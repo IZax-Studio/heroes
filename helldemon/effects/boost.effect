@@ -30,7 +30,7 @@
 						position="0 50 0"
 						directionalspace="local"
 						alpha="0"
-						color="0 1 .5"
+						color=".5 0 .25"
 					>
 <!--
 						<twopointtrailemitter
@@ -44,8 +44,8 @@
 							material="/shared/effects/materials/soul_projectile.material"
 						>
 							<particle
-								startcolor="0 1 .5"
-								endcolor="0 1 .5"
+								startcolor="1 0 .5"
+								endcolor="-1 -1 -1"
 								startalpha="1"
 								endalpha="0"
 							/>
@@ -62,8 +62,8 @@
 							material="/shared/effects/materials/soul_projectile.material"
 						>
 							<particle
-								startcolor="0 1 .5"
-								endcolor="0 1 .5"
+								startcolor=".85 0 .5"
+								endcolor="-1 -1 -1"
 								startalpha="1"
 								endalpha="0"
 							/>

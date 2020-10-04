@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_BabaYaga"
+
+	team="Hellbourne"
+	icon="queen_of_pain/Queen_of_Pain.tga"
+	portrait="queen_of_pain/Queen_of_Pain.tga"
+	model="queen_of_pain/model.mdf"
+	skin=""
+
+	passiveeffect="effects/body.effect"
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana_%.wav"
+	cooldownsound="sounds/voice/cooldown_%.wav"
+	announcersound="sounds/voice/hero_select.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+	
+	preglobalscale="1.0"
+	modelscale="1.0"
+	effectscale="1"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="44"
+	targetoffset="0 0 64"
+	portraitcampos="8 0 71"
+	portraitangles="0 0 20"
+
+	category="magic"
+	difficulty="3"
+
+	solorating="5"
+	junglerating="0"
+	carryrating="2"
+	supportrating="0"
+	initiatorrating="0"
+	gankerrating="2"
+	pusherrating="0"
+	rangedrating="5"
+	meleerating="0"
+	
+	movespeed="295"
+	turnrate="500"
+	turnsmoothing="0.05"
+
+	maxhealth="150"
+	healthregen="0.25"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="-0.82"
+	magicarmor="5"
+
+	inventory0="Ability_BabaYaga1"
+	inventory1="Ability_BabaYaga2"
+	inventory2="Ability_BabaYaga3"
+	inventory3="Ability_BabaYaga4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="970"
+	attackactiontime="500"
+	attackcooldown="1700"
+	attackdamagemin="20"
+	attackdamagemax="27"
+	attacknumanims="2"
+	attackoffset="0 100 70"
+	attackprojectile="Projectile_BabaYagaAttack"
+	attackrange="550"
+	attackstarteffect="effects/attack.effect"
+	attackactioneffect=""
+	attackimpacteffect="effects/impact.effect"
+	attacktype="ranged"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="800"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	primaryattribute="Intelligence"
+	strength="16"
+	strengthperlevel="1.7"
+	agility="19"
+	agilityperlevel="2.5"
+	intelligence="25"
+	intelligenceperlevel="2.8"
+	
+	corpsetime="3500"
+	corpsefadetime="1000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	previewmodel="queen_of_pain/model.mdf"
+	previewpos="0 0 -50"
+	previewangles="0 0 0"
+	previewscale="1.5"
+	
+	storemodel="queen_of_pain/model.mdf"
+	storepos="0 0 -15"
+	storeangles="0 0 0"
+	storescale=".75"
+>
+	<recommendeditem name="Item_ManaPotion" />
+	<recommendeditem name="Item_MinorTotem" />
+	<recommendeditem name="Item_RunesOfTheBlight" />
+	<recommendeditem name="Item_HealthPotion" />
+	<recommendeditem name="Item_HomecomingStone" />
+	
+	<recommendeditem name="Item_Intelligence5" />
+	<recommendeditem name="Item_Strength5" />
+	<recommendeditem name="Item_Steamboots" />
+	<recommendeditem name="Item_Intelligence7" />
+	<recommendeditem name="Item_Morph" />
+	<recommendeditem name="Item_Protect" />
+	<recommendeditem name="Item_UltorsHeavyPlate" />
+	<recommendeditem name="Item_Silence" />
+	<recommendeditem name="Item_Immunity" />
+	<recommendeditem name="Item_Pierce" />
+	
+	<modifier key="frost" modpriority="100"
+		passiveeffect="effects/frost.effect"		
+	/>
+	
+	<modifier key="iamsheeped" modpriority="1000"
+		passiveeffect=""
+	/>
+	
+	<!-- Staff of the master upgrade effect-->
+	<modifier key="ult_boost" modpriority="100">
+		<aura state="State_BabaYaga_Ult_Boost" radius="0" targetscheme="self"/>
+	</modifier>
+	
+	<altavatar key="Hero_BabaYaga.Alt"
+		preglobalscale="2"
+		modelscale="1"
+		icon2="alt/icon.tga"
+		portrait="alt/icon.tga"
+		model="alt/model.mdf"
+		infoheight="185"
+		previewmodel="alt/preview.mdf"
+
+		
+		previewpos="0 0 -80"
+		previewangles="0 0 0"
+		previewscale="2"
+		effectscale="1"
+		
+		storemodel="alt/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.8"
+		
+		selectedsound="alt/sounds/voice/select_%.wav"
+		selectedflavorsound="alt/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt/sounds/voice/move_%.wav"
+		confirmattacksound="alt/sounds/voice/attack_%.wav"
+		nomanasound="alt/sounds/voice/no_mana.wav"
+		cooldownsound="alt/sounds/voice/cooldown.wav"
+		announcersound="alt/sounds/voice/hero_select.wav"
+		tauntedsound="alt/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt/sounds/voice/taunt_after.wav"
+		passiveeffect="alt/effects/body.effect"
+	/>
+	
+	<altavatar key="Hero_BabaYaga.Alt2"
+		preglobalscale="2"
+		modelscale="1"
+		icon2="alt2/icon.tga"
+		portrait="alt2/icon.tga"
+		model="alt2/model.mdf"
+		infoheight="185"
+		previewmodel="alt2/preview.mdf"
+		
+		attackprojectile="Projectile_BabaYagaAttack_Alt2"
+		attackimpacteffect=""
+		
+		previewpos="0 0 -80"
+		previewangles="0 0 0"
+		previewscale="2"
+		effectscale="1"
+		
+		storemodel="alt2/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.0"
+		
+		selectedsound="alt2/sounds/voice/select_%.wav"
+		selectedflavorsound="alt2/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt2/sounds/voice/move_%.wav"
+		confirmattacksound="alt2/sounds/voice/attack_%.wav"
+		nomanasound="alt2/sounds/voice/no_mana.wav"
+		cooldownsound="alt2/sounds/voice/cooldown.wav"
+		tauntedsound="alt2/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt2/sounds/voice/taunt_after.wav"
+		
+		passiveeffect="alt2/effects/body.effect"
+	/>
+
+	<altavatar key="Hero_BabaYaga.Alt3"
+		preglobalscale="1.75"
+		icon2="alt3/icon.tga"
+		portrait="alt3/icon.tga"
+		model="alt3/model.mdf"
+		previewmodel="alt3/preview.mdf"
+		
+		previewpos="0 0 -80"
+		previewangles="0 0 0"
+		previewscale="2"
+		effectscale="1"
+		
+		storemodel="alt3/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.8"
+		
+		selectedsound="alt3/sounds/voice/select_%.wav"
+		selectedflavorsound="alt3/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt3/sounds/voice/move_%.wav"
+		confirmattacksound="alt3/sounds/voice/attack_%.wav"
+		nomanasound="alt3/sounds/voice/no_mana.wav"
+		cooldownsound="alt3/sounds/voice/cooldown.wav"
+		tauntedsound="alt3/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt3/sounds/voice/taunt_after.wav"
+		
+		attackprojectile="Projectile_BabaYagaAttack_Alt3"
+		attackimpacteffect=""
+	>
+		<onspawn>
+			<applystate name="State_Flying_Monkey" target="this_entity" continuous="true" source="target_entity"/>
+		</onspawn>
+		
+		<onrespawn>
+			<applystate name="State_Flying_Monkey" target="this_entity" continuous="true" source="target_entity"/>
+		</onrespawn>
+	</altavatar>
+	
+	<altavatar key="Hero_BabaYaga.Alt4" modpriority="1"
+		altavatar="true"
+		preglobalscale="1.75"
+		icon2="alt4/icon.tga"
+		portrait="alt4/icon.tga"
+		model="alt4/model.mdf"
+		previewmodel="alt4/preview.mdf"
+		infoheight="185"
+		respawneffect="/shared/effects/respawn_hag.effect"
+		
+		previewpos="0 0 -80"
+		previewangles="0 0 0"
+		previewscale="2"
+		effectscale="1"
+		
+		storemodel="alt4/preview.mdf"
+		storepassiveeffect="alt4/lvl_18/body_preview.effect"
+		storepos="0 0 -40"
+		storeangles="0 0 0"
+		storescale="1.8"
+		
+		selectedsound="alt4/sounds/voice/select_%.wav"
+		selectedflavorsound="alt4/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt4/sounds/voice/move_%.wav"
+		confirmattacksound="alt4/sounds/voice/attack_%.wav"
+		nomanasound="alt4/sounds/voice/no_mana.wav"
+		cooldownsound="alt4/sounds/voice/cooldown.wav"
+		tauntedsound="alt4/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt4/sounds/voice/taunt_after.wav"
+		
+		attackprojectile="Projectile_BabaYagaAttack_Alt4"
+		attackstarteffect="alt4/effects/attack.effect"
+		attackoffset="0 100 70"
+		attackrange="550"
+		attackactioneffect=""
+		attackimpacteffect=""
+		
+		passiveeffect="alt4/base/body.effect,alt4/base/body.effect,alt4/lvl_3/body.effect,alt4/lvl_3/body.effect,alt4/lvl_3/body.effect,alt4/lvl_6/body.effect,alt4/lvl_6/body.effect,alt4/lvl_6/body.effect,alt4/lvl_9/body.effect,alt4/lvl_9/body.effect,alt4/lvl_9/body.effect,alt4/lvl_12/body.effect,alt4/lvl_12/body.effect,alt4/lvl_12/body.effect,alt4/lvl_15/body.effect,alt4/lvl_15/body.effect,alt4/lvl_15/body.effect,alt4/lvl_18/body.effect"
+	>	
+		<modifier key="frost" modpriority="100" >
+			<aura state="State_BabaYaga_Alt4_Frost" radius="0" targetscheme="self"/>
+		</modifier>
+	
+	</altavatar>
+	
+	<altavatar key="Hero_BabaYaga.Alt5"
+		preglobalscale="2"
+		modelscale="1"
+		icon2="alt5/icon.tga"
+		portrait="alt5/icon.tga"
+		model="alt5/model.mdf"
+		infoheight="185"
+		previewmodel="alt5/preview.mdf"
+		
+		previewpos="0 0 -80"
+		previewangles="0 0 0"
+		previewscale="2"
+		effectscale="1"
+		
+		storemodel="alt5/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.8"
+		
+		selectedsound="alt5/sounds/voice/select_%.wav"
+		selectedflavorsound="alt5/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt5/sounds/voice/move_%.wav"
+		confirmattacksound="alt5/sounds/voice/attack_%.wav"
+		nomanasound="alt5/sounds/voice/no_mana.wav"
+		cooldownsound="alt5/sounds/voice/cooldown.wav"
+		announcersound="alt5/sounds/voice/hero_select.wav"
+		tauntedsound="alt5/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt5/sounds/voice/taunt_after.wav"
+		passiveeffect="alt5/effects/body.effect"
+		
+		attackstarteffect="alt5/effects/attack.effect"
+		attackimpacteffect="alt5/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_BabaYaga.Alt6"
+		preglobalscale="1.5"
+		modelscale="1"
+		icon2="alt6/icon.tga"
+		portrait="alt6/icon.tga"
+		model="alt6/model.mdf"
+		infoheight="185"
+		previewmodel="alt6/preview.mdf"
+		
+		previewpos="0 0 -80"
+		previewangles="0 0 0"
+		previewscale="2"
+		effectscale="1"
+		
+		storemodel="alt6/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.4"
+		
+		selectedsound="alt6/sounds/voice/select_%.wav"
+		selectedflavorsound="alt6/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt6/sounds/voice/move_%.wav"
+		confirmattacksound="alt6/sounds/voice/attack_%.wav"
+		nomanasound="alt6/sounds/voice/no_mana.wav"
+		cooldownsound="alt6/sounds/voice/cooldown.wav"
+		announcersound="alt6/sounds/voice/hero_select.wav"
+		tauntedsound="alt6/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt6/sounds/voice/taunt_after.wav"
+		passiveeffect="alt6/effects/body.effect"
+		
+		attackstarteffect="alt6/effects/attack.effect"
+		attackimpacteffect="alt6/effects/impact.effect"
+		
+		portraitcampos="12 -5 -20"
+	/>
+	
+	<altavatar key="Hero_BabaYaga.Alt7"
+		preglobalscale="1.5"
+		modelscale="1"
+		icon2="alt6/icon.tga"
+		portrait="alt6/icon.tga"
+		model="alt7/model.mdf"
+		infoheight="185"
+		previewmodel="alt6/preview.mdf"
+		
+		previewpos="0 0 -80"
+		previewangles="0 0 0"
+		previewscale="2"
+		effectscale="1"
+		
+		storemodel="alt6/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.4"
+		
+		selectedsound="alt7/sounds/voice/select_%.wav"
+		selectedflavorsound="alt7/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt7/sounds/voice/move_%.wav"
+		confirmattacksound="alt7/sounds/voice/attack_%.wav"
+		nomanasound="alt7/sounds/voice/no_mana.wav"
+		cooldownsound="alt7/sounds/voice/cooldown.wav"
+		announcersound="alt7/sounds/voice/hero_select.wav"
+		tauntedsound="alt7/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt7/sounds/voice/taunt_after.wav"
+		passiveeffect="alt6/effects/body.effect"
+		
+		attackstarteffect="alt6/effects/attack.effect"
+		attackimpacteffect="alt6/effects/impact.effect"
+		
+		portraitcampos="12 -5 -20"
+	/>
+	
+	<altavatar key="Hero_BabaYaga.Alt8"
+		preglobalscale="2"
+
+		modelscale="1"
+		icon2="alt8/icon.tga"
+		portrait="alt8/icon.tga"
+		model="alt8/model.mdf"
+		infoheight="185"
+		previewmodel="alt8/preview.mdf"
+		
+		previewpos="0 0 -80"
+		previewangles="0 0 0"
+		previewscale="2"
+		effectscale="1"
+		
+		storemodel="alt8/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.8"
+		
+		selectedsound="alt8/sounds/voice/select_%.wav"
+		selectedflavorsound="alt8/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt8/sounds/voice/move_%.wav"
+		confirmattacksound="alt8/sounds/voice/attack_%.wav"
+		nomanasound="alt8/sounds/voice/no_mana.wav"
+		cooldownsound="alt8/sounds/voice/cooldown.wav"
+		announcersound="alt8/sounds/voice/hero_select.wav"
+		tauntedsound="alt8/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt8/sounds/voice/taunt_after.wav"
+		passiveeffect="alt8/effects/body.effect"
+		
+		attackstarteffect="alt8/effects/attack.effect"
+		attackimpacteffect="alt8/effects/impact.effect"
+		
+		portraitcampos="10 -35 22"
+	>
+		<onspawn>
+			<activatemodifierkey name="Paragon_Sound_Alexandrite" />
+			<applystate name="State_Alexandrite_Paragon_Sound_Initiator" target="source_entity" duration="2000" />
+			<ownsproduct target="this_entity" product="en.paragon_trail" >
+				<applystate name="State_Paragon_Trail" target="this_entity" continuous="true" />
+			</ownsproduct>
+
+			<upgradeselected target="this_entity" upgrade="sc.paragon_circle_upgrade">
+				<activatemodifierkey name="Alt8_Paragon_Circle" />
+			</upgradeselected>
+
+			<ownsproduct target="this_entity" product="en.wretched_hag_ability01_upgrade" >
+				<activatemodifierkey name="Alt8_Ability1_Upgrade" />
+			</ownsproduct>
+			
+			<ownsproduct target="this_entity" product="en.wretched_hag_ability02_upgrade" >
+				<activatemodifierkey name="Alt8_Ability2_Upgrade" />
+			</ownsproduct>
+			
+			<ownsproduct target="this_entity" product="en.wretched_hag_ability03_upgrade" >
+				<activatemodifierkey name="Alt8_Ability3_Upgrade" />
+			</ownsproduct>
+			
+			<ownsproduct target="this_entity" product="en.wretched_hag_ability04_upgrade" >
+				<activatemodifierkey name="Alt8_Ability4_Upgrade" />
+			</ownsproduct>
+
+            <ownsproduct target="this_entity" product="en.paragon_pet" >
+                <spawnunit name="Pet_Paragon" target="this_entity" source="target_entity" offset="0 -100" facing="source_entity" pushentity="true" />
+                <activatemodifierkey name="Pet_Paragon_Alexandrite" entity="stack_entity" />
+            </ownsproduct>
+		</onspawn>
+
+        <onrespawn>
+			<ownsproduct target="this_entity" product="en.paragon_trail" >
+				<applystate name="State_Paragon_Trail" target="this_entity" continuous="true" />
+			</ownsproduct>
+			
+            <ownsproduct target="this_entity" product="en.paragon_pet" >
+                <spawnunit name="Pet_Paragon" target="this_entity" source="target_entity" offset="0 -100" facing="source_entity" pushentity="true" />
+                <activatemodifierkey name="Pet_Paragon_LapisLazuli" entity="stack_entity" />
+            </ownsproduct>
+			
+			<ownsproduct target="this_entity" product="en.wretched_hag_stat_track" >
+                <!-- <playeffect effect="/shared/effects/paragon_stats.effect" source="this_entity" target="this_entity" /> -->
+				<applystate name="State_Paragon_Stats_VFX" source="this_entity" target="this_entity" duration="4000" />
+			</ownsproduct>
+        </onrespawn>
+		
+		<onchannelingstart>
+			<ownsproduct target="this_entity" product="en.wretched_hag_stat_track" >
+				<entitytype type="Ability_Taunt" target="inflictor_entity">
+                    <!-- <playeffect effect="/shared/effects/paragon_stats.effect" source="this_entity" target="this_entity" /> -->
+					<applystate name="State_Paragon_Stats_VFX" source="this_entity" target="this_entity" duration="4000" />
+				</entitytype>
+			</ownsproduct>
+		</onchannelingstart>
+		
+		<onkill>
+			<ownsproduct target="this_entity" product="en.wretched_hag_stat_track" >
+                <cantarget targetscheme="enemy_heroes" >
+                    <!-- <playeffect effect="/shared/effects/paragon_stats.effect" source="this_entity" target="this_entity" /> -->
+					<applystate name="State_Paragon_Stats_VFX" source="this_entity" target="this_entity" duration="4000" />
+                </cantarget>
+			</ownsproduct>
+        </onkill>
+	
+		<onassist>
+			<ownsproduct target="this_entity" product="en.wretched_hag_stat_track" >
+                <!-- <playeffect effect="/shared/effects/paragon_stats.effect" source="this_entity" target="this_entity" /> -->
+				<applystate name="State_Paragon_Stats_VFX" source="this_entity" target="this_entity" duration="4000" />
+			</ownsproduct>
+        </onassist>
+
+		<modifier key="Alt8_Paragon_Circle" modpriority="2"
+            localselectionringmaterial="/shared/materials/selection_indicator_paragon.material"
+        />
+		
+		<modifier key="frost" modpriority="100" />
+	</altavatar>
+	
+	<altavatar key="Hero_BabaYaga.Alt9"
+		preglobalscale="1.0"
+		modelscale="1.0"
+		icon2="alt9/icon.tga"
+		portrait="alt9/icon.tga"
+		model="queen_of_pain/model.mdf"
+		infoheight="185"
+		previewmodel="alt9/preview.mdf"
+		
+		previewpos="0 0 -80"
+		previewangles="0 0 0"
+		previewscale="2"
+		effectscale="1"
+		
+		storemodel="alt9/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.4"
+		
+		selectedsound="alt9/sounds/voice/select_%.wav"
+		selectedflavorsound="alt9/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt9/sounds/voice/move_%.wav"
+		confirmattacksound="alt9/sounds/voice/attack_%.wav"
+		nomanasound="alt9/sounds/voice/no_mana.wav"
+		cooldownsound="alt9/sounds/voice/cooldown.wav"
+		announcersound="alt9/sounds/voice/hero_select.wav"
+		tauntedsound="alt9/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt9/sounds/voice/taunt_after.wav"
+		passiveeffect="alt9/effects/body.effect"
+		
+		portraitcampos="0 -20 20"
+	/>
+	
+	<altavatar key="Hero_BabaYaga.pog_skin"
+		preglobalscale="1.4"
+		modelscale="1"
+		icon2="icon.tga"
+		portrait="icon.tga"
+		model="pog_skin/model.mdf"
+		infoheight="185"
+		previewmodel="pog_skin/preview.mdf"
+		
+		previewpos="0 0 -80"
+		previewangles="0 0 0"
+		previewscale="2"
+		effectscale="1"
+		
+		storemodel="pog_skin/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.25"
+		
+	/>
+	
+	
+	<altavatar key="Hero_BabaYaga.Alt10"
+		preglobalscale="1.5"
+		modelscale="1.4"
+		
+		icon2="alt10/icon.tga"
+		model="alt10/model.mdf"
+		infoheight="185"
+		previewmodel="alt10/preview.mdf"
+		
+		passiveeffect="alt10/effects/body.effect"
+		
+		attackstarteffect="alt10/effects/attack.effect"
+		attackimpacteffect="alt10/effects/impact.effect"
+		
+		portraitcampos="5 -20 22"
+		
+		storemodel="alt10/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="2"
+		
+		selectedsound="alt10/sounds/voice/select_%.wav"
+		selectedflavorsound="alt10/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt10/sounds/voice/move_%.wav"
+		confirmattacksound="alt10/sounds/voice/attack_%.wav"
+		nomanasound="alt10/sounds/voice/no_mana.wav"
+		cooldownsound="alt10/sounds/voice/cooldown.wav"
+		tauntedsound="alt10/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt10/sounds/voice/taunt_after.wav"
+		
+		
+	>
+		<onkill>
+			<ownsproduct target="this_entity" product="aa.Hero_BabaYaga.Alt10 aa.Hero_CorruptedDisciple.Alt8 aa.Hero_DrunkenMaster.Alt10 aa.Hero_ForsakenArcher.Alt9 aa.Hero_Krixi.Alt9 aa.Hero_Silhouette.Alt12" >
+				<cantarget targetscheme="enemy_heroes">
+					<applystate name="State_Set_Magcial_Girl_VFX" source="this_entity" target="this_entity" duration="2500" />
+				</cantarget>
+			</ownsproduct>
+        </onkill>
+		
+		<onassist>
+			<ownsproduct target="this_entity" product="aa.Hero_BabaYaga.Alt10 aa.Hero_CorruptedDisciple.Alt8 aa.Hero_DrunkenMaster.Alt10 aa.Hero_ForsakenArcher.Alt9 aa.Hero_Krixi.Alt9 aa.Hero_Silhouette.Alt12" >
+				<applystate name="State_Set_Magcial_Girl_VFX" source="this_entity" target="this_entity" duration="2500" />
+			</ownsproduct>
+        </onassist>
+	</altavatar>
+</hero>

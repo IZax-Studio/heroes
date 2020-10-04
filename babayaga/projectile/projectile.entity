@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_BabaYagaAttack"
+
+	speed="1500"
+	gravity="0"
+	canturn="false"
+	modelscale="1.0"
+
+	model="effects/bat.mdf"
+	traileffect=""
+	impacteffect=""
+>
+
+	<altavatar key="Hero_BabaYaga.Alt5" modpriority="1"
+		modelscale="1.5"
+		model="../alt5/projectile/effects/bat.mdf"
+	/>
+	
+	<altavatar key="Hero_BabaYaga.Alt6" modpriority="1"
+		modelscale="1"
+		model="/shared/models/invis.mdf"
+		traileffect="../alt6/projectile/effects/trail.effect"
+		impacteffect="../alt6/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_BabaYaga.Alt7" modpriority="1"
+		modelscale="1"
+		model="/shared/models/invis.mdf"
+		traileffect="../alt6/projectile/effects/trail.effect"
+		impacteffect="../alt6/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_BabaYaga.Alt8" modpriority="1"
+		modelscale="1.5"
+		model="../alt8/projectile/effects/bat.mdf"
+		traileffect="../alt8/projectile/effects/trail.effect"
+		impacteffect="../alt8/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_BabaYaga.Alt10" modpriority="1"
+		modelscale="1"
+		model="/shared/models/invis.mdf"
+		traileffect="../alt10/projectile/effects/trail.effect"
+		impacteffect="../alt10/projectile/effects/impact.effect"
+	/>
+
+</projectile>
