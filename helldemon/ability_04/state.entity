@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_HellDemon_Ability4"
+
+	icon="icon4.tga"
+	passiveeffect=""
+	
+	ishidden="true"
+	deathpersist="true"
+>
+	<onexpired>
+		<targettype type="alive" target="target_entity">
+			<playeffect effect="effects/impact.effect" source="target_entity" target="" />
+		</targettype>
+		<else>
+			<playeffect effect="effects/impact_death.effect" source="target_entity" target="" />
+		</else>
+	</onexpired>
+	
+	<altavatar key="Hero_HellDemon.Alt2"
+	>
+		<onexpired>
+			<targettype type="alive" target="target_entity">
+				<playeffect effect="effects/impact.effect" source="target_entity" target="" />
+			</targettype>
+			<else>
+				<playeffect effect="/heroes/helldemon/alt2/ability_04/effects/impact_death.effect" source="target_entity" target="" />
+			</else>
+		</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_HellDemon.Alt3"
+	>
+		<onexpired>
+			<targettype type="alive" target="target_entity">
+				<playeffect effect="effects/impact.effect" source="target_entity" target="" />
+			</targettype>
+			<else>
+				<playeffect effect="/heroes/helldemon/alt3/ability_04/effects/impact_death.effect" source="target_entity" target="" />
+			</else>
+		</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_HellDemon.Alt4"
+	>
+		<onexpired>
+			<targettype type="alive" target="target_entity">
+				<playeffect effect="/heroes/helldemon/alt4/ability_04/effects/impact.effect" source="target_entity" target="" />
+			</targettype>
+			<else>
+				<playeffect effect="/heroes/helldemon/alt4/ability_04/effects/impact_death.effect" source="target_entity" target="" />
+			</else>
+		</onexpired>
+	</altavatar>
+</state>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_HellDemon_Attack"
+
+	speed="1300"
+	gravity="1000"
+
+	modelscale="1.85"
+	model="effects/model.mdf"
+	traileffect="effects/trail.effect"
+	
+	casteffect="effects/cast.effect"
+	impacteffect="effects/impact.effect"
+>
+
+	<altavatar key="Hero_HellDemon.Alt" modpriority="1"
+		model="../alt/effects/projectile/effects/model.mdf"
+	/>
+	
+	<altavatar key="Hero_HellDemon.Alt2" modpriority="1"
+		model="../alt2/projectile/effects/model.mdf"
+	/>
+	
+	<altavatar key="Hero_HellDemon.Alt3" modpriority="1"
+		model="../alt3/projectile/effects/model.mdf"
+	/>
+	
+	<altavatar key="Alt4" modpriority="1"
+		model="../alt4/projectile/effects/model.mdf"
+	/>
+	
+	<altavatar key="Hero_HellDemon.pog_skin" modpriority="1"
+		model="../alt/effects/projectile/effects/model.mdf"
+	/>
+</projectile>

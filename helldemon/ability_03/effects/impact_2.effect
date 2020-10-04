@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true" deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+		
+			<sound
+			    forcestereo="true"
+				linearfalloff="true"
+				falloffstart="2000"
+				falloffend="2200"
+				volume=".4"
+				sample="/heroes/helldemon/ability_03/sounds/cast.wav"
+			/>
+
+			<light
+				delay="0"
+				life="450"
+				startcolor="2 .5 6"
+				endcolor="0 0 0"
+				midcolorpos=".2"
+				falloffstart="80"
+				falloffend="145"
+				position="0 0 50"
+			/>
+
+			
+			
+			<skeletonemitter
+				life="200"
+				spawnrate="2000"
+				count="50"
+				minparticlelife="230"
+				maxparticlelife="1000"
+				speed="1000"
+				drag="0.02"
+				offsetsphere="5 5 5"
+				angle="30"
+				direction="0 0 1"
+				directionalspace="global"
+				depthbias="-40"
+				material="/shared/effects/materials/neb_blend.material"
+				gravity="-5"
+			>
+				<particle
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					startcolor="0 .4 .75"
+					midcolor=".6 .1 .4"
+					endcolor="0"
+					midcolorpos=".5"
+					startsize="80"
+					minendscale="2"
+					maxendscale="5"
+				/>
+			</skeletonemitter>			
+			
+	
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+			
+				spawnrate="650"
+				count="10"
+				minparticlelife="230"
+				maxparticlelife="400"
+				speed="200"
+				drag="0.05"
+				offsetsphere="0 0 0"
+				depthbias="-40"
+				material="/shared/effects/materials/frost_burst.material"
+			>
+				<particle
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					turn="1"
+					startcolor="1 1 .5"
+					midcolorpos="0.2"
+					midcolor=".2 .5 1"
+					endcolor="0"
+					startsize="70"					
+					endsize="100"
+					startalpha=".3"
+					midalpha="1"
+					midalphapos="0.1"
+					endalpha="0"
+				/>
+			</simpleemitter>				
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="2.0">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="500"
+				falloffend="2000"
+				volume="0.6" 
+				sample="../sounds/cast.wav"
+				fadein="100"
+				fadeout="2000"
+			/>
+				
+			<light
+				bone="_bone_centerofchest"
+				life="250"			
+				startcolor="4 2 12"				
+				endcolor="0 0 0"
+				midcolorpos=".2"
+				falloffstart="00"
+				falloffend="255"
+				position="0 0 20"	
+			/>
+			
+			<simpleemitter
+				life="100"
+				count="1"
+				spawnrate="1000"
+				particlelife="500"
+			>
+				<particle>
+					<billboard
+						life="350"
+						lockup="true"
+						pitch="90"
+						depthbias="-20"
+						material="/shared/effects/materials/corona_ground.material"
+						size="650"
+						startcolor=".12 0 .12"
+						endcolor="0"
+					/>
+					
+					<billboard
+						delay="100"
+						life="250"
+						lockup="true"
+						pitch="90"
+						depthbias="-20"
+						material="/shared/effects/materials/corona_ground.material"
+						size="500"
+						startcolor=".09 0 .09"
+						endcolor="0"
+					/>
+					
+					<billboard
+						delay="200"
+						life="150"
+						lockup="true"
+						pitch="90"
+						depthbias="-20"
+						material="/shared/effects/materials/corona_ground.material"
+						size="350"
+						startcolor=".08 0 .08"
+						endcolor="0"
+					/>
+				</particle>
+			</simpleemitter>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

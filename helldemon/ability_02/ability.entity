@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_HellDemon2"
+
+	icon="icon2.tga"
+	statuseffecttooltip2="State_HellDemon_Ability2"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	passiveeffect=""
+	casteffect="effects/cast.effect"
+	
+	actiontype="no_target"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nonaggressive="true"
+	
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="20000"
+	cooldowntype="helldemonhealthdegenaura"
+>
+	<aura name="helldemonaura" state="State_HellDemon_Ability2" radius="800,900,1000,1100" effecttype="Debuff" targetscheme="enemy_nonboss_units" propagatecondition="not_stealthed" stack="true" />
+	
+	<onimpact>
+		<applystate name="State_HellDemon_Ability2_Buff" target="this_owner_entity" duration="10000" />
+	</onimpact>
+
+	<modifier key="soulreaper_ability2_Active" modpriority="100"
+		statuseffecttooltip2="State_HellDemon_Ability2_Greater"
+	>
+		<aura name="helldemonaura" state="State_HellDemon_Ability2_Greater" radius="400,450,500,550" effecttype="Debuff" targetscheme="enemy_nonboss_units" propagatecondition="not_stealthed" stack="true" />
+	</modifier>
+
+	<!-- Make the aura only heroes, not toggleable, and not work on illusions for krosmode -->
+	<modifier key="krosmode" modpriority="101"
+		actiontype="passive"
+	>
+		<onimpact />
+
+		<aura name="helldemonaura" state="State_HellDemon_Ability2" radius="800,900,1000,1100" effecttype="Debuff" targetscheme="enemy_nonboss_units" propagatecondition="not_stealthed,not_illusion" stack="true" />
+	</modifier>
+</ability>

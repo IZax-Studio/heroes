@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_HellDemon_Ability3"
+	
+	icon="icon3.tga"
+
+>
+	
+	<onrefresh />
+
+	<onframe>
+		<targettype target="source_entity" type="illusion">
+			<setvar0 a="0.004,0.007,0.01,0.013" b="3" op="div" />
+			<setvar0 a="target_maxhealth" b="var0" op="mult" />
+			<setvar1 a="var0" b="-1" op="mult" />
+			<setvar2 a="var1" b="frametime" op="mult" />
+			<setvar3 a="var2" b="-1" op="mult" />
+			<compare a="target_health" b="var3" op="lt">
+				<kill target="target_entity" />
+			</compare>
+			<changehealth a="var2" />
+		</targettype>
+		<else>
+			<setvar0 a="target_maxhealth" b="0.004,0.007,0.01,0.013" op="mult" />
+			<setvar1 a="var0" b="-1" op="mult" />
+			<setvar2 a="var1" b="frametime" op="mult" />
+			<setvar3 a="var2" b="-1" op="mult" />
+			<compare a="target_health" b="var3" op="lt">
+				<kill target="target_entity" />
+			</compare>
+			<changehealth a="var2" />
+		</else>
+	</onframe>
+
+	<modifier key="helldemon_healthaura" condition="hero" modpriority="100"
+		passiveeffect="effects/aura.effect"
+	/>
+
+	<modifier key="krosmode" modpriority="100"
+	>
+		<onrefresh>
+			<addcharges count="1" />
+		</onrefresh>
+
+		<onframe>
+			<targettype target="source_entity" type="illusion">
+				<setvar0 a="0.004,0.007,0.01,0.013" b="3" op="div" />
+				<setvar0 a="target_maxhealth" b="var0" op="mult" />
+				<setvar1 a="var0" b="-1" op="mult" />
+				<setvar2 a="var1" b="frametime" op="mult" />
+				<setvar3 a="var2" b="-1" op="mult" />
+				<compare a="target_health" b="var3" op="lt">
+					<kill target="target_entity" />
+				</compare>
+				<changehealth a="var2" />
+			</targettype>
+			<else>
+				<setvar0 a="target_maxhealth" b="0.004,0.007,0.01,0.013" op="mult" />
+				<setvar1 a="var0" b="-1" op="mult" />
+				<setvar2 a="var1" b="frametime" op="mult" />
+				<setvar3 a="var2" b="-1" op="mult" />
+				<compare a="target_health" b="var3" op="lt">
+					<kill target="target_entity" />
+				</compare>
+				<changehealth a="var2" />
+			</else>
+			
+			<setcharges count="0" />
+		</onframe>
+	</modifier>
+</state>

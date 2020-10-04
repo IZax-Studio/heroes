@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_HellDemon_Ability2_Greater"
+	
+	icon="icon2.tga"
+>
+	<onframe>
+		<!-- Boolean flag logic -->
+		<setaccumulator value="0" />
+		
+		<!-- Hero Level <= 3 && target is a neutral creep. If this check passes true, no effect -->
+		<compare a="source_level" source="source_entity" b="3" op="lt">
+			<targettype type="neutral" target="target_entity">
+				<setaccumulator value="1" />
+			</targettype>
+		</compare>
+	
+		<compare a="accumulator" b="0" op="eq">
+			<targettype target="source_entity" type="illusion">
+				<setvar0 a="0.008,0.012,0.016,0.02" b="3" op="div" />
+				<setvar0 a="target_maxhealth" b="var0" op="mult" />
+				<setvar1 a="var0" b="-1" op="mult" />
+				<setvar2 a="var1" b="frametime" op="mult" />
+				<setvar3 a="var2" b="-1" op="mult" />
+				<compare a="target_health" b="var3" op="lt">
+					<kill target="target_entity" />
+				</compare>
+				<changehealth a="var2" />
+			</targettype>
+			<else>
+				<setvar0 a="target_maxhealth" b="0.008,0.012,0.016,0.02" op="mult" />
+				<setvar1 a="var0" b="-1" op="mult" />
+				<setvar2 a="var1" b="frametime" op="mult" />
+				<setvar3 a="var2" b="-1" op="mult" />
+				<compare a="target_health" b="var3" op="lt">
+					<kill target="target_entity" />
+				</compare>
+				<changehealth a="var2" />
+			</else>
+		</compare>
+	</onframe>
+
+	<modifier key="helldemon_healthaura" condition="hero" modpriority="100"
+		passiveeffect="effects/aura.effect"
+	/>
+</state>
