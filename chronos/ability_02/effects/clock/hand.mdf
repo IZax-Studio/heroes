@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="hand.model" type="K2" high="hand.model" med="hand.model" low="hand.model" >
+
+	<anim name="idle" clip="ghost_hand_idle.clip" loop="true" fps="25"/>
+	
+	<anim name="hour" clip="ghost_hand_idle.clip" loop="true" fps="7"/>
+	
+</model>

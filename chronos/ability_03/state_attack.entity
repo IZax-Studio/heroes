@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Chronos_Ability3_Attack"
+	
+	icon="AB3.tga"
+	passiveeffect=""
+	
+	ishidden="true"
+	
+	impactinterval="150"
+	
+	effecttype=""
+>
+	
+	<onimpact>
+		<attack target="this_proxy_entity" startcooldown="false" />
+		<expire />
+	</onimpact>
+	
+	<altavatar key="Hero_Chronos.Alt3" modpriority="1"
+		passiveeffect="/heroes/chronos/alt3/ability_03/effects/lock.effect"
+	/>
+	
+	<altavatar key="Hero_Chronos.Alt8" modpriority="1"
+		icon="/heroes/chronos/alt8/ability_03/icon.tga"
+		passiveeffect="/heroes/chronos/alt8/ability_03/effects/lock.effect"
+	/>
+	
+	<altavatar key="Hero_Chronos.Alt9" modpriority="1"
+		passiveeffect="/heroes/chronos/alt9/ability_03/effects/lock.effect"
+	/>
+	
+	<altavatar key="Hero_Chronos.Alt10" modpriority="1"
+		passiveeffect="/heroes/chronos/alt10/ability_03/effects/lock.effect"
+	/>
+	
+	<altavatar key="Hero_Chronos.Alt11" modpriority="1"
+		icon="/heroes/chronos/alt11/ability_03/icon.tga"
+		passiveeffect="/heroes/chronos/alt11/ability_03/effects/lock.effect"
+	/>
+	
+	<altavatar key="Hero_Chronos.trophy_skin01" modpriority="1"
+		passiveeffect="/heroes/chronos/trophy_skin/model_01/ability_03/effects/lock.effect"
+	/>
+	
+	<altavatar key="Hero_Chronos.trophy_skin02" modpriority="1"
+		passiveeffect="/heroes/chronos/trophy_skin/model_02/ability_03/effects/lock.effect"
+	/>
+	
+	<altavatar key="Hero_Chronos.trophy_skin03" modpriority="1"
+		passiveeffect="/heroes/chronos/trophy_skin/model_03/ability_03/effects/lock.effect"
+	/>
+	
+</state>

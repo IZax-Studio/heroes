@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Chronos_Ability4_Haste"
+
+	icon="AB4.tga"
+	displaylevel="true"
+	passiveeffect=""
+	
+	maxmovespeed="450"
+	movespeedmultiplier="100"
+	slowresistance="1.0"
+	unitwalking="true"
+	
+	effecttype=""
+	
+	modifierkey="chronos_ability4_Haste"
+>
+	<oninflict>
+		<pushability name="Ability_Chronos3" />
+		<resetcooldown entity="stack_entity" />
+	</oninflict>
+	
+	<onframe>
+		<compare a="accumulator" b="0" op="gt">
+			<setaccumulator value="accumulator" valueb="1" valueop="sub" />
+		</compare>
+		<targettype type="moving" source="this_owner_entity" target="this_owner_entity">
+			<compare a="accumulator" b="0" op="eq">
+				<setaccumulator value="15" />
+				<hasavatarkey name="Hero_Chronos.Alt">
+					<playeffect effect="/heroes/chronos/alt/ability_01/effects/walk.effect" source="this_owner_entity" target="" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Chronos.Alt4">
+						<playeffect effect="/heroes/chronos/alt4/ability_01/effects/walk.effect" source="this_owner_entity" target="" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Chronos.Alt5">
+							<playeffect effect="/heroes/chronos/alt5/ability_01/effects/walk_bonus.effect" source="this_owner_entity" target="" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Chronos.Alt6">
+								<playeffect effect="/heroes/chronos/alt6/ability_01/effects/walk.effect" source="this_owner_entity" target="" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Chronos.Alt8">
+									<playeffect effect="/heroes/chronos/alt8/ability_01/effects/walk.effect" source="this_owner_entity" target="" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Chronos.Alt9">
+										<playeffect effect="/heroes/chronos/alt9/ability_01/effects/walk.effect" source="this_owner_entity" target="" />
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_Chronos.Alt10">
+											<playeffect effect="/heroes/chronos/alt10/ability_01/effects/walk.effect" source="this_owner_entity" target="" />
+										</hasavatarkey>
+										<else>
+											<hasavatarkey name="Hero_Chronos.Alt11">
+												<playeffect effect="/heroes/chronos/alt11/ability_01/effects/walk.effect" source="this_owner_entity" target="" />
+											</hasavatarkey>
+											<else>
+												<hasavatarkey name="Hero_Chronos.trophy_skin01" >
+													<playeffect effect="/heroes/chronos/trophy_skin/model_01//ability_01/effects/walk.effect" source="source_entity" target="" />
+												</hasavatarkey>
+												<else>
+													<hasavatarkey name="Hero_Chronos.trophy_skin02" >
+														<playeffect effect="/heroes/chronos/trophy_skin/model_02//ability_01/effects/walk.effect" source="source_entity" target="" />
+													</hasavatarkey>
+													<else>
+														<hasavatarkey name="Hero_Chronos.trophy_skin03" >
+															<playeffect effect="/heroes/chronos/trophy_skin/model_03//ability_01/effects/walk.effect" source="source_entity" target="" />
+														</hasavatarkey>
+														<else>
+															<playeffect effect="/heroes/chronos/ability_01/effects/walk.effect" source="this_owner_entity" target="" />
+														</else>
+													</else>	
+												</else>	
+											</else>
+										</else>	
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</compare>
+		</targettype>
+		<else>
+			<setaccumulator value="0" />
+		</else>
+	</onframe>
+	
+	<altavatar key="Hero_Chronos.Alt8" 
+		icon="../alt8/ability_04/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Chronos.Alt9" 
+		icon="../alt9/ability_04/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Chronos.Alt11" 
+		icon="/heroes/chronos/alt11/ability_04/icon.tga"
+	/>
+	
+</state>

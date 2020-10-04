@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+
+			<billboard
+				life="750"
+				loop="true"
+				position="-10 -25 0"
+				material="/shared/effects/materials/gear_1.material"
+				color=".75 .75 1"
+				size="110"
+				alpha=".6"
+				startroll="0"
+				midroll="-260"
+				endroll="-260"
+				pitch="-90"
+				depthbias="-10"
+				lockup="1"
+				lockright="1"
+			/>
+			
+			<billboard
+				life="750"
+				loop="true"
+				position="-10 -25 5"
+				material="/shared/effects/materials/gear_1.material"
+				color=".75 .75 1"
+				size="110"
+				alpha=".6"
+				startroll="0"
+				midroll="-260"
+				endroll="-260"
+				pitch="-90"
+				depthbias="-10"
+				lockup="1"
+				lockright="1"
+			/>
+			
+			<billboard
+				life="750"
+				loop="true"
+				position="15 30 5"
+				material="/shared/effects/materials/gear_1.material"
+				color=".75 .75 1"
+				size="80"
+				alpha=".5"
+				startroll="0"
+				midroll="360"
+				endroll="360"
+				pitch="-90"
+				depthbias="-20"
+				lockup="1"
+				lockright="1"
+			/>
+			<billboard
+				life="750"
+				loop="true"
+				position="15 30 10"
+				material="/shared/effects/materials/gear_1.material"
+				color=".75 .75 1"
+				size="80"
+				alpha=".5"
+				startroll="0"
+				midroll="360"
+				endroll="360"
+				pitch="-90"
+				depthbias="-20"
+				lockup="1"
+				lockright="1"
+			/>
+			
+			<billboard
+				life="750"
+				loop="true"
+				position="-30 40 10"
+				material="/shared/effects/materials/gear_1.material"
+				color=".75 .75 1"
+				size="60"
+				alpha=".4"
+				startroll="0"
+				midroll="-540"
+				endroll="-540"
+				pitch="-90"
+				depthbias="-20"
+				lockup="1"
+				lockright="1"
+			/>
+			<billboard
+				life="750"
+				loop="true"
+				position="-30 40 15"
+				material="/shared/effects/materials/gear_1.material"
+				color=".75 .75 1"
+				size="60"
+				alpha=".4"
+				startroll="0"
+				midroll="-540"
+				endroll="-540"
+				pitch="-90"
+				depthbias="-20"
+				lockup="1"
+				lockright="1"
+			/>
+			
+			
+			<!--
+			<simpleemitter
+				bone="_bone_back"
+				spawnrate="75"
+				minparticlelife="150"
+				maxparticlelife="200"
+				direction="0 1 0"
+				angle="0"
+				speed="1"
+				material="/shared/effects/materials/light_rays.material"
+			>
+				<particle
+					color="0 .25 1"
+					turn="1"
+					flare="1"
+					minwidth="15"
+					maxwidth="35"
+					minstartheight="10"
+					maxstartheight="60"
+					minendheight="20"
+					maxendheight="50"
+					stickiness="1"
+				/>
+			</simpleemitter>
+			-->
+			
+			<template name="glow" >
+				<billboard
+					life="1000"
+					loop="true"
+					bone="{bone}"
+					material="/shared/effects/materials/whitedot.material"
+					color="0 .1 .25"
+					startsize="30"
+					midsize="60"
+					endsize="30"
+					scale="{scale}"
+					position="{position}"
+					depthbias="-10"
+				/>
+			</template>
+			
+			<instance name="glow" bone="_bone_leftfoot" scale="1" position="0" />
+			<instance name="glow" bone="_bone_rightfoot" scale="1" position="0" />
+			<instance name="glow" bone="_bone_lefthand" scale="1" position="0" />
+			<instance name="glow" bone="_bone_righthand" scale="1.2" position="0" />
+			<instance name="glow" bone="Box02" scale="1.5" position="0" />
+			<instance name="glow" bone="_bone_centerofchest" scale=".5" position="0" />
+			<instance name="glow" bone="_bone_head" scale="1.75" position="0 0 0" />
+
+			<billboard
+				bone="_bone_weapon3"	
+				material="/shared/effects/materials/whitedot.material"
+				color=".5 1 .5"
+				size="40"
+			/>
+			
+			<simpleemitter
+				bone="_bone_weapon3"	
+				material="/shared/effects/materials/whitedot.material"
+				spawnrate="40"
+				particlelife="100"
+			>
+				<particle
+				anchor="1"
+				color=".5 1 .5"
+				startsize="4"
+				endsize="2">
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_weapon3"	
+				material="/shared/effects/materials/whitedot.material"
+				spawnrate="400"
+				particlelife="300"
+				gravity="7"
+				speed="30"
+				inheritvelocity="0.21"
+				offsetsphere="5 5 5"
+				drag="0.1"
+			>
+				<particle
+				anchor="1"
+				heightdistort="0.01"
+				turn="1"
+				startcolor=".5 1 .5"
+				endcolor="0 0 0"
+				startsize="2"
+				endsize="0">
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_weapon3"
+				material="/shared/effects/materials/phantom_smoke_06.material"
+				spawnrate="60"
+				particlelife="300"
+				gravity="7"
+				speed="30"
+				inheritvelocity="0.21"
+				offsetsphere="5 5 5"
+				drag="0.1"
+			>
+				<particle
+				roll="180"
+				heightdistort="0.01"
+				turn="1"
+				anchor="1"
+				startcolor="0 0 0"
+				midcolor=".1 .3 .1"
+				endcolor="0 0 0"
+				midcolorpos=".2"
+				startsize="26"
+				endsize="20">
+				</particle>
+			</simpleemitter>		
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->

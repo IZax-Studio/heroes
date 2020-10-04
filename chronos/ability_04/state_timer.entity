@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Chronos_Ability4_Timer"
+
+	icon="AB4.tga"
+	passiveeffect=""
+	
+	deathpersist="true"
+
+	modifierkey="chronos_ability4_Timer"
+>
+	<onframe>
+		<hasmodifier entity="this_owner_entity" name="chronos_ability4_Haste" />
+		<else>
+			<compare a="lifetime" b="50" op="gt">
+				<changeduration b="50" op="sub" />
+			</compare>
+			<else>
+				<expire />
+			</else>
+		</else>
+	</onframe>
+</state>

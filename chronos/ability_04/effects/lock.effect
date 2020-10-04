@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="purgeEffect" deferred="true" useentityeffectsscale="true">
+	<definitions>
+		<particlesystem name="system1" space="world" scale="1.3">
+
+			<sound
+				soundloop="false"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume="1"
+				fadein="200"
+				fadeout="400"
+				sample="/heroes/chronos/ability_03/sounds/ability_03.wav"
+			/>
+
+			<model	
+				bone="_bone_back"
+				position="0 0 0"			
+				model="../../ability_04/effects/orb.mdf"
+				anim="idle"
+				scale=".1"
+				pitch="255"
+			>			
+			</model>	
+
+			<!-- white to light -->
+			<simpleemitter
+				spawnrate="80"
+				bone="_bone_back"
+				particlelife="300"
+				gravity="0"
+				speed="50"
+				drag="0"
+				acceleration="0"
+				position="0 0 0"
+				material="/shared/effects/materials/blink.material"
+				offsetsphere="1 1 1"
+				minangle="360"
+				maxangle="180"
+				direction="1 0 0"
+				offsetdirection="0 0 0"
+				offsetradial="0 0 0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="50"
+					maxanglespeed="150"
+					startcolor="0 1 2.5"
+					midcolor=".1 .1 1"
+					endcolor="0 0 0"
+					midcolorpos=".8"
+					startframe="0"
+					endframe="1"
+					startsize="4"
+					midsize="2"
+					endsize="8"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".6"
+					startstickiness="1"
+					endstickiness="1"
+				/>
+
+
+			</simpleemitter>
+			
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />	
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>
+
+
+
+
+
+
+

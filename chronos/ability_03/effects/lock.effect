@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="purgeEffect" deferred="true" useentityeffectsscale="true">
+	<definitions>
+		<particlesystem name="system1" space="world" scale="1.3">
+	
+            <sound
+			    norestart="true"
+				channel="22355"
+			    forcestereo="true"
+				linearfalloff="true"
+				falloffstart="1300"
+				falloffend="1800"
+				volume="1"
+				sample="/heroes/chronos/ability_02/sounds/trigger.wav"
+			/>
+			
+			<model
+				life="1000"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="0 .65 3"
+				endcolor="0 .65 1"
+				startscale="1"
+				midscale="1"
+				endscale="1"
+				midscalepos="1"
+				material="/shared/effects/materials/shell_flat_outline.material"
+				startalpha="5"
+				endalpha=".7"
+			/>
+			
+			<template name="clock">
+				<model
+					life="{life}"
+					directionalspace="global"
+					position="0 0 2"
+					scale=".8"
+					expirelife="1000"
+					model="/heroes/chronos/ability_02/effects/clock/model.mdf"
+					material="/heroes/chronos/ability_02/effects/clock/material.material"
+					
+					startcolor="1"
+					midcolor="1"
+					endcolor=".2"
+					midcolorpos=".8"
+					
+					startalpha=".7"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".8"
+				>
+				</model>
+				
+				<model
+					life="{life}"
+					directionalspace="global"
+					position="0 0 0"
+					scale=".8"
+					model="/heroes/chronos/ability_02/effects/clock/hand.mdf"
+					material="/heroes/chronos/ability_02/effects/clock/material2.material"
+					color="1"
+					anim="idle"
+					expirelife="1000"
+					
+					startcolor="1"
+					endcolor="0"
+					
+					startalpha="1"
+					endalpha="0"
+				>
+					<beam
+						bone_a="_bone_hand"
+						bone_b="_bone_root"
+						size="50"
+						color=".4 .5 2"
+						material="/shared/effects/materials/bow_glow_03.material"
+						depthbias="-100"
+						anchor="1"
+						position_a="0 0 7"
+						position_b="0 0 7"
+					/>	
+				</model>
+				
+				<model
+					life="{life}"
+					directionalspace="global"
+					position="0 0 0"
+					scale=".7"
+					model="/heroes/chronos/ability_02/effects/clock/hand.mdf"
+					material="/heroes/chronos/ability_02/effects/clock/material2.material"
+					color="1"
+					anim="hour"
+					
+					expirelife="1000"
+					
+					startcolor="1"
+					endcolor="0"
+					
+					startalpha="1"
+					endalpha="0"
+				>
+					<beam
+						bone_a="_bone_hand"
+						bone_b="_bone_root"
+						size="50"
+						color=".4 .5 2"
+						material="/shared/effects/materials/bow_glow_03.material"
+						depthbias="-100"
+						anchor="1"
+						position_a="0 0 7"
+						position_b="0 0 7"
+					/>	
+				</model>
+				
+				<simpleemitter
+					life="{life}"
+					spawnrate="322"
+					particlelife="1400"			
+					
+					speed="40"
+					position="0 0 20"
+					offsetsphere="50 50 25"
+					acceleration="0"
+					gravity="2"
+					material="/shared/effects/materials/whitedot.material"
+					inheritvelocity="0"
+				>
+
+					<particle
+						minangle="-360"
+						maxangle="360"
+						
+						startcolor="0"
+						midcolor="1"
+						endcolor="0"
+						
+						minsize="1"
+						maxsize="2"
+						
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos="0.9"
+						anchor="0"
+						depthbias="0"							
+				
+					/>
+				</simpleemitter>
+			</template>
+				
+			<instance name="clock" life="1200"/>
+			
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />	
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>
+
+
+
+
+
+
+

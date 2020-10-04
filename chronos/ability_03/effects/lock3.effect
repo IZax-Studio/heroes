@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="purgeEffect" deferred="true" useentityeffectsscale="true">
+	<definitions>
+		<particlesystem name="system1" space="world" scale="1.3">
+
+			<sound
+				soundloop="false"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume="1"
+				fadein="200"
+				fadeout="400"
+				sample="/heroes/chronos/ability_03/sounds/ability_03.wav"
+			/>
+			
+			<template name="clock">
+				<model
+				    bone="_bone_weapon3"
+					life="{life}"
+					position="0 0 0"
+					scale="0"
+					model="/heroes/chronos/ability_02/effects/clock/model.mdf"
+					material="/heroes/chronos/ability_02/effects/clock/material.material"
+					pitch="225"
+					
+					startcolor="1"
+					midcolor="1"
+					endcolor=".2"
+					midcolorpos=".8"
+					
+					startalpha="1"
+					midalpha="1"
+					endalpha="1"
+					midalphapos="1"
+				>
+				</model>
+				
+				<model
+					bone="_bone_weapon3"
+					life="{life}"
+					pitch="255"
+					position="0 0 0"
+					scale="0"
+					model="/heroes/chronos/ability_02/effects/clock/hand.mdf"
+					material="/heroes/chronos/ability_02/effects/clock/material2.material"
+					color="1"
+					anim="idle"
+					expirelife="1000"
+					
+					startcolor="1"
+					endcolor="0"
+					
+					startalpha="1"
+					endalpha="0"
+				>
+					<beam
+						bone_a="_bone_hand"
+						bone_b="_bone_root"
+						size="50"
+						color=".4 .5 2"
+						material="/shared/effects/materials/bow_glow_03.material"
+						depthbias="-100"
+						anchor="1"
+						position_a="0 0 7"
+						position_b="0 0 7"
+					/>	
+				</model>
+				
+				<model
+					bone="_bone_weapon3"
+					life="{life}"
+					position="0 0 0"
+					scale="0"
+					model="/heroes/chronos/ability_02/effects/clock/hand.mdf"
+					material="/heroes/chronos/ability_02/effects/clock/material2.material"
+					color="1"
+					anim="hour"
+					pitch="255"
+					yaw="90"
+					expirelife="1000"
+					
+					startcolor="1"
+					endcolor="0"
+					
+					startalpha="1"
+					endalpha="0"
+				>
+					<beam
+						bone_a="_bone_hand"
+						bone_b="_bone_root"
+						size="50"
+						color=".4 .5 2"
+						material="/shared/effects/materials/bow_glow_03.material"
+						depthbias="-100"
+						anchor="1"
+						position_a="0 0 7"
+						position_b="0 0 7"
+					/>	
+				</model>
+				
+				<simpleemitter
+					bone="_bone_weapon3"
+					life="{life}"
+					spawnrate="622"
+					particlelife="200"			
+					
+					speed="40"
+					position="0 0 0"
+					offsetsphere="15 15 50"
+					acceleration="0"
+					gravity="20"
+					drag=".8"
+					material="/shared/effects/materials/fairy_glow_06.material"
+					inheritvelocity="0"
+				>
+
+					<particle
+						minangle="-360"
+						maxangle="360"
+						
+						startcolor="0"
+						midcolor="1"
+						endcolor="0"
+						
+						minsize="1"
+						maxsize="2"
+						
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos="0.9"
+						anchor="0"
+						depthbias="0"							
+				
+					/>
+				</simpleemitter>
+			</template>
+				
+			<instance name="clock" life="-1"/>
+			
+			<template name="glow" >
+				<billboard
+					life="1000"
+					loop="true"
+					bone="{bone}"
+					material="/shared/effects/materials/lightning_02.material"
+					color="0 .1 .25"
+					startsize="30"
+					midsize="60"
+					endsize="30"
+					scale="{scale}"
+					position="{position}"
+					depthbias="-10"
+				/>
+			</template>
+			
+			<instance name="glow" bone="_bone__bone_weapon3" scale="2" position="0" />
+	
+			
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />	
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>
+
+
+
+
+
+
+

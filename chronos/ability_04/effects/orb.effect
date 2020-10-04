@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" name="orb">
+	<definitions>
+	
+
+
+		<particlesystem name="system0" space="world" scale="1.15">
+
+		
+		
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume="1.0" 
+				fadein="0"
+				fadeout="0n"
+				soundloop="false"
+				sample="/heroes/chronos/ability_04/sounds/ability_04.wav"
+			/>		
+		
+		
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume="1.0" 
+				soundloop="false"
+				sample="../../custom/sounds/clock.wav"
+			/>		
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume="1.0" 
+				soundloop="false"
+				sample="../../custom/sounds/clock.wav"
+			/>		
+			
+
+			
+					<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".5" 
+				soundloop="false"
+				sample="../../custom/sounds/lightsoff.wav"
+			/>	
+			
+
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume="1" 
+				soundloop="false"
+				sample="../../custom/sounds/corrupted.wav"
+			/>	
+			
+		  		<groundsprite
+					life="200"
+					position="-10 -2 50"
+					yaw="0"
+					material="../../custom/materials/gear_ring2.material"				
+					startsize="0"	
+					endsize="330"
+					
+					color="1"		
+					depthbias="0"
+					alpha="0.9"
+			/>	
+
+		  		<groundsprite
+					delay="200"
+					position="-10 -2 50"
+					yaw="0"
+					material="../../custom/materials/gear_ring2.material"				
+					size="330"								
+					yawspeed="-10"
+					color="1"		
+					depthbias="0"
+					alpha="0.9"
+			/>		
+		
+		  		<groundsprite
+					life="200"
+					position="-10 -2 50"
+					yaw="20"
+					
+					material="../../custom/materials/gear_ring3.material"				
+					startsize="0"		
+					endsize="260"
+					color="1"		
+					depthbias="0"
+					alpha="0.9"
+			/>		
+		
+				<groundsprite
+					delay="200"
+					position="-10 -2 50"
+					yaw="20"
+					yawspeed="10"
+					material="../../custom/materials/gear_ring3.material"				
+					size="260"								
+					color="1"		
+					depthbias="0"
+					alpha="0.9"
+			/>	
+		
+		  		<billboard
+					
+					life="200"
+					
+					position="-10 1 10"
+					yaw="0"
+					yawspeed="0"
+					material="/shared/effects/materials/corona_07.material"				
+					startsize="0"		
+					endsize="785"
+					
+					startcolor=".9"		
+					midcolor=".5"
+					endcolor=".9"
+					depthbias="0"
+				
+					lockup="true"
+					lockleft="true"
+					pitch="90"
+					
+			/>		
+		
+		  		<billboard
+					delay="200"
+					life="1500"
+					loop="true"
+					position="-10 1 10"
+					yaw="0"
+					yawspeed="0"
+					material="/shared/effects/materials/corona_07.material"				
+					size="785"				
+					
+					startcolor=".9"		
+					midcolor=".5"
+					endcolor=".9"
+					depthbias="0"
+				
+					lockup="true"
+					lockleft="true"
+					pitch="90"
+					
+			/>	
+		
+			<model		
+				delay="200"
+				position="0 0 0"			
+				model="orb.mdf"
+				anim="idle"
+				expirelife="150"
+				startscale="3.2"
+				endscale="0"
+				
+			>
+			
+			<beam
+			
+				bone_a="Scene Root"
+				bone_b="outer_01"
+
+				size="10"
+				color=".65 .65 .65"
+				alpha="1.0"
+				material="../../custom/materials/bolt/bolt.material"
+
+				framespeed="1.75"
+			/>
+			
+			<beam
+			
+				bone_a="Scene Root"
+				bone_b="outer_02"
+
+				size="10"
+				color=".65 .65 .65"
+				alpha="1.0"
+				material="../../custom/materials/bolt/bolt.material"
+
+				framespeed="1.75"
+			/>
+			
+			<beam
+			
+				bone_a="Scene Root"
+				bone_b="outer_03"
+
+				size="10"
+				color=".65 .65 .65"
+				alpha="1.0"
+				material="../../custom/materials/bolt/bolt.material"
+
+				framespeed="1.75"
+			/>
+			
+			<beam
+			
+				bone_a="Scene Root"
+				bone_b="outer_04"
+
+				size="10"
+				color=".65 .65 .65"
+				alpha="1.0"
+				material="../../custom/materials/bolt/bolt.material"
+
+				framespeed="1.75"
+			/>
+			
+			<beam
+			
+				bone_a="Scene Root"
+				bone_b="outer_05"
+
+				size="10"
+				color=".65 .65 .65"
+				alpha="1.0"
+				material="../../custom/materials/bolt/bolt.material"
+
+				framespeed="1.75"
+			/>
+			
+		
+			<beam
+			
+				bone_a="Scene Root"
+				bone_b="outer_06"
+
+				size="10"
+				color=".65 .65 .65"
+				alpha="1.0"
+				material="../../custom/materials/bolt/bolt.material"
+
+				framespeed="1.75"
+			/>
+			
+			</model>
+			
+			<model
+				life="200"
+				position="0 0 0"			
+				model="orb.mdf"
+			
+				expirelife="150"
+				startscale="0"
+				endscale="3.2"
+				
+				
+			>
+			</model>
+			
+			<model		
+				life="200"
+				position="0 0 0"			
+				model="orb.mdf"
+				material="/shared/effects/materials/shell6.material"
+				expirelife="150"
+				color=".1"
+				yaw="150"
+				yawspeed="0"
+				pitchspeed="0"
+				rollspeed="0"
+				alpha="0.1"
+				startscale="0"
+				endscale="3.2"
+				
+			>
+			</model>
+
+
+			<model		
+				delay="200"
+				position="0 0 0"			
+				model="orb.mdf"
+				material="/shared/effects/materials/shell6.material"
+				expirelife="150"
+				color=".1"
+				yaw="150"
+				yawspeed="0"
+				pitchspeed="0"
+				rollspeed="0"
+				alpha="0.1"
+				startscale="3.2"
+				endscale="0"
+				
+			>
+			</model>
+			
+	  <simpleemitter
+			
+			spawnrate="20"
+			particlelife="3000"	
+		
+			gravity="4"
+			speed="45"
+			drag=".02"
+			acceleration="0"
+			position="0 0 0"
+			material="../../custom/materials/clock.material"	
+			offsetsphere="1 1 1"
+			minangle="0"
+			maxangle="0"
+			direction="0 0 1"
+			offsetdirection="0 0 0"
+			offsetradial="0 0 0"
+			depthbias="0"
+		>
+
+
+			<particle 
+				minangle="0"
+				maxangle="0"
+				minanglespeed="50"
+				maxanglespeed="150"
+			
+				color="1 1 1"
+				startsize="740"
+				midsize="300"
+				endsize="701"
+				startalpha="0"
+				midalpha=".3"
+				endalpha="0"
+				midalphapos=".3"
+				startstickiness=".4"
+				endstickiness="0"
+				lockup="true"
+				lockleft="true"
+				pitch="90"
+			/>
+		</simpleemitter>
+		
+		
+		
+			 	<billboard
+					life="200"
+					
+					position="-10 -1 10"
+					yaw="0"
+					yawspeed="0"
+					material="../../custom/materials/clock3.material"				
+					startsize="0"	
+					endsize="255"
+					startcolor=".3"	
+					midcolor=".5"
+					endcolor=".3"
+
+					depthbias="0"
+					alpha="0.9"
+					lockup="true"
+					lockleft="true"
+					pitch="90"
+					
+			/>		
+		
+			<billboard
+					delay="200"
+					loop="true"
+					position="-10 -1 10"
+					yaw="0"
+					yawspeed="0"
+					material="../../custom/materials/clock3.material"				
+					size="255"								
+					startcolor=".3"	
+					midcolor=".5"
+					endcolor=".3"
+
+					depthbias="0"
+					alpha="0.9"
+					lockup="true"
+					lockleft="true"
+					pitch="90"
+					
+			/>		
+		
+		  		<billboard
+				
+					life="200"
+				
+					position="-10 -1 10"
+					yaw="0"
+					yawspeed="0"
+					material="/shared/effects/materials/corona_07.material"				
+					startsize="0"	
+					endsize="285"
+					
+					startcolor=".2"		
+					midcolor=".5"
+					endcolor=".2"
+					depthbias="0"
+				
+					lockup="true"
+					lockleft="true"
+					pitch="90"
+					
+			/>		
+		
+		
+			<billboard
+					delay="200"
+					life="1500"
+					loop="true"
+					position="-10 -1 10"
+					yaw="0"
+					yawspeed="0"
+					material="/shared/effects/materials/corona_07.material"				
+					size="285"				
+					
+					startcolor=".2"		
+					midcolor=".5"
+					endcolor=".2"
+					depthbias="0"
+				
+					lockup="true"
+					lockleft="true"
+					pitch="90"
+					
+			/>		
+		
+				<billboard
+					
+					life="200"
+					position="-10 -1 10"
+					roll="180"
+					
+					material="../../custom/materials/hand.material"		
+					startsize="0"	
+					endsize="55"
+					color="1 .4 0"
+					alpha="0.8"
+					depthbias="0"
+					height="230"
+					width="50"
+					lockup="true"
+					lockleft="true"
+					pitch="90"
+					
+			/>		
+		 
+				<billboard
+					
+					loop="true"
+					position="-10 -1 10"
+					roll="180"
+					rollspeed="300"
+					material="../../custom/materials/hand.material"		
+					size="55"				
+					color="1 .4 0"
+					alpha="0.8"
+					depthbias="0"
+					height="230"
+					width="50"
+					lockup="true"
+					lockleft="true"
+					pitch="90"
+					
+			/>		
+		 		 
+		 	<model			
+				position="-10 -1 10"			
+				model="../../custom/materials/handrig.mdf"
+				anim="idle"
+				yaw="0"
+				yawspeed="-300"
+				scale="1.2"
+				directionalspace="world"
+				
+			>
+			
+		 <simpleemitter
+			delay="50"
+			bone="Bone05"
+			spawnrate="10"
+			particlelife="800"			
+			acceleration="0"
+			position="0 22 0"
+			
+			particledirectionalspace="local"
+			material="/shared/effects/materials/whitedot.material"
+
+		>
+
+
+			<particle 
+
+				startcolor="1"
+				endcolor="0"
+			
+				size="20"
+				lockup="true"
+				lockleft="true"
+				pitch="90"
+				
+			
+
+			/>
+
+		</simpleemitter>
+			
+			
+		<twopointtrailemitter
+			
+				loop="false"
+			 	bone_a="Bone02"
+				bone_b="Bone06"
+				spawnrate="40"
+				particlelife="500"
+				texpostime="500"
+				texposscale="0.0"
+				
+				texstretchscale="0.9"
+				depthbias="0"
+				material="/shared/effects/materials/swoosh_add.material"
+				subframepos="true"
+			>
+	         	<particle
+					startcolor=".5 .25 0"
+					endcolor="0 0 0" 
+				/>
+			</twopointtrailemitter>
+			
+		 <simpleemitter
+		
+			spawnrate="200"
+			bone="Bone06"
+			particlelife="300"			
+			gravity="4"
+			speed="15"
+			drag=".02"
+			acceleration="0"
+			position="0 0 0"
+			material="/shared/effects/materials/star_03.material"
+			offsetsphere="1 1 1"
+			minangle="0"
+			maxangle="360"
+			direction="0 0 1"
+			offsetdirection="0 0 0"
+			offsetradial="0 0 0"
+		>
+
+
+			<particle 
+				minangle="0"
+				maxangle="0"
+				minanglespeed="50"
+				maxanglespeed="150"
+				startcolor=".25 .12 .0"
+				midcolor=".5 .25 0"
+				endcolor="0"
+				midcolorpos=".2"
+				startalpha="1"
+				endalpha="0"
+				size="10"
+			
+
+			/>
+
+		</simpleemitter>
+			</model>
+		 
+				<billboard
+					
+					loop="true"
+					position="-10 -1 10"
+					roll="180"
+					rollspeed="100"
+					material="../../custom/materials/hand2.material"		
+								
+					color="1 .4 0"
+					alpha="0.8"
+					depthbias="0"
+					height="190"
+					width="50"
+					lockup="true"
+					lockleft="true"
+					pitch="90"
+					
+			/>	
+		
+
+		
+			<model			
+				position="-10 -1 10"			
+				model="../../custom/materials/handrig.mdf"
+				anim="idle"
+				yaw="0"
+				yawspeed="-100"
+				scale="1.2"
+				directionalspace="world"
+				
+			>
+			
+			<twopointtrailemitter
+			
+				loop="false"
+			 	bone_a="Bone02"
+				bone_b="Bone05"
+				spawnrate="40"
+				particlelife="500"
+				texpostime="500"
+				texposscale="0.0"
+				
+				texstretchscale="0.9"
+				depthbias="0"
+				material="/shared/effects/materials/swoosh_add.material"
+				subframepos="true"
+			>
+	         	<particle
+					startcolor=".5 .25 0"
+					endcolor="0 0 0" 
+				/>
+			</twopointtrailemitter>
+			
+			
+			
+	 <simpleemitter
+		
+			spawnrate="20"
+			bone="Bone05"
+		
+			particlelife="1200"			
+			gravity="4"
+			speed="15"
+			drag=".02"
+			acceleration="0"
+			position="0 0 0"
+
+
+			material="/shared/effects/materials/star_03.material"
+			offsetsphere="1 1 1"
+			minangle="0"
+			maxangle="360"
+			direction="0 0 1"
+			offsetdirection="0 0 0"
+			offsetradial="0 0 0"
+		>
+
+
+			<particle 
+				minangle="0"
+				maxangle="0"
+				minanglespeed="50"
+				maxanglespeed="150"
+				startcolor=".25 .12 .0"
+				midcolor=".5 .25 0"
+				endcolor="0"
+				midcolorpos=".2"
+				startalpha="1"
+				endalpha="0"
+				size="10"
+	
+			/>
+
+		</simpleemitter>
+			
+			</model>
+	
+		  		<billboard
+					position="0 0 5"
+					material="/shared/effects/materials/whitedot.material"				
+					size="400"								
+					color=".1"	
+					depthbias="0"
+					lockup="true"
+					lockleft="true"
+					pitch="90"
+					alpha="0"
+
+			/>		
+			
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world">
+
+			<sound
+			    forcestereo="true"
+				linearfalloff="true"
+				falloffstart="1300"
+				falloffend="1800"
+				volume="1"
+				sample="/heroes/chronos/ability_02/sounds/ability_02.wav"
+			/>
+			
+			
+			<sound
+				soundloop="false"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume="1"
+				fadein="200"
+				fadeout="400"
+				sample="/heroes/chronos/ability_03/sounds/ability_03.wav"
+			/>
+			
+			<simpleemitter
+				spawnrate="10"
+				count="1"
+				particlelife="250"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="true"
+				>
+					<model
+						position="0 -45 0"
+						scale="1"
+						minlife="250"
+						maxlife="500"
+						model="/heroes/chronos/hd_chronos/model.mdf"
+						anim="backtrack"
+						color=".5 .5 1"
+						startalpha=".5"
+						endalpha="0"
+					>
+					</model>
+					
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="10"
+				count="1"
+				delay="75"
+				particlelife="350"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="true"
+				>
+					<model
+						position="0 -65 0"
+						scale="1"
+						minlife="250"
+						maxlife="500"
+						model="/heroes/chronos/hd_chronos/model.mdf"
+						anim="backtrack"
+						color=".5 .5 1"
+						startalpha=".5"
+						endalpha="0"
+					>
+					</model>
+					
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="10"
+				count="1"
+				delay="150"
+				particlelife="450"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="true"
+				>
+					<model
+						position="0 -85 0"
+						scale="1"
+						minlife="250"
+						maxlife="500"
+						model="/heroes/chronos/hd_chronos/model.mdf"
+						anim="backtrack"
+						color=".5 .5 1"
+						startalpha=".5"
+						endalpha="0"
+					>
+					</model>
+					
+				</particle>
+			</simpleemitter>
+			
+			
+			<model
+				life="800"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor=".5 .5 1"
+				endcolor=".5 .5 1"
+				startscale="1"
+				midscale="1"
+				endscale="1"
+				midscalepos="1"
+				material="/items/powerups/invisible/material.material"
+				startalpha=".7"
+				endalpha="0"
+			/>
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
