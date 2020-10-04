@@ -6,9 +6,9 @@
 		<modifier
 			life="250"
 			name="modifier0"
-			startcolor="1 1 1"
-			midcolor="1 2 1"
-			endcolor="1 1 1"
+			startcolor="0 9 0"
+			midcolor="0 9 0"
+			endcolor="0 9 0"
 		/>
 
 		<particlesystem name="system0" space="world" scale=".4">
