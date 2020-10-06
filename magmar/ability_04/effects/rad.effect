@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" name="ability_01_impact">
+	<definitions>
+		<particlesystem name="system0" space="world"  scale="1">
+		
+			<sound
+				soundloop="true"
+				fadein="100"
+				fadeout="2000"
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="2000" 
+				volume=".3" 
+				life="3000"
+				sample="/heroes/magmar/ability_04/sounds/cast2.wav"
+			/>
+			
+			<template name="pulse" >
+				<simpleemitter
+					life="1500"
+					delay="{delay}"
+					spawnrate="10"
+					particlelife="3000"
+					count="1"
+					anchor="1"
+				>
+					<particle
+					>
+						<billboard
+							life="{life}"
+							color="1.0 1.0 1.0"
+							startalpha="0.1"
+							midalpha=".32"
+							endalpha="0.0"
+							startsize="300"
+							endsize="{size2}"
+							midsizepos=".5"
+							depthbias="-160"
+							position="0 0 0"
+							material="/shared/effects/materials/crater.material"
+							lockup="true"
+							pitch="90"
+							minroll="0"
+							maxroll="360"
+						/>
+						<billboard
+							life="{life}"
+							color="1.0 1.0 1.0"
+							startalpha="0.1"
+							midalpha=".65"
+							endalpha="0.0"
+							midalphapos="0.75"
+							param=".22"
+							startsize="200"
+							endsize="{size}"
+							midsizepos=".35"
+							depthbias="-160"
+							position="0 0 0"
+							material="/shared/effects/materials/refract_swell.material"
+							lockup="true"
+							pitch="90"				
+						/>	
+						<billboard
+							life="420"
+							color="1.0 1.0 1.0"
+							startalpha="0.1"
+							midalpha="2"
+							endalpha="0.0"
+							midalphapos="0.75"
+							startparam=".1"
+							endparam="0.0"
+							startsize="200"
+							endsize="{size2}"
+							midsizepos=".35"
+							depthbias="-160"
+							position="0 0 0"
+							material="/shared/effects/materials/refract_outsplash.material"
+							lockup="true"
+							pitch="90"				
+						/>
+						<billboard
+							life="{life2}"
+							startcolor=".7 .65 .5"
+							midcolor=".4 .25 .1"
+							endcolor="0 0 0"
+							midcolorpos=".75"
+							startsize="200"
+							endsize="{size}"
+							depthbias="-100"
+							position="0 0 0"
+							material="/shared/effects/materials/smokering.material"
+							lockup="true"
+							pitch="90"
+							minroll="0"
+							maxroll="360"
+						/>
+
+					</particle>
+				</simpleemitter>
+			</template>
+			
+			<instance name="pulse" delay="0" size="575" size2="475" life="450" life2="800" volume=".3"/>
+			<instance name="pulse" delay="350" size="750" size2="575" life="460" life2="810" volume=".33"/>
+			<instance name="pulse" delay="700" size="925" size2="750" life="480" life2="830" volume=".37"/>
+			<instance name="pulse" delay="1050" size="1100" size2="925" life="510" life2="860" volume=".42"/>
+			<instance name="pulse" delay="1400" size="1275" size2="1100" life="550" life2="900" volume=".48"/>
+			<instance name="pulse" delay="1750" size="1450" size2="1275" life="600" life2="950" volume=".55"/>
+			<instance name="pulse" delay="2100" size="1625" size2="1375" life="660" life2="1010" volume=".66"/>
+			<instance name="pulse" delay="2450" size="1800" size2="1475" life="730" life2="1080" volume=".75"/>
+			<instance name="pulse" delay="2800" size="1975" size2="1575" life="800" life2="1170" volume=".89"/>
+			<instance name="pulse" delay="3150" size="2150" size2="1650" life="900" life2="1200" volume="1"/> <!--sotm pulse-->				
+			
+      </particlesystem>
+   </definitions>
+   <thread>
+   
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+	  <camerashake2 scale="7" radius="1200" duration="3500" frequency="18" />
+	  <wait duration="3333" />
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

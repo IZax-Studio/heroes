@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Magmar4"
+
+	icon="icon4.tga"
+
+	statuseffecttooltip="State_Magmar_Ability4"
+	anim="idle"
+	casttime="250"
+	castactiontime="250"
+	channeltime="2000"
+	ischanneling="true"
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="self_position"
+	targetradius="300"
+	casteffecttype="Magic"
+	casteffect=""
+	targetscheme="enemy_units"
+	manacost="175,250,325"
+	cooldowntime="140000,120000,100000"
+
+	novoiceresponse="true"
+>
+	<onimpact />
+	
+	<onchannelstart>
+		<applystate name="State_Magmar_Ability4_SelfCast" ischannel="true" duration="2000" target="source_entity" />
+		<playanim name="ability_4" target="source_entity" />
+	</onchannelstart>
+
+
+	<onchannelend >
+		<hasavatarkey name="Hero_Magmar.Alt2" >
+			<playeffect effect="effects/start_alt.effect" target="source_position" source="source_position" occlude="true"/>
+		</hasavatarkey>
+		
+		<hasavatarkey name="Hero_Magmar.set_ascension" >
+			<playeffect effect="/heroes/magmar/set_ascension/ability_04/effects/start.effect" target="source_position" source="source_position" occlude="true"/>
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Magmar.Alt3" >
+				<playeffect effect="/heroes/magmar/alt3/ability_04/effects/start.effect" target="source_position" source="source_position" occlude="true"/>
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Magmar.Alt4" >
+					<playeffect effect="/heroes/magmar/alt4/ability_04/effects/start.effect" target="source_position" source="source_position" occlude="true"/>
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Magmar.Alt5" >
+						<playeffect effect="/heroes/magmar/alt5/ability_04/effects/start.effect" target="source_position" source="source_position" occlude="true"/>
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Magmar.Alt6" >
+							<playeffect effect="/heroes/magmar/alt6/ability_04/effects/start.effect" target="source_position" source="source_position" occlude="true"/>
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Magmar.Alt7" >
+								<playeffect effect="/heroes/magmar/alt7/ability_04/effects/start.effect" target="source_position" source="source_position" occlude="true"/>
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Magmar.Alt9" >
+									<playeffect effect="/heroes/magmar/alt9/ability_04/effects/start.effect" target="source_position" source="source_position" occlude="true"/>
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Magmar.Alt11" >
+										<playeffect effect="/heroes/magmar/alt11/ability_04/effects/start.effect" target="source_position" source="source_position" occlude="true"/>
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_Magmar.Alt12" >
+											<playeffect effect="/heroes/magmar/alt12/ability_04/effects/start.effect" target="source_position" source="source_position" occlude="true"/>
+										</hasavatarkey>
+										<else>
+											<hasavatarkey name="Hero_Magmar.Alt13" >
+												<playeffect effect="/heroes/magmar/alt13/ability_04/effects/start.effect" target="source_position" source="source_position" occlude="true"/>
+											</hasavatarkey>
+											<else>
+												<playeffect effect="effects/start.effect" target="source_position" source="source_position" occlude="true"/>
+											</else>	
+										</else>	
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+		<hasavatarkey name="Hero_Magmar.Alt5" >
+			<playeffect effect="/heroes/magmar/alt5/ability_04/effects/self.effect" target="source_entity" source="source_entity"/>
+		</hasavatarkey>
+		
+		<hasavatarkey name="Hero_Magmar.set_ascension" >
+			<playeffect effect="/heroes/magmar/set_ascension/ability_04/effects/self.effect" target="source_entity" source="source_entity"/>
+		</hasavatarkey>
+		
+		<else>
+			<hasavatarkey name="Hero_Magmar.Alt7" >
+				<playeffect effect="/heroes/magmar/alt7/ability_04/effects/self.effect" target="source_entity" source="source_entity"/>
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Magmar.Alt9" >
+					<playeffect effect="/heroes/magmar/alt9/ability_04/effects/self.effect" target="source_entity" source="source_entity"/>
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Magmar.Alt11" >
+						<playeffect effect="/heroes/magmar/alt11/ability_04/effects/self.effect" target="source_entity" source="source_entity"/>
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Magmar.Alt12" >
+							<playeffect effect="/heroes/magmar/alt12/ability_04/effects/self.effect" target="source_entity" source="source_entity"/>
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Magmar.Alt13" >
+								<playeffect effect="/heroes/magmar/alt13/ability_04/effects/self.effect" target="source_entity" source="source_entity"/>
+							</hasavatarkey>
+							<else>
+								<playeffect effect="effects/self.effect" target="source_entity" source="source_entity"/>
+							</else>	
+						</else>	
+					</else>
+				</else>
+			</else>
+		</else>
+		<spawnaffector name="Affector_Magmar_Ability4" target="source_entity" proxy="source_entity" param="0" />
+	</onchannelend>
+	
+	<modifier key="ult_boost" modpriority="100"
+		displayname="true"
+		cooldowntime="120000,100000,80000"
+	>
+		<onimpact />
+	</modifier>
+	
+	<altavatar key="Hero_Magmar.Alt4" modpriority="1"
+		icon="../alt4/ability_04/icon.tga"
+	/>
+
+	<altavatar key="Hero_Magmar.Alt9" modpriority="1"
+		icon="../alt9/ability_04/icon.tga"
+	>
+		<modifier key="Alt9_Ability4_Upgrade"
+			icon="../alt9/ability_04/icon_upgrade.tga"
+		/>
+	</altavatar>
+	
+</ability>

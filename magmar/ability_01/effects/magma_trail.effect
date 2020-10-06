@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect persistent="1" name="deathExplosionLarge" >
+	<definitions>
+
+	
+		<particlesystem name="system0" space="world" scale="1" >
+
+<!-- so so trail -->
+		<simpleemitter
+			count="25"
+			particlelife="600"				
+			spawnrate="150"
+			speed="280"
+			gravity="1"
+			drag="0.01"
+			material="/shared/effects/materials/sand.material"
+			inheritvelocity="0.25"
+		>
+			
+			<particle 
+				minanglespeed="-250"
+				maxanglespeed="250"					
+				minangle="-160"
+				maxangle="160"
+				color=".6 .5 .3"				
+				startsize="50"
+				minendsize="180"				
+				maxendsize="400"				
+				startalpha="2"
+				endalpha="0"		
+			/>
+		</simpleemitter>
+	
+	
+		<simpleemitter	
+			life="250"
+			particlelife="2400"				
+			spawnrate="40"
+			speed="0"
+			gravity="0"
+			drag="0.0"					
+		>			
+			<particle 				
+			>
+				<groundsprite
+					minlife="800"
+					maxlife="1400"
+					loop="false"			
+					material="/shared/effects/materials/sand_groun.material"
+					size="80"
+					color="1 1 1"
+					startalpha="1"
+					endalpha="0"
+					minangle="55"
+					maxangle="55"
+				/>
+				<debris
+					position="0 0 10"
+					delay="0"
+					scale=".5"
+					life="1600"
+					model="/shared/effects/models/debris/debris.mdf"
+					anim="idle"	
+					minspeed="300.0"
+					maxspeed="600.0"
+					minrotationspeed="500.0"
+					maxrotationspeed="600.0"
+					gravity="70.0"
+					minangle="10"
+					color=".7 .6 .5"
+					maxangle="60"
+					collide="true"
+					startalpha="1.0"
+					midalpha="0.5"
+					endalpha="0.0"
+					midalphapos="0.9"
+					bounce="0.7"
+					reflect="0.6"
+					animpose="false"
+				/>	
+				<model
+					model="spike.mdf"
+					anim="idle"
+					scale="0.8"
+					life="2000"
+					alpha=".8"
+					minyaw="-180"
+					maxyaw="180"
+				/>					
+				
+				<model
+					model="spike.mdf"
+					anim="idle"
+					scale="0.8"
+					life="2000"
+					alpha=".8"
+					minyaw="-180"
+					maxyaw="180"
+					position="50 0 -20"
+				/>					
+				
+				<model
+					model="spike.mdf"
+					anim="idle"
+					scale="0.8"
+					life="2000"
+					alpha=".8"
+					minyaw="-180"
+					maxyaw="180"
+					position="75 0 -20"
+				/>					
+				
+				<model
+					model="spike.mdf"
+					anim="idle"
+					scale="0.8"
+					life="2000"
+					alpha=".8"
+					roll="-360"
+					maxyaw="360"
+					position="0 50 -20"
+				/>						
+				
+				<model
+					model="spike.mdf"
+					anim="idle"
+					scale="0.8"
+					life="2000"
+					alpha=".8"
+					minyaw="-360"
+					maxyaw="360"
+					position="0 75 -20"
+				/>				
+				
+			</particle>
+		</simpleemitter>	
+				
+		<simpleemitter			
+			life="223"
+			particlelife="6000"				
+			spawnrate="222"
+			offsetsphere="96 77 1"	
+			inheritvelocity="0.5"
+		>						
+			<particle 	
+				size="11"
+			>
+				<simpleemitter	
+					life="900"
+					particlelife="1000"
+					delay="100"
+					spawnrate="100"
+					count="4"
+					direction="0 0 1"
+					minangle="0"
+					maxangle="50"
+					minspeed="200"
+					maxspeed="1500"
+					drag="0.018"
+					offsetsphere="30 30 20"
+					material="/shared/effects/materials/sand.material"
+				>						
+					<particle 	
+						color=".75 .6 .35"
+						startsize="110"
+						endsize="80"	
+						startalpha="0"
+						midalpha=".15"
+						endalpha="0"
+						midalphapos=".15"
+						minangle="0"
+						maxangle="360"
+						minanglespeed="-50"
+						maxanglespeed="50"
+					>	
+					</particle>
+				</simpleemitter>
+				
+			</particle>
+		</simpleemitter>
+      </particlesystem>
+   </definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	
+	
+	<waitfordeath instance="instance0" />
+	
+	<!-- <die /> -->
+</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

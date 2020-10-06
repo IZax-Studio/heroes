@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="dragon_slave" persistent="true" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			
+			<billboard
+				life="2000"
+				material="/shared/effects/materials/whitedot.material"
+				position="0 0 60"
+				startcolor="0 0 0"
+				midcolor=".2 .04 0"					
+				endcolor="0 0 0"
+				size="250"
+				depthbias="-300"
+			/>
+		
+			<simpleemitter
+				delay="0"
+				count="1"
+				speed="0"
+				spawnrate="5000"
+				particlelife="1600"
+				drag="0.0"
+				acceleration="0.0"
+				minangle="0"
+				maxangle="0"
+			>
+				<particle>
+				
+					<groundsprite
+						delay="0"
+						life="3000"
+						material="/shared/effects/materials/ground_smash_overlay.material"
+						startsize="10"
+						midsize="140"
+						endsize="140"
+						midsizepos=".052"
+						color="1.0 1.0 1.0"
+						startalpha="0.75"
+						midalpha="0.75"
+						midalphapos="0.5"
+						endalpha="0"
+						maxyaw="360"
+					/>
+			
+					<simpleemitter
+						delay="0"
+						count="31"
+						spawnrate="226"
+						particlelife="600"
+						gravity="21.0"
+						speed="350.0"
+						drag="0.0"
+						acceleration="0.0"					
+						minangle="0"
+						maxangle="90"					
+						direction="0 0 1"
+						offsetdirection="0 0 0"
+					>
+						<particle
+							scale="40"									
+						/>		
+					</simpleemitter>	
+
+					<billboard			
+						life="600"
+						startcolor="1 .3 0"
+						endcolor="0"
+						startsize="120"
+						endsize="360"
+						depthbias="-100"
+						material="/shared/effects/materials/stomp_01.material"
+					/>	
+
+					<billboard
+						position="0 0 10"
+						delay="0"
+						life="300"
+						param="0.1"	
+						startsize="160"
+						endsize="350"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"				
+						depthbias="0"
+						material="/shared/effects/materials/refract_swell.material"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+					/>	
+					
+				</particle>	
+			</simpleemitter>
+			
+
+			<simpleemitter			
+				life="223"
+				particlelife="6000"				
+				spawnrate="55"
+				offsetsphere="120 120 1"
+			>						
+				<particle 	
+					size="11"
+				>	
+
+					<simpleemitter	
+						life="500"
+						particlelife="1200"					
+						spawnrate="800"
+						count="50"
+						gravity="-5"
+						speed="162"
+						drag="0.02"
+						direction="0 0 1"
+						offsetsphere="60 60 20"
+						anchor="1"
+						material="/shared/effects/materials/sand.material"
+					>						
+						<particle 	
+							color=".7 .65 .6"
+							startalpha="0"
+							midalpha=".35"
+							endalpha="0"
+							midalphapos=".1"
+							startsize="15"
+							endsize="85"
+							minangle="0"
+							maxangle="360"
+							minanglespeed="-30"
+							maxanglespeed="30"
+						>	
+						</particle>
+					</simpleemitter>
+					
+					<simpleemitter
+						life="1800"
+						particlelife="2000"
+						spawnrate="1"
+						gravity="-3"
+						speed="0"
+						offsetsphere="20"
+						material="/shared/effects/materials/smoke_particle.material"
+					>						
+						<particle 	
+							color=".8 .7 .4"
+							startsize="130"
+							endsize="150"	
+							startalpha="0"
+							midalpha=".35"
+							endalpha="0"
+						>	
+						</particle>
+					</simpleemitter>			
+
+				</particle>
+			</simpleemitter>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Magmar_Ability2"
+	icon="icon2.tga"
+
+	effecttype="StatusStealth"
+	displaylevel="true"
+	
+	dispelonaction="true"
+	
+	stealthtype="hero"
+	fadetime="0"
+	unitwalking="true"
+	
+>
+	<altavatar key="Hero_Magmar.Alt4" modpriority="1"
+		icon="../alt4/ability_02/icon.tga"
+	/>	
+	
+	<altavatar key="Hero_Magmar.set_ascension" modpriority="1"
+		icon="../set_ascension/ability_02/icon.tga"
+	/>	
+
+</state>

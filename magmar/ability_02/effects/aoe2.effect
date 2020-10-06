@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+		
+		<particlesystem name="system0" space="world" scale="1.2">
+
+			<sound
+				soundloop="true"
+				fadein="300"
+				fadeout="700"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2200"
+				volume=".4"
+				sample="/heroes/magmar/ability_02/sounds/state.wav"
+			/>
+
+			<!--ground sand-->
+			<billboard
+				lockup="true"
+				lockright="true"
+				pitch="90"
+				life="1000"
+				material="/shared/effects/materials/crater.material"
+				size="900"
+				startalpha="0"
+				endalpha=".6"
+			/>
+			
+			<billboard
+				expirelife="1500"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+				delay="1000"
+				material="/shared/effects/materials/crater.material"
+				size="900"
+				startalpha=".6"
+				endalpha="0"
+			/>
+			
+			<template name="sand">
+				<billboard
+					position="0 0 5"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					life="500"
+					material="/shared/effects/materials/sand_groun.material"
+					size="700"
+					color="1 1 1"
+					startalpha="0"
+					endalpha="{alpha}"
+					rollspeed="2"
+					depthbias="{depthbias}"
+				/>
+				<billboard
+					delay="500"
+					position="0 0 5"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					expirelife="1000"
+					material="/shared/effects/materials/sand_groun.material"
+					size="700"
+					color="1 1 1"
+					startalpha="{alpha}"
+					endalpha="0"
+					roll="1"
+					rollspeed="2"
+					depthbias="{depthbias}"
+				/>
+			</template>
+			
+			<instance name="sand" alpha=".1" depthbias="-40" />
+			<instance name="sand" alpha=".07" depthbias="-90" />
+			<instance name="sand" alpha=".07" depthbias="-130" />
+			<instance name="sand" alpha=".05" depthbias="-200" />
+			<!--
+			<simpleemitter	
+				particlelife="2800"
+				spawnrate="5"
+				position="0 0 5"
+				offsetsphere="200 200 0"
+			>			
+				<particle
+				>
+					<billboard
+						lockup="true"
+						lockright="true"
+						pitch="90"
+						minlife="2400"
+						maxlife="2800"
+						material="/shared/effects/materials/sand_groun.material"
+						size="300"
+						color="1 1 1"
+						startalpha="0"
+						midalpha="0.5"
+						endalpha="0"
+						minangle="55"
+						maxangle="55"
+					/>
+				</particle>
+			</simpleemitter>
+			-->
+			
+
+			<!-- cloud  -->
+			<orbiteremitter
+				position="0 0 120"
+				orbit="-1 0 0"
+				origin="300 300 200"
+				offset="200 .5 100"
+				spawnrate="45"
+				particlelife="1500"
+				minspeed="-.5"
+				maxspeed="1.8"
+				material="/shared/effects/materials/dust.material"
+			>
+				<particle
+					minsize="120"
+					maxsize="220"
+					color=".95 .85 .75"
+					startalpha="0"
+					minmidalpha=".35"
+					maxmidalpha=".5"
+					endalpha="0"
+					minanglespeed="-30"
+					maxanglespeed="30"
+				/>
+			</orbiteremitter>
+			
+			<simpleemitter
+				spawnrate="9"
+				particlelife="1200"
+				material="/shared/effects/materials/dust.material"
+				offsetsphere="320 320 100"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				speed="520"
+				depthbias="-50"
+				direction="0 0 0"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="100"
+					maxanglespeed="100"
+					color=".7 .7 .7"
+					startframe="0"
+					size="555"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="15"
+				particlelife="1200"
+				material="/shared/effects/materials/dust.material"
+				offsetsphere="350 350 100"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				speed="520"
+				depthbias="-50"
+				direction="0 0 0"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="25"
+					maxanglespeed="50"
+					color=".7 .7 .7"
+					startframe="0"
+					size="250"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+
+			<orbiteremitter
+				position="0 0 120"
+				orbit="-1 0 0"
+				origin="300 300 200"
+				offset="200 .5 100"
+				spawnrate="60"
+				particlelife="1500"
+				minspeed="-.5"
+				maxspeed="1.8"
+				material="/shared/effects/materials/sand.material"
+			>
+				<particle
+					minsize="100"
+					maxsize="150"
+					color=".95 .85 .75"
+					startalpha="0"
+					minmidalpha=".35"
+					maxmidalpha=".5"
+					endalpha="0"
+					minanglespeed="-30"
+					maxanglespeed="30"
+				/>
+			</orbiteremitter>
+			
+			<simpleemitter
+				spawnrate="9"
+				particlelife="1200"
+				material="/shared/effects/materials/sand.material"
+				offsetsphere="320 320 100"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				speed="520"
+				depthbias="-50"
+				direction="0 0 0"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="100"
+					maxanglespeed="100"
+					color=".7 .7 .7"
+					startframe="0"
+					size="100"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="15"
+				particlelife="1200"
+				material="/shared/effects/materials/sand.material"
+				offsetsphere="350 350 100"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				speed="520"
+				depthbias="-50"
+				direction="0 0 0"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="25"
+					maxanglespeed="50"
+					color=".7 .7 .7"
+					startframe="0"
+					size="100"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<camerashake2 scale="8.0" radius="1200" duration="400" frequency="22" />	
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>
