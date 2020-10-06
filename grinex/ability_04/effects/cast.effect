@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+
+	<definitions>
+
+		<particlesystem name="system1" space="world" scale="1.25">
+			
+			<sound
+			    norestart="true"
+				channel="1337872"
+			    forcestereo="true"
+				linearfalloff="true" 
+				falloffstart="1200"
+				falloffend="1500"
+				volume="1"
+				sample="/heroes/grinex/ability_04/sounds/cast_%.wav"
+			/>
+			
+			<simpleemitter
+				position="0 0 75"
+				spawnrate="500"
+				count="10"
+				minparticlelife="400"
+				maxparticlelife="1200"
+				gravity="-1"
+				material="/shared/effects/materials/pyroclast_03.material"
+				offsetsphere="20 20 70"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				speed="150"
+				directionalspace="global"
+				inheritvelocity=".5"
+				depthbias="-25"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					anglespeed="20"
+					startsize="40"
+					midsize="100"
+					endsize="160"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					startcolor=".3 .1 .8"
+					endcolor="0"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".65"
+				/>
+				<particle
+					minangle="0"
+					maxangle="360"
+					anglespeed="20"
+					startsize="40"
+					midsize="100"
+					endsize="160"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					startcolor=".1"
+					endcolor="0"
+					startalpha="1"
+					endalpha="0"
+					midalphapos=".65"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="1000"
+				count="5"
+				minparticlelife="1000"
+				maxparticlelife="2000"
+				spawnrate="50"
+				speed="50"
+				gravity="0"
+				direction="0 0 0"
+				material="/shared/effects/materials/dust_smoke_02.material"
+				offsetsphere="50 50 25"
+				position="0 0 50"
+				depthbias="0"
+				inheritvelocity=".25"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					startsize="125"
+					endsize="275"
+					startcolor=".15 0 .5"
+					endcolor="0"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".2"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+				/>
+				<particle
+					minangle="0"
+					maxangle="360"
+					startsize="125"
+					endsize="275"
+					color="0"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".2"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+				/>
+			</simpleemitter>
+			
+			
+			<model
+				position="0 0 25"
+				life="5000"
+				anim="idle"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				scale="1.725"
+				startcolor="0 0 0"
+				midcolor="0 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".75"
+				startalpha="0"
+				midalpha="0"
+				endalpha="0"
+				midalphapos=".4"
+				yawspeed="-180"
+				pitchspeed="0"
+			>
+				<billboard
+					life="500"
+					bone="Scene Root"
+					startcolor=".2 0 .4"
+					endcolor="0 0 0"
+					size="70"
+					position="0 0 10"
+					material="/heroes/drunkenmaster/effects/material.material"
+					lockup="1"
+					lockright="1"
+					rollspeed="0"
+					pitch="90"
+					yawspeed="0"
+					directionalspace="local"
+					depthbias="-30"
+				/>
+				
+				<billboard
+				delay="250"
+					life="500"
+					bone="Scene Root"
+					startcolor=".2 0 .5"
+					endcolor="0 0 0"
+					size="70"
+					position="0 0 20"
+					material="/heroes/drunkenmaster/effects/material.material"
+					lockup="1"
+					lockright="1"
+					rollspeed="0"
+					pitch="90"
+					yawspeed="0"
+					directionalspace="local"
+					depthbias="-30"
+				/>
+				
+				<billboard
+				delay="250"
+					life="250"
+					bone="Scene Root"
+					startcolor=".2 0 .6"
+					endcolor="0 0 0"
+					size="70"
+					position="0 0 30"
+					material="/heroes/drunkenmaster/effects/material.material"
+					lockup="1"
+					lockright="1"
+					rollspeed="0"
+					pitch="90"
+					yawspeed="0"
+					directionalspace="local"
+					depthbias="-30"
+				/>
+			</model>
+			
+			
+			
+			
+			
+			
+			<billboard
+				position="0 0 35"
+				life="1000"
+				startcolor=".3 0 .7"
+				midcolor="0 0 .5"
+				midcolorpos="0.3"
+				endcolor="0"
+				startsize="175"
+				endsize="0"
+				depthbias="-50"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+			<billboard
+				position="0 0 35"
+				life="1000"
+				param="0.1"	
+				startsize="50"
+				endsize="500"
+				startalpha="0"
+				midalpha=".5"
+				endalpha="0"
+				midalphapos=".2"				
+				depthbias="-60"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+
+			
+			
+			
+
+		</particlesystem>
+
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale="1.0">
+			
+			<model
+				life="450"
+				model="/heroes/grinex/model.mdf"
+				anim="idle"
+				position="0 0 0"
+				startscale="0.7"
+				midscale="1.1"
+				endscale="1.1"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".8"
+			>
+				<billboard
+					size="200"
+					expirelife="250"
+					startcolor=".15 0 .5"
+					endcolor="0 0 0"
+					midcolorpos=".15"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+				
+				<groundsprite
+					size="100"
+					life="500"
+					startcolor=".3 0 .6"
+					midcolor=".03 0 .06"
+					endcolor=".3 0 .6"
+					material="/shared/effects/materials/whitedot_ground.material"
+				/>
+
+				<groundsprite
+					size="55"
+					life="500"
+					startcolor=".15"
+					midcolor=".015"
+					endcolor=".15"
+					material="/shared/effects/materials/whitedot_ground.material"
+				/>
+
+			</model>
+			
+
+
+
+			<!--
+			<simpleemitter
+				spawnrate="160"
+				count="80"
+				particlelife="550"
+				gravity="5"
+				speed="100"
+				acceleration="0"
+				position="0 0 0"
+				material="/shared/effects/materials/poison_05.material"
+				offsetsphere="1 1 1"
+				minangle="0"
+				maxangle="180"
+				direction="0 0 1"
+				offsetdirection="0 0 0"
+				offsetradial="0 0 0"
+				inheritvelocity="0.25"
+			>
+				<particle 
+					minangle="0"
+					maxangle="0"
+					minanglespeed="0"
+					maxanglespeed="0"
+					startcolor=".5 .1 1"
+					midcolor=".5 .1 1"
+					endcolor="0 0 0"
+					startframe="0"
+					endframe="1"
+					size="75"
+					turn="true"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="250"
+				minparticlelife="50"
+				maxparticlelife="250"
+				speed="0"
+				gravity="10"
+				material="/shared/effects/materials/flare_03.material"
+				offsetsphere="35"
+				position="0 0 0"
+				depthbias="0"
+			>
+				<particle
+					turn="1"
+					startsize="45"
+					endsize="0"
+					startcolor="1 1 1"
+					midcolor="1 1 1"
+					endcolor="0 0 0"
+					midcolorpos=".25"
+				/>
+			</simpleemitter>
+			-->
+
+			
+			<controller
+				life="600"
+				startpitch="30"
+				endpitch="-30"
+			>
+				<simpleemitter
+					spawnrate="10"
+					particlelife="250"
+					position="0 0 0"
+					material="/shared/effects/materials/whitedot.material"
+					particledirectionalspace="local"
+					offsetdirection="0 0 0"
+					offsetradial="0"
+				>
+					<particle
+						startcolor=".4 .15 .5"
+						endcolor="0 0 0"
+						startsize="300"
+						endsize="600"
+						lockup="true"
+						lockright="1"
+						scale=".5"
+						turn="1"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					spawnrate="10"
+					particlelife="250"
+					position="0 0 0"
+					material="/shared/effects/materials/whitedot.material"
+					particledirectionalspace="local"
+					offsetdirection="0 0 0"
+					offsetradial="0"
+				>
+					<particle
+						startcolor=".5"
+						endcolor="0 0 0"
+						startsize="100"
+						endsize="200"
+						lockup="true"
+						lockright="1"
+						scale=".5"
+						turn="1"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					spawnrate="10"
+					particlelife="250"
+					position="0 0 0"
+					material="/shared/effects/materials/refract_swell.material"
+					particledirectionalspace="local"
+					offsetdirection="0 0 0"
+					offsetradial="0"
+				>
+					<particle
+						startsize="300"
+						endsize="600"
+						param="0.5"
+						startalpha=".5"
+						midalpha=".25"
+						endalpha="0"
+						midalphapos=".75"
+						lockup="true"
+						lockright="1"
+						scale=".5"
+						turn="1"
+					/>
+				</simpleemitter>
+			</controller>
+			
+			
+		
+			<!-- smoke -->
+			<controller
+				life="5000"
+				scale="1.5"
+			>
+				<simpleemitter 
+					spawnrate="100"
+					minparticlelife="600"
+					maxparticlelife="2200"
+					gravity="0"
+					drag="0.02"
+					speed="50"
+					position="0 0 0"
+					offsetsphere="20 20 20"
+					depthbias="-50"
+					material="/shared/effects/materials/neb_blend.material"
+				>
+					<particle
+						maxangle="360"
+						minanglespeed="-44"
+						maxanglespeed="44"
+						color=".15 0 .25"	
+						startalpha=".35"
+						endalpha="0"
+						startsize="145"
+						midsize="250"
+						endsize="300"
+					/>
+					<particle	
+						minangle="0"
+						maxangle="360"
+						minanglespeed="-80"
+						maxanglespeed="80"
+						startsize="140"
+						minendsize="220"
+						maxendsize="300"
+						color="0"
+						startalpha="0"
+						midalpha=".5"
+						endalpha="0"
+						midalphapos=".25"
+					/>
+				</simpleemitter>
+			</controller>
+
+			<!-- water  -->
+			<controller
+				life="5000"
+				scale="1.5"
+			>
+				<simpleemitter
+					spawnrate="10"
+					particlelife="3850"
+				>
+					<particle>
+						<simpleemitter
+							count="1"
+							minparticlelife="750"
+							maxparticlelife="1500"
+							material="/shared/effects/materials/smoke_01.material"
+							offsetsphere="50 50 0"
+							minangle="0"
+							maxangle="360"
+							gravity="-2"
+							speed="10"
+							depthbias="-100"
+							collide="1"
+						>
+							<particle 
+								minangle="0"
+								maxangle="0"
+								minanglespeed="-30"
+								maxanglespeed="40"
+								color=".4 .65 1"
+								startsize="400"
+								endsize="400"
+								startalpha=".2"
+								midalpha=".15"
+								endalpha="0"
+							/>
+						</simpleemitter>
+						
+						<simpleemitter
+							life="500"
+							minparticlelife="650"				
+							maxparticlelife="900"				
+							spawnrate="10"
+							minspeed="0"
+							maxspeed="1450"
+							gravity="55"
+							direction="0 0 1"
+							minangle="20"
+							maxangle="15"
+							drag="0.01"
+							material="/shared/effects/materials/refract_outsplash.material"
+							offsetsphere="25 25 25"
+							position="0 0 50"
+						>
+							<particle 
+								maxangle="360"
+								startsize="150"
+								endsize="275"
+								startalpha="0"
+								midalpha=".75"
+								endalpha="0"
+								midalphapos=".2"
+								startparam="0.5"
+								endparam="0"
+							/>
+						</simpleemitter>
+
+					</particle>
+				</simpleemitter>
+
+				<terrainemitter
+					spawnrate="23"
+					startrange="24"
+					endrange="24"
+					particlelife="2000"
+				>
+					<particle>
+						<groundsprite
+							life="750"
+							material="/shared/effects/materials/ice_blob_overlay.material"
+							minsize="75"
+							maxsize="150"
+							minyaw="-360"
+							maxyaw="360"
+							startcolor=".5"
+							endcolor=".5 .75 1"
+							startalpha="0"
+							midalpha=".15"
+							endalpha="0"
+							midalphapos=".25"
+							position="0 0 0"
+						/>
+						
+						<simpleemitter
+							count="10"
+							particlelife="500"
+							spawnrate="90"
+							minspeed="350"
+							maxspeed="550"
+							gravity="-15"
+							direction="0 0 1"
+							drag="0.05"
+							material="/shared/effects/materials/whitewater_02.material"
+							offsetsphere="40 40 10"
+							position="0 0 0"
+						>
+							<particle
+								minangle="0"
+								maxangle="360"
+								minanglespeed="-60"
+								maxanglespeed="60"
+								startsize="65"
+								endsize="110"
+								startcolor=".5"
+								endcolor="0"
+								startalpha=".1"
+								midalpha=".1"
+								endalpha="0"
+							/>
+						</simpleemitter>
+						
+						<simpleemitter
+							count="10"
+							particlelife="500"
+							spawnrate="90"
+							minspeed="350"
+							maxspeed="550"
+							gravity="-15"
+							direction="0 0 1"
+							drag="0.02"
+							material="/shared/effects/materials/whitewater_02.material"
+							offsetsphere="40 40 10"
+							position="0 0 0"
+						>
+							<particle
+								minangle="0"
+								maxangle="360"
+								minanglespeed="-60"
+								maxanglespeed="60"
+								startsize="65"
+								endsize="110"
+								startcolor=".35 .5 1"
+								endcolor="0"
+								startalpha=".1"
+								midalpha=".1"
+								endalpha="0"
+							/>
+						</simpleemitter>
+					</particle>
+				</terrainemitter>
+			</controller>
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

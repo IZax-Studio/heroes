@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="entity" scale="1">
+		
+			<sound
+				forcestereo="true"
+				linearfalloff="true" 
+				falloffstart="500"
+				falloffend="1500"
+				volume=".8"
+				sample="/heroes/grinex/ability_03/sounds/core_impact.wav"
+			/>
+			
+				<sound
+				delay="150"
+			    forcestereo="true"
+				linearfalloff="true" 
+				falloffstart="128"
+				falloffend="1500"
+				volume="1"
+				sample="../../sounds/attack_grunt_%.wav"
+			/>
+		
+			<model
+				owner="source"
+				parentmodel="1"
+				parentskeleton="1"
+				material="/shared/effects/materials/shell2.material"
+				life="500"
+				startcolor="3 0 3"
+				endcolor="0"
+			/>
+			
+			<skeletonemitter
+				owner="source"
+				minparticlelife="400"
+				maxparticlelife="600"
+				count="150"
+				material="/shared/effects/materials/refract_outsplash.material"
+			>
+				<particle
+					minangle="-180"
+					maxangle="180"		
+					color="1 1 1"
+					param=".5"
+					size="6"
+					minstartscale="1"
+					maxstartscale="5"
+					maxendscale="35"
+					minendscale="50"
+					startalpha="0"
+					midalpha=".35"
+					midalphapos="0.2"
+					endalpha="0"
+					anchor="1"
+				>
+					<billboard
+						life="400"
+						startcolor=".5 .5 .75"
+						endcolor="0"
+						startsize="0"
+						endsize="100"
+						material="/shared/effects/materials/whitedot.material"
+					/>
+				</particle>
+			</skeletonemitter>
+			
+			<skeletonemitter
+				owner="source"
+				minparticlelife="300"
+				maxparticlelife="900"
+				minspeed="100"
+				maxspeed="500"
+				drag=".075"
+				gravity="-30"
+				count="50"
+				material="/shared/effects/materials/whitewater_02.material"
+			>
+				<particle
+					minangle="-180"
+							maxangle="180"		
+							startcolor="0 0 0"
+							midcolor=".3 .4 .5"
+							endcolor="0 0 0"
+							minstartscale="1"
+							maxstartscale="5"
+							maxendscale="30"
+							minendscale="15"
+							startalpha="0"
+							midalpha="0.25"
+							midalphapos="0.2"
+				/>
+			</skeletonemitter>
+
+		</particlesystem>
+		
+		
+		<particlesystem name="system1" space="world" scale="1">
+		
+			<model
+				owner="target"
+				parentmodel="1"
+				parentskeleton="1"
+				material="/shared/effects/materials/shell2.material"
+				life="500"
+				startcolor="3 0 3"
+				endcolor="0"
+			/>
+			
+			<skeletonemitter
+				owner="target"
+				minparticlelife="400"
+				maxparticlelife="600"
+				count="150"
+				material="/shared/effects/materials/refract_outsplash.material"
+			>
+				<particle
+					minangle="-180"
+					maxangle="180"		
+					color="1 1 1"
+					param=".5"
+					size="6"
+					minstartscale="1"
+					maxstartscale="5"
+					maxendscale="35"
+					minendscale="50"
+					startalpha="0"
+					midalpha=".35"
+					midalphapos="0.2"
+					endalpha="0"
+					anchor="1"
+				>
+					<billboard
+						life="400"
+						startcolor=".5 .5 .75"
+						endcolor="0"
+						startsize="0"
+						endsize="100"
+						material="/shared/effects/materials/whitedot.material"
+					/>
+				</particle>
+			</skeletonemitter>
+			
+			<skeletonemitter
+				owner="target"
+				minparticlelife="300"
+				maxparticlelife="900"
+				minspeed="100"
+				maxspeed="500"
+				drag=".075"
+				gravity="-30"
+				count="50"
+				material="/shared/effects/materials/whitewater_02.material"
+			>
+				<particle
+					minangle="-180"
+							maxangle="180"		
+							startcolor="0 0 0"
+							midcolor=".3 .4 .5"
+							endcolor="0 0 0"
+							minstartscale="1"
+							maxstartscale="5"
+							maxendscale="30"
+							minendscale="15"
+							startalpha="0"
+							midalpha="0.25"
+							midalphapos="0.2"
+				/>
+			</skeletonemitter>
+			
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

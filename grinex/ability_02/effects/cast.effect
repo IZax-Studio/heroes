@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect entityeffectscale="true" deferred="true">
+
+	<definitions>
+	
+		<modifier
+			life="2020"
+			name="modifier0"
+			material="material.material"
+			startalpha="1"
+			endalpha=".2"
+			startcolor="1"
+			endcolor=".5"
+		/>
+		
+		<particlesystem name="system0" space="entity" scale=".75" >
+		
+				<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1500"
+				volume=".6"
+				sample="/heroes/grinex/ability_02/sounds/core_cast.wav"
+			/>
+			
+				<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1500"
+				volume=".5"
+				sample="../sounds/cast.wav"
+			/>
+		
+		
+		
+			<model
+				life="2000"
+				parentmodel="true"
+				parentskeleton="true"
+				material="refract.material"
+				param0="10.0"
+				color="3.0"
+				startalpha="0"
+				endalpha=".3"
+			/>
+		
+			<!-- refract rings -->
+			
+			<simpleemitter
+				spawnrate="10"
+				count="4"
+				particlelife="500"
+				position="0 100 50"
+				speed="-500"
+				direction="0 1 0"
+				angle="0"
+				material="/shared/effects/materials/corona_06.material"
+				particledirectionalspace="local"
+				depthbias="-20"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".25 0 .5"
+					endcolor="0 0 0"
+					startsize="0"
+					midsize="500"
+					endsize="0"
+					lockup="true"
+					lockright="1"
+					scale=".5"
+					turn="1"
+				/>
+			</simpleemitter>
+			
+			<!--
+			<simpleemitter
+				spawnrate="100"
+				count="1"
+				particlelife="500"
+				position="0 100 50"
+				speed="-500"
+				direction="0 1 0"
+				angle="0"
+				material="/shared/effects/materials/whitedot.material"
+				particledirectionalspace="local"
+			>
+				<particle
+					startcolor=".5 .1 .5"
+					endcolor="0 0 0"
+					startsize="100"
+					midsize="200"
+					endsize="100"
+					lockup="true"
+					lockright="1"
+					scale=".5"
+					turn="1"
+				/>
+			</simpleemitter>
+			-->
+			
+			<simpleemitter
+				spawnrate="7"
+				count="3"
+				particlelife="500"
+				position="0 100 50"
+				speed="-500"
+				direction="0 1 0"
+				angle="0"
+				material="/shared/effects/materials/refract_swell.material"
+				particledirectionalspace="local"
+			>
+				<particle
+					startsize="0"
+					midsize="600"
+					endsize="0"
+					startparam="0"
+					midparam="0.0175"
+					endaparam="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					lockup="true"
+					lockright="1"
+					scale=".5"
+					turn="1"
+				/>
+			</simpleemitter>
+			
+
+
+
+			<model
+				life="1000"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="0"
+				midcolor="3 0 5"
+				endcolor="0"
+				material="/shared/effects/materials/shell2.material"
+				alpha="1"
+			/>
+			<model
+				life="1000"
+				parentmodel="true"
+				parentskeleton="true"
+				color="3.0"
+				material="refract.material"
+				param0="10"
+				startalpha="0"
+				midalpha=".75"
+				endalpha="0"
+			/>
+		</particlesystem>
+		
+		
+		
+		
+		<particlesystem name="system1" space="world" scale="1.0" >
+		<!--
+			<simpleemitter
+				count="5"
+				spawnrate="4"
+				particlelife="750"
+				gravity="-10"
+				speed="5"
+				direction="0 0 1"
+				position="0 0 0"
+				offsetsphere="25 25 0"
+				material="/shared/effects/materials/heathaze.material"
+				loop="true"
+			>
+				<particle 
+					minangle="0"
+					maxangle="180"
+					anglespeed="25"
+					startparam="0"
+					midparam=".5"
+					endparam="0"
+					midparampos=".2"
+					startcolor="1 1 1"
+					alpha=".2"
+					startsize="100" 
+					endsize="50"
+					anchor=".25"
+				/>
+			</simpleemitter>
+			-->
+			<!--
+			<simpleemitter
+				count="20"
+				spawnrate="125"
+				particlelife="500"
+				gravity="-5"
+				speed="5"
+				position="0 10 50"
+				offsetsphere="50 50 0"
+				material="/shared/effects/materials/phantom_smoke_04.material"
+				loop="true"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					anglespeed="25"
+					startcolor="0"
+					midcolor=".7 0 1"
+					endcolor="0"
+					startsize="40"
+					midsize="50"				
+					endsize="40"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				count="20"
+				spawnrate="125"
+				particlelife="500"
+				gravity="-5"
+				speed="5"
+				position="0 10 50"
+				offsetsphere="50 50 0"
+				material="/shared/effects/materials/phantom_smoke_04.material"
+				loop="true"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					anglespeed="25"
+					startcolor="0"
+					midcolor=".5 0 1"
+					endcolor="0"
+					startsize="40"
+					midsize="50"				
+					endsize="30"
+				/>
+			</simpleemitter>
+			-->
+			<!--
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="10"
+				life="500"
+				particlelife="600"
+				minspeed="0"
+				maxspeed="3000"
+				drag="0.07"
+				offsetsphere="15"
+				material="/shared/effects/materials/refract_outsplash.material"
+			>
+				<particle
+					startalpha="1.0"
+					endalpha="0.0"
+					minangle="0"
+					maxangle="360"
+					anglespeed="-90"
+					startsize="50"
+					endsize="180"
+					param=".1"
+					depthbias="-130"
+				/>
+			</simpleemitter>
+			-->
+
+			
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<spawnmodifier instance="instance2" modifier="modifier0"/> 
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<waitfordeath instance="instance2" />
+		
+	</thread>
+
+</effect>

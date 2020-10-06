@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="	" deferred="1">
+	<definitions>
+
+	
+		<particlesystem name="system0" space="world" scale="0.75">
+
+			<terrainemitter
+				position="0 0 0"
+				spawnrate="10111"
+				count="2"	
+				offsetsphere="80 80 0"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				speed="0"
+				directionalspace="global"
+				inheritvelocity="0"
+				depthbias="-20"
+				particlelife="6000"
+			>
+				<particle>
+					<billboard
+						life="5800"
+						delay="200"
+						material="/shared/effects/materials/sand_groun.material"	
+						scale="6"
+						color="0 0 0"
+						startalpha="0.3"
+						midalpha="0.3"
+						midalphapos=".9"
+						endalpha="0"
+						lockup="true"
+						pitch="90"
+						depthbias="-30"
+					/>
+				</particle>
+			</terrainemitter>
+			
+			
+			<simpleemitter
+				life="5500"
+				position="0 0 40"
+				spawnrate="30"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				offsetradial="150"
+				offsetsphere="20 20 40"
+				directionalspace="global"
+				gravity="-8"
+				depthbias="-20"
+				material="/shared/effects/materials/dust_smoke_03.material"
+			>
+				<particle
+					maxangle="360"
+					minsize="40"
+					maxsize="70"
+					color="0"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+				<terrainemitter
+					life="5000"
+					minparticlelife="400"
+					maxparticlelife="600"
+					spawnrate="7"
+					material="/shared/effects/materials/refract_ring_depth.material"
+					range="50"
+					depthbias="-5"
+					offsetsphere="80 80 0"
+				>
+					<particle
+						turn="1"
+						angle="180"
+						minstartscale="3"
+						maxstartscale="6"
+						minendscale="20"
+						maxendscale="30"
+						startparam="0"
+						midparam=".05"
+						endparam="0"
+						lockup="true"
+						lockright="true"
+						pitch="-90"
+						midcolor=".8 1 1"
+					/>
+				</terrainemitter>
+				
+				<groundsprite
+					life="6000"
+					material="/shared/effects/materials/water_puddle_white_notround.material"
+					size="70"
+					color="0 .15 .25"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+					position="0"
+					yaw="90"
+				/>
+				
+				<!-- <groundsprite	
+					life="6000"
+					startcolor="0 .15 .2"
+					midcolor="0 .15 .2"
+					endcolor="0" midcolorpos=".75"
+					size="130"
+					expirelife="500"					
+					material="/shared/effects/materials/whitedot_ground.material"			
+				/> -->
+			
+				<simpleemitter
+					life="5000"
+					gravity="-1"
+					spawnrate="7"
+					minparticlelife="600"
+					maxparticlelife="850"
+					offsetsphere="80 80 0"
+					material="/shared/effects/materials/water_spray_add.material"
+					depthbias="-55"
+					expirelife="1000"
+				>
+					<particle 
+						minangle="-180"
+						maxangle="180"		
+						startcolor="0"
+						midcolor=".2"
+						endcolor="0"
+						startalpha="0"
+						midalpha=".5"
+						endalpha="0"
+						size="2.5"
+						minstartscale="5"
+						maxstartscale="10"
+						minendscale="15"
+						maxendscale="20"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					life="5000"
+					gravity="-1"
+					spawnrate="7"
+					minparticlelife="350"
+					maxparticlelife="500"
+					offsetsphere="80 80 0"
+					expirelife="1000"
+					material="/shared/effects/materials/whitewater_02.material"
+				>
+					<particle 
+						minangle="-180"
+						maxangle="180"		
+						startcolor="0 0 0"
+						midcolor=".25 .25 .25"
+						endcolor="0 0 0"
+						size="4"
+						minstartscale="6"
+						maxstartscale="8"
+						maxendscale="20"
+						minendscale="12"
+						startalpha="0"
+						midalpha="0.2"
+						midalphapos="0.2"
+						endalpha="0"
+						startanchor="1"
+						endanchor="0"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					life="5000"
+					gravity="-1"
+					spawnrate="5"
+					minparticlelife="350"
+					maxparticlelife="500"
+					offsetsphere="80 80 0"
+					expirelife="1000"
+					material="/shared/effects/materials/refract_outsplash.material"
+				>
+					<particle 
+						minangle="-180"
+						maxangle="180"		
+						color="1 1 1"
+						param=".05"
+						size="4"
+						minstartscale="10"
+						maxstartscale="12"
+						maxendscale="35"
+						minendscale="40"
+						startalpha="0"
+						midalpha="1"
+						midalphapos="0.2"
+						endalpha="0"
+						startanchor="1"
+						endanchor="0"
+					/>
+				</simpleemitter>
+			
+		</particlesystem>
+	</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnmodifier instance="instance1" modifier="modifier0"/>  
+	
+	<waitfordeath instance="instance0" />
+	<wait duration="20000"/>
+	<!-- <die /> -->
+</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->

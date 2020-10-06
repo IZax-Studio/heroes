@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Grinex_Ability4_Attack_Illusion"
+	
+	icon="icon4.tga"
+	passiveeffect="effects/illusion.effect"
+	
+	movespeed="550"
+	nothreat="true"
+	unitwalking="true"
+	buildingwalking="true"
+	ishidden="true"
+	invulnerable="true"
+	
+	unselectable="true"
+	
+	modifierkey="stealth_run_4"
+	
+	impactinterval="200"
+>
+	<onimpact>
+		<cantarget targetscheme="enemy_units" target="this_proxy_entity" ignoreinvulnerable="false" />
+		<else>
+			<order command="attack" force="true" forceduration="5000,6000,7000" source="this_owner_entity" target="this_proxy_entity" />
+		</else>
+		<targettype type="alive" target="this_proxy_entity" />
+		<else>
+			<expire />
+		</else>
+		<compare a="this_proxy_entity" b="0" op="eq">
+			<expire />
+		</compare>
+	</onimpact>
+	
+	<onexpired>
+		<kill target="this_owner_entity" source="" />
+		<hasavatarkey name="Hero_Grinex.Alt5">
+			<playeffect effect="../alt5/ability_04/effects/death.effect" source="target_position" target="target_position" occlude="true" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Grinex.Alt6">
+				<playeffect effect="../alt6/ability_04/effects/death.effect" source="target_position" target="target_position" occlude="true" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Grinex.Alt7">
+					<playeffect effect="../alt6/ability_04/effects/death.effect" source="target_position" target="target_position" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/death.effect" source="target_position" target="target_position" occlude="true" />
+				</else>
+			</else>
+		</else>
+	</onexpired>
+
+	<altavatar key="Hero_Grinex.Alt" modpriority="100"
+		passiveeffect="../alt/ability_04/effects/illusion.effect"
+		modifierkey="stealth_run_4_alt"
+	/>
+
+	<altavatar key="Hero_Grinex.Alt2" modpriority="100"
+		passiveeffect="../alt2/ability_04/effects/illusion.effect"
+		modifierkey="stealth_run_4_alt2"
+	/>
+
+	<altavatar key="Hero_Grinex.Alt3" modpriority="100"
+		passiveeffect="../alt3/ability_04/effects/illusion.effect"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt4" modpriority="100"
+		passiveeffect="../alt4/ability_04/effects/illusion.effect"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt5" modpriority="100"
+		passiveeffect="../alt5/ability_04/effects/illusion.effect"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt6" modpriority="100"
+		passiveeffect="../alt6/ability_04/effects/illusion.effect"
+		modifierkey="stealth_run_4_alt6"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt7" modpriority="100"
+		passiveeffect="../alt7/ability_04/effects/illusion.effect"
+		modifierkey="stealth_run_4_alt6"
+	/>
+</state>
