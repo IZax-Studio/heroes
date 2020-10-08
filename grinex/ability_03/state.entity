@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Grinex_Ability3"
+	passiveeffect=""
+	icon="icon3.tga"
+	propagatetoillusions="true"
+	
+	dynamicprecache="effects/impact.effect"
+	maxcharges="1"
+	
+>
+	<oninflict>
+		<setscriptvalue name="impact_effect" value="effects/impact.effect" entity="this_entity" />
+		<addcharges count="1" />
+	</oninflict>
+	
+	<onrefresh />
+	
+	<onattack>
+		<cantarget targetscheme="enemy_units">
+			<evaluate a="charges" b="40,60,80,100" op="mult" />
+			<bonusdamageadd target="" a="result" />
+			
+			<!-- Dynamic visual effects -->
+			<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+			<playeffectdynamic effect="str0" source="source_entity" target="target_entity" occlude="true" />
+
+			<expire />
+		</cantarget>
+	</onattack>
+	
+	<onframe />
+	
+	<modifier key="ult_boost" modpriority="100"
+		maxcharges="2"
+	>
+		<onrefresh>
+			<addcharges count="1" />
+		</onrefresh>
+		
+		<onframe />
+	</modifier>
+	
+	<altavatar key="Hero_Grinex.Alt"
+		dynamicprecache="../alt/ability_03/effects/impact.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="impact_effect" value="../alt/ability_03/effects/impact.effect" entity="this_entity" />
+			<addcharges count="1" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_Grinex.Alt2"
+		dynamicprecache="../alt2/ability_03/effects/impact.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="impact_effect" value="../alt2/ability_03/effects/impact.effect" entity="this_entity" />
+			<addcharges count="1" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_Grinex.Alt3"
+		dynamicprecache="../alt3/ability_03/effects/impact.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="impact_effect" value="../alt3/ability_03/effects/impact.effect" entity="this_entity" />
+			<addcharges count="1" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_Grinex.Alt6"
+		dynamicprecache="../alt6/ability_03/effects/impact.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="impact_effect" value="../alt6/ability_03/effects/impact.effect" entity="this_entity" />
+			<addcharges count="1" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_Grinex.Alt7"
+		dynamicprecache="../alt6/ability_03/effects/impact.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="impact_effect" value="../alt6/ability_03/effects/impact.effect" entity="this_entity" />
+			<addcharges count="1" />
+		</oninflict>
+	</altavatar>
+</state>

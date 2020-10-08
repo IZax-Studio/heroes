@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+		
+				<sound
+				forcestereo="true"
+			    norestart="true"
+				channel="1004"
+				linearfalloff="true" 
+				falloffstart="1200"
+				falloffend="2000"
+				volume="1"
+			    life="6862"
+				sample="/heroes/grinex/ability_04/sounds/death_%.wav"
+			/>
+			   <sound
+				forcestereo="true"
+			    norestart="true"
+				channel="1337870"
+				linearfalloff="true" 
+				falloffstart="1200"
+				falloffend="2000"
+				volume="1"
+			    life="6862"
+				sample="/heroes/grinex/ability_04/sounds/core_illusion.wav"
+			/>
+			
+			<simpleemitter
+				position="0 0 75"
+				spawnrate="500"
+				count="10"
+				minparticlelife="400"
+				maxparticlelife="1200"
+				gravity="-1"
+				material="/shared/effects/materials/pyroclast_03.material"
+				offsetsphere="20 20 70"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				speed="150"
+				directionalspace="global"
+				inheritvelocity=".5"
+				depthbias="-25"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					anglespeed="20"
+					startsize="40"
+					midsize="100"
+					endsize="160"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					color="0"
+					startalpha=".8"
+					endalpha="0"
+					midalphapos=".35"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="1000"
+				count="5"
+				minparticlelife="1000"
+				maxparticlelife="2000"
+				spawnrate="50"
+				speed="50"
+				gravity="0"
+				direction="0 0 0"
+				material="/shared/effects/materials/dust_smoke_02.material"
+				offsetsphere="50 50 25"
+				position="0 0 50"
+				depthbias="0"
+				inheritvelocity=".25"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					startsize="125"
+					endsize="275"
+					color="0"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".2"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="1000"
+				count="5"
+				minparticlelife="1000"
+				maxparticlelife="2000"
+				spawnrate="50"
+				speed="150"
+				gravity="-5"
+				direction="0 0 -1"
+				angle="50"
+				material="/shared/effects/materials/dust_smoke_02.material"
+				offsetsphere="50 50 25"
+				position="0 0 100"
+				depthbias="-30"
+				inheritvelocity=".25"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					startsize="25"
+					endsize="275"
+					color="0"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".2"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

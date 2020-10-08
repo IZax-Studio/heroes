@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Grinex_Invis_Ability2"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	stealthtype="hero"
+	fadetime="0"
+	unitwalking="true"
+	movespeedmultiplier="0.25"
+	
+	effecttype="StatusStealth"
+	
+	modifierkey="stealth_run_4"
+>
+	<onframe />
+	
+	<oninflict>
+		<addcharges count="1" />
+		<startfade />
+	</oninflict>
+	
+	<onrefresh>
+		<addcharges count="1" />
+	</onrefresh>
+	
+	<onattackpreimpact>
+		<cantarget targetscheme="enemy_units">
+			<applystate name="State_Grinex_Ability2_Armor" duration="5000" />
+		</cantarget>		
+	</onattackpreimpact>
+	
+	<onattack>
+		<compare a="charges" b="0" op="eq">
+			<expire />
+		</compare>
+		<removecharge />
+	</onattack>
+	
+	<onactivatepreimpact>
+		<!-- Exception for Harkon's Blade, since an attack from it also procs this event -->
+		<entitytype type="Item_HarkonsBlade" target="inflictor_entity" />
+		<else>
+			<expire />
+		</else>
+	</onactivatepreimpact>
+	
+	<altavatar key="Hero_Grinex.Alt" modpriority="100"
+		passiveeffect="../alt/ability_02/effects/state.effect"
+		modifierkey="stealth_run_4_alt"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt2" modpriority="100"
+		passiveeffect="../alt2/ability_02/effects/state.effect"
+		modifierkey="stealth_run_2_alt2"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt3" modpriority="100"
+		passiveeffect="../alt3/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt4" modpriority="100"
+		passiveeffect="../alt4/ability_02/effects/state.effect"
+	/>
+
+	<altavatar key="Hero_Grinex.Alt5" modpriority="100"
+		passiveeffect="../alt5/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt6" modpriority="100"
+		passiveeffect="../alt6/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt7" modpriority="100"
+		passiveeffect="../alt6/ability_02/effects/state.effect"
+	/>
+</state>

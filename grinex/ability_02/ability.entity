@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Grinex2"
+
+	icon="icon2.tga"
+	statuseffecttooltip="State_Grinex_Ability2"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	
+	anim=""
+	casttime="0"
+	castactiontime="0"
+	casteffect="effects/cast.effect"
+	frontqueue="true"
+	inheritmovement="true"
+	nonaggressive="true"
+
+	actiontype="target_self"
+	casteffecttype=""
+
+	manacost="50"
+
+	cooldowntime="1000"
+	maxcharges="2"
+>
+	<onlearn>
+		<setcharges a="2" />
+	</onlearn>
+
+	<onframe>
+		<compare a="charges" b="2" op="eq">
+			<setaccumulator value="0" op="min" />
+		</compare>
+		<else>
+			<setaccumulator value="accumulator" valueb="frametime" valueop="add" />
+		</else>
+
+		<compare a="charges" b="0" op="gt">
+			<setactivemodifierkey name="" />
+		</compare>
+
+		<compare a="accumulator" b="20,18,16,14" op="gt">
+			<setaccumulator value="0" />
+			<addcharges count="1" />
+			<compare a="charges" b="2" op="eq" />
+			<else>
+				<starttimer duration="20000,18000,16000,14000" />
+			</else>
+		</compare>
+	</onframe>
+	
+	<onimpact>
+		<!-- Set initial fade time duration here -->
+		<applystate name="State_Grinex_Ability2" duration="1000" target="source_entity" />
+		<compare a="charges" b="2" op="eq">
+			<starttimer duration="20000,18000,16000,14000" />
+		</compare>
+		<removecharge />
+		<compare a="charges" b="0" op="eq">
+			<setactivemodifierkey name="Grinexstealthdisabled" />
+		</compare>
+	</onimpact>
+	
+	<ondeath>
+		<setcharges a="2" />
+		<resettimer />
+	</ondeath>
+
+	<modifier key="Grinexstealthdisabled" modpriority="100"
+		disabled="true"
+	>
+	</modifier>
+	
+	<altavatar key="Hero_Grinex.Alt" modpriority="100"
+		casteffect="../alt/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt2" modpriority="100"
+		casteffect="../alt2/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt3" modpriority="100"
+		casteffect="../alt3/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt4" modpriority="100"
+		casteffect="../alt4/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt6" modpriority="100"
+		casteffect="../alt6/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt7" modpriority="100"
+		casteffect="../alt7/ability_02/effects/cast.effect"
+	/>
+
+	<modifier key="rapidfire" modpriority="99"
+	>
+		<onframe>
+			<compare a="charges" b="2" op="eq">
+				<setaccumulator value="0" op="min" />
+			</compare>
+			<else>
+				<setaccumulator value="accumulator" valueb="frametime" valueop="add" />
+			</else>
+
+			<compare a="charges" b="0" op="gt">
+				<setactivemodifierkey name="" />
+			</compare>
+
+			<compare a="accumulator" b="4,3.6,3.2,2.8" op="gt">
+				<setaccumulator value="0" />
+				<addcharges count="1" />
+				<compare a="charges" b="2" op="eq" />
+				<else>
+					<starttimer duration="4000,3600,3200,2800" />
+				</else>
+			</compare>
+		</onframe>
+		
+		<onimpact>
+			<!-- Set initial fade time duration here -->
+			<applystate name="State_Grinex_Ability2" duration="1500" target="source_entity" />
+			<compare a="charges" b="2" op="eq">
+				<starttimer duration="4000,3600,3200,2800" />
+			</compare>
+			<removecharge />
+			<compare a="charges" b="0" op="eq">
+				<setactivemodifierkey name="Grinexstealthdisabled" />
+			</compare>
+		</onimpact>
+	</modifier>
+
+</ability>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="ability_02">
+
+	<definitions>
+	
+		<modifier
+			name="modifier0"
+			life="500"
+			startalpha="1"
+			midalpha=".99"
+			midalphapos=".25"
+			endalpha="0"
+			material="../../material_invis.material"
+		/>
+		 
+		<particlesystem name="system0" space="world" scale="1.5">
+
+			<sound
+			    forcestereo="true"
+				linearfalloff="true" 
+				falloffstart="450"
+				falloffend="1500"
+				volume=".5" 
+				sample="/heroes/grinex/ability_01/sounds/core_cast.wav"
+			/>
+
+			<sound
+			    forcestereo="true"
+				linearfalloff="true" 
+				falloffstart="450"
+				falloffend="1500"
+				volume=".8" 
+				sample="/heroes/grinex/ability_01/sounds/cast_%.wav"
+			/>
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="450"
+				falloffend="1500"
+				volume=".5" 
+				sample="../sounds/cast.wav"
+			/>
+			
+	</particlesystem>
+</definitions>
+
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />	
+	<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+
+
+
+
+
+

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Grinex4"
+	
+	statuseffecttooltip="State_Grinex_Ability4_Path"
+	icon="icon4.tga"
+	
+	casttime="0"
+	castactiontime="0"
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_self"
+	targetscheme="enemy_nonstealthed_heroes"
+	casteffecttype=""
+	frontqueue="true"
+	inheritmovement="true"
+	nonaggressive="true"
+	
+	casteffect="effects/cast.effect"
+	
+	manacost="100"
+	cooldowntime="70000,60000,50000"
+	
+	targetradius="1200"
+>
+	<onimpact>
+		<applystate name="State_Grinex_Ability4_Initial" target="source_entity" duration="50" pushentity="true" />
+		<applystate name="State_Grinex_Ability4_Path" target="source_entity" duration="1500" />
+	</onimpact>
+	
+	<modifier key="ult_boost" modpriority="100">
+		<onimpact>
+			<applystate name="State_Grinex_Ability4_Initial" target="source_entity" duration="50" pushentity="true" />
+			<applystate name="State_Grinex_Ability4_Path" target="source_entity" duration="1500" />
+			
+			<disjoint target="source_entity" />
+			<orderdisjoint target="source_entity" />
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Grinex.Alt" modpriority="100"
+		casteffect="../alt/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt2" modpriority="100"
+		casteffect="../alt2/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt3" modpriority="100"
+		casteffect="../alt3/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt4" modpriority="100"
+		casteffect="../alt4/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt5" modpriority="100"
+		casteffect="../alt5/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt6" modpriority="100"
+		casteffect="../alt6/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt7" modpriority="100"
+		casteffect="../alt6/ability_04/effects/cast.effect"
+	/>
+</ability>

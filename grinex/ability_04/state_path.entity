@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Grinex_Ability4_Path"
+
+	icon="icon.tga"
+	passiveeffect="effects/self_path.effect"
+	stealthtype="hero"
+	fadetime="1000"
+	unitwalking="true"
+	
+	movespeedmultiplier="0.15"
+	
+	effecttype="StatusStealth"
+	modifierkey="stealth_run_4"
+>
+	<onframe />
+	
+	<onattackstart>
+		<startfade />
+	</onattackstart>
+	
+	<onactivatestart>
+		<startfade />
+	</onactivatestart>
+	
+	<modifier key="ult_boost" modpriority="100"
+		modifierkey="grinex_R_targetImmunity"
+	>
+		<onattackstart />
+		
+		<onactivatestart />
+		
+		<onattack>
+			<playeffect effect="effects/impact_stealth.effect" source="target_entity" target="target_entity" occlude="true" />
+		</onattack>
+	</modifier>
+	
+	<altavatar key="Hero_Grinex.Alt" modpriority="100"
+		modifierkey="stealth_run_4_alt"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt2" modpriority="100"
+		modifierkey="stealth_run_4_alt2"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt5" modpriority="100"
+		passiveeffect="../alt5/ability_04/effects/self_path.effect"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt6" modpriority="100"
+		passiveeffect="../alt6/ability_04/effects/self_path.effect"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt7" modpriority="100"
+		passiveeffect="../alt6/ability_04/effects/self_path.effect"
+	/>
+</state>

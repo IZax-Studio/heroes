@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+	<!--
+		<modifier
+			name="modifier0"
+			material="refract.material"
+			color="1"
+			param0="3"
+			alpha="1"
+		/>
+		-->
+		<modifier
+			material="material.material"
+			name="modifier0"
+			alpha=".4"
+			color=".5"
+		/>
+	
+		<particlesystem name="system0" scale="1">
+		<!--
+			<model
+				expirelife="100"
+				parentmodel="true"
+				parentskeleton="true"
+				material="/shared/effects/materials/shell2.material"
+				color="0.65"
+				alpha=".15"
+			/>
+			-->
+			
+			<model
+				expirelife="100"
+				parentmodel="true"
+				parentskeleton="true"
+				material="refract.material"
+				param0="10.0"
+				color="3.0"
+				alpha=".3"
+			/>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				position="0 0 0"
+				spawnrate="10"
+				
+				drag="0"
+				particlelife="850"
+				gravity="5"
+				speed="0"
+				inheritvelocity=".2"
+				limitinheritvelocity="100"
+				offsetsphere="1 5 1"
+				minangle="25"
+				maxangle="10"
+				direction="-1 -1 0"
+				material="/shared/effects/materials/cloud1.material"
+			>
+				<particle
+					startcolor="0 0 0"
+					midcolor="0 0 0"
+					endcolor="0 0 0"
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="0"
+					midcolorpos=".1"
+					maxanglespeed="0"
+					startsize="300"
+					endsize="300"
+					midsizepos=".4"
+					startalpha="0.0"
+					midalpha="0.4"
+					endalpha="0.0"
+					midalphapos="0.1"
+					
+				/>
+			</simpleemitter>
+		</particlesystem>
+		
+	</definitions>
+	
+	<thread>
+		<spawnparticlesystem particlesystem="system0" instance="instance0" /> 
+		<spawnmodifier modifier="modifier0" instance="instance1"/> 
+		<waitfordeath instance="instance0"/>
+		<waitfordeath instance="instance1"/>
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
