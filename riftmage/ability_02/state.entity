@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Riftmage_Ability2"
+	
+	icon="icon2.tga"
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	movespeedslow="0.3,0.35,0.40,0.45"
+	movespeedslowpercharge="0.04,0.06,0.08,0.10"
+	
+	maxcharges="5"
+	passiveeffect="effects/state.effect"
+
+	negativeeffect="slowed"
+>
+	<onimpact />
+	
+	<ondamaged>
+		<damageeffecttype effecttype="DOT" />
+		<else>
+			<addcharges count="1" />
+			<playeffect effect="effects/portal.effect" target="source_entity" source="source_entity"/>
+		</else>
+	</ondamaged>
+	
+	<altavatar key="Hero_Riftmage.Alt3" modpriority="1"
+		passiveeffect="/heroes/riftmage/alt3/ability_02/effects/state.effect"
+	>	
+		<ondamaged>
+			<damageeffecttype effecttype="DOT" />
+			<else>
+				<addcharges count="1" />
+				<playeffect effect="/heroes/riftmage/alt3/ability_02/effects/portal.effect" target="source_entity" source="source_entity"/>
+			</else>
+		</ondamaged>	
+	</altavatar>
+	
+	<altavatar key="Hero_Riftmage.Alt4" modpriority="1"
+		passiveeffect=""
+	>	
+		<ondamaged>
+			<damageeffecttype effecttype="DOT" />
+			<else>
+				<addcharges count="1" />
+				<hasmodifier name="Alt4_Ability2_Upgrade" >
+					<playeffect effect="/heroes/riftmage/alt4/ability_02/effects/portal_upgrade.effect" target="source_entity" source="source_entity"/>
+				</hasmodifier>
+				<else>
+					<playeffect effect="/heroes/riftmage/alt4/ability_02/effects/portal.effect" target="source_entity" source="source_entity"/>
+				</else>
+			</else>
+		</ondamaged>	
+			<modifier key="Alt4_Ability2_Upgrade"
+				passiveeffect="/heroes/riftmage/alt4/ability_02/effects/state_upgrade.effect"
+			/>	
+	</altavatar>
+	
+	<altavatar key="Hero_Riftmage.Alt5" modpriority="1"
+		passiveeffect="/heroes/riftmage/alt5/ability_02/effects/state.effect"
+	>	
+		<ondamaged>
+			<damageeffecttype effecttype="DOT" />
+			<else>
+				<addcharges count="1" />
+				<playeffect effect="/heroes/riftmage/alt5/ability_02/effects/portal.effect" target="source_entity" source="source_entity"/>
+			</else>
+		</ondamaged>	
+	</altavatar>
+	
+</state>

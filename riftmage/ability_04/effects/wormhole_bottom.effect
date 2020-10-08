@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<sound
+			    soundloop="true"
+				fadein="200"
+				fadeout="1000"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume=".5"
+				sample="/heroes/riftmage/ability_04/sounds/loop.wav"
+			/>
+		
+			<billboard
+				position="0 0 65"
+				expirelife="2000"
+				color="0"
+				startsize="700"
+				midsize="0"
+				endsize="0"
+				startalpha=".35"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				material="/shared/effects/materials/black_spot.material"
+				depthbias="0"
+			/>
+
+			<billboard
+				position="0 0 75"
+				expirelife="250"
+				startcolor="0 .5 .2"
+				endcolor="0 0 0"
+				size="1000"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				material="/shared/effects/materials/whitedot.material"
+				depthbias="50"
+			/>
+
+			<simpleemitter	
+				position="0 0 75"
+				spawnrate="15"
+				particlelife="750"
+				gravity="2"
+				speed="5"
+				direction="0 0 1"
+				material="/shared/effects/materials/twirl_blend.material"
+			>
+				<particle
+					color="0"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+					maxangle="360"
+					anglespeed="-30"
+					startsize="900"
+					endsize="0"
+					lockup="1"
+					lockright="1"
+					pitch="-90"
+					anchor=".8"
+				/>
+			</simpleemitter>
+<!--
+			<simpleemitter
+
+				position="0 0 75"
+				spawnrate="15"
+				particlelife="750"
+				gravity="5"
+				speed="15"
+				offsetsphere="15"
+				direction="0 0 1"
+				material="/shared/effects/materials/blob.material"
+			>
+				<particle
+					startcolor="0 1 .5"
+					midcolor="0 1 .5"
+					endcolor="0"
+					midcolorpos=".5"
+					startalpha="0"
+					midalpha=".175"
+					endalpha="0"					
+					maxangle="360"
+					anglespeed="-30"
+					startsize="500"
+					endsize="0"
+					lockup="1"
+					lockright="1"
+					pitch="-90"
+					anchor=".8"
+				/>
+			</simpleemitter>
+-->
+			
+
+			<simpleemitter
+				position="0 0 75"
+				spawnrate="5"
+				minparticlelife="250"
+				maxparticlelife="750"
+				gravity="5"
+				speed="3"
+				offsetsphere="15"
+				direction="0 0 1"
+				material="/shared/effects/materials/twirl_blend.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor="0"
+					endcolor="0"
+					midcolorpos=".5"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"					
+					maxangle="360"
+					anglespeed="-160"
+					startsize="500"
+					endsize="0"
+					lockup="1"
+					lockright="1"
+					pitch="-90"
+					anchor=".8"
+				/>
+			</simpleemitter>
+
+			
+			
+
+			<billboard
+				position="0 0 75"
+				life="2000"
+				color="1 1 1"
+				startalpha=".125"
+				midalpha=".5"
+				endalpha=".125"
+				startparam=".025"
+				endparam="0"
+				startsize="0"
+				endsize="1000"
+				material="/shared/effects/materials/refract_ripple.material"
+				lockup="1"
+				pitch="90"
+				loop="true"
+			/>
+
+			<billboard
+				position="0 0 75"
+				life="1000"
+				color="1 1 1"
+				startalpha=".125"
+				midalpha=".5"
+				endalpha=".125"
+				startparam=".025"
+				endparam="0"
+				startsize="0"
+				endsize="1000"
+				material="/shared/effects/materials/refract_ripple.material"
+				lockup="1"
+				pitch="90"
+				loop="true"
+			/>
+<!--
+			<simpleemitter
+				spawnrate="5"
+				particlelife="400"
+				gravity="-6"
+				speed="0.0"
+				acceleration="0.0"
+				position="0 0 75"
+				offsetsphere="20 20 0"
+				material="/shared/effects/materials/flare_01.material"
+			>
+				<particle
+					startcolor="0 0 0"
+					midcolor="0 1 .5"
+					endcolor="0 0 0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="0"
+					maxanglespeed="0"
+					startsize="1000"
+					endsize="50"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+				/>
+			</simpleemitter>
+
+			<billboard
+				position="0 0 75"
+				life="1000"
+				startcolor="0 0 0"
+				midcolor="0 .2 0"
+				endcolor="0 0 0"
+				startsize="500"
+				endsize="500"
+				lockup="1"
+				pitch="90"
+				material="/shared/effects/materials/starlight.material"
+				loop="true"
+			/>
+
+			<simpleemitter
+				spawnrate="10"
+				particlelife="500"
+				gravity="-6"
+				speed="0.0"
+				acceleration="0.0"
+				position="0 0 75"
+				material="/shared/effects/materials/flare_01.material"
+				depthbias="-100"
+			>
+				<particle
+					startcolor=".3"
+					midcolor="0 .2 0"
+					endcolor="0 0 0"
+					startalpha=".02"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="0"
+					maxanglespeed="0"
+					startsize="300"
+					endsize="50"
+					lockup="true"
+					pitch="90"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="200"
+				particlelife="610"
+				gravity="0"
+				speed="0"
+				position="0 0 75"
+				acceleration="11"
+				material="/shared/effects/materials/flare_03.material"
+				offsetsphere="220 220 50"
+				drag="0.05"
+				direction="1 0 0"
+				depthbias="-50"
+			>
+				<particle
+					startstickiness="0"
+					endstickiness=".25"
+					startcolor=".75"
+					midcolor="0 .2 0"
+					endcolor="0 0 0"
+					startsize="10"
+					endsize="0"	
+					turn="1"
+					heightdistort="0.02"
+				/>
+			</simpleemitter>
+-->
+
+			<controller>
+				<billboard
+					position="0 0 75"
+					life="2000"
+					startscale="0"
+					midscale="1.6"
+					endscale="2.4"
+					midscalepos=".9"
+					material="/shared/effects/materials/black_spot2.material"
+					depthbias="-50"
+				/>
+				<model
+					directionalspace="global"
+					position="0 0 75"
+					life="2000"
+					model="/heroes/riftmage/alt2/ability_01/effects/model.mdf"
+					startscale="0"
+					midscale=".8"
+					endscale="1.2"
+					midscalepos=".9"
+					startalpha="1"
+					endalpha="1"
+				/>
+				
+				<light
+					position="0 0 75"
+					falloffend="500"
+					life="2050"
+					startcolor="0"
+					midcolor="-1.5 -2 -1"
+					endcolor="0"
+					midcolorpos=".95"
+				/>
+			</controller>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

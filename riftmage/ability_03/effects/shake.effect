@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+<!--
+			<model
+				model="rocks/model.mdf"
+				material="/heroes/sand_wraith/ability_01/effects/material.material"
+				anim="idle"
+				scale="1"
+				minlife="600"
+				maxlife="700"
+				startalpha="1"	
+				midalpha="1"				
+				endalpha="0"
+				startcolor="0 1 .5"
+				midcolor=".1"
+				endcolor="-1"
+				midalphapos=".75"
+				position="0 0 0"
+				minyaw="0"
+				maxyaw="360"
+			>
+			</model>
+			
+			<model
+				model="rocks/model.mdf"
+				material="/heroes/sand_wraith/ability_01/effects/material.material"
+				anim="idle"
+				minscale="1.1"
+				maxscale="1.35"
+				minlife="600"
+				maxlife="700"
+				startalpha="1"	
+				midalpha="1"				
+				endalpha="0"
+				startcolor="0 1 .5"
+				midcolor=".1"
+				endcolor="-1"
+				midalphapos=".75"
+				position="0 0 0"
+				minyaw="0"
+				maxyaw="360"
+			>
+			</model>
+-->
+
+
+			<billboard
+				position="0 0 75"
+				life="250"
+				startsize="150"
+				endsize="1000"
+				startparam=".5"
+				endparam="0"
+				depthbias="-75"
+				material="/shared/effects/materials/refract_ring.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+			
+			<billboard
+				material="/shared/effects/materials/bulb_add.material"				
+				startcolor="0 1 .5"				
+				endcolor="0 0 0"
+				life="250"	
+				position="0 0 75"
+				startsize="200"
+				endsize="750"
+				depthbias="-150"			
+			/>
+			
+			<billboard
+				delay="100"
+				material="/shared/effects/materials/bulb_add.material"				
+				startcolor="0 1 .5"				
+				endcolor="0 0 0"
+				life="250"	
+				position="0 0 75"
+				startsize="200"
+				endsize="750"
+				depthbias="-150"			
+			/>
+			
+			<billboard
+				delay="200"
+				material="/shared/effects/materials/bulb_add.material"				
+				startcolor=".065"				
+				endcolor="0 0 0"
+				life="250"	
+				position="0 0 75"
+				startsize="200"
+				endsize="750"
+				depthbias="-150"			
+			/>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<camerashake2 scale="10" radius="500" duration="500" frequency="10" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

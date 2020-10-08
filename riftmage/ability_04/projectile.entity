@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Riftmage_Ability4_Staff"
+	
+	icon="icon4.tga"
+	portrait=""
+
+	gravity="0"
+	
+	model="/shared/models/invis.mdf"
+	
+	lifetime="500"
+	useexactlifetime="true"
+>
+	<onimpact>
+		<areaofeffect radius="50" ignoreinvulnerable="true" targetselection="all">
+			<entitytype type="Riftmage_Ability4_Staff_Tracker_Target" target="target_entity">
+				<kill target="target_entity" source=""/>
+			</entitytype>
+		</areaofeffect>
+		<areaofeffect radius="50" ignoreinvulnerable="true" targetselection="all">
+			<entitytype type="Riftmage_Ability4_Staff_Tracker_Source" target="target_entity">
+				<kill target="target_entity" source=""/>
+			</entitytype>
+		</areaofeffect>
+	</onimpact>
+
+</projectile>

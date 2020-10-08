@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Riftmage_Ability4_Art"
+	
+	icon="icon4.tga"
+	portrait=""
+	
+	model="/shared/models/invis.mdf"
+	passiveeffect="effects/wormhole_bottom.effect"
+	preglobalscale="1.25"
+	modelscale="1.0"
+	effectscale="1.0"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="64"
+	isselectable="false"
+	iscontrollable="false"
+	
+	drawonmap="false"
+
+	targetoffset="0 0 0"
+
+	canrotate="true"
+	ismobile="false"
+	nothreat="true"
+
+	attacktype="none"
+	combattype="Ranged"
+
+	stealthtype="unrevealable"
+	fadetime="0"
+	
+	sightrangeday="0"
+	sightrangenight="0"
+	unitwalking="true"
+	canattack="false"
+
+	flying="false"
+	clearvision="true"
+	
+	corpsetime="0"
+	deathtime="0"
+	
+	lifetime="2000"
+>
+
+	<altavatar key="Hero_Riftmage.Alt2" modpriority="1"
+		passiveeffect="/heroes/riftmage/alt2/ability_04/effects/wormhole_bottom.effect"
+	/>
+	
+	<altavatar key="Hero_Riftmage.Alt3" modpriority="1"
+		passiveeffect="/heroes/riftmage/alt3/ability_04/effects/wormhole_bottom.effect"
+	/>
+	
+	<altavatar key="Hero_Riftmage.Alt4" modpriority="1"
+		passiveeffect="/heroes/riftmage/alt4/ability_04/effects/wormhole_bottom.effect"
+	>
+		<modifier key="Alt4_Ability3_Upgrade" 
+			passiveeffect="/heroes/riftmage/alt4/ability_04/effects/wormhole_bottom_upgrade.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Riftmage.Alt5" modpriority="1"
+		passiveeffect="/heroes/riftmage/alt5/ability_04/effects/wormhole_bottom.effect"
+	/>
+</gadget>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Riftmage_Ability4_Staff"
+
+	icon="icon4.tga"
+	
+	passiveeffect=""
+	alwaystransmitdata="true" 
+	
+	modifierkey="Riftmage_staff_port"
+>
+	<onexpired>
+		<kill target="this_proxy_entity" source="" />
+	</onexpired>
+	
+	<onframe />
+</state>

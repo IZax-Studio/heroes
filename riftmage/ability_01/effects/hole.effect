@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect >
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+			
+			<sound
+				delay="0"
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="3600"
+				volume="1.0" 
+				life="1600"
+				sample="/heroes/riftmage/ability_01/sounds/cast.wav"
+			/>
+		
+			<simpleemitter
+				life="1500"			
+				position="0 0 75"
+				startspawnrate="0"
+				endspawnrate="30"
+				particlelife="750"
+				gravity="2"
+				speed="5"
+				direction="0 0 1"
+				material="/shared/effects/materials/twirl_blend.material"
+			>
+				<particle
+					color="0"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+					maxangle="360"
+					anglespeed="-30"
+					startsize="900"
+					endsize="0"
+					lockup="1"
+					lockright="1"
+					pitch="-90"
+					anchor=".8"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="1500"
+				position="0 0 75"
+				startspawnrate="0"
+				endspawnrate="10"
+				minparticlelife="250"
+				maxparticlelife="750"
+				gravity="5"
+				speed="3"
+				offsetsphere="15"
+				direction="0 0 1"
+				material="/shared/effects/materials/twirl_blend.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor="0"
+					endcolor="0"
+					midcolorpos=".5"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"					
+					maxangle="360"
+					anglespeed="-160"
+					startsize="500"
+					endsize="0"
+					lockup="1"
+					lockright="1"
+					pitch="-90"
+					anchor=".8"
+				/>
+			</simpleemitter>
+		
+		
+
+			<billboard
+			delay="200"
+				position="0 0 75"
+				life="1500"
+				startcolor="0 0 0"
+				midcolor="0 .3 0"
+				endcolor="0 0 0"
+				midcolorpos=".9"
+				startsize="1000"
+				midsize="1000"
+				endsize="0"
+				midsizepos=".9"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				material="/shared/effects/materials/whitedot.material"
+				depthbias="50"
+			/>
+
+			<billboard
+			delay="200"
+				position="0 0 75"
+				life="1500"
+				startcolor="0 0 0"
+				midcolor="0 .1 0"
+				endcolor="0 0 0"
+				midcolorpos=".9"
+				startsize="600"
+				midsize="600"
+				endsize="0"
+				midsizepos=".9"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				material="/shared/effects/materials/whitedot.material"
+				depthbias="50"
+			/>
+			
+			<billboard
+			delay="200"
+				position="0 0 75"
+				life="1500"
+				startcolor="0 0 0"
+				midcolor=".75"
+				endcolor="0 0 0"
+				midcolorpos=".9"
+				startsize="125"
+				midsize="125"
+				endsize="0"
+				midsizepos=".9"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				material="/shared/effects/materials/whitedot.material"
+				depthbias="50"
+			/>
+
+
+
+<!--
+			<billboard
+				position="0 0 75"
+				life="1000"
+				color="1 1 1"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				startparam=".025"
+				endparam="0"
+				startsize="0"
+				endsize="1000"
+				material="/shared/effects/materials/refract_ripple.material"
+				lockup="1"
+				pitch="90"
+				loop="true"
+			/>
+			
+			<billboard
+				position="0 0 75"
+				life="1000"
+				color="1 1 1"
+				startalpha="1"
+				midalpha="0"
+				endalpha="1"
+				startparam=".025"
+				endparam="0"
+				startsize="0"
+				endsize="1000"
+				material="/shared/effects/materials/refract_ripple.material"
+				lockup="1"
+				pitch="90"
+				loop="true"
+			/>
+			
+			<billboard
+				position="0 0 75"
+				life="1000"
+				color="0"
+				startalpha="1"
+				midalpha="0"
+				endalpha="0"
+				midalphapos=".75"
+				startparam=".025"
+				endparam="0"
+				startsize="0"
+				endsize="1000"
+				material="/shared/effects/materials/twirl_blend.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+-->
+			
+
+			<simpleemitter
+				life="1500"
+				delay="250"
+				startspawnrate="0"
+				endspawnrate="200"
+				particlelife="610"
+				gravity="0"
+				speed="0"
+				position="0 0 75"
+				acceleration="11"
+				material="/shared/effects/materials/flare_03.material"
+				offsetsphere="220 220 50"
+				drag="0.05"
+				direction="1 0 0"
+				depthbias="-50"
+			>
+				<particle
+					startstickiness="0"
+					endstickiness=".25"
+					startcolor="1"
+					midcolor="0 .1 0"
+					endcolor="0 0 0"
+					startsize="10"
+					endsize="0"	
+					turn="1"
+					heightdistort="0.02"
+				/>
+			</simpleemitter>
+			
+			
+			<simpleemitter
+				life="1500"
+				delay="750"
+				startspawnrate="0"
+				endspawnrate="200"
+				minparticlelife="300"
+				maxparticlelife="600"
+				gravity="0"
+				speed="0"
+				position="0 0 75"
+				acceleration="11"
+				material="/shared/effects/materials/flare_03.material"
+				offsetsphere="220 220 50"
+				drag="0.05"
+				direction="1 0 0"
+				depthbias="-50"
+			>
+				<particle
+					startstickiness="0"
+					endstickiness=".25"
+					startcolor="1"
+					midcolor="0 .1 0"
+					endcolor="0 0 0"
+					startsize="25"
+					endsize="0"	
+					turn="1"
+					heightdistort="0.02"
+				/>
+			</simpleemitter>
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

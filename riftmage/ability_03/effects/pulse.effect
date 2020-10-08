@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1.33">
+		
+			<sound
+			    life="5000"
+				sample="/heroes/riftmage/ability_03/sounds/pulse.wav"
+				volume="1"
+				linearfalloff="true"
+				falloffstart="1500"
+				falloffend="2500"
+			/>
+<!--
+			<model
+				model="rocks/model.mdf"
+				material="/heroes/sand_wraith/ability_01/effects/material.material"
+				anim="idle"
+				scale="1"
+				minlife="600"
+				maxlife="700"
+				startalpha="1"	
+				midalpha="1"				
+				endalpha="0"
+				startcolor="1 0 3"
+				midcolor=".1"
+				endcolor="-1"
+				midalphapos=".75"
+				position="0 0 0"
+				minyaw="0"
+				maxyaw="360"
+			>
+			</model>
+			
+			<model
+				model="rocks/model.mdf"
+				material="/heroes/sand_wraith/ability_01/effects/material.material"
+				anim="idle"
+				minscale="1.1"
+				maxscale="1.35"
+				minlife="600"
+				maxlife="700"
+				startalpha="1"	
+				midalpha="1"				
+				endalpha="0"
+				startcolor="1 0 3"
+				midcolor=".1"
+				endcolor="-1"
+				midalphapos=".75"
+				position="0 0 0"
+				minyaw="0"
+				maxyaw="360"
+			>
+			</model>
+-->
+			
+			
+			
+			<simpleemitter
+			count="20"
+				spawnrate="500"
+				minparticlelife="200"
+				maxparticlelife="400"
+				gravity="-55"
+				speed="40"
+				drag=".08"
+				acceleration="0"
+				position="0 0 150"
+				material="/shared/effects/materials/phantom_smoke_10.material"
+				offsetsphere="25 25 100"
+				minangle="90"
+				maxangle="-90"
+				depthbias="50"
+			>
+				<particle 
+					startcolor="0 0 0"
+					midcolor="0 1 .5"
+					endcolor="0 0 0"
+					midcolorpos=".1"
+					startframe="0"
+					endframe="1"
+					startwidth="20"
+					midwidth="15"
+					endwidth="6"
+					midwidthpos=".5"
+					startheight="0"
+					endheight="500"
+					lockup="true"
+				/>
+			</simpleemitter>
+			<billboard
+				position="0 0 100"
+				life="250"
+				startcolor=".65"
+				endcolor="0 0 0"
+				size="400"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				material="/shared/effects/materials/flare_03.material"
+				depthbias="-50"
+			/>
+			
+			<billboard
+				position="0 0 100"
+				life="250"
+				startcolor="0 1 .5"
+				endcolor="0 0 0"
+				size="900"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				yaw="5"
+				material="/shared/effects/materials/flare_03.material"
+				depthbias="-50"
+			/>
+
+			<billboard
+				position="0 0 75"
+				life="400"
+				startsize="150"
+				endsize="800"
+				startparam=".25"
+				endparam="0"
+				depthbias="-75"
+				material="/shared/effects/materials/refract_ring.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+
+			<billboard
+				maxroll="360"
+				position="0 0 75"
+				life="400"
+				startsize="100"
+				endsize="550"
+				startparam=".015"
+				endparam="0"
+				depthbias="-75"
+				material="/shared/effects/materials/refract_pinch.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+
+			<billboard
+				maxroll="360"
+				position="0 0 25"
+				life="400"
+				startsize="100"
+				endsize="550"
+				startparam=".015"
+				endparam="0"
+				depthbias="-75"
+				material="/shared/effects/materials/refract_pinch.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+			
+			<billboard
+				material="/shared/effects/materials/corona_06_blend.material"				
+				startcolor="0 1 .5"
+				midcolor="0 1 .5"
+				endcolor="0 0 0"
+				startalpha=".8"
+				midalpha=".8"
+				endalpha="0"
+				midalphapos=".65"
+				life="375"
+				position="0 0 20"
+				startsize="125"
+				endsize="725"
+				depthbias="-150"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+			/>
+			
+			<billboard
+				material="/shared/effects/materials/corona_07.material"				
+				startcolor="0 1 .5"
+				midcolor="0 1 .5"
+				endcolor="0 0 0"
+				midcolorpos=".65"
+				life="375"
+				position="0 0 20"
+				startsize="100"
+				endsize="625"
+				depthbias="-150"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+			/>
+			<!--
+			<simpleemitter
+				spawnrate="1000"
+				mincount="8"
+				maxcount="10"
+				particlelife="400"
+				position="0 0 100"
+				depthbias="-150"
+				material="/shared/effects/materials/corona_06.material"	
+			>
+				<particle
+					maxpitch="360"
+					maxroll="360"
+					maxyaw="360"
+					minrollspeed="-150"
+					maxrollspeed="150"
+					minyawspeed="-150"
+					maxyawspeed="150"
+					minpitchspeed="-150"
+					maxpitchspeed="150"
+					startcolor="0 1 .5"
+					midcolor="0 1 .5"
+					endcolor="0 0 0"
+					startsize="0"
+					minendsize="400"
+					maxendsize="650"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+				/>
+			</simpleemitter>
+			-->
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

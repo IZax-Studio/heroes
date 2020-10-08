@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Riftmage_Ability3"
+	
+	icon="icon3.tga"
+	
+	ishidden="true"
+	effecttype=""
+	
+	impactinterval="600"
+>
+	<oninflict>
+		<!-- Use a spreadsheet to calculate these initial values -->
+		<setaccumulator value="11.4,15.2,19.0,23" />
+	</oninflict>
+	
+	<onimpact>
+		<setaccumulator value="accumulator" valueb="1.23" valueop="mult" />
+		<popup name="poison" a="result" source="this_owner_entity" target="source_entity" />
+		<spawnaffector name="Affector_Riftmage_Ability3_Pulse" target="this_owner_entity" param="accumulator" />
+	</onimpact>
+</state>

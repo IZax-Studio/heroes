@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			<template name="glows">
+				
+				<billboard
+					bone="_bone_weapon3"
+					position="0 0 0"
+					life="500"
+					color=".1 0 .15"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					startsize="35"
+					midsize="45"
+					endsize="35"
+					material="/shared/effects/materials/twirl_blend.material"
+					lockright="1"
+					lockup="1"
+					pitch="{zpitch}"
+					loop="true"
+					directionalspace="local"
+					rollspeed="360"
+				/>
+				
+				<billboard
+					bone="_bone_weapon3"
+					position="0 0 0"
+					life="500"
+					color=".1 0 .15"
+					startalpha="0"
+					midalpha=".65"
+					endalpha="0"
+					startsize="35"
+					midsize="45"
+					endsize="35"
+					material="/shared/effects/materials/twirl_blend.material"
+					lockright="1"
+					lockup="1"
+					pitch="{zpitch}"
+					loop="true"
+					directionalspace="local"
+					rollspeed="-360"
+				/>
+
+				<billboard
+					bone="_bone_weapon3"
+					position="0 0 0"
+					life="1000"
+					color="1 1 1"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					startparam=".025"
+					endparam="0"
+					startsize="0"
+					endsize="85"
+					material="/shared/effects/materials/refract_ripple.material"
+					lockright="1"
+					lockup="1"
+					pitch="{zpitch}"
+					loop="true"
+					directionalspace="local"
+				/>
+			</template>	
+			
+			<instance name="glows" zpitch="0"/>
+			<instance name="glows" zpitch="90"/>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<model
+				bone="_bone_weapon3"
+				model="/shared/models/invis.mdf"
+				material="/shared/effects/materials/shell4.material"
+				anim="idle"
+				startscale=".5"
+				endscale="0"
+				startcolor="1.25 .45 1.5"
+				endcolor="0 0 0"
+				expirelife="150"
+			>
+				<model
+					model="/heroes/riftmage/projectile/effects/orb/orb.mdf"
+					material="/shared/effects/materials/shell4.material"
+					anim="idle"
+					startscale="20"
+					endscale="0"
+					startcolor=".5 .15 2"
+					endcolor="0 0 0"
+					expirelife="150"
+				/>
+				
+				<model
+					model="/heroes/riftmage/projectile/effects/orb/orb.mdf"
+					material="/shared/effects/materials/shell4.material"
+					anim="idle"
+					startscale="12"
+					endscale="0"
+					startcolor="1"
+					endcolor="0 0 0"
+					expirelife="150"
+				/>
+
+				<model
+					position="0 0 0"
+					expirelife="1500"
+					name="emitter0" 
+					anim="idle"
+					model="/shared/effects/models/circle_of_bones/model.mdf"
+					scale="1.4"
+					startcolor="0 0 0"
+					midcolor="0 0 0"
+					endcolor="0 0 0"
+					midcolorpos=".75"
+					startalpha="0"
+					midalpha="0"
+					endalpha="0"
+					midalphapos=".4"
+					rollspeed="1200"
+					pitchspeed="2000"
+					yawspeed="1000"
+				>
+					<trailemitter
+						spawnrate="30"
+						particlelife="600"
+						endminparticlelife="1"
+						endmaxparticlelife="1" 
+						texpostime="600"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/soul_projectile.material"
+					>
+						<particle
+							startcolor=".25 .2 .3"
+							midcolor=".25 .2 .3"
+							endcolor="0 0 0"
+							size="75"
+							startalpha=".8"
+							endalpha="0"
+						/>
+					</trailemitter>
+				
+					<template name="random_beams">
+						<trailemitter
+							spawnrate="10"
+							startminparticlelife="500"
+							startmaxparticlelife="500"
+							offsetsphere="40"
+							endminparticlelife="1"
+							endmaxparticlelife="1" 
+							texpostime="1000"
+							texposscale="0"
+							texstretchscale="1"
+							material="/shared/effects/materials/arrow_trail.material"
+						>
+							<particle
+								startcolor="1"
+								midcolor=".3 .1 1"
+								endcolor="0 0 0"
+								startsize="2"
+								endsize="4"
+								midcolorpos=".1"
+								midsizepos=".1"
+							/>
+						</trailemitter>
+					</template>
+					
+					<instance name="random_beams" />
+					<instance name="random_beams" />
+					<instance name="random_beams" />
+					<instance name="random_beams" />
+					<instance name="random_beams" />
+					<instance name="random_beams" />
+					<instance name="random_beams" />
+				</model>
+			</model>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
