@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_Silhouette"
+
+	team="Legion"
+	icon="Huskar.tga"
+	portrait="Huskar.tga"
+	model="model.mdf"
+	skin=""
+	
+	
+	passiveeffect="effects/body.effect"
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana_%.wav"
+	cooldownsound="sounds/voice/cooldown_%.wav"
+	announcersound="sounds/voice/hero_select.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+	
+	preglobalscale=".8"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="48"
+	targetoffset="0 0 64"
+	portraitcampos="-5 100 50"
+	infoheight="200"
+
+	category="physical"
+	difficulty="4.5"
+
+	solorating="2"
+	junglerating="0"
+	carryrating="4"
+	supportrating="0"
+	initiatorrating="0"
+	gankerrating="2"
+	pusherrating="0"
+	rangedrating="3"
+	meleerating="0"
+	
+	movespeed="295"
+	turnrate="450"
+	turnsmoothing="0.05"
+
+	maxhealth="150"
+	healthregen="0.25"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="-0.5"
+	magicarmor="5"
+
+	inventory0="Ability_Silhouette1"
+	inventory1="Ability_Silhouette2"
+	inventory2="Ability_Silhouette3"
+	inventory3="Ability_Silhouette4"
+	inventory4="Ability_AttributeBoost"
+	inventory5="Ability_Silhouette2_Go"
+	inventory6="Ability_Silhouette2_Pull"
+	inventory7="Ability_Silhouette4_Swap"
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11=""
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="1000"
+	attackactiontime="400"
+	attackcooldown="1700"
+	attackdamagemin="18"
+	attackdamagemax="23"
+	attacknumanims="5"
+	attackoffset="0 100 70"
+	attackprojectile="Projectile_SilhouetteAttack"
+	attackrange="500"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect=""
+	attacktype="ranged"
+	combattype="Hero"
+
+	aggrorange="800"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	primaryattribute="Agility"
+	strength="15"
+	strengthperlevel="1.8"
+	agility="23"
+	agilityperlevel="2.8"
+	intelligence="21"
+	intelligenceperlevel="2.0"
+	
+	previewmodel="model.mdf"
+	previewpos="0 0 -50"
+	previewangles="0 0 0"
+	previewscale="1.8"
+	
+	storemodel="model.mdf"
+	storepos="0 0 -14"
+	storeangles="0 0 0"
+	storescale=".65"
+	
+	corpsetime="2000"
+	corpsefadetime="2000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+>
+	<recommendeditem name="Item_MinorTotem" />
+	<recommendeditem name="Item_RunesOfTheBlight" />
+	<recommendeditem name="Item_HealthPotion" />
+	<recommendeditem name="Item_HomecomingStone" />
+	
+	<recommendeditem name="Item_Soulscream" />	
+	<recommendeditem name="Item_Strength5" />
+	<recommendeditem name="Item_Steamboots" />
+	<recommendeditem name="Item_EnhancedMarchers" />
+	<recommendeditem name="Item_Gloves3" />
+	<recommendeditem name="Item_Stealth" />
+	<recommendeditem name="Item_ManaBurn2" />
+	<recommendeditem name="Item_Weapon3" />
+	<recommendeditem name="Item_Evasion" />
+
+	<modifier key="soccer" modpriority="190" primaryattribute="" 
+		turnrate="650" magicarmor="0" healthregen="2.5" armor="0" manaregen="0"
+		maxmana="100"
+		attackrange="400"
+		movespeed="330"
+		maxhealth="475"
+		attackdamagemin="50"
+		attackdamagemax="50"
+		intelligence="0"
+		strength="0"
+		agility="0"
+		inventory0="Ability_Soccer_SlideKick"
+		inventory1="Ability_Soccer_Sprint"
+		inventory2="Ability_Silhouette2"
+		inventory3="Ability_Silhouette4"
+		inventory4="Ability_Silhouette3"
+		cancarryitems="false" inventory8="" inventory12=""
+	/>
+	
+	<altavatar key="Hero_Silhouette.Alt" modpriority="1"
+		altavatar="true"
+		preglobalscale="1.9"
+		icon2="alt/icon.tga"
+		portrait="alt/icon.tga"
+		model="alt/model.mdf"
+		infoheight="185"
+		previewmodel="alt/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.8"
+		
+		storemodel="alt/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.7"
+	/>
+	
+	<altavatar key="Hero_Silhouette.Alt2" modpriority="1"
+		altavatar="true"
+		preglobalscale="2.1"
+		icon2="alt2/icon.tga"
+		portrait="alt2/icon.tga"
+		model="alt2/model.mdf"
+		infoheight="185"
+		previewmodel="alt2/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.8"
+		
+		selectedsound="alt2/sounds/voice/select_%.wav"
+		selectedflavorsound="alt2/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt2/sounds/voice/move_%.wav"
+		confirmattacksound="alt2/sounds/voice/attack_%.wav"
+		nomanasound="alt2/sounds/voice/no_mana.wav"
+		cooldownsound="alt2/sounds/voice/cooldown.wav"
+		tauntedsound="alt2/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt2/sounds/voice/taunt_after.wav"
+		
+		storemodel="alt2/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.7"
+	/>
+	
+	<altavatar key="Hero_Silhouette.Alt3" modpriority="1"
+		altavatar="true"
+		preglobalscale="2.1"
+		icon2="alt3/icon.tga"
+		portrait="alt3/icon.tga"
+		model="alt3/model.mdf"
+		infoheight="185"
+		previewmodel="alt3/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.8"
+		
+		selectedsound="alt3/sounds/voice/select_%.wav"
+		selectedflavorsound="alt3/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt3/sounds/voice/move_%.wav"
+		confirmattacksound="alt3/sounds/voice/attack_%.wav"
+		nomanasound="alt3/sounds/voice/no_mana.wav"
+		cooldownsound="alt3/sounds/voice/cooldown.wav"
+		tauntedsound="alt3/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt3/sounds/voice/taunt_after.wav"
+		
+		attacknumanims="2"
+		
+		storemodel="alt3/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.7"
+	/>
+	
+	<altavatar key="Alt4"
+		preglobalscale="2.1"
+		icon2="alt4/icon.tga"
+		portrait="alt4/icon.tga"
+		model="alt4/model.mdf"
+		infoheight="185"
+		previewmodel="alt4/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.8"
+		
+		selectedsound="alt4/sounds/voice/select_%.wav"
+		selectedflavorsound="alt4/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt4/sounds/voice/move_%.wav"
+		confirmattacksound="alt4/sounds/voice/attack_%.wav"
+		nomanasound="alt4/sounds/voice/no_mana.wav"
+		cooldownsound="alt4/sounds/voice/cooldown.wav"
+		tauntedsound="alt4/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt4/sounds/voice/taunt_after.wav"
+		
+		attacknumanims="2"
+		
+		storemodel="alt4/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.7"
+	>
+	
+		<onspawn>
+		<ownsproduct target="this_entity" product="aa.Hero_CorruptedDisciple.Alt3 aa.Hero_Jereziah.Alt4 aa.Hero_Kenisis.Alt3 aa.Hero_Berzerker.Alt5 aa.Hero_Prophet.Alt4" />
+		<compare a="result" b="1" op="eq">
+			<applystate name="State_Blind_Prophet_Set" target="this_entity" continuous="true" />
+		</compare>
+		</onspawn>
+		
+		<onrespawn>
+		<ownsproduct target="this_entity" product="aa.Hero_CorruptedDisciple.Alt3 aa.Hero_Jereziah.Alt4 aa.Hero_Kenisis.Alt3 aa.Hero_Berzerker.Alt5 aa.Hero_Prophet.Alt4" />
+		<compare a="result" b="1" op="eq">
+			<applystate name="State_Blind_Prophet_Set" target="this_entity" continuous="true" />
+		</compare>
+		</onrespawn>
+	
+	</altavatar>
+	
+	<altavatar key="Alt5"
+		preglobalscale="2.1"
+		icon2="alt5/icon.tga"
+		portrait="alt5/icon.tga"
+		model="alt5/model.mdf"
+		infoheight="185"
+		previewmodel="alt5/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.8"
+		
+		selectedsound="alt5/sounds/voice/select_%.wav"
+		selectedflavorsound="alt5/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt5/sounds/voice/move_%.wav"
+		confirmattacksound="alt5/sounds/voice/attack_%.wav"
+		nomanasound="alt5/sounds/voice/no_mana.wav"
+		cooldownsound="alt5/sounds/voice/cooldown.wav"
+		tauntedsound="alt5/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt5/sounds/voice/taunt_after.wav"
+		
+		attacknumanims="2"
+		
+		portraitcampos="27 -50 15"
+		portraitangles="20 0 0"
+		
+		storemodel="alt5/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.85"
+		storepassiveeffect="alt5/effects/body_store.effect"
+
+		corpsefadeeffect=""
+	/>
+	
+	<altavatar key="Alt6"
+		
+		preglobalscale="2.1"
+		icon2="alt6/icon.tga"
+		portrait="alt6/icon.tga"
+		model="alt6/model.mdf"
+		infoheight="185"
+		previewmodel="alt6/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.8"
+		
+		selectedsound="alt6/sounds/voice/select_%.wav"
+		selectedflavorsound="alt6/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt6/sounds/voice/move_%.wav"
+		confirmattacksound="alt6/sounds/voice/attack_%.wav"
+		nomanasound="alt6/sounds/voice/no_mana.wav"
+		cooldownsound="alt6/sounds/voice/cooldown.wav"
+		tauntedsound="alt6/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt6/sounds/voice/taunt_after.wav"
+		
+		attacknumanims="2"
+		
+		portraitcampos="15 15 10"
+		portraitangles="0 0 0"
+		
+		storemodel="alt6/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.85"
+		
+		corpsefadeeffect=""
+	>
+	
+	<onspawn>
+		<ownsproduct target="this_entity" product="aa.Hero_Legionnaire.Alt4" />
+		<compare a="result" b="1" op="eq">
+			<applystate name="State_Black_Legion" target="this_entity" continuous="true" />
+		</compare>
+	</onspawn>
+	
+	<onrespawn>
+		<ownsproduct target="this_entity" product="aa.Hero_Legionnaire.Alt4" />
+		<compare a="result" b="1" op="eq">
+			<applystate name="State_Black_Legion" target="this_entity" continuous="true" />
+		</compare>
+	</onrespawn>
+	
+	</altavatar>
+	
+	<altavatar key="Alt7"
+		preglobalscale="2.2"
+		icon2="alt7/icon.tga"
+		portrait="alt7/icon.tga"
+		model="alt7/model.mdf"
+		infoheight="185"
+			
+		passiveeffect="alt8/effects/body.effect"
+			
+		previewmodel="alt8/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.8"
+			
+		selectedsound="alt7/sounds/voice/select_%.wav"
+		selectedflavorsound="alt7/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt7/sounds/voice/move_%.wav"
+		confirmattacksound="alt7/sounds/voice/attack_%.wav"
+		nomanasound="alt7/sounds/voice/no_mana.wav"
+		cooldownsound="alt7/sounds/voice/cooldown.wav"
+		tauntedsound="alt7/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt7/sounds/voice/taunt_after.wav"
+			
+		attacknumanims="2"
+			
+		storemodel="alt8/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.75"
+		
+		portraitcampos="15 -30 -12"
+		portraitangles="0 0 0"
+		
+		corpsetime="1300"
+		corpsefadetime="2000"
+	>
+		<modifier key="nohand" modpriority="101"
+			model="alt7/model_nohand.mdf"
+			portraitcampos="3 -30 -10"
+		/>
+	</altavatar>
+	
+	<altavatar key="Alt8"
+		preglobalscale="2.2"
+		icon2="alt7/icon.tga"
+		portrait="alt7/icon.tga"
+		model="alt8/model.mdf"
+		infoheight="185"
+			
+		passiveeffect="alt8/effects/body.effect"
+			
+		previewmodel="alt8/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.8"
+			
+		selectedsound="alt8/sounds/voice/select_%.wav"
+		selectedflavorsound="alt8/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt8/sounds/voice/move_%.wav"
+		confirmattacksound="alt8/sounds/voice/attack_%.wav"
+		nomanasound="alt8/sounds/voice/no_mana.wav"
+		cooldownsound="alt8/sounds/voice/cooldown.wav"
+		tauntedsound="alt8/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt8/sounds/voice/taunt_after.wav"
+			
+		attacknumanims="2"
+			
+		storemodel="alt8/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.75"
+		
+		portraitcampos="15 -30 -12"
+		portraitangles="0 0 0"
+		
+		corpsetime="1300"
+		corpsefadetime="2000"
+	>
+		
+		<modifier key="nohand" modpriority="101"
+			model="alt8/model_nohand.mdf"
+			portraitcampos="3 -30 -10"
+		/>
+	</altavatar>
+	
+	<altavatar key="Alt9"
+		preglobalscale="2.1"
+		icon2="alt9/icon.tga"
+		portrait="alt9/icon.tga"
+		model="alt9/model.mdf"
+			
+		passiveeffect="alt9/effects/body.effect"
+			
+		previewmodel="alt9/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.8"
+			
+		selectedsound="alt9/sounds/voice/select_%.wav"
+		selectedflavorsound="alt9/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt9/sounds/voice/move_%.wav"
+		confirmattacksound="alt9/sounds/voice/attack_%.wav"
+		nomanasound="alt9/sounds/voice/no_mana.wav"
+		cooldownsound="alt9/sounds/voice/cooldown.wav"
+		tauntedsound="alt9/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt9/sounds/voice/taunt_after.wav"
+			
+		attacknumanims="2"
+		
+		portraitcampos="15 0 15"
+			
+		storemodel="alt9/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.85"
+	/>
+	
+	<altavatar key="Alt10"
+		preglobalscale="2.1"
+		icon2="alt10/icon.tga"
+		portrait="alt10/icon.tga"
+		model="alt10/model.mdf"
+			
+		passiveeffect="alt10/effects/body.effect"
+			
+		previewmodel="alt10/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.8"
+			
+		selectedsound="alt10/sounds/voice/select_%.wav"
+		selectedflavorsound="alt10/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt10/sounds/voice/move_%.wav"
+		confirmattacksound="alt10/sounds/voice/attack_%.wav"
+		nomanasound="alt10/sounds/voice/no_mana.wav"
+		cooldownsound="alt10/sounds/voice/cooldown.wav"
+		tauntedsound="alt10/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt10/sounds/voice/taunt_after.wav"
+			
+		attacknumanims="2"
+		
+		portraitcampos="10 -10 14"
+			
+		storemodel="alt10/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.85"
+	>	
+		
+		<onframe> 
+			<hasmodifier name="Deadlift_Ghost">
+				<deactivatemodifierkey name="Rift_Hunter" />
+			</hasmodifier>
+		</onframe>
+		
+		<onspawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Engineer.Alt8 aa.Hero_Silhouette.Alt10 aa.Hero_Tarot.Alt7 aa.Hero_Voodoo.Alt6 aa.Hero_Calamity.Alt6" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey name="Rift_Hunter" />
+			</compare>
+		</onspawn>
+		
+		<onrespawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Engineer.Alt8 aa.Hero_Silhouette.Alt10 aa.Hero_Tarot.Alt7 aa.Hero_Voodoo.Alt6 aa.Hero_Calamity.Alt6" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey name="Rift_Hunter" />
+			</compare>
+		</onrespawn>
+		
+		<onkilled>
+			<ownsproduct target="this_entity" product="aa.Hero_Engineer.Alt8 aa.Hero_Silhouette.Alt10 aa.Hero_Tarot.Alt7 aa.Hero_Voodoo.Alt6 aa.Hero_Calamity.Alt6" />
+			<compare a="result" b="1" op="eq">
+				<deactivatemodifierkey name="Rift_Hunter" />
+			</compare>
+		</onkilled>
+		
+		<modifier key="Rift_Hunter" modpriority="10"
+			passiveeffect="alt10/effects/Rift_Hunter.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Alt12"
+		preglobalscale="2.1"
+		icon2="alt12/icon.tga"
+		model="alt12/model.mdf"
+		attacknumanims="2"
+		portraitcampos="5 -35 27"
+		
+		previewmodel="alt12/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.8"
+		
+		storemodel="alt12/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.85"
+		
+		selectedsound="alt12/sounds/voice/select_%.wav"
+		selectedflavorsound="alt12/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt12/sounds/voice/move_%.wav"
+		confirmattacksound="alt12/sounds/voice/attack_%.wav"
+		nomanasound="alt12/sounds/voice/no_mana.wav"
+		cooldownsound="alt12/sounds/voice/cooldown.wav"
+		tauntedsound="alt12/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt12/sounds/voice/taunt_after.wav"
+			
+		
+	>
+		<onkill>
+			<ownsproduct target="this_entity" product="aa.Hero_BabaYaga.Alt10 aa.Hero_CorruptedDisciple.Alt8 aa.Hero_DrunkenMaster.Alt10 aa.Hero_ForsakenArcher.Alt9 aa.Hero_Krixi.Alt9 aa.Hero_Silhouette.Alt12" >
+				<cantarget targetscheme="enemy_heroes">
+					<applystate name="State_Set_Magcial_Girl_VFX" source="this_entity" target="this_entity" duration="2500" />
+				</cantarget>
+			</ownsproduct>
+        </onkill>
+		
+		<onassist>
+			<ownsproduct target="this_entity" product="aa.Hero_BabaYaga.Alt10 aa.Hero_CorruptedDisciple.Alt8 aa.Hero_DrunkenMaster.Alt10 aa.Hero_ForsakenArcher.Alt9 aa.Hero_Krixi.Alt9 aa.Hero_Silhouette.Alt12" >
+				<applystate name="State_Set_Magcial_Girl_VFX" source="this_entity" target="this_entity" duration="2500" />
+			</ownsproduct>
+        </onassist>
+	</altavatar>
+	
+	<altavatar key="Alt13"
+		preglobalscale="2.2"
+		icon2="alt13/icon.tga"
+		attacknumanims="2"
+		
+		selectedsound="alt13/sounds/voice/select_%.wav"
+		selectedflavorsound="alt13/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt13/sounds/voice/move_%.wav"
+		confirmattacksound="alt13/sounds/voice/attack_%.wav"
+		nomanasound="alt13/sounds/voice/no_mana.wav"
+		cooldownsound="alt13/sounds/voice/cooldown.wav"
+		tauntedsound="alt13/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt13/sounds/voice/taunt_after.wav"
+		
+		model="alt13/model.mdf"
+		portraitcampos="30 -22 25"	
+
+		previewmodel="alt13/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.8"
+		
+		storemodel="alt13/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.85"		
+			
+	>
+		<onspawn propagatetoillusions="false">
+			<setaccumulator value="0" />
+			<ownsproduct target="this_entity" product="aa.Hero_Silhouette.Alt12">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Bushwack.Alt8">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Legionnaire.Alt16">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_FlintBeastwood.Alt14">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Behemoth.Alt16">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hammerstorm.Alt13">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+		
+			<compare a="accumulator" b="4" op="ge">
+				<activatemodifierkey name="Flex_set" />
+			</compare>
+		</onspawn>
+
+		<modifier key="Flex_set" modpriority="100"
+			passiveeffect="alt13/effects/set_flex_body.effect"
+		/>
+	</altavatar>	
+</hero>

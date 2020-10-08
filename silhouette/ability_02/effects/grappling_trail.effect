@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world">
+
+			<sound
+			     life="5000"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".65"
+				sample="../sounds/trail1.wav"
+			/>
+
+			<template name="trail">
+				<twopointtrailemitter
+				life="650"
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					spawnrate="50"
+					particlelife="500"
+					texpostime="500"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/swoosh_add.material"
+					subframepos="true"
+				>
+					<particle
+						startcolor=".25 .25 .25"
+						endcolor="0 0 0" 
+						midcolorpos=".1"
+					/>
+				</twopointtrailemitter>
+			</template>
+			
+			<instance name="trail" bone_a="_bone_lefthand" bone_b="_bone_lefthand"/>
+			<instance name="trail" bone_a="Bip01 R Clavicle" bone_b="Bip01 R Hand"/>
+			<instance name="trail" bone_a="Bip01 R Foot" bone_b="Bip01 R Thigh"/>
+			<instance name="trail" bone_a="_bone_leftfoot" bone_b="_bone_leftfoot"/>
+			<instance name="trail" bone_a="Bip01 Pelvis" bone_b="Bip01 Head"/>
+
+			<simpleemitter
+				spawnrate="15"
+				count="7"
+				particlelife="5500"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+				turn="true"
+				>
+					<model
+						position="0 0 0"
+						scale="1"
+						life="250"
+						model="../../model.mdf"
+						anim="ability_2_fly"
+						color="2 2 2"
+						startalpha="1"
+						endalpha="0"
+						midalphapos=".35"
+					>
+					</model>
+<!--
+					<model
+						position="0 0 0"
+						scale="1"
+						life="250"
+						model="../../model.mdf"
+						material="/shared/effects/materials/shell2.material"
+						anim="ability_2_fly"
+						color="1 1 1"
+						startalpha="1"
+						endalpha="0"
+						midalphapos=".35"
+					>
+					</model>
+-->
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				spawnrate="15"
+				particlelife="150"
+				position="0 0 50"
+				material="/shared/effects/materials/refract_swell.material"
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+				param=".4"
+			>
+				<particle
+					startsize="250"
+					endsize="500"
+					param="0.5"
+					startalpha=".5"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".5"
+					lockup="true"
+					lockright="1"
+					pitch="0"
+					flare="0"
+					yaw="00"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="10"
+				particlelife="125"
+				position="0 0 50"
+				material="/shared/effects/materials/whitedot.material"
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+			>
+				<particle
+					color=".25 .25 .25"
+					startsize="100"
+					endsize="200"
+					startalpha=".5"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".5"
+					lockup="true"
+					lockright="1"
+					pitch="0"
+					flare="0"
+					yaw="00"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

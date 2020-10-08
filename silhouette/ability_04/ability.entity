@@ -1,0 +1,1095 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Silhouette4"
+
+	icon="icon4.tga"
+	
+	anim="ability_4"
+	casttime="750"
+	castactiontime="250"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="no_target"
+	
+	manacost="150,100,50"
+	cooldowntime="80000"
+	
+	casteffect="effects/cast.effect"
+>
+	<onimpact>
+		<!-- Kill the old orbiting projectiles -->
+		
+		<pushability name="Ability_Silhouette1" />
+		<foreachproxy entity="stack_entity">
+			<kill target="target_entity" source="" />
+		</foreachproxy>
+		
+		<!-- Logic of spawning the Illusion and making it both this ability and Ability 4a's proxy -->
+	
+		<dispel target="source_entity" type="StatusBuff" />
+		<dispel target="source_entity" type="StatusDebuff" />
+		<disjoint target="source_entity" />
+		<orderdisjoint target="source_entity" />
+		<applystate name="State_Silhouette_Ability4_Self" duration="100" />
+		<spawnillusion
+			target="source_entity"
+			count="1"
+			spawncircular="true"
+			spawncircularradius="100"
+			spawncircularrotate="false"
+			lifetime="20000,30000,40000"
+			receivedamagemultiplier="2.0,1.5,1.0"
+			inflictdamagemultiplier="1.0"
+			pushentity="true"
+			spawneffect=""
+			deatheffect=""
+		/>
+		<setproxy entity="this_entity" target="stack_entity" />
+		<pushability name="Ability_Silhouette4_Swap" />
+		<setproxy entity="stack_entity" target="this_proxy_entity" />		
+		<applystate target="this_proxy_entity" name="State_Silhouette_Ability4_Shadow" continuous="true" proxy="source_entity" />
+		<applystate target="source_entity" name="State_Silhouette_Ability4_On" duration="20000,30000,40000" />
+		<clearteamtarget />
+		
+		<!-- Start visual timer for illusion lifetime -->
+		
+		<starttimer duration="20000,30000,40000" entity="stack_entity" />
+
+		<!-- Make orbits for the Illusion. These do not do damage -->
+		<pushability name="Ability_Silhouette1" />
+		<isready entity="stack_entity">
+			<hasmodifier name="SilhouetteOrbit1">
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="this_proxy_entity"
+					orbitstartingtheta="90"
+					pushentity="true"
+				/>
+				<setproxy target="stack_entity" />
+			</hasmodifier>
+			<hasmodifier name="SilhouetteOrbit2">
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="this_proxy_entity"
+					orbitstartingtheta="90"
+					pushentity="true"
+				/>
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="this_proxy_entity"
+					orbitstartingtheta="270"
+					proxy="stack_entity"
+					pushentity="true"
+				/>
+				<setproxy target="stack_entity" />
+			</hasmodifier>
+			<hasmodifier name="SilhouetteOrbit3">
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="this_proxy_entity"
+					orbitstartingtheta="90"
+					pushentity="true"
+				/>
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="this_proxy_entity"
+					orbitstartingtheta="210"
+					proxy="stack_entity"
+					pushentity="true"
+				/>
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="this_proxy_entity"
+					orbitstartingtheta="330"
+					proxy="stack_entity"
+					pushentity="true"
+				/>
+				<setproxy target="stack_entity" />
+			</hasmodifier>
+			<hasmodifier name="SilhouetteOrbit4">
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="this_proxy_entity"
+					orbitstartingtheta="90"
+					pushentity="true"
+				/>
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="this_proxy_entity"
+					orbitstartingtheta="270"
+					proxy="stack_entity"
+					pushentity="true"
+				/>
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="this_proxy_entity"
+					orbitstartingtheta="180"
+					proxy="stack_entity"
+					pushentity="true"
+				/>
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="this_proxy_entity"
+					orbitstartingtheta="360"
+					proxy="stack_entity"
+					pushentity="true"
+				/>
+				<setproxy target="stack_entity" />
+			</hasmodifier>
+			
+			<!-- Make orbits for the Hero, linking them to the old orbits in a proxy chain -->
+						
+			<hasmodifier name="SilhouetteOrbit1">
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="source_entity"
+					orbitstartingtheta="90"
+					proxy="this_proxy_entity"
+					pushentity="true"
+				/>
+				<setproxy target="stack_entity" />
+			</hasmodifier>
+			<hasmodifier name="SilhouetteOrbit2">
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="source_entity"
+					orbitstartingtheta="90"
+					proxy="this_proxy_entity"
+					pushentity="true"
+				/>
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="source_entity"
+					orbitstartingtheta="270"
+					proxy="stack_entity"
+					pushentity="true"
+				/>
+				<setproxy target="stack_entity" />
+			</hasmodifier>
+			<hasmodifier name="SilhouetteOrbit3">
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="source_entity"
+					orbitstartingtheta="90"
+					proxy="this_proxy_entity"
+					pushentity="true"
+				/>
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="source_entity"
+					orbitstartingtheta="210"
+					proxy="stack_entity"
+					pushentity="true"
+				/>
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="source_entity"
+					orbitstartingtheta="330"
+					proxy="stack_entity"
+					pushentity="true"
+				/>
+				<setproxy target="stack_entity" />
+			</hasmodifier>
+			<hasmodifier name="SilhouetteOrbit4">
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="source_entity"
+					orbitstartingtheta="90"
+					proxy="this_proxy_entity"
+					pushentity="true"
+				/>
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="source_entity"
+					orbitstartingtheta="270"
+					proxy="stack_entity"
+					pushentity="true"
+				/>
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="source_entity"
+					orbitstartingtheta="180"
+					proxy="stack_entity"
+					pushentity="true"
+				/>
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="source_entity"
+					orbitstartingtheta="360"
+					proxy="stack_entity"
+					pushentity="true"
+				/>
+				<setproxy target="stack_entity" />
+			</hasmodifier>
+		
+			<!-- Right now the current this_proxy_entity is the last orbit in the chain. Link it to Ability 1! -->
+						
+			<pushability name="Ability_Silhouette1" />
+			<setproxy entity="stack_entity" target="this_proxy_entity" />
+			<setproxy entity="this_entity" target="" />
+		</isready>
+
+		<hasmodifier name="krosmode">
+			<starttimer duration="35000" entity="this_entity" />
+			<resetcooldown entity="this_entity" />
+		</hasmodifier>
+	</onimpact>
+	
+	<modifier key="silhouetteshadow_1" modpriority="90"
+		disabled="true"
+		subslot="7"
+	/>
+	
+	<modifier key="silhouetteshadow_2" modpriority="90"
+		disabled="true"
+		subslot="7"
+	/>
+	
+	<modifier key="silhouetteshadow_3" modpriority="90"
+		disabled="true"
+		subslot="7"
+	/>
+	
+	<altavatar key="Hero_Silhouette.Alt" modpriority="90"
+		casteffect="../alt/ability_04/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Silhouette.Alt2" modpriority="90"
+		casteffect="../alt2/ability_04/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Silhouette.Alt3" modpriority="100"
+		casteffect="../alt3/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Silhouette.Alt4" modpriority="90"
+		casteffect="../alt4/ability_04/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Silhouette.Alt5" modpriority="90"
+		casteffect="../alt5/ability_04/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Silhouette.Alt6" modpriority="90"
+		casteffect="../alt6/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Silhouette.Alt7" modpriority="90"
+		casteffect="../alt8/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Silhouette.Alt8" modpriority="90"
+		casteffect="../alt8/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Silhouette.Alt9" modpriority="90"
+		casteffect="../alt9/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Silhouette.Alt10" modpriority="90"
+		casteffect="../alt10/ability_04/effects/cast.effect"
+	/>
+
+	<altavatar key="Hero_Silhouette.Alt12" modpriority="90"
+		casteffect="../alt12/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Silhouette.Alt13" modpriority="90"
+		casteffect="../alt13/ability_04/effects/cast.effect"
+	/>
+	
+	<modifier key="silhouette_krosmode_on" modpriority="101"
+		icon="icon2.tga"
+		
+		casttime="150"
+		castactiontime="150"
+		casteffect=""
+		
+		maxlevel="4"
+		baselevel="0" 
+		
+		actiontype="no_target"
+		activatescheme="movement"
+		
+		manacost="50,25,0"
+		cooldowntime="10000,7000,3000"
+	>
+		<onimpact>
+			<compare a="this_proxy_entity" b="0" op="eq">
+				<areaofeffect
+					global="true"
+					targetscheme="my_illusions"
+					targetselection="all"
+					ignoreinvulnerable="true"
+				>
+					<hasmodifier entity="target_entity" name="silhouetteillusionmod">
+						<setproxy entity="this_entity" target="target_entity" />
+					</hasmodifier>
+				</areaofeffect>
+				
+				<!-- Logic for the actual teleport -->
+				
+				<unbind target="source_entity" />
+				<unbind target="this_proxy_entity" />
+				<disjoint target="source_entity" />
+				<disjoint target="this_proxy_entity" />
+				<setpos0 position="source_position" />
+				<setpos1 position="this_proxy_position" />
+				<teleport source="source_entity" target="" interpolate="false" />
+				<teleport source="this_proxy_entity" target="pos0" interpolate="false" />
+				<teleport source="source_entity" target="pos1" interpolate="false" />
+				<order command="stop" target="this_proxy_entity" source="this_proxy_entity" />
+
+				<playeffect effect="effects/teleport.effect" source="this_proxy_entity" target="this_proxy_entity"/>
+				<playeffect effect="effects/teleport.effect" source="source_entity" target="source_entity"/>
+
+				
+				<pushability name="Ability_Silhouette1" />
+				<isready entity="stack_entity">
+					<!-- Kill old projectiles -->
+					
+					<foreachproxy entity="stack_entity">
+						<entitytype type="Hero_Silhouette" />
+						<else>
+							<kill target="target_entity" source="" />
+						</else>
+					</foreachproxy>
+					
+					<pushability name="Ability_Silhouette4" />
+					<setproxy entity="stack_entity" target="this_proxy_entity" />
+					
+					<!-- Spawn new projctiles -->
+					
+					<hasmodifier name="SilhouetteOrbit1">
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="this_proxy_entity"
+							orbitstartingtheta="90"
+							orbitstartingthetatime="frametime"
+							pushentity="true"
+						/>
+						<setproxy target="stack_entity" />
+					</hasmodifier>
+					<hasmodifier name="SilhouetteOrbit2">
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="this_proxy_entity"
+							orbitstartingtheta="90"
+							orbitstartingthetatime="frametime"
+							pushentity="true"
+						/>
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="this_proxy_entity"
+							orbitstartingtheta="270"
+							proxy="stack_entity"
+							orbitstartingthetatime="frametime"
+							pushentity="true"
+						/>
+						<setproxy target="stack_entity" />
+					</hasmodifier>
+					<hasmodifier name="SilhouetteOrbit3">
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="this_proxy_entity"
+							orbitstartingtheta="90"
+							orbitstartingthetatime="frametime"
+							pushentity="true"
+						/>
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="this_proxy_entity"
+							orbitstartingtheta="210"
+							proxy="stack_entity"
+							orbitstartingthetatime="frametime"
+							pushentity="true"
+						/>
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="this_proxy_entity"
+							orbitstartingtheta="330"
+							proxy="stack_entity"
+							orbitstartingthetatime="frametime"
+							pushentity="true"
+						/>
+						<setproxy target="stack_entity" />
+					</hasmodifier>
+					<hasmodifier name="SilhouetteOrbit4">
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="this_proxy_entity"
+							orbitstartingtheta="90"
+							orbitstartingthetatime="frametime"
+							pushentity="true"
+						/>
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="this_proxy_entity"
+							orbitstartingtheta="270"
+							proxy="stack_entity"
+							orbitstartingthetatime="frametime"
+							pushentity="true"
+						/>
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="this_proxy_entity"
+							orbitstartingtheta="180"
+							proxy="stack_entity"
+							orbitstartingthetatime="frametime"
+							pushentity="true"
+						/>
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="this_proxy_entity"
+							orbitstartingtheta="360"
+							proxy="stack_entity"
+							orbitstartingthetatime="frametime"
+							pushentity="true"
+						/>
+						<setproxy target="stack_entity" />
+					</hasmodifier>
+					
+					<!-- Make orbits for the Hero, linking them to the old orbits in a proxy chain -->
+								
+					<hasmodifier name="SilhouetteOrbit1">
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="source_entity"
+							orbitstartingtheta="90"
+							proxy="this_proxy_entity"
+							orbitstartingthetatime="frametime"
+							pushentity="true"
+						/>
+						<setproxy target="stack_entity" />
+					</hasmodifier>
+					<hasmodifier name="SilhouetteOrbit2">
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="source_entity"
+							orbitstartingtheta="90"
+							proxy="this_proxy_entity"
+							orbitstartingthetatime="frametime"
+							pushentity="true"
+						/>
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="source_entity"
+							orbitstartingtheta="270"
+							orbitstartingthetatime="frametime"
+							proxy="stack_entity"
+							pushentity="true"
+						/>
+						<setproxy target="stack_entity" />
+					</hasmodifier>
+					<hasmodifier name="SilhouetteOrbit3">
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="source_entity"
+							orbitstartingtheta="90"
+							orbitstartingthetatime="frametime"
+							proxy="this_proxy_entity"
+							pushentity="true"
+						/>
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="source_entity"
+							orbitstartingtheta="210"
+							orbitstartingthetatime="frametime"
+							proxy="stack_entity"
+							pushentity="true"
+						/>
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="source_entity"
+							orbitstartingtheta="330"
+							orbitstartingthetatime="frametime"
+							proxy="stack_entity"
+							pushentity="true"
+						/>
+						<setproxy target="stack_entity" />
+					</hasmodifier>
+					<hasmodifier name="SilhouetteOrbit4">
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="source_entity"
+							orbitstartingtheta="90"
+							orbitstartingthetatime="frametime"
+							proxy="this_proxy_entity"
+							pushentity="true"
+						/>
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="source_entity"
+							orbitstartingtheta="270"
+							orbitstartingthetatime="frametime"
+							proxy="stack_entity"
+							pushentity="true"
+						/>
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="source_entity"
+							orbitstartingtheta="180"
+							orbitstartingthetatime="frametime"
+							proxy="stack_entity"
+							pushentity="true"
+						/>
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="source_entity"
+							orbitstartingtheta="360"
+							orbitstartingthetatime="frametime"
+							proxy="stack_entity"
+							pushentity="true"
+						/>
+						<setproxy target="stack_entity" />
+					</hasmodifier>
+					
+					<pushability name="Ability_Silhouette1" />
+					<setproxy entity="stack_entity" target="this_proxy_entity" />
+					<pushability name="Ability_Silhouette4" />
+					<setproxy entity="this_entity" target="stack_proxy_entity" />
+					<setproxy entity="stack_entity" target="" />
+				</isready>
+			</compare>
+			<else>
+				<!-- Logic for the actual teleport -->
+				
+				<unbind target="source_entity" />
+				<unbind target="this_proxy_entity" />
+				<disjoint target="source_entity" />
+				<disjoint target="this_proxy_entity" />
+				<setpos0 position="source_position" />
+				<setpos1 position="this_proxy_position" />
+				<teleport source="source_entity" target="" interpolate="false" />
+				<teleport source="this_proxy_entity" target="pos0" interpolate="false" />
+				<teleport source="source_entity" target="pos1" interpolate="false" />
+				<order command="stop" target="this_proxy_entity" source="this_proxy_entity" />
+
+				<playeffect effect="effects/teleport.effect" source="this_proxy_entity" target="this_proxy_entity"/>
+				<playeffect effect="effects/teleport.effect" source="source_entity" target="source_entity"/>
+
+				
+				<pushability name="Ability_Silhouette1" />
+				<isready entity="stack_entity">
+					<!-- Kill old projectiles -->
+					
+					<foreachproxy entity="stack_entity">
+						<entitytype type="Hero_Silhouette" />
+						<else>
+							<kill target="target_entity" source="" />
+						</else>
+					</foreachproxy>
+					
+					<pushability name="Ability_Silhouette4" />
+					<setproxy entity="stack_entity" target="this_proxy_entity" />
+					
+					<!-- Spawn new projctiles -->
+					
+					<hasmodifier name="SilhouetteOrbit1">
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="this_proxy_entity"
+							orbitstartingtheta="90"
+							orbitstartingthetatime="frametime"
+							pushentity="true"
+						/>
+						<setproxy target="stack_entity" />
+					</hasmodifier>
+					<hasmodifier name="SilhouetteOrbit2">
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="this_proxy_entity"
+							orbitstartingtheta="90"
+							orbitstartingthetatime="frametime"
+							pushentity="true"
+						/>
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="this_proxy_entity"
+							orbitstartingtheta="270"
+							proxy="stack_entity"
+							orbitstartingthetatime="frametime"
+							pushentity="true"
+						/>
+						<setproxy target="stack_entity" />
+					</hasmodifier>
+					<hasmodifier name="SilhouetteOrbit3">
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="this_proxy_entity"
+							orbitstartingtheta="90"
+							orbitstartingthetatime="frametime"
+							pushentity="true"
+						/>
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="this_proxy_entity"
+							orbitstartingtheta="210"
+							proxy="stack_entity"
+							orbitstartingthetatime="frametime"
+							pushentity="true"
+						/>
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="this_proxy_entity"
+							orbitstartingtheta="330"
+							proxy="stack_entity"
+							orbitstartingthetatime="frametime"
+							pushentity="true"
+						/>
+						<setproxy target="stack_entity" />
+					</hasmodifier>
+					<hasmodifier name="SilhouetteOrbit4">
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="this_proxy_entity"
+							orbitstartingtheta="90"
+							orbitstartingthetatime="frametime"
+							pushentity="true"
+						/>
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="this_proxy_entity"
+							orbitstartingtheta="270"
+							proxy="stack_entity"
+							orbitstartingthetatime="frametime"
+							pushentity="true"
+						/>
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="this_proxy_entity"
+							orbitstartingtheta="180"
+							proxy="stack_entity"
+							orbitstartingthetatime="frametime"
+							pushentity="true"
+						/>
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="this_proxy_entity"
+							orbitstartingtheta="360"
+							proxy="stack_entity"
+							orbitstartingthetatime="frametime"
+							pushentity="true"
+						/>
+						<setproxy target="stack_entity" />
+					</hasmodifier>
+					
+					<!-- Make orbits for the Hero, linking them to the old orbits in a proxy chain -->
+								
+					<hasmodifier name="SilhouetteOrbit1">
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="source_entity"
+							orbitstartingtheta="90"
+							proxy="this_proxy_entity"
+							orbitstartingthetatime="frametime"
+							pushentity="true"
+						/>
+						<setproxy target="stack_entity" />
+					</hasmodifier>
+					<hasmodifier name="SilhouetteOrbit2">
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="source_entity"
+							orbitstartingtheta="90"
+							proxy="this_proxy_entity"
+							orbitstartingthetatime="frametime"
+							pushentity="true"
+						/>
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="source_entity"
+							orbitstartingtheta="270"
+							orbitstartingthetatime="frametime"
+							proxy="stack_entity"
+							pushentity="true"
+						/>
+						<setproxy target="stack_entity" />
+					</hasmodifier>
+					<hasmodifier name="SilhouetteOrbit3">
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="source_entity"
+							orbitstartingtheta="90"
+							orbitstartingthetatime="frametime"
+							proxy="this_proxy_entity"
+							pushentity="true"
+						/>
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="source_entity"
+							orbitstartingtheta="210"
+							orbitstartingthetatime="frametime"
+							proxy="stack_entity"
+							pushentity="true"
+						/>
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="source_entity"
+							orbitstartingtheta="330"
+							orbitstartingthetatime="frametime"
+							proxy="stack_entity"
+							pushentity="true"
+						/>
+						<setproxy target="stack_entity" />
+					</hasmodifier>
+					<hasmodifier name="SilhouetteOrbit4">
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="source_entity"
+							orbitstartingtheta="90"
+							orbitstartingthetatime="frametime"
+							proxy="this_proxy_entity"
+							pushentity="true"
+						/>
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="source_entity"
+							orbitstartingtheta="270"
+							orbitstartingthetatime="frametime"
+							proxy="stack_entity"
+							pushentity="true"
+						/>
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="source_entity"
+							orbitstartingtheta="180"
+							orbitstartingthetatime="frametime"
+							proxy="stack_entity"
+							pushentity="true"
+						/>
+						<spawnprojectile
+							name="Projectile_Silhouette_Ability4_Orbit"
+							source="source_entity"
+							target="source_entity"
+							orbitstartingtheta="360"
+							orbitstartingthetatime="frametime"
+							proxy="stack_entity"
+							pushentity="true"
+						/>
+						<setproxy target="stack_entity" />
+					</hasmodifier>
+					
+					<pushability name="Ability_Silhouette1" />
+					<setproxy entity="stack_entity" target="this_proxy_entity" />
+					<pushability name="Ability_Silhouette4" />
+					<setproxy entity="this_entity" target="stack_proxy_entity" />
+					<setproxy entity="stack_entity" target="" />
+				</isready>
+			</else>
+		</onimpact>
+	</modifier>
+	
+	<modifier key="soccer" modpriority="150"
+		manacost="30"
+		cooldowntime="30000"
+		activatescheme=""
+		maxlevel="1"
+	>
+		<onimpact>
+		<!-- Kill the old orbiting projectiles -->
+		
+		<pushability name="Ability_Silhouette1" />
+		<foreachproxy entity="stack_entity">
+			<kill target="target_entity" source="" />
+		</foreachproxy>
+		
+		<!-- Logic of spawning the Illusion and making it both this ability and Ability 4a's proxy -->
+	
+		<dispel target="source_entity" type="StatusBuff" />
+		<dispel target="source_entity" type="StatusDebuff" />
+		<disjoint target="source_entity" />
+		<orderdisjoint target="source_entity" />
+		<applystate name="State_Silhouette_Ability4_Self" duration="100" />
+		<spawnillusion
+			target="source_entity"
+			count="1"
+			spawncircular="true"
+			spawncircularradius="100"
+			spawncircularrotate="false"
+			lifetime="20000,30000,40000"
+			receivedamagemultiplier="2.0,1.5,1.0"
+			inflictdamagemultiplier="1.0"
+			pushentity="true"
+			spawneffect=""
+			deatheffect=""
+		/>
+		<setproxy entity="this_entity" target="stack_entity" />
+		<pushability name="Ability_Silhouette4_Swap" />
+		<setproxy entity="stack_entity" target="this_proxy_entity" />		
+		<applystate target="this_proxy_entity" name="State_Silhouette_Ability4_Shadow" continuous="true" proxy="source_entity" />
+		<applystate target="source_entity" name="State_Silhouette_Ability4_On" duration="20000,30000,40000" />
+		<clearteamtarget />
+		
+		<!-- Start visual timer for illusion lifetime -->
+		
+		<starttimer duration="20000,30000,40000" entity="stack_entity" />
+
+		<!-- Make orbits for the Illusion. These do not do damage -->
+		<pushability name="Ability_Silhouette1" />
+		<isready entity="stack_entity">
+			<hasmodifier name="SilhouetteOrbit1">
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="this_proxy_entity"
+					orbitstartingtheta="90"
+					pushentity="true"
+				/>
+				<setproxy target="stack_entity" />
+			</hasmodifier>
+			<hasmodifier name="SilhouetteOrbit2">
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="this_proxy_entity"
+					orbitstartingtheta="90"
+					pushentity="true"
+				/>
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="this_proxy_entity"
+					orbitstartingtheta="270"
+					proxy="stack_entity"
+					pushentity="true"
+				/>
+				<setproxy target="stack_entity" />
+			</hasmodifier>
+			<hasmodifier name="SilhouetteOrbit3">
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="this_proxy_entity"
+					orbitstartingtheta="90"
+					pushentity="true"
+				/>
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="this_proxy_entity"
+					orbitstartingtheta="210"
+					proxy="stack_entity"
+					pushentity="true"
+				/>
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="this_proxy_entity"
+					orbitstartingtheta="330"
+					proxy="stack_entity"
+					pushentity="true"
+				/>
+				<setproxy target="stack_entity" />
+			</hasmodifier>
+			<hasmodifier name="SilhouetteOrbit4">
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="this_proxy_entity"
+					orbitstartingtheta="90"
+					pushentity="true"
+				/>
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="this_proxy_entity"
+					orbitstartingtheta="270"
+					proxy="stack_entity"
+					pushentity="true"
+				/>
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="this_proxy_entity"
+					orbitstartingtheta="180"
+					proxy="stack_entity"
+					pushentity="true"
+				/>
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="this_proxy_entity"
+					orbitstartingtheta="360"
+					proxy="stack_entity"
+					pushentity="true"
+				/>
+				<setproxy target="stack_entity" />
+			</hasmodifier>
+			
+			<!-- Make orbits for the Hero, linking them to the old orbits in a proxy chain -->
+						
+			<hasmodifier name="SilhouetteOrbit1">
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="source_entity"
+					orbitstartingtheta="90"
+					proxy="this_proxy_entity"
+					pushentity="true"
+				/>
+				<setproxy target="stack_entity" />
+			</hasmodifier>
+			<hasmodifier name="SilhouetteOrbit2">
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="source_entity"
+					orbitstartingtheta="90"
+					proxy="this_proxy_entity"
+					pushentity="true"
+				/>
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="source_entity"
+					orbitstartingtheta="270"
+					proxy="stack_entity"
+					pushentity="true"
+				/>
+				<setproxy target="stack_entity" />
+			</hasmodifier>
+			<hasmodifier name="SilhouetteOrbit3">
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="source_entity"
+					orbitstartingtheta="90"
+					proxy="this_proxy_entity"
+					pushentity="true"
+				/>
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="source_entity"
+					orbitstartingtheta="210"
+					proxy="stack_entity"
+					pushentity="true"
+				/>
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="source_entity"
+					orbitstartingtheta="330"
+					proxy="stack_entity"
+					pushentity="true"
+				/>
+				<setproxy target="stack_entity" />
+			</hasmodifier>
+			<hasmodifier name="SilhouetteOrbit4">
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="source_entity"
+					orbitstartingtheta="90"
+					proxy="this_proxy_entity"
+					pushentity="true"
+				/>
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="source_entity"
+					orbitstartingtheta="270"
+					proxy="stack_entity"
+					pushentity="true"
+				/>
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="source_entity"
+					orbitstartingtheta="180"
+					proxy="stack_entity"
+					pushentity="true"
+				/>
+				<spawnprojectile
+					name="Projectile_Silhouette_Ability4_Orbit"
+					source="source_entity"
+					target="source_entity"
+					orbitstartingtheta="360"
+					proxy="stack_entity"
+					pushentity="true"
+				/>
+				<setproxy target="stack_entity" />
+			</hasmodifier>
+		
+			<!-- Right now the current this_proxy_entity is the last orbit in the chain. Link it to Ability 1! -->
+						
+			<pushability name="Ability_Silhouette1" />
+			<setproxy entity="stack_entity" target="this_proxy_entity" />
+			<setproxy entity="this_entity" target="" />
+		</isready>
+
+			<hasmodifier name="krosmode">
+				<starttimer duration="35000" entity="this_entity" />
+				<resetcooldown entity="this_entity" />
+			</hasmodifier>
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Silhouette.Alt12" 
+		icon="/heroes/silhouette/alt12/ability_04/icon.tga"
+	>
+	</altavatar>
+	
+</ability>

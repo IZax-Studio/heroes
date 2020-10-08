@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".425">
+
+			<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2000"
+				volume=".5"
+				sample="../sounds/cast2.wav"
+			/>
+
+			<simpleemitter
+				count="1"
+				life="150"
+				position="0 0 55"
+				spawnrate="1000"
+				particlelife="500"
+				gravity="0"
+				direction="0 0 0"
+				material="/shared/effects/materials/twirl_blend.material"
+			>
+				<particle
+					color="1 1 1"
+					startalpha="0"
+					midalpha=".3"
+					endalpha="0"
+					maxangle="360"
+					anglespeed="-30"
+					startsize="400"
+					endsize="0"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					rollspeed="-360"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				count="1"
+				life="150"
+				position="0 0 55"
+				spawnrate="1000"
+				particlelife="500"
+				gravity="0"
+				direction="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+			>
+				<particle
+					color=".25"
+					startalpha="0"
+					midalpha=".3"
+					endalpha="0"
+					startsize="400"
+					endsize="0"
+					lockup="1"
+					lockright="1"
+					pitch="-90"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="2500"
+				count="1"
+				particlelife="500"
+				offsetsphere="0 0 0"
+				position="0 0 55"
+				minangle="0"
+				maxangle="0"
+				direction="0 0 0"
+			>
+				<particle
+					turn="true"
+				>
+					<billboard
+						life="500"
+						color="1 1 1"
+						startalpha=".5"
+						midalpha=".5"
+						endalpha="0"
+						midalphapos="0.75"
+						startparam=".25"
+						endparam="0"
+						startsize="500"
+						endsize="200"
+						depthbias="-100"
+						position="0 0 0"
+						material="/shared/effects/materials/refract_ring.material"
+						lockup="true"
+						pitch="90"
+					/>
+				</particle>
+			</simpleemitter>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>
+
+

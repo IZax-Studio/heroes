@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+
+		<modifier
+			name="modifier0"
+			color="1 1 1"
+			alpha="0"
+		/>
+		
+		<particlesystem name="system0" space="world" scale="2">
+
+			<model
+				life="4250"
+				model="log_death/model.mdf"
+				anim="idle"
+				startcolor="1 1 1"
+				midcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".5"
+				expirelife="500"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".5"
+				scale=".65"
+			/>
+
+			<template name="dust">
+				<simpleemitter
+					life="500"
+					bone="{bone}"
+					gravity="-1"
+					spawnrate="100"
+					minparticlelife="1000"
+					maxparticlelife="2000"
+					offsetsphere="35 35 35"
+					material="/shared/effects/materials/dust_smoke_10.material"
+					depthbias="-55"
+					inheritvelocity="-0.1"
+				>
+					<particle 
+						minangle="-180"
+						maxangle="180"
+						color=".5 .5 .4"
+						size="10"
+						minstartscale="5"
+						maxstartscale="10"
+						minendscale="12"
+						maxendscale="18"
+						startalpha="0"
+						midalpha=".25"
+						midalphapos="0.75"
+						endalpha="0"
+					/>
+				</simpleemitter>
+			</template>
+
+			<instance name="dust" bone="_bone_leftfoot"/>
+			<instance name="dust" bone="_bone_rightfoot"/>
+
+			<simpleemitter
+				spawnrate="2000"
+				count="75"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				gravity="0"
+				speed="50"
+				drag=".1"
+				acceleration="100"
+				material="/shared/effects/materials/dust.material"
+				minangle="90"
+				maxangle="90"
+				direction="0 0 -1"
+				position="0 0 15"
+				offsetsphere="15 15 0"
+			>
+				<particle
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+					midalphapos=".75"
+					color=".5 .5 .4"
+					startsize="25"
+					endsize="50"
+					maxanglespeed="40"
+				/>
+			</simpleemitter>
+			
+			<groundsprite
+				delay="325"
+				life="4250"
+				material="/shared/effects/materials/earth_cracks_02.material"
+				size="38"
+				color="1"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos="0.8"
+				maxyaw="360"
+			/>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance1" particlesystem="system0" />
+		<spawnmodifier instance="instance0"/>
+		<waitfordeath  instance="instance0"/>
+		<waitfordeath  instance="instance1"/>
+	</thread>
+
+</effect>

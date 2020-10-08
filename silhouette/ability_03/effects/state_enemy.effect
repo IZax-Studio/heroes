@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true" useentityeffectscale="1">
+	<definitions>
+
+		<modifier
+			name="modifier0"
+			life="1000"
+			startcolor="1 1 1"
+			endcolor="1 1 1"
+			alpha="1"
+		/>
+	
+		<particlesystem name="system0" space="world" scale="1.25" >
+
+			<model
+				bone="_bone_centerofchest"
+				position="0 0 -50"
+				expirelife="250"
+				name="emitter0" 
+				anim="idle"
+				model="/heroes/silhouette/ability_01/effects/blades/model.mdf"
+				scale="2"
+				startcolor="1.5 1.5 1.85"
+				midcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".75"
+				startalpha="1"
+				endalpha="0"
+			>
+				<template name="glows">
+				
+					<billboard
+						bone="{zBone}"
+						expirelife="250"
+						startcolor=".2"
+						endcolor="0"
+						size="35"
+						depthbias="-25"
+						material="/shared/effects/materials/whitedot.material"
+					/>
+				
+					<billboard
+						bone="{zBone}"
+						life="500"
+						startcolor=".4"
+						endcolor="0"
+						size="35"
+						depthbias="-25"
+						material="/shared/effects/materials/whitedot.material"
+					/>
+					
+					<billboard
+						bone="{zBone}"
+						minlife="100"
+						maxlife="200"
+						startcolor=".5 .5 .5"
+						endcolor="0"
+						startsize="75"
+						endsize="30"
+						depthbias="-25"
+						material="/shared/effects/materials/blink.material"
+						minrollspeed="0"
+						maxrollspeed="-180"
+					/>
+
+				</template>
+				
+				<instance name="glows" zBone="_bone_fx_01"/>
+				<instance name="glows" zBone="_bone_fx_02"/>
+				<instance name="glows" zBone="_bone_fx_03"/>
+				<instance name="glows" zBone="_bone_fx_04"/>
+				<instance name="glows" zBone="_bone_fx_05"/>
+				<instance name="glows" zBone="_bone_fx_06"/>
+				<instance name="glows" zBone="_bone_fx_07"/>
+				<instance name="glows" zBone="_bone_fx_08"/>
+				<instance name="glows" zBone="_bone_fx_09"/>
+
+			</model>
+			
+
+			
+
+
+      </particlesystem>
+   </definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnmodifier instance="instance1" modifier="modifier0"/>  
+	
+	<waitfordeath instance="instance0" />
+	<wait duration="20000"/>
+	<!-- <die /> -->
+</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Silhouette_Ability4_Shadow"
+	
+	icon="icon4.tga"
+	ishidden="true"
+	
+	modifierkey="silhouetteillusionmod"
+>
+	<ondeath>
+		<expirestate name="State_Silhouette_Ability4_On" target="proxy_entity" />
+		<playeffect effect="effects/death.effect" target="target_position" source="target_position" />
+	</ondeath>
+	
+	<onexpired>
+		<expirestate name="State_Silhouette_Ability4_On" target="proxy_entity" />
+	</onexpired>
+	
+	<modifier key="soccer" modpriority="150">
+		<onattackstart>
+			<addattackpreimpactactions>
+				<cantarget targetscheme="enemy_units">
+					<bonusdamageadd target="" a="-40" />
+				</cantarget>
+			</addattackpreimpactactions>
+		</onattackstart>	
+	</modifier>
+	
+	<altavatar key="Hero_Silhouette.Alt12"
+	    icon="/heroes/silhouette/alt12/ability_04/icon.tga"
+	/>
+	
+</state>

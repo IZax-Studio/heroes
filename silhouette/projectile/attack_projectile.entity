@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_SilhouetteAttack"
+
+	speed="1200"
+	gravity="0"
+	modelscale=".85"
+	model="effects/shuriken/shuriken.mdf"
+
+	impacteffect="effects/impact.effect"
+	traileffect="effects/trail.effect"
+>
+	<altavatar key="Hero_Silhouette.Alt2"
+		model="../alt2/projectile/effects/shuriken/shuriken.mdf"
+		impacteffect="../alt2/projectile/effects/impact.effect"
+		traileffect="../alt2/projectile/effects/trail.effect"
+		modelscale="2.1"
+	/>
+	
+	<altavatar key="Hero_Silhouette.Alt3"
+		model="../alt3/projectile/effects/shuriken/shuriken.mdf"
+		impacteffect="../alt3/projectile/effects/impact.effect"
+		traileffect="../alt3/projectile/effects/trail.effect"
+		modelscale="2.1"
+	/>
+	
+	<altavatar key="Hero_Silhouette.Alt4"
+		model="../alt4/projectile/effects/dagger/model.mdf"
+		impacteffect="../alt4/projectile/effects/impact.effect"
+		traileffect="../alt4/projectile/effects/trail.effect"
+	/>
+
+	<altavatar key="Hero_Silhouette.Alt5"
+		model="../alt5/projectile/effects/dagger/model.mdf"
+		impacteffect="../alt5/projectile/effects/impact.effect"
+		traileffect="../alt5/projectile/effects/trail.effect"
+		modelscale="2"
+	/>
+	
+	<altavatar key="Hero_Silhouette.Alt6"
+		model="../alt6/projectile/effects/shuriken/shuriken.mdf"
+		traileffect="../alt6/projectile/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Silhouette.Alt7"
+		model="../alt8/projectile/effects/shuriken/model.mdf"
+		traileffect="../alt8/projectile/effects/trail.effect"
+		impacteffect="../alt8/projectile/effects/impact.effect"
+		modelscale="4"
+	/>
+	
+	<altavatar key="Hero_Silhouette.Alt8"
+		model="../alt8/projectile/effects/shuriken/model.mdf"
+		traileffect="../alt8/projectile/effects/trail.effect"
+		impacteffect="../alt8/projectile/effects/impact.effect"
+		modelscale="4"
+	/>
+	
+	<altavatar key="Hero_Silhouette.Alt10"
+		model="../alt10/projectile/effects/shuriken/shuriken.mdf"
+		traileffect="../alt10/projectile/effects/trail.effect"
+		modelscale=".75"
+	/>
+	
+	<altavatar key="Hero_Silhouette.Alt12"
+		traileffect="../alt12/projectile/effects/trail.effect"
+		impacteffect="../alt12/projectile/effects/impact.effect"
+		modelscale="1"
+	/>
+	
+	<altavatar key="Hero_Silhouette.Alt13"
+		traileffect="../alt13/projectile/effects/trail.effect"
+		impacteffect="../alt13/projectile/effects/impact.effect"
+		modelscale="1"
+	/>
+	
+</projectile>
