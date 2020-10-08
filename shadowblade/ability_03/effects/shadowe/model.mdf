@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="wind.model" type="K2" high="wind.model" med="wind.model" low="wind.model" >
+	
+	<anim name="idle" clip="clips/default_1.clip" fps="30" loop="true" blendtime="150">
+	<startevent cmd="StopSound 1"/>
+	</anim>
+	
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="30" loop="false">
+		 <frameevent frame="6" cmd="PlaySoundLinear /heroes/shadowblade/sounds/whooshinti_%.wav 0 1300 .83"/>
+	</anim>
+	
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="30" loop="false">
+	    <frameevent frame="6" cmd="PlaySoundLinear /heroes/shadowblade/sounds/whooshinti_%.wav 0 1300 .83"/>
+	</anim>
+	
+	<anim name="walk_1" clip="clips/default_1.clip" fps="30" loop="true" loopbackframe="-5">
+	</anim>
+	
+	<anim name="death_1" clip="clips/death_1.clip" fps="30" loop="true" loopbackframe="-1">
+	<startevent cmd="StopSound 1"/>
+	</anim>
+	
+	<anim name="ability_3" clip="clips/ability_3.clip" fps="40" loop="false">
+	<frameevent frame="1" cmd="PlaySoundLinear /heroes/shadowblade/sounds/ability.wav 400 1300 1"/>
+	<frameevent frame="1" cmd="PlaySoundLinear /heroes/shadowblade/ability_03/sounds/cast.wav 400 1300 .50"/>
+	</anim>
+	
+	<anim name="ability_4" clip="clips/ability_4.clip" fps="30" loop="false">
+	 	<frameevent frame="1" cmd="PlaySoundLinear /heroes/shadowblade/sounds/laughter.wav 400 1300 1"/>
+		<frameevent frame="1" cmd="PlaySoundLinear /heroes/shadowblade/ability_04/sounds/cast.wav 400 1300 1"/>
+	</anim>
+
+	<anim name="bored_1" clip="clips/bored_1.clip" fps="30" loop="false"/>
+
+	<anim name="item_1" clip="clips/item_1.clip" fps="30" loop="false"/>
+
+	<anim name="knock_1" clip="clips/knock_1.clip" loop="true" loopbackframe="-1"/>
+
+	<anim name="taunt_1" clip="clips/taunt_1.clip" fps="30" loop="false"/>
+
+	<anim name="portrait" clip="clips/portrait_1.clip" fps="30" loop="true"/>
+	
+</model>

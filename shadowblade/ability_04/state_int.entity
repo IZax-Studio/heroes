@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_ShadowBlade_Ability4_Intelligence"
+
+	icon="icon4.tga"
+	passiveeffect="effects/passiveint.effect"
+	displaylevel="true"
+	propagatetoillusions="true"
+	
+	intelligencepercharge="1"
+	
+	modifierkey="Shadowblade_R_Int"
+	modifierkey2=""
+	deathpersist="true"
+	
+	effecttype=""
+>	
+	<onframe>
+		<hasmodifier name="iamsheeped" entity="this_owner_entity" >
+			<activatemodifierkey name="iamsheeped" />
+		</hasmodifier>
+		<else>
+			<deactivatemodifierkey name="iamsheeped" />
+		</else>
+		
+	</onframe>
+	
+	<onattackpreimpact />
+	
+	<onattackimpact />
+	
+	<modifier key="iamsheeped" modpriority="1000"
+		passiveeffect=""
+	/>
+
+	<modifier key="ult_boost" modpriority="101"	>
+		<!-- Int bonus passive -->
+		<onattackimpact effectdescription="true" >
+			<cantarget targetscheme="enemy_units" effecttype="Magic">
+			<setvar0 a="source_intelligence" b="0.4,0.6,0.8" op="mult" />
+			<takemana effecttype="Magic" amount="1" b="var0" op="mult" />
+			<givemana effecttype="Magic" amount="1" b="var0" op="mult" target="source_entity" />
+			<popup name="execution" a="var0" source="source_entity" target="target_entity" />
+			</cantarget>
+		</onattackimpact>
+	</modifier>
+
+	<modifier key="krosmode" modpriority="100"
+		deathpersist="false"
+	/>
+	
+	<altavatar key="Hero_ShadowBlade.Alt3" modpriority="90"
+		passiveeffect="../alt3/ability_04/effects/shadowr/effects/passiveint.effect"
+		modifierkey2="shadowr_Alt3"
+	/>
+	
+	<altavatar key="Hero_ShadowBlade.Alt4" modpriority="90"
+		passiveeffect="../alt4/ability_04/effects/passiveint.effect"
+	/>
+	
+	<altavatar key="Hero_ShadowBlade.Alt5" modpriority="90"
+		passiveeffect="../alt5/ability_04/effects/passiveint.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_ShadowBlade.Alt6" modpriority="90"
+		passiveeffect="../alt6/ability_04/effects/passiveint.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_ShadowBlade.Alt7" modpriority="90"
+	    icon="../alt7/ability_04/icon.tga"
+		passiveeffect="../alt7/ability_04/effects/passiveint.effect"
+	>
+	</altavatar>
+</state>

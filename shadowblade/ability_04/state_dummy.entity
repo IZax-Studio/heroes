@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_ShadowBlade_Ability4_Dummy"
+
+	icon="icon4.tga"
+	ishidden="true"
+	serverentity="true"
+	effecttype=""
+
+>
+	<onexpired>
+		<!-- Logic to set the correct primary stat based on Shadowblade's form if targeting self -->
+		<compare a="target_entity" b="source_entity" op="eq">
+			<condition test="hasstate State_ShadowBlade_Ability2_Morph" target="source_entity">
+				<applystate name="State_ShadowBlade_Ability4_Agility" duration="-1" target="source_entity" pushentity="true" />
+				<evaluate a="target_agility" b="0.2,0.35,0.5" op="mult" />
+				<setcharges entity="stack_entity" a="result" />
+			</condition>
+			<else>
+				<condition test="hasstate State_ShadowBlade_Ability1_Morph" target="source_entity">
+					<applystate name="State_ShadowBlade_Ability4_Strength" duration="-1" target="source_entity" pushentity="true" />
+					<evaluate a="target_strength" b="0.2,0.35,0.5" op="mult" />
+					<setcharges entity="stack_entity" a="result" />
+				</condition>
+				<else>
+					<condition test="hasstate State_ShadowBlade_Ability3_Morph" target="source_entity">
+						<applystate name="State_ShadowBlade_Ability4_Intelligence" duration="-1" target="source_entity" pushentity="true" />
+						<evaluate a="target_intelligence" b="0.2,0.35,0.5" op="mult" />
+						<setcharges entity="stack_entity" a="result" />
+					</condition>
+					
+					<!-- If Shadowblade is not in 1 of his 3 forms, default to Agility -->
+					<else>
+						<applystate name="State_ShadowBlade_Ability4_Agility" duration="-1" target="source_entity" pushentity="true" />
+						<evaluate a="target_agility" b="0.2,0.35,0.5" op="mult" />
+						<setcharges entity="stack_entity" a="result" />
+					</else>
+				</else>
+			</else>
+		</compare>
+
+		<else>
+			<!-- If targeting another unit, default to checking the target's Primary Attribute -->
+			<!-- Subtract bonus Str/Agi/Int from Shadowblade's R state if the target has this state already -->
+			
+			<targettype target="target_entity" type="Agility">
+				<hasmodifier entity="target_entity" name="Shadowblade_R_Agi">
+					<applystate name="State_ShadowBlade_Ability4_Agility" duration="0" target="target_entity" pushentity="true" />
+					<addcharges count="0" entity="stack_entity" />
+					<setaccumulator value="result" />
+				</hasmodifier>
+				
+				<applystate name="State_ShadowBlade_Ability4_Agility" duration="-1" target="source_entity" pushentity="true" />
+				<evaluate a="target_agility" b="accumulator" op="sub" />
+				<evaluate a="result" b="0.2,0.35,0.5" op="mult" />
+				<setcharges entity="stack_entity" a="result" />
+			</targettype>
+			<else>
+				<targettype target="target_entity" type="Strength">
+					<hasmodifier entity="target_entity" name="Shadowblade_R_Str">
+						<applystate name="State_ShadowBlade_Ability4_Strength" duration="0" target="target_entity" pushentity="true" />
+						<addcharges count="0" entity="stack_entity" />
+						<setaccumulator value="result" />
+					</hasmodifier>
+				
+					<applystate name="State_ShadowBlade_Ability4_Strength" duration="-1" target="source_entity" pushentity="true" />
+					<evaluate a="target_strength" b="accumulator" op="sub" />
+					<evaluate a="result" b="0.2,0.35,0.5" op="mult" />
+					<setcharges entity="stack_entity" a="result" />
+				</targettype>
+				<else>
+					<targettype target="target_entity" type="Intelligence">
+						<hasmodifier entity="target_entity" name="Shadowblade_R_Int">
+							<applystate name="State_ShadowBlade_Ability4_Intelligence" duration="0" target="target_entity" pushentity="true" />
+							<addcharges count="0" entity="stack_entity" />
+							<setaccumulator value="result" />
+						</hasmodifier>
+					
+						<applystate name="State_ShadowBlade_Ability4_Intelligence" duration="-1" target="source_entity" pushentity="true" />
+						<evaluate a="target_intelligence" b="accumulator" op="sub" />
+						<evaluate a="result" b="0.2,0.35,0.5" op="mult" />
+						<setcharges entity="stack_entity" a="result" />
+					</targettype>
+				</else>
+			</else>
+		</else>
+	</onexpired>
+	
+    <altavatar key="Hero_ShadowBlade.Alt7"
+	    icon="../alt7/ability_04/icon.tga"
+	/>
+	
+</state>

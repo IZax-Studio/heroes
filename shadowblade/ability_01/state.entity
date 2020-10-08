@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_ShadowBlade_Ability1"
+
+	icon="icon1.tga"
+	passiveeffect="effects/state_enemy.effect"
+	effecttype="StatusDebuff"
+
+	movespeedslow="0.25"
+	allowtransfer="true"
+
+	negativeeffect="slowed"
+>
+	<altavatar key="Hero_ShadowBlade.Alt4" modpriority="90"
+		passiveeffect="../alt4/ability_01/effects/state_enemy.effect"
+	/>
+	
+	<altavatar key="Hero_ShadowBlade.Alt5" modpriority="90"
+		passiveeffect="../alt5/ability_01/effects/state_enemy.effect"
+	/>
+	
+	<altavatar key="Hero_ShadowBlade.Alt6" modpriority="90"
+		passiveeffect="../alt6/ability_01/effects/state_enemy.effect"
+	/>
+	
+	<altavatar key="Hero_ShadowBlade.Alt7" modpriority="90"
+	    icon="/heroes/shadowblade/alt7/ability_01/icon.tga"
+		passiveeffect="../alt7/ability_01/effects/state_enemy.effect"
+	/>
+</state>

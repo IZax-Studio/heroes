@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_ShadowBlade_Ability3_Morph_Krosmode"
+
+	icon="icon3.tga"
+	passiveeffect=""
+	ishidden="true"
+
+	propagatetoillusions="true"
+	
+	effecttype=""
+
+	attackrange="600"
+	morphattacktype="ranged"
+	morphattackprojectile="Projectile_ShadowBlade_Ability3"
+	morphpriority="100"
+>
+	<onframe>
+		<hasmodifier entity="this_owner_entity" name="shadowe" />
+		<else>
+			<expire />
+		</else>
+	</onframe>
+</state>

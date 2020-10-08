@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1.65">
+		
+
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume="1"
+				sample="../sounds/cast.wav"
+			/>
+			
+						<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume="1"
+				sample="../../sounds/ability.wav"
+			/>
+			
+
+			<simpleemitter
+				count="1"
+				spawnrate="5000"
+				particlelife="6000"
+				acceleration="0.0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+				position="0 0 -30"
+				offsetsphere="0 0 0"
+			>
+				<particle
+					turn="0"
+				>
+					<model
+						life="6000"
+						model="motion_rig/model.mdf"
+						anim="idle"
+						color="1 1 2"
+						scale="1"
+						startalpha="0"
+						midalpha="0"
+						endalpha="0"
+						midalphapos=".25"
+					>
+					
+					<model
+						bone="_bone_fx_01"
+						life="6000"
+						model=""
+						anim="idle"
+						startcolor="1.5 1 2"
+						endcolor=".75 .5 1"
+						scale=".9"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".99"
+						pitch="-50"
+						directionalspace="local"
+					>
+
+						<template name="trails">
+						
+							<twopointtrailemitter
+								count="75"
+								bone_a="{bone01}"
+								bone_b="{bone02}"
+								spawnrate="50"
+								particlelife="750"
+								gravity="5"
+								subframepose="1"
+								drag="0.01"
+								speed="100"
+								direction="0 -1 0"
+								minangle="0"
+								maxangle="0"
+								texpostime="750"
+								texposscale="0"
+								texstretchscale="1"
+								material="/shared/effects/materials/lightning_02.material"
+								startparticlealpha="1"
+								endparticlealpha="0"
+								depthbias="500"
+							>
+								<particle
+									color=".5"
+									startalpha=".5"
+									endalpha="0"
+								/>
+							</twopointtrailemitter>
+
+							<twopointtrailemitter
+								count="75"
+								bone_a="{bone01}"
+								bone_b="{bone02}"
+								spawnrate="50"
+								particlelife="500"
+								gravity="5"
+								subframepose="1"
+								drag="0.01"
+								speed="100"
+								direction="0 -1 0"
+								texpostime="500"
+								texposscale="0"
+								texstretchscale="1"
+								material="/shared/effects/materials/lightning_02.material"
+								startparticlealpha="1"
+								endparticlealpha="0"
+								depthbias="500"
+							>
+								<particle
+									color=".5"
+									startalpha=".5"
+									endalpha="0"
+								/>
+							</twopointtrailemitter>
+							
+							<twopointtrailemitter
+								delay="750"
+								count="75"
+								bone_a="{bone01}"
+								bone_b="{bone02}"
+								spawnrate="35"
+								particlelife="750"
+								gravity="5"
+								subframepose="1"
+								drag="0.01"
+								speed="100"
+								direction="0 -1 0"
+								minangle="0"
+								maxangle="0"
+								texpostime="750"
+								texposscale="0"
+								texstretchscale="1"
+								material="/shared/effects/materials/lightning_02.material"
+								startparticlealpha="1"
+								endparticlealpha="0"
+							>
+								<particle
+									color=".5"
+									startalpha=".25"
+									endalpha="0"
+								/>
+							</twopointtrailemitter>
+
+							<twopointtrailemitter
+								delay="750"
+								bone_a="{bone01}"
+								bone_b="{bone02}"
+								spawnrate="35"
+								particlelife="500"
+								gravity="5"
+								subframepose="1"
+								drag="0.01"
+								speed="100"
+								direction="0 -1 0"
+								texpostime="500"
+								texposscale="0"
+								texstretchscale="1"
+								material="/shared/effects/materials/lightning_02.material"
+								startparticlealpha="1"
+								endparticlealpha="0"
+							>
+								<particle
+									color=".5"
+									startalpha=".25"
+									endalpha="0"
+								/>
+							</twopointtrailemitter>
+						</template>
+
+						<instance name="trails" bone01="Bip01 L UpperArm" bone02="Bip01 L Hand"/>
+						<instance name="trails" bone01="Bip01 R UpperArm" bone02="Bip01 R Hand"/>
+
+						<simpleemitter
+							bone=""
+							spawnrate="50"
+							particlelife="500"
+							gravity="0"
+							speed="0"
+							position="0 0 0"
+							acceleration="11"
+							material="/shared/effects/materials/fire_add.material"
+							offsetsphere="20"
+							drag="0.01"
+							direction="1 0 0"
+							depthbias="50"
+							
+						>
+							<particle 
+								startstickiness="0"
+								endstickiness="1"
+								startcolor=".25 0 .25"
+								midcolor=".25 0 .25"
+								endcolor="0 0 0"
+								midcolorpos=".1"
+								startsize="35"
+								endsize="0"	
+								turn="1"
+								heightdistort="0.1"				
+							
+							/>
+						</simpleemitter>
+						
+						<simpleemitter
+							bone="eyeball"
+							spawnrate="10"
+							particlelife="500"
+							gravity="0"
+							speed="0"
+							position="0 0 0"
+							acceleration="11"
+							material="/shared/effects/materials/lightning_02.material"
+							offsetsphere="20"
+							drag="0.01"
+							direction="1 0 0"
+							depthbias="25"
+							
+						>
+							<particle 
+								param=".1"
+								color="1 1 1"
+								startsize="100"
+								endsize="0"	
+								turn="1"
+								heightdistort="0.05"	
+								startalpha="0"					
+								midalpha=".5"					
+								endalpha="0"					
+
+							/>
+						</simpleemitter>
+						
+						<billboard
+							bone="eyeball"
+							expirelife="310"
+							startcolor="0 0 .3"
+							endcolor="0 0 0"
+							startsize="300"
+							endsize="300"
+							depthbias="0"
+							material="/shared/effects/materials/whitedot.material"
+						/>
+
+						<billboard
+							bone="eyeball"
+							life="310"
+							color=".25 0 .75"
+							startsize="200"
+							midsize="10"
+							endsize="200"
+							depthbias="0"
+							material="/shared/effects/materials/flare_03.material"
+							loop="1"
+						/>	
+
+						<billboard
+							bone="eyeball"
+							life="200"
+							color="0 0 .75"
+							startsize="200"
+							midsize="10"
+							endsize="200"
+							depthbias="0"
+							material="/shared/effects/materials/flare_03.material"
+							loop="1"
+						/>	
+
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+
+						
+						<billboard
+							delay="1350"
+							bone="_bone_fx_01"
+							life="6000"
+							startcolor=".4 0 .8"
+							endcolor="0"
+							midcolorpos="0.75"
+							size="60"
+							depthbias="-25"
+							material="/shared/effects/materials/whitedot.material"
+							position="0 0 0"
+						/>
+
+						<billboard
+							delay="1350"
+							bone="_bone_fx_01"
+							life="6000"
+							startcolor=".5 0 1"
+							endcolor="0"
+							midcolorpos="0.75"
+							size="8"
+							depthbias="-25"
+							material="/shared/effects/materials/whitedot.material"
+							position="0 0 0"
+						/>
+
+						<billboard
+							delay="1350"
+							bone="_bone_fx_01"
+							life="6000"
+							startcolor="1"
+							endcolor="0"
+							midcolorpos="0.75"
+							size="5"
+							depthbias="-25"
+							material="/shared/effects/materials/whitedot.material"
+							position="0 0 0"
+						/>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+
+						<simpleemitter
+							life="1300"
+							bone=""
+							spawnrate="100"
+							minparticlelife="500"
+							maxparticlelife="1500"
+							gravity="0"
+							speed="0"
+							position="0 0 0"
+							acceleration="11"
+							material="/shared/effects/materials/fire_add.material"
+							offsetsphere="20"
+							drag="0.01"
+							direction="1 0 0"
+						>
+							<particle
+								startcolor=".25 0 .25"
+								midcolor=".25 0 .25"
+								endcolor="0 0 0"
+								midcolorpos=".5"
+								startsize="60"
+								endsize="0"
+								turn="1"
+								heightdistort="0.05"
+							
+							/>
+						</simpleemitter>
+						
+						<simpleemitter
+							life="1000"
+							bone=""
+							spawnrate="50"
+							particlelife="1500"
+							gravity="0"
+							speed="0"
+							position="0 0 0"
+							acceleration="11"
+							material="/shared/effects/materials/heathaze.material"
+							offsetsphere="20"
+							drag="0.01"
+							direction="1 0 0"
+						>
+							<particle
+								param=".1"
+								color="1 1 1"
+								startsize="50"
+								endsize="0"
+								turn="1"
+								heightdistort="0.05"
+								startalpha=".5"
+								endalpha="0"
+							/>
+						</simpleemitter>
+
+					</model>
+					
+					<model
+						bone="_bone_fx_01"
+						life="2250"
+						model=""
+						anim="idle"
+						color=".5 0 1"
+						scale=".9"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".5"
+						pitch="-50"
+						directionalspace="local"
+					/>
+					
+				
+						
+					</model>
+
+				</particle>
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+	</thread>
+
+</effect>

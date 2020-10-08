@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+	
+
+
+		<particlesystem name="system0" space="world" scale="1">
+
+			<simpleemitter		
+				bone="_bone_rightfoot"
+				position="0 0 10"
+				inheritvelocity=".2"
+				spawnrate="100"			
+				particlelife="700"			
+				gravity="0"
+				speed="20"
+				drag=".5"
+				depthbias="0"
+				material="/shared/effects/materials/cloud.material"
+				offsetsphere="5"
+				minangle="-265"
+				maxangle="265"
+				direction="0 0 -1"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-10"
+					maxanglespeed="10"
+					startsize="30"
+					endsize="50"
+					startalpha="0.0"
+					midalpha=".1"
+					endalpha="0"
+					midalphapos=".1"
+					anchor="1"
+				/>
+			</simpleemitter>		
+		
+			<simpleemitter		
+				bone="_bone_leftfoot"
+				position="0 0 10"
+				inheritvelocity=".2"
+				spawnrate="100"			
+				particlelife="700"			
+				gravity="0"
+				speed="20"
+				drag=".5"
+				depthbias="0"
+				material="/shared/effects/materials/cloud.material"
+				offsetsphere="5"
+				minangle="-265"
+				maxangle="265"
+				direction="0 0 -1"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-10"
+					maxanglespeed="10"
+					startsize="30"
+					endsize="50"
+					startalpha="0.0"
+					midalpha=".1"
+					endalpha="0"
+					midalphapos=".1"
+					anchor="1"
+				/>
+			</simpleemitter>		
+		
+			<simpleemitter		
+				bone="_bone_origin"
+				position="0 0 10"
+				inheritvelocity=".2"
+				spawnrate="100"			
+				particlelife="700"			
+				gravity="0"
+				speed="20"
+				drag=".5"
+				depthbias="0"
+				material="/shared/effects/materials/cloud.material"
+				offsetsphere="5"
+				minangle="-265"
+				maxangle="265"
+				direction="0 0 -1"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-10"
+					maxanglespeed="10"
+					startsize="100"
+					endsize="200"
+					startalpha="0.0"
+					midalpha=".1"
+					endalpha="0"
+					midalphapos=".1"
+					anchor="1"
+				/>
+			</simpleemitter>		
+		
+			<simpleemitter		
+				bone="wrist_L"
+				position="0 0 10"
+				inheritvelocity=".2"
+				spawnrate="100"			
+				particlelife="700"			
+				gravity="0"
+				speed="20"
+				drag=".5"
+				depthbias="0"
+				material="/shared/effects/materials/cloud.material"
+				offsetsphere="5"
+				minangle="-265"
+				maxangle="265"
+				direction="0 0 -1"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-10"
+					maxanglespeed="10"
+					startsize="30"
+					endsize="50"
+					startalpha="0.0"
+					midalpha=".1"
+					endalpha="0"
+					midalphapos=".1"
+					anchor="1"
+				/>
+			</simpleemitter>
+
+			<simpleemitter		
+				bone="elbow_L"
+				position="0 0 10"
+				inheritvelocity=".2"
+				spawnrate="100"			
+				particlelife="700"			
+				gravity="0"
+				speed="20"
+				drag=".5"
+				depthbias="0"
+				material="/shared/effects/materials/cloud.material"
+				offsetsphere="5"
+				minangle="-265"
+				maxangle="265"
+				direction="0 0 -1"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-10"
+					maxanglespeed="10"
+					startsize="30"
+					endsize="50"
+					startalpha="0.0"
+					midalpha=".1"
+					endalpha="0"
+					midalphapos=".1"
+					anchor="1"
+				/>
+			</simpleemitter>			
+
+			<twopointemitter
+				spawnrate="100"
+				minparticlelife="600"
+				maxparticlelife="1200"
+				bone_a="elbow_L"
+				bone_b="clavicle_L"
+				offsetsphere="5"
+				maxspeed="50"
+				direction="0 0 0"
+				gravity="0"
+				material="/shared/effects/materials/cloud.material"
+			>
+				<particle
+					maxangle="720"
+					minstartscale="10"
+					maxstartscale="20"
+					minendscale="7"
+					maxendscale="10"
+					startalpha="0"
+					midalpha=".1"
+					endalpha="0"
+					startanchor=".8"
+					endanchor=".6"
+				/>
+			</twopointemitter>
+			
+			<simpleemitter		
+				bone="wrist_R"
+				position="0 0 10"
+				inheritvelocity=".2"
+				spawnrate="100"			
+				particlelife="700"			
+				gravity="0"
+				speed="20"
+				drag=".5"
+				depthbias="0"
+				material="/shared/effects/materials/cloud.material"
+				offsetsphere="5"
+				minangle="-265"
+				maxangle="265"
+				direction="0 0 -1"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-10"
+					maxanglespeed="10"
+					startsize="30"
+					endsize="50"
+					startalpha="0.0"
+					midalpha=".1"
+					endalpha="0"
+					midalphapos=".1"
+					anchor="1"
+				/>
+			</simpleemitter>
+
+			<simpleemitter		
+				bone="elbow_R"
+				position="0 0 10"
+				inheritvelocity=".2"
+				spawnrate="100"			
+				particlelife="700"			
+				gravity="0"
+				speed="20"
+				drag=".5"
+				depthbias="0"
+				material="/shared/effects/materials/cloud.material"
+				offsetsphere="5"
+				minangle="-265"
+				maxangle="265"
+				direction="0 0 -1"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-10"
+					maxanglespeed="10"
+					startsize="30"
+					endsize="50"
+					startalpha="0.0"
+					midalpha=".1"
+					endalpha="0"
+					midalphapos=".1"
+					anchor="1"
+				/>
+			</simpleemitter>			
+
+			<twopointemitter
+				spawnrate="100"
+				minparticlelife="600"
+				maxparticlelife="1200"
+				bone_a="elbow_R"
+				bone_b="clavicle_R"
+				offsetsphere="5"
+				maxspeed="50"
+				direction="0 0 0"
+				gravity="0"
+				material="/shared/effects/materials/cloud.material"
+			>
+				<particle
+					maxangle="720"
+					minstartscale="10"
+					maxstartscale="20"
+					minendscale="7"
+					maxendscale="10"
+					startalpha="0"
+					midalpha=".1"
+					endalpha="0"
+					startanchor=".8"
+					endanchor=".6"
+				/>
+			</twopointemitter>
+
+			<simpleemitter		
+				bone="_bone_centerofchest"
+				position="0 0 10"
+				inheritvelocity=".2"
+				spawnrate="100"			
+				particlelife="700"			
+				gravity="0"
+				speed="20"
+				drag=".5"
+				depthbias="0"
+				material="/shared/effects/materials/cloud.material"
+				offsetsphere="5"
+				minangle="-265"
+				maxangle="265"
+				direction="0 0 -1"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-10"
+					maxanglespeed="10"
+					startsize="100"
+					endsize="150"
+					startalpha="0.0"
+					midalpha=".1"
+					endalpha="0"
+					midalphapos=".1"
+					anchor="1"
+				/>
+			</simpleemitter>			
+			
+			<twopointemitter
+				bone_a="wrist_R"
+				bone_b="clavicle_R"
+				spawnrate="200"
+				minparticlelife="100"
+				maxparticlelife="300"
+				angle="0"
+				offsetsphere="10"
+				material="/shared/effects/materials/lightning_02.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".2 .7 1"
+					endcolor="0"
+					midcolorpos="0.5"
+					minangle="0"
+					maxangle="350"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					startsize="10"
+					maxendsize="15"
+					flare="1"
+					anchor="1"
+					height="50"
+				/>
+			</twopointemitter>
+			
+			
+				<twopointemitter
+				bone_a="wrist_R"
+				bone_b="clavicle_R"
+				spawnrate="50"
+				minparticlelife="100"
+				maxparticlelife="300"
+				angle="0"
+				offsetsphere="10"
+				material="/shared/effects/materials/femme_lightning_01.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".2 .7 1"
+					endcolor="0"
+					midcolorpos="0.5"
+					minangle="0"
+					maxangle="350"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					startsize="10"
+					maxendsize="15"
+					flare="1"
+					anchor="1"
+					height="50"
+				/>
+			</twopointemitter>		
+
+			<twopointemitter
+				bone_a="wrist_L"
+				bone_b="clavicle_L"
+				spawnrate="200"
+				minparticlelife="100"
+				maxparticlelife="300"
+				angle="0"
+				offsetsphere="10"
+				material="/shared/effects/materials/lightning_02.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".2 .7 1"
+					endcolor="0"
+					midcolorpos="0.5"
+					minangle="0"
+					maxangle="350"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					startsize="10"
+					maxendsize="15"
+					flare="1"
+					anchor="1"
+					height="50"
+				/>
+			</twopointemitter>
+			
+			
+				<twopointemitter
+				bone_a="wrist_L"
+				bone_b="clavicle_L"
+				spawnrate="50"
+				minparticlelife="100"
+				maxparticlelife="300"
+				angle="0"
+				offsetsphere="10"
+				material="/shared/effects/materials/femme_lightning_01.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".2 .7 1"
+					endcolor="0"
+					midcolorpos="0.5"
+					minangle="0"
+					maxangle="350"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					startsize="10"
+					maxendsize="15"
+					flare="1"
+					anchor="1"
+					height="50"
+				/>
+			</twopointemitter>		
+
+			<terrainemitter
+				bone="_bone_centerofchest"
+				offsetradial="20"
+				offsetdirection="0 0 1"
+				spawnrate="20"
+				particlelife="500"
+				minspeed="300"
+				maxspeed="500"
+				direction="0 0 1"
+				minangle="30"
+				maxangle="60"
+				gravity="-100"
+				drag="0.02"
+				inheritvelocity="3"
+				limitinheritvelocity="1500"
+			>
+				<particle>
+					<trailemitter
+						minlife="80"
+						maxlife="120"
+						spawnrate="100"
+						particlelife="125"
+						material="/shared/effects/materials/femme_lightning_01.material"
+						offsetsphere="10"
+						texposscale="1"
+						texstretchscale="0"
+					>
+						<particle
+							startscale="1"
+							minmidscale="10"
+							maxmidscale="15"
+							minendscale="1"
+							maxendscale="5"
+							startcolor="1 1 1"
+							midcolor="0 .5 1"
+							endcolor="0"
+						/>
+					</trailemitter>
+				</particle>
+			</terrainemitter>
+			
+			<!--
+			<groundsprite
+				material="/shared/effects/materials/whitedot2.material"
+				color=".2 .2 0"
+				scale=".5"
+				yawspeed="100"
+			/>
+			
+			<groundsprite
+				life="1000"
+				loop="true"
+				material="/shared/effects/materials/whitedot2.material"
+				startcolor="0"
+				midcolor=".25"
+				endcolor="0"
+				scale=".495"
+				yawspeed="100"
+			/>
+			-->
+
+			<simpleemitter
+				spawnrate="10"
+				minparticlelife="1000"
+				maxparticlelife="1500"
+				maxspeed="10"
+				direction="0 0 1"
+				angle="0"
+				material="/shared/effects/materials/twirl_05_blend.material"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-300"
+					maxanglespeed="300"
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+					startscale="90"
+					minendscale="100"
+					maxendscale="120"
+					color="0 .5 1"
+					startalpha="0"
+					midalpha=".2"
+					endalpha="0"
+					midalphapos=".1"
+					anchor="1"
+				/>
+			</simpleemitter>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+	</thread>
+</effect>

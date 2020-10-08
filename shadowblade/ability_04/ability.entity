@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_ShadowBlade4"
+
+	icon="icon4.tga"
+	statuseffecttooltip=""
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	
+	anim="ability_4"
+	casttime="0"
+	castactiontime="0"
+
+	actiontype="target_entity"
+	casteffecttype="SuperiorMagic"
+	targetscheme="all_heroes"
+	
+	novoiceresponse="true"
+	
+	doubleactivate="true"
+	frontqueue="true"
+	inheritmovement="true"
+	nonaggressive="true"
+	
+	manacost="30"
+	cooldowntime="30000"
+	
+	range="1600"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	dynamicprecache="effects/sound.effect"
+>
+	<onlearn>
+		<setscriptvalue name="sound_effect" value="effects/sound.effect" entity="this_entity" />
+	</onlearn>
+	
+	<onimpact>
+		<!-- Sound for Shadowblade's ultimate so it occurs only while he is moving -->		
+		<targettype type="moving" target="source_entity">
+			<!-- Dynamic visual effects -->
+			<getscriptvalue name="sound_effect" destvar="str0" entity="this_entity" />
+			<playeffectdynamic effect="str0" source="source_entity" target="source_entity" occlude="true" />
+		</targettype>
+		
+		<expirestate name="State_ShadowBlade_Ability4_Intelligence" target="source_entity" />
+		<expirestate name="State_ShadowBlade_Ability4_Strength" target="source_entity" />
+		<expirestate name="State_ShadowBlade_Ability4_Agility" target="source_entity" />
+		
+		<applystate name="State_ShadowBlade_Ability4_Dummy" duration="0" />
+	</onimpact>
+	
+	<ondeath />
+
+	<onframe>
+		<compare a="accumulator" b="1" op="ge">			
+			<hasmodifier name="Shadowblade_R_Str" entity="source_entity">
+				<applystate name="State_ShadowBlade_Ability4_Strength" pushentity="true" />
+				<addcharges count="0" entity="stack_entity" />
+				<!-- Save charges, then reapply -->
+				<setvar0 a="result" />
+				
+				<expirestate name="State_ShadowBlade_Ability4_Strength" target="source_entity" />
+				<applystate name="State_ShadowBlade_Ability4_Strength" continuous="true" pushentity="true" />
+				<setcharges a="var0" entity="stack_entity" />
+			</hasmodifier>
+			<else>
+				<hasmodifier name="Shadowblade_R_Agi" entity="source_entity">
+					<applystate name="State_ShadowBlade_Ability4_Agility" pushentity="true" />
+					<addcharges count="0" entity="stack_entity" />
+					<!-- Save charges, then reapply -->
+					<setvar0 a="result" />
+					
+					<expirestate name="State_ShadowBlade_Ability4_Agility" target="source_entity" />
+					<applystate name="State_ShadowBlade_Ability4_Agility" continuous="true" pushentity="true" />
+					<setcharges a="var0" entity="stack_entity" />
+				</hasmodifier>
+				<else>
+					<hasmodifier name="Shadowblade_R_Int" entity="source_entity">
+						<applystate name="State_ShadowBlade_Ability4_Intelligence" pushentity="true" />
+						<addcharges count="0" entity="stack_entity" />
+						<!-- Save charges, then reapply -->
+						<setvar0 a="result" />
+						
+						<expirestate name="State_ShadowBlade_Ability4_Intelligence" target="source_entity" />
+						<applystate name="State_ShadowBlade_Ability4_Intelligence" continuous="true" pushentity="true" />
+						<setcharges a="var0" entity="stack_entity" />
+					</hasmodifier>
+				</else>
+			</else>
+		</compare>
+		
+		<setaccumulator value="0" />
+	</onframe>
+	
+	<modifier key="ult_boost" modpriority="100"
+		displayname="true"
+		cooldowntime="5000"
+	>
+		<onframe>
+			<compare a="accumulator" b="0" op="eq">			
+				<hasmodifier name="Shadowblade_R_Str" entity="source_entity">
+					<applystate name="State_ShadowBlade_Ability4_Strength" pushentity="true" />
+					<addcharges count="0" entity="stack_entity" />
+					<!-- Save charges, then reapply -->
+					<setvar0 a="result" />
+					
+					<expirestate name="State_ShadowBlade_Ability4_Strength" target="source_entity" />
+					<applystate name="State_ShadowBlade_Ability4_Strength" continuous="true" pushentity="true" />
+					<setcharges a="var0" entity="stack_entity" />
+				</hasmodifier>
+				<else>
+					<hasmodifier name="Shadowblade_R_Agi" entity="source_entity">
+						<applystate name="State_ShadowBlade_Ability4_Agility" pushentity="true" />
+						<addcharges count="0" entity="stack_entity" />
+						<!-- Save charges, then reapply -->
+						<setvar0 a="result" />
+						
+						<expirestate name="State_ShadowBlade_Ability4_Agility" target="source_entity" />
+						<applystate name="State_ShadowBlade_Ability4_Agility" continuous="true" pushentity="true" />
+						<setcharges a="var0" entity="stack_entity" />
+					</hasmodifier>
+					<else>
+						<hasmodifier name="Shadowblade_R_Int" entity="source_entity">
+							<applystate name="State_ShadowBlade_Ability4_Intelligence" pushentity="true" />
+							<addcharges count="0" entity="stack_entity" />
+							<!-- Save charges, then reapply -->
+							<setvar0 a="result" />
+							
+							<expirestate name="State_ShadowBlade_Ability4_Intelligence" target="source_entity" />
+							<applystate name="State_ShadowBlade_Ability4_Intelligence" continuous="true" pushentity="true" />
+							<setcharges a="var0" entity="stack_entity" />
+						</hasmodifier>
+					</else>
+				</else>
+			</compare>
+			
+			<setaccumulator value="1" />
+		</onframe>
+	</modifier>
+
+	<modifier key="krosmode" modpriority="100"
+	>
+		<ondeath>
+			<expirestate name="State_ShadowBlade_Ability4_Intelligence" target="source_entity" />
+			<expirestate name="State_ShadowBlade_Ability4_Strength" target="source_entity" />
+			<expirestate name="State_ShadowBlade_Ability4_Agility" target="source_entity" />
+		</ondeath>
+	</modifier>
+	
+	<altavatar key="Hero_ShadowBlade.Alt2"
+		dynamicprecache="../alt2/ability_04/effects/sound.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="sound_effect" value="../alt2/ability_04/effects/sound.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<!-- Sound for Shadowblade alt3's ultimate so it occurs regardless if he is standing still or moving, don't remove this plx -->	
+    <altavatar key="Hero_ShadowBlade.Alt3"
+		casteffect="../alt3/ability_04/effects/sound.effect"
+		dynamicprecache="../alt3/ability_04/effects/sound.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="sound_effect" value="../alt3/ability_04/effects/sound.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_ShadowBlade.Alt4"
+		casteffect="../alt4/ability_04/effects/sound.effect"
+		dynamicprecache="../alt4/ability_04/effects/sound.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="sound_effect" value="../alt4/ability_04/effects/sound.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+
+	<altavatar key="Hero_ShadowBlade.Alt7"
+	    icon="../alt7/ability_04/icon.tga"
+		casteffect="../alt7/ability_04/effects/sound.effect"
+		dynamicprecache="../alt7/ability_04/effects/sound.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="sound_effect" value="../alt7/ability_04/effects/sound.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+
+</ability>

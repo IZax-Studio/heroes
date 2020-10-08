@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_ShadowBlade_Ability4_Strength"
+
+	icon="icon4.tga"
+	passiveeffect="effects/passivestr.effect"
+	displaylevel="true"
+	propagatetoillusions="true"
+	
+	strengthpercharge="1"
+	maxhealthpercharge="-3"
+	
+	modifierkey="Shadowblade_R_Str"
+	modifierkey2=""
+	deathpersist="true"
+	
+	effecttype=""
+>
+
+	<onframe>
+		<hasmodifier name="iamsheeped" entity="this_owner_entity" >
+			<activatemodifierkey name="iamsheeped" />
+		</hasmodifier>
+		<else>
+			<deactivatemodifierkey name="iamsheeped" />
+		</else>
+	</onframe>
+	
+	<onattackpreimpact />
+	
+	<onattackimpact />
+	
+	<modifier key="iamsheeped" modpriority="1000"
+		passiveeffect=""
+	/>
+
+	<modifier key="ult_boost" modpriority="101"	>		
+		<!-- Str bonus passive -->
+		<onattackimpact>
+			<cantarget targetscheme="enemy_units">
+				<!-- Ranged cleave's circular AoE position -->
+				<hasmodifier name="ShadowBlade_E_Form" entity="source_entity">
+					<splashdamage a="total_adjusted_damage" b="0.3,0.5,0.7" op="mult" radius="225" effecttype="Physical Splash Cleave" targetscheme="enemy_units" centerontarget="true" />
+					<areaofeffect
+						targetselection="all"
+						targetscheme="enemy_units"
+						center="target_entity"
+						radius="225"
+						effecttype="Physical Splash Cleave"
+						ignore="target_entity"
+					>
+						<!-- playeffect doesn't work if the modifier has no name. -->
+						<playeffect effect="/shared/effects/splash_damage.effect" source="target_entity" target="stack_entity"/>
+					</areaofeffect>
+				</hasmodifier>
+				
+				<!-- Melee cleave's circular AoE position -->
+				<else>
+					<splashdamage a="total_adjusted_damage" b="0.3,0.5,0.7" op="mult" radius="225" effecttype="Physical Splash Cleave" targetscheme="enemy_units" centerontarget="false" />
+					<pushentity entity="target_entity" />
+					
+					<setpos0 position="source_entity" positionend="stack_position" positionmodifier="pointonline" positionvalue="275" />
+					<areaofeffect
+						targetselection="all"
+						targetscheme="enemy_units"
+						center="pos0"
+						radius="225"
+						effecttype="Physical Splash Cleave"
+						ignore="target_entity"
+					>
+						<!-- playeffect doesn't work if the modifier has no name. -->
+						<playeffect effect="/shared/effects/splash_damage.effect" source="target_entity" target="stack_entity"/>
+					</areaofeffect>
+				</else>
+			</cantarget>
+		</onattackimpact>
+	</modifier>
+
+	<modifier key="krosmode" modpriority="100"
+		deathpersist="false"
+	/>
+	
+	<altavatar key="Hero_ShadowBlade.Alt3" modpriority="90"
+		modifierkey="Shadowblade_R_Str"
+		modifierkey2="shadowr_Alt3"
+		passiveeffect="../alt3/ability_04/effects/shadowr/effects/passivestr.effect"
+	/>
+	
+	<altavatar key="Hero_ShadowBlade.Alt4" modpriority="90"
+		passiveeffect="../alt4/ability_04/effects/passivestr.effect"
+	/>
+	
+	<altavatar key="Hero_ShadowBlade.Alt5" modpriority="90"
+		passiveeffect="../alt5/ability_04/effects/passivestr.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_ShadowBlade.Alt6" modpriority="90"
+		passiveeffect="../alt6/ability_04/effects/passivestr.effect"
+	/>
+	
+	<altavatar key="Hero_ShadowBlade.Alt7" modpriority="90"
+	    icon="../alt7/ability_04/icon.tga"
+		passiveeffect="../alt7/ability_04/effects/passivestr.effect"
+	/>
+</state>

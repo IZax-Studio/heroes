@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+	
+
+
+		<particlesystem name="system0" space="world" scale="1">
+
+			<template name="rising_smoke">
+				<orbiteremitter
+					direction="0 0 1"
+					spawnrate="100"
+					minparticlelife="600"
+					maxparticlelife="1000"
+					orbit="{orbit}"
+					offset="3.14 0 10"
+					origin="0 0 20"
+					cylindrical="1"
+					minspeed=".1"
+					maxspeed="1"
+					depthbias="-20"
+					material="/shared/effects/materials/dust_smoke_03.material"
+				>
+					<particle
+						maxangle="360"
+						minanglespeed="-30"
+						maxanglespeed="30"
+						maxsize="25"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".1"
+					/>
+				</orbiteremitter>
+			</template>
+			
+			<instance name="rising_smoke" orbit="-.5 50 50" />
+			<instance name="rising_smoke" orbit=".5 50 50" />
+
+
+			<simpleemitter
+				spawnrate="10"
+				minparticlelife="1000"
+				maxparticlelife="1500"
+				maxspeed="10"
+				direction="0 0 1"
+				angle="0"
+				material="/shared/effects/materials/twirl_05_blend.material"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-300"
+					maxanglespeed="300"
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+					startscale="30"
+					minendscale="40"
+					maxendscale="80"
+					color="0 3 0"
+					startalpha="0"
+					midalpha=".2"
+					endalpha="0"
+					midalphapos=".1"
+					anchor="1"
+				/>
+			</simpleemitter>
+
+			<template name="weapon_glow" >
+				<twopointemitter
+					bone_a="{a}"
+					bone_b="{b}"
+					spawnrate="60"
+					minparticlelife="300"
+					maxparticlelife="600"
+					gravity="-2"
+					maxspeed="30"
+					direction="0 0 1"
+					angle="30"
+					material="/shared/effects/materials/mana.material"
+					depthbias="5"
+				>
+					<particle
+						maxangle="360"
+						startsize="10"
+						minendsize="30"
+						maxendsize="50"
+						startcolor="0"
+						midcolor="0 1 0"
+						endcolor="0"
+						midcolorpos=".2"
+						anchor=".75"
+					/>
+					<particle
+						maxangle="360"
+						startsize="10"
+						minendsize="30"
+						maxendsize="50"
+						startcolor="0"
+						midcolor="0 .5 0"
+						endcolor="0"
+						midcolorpos=".2"
+						anchor=".75"
+					/>
+				</twopointemitter>
+			</template>
+			<instance name="weapon_glow" a="_bone_lefthand" b="bicep_L" />
+			<instance name="weapon_glow" a="_bone_righthand" b="bicep_R" />
+			<instance name="weapon_glow" a="_bone_centerofchest" b="_bone_center" />
+
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+	</thread>
+</effect>

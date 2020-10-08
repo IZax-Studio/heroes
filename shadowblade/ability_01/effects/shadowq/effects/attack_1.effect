@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="savage_quick_attack_1">
+
+<definitions>
+	<particlesystem name="system0" space="entity">
+
+		<billboard
+			bone="_bone_origin"
+			life="150"
+			startcolor=".45 0 0"
+			endcolor="0 0 0"
+			size="200"
+			position="0 45 50"
+			material="/heroes/drunkenmaster/effects/material.material"
+			lockup="1"
+			lockright="1"
+			pitch="90"
+			yaw="-52"
+			roll="135"
+			rollspeed="-320"
+			directionalspace="local"
+			depthbias="-25"
+		/>
+		
+		<billboard
+			bone="_bone_origin"
+			life="150"
+			startcolor=".35 0 0"
+			endcolor="0 0 0"
+			size="150"
+			position="0 45 50"
+			material="/heroes/drunkenmaster/effects/material.material"
+			lockup="1"
+			lockright="1"
+			pitch="90"
+			yaw="-52"
+			roll="135"
+			rollspeed="-320"
+			directionalspace="local"
+			depthbias="-25"
+		/>
+
+	</particlesystem>
+</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
