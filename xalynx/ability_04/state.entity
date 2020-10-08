@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Xalynx_Ability4"
+
+	icon="icon4.tga"
+
+	effecttype="StatusDebuff"
+	
+	passiveeffect="effects/link_heal.effect"
+
+>
+	
+	<onframe>
+		<!-- Leash range -->
+		<cantarget effecttype="Magic" ignoreinvulnerable="false">
+			<distance />
+			<compare a="result" b="900" op="gt">
+				<expire />
+			</compare>
+		</cantarget>
+
+		<!-- Damage the target and heal Torturer -->
+		<damage amount="50,75,100" b="frametime" op="mult" effecttype="Magic DOT" target="target_entity" />
+		<heal a="25,37.5,50" b="frametime" op="mult" target="source_entity"/>
+	</onframe>
+
+	<onexpired>
+		<removecharge entity="proxy_entity" />
+	</onexpired>
+	
+</state>

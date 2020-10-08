@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Succubis_Ability4"
+
+	icon="icon4.tga"
+	passiveeffect="effects/state.effect"
+	
+	stunned="true"
+	stunneddurationunmodifiable="true"
+	frozen="true"
+	immobilized="true"
+	
+	sighted="true"
+	revealed="true"
+	
+	impactinterval="1000"
+	
+	effecttype=""
+
+	modifierkey="channeled_stun_ability"
+
+	negativeeffect="suppressed"
+>
+	<onimpact>
+		<damage effecttype="Magic" amount="100,160,220" />
+	</onimpact>
+	
+	<onframe>
+		<setvar0 a="0.05" b="target_maxmana" op="mult" />
+		<evaluate a="var0" b="frametime" op="mult" />
+		<takemana target="target_entity" amount="1" b="result" op="mult" />
+		<givemana target="source_entity" amount="result" />
+	</onframe>
+	
+	<onexpired>
+		<applystate name="State_Succubis_Ability4_Assist" target="target_entity" duration="50" />
+		<playanim name="idle" target="target_entity" />
+	</onexpired>
+	
+	<modifier key="ult_boost" modpriority="100"
+		passiveeffect="effects/state_boost.effect"
+	>
+		
+		<onframe>
+			<setvar0 a="0.05" b="target_maxmana" op="mult" />
+			<evaluate a="var0" b="frametime" op="mult" />
+			<takemana target="target_entity" amount="1" b="result" op="mult" />
+			<givemana target="source_entity" amount="result" />
+			
+			<!-- Dispel if Succubus is dead, Stunned, Silenced, or deleted, or if the target is outside of the leash range -->
+			<distance />
+			<compare a="result" b="1200" op="gt">
+				<expire />
+			</compare>
+			<else>
+				<targettype type="alive" source="source_entity" target="source_entity">
+					<targettype type="stunned" source="source_entity" target="source_entity">
+						<expire />
+					</targettype>
+					<else>
+						<targettype type="silenced" source="source_entity" target="source_entity">
+							<expire />
+						</targettype>
+						<else>
+							<compare a="source_entity" b="0" op="eq">
+								<expire />
+							</compare>
+						</else>
+					</else>
+				</targettype>
+				<else>
+					<expire />
+				</else>
+			</else>
+			
+			<cantarget target="target_entity" ignoreinvulnerable="false" />
+			<else>
+				<expire />
+			</else>
+		</onframe>
+		
+		<onexpired>
+			<hidechannelbar toolname="Ability_Succubis4" target="source_entity" />
+			<applystate name="State_Succubis_Ability4_Assist" source="source_owner_entity" target="target_entity" duration="50" />
+			<playanim name="idle" target="target_entity" />
+		</onexpired>
+	</modifier>
+	
+	<altavatar key="Hero_Succubis.Alt2"
+		icon="/heroes/succubis/alt2/ability_04/icon.tga"
+		passiveeffect="/heroes/succubis/alt2/ability_04/effects/state.effect"
+	>
+		<modifier key="ult_boost" modpriority="100"
+			passiveeffect="../alt2/ability_04/effects/state_boost.effect"
+		>
+			
+			<onframe>
+				<setvar0 a="0.05" b="target_maxmana" op="mult" />
+				<evaluate a="var0" b="frametime" op="mult" />
+				<takemana target="target_entity" amount="1" b="result" op="mult" />
+				<givemana target="source_entity" amount="result" />
+				
+				<!-- Dispel if Succubus is dead, Stunned, Silenced, or deleted, or if the target is outside of the leash range -->
+				<distance />
+				<compare a="result" b="1200" op="gt">
+					<expire />
+				</compare>
+				<else>
+					<targettype type="alive" source="source_entity" target="source_entity">
+						<targettype type="stunned" source="source_entity" target="source_entity">
+							<expire />
+						</targettype>
+						<else>
+							<targettype type="silenced" source="source_entity" target="source_entity">
+								<expire />
+							</targettype>
+							<else>
+								<compare a="source_entity" b="0" op="eq">
+									<expire />
+								</compare>
+							</else>
+						</else>
+					</targettype>
+					<else>
+						<expire />
+					</else>
+				</else>
+			</onframe>
+			
+			<onexpired>
+				<hidechannelbar toolname="Ability_Succubis4" target="source_entity" />
+				<applystate name="State_Succubis_Ability4_Assist" source="source_owner_entity" target="target_entity" duration="50" />
+				<playanim name="idle" target="target_entity" />
+			</onexpired>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Succubis.Alt3"
+		passiveeffect="../alt3/ability_04/effects/state.effect"
+	>
+		<modifier key="ult_boost" modpriority="100"
+			passiveeffect="../alt3/ability_04/effects/state_boost.effect"
+		>
+			
+			<onframe>
+				<setvar0 a="0.05" b="target_maxmana" op="mult" />
+				<evaluate a="var0" b="frametime" op="mult" />
+				<takemana target="target_entity" amount="1" b="result" op="mult" />
+				<givemana target="source_entity" amount="result" />
+				
+				<!-- Dispel if Succubus is dead, Stunned, Silenced, or deleted, or if the target is outside of the leash range -->
+				<distance />
+				<compare a="result" b="1200" op="gt">
+					<expire />
+				</compare>
+				<else>
+					<targettype type="alive" source="source_entity" target="source_entity">
+						<targettype type="stunned" source="source_entity" target="source_entity">
+							<expire />
+						</targettype>
+						<else>
+							<targettype type="silenced" source="source_entity" target="source_entity">
+								<expire />
+							</targettype>
+							<else>
+								<compare a="source_entity" b="0" op="eq">
+									<expire />
+								</compare>
+							</else>
+						</else>
+					</targettype>
+					<else>
+						<expire />
+					</else>
+				</else>
+			</onframe>
+			
+			<onexpired>
+				<hidechannelbar toolname="Ability_Succubis4" target="source_entity" />
+				<applystate name="State_Succubis_Ability4_Assist" source="source_owner_entity" target="target_entity" duration="50" />
+				<playanim name="idle" target="target_entity" />
+			</onexpired>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Succubis.Alt4"
+		passiveeffect="../alt4/ability_04/effects/state.effect"
+	>	
+		<modifier key="ult_boost" modpriority="100"
+			passiveeffect="../alt4/ability_04/effects/state_boost.effect"
+		>
+			
+			<onframe>
+				<setvar0 a="0.05" b="target_maxmana" op="mult" />
+				<evaluate a="var0" b="frametime" op="mult" />
+				<takemana target="target_entity" amount="1" b="result" op="mult" />
+				<givemana target="source_entity" amount="result" />
+				
+				<!-- Dispel if Succubus is dead, Stunned, Silenced, or deleted, or if the target is outside of the leash range -->
+				<distance />
+				<compare a="result" b="1200" op="gt">
+					<expire />
+				</compare>
+				<else>
+					<targettype type="alive" source="source_entity" target="source_entity">
+						<targettype type="stunned" source="source_entity" target="source_entity">
+							<expire />
+						</targettype>
+						<else>
+							<targettype type="silenced" source="source_entity" target="source_entity">
+								<expire />
+							</targettype>
+							<else>
+								<compare a="source_entity" b="0" op="eq">
+									<expire />
+								</compare>
+							</else>
+						</else>
+					</targettype>
+					<else>
+						<expire />
+					</else>
+				</else>
+			</onframe>
+			
+			<onexpired>
+				<hidechannelbar toolname="Ability_Succubis4" target="source_entity" />
+				<applystate name="State_Succubis_Ability4_Assist" source="source_owner_entity" target="target_entity" duration="50" />
+				<playeffect effect="../alt4/ability_04/effects/expire_sound.effect" target="target_entity" />
+				<playanim name="idle" target="target_entity" />
+			</onexpired>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Succubis.Alt5"
+		passiveeffect="../alt5/ability_04/effects/state.effect"
+	>	
+		<modifier key="ult_boost" modpriority="100"
+			passiveeffect="effects/state_boost.effect"
+		>
+			
+			<onframe>
+				<setvar0 a="0.05" b="target_maxmana" op="mult" />
+				<evaluate a="var0" b="frametime" op="mult" />
+				<takemana target="target_entity" amount="1" b="result" op="mult" />
+				<givemana target="source_entity" amount="result" />
+				
+				<!-- Dispel if Succubus is dead, Stunned, Silenced, or deleted, or if the target is outside of the leash range -->
+				<distance />
+				<compare a="result" b="1200" op="gt">
+					<expire />
+				</compare>
+				<else>
+					<targettype type="alive" source="source_entity" target="source_entity">
+						<targettype type="stunned" source="source_entity" target="source_entity">
+							<expire />
+						</targettype>
+						<else>
+							<targettype type="silenced" source="source_entity" target="source_entity">
+								<expire />
+							</targettype>
+							<else>
+								<compare a="source_entity" b="0" op="eq">
+									<expire />
+								</compare>
+							</else>
+						</else>
+					</targettype>
+					<else>
+						<expire />
+					</else>
+				</else>
+			</onframe>
+			
+			<onexpired>
+				<hidechannelbar toolname="Ability_Succubis4" target="source_entity" />
+				<applystate name="State_Succubis_Ability4_Assist" source="source_owner_entity" target="target_entity" duration="50" />
+				<playeffect effect="../alt5/ability_04/effects/expire_sound.effect" target="target_entity" />
+				<playanim name="idle" target="target_entity" />
+			</onexpired>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Succubis.Alt6"
+		passiveeffect="../alt6/ability_04/effects/state.effect"
+	>	
+		<modifier key="ult_boost" modpriority="100"
+			passiveeffect="../alt6/ability_04/effects/state_boost.effect"
+		>
+			
+			<onframe>
+				<setvar0 a="0.05" b="target_maxmana" op="mult" />
+				<evaluate a="var0" b="frametime" op="mult" />
+				<takemana target="target_entity" amount="1" b="result" op="mult" />
+				<givemana target="source_entity" amount="result" />
+				
+				<!-- Dispel if Succubus is dead, Stunned, Silenced, or deleted, or if the target is outside of the leash range -->
+				<distance />
+				<compare a="result" b="1200" op="gt">
+					<expire />
+				</compare>
+				<else>
+					<targettype type="alive" source="source_entity" target="source_entity">
+						<targettype type="stunned" source="source_entity" target="source_entity">
+							<expire />
+						</targettype>
+						<else>
+							<targettype type="silenced" source="source_entity" target="source_entity">
+								<expire />
+							</targettype>
+							<else>
+								<compare a="source_entity" b="0" op="eq">
+									<expire />
+								</compare>
+							</else>
+						</else>
+					</targettype>
+					<else>
+						<expire />
+					</else>
+				</else>
+			</onframe>
+			
+			<onexpired>
+				<hidechannelbar toolname="Ability_Succubis4" target="source_entity" />
+				<applystate name="State_Succubis_Ability4_Assist" source="source_owner_entity" target="target_entity" duration="50" />
+				<playeffect effect="../alt6/ability_04/effects/expire_sound.effect" target="target_entity" />
+				<playanim name="idle" target="target_entity" />
+			</onexpired>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Succubis.Alt7"
+		passiveeffect="../alt7/ability_04/effects/state.effect"
+	>	
+		<modifier key="ult_boost" modpriority="100"
+			passiveeffect="../alt7/ability_04/effects/state_boost.effect"
+		>
+			
+			<onframe>
+				<setvar0 a="0.05" b="target_maxmana" op="mult" />
+				<evaluate a="var0" b="frametime" op="mult" />
+				<takemana target="target_entity" amount="1" b="result" op="mult" />
+				<givemana target="source_entity" amount="result" />
+				
+				<!-- Dispel if Succubus is dead, Stunned, Silenced, or deleted, or if the target is outside of the leash range -->
+				<distance />
+				<compare a="result" b="1200" op="gt">
+					<expire />
+				</compare>
+				<else>
+					<targettype type="alive" source="source_entity" target="source_entity">
+						<targettype type="stunned" source="source_entity" target="source_entity">
+							<expire />
+						</targettype>
+						<else>
+							<targettype type="silenced" source="source_entity" target="source_entity">
+								<expire />
+							</targettype>
+							<else>
+								<compare a="source_entity" b="0" op="eq">
+									<expire />
+								</compare>
+							</else>
+						</else>
+					</targettype>
+					<else>
+						<expire />
+					</else>
+				</else>
+			</onframe>
+			
+			<onexpired>
+				<hidechannelbar toolname="Ability_Succubis4" target="source_entity" />
+				<applystate name="State_Succubis_Ability4_Assist" source="source_owner_entity" target="target_entity" duration="50" />
+				<playeffect effect="../alt7/ability_04/effects/expire_sound.effect" target="target_entity" />
+				<playanim name="idle" target="target_entity" />
+			</onexpired>
+		</modifier>
+	</altavatar>
+	
+	
+	<altavatar key="Hero_Succubis.Naughty"
+	>
+		<modifier key="ult_boost" modpriority="100"
+			passiveeffect="effects/state_boost_naughty.effect"
+		>
+		
+			<onframe>
+				<setvar0 a="0.05" b="target_maxmana" op="mult" />
+				<evaluate a="var0" b="frametime" op="mult" />
+				<takemana target="target_entity" amount="1" b="result" op="mult" />
+				<givemana target="source_entity" amount="result" />
+				
+				<!-- Dispel if Succubus is dead, Stunned, Silenced, or deleted, or if the target is outside of the leash range -->
+				<distance />
+				<compare a="result" b="1200" op="gt">
+					<expire />
+				</compare>
+				<else>
+					<targettype type="alive" source="source_entity" target="source_entity">
+						<targettype type="stunned" source="source_entity" target="source_entity">
+							<expire />
+						</targettype>
+						<else>
+							<targettype type="silenced" source="source_entity" target="source_entity">
+								<expire />
+							</targettype>
+							<else>
+								<compare a="source_entity" b="0" op="eq">
+									<expire />
+								</compare>
+							</else>
+						</else>
+					</targettype>
+					<else>
+						<expire />
+					</else>
+				</else>
+			</onframe>
+			
+			<onexpired>
+				<hidechannelbar toolname="Ability_Succubis4" target="source_entity" />
+				<applystate name="State_Succubis_Ability4_Assist" source="source_owner_entity" target="target_entity" duration="50" />
+				<playanim name="idle" target="target_entity" />
+			</onexpired>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Succubis.pog_skin"
+	>
+		<modifier key="ult_boost" modpriority="100"
+			passiveeffect="effects/state_boost_naughty.effect"
+		>
+			
+			<onframe>
+				<setvar0 a="0.05" b="target_maxmana" op="mult" />
+				<evaluate a="var0" b="frametime" op="mult" />
+				<takemana target="target_entity" amount="1" b="result" op="mult" />
+				<givemana target="source_entity" amount="result" />
+				
+				<!-- Dispel if Succubus is dead, Stunned, Silenced, or deleted, or if the target is outside of the leash range -->
+				<distance />
+				<compare a="result" b="1200" op="gt">
+					<expire />
+				</compare>
+				<else>
+					<targettype type="alive" source="source_entity" target="source_entity">
+						<targettype type="stunned" source="source_entity" target="source_entity">
+							<expire />
+						</targettype>
+						<else>
+							<targettype type="silenced" source="source_entity" target="source_entity">
+								<expire />
+							</targettype>
+							<else>
+								<compare a="source_entity" b="0" op="eq">
+									<expire />
+								</compare>
+							</else>
+						</else>
+					</targettype>
+					<else>
+						<expire />
+					</else>
+				</else>
+			</onframe>
+			
+			<onexpired>
+				<hidechannelbar toolname="Ability_Succubis4" target="source_entity" />
+				<applystate name="State_Succubis_Ability4_Assist" source="source_owner_entity" target="target_entity" duration="50" />
+				<playanim name="idle" target="target_entity" />
+			</onexpired>
+		</modifier>
+	</altavatar>
+	
+</state>

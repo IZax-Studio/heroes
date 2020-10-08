@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_SuccubisAttack"
+
+	speed="900"
+	gravity="2000"
+
+	model="/shared/models/invis.mdf"
+	modelscale="1.2"
+
+	impacteffect="impact.effect"
+	traileffect="trail.effect"
+>
+	<altavatar key="Hero_Succubis.Alt4" modpriority="90"
+		impacteffect="../alt4/projectile/impact.effect"
+		traileffect="../alt4/projectile/trail.effect"
+		model="/shared/models/invis.mdf"
+		modelscale="1"
+	/>
+	
+	<altavatar key="Hero_Succubis.Alt5" modpriority="90"
+		impacteffect="../alt5/projectile/impact.effect"
+		traileffect="../alt5/projectile/trail.effect"
+		model="/shared/models/invis.mdf"
+		modelscale="1"
+	/>
+	
+	<altavatar key="Hero_Succubis.Alt6" modpriority="90"
+		impacteffect="../alt6/projectile/impact.effect"
+		traileffect="../alt6/projectile/trail.effect"
+		model="/shared/models/invis.mdf"
+		modelscale="1"
+	/>
+	
+	<altavatar key="Hero_Succubis.Alt7" modpriority="90"
+		impacteffect="../alt7/projectile/impact.effect"
+		traileffect="../alt7/projectile/trail.effect"
+		model="/shared/models/invis.mdf"
+		modelscale=".4"
+	/>
+
+</projectile>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Succubis_Ability4_Self"
+	
+	icon="icon4.tga"
+	passiveeffect="effects/state_self.effect"
+	ishidden="true"
+	
+>
+
+	<altavatar key="Hero_Succubis.Alt3"
+		passiveeffect="../alt3/ability_04/effects/state_self.effect"
+	/>
+
+</state>

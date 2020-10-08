@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Succubis_Ability4_Assist"
+
+	icon="icon4.tga"
+	passiveeffect=""
+	
+	ishidden="true"
+	serverentity="true"
+	
+	effecttype="StatusDebuff"
+>
+</state>

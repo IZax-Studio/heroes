@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="cyclone" deferred="true">
+	<definitions>
+				
+		<particlesystem name="system0" space="world" scale="1">	
+			
+
+			<simpleemitter
+				bone="Spine_0"
+				spawnrate="40"
+				particlelife="200"
+				gravity="0"
+				speed="5"
+				acceleration="00"
+				position="0 0 0"
+				material="/shared/effects/materials/flame.material"
+				offsetsphere="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 0 0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="180"
+					minanglespeed="50"
+					startcolor="0 0 1"
+					midcolor="0 .5 1"
+					endcolor="0 0 .5"
+					midcolorpos="1"
+					maxanglespeed="0"
+					startsize="50"
+					midsize="90"
+					endsize="10"
+					startalpha=""
+					midalpha="1"
+					endalpha="0"
+					startanchor="1"
+					endanchor=".5"
+				/>
+			</simpleemitter>		
+
+			<template name="glow">
+				<billboard
+					bone="{bone}"
+					position="0 0 5"
+					expirelife="250"
+					startcolor="0 .2 .5"
+					endcolor="0 0 0"
+					size="25"
+					depthbias="-10"
+					material="/shared/effects/materials/flare_02.material"
+				/>
+				
+				<billboard
+					bone="{bone}"
+					position="0 0 0"
+					expirelife="250"
+					startcolor="0 .2 .5"
+					endcolor="0 0 0"
+					size="25"
+					depthbias="-10"
+					material="/shared/effects/materials/flare_02.material"
+				/>
+
+
+			</template>
+			
+			<instance name="glow" bone="Ring_0_R"/>
+			<instance name="glow" bone="Ring_0_L"/>
+
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		
+      		<waitfordeath instance="instance0" />
+		
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

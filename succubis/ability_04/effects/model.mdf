@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="wings_1.max" file="grip.model" type="K2" >
+	<anim name="idle" fps="30" clip="default_1.clip" loopbackframe="32" loop="true"/>	
+	
+	<anim name="attack" fps="30" clip="attack_1.clip" loop="true"/>	
+	
+</model>

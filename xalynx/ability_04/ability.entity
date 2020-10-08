@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Xalynx4"
+
+	icon="icon4.tga"
+	
+	anim=""
+	casttime="0"
+	castactiontime="0"
+	casteffect=""
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	casteffecttype="Magic"
+	actiontype="toggle"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nonaggressive="true"
+	
+	noresponse="false"
+	manacost="40,80,120"
+	activemanacost="20,40,60"
+	toggleoffmanacost="0"
+	cooldowntime="750"
+	targetradius="400"
+	autotoggleoffwhendisabled="true"
+>
+	
+	<onimpact effectdescription="true" />
+	
+	<ontoggleon>
+		<spawnaffector name="Affector_Xalynx_Ability4" target="source_entity" istoggle="true" />	
+	</ontoggleon>
+	
+	<modifier key="manabatterytort" condition="toggle_active" modpriority="90"
+		noresponse="true"
+	>
+	</modifier>
+
+	<modifier key="ult_boost" modpriority="99"
+		displayname="true"
+		description="true"
+		autotoggleoffwhendisabled="false"
+	>
+		<onimpact />
+	</modifier>
+
+	<altavatar key="Hero_Xalynx.Alt6"
+		icon="../alt6/ability_04/icon.tga"
+	>
+		<modifier key="Alt6_Ability4_Upgrade"
+			icon="../alt6/ability_04/icon_b.tga"
+		/>
+	</altavatar>
+
+</ability>

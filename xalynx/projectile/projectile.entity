@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_XalynxAttack"
+
+	speed="900"
+	gravity="0"
+
+	scale=".6"
+	model="/shared/models/invis.mdf"
+
+	impacteffect=""
+	traileffect="/heroes/shadowblade/alt4/ability_03/effects/trail.effect"
+>
+
+	<altavatar key="Hero_Xalynx.Alt5"
+		traileffect="../alt5/projectile/effects/trail.effect"
+		model="../alt5/projectile/effects/hook/model.mdf"
+		modelscale="2.25"
+	/>
+	
+	<altavatar key="Hero_Xalynx.Alt6"
+		traileffect="../alt6/projectile/effects/trail.effect"
+		model="../alt6/projectile/effects/model/model.mdf"
+		modelscale="2.25"
+	/>
+	
+</projectile>

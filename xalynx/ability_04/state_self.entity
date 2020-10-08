@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Xalynx_Ability4_Self"
+
+	icon="icon4.tga"
+
+	effecttype=""
+	
+	passiveeffect=""
+
+	maxcharges="5"
+
+>
+
+	<oninflict>
+		<areaofeffect
+			radius="600"
+			targetselection="all"
+			targetscheme="enemy_heroes"
+			effecttype="Magic"
+		>
+			<applystate name="State_Xalynx_Ability4" duration="8000" effecttype="Magic" proxy="this_entity" />
+		</areaofeffect>
+	</oninflict>
+
+	<onframe />
+	
+</state>
