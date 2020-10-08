@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_Revenant"
+
+	team="Hellbourne"
+	icon="dark_willow.tga"
+	portrait="dark_willow.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect="effects/body.effect"
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana_%.wav"
+	cooldownsound="sounds/voice/cooldown_%.wav"
+	announcersound="sounds/voice/hero_select.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+	
+	preglobalscale="0.9"
+	modelscale="1.0"
+	effectscale="1"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="48"
+	targetoffset="0 0 64"
+	infoheight="200"
+	portraitcampos="10 0 15"
+
+	category="magic"
+	difficulty="3"
+
+	solorating="0"
+	junglerating="0"
+	carryrating="1"
+	supportrating="3"
+	initiatorrating="0"
+	gankerrating="2"
+	pusherrating="0"
+	rangedrating="5"
+	meleerating="0"
+	
+	movespeed="295"
+	turnrate="540"
+	turnsmoothing="0.075"
+
+	maxhealth="150"
+	healthregen="0.25"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="1"
+	magicarmor="5"
+
+	inventory0="Ability_Revenant1"
+	inventory1="Ability_Revenant2"
+	inventory2="Ability_Revenant3"
+	inventory3="Ability_Revenant4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="800"
+	attackactiontime="400"
+	attackcooldown="1700"
+	attackdamagemin="30"
+	attackdamagemax="33"
+	attacknumanims="2"
+	attackoffset="0 50 170"
+	attackprojectile="Projectile_Rev_Attack"
+	attackrange="600"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect=""
+	attacktype="ranged"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="800"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	primaryattribute="Intelligence"
+	strength="18"
+	strengthperlevel="1.8"
+	agility="21"
+	agilityperlevel="2"
+	intelligence="23"
+	intelligenceperlevel="2.7"
+	
+	previewmodel="model.mdf"
+	previewpos="0 0 -60"
+	previewangles="0 0 0"
+	previewscale="1.3"
+	
+	storemodel="model.mdf"
+	storepos="0 0 -60"
+	storeangles="0 0 0"
+	storescale="0.8"
+	
+	tooleffectpath37="ability_04/effects/state1.effect"
+	tooleffectkeyname37="State_Revenant_Ability4_Effect1"
+	tooeffectgroup37="ability_4"
+	
+	tooleffectpath38="ability_04/effects/state2.effect"
+	tooleffectkeyname38="State_Revenant_Ability4_Effect2"
+	tooeffectgroup38="ability_4"
+	
+	tooleffectpath39="ability_04/effects/state3.effect"
+	tooleffectkeyname39="State_Revenant_Ability4_Effect3"
+	tooleffectgroup39="ability_4"
+
+>
+	<recommendeditem name="Item_ManaPotion" />
+	<recommendeditem name="Item_MinorTotem" />
+	<recommendeditem name="Item_RunesOfTheBlight" />
+	<recommendeditem name="Item_HealthPotion" />
+	<recommendeditem name="Item_HomecomingStone" />
+	
+	<recommendeditem name="Item_FlamingEye" />
+	<recommendeditem name="Item_Strength5" />
+	<recommendeditem name="Item_Striders" />
+	<recommendeditem name="Item_Intelligence7" />
+	<recommendeditem name="Item_PortalKey" />
+	<recommendeditem name="Item_Evasion" />
+	<recommendeditem name="Item_Morph" />
+	
+	<!-- <modifier key="gated" modpriority="200"
+		movespeed="315"
+		attackrange="500"
+		magicarmor="5"
+		
+		inventory0="Reborn_Ability_Revenant1"
+		inventory1="Reborn_Ability_Revenant2"
+		inventory2="Reborn_Ability_Revenant3"
+		inventory3="Reborn_Ability_Revenant4"
+		
+		primaryattribute="Intelligence"
+		strength="18"
+		strengthperlevel="1.6"
+		agility="20"
+		agilityperlevel="2.0"
+		intelligence="20"
+		intelligenceperlevel="2.5"
+	>
+	</modifier> -->
+	
+	<altavatar key="Hero_Revenant.Alt" modpriority="1"
+		altavatar="true"
+		
+		icon2="alt/icon.tga"
+		portrait="alt/icon.tga"
+		model="alt/model.mdf"
+		
+		previewmodel="alt/preview.mdf"
+		previewpos="0 0 -80"
+		previewangles="0 0 0"
+		previewscale="1.3"
+		
+		preglobalscale="1.45"
+		
+		attackprojectile="Projectile_Rev_Attack_Alt"
+		
+		storemodel="alt/preview.mdf"
+		storepos="0 0 -45"
+		storeangles="0 0 0"
+		storescale="1.4"
+		
+		passiveeffect="alt/effects/body.effect"
+		
+		tooleffectpath37="alt/ability_04/effects/state1.effect"
+		tooleffectkeyname37="State_Revenant_Ability4_Effect1"
+		tooeffectgroup37="ability_4"
+		
+		tooleffectpath38="alt/ability_04/effects/state2.effect"
+		tooleffectkeyname38="State_Revenant_Ability4_Effect2"
+		tooeffectgroup38="ability_4"
+		
+		tooleffectpath39="alt/ability_04/effects/state3.effect"
+		tooleffectkeyname39="State_Revenant_Ability4_Effect3"
+		tooleffectgroup39="ability_4"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Revenant.Alt2" modpriority="1"
+		altavatar="true"
+		
+		icon2="alt2/icon.tga"
+		portrait="alt2/icon.tga"
+		model="alt2/model.mdf"
+		
+		previewmodel="alt2/preview.mdf"
+		previewpos="0 0 -80"
+		previewangles="0 0 0"
+		previewscale="1.3"
+			
+		selectedsound="alt2/sounds/voice/select_%.wav"
+		selectedflavorsound="alt2/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt2/sounds/voice/move_%.wav"
+		confirmattacksound="alt2/sounds/voice/attack_%.wav"
+		nomanasound="alt2/sounds/voice/no_mana.wav"
+		cooldownsound="alt2/sounds/voice/cooldown.wav"
+		announcersound="alt2/sounds/voice/hero_select.wav"
+		tauntedsound="alt2/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt2/sounds/voice/taunt_after.wav"
+	
+		preglobalscale="2.0"
+		
+		attackprojectile="Projectile_Rev_Attack_Alt2"
+		
+		storemodel="alt2/preview.mdf"
+		storepos="0 0 -55"
+		storeangles="0 0 0"
+		storescale="1.8"
+		
+		passiveeffect="alt2/effects/body.effect"
+		
+		tooleffectpath37="alt2/ability_04/effects/state1.effect"
+		tooleffectkeyname37="State_Revenant_Ability4_Effect1"
+		tooeffectgroup37="ability_4"
+		
+		tooleffectpath38="alt2/ability_04/effects/state2.effect"
+		tooleffectkeyname38="State_Revenant_Ability4_Effect2"
+		tooeffectgroup38="ability_4"
+		
+		tooleffectpath39="alt2/ability_04/effects/state3.effect"
+		tooleffectkeyname39="State_Revenant_Ability4_Effect3"
+		tooleffectgroup39="ability_4"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Revenant.Alt3" modpriority="1"
+		altavatar="true"
+		
+		icon2="alt3/icon.tga"
+		portrait="alt3/icon.tga"
+		model="alt3/model.mdf"
+		
+		previewmodel="alt3/preview.mdf"
+		previewpos="0 0 -80"
+		previewangles="0 0 0"
+		previewscale="1.3"
+			
+		selectedsound="alt3/sounds/voice/select_%.wav"
+		selectedflavorsound="alt3/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt3/sounds/voice/move_%.wav"
+		confirmattacksound="alt3/sounds/voice/attack_%.wav"
+		nomanasound="alt3/sounds/voice/no_mana.wav"
+		cooldownsound="alt3/sounds/voice/cooldown.wav"
+		announcersound="alt3/sounds/voice/hero_select.wav"
+		tauntedsound="alt3/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt3/sounds/voice/taunt_after.wav"
+	
+		preglobalscale="2.0"
+		
+		attackprojectile="Projectile_Rev_Attack_Alt3"
+		
+		storemodel="alt3/preview.mdf"
+		storepos="0 0 -55"
+		storeangles="0 0 0"
+		storescale="1.8"
+		
+		passiveeffect="alt3/effects/body.effect"
+		
+		tooleffectpath37="alt3/ability_04/effects/state1.effect"
+		tooleffectkeyname37="State_Revenant_Ability4_Effect1"
+		tooeffectgroup37="ability_4"
+		
+		tooleffectpath38="alt3/ability_04/effects/state2.effect"
+		tooleffectkeyname38="State_Revenant_Ability4_Effect2"
+		tooeffectgroup38="ability_4"
+		
+		tooleffectpath39="alt3/ability_04/effects/state3.effect"
+		tooleffectkeyname39="State_Revenant_Ability4_Effect3"
+		tooleffectgroup39="ability_4"
+	>
+		<ondeath>
+			<playeffect effect="alt3/effects/death.effect"/>
+		</ondeath>
+	</altavatar>
+	
+	<altavatar key="Hero_Revenant.Alt4" modpriority="1"
+		altavatar="true"
+		
+		icon2="alt4/icon.tga"
+		portrait="alt4/icon.tga"
+		model="alt4/model.mdf"
+		
+		previewmodel="alt4/preview.mdf"
+		previewpassiveeffect="alt4/effects/body_store.effect"
+		previewpos="0 0 -80"
+		previewangles="0 0 0"
+		previewscale="1.3"
+			
+		selectedsound="alt4/sounds/voice/select_%.wav"
+		selectedflavorsound="alt4/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt4/sounds/voice/move_%.wav"
+		confirmattacksound="alt4/sounds/voice/attack_%.wav"
+		nomanasound="alt4/sounds/voice/no_mana.wav"
+		cooldownsound="alt4/sounds/voice/cooldown.wav"
+		announcersound="alt4/sounds/voice/hero_select.wav"
+		tauntedsound="alt4/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt4/sounds/voice/taunt_after.wav"
+	
+		preglobalscale="2.0"
+		
+		storemodel="alt4/preview.mdf"
+		storepassiveeffect="alt4/effects/body_store.effect"
+		storepos="0 0 -55"
+		storeangles="0 0 0"
+		storescale="1.8"
+		
+		portraitcampos="-15 -10 17"
+		
+		passiveeffect="alt4/effects/body.effect"
+		
+		tooleffectpath37="alt4/ability_04/effects/state1.effect"
+		tooleffectkeyname37="State_Revenant_Ability4_Effect1"
+		tooeffectgroup37="ability_4"
+		
+		tooleffectpath38="alt4/ability_04/effects/state2.effect"
+		tooleffectkeyname38="State_Revenant_Ability4_Effect2"
+		tooeffectgroup38="ability_4"
+		
+		tooleffectpath39="alt4/ability_04/effects/state3.effect"
+		tooleffectkeyname39="State_Revenant_Ability4_Effect3"
+		tooleffectgroup39="ability_4"
+	>
+	
+	
+		<onspawn>
+			<activatemodifierkey name="Paragon_Sound_Sapphire" />
+			<applystate name="State_Sapphire_Paragon_Sound_Initiator" target="source_entity" duration="2000" />
+			<ownsproduct target="this_entity" product="en.paragon_trail">
+				<applystate name="State_Paragon_Trail" target="this_entity" continuous="true" />
+			</ownsproduct>
+
+			<upgradeselected target="this_entity" upgrade="sc.paragon_circle_upgrade">
+				<activatemodifierkey name="Alt4_Paragon_Circle" />
+			</upgradeselected>
+			
+			<ownsproduct target="this_entity" product="en.revenant_ability01_upgrade">
+				<activatemodifierkey name="Alt4_Ability1_Upgrade" />
+			</ownsproduct>
+			
+			<ownsproduct target="this_entity" product="en.revenant_ability02_upgrade">
+				<activatemodifierkey name="Alt4_Ability2_Upgrade" />
+			</ownsproduct>
+			
+			<ownsproduct target="this_entity" product="en.revenant_ability03_upgrade">
+				<activatemodifierkey name="Alt4_Ability3_Upgrade" />
+			</ownsproduct>
+			
+			<ownsproduct target="this_entity" product="en.revenant_ability04_upgrade">
+				<activatemodifierkey name="Alt4_Ability4_Upgrade" />
+			</ownsproduct>
+
+            <ownsproduct target="this_entity" product="en.paragon_pet">
+                <spawnunit name="Pet_Paragon" target="this_entity" source="target_entity" offset="0 -100" facing="source_entity" pushentity="true" />
+                <activatemodifierkey name="Pet_Paragon_Sapphire" entity="stack_entity" />
+            </ownsproduct>
+		</onspawn>
+
+        <onrespawn>
+			<ownsproduct target="this_entity" product="en.paragon_trail">
+				<applystate name="State_Paragon_Trail" target="this_entity" continuous="true" />
+			</ownsproduct>
+			
+            <ownsproduct target="this_entity" product="en.paragon_pet">
+                <spawnunit name="Pet_Paragon" target="this_entity" source="target_entity" offset="0 -100" facing="source_entity" pushentity="true" />
+                <activatemodifierkey name="Pet_Paragon_Sapphire" entity="stack_entity" />
+            </ownsproduct>
+			
+			<ownsproduct target="this_entity" product="en.revenant_stat_track">
+                <!-- <playeffect effect="/shared/effects/paragon_stats.effect" source="this_entity" target="this_entity" /> -->
+				<applystate name="State_Paragon_Stats_VFX" source="this_entity" target="this_entity" duration="4000" />
+			</ownsproduct>
+        </onrespawn>
+		
+		<onchannelingstart>
+			<ownsproduct target="this_entity" product="en.revenant_stat_track">
+				<entitytype type="Ability_Taunt" target="inflictor_entity">
+                    <!-- <playeffect effect="/shared/effects/paragon_stats.effect" source="this_entity" target="this_entity" /> -->
+					<applystate name="State_Paragon_Stats_VFX" source="this_entity" target="this_entity" duration="4000" />
+				</entitytype>
+			</ownsproduct>
+		</onchannelingstart>
+		
+		<onkill>
+			<ownsproduct target="this_entity" product="en.revenant_stat_track">
+                <cantarget targetscheme="enemy_heroes" >
+                    <!-- <playeffect effect="/shared/effects/paragon_stats.effect" source="this_entity" target="this_entity" /> -->
+					<applystate name="State_Paragon_Stats_VFX" source="this_entity" target="this_entity" duration="4000" />
+                </cantarget>
+			</ownsproduct>
+        </onkill>
+	
+		<onassist>
+			<ownsproduct target="this_entity" product="en.revenant_stat_track">
+                <!-- <playeffect effect="/shared/effects/paragon_stats.effect" source="this_entity" target="this_entity" /> -->
+				<applystate name="State_Paragon_Stats_VFX" source="this_entity" target="this_entity" duration="4000" />
+			</ownsproduct>
+        </onassist>
+		
+		<modifier key="Alt4_Ability4_Upgrade" modpriority="99"
+			tooleffectpath37="alt4/ability_04/effects/state1_upgrade.effect"
+			tooleffectkeyname37="State_Revenant_Ability4_Effect1"
+			tooeffectgroup37="ability_4"
+			
+			tooleffectpath38="alt4/ability_04/effects/state2_upgrade.effect"
+			tooleffectkeyname38="State_Revenant_Ability4_Effect2"
+			tooeffectgroup38="ability_4"
+			
+			tooleffectpath39="alt4/ability_04/effects/state3_upgrade.effect"
+			tooleffectkeyname39="State_Revenant_Ability4_Effect3"
+			tooleffectgroup39="ability_4"
+		/>
+
+		<modifier key="Alt4_Paragon_Circle" modpriority="2"
+            localselectionringmaterial="/shared/materials/selection_indicator_paragon.material"
+        />
+		
+		<modifier key="Revenant_Ability4_1" modpriority="100">
+		<onrespawn>
+			<applystate name="State_Revenant_Ability4_Effect1" target="source_entity" duration="-1" />
+			<ownsproduct target="this_entity" product="en.paragon_trail">
+				<applystate name="State_Paragon_Trail" target="this_entity" continuous="true" />
+			</ownsproduct>
+			
+            <ownsproduct target="this_entity" product="en.paragon_pet">
+                <spawnunit name="Pet_Paragon" target="this_entity" offset="0 -100" facing="source_entity" pushentity="true" />
+                <activatemodifierkey name="Pet_Paragon_Sapphire" entity="stack_entity" />
+            </ownsproduct>
+			
+			<ownsproduct target="this_entity" product="en.revenant_stat_track">
+                <!-- <playeffect effect="/shared/effects/paragon_stats.effect" source="this_entity" target="this_entity" /> -->
+				<applystate name="State_Paragon_Stats_VFX" source="this_entity" target="this_entity" duration="4000" />
+			</ownsproduct>
+		</onrespawn> 
+	</modifier>
+	
+	<modifier key="Revenant_Ability4_2" modpriority="100" >
+		<onrespawn>
+			<applystate name="State_Revenant_Ability4_Effect2" target="source_entity" duration="-1" />
+			<ownsproduct target="this_entity" product="en.paragon_trail">
+				<applystate name="State_Paragon_Trail" target="this_entity" continuous="true" />
+			</ownsproduct>
+			
+            <ownsproduct target="this_entity" product="en.paragon_pet">
+                <spawnunit name="Pet_Paragon" target="this_entity" offset="0 -100" facing="source_entity" pushentity="true" />
+                <activatemodifierkey name="Pet_Paragon_Sapphire" entity="stack_entity" />
+            </ownsproduct>
+			
+			<ownsproduct target="this_entity" product="en.revenant_stat_track">
+                <!-- <playeffect effect="/shared/effects/paragon_stats.effect" source="this_entity" target="this_entity" /> -->
+				<applystate name="State_Paragon_Stats_VFX" source="this_entity" target="this_entity" duration="4000" />
+			</ownsproduct>
+		</onrespawn> 
+	</modifier>
+	
+	<modifier key="Revenant_Ability4_3" modpriority="100" >
+		<onrespawn>
+			<applystate name="State_Revenant_Ability4_Effect3" target="source_entity" duration="-1" />
+			<ownsproduct target="this_entity" product="en.paragon_trail">
+				<applystate name="State_Paragon_Trail" target="this_entity" continuous="true" />
+			</ownsproduct>
+			
+            <ownsproduct target="this_entity" product="en.paragon_pet">
+                <spawnunit name="Pet_Paragon" target="this_entity" offset="0 -100" facing="source_entity" pushentity="true" />
+                <activatemodifierkey name="Pet_Paragon_Sapphire" entity="stack_entity" />
+            </ownsproduct>
+			
+			<ownsproduct target="this_entity" product="en.revenant_stat_track">
+                <!-- <playeffect effect="/shared/effects/paragon_stats.effect" source="this_entity" target="this_entity" /> -->
+				<applystate name="State_Paragon_Stats_VFX" source="this_entity" target="this_entity" duration="4000" />
+			</ownsproduct>
+		</onrespawn> 
+	</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Revenant.Alt5"
+		model="alt5/model.mdf"
+	/>
+			
+	<altavatar key="Hero_Revenant.Alt6"
+	    icon2="alt6/icon.tga"
+		portrait="alt6/icon.tga"
+		model="alt6/model.mdf"
+		passiveeffect="alt6/effects/body.effect"
+		preglobalscale="1.65"
+		
+		portraitcampos="-15 10 26"
+		
+		
+		selectedsound="alt6/sounds/voice/select_%.wav"
+		selectedflavorsound="alt6/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt6/sounds/voice/move_%.wav"
+		confirmattacksound="alt6/sounds/voice/attack_%.wav"
+		nomanasound="alt6/sounds/voice/no_mana.wav"
+		cooldownsound="alt6/sounds/voice/cooldown.wav"
+		announcersound="alt6/sounds/voice/hero_select.wav"
+		tauntedsound="alt6/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt6/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt6/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.3"
+		
+		storemodel="alt6/preview.mdf"
+		storepos="0 0 -40"
+		storeangles="0 0 0"
+		storescale="1.65"
+		
+		corpsetime="500"
+		corpsefadetime="4000"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		
+		tooleffectpath37="alt6/ability_04/effects/state1.effect"
+		tooleffectkeyname37="State_Revenant_Ability4_Effect1"
+		tooeffectgroup37="ability_4"
+		
+		tooleffectpath38="alt6/ability_04/effects/state2.effect"
+		tooleffectkeyname38="State_Revenant_Ability4_Effect2"
+		tooeffectgroup38="ability_4"
+		
+		tooleffectpath39="alt6/ability_04/effects/state3.effect"
+		tooleffectkeyname39="State_Revenant_Ability4_Effect3"
+		tooleffectgroup39="ability_4"
+
+	/>
+	
+	<modifier key="ult_boost" modpriority="101"
+	>
+		<aura state="State_Revenant_Ult_Boost" radius="0" targetscheme="self"/>
+	</modifier>
+	
+	<modifier key="iamsheeped" modpriority="101"
+		passiveeffect=""
+	/>
+	
+	
+	<modifier key="Revenant_Ability4_1" modpriority="100">
+		<onrespawn>
+			<applystate name="State_Revenant_Ability4_Effect1" target="source_entity" duration="-1" />
+		</onrespawn> 
+	</modifier>
+	
+	<modifier key="Revenant_Ability4_2" modpriority="100" >
+		<onrespawn>
+			<applystate name="State_Revenant_Ability4_Effect2" target="source_entity" duration="-1" />
+		</onrespawn> 
+	</modifier>
+	
+	<modifier key="Revenant_Ability4_3" modpriority="100" >
+		<onrespawn>
+			<applystate name="State_Revenant_Ability4_Effect3" target="source_entity" duration="-1" />
+		</onrespawn> 
+	</modifier>
+	
+	
+		
+</hero>

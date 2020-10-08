@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Rev_Attack"
+
+	speed="1200"
+	gravity="0"
+	canturn="false"
+
+	modelscale="1.35"
+	model="/heroes/revenant/alt4/projectile/effects/crystal/model.mdf"
+	
+	impacteffect="effects/impact.effect"
+	traileffect="effects/trail.effect"
+>
+
+	<altavatar key="Hero_Revenant.Alt4"
+		model="../alt4/projectile/effects/crystal/model.mdf"
+		modelscale="1.35"
+		impacteffect="../alt4/projectile/effects/impact.effect"
+		traileffect="../alt4/projectile/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Revenant.Alt6"
+		model="../alt6/projectile/effects/heart/model.mdf"
+		modelscale="1.35"
+		impacteffect="../alt6/projectile/effects/impact.effect"
+		traileffect="../alt6/projectile/effects/trail.effect"
+	/>
+</projectile>

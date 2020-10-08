@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+
+		<particlesystem name="system1" space="entity" scale="1">
+
+			<billboard
+				position="0 0 50"
+				depthbias="0"
+				expirelife="250"
+				material="/shared/effects/materials/black_spot.material"
+				size="700"
+				color="0 0 0"
+				startalpha=".25"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				roll="180"
+				rollspeed="-540"
+			/>
+			
+			<billboard
+				position="0 0 50"
+				depthbias="0"
+				expirelife="250"
+				material="/shared/effects/materials/black_spot.material"
+				size="350"
+				color="0 0 0"
+				startalpha=".325"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				roll="180"
+				rollspeed="-540"
+			/>
+
+			<simpleemitter
+				position="0 0 100"
+				spawnrate="10"
+				minparticlelife="250"
+				maxparticlelife="500"
+				gravity="0"
+				speed="0"
+				drag=".01"
+				depthbias="50"
+				material="/shared/effects/materials/mana.material"
+				offsetsphere="150 150 50"
+				direction="0 0 0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-360"
+					maxanglespeed="360"
+					startcolor=".5 0 .5"
+					midcolor=".5 0 .5"
+					endcolor="0 0 0"
+					minstartsize="25"
+					maxstartsize="50"
+					minendsize="300"
+					maxendsize="400"
+					param=".0175"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				count="1"
+				position="0 0 15"
+				spawnrate="2500"		
+				particlelife="1000"
+				offsetsphere="0 0 0"
+			>
+				<particle>
+					<billboard
+						life="750"
+						material="/shared/effects/materials/corona_07.material"
+						startsize="0"
+						endsize="900"
+						startcolor=".5 0 .5"
+						endcolor="0 0 0"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+					/>
+<!--
+					<billboard
+						delay="250"
+						life="750"
+						material="/shared/effects/materials/shadow_cut_add.material"
+						startsize="0"
+						endsize="800"
+						startcolor=".5 0 .5"
+						midcolor=".5 0 .5"
+						endcolor="0 0 0"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						rollspeed="-540"
+					/>
+					
+					<billboard
+						delay="500"
+						life="750"
+						material="/shared/effects/materials/shadow_cut_add.material"
+						startsize="0"
+						endsize="800"
+						startcolor=".5 0 .5"
+						midcolor=".5 0 .5"
+						endcolor="0 0 0"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						rollspeed="-540"
+					/>
+-->
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				position="0 0 15"
+				spawnrate="1"		
+				particlelife="1000"
+				offsetsphere="0 0 0"
+			>
+				<particle>
+					<billboard
+						life="750"
+						material="/shared/effects/materials/corona_07.material"
+						startsize="0"
+						endsize="900"
+						startcolor=".5 0 .5"
+						endcolor="0 0 0"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+					/>
+<!--
+					<billboard
+						delay="250"
+						life="750"
+						material="/shared/effects/materials/shadow_cut_add.material"
+						startsize="0"
+						endsize="800"
+						startcolor=".5 0 .5"
+						midcolor=".5 0 .5"
+						endcolor="0 0 0"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						rollspeed="-540"
+					/>
+					
+					<billboard
+						delay="500"
+						life="750"
+						material="/shared/effects/materials/shadow_cut_add.material"
+						startsize="0"
+						endsize="800"
+						startcolor=".5 0 .5"
+						midcolor=".5 0 .5"
+						endcolor="0 0 0"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						rollspeed="-540"
+					/>
+-->
+				</particle>
+			</simpleemitter>
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+<!--
+			<model
+				position="0 0 0"
+				life="1750"
+				name="emitter0" 
+				anim="idle"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				scale="5"
+				startcolor="0 0 0"
+				midcolor="0 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".75"
+				startalpha="0"
+				midalpha="0"
+				endalpha="0"
+				midalphapos=".4"
+				yawspeed="180"
+				yaw="0"
+			>
+				<model
+					bone="_bone_fx_01"
+					position="0 0 0"
+					life="1750"
+					name="emitter0" 
+					anim="idle"
+					model="spirit/model.mdf"
+					scale=".45"
+					color="1 1 1"
+					startalpha="0"
+					midalpha=".85"
+					endalpha="0"
+					midalphapos=".75"
+					yawspeed="45"
+				>
+					<billboard
+						bone="Bip01 Spine2"
+						life="1750"
+						material="/shared/effects/materials/whitedot.material"
+						startsize="0"
+						endsize="250"
+						startcolor="0 0 0"
+						midcolor=".5 0 .5"
+						endcolor="0 0 0"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						loop="true"
+						depthbias="50"
+					/>
+				</model>
+			</model>
+-->
+			
+
+			<model
+				position="0 0 0"
+				life="5000"
+				name="emitter0" 
+				anim="idle"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				scale="1.725"
+				startcolor="0 0 0"
+				midcolor="0 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".75"
+				startalpha="0"
+				midalpha="0"
+				endalpha="0"
+				midalphapos=".4"
+				yawspeed="45"
+			>
+				<model
+					bone="_bone_fx_01"
+					position="0 0 0"
+					expirelife="1000"
+					name="emitter0" 
+					anim="attack_1"
+					model="spirit/model.mdf"
+					scale=".7"
+					startalpha=".65"
+					endalpha="0"
+					color=".5 0 .5"
+				>
+					<simpleemitter
+						bone="_bone_centerofchest"
+						spawnrate="10"
+						minparticlelife="250"
+						maxparticlelife="500"
+						gravity="0"
+						speed="0"
+						drag=".01"
+						depthbias="25"
+						material="/shared/effects/materials/mana_01.material"
+						offsetsphere="10 10 15"
+						direction="0 0 0"
+					>
+						<particle 
+							minangle="0"
+							maxangle="360"
+							minanglespeed="-360"
+							maxanglespeed="360"
+							startcolor=".5"
+							midcolor=".5 0 .5"
+							endcolor="0 0 0"
+							minstartsize="5"
+							maxstartsize="10"
+							minendsize="50"
+							maxendsize="75"
+							param=".0175"
+							startalpha="0"
+							midalpha=".5"
+							endalpha="0"
+						/>
+					</simpleemitter>
+					
+					<simpleemitter
+						bone="_bone_centerofchest"
+						spawnrate="15"
+						minparticlelife="250"
+						maxparticlelife="500"
+						gravity="0"
+						speed="0"
+						drag=".01"
+						depthbias="25"
+						material="/shared/effects/materials/mana.material"
+						offsetsphere="10 10 15"
+						direction="0 0 0"
+					>
+						<particle 
+							minangle="0"
+							maxangle="360"
+							minanglespeed="-360"
+							maxanglespeed="360"
+							startcolor=".5 0 .5"
+							midcolor=".5 0 .5"
+							endcolor="0 0 0"
+							minstartsize="5"
+							maxstartsize="10"
+							minendsize="75"
+							maxendsize="125"
+							param=".0175"
+							startalpha="0"
+							midalpha=".5"
+							endalpha="0"
+						/>
+					</simpleemitter>
+				
+					<billboard
+						bone="_bone_centerofchest"
+						expirelife="1000"
+						material="/shared/effects/materials/whitedot.material"
+						startsize="200"
+						endsize="0"
+						startcolor=".5 0 .5"
+						endcolor="0 0 0"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						depthbias="50"
+					/>
+
+					<template name="trails">
+						<twopointtrailemitter
+							startparticlealpha=".25"
+							midparticlealpha=".5"
+							endparticlealpha="0"
+							bone_a="{bone01}"
+							bone_b="{bone02}"
+							spawnrate="10"
+							minparticlelife="500"
+							maxparticlelife="500"
+							gravity="5"
+							subframepose="1"
+							drag="0.01"
+							speed="100"
+							direction="0 -1 0"
+							minangle="0"
+							maxangle="0"
+							texpostime="500"
+							texposscale="0"
+							texstretchscale="1"
+							material="/shared/effects/materials/hide.material"
+						>
+							<particle
+								startcolor=".5 0 .5"
+								endcolor="0 0 0"
+								startalpha="0"
+								midalpha=".5"
+								endalpha="0"
+								midalphapos=".75"
+							/>
+						</twopointtrailemitter>
+					</template>
+
+
+					<instance name="trails" bone01="_bone_righthand" bone02="_bone_lefthand"/>
+
+				</model>
+			</model>
+			
+			
+			
+			
+			
+			
+			
+
+			<model
+				position="0 0 0"
+				life="5000"
+				name="emitter0" 
+				anim="idle"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				scale="1.725"
+				startcolor="0 0 0"
+				midcolor="0 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".75"
+				startalpha="0"
+				midalpha="0"
+				endalpha="0"
+				midalphapos=".4"
+				yawspeed="45"
+				yaw="180"
+			>
+				<model
+					bone="_bone_fx_01"
+					position="0 0 0"
+					expirelife="1000"
+					name="emitter0" 
+					anim="attack_2"
+					model="spirit/model.mdf"
+					scale=".7"
+					startalpha=".65"
+					endalpha="0"
+					color=".5 0 .5"
+				>
+					<simpleemitter
+						bone="Bip01 Spine2"
+						spawnrate="10"
+						minparticlelife="250"
+						maxparticlelife="500"
+						gravity="0"
+						speed="0"
+						drag=".01"
+						depthbias="25"
+						material="/shared/effects/materials/mana_01.material"
+						offsetsphere="10 10 15"
+						direction="0 0 0"
+					>
+						<particle 
+							minangle="0"
+							maxangle="360"
+							minanglespeed="-360"
+							maxanglespeed="360"
+							startcolor=".5 0 .5"
+							midcolor=".5 0 .5"
+							endcolor="0 0 0"
+							minstartsize="5"
+							maxstartsize="10"
+							minendsize="50"
+							maxendsize="75"
+							param=".0175"
+							startalpha="0"
+							midalpha=".5"
+							endalpha="0"
+						/>
+					</simpleemitter>
+					
+					<simpleemitter
+						bone="Bip01 Spine2"
+						spawnrate="15"
+						minparticlelife="250"
+						maxparticlelife="500"
+						gravity="0"
+						speed="0"
+						drag=".01"
+						depthbias="25"
+						material="/shared/effects/materials/mana.material"
+						offsetsphere="10 10 15"
+						direction="0 0 0"
+					>
+						<particle 
+							minangle="0"
+							maxangle="360"
+							minanglespeed="-360"
+							maxanglespeed="360"
+							startcolor=".5 0 .5"
+							midcolor=".5 0 .5"
+							endcolor="0 0 0"
+							minstartsize="5"
+							maxstartsize="10"
+							minendsize="75"
+							maxendsize="125"
+							param=".0175"
+							startalpha="0"
+							midalpha=".5"
+							endalpha="0"
+						/>
+					</simpleemitter>
+
+					<billboard
+						bone="Bip01 Spine2"
+						expirelife="1000"
+						material="/shared/effects/materials/whitedot.material"
+						startsize="200"
+						endsize="0"
+						startcolor=".5 0 .5"
+						endcolor=".5 0 .5"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						depthbias="50"
+					/>
+
+					<template name="trails">
+						<twopointtrailemitter
+							startparticlealpha=".25"
+							midparticlealpha=".5"
+							endparticlealpha="0"
+							bone_a="{bone01}"
+							bone_b="{bone02}"
+							spawnrate="10"
+							minparticlelife="750"
+							maxparticlelife="750"
+							gravity="5"
+							subframepose="1"
+							drag="0.01"
+							speed="100"
+							direction="0 -1 0"
+							minangle="0"
+							maxangle="0"
+							texpostime="500"
+							texposscale="0"
+							texstretchscale="1"
+							material="/shared/effects/materials/hide.material"
+						>
+							<particle
+								startcolor=".5 0 .5"
+								endcolor=".5 0 .5"
+								startalpha=".5"
+								midalpha=".5"
+								endalpha="0"
+								midalphapos=".85"
+							/>
+						</twopointtrailemitter>
+					</template>
+
+					<instance name="trails" bone01="_bone_fx_07" bone02="_bone_fx_08"/>
+					<instance name="trails" bone01="_bone_fx_11" bone02="_bone_fx_12"/>
+					<instance name="trails" bone01="Bip01 R UpperArm" bone02="Bip01 L UpperArm"/>
+
+				</model>
+			</model>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

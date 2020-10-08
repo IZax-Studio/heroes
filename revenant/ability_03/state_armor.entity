@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Revenant_Ability3_Armor"
+
+	icon="icon_3.tga"
+	passiveeffect="effects/passive.effect"
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	armorpercharge="-1,-2,-3,-4"
+>
+	<onframe />
+	
+	<oninflict>
+		<addcharges count="1" />
+	</oninflict>
+	
+	<onrefresh>
+		<addcharges count="1" />
+	</onrefresh>
+	
+	<altavatar key="Hero_Revenant.Alt" modpriority="1"
+		passiveeffect="../alt/ability_03/effects/passive.effect"
+	/>
+	
+	<altavatar key="Hero_Revenant.Alt4" modpriority="2"
+		passiveeffect="../alt4/ability_03/effects/passive.effect"
+		icon="../alt4/ability_03/icon.tga"
+	>
+		<modifier key="Alt4_Ability3_Upgrade" modpriority="99"
+			passiveeffect="../alt4/ability_03/effects/passive_upgrade.effect"
+			icon="../alt4/ability_03/icon_upgrade.tga"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Revenant.Alt6" modpriority="1"
+		passiveeffect="../alt6/ability_03/effects/passive.effect"
+	/>
+	
+</state>

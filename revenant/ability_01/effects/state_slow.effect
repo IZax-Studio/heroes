@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+
+		<particlesystem name="system0" space="entity" scale=".55">
+		
+			<sound
+			    soundloop="true"
+				fadein="100"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1500"
+				volume=".70"
+				sample=".../sounds/state.wav"
+			/>
+			
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="1800"
+				volume="1"
+				sample=".../sounds/cast2.wav"
+			/>
+		
+			<billboard
+				life="1000"
+				loop="true"
+				bone="_bone_centerofchest"
+				position="0 0 0"
+				startcolor="0 0 0"
+				midcolor=".5 0 .5"
+				endcolor="0 0 0"
+				size="225"
+				rollspeed="-360"
+				depthbias="0"
+				material="/shared/effects/materials/stomp_02.material"
+			/>
+		
+			<simpleemitter
+				bone="_bone_centerofchest"
+				position="0 0 0"
+				spawnrate="15"
+				minparticlelife="250"
+				maxparticlelife="500"
+				gravity="0"
+				speed="0"
+				drag=".01"
+				depthbias="0"
+				material="/shared/effects/materials/mana_01.material"
+				offsetsphere="25 25 25"
+				direction="0 0 0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-360"
+					maxanglespeed="360"
+					startcolor="1 1 1"
+					midcolor=".5 0 .5"
+					endcolor="0 0 0"
+					minstartsize="25"
+					maxstartsize="50"
+					minendsize="200"
+					maxendsize="300"
+					param=".0175"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				position="0 0 0"
+				spawnrate="25"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				gravity="0"
+				speed="0"
+				drag=".01"
+				depthbias="0"
+				material="/shared/effects/materials/mana.material"
+				offsetsphere="50 50 25"
+				direction="0 0 0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-360"
+					maxanglespeed="360"
+					startcolor="1 1 1"
+					midcolor=".5 0 .5"
+					endcolor="0 0 0"
+					midcolorpos=".75"
+					minstartsize="25"
+					maxstartsize="50"
+					minendsize="250"
+					maxendsize="350"
+					param=".0175"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			<template name="rings">
+<!--
+				<billboard
+					expirelife="500"
+					bone="_bone_centerofchest"
+					startcolor=".5 0 .5"
+					endcolor="0 0 0"
+					size="250"
+					position="{position}"
+					material="material.material"
+					lockup="1"
+					lockright="1"
+					rollspeed="500"
+					pitch="90"
+					yawspeed="15"
+				/>
+-->
+				<billboard
+					expirelife="500"
+					bone="_bone_centerofchest"
+					startcolor=".5 0 .5"
+					endcolor="0 0 0"
+					size="250"
+					position="{position}"
+					material="material.material"
+					lockup="1"
+					lockright="1"
+					rollspeed="500"
+					pitch="90"
+					yawspeed="0"
+				/>
+
+				<billboard
+					expirelife="500"
+					bone="_bone_centerofchest"
+					startcolor=".5 0 .5"
+					endcolor="0 0 0"
+					size="250"
+					position="{position}"
+					material="material.material"
+					lockup="1"
+					lockright="1"
+					rollspeed="500"
+					pitch="90"
+					yawspeed="0"
+				/>
+			</template>
+
+			<instance name="rings" position="0 0 -25"/>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="5"
+				particlelife="750"
+				gravity="-10"
+				speed="10"
+				drag="0.07"
+				position="0 0 0"
+				material="/shared/effects/materials/heathaze.material"
+				offsetsphere="50 50 50"
+				depthbias="-25"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					startsize="150"
+					endsize="300"
+					param="0.5"
+					startalpha=".35"
+					endalpha="0"
+					lockright="1"
+					lockup="1"
+					pitch="90"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->

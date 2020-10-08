@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Revenant_Ability1"
+
+	icon="icon_1.tga"
+	passiveeffect="effects/state_buff.effect"
+	
+	impactinterval="5000"
+	maxcharges="2"
+
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>		
+	<onframe />
+	
+	<oninflict>
+		<setcharges a="2" />
+	</oninflict>
+	
+	<onrefresh>
+		<setcharges a="2" />
+	</onrefresh>
+	
+	<onimpact>
+		<compare a="charges" b="1" op="gt">
+			<changeduration b="5000" op="max" />
+		</compare>
+		<removecharge />
+	</onimpact>
+	
+	<onattackimpact>
+		<cantarget targetscheme="enemy_units" effecttype="Magic">
+			<hasavatarkey name="Hero_Revenant.Alt4">
+				<hasmodifier name="Alt4_Ability1_Upgrade">
+					<playeffect effect="../alt4/ability_01/effects/impact_upgrade.effect" source="target_entity" occlude="true" />
+				</hasmodifier>
+				<else>
+					<playeffect effect="../alt4/ability_01/effects/impact.effect" source="target_entity" occlude="true" />
+				</else>
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Revenant.Alt6">
+					<playeffect effect="../alt6/ability_01/effects/impact.effect" source="target_entity" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/impact.effect" source="target_entity" occlude="true" />
+				</else>
+			</else>
+			<applystate name="State_Revenant_Ability1_Slow" duration="4000" inflictor="this_proxy_entity" />
+			<damage effecttype="Magic" amount="40,70,100,130" />
+		</cantarget>	
+		
+		<cantarget targetscheme="all_buildings" />
+		<else>
+			<removecharge />
+			<compare a="charges" b="1" op="ge" >
+				<changeduration b="5000" op="max" />
+			</compare>
+		</else>
+
+		<compare a="charges" b="0" op="eq" >
+			<expire />
+		</compare>
+	</onattackimpact>
+	
+	<altavatar key="Hero_Revenant.Alt"
+		passiveeffect="../alt/ability_01/effects/state_buff.effect"
+	>
+		<onattackimpact>
+			<cantarget targetscheme="enemy_units" effecttype="Magic">
+				<playeffect effect="../alt/ability_01/effects/impact.effect" source="target_entity" occlude="true" />
+				<applystate name="State_Revenant_Ability1_Slow" duration="4000" inflictor="this_proxy_entity" />
+				<damage effecttype="Magic" amount="40,70,100,130" />
+			</cantarget>	
+			
+			<cantarget targetscheme="all_buildings" />
+			<else>
+				<removecharge />
+				<compare a="charges" b="1" op="ge" >
+					<changeduration b="5000" op="max" />
+				</compare>
+			</else>
+
+			<compare a="charges" b="0" op="eq" >
+				<expire />
+			</compare>
+		</onattackimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Revenant.Alt3"
+		passiveeffect="../alt3/ability_01/effects/state_buff.effect"
+	>
+		<onattackimpact>
+			<cantarget targetscheme="enemy_units" effecttype="Magic">
+				<playeffect effect="../alt3/ability_01/effects/impact.effect" source="target_entity" occlude="true" />
+				<applystate name="State_Revenant_Ability1_Slow" duration="4000" inflictor="this_proxy_entity" />
+				<damage effecttype="Magic" amount="40,70,100,130" />
+			</cantarget>	
+			
+			<cantarget targetscheme="all_buildings" />
+			<else>
+				<removecharge />
+				<compare a="charges" b="1" op="ge" >
+					<changeduration b="5000" op="max" />
+				</compare>
+			</else>
+
+			<compare a="charges" b="0" op="eq" >
+				<expire />
+			</compare>
+		</onattackimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Revenant.Alt4"
+		passiveeffect="../alt4/ability_01/effects/state_buff.effect"
+		icon="../alt4/ability_01/icon.tga"
+	>
+		<modifier key="Alt4_Ability1_Upgrade" modpriority="99"
+			passiveeffect="../alt4/ability_01/effects/state_buff_upgrade.effect"
+			icon="../alt4/ability_01/icon_upgrade.tga"
+		/>
+		
+	</altavatar>
+	
+	<altavatar key="Hero_Revenant.Alt6"
+		passiveeffect="../alt6/ability_01/effects/state_buff.effect"
+	/>
+	
+</state>

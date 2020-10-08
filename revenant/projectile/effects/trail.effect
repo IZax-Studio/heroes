@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="femme_projectile" deferred="true">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<model
+				scale="1.2"
+				life="250"
+				model="/heroes/revenant/alt4/projectile/effects/crystal/model.mdf"
+				material="/shared/effects/materials/shell2.material"
+				anim="idle"
+				startcolor="1 0 1"
+				endcolor="1 0 1"
+				minroll="0"
+				maxroll="0"
+				depthbias="25"
+			>
+			</model>
+		
+			<model
+				expirelife="250"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="1 0 1"
+				endcolor="0 0 0"
+				midcolorpos=".25"
+				startscale="1"
+				midscale="1"
+				endscale="1"
+				midscalepos=".4"
+				material="/shared/effects/materials/shell2.material"
+			/>
+			
+
+			<model
+				position="0 0 0"
+				expirelife="1500"
+				name="emitter0" 
+				anim="idle"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				scale="1"
+				startcolor="0 0 0"
+				midcolor="0 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".75"
+				startalpha="0"
+				midalpha="0"
+				endalpha="0"
+				midalphapos=".4"
+				rollspeed="-1440"
+			>
+			
+				<template name="trails">
+					<twopointtrailemitter
+						name="trail01"
+						position="0 0 0"
+						bone_a="{bone01}"
+						bone_b="{bone02}"
+						spawnrate="150"
+						particlelife="500"
+						subframepose="1"
+						texpostime="1000"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/soul_projectile_blue.material"
+					>
+						<particle
+							startcolor="1 0 1"
+							endcolor="1 0 1"
+						/>
+					</twopointtrailemitter>
+				</template>
+				
+				<instance name="trails" bone01="_bone_fx_01"  bone02="_bone_fx_03"/>
+				<instance name="trails" bone01="_bone_fx_05"  bone02="_bone_fx_07"/>
+				
+			</model>
+			
+			<simpleemitter
+				spawnrate="150"
+				expirelife="100"
+				offsetsphere="30"
+				maxspeed="30"
+				minparticlelife="300"
+				maxparticlelife="700"
+				material="/shared/effects/materials/whitesquare.material"
+			>
+				<particle
+					startcolor="1 0 1"
+					endcolor="0"
+					size="1"
+					maxscale="2"
+					maxangle="360"
+				/>
+				<particle
+					startcolor="1 0 1"
+					endcolor="0"
+					size="1"
+					maxscale="2"
+					maxangle="360"
+				/>
+				<particle
+					startcolor="1 0 1"
+					endcolor="0"
+					size="1"
+					maxscale="2"
+					maxangle="360"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="20"
+				expirelife="100"
+				offsetsphere="45"
+				maxspeed="20"
+				inheritvelocity=".025"
+				particlelife="700"
+			>
+				<particle
+				scale=".15"
+				>
+					<model
+						maxyaw="360"
+						maxpitch="360"
+						maxroll="360"
+						life="650"
+						anim="idle"
+						model="/heroes/geomancer/ability_04/effects/shard/model.mdf"
+						material="/heroes/revenant/alt4/effects/crystal.material"
+						color="1 0 1"
+						midscalepos=".8"
+						startalpha=".7"
+						midalpha=".7"
+						endalpha="0"
+					>
+						<billboard
+							position="0 0 5"
+							size="70"
+							life="650"
+							startcolor="0"
+							midcolor="1 0 1"
+							endcolor="0"
+							depthbias="-25"
+							material="/shared/effects/materials/whitedot.material"
+						/>
+					</model>
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="50"
+				expirelife="100"
+				maxparticlelife="300"
+				material="/shared/effects/materials/blink.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".1 0 .1"
+					midcolorpos=".25"
+					endcolor="0"
+					size="70"
+					maxscale="3"
+					maxangle="360"
+					anchor="1"
+					maxanglespeed="300"
+				/>
+			</simpleemitter>
+				
+			<!--
+			<simpleemitter
+				spawnrate="20"
+				count="5"
+				particlelife="1000"
+				offsetsphere="0 25 0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+				turn="true"
+				>
+					<model
+						startscale="1"
+						endscale=".85"
+						minlife="250"
+						maxlife="250"
+						model="/heroes/revenant/alt4/projectile/effects/crystal/model.mdf"
+						color="1 0 1"
+						startalpha="0"
+						midalpha=".85"
+						endalpha="0"
+						midalphapos=".25"
+						minyaw="0"
+						maxyaw="360"
+					>
+					</model>
+				</particle>
+			</simpleemitter>
+-->			
+			<groundsprite
+				startsize="100"
+				endsize="22"
+				life="350"
+				startcolor=".2 0 .2"
+				midcolor=".2 0 .2"
+				endcolor="0 0 0"
+				midcolorpos=".75"
+				material="/shared/effects/materials/whitedot_ground.material"
+			/>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance1" particlesystem="system0" />
+		<waitfordeath  instance="instance1"/>
+	</thread>
+</effect>
+

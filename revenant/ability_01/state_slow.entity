@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Revenant_Ability1_Slow"
+	
+	icon="icon_1.tga"
+	passiveeffect="effects/state_slow.effect"
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	movespeedslowpercharge="0.20"
+
+	negativeeffect="slowed"
+>
+	<oninflict>
+		<addcharges count="1" timed="true" />
+	</oninflict>
+	
+	<onrefresh>
+		<addcharges count="1" timed="true" />
+	</onrefresh>
+	
+	<onframe />
+	
+	<altavatar key="Hero_Revenant.Alt"
+		passiveeffect="../alt/ability_01/effects/state_slow.effect"
+	/>
+	
+	<altavatar key="Hero_Revenant.Alt3"
+		passiveeffect="../alt3/ability_01/effects/state_slow.effect"
+	/>
+	
+	<altavatar key="Hero_Revenant.Alt4"
+		passiveeffect="../alt4/ability_01/effects/state_slow.effect"
+		icon="../alt4/ability_01/icon.tga"
+	>
+		<modifier key="Alt4_Ability1_Upgrade" modpriority="99"
+			passiveeffect="../alt4/ability_01/effects/state_slow_upgrade.effect"
+			icon="../alt4/ability_01/icon_upgrade.tga"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Revenant.Alt6"
+		passiveeffect="../alt6/ability_01/effects/state_slow.effect"
+	/>
+	
+</state>
