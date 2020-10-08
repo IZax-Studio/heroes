@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Aluna_Ability3"
+	icon="icons3.tga"	
+	passiveeffect="effects/state.effect"
+	effecttype="StatusBuff"
+	movespeedmultiplier="0.30,0.35,0.40,0.45"
+	
+	unitwalking="true"
+>
+	<modifier key="aluna_red" modpriority="100"
+		passiveeffect="effects/state_red.effect"
+		evasion="1.0"
+		icon="icon_b.tga"
+		movespeedmultiplier="0.45,0.50,0.55,0.60"
+	>
+		<oninflict>
+			<spawnaffector name="Affector_Aluna_Ability4" target="source_entity" pushentity="true" />
+			<setproxy target="stack_entity" />
+		</oninflict>
+
+		<onexpired>
+			<delete source="source_entity" target="this_proxy_entity" />
+		</onexpired>
+	</modifier>
+	
+	<altavatar key="Hero_Aluna.Alt" modpriority="1"
+		passiveeffect="../alt/ability_03/effects/state.effect"
+	>
+		<modifier key="aluna_red" modpriority="100"
+			passiveeffect="../alt/ability_03/effects/state_red.effect"
+			evasion="1.0"
+			icon="icon_b.tga"
+			movespeedmultiplier="0.45,0.50,0.55,0.60"
+		>
+			<oninflict>
+				<spawnaffector name="Affector_Aluna_Ability4" target="source_entity" pushentity="true" />
+				<setproxy target="stack_entity" />
+			</oninflict>
+
+			<onexpired>
+				<delete source="source_entity" target="this_proxy_entity" />
+			</onexpired>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Aluna.Alt2" modpriority="1"
+		passiveeffect="../alt2/ability_03/effects/state.effect"
+	>
+		<modifier key="aluna_red" modpriority="100"
+			passiveeffect="../alt2/ability_03/effects/state_red.effect"
+			evasion="1.0"
+			icon="icon_b.tga"
+			movespeedmultiplier="0.45,0.50,0.55,0.60"
+		>
+			<oninflict>
+				<spawnaffector name="Affector_Aluna_Ability4" target="source_entity" pushentity="true" />
+				<setproxy target="stack_entity" />
+			</oninflict>
+
+			<onexpired>
+				<delete source="source_entity" target="this_proxy_entity" />
+			</onexpired>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Aluna.Alt3" modpriority="1"
+		passiveeffect="../alt3/ability_03/effects/state.effect"
+	>
+		<modifier key="aluna_red" modpriority="100"
+			passiveeffect="../alt3/ability_03/effects/state_red.effect"
+			evasion="1.0"
+			icon="icon_b.tga"
+			movespeedmultiplier="0.45,0.50,0.55,0.60"
+		>
+			<oninflict>
+				<spawnaffector name="Affector_Aluna_Ability4" target="source_entity" pushentity="true" />
+				<setproxy target="stack_entity" />
+			</oninflict>
+
+			<onexpired>
+				<delete source="source_entity" target="this_proxy_entity" />
+			</onexpired>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Aluna.Alt4" modpriority="1"
+		passiveeffect="../alt4/ability_03/effects/state.effect"
+	>
+		<modifier key="aluna_red" modpriority="100"
+			passiveeffect="../alt4/ability_03/effects/state_red.effect"
+			evasion="1.0"
+			icon="icon_b.tga"
+			movespeedmultiplier="0.45,0.50,0.55,0.60"
+		>
+			<oninflict>
+				<spawnaffector name="Affector_Aluna_Ability4" target="source_entity" pushentity="true" />
+				<setproxy target="stack_entity" />
+			</oninflict>
+
+			<onexpired>
+				<delete source="source_entity" target="this_proxy_entity" />
+			</onexpired>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Aluna.Alt5" modpriority="1"
+		passiveeffect="../alt5/ability_03/effects/state.effect"
+	>
+		<modifier key="aluna_red" modpriority="100"
+			passiveeffect="../alt5/ability_03/effects/state_red.effect"
+			evasion="1.0"
+			icon="icon_b.tga"
+			movespeedmultiplier="0.45,0.50,0.55,0.60"
+		>
+			<oninflict>
+				<spawnaffector name="Affector_Aluna_Ability4" target="source_entity" pushentity="true" />
+				<setproxy target="stack_entity" />
+			</oninflict>
+
+			<onexpired>
+				<delete source="source_entity" target="this_proxy_entity" />
+			</onexpired>
+		</modifier>
+	</altavatar>
+		
+	<altavatar key="Hero_Aluna.Alt7" modpriority="1"
+		passiveeffect="../alt7/ability_03/effects/state.effect"
+	>
+		<modifier key="aluna_red" modpriority="100"
+			passiveeffect="../alt7/ability_03/effects/state_red.effect"
+			evasion="1.0"
+			icon="icon_b.tga"
+			movespeedmultiplier="0.45,0.50,0.55,0.60"
+		>
+			<oninflict>
+				<spawnaffector name="Affector_Aluna_Ability4" target="source_entity" pushentity="true" />
+				<setproxy target="stack_entity" />
+			</oninflict>
+
+			<onexpired>
+				<delete source="source_entity" target="this_proxy_entity" />
+			</onexpired>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Aluna.Alt8" modpriority="1"
+		icon="../alt8/ability_03/icon.tga"
+		passiveeffect="../alt8/ability_03/effects/state.effect"
+	>
+		<modifier key="aluna_red" modpriority="100"
+			icon="../alt8/ability_03/iconb.tga"
+			passiveeffect="../alt8/ability_03/effects/state_red.effect"
+			evasion="1.0"
+			movespeedmultiplier="0.45,0.50,0.55,0.60"
+		>
+			<oninflict>
+				<spawnaffector name="Affector_Aluna_Ability4" target="source_entity" pushentity="true" />
+				<setproxy target="stack_entity" />
+			</oninflict>
+
+			<onexpired>
+				<delete source="source_entity" target="this_proxy_entity" />
+			</onexpired>
+		</modifier>
+	</altavatar>
+</state>
