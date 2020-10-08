@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
 	name="State_Aluna_Ability3_Enemy"
-	icon="icon2.tga"	
+	icon="icons2.tga"	
 	passiveeffect="effects/slow.effect"
 	effecttype="StatusDebuff"
 	allowtransfer="true"

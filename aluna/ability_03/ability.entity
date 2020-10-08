@@ -2,7 +2,7 @@
 <ability
 	name="Ability_Aluna3"
 	
-	icon="icon3.tga"
+	icon="icons3.tga"
 	anim=""		
 	
 	casttime="0"

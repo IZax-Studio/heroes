@@ -11,7 +11,7 @@
 	<modifier key="aluna_red" modpriority="100"
 		passiveeffect="effects/state_red.effect"
 		evasion="1.0"
-		icon="icon_b.tga"
+		icon="icons3.tga"
 		movespeedmultiplier="0.45,0.50,0.55,0.60"
 	>
 		<oninflict>
