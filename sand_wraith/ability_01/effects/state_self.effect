@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true" useentityeffectscale="true">
+	<definitions>
+
+
+			
+		<particlesystem name="system0" space="world" scale="0.7">
+
+			<sound
+				soundloop="true"
+				fadein="300"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".4"
+				sample="../sounds/state_self.wav"
+			/>
+
+
+		
+			<model
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="1"
+				endcolor="0"
+				material="/shared/effects/materials/shell3.material"
+				startalpha="1"
+				endalpha="1"
+				size="4"
+				
+			/>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
