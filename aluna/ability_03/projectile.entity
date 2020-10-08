@@ -22,7 +22,7 @@
 	touchradiusdiradjust="false"
 	
 	lifetime="-1"	
-	turnrate="90000"		
+	turnrate="90000"	
 >
 	<onframe />
 	
@@ -77,5 +77,10 @@
 		<modifier key="aluna_red" modpriority="100"
 			traileffect="../alt8/ability_03/effects/shadow_red.effect"
 		/>
-	</altavatar>		
+	</altavatar>
+	
+	<altavatar key="Hero_Aluna.Alt9"
+		traileffect="../alt9/ability_03/effects/shadow.effect"
+	>
+	</altavatar>
 </projectile>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
 	name="State_Aluna_Ability3"
-	icon="icons3.tga"	
+	icon="icon3.tga"	
 	passiveeffect="effects/state.effect"
 	effecttype="StatusBuff"
 	movespeedmultiplier="0.30,0.35,0.40,0.45"
@@ -151,6 +151,25 @@
 		<modifier key="aluna_red" modpriority="100"
 			icon="../alt8/ability_03/iconb.tga"
 			passiveeffect="../alt8/ability_03/effects/state_red.effect"
+			evasion="1.0"
+			movespeedmultiplier="0.45,0.50,0.55,0.60"
+		>
+			<oninflict>
+				<spawnaffector name="Affector_Aluna_Ability4" target="source_entity" pushentity="true" />
+				<setproxy target="stack_entity" />
+			</oninflict>
+
+			<onexpired>
+				<delete source="source_entity" target="this_proxy_entity" />
+			</onexpired>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Aluna.Alt9" modpriority="1"
+		passiveeffect="../alt9/ability_03/effects/state.effect"
+	>
+		<modifier key="aluna_red" modpriority="100"
+			passiveeffect="../alt9/ability_03/effects/state_red.effect"
 			evasion="1.0"
 			movespeedmultiplier="0.45,0.50,0.55,0.60"
 		>
