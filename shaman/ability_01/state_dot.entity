@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Shaman_Ability1_Damage"
+
+	icon="icon1.tga"
+	passiveeffect=""
+	deniable="true"
+>
+	<onframe>
+		<setvar0 a="80,120,160,200" b="8" op="div" /> <!-- Damage over the time duration of the state -->
+		<setvar0 a="var0" b="frametime" op="mult" />
+		<damage effecttype="Physical DOT" amount="1" b="var0" op="mult" />
+	</onframe>
+	
+	<altavatar key="Hero_Shaman.Alt3"
+		icon="/heroes/shaman/alt3/ability_01/icon.tga"
+	/>
+</state>

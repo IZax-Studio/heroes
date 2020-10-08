@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+		
+		<template name="smoke" >
+			<simpleemitter
+				spawnrate="140"
+				bone="{bone}"
+				offsetsphere="5"
+				particlelife="300"
+				material="/shared/effects/materials/phantom_white.material"
+			>
+				<particle
+					startsize="50"
+					endsize="60"
+					startalpha="0"
+					midalpha=".65"
+					endalpha="0"
+					midalphapos=".2"
+					startcolor="1 0 0"
+					endcolor="0"
+					maxangle="360"
+				/>
+				<particle
+					startsize="50"
+					endsize="60"
+					startalpha="0"
+					midalpha=".65"
+					endalpha="0"
+					midalphapos=".2"
+					startcolor=".66 0 0"
+					endcolor="0"
+					maxangle="360"
+				/>
+				<particle
+					startsize="50"
+					endsize="60"
+					startalpha="0"
+					midalpha=".65"
+					endalpha="0"
+					midalphapos=".2"
+					startcolor=".33 0 0"
+					endcolor="0"
+					maxangle="360"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="80"
+				bone="{bone}"
+				offsetsphere="5"
+				particlelife="300"
+				material="/shared/effects/materials/phantom_smoke_13.material"
+			>
+				<particle
+					startsize="50"
+					endsize="60"
+					startwidth="100"
+					endwidth="120"
+					startcolor="0"
+					midcolor=".15 0 0"
+					midcolorpos=".25"
+					endcolor="0"
+					maxangle="360"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="100"
+				bone="{bone}"
+				offsetsphere="25"
+				particlelife="400"
+				gravity="-20"
+				minspeed="0"
+				maxspeed="140"
+				material="/shared/effects/materials/spark_10.material"
+			>
+				<particle
+					startsize="5"
+					endsize="1"
+					startcolor="0"
+					midcolor="1"
+					endcolor="0"
+					maxangle="360"
+					minscale="1"
+					maxscale="2"
+				/>
+			</simpleemitter>
+		</template>
+		<!--
+		<instance name="smoke" bone="Box01" />
+		<instance name="smoke" bone="Box04" />
+		-->
+		<instance name="smoke" bone="Box03" />
+		<instance name="smoke" bone="Box06" />
+		
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

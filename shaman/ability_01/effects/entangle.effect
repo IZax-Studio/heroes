@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".75">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume="0.5" 
+				sample="../sounds/impact.wav"
+			/>
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume="1" 
+				sample="../sounds/cast_%.wav"
+			/>		
+			
+			<model
+				position="0 0 0"
+				life="2100"
+				model="/heroes/shaman/alt4/ability_01/effects/olive_tree/model.mdf"
+				material="/shared/effects/materials/shell2.material"
+				anim="idle"
+				scale="1.7"
+				color="1 0 1"
+				alpha="1"
+				midalphapos=".5"
+			>
+			<simpleemitter
+					life="1800"
+					bone="Object005"
+					position="0 0 50"
+					material="/shared/effects/materials/whitedot.material"
+					spawnrate="50"
+					particlelife="650"
+					gravity="-6"
+					speed="10"
+					offsetsphere="60"
+					drag="0.1"
+				>
+					<particle
+						color="1 0 1"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".5"
+						maxangle="90"
+						size="20"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						startframe=".3"
+						endframe="1"
+						minscale=".5"
+						maxscale="1"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					position="0 20 0"
+					material="/shared/effects/materials/sparks_reveal.material"
+					spawnrate="50"
+					particlelife="750"
+					gravity="-10"
+					speed="30"
+					inheritvelocity="0.05"
+					offsetsphere="50"
+					drag="0.1"
+				>
+					<particle
+						color="1 0 1"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".5"
+						maxangle="90"
+						startsize="40"
+						minendsize="55"
+						maxendsize="60"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						startframe=".3"
+						endframe="1"
+						scale="1"
+					/>
+				</simpleemitter>
+			</model>
+			
+			
+			<model
+				position="0 0 0"
+				life="2100"
+				model="/heroes/shaman/alt4/ability_01/effects/olive_tree/model.mdf"
+				material="/shared/effects/materials/shell2.material"
+				anim="idle"
+				scale="1.72"
+				color="1 0 1"
+				alpha="1"
+				midalphapos=".5"
+			>
+			</model>
+					
+
+			<!-- <model
+				position="0 0 0"
+				life="1250"
+				model="/shared/effects/entangle/vines.mdf"
+				material="/heroes/tundra/ability_01/effects/material.material"
+				anim="idle"
+				scale="4.5"
+				color="1 0 1"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".5"
+			>
+			</model>
+
+			<model
+				position="0 0 0"
+				life="1250"
+				model="/shared/effects/entangle/vines.mdf"
+				material="/shared/effects/materials/shell2.material"
+				anim="idle"
+				scale="4.55"
+				color="1 0 1"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".5"
+			>
+			</model> -->
+			
+			<template name="beam">
+				<beam
+					expirelife="1000"		
+					bone_a="{a}"
+					bone_b="{b}"
+					size="{size}"
+					color=".5 0 .5"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					material="/shared/effects/materials/vine.material"
+					startframe="{frame}"
+					framespeed="5"
+				/>	
+			</template>		
+		
+			<instance name="beam" a="_bone_righthand" b="_bone_lefthand" size="15" frame=".6"/>
+			<instance name="beam" a="_bone_righthand" b="_bone_rightfoot" size="15" frame="5"/>
+			<instance name="beam" a="_bone_lefthand" b="_bone_leftfoot" size="15" frame="5"/>
+			<instance name="beam" a="_bone_centerofchest" b="_bone_origin" position_b="20 22 0" size="14" frame="1"/>
+			<instance name="beam" a="_bone_head" b="_bone_origin" position_b="20 34 0" size="12" frame="1"/>
+			<instance name="beam" a="_bone_head" b="_bone_origin" position_a="12 44 0" size="12" frame="1"/>
+			<instance name="beam" a="_bone_lefthand" b="_bone_origin" position_b="-30 20 0" size="12" frame="5"/>
+			<instance name="beam" a="_bone_leftfoot" b="_bone_rightfoot" size="15" frame="5"/>
+			<instance name="beam" a="_bone_lefthand L ForeArm" b="Bip01 Spine" size="15" frame="5"/>
+			<instance name="beam" a="_bone_righthand" b="_bone_head" size="15" frame="5"/>			
+			<instance name="beam" a="_bone_lefthand" b="_bone_head"  size="15" frame="5"/>
+			<instance bame="beam" a="_bone_leftfoot" b="_bone_origin" size="13" position_b="20 20 500"/>			
+			<instance name="beam" a="" b="_bone_leftfoot" size="15" frame=".8"/>
+			
+			
+			<model
+				startcolor="1 0 1"
+				endcolor="0 0 0"
+				parentmodel="true"
+				parentskeleton="true"
+				material="/shared/effects/materials/shell2.material"
+				life="2100"
+				startalpha="1"
+				endalpha="0"
+				scale="1.02"
+			/>
+			
+			<model
+				model="/heroes/geomancer/ability_04/effects/amethyst_explosion/model.mdf"
+				material="/heroes/tundra/ability_01/effects/material.material"
+				anim="idle"
+				color="1 0 1"
+				life="2000"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				maxyaw="359"
+				scale=".7"
+			/>
+				
+				
+			<simpleemitter
+				position="0 0 20"
+				delay="1800"
+				life="2000"
+				minspeed="1000"
+				maxspeed="5000"
+				direction="0 0 1"
+				minangle="0"
+				maxangle="30"
+				material="/shared/effects/materials/spark_12.material"
+				count="100"
+				minparticlelife="600"
+				maxparticlelife="1200"
+				gravity="40"
+				drag=".02"
+				offsetsphere="5"
+			>
+				<particle
+					midcolorpos=".1"
+					startcolor="0 0 0"
+					midcolor="1 0 1"
+					endcolor="0 0 0"
+					size="20"
+				/>
+			</simpleemitter>
+			
+			
+			<simpleemitter
+				position="0 0 20"
+				delay="1800"
+				life="2000"
+				minspeed="1000"
+				maxspeed="5000"
+				direction="0 0 1"
+				minangle="0"
+				maxangle="30"
+				material="/shared/effects/materials/sparks_reveal.material"
+				count="100"
+				minparticlelife="1200"
+				maxparticlelife="1800"
+				gravity="40"
+				drag=".02"
+				offsetsphere="5"
+				>
+				<particle
+					color="1 0 1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					maxangle="90"
+					startsize="40"
+					minendsize="55"
+					maxendsize="60"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					startframe=".3"
+					endframe="1"
+					scale="1"
+				/>
+			</simpleemitter>
+			
+		
+			<simpleemitter
+				delay="1800"
+				name="emitter0"
+				spawnrate="200"
+				life="400"
+				minparticlelife="350"
+				maxparticlelife="550"
+				gravity="20"
+				minspeed="300"
+				maxspeed="500"
+				drag=".1"
+				acceleration="0"
+				position="0 0 50"
+				material="/shared/effects/materials/sparks_reveal.material"
+				offsetsphere="200"
+				minangle="0"
+				maxangle="360"
+				direction="0 0 1"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="-150"
+					startcolor=".5 0 .5"
+					midcolor="0 0 0"
+					endcolor=".5 0 .5"
+					midcolorpos=".4"
+					startframe="0"
+					endframe="1"
+					startsize="20"
+					midsize="40"
+					endsize="20"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".25"
+					startstickiness=".4"
+					endstickiness="0"
+				/>
+			</simpleemitter>
+			
+			<billboard
+				delay="1850"
+				life="350"
+				startalpha=".8"
+				midalpha=".8"
+				endalpha="0"
+				midalphapos=".75"
+				startparam=".2"
+				endparam="0"
+				startsize="0"
+				endsize="1000"
+				depthbias="-100"
+				position="0 0 20"
+				material="/shared/effects/materials/refract_ring.material"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+			/>
+			
+			<billboard
+				delay="1950"
+				material="/shared/effects/materials/bulb_add.material"				
+				startcolor=".9"
+				endcolor="0 0 0"
+				life="250"
+				position="0 0 10"
+				startsize="50"
+				endsize="300"
+				depthbias="-150"			
+			/>
+
+
+			<billboard
+				delay="1850"
+				material="/shared/effects/materials/whitedot.material"				
+				startcolor=".5 0 .5"
+				endcolor="0 0 0"
+				life="500"	
+				position="0 0 25"
+				startsize="400"
+				endsize="400"
+				depthbias="-150"			
+			/>
+
+		</particlesystem>
+		
+		<modifier
+			name="modifier0"
+			material="/heroes/tundra/ability_01/effects/material.material"
+			color="1"
+			startalpha="1"
+			endalpha="0"
+			life="500"
+		/>
+
+	</definitions>
+	<thread>
+		<spawnmodifier instance="instance1" modifier="modifier0"/> 
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+
+</effect>

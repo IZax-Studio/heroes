@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_Shaman"
+
+	team="Hellbourne"
+	icon="Dazzle.tga"
+	portrait="Dazzle.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	deatheffect=""
+	selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana_%.wav"
+	cooldownsound="sounds/voice/cooldown_%.wav"
+	announcersound="sounds/voice/hero_select.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+	
+	preglobalscale=".8"
+	modelscale="1.0"
+	effectscale="0.99"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="48"
+	targetoffset="0 0 92"
+	portraitcampos="-15 50 50"
+
+	category="protective"
+	difficulty="2.5"
+
+	solorating="2"
+	junglerating="0"
+	carryrating="0"
+	supportrating="5"
+	initiatorrating="0"
+	gankerrating="0"
+	pusherrating="2"
+	rangedrating="5"
+	meleerating="0"
+	
+	movespeed="305"
+	turnrate="450"
+	turnsmoothing="0.05"
+
+	maxhealth="150"
+	healthregen="0.25"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="0.5"
+	magicarmor="5"
+
+	inventory0="Ability_Shaman1"
+	inventory1="Ability_Shaman2"
+	inventory2="Ability_Shaman3"
+	inventory3="Ability_Shaman4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="600"
+	attackactiontime="300"
+	attackcooldown="1700"
+	attackdamagemin="26"
+	attackdamagemax="30"
+	attacknumanims="2"
+	attackoffset="0 30 110"
+	attackprojectile="Projectile_Shaman_Attack"
+	attackrange="550"
+	attackstarteffect="projectile/effects/cast.effect"
+	attackactioneffect=""
+	attackimpacteffect=""
+	attacktype="ranged"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="800"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	primaryattribute="Intelligence"
+	strength="16"
+	strengthperlevel="1.8"
+	agility="21"
+	agilityperlevel="1.8"
+	intelligence="22"
+	intelligenceperlevel="2.5"
+
+	corpsetime="5000"
+	corpsefadetime="5000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	previewmodel="model.mdf"
+	previewpos="0 0 -60"
+	previewangles="0 0 0"
+	previewscale="1.5"
+	
+	storemodel="model.mdf"
+	storepos="0 0 -22"
+	storeangles="0 0 0"
+	storescale=".75"
+>
+	<recommendeditem name="Item_ManaPotion" />
+	<recommendeditem name="Item_MinorTotem" />
+	<recommendeditem name="Item_RunesOfTheBlight" />
+	<recommendeditem name="Item_HealthPotion" />
+	<recommendeditem name="Item_HomecomingStone" />
+	
+	<recommendeditem name="Item_Strength5" />
+	<recommendeditem name="Item_Bottle" />
+	<recommendeditem name="Item_Astrolabe" />
+	<recommendeditem name="Item_NomesWisdom" />
+	<recommendeditem name="Item_Striders" />
+	<recommendeditem name="Item_PlatedGreaves" />
+	<recommendeditem name="Item_Silence" />
+	<recommendeditem name="Item_Freeze" />
+	<recommendeditem name="Item_Intelligence7" />
+	<recommendeditem name="Item_Morph" />
+	
+	<!-- <modifier key="gated" modpriority="200"
+		movespeed="305"
+		magicarmor="5"
+		attackrange="550"
+		armor="-0.65"
+		
+		inventory0="Reborn_Ability_Shaman1"
+		inventory1="Reborn_Ability_Shaman2"
+		inventory2="Reborn_Ability_Shaman3"
+		inventory3="Reborn_Ability_Shaman4"
+		
+		attackdamagemin="14"
+		attackdamagemax="32"
+		
+		primaryattribute="Intelligence"
+		strength="16"
+		strengthperlevel="2"
+		agility="21"
+		agilityperlevel="1.7"
+		intelligence="27"
+		intelligenceperlevel="3.5"
+	>
+	</modifier> -->
+	
+	<altavatar key="Hero_Shaman.Alt"
+		icon2="alt/icon.tga"
+		portrait="alt/icon.tga"
+		model="alt/model.mdf"
+		
+		previewmodel="alt/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.5"
+		selectedsound="alt/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt/sounds/voice/move_%.wav"
+	    confirmattacksound="alt/sounds/voice/attack_%.wav"
+	    nomanasound="alt/sounds/voice/no_mana.wav"
+	    cooldownsound="alt/sounds/voice/cooldown.wav"
+	    tauntedsound="alt/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt/sounds/voice/taunt_after.wav"
+		
+		preglobalscale="1.65"
+		
+		attackstarteffect=""
+		
+		storemodel="alt/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.50"
+	/>
+	
+	<altavatar key="Hero_Shaman.Alt2"
+		icon2="alt2/icon.tga"
+		portrait="alt2/icon.tga"
+		model="alt2/model.mdf"
+	
+		passiveeffect="alt2/effects/body.effect"
+		
+		selectedsound="alt2/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt2/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt2/sounds/voice/move_%.wav"
+	    confirmattacksound="alt2/sounds/voice/attack_%.wav"
+	    nomanasound="alt2/sounds/voice/no_mana.wav"
+	    cooldownsound="alt2/sounds/voice/cooldown.wav"
+	    tauntedsound="alt2/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt2/sounds/voice/taunt_after.wav"
+			
+		attackstarteffect="alt2/projectile/effects/cast.effect"
+		
+		previewmodel="alt2/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.5"
+		
+		preglobalscale="1.65"
+		
+		storemodel="alt2/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.75"
+	>
+	
+	<onspawn propagatetoillusions="false" >
+		<ownsproduct target="this_entity" product="aa.Hero_Mumra.Alt3 aa.Hero_Ra.Alt3 aa.Hero_Xalynx.Alt2 aa.Hero_Taint.Alt2">
+			<activatemodifierkey name="Amunra_trail"/>
+		</ownsproduct>
+	</onspawn>
+	
+	<onrespawn propagatetoillusions="false" >
+		<ownsproduct target="this_entity" product="aa.Hero_Mumra.Alt3 aa.Hero_Ra.Alt3 aa.Hero_Xalynx.Alt2 aa.Hero_Taint.Alt2">
+			<activatemodifierkey name="Amunra_trail"/>
+		</ownsproduct>
+	</onrespawn>
+	
+	<modifier key="Amunra_trail" modpriority="1"
+		walkanim="walk_2"
+	/>
+	
+	</altavatar>
+	
+	<altavatar key="Hero_Shaman.Alt3"
+		icon2="alt3/icon.tga"
+		portrait="alt3/icon.tga"
+		model="alt3/model.mdf"
+	
+		passiveeffect="alt3/effects/body.effect"
+		
+		selectedsound="alt3/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt3/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt3/sounds/voice/move_%.wav"
+	    confirmattacksound="alt3/sounds/voice/attack_%.wav"
+	    nomanasound="alt3/sounds/voice/no_mana.wav"
+	    cooldownsound="alt3/sounds/voice/cooldown.wav"
+	    tauntedsound="alt3/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt3/sounds/voice/taunt_after.wav"
+			
+		attackstarteffect="alt3/projectile/effects/cast.effect"
+		
+		previewmodel="alt3/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.5"
+		
+		preglobalscale="1.8"
+		
+		storemodel="alt3/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.75"
+	>
+		<onspawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Bephelgor.Alt4 aa.Hero_Bombardier.Alt4 aa.Hero_DiseasedRider.Alt3">
+				<spawnunit name="Pet_Candy" target="this_entity" source="target_entity" offset="0 -100" facing="source_entity" pushentity="true" />
+			</ownsproduct>
+		</onspawn>
+		
+		<onrespawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Bephelgor.Alt4 aa.Hero_Bombardier.Alt4 aa.Hero_DiseasedRider.Alt3">
+				<spawnunit name="Pet_Candy" target="this_entity" source="target_entity" offset="0 -100" facing="source_entity" pushentity="true" />
+			</ownsproduct>
+		</onrespawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Shaman.Alt4"
+		icon2="alt4/icon.tga"
+		portrait="alt4/icon.tga"
+		model="alt4/model.mdf"
+	
+		passiveeffect=""
+		
+		selectedsound="alt4/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt4/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt4/sounds/voice/move_%.wav"
+	    confirmattacksound="alt4/sounds/voice/attack_%.wav"
+	    nomanasound="alt4/sounds/voice/no_mana.wav"
+	    cooldownsound="alt4/sounds/voice/cooldown.wav"
+	    tauntedsound="alt4/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt4/sounds/voice/taunt_after.wav"
+			
+		attackstarteffect=""
+		
+		previewmodel="alt4/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.5"
+		
+		preglobalscale="1.8"
+		
+		storemodel="alt4/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.75"
+	/>
+	
+	<altavatar key="Hero_Shaman.Alt5"
+		icon2="alt5/icon.tga"
+		portrait="alt5/icon.tga"
+		model="alt5/model.mdf"
+	
+		passiveeffect="alt5/effects/body.effect"
+		
+		selectedsound="alt5/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt5/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt5/sounds/voice/move_%.wav"
+	    confirmattacksound="alt5/sounds/voice/attack_%.wav"
+	    nomanasound="alt5/sounds/voice/no_mana.wav"
+	    cooldownsound="alt5/sounds/voice/cooldown.wav"
+	    tauntedsound="alt5/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt5/sounds/voice/taunt_after.wav"
+			
+		attackstarteffect="alt5/projectile/effects/cast.effect"
+		
+		previewmodel="alt5/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.5"
+		
+		preglobalscale="1.8"
+		
+		storemodel="alt5/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.75"
+	/>
+	
+	<altavatar key="Hero_Shaman.Alt6"
+		icon2="alt6/icon.tga"
+		portrait="alt6/icon.tga"
+		model="alt6/model.mdf"
+	
+		passiveeffect="alt6/effects/body.effect"
+		
+		selectedsound="alt6/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt6/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt6/sounds/voice/move_%.wav"
+	    confirmattacksound="alt6/sounds/voice/attack_%.wav"
+	    nomanasound="alt6/sounds/voice/no_mana.wav"
+	    cooldownsound="alt6/sounds/voice/cooldown.wav"
+	    tauntedsound="alt6/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt6/sounds/voice/taunt_after.wav"
+			
+		attackstarteffect="alt6/projectile/effects/cast.effect"
+		
+		previewmodel="alt6/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.5"
+		
+		preglobalscale="1.8"
+		
+		storemodel="alt6/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.75"
+	/>
+
+	
+	<altavatar key="Hero_Shaman.Alt7"
+		icon2="alt7/icon.tga"
+		portrait="alt7/icon.tga"
+		model="alt7/model.mdf"
+	
+		passiveeffect=""
+		
+		selectedsound="alt5/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt5/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt5/sounds/voice/move_%.wav"
+	    confirmattacksound="alt5/sounds/voice/attack_%.wav"
+	    nomanasound="alt5/sounds/voice/no_mana.wav"
+	    cooldownsound="alt5/sounds/voice/cooldown.wav"
+	    tauntedsound="alt5/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt5/sounds/voice/taunt_after.wav"
+			
+		attackstarteffect="alt7/projectile/effects/cast.effect"
+		
+		previewmodel="alt7/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.5"
+		
+		preglobalscale="2.4"
+		
+		storemodel="alt7/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="2.2"
+
+		portraitcampos="-5 -75 18"
+		portraitangles="0 0 40"
+	>
+		<onspawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Blitz.Alt5 aa.Hero_CorruptedDisciple.Alt6 aa.Hero_Taint.Alt8 aa.Hero_Shaman.Alt7 aa.Hero_ForsakenArcher.Alt8" >
+				<activatemodifierkey name="Songkran_Set" />
+			</ownsproduct>
+		</onspawn>
+		
+		<onrespawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Blitz.Alt5 aa.Hero_CorruptedDisciple.Alt6 aa.Hero_Taint.Alt8 aa.Hero_Shaman.Alt7 aa.Hero_ForsakenArcher.Alt8" >
+				<activatemodifierkey name="Songkran_Set" />
+			</ownsproduct>
+		</onrespawn>
+		
+		<onkilled>
+			<ownsproduct target="this_entity" product="aa.Hero_Blitz.Alt5 aa.Hero_CorruptedDisciple.Alt6 aa.Hero_Taint.Alt8 aa.Hero_Shaman.Alt7 aa.Hero_ForsakenArcher.Alt8">
+				<deactivatemodifierkey name="Songkran_Set" />
+			</ownsproduct>
+		</onkilled>
+		
+		<modifier key="Songkran_Set" modpriority="1000"
+			tooleffectpath36="alt7/effects/songkran_set.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Shaman.pog_skin" modpriority="1"
+		
+		icon2="icon.tga"
+		portrait="icon.tga"
+		model="model.mdf"
+		
+		previewmodel="pog_skin/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.15"
+
+		storemodel="pog_skin/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.6"
+	/>
+	
+	<altavatar key="Hero_Shaman.Alt8"
+		icon2="alt8/icon.tga"
+		portrait="alt8/icon.tga"
+		model="alt8/model.mdf"
+		
+		portraitcampos="32 -38 35"
+	
+		passiveeffect="alt8/effects/body.effect"
+		
+		selectedsound="alt8/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt8/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt8/sounds/voice/move_%.wav"
+	    confirmattacksound="alt8/sounds/voice/attack_%.wav"
+	    nomanasound="alt8/sounds/voice/no_mana.wav"
+	    cooldownsound="alt8/sounds/voice/cooldown.wav"
+	    tauntedsound="alt8/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt8/sounds/voice/taunt_after.wav"
+			
+		attackstarteffect="alt8/projectile/effects/cast.effect"
+		
+		previewmodel="alt8/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.5"
+		
+		preglobalscale="1.75"
+	
+		storemodel="alt8/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.75"
+	/>
+	
+	
+	<altavatar key="Hero_Shaman.Alt9"
+		icon2="alt9/icon.tga"
+		portrait="alt9/icon.tga"
+		model="alt9/model.mdf"
+		
+		modelscale="0.9"
+		
+		portraitcampos="40 -50 23"
+		portraitangles="0 0 10"
+		preglobalscale="1.75"
+		
+		previewmodel="alt9/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.5"
+	
+		storemodel="alt9/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.75"
+		
+		selectedsound="alt9/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt9/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt9/sounds/voice/move_%.wav"
+	    confirmattacksound="alt9/sounds/voice/attack_%.wav"
+	    nomanasound="alt9/sounds/voice/no_mana.wav"
+	    cooldownsound="alt9/sounds/voice/cooldown.wav"
+	    tauntedsound="alt9/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt9/sounds/voice/taunt_after.wav"
+		
+		attackstarteffect="alt9/projectile/effects/cast.effect"
+		
+		corpsetime="2000"
+		corpsefadetime="2000"
+		
+	
+		
+	/>
+</hero>

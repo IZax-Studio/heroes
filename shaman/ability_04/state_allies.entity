@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Shaman_Ability4"
+
+	icon="icon4.tga"
+	
+	armorpercharge="1.0"
+	impactinterval="500"
+	
+	passiveeffect="effects/state.effect"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<onframe />
+
+	<oninflict>
+		<addcharges count="1" />
+	</oninflict>
+	
+	<onrefresh>
+		<setcharges a="0" />
+		<deactivatemodifierkey name="Shaman_Cloud_Maxed" />
+	</onrefresh>
+
+	<onimpact>
+		<addcharges count="1" />
+		
+		<!-- Staff of the Master -->
+		<hasmodifier name="ult_boost">
+			<compare a="charges" b="18,24,30" op="ge">
+				<activatemodifierkey name="Shaman_Cloud_Maxed" />
+			</compare>
+		</hasmodifier>
+		<else>
+			<compare a="charges" b="10,17,24" op="ge">
+				<activatemodifierkey name="Shaman_Cloud_Maxed" />
+			</compare>
+		</else>		
+	</onimpact>
+	
+	<modifier key="ult_boost" modpriority="99">
+		<onframe />
+	</modifier>
+	
+	<modifier key="Shaman_Cloud_Maxed" modpriority="100">
+		<onimpact>
+			<removecharge />
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Shaman.Alt3"
+		icon="/heroes/shaman/alt3/ability_04/icon.tga"
+		passiveeffect="/heroes/shaman/alt3/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Shaman.Alt4"
+		passiveeffect="/heroes/shaman/alt4/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Shaman.Alt5"
+		passiveeffect="/heroes/shaman/alt5/ability_04/effects/state.effect"
+	/>
+	
+</state>

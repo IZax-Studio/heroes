@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Shaman_Ability1_Snare"
+	
+	icon="icon1.tga"
+	passiveeffect="effects/entangle.effect"
+
+	movespeedslowstart="0.4"
+	movespeedslowmid="0.4,0.6,0.8,1.0"
+	movespeedslowend="0.4,0.6,0.8,1.0"
+	movespeedslowmidpos="0.8"
+	movespeedslowduration="2000"
+	
+	effecttype="StatusDebuff"
+
+	negativeeffect="slowed"
+>
+	<oninflict>
+		<applystate name="State_Stunned" duration="100" />
+		<damage effecttype="" amount="0.000001" nonlethal="true" />
+	</oninflict>
+
+	<onexpired>
+		<compare a="dispelled" b="0" op="eq">
+			<cantarget targetscheme="enemy_units">
+				<compare a="level" b="1" op="gt">
+					<applystate name="State_Stunned" duration="0,400,800,1200" />
+				</compare>
+				
+				<applystate name="State_Shaman_Ability1_Damage" duration="8000" />
+			</cantarget>
+		</compare>
+	</onexpired>
+	
+	<altavatar key="Hero_Shaman.Alt3"
+		icon="/heroes/shaman/alt3/ability_01/icon.tga"
+		passiveeffect="/heroes/shaman/alt3/ability_01/effects/entangle.effect"
+	/>
+	
+	<altavatar key="Hero_Shaman.Alt4"
+		passiveeffect="/heroes/shaman/alt4/ability_01/effects/entangle.effect"
+	/>
+	
+	<altavatar key="Hero_Shaman.Alt5"
+		passiveeffect="/heroes/shaman/alt5/ability_01/effects/entangle.effect"
+	/>
+	
+	<altavatar key="Hero_Shaman.Alt7"
+		passiveeffect="/heroes/shaman/alt7/ability_01/effects/entangle.effect"
+	/>
+	
+	<altavatar key="Hero_Shaman.Alt8"
+		passiveeffect="/heroes/shaman/alt8/ability_01/effects/entangle.effect"
+	/>
+	
+	<altavatar key="Hero_Shaman.Alt9"
+		passiveeffect="/heroes/shaman/alt9/ability_01/effects/entangle.effect"
+	/>
+</state>

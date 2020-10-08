@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Shaman_Attack"
+
+	speed="1200"
+	gravity="0"
+
+	modelscale=".7"
+	model="/shared/models/invis.mdf"
+
+	impacteffect="effects/impact.effect"
+	traileffect="effects/trail.effect"
+>
+	<altavatar key="Hero_Shaman.Alt"
+		impacteffect="../alt/projectile/effects/impact.effect"
+		traileffect="../alt/projectile/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Shaman.Alt2"
+		impacteffect="../alt2/projectile/effects/impact.effect"
+		traileffect="../alt2/projectile/effects/trail.effect"
+	/>
+
+	<altavatar key="Hero_Shaman.Alt3"
+		impacteffect="../alt3/projectile/effects/impact.effect"
+		traileffect="../alt3/projectile/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Shaman.Alt4"
+		impacteffect="../alt4/projectile/effects/impact.effect"
+		traileffect="../alt4/projectile/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Shaman.Alt5"
+		impacteffect="../alt5/projectile/effects/impact.effect"
+		traileffect="../alt5/projectile/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Shaman.Alt7"
+		impacteffect="../alt7/projectile/effects/impact.effect"
+		traileffect="../alt7/projectile/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Shaman.Alt8"
+		impacteffect="../alt8/projectile/effects/impact.effect"
+		traileffect="../alt8/projectile/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Shaman.Alt9"
+		impacteffect="../alt9/projectile/effects/impact.effect"
+		traileffect="../alt9/projectile/effects/trail.effect"
+	/>
+</projectile>
