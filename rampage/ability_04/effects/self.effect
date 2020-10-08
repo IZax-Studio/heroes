@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.1" >
+
+			<!-- Red shield -->
+			<billboard
+				material="/shared/effects/materials/fresnel_blend.material"
+				bone="_bone_centerofchest"
+				color="1 .2 .2"
+				loop="1"
+				life="1000"
+				startalpha=".4"
+				midalpha=".9"
+				endalpha=".4"
+				position="0 0 10"
+				size="250"
+				depthbias="-150"			
+			/>
+			<billboard
+				material="/shared/effects/materials/corona_07.material"
+				bone="_bone_centerofchest"
+				color=".6 0 0"
+				loop="1"
+				life="1000"
+				startalpha=".4"
+				midalpha=".9"
+				endalpha=".4"
+				position="0 0 10"
+				size="250"
+				depthbias="-150"			
+			/>			
+			<billboard
+				material="/shared/effects/materials/fresnel.material"
+				bone="_bone_centerofchest"
+				startcolor="1 .2 0"
+				endcolor="0 0 0"
+				
+				life="300"
+
+				position="0 0 10"
+				size="250"
+				depthbias="-150"			
+			/>
+			<!-- Red shield over -->
+
+      </particlesystem>
+   </definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

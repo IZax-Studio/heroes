@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Rampage_Ability4"
+
+	icon="icon4.tga"
+	passiveeffect="effects/shake.effect"
+	ishidden="true"
+
+	effecttype=""
+	
+	impactinterval="1000"
+>
+	<onimpact>
+		<cantarget target="this_owner_entity" ignoreinvulnerable="false">
+			<damage effecttype="Physical" target="this_owner_entity" amount="100,200,300" />
+			<setpos0 position="this_owner_entity" positionend="this_proxy_entity" positionmodifier="pointonline" positionvalue="300" />
+			<spawnprojectile name="Projectile_Rampage_Ability4" source="this_owner_entity" target="pos0" bind="this_owner_entity" bindstate="State_Rampage_Ability4_Bound" />
+			
+			<!-- Horned Strike (E) -->
+			<pushability name="Ability_Rampage3" />
+			<setvar0 a="source_level" source="stack_entity" />
+			
+			<compare a="var0" b="0" op="gt">
+				<!-- Slow Duration = 1000 + 500*Level (ms) -->
+				<evaluate a="var0" b="500" op="mult" />
+				<setvar1 a="result" b="1000" op="add" />
+				<applystate name="State_Rampage_Ability3" target="this_owner_entity" duration="var1" />
+				
+				<!-- Damage = 25 + 30*Level -->
+				<evaluate a="var0" b="30" op="mult" />
+				<evaluate a="result" b="25" op="add" />
+				<damage effecttype="Physical" target="this_owner_entity" amount="1" b="result" op="mult" />
+				
+				<!-- Art for Horned Strike (E) -->
+				<hasavatarkey name="Hero_Rampage.Alt14">
+					<playeffect effect="../alt14/ability_03/effects/impact.effect" source="target_entity" />
+					<playeffect effect="../alt14/ability_03/effects/cast.effect" target="source_entity" />
+				</hasavatarkey>
+				<else>
+					<playeffect effect="../ability_03/effects/impact.effect" source="target_entity" />
+					<playeffect effect="../ability_03/effects/cast.effect" target="source_entity" />
+				</else>
+			</compare>
+		</cantarget>
+		
+		<!-- Art -->
+		<hasavatarkey name="Hero_Rampage.Alt">
+			<playeffect effect="../alt/ability_04/effects/impact.effect" source="this_owner_position" target="" occlude="true" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Rampage.Alt2">
+				<playeffect effect="../alt2/ability_04/effects/impact.effect" source="this_owner_position" target="" occlude="true" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Rampage.Alt5">
+					<playeffect effect="../alt5/ability_04/effects/impact.effect" source="this_owner_position" target="" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Rampage.Alt6">
+						<playeffect effect="../alt6/ability_04/effects/impact.effect" source="this_owner_position" target="" occlude="true" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Rampage.Alt13">
+							<playeffect effect="../alt13/ability_04/effects/impact.effect" source="this_owner_position" target="" occlude="true" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Rampage.Alt14">
+								<playeffect effect="../alt14/ability_04/effects/impact.effect" source="this_owner_position" target="" occlude="true" />
+							</hasavatarkey>
+							<else>
+								<playeffect effect="effects/impact.effect" source="this_owner_position" target="" occlude="true" />
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+		
+		<expire />
+	</onimpact>
+	
+	<altavatar key="Hero_Rampage.Alt2"
+		passiveeffect="../alt2/ability_04/effects/shake.effect"
+	/>
+	
+	<altavatar key="Hero_Rampage.Alt5"
+		passiveeffect="../alt5/ability_04/effects/shake.effect"
+	/>
+	
+	 <altavatar key="Hero_Rampage.Alt14"
+		icon="/heroes/Rampage/alt14/ability_04/icon.tga"
+	>
+	</altavatar>
+</state>

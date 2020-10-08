@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Rampage_Ability4_Damage"
+
+	icon="icon4.tga"
+	passiveeffect=""
+>
+	<onframe>
+		<damage target="proxy_entity" amount="0.25,0.35,0.45" b="movement" op="mult" effecttype="Physical DOT" />
+	</onframe>
+	
+	<modifier key="soccer" modpriority="150">
+		<onframe>
+			<damage target="proxy_entity" amount="0.1" b="movement" op="mult" effecttype="Physical DOT" />
+		</onframe>	
+	</modifier>
+	
+	 <altavatar key="Hero_Rampage.Alt14"
+		icon="/heroes/Rampage/alt14/ability_04/icon.tga"
+	>
+	</altavatar>
+	
+</state>
