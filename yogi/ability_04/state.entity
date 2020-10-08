@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Yogi_Ability4"
+
+	icon="icon4.tga"
+	passiveeffect=""
+	displaylevel="true"
+	
+	modifierkey="Yogi_Ability4_Active"
+	
+	armor="3,6,9"
+	
+	effecttype=""
+	
+	propagatetoillusions="true"
+>
+	<onframe />
+	
+	<modifier key="Yogiq_4" modpriority="100"
+		armor="6,9,12"
+		magicarmor="3"
+	>
+	</modifier>
+	
+	<modifier key="Yogi_Ability4_Active" modpriority="110"
+	>
+		<onframe />
+	</modifier>
+	
+	<modifier key="Yogi_BoobooAlive" modpriority="120"
+	>
+		<onframe />
+	</modifier>
+
+	<modifier key="krosmode" modpriority="130"
+
+		morphmodel="/heroes/yogi/hd_wildsoul/morph/model.mdf"
+
+		morphattackrange="150"
+		morphattackprojectile=""
+		morphattackimpacteffect=""
+		morphattackcooldown="1600"
+		morphattackactiontime="500"
+		morphattacktype="melee"
+		
+		morpheffectscale="1.17"
+		morphpreglobalscale="1.8"
+		morphaggrorange="600"
+
+		morphpriority="100"
+	>
+
+	</modifier>
+
+	<altavatar key="Hero_Yogi.Classic"
+		modifierkey2="Yogi_Ability4_Classic"
+	>
+	</altavatar>
+
+	<altavatar key="Hero_Yogi.Alt"
+		modifierkey2="Yogi_Ability4_Alt1"
+	>
+	</altavatar>
+
+	<altavatar key="Hero_Yogi.Alt2"
+		modifierkey2="Yogi_Ability4_Alt2"
+	>
+	</altavatar>
+
+	<altavatar key="Hero_Yogi.Alt3"
+		modifierkey2="Yogi_Ability4_Alt3"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Yogi.Alt4"
+		modifierkey2="Yogi_Ability4_Alt4"
+	/>
+	
+	<altavatar key="Hero_Yogi.Alt5"
+		modifierkey2="Yogi_Ability4_Alt5"
+	/>
+	<altavatar key="Hero_Yogi.Alt6"
+		modifierkey2="Yogi_Ability4_Alt6"
+	/>
+	
+	<altavatar key="Hero_Yogi.Soccer_skin"
+		modifierkey2="Yogi_Ability4_Soccer_skin"
+	/>
+</state>

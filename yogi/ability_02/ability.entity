@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Yogi2"
+
+	statuseffecttooltip="State_Yogi_Ability2"
+	icon="icon2.tga"
+	
+	anim="ability_2"
+	casttime="0"
+	castactiontime="0"
+	casteffect="../effects/ability_02/cast.effect"
+	frontqueue="true"
+	inheritmovement="true"
+	nonaggressive="true"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="global"
+	targetscheme="my_units"
+	casteffecttype=""
+	
+	manacost="50,60,70,80"
+	cooldowntime="20000"
+>
+	
+	<onimpact>
+		<applystate name="State_Yogi_Ability2" duration="45000" target="target_entity" />
+		<hasmodifier name="rapidfire">
+			<applystate name="State_Yogi_Ability2_Cooldown" duration="4000" target="this_owner_entity" proxy="this_entity" />
+		</hasmodifier>
+		<else>
+			<applystate name="State_Yogi_Ability2_Cooldown" duration="20000" target="this_owner_entity" proxy="this_entity" />
+		</else>
+	</onimpact>
+	
+	<modifier key="Yogi_Ability4_Active" modpriority="100"
+		icon="/heroes/yogi/summon/icons/ability_2b.tga"
+		statuseffecttooltip="State_Yogi_AbilityBear3"
+		targetradius="300"
+		actiontype="self_position"
+		targetscheme="enemy_units"
+		casttime="500"
+		castactiontime="250"
+
+		casteffecttype="Physical"
+		manacost="0"
+		cooldowntime="11000"
+		anim="ability_2"
+		
+		maxcharges="3"
+		frontqueue="false"
+		inheritmovement="false"
+		casteffect=""
+		
+		baselevel="1"
+		maxlevel="5"
+		disabled="true"
+	>
+		<onimpact />
+	</modifier>
+	
+	
+	<modifier key="Yogiq_level3" modpriority="110"
+		disabled="false"
+	>
+		<onimpact>
+			<spawnaffector name="Affector_Yogi_AbilityBear3" target="source_position" />
+			<starttimer duration="0" />
+			<hasmodifier name="rapidfire">
+				<applystate name="State_Yogi_Ability2_Cooldownsub" duration="2200" target="this_owner_entity" proxy="this_entity" />
+			</hasmodifier>
+			<else>
+				<applystate name="State_Yogi_Ability2_Cooldownsub" duration="11000" target="this_owner_entity" proxy="this_entity" />
+			</else>
+		</onimpact>
+		
+		<ontimer>
+			<setcharges a="0" />
+		</ontimer>
+		
+		<onattack>
+			<isready>
+				<cantarget targetscheme="enemy_units">
+					<addcharges count="1" />
+					<compare a="charges" b="3" op="ge">
+						<starttimer duration="0" />
+						<startcooldown duration="8000" />
+						<spawnaffector name="Affector_Yogi_AbilityBear3" target="source_position" />
+						<hasmodifier name="rapidfire">
+							<applystate name="State_Yogi_Ability2_Cooldownsub" duration="2200" target="this_owner_entity" proxy="this_entity" />
+						</hasmodifier>
+						<else>
+							<applystate name="State_Yogi_Ability2_Cooldownsub" duration="11000" target="this_owner_entity" proxy="this_entity" />
+						</else>
+					</compare>
+					<else>
+						<starttimer duration="5000" />
+					</else>
+				</cantarget>
+			</isready>
+		</onattack>
+	</modifier>
+
+	<modifier key="Yogiq_level4" modpriority="120"
+		targetradius="350"
+		statuseffecttooltip="State_Yogi_AbilityBear3"
+		targetscheme="enemy_units_and_structures"
+	>
+		<onimpact>
+			<spawnaffector name="Affector_Yogi_AbilityBear3" target="source_position" />
+			<starttimer duration="0" />
+			<hasmodifier name="rapidfire">
+				<applystate name="State_Yogi_Ability2_Cooldownsub" duration="2200" target="this_owner_entity" proxy="this_entity" />
+			</hasmodifier>
+			<else>
+				<applystate name="State_Yogi_Ability2_Cooldownsub" duration="11000" target="this_owner_entity" proxy="this_entity" />
+			</else>
+		</onimpact>
+		
+		<ontimer>
+			<setcharges a="0" />
+		</ontimer>
+		
+		<onattack>
+			<isready>
+				<cantarget targetscheme="enemy_units_and_structures">
+					<addcharges count="1" />
+					<compare a="charges" b="3" op="ge">
+						<starttimer duration="0" />
+						<startcooldown duration="8000" />
+						<spawnaffector name="Affector_Yogi_AbilityBear3" target="source_position" />
+						<hasmodifier name="rapidfire">
+							<applystate name="State_Yogi_Ability2_Cooldownsub" duration="2200" target="this_owner_entity" proxy="this_entity" />
+						</hasmodifier>
+						<else>
+							<applystate name="State_Yogi_Ability2_Cooldownsub" duration="11000" target="this_owner_entity" proxy="this_entity" />
+						</else>
+					</compare>
+					<else>
+						<starttimer duration="5000" />
+					</else>
+				</cantarget>
+			</isready>
+		</onattack>
+	</modifier>
+	
+	<altavatar key="Hero_Yogi.Alt2"
+	    casteffect="/heroes/yogi/alt2/ability_02/effects/cast.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Yogi.Alt5"
+	    casteffect="/heroes/yogi/alt5/ability_02/effects/cast.effect"
+	>
+	</altavatar>
+</ability>

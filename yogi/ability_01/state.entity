@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Yogi_Ability1"
+
+	icon="icon1.tga"
+	passiveeffect=""
+	
+	effecttype=""
+
+	serverentity="true"
+
+	impactinterval="120000"
+	maxcharges="1"
+
+	modifierkey="Yogi_BoobooAlive"
+>
+	<oninflict>
+		<setaccumulator value="120" />
+	</oninflict>
+
+	<onframe>
+		<compare a="charges" b="0" op="eq">
+			<compare a="accumulator" b="0" op="gt">
+				<setaccumulator value="accumulator" valueb="frametime" valueop="sub" />
+			</compare>
+			<compare a="accumulator" b="0" op="lt">
+				<setaccumulator value="0" />
+			</compare>
+		</compare>
+	</onframe>
+
+	<onimpact>
+		<compare a="charges" b="0" op="eq">
+			<addcharges count="1" />
+		</compare>
+	</onimpact>
+
+	<onexpired>
+		<!--
+		<compare a="accumulator" b="0" op="eq">
+		</compare>
+		<else>
+			<setvar0 a="accumulator" b="1000" op="mult" />
+			<startcooldown entity="this_proxy_entity" duration="var0" />
+		</else>
+		-->
+		<startcooldown entity="this_proxy_entity" duration="30000" />
+	</onexpired>
+	
+	<modifier key="ult_boost" modpriority="100"
+		modifierkey2="Yogi_BoobooAlive_Sotm"
+	>
+	</modifier>
+</state>

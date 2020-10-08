@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Yogi_AbilityBear3"
+
+	passiveeffect="effects/state.effect"
+	
+	icon="/heroes/yogi/summon/icons/ability_2b.tga"
+	
+	movespeedslow="0.75"
+	attackspeed="-0.75"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	negativeeffect="slowed"
+>
+	<altavatar key="Hero_Yogi.Alt5"
+		passiveeffect="/heroes/yogi/alt5/summon/effects/state.effect"
+	/>
+</state>

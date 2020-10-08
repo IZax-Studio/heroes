@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_YogiAttack"
+
+	speed="900"
+	gravity="2000"
+	canturn="true"
+
+	modelscale="1.5"
+	model="model.mdf"
+	traileffect="trails.effect"
+	impacteffect="impact.effect"
+>
+
+	<altavatar key="Hero_Yogi.Alt4"
+		modelscale="2"
+		model="../alt4/effects/model.mdf"
+		traileffect="../alt4/effects/trails.effect"
+		impacteffect="../alt4/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Yogi.Alt5"
+		modelscale="1.5"
+		model="../alt5/effects/model.mdf"
+		traileffect="../alt5/effects/trails.effect"
+		impacteffect="../alt5/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Yogi.Alt6"
+		modelscale="1.5"
+		traileffect="../alt6/effects/trails.effect"
+		impacteffect="../alt6/effects/impact.effect"
+	/>
+
+</projectile>

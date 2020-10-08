@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Yogi4"
+
+	statuseffecttooltip="State_Yogi_Ability4"
+	icon="icon4.tga"
+	
+	anim="ability_4"
+	casttime="0"
+	castactiontime="0"
+	casteffect="../effects/ability_04/effects/transformation.effect"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="toggle"
+	frontqueue="true"
+	noresponse="true"
+	inheritmovement="true"
+	nonaggressive="true"
+	
+	manacost="0"
+	toggleoffmanacost="0"
+	cooldowntime="0"
+	
+	noshuffle="true"
+	
+	maxcharges="30,40,50"
+>
+	<onlearn>
+		<addcharges count="30" />
+	</onlearn>
+	
+	<onupgrade>
+		<addcharges count="10" />
+	</onupgrade>
+	
+	<checkcost>
+		<compare a="charges" b="5" op="lt">
+			<invalidate />
+		</compare>
+	</checkcost>
+
+	<ontoggleon>
+		<hasmodifier entity="source_entity" name="Yogi_BoobooAlive">
+			<pushability name="Ability_Yogi1" />
+			<applystate name="State_Yogi_Ability4" istoggle="true" proxy="stack_proxy_entity"/>
+		</hasmodifier>
+		<else>
+			<applystate name="State_Yogi_Ability4" istoggle="true" />
+		</else>
+		
+		<pushability name="Ability_Yogi2" />
+		<resetcooldown entity="stack_entity" />
+		
+		<hasmodifier entity="source_entity" name="Yogiq_1">
+			<applystate name="State_Yogi_Ability1_Level1" istoggle="true" />
+		</hasmodifier>
+		<else>
+			<hasmodifier entity="source_entity" name="Yogiq_2">
+				<applystate name="State_Yogi_Ability1_Level1" istoggle="true" />
+				<applystate name="State_Yogi_Ability1_Level2" istoggle="true" />
+			</hasmodifier>
+			<else>
+				<hasmodifier entity="source_entity" name="Yogiq_3">
+					<applystate name="State_Yogi_Ability1_Level1" istoggle="true" />
+					<applystate name="State_Yogi_Ability1_Level2" istoggle="true" />
+					<applystate name="State_Yogi_Ability1_Level3" istoggle="true" />
+				</hasmodifier>
+				<else>	
+					<hasmodifier entity="source_entity" name="Yogiq_4">
+						<applystate name="State_Yogi_Ability1_Level1" istoggle="true" />
+						<applystate name="State_Yogi_Ability1_Level2" istoggle="true" />
+						<applystate name="State_Yogi_Ability1_Level3" istoggle="true" />
+						<applystate name="State_Yogi_Ability1_Level4" istoggle="true" />
+					</hasmodifier>
+				</else>
+			</else>
+		</else>
+		
+		<hasavatarkey name="Hero_Yogi.Alt3">
+			<expirestate name="State_Yogi_Alt3_Arm_Effects"/>
+			<expirestate name="State_Yogi_Alt3_Back_Effects"/>
+			<expirestate name="State_Yogi_Alt3_Boots_Effects"/>
+			<expirestate name="State_Yogi_Alt3_Skirt_Effects"/>
+			<expirestate name="State_Yogi_Alt3_Weapon_Effects"/>
+			<expirestate name="State_Yogi_Alt3_Headdress_Effects"/>
+			
+			<ownsproduct target="this_owner_entity" product="aa.Hero_Javaras.Alt3">
+				<applystate name="State_Yogi_Alt3_Morph_Boots_Effects" target="this_owner_entity" continuous="true"/>
+			</ownsproduct>
+
+			<ownsproduct target="this_owner_entity" product="aa.Hero_Prisoner.Alt3">
+				<applystate name="State_Yogi_Alt3_Morph_Skirt_Effects" target="this_owner_entity" continuous="true"/>
+			</ownsproduct>
+
+			<ownsproduct target="this_owner_entity" product="aa.Hero_Martyr.Alt3">
+				<applystate name="State_Yogi_Alt3_Morph_Arm_Effects" target="this_owner_entity" continuous="true"/>
+			</ownsproduct>
+
+			<ownsproduct target="this_owner_entity" product="aa.Hero_Panda.Alt3">
+				<applystate name="State_Yogi_Alt3_Morph_Shoulder_Effects" target="this_owner_entity" continuous="true"/>
+			</ownsproduct>
+			
+			<ownsproduct target="this_owner_entity" product="aa.Hero_HellDemon.Alt3">
+				<applystate name="State_Yogi_Alt3_Morph_Head_Effects" target="this_owner_entity" continuous="true"/>
+			</ownsproduct>
+		</hasavatarkey>
+	</ontoggleon>
+	
+	<ontoggleoff>
+		<pushability name="Ability_Yogi2" />
+		<setcharges entity="stack_entity" a="0" />
+		<starttimer entity="stack_entity" duration="0" />
+		<resetcooldown entity="stack_entity" />
+		<expirestate name="State_Yogi_Ability1_Level1" target="this_owner_entity" />
+		<expirestate name="State_Yogi_Ability1_Level2" target="this_owner_entity" />
+		<expirestate name="State_Yogi_Ability1_Level3" target="this_owner_entity" />
+		<expirestate name="State_Yogi_Ability1_Level4" target="this_owner_entity" />
+	
+		<hasavatarkey name="Hero_Yogi.Alt3">
+			<expirestate name="State_Yogi_Alt3_Morph_Boots_Effects" />
+			<expirestate name="State_Yogi_Alt3_Morph_Skirt_Effects" />
+			<expirestate name="State_Yogi_Alt3_Morph_Arm_Effects" />
+			<expirestate name="State_Yogi_Alt3_Morph_Shoulder_Effects" />
+			<expirestate name="State_Yogi_Alt3_Morph_Head_Effects" />
+			<applystate name="State_Yogi_Alt3_Arm_Effects" continuous="true"/>
+			<applystate name="State_Yogi_Alt3_Back_Effects" continuous="true"/>
+			<applystate name="State_Yogi_Alt3_Boots_Effects" continuous="true"/>
+			<applystate name="State_Yogi_Alt3_Skirt_Effects" continuous="true"/>
+			<applystate name="State_Yogi_Alt3_Weapon_Effects" continuous="true"/>
+			<applystate name="State_Yogi_Alt3_Headdress_Effects" continuous="true"/>
+		</hasavatarkey>
+	</ontoggleoff>
+	
+	<onframe>
+		<compare a="accumulator" b="20" op="ge">
+			<compare a="charges" b="30,40,50" op="lt">
+				<setaccumulator value="1" />
+				<addcharges count="1" />
+			</compare>
+		</compare>
+		<else>
+			<setaccumulator value="accumulator" valueb="1" valueop="add" />
+		</else>
+	</onframe>
+	
+	<onimpact />
+	
+	<modifier key="yogi4_toggle_active" condition="toggle_active" modpriority="100"
+		icon="/heroes/yogi/icons/hero.tga"
+		statuseffecttooltip=""
+		anim="ability_4_back"
+		casteffect="../effects/ability_04/effects/transformation_back.effect"
+	>
+		<onimpact />
+		
+		<checkcost />
+		
+		<ondamaged>
+			<hasmodifier name="Yogiq_level2">
+				<compare a="source_damage" b="0" op="gt">
+					<damageeffecttype effecttype="DOT" />
+					<else>
+						<applystate name="State_Yogi_AbilityBear4_Yogi" target="this_owner_entity" duration="15000" pushentity="true" />
+						<addcharges entity="stack_entity" count="1" />
+					</else>
+				</compare>
+			</hasmodifier>
+		</ondamaged>
+		
+		<onframe>
+			<compare a="accumulator" b="0" op="le">
+				<compare a="charges" b="0" op="gt">
+					<removecharge />
+					<compare a="charges" b="0" op="eq">
+						<toggleoff name="Ability_Yogi4" />
+							<targettype type="illusion" source="this_owner_entity" target="this_owner_entity" />
+							<else>
+								<playeffect effect="../effects/ability_04/effects/transformation_back.effect" source="this_owner_entity" />
+							</else>
+					</compare>
+					<else>
+						<setaccumulator value="19" />
+					</else>
+				</compare>
+			</compare>
+			<else>
+				<setaccumulator value="accumulator" valueb="1" valueop="sub" />
+			</else>
+		</onframe>
+	</modifier>
+
+	<altavatar key="Hero_Yogi.Alt"
+		icon="/heroes/yogi/alt/morph/icon.tga"
+	>
+		<modifier key="Yogi_Ability4_Alt1" modpriority="101"
+			icon="/heroes/yogi/alt/icon.tga"
+			statuseffecttooltip=""
+			anim="ability_4_back"
+			casteffect="../effects/ability_04/effects/transformation_back.effect"
+		>
+			<checkcost />
+			
+			<ondamaged>
+				<hasmodifier name="Yogiq_level2">
+					<compare a="source_damage" b="0" op="gt">
+						<damageeffecttype effecttype="DOT" />
+						<else>
+							<applystate name="State_Yogi_AbilityBear4_Yogi" target="this_owner_entity" duration="15000" pushentity="true" />
+							<addcharges entity="stack_entity" count="1" />
+						</else>
+					</compare>
+				</hasmodifier>
+			</ondamaged>
+			
+			<onframe>
+				<compare a="accumulator" b="0" op="le">
+					<compare a="charges" b="0" op="gt">
+						<removecharge />
+						<compare a="charges" b="0" op="eq">
+							<toggleoff name="Ability_Yogi4" />
+								<targettype type="illusion" source="this_owner_entity" target="this_owner_entity" />
+								<else>
+									<playeffect effect="../effects/ability_04/effects/transformation_back.effect" source="this_owner_entity" />
+								</else>
+						</compare>
+						<else>
+							<setaccumulator value="19" />
+						</else>
+					</compare>
+				</compare>
+				<else>
+					<setaccumulator value="accumulator" valueb="1" valueop="sub" />
+				</else>
+			</onframe>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Yogi.Alt2"
+		casteffect="/heroes/yogi/alt2/morph/effects/transformation.effect"
+		icon="/heroes/yogi/alt2/morph/icons/icon.tga"
+	>
+		<modifier key="Yogi_Ability4_Alt2" modpriority="101"
+			icon="/heroes/yogi/alt2/Icon.tga"
+			statuseffecttooltip=""
+			anim="ability_4_back"
+			casteffect="/heroes/yogi/alt2/morph/effects/transformation_back.effect"
+		>
+			<checkcost />
+			
+			<ondamaged>
+				<hasmodifier name="Yogiq_level2">
+					<compare a="source_damage" b="0" op="gt">
+						<damageeffecttype effecttype="DOT" />
+						<else>
+							<applystate name="State_Yogi_AbilityBear4_Yogi" target="this_owner_entity" duration="15000" pushentity="true" />
+							<addcharges entity="stack_entity" count="1" />
+						</else>
+					</compare>
+				</hasmodifier>
+			</ondamaged>
+			
+			<onframe>
+				<compare a="accumulator" b="0" op="le">
+					<compare a="charges" b="0" op="gt">
+						<removecharge />
+						<compare a="charges" b="0" op="eq">
+							<toggleoff name="Ability_Yogi4" />
+								<targettype type="illusion" source="this_owner_entity" target="this_owner_entity" />
+								<else>
+									<playeffect effect="../effects/ability_04/effects/transformation_back.effect" source="this_owner_entity" />
+								</else>
+						</compare>
+						<else>
+							<setaccumulator value="19" />
+						</else>
+					</compare>
+				</compare>
+				<else>
+					<setaccumulator value="accumulator" valueb="1" valueop="sub" />
+				</else>
+			</onframe>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Yogi.Alt3"
+		casteffect="/heroes/yogi/alt3/morph/effects/transformation.effect"
+		icon="/heroes/yogi/alt3/morph/icon.tga"
+	>
+		<modifier key="Yogi_Ability4_Alt3" modpriority="101"
+			icon="/heroes/yogi/alt3/icon.tga"
+			statuseffecttooltip=""
+			anim="ability_4_back"
+			casteffect="/heroes/yogi/alt3/morph/effects/transformation_back.effect"
+		>
+			<checkcost />
+			
+			<ondamaged>
+				<hasmodifier name="Yogiq_level2">
+					<compare a="source_damage" b="0" op="gt">
+						<damageeffecttype effecttype="DOT" />
+						<else>
+							<applystate name="State_Yogi_AbilityBear4_Yogi" target="this_owner_entity" duration="15000" pushentity="true" />
+							<addcharges entity="stack_entity" count="1" />
+						</else>
+					</compare>
+				</hasmodifier>
+			</ondamaged>
+			
+			<onframe>
+				<compare a="accumulator" b="0" op="le">
+					<compare a="charges" b="0" op="gt">
+						<removecharge />
+						<compare a="charges" b="0" op="eq">
+							<toggleoff name="Ability_Yogi4" />
+								<targettype type="illusion" source="this_owner_entity" target="this_owner_entity" />
+								<else>
+									<playeffect effect="../effects/ability_04/effects/transformation_back.effect" source="this_owner_entity" />
+								</else>
+						</compare>
+						<else>
+							<setaccumulator value="19" />
+						</else>
+					</compare>
+				</compare>
+				<else>
+					<setaccumulator value="accumulator" valueb="1" valueop="sub" />
+				</else>
+			</onframe>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Yogi.Alt4"
+		casteffect="/heroes/yogi/alt4/morph/effects/transformation.effect"
+	>
+		<modifier key="yogi4_toggle_active" condition="toggle_active" modpriority="101"
+			icon="/heroes/yogi/alt4/icon.tga"
+			statuseffecttooltip=""
+			anim="ability_4_back"
+			casteffect="/heroes/yogi/alt4/morph/effects/transformation_back.effect"
+		>
+			<checkcost />
+			
+			<ondamaged>
+				<hasmodifier name="Yogiq_level2">
+					<compare a="source_damage" b="0" op="gt">
+						<damageeffecttype effecttype="DOT" />
+						<else>
+							<applystate name="State_Yogi_AbilityBear4_Yogi" target="this_owner_entity" duration="15000" pushentity="true" />
+							<addcharges entity="stack_entity" count="1" />
+						</else>
+					</compare>
+				</hasmodifier>
+			</ondamaged>
+		
+			<onframe>
+				<compare a="accumulator" b="0" op="le">
+					<compare a="charges" b="0" op="gt">
+						<removecharge />
+						<compare a="charges" b="0" op="eq">
+							<toggleoff name="Ability_Yogi4" />
+								<targettype type="illusion" source="this_owner_entity" target="this_owner_entity" />
+								<else>
+									<playeffect effect="../effects/ability_04/effects/transformation_back.effect" source="this_owner_entity" />
+								</else>
+						</compare>
+						<else>
+							<setaccumulator value="19" />
+						</else>
+					</compare>
+				</compare>
+				<else>
+					<setaccumulator value="accumulator" valueb="1" valueop="sub" />
+				</else>
+			</onframe>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Yogi.Alt5"
+		casteffect="/heroes/yogi/alt5/morph/effects/transformation.effect"
+	>
+		<modifier key="yogi4_toggle_active" condition="toggle_active" modpriority="101"
+			statuseffecttooltip=""
+			anim="ability_4_back"
+			casteffect="/heroes/yogi/alt5/morph/effects/transformation_back.effect"
+		>
+			<checkcost />
+			
+			<ondamaged>
+				<hasmodifier name="Yogiq_level2">
+					<compare a="source_damage" b="0" op="gt">
+						<damageeffecttype effecttype="DOT" />
+						<else>
+							<applystate name="State_Yogi_AbilityBear4_Yogi" target="this_owner_entity" duration="15000" pushentity="true" />
+							<addcharges entity="stack_entity" count="1" />
+						</else>
+					</compare>
+				</hasmodifier>
+			</ondamaged>
+		
+			<onframe>
+				<compare a="accumulator" b="0" op="le">
+					<compare a="charges" b="0" op="gt">
+						<removecharge />
+						<compare a="charges" b="0" op="eq">
+							<toggleoff name="Ability_Yogi4" />
+								<targettype type="illusion" source="this_owner_entity" target="this_owner_entity" />
+								<else>
+									<playeffect effect="/heroes/yogi/alt5/morph/effects/transformation.effect" source="this_owner_entity" />
+								</else>
+						</compare>
+						<else>
+							<setaccumulator value="19" />
+						</else>
+					</compare>
+				</compare>
+				<else>
+					<setaccumulator value="accumulator" valueb="1" valueop="sub" />
+				</else>
+			</onframe>
+		</modifier>
+	</altavatar>
+	
+</ability>

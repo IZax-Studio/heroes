@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Yogi_Pet"
+
+	icon="/heroes/yogi/summon/icons/ability_1.tga"
+	passiveeffect=""
+	
+	disarmed="true"
+	ishidden="false"
+	
+	effecttype=""
+	
+	modifierkey="bear_swipe_disabled"
+>
+	<!-- This state is applied when Booboo is too far from Wildsoul -->
+
+	<onframe />
+	
+	<aura name="wildsoul_summon_aura" gadget="Gadget_Bear_Disarm" radius="0" targetscheme="self" /> 
+	
+	<onattackingdamageevent>
+		<cantarget targetscheme="enemy_heroes">
+			<setvalue name="damage_attempted" a="damage_attempted" b="0" op="mult" />
+		</cantarget>
+		<else>
+			<cantarget targetscheme="enemy_buildings">
+				<setvalue name="damage_attempted" a="damage_attempted" b="0" op="mult" />
+			</cantarget>
+		</else>
+	</onattackingdamageevent>
+	
+	<modifier key="ult_boost" modpriority="100"
+		disarmed="false"
+		attackspeedmultiplier="-0.5"
+		modifierkey=""
+	>
+		<aura name="wildsoul_summon_aura" radius="0" targetscheme="self" />
+		
+		<onframe />
+		
+		<onattackingdamageevent />
+	</modifier>
+</state>

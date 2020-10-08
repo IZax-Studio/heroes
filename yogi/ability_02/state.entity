@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Yogi_Ability2"
+
+	icon="icon2.tga"
+	passiveeffect="../effects/ability_02/buff.effect"
+	displaylevel="true"
+	
+	attackspeed="0.2,0.4,0.6,0.8"
+	movespeedmultiplier="0.08,0.12,0.16,0.2"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<oninflict>
+		<setaccumulator value="0" />
+	</oninflict>
+	
+	<onrefresh>
+		<setaccumulator value="0" />
+		<setactivemodifierkey name="" />
+	</onrefresh>
+
+	<onframe>
+		<changeaccumulator b="0.05" op="add" />
+		<compare a="accumulator" b="10" op="ge">
+			<setactivemodifierkey name="Yogi_Ability2Extra" />
+		</compare>
+	</onframe>
+
+	<modifier key="Yogi_Ability2Extra" modpriority="100"
+		attackspeed="0.1,0.2,0.3,0.4"
+		movespeedmultiplier="0.04,0.06,0.08,0.1"
+		
+		passiveeffect="../effects/ability_02/buff_2.effect"
+	>
+		<onframe />
+	</modifier>
+	
+	<altavatar key="Hero_Yogi.Alt5"
+	    passiveeffect="../alt5/ability_02/effects/buff.effect"
+	>
+		<modifier key="Yogi_Ability2Extra" modpriority="100"
+			attackspeed="0.1,0.15,0.2,0.25"
+			movespeedmultiplier="0.04,0.06,0.08,0.1"
+			
+			passiveeffect="../alt5/ability_02/effects/buff_2.effect"
+		>
+			<onframe />
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Yogi.Alt6"
+	    passiveeffect="../alt6/ability_02/effects/buff.effect"
+	>
+		<modifier key="Yogi_Ability2Extra" modpriority="100"
+			attackspeed="0.1,0.15,0.2,0.25"
+			movespeedmultiplier="0.04,0.06,0.08,0.1"
+			
+			passiveeffect="../alt6/ability_02/effects/buff_2.effect"
+		>
+			<onframe />
+		</modifier>
+	</altavatar>
+</state>

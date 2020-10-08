@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Yogi_Ability3_Bear"
+
+	icon="icon3.tga"
+	
+	effecttype="StatusBuff"
+	allowtransfer="false"
+	
+	lifesteal="0.1,0.15,0.2,0.25"
+>
+	<onframe />
+	
+	<onattackimpact>
+		<cantarget targetscheme="enemy_units">
+			<playeffect effect="../summon/effects/lifesteal.effect" source="source_entity" target="target_entity" />
+		</cantarget>
+	</onattackimpact>
+	
+	<onattackpredamage>
+		<cantarget targetscheme="enemy_units" />
+		<else>
+			<setvalue name="combat_lifesteal" a="combat_lifesteal" b="-0.1,-0.15,-0.2,-0.25" op="add" />
+		</else>
+	</onattackpredamage>
+	
+	<modifier key="Yogi_Ability4_Active" modpriority="100"
+		lifesteal="0,0.08,0.12,0.16,0.2"
+		ishidden="true,false"
+	>
+		<onattackimpact>
+			<cantarget targetscheme="enemy_units">
+				<playeffect effect="../summon/effects/lifesteal.effect" source="source_entity" target="target_entity" />
+			</cantarget>
+		</onattackimpact>
+		
+		<onattackpredamage>
+			<cantarget targetscheme="enemy_units" />
+			<else>
+				<setvalue name="combat_lifesteal" a="combat_lifesteal" b="0,-0.1,-0.15,-0.2,-0.25" op="add" />
+			</else>
+		</onattackpredamage>
+	</modifier>
+	
+	<altavatar key="Hero_Yogi.Alt5" modpriority="100"
+	>
+		<onattackimpact>
+			<cantarget targetscheme="enemy_units">
+				<playeffect effect="../alt5/ability_03/effects/lifesteal.effect" source="source_entity" target="target_entity" />
+			</cantarget>
+		</onattackimpact>
+		
+		<onattackpredamage>
+			<cantarget targetscheme="enemy_units" />
+			<else>
+				<setvalue name="combat_lifesteal" a="combat_lifesteal" b="-0.1,-0.15,-0.2,-0.25" op="add" />
+			</else>
+		</onattackpredamage>
+		
+		<modifier key="Yogi_Ability4_Active" modpriority="100"
+			lifesteal="0,0.08,0.12,0.16,0.2"
+			ishidden="true,false"
+		>
+			<onattackimpact>
+				<cantarget targetscheme="enemy_units">
+					<playeffect effect="../alt5/ability_03/effects/lifesteal.effect" source="source_entity" target="target_entity"/>
+				</cantarget>
+			</onattackimpact>
+			
+			<onattackpredamage>
+				<cantarget targetscheme="enemy_units" />
+				<else>
+					<setvalue name="combat_lifesteal" a="combat_lifesteal" b="0,-0.1,-0.15,-0.2,-0.25" op="add" />
+				</else>
+			</onattackpredamage>
+		</modifier>
+	</altavatar>
+
+</state>

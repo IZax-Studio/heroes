@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world"  scale="2.5">
+
+				<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume="1" 
+				sample="/heroes/yogi/ability_02/sounds/cast.wav"
+			/>
+		
+			<simpleemitter
+				spawnrate="50"
+				count="3"
+				anchor="1"
+				timenudge="333"
+			>
+				<particle
+					particlelife="3000"
+				>
+
+					<groundsprite
+						delay="0"					
+						life="800"
+						color=".5 .125 0"
+						startalpha="0"					
+						midalpha=".15"
+						endalpha="0.0"
+						midalphapos="0.3"					
+						startsize="0"
+						endsize="200"			
+						material="/shared/effects/materials/pulse_ground.material"			
+					/>
+					
+					<groundsprite
+						delay="0"					
+						life="800"
+						startcolor=".25 .075 .03"
+						endcolor="0 0 0"
+						startalpha="0"					
+						midalpha=".4"
+						endalpha="0.0"
+						midalphapos="0.3"					
+						startsize="0"
+						endsize="200"			
+						material="/shared/effects/materials/stomp_02.material"			
+					/>
+					
+					<groundsprite
+						delay="0"					
+						life="800"
+						startcolor=".25 .075 .03"
+						endcolor="0 0 0"
+						startalpha="0"					
+						midalpha=".4"
+						endalpha="0.0"
+						midalphapos="0.3"					
+						startsize="0"
+						endsize="200"			
+						material="/shared/effects/materials/smash_add.material"			
+					/>
+				</particle>
+			</simpleemitter>
+<!--
+			<simpleemitter
+				spawnrate="3"
+				count="1"
+				anchor="1"
+				timenudge="333"
+			>
+				<particle
+					particlelife="3000"
+				>
+					<groundsprite
+						delay="0"					
+						life="500"
+						color=".5 .125 0"
+						startalpha="0"					
+						midalpha=".1"
+						endalpha="0.0"
+						midalphapos="0.3"					
+						startsize="200"			
+						material="/shared/effects/materials/pulse_ground.material"			
+					/>
+					
+					<groundsprite
+						delay="0"					
+						life="500"
+						startcolor=".25 .075 .03"
+						endcolor="0 0 0"
+						startalpha="0"					
+						midalpha=".3"
+						endalpha="0.0"
+						midalphapos="0.3"					
+						startsize="200"			
+						material="/shared/effects/materials/stomp_02.material"			
+					/>
+					
+					<groundsprite
+						delay="0"					
+						life="500"
+						startcolor=".25 .075 .03"
+						endcolor="0 0 0"
+						startalpha="0"					
+						midalpha=".3"
+						endalpha="0.0"
+						midalphapos="0.3"					
+						startsize="200"			
+						material="/shared/effects/materials/smash_add.material"			
+					/>
+				</particle>
+			</simpleemitter>	
+-->
+			<simpleemitter
+				minangle="-90"
+				maxangle="-90"
+				position="0 0 25"
+				life="400"
+				spawnrate="650"
+				count="15"
+				minparticlelife="750"
+				maxparticlelife="1500"
+				speed="2000"
+				drag=".08"
+				gravity="-1"
+				offsetsphere="50 50 0"
+				material="/shared/effects/materials/dust_smoke_10.material"
+			>
+				<particle
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					turn="1"
+					color="0.7 0.65 .56"
+					startsize="50"
+					minendscale="6"
+					maxendscale="10"
+					startalpha="0"
+					midalpha=".6"
+					endalpha="0"
+					midalphapos="0.1"
+				/>
+			</simpleemitter>
+
+
+			<billboard
+				life="350"
+				startcolor="1 .75 .5"
+				midcolor=".5 .5 .5"
+				endcolor=".5 .5 .5"
+				startalpha=".75"
+				endalpha="0"
+				startsize="100"
+				endsize="350"
+				depthbias="-100"
+				position="0 0 0"
+				material="/shared/effects/materials/pyroclast_06.material"
+				lockup="true"
+				pitch="90"
+			/>
+			
+			<billboard
+				life="350"
+				startcolor=".75 .5 0"
+				endcolor="0 0 0"
+				startparam=".5"
+				endparam="0.4"
+				startsize="100"
+				endsize="350"
+				depthbias="-100"
+				position="0 0 0"
+				material="/shared/effects/materials/stomp_01.material"
+				lockup="true"
+				pitch="90"
+			/>
+			
+			<billboard
+				life="350"
+				startcolor="0 .5 .75"
+				endcolor="0 0 0"
+				startparam=".5"
+				endparam="0.4"
+				startsize="100"
+				endsize="350"
+				depthbias="-100"
+				position="0 0 0"
+				material="/shared/effects/materials/stomp_02.material"
+				lockup="true"
+				pitch="90"
+				yaw="45"
+			/>
+			
+			<billboard
+				life="350"
+				startcolor="0 .5 .75"
+				endcolor="0 0 0"
+				startparam=".5"
+				endparam="0.4"
+				startsize="100"
+				endsize="350"
+				depthbias="-100"
+				position="0 0 0"
+				material="/shared/effects/materials/stomp_02.material"
+				lockup="true"
+				pitch="90"
+				yaw="-45"
+			/>
+			
+			<billboard
+				life="350"
+				startcolor=".35 .15 0"
+				endcolor="0 0 0"
+				startsize="100"
+				endsize="350"
+				depthbias="-100"
+				position="0 0 0"
+				material="/shared/effects/materials/corona_06.material"
+				lockup="true"
+				pitch="90"
+			/>
+
+			<simpleemitter
+				count="1"
+				spawnrate="222"			
+				particlelife="5000"			
+			>
+				<particle>	
+					<groundsprite
+						delay="100"
+						life="3000"
+						material="/shared/effects/materials/ground_smash_overlay.material"
+						size="75"			
+						color="1"
+						startalpha=".25"
+						endalpha="0"
+					/>	
+					
+					<groundsprite
+						delay="100"
+						life="3000"
+						material="/shared/effects/materials/earth_cracks_02.material"
+						size="50"			
+						color="1"
+						startalpha=".5"
+						endalpha="0"
+					/>
+
+					<groundsprite
+						delay="100"
+						life="3000"
+						material="/shared/effects/materials/earth_cracks_overlay.material"
+						size="50"			
+						color="1"
+						startalpha=".5"
+						endalpha="0"
+					/>
+					
+					<simpleemitter						
+						offsetsphere="25"
+						timenudge="500"
+						spawnrate="500"			
+						count="150"
+						particlelife="1500"			
+						gravity="3"	
+						drag=".02"						
+						acceleration="0"
+						direction="1 1 1"
+						speed="100"
+						position="0 0 10"					
+						material="/shared/effects/materials/pyroclast_01.material"	
+					>
+						<particle
+								minangle="-360"
+								maxangle="360"
+								color=".36 .33 .2"
+								startsize="40"
+								endsize="50"
+								minanglespeed="-30"
+								maxanglespeed="73"								
+								startalpha="0"
+								midalpha="1"
+								endalpha="0"			
+								frame="1"
+								framespeed="1"							
+								anchor="1"				
+								lockup="0"
+								lockright="false"
+								turn="false"
+						/>
+					</simpleemitter>	
+					
+					<billboard
+						life="1000"
+						color=".5"
+						startalpha="1.0h"
+						endalpha="0.0"
+						startparam=".2"
+						endparam="0.0"
+						startsize="100"
+						endsize="500"
+						depthbias="0"
+						position="0 0 10"
+						material="/shared/effects/materials/refract_ring.material"
+						lockup="true"
+						pitch="90"
+					/>	
+						
+				</particle>
+
+			</simpleemitter>
+			
+			<simpleemitter
+				count="1"
+				spawnrate="5"
+				particlelife="1500"
+				gravity="0"
+				speed="0"
+				drag="0"
+				acceleration="0"
+				position="0 50 0"
+				offsetsphere="0 0 0"
+				
+			>
+				<particle>
+					
+					<model
+						position="0 0 0"
+						maxlife="1000"
+						name="emitter0"
+						anim="idle"
+						model="/heroes/moraxus/ability_01/effects/rocks/model.mdf"
+						scale=".1"
+						color=".5"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".9"
+						minyaw="0"
+						maxyaw="360"
+					>
+					</model>
+
+				</particle>
+			</simpleemitter>
+<!--			
+			<model
+				life="1000"
+				anim="idle"
+				model="/heroes/dreadknight/ability_02/effects/rocks/model.mdf"
+				scale=".25"
+				color=".65"
+				alpha="1"
+			/>
+			
+			<model
+				life="1000"
+				anim="idle"
+				model="/heroes/dreadknight/ability_02/effects/rocks/model.mdf"
+				scale=".3"
+				color=".65"
+				alpha="1"
+				yaw="180"
+			/>
+-->
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

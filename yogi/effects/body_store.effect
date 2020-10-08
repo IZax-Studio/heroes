@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>	
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<model
+				model="/heroes/yogi/summon/model.mdf"
+				anim="idle"
+				position="-130 -55 0"
+				color="1"
+				alpha="1"
+				scale="1.0"
+			/>
+
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance1" particlesystem="system0" />
+		<waitfordeath  instance="instance1"/>
+	</thread>
+
+</effect>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Bear4"
+
+	icon="icon4.tga"
+	
+	statuseffecttooltip="State_Yogi_AbilityBear4"
+	
+	actiontype="passive"
+>
+	
+	<ondamaged>
+		<compare a="source_damage" b="0" op="gt">
+			<damageeffecttype effecttype="DOT" />
+			<else>
+				<applystate name="State_Yogi_AbilityBear4" target="this_owner_entity" duration="15000" pushentity="true" />
+				<addcharges entity="stack_entity" count="1" />
+			</else>
+		</compare>
+	</ondamaged>
+	
+	<modifier key="Yogiq_Boosted" modpriority="90"
+		armor="3"
+		magicarmor="3"
+	>
+	</modifier>
+</ability>

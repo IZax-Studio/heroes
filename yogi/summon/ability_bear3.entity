@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Bear3"
+
+	icon="icon2.tga"
+
+	statuseffecttooltip="State_Yogi_AbilityBear3"
+	targetradius="300"
+	actiontype="self_position"
+	targetscheme="enemy_units"
+	casttime="500"
+	castactiontime="250"
+
+	casteffecttype="Physical"
+	manacost="0"
+	cooldowntime="11000"
+	anim="ability_2"
+	
+	maxcharges="3"
+>	
+	<onimpact>
+		<spawnaffector name="Affector_Yogi_AbilityBear3" target="source_position" />
+		<starttimer duration="0" />
+	</onimpact>
+
+	<onattack>
+		<isready>
+			<cantarget targetscheme="enemy_units">
+				<addcharges count="1" />
+				<compare a="charges" b="3" op="ge">
+					<starttimer duration="0" />
+					<startcooldown />
+					<spawnaffector name="Affector_Yogi_AbilityBear3" target="source_position" />
+				</compare>
+				<else>
+					<starttimer duration="5000" />
+				</else>
+			</cantarget>
+		</isready>
+	</onattack>
+	
+	<ontimer>
+		<setcharges a="0" />
+	</ontimer>
+	
+	<modifier key="bear_swipe_disabled" modpriority="90"
+		disabled="true"
+	>
+	</modifier>
+	
+	<modifier key="Yogiq_Boosted" modpriority="100"
+		targetradius="350"
+		statuseffecttooltip="State_Yogi_AbilityBear3"
+		targetscheme="enemy_units_and_structures"
+	>
+		<onimpact>
+			<spawnaffector name="Affector_Yogi_AbilityBear3" target="source_position" />
+			<starttimer duration="0" />
+		</onimpact>
+		
+		<onattack>
+			<isready>
+				<cantarget targetscheme="enemy_units_and_structures">
+					<addcharges count="1" />
+					<compare a="charges" b="3" op="ge">
+						<starttimer duration="0" />
+						<startcooldown />
+						<spawnaffector name="Affector_Yogi_AbilityBear3" target="source_position" />
+					</compare>
+					<else>
+						<starttimer duration="5000" />
+					</else>
+				</cantarget>
+			</isready>
+		</onattack>
+	</modifier>
+	
+</ability>

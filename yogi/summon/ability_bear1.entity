@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Bear1"
+	icon="icon1.tga"
+	casttime="0"
+	castactiontime="0"
+	actiontype="no_target"
+	activatescheme="movement"
+	cooldowntime="5000"
+	modifierkey=",,,Yogiq_Boosted"
+>
+	<onready>
+		<targettype type="alive" source="this_owner_entity" target="this_owner_entity">
+			<pushentity entity="this_owner_entity" />
+			<resetcooldown entity="stack_proxy_entity" />
+		</targettype>
+	</onready>
+	<onimpact>
+		<hasavatarkey name="Hero_Yogi.Alt5">
+			<playeffect effect="../alt5/summon/effects/return.effect" source="target_position" target="" occlude="true" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Yogi.Alt6">
+				<playeffect effect="../alt6/summon/effects/return.effect" source="target_position" target="" occlude="true" />
+			</hasavatarkey>
+			<else>
+				<playeffect effect="../summon/effects/return/return.effect" source="target_position" target="" occlude="true" />
+			</else>			
+		</else>
+		<teleport target="source_owner_position" interpolate="false" />
+		<disjoint target="source_entity" />
+		<hasavatarkey name="Hero_Yogi.Alt5">
+			<playeffect effect="../alt5/summon/effects/return.effect" source="target_position" target="" occlude="true" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Yogi.Alt6">
+				<playeffect effect="../alt6/summon/effects/return.effect" source="target_position" target="" occlude="true" />
+			</hasavatarkey>
+			<else>
+				<playeffect effect="../summon/effects/return/return.effect" source="target_position" target="" occlude="true" />
+			</else>			
+		</else>
+		<playanim name="idle" target="this_owner_entity" />
+		<order source="this_owner_entity" command="stop" />
+		<startcooldown target="source_owner_entity" toolname="Ability_Yogi1" />
+	</onimpact>
+	<ondamaged>
+		<compare a="source_damage" b="0" op="gt">
+			<targettype type="player_controlled">
+				<targettype type="self" />
+				<else>
+					<startcooldown target="source_owner_entity" toolname="Ability_Yogi1" duration="3000" />
+					<startcooldown duration="3000" />
+				</else>
+			</targettype>
+		</compare>
+	</ondamaged>
+	<onframe>
+		<distance source="source_entity" target="source_owner_entity" />
+		<compare a="result" b="1050" op="gt">
+			<targettype type="alive" source="this_owner_entity" target="this_owner_entity">
+				<applystate name="State_Yogi_Pet" continuous="true" timeout="frametime" />
+			</targettype>
+		</compare>
+	</onframe>
+</ability>

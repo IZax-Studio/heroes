@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Yogi3"
+
+	icon="icon3.tga"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="passive"
+	
+	healthregen="2,3,4,5"
+	manaregen="0.5,1,1.5,2"
+>
+	<aura name="Yogi_E_Self" state="State_Yogi_Ability3_Self" radius="0" targetscheme="nothing" ignoreinvulnerable="true" notooltip="true" />
+
+	<aura name="Yogi_E" state="State_Yogi_Ability3_Bear" radius="99999" targetscheme="my_other_units" ignoreinvulnerable="true" notooltip="true" />
+	
+	<modifier key="Yogi_Ability4_Active" modpriority="100"
+		icon="/heroes/yogi/summon/icons/ability_3c.tga"
+		baselevel="1"
+		maxlevel="5"
+		healthregen="0"
+		manaregen="0"
+	>
+		<aura name="Yogi_E_Self" state="State_Yogi_Ability3_Self" radius="0" targetscheme="self" ignoreinvulnerable="true" notooltip="true" />
+	</modifier>
+	
+	<modifier key="Yogiq_level1" modpriority="110"
+		icon="/heroes/yogi/summon/icons/ability_3b.tga"
+	>
+		<onattackdamageevent>
+			<damagesupertype supertype="attack">
+				<cantarget targetscheme="neutral_nonboss_units">
+					<setvar0 a="source_attackdamage" b="0.5" op="mult" />
+					<setvalue name="damage_attempted" a="damage_attempted" b="var0" op="add" />
+				</cantarget>
+			</damagesupertype>
+		</onattackdamageevent>
+	</modifier>
+	
+	<modifier key="Yogiq_level4" modpriority="120"
+	>
+		<onattackdamageevent>
+			<damagesupertype supertype="attack">
+				<cantarget targetscheme="neutral_nonboss_units">
+					<setvar0 a="source_attackdamage" b="1" op="mult" />
+					<setvalue name="damage_attempted" a="damage_attempted" b="var0" op="add" />
+				</cantarget>
+			</damagesupertype>
+		</onattackdamageevent>
+	</modifier>
+	
+</ability>

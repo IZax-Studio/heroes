@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Yogi_AbilityBear4"
+
+	passiveeffect="effects/state_frenzy.effect"
+	
+	icon="/heroes/yogi/summon/icons/ability_4b.tga"
+	
+	effecttype="StatusBuff"
+	allowtransfer="false"
+	
+	morphpriority="99"
+	morphpreglobalscale="1.0"
+	morphmodelscale="3"
+	morpheffectscale="1.0"
+	
+	damagepercharge="2"
+	maxcharges="15"
+>
+
+	<onexpired>
+		<hasavatarkey name="Hero_Yogi.Alt6">
+			<playeffect effect="../alt6/summon/effects/frenzy_end.effect" target="this_owner_entity"/>
+		</hasavatarkey>
+		<else>
+			<playeffect effect="effects/frenzy_end.effect" target="this_owner_entity"/>
+		</else>		
+	</onexpired>
+	
+	<onframe>
+		<hasmodifier name="iamsheeped" entity="this_owner_entity" >
+			<activatemodifierkey name="iamsheeped" />
+		</hasmodifier>
+		<else>
+			<deactivatemodifierkey name="iamsheeped" />
+		</else>
+	</onframe>
+	
+	<modifier key="iamsheeped" modpriority="100"
+		passiveeffect=""
+	/>
+	
+	<altavatar key="Hero_Yogi.Alt"
+		morphmodelscale="2.25"
+	/>
+	
+	<altavatar key="Hero_Yogi.Alt4"
+		morphmodelscale="2.25"
+	/>
+	
+	<altavatar key="Hero_Yogi.Alt5"
+		passiveeffect="/heroes/yogi/alt5/summon/effects/state_frenzy.effect"
+		morphmodelscale="3.25"
+	/>
+	
+	<altavatar key="Hero_Yogi.Alt6"
+		passiveeffect="/heroes/yogi/alt6/summon/effects/state_frenzy.effect"
+		morphmodelscale="2.7"
+	/>
+</state>
