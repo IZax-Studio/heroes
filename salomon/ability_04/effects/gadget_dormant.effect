@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" >
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1.15">
+				
+				<sound
+			    life="5000"
+			    norestart="true"
+				channel="6002"
+			    forcestereo="true"
+				linearfalloff="true" 
+				falloffstart="1200"
+				falloffend="1200"
+				volume="1"
+				sample="/heroes/salomon/ability_04/sounds/orb.wav"
+			/>
+			
+			<model
+				life="2050"
+				model="/shared/effects/models/orb/orb.mdf"
+				startscale="0"
+				midscale=".15"
+				endscale=".35"
+				startcolor="0"
+				midcolor=".25 0 .75"
+				endcolor=".75 0 2"
+				midcolorpos=".9"
+				expirelife="10"
+				minpitchspeed="-90"
+				maxpitchspeed="90"
+				minyawspeed="-90"
+				maxyawspeed="90"
+				minrollspeed="-90"
+				maxrollspeed="90"
+				alpha="1"
+			/>
+			
+			<template name="gold_ring">
+				<model
+					life="250"
+					alpha=".5"
+					model="/heroes/chipper/ability_03/effects/model.mdf"
+					material="/heroes/Salomon/ability_04/effects/material.material"
+					anim="idle"
+					startscale=".65"
+					endscale="0"
+					minyaw="0"
+					maxyaw="360"
+					minpitch="0"
+					maxpitch="360"
+					minroll="0"
+					maxroll="360"
+					minpitchspeed="-180"
+					maxpitchspeed="180"
+					minyawspeed="-180"
+					maxyawspeed="180"
+					minrollspeed="-180"
+					maxrollspeed="180"
+				/>
+				<model
+					delay="{delay}"
+					life="{life}"
+					alpha=".5"
+					model="/heroes/chipper/ability_03/effects/model.mdf"
+					material="/heroes/Salomon/ability_04/effects/material.material"
+					anim="idle"
+					startscale="0"
+					midscale=".65"
+					endscale=".65"
+					minyaw="0"
+					maxyaw="360"
+					minpitch="0"
+					maxpitch="360"
+					minroll="0"
+					maxroll="360"
+					minpitchspeed="-180"
+					maxpitchspeed="180"
+					minyawspeed="-180"
+					maxyawspeed="180"
+					minrollspeed="-180"
+					maxrollspeed="180"
+				/>
+			</template>
+			<instance name="gold_ring" delay="500" life="1550" />
+			<instance name="gold_ring" delay="1000" life="1050"/>
+			<instance name="gold_ring" delay="1500" life="550"/>
+			
+			<billboard
+				life="2050"
+				startcolor="0"
+				endcolor=".15 0 .4"
+				midcolorpos=".8"
+				scale="3.5"
+				material="/shared/effects/materials/whitedot.material"
+				depthbias="-60"
+			/>
+			
+			<billboard
+				delay="1750"
+				life="300"
+				startcolor="0"
+				endcolor=".25 0 .5"
+				startscale="4"
+				endscale="1"
+				material="/shared/effects/materials/corona_06.material"
+				depthbias="-60"
+				pitch="90"
+				lockup="true"
+				lockright="true"
+			/>
+			
+			<simpleemitter
+				life="2050"
+				material="/shared/effects/materials/whitedot.material"
+				startspawnrate="0"
+				endspawnrate="300"
+				particlelife="400"
+				gravity="7"
+				speed="30"
+				inheritvelocity="0.21"
+				offsetsphere="25"
+				drag="0.1"
+			>
+				<particle
+					heightdistort="0.01"
+					turn="1"
+					startcolor=".25 0 .5"
+					endcolor="0 0 0"
+					startsize="3"
+					endsize="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="2050"
+				material="/shared/effects/materials/smoke_01.material"
+				startspawnrate="0"
+				endspawnrate="50"
+				minparticlelife="500"
+				maxparticlelife="750"
+				gravity="7"
+				speed="30"
+				inheritvelocity="0.21"
+				offsetsphere="10 10 10"
+				drag="0.1"
+			>
+				<particle
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".25"
+					roll="180"
+					heightdistort="0.01"
+					turn="1"
+					startcolor=".05 0 .1"
+					endcolor="0 0 0"
+					startsize="60"
+					endsize="20"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				material="/shared/effects/materials/phantom_smoke_10.material"
+				spawnrate="100"
+				particlelife="600"
+				gravity="7"
+				speed="30"
+				inheritvelocity="0.21"
+				offsetsphere="10 10 10"
+				drag="0.1"
+			>
+				<particle
+					roll="180"
+					heightdistort="0.01"
+					turn="1"
+					startcolor=".05 0 .1"
+					endcolor="0 0 0"
+					startsize="36"
+					endsize="10"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath  instance="instance0"/>
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

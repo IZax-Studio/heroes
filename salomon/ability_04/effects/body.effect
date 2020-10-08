@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1">
+						
+						<sound
+                soundloop="true"
+				fadein="100"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume=".6"
+				sample="/heroes/salomon/alt/ability_04/effects/transformed/sounds/move.wav"
+			/>
+			<model
+				directionalspace="global"
+				bone="Box003"
+				model="transformed/flames.mdf"
+				parentalpha="true"
+			/>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

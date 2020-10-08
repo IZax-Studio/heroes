@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Salomon4"
+	
+	icon="icon4.tga"
+	anim="ability_4"
+	casteffect="effects/cast.effect"
+
+	casttime="600"
+	castactiontime="0"
+	
+	inheritmovement="true"
+	frontqueue="true"
+	nonaggressive="true"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_self"
+	
+	manacost="50,100,150"
+	cooldowntime="80000,70000,60000"
+	
+	noshuffle="true"
+
+	modifierkey="Salomon_Ult1,Salomon_Ult2,Salomon_Ult3"
+>
+	<activatecost />
+	
+	<onimpact>
+		<applystate name="State_Salomon_Ability4_Self" target="source_entity" duration="30000" />
+		
+		<getremainingcooldown target="source_entity" ability="0" />
+		<setvar2 a="result" b="0" op="add" />
+		<compare a="var2" b="5" op="gt">
+			<evaluate a="var2" b="1000" op="mult" />
+			<setvar0 a="result" b="5000" op="sub" />
+			<compare a="var0" b="0" op="gt">
+				<pushability name="Ability_Salomon1" />
+				<reducecooldown entity="stack_entity" duration="var0" />
+			</compare>
+		</compare>
+		
+		<getremainingcooldown target="source_entity" ability="1" />
+		<setvar2 a="result" b="0" op="add" />
+		<compare a="var2" b="5" op="gt">
+			<evaluate a="var2" b="1000" op="mult" />
+			<setvar0 a="result" b="5000" op="sub" />
+			<compare a="var0" b="0" op="gt">
+				<pushability name="Ability_Salomon2" />
+				<reducecooldown entity="stack_entity" duration="var0" />
+			</compare>
+		</compare>
+	</onimpact>
+	
+	<modifier key="ult_boost" modpriority="100"
+		cooldowntime="40000"
+	>
+	</modifier>
+
+	
+	<altavatar key="Hero_Salomon.Alt" modpriority="1"
+		casteffect="/heroes/salomon/alt/ability_04/effects/cast.effect"
+	>
+		
+	</altavatar>
+	
+	<altavatar key="Hero_Salomon.Alt2" modpriority="1"
+		casteffect="/heroes/salomon/alt2/ability_04/effects/cast.effect"
+	>
+		
+	</altavatar>
+	
+	<altavatar key="Hero_Salomon.Alt3" modpriority="1"
+		casteffect="/heroes/salomon/alt3/ability_04/effects/cast.effect"
+	>
+		
+	</altavatar>
+	
+	<altavatar key="Hero_Salomon.Alt4" modpriority="1"
+		casteffect="/heroes/salomon/alt4/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Salomon.Alt5" modpriority="1"
+		casteffect="/heroes/salomon/alt5/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Salomon.Alt6" modpriority="1"
+		casteffect="/heroes/salomon/alt6/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Salomon.Alt7" modpriority="1"
+		casteffect="/heroes/salomon/alt7/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Salomon.set_ascension" modpriority="1"
+		casteffect="/heroes/salomon/set_ascension/ability_04/effects/cast.effect"
+	/>
+</ability>

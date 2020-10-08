@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Salomon_Ability4_Self"
+
+	icon="icon4.tga"
+	passiveeffect=""
+	
+	propagatetoillusions="true"
+	effecttype=""
+	
+	healthregen="35,55,75"
+	manaregen="4,8,12"
+	
+	dynamicprecache="effects/cast_expired.effect"
+	
+	modifierkey="Salomon_Ult_Active"
+>
+	<oninflict>
+		<setscriptvalue name="castexpired_effect" value="effects/cast_expired.effect" entity="this_entity" />
+	</oninflict>
+	
+	<onexpired>
+		<!-- Dynamic visual effects -->
+		<getscriptvalue name="castexpired_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" source="source_entity" occlude="true" />
+	</onexpired>
+	
+	<altavatar key="Hero_Salomon.Alt" modpriority="1"
+		modifierkey2="Salomon_Ult_Active_Alt"
+		dynamicprecache="/heroes/salomon/alt/ability_04/effects/cast_expired.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="castexpired_effect" value="/heroes/salomon/alt/ability_04/effects/cast_expired.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_Salomon.Alt2" modpriority="1"
+		modifierkey2="Salomon_Ult_Active_Alt2"
+		dynamicprecache="/heroes/salomon/alt2/ability_04/effects/cast_expired.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="castexpired_effect" value="/heroes/salomon/alt2/ability_04/effects/cast_expired.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_Salomon.Alt3" modpriority="1"
+		modifierkey2="Salomon_Ult_Active_Alt3"
+		dynamicprecache="/heroes/salomon/alt3/ability_04/effects/cast_expired.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="castexpired_effect" value="/heroes/salomon/alt3/ability_04/effects/cast_expired.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_Salomon.Alt4" modpriority="1"
+		modifierkey2="Salomon_Ult_Active_Alt4"
+		dynamicprecache="/heroes/salomon/alt4/ability_04/effects/cast_expired.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="castexpired_effect" value="/heroes/salomon/alt4/ability_04/effects/cast_expired.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_Salomon.Alt5" modpriority="1"
+		modifierkey2="Salomon_Ult_Active_Alt5"
+		dynamicprecache="/heroes/salomon/alt5/ability_04/effects/cast_expired.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="castexpired_effect" value="/heroes/salomon/alt5/ability_04/effects/cast_expired.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_Salomon.Alt6" modpriority="1"
+		modifierkey2="Salomon_Ult_Active_Alt6"
+		dynamicprecache="/heroes/salomon/alt6/ability_04/effects/cast_expired.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="castexpired_effect" value="/heroes/salomon/alt6/ability_04/effects/cast_expired.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_Salomon.Alt7" modpriority="1"
+		modifierkey2="Salomon_Ult_Active_Alt7"
+		dynamicprecache="/heroes/salomon/alt7/ability_04/effects/cast_expired.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="castexpired_effect" value="/heroes/salomon/alt7/ability_04/effects/cast_expired.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_Salomon.set_ascension" modpriority="1"
+		modifierkey2="Salomon_Ult_Active_set_ascension"
+		dynamicprecache="/heroes/salomon/alt5/ability_04/effects/cast_expired.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="castexpired_effect" value="/heroes/salomon/alt5/ability_04/effects/cast_expired.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+
+	<modifier key="krosmode" modpriority="100"
+		passiveeffect="effects/body.effect"
+
+		morphmodel="effects/transformed/model.mdf"
+		morphpreglobalscale="1.8"
+		morphrespawneffect=""
+		morphattacktype="melee"
+		morphattackrange="150"
+		morphattackactioneffect="effects/attack.effect"
+		morphattackimpacteffect="effects/impact.effect"
+		morphattackprojectile=""
+		morphattackoffset="0 30 100"
+
+		morphattackduration="950"
+		morphattackactiontime="500"
+		morphattackcooldown="1700"
+
+		morphpriority="100"
+	/>
+</state>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="1" deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+		
+						<sound
+				forcestereo="true"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1500"
+				volume="1"
+				sample="/heroes/salomon/ability_03/sounds/cast.wav"
+			/>
+		
+			<!-- shield explosion -->
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="1000"
+				count="3"
+				particlelife="1000"
+			>
+				<particle>
+					<model
+						minlife="600"
+						maxlife="800"
+						bone="_bone_centerofchest"
+						model="/shared/effects/models/orb/orb.mdf"
+						material="/shared/effects/materials/shell6.material"
+						startcolor=".2 0 .4"
+						endcolor="0"
+						maxyaw="360"
+						maxpitch="360"
+						maxroll="360"
+						minyawspeed="-200"
+						maxyawspeed="200"
+						minrollspeed="-200"
+						maxrollspeed="200"
+						minpitchspeed="-200"
+						maxpitchspeed="200"
+						minstartscale="1"
+						maxstartscale="1.25"
+						minendscale="4"
+						maxendscale="7.5"
+					/>
+				</particle>
+			</simpleemitter>
+			
+			<!--
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="1000"
+				count="6"
+				minparticlelife="600"
+				maxparticlelife="750"
+				material="/shared/effects/materials/pyroclast_ring.material"
+			>
+				<particle
+					startscale="10"
+					minendscale="200"
+					maxendscale="400"
+					midscalepos=".35"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					maxangle="360"
+					startalpha="0"
+					midalpha=".75"
+					endalpha="0"
+					midalphapos=".2"
+					color="1 .1 .1"
+				/>
+			</simpleemitter>
+			-->
+		
+		
+			<!-- roaming spirits -->
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="1000"
+				mincount="17"
+				maxcount="23"
+				minparticlelife="1000"
+				maxparticlelife="1250"
+				minspeed="100"
+				maxspeed="1200"
+				drag="0.01"
+				direction="0 0 1"
+				minangle="85"
+				maxangle="95"
+				directionalspace="global"
+			>
+				<particle
+					scale="1"
+				>
+					<model
+						model="/shared/effects/models/circle_of_bones/model.mdf"
+						anim="idle"
+						maxyaw="360"
+						maxpitch="360"
+						maxroll="360"
+						minyawspeed="-200"
+						maxyawspeed="200"
+						minrollspeed="-200"
+						maxrollspeed="200"
+						minpitchspeed="-200"
+						maxpitchspeed="200"
+						minscale="1.75"
+						maxscale="2.75"
+					>
+						<billboard
+							life="1500"
+							bone="_bone_fx_01"
+							minanglespeed="-60"
+							maxanglespeed="60"
+							minscale=".2"
+							maxscale=".225"
+							material="/shared/effects/materials/whitedot_blend.material"
+							color=".35 0 .5"
+							startalpha="0"
+							midalpha=".75"
+							endalpha="0"
+							midalphapos=".2"
+						/>
+						<billboard
+							life="1500"
+							bone="_bone_fx_01"
+							minanglespeed="-60"
+							maxanglespeed="60"
+							minscale=".125"
+							maxscale=".15"
+							material="/shared/effects/materials/flare_01.material"
+							startcolor="0"
+							midcolor=".3 .15 .6"
+							endcolor="0"
+							midcolorpos=".2"
+						/>
+						
+						<trailemitter
+							life="1500"
+							bone="_bone_fx_01"
+							spawnrate="20"
+							particlelife="500"
+							material="/shared/effects/materials/soul_projectile.material"
+							texposscale="0"
+							texstretchscale="1"
+							startparticlealpha="1"
+							midparticlealpha="1"
+							endparticlealpha="0"
+						>
+							<particle
+								startscale=".1"
+								midscale="2"
+								endscale="2.75"
+								midscalepos=".2"
+								startcolor="1"
+								midcolor=".5 0 .65"
+								endcolor="0"
+								midcolorpos=".1"
+								startalpha=".65"
+								midalpha=".65"
+								endalpha="0"
+							/>
+						</trailemitter>
+					</model>
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="1000"
+				mincount="40"
+				maxcount="50"
+				minparticlelife="600"
+				maxparticlelife="850"
+				minspeed="100"
+				maxspeed="1000"
+				drag="0.01"
+				direction="0 0 1"
+				minangle="65"
+				maxangle="115"
+				directionalspace="global"
+				material="/shared/effects/materials/flare_03.material"
+				offsetsphere="30"
+			>
+				<particle
+					minscale="5"
+					maxscale="10"
+					startcolor=".5 0 1"
+					endcolor="0"
+				/>
+			</simpleemitter>
+			
+			<light
+				life="400"
+				startcolor="2 -1.5 4"
+				endcolor="0"
+				falloffend="500"
+			/>
+			
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+
