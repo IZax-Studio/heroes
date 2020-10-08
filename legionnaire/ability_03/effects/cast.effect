@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="ability_03">
+	<definitions>
+
+		<modifier
+			name="modifier0"
+			color="1 1 1"
+			life="320"
+			startalpha="1.0"
+			midalpha="0"
+			endalpha="0"
+			midalphapos="0.1"
+		/>
+
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".75"
+				sample="/heroes/legionnaire/ability_03/sounds/counterhelix.wav"
+			/>
+
+			<model
+				life="340"
+				name="spin"
+				parentmodel="true"
+				anim="ability_3"
+				position="6 0 0"
+				yaw="-20"
+				startalpha="1.0"
+				midalpha="1.0"
+				endalpha="0"
+				midalphapos="0.9"
+			>
+			<billboard
+				life="370.0000012"
+				color="1 1 1"
+				startalpha="0.25"
+				midalpha="0.5"
+				endalpha="0.75"
+				midalphapos="0.5"
+				startparam=".025"
+				endparam="0.0"
+				startsize="50"
+				midsize="264"
+				endsize="50"
+				depthbias="-100"
+				position="6 0 96"
+				material="warp_blur_noz.material"
+				lockup="true"
+				pitch="-90"
+				rollspeed="360"
+				delay="50"
+			/>
+				<template name="axe_attack_blur_counterhelix">
+					<trailemitter
+						bone="{bone}"
+						spawnrate="300"
+						particlelife="300.0003052"
+						texpostime="2000.0000012"
+						starttexposscale="0.0"
+						midtexposscale="0.1"
+						endtexposscale="1.0"
+						midtexposscalepos="0.9"
+						texstretchscale="1.0"
+						material="beam_fire_02_addself_oriented.material"
+						subframepose="true"
+						life="320.0000012"
+						delay="50"
+					>
+						<particle
+							startcolor="1.380 0 0 1"
+							midcolor="1.514 0 0 1"
+							endcolor="2 1.882 0 1"
+							midcolorpos="0.45"
+							startalpha="0.0"
+							midalpha="0.75"
+							endalpha="0.75"
+							midalphapos="0.05"
+							startscale="30"
+							midscale="22.5"
+							endscale="0"
+							midscalepos="0.5"
+						/>
+					</trailemitter>
+				</template>
+				
+			<instance name="axe_attack_blur_counterhelix" bone="_bone_weapon3"/>
+			</model>
+
+	</particlesystem>
+</definitions>
+
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<camerashake2 scale="5.0" radius="1200" duration="340" frequency="22" />
+	<spawnmodifier instance="instance1" modifier="modifier0"/>  
+	<waitfordeath instance="instance0" />
+</thread>
+
+</effect>
+
+
+
+
+
+
+

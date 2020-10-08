@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+
+			<model 
+				parentskeleton="1"
+				startalpha="1"
+				endalpha="0"
+				model="/heroes/legionnaire/ability_02/effects/axe_head.mdf"
+				material="/shared/effects/materials/shell2.material"
+				startcolor="2.5 1 0"
+				endcolor="0 0 0"
+				scale="1"
+				life="1000"
+				position="0 0 0"
+			/>
+
+			<billboard
+				life="125"
+				bone="_bone_weapon3"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor=".5 .2 .0"
+				midcolor=".5 .2 .0"
+				endcolor="0 0 0"
+				size="80"
+				depthbias="-30"
+				position="-30 0 0"
+			/>
+			
+			<template name="eyeglow">
+				<billboard
+					life="1000"
+					bone="{bone}"
+					material="/shared/effects/materials/whitedot.material"
+					startcolor=".5 .2 .0"
+					midcolor=".5 .2 .0"
+					endcolor="0 0 0"
+					size="8"
+					position="0 0 0"
+				/>
+			</template>
+		
+			<instance name="eyeglow" bone="_bone_lefteye"/>
+			<instance name="eyeglow" bone="_bone_righteye"/>
+			
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+

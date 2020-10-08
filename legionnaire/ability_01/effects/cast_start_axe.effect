@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+	
+		<particlesystem name="system0" space="entity" >
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".75"
+				sample="/heroes/legionnaire/ability_01/sounds/berserkers_call.wav"
+			/>
+
+			<model
+				life="650"
+				model="/heroes/legionnaire/axe/model_noweapon.mdf"
+				parentskeleton="true"
+				startcolor="2.5 1 0"
+				endcolor="0 0 0"
+				startscale="1.5"
+				midscale="1"
+				endscale="1"
+				midscalepos=".4"
+				material="/shared/effects/materials/shell2.material"
+				position="0 0 0"
+			/>
+
+			<template name="bodyglow">			
+				<billboard
+					delay="300"
+					life="900"
+					bone="{bone}"
+					material="/shared/effects/materials/whitedot.material"
+					size="{size}"
+					depthbias="-150"
+					rollspeed="-100"
+					startcolor=".4 .2 0"
+					midcolor=".4 0 0"
+					endcolor="0"
+				/>
+			</template>
+			
+			<instance name="bodyglow" bone="Bip01 L Forearm" size="50"/>
+			<instance name="bodyglow" bone="Bip01 R Forearm" size="50"/>
+			<instance name="bodyglow" bone="_bone_centerofchest" size="50"/>
+			<instance name="bodyglow" bone="Bip01 L Calf" size="75"/>
+			<instance name="bodyglow" bone="Bip01 R Calf" size="75"/>
+
+			<template name="eyeglow">
+				<billboard
+					delay="300"
+					life="1200"
+					bone="{bone}"
+					material="/shared/effects/materials/whitedot.material"
+					startcolor=".5 .2 .0"
+					midcolor=".5 .2 .0"
+					endcolor="0 0 0"
+					size="8"
+					position="0 0 0"
+				/>
+			</template>
+		
+			<instance name="eyeglow" bone="_bone_lefteye"/>
+			<instance name="eyeglow" bone="_bone_righteye"/>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

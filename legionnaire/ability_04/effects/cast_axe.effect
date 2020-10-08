@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<modifier 
+			name="modifier0"
+			startcolor="1 1 1"
+			endcolor="3 2 1"
+			life="650"
+			delay="1300"
+		/>
+
+		<particlesystem name="system0" space="world">
+			<model
+				life="650"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="2.5 1 0"
+				endcolor="0 0 0"
+				startscale="2"
+				midscale="1"
+				endscale="1"
+				midscalepos=".15"
+				material="/shared/effects/materials/shell2.material"
+				position="0 0 0"
+			/>
+			
+			<billboard
+				delay="200"						
+				bone="_bone_weapon3"
+				material="/shared/effects/materials/star_03.material"
+				position="0 0 0"
+				startsize="100"
+				midsize="300"
+				endsize="100"	
+				roll="305"					
+				rollspeed="500"	
+				color=".5 .2 .0"					
+				alpha="1"					
+				midalphapos=".2"					
+				lockup="true"
+				lockright="true"
+				pitch="90"
+				yaw="0"
+				depthbias="-5"
+				life="500"
+			/>
+
+			<billboard						
+				bone="_bone_weapon3"
+				material="/shared/effects/materials/whitedot.material"
+				position="0 0 0"
+				size="40"	
+				roll="205"					
+				rollspeed="500"	
+				color=".5 .2 .0"					
+				alpha="1"					
+				midalphapos=".2"					
+				lockup="true"
+				lockright="true"
+				pitch="90"
+				yaw="0"
+				depthbias="-5"
+				life="500"
+			/>
+
+			<billboard						
+				bone="_bone_weapon3"
+				material="/shared/effects/materials/whitedot.material"
+				position="0 0 0"
+				size="125"	
+				roll="205"					
+				rollspeed="500"	
+				color=".5 .2 .0"					
+				alpha="1"					
+				midalphapos=".2"					
+				lockup="true"
+				lockright="true"
+				pitch="90"
+				yaw="0"
+				depthbias="-5"
+				life="500"
+			/>
+		
+			<twopointtrailemitter
+			 	bone_a="_bone_weapon3"
+				bone_b="_bone_weapon2"
+				spawnrate="800"
+				particlelife="500"
+				texpostime="0"
+				texposscale="1.0"
+				texstretchscale="1.0"
+				material="/heroes/legionnaire/ability_03/effects/beam_streak_01.material"
+				subframepose="true"
+				life="400"
+			>
+						<particle
+							startcolor="1 .4 0"
+							midcolor="1 .4 0"
+							endcolor="1 .4 0" 
+						/>
+			</twopointtrailemitter>
+
+			<template name="eyeglow">
+				<billboard
+					life="1250"
+					bone="{bone}"
+					material="/shared/effects/materials/whitedot.material"
+					startcolor=".5 .2 .0"
+					midcolor=".5 .2 .0"
+					endcolor="0 0 0"
+					size="8"
+					position="0 0 0"
+				/>
+			</template>
+		
+			<instance name="eyeglow" bone="_bone_lefteye"/>
+			<instance name="eyeglow" bone="_bone_righteye"/>		
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+      		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

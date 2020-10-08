@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+	
+		<particlesystem name="system0" space="entity" >
+
+
+			<simpleemitter
+				spawnrate="60"
+				delay="-100.0000015"
+				life="100"
+				minparticlelife="125"
+				maxparticlelife="150.000006"
+				position="0 0 32"
+				material="particle_ring_wavy6.material"
+			>	
+				<particle
+					minangle="0"
+					maxangle="360"
+					startcolor="0.380 0.145 0 1.0"
+					midcolor="0.969 0.059 0.059 1.0"
+					endcolor="0.522 0.298 0.004 1.0"
+					midcolorpos="0.90"
+					startsize="0"
+					endsize="600"
+					startalpha="0"
+					midalpha="0.435"
+					endalpha="0.478"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					anchor="0"
+				/>
+			</simpleemitter>
+		
+			<billboard
+				bone="_bone_centerofchest"
+				life="500"
+				color="1.0 1.0 1.0"
+				midalphapos="0.25"
+				param="0.0555"
+				startsize="50"
+				endsize="300"
+				startalpha="0"
+				midalpha=".9"
+				endalpha="0"
+				depthbias="-49"
+				position="0 0 0"
+				material="/shared/effects/materials/refract_ring.material"
+				lockup="0"
+				pitch="0"
+			/>
+
+			<billboard
+				bone="_bone_centerofchest"
+				delay="0"
+				life="400"
+				startcolor=".5 .25 0"
+				midcolor=".5 .25 0"
+				endcolor="0 0 0"
+				midalphapos="0.25"
+				startsize="100"
+				endsize="100"
+				startalpha="0"
+				midalpha=".9"
+				endalpha="0"
+				depthbias="-49"
+				position="0 0 0"
+				material="/shared/effects/materials/smash_add.material"
+				lockup="0"
+				pitch="0"
+			/>
+<!--
+			<billboard
+				bone="_bone_centerofchest"
+				delay="0"
+				minlife="125"
+				maxlife="150.000006"
+				minangle="0"
+				maxangle="360"
+				startcolor="0.522 0.298 0.004 1.0"
+				midcolor="0.380 0.145 0 1.0"
+				endcolor="0.969 0.059 0.059 1.0"
+				startsize="0"
+				endsize="400"
+				startalpha="0"
+				midalpha="0.435"
+				endalpha="0.478"
+				depthbias="0.7549999952"
+				position="0 0 0"
+				material="particle_ring_wavy6.material"
+				lockup="true"
+				pitch="90"
+			/>
+-->
+
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				count="1"
+				life="1600"
+				particlelife="400"
+				position="0 0 0"
+				material="/shared/effects/materials/stomp_02.material"
+			>	
+				<particle
+					minangle="0"
+					maxangle="180"
+					startcolor=".5 .25 .5"
+					midcolor=".5 .1 0"
+					endcolor="0 0 0"
+					midcolorpos=".2"
+					maxanglespeed="30"
+					startsize="200"
+					midsize="325"
+					endsize="450"
+					midsizepos=".5"
+					lockup="true"
+					pitch="90"
+					anchor="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				count="1"
+				life="1000"
+				particlelife="400"
+				position="0 0 0"
+				material="/shared/effects/materials/shieldstarfish.material"				
+			>	
+				<particle
+					minangle="0"
+					maxangle="180"
+					startcolor=".5 .25 .5"
+					midcolor=".5 .1 0"
+					endcolor="0 0 0"
+					midcolorpos=".2"
+					maxanglespeed="30"
+					startsize="100"
+					midsize="225"
+					endsize="300"
+					midsizepos=".5"
+					lockup="true"
+					pitch="90"
+					anchor=".5"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				count="1"
+				life="1000"
+				particlelife="550"
+				position="0 0 0"
+				material="/shared/effects/materials/smash_add.material"				
+			>	
+				<particle
+					minangle="0"
+					maxangle="180"
+					startcolor="0 0 0"
+					midcolor=".5 .1 0"
+					endcolor="0 0 0"
+					midcolorpos=".2"
+					maxanglespeed="30"
+					startsize="0"
+					midsize="225"
+					endsize="450"
+					midsizepos=".5"
+					lockup="true"
+					pitch="90"
+					anchor=".5"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
