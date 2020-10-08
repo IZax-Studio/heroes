@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.5">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume="1"
+				sample="../../sounds/impact_%.wav"
+			/>
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".75"
+				sample="/heroes/zephyr/sounds/impact_%.wav"
+			/>
+
+
+			
+			
+			
+	</particlesystem>
+		
+</definitions>
+<thread>
+		<spawnparticlesystem instance="instance1" particlesystem="system0" />
+		
+		<waitfordeath  instance="instance1"/>
+</thread>
+</effect>
+
+
+
+
+
