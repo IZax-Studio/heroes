@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true" deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" >
+         <sound
+			    life="5000"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="1300"
+				volume="1"
+				sample="/heroes/shellshock/ability_03/sounds/drop.wav"
+			/>
+			
+			<sound
+			    soundloop="true"
+				randomloop="true"
+				fadein="1000"
+				fadeout="500"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="1300"
+				volume=".3"
+				sample=""
+			/>
+		<!-- add explosion for covering the shell transform -->	
+			<simpleemitter
+				count="100"
+				spawnrate="2000"
+				minparticlelife="300"
+				maxparticlelife="400"
+				drag=".01"
+				offsetphere="140 140 20"
+				gravity="-3"
+				minspeed="650"
+				maxspeed="3250"								
+				direction="0 0 1"
+				position="0 0 30"
+				depthbias="-30"
+				material="/shared/effects/materials/blob_add.material"
+			>			
+				<particle
+					startcolor=".4 .3 1"
+					endcolor="0"
+					startsize="3"
+					endsize="0"
+					minscale="1"
+					maxscale="3"
+				/>
+				<particle
+					startcolor=".4 .8 1"
+					endcolor="0"
+					startsize="5"
+					endsize="0"
+					minscale="1"
+					maxscale="3"
+					endstickiness=".4"
+					startheightdistort=".05"
+					endheightdistortion="0"
+					turn="1"
+				/>
+			</simpleemitter>
+		
+			<billboard
+				life="1000"
+				position="0 0 0"			
+				startcolor="0 .35 .75" midcolor=".2 .2 .9"  endcolor="0" midcolorpos=".15"
+				size="250"
+				depthbias="-100"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+		<!-- a picked up energy shell -->		
+			<template name="zaps">
+				<simpleemitter
+					timenudge="1000"
+					position="0 0 40"
+					minspawnrate="4"
+					maxspawnrate="5"
+					minparticlelife="200"
+					maxparticlelife="300"
+					material="{material}"
+					offsetradial="80"
+					offsetsphere="20"
+				>
+					<particle
+						maxangle="360"
+						minscale="10"
+						maxscale="30"
+						startframe="1"
+						minmidframe="{minframe}"
+						maxmidframe="{maxframe}"
+						endframe="1"
+						midframepos=".25"
+						anchor="1"
+						color="{color}"
+					>
+						<trackeremitter
+							targetbone="_bone_center"
+							mincount=".98"
+							maxcount="1"
+							particlelife="100"
+							speed="100"
+							tracktype="angular"
+							trackspeed="1000"
+						>
+							<particle>
+								<trailemitter
+									minspawnrate="300"
+									maxspawnrate="600"
+									particlelife="100"
+									offsetsphere=".5"
+									material=""
+									texposscale="1"
+									texpostime="25"
+									texstretchscale="0"
+								>
+									<particle
+										startsize="0"
+										minmidsize=".01"
+										maxmidsize=".1"
+										endsize="0"
+										startcolor="1"
+										midcolor=".25 .5 1"
+										endcolor="0 0 1"
+										midcolorpos=".25"
+										startalpha=".75"
+										endalpha="0"
+									/>
+								</trailemitter>
+							</particle>
+						</trackeremitter>
+
+						<groundsprite
+							life="100"
+							material="/shared/effects/materials/whitedot_ground.material"
+							startsize="2"
+							endsize="0"
+							startcolor=".15"
+							endcolor="0"
+							midcolorpos=".01"
+						/>
+					</particle>
+				</simpleemitter>
+			</template>
+			<instance name="zaps" material="/shared/effects/materials/snowflake.material" minframe=".6" maxframe=".7" color=".25 .5 1" />
+
+			<template name="zaps">
+				<simpleemitter
+					timenudge="1000"
+					position="0 0 40"
+					minspawnrate="4"
+					maxspawnrate="5"
+					minparticlelife="200"
+					maxparticlelife="300"
+					material="/shared/effects/materials/snowflake.material"
+					offsetradial="80"
+					offsetsphere="20"
+				>
+					<particle
+						maxangle="360"
+						minscale="10"
+						maxscale="30"
+						startframe="1"
+						minmidframe="{minframe}"
+						maxmidframe="{maxframe}"
+						endframe="1"
+						midframepos=".25"
+						anchor="1"
+						color=".25 .5 1"
+					>
+						<trackeremitter
+							targetbone="_bone_center"
+							mincount=".98"
+							maxcount="1"
+							particlelife="100"
+							speed="100"
+							tracktype="angular"
+							trackspeed="1000"
+						>
+							<particle>
+								<trailemitter
+									minspawnrate="300"
+									maxspawnrate="600"
+									particlelife="100"
+									offsetsphere=".5"
+									material="/shared/effects/materials/snowflake.material"
+									texposscale="1"
+									texpostime="25"
+									texstretchscale="0"
+								>
+									<particle
+										startsize="0"
+										minmidsize=".01"
+										maxmidsize=".1"
+										endsize="0"
+										startcolor="1"
+										midcolor="1 .5 .25"
+										endcolor="0 0 1"
+										midcolorpos=".25"
+										startalpha=".75"
+										endalpha="0"
+									/>
+								</trailemitter>
+							</particle>
+						</trackeremitter>
+
+						<groundsprite
+							life="100"
+							material="/shared/effects/materials/whitedot_ground.material"
+							startsize="2"
+							endsize="0"
+							startcolor=".15"
+							endcolor="0"
+							midcolorpos=".01"
+						/>
+					</particle>
+				</simpleemitter>
+			</template>
+			<instance name="zaps" material="/shared/effects/materials/snowflake.material" minframe=".6" maxframe=".7" color=".25 .5 1" />
+
+			<model
+			delay="300"
+				timenudge="1"
+				position="0 0 40"
+				model="/shared/effects/models/sphere/model.mdf"
+				material="rim_gradient.material"
+				scale="1.5"
+				color="0 .2 .4"
+				directionalspace="global"
+			/>
+
+			<groundsprite
+				timenudge="1"
+				life="2000"
+				loop="1"
+				startcolor="0 .2 .4"			
+				midcolor="0 .1 .2"
+				endcolor="0 .2 .4"				
+				size="150"						
+				position="0 0 00"
+				material="/shared/effects/materials/whitedot_ground.material"
+			/>	
+
+			<groundsprite
+				timenudge="1"
+				material="/shared/materials/selection_indicator_b.material"
+				size="100"
+				alpha=".2"
+			/>
+		
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	
+		<waitfordeath instance="instance0" />
+	
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Shellshock_Ability4"
+	
+	icon="icon4.tga"
+	passiveeffect="effects/impact.effect"
+	
+	effecttype="StatusDebuff"
+	
+	allowtransfer="false"
+>
+	<onframe>
+		<setvar0 source="source_entity" a="source_maxhealth" b="0.01,0.015,0.02" op="mult" />
+		<setvar0 a="var0" b="30,40,50" op="add" />
+		<setvar0 a="var0" b="frametime" op="mult" />
+		<damage effecttype="Magic DOT" target="this_owner_entity" amount="0" b="var0" op="add" />
+	</onframe>
+	
+	<altavatar key="Hero_Shellshock.Alt"
+		passiveeffect="/heroes/shellshock/alt/ability_04/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Shellshock.Alt2"
+		passiveeffect="/heroes/shellshock/alt2/ability_04/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Shellshock.Alt3"
+		passiveeffect="/heroes/shellshock/alt3/ability_04/effects/impact.effect"
+	/>
+
+	<altavatar key="Hero_Shellshock.Alt4"
+		passiveeffect="/heroes/shellshock/alt3/ability_04/effects/impact.effect"
+	/>
+</state>

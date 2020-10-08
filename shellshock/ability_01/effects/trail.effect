@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				volume="1" 
+				sample="/heroes/shellshock/ability_01/sounds/cast.wav"
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="2500"
+				life="4000"
+			/>
+		
+			<terrainemitter
+				timenudge="500"
+				position="0 80 0"
+				particlelife="2000"
+				spawnrate="30"
+				range="200"
+			>
+				<template name="bioluminate">
+					<particle>
+						<model
+							minlife="1500"
+							maxlife="2500"
+							model="{model}"
+							material="rim_gradient.material"
+							anim="idle"
+							startscale="0"
+							minendscale="{minscale}"
+							maxendscale="{maxscale}"
+							midscalepos=".25"
+							startcolor="0"
+							midcolor="0 1 2"
+							endcolor="0"
+							midcolorpos=".1"
+							position="0 0 2"
+							directionalspace="global"
+							maxyaw="360"
+							maxpitch="10"
+						/>
+
+						<groundsprite
+							timenudge="1"
+							life="2000"
+							material="/shared/effects/materials/whitedot_ground.material"
+							size="20"
+							startcolor="0"
+							midcolor="0 .1 .35"
+							endcolor="0"
+						/>
+					</particle>
+				</template>
+				<instance name="bioluminate" model="/heroes/ellonia/ability_03/effects/ice/ice.mdf" minscale=".075" maxscale=".125" />
+				<instance name="bioluminate" model="/heroes/ellonia/ability_03/effects/ice/ice.mdf" minscale=".075" maxscale=".125" />
+				<instance name="bioluminate" model="/heroes/ellonia/ability_03/effects/ice/ice.mdf" minscale=".075" maxscale=".125" />
+				<!-- <instance name="bioluminate" model="/heroes/ellonia/ability_03/effects/ice/ice.mdf" minscale=".6" maxscale="1" />
+				<instance name="bioluminate" model="/heroes/ellonia/ability_03/effects/ice/ice.mdf" minscale=".6" maxscale="1" /> -->
+			</terrainemitter>
+		
+			<terrainemitter
+				position="0 80 0"
+				minparticlelife="800"
+				maxparticlelife="2000"
+				spawnrate="100"
+				range="250"
+				gravity="-2"
+				maxspeed="5"
+				direction="0 0 1"
+				angle="90"
+				drag="0.01"
+				material="/core/materials/effect_solid.material"
+			>
+				<particle
+					minstartsize="1"
+					maxstartsize="1.5"
+					endsize="0"
+					color=".4 .8 1"
+				>
+					<billboard
+						material="/shared/effects/materials/whitedot.material"
+						startcolor="0 0 .5"
+						endcolor="0"
+						startsize="5"
+						endsize="0"
+					/>
+				</particle>
+			</terrainemitter>
+		
+			<!-- <simpleemitter
+				position="0 0 10"
+				particlelife="1200"
+				spawnrate="6"
+				material="/shared/effects/materials/neb_add.material"
+			>
+				<particle
+					startcolor="0 0 0"
+					midcolor="0 .3 .2"
+					endcolor="0 0 0"
+					minsize="351"
+					maxsize="450"
+					pitch="90"
+					lockup="1"
+					lockright="1"
+				/>
+
+				<particle
+					startcolor="0 0 0"
+					midcolor="0 .8 .5"
+					endcolor="0 0 0"
+					minsize="351"
+					maxsize="450"
+					pitch="90"
+					lockup="1"
+					lockright="1"
+				/>
+			</simpleemitter> -->
+		
+			<!-- <simpleemitter
+				position="0 80 10"
+				particlelife="1200"
+				spawnrate="60"
+				material="/shared/effects/materials/snowflake.material"
+				depthbias="-20"
+				offsetsphere="110 10 5"
+			>
+				<particle
+					startcolor="0"
+					midcolor="0 .5 1"
+					endcolor="0"
+					midcolorpos=".1"
+					minsize="20"
+					maxsize="26"
+				/>
+			</simpleemitter> -->
+
+			<!-- <twopointtrailemitter
+				position_a="-150 120 10"
+				position_b="150 120 10"
+				spawnrate="200"
+				particlelife="50"
+				direction="0 -1 0"
+				speed="7000"
+				angle="0"
+				material="/shared/effects/materials/snowflake.material"
+				texposscale="0"
+				texstretchscale="1.0"
+				attachtoemitter="true"
+			>
+				<particle
+					startcolor="0 1 1"
+					endcolor="0"
+				/>
+			</twopointtrailemitter>
+
+			<twopointtrailemitter
+				position_a="-200 140 10"
+				position_b="200 140 10"
+				spawnrate="200"
+				particlelife="50"
+				direction="0 -1 0"
+				speed="7000"
+				angle="0"
+				material="/shared/effects/materials/snowflake.material"
+				texposscale="0"
+				texstretchscale="1.0"
+				attachtoemitter="true"
+			>
+				<particle
+					startcolor="0 0 1"
+					midcolor="0 0 1"
+					endcolor="0"
+				/>
+			</twopointtrailemitter> -->
+
+			<!-- <groundsprite
+				life="950"
+				material="/shared/effects/materials/ground_trail_02.material"
+				startcolor="0"
+				midcolor="0 .15 .25"
+				endcolor="0"
+				midcolorpos=".4"
+				startheight="100"
+				midheight="140"
+				endheight="155"
+				width="115"
+				directionalspace="local"
+				position="0 -10 0"
+			/> -->
+
+			<!-- <groundsprite
+				life="950"
+				material="/shared/effects/materials/ground_trail_02_overlay.material"
+				startalpha="0"
+				midalpha="3"
+				endalpha="0"
+				startheight="100"
+				midheight="145"
+				endheight="160"
+				width="120"
+				directionalspace="local"
+				position="0 -10 0"
+			/>
+			<groundsprite
+				life="950"
+				material="/shared/effects/materials/ground_trail_02_overlay.material"
+				startalpha="0"
+				midalpha="3"
+				endalpha="0"
+				color=".5 1 1"
+				startheight="100"
+				midheight="145"
+				endheight="160"
+				width="120"
+				directionalspace="local"
+				position="0 -10 0"
+			/> -->
+
+			<!-- <groundsprite
+				life="950"
+				material="/shared/effects/materials/ground_trail_01_overlay.material"
+				color=".5 .6 1"
+				startalpha="0"
+				midalpha="3"
+				endalpha="0"
+				startheight="160"
+				midheight="200"
+				endheight="225"
+				width="160"
+				directionalspace="local"
+				position="0 -30 0"
+			/>
+
+			<groundsprite
+				life="950"
+				material="/shared/effects/materials/ground_trail_01_overlay.material"
+				color=".5 .6 1"
+				startalpha="0"
+				midalpha="3"
+				endalpha="0"
+				startheight="160"
+				midheight="200"
+				endheight="225"
+				width="160"
+				directionalspace="local"
+				position="0 -30 0"
+			/> -->
+
+			<model
+				model="trail_helpers/model.mdf"
+				anim="idle"
+				scale="2.25"
+			>
+				<twopointtrailemitter
+					life="1250"
+					bone_a="_bone_fx_01"
+					bone_b="_bone_fx_02"
+					position_a="0 20 0"
+					position_b="0 20 0"
+					spawnrate="30"
+					startminparticlelife="5000"
+					startmaxparticlelife="5000"
+					midminparticlelife="6000"
+					midmaxparticlelife="6000"
+					endminparticlelife="9000"
+					endmaxparticlelife="9000"
+					material="ground_bioluminescence_trail.material"
+					texposscale="0"
+					texpostime="500"
+					texstretchscale="1"
+					attachtoemitter="true"
+					startparticlealpha="0"
+					midparticlealpha="1"
+					endparticlealpha="0"
+					midparticlealphapos=".15"
+				>
+					<particle
+						startalpha="1"
+						midalpha=".1"
+						endalpha="0"
+						midalphapos=".3"
+					/>
+				</twopointtrailemitter>
+			</model>
+
+
+			<!-- Circle for visualizing the area -->
+			<groundsprite
+				timenudge="1"
+				life="950"
+				material="/shared/effects/materials/corona_01_large.material"
+				startcolor="0 .025 .05"
+				midcolor="0 .025 .05"
+				endcolor="0"
+				midcolorpos=".8"
+				size="125"
+			/>
+			<billboard
+				timenudge="1"
+				life="950"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="0 .05 .25"
+				midcolor="0 .05 .25"
+				endcolor="0"
+				midcolorpos=".8"
+				size="400"
+				lockup="true"
+				lockright="true"
+				pitch="-90"
+				depthbias="-100"
+			/>
+
+		
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+  		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

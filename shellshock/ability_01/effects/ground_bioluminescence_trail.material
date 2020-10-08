@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<material>
+	<parameters>
+		<float name="fNoiseScale" value=".002"/>
+		<float name="fMicroNoiseScale" value=".003"/>
+	</parameters>
+	<phase
+		name="color"
+		vs="effect_snail_bioluminescence"
+		ps="effect_snail_bioluminescence"
+		srcblend="BLEND_ONE"
+		dstblend="BLEND_SRC_ALPHA"
+		cull="CULL_NONE"
+		translucent="true"
+		alphawrite="true"
+		depthbias="450"
+		depthslopebias="true"
+	>
+		<sampler
+			name="reveal"
+			texture="reveal_bioluminescence_trail.tga"
+			repeat_u="false"
+			repeat_v="false"
+			mipmaps="true"
+			fullquality="false"
+			nocompress="false"
+			filtering="true"
+		/>
+		<sampler
+			name="noise"
+			texture="noise.tga"
+			repeat_u="true"
+			repeat_v="true"
+			mipmaps="true"
+			fullquality="false"
+			nocompress="false"
+			filtering="true"
+		/>
+		<sampler
+			name="gradient"
+			texture="gradient_bioliminescence.tga"
+			repeat_u="false"
+			repeat_v="true"
+			mipmaps="true"
+			fullquality="false"
+			nocompress="false"
+			filtering="true"
+		/>
+	</phase>
+</material>

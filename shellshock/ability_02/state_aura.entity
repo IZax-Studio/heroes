@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Shellshock_Ability2_Aura"
+
+	icon="icon2.tga"
+	passiveeffect=""
+	
+	ishidden="true"
+	
+	effecttype=""
+>
+	<oninflict>
+		<cantarget targetscheme="ally_nonillusion_nonmimic_nonpet_heroes" target="this_owner_entity" ignoreinvulnerable="true">
+			<setscriptvalue name="custom_button_Shellshock_selected" value="0" entity="this_owner_entity" />
+			<distance source="this_owner_entity" target="this_inflictor_entity" />
+			<compare a="result" b="600" op="le">
+				<clientuitrigger entity="this_owner_entity" source="this_owner_entity" target="this_owner_entity" name="custom_button_Shellshock" />
+			</compare>
+		</cantarget>
+	</oninflict>
+	
+	<onframe>
+		<distance source="this_owner_entity" target="this_inflictor_entity" />
+		<setvar2 a="result" />
+		<compare a="var2" b="600" op="le">
+			<hasmodifier name="shellshock_ability2_StateVisible" />
+			<else>
+				<setactivemodifierkey name="shellshock_ability2_StateVisible" />
+			</else>
+		</compare>
+		<else>
+			<hasmodifier name="shellshock_ability2_StateVisible">
+				<setactivemodifierkey name="" />
+			</hasmodifier>
+		</else>
+		
+		<hasmodifier entity="this_owner_entity" name="shellshock_ability2_Dragged" />
+		<else>
+			<cantarget targetscheme="ally_nonillusion_nonmimic_nonpet_heroes" target="this_owner_entity" ignoreinvulnerable="true">
+				<compare a="var2" b="600" op="le">
+					<hasmodifier entity="this_owner_entity" name="ui_hideCustomButtons">
+						<clientuitrigger entity="this_owner_entity" source="this_owner_entity" target="this_owner_entity" name="custom_button_Shellshock_hide" />
+					</hasmodifier>
+					<else>
+						<clientuitrigger entity="this_owner_entity" source="this_owner_entity" target="this_owner_entity" name="custom_button_Shellshock" />
+					</else>
+				</compare>
+				<else>
+					<clientuitrigger entity="this_owner_entity" source="this_owner_entity" target="this_owner_entity" name="custom_button_Shellshock_hide" />
+				</else>
+			</cantarget>
+		</else>
+		
+		<compare a="accumulator" b="1" op="eq">
+			<hasmodifier entity="this_owner_entity" name="shellshock_ability2_Dragged" />
+			<else>
+				<compare a="var2" b="250" op="le">
+					<unbind target="this_owner_entity" />
+					<applystate name="State_Shellshock_Ability2_Ally" target="this_owner_entity" continuous="true" proxy="this_proxy_entity" />
+					<pushability source="this_proxy_entity" name="Ability_Shellshock2" />
+					<addcharges entity="stack_entity" count="1" />
+				</compare>
+			</else>
+		</compare>
+		<else>
+			<cantarget targetscheme="ally_nonillusion_nonmimic_nonpet_heroes" target="this_owner_entity" ignoreinvulnerable="true">
+				<scriptcondition entity="this_owner_entity" name="custom_button_Shellshock_selected" value="1">
+					<setscriptvalue name="custom_button_Shellshock_selected" value="0" entity="this_owner_entity" />
+					<hasmodifier entity="this_owner_entity" name="shellshock_ability2_Dragged" />
+					<else>
+						<order command="follow" source="this_owner_entity" target="this_inflictor_entity" />
+					</else>
+				</scriptcondition>
+			</cantarget>
+		</else>
+	</onframe>
+	
+	<ontargetacquired>
+		<hasmodifier entity="target_entity" name="shellshock_ability2_Gather">
+			<cantarget targetscheme="ally_objects" source="this_owner_entity" target="target_entity" ignoreinvulnerable="true">
+				<hasmodifier entity="this_owner_entity" name="shellshock_ability2_Dragged" />
+				<else>
+					<distance source="this_owner_entity" target="this_inflictor_entity" />
+					<compare a="result" b="250" op="le">
+						<unbind target="this_owner_entity" />
+						<applystate name="State_Shellshock_Ability2_Ally" target="this_owner_entity" continuous="true" proxy="target_entity" />
+						<pushability source="target_entity" name="Ability_Shellshock2" />
+						<addcharges entity="stack_entity" count="1" />
+					</compare>
+				</else>
+
+				<setproxy target="target_entity" />
+				<!-- Accumulator being set to 1 means that this unit is focused on the shell -->
+				<setaccumulator value="1" />
+			</cantarget>
+			<else>
+				<setaccumulator value="0" />
+			</else>
+		</hasmodifier>
+		<else>
+			<setaccumulator value="0" />
+		</else>
+	</ontargetacquired>
+	
+	<onexpired>
+		<cantarget targetscheme="ally_nonillusion_nonmimic_nonpet_heroes" target="this_owner_entity" ignoreinvulnerable="true">
+			<clientuitrigger entity="this_owner_entity" source="this_owner_entity" target="this_owner_entity" name="custom_button_Shellshock_hide" />
+		</cantarget>
+	</onexpired>
+	
+	<modifier key="shellshock_ability2_StateVisible" modpriority="100"
+		ishidden="false"
+	>
+	</modifier>
+</state>

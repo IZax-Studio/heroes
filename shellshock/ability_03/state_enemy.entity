@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Shellshock_Ability3_Enemy"
+	icon="icon3.tga"
+
+	magicarmor="-1,-2,-3,-4"
+	passiveeffect="effects/aura_enemy.effect"
+
+	effecttype="StatusDebuff"
+	
+>
+	<altavatar key="Hero_Shellshock.Alt"
+		passiveeffect="/heroes/shellshock/alt/ability_03/effects/aura_enemy.effect"
+	/>
+	
+	<altavatar key="Hero_Shellshock.Alt2"
+		passiveeffect="/heroes/shellshock/alt2/ability_03/effects/aura_enemy.effect"
+	/>
+	
+	<altavatar key="Hero_Shellshock.Alt3"
+		passiveeffect="/heroes/shellshock/alt3/ability_03/effects/aura_enemy.effect"
+	/>	
+	
+	<altavatar key="Hero_Shellshock.Alt4"
+		passiveeffect="/heroes/shellshock/alt3/ability_03/effects/aura_enemy.effect"
+	/>
+	
+</state>

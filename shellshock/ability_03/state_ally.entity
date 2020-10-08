@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Shellshock_Ability3_Ally"
+	icon="icon3.tga"
+
+	magicarmor="1,2,3,4"
+	passiveeffect="effects/aura.effect"
+
+	effecttype="StatusBuff"
+	
+>
+	<altavatar key="Hero_Shellshock.Alt"
+		passiveeffect="/heroes/shellshock/alt/ability_03/effects/aura.effect"
+	/>
+	
+	<altavatar key="Hero_Shellshock.Alt2"
+		passiveeffect="/heroes/shellshock/alt2/ability_03/effects/aura.effect"
+	/>
+	
+	<altavatar key="Hero_Shellshock.Alt3"
+		passiveeffect="/heroes/shellshock/alt3/ability_03/effects/aura.effect"
+	/>	
+	
+	<altavatar key="Hero_Shellshock.Alt4"
+		passiveeffect="/heroes/shellshock/alt3/ability_03/effects/aura.effect"
+	/>
+</state>

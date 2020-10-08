@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  useentityeffectscale="1" name="ability_03">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="3.6">
+
+		
+			<template name="zaps">
+				<simpleemitter
+					timenudge="1000"
+					position="0 0 40"
+					minspawnrate="4"
+					maxspawnrate="5"
+					minparticlelife="200"
+					maxparticlelife="300"
+					material="{material}"
+					offsetradial="80"
+					offsetsphere="20"
+				>
+					<particle
+						maxangle="360"
+						minscale="5"
+						maxscale="5"
+						startframe="1"
+						minmidframe="{minframe}"
+						maxmidframe="{maxframe}"
+						endframe="1"
+						midframepos=".25"
+						anchor="1"
+						color="{color}"
+					>
+						<trackeremitter
+							targetbone="_bone_center"
+							mincount=".98"
+							maxcount="1"
+							particlelife="100"
+							speed="100"
+							tracktype="angular"
+							trackspeed="1000"
+						>
+							<particle>
+								<trailemitter
+									minspawnrate="300"
+									maxspawnrate="600"
+									particlelife="100"
+									offsetsphere=".5"
+									material="/shared/effects/materials/snowflake.material"
+									texposscale="1"
+									texpostime="25"
+									texstretchscale="0"
+								>
+									<particle
+										startsize="0"
+										minmidsize=".01"
+										maxmidsize=".1"
+										endsize="0"
+										startcolor="1"
+										midcolor=".25 .5 1"
+										endcolor="0 0 1"
+										midcolorpos=".25"
+										startalpha=".75"
+										endalpha="0"
+									/>
+								</trailemitter>
+							</particle>
+						</trackeremitter>
+
+						<groundsprite
+							life="100"
+							material="/shared/effects/materials/whitedot_ground.material"
+							startsize="2"
+							endsize="0"
+							startcolor=".15"
+							endcolor="0"
+							midcolorpos=".01"
+						/>
+					</particle>
+				</simpleemitter>
+			</template>
+			<instance name="zaps" material="/shared/effects/materials/snowflake.material" minframe=".2" maxframe=".3" color=".25 .5 1" />
+			<instance name="zaps" material="/shared/effects/materials/whitedot.material" minframe=".2" maxframe=".3" color=".25 .5 1" />
+
+			<template name="zaps">
+				<simpleemitter
+					timenudge="1000"
+					position="0 0 40"
+					minspawnrate="7"
+					maxspawnrate="9"
+					minparticlelife="200"
+					maxparticlelife="300"
+					material="{material}"
+					offsetradial="80"
+					offsetsphere="20"
+				>
+					<particle
+						maxangle="360"
+						minscale="5"
+						maxscale="5"
+						startframe="1"
+						minmidframe="{minframe}"
+						maxmidframe="{maxframe}"
+						endframe="1"
+						midframepos=".25"
+						anchor="1"
+						color="{color}"
+					>
+						<trackeremitter
+							targetbone="_bone_center"
+							mincount=".98"
+							maxcount="1"
+							particlelife="100"
+							speed="100"
+							tracktype="angular"
+							trackspeed="1000"
+						>
+							<particle>
+								<trailemitter
+									minspawnrate="300"
+									maxspawnrate="600"
+									particlelife="100"
+									offsetsphere=".5"
+									material="/shared/effects/materials/snowflake.material"
+									texposscale="1"
+									texpostime="25"
+									texstretchscale="0"
+								>
+									<particle
+										startsize="0"
+										minmidsize=".01"
+										maxmidsize=".1"
+										endsize="0"
+										startcolor="1"
+										midcolor=".25 .5 1"
+										endcolor="0 0 1"
+										midcolorpos=".25"
+										startalpha=".75"
+										endalpha="0"
+									/>
+								</trailemitter>
+							</particle>
+						</trackeremitter>
+
+						<groundsprite
+							life="100"
+							material="/shared/effects/materials/whitedot_ground.material"
+							startsize="2"
+							endsize="0"
+							startcolor=".15"
+							endcolor="0"
+							midcolorpos=".01"
+						/>
+					</particle>
+				</simpleemitter>
+			</template>
+			<instance name="zaps" material="/shared/effects/materials/snowflake.material" minframe=".2" maxframe=".3" color=".25 .5 1" />
+			<instance name="zaps" material="/shared/effects/materials/whitedot.material" minframe=".2" maxframe=".3" color=".25 .5 1" />
+
+			<groundsprite
+				startcolor=".0 .1 .25"
+				endcolor="0"
+				expirelife="350"
+				size="150"
+				material="/shared/effects/materials/whitedot_ground.material"
+			/>
+			
+			<groundsprite
+				startcolor=".0 .1 .25"
+				endcolor="0"
+				expirelife="350"
+				size="70"
+				material="/shared/effects/materials/whitedot_ground.material"
+			/>
+			
+			<simpleemitter
+				expirelife="700"
+				spawnrate="25"
+				bone="_bone_centerofchest"
+				position="0 0 -10"
+				minparticlelife="200"
+				maxparticlelife="300"
+				material="/shared/effects/materials/water_ring_blend.material"
+			>
+				<particle
+					startsize="0"
+					endsize="60"
+					startcolor="1"
+					midcolor="0 .5 1"
+					endcolor=".0 .5 1"
+					framespeed="2"
+					maxangle="360"
+					maxyaw="360"
+					maxpitch="360"
+					anchor="1"
+				/>
+			</simpleemitter>
+			
+			<terrainemitter
+				expirelife="300"
+				spawnrate="800"
+				offsetradial="330"
+				offsetsphere="30"
+				particlelife="200"
+				bone="_bone_origin"
+				material="/shared/effects/materials/energy_reveal.material"
+			>
+				<particle
+					startframe="0"
+					endframe="1"
+					startcolor=".0 .35 .5"
+					endcolor="0 .15 .5"
+					size="12"
+					maxangle="360"
+					minscale="1"
+					maxscale="1.5"
+					anchor="1"
+				/>
+			</terrainemitter>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<wait duration="250" />
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

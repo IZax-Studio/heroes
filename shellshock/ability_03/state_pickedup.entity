@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Shellshock_Ability3_Pickedup"
+	icon="icon3.tga"
+
+	passiveeffect=""
+
+	effecttype=""
+	
+>
+
+	<aura state="State_Shellshock_Ability3_Ally" radius="600" targetscheme="ally_heroes" ignoreinvulnerable="true" />
+	<aura state="State_Shellshock_Ability3_Enemy" radius="600" targetscheme="enemy_heroes" effecttype="Magic" ignoreinvulnerable="true" />
+
+	<onframe />
+	
+</state>

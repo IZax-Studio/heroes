@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Shellshock_Ability4_Slow"
+
+	icon="icon4.tga"
+	passiveeffect="effects/slow.effect"
+
+	movespeedslowstart="0.8"
+	movespeedslowmid="0.4"
+	movespeedslowend="0.0"
+	movespeedslowmidpos="0.5"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+>
+	<altavatar key="Hero_Shellshock.Alt"
+		passiveeffect="/heroes/shellshock/alt/ability_04/effects/slow.effect"
+	/>
+	<altavatar key="Hero_Shellshock.Alt2"
+		passiveeffect="/heroes/shellshock/alt2/ability_04/effects/slow.effect"
+	/>
+	<altavatar key="Hero_Shellshock.Alt3"
+		passiveeffect="/heroes/shellshock/alt3/ability_04/effects/slow.effect"
+	/>
+	
+	<altavatar key="Hero_Shellshock.Alt4"
+		passiveeffect="/heroes/shellshock/alt3/ability_04/effects/slow.effect"
+	/>
+</state>

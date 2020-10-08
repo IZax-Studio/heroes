@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Shellshock_Ability2_Ally"
+
+	icon="icon2.tga"
+	passiveeffect="effects/trail2.effect"
+
+	stealthtype="unrevealable"
+
+	disarmed="true"
+	immobilized2="true"
+	invulnerable="true"
+	norender="true"
+	unselectable="true"
+	
+	modifierkey="shellshock_ability2_Dragged"
+>
+	<oninflict>
+		<playeffect effect="/heroes/shellshock/ability_02/effects/gather_sound.effect" source="this_owner_entity" target="this_owner_entity" />
+		<order command="stop" source="this_owner_entity" target="this_owner_entity" />
+	</oninflict>
+	
+	<onframe>
+		<teleport source="this_owner_entity" target="this_proxy_entity" noninterrupting="true" interpolate="true" />
+		<hasmodifier name="shellshock_ability2_Gather" entity="this_proxy_entity" />
+		<else>
+			<expire />
+			<spawnaffector name="Affector_Shellshock_Ability2" target="this_proxy_entity" proxy="this_owner_entity" />
+		</else>
+	</onframe>
+
+</state>

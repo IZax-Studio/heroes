@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect persistent="1" disable2dworld="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="0.8">
+				
+				<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="1300"
+				volume=".75"
+				sample="/heroes/shellshock/ability_04/sounds/cast_elec.wav"
+			/>
+			
+			<simpleemitter
+				bone="_bone_origin"
+				position="0 0 50"
+				life="100"
+				spawnrate="50"
+				particlelife="2000"
+				directionalspace="global"
+			>
+				<particle
+					maxyaw="360"
+				>
+					<model
+						model="/shared/effects/models/circle_of_bones/model.mdf"
+						anim="idle"
+						life="500"
+						startscale="0"
+						midscale="10"
+						midscalepos=".5"
+						endscale="12"
+					>
+						<template name="electricity_ring" >
+							<beam
+								bone_a="{bonea}"
+								bone_b="{boneb}"
+								life="300"
+								startscale="10.5"
+								endscale=".1"
+								startcolor=".5 1 1"
+								midcolor=".2 .4 1"
+								endcolor="0"
+								midcolorpos=".75"
+								minsize="5"
+								maxsize="10"
+								framespeed="2"
+								material="/shared/effects/materials/femme_lightning_01.material"
+							/>
+						</template>
+						
+						<instance name="electricity_ring" bonea="_bone_fx_01" boneb="_bone_fx_02" />
+						<instance name="electricity_ring" bonea="_bone_fx_02" boneb="_bone_fx_03" />
+						<instance name="electricity_ring" bonea="_bone_fx_03" boneb="_bone_fx_04" />
+						<instance name="electricity_ring" bonea="_bone_fx_04" boneb="_bone_fx_05" />
+						<instance name="electricity_ring" bonea="_bone_fx_05" boneb="_bone_fx_06" />
+						<instance name="electricity_ring" bonea="_bone_fx_06" boneb="_bone_fx_07" />
+						<instance name="electricity_ring" bonea="_bone_fx_07" boneb="_bone_fx_08" />
+						<instance name="electricity_ring" bonea="_bone_fx_08" boneb="_bone_fx_09" />
+						<instance name="electricity_ring" bonea="_bone_fx_09" boneb="_bone_fx_10" />
+						<instance name="electricity_ring" bonea="_bone_fx_10" boneb="_bone_fx_11" />
+						<instance name="electricity_ring" bonea="_bone_fx_11" boneb="_bone_fx_12" />
+						<instance name="electricity_ring" bonea="_bone_fx_12" boneb="_bone_fx_01" />
+						
+						<template name="electricity_lines" >
+							<trailemitter
+								bone="{bone}"
+								spawnrate="100"
+								particlelife="175"
+								life="300"
+								startparticlecolor="1"
+								midparticlecolor="1"
+								endparticlecolor="0"
+								startscale="10.5"
+								endscale=".1"
+								offsetsphere="3"
+								material="/shared/effects/materials/beam.material"
+							>
+								<particle
+									startsize="0"
+									midsize="1"
+									midsizepos=".25"
+									endsize="0"
+									startcolor=".5 1 1"
+									midcolor=".2 .4 1"
+									endcolor="0"
+								/>
+							</trailemitter>
+						</template>
+						
+						<instance name="electricity_lines" bone="_bone_fx_01" />
+						<instance name="electricity_lines" bone="_bone_fx_02" />
+						<instance name="electricity_lines" bone="_bone_fx_05" />
+						<instance name="electricity_lines" bone="_bone_fx_09" />
+						<instance name="electricity_lines" bone="_bone_fx_11" />
+						
+						
+					</model>		
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_origin"
+				position="0 0 100"
+				count="1"
+				particlelife="2000"
+				directionalspace="global"
+			>
+				<particle
+				>
+					<groundsprite
+						startcolor=".25"
+						midcolor=".0 .1 .25"
+						endcolor="0"
+						life="350"
+						startsize="0"
+						endsize="700"
+						material="/shared/effects/materials/whitedot_ground.material"
+					/>
+					
+					<groundsprite
+						startcolor=".5"
+						midcolor=".05 .1 .25"
+						endcolor="0"
+						life="350"
+						startsize="0"
+						endsize="500"
+						material="/shared/effects/materials/corona_ground.material"
+					/>
+				</particle>
+			</simpleemitter>
+			
+	
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

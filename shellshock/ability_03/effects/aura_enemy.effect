@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  useentityeffectscale="1" name="ability_03">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+
+			<template name="zaps">
+				<simpleemitter
+					minspawnrate="5"
+					maxspawnrate="6"
+					minparticlelife="200"
+					maxparticlelife="300"
+					bone="_bone_center"
+					material="{material}"
+					offsetradial="80"
+					offsetsphere="20"
+				>
+					<particle
+						maxangle="360"
+						minscale="10"
+						maxscale="30"
+						startframe="1"
+						minmidframe="{minframe}"
+						maxmidframe="{maxframe}"
+						endframe="1"
+						midframepos=".25"
+						anchor="1"
+						color="{color}"
+					>
+						<trackeremitter
+							targetbone="_bone_center"
+							mincount=".98"
+							maxcount="1"
+							particlelife="100"
+							speed="100"
+							tracktype="angular"
+							trackspeed="1000"
+						>
+							<particle>
+								<trailemitter
+									minspawnrate="300"
+									maxspawnrate="600"
+									particlelife="100"
+									offsetsphere=".5"
+									material="/core/materials/effect_solid_add.material"
+									texposscale="1"
+									texpostime="25"
+									texstretchscale="0"
+								>
+									<particle
+										startsize="0"
+										minmidsize=".01"
+										maxmidsize=".1"
+										endsize="0"
+										startcolor="1"
+										midcolor="1 .5 .25"
+										endcolor="1 0 0"
+										midcolorpos=".25"
+										startalpha=".75"
+										endalpha="0"
+									/>
+								</trailemitter>
+							</particle>
+						</trackeremitter>
+
+						<groundsprite
+							life="100"
+							material="/shared/effects/materials/whitedot_ground.material"
+							startsize="2"
+							endsize="0"
+							startcolor=".05 .025 0"
+							endcolor="0"
+						/>
+
+						<billboard
+							life="100"
+							material="/shared/effects/materials/whitedot_ground.material"
+							startsize="4"
+							endsize="0"
+							startcolor=".1 .05 0"
+							endcolor="0"
+						/>
+					</particle>
+				</simpleemitter>
+			</template>
+			
+
+
+			<!-- <billboard
+				bone="_bone_center"
+				lockup="true"
+				lockright="true"
+				pitch="-90"
+				material="/shared/effects/materials/ring_01.material"
+				size="215"
+				color="0 .05 .075"
+			/> -->
+			<!-- <billboard
+				bone="_bone_center"
+				material="/shared/effects/materials/fresnel.material"
+				size="230"
+				color="0 .1 0"
+			/> -->
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+
+
+
+
+
+

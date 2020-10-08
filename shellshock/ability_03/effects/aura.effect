@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  useentityeffectscale="1" name="ability_03">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+
+			<template name="zaps">
+				<simpleemitter
+					minspawnrate="8"
+					maxspawnrate="9"
+					minparticlelife="200"
+					maxparticlelife="300"
+					bone="_bone_center"
+					material="/shared/effects/materials/snowflake.material""
+					offsetradial="80"
+					offsetsphere="20"
+				>
+					<particle
+						maxangle="360"
+						minscale="15"
+						maxscale="40"
+						startframe="1"
+						minmidframe="{minframe}"
+						maxmidframe="{maxframe}"
+						endframe="1"
+						midframepos=".25"
+						anchor="1"
+						color="{color}"
+					/>
+				</simpleemitter>
+			</template>
+			<instance name="zaps" material="/shared/effects/materials/snowflake.material" minframe=".1" maxframe=".4" color="1" />
+			<instance name="zaps" material="/shared/effects/materials/ice_reveal.material" minframe=".55" maxframe=".65" color=".5 .7 1" />
+
+			<!-- <model
+				bone="_bone_center"
+				model="/shared/effects/models/sphere/model.mdf"
+				material="rim_gradient.material"
+				scale="1.5"
+				color="0 .1 0"
+				directionalspace="global"
+			/> -->
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

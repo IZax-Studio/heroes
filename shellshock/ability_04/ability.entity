@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Shellshock4"
+
+	icon="icon4.tga"
+	
+	casttime="600"
+	castactiontime="600"
+	anim="ability_4"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="self_position"
+	casteffecttype="Magic"
+	targetscheme="enemy_units"
+	targetradius="350"
+	casteffect=""
+
+	manacost="150,175,200"
+	cooldowntime="80000"
+
+	showrangeandradiusintooltip="true"
+	
+	dynamicprecache="effects/cast.effect"
+>
+	<onlearn>
+		<setscriptvalue name="cast_effect" value="effects/cast.effect" entity="this_entity" />
+	</onlearn>
+	
+	<onimpact>
+		<areaofeffect
+			targetscheme="enemy_units"
+			effecttype="Magic"
+			targetselection="all"
+			radius="350"
+			maxtotalimpacts=""
+			maximpactspertarget="1"
+		>
+			<damage amount="100,200,300" effecttype="Magic" />
+			<applystate name="State_Shellshock_Ability4_Slow" duration="3000" />
+		</areaofeffect>
+		
+		<applystate name="State_Shellshock_Ability4_Self" target="this_owner_entity" duration="10000" />
+		
+		<!-- Dynamic visual effects -->
+		<getscriptvalue name="cast_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" target="target_position" source="source_entity" occlude="true" />
+	</onimpact>
+
+	<altavatar key="Hero_Shellshock.Alt2"
+		dynamicprecache="/heroes/shellshock/alt2/ability_04/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="/heroes/shellshock/alt2/ability_04/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Shellshock.Alt"
+		dynamicprecache="/heroes/shellshock/alt/ability_04/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="/heroes/shellshock/alt/ability_04/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Shellshock.Alt3"
+		dynamicprecache="/heroes/shellshock/alt3/ability_04/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="/heroes/shellshock/alt3/ability_04/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Shellshock.Alt4"
+		dynamicprecache="/heroes/shellshock/alt4/ability_04/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="/heroes/shellshock/alt4/ability_04/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+</ability>

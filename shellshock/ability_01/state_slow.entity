@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Shellshock_Ability1_Slow"
+	
+	icon="icon1.tga"
+	
+	passiveeffect=""
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	movespeedslowstart="0.6"
+	movespeedslowend="0"
+>
+</state>

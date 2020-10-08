@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<modifier
+			alpha="0"
+			offset="0 0 500"
+			color="0"
+		/>
+
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+			    randomloop="true"
+				forcestereo="true"
+				soundloop="true"
+				linearfalloff="true"
+				falloffstart="800"
+				falloffend="2000"
+				volume="1"
+				fadein="250"
+				fadeout="500"
+				sample="/heroes/shellshock/ability_02/sounds/loop.wav"
+			/>
+		
+			<sound
+				soundloop="true"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2000"
+				volume=".7"
+				fadein="250"
+				fadeout="500"
+				sample="/heroes/shellshock/ability_02/sounds/loop_2.wav"
+			/>
+			
+			<!-- the shell -->
+			<model
+				timenudge="1"
+				anim="idle"
+				model="/npcs/winter_boss/ability_02/effects/snowball/model.mdf"
+				material="/npcs/winter_boss/ability_02/effects/snowball/material.material"
+				scale="3.5"
+				pitchspeed="-500"
+				position="0 0 60"
+			/>
+
+			<!-- ally pull range indicator -->
+			<model
+				timenudge="1"
+				position="0 0 60"
+				anim="idle"
+				model=""
+				material=""
+				startscale="2.5"
+				endscale="0"
+				pitchspeed="-700"
+				color=".025 .05 .1"
+			/>
+			<simpleemitter
+				spawnrate="4"
+				particlelife="500"
+			>
+				<particle anchor="1">
+					<model
+						life="500"
+						position="0 0 60"
+						anim="idle"
+						model=""
+						material=""
+						startscale="3.25"
+						endscale="1"
+						pitchspeed="-700"
+						startcolor="0"
+						midcolor="0 .1 .2"
+						endcolor="0"
+						midcolorpos=".2"
+					/>
+				</particle>
+			</simpleemitter>
+
+			<!-- lightning -->
+			<!-- <trackeremitter
+				timenudge="1000"
+				material=""
+				spawnrate="80"
+				minparticlelife="200"
+				maxparticlelife="300"
+				position="0 -100 50"
+				offsetsphere="60 200 30"
+				drag="0.04"
+				angle="90"
+				direction="0 0 1"
+				gravity="-1"
+				depthbias="-5"
+				targetbone="{bone}"
+				tracktype="cgravity"
+				trackspeed="-50"
+			>
+				<particle
+					maxangle="360"
+					minstartscale="15"
+					maxstartscale="20"
+					minendscale="30"
+					maxendscale="60"
+					color="1"
+					startalpha="0"
+					minmidalpha="1"
+					maxmidalpha="1"
+					endalpha=".15"
+					startframe="0"
+					endframe="1"
+				/>
+			</trackeremitter>
+			
+			<terrainemitter
+				timenudge="1000"
+				range="80"
+				spawnrate="30"
+				particlelife="1000"
+			>
+				<particle>
+					<trackeremitter
+						targetposition="0 -500 0"
+						count="1"
+						particlelife="50"
+						speed="4000"
+						direction="0 1 0"
+						minangle="90"
+						maxangle="90"
+						tracktype="angular"
+						trackspeed="10"
+					>
+						<particle>
+							<trailemitter
+								spawnrate="600"
+								particlelife="450"
+								offsetsphere="10"
+								maxspeed="20"
+								material=""
+								texposscale="1"
+								texpostime="25"
+								texstretchscale="0"
+								gravity="-5"
+							>
+								<particle
+									size="2"
+									startcolor="1"
+									midcolor=".25 1 1"
+									endcolor="0 1 1"
+									midcolorpos=".25"
+									startalpha=".75"
+									endalpha="0"
+								/>
+							</trailemitter>
+						</particle>
+					</trackeremitter>
+				</particle>
+			</terrainemitter> -->
+
+			<!-- holographic onionskin effect -->
+			<simpleemitter
+				timenudge="1000"
+				spawnrate="12"
+				particlelife="1000"
+				directionalspace="local"
+				direction="0 -1 0"
+				angle="0"
+				speed="150"
+				inheritvelocity=".1"
+				drag="0.01"
+			>
+				<particle turn="1">
+					<model
+						life="150"
+						model=""
+						anim="idle_slow"
+						material=""
+						startscale="3"
+						endscale="3"
+						directionalspace="local"
+						startcolor="0"
+						endcolor="1 1 1"
+						startalpha="0"
+						endalpha="1"
+						yaw="180"
+					/>
+					<model
+						delay="150"
+						life="400"
+						model=""
+						anim="idle_slow"
+						material=""
+						startscale="3"
+						endscale="3"
+						directionalspace="local"
+						startcolor="1 1 1"
+						midcolor="1 1 1"
+						endcolor="0"
+						midcolorpos=".4"
+						startalpha="1"
+						endalpha="0"
+						yaw="180"
+					/>
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				timenudge="1000"
+				position="0 10 60"
+				spawnrate="20"
+				particlelife="750"
+				offsetsphere="40"
+				direction="0 1 0"
+				angle="0"
+				speed=".1"
+			>
+				<particle anchor="1" turn="1" minscale=".25" maxscale="1.25">
+					<trailemitter
+						life="500"
+						spawnrate="45"
+						particlelife="350"
+						startparticlescale="1"
+						midparticlescale="1"
+						endparticlescale="0"
+						material="/shared/effects/materials/aurora_alpha.material"
+						texposscale="0"
+						texstretchscale="1"
+						attachtoemitter="1"
+						directionalspace="local"
+						speed="500"
+						direction="0 -1 0"
+						angle="0"
+					>
+						<particle
+							size="15"
+							color="1"
+							startframe="0"
+							midframe=".65"
+							endframe="0"
+							midframepos=".2"
+							param=".5"
+						/>
+					</trailemitter>
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				spawnrate="70"
+				minparticlelife="250"
+				maxparticlelife="550"
+				speed="20"
+				direction="0 0 -1"
+				drag="0.10"
+				gravity="10"
+				material="/shared/effects/materials/snowflake.material"
+				offsetsphere="100"
+				position="0 0 0"
+				depthbias="0"
+				acceleration="-50"
+			>
+				<particle
+					turn="1"
+					startsize="15"
+					endsize="0"
+					color="1"
+					startalpha=".5"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			
+			<billboard
+				material="/shared/effects/materials/whitedot.material"
+				midcolor=".01 .08 .16"
+				life="50"
+				loop="true"
+			/>
+
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

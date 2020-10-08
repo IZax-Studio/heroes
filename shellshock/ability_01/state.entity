@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Shellshock_Ability1"
+	
+	icon="icon1.tga"
+	
+	passiveeffect="effects/state.effect"
+	effecttype="StatusDebuff"
+	
+	movespeedslow="0.2"
+	
+	allowtransfer="true"
+	
+	negativeeffect="slowed"
+>
+	<altavatar key="Hero_Shellshock.Alt2"
+	
+		passiveeffect="../alt2/ability_01/effects/state.effect"
+		effecttype="StatusDebuff"
+		allowtransfer="true"
+	/>
+    
+	<altavatar key="Hero_Shellshock.Alt"
+	
+		passiveeffect="../alt/ability_01/effects/state.effect"
+		effecttype="StatusDebuff"
+		allowtransfer="true"
+	/>
+</state>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Shellshock_Ability2_Gather"
+
+	icon="icon2.tga"
+
+	passiveeffect="effects/trail.effect"
+
+	cliffwalking="true"
+	unitwalking="true"
+	buildingwalking="false"
+	treewalking="true"
+
+	propagatetoillusions="false"
+
+	disarmed="true"
+	immobilized2="true"
+	invulnerable="true"
+
+	maxaccumulator="4,6,8,10"
+
+	morphpriority="101"
+	morphpreglobalscale="1.0"
+	morphmodelscale="1.8"
+	morpheffectscale="1.0"
+
+	dynamicprecache="effects/impact.effect"
+	
+	modifierkey="shellshock_ability2_Gather"
+>
+	<onspawn>
+		<!-- modifierkey="shellshockAbility2" -->
+		<setscriptvalue name="impact_effect" value="effects/impact.effect" entity="this_entity" />
+	</onspawn>
+
+	<onframe>
+		<targettype type="alive" source="this_proxy_entity" target="this_proxy_entity">
+			<killtrees radius="150" />
+			
+			<!-- Defines which units can enter Shellshock's Rolling Thunder -->
+			<areaofeffect
+				center="this_owner_entity"
+				radius="99999"
+				targetscheme="nongadget_player_controlled_ally_units"
+				targetselection="all"
+				ignore="this_owner_entity"
+				ignoreinvulnerable="true"
+			>
+				<hasmodifier entity="target_entity" name="shellshock_ability2_Dragged" />
+				<else>
+					<applystate name="State_Shellshock_Ability2_Aura" target="target_entity" continuous="true" timeout="frametime" />
+				</else>
+			</areaofeffect>
+		</targettype>
+		<else>
+			<expire />
+		</else>
+	</onframe>
+
+	<onexpired>
+		<expirestate name="State_Shellshock_Ability2_ShootCancel" target="this_owner_entity" />
+		<unbind target="this_owner_entity" />
+		<playanim name="idle_soon" target="source_entity"/>
+		<pushability source="this_owner_entity" name="Ability_Shellshock2" />
+		<addcharges entity="stack_entity" count="0" />
+		<setvar0 a="result" b="20,30,40,50" op="mult" />
+		<setcharges entity="stack_entity" a="0" />
+		
+		<setvar1 a="accumulator" b="10" op="mult" />
+		<setvar0 a="var0" b="var1" op="add" />
+		
+		<hasmodifier name="ult_boost">
+			<!-- Sotm deals 70 more damage, otherwise identical -->
+			<areaofeffect
+				radius="300"
+				targetselection="all"
+				targetscheme="enemy_nonboss_units"
+				center="this_owner_entity"
+				effecttype="Magic"
+			>
+				<applystate name="State_Stunned" duration="1000,1250,1500,1750" />
+				<damage effecttype="Magic" amount="140,210,280,350" b="var0" op="add" target="target_entity" />
+				
+				<cantarget target="target_entity" effecttype="Push">
+					<unbind target="target_entity" />
+					<setpos0 position="source_position" positionend="target_position" positionvalue="100" positionmodifier="pointpastline" />
+					<spawnprojectile name="Projectile_Shellshock_Ability2_Toss" source="target_entity" target="pos0" bind="target_entity" />
+				</cantarget>
+			</areaofeffect>
+		</hasmodifier>
+		<else>
+			<areaofeffect
+				radius="300"
+				targetselection="all"
+				targetscheme="enemy_nonboss_units"
+				center="this_owner_entity"
+				effecttype="Magic"
+			>
+				<applystate name="State_Stunned" duration="1000,1250,1500,1750" />
+				<damage effecttype="Magic" amount="70,140,210,280" b="var0" op="add" target="target_entity" />
+				
+				<cantarget target="target_entity" effecttype="Push">
+					<unbind target="target_entity" />
+					<setpos0 position="source_position" positionend="target_position" positionvalue="100" positionmodifier="pointpastline" />
+					<spawnprojectile name="Projectile_Shellshock_Ability2_Toss" source="target_entity" target="pos0" bind="target_entity" />
+				</cantarget>
+			</areaofeffect>
+		</else>
+
+		<!-- Dynamic visual effects -->
+		<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" source="source_position" occlude="true" />
+	</onexpired>
+
+	<altavatar key="Hero_Shellshock.Alt2"
+		dynamicprecache="effects/impact.effect"
+		passiveeffect="/heroes/shellshock/alt2/ability_02/effects/trail.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="/heroes/shellshock/alt2/ability_02/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+
+	</altavatar>
+
+	<altavatar key="Hero_Shellshock.Alt3"
+		dynamicprecache="effects/impact.effect"
+		passiveeffect="/heroes/shellshock/alt3/ability_02/effects/trail.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="/heroes/shellshock/alt3/ability_02/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+
+	</altavatar>
+	
+	<altavatar key="Hero_Shellshock.Alt4"
+		dynamicprecache="effects/impact.effect"
+		passiveeffect="/heroes/shellshock/alt3/ability_02/effects/trail.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="/heroes/shellshock/alt3/ability_02/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+
+	</altavatar>
+
+	<altavatar key="Hero_Shellshock.Alt"
+		dynamicprecache="effects/impact.effect"
+		passiveeffect="/heroes/shellshock/alt/ability_02/effects/trail.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="/heroes/shellshock/alt/ability_02/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+
+	</altavatar>
+
+</state>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+
+	name="Gadget_Shellshock_Ability3"
+	
+	model="/heroes/ellonia/ability_03/effects/ice/ice.mdf"
+	passiveeffect="effects/ground.effect"
+
+	icon="icon3.tga"
+
+	modelscale="2.5"
+
+	sightrangeday="100"
+	sightrangenight="100"
+	
+	selectionradius="40"
+	boundsheight="64"
+	boundsradius="16"
+	isselectable="true"
+
+	movespeed="350"
+	turnrate="5000"
+	turnsmoothing="0.05"
+	
+	unitwalking="true"
+	cliffwalking="true"
+	treewalking="true"
+	buildingwalking="true"
+
+	invulnerable="false"
+	flying="false"
+	drawonmap="false"
+	
+	lifetime=""
+	
+	maxhealth="1"
+	healthregen="0"
+	maxmana="0"
+	manaregen="0"
+	
+	cancarryitems="false"
+	nothreat="true"
+	
+	armor="0"
+	magicarmor="0"
+	immunity=""
+	
+	canattack="false"
+	attacktype="ranged"
+	
+	aggrorange="0"
+	
+	iscontrollable="false"
+	noblockneutralspawn="false"
+
+	unittype="Shellshock_Shell"
+
+	deathtime="0"
+	corpsetime="0"
+	corpsefadetime="0"
+
+	prefertouch="true"
+	
+	dynamicprecache="effects/pickup.effect"
+>
+	<aura state="State_Shellshock_Ability3_Ally" radius="600" targetscheme="ally_heroes" ignoreinvulnerable="true" />
+	<aura state="State_Shellshock_Ability3_Enemy" radius="600" targetscheme="enemy_heroes" effecttype="Magic" ignoreinvulnerable="true" />
+	
+	<onspawn>
+		<setscriptvalue name="pickup_effect" value="effects/pickup.effect" entity="this_entity" />
+	</onspawn>
+	
+	<ontouched>
+		<cantarget targetscheme="ally_heroes">
+			<applystate name="State_Shellshock_Ability3_Pickedup" target="target_entity" continuous="true" pushentity="true"/>
+			<setproxy entity="this_proxy_entity" target="stack_entity" />
+			<delete target="this_entity" />
+			
+			<!-- Dynamic visual effects -->
+			<getscriptvalue name="pickup_effect" destvar="str0" entity="this_entity" />
+			<playeffectdynamic effect="str0" target="target_entity" source="target_entity" occlude="true" />
+		</cantarget>
+		<else>
+			<kill target="this_entity" source="" />
+		</else>
+	</ontouched>
+ 
+	<altavatar key="Hero_Shellshock.Alt2"
+		model="/heroes/shellshock/alt2/ability_02/effects/shell/model_ground.mdf"
+		passiveeffect="/heroes/shellshock/alt2/ability_03/effects/ground.effect"
+		
+		dynamicprecache="/heroes/shellshock/alt2/ability_03/effects/pickup.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="pickup_effect" value="/heroes/shellshock/alt2/ability_03/effects/pickup.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+		
+	<altavatar key="Hero_Shellshock.Alt"
+	    modelscale="2.5"
+		model="/heroes/shellshock/alt/ability_02/effects/shell/model_ground.mdf"
+		passiveeffect="/heroes/shellshock/alt/ability_03/effects/ground.effect"
+		
+		dynamicprecache="/heroes/shellshock/alt/ability_03/effects/pickup.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="pickup_effect" value="/heroes/shellshock/alt/ability_03/effects/pickup.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+ 
+	<altavatar key="Hero_Shellshock.Alt3"
+		model="/shared/models/invis.mdf"
+		passiveeffect="/heroes/shellshock/alt3/ability_03/effects/ground.effect"
+		dynamicprecache="/heroes/shellshock/alt3/ability_03/effects/pickup.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="pickup_effect" value="/heroes/shellshock/alt3/ability_03/effects/pickup.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Shellshock.Alt4"
+		model="/shared/models/invis.mdf"
+		passiveeffect="/heroes/shellshock/alt3/ability_03/effects/ground.effect"
+		dynamicprecache="/heroes/shellshock/alt3/ability_03/effects/pickup.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="pickup_effect" value="/heroes/shellshock/alt3/ability_03/effects/pickup.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+</gadget>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Shellshock_Ability4_Self"
+	
+	icon="icon4.tga"
+	
+	passiveeffect="effects/state_self.effect"
+>
+    <onexpired>
+		<playeffect effect="/heroes/shellshock/ability_04/effects/expired_sound.effect" source="source_entity" />
+	</onexpired>
+	
+	<aura state="State_Shellshock_Ability4" targetscheme="enemy_units" effecttype="Magic" radius="350" />
+	
+	<onframe />
+	
+	<altavatar key="Hero_Shellshock.Alt"
+		passiveeffect="/heroes/shellshock/alt/ability_04/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Shellshock.Alt2"
+		passiveeffect="/heroes/shellshock/alt2/ability_04/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Shellshock.Alt3"
+		passiveeffect="/heroes/shellshock/alt3/ability_04/effects/state_self.effect"
+	/>
+
+	<altavatar key="Hero_Shellshock.Alt4"
+		passiveeffect="/heroes/shellshock/alt3/ability_04/effects/state_self.effect"
+	/>
+</state>
