@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Rocky4"
+
+	icon="icon4.tga"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	movespeed="10,20,30"
+
+	actiontype="passive"
+	modifierkey="Rocky_Grow1,Rocky_Grow2,Rocky_Grow3"
+
+	noshuffle="true"
+>
+	<onlearn>
+		<isstealthed entity="source_entity" />
+		<else>
+			<playeffect effect="effects/cast.effect" source="source_position" target="" occlude="true" />
+		</else>
+
+		<!-- Art -->
+		<hasavatarkey name="Hero_Rocky.Alt11">
+			<setscriptvalue name="launch_effect" value="../alt11/ability_02/effects/launch.effect" entity="this_entity" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Rocky.Alt9">
+				<setscriptvalue name="launch_effect" value="../alt9/ability_02/effects/launch.effect" entity="this_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Rocky.Alt10">
+					<setscriptvalue name="launch_effect" value="../alt10/ability_02/effects/launch.effect" entity="this_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Rocky.Alt12">
+						<setscriptvalue name="launch_effect" value="../alt10/ability_02/effects/launch.effect" entity="this_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Rocky.trophy_skin01">
+						<setscriptvalue name="launch_effect" value="../trophy_skin/ability_02/effects/launch.effect" entity="this_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Rocky.trophy_skin02">
+								<setscriptvalue name="launch_effect" value="../trophy_skin/ability_02/effects/launch.effect" entity="this_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Rocky.trophy_skin03">
+									<setscriptvalue name="launch_effect" value="../trophy_skin/ability_02/effects/launch.effect" entity="this_entity" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Rocky.Alt3">
+										<setscriptvalue name="launch_effect" value="../alt13/ability_02/effects/launch.effect" entity="this_entity" />
+									</hasavatarkey>
+									<else>
+										<setscriptvalue name="launch_effect" value="../ability_02/effects/launch.effect" entity="this_entity" />
+									</else>
+								</else>	
+							</else>	
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+	</onlearn>
+
+	<onupgrade>
+		<isstealthed entity="source_entity" />
+		<else>
+			<playeffect effect="effects/cast_big.effect" source="source_position" target="" occlude="true" />
+		</else>
+	</onupgrade>
+
+	<onframe>
+		<isready>
+			<targettype type="alive" target="source_entity">
+				<entitytype type="Hero_Rocky" />
+				<else>
+					<applystate name="State_Rocky_Ability4" continuous="true" />
+				</else>
+			</targettype>
+		</isready>
+	</onframe>
+
+	<modifier
+		key="ult_boost"
+		modpriority="100"
+		anim="ability_2"
+		casttime="600"
+		castactiontime="0"
+
+		actiontype="target_entity"
+		targetradius="300"
+		targetmaterial="/shared/materials/area_cast_indicator_simple.material"
+		casteffecttype="Magic"
+		targetscheme="all_visible_units"
+		manacost="120"
+		cooldowntime="10000"
+		cooldowntype="Rocky_Toss"
+
+		range="1100"
+
+		useproxy="true"
+		proxytargetscheme="chuck_targets"
+		proxyeffecttype="Magic"
+		proxyselectionradius="325"
+		proxyselectionmethod="closest"
+		proxytargetmaterial="/shared/materials/area_cast_indicator_simple.material"
+
+		showareacast="true"
+		areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+
+		showrangeandradiusintooltip="true"
+		doubleactivate="true"
+	>
+
+		<activatecost>
+			<targettype type="hero" target="this_proxy_entity">
+				<cantarget effecttype="Push" target="this_proxy_entity" />
+				<else>
+					<invalidate />
+				</else>
+			</targettype>
+		</activatecost>
+
+		<onimpact>
+			<setent1 entity="target_entity" />
+			<unbind target="this_proxy_entity" />
+			<areaofeffect
+				radius="325"
+				maxtotalimpacts="2"
+				maximpactspertarget="1"
+				effecttype="Magic"
+				targetselection="closest"
+				targetscheme="chuck_targets"
+				center="source_entity"
+				ignore="this_proxy_entity"
+			/>
+
+			<setvar0 a="result" />
+			<setvar1 a="0.5" />
+			<setvar2 a="0.625" />
+
+			<compare a="var0" b="0" op="gt">
+				<areaofeffect
+					radius="325"
+					maxtotalimpacts="2"
+					maximpactspertarget="1"
+					effecttype="Magic"
+					targetselection="closest"
+					targetscheme="chuck_targets"
+					center="source_entity"
+					ignore="this_proxy_entity"
+				>
+					<compare a="var0" b="2" op="eq">
+						<compare a="accumulator" b="0" op="eq">
+							<!-- Only throw heroes if they don't have Push Immunity, otherwise throw non-hero units regardless -->
+							<targettype type="hero" target="target_entity">
+								<cantarget effecttype="Push" target="target_entity">
+									<spawnprojectile name="Projectile_Rocky_Ability4_Boost" proxy="target_entity" source="target_entity" target="ent1" bind="target_entity" bindstate="State_Rocky_Ability4_Projectile" ignoretargetoffset="true" noresponse="true" param="var1" />
+									<cantarget targetscheme="ally_units" target="target_entity">
+										<spawnunit name="Gadget_Rocky_Ability4" mount="target_entity" />
+									</cantarget>
+									<setaccumulator value="1" />
+								</cantarget>
+							</targettype>
+							<else>
+								<spawnprojectile name="Projectile_Rocky_Ability4_Boost" proxy="target_entity" source="target_entity" target="ent1" bind="target_entity" bindstate="State_Rocky_Ability4_Projectile" ignoretargetoffset="true" noresponse="true" param="var1" />
+								<cantarget targetscheme="ally_units" target="target_entity">
+									<spawnunit name="Gadget_Rocky_Ability4" mount="target_entity" />
+								</cantarget>
+								<setaccumulator value="1" />
+							</else>
+						</compare>
+						<else>
+							<!-- Only throw heroes if they don't have Push Immunity, otherwise throw non-hero units regardless -->
+							<targettype type="hero" target="target_entity">
+								<cantarget effecttype="Push" target="target_entity">
+									<spawnprojectile name="Projectile_Rocky_Ability4_Booster" proxy="target_entity" source="target_entity" target="ent1" bind="target_entity" bindstate="State_Rocky_Ability4_Projectile" ignoretargetoffset="true" noresponse="true" param="var1" />
+									<cantarget targetscheme="ally_units" target="target_entity">
+										<spawnunit name="Gadget_Rocky_Ability4" mount="target_entity" />
+									</cantarget>
+								</cantarget>
+							</targettype>
+							<else>
+								<spawnprojectile name="Projectile_Rocky_Ability4_Booster" proxy="target_entity" source="target_entity" target="ent1" bind="target_entity" bindstate="State_Rocky_Ability4_Projectile" ignoretargetoffset="true" noresponse="true" param="var1" />
+								<cantarget targetscheme="ally_units" target="target_entity">
+									<spawnunit name="Gadget_Rocky_Ability4" mount="target_entity" />
+								</cantarget>
+							</else>
+						</else>
+					</compare>
+
+					<compare a="var0" b="1" op="eq">
+						<!-- Only throw heroes if they don't have Push Immunity, otherwise throw non-hero units regardless -->
+						<targettype type="hero" target="target_entity">
+							<cantarget effecttype="Push" target="target_entity">
+								<spawnprojectile name="Projectile_Rocky_Ability4_Boost" proxy="target_entity" source="target_entity" target="ent1" bind="target_entity" bindstate="State_Rocky_Ability4_Projectile" ignoretargetoffset="true" noresponse="true" param="var2" />
+								<cantarget targetscheme="ally_units" target="target_entity">
+									<spawnunit name="Gadget_Rocky_Ability4" mount="target_entity" />
+								</cantarget>
+							</cantarget>
+						</targettype>
+						<else>
+							<spawnprojectile name="Projectile_Rocky_Ability4_Boost" proxy="target_entity" source="target_entity" target="ent1" bind="target_entity" bindstate="State_Rocky_Ability4_Projectile" ignoretargetoffset="true" noresponse="true" param="var2" />
+							<cantarget targetscheme="ally_units" target="target_entity">
+								<spawnunit name="Gadget_Rocky_Ability4" mount="target_entity" />
+							</cantarget>
+						</else>
+					</compare>
+				</areaofeffect>
+
+				<!-- Dynamic visual effects -->
+				<getscriptvalue name="launch_effect" destvar="str0" entity="this_entity" />
+				<playeffectdynamic effect="str0" source="this_proxy_position" target="" occlude="true" />
+			</compare>
+
+			<else>
+				<!-- Only throw heroes if they don't have Push Immunity, otherwise throw non-hero units regardless -->
+				<targettype type="hero" target="this_proxy_entity">
+					<cantarget effecttype="Push" target="this_proxy_entity">
+						<spawnprojectile name="Projectile_Rocky_Ability4" proxy="this_proxy_entity" source="this_proxy_entity" target="target_entity" bind="this_proxy_entity" bindstate="State_Rocky_Ability4_Projectile" ignoretargetoffset="true" noresponse="true" param="1" />
+						<cantarget targetscheme="ally_units" target="this_proxy_entity">
+							<spawnunit name="Gadget_Rocky_Ability4" mount="this_proxy_entity" />
+						</cantarget>
+
+						<!-- Dynamic visual effects -->
+						<getscriptvalue name="launch_effect" destvar="str0" entity="this_entity" />
+						<playeffectdynamic effect="str0" source="this_proxy_position" target="" occlude="true" />
+					</cantarget>
+				</targettype>
+				<else>
+					<spawnprojectile name="Projectile_Rocky_Ability4" proxy="this_proxy_entity" source="this_proxy_entity" target="target_entity" bind="this_proxy_entity" bindstate="State_Rocky_Ability4_Projectile" ignoretargetoffset="true" noresponse="true" param="1" />
+					<cantarget targetscheme="ally_units" target="this_proxy_entity">
+						<spawnunit name="Gadget_Rocky_Ability4" mount="this_proxy_entity" />
+					</cantarget>
+
+					<!-- Dynamic visual effects -->
+					<getscriptvalue name="launch_effect" destvar="str0" entity="this_entity" />
+					<playeffectdynamic effect="str0" source="this_proxy_position" target="" occlude="true" />
+				</else>
+			</else>
+
+			<compare a="var0" b="2" op="eq">
+				<!-- Only throw heroes if they don't have Push Immunity, otherwise throw non-hero units regardless -->
+				<targettype type="hero" target="this_proxy_entity">
+					<cantarget effecttype="Push" target="this_proxy_entity">
+						<spawnprojectile name="Projectile_Rocky_Ability4" proxy="this_proxy_entity" source="this_proxy_entity" target="target_entity" bind="this_proxy_entity" bindstate="State_Rocky_Ability4_Projectile" ignoretargetoffset="true" noresponse="true" param="1" />
+						<cantarget targetscheme="ally_units" target="this_proxy_entity">
+							<spawnunit name="Gadget_Rocky_Ability4" mount="this_proxy_entity" />
+						</cantarget>
+
+						<!-- Dynamic visual effects -->
+						<getscriptvalue name="launch_effect" destvar="str0" entity="this_entity" />
+						<playeffectdynamic effect="str0" source="this_proxy_position" target="" occlude="true" />
+					</cantarget>
+				</targettype>
+				<else>
+					<spawnprojectile name="Projectile_Rocky_Ability4" proxy="this_proxy_entity" source="this_proxy_entity" target="target_entity" bind="this_proxy_entity" bindstate="State_Rocky_Ability4_Projectile" ignoretargetoffset="true" noresponse="true" param="1" />
+					<cantarget targetscheme="ally_units" target="this_proxy_entity">
+						<spawnunit name="Gadget_Rocky_Ability4" mount="this_proxy_entity" />
+					</cantarget>
+
+					<!-- Dynamic visual effects -->
+					<getscriptvalue name="launch_effect" destvar="str0" entity="this_entity" />
+					<playeffectdynamic effect="str0" source="this_proxy_position" target="" occlude="true" />
+				</else>
+			</compare>
+
+			<compare a="var0" b="1" op="eq">
+				<!-- Only throw heroes if they don't have Push Immunity, otherwise throw non-hero units regardless -->
+				<targettype type="hero" target="this_proxy_entity">
+					<cantarget effecttype="Push" target="this_proxy_entity">
+						<spawnprojectile name="Projectile_Rocky_Ability4" proxy="this_proxy_entity" source="this_proxy_entity" target="target_entity" bind="this_proxy_entity" bindstate="State_Rocky_Ability4_Projectile" ignoretargetoffset="true" noresponse="true" param="1" />
+						<cantarget targetscheme="ally_units" target="this_proxy_entity">
+							<spawnunit name="Gadget_Rocky_Ability4" mount="this_proxy_entity" />
+						</cantarget>
+
+						<!-- Dynamic visual effects -->
+						<getscriptvalue name="launch_effect" destvar="str0" entity="this_entity" />
+						<playeffectdynamic effect="str0" source="this_proxy_position" target="" occlude="true" />
+					</cantarget>
+				</targettype>
+				<else>
+					<spawnprojectile name="Projectile_Rocky_Ability4" proxy="this_proxy_entity" source="this_proxy_entity" target="target_entity" bind="this_proxy_entity" bindstate="State_Rocky_Ability4_Projectile" ignoretargetoffset="true" noresponse="true" param="1" />
+					<cantarget targetscheme="ally_units" target="this_proxy_entity">
+						<spawnunit name="Gadget_Rocky_Ability4" mount="this_proxy_entity" />
+					</cantarget>
+
+					<!-- Dynamic visual effects -->
+					<getscriptvalue name="launch_effect" destvar="str0" entity="this_entity" />
+					<playeffectdynamic effect="str0" source="this_proxy_position" target="" occlude="true" />
+				</else>
+			</compare>
+
+			<setaccumulator value="0" />
+		</onimpact>
+		
+		<ondoubleactivate>
+			<useability slot="3" target="source_entity" />
+		</ondoubleactivate>
+
+		<oncancel>
+			<playanim name="idle" target="source_entity" />
+		</oncancel>
+	</modifier>
+	
+	
+
+	<altavatar key="Hero_Rocky.Alt2" modpriority="1"
+		modifierkey2="Rocky_Grow1_Alt2,Rocky_Grow2_Alt2,Rocky_Grow3_Alt2"
+		dynamicprecache="../alt2/ability_02/effects/launch.effect"
+	>
+		<onlearn>
+		    <setscriptvalue name="launch_effect" value="../alt2/ability_02/effects/launch.effect" entity="this_entity" />
+			<isstealthed entity="source_entity" />
+			<else>
+				<playeffect effect="/heroes/rocky/alt2/ability_04/effects/cast.effect" source="source_position" target="" occlude="true" />
+			</else>
+		</onlearn>
+
+		<onupgrade>
+			<isstealthed entity="source_entity" />
+			<else>
+				<playeffect effect="/heroes/rocky/alt2/ability_04/effects/cast_big.effect" source="source_position" target="" occlude="true" />
+			</else>
+		</onupgrade>
+	</altavatar>
+
+	<altavatar key="Hero_Rocky.Alt3" modpriority="1"
+		modifierkey2="Rocky_Grow1_Alt3,Rocky_Grow2_Alt3,Rocky_Grow3_Alt3"
+		dynamicprecache="../alt3/ability_02/effects/launch.effect"
+	>
+		<onlearn>
+		    <setscriptvalue name="launch_effect" value="../alt3/ability_02/effects/launch.effect" entity="this_entity" />
+			<isstealthed entity="source_entity" />
+			<else>
+				<playeffect effect="/heroes/rocky/alt3/ability_04/effects/cast.effect" source="source_position" target="" occlude="true" />
+			</else>
+		</onlearn>
+
+		<onupgrade>
+			<isstealthed entity="source_entity" />
+			<else>
+			    <playeffect effect="effects/cast.effect" source="source_position" target="" occlude="true" />
+				<playeffect effect="/heroes/rocky/alt3/ability_04/effects/cast_big.effect" source="source_position" target="" occlude="true" />
+			</else>
+		</onupgrade>
+	</altavatar>
+
+	<altavatar key="Hero_Rocky.Alt4" modpriority="1"
+		dynamicprecache="../ability_02/effects/launch.effect"
+	>
+		<aura state="State_Rocky_Alt4_Transform" radius="0" targetscheme="self" />
+
+		<onlearn>
+		    <setscriptvalue name="launch_effect" value="../ability_02/effects/launch.effect" entity="this_entity" />
+			<isstealthed entity="source_entity" />
+			<else>
+				<playeffect effect="/heroes/rocky/alt4/ability_04/effects/cast.effect" source="source_position" target="" occlude="true" />
+			</else>
+		</onlearn>
+
+		<onupgrade>
+			<isstealthed entity="source_entity" />
+			<else>
+				<playeffect effect="/heroes/rocky/alt4/ability_04/effects/cast_big.effect" source="source_position" target="" occlude="true" />
+			</else>
+		</onupgrade>
+	</altavatar>
+
+	<altavatar key="Hero_Rocky.Alt5"
+		dynamicprecache="../alt5/ability_02/effects/launch.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="launch_effect" value="../alt5/ability_02/effects/launch.effect" entity="this_entity" />
+
+			<isstealthed entity="source_entity" />
+			<else>
+				<playeffect effect="../alt5/ability_04/effects/cast.effect" source="source_position" target="" occlude="true" />
+			</else>
+		</onlearn>
+
+		<onupgrade>
+			<isstealthed entity="source_entity" />
+			<else>
+				<playeffect effect="../alt5/ability_04/effects/cast_big.effect" source="source_position" target="" occlude="true" />
+			</else>
+		</onupgrade>
+	</altavatar>
+
+	<altavatar key="Hero_Rocky.Alt6" modpriority="1"
+		dynamicprecache="../alt6/ability_02/effects/launch.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="launch_effect" value="../alt6/ability_02/effects/launch.effect" entity="this_entity" />
+
+			<isstealthed entity="source_entity" />
+			<else>
+				<playeffect effect="../alt6/ability_04/effects/cast.effect" source="source_position" target="" occlude="true" />
+			</else>
+		</onlearn>
+
+		<onupgrade>
+			<isstealthed entity="source_entity" />
+			<else>
+				<playeffect effect="../alt6/ability_04/effects/cast_big.effect" source="source_position" target="" occlude="true" />
+			</else>
+		</onupgrade>
+	</altavatar>
+
+	<altavatar key="Hero_Rocky.Alt7" modpriority="1"
+		dynamicprecache="../alt7/ability_02/effects/launch.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="launch_effect" value="../alt7/ability_02/effects/launch.effect" entity="this_entity" />
+
+			<isstealthed entity="source_entity" />
+			<else>
+				<playeffect effect="../alt7/ability_04/effects/cast.effect" source="source_position" target="" occlude="true" />
+			</else>
+		</onlearn>
+
+		<onupgrade>
+			<isstealthed entity="source_entity" />
+			<else>
+				<playeffect effect="../alt7/ability_04/effects/cast_big.effect" source="source_position" target="" occlude="true" />
+			</else>
+		</onupgrade>
+	</altavatar>
+
+	<altavatar key="Hero_Rocky.Alt8" modpriority="1"
+		dynamicprecache="../alt8/ability_02/effects/launch.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="launch_effect" value="../alt8/ability_02/effects/launch.effect" entity="this_entity" />
+
+			<isstealthed entity="source_entity" />
+			<else>
+				<playeffect effect="effects/cast.effect" source="source_position" target="" occlude="true" />
+			</else>
+		</onlearn>
+	</altavatar>
+
+	<altavatar key="Hero_Rocky.Alt9" modpriority="1"
+		dynamicprecache="../alt9/ability_02/effects/launch.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="launch_effect" value="../alt9/ability_02/effects/launch.effect" entity="this_entity" />
+
+			<isstealthed entity="source_entity" />
+			<else>
+				<playeffect effect="effects/cast.effect" source="source_position" target="" occlude="true" />
+			</else>
+		</onlearn>
+	</altavatar>
+
+	<altavatar key="Hero_Rocky.Alt10" modpriority="1"
+		dynamicprecache="../alt10/ability_02/effects/launch.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="launch_effect" value="../alt10/ability_02/effects/launch.effect" entity="this_entity" />
+			<isstealthed entity="source_entity" />
+			<else>
+				<hasmodifier name="Combo_efx_rocky">
+					<playeffect effect="../alt10/ability_04/effects/cast_combo.effect" source="source_position" target="" occlude="true" />
+				</hasmodifier>
+				<else>
+					<playeffect effect="../alt10/ability_04/effects/cast.effect" source="source_position" target="" occlude="true" />
+				</else>
+			</else>
+		</onlearn>
+		<onupgrade>
+			<isstealthed entity="source_entity" />
+			<else>
+				<hasmodifier name="Combo_efx_rocky">
+					<playeffect effect="../alt10/ability_04/effects/cast_big_combo.effect" source="source_position" target="" occlude="true" />
+				</hasmodifier>
+				<else>
+					<playeffect effect="../alt10/ability_04/effects/cast_big.effect" source="source_position" target="" occlude="true" />
+				</else>
+			</else>
+		</onupgrade>
+	</altavatar>
+
+	<altavatar key="Hero_Rocky.Alt11" modpriority="1"
+		dynamicprecache="../alt11/ability_02/effects/launch.effect"
+		icon="../alt11/ability_04/icon.tga"
+	>
+		<onlearn>
+			<setscriptvalue name="launch_effect" value="../alt11/ability_02/effects/launch.effect" entity="this_entity" />
+			<isstealthed entity="source_entity" />
+			<else>
+				<playeffect effect="../alt11/ability_04/effects/cast.effect" source="source_position" target="" occlude="true" />
+			</else>
+		</onlearn>
+
+		<onupgrade>
+			<isstealthed entity="source_entity" />
+			<else>
+				<playeffect effect="../alt11/ability_04/effects/cast_big.effect" source="source_position" target="" occlude="true" />
+			</else>
+		</onupgrade>
+	</altavatar>
+	
+	<altavatar key="Hero_Rocky.Alt12" modpriority="1"
+		dynamicprecache="../alt12/ability_02/effects/launch.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="launch_effect" value="../alt12/ability_02/effects/launch.effect" entity="this_entity" />
+			<isstealthed entity="source_entity" />
+			<else>
+				<playeffect effect="../alt12/ability_04/effects/cast.effect" source="source_position" target="" occlude="true" />
+			</else>
+		</onlearn>
+
+		<onupgrade>
+			<isstealthed entity="source_entity" />
+			<else>
+				<playeffect effect="../alt12/ability_04/effects/cast_big.effect" source="source_position" target="" occlude="true" />
+			</else>
+		</onupgrade>
+	</altavatar>
+	
+	<altavatar key="Hero_Rocky.trophy_skin01" modpriority="1"
+		dynamicprecache="../trophy_skin/ability_02/effects/launch_01.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="launch_effect" value="../trophy_skin/ability_02/effects/launch_01.effect" entity="this_entity" />
+			<isstealthed entity="source_entity" />
+			<else>
+				<playeffect effect="../trophy_skin/ability_04/effects/cast_01.effect" source="source_position" target="" occlude="true" />
+			</else>
+		</onlearn>
+
+		<onupgrade>
+			<isstealthed entity="source_entity" />
+			<else>
+				<playeffect effect="../trophy_skin/ability_04/effects/cast_big_01.effect" source="source_position" target="" occlude="true" />
+			</else>
+		</onupgrade>
+	</altavatar>
+	
+	<altavatar key="Hero_Rocky.trophy_skin02" modpriority="1"
+		dynamicprecache="../trophy_skin/ability_02/effects/launch_02.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="launch_effect" value="../trophy_skin/ability_02/effects/launch_02.effect" entity="this_entity" />
+			<isstealthed entity="source_entity" />
+			<else>
+				<playeffect effect="../trophy_skin/ability_04/effects/cast_02.effect" source="source_position" target="" occlude="true" />
+			</else>
+		</onlearn>
+
+		<onupgrade>
+			<isstealthed entity="source_entity" />
+			<else>
+				<playeffect effect="../trophy_skin/ability_04/effects/cast_big_02.effect" source="source_position" target="" occlude="true" />
+			</else>
+		</onupgrade>
+	</altavatar>
+	
+	<altavatar key="Hero_Rocky.trophy_skin03" modpriority="1"
+		dynamicprecache="../trophy_skin/ability_03/effects/launch_03.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="launch_effect" value="../trophy_skin/ability_02/effects/launch_03.effect" entity="this_entity" />
+			<isstealthed entity="source_entity" />
+			<else>
+				<playeffect effect="../trophy_skin/ability_04/effects/cast_03.effect" source="source_position" target="" occlude="true" />
+			</else>
+		</onlearn>
+
+		<onupgrade>
+			<isstealthed entity="source_entity" />
+			<else>
+				<playeffect effect="../trophy_skin/ability_04/effects/cast_big_03.effect" source="source_position" target="" occlude="true" />
+			</else>
+		</onupgrade>
+	</altavatar>
+
+	<modifier key="krosmode" modpriority="100"
+		cooldowntype=""
+	>
+	</modifier>
+	
+	<altavatar key="Hero_Rocky.Alt13" modpriority="1"
+		dynamicprecache="../alt13/ability_02/effects/launch.effect"
+		icon="../alt13/ability_04/icon.tga"
+	>
+		<onlearn>
+			<setscriptvalue name="launch_effect" value="../alt13/ability_02/effects/launch.effect" entity="this_entity" />
+			<isstealthed entity="source_entity" />
+			<else>
+				<playeffect effect="../alt13/ability_04/effects/cast.effect" source="source_position" target="" occlude="true" />
+			</else>
+		</onlearn>
+
+		<onupgrade>
+			<isstealthed entity="source_entity" />
+			<else>
+				<playeffect effect="../alt13/ability_04/effects/cast_big.effect" source="source_position" target="" occlude="true" />
+			</else>
+		</onupgrade>
+	</altavatar>
+	
+</ability>

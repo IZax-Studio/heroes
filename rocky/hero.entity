@@ -1,0 +1,1276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_Rocky"
+
+	team="Legion"
+	icon="Tiny.tga"
+	portrait="Tiny.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana_%.wav"
+	cooldownsound="sounds/voice/cooldown_%.wav"
+	announcersound="sounds/voice/hero_select.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+	
+	preglobalscale="1.125"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="54"
+	targetoffset="0 0 92"
+	portraitcampos="-5 20 18"
+	infoheight="175"
+
+	category="cc magic"
+	difficulty="3"
+
+	solorating="2"
+	junglerating="0"
+	carryrating="1"
+	supportrating="0"
+	initiatorrating="1"
+	gankerrating="4"
+	pusherrating="1"
+	rangedrating="0"
+	meleerating="5"
+
+	movespeed="285"
+	turnrate="450"
+	turnsmoothing="0.05"
+
+	maxhealth="150"
+	healthregen="1.00"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="-0.26"
+	magicarmor="5"
+
+	inventory0="Ability_Rocky1"
+	inventory1="Ability_Rocky2"
+	inventory2="Ability_Rocky3"
+	inventory3="Ability_Rocky4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="700"
+	attackactiontime="400"
+	attackcooldown="1700"
+
+	attackdamagemin="37"
+	attackdamagemax="43"
+
+	attacknumanims="2"
+	attackoffset="0 30 100"
+	attackprojectile=""
+	attackrange="150"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="effects/impact.effect"
+	attacktype="melee"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="600"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	primaryattribute="Strength"
+	strength="24"
+	strengthperlevel="3.0"
+	agility="10"
+	agilityperlevel="1.0"
+	intelligence="18"
+	intelligenceperlevel="1.6"
+
+	previewmodel="model.mdf"
+	previewpos="0 0 -50"
+	previewangles="0 0 0"
+	previewscale="1.2"
+
+	storemodel="model.mdf"
+	storepos="0 0 -20"
+	storeangles="0 0 0"
+	storescale="1.0"
+
+	corpsetime="1500"
+	corpsefadetime="4000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+>
+	<recommendeditem name="Item_ManaPotion" />
+	<recommendeditem name="Item_MinorTotem" />
+	<recommendeditem name="Item_RunesOfTheBlight" />
+	<recommendeditem name="Item_HealthPotion" />
+	<recommendeditem name="Item_HomecomingStone" />
+
+	<recommendeditem name="Item_Intelligence5" />
+	<recommendeditem name="Item_Bottle" />
+	<recommendeditem name="Item_Striders" />
+	<recommendeditem name="Item_EnhancedMarchers" />
+	<recommendeditem name="Item_Replenish" />
+
+	<recommendeditem name="Item_SpellShards" />
+	<recommendeditem name="Item_PortalKey" />
+	<recommendeditem name="Item_UltorsHeavyPlate" />
+	<recommendeditem name="Item_DaemonicBreastplate" />
+	<recommendeditem name="Item_BehemothsHeart" />
+
+	<modifier key="ult_boost" modpriority="100">
+		<aura state="State_Rocky_Ult_Boost" radius="0" targetscheme="self"/>
+	</modifier>
+
+	<modifier key="iamsheeped" modpriority="1000"
+		passiveeffect=""
+	/>
+
+	<!-- <modifier key="gated" modpriority="200"
+		movespeed="290"
+		magicarmor="5"
+		armor="-1.35"
+		
+		inventory0="Reborn_Ability_Rocky1"
+		inventory1="Reborn_Ability_Rocky2"
+		inventory2="Reborn_Ability_Rocky3"
+		inventory3="Reborn_Ability_Rocky4"
+		
+		attackdamagemin="54"
+		attackdamagemax="60"
+		
+		primaryattribute="Strength"
+		strength="26"
+		strengthperlevel="2.8"
+		agility="9"
+		agilityperlevel="1.0"
+		intelligence="16"
+		intelligenceperlevel="1.5"
+		
+		solorating="5"
+		junglerating="0"
+		carryrating="0"
+		supportrating="0"
+		initiatorrating="0"
+		gankerrating="5"
+		pusherrating="0"
+		rangedrating="0"
+		meleerating="5"
+	>
+	</modifier> -->
+	
+	<modifier key="Reborn_Rocky_Grow1" modpriority="100"
+		walkanim="ability_4_walk_1"
+		preglobalscale="1.2"
+		effectscale="1.008"
+		selectionradius="62"
+		attackcooldown="1800"
+		model="alt2/model.mdf"
+		portraitcampos="-5 20 32"
+	/>
+	
+	<modifier key="Reborn_Rocky_Grow2" modpriority="100"
+		walkanim="ability_4_walk_2"
+		preglobalscale="1.1"
+		effectscale="1.17"
+		selectionradius="70"
+		attackcooldown="2000"
+		model="alt3/model.mdf"
+		portraitcampos="-40 120 40"
+		infoheight="230"
+	/>
+	
+	<modifier key="Reborn_Rocky_Grow3" modpriority="100"
+		walkanim="ability_4_walk_3"
+		preglobalscale="1.0"
+		effectscale="1.44"
+		selectionradius="74"
+		attackcooldown="2200"
+		infoheight="220"
+		model="alt4/model.mdf"
+		portraitcampos="-40 120 40"
+	/>
+
+	<modifier key="Rocky_Grow1" modpriority="100"
+		walkanim="ability_4_walk_1"
+		preglobalscale="1.2"
+		effectscale="1.008"
+		attackdamagemin="77"
+		attackdamagemax="83"
+		selectionradius="62"
+		attackcooldown="1900"
+		model="alt2/model.mdf"
+		portraitcampos="-5 20 32"
+	/>
+	
+	<modifier key="Rocky_Grow2" modpriority="100"
+		walkanim="ability_4_walk_2"
+		preglobalscale="1.1"
+		effectscale="1.17"
+		attackdamagemin="117"
+		attackdamagemax="123"
+		selectionradius="70"
+		attackcooldown="2100"
+		model="alt3/model.mdf"
+		portraitcampos="-40 120 40"
+		infoheight="210"
+	/>
+	
+	<modifier key="Rocky_Grow3" modpriority="100"
+		walkanim="ability_4_walk_3"
+		preglobalscale="1.0"
+		effectscale="1.44"
+		attackdamagemin="157"
+		attackdamagemax="163"
+		selectionradius="74"
+		attackcooldown="2300"
+		model="alt4/model.mdf"
+		portraitcampos="-40 120 40"
+		infoheight="210"
+	/>
+
+	<modifier key="soccer" modpriority="190" primaryattribute=""
+		turnrate="650" magicarmor="0" healthregen="2.5" armor="0" manaregen="0"
+		maxmana="150"
+		attackrange="175"
+		attackduration="1000"
+		attackactiontime="400"
+		attackcooldown="1700"
+		movespeed="320"
+		maxhealth="525"
+		attackdamagemin="60"
+		attackdamagemax="60"
+		intelligence="0"
+		strength="0"
+		agility="0"
+		inventory0="Ability_Soccer_SlideKick"
+		inventory1="Ability_Soccer_Sprint"
+		inventory2="Ability_Rocky1"
+		inventory3="Ability_Rocky2"
+		inventory4="Ability_Soccer_Rocky_Passive"
+		modelscale="1.32"
+		infoheight="200"
+		cancarryitems="false" inventory8="" inventory12=""
+	/>
+
+	<altavatar key="Hero_Rocky.Classic"
+		preglobalscale="1.125"
+		icon2="icon.tga"
+		portrait="icon.tga"
+		model="model.mdf"
+
+		previewmodel="preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.2"
+
+		storemodel="preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.75"
+	>
+	</altavatar>
+
+	<altavatar key="Hero_Rocky.Alt"
+		preglobalscale="1.0"
+		icon2="alt/icon.tga"
+		portrait="alt/icon.tga"
+		model="alt/model.mdf"
+
+		previewmodel="alt/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.2"
+
+		storemodel="alt/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.75"
+	>
+	</altavatar>
+
+	<altavatar key="Hero_Rocky.Alt2"
+		preglobalscale=".95"
+		icon2="alt2/icon.tga"
+		portrait="alt2/icon.tga"
+		model="alt2/model.mdf"
+		passiveeffect="alt2/effects/body.effect"
+
+		selectedsound="alt2/sounds/voice/select_%.wav"
+		selectedflavorsound="alt2/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt2/sounds/voice/move_%.wav"
+		confirmattacksound="alt2/sounds/voice/attack_%.wav"
+		nomanasound="alt2/sounds/voice/no_mana.wav"
+		cooldownsound="alt2/sounds/voice/cooldown.wav"
+		tauntedsound="alt2/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt2/sounds/voice/taunt_after.wav"
+
+		previewmodel="alt2/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.2"
+
+		storemodel="alt2/model_store.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.23"
+
+		infoheight="140"
+	>
+		<modifier key="Rocky_Grow1_Alt2" modpriority="100"
+			walkanim="ability_4_walk_1"
+			passiveeffect="alt2/effects/body_grow1.effect"
+			preglobalscale="1.15"
+			effectscale="1.008"
+			attackdamagemin="77"
+			attackdamagemax="83"
+			selectionradius="62"
+			attackcooldown="1900"
+
+			infoheight="180"
+		/>
+		<modifier key="Rocky_Grow2_Alt2" modpriority="100"
+			walkanim="ability_4_walk_2"
+			passiveeffect="alt2/effects/body_grow1.effect"
+			preglobalscale="1.45"
+			effectscale="1.55"
+			attackdamagemin="117"
+			attackdamagemax="123"
+			selectionradius="70"
+			attackcooldown="2100"
+
+			infoheight="220"
+		/>
+		<modifier key="Rocky_Grow3_Alt2" modpriority="100"
+			walkanim="ability_4_walk_3"
+			passiveeffect="alt2/effects/body_grow1.effect"
+			preglobalscale="1.65"
+			effectscale="1.44"
+			attackdamagemin="157"
+			attackdamagemax="163"
+			selectionradius="74"
+			attackcooldown="2300"
+
+			infoheight="250"
+		/>
+		
+		<modifier key="Reborn_Rocky_Grow1_Art" modpriority="100"
+			passiveeffect="alt2/effects/body_grow1.effect"
+			preglobalscale="1.15"
+			effectscale="1.008"
+			selectionradius="62"
+			infoheight="180"
+		/>
+		
+		<modifier key="Reborn_Rocky_Grow2_Art" modpriority="100"
+			passiveeffect="alt2/effects/body_grow1.effect"
+			preglobalscale="1.15"
+			effectscale="1.008"
+			selectionradius="62"
+			infoheight="180"
+		/>
+		
+		<modifier key="Reborn_Rocky_Grow3_Art" modpriority="100"
+			passiveeffect="alt2/effects/body_grow1.effect"
+			preglobalscale="1.65"
+			effectscale="1.44"
+			selectionradius="74"
+			infoheight="250"
+		/>
+	</altavatar>
+
+	<altavatar key="Hero_Rocky.Alt3"
+		preglobalscale="1"
+		icon2="alt3/icon.tga"
+		portrait="alt3/icon.tga"
+		model="alt3/model.mdf"
+		passiveeffect="alt3/effects/body.effect"
+
+		previewmodel="alt3/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.2"
+
+		selectedsound="alt3/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt3/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt3/sounds/voice/move_%.wav"
+	    confirmattacksound="alt3/sounds/voice/attack_%.wav"
+	    nomanasound="alt3/sounds/voice/no_mana.wav"
+	    cooldownsound="alt3/sounds/voice/cooldown.wav"
+	    tauntedsound="alt3/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt3/sounds/voice/taunt_after.wav"
+
+		storemodel="alt3/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.4"
+		storepassiveeffect="alt3/effects/body_grow3.effect"
+
+		infoheight="160"
+		portraitcampos="-10 70 26"
+
+		attackimpacteffect="alt3/effects/impact.effect"
+	>
+		<modifier key="Rocky_Grow1_Alt3" modpriority="100"
+			walkanim="ability_4_walk_1"
+			passiveeffect="alt3/effects/body_grow1.effect"
+			preglobalscale="1"
+			effectscale="1.008"
+			attackdamagemin="77"
+			attackdamagemax="83"
+			selectionradius="62"
+			attackcooldown="1900"
+			modelscale=".9"
+			infoheight="192"
+		/>
+		<modifier key="Rocky_Grow2_Alt3" modpriority="100"
+			walkanim="ability_4_walk_2"
+			passiveeffect="alt3/effects/body_grow2.effect"
+			preglobalscale="1"
+			effectscale="1.15"
+			attackdamagemin="117"
+			attackdamagemax="123"
+			selectionradius="70"
+			attackcooldown="2100"
+			modelscale=".92"
+			infoheight="225"
+		/>
+		<modifier key="Rocky_Grow3_Alt3" modpriority="100"
+			walkanim="ability_4_walk_3"
+			passiveeffect="alt3/effects/body_grow3.effect"
+			preglobalscale="1"
+			effectscale="1.4"
+			attackdamagemin="157"
+			attackdamagemax="163"
+			selectionradius="74"
+			attackcooldown="2300"
+			model="alt3/ability_04/transformed/model.mdf"
+			modelscale="1.1"
+			infoheight="260"
+		/>
+		
+		<modifier key="Reborn_Rocky_Grow1_Art" modpriority="100"
+			passiveeffect="alt3/effects/body_grow1.effect"
+			preglobalscale="1"
+			effectscale="1.008"
+			selectionradius="62"
+			modelscale=".9"
+			infoheight="192"
+		/>
+		
+		<modifier key="Reborn_Rocky_Grow2_Art" modpriority="100"
+			passiveeffect="alt3/effects/body_grow2.effect"
+			preglobalscale="1"
+			effectscale="1.15"
+			selectionradius="70"
+			modelscale=".92"
+			infoheight="225"
+		/>
+		
+		<modifier key="Reborn_Rocky_Grow3_Art" modpriority="100"
+			passiveeffect="alt3/effects/body_grow3.effect"
+			preglobalscale="1"
+			effectscale="1.4"
+			selectionradius="74"
+			model="alt3/ability_04/transformed/model.mdf"
+			modelscale="1.1"
+			infoheight="260"
+		/>
+	</altavatar>
+
+	<altavatar key="Hero_Rocky.Alt4"
+		preglobalscale="1"
+		icon2="alt4/icon.tga"
+		portrait="alt4/icon.tga"
+		model="model.mdf"
+
+		previewmodel="alt4/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.2"
+
+		selectedsound="alt4/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt4/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt4/sounds/voice/move_%.wav"
+	    confirmattacksound="alt4/sounds/voice/attack_%.wav"
+	    nomanasound="alt4/sounds/voice/no_mana.wav"
+	    cooldownsound="alt4/sounds/voice/cooldown.wav"
+	    tauntedsound="alt4/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt4/sounds/voice/taunt_after.wav"
+
+		storemodel="alt4/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.45"
+
+		infoheight="160"
+
+		attackimpacteffect="effects/impact.effect"
+	>
+		<onspawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Ophelia.Alt3 aa.Hero_Rocky.Alt4 aa.Hero_Taint.Alt3 aa.Hero_DwarfMagi.Alt4">
+				<applystate name="State_Earthoc_Pet" continuous="true" />
+			</ownsproduct>
+		</onspawn>
+
+		<onrespawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Ophelia.Alt3 aa.Hero_Rocky.Alt4 aa.Hero_Taint.Alt3 aa.Hero_DwarfMagi.Alt4">
+				<applystate name="State_Earthoc_Pet" continuous="true" />
+			</ownsproduct>
+		</onrespawn>
+	</altavatar>
+
+	<altavatar key="Hero_Rocky.Alt5"
+		preglobalscale="1.125"
+		icon2="alt5/icon.tga"
+		portrait="alt5/icon.tga"
+		model="alt5/model.mdf"
+
+		previewmodel="alt5/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.2"
+
+		selectedsound="alt5/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt5/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt5/sounds/voice/move_%.wav"
+	    confirmattacksound="alt5/sounds/voice/attack_%.wav"
+	    nomanasound="alt5/sounds/voice/no_mana.wav"
+	    cooldownsound="alt5/sounds/voice/cooldown.wav"
+	    tauntedsound="alt5/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt5/sounds/voice/taunt_after.wav"
+
+		storemodel="alt5/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.45"
+
+		infoheight="160"
+
+		attackimpacteffect="alt5/effects/impact.effect"
+	>
+		<onspawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_EmeraldWarden.Alt7 aa.Hero_Hammerstorm.Alt7 aa.Hero_Legionnaire.Alt8 aa.Hero_Predator.Alt9 aa.Hero_Rally.Alt7 aa.Hero_Rocky.Alt5 aa.Hero_Solstice.Alt6 aa.Hero_Dampeer.Alt5 aa.Hero_Kane.Alt3 aa.Hero_Pestilence.Alt5 aa.Hero_Ravenor.Alt6">
+				<activatemodifierkey name="ARMS_Set" />
+			</ownsproduct>
+		</onspawn>
+
+		<onrespawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_EmeraldWarden.Alt7 aa.Hero_Hammerstorm.Alt7 aa.Hero_Legionnaire.Alt8 aa.Hero_Predator.Alt9 aa.Hero_Rally.Alt7 aa.Hero_Rocky.Alt5 aa.Hero_Solstice.Alt6 aa.Hero_Dampeer.Alt5 aa.Hero_Kane.Alt3 aa.Hero_Pestilence.Alt5 aa.Hero_Ravenor.Alt6">
+				<activatemodifierkey name="ARMS_Set" />
+			</ownsproduct>
+		</onrespawn>
+
+		<modifier key="ARMS_Set" modpriority="1"
+			tooleffectkeyname0=""
+			tooleffectpath0="/shared/effects/set_arms_blue.effect"
+		/>
+	</altavatar>
+
+	<altavatar key="Hero_Rocky.Alt6"
+		preglobalscale=".95"
+		icon2="alt6/icon.tga"
+		portrait="alt6/icon.tga"
+		model="alt6/model.mdf"
+		passiveeffect="alt6/effects/body.effect"
+
+		previewmodel="alt6/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.2"
+
+		selectedsound="alt6/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt6/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt6/sounds/voice/move_%.wav"
+	    confirmattacksound="alt6/sounds/voice/attack_%.wav"
+	    nomanasound="alt6/sounds/voice/no_mana.wav"
+	    cooldownsound="alt6/sounds/voice/cooldown.wav"
+	    tauntedsound="alt6/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt6/sounds/voice/taunt_after.wav"
+
+		storemodel="alt6/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.05"
+
+		infoheight="190"
+		portraitcampos="-10 30 50"
+	>
+		<onspawn>
+			<applystate name="Hotshot_Rocky_Sound_Initiator" target="source_entity" duration="2000" />
+			<activatemodifierkey name="Rocky_Sound" />
+		</onspawn>
+
+		<modifier key="Rocky_Grow1" modpriority="100"
+			walkanim="ability_4_walk_1"
+			preglobalscale="1.25"
+			effectscale="1.008"
+			attackdamagemin="77"
+			attackdamagemax="83"
+			selectionradius="62"
+			attackcooldown="1900"
+			infoheight="230"
+		/>
+		<modifier key="Rocky_Grow2" modpriority="100"
+			walkanim="ability_4_walk_2"
+			preglobalscale="1.55"
+			effectscale="1.17"
+			attackdamagemin="117"
+			attackdamagemax="123"
+			selectionradius="70"
+			attackcooldown="2100"
+			infoheight="260"
+		/>
+		<modifier key="Rocky_Grow3" modpriority="100"
+			walkanim="ability_4_walk_3"
+			preglobalscale="1.7"
+			effectscale="1.44"
+			attackdamagemin="157"
+			attackdamagemax="163"
+			selectionradius="74"
+			attackcooldown="2300"
+
+			infoheight="300"
+		/>
+		
+		<modifier key="Reborn_Rocky_Grow1_Art" modpriority="150"
+			preglobalscale="1.25"
+			effectscale="1.008"
+			selectionradius="62"
+			infoheight="230"
+		/>
+		
+		<modifier key="Reborn_Rocky_Grow2_Art" modpriority="150"
+			preglobalscale="1.55"
+			effectscale="1.17"
+			selectionradius="70"
+			infoheight="260"
+		/>
+		
+		<modifier key="Reborn_Rocky_Grow3_Art" modpriority="150"
+			preglobalscale="1.7"
+			effectscale="1.44"
+			selectionradius="74"
+			infoheight="300"
+		/>
+	</altavatar>
+
+	<altavatar key="Hero_Rocky.Alt7"
+		icon2="alt7/icon.tga"
+		portrait="alt7/icon.tga"
+		model="alt7/model.mdf"
+		passiveeffect="alt7/effects/body.effect"
+		attackimpacteffect="alt7/effects/impact.effect"
+
+		previewmodel="alt7/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.2"
+
+		selectedsound="alt7/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt7/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt7/sounds/voice/move_%.wav"
+	    confirmattacksound="alt7/sounds/voice/attack_%.wav"
+	    nomanasound="alt7/sounds/voice/no_mana.wav"
+	    cooldownsound="alt7/sounds/voice/cooldown.wav"
+	    tauntedsound="alt7/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt7/sounds/voice/taunt_after.wav"
+
+		storemodel="alt7/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.55"
+
+		infoheight="190"
+		portraitcampos="15 0 15"
+	/>
+
+	<altavatar key="Hero_Rocky.Alt8"
+		icon2="alt8/icon.tga"
+		portrait="alt8/icon.tga"
+		model="alt8/model.mdf"
+		passiveeffect="alt8/effects/body.effect"
+		attackimpacteffect="alt8/effects/impact.effect"
+
+		previewmodel="alt8/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.2"
+		preglobalscale="1.36"
+
+		selectedsound="alt8/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt8/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt8/sounds/voice/move_%.wav"
+	    confirmattacksound="alt8/sounds/voice/attack_%.wav"
+	    nomanasound="alt8/sounds/voice/no_mana.wav"
+	    cooldownsound="alt8/sounds/voice/cooldown.wav"
+	    tauntedsound="alt8/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt8/sounds/voice/taunt_after.wav"
+
+		storemodel="alt8/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.45"
+
+		infoheight="190"
+		portraitcampos="10 -5 15"
+	>
+		<onlevelup>
+			<condition test="level ge 16" >
+				<setactivemodifierkey name="new_form" />
+			</condition>
+			<else>
+
+			</else>
+		</onlevelup>
+
+		<onspawn propagatetoillusions="false">
+			<ownsproduct target="this_entity" product="aa.Hero_Mumra.Alt5 aa.Hero_Artesia.Alt5 aa.Hero_Bubbles.Alt10">
+				<targettype type="mimic" target="this_entity" >
+				</targettype>
+				<else>
+					<playeffect effect="alt8/effects/steam_works.effect"/>
+				</else>
+			</ownsproduct>
+		</onspawn>
+
+		<onrespawn propagatetoillusions="false">
+			<ownsproduct target="this_entity" product="aa.Hero_Mumra.Alt5 aa.Hero_Artesia.Alt5 aa.Hero_Bubbles.Alt10">
+				<targettype type="mimic" target="this_entity" >
+				</targettype>
+				<else>
+					<playeffect effect="alt8/effects/steam_works.effect"/>
+				</else>
+			</ownsproduct>
+		</onrespawn>
+
+		<modifier key="new_form" modpriority="1"
+			model="alt8/level_16/model.mdf"
+			passiveeffect="alt8/effects/body.effect"
+			preglobalscale="1.36"
+		/>
+	</altavatar>
+
+	<altavatar key="Hero_Rocky.Alt9"
+		icon2="alt9/icon.tga"
+		portrait="alt9/icon.tga"
+		model="alt9/model.mdf"
+
+		previewmodel="alt9/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.2"
+
+		selectedsound="alt9/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt9/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt9/sounds/voice/move_%.wav"
+	    confirmattacksound="alt9/sounds/voice/attack_%.wav"
+	    nomanasound="alt9/sounds/voice/no_mana.wav"
+	    cooldownsound="alt9/sounds/voice/cooldown.wav"
+	    tauntedsound="alt9/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt9/sounds/voice/taunt_after.wav"
+
+		storemodel="alt9/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.55"
+
+		infoheight="190"
+		portraitcampos="-5 50 0"
+	/>
+
+	<altavatar key="Hero_Rocky.Alt10"
+		preglobalscale="1.3"
+		icon2="alt10/icon.tga"
+		portrait="alt/icon.tga"
+		model="alt10/model.mdf"
+		
+		attackimpacteffect=""
+
+		previewmodel="alt10/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.2"
+
+		storemodel="alt10/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.75"
+		
+		portraitcampos="-10 50 10"
+		
+		selectedsound="alt10/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt10/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt10/sounds/voice/move_%.wav"
+	    confirmattacksound="alt10/sounds/voice/attack_%.wav"
+	    nomanasound="alt10/sounds/voice/no_mana.wav"
+	    cooldownsound="alt10/sounds/voice/cooldown.wav"
+	    tauntedsound="alt10/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt10/sounds/voice/taunt_after.wav"
+	>
+	
+		<onspawn>
+			<applystate name="State_Chuck_Sound_Initiator" target="this_entity" duration="2000" />
+		</onspawn>
+		
+		<onattackimpact>
+			<playeffect effect="alt10/effects/impact.effect" target="this_entity" source="target_entity" occlude="true"/>
+		</onattackimpact>
+		
+		<onframe>
+			<setactivemodifierkey name="Hero_Rocky_Alt10" />
+			<areaofeffect
+				global="true"
+				targetscheme="all_heroes"
+				targetselection="all"
+				ignoreinvulnerable="true"
+			>
+				<hasmodifier entity="target_entity" name="Hero_Fairy_Alt6" propagatetoillusions="false">
+					<compare a="source_team" b="target_team" op="eq">
+						<activatemodifierkey name="Combo_efx_rocky" entity="source_entity"/>
+					</compare>
+				</hasmodifier>
+			</areaofeffect>
+		</onframe>
+	</altavatar>
+
+
+	<altavatar key="Hero_Rocky.pog_skin"
+		preglobalscale="1.2"
+		icon2="pog_skin/icon.tga"
+		portrait="pog_skin/icon.tga"
+		model="model.mdf"
+
+		previewmodel="pog_skin/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.2"
+
+		storemodel="pog_skin/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.75"
+	>
+	</altavatar>
+
+	<altavatar key="Hero_Rocky.Alt11"
+		icon2="alt11/icon.tga"
+		portrait="alt11/icon.tga"
+		model="alt11/model.mdf"
+		modelscale="1.3"
+		passiveeffect="alt11/effects/body.effect"
+		attackimpacteffect="alt11/effects/impact.effect"
+
+		previewmodel="/heroes/rocky/alt11/Rocky_Grow1/model.mdf"
+		previewpassiveeffect="alt11/effects/body_store.effect"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.2"
+
+		selectedsound="alt11/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt11/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt11/sounds/voice/move_%.wav"
+	    confirmattacksound="alt11/sounds/voice/attack_%.wav"
+	    nomanasound="alt11/sounds/voice/no_mana.wav"
+	    cooldownsound="alt11/sounds/voice/cooldown.wav"
+	    tauntedsound="alt11/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt11/sounds/voice/taunt_after.wav"
+
+		storemodel="/heroes/rocky/alt11/Rocky_Grow1/model.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.65"
+		storepassiveeffect="alt11/effects/body_store.effect"
+
+		infoheight="170"
+		portraitcampos="0 -7 27"
+	>
+		<onkill>
+			<ownsproduct target="this_entity" product="aa.Hero_MonkeyKing.Alt11 aa.Hero_KingKlout.Alt3 aa.Hero_Lodestone.Alt5 aa.Hero_Rocky.Alt11 aa.Hero_Kane.Alt11 aa.Hero_Zephyr.Alt9" >
+				<cantarget targetscheme="enemy_heroes">
+					<applystate name="State_Set_Striker_Score_VFX" source="this_entity" target="this_entity" duration="2500" />
+				</cantarget>
+			</ownsproduct>
+        </onkill>
+
+		<onassist>
+			<ownsproduct target="this_entity" product="aa.Hero_MonkeyKing.Alt11 aa.Hero_KingKlout.Alt3 aa.Hero_Lodestone.Alt5 aa.Hero_Rocky.Alt11 aa.Hero_Kane.Alt11 aa.Hero_Zephyr.Alt9" >
+				<applystate name="State_Set_Striker_Score_VFX" source="this_entity" target="this_entity" duration="2500" />
+			</ownsproduct>
+        </onassist>
+
+		<modifier key="Rocky_Grow1" modpriority="100"
+		    model="/heroes/rocky/alt11/Rocky_Grow1/model.mdf"
+			modelscale="1.3"
+
+			walkanim="ability_4_walk_1"
+			preglobalscale="1.485"
+			effectscale="1.008"
+			attackdamagemin="77"
+			attackdamagemax="83"
+			selectionradius="62"
+			attackcooldown="1900"
+			infoheight="230"
+		/>
+		<modifier key="Rocky_Grow2" modpriority="100"
+		    model="/heroes/rocky/alt11/Rocky_Grow2/model.mdf"
+			modelscale="1.35"
+
+			walkanim="ability_4_walk_2"
+			preglobalscale="1.775"
+			effectscale="1.17"
+			attackdamagemin="117"
+			attackdamagemax="123"
+			selectionradius="70"
+			attackcooldown="2100"
+			infoheight="270"
+		/>
+		<modifier key="Rocky_Grow3" modpriority="100"
+		    model="/heroes/rocky/alt11/Rocky_Grow3/model.mdf"
+			modelscale="1.3"
+
+			walkanim="ability_4_walk_3"
+			preglobalscale="2.07"
+			effectscale="1.44"
+			attackdamagemin="157"
+			attackdamagemax="163"
+			selectionradius="74"
+			attackcooldown="2300"
+
+			infoheight="300"
+		>
+			<onkill>
+				<ownsproduct target="this_entity" product="aa.Hero_MonkeyKing.Alt11 aa.Hero_KingKlout.Alt3 aa.Hero_Lodestone.Alt5 aa.Hero_Rocky.Alt11 aa.Hero_Kane.Alt11 aa.Hero_Zephyr.Alt9" >
+					<cantarget targetscheme="enemy_heroes">
+						<applystate name="State_Set_Striker_Score_VFX_HIGH" source="this_entity" target="this_entity" duration="2500" />
+					</cantarget>
+				</ownsproduct>
+			</onkill>
+
+			<onassist>
+				<ownsproduct target="this_entity" product="aa.Hero_MonkeyKing.Alt11 aa.Hero_KingKlout.Alt3 aa.Hero_Lodestone.Alt5 aa.Hero_Rocky.Alt11 aa.Hero_Kane.Alt11 aa.Hero_Zephyr.Alt9" >
+					<applystate name="State_Set_Striker_Score_VFX_HIGH" source="this_entity" target="this_entity" duration="2500" />
+				</ownsproduct>
+			</onassist>
+		</modifier>
+		
+		<modifier key="Reborn_Rocky_Grow1_Art" modpriority="150"
+		    model="/heroes/rocky/alt11/Rocky_Grow1/model.mdf"
+			modelscale="1.3"
+			preglobalscale="1.485"
+			effectscale="1.008"
+			selectionradius="62"
+			infoheight="230"
+		/>
+		
+		<modifier key="Reborn_Rocky_Grow2_Art" modpriority="150"
+		    model="/heroes/rocky/alt11/Rocky_Grow2/model.mdf"
+			modelscale="1.35"
+			preglobalscale="1.775"
+			effectscale="1.17"
+			selectionradius="70"
+			infoheight="270"
+		/>
+		<modifier key="Reborn_Rocky_Grow3_Art" modpriority="150"
+		    model="/heroes/rocky/alt11/Rocky_Grow3/model.mdf"
+			modelscale="1.3"
+			preglobalscale="2.07"
+			effectscale="1.44"
+			selectionradius="74"
+			infoheight="300"
+		>
+			<onkill>
+				<ownsproduct target="this_entity" product="aa.Hero_MonkeyKing.Alt11 aa.Hero_KingKlout.Alt3 aa.Hero_Lodestone.Alt5 aa.Hero_Rocky.Alt11 aa.Hero_Kane.Alt11 aa.Hero_Zephyr.Alt9" >
+					<cantarget targetscheme="enemy_heroes">
+						<applystate name="State_Set_Striker_Score_VFX_HIGH" source="this_entity" target="this_entity" duration="2500" />
+					</cantarget>
+				</ownsproduct>
+			</onkill>
+
+			<onassist>
+				<ownsproduct target="this_entity" product="aa.Hero_MonkeyKing.Alt11 aa.Hero_KingKlout.Alt3 aa.Hero_Lodestone.Alt5 aa.Hero_Rocky.Alt11 aa.Hero_Kane.Alt11 aa.Hero_Zephyr.Alt9" >
+					<applystate name="State_Set_Striker_Score_VFX_HIGH" source="this_entity" target="this_entity" duration="2500" />
+				</ownsproduct>
+			</onassist>
+		</modifier>
+		
+	</altavatar>
+
+	
+	<altavatar key="Hero_Rocky.trophy_skin01"
+		icon2="trophy_skin/model_01/icon.tga"
+		portrait="trophy_skin/model_01/icon.tga"
+		model="trophy_skin/model_01/model.mdf"
+		passiveeffect="trophy_skin/effects/body_01.effect"
+		
+		previewmodel="trophy_skin/model_01/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.2"
+
+		storemodel="trophy_skin/model_01/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.75"
+	/>
+	
+	<altavatar key="Hero_Rocky.trophy_skin02"
+		icon2="trophy_skin/model_02/icon.tga"
+		portrait="trophy_skin/model_02/icon.tga"
+		model="trophy_skin/model_02/model.mdf"
+		passiveeffect="trophy_skin/effects/body_02.effect"
+		
+		previewmodel="trophy_skin/model_02/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.2"
+
+		storemodel="trophy_skin/model_02/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.75"
+	/>
+	
+	<altavatar key="Hero_Rocky.trophy_skin03"
+		icon2="trophy_skin/model_03/icon.tga"
+		portrait="trophy_skin/model_03/icon.tga"
+		model="trophy_skin/model_03/model.mdf"
+		passiveeffect="trophy_skin/effects/body_03.effect"
+		
+		previewmodel="trophy_skin/model_03/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.2"
+
+		storemodel="trophy_skin/model_03/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.75"
+	/>
+	
+	<altavatar key="Hero_Rocky.Alt12"
+		icon2="alt12/icon.tga"
+		portrait="alt12/icon.tga"
+		model="alt12/model.mdf"
+		modelscale="0.7"
+		portraitcampos="-7 7 55"
+		
+		previewmodel="alt12/model.mdf"
+		previewpassiveeffect=""
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale=".7"
+		
+		selectedsound="alt12/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt12/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt12/sounds/voice/move_%.wav"
+	    confirmattacksound="alt12/sounds/voice/attack_%.wav"
+	    nomanasound="alt12/sounds/voice/no_mana.wav"
+	    cooldownsound="alt12/sounds/voice/cooldown.wav"
+	    tauntedsound="alt12/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt12/sounds/voice/taunt_after.wav"
+		
+		storemodel="alt12/model.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale=".95"
+		storepassiveeffect=""
+		attackimpacteffect="alt12/effects/impact.effect"
+	>
+		<onspawn>
+			<applystate name="State_P800_Sound_Initiator" target="source_entity" duration="2000" />
+		</onspawn>
+		
+		<modifier key="Rocky_Grow1" modpriority="100"
+		    model="/heroes/rocky/alt12/Rocky_Grow1/model.mdf"
+			modelscale="1.3"
+
+			walkanim="ability_4_walk_1"
+			preglobalscale="0.85"
+			effectscale="1.008"
+			attackdamagemin="77"
+			attackdamagemax="83"
+			selectionradius="62"
+			attackcooldown="1900"
+			infoheight="230"
+		/>
+		<modifier key="Rocky_Grow2" modpriority="100"
+		    model="/heroes/rocky/alt12/Rocky_Grow2/model.mdf"
+			modelscale="1.35"
+
+			walkanim="ability_4_walk_2"
+			preglobalscale="0.95"
+			effectscale="1.17"
+			attackdamagemin="117"
+			attackdamagemax="123"
+			selectionradius="70"
+			attackcooldown="2100"
+			infoheight="270"
+		/>
+		<modifier key="Rocky_Grow3" modpriority="100"
+		    model="/heroes/rocky/alt12/Rocky_Grow3/model.mdf"
+			modelscale="1.3"
+
+			walkanim="ability_4_walk_3"
+			preglobalscale="1.3"
+			effectscale="1.44"
+			attackdamagemin="157"
+			attackdamagemax="163"
+			selectionradius="74"
+			attackcooldown="2300"
+
+			infoheight="300"
+	    />
+		
+		<modifier key="Reborn_Rocky_Grow1_Art" modpriority="150"
+		    model="/heroes/rocky/alt12/Rocky_Grow1/model.mdf"
+			modelscale="1.3"
+			preglobalscale="0.85"
+			effectscale="1.008"
+			selectionradius="62"
+			infoheight="230"
+		/>
+		
+		<modifier key="Reborn_Rocky_Grow2_Art" modpriority="150"
+		    model="/heroes/rocky/alt12/Rocky_Grow2/model.mdf"
+			modelscale="1.35"
+			preglobalscale="0.95"
+			effectscale="1.17"
+			selectionradius="70"
+			infoheight="270"
+		/>
+		
+		<modifier key="Reborn_Rocky_Grow3_Art" modpriority="150"
+		    model="/heroes/rocky/alt12/Rocky_Grow3/model.mdf"
+			modelscale="1.3"
+			preglobalscale="1.3"
+			effectscale="1.44"
+			selectionradius="74"
+			infoheight="300"
+	    />
+
+	</altavatar>
+	
+	<altavatar key="Hero_Rocky.Alt13"
+		icon2="alt13/icon.tga"
+		portrait="alt13/icon.tga"
+		model="alt13/model.mdf"
+		modelscale="1"
+		portraitcampos="-10 40 10"
+		
+		passiveeffect="alt13/effects/body.effect"
+		
+		previewmodel="alt13/model.mdf"
+		previewpassiveeffect=""
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.2"
+		
+		storemodel="alt13/model.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.7"
+		storepassiveeffect=""
+		attackimpacteffect="alt13/effects/impact.effect"
+		
+		selectedsound="alt13/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt13/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt13/sounds/voice/move_%.wav"
+	    confirmattacksound="alt13/sounds/voice/attack_%.wav"
+	    nomanasound="alt13/sounds/voice/no_mana.wav"
+	    cooldownsound="alt13/sounds/voice/cooldown.wav"
+	    tauntedsound="alt13/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt13/sounds/voice/taunt_after.wav"
+	>
+		<onspawn>
+			<applystate name="State_P800_Sound_Initiator" target="source_entity" duration="2000" />
+		</onspawn>
+		
+		<modifier key="Rocky_Grow1" modpriority="100"
+		    model="/heroes/rocky/alt13/Rocky_Grow1/model.mdf"
+			modelscale="1.3"
+
+			walkanim="ability_4_walk_1"
+			preglobalscale="1.4"
+			effectscale="1.008"
+			attackdamagemin="77"
+			attackdamagemax="83"
+			selectionradius="62"
+			attackcooldown="1900"
+			infoheight="230"
+		/>
+		
+		<modifier key="Rocky_Grow2" modpriority="100"
+		    model="/heroes/rocky/alt13/Rocky_Grow2/model.mdf"
+			modelscale="1.35"
+
+			walkanim="ability_4_walk_2"
+			preglobalscale="1.6"
+			effectscale="1.17"
+			attackdamagemin="117"
+			attackdamagemax="123"
+			selectionradius="70"
+			attackcooldown="2100"
+			infoheight="270"
+		/>
+		
+		<modifier key="Rocky_Grow3" modpriority="100"
+		    model="/heroes/rocky/alt13/Rocky_Grow3/model.mdf"
+			modelscale="1.3"
+
+			walkanim="ability_4_walk_3"
+			preglobalscale="1.8"
+			effectscale="1.44"
+			attackdamagemin="157"
+			attackdamagemax="163"
+			selectionradius="74"
+			attackcooldown="2300"
+
+			infoheight="300"
+	    />
+		
+		<modifier key="Reborn_Rocky_Grow1_Art" modpriority="150"
+		    model="/heroes/rocky/alt13/Rocky_Grow1/model.mdf"
+			modelscale="1.3"
+			preglobalscale="1.4"
+			effectscale="1.008"
+			selectionradius="62"
+			infoheight="230"
+		/>
+		
+		<modifier key="Reborn_Rocky_Grow2_Art" modpriority="150"
+		    model="/heroes/rocky/alt13/Rocky_Grow2/model.mdf"
+			modelscale="1.35"
+			preglobalscale="1.6"
+			effectscale="1.17"
+			selectionradius="70"
+			infoheight="270"
+		/>
+		
+		<modifier key="Reborn_Rocky_Grow3_Art" modpriority="150"
+		    model="/heroes/rocky/alt13/Rocky_Grow3/model.mdf"
+			modelscale="1.3"
+			walkanim="ability_4_walk_3"
+			preglobalscale="1.8"
+			effectscale="1.44"
+			selectionradius="74"
+			infoheight="300"
+	    />
+
+	</altavatar>
+
+</hero>

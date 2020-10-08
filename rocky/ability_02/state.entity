@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Rocky_Ability2"
+
+	
+	
+	icon="icon2.tga"
+	passiveeffect="effects/trail.effect"
+	ishidden="true"
+	
+	stunned="true"
+	stunneddurationunmodifiable="true"
+>
+
+	<altavatar key="Hero_Rocky.Alt2" modpriority="1"
+		passiveeffect="/heroes/rocky/alt2/ability_02/effects/trail.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Rocky.Alt3" modpriority="1"
+		passiveeffect="/heroes/rocky/alt3/ability_02/effects/trail.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Rocky.Alt6" modpriority="1"
+		passiveeffect="/heroes/rocky/alt6/ability_02/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Rocky.Alt7" modpriority="1"
+		passiveeffect="/heroes/rocky/alt7/ability_02/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Rocky.Alt8" modpriority="1"
+		passiveeffect="/heroes/rocky/alt8/ability_02/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Rocky.Alt9" modpriority="1"
+		passiveeffect="/heroes/rocky/alt9/ability_02/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Rocky.Alt10" modpriority="1"
+		passiveeffect="/heroes/rocky/alt10/ability_02/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Rocky.Alt11" modpriority="1"
+		passiveeffect="/heroes/rocky/alt11/ability_02/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Rocky.Alt11" modpriority="1"
+		passiveeffect="/heroes/rocky/alt11/ability_02/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Rocky.Alt12" modpriority="1"
+		passiveeffect="/heroes/rocky/alt12/ability_02/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Rocky.trophy_skin01" modpriority="1"
+		passiveeffect="/heroes/rocky/trophy_skin/ability_02/effects/trail_01.effect"
+	/>
+	
+	<altavatar key="Hero_Rocky.trophy_skin02" modpriority="1"
+		passiveeffect="/heroes/rocky/trophy_skin/ability_02/effects/trail_02.effect"
+	/>
+	
+	<altavatar key="Hero_Rocky.trophy_skin03" modpriority="1"
+		passiveeffect="/heroes/rocky/trophy_skin/ability_02/effects/trail_03.effect"
+	/>
+	
+	<modifier key="Combo_efx_rocky" modpriority="101"
+		passiveeffect="/heroes/rocky/alt10/ability_02/effects/trail_combo.effect"
+	/>
+	
+	<modifier key="soccer" modpriority="99" modifierkey="dontlootball" />
+	
+	<altavatar key="Hero_Rocky.Alt13" modpriority="1"
+		passiveeffect="/heroes/rocky/alt13/ability_02/effects/trail.effect"
+	/>
+	
+</state>

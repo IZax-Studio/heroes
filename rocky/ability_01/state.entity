@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Rocky_Ability1"
+
+	icon="icon1.tga"
+	passiveeffect=""
+	ishidden="true"
+>
+	<onframe>
+		<condition test="hasstate State_Rocky_Ability2">
+			<damage effecttype="Magic" amount="25,40,55,70" />
+			<expire />
+		</condition>
+		<condition test="hasstate State_Rocky_Ability4_Projectile">
+			<damage effecttype="Magic" amount="25,40,55,70" />
+			<expire />
+		</condition>
+	</onframe>
+	
+	<modifier key="soccer" modpriority="150">
+		<onframe>
+			<condition test="hasstate State_Rocky_Ability2">
+				<damage effecttype="Magic" amount="15" />
+				<expire />
+			</condition>
+			<condition test="hasstate State_Rocky_Ability4_Projectile">
+				<damage effecttype="Magic" amount="15" />
+				<expire />
+			</condition>
+		</onframe>	
+	</modifier>
+
+</state>

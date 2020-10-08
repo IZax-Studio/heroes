@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+		<particlesystem name="system0" space="world">
+		
+			<template name="falling_dust" >
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="10"
+					minparticlelife="400"
+					maxparticlelife="750"
+					material="/shared/effects/materials/dust_smoke_10.material"
+					offsetsphere="10"
+					maxspeed="10"
+					gravity="2"
+				>
+					<particle
+						maxangle="360"
+						minanglespeed="-100"
+						maxanglespeed="100"
+						minscale="6"
+						maxscale="20"
+						color="1 .8 .6"
+						startalpha="0"
+						midalpha=".4"
+						endalpha="0"
+						midalphapos=".5"
+					/>
+				</simpleemitter>
+			</template>
+		
+			<controller
+				bone="_bone_center"
+				yawspeed="75"
+			>
+				<model
+					position="20 30 -5"
+					model="floating_rocks/rock2.mdf"
+					anim="idle"
+				/>
+				<model
+					position="-20 35 40"
+					model="floating_rocks/rock1.mdf"
+					anim="idle"
+					scale=".75"
+				/>
+				<model
+					position="-20 -30 25"
+					model="floating_rocks/rock3.mdf"
+					anim="idle"
+				>
+					<instance name="falling_dust" bone="Object003"/>
+				</model>
+			</controller>
+			
+			<controller
+				bone="_bone_center"
+				yawspeed="-30"
+			>
+				<model
+					position="0 50 0"
+					model="floating_rocks/rock1.mdf"
+					anim="idle"
+				>
+					<instance name="falling_dust" bone="Object001"/>
+				</model>
+				
+				<model
+					position="30 -30 10"
+					model="floating_rocks/rock4.mdf"
+					anim="idle"
+				>
+					<instance name="falling_dust" bone="Object004"/>
+				</model>
+				
+				<model
+					position="-10 -42 12"
+					model="floating_rocks/rock2.mdf"
+					anim="idle"
+					scale=".8"
+				/>
+			</controller>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
