@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect persistent="0">
+	<definitions>
+		
+		<particlesystem name="system0" space="world" scale=".3">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".5" 
+				sample="../sounds/cast.wav"
+			/>
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="500"
+				falloffend="1500"
+				volume="1.5" 
+				sample="../sounds/voice_%.wav"
+			/>
+			
+			<template name="shockwaves">
+			    <simpleemitter
+				    life="500"
+				    spawnrate="15"
+				    particlelife="400"
+				    gravity="-6"
+				    speed="0.0"
+				    acceleration="0.0"
+				    position="0 0 50"
+				    material="/shared/effects/materials/flare_01.material"
+			    >
+				    <particle
+					    startcolor="1 0 0"
+					    endcolor="1 0 0"
+					    startalpha=".02"
+					    endalpha="0"
+					    minangle="0"
+					    maxangle="360"
+					    minanglespeed="0"
+					    maxanglespeed="0"
+					    startsize="75"
+					    midsize="60"
+					    endsize="25"
+					    lockup="true"
+					    pitch="{pitch}"
+				    />
+			    </simpleemitter>
+			
+			    <simpleemitter
+				    count="20"
+				    spawnrate="1000"
+				    minparticlelife="750"
+				    maxparticlelife="1500"
+				    gravity="0"
+				    drag="0"
+				    position="0 0 25"
+				    offsetsphere="70 70 50"
+				    material="/shared/effects/materials/smoke_particle.material"
+			    >
+					<particle 
+						maxangle="360"
+						minanglespeed="-6"
+						maxanglespeed="6"
+						startcolor="0 0 0"
+						midcolor="0 0 0"
+						endcolor="0 0 0"
+						startalpha="0"
+						midalpha=".25"
+						endalpha="0"
+						startsize="300"
+						endsize="250"
+						endanchor="0"
+					/>
+			    </simpleemitter>
+
+			    <billboard
+				    position="0 0 50"
+				    life="750"
+				    color="1 1 1"
+				    startalpha="1.0"
+				    endalpha="1"
+				    startparam="0.01"
+				    endparam="0.0"
+				    startsize="0"
+				    endsize="2000"
+				    material="/shared/effects/materials/refract_ripple.material"
+				    lockup="1"
+				    pitch="{pitch}"
+			    />
+
+			    <billboard
+				    position="0 0 50"
+				    life="550"
+				    startcolor="0 0 0"
+				    midcolor="1 0 0"
+				    endcolor="0 0 0"
+				    startsize="200"
+				    endsize="00"
+				    lockup="1"
+				    pitch="{pitch}"
+				    material="/shared/effects/materials/pulse.material"
+			    />
+
+			    <simpleemitter
+				    life="500"
+				    spawnrate="10"
+				    particlelife="400"
+				    gravity="-6"
+				    speed="0.0"
+				    acceleration="0.0"
+				    position="0 0 50"
+				    offsetsphere="20 20 0"
+				    material="/shared/effects/materials/flare_01.material"
+			    >
+				    <particle
+					    startcolor="0 0 0"
+						midcolor="1 0 0"
+					    endcolor="0 0 0"
+					    minangle="0"
+					    maxangle="360"
+					    minanglespeed="0"
+					    maxanglespeed="0"
+					    startsize="137"
+					    midsize="100"
+					    endsize="25"
+					    lockup="true"
+					    pitch="{pitch}"
+				    />
+				    <particle
+					    startcolor="0 0 0"
+						midcolor="1 0 0"
+					    endcolor="0 0 0"
+					    minangle="0"
+					    maxangle="360"
+					    minanglespeed="0"
+					    maxanglespeed="0"
+					    startsize="225"
+					    midsize="100"
+					    endsize="25"
+					    lockup="true"
+					    pitch="{pitch}"
+				    />
+			    </simpleemitter>
+
+			    <billboard
+				    position="0 0 50"
+				    life="500"
+				    startcolor=".25 .25 .25"
+				    midcolor="1 0 0"
+				    midcolorpos=".85"
+				    endcolor="0 0 0"
+				    startsize="200"
+				    endsize="1500"
+				    lockup="1"
+				    pitch="{pitch}"
+				    material="/shared/effects/materials/corona_07.material"
+			    />
+			
+			    <billboard
+				    position="0 0 50"
+				    life="500"
+				    startcolor=".5 0 0"
+				    midcolor=".5 0 0"
+				    endcolor="0 0 0"
+				    midcolorpos=".85"
+				    startsize="200"
+				    endsize="1100"
+				    lockup="1"
+				    pitch="{pitch}"
+				    material="/shared/effects/materials/corona_07.material"
+			    />
+
+			    <billboard
+				    position="0 0 50"
+				    life="500"
+				    startcolor=".5 0 0"
+				    midcolor="0 0 0"
+				    endcolor="0 0 0"
+				    startsize="200"
+				    endsize="1000"
+				    lockup="1"
+				    pitch="{pitch}"
+				    material="/shared/effects/materials/starlight.material"
+			    />
+			
+			    <billboard
+				    position="0 0 50"
+				    life="500"
+				    startcolor=".5 0 0"
+				    midcolor=".1 0 0"
+				    endcolor="0 0 0"
+				    startsize="200"
+				    endsize="1500"
+				    lockup="1"
+				    pitch="{pitch}"
+				    material="/shared/effects/materials/starlight.material"
+			    />
+		
+			    <simpleemitter
+				    life="500"
+				    spawnrate="10"
+				    particlelife="400"
+				    gravity="-6"
+				    speed="0.0"
+				    acceleration="0.0"
+				    position="0 0 50"
+				    offsetsphere="0 0 0"
+				    material="/shared/effects/materials/blink.material"
+			    >
+				    <particle
+					    startcolor="0 0 0"
+					    midcolor=".5 0 0"
+					    endcolor="0 0 0"
+					    minangle="0"
+					    maxangle="360"
+					    minanglespeed="0"
+					    maxanglespeed="0"
+					    startsize="600"
+					    midsize="300"
+					    endsize="25"
+					    lockup="true"
+					    pitch="{pitch}"
+				    />				
+				    <particle
+					    startcolor="0 0 0"
+					    midcolor="1 0 0"
+					    endcolor="0 0 0"
+					    minangle="0"
+					    maxangle="360"
+					    minanglespeed="0"
+					    maxanglespeed="0"
+					    startsize="600"
+					    midsize="300"
+					    endsize="100"
+					    lockup="true"
+					    pitch="{pitch}"
+				    />
+			    </simpleemitter>
+			</template>
+			
+			<instance name="shockwaves" pitch="135"/>
+			<instance name="shockwaves" pitch="45"/>
+			<instance name="shockwaves" pitch="180"/>
+			<instance name="shockwaves" pitch="90"/>
+		
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

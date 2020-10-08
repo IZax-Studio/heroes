@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Soulstealer4"
+
+	icon="icon4.tga"
+	statuseffecttooltip="State_Soulstealer_Ability4"
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	
+	anim="ability_4"
+	casttime="1400"
+	castactiontime="1400"
+
+	actiontype="target_self"
+	targetradius="1000"
+	casteffecttype="Magic"
+	targetscheme="enemy_units"
+	
+	manacost="150,175,200"
+	cooldowntime="120000,110000,100000"
+	
+	dynamicprecache="/heroes/soulstealer/ability_04/effects/cast.effect"
+>
+	<onlearn>
+		<setscriptvalue name="cast_effect" value="/heroes/soulstealer/ability_04/effects/cast.effect" entity="this_entity" />
+	</onlearn>
+	
+	<onstart>
+		<showchannelbar duration="1400" />
+	</onstart>
+	
+	<oncancel>
+		<hidechannelbar />
+	</oncancel>
+	
+	<onimpact>
+		<spawnaffector name="Affector_SoulStealer_Ability4" count="0.5" countb="30" countop="mult" distribute="even" target="source_position" distance="175" />
+		<spawnaffector name="Affector_SoulStealer_Ability4_State" target="source_position" param="owner_counter" />
+		
+		<!-- Dynamic VFX -->
+		<getscriptvalue name="cast_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" occlude="true" />
+	</onimpact>
+	
+	<modifier key="krosmode" modpriority="100" >
+		<onimpact>
+			<spawnaffector name="Affector_SoulStealer_Ability4" count="0.5" countb="30" countop="mult" distribute="even" target="source_position" distance="175" />
+			<spawnaffector name="Affector_SoulStealer_Ability4_State" target="source_position" param="30"/>
+			
+			<!-- Dynamic VFX -->
+			<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+			<playeffectdynamic effect="str0" occlude="true" />
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Soulstealer.Alt2" modpriority="1" 
+		dynamicprecache="/heroes/soulstealer/alt2/ability_04/effects/cast.effect,/heroes/soulstealer/alt2/sin_set_bonus/ability_04/effects/cast.effect"
+	>
+		<onlearn>
+			<hasmodifier name="Alt2_Sin_Set_Bonus" >
+				<setscriptvalue name="cast_effect" value="/heroes/soulstealer/alt2/sin_set_bonus/ability_04/effects/cast.effect" entity="this_entity" />
+			</hasmodifier>
+			<else>
+				<setscriptvalue name="cast_effect" value="/heroes/soulstealer/alt2/ability_04/effects/cast.effect" entity="this_entity" />
+			</else>
+		</onlearn>
+	</altavatar>	
+	
+	<altavatar key="Hero_Soulstealer.set_ascension" modpriority="1"
+		dynamicprecache="/heroes/soulstealer/set_ascension/ability_04/effects/cast.effect,/heroes/soulstealer/set_ascension/sin_set_bonus/ability_04/effects/cast.effect"
+	>
+		<onlearn>
+			<hasmodifier name="Alt2_Sin_Set_Bonus" >
+				<setscriptvalue name="cast_effect" value="/heroes/soulstealer/set_ascension/sin_set_bonus/ability_04/effects/cast.effect" entity="this_entity" />
+			</hasmodifier>
+			<else>
+				<setscriptvalue name="cast_effect" value="/heroes/soulstealer/set_ascension/ability_04/effects/cast.effect" entity="this_entity" />
+			</else>
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Soulstealer.Alt5" modpriority="1" 
+		icon="../alt5/ability_04/icon.tga"
+		dynamicprecache="/heroes/soulstealer/alt5/ability_04/effects/cast.effect,/heroes/soulstealer/alt5/sin_set_bonus/ability_04/effects/cast.effect"
+	>
+		<onlearn>
+			<hasmodifier name="Alt2_Sin_Set_Bonus" >
+				<setscriptvalue name="cast_effect" value="/heroes/soulstealer/alt5/sin_set_bonus/ability_04/effects/cast.effect" entity="this_entity" />
+			</hasmodifier>
+			<else>
+				<setscriptvalue name="cast_effect" value="/heroes/soulstealer/alt5/ability_04/effects/cast.effect" entity="this_entity" />
+			</else>
+		</onlearn>
+	</altavatar>
+
+	<altavatar key="Hero_Soulstealer.Alt6" modpriority="1"
+		dynamicprecache="/heroes/soulstealer/alt6/ability_04/effects/cast.effect,/heroes/soulstealer/alt6/sin_set_bonus/ability_04/effects/cast.effect"
+	>
+		<onlearn>
+			<hasmodifier name="Alt2_Sin_Set_Bonus" >
+				<setscriptvalue name="cast_effect" value="/heroes/soulstealer/alt6/sin_set_bonus/ability_04/effects/cast.effect" entity="this_entity" />
+			</hasmodifier>
+			<else>
+				<setscriptvalue name="cast_effect" value="/heroes/soulstealer/alt6/ability_04/effects/cast.effect" entity="this_entity" />
+			</else>
+		</onlearn>
+	</altavatar>	
+	
+	<altavatar key="Hero_Soulstealer.Alt7" modpriority="1"
+		dynamicprecache="/heroes/soulstealer/alt7/ability_04/effects/cast.effect,/heroes/soulstealer/alt6/sin_set_bonus/ability_04/effects/cast.effect"
+	>
+		<onlearn>
+			<hasmodifier name="Alt2_Sin_Set_Bonus" >
+				<setscriptvalue name="cast_effect" value="/heroes/soulstealer/alt7/sin_set_bonus/ability_04/effects/cast.effect" entity="this_entity" />
+			</hasmodifier>
+			<else>
+				<setscriptvalue name="cast_effect" value="/heroes/soulstealer/alt7/ability_04/effects/cast.effect" entity="this_entity" />
+			</else>
+		</onlearn>
+	</altavatar>	
+</ability>

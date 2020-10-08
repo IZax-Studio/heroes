@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="debris_death.max" file="debris_death.model" type="K2">
+	<anim name="idle" clip="debris_death.clip"/>
+</model>
