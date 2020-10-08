@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Scar_Ability1"
+
+	icon="icon1.tga"
+	passiveeffect="effects/state.effect"
+	
+	movespeedmultiplier="0.5,0.75,1.0,1.25"
+	
+	unitwalking="true"
+	
+	stealthtype="hero"
+	fadetime="500"
+	
+	effecttype="StatusStealth"
+	
+	modifierkey=""
+	
+>
+	<oninflict>
+		<forgetattacks />
+			<playeffect effect="effects/cast.effect" source="source_entity" />
+		<startfade />
+	</oninflict>
+	
+	<onattackimpact>
+		<expire />
+	</onattackimpact>
+	
+	<onactivatepreimpact>
+		<expire />
+	</onactivatepreimpact>
+
+	<onexpired>
+		<playeffect effect="effects/castback.effect" source="source_entity" />
+	</onexpired>
+	
+	<aura
+		gadget="Gadget_Scar_Ability1"
+		radius="0"
+		targetscheme="self"
+	/>
+	
+	<altavatar key="Hero_Scar.Scary" modpriority="1"
+		passiveeffect="../alt/ability_1/effects/state.effect"
+	>
+	
+		<oninflict>
+			<forgetattacks />
+			<playeffect effect="../alt/ability_1/effects/cast.effect" source="source_entity" />
+			<startfade />
+		</oninflict>
+		
+		<onexpired>
+			<playeffect effect="../alt/ability_1/effects/castback.effect" source="source_entity" />
+		</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_Scar.Alt2" modpriority="1"
+		passiveeffect="../alt2/ability_01/effects/state.effect"
+	>
+	
+		<oninflict>
+			<forgetattacks />
+			<playeffect effect="../alt2/ability_01/effects/cast.effect" source="source_entity" />
+			<startfade />
+		</oninflict>
+		
+		<onexpired>
+			<playeffect effect="../alt2/ability_01/effects/castback.effect" source="source_entity" />
+		</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_Scar.Alt3" modpriority="1"
+		passiveeffect="../alt3/ability_01/effects/state.effect"
+		modifierkey="Scar_Ability1_alt3"
+	>
+	
+		<oninflict>
+			<forgetattacks />
+			<playeffect effect="../alt3/ability_01/effects/cast.effect" source="source_entity" />
+			<startfade />
+		</oninflict>
+		
+		<onexpired>
+			<playeffect effect="../alt3/ability_01/effects/castback.effect" source="source_entity" />
+		</onexpired>
+		
+	</altavatar>
+	
+	<altavatar key="Hero_Scar.Alt4" modpriority="1"
+		passiveeffect="../alt4/ability_01/effects/state.effect"
+	>
+	
+		<oninflict>
+			<forgetattacks />
+				<playeffect effect="../alt4/ability_01/effects/cast.effect" source="source_entity" />
+			<startfade />
+		</oninflict>
+		
+		<onexpired>
+			<playeffect effect="../alt4/ability_01/effects/castback.effect" source="source_entity" />
+		</onexpired>
+		
+	</altavatar>
+	
+	<altavatar key="Hero_Scar.Alt5" modpriority="1"
+		passiveeffect="../alt5/ability_01/effects/state.effect"
+	>
+		<oninflict>
+			<forgetattacks />
+				<playeffect effect="../alt5/ability_01/effects/cast.effect" source="source_entity" />
+			<startfade />
+		</oninflict>
+		<onexpired>
+			<playeffect effect="../alt5/ability_01/effects/castback.effect" source="source_entity" />
+		</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_Scar.Alt8" modpriority="1"
+		passiveeffect="../alt8/ability_01/effects/state.effect"
+	>
+		<oninflict>
+			<forgetattacks />
+				<playeffect effect="../alt8/ability_01/effects/cast.effect" source="source_entity" />
+			<startfade />
+		</oninflict>
+		<onexpired>
+			<playeffect effect="../alt8/ability_01/effects/castback.effect" source="source_entity" />
+		</onexpired>
+	</altavatar>
+	
+</state>
