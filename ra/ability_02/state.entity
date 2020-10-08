@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ra_Ability2_Enemy"
+
+	
+	
+	icon="icon2.tga"
+	passiveeffect="effects/state.effect"
+	
+	movespeedslowstart="0.12,0.18,0.24,0.3"
+	movespeedslowmid="0.1"
+	movespeedslowend="0.0"
+	movespeedslowmidpos="0.33"
+
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	negativeeffect="slowed"
+>
+	<altavatar key="Hero_Ra.Alt5"
+		passiveeffect="../alt5/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Ra.Alt6"
+		passiveeffect="../alt6/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Ra.Alt8"
+		passiveeffect="../alt8/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Ra.Alt10"
+		passiveeffect="../alt10/ability_02/effects/state.effect"
+	/>
+	
+</state>

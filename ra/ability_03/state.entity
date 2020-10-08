@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ra_Ability3"
+
+	icon="icon3.tga"
+	passiveeffect=""
+	
+	ishidden="false"
+	
+	effecttype=""
+	
+	maxcharges="20,30,40,50"
+
+	
+>
+	<onframe>
+		<areaofeffect
+			radius="400"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+		>
+			<applystate name="State_Ra_Ability3_Damage" continuous="true" timeout="frametime" pushentity="true" />
+			<setcharges entity="stack_entity" a="charges" />
+		</areaofeffect>
+		
+		<compare a="charges" b="0" op="eq">
+			<expire />
+		</compare>
+		
+		<compare a="charges" b="10" op="lt">
+			<setactivemodifierkey name="Rassj0" />
+		</compare>
+		<else>
+			<compare a="charges" b="20" op="lt">
+				<setactivemodifierkey name="Rassj1" />
+			</compare>
+			<else>
+				<compare a="charges" b="30" op="lt">
+					<setactivemodifierkey name="Rassj2" />
+				</compare>
+				<else>
+					<compare a="charges" b="40" op="lt">
+						<setactivemodifierkey name="Rassj3" />
+					</compare>
+					<else>
+						<setactivemodifierkey name="Rassj4" />
+					</else>
+				</else>
+			</else>
+		</else>
+	</onframe>
+	
+	<modifier key="Rassj1" modpriority="100"
+		passiveeffect="effects/state1.effect"
+	>
+	</modifier>
+	
+	<modifier key="Rassj2" modpriority="100"
+		passiveeffect="effects/state2.effect"
+	>
+	</modifier>
+
+	<modifier key="Rassj3" modpriority="100"
+		passiveeffect="effects/state3.effect"
+	>
+	</modifier>
+	
+	<modifier key="Rassj4" modpriority="100"
+		passiveeffect="effects/state4.effect"
+	>
+	</modifier>
+	
+	<onexpired>
+		<setcharges entity="this_proxy_entity" a="0" />
+	</onexpired>
+	
+	<altavatar key="Hero_Ra.Alt5"
+		icon="../alt5/ability_03/icon.tga"
+	>
+	
+	<onframe>
+		<areaofeffect
+			radius="400"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+		>
+			<applystate name="State_Ra_Ability3_Damage" continuous="true" timeout="frametime" pushentity="true" />
+			<setcharges entity="stack_entity" a="charges" />
+		</areaofeffect>
+		
+		<compare a="charges" b="0" op="eq">
+			<expire />
+		</compare>
+		
+		<compare a="charges" b="10" op="lt">
+			<setactivemodifierkey name="Rassj0" />
+		</compare>
+		<else>
+			<compare a="charges" b="20" op="lt">
+				<setactivemodifierkey name="Rassj1" />
+			</compare>
+			<else>
+				<compare a="charges" b="30" op="lt">
+					<setactivemodifierkey name="Rassj2" />
+				</compare>
+				<else>
+					<compare a="charges" b="40" op="lt">
+						<setactivemodifierkey name="Rassj3" />
+					</compare>
+					<else>
+						<setactivemodifierkey name="Rassj4" />
+					</else>
+				</else>
+			</else>
+		</else>
+	</onframe>
+	
+		<modifier key="Rassj1" modpriority="100"
+			passiveeffect="../alt5/ability_03/effects/state1.effect"
+		>
+
+		</modifier>
+		
+		<modifier key="Rassj2" modpriority="100"
+			passiveeffect="../alt5/ability_03/effects/state2.effect"
+		>
+		
+		</modifier>
+
+		<modifier key="Rassj3" modpriority="100"
+			passiveeffect="../alt5/ability_03/effects/state3.effect"
+		>
+
+		</modifier>
+		
+		<modifier key="Rassj4" modpriority="100"
+			passiveeffect="../alt5/ability_03/effects/state4.effect"
+		>
+
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Ra.Alt8"
+	>
+	
+		<onframe>
+			<areaofeffect
+				radius="400"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Magic"
+			>
+				<applystate name="State_Ra_Ability3_Damage" continuous="true" timeout="frametime" pushentity="true" />
+				<setcharges entity="stack_entity" a="charges" />
+			</areaofeffect>
+			
+			<compare a="charges" b="0" op="eq">
+				<expire />
+			</compare>
+			
+			<compare a="charges" b="10" op="lt">
+				<setactivemodifierkey name="Rassj0" />
+			</compare>
+			<else>
+				<compare a="charges" b="20" op="lt">
+					<setactivemodifierkey name="Rassj1" />
+				</compare>
+				<else>
+					<compare a="charges" b="30" op="lt">
+						<setactivemodifierkey name="Rassj2" />
+					</compare>
+					<else>
+						<compare a="charges" b="40" op="lt">
+							<setactivemodifierkey name="Rassj3" />
+						</compare>
+						<else>
+							<setactivemodifierkey name="Rassj4" />
+						</else>
+					</else>
+				</else>
+			</else>
+		</onframe>
+		
+			<modifier key="Rassj1" modpriority="100"
+				passiveeffect="../alt8/ability_03/effects/state1.effect"
+			>
+
+			</modifier>
+			
+			<modifier key="Rassj2" modpriority="100"
+				passiveeffect="../alt8/ability_03/effects/state2.effect"
+			>
+			
+			</modifier>
+
+			<modifier key="Rassj3" modpriority="100"
+				passiveeffect="../alt8/ability_03/effects/state3.effect"
+			>
+
+			</modifier>
+			
+			<modifier key="Rassj4" modpriority="100"
+				passiveeffect="../alt8/ability_03/effects/state4.effect"
+			>
+
+			</modifier>
+		</altavatar>
+	
+	
+	<altavatar key="Hero_Ra.Alt9"
+	>
+		<modifier key="Rassj4" modpriority="100"
+			passiveeffect="../alt9/ability_03/effects/state4.effect"
+		>
+		</modifier>
+	</altavatar>	
+	
+	<altavatar key="Hero_Ra.Alt10"
+	>
+	
+		<onframe>
+			<areaofeffect
+				radius="400"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Magic"
+			>
+				<applystate name="State_Ra_Ability3_Damage" continuous="true" timeout="frametime" pushentity="true" />
+				<setcharges entity="stack_entity" a="charges" />
+			</areaofeffect>
+			
+			<compare a="charges" b="0" op="eq">
+				<expire />
+			</compare>
+			
+			<compare a="charges" b="10" op="lt">
+				<setactivemodifierkey name="Rassj0" />
+			</compare>
+			<else>
+				<compare a="charges" b="20" op="lt">
+					<setactivemodifierkey name="Rassj1" />
+				</compare>
+				<else>
+					<compare a="charges" b="30" op="lt">
+						<setactivemodifierkey name="Rassj2" />
+					</compare>
+					<else>
+						<compare a="charges" b="40" op="lt">
+							<setactivemodifierkey name="Rassj3" />
+						</compare>
+						<else>
+							<setactivemodifierkey name="Rassj4" />
+						</else>
+					</else>
+				</else>
+			</else>
+		</onframe>
+		
+			<modifier key="Rassj1" modpriority="100"
+				passiveeffect="../alt10/ability_03/effects/state1.effect"
+			>
+
+			</modifier>
+			
+			<modifier key="Rassj2" modpriority="100"
+				passiveeffect="../alt10/ability_03/effects/state2.effect"
+			>
+			
+			</modifier>
+
+			<modifier key="Rassj3" modpriority="100"
+				passiveeffect="../alt10/ability_03/effects/state3.effect"
+			>
+
+			</modifier>
+			
+			<modifier key="Rassj4" modpriority="100"
+				passiveeffect="../alt10/ability_03/effects/state4.effect"
+			>
+
+			</modifier>
+		</altavatar>
+	
+</state>

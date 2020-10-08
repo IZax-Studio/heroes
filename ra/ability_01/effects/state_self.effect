@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+
+			<model
+				life="2000"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="0 0 0"
+				midcolor="0 1 .5"
+				endcolor="0 0 0"
+				material="/shared/effects/materials/shell.material"
+				scale="1"
+				loop="true"
+			/>
+			
+			<model
+				parentmodel="true"
+				parentskeleton="true"
+				material=""
+				expirelife="500"
+				startalpha=".85"
+				endalpha="0"
+			/>
+<!--
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="100"
+				minparticlelife="400"
+				maxparticlelife="700"
+				gravity="-5"
+				position="0 0 0"
+				offsetsphere="50 50 50"
+				material="/shared/effects/materials/soul_projectile2.material"
+				depthbias="25"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-6"
+					maxanglespeed="6"
+					startcolor="0 1 .5"
+					endcolor="0 0 0"
+					startsize="0"
+					endsize="75"
+					startanchor="1"
+					endanchor="0"
+				/>
+			</simpleemitter>
+-->
+			<simpleemitter
+				bone="_bone_lefthand"
+				spawnrate="25"
+				minparticlelife="400"
+				maxparticlelife="700"
+				gravity="-5"
+				position="0 0 0"
+				offsetsphere="25 25 25"
+				material="/shared/effects/materials/soul_projectile2.material"
+				depthbias="25"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-6"
+					maxanglespeed="6"
+					startcolor="0 1 .5"
+					endcolor="0 0 0"
+					startsize="0"
+					endsize="75"
+					startanchor="1"
+					endanchor=".5"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_righthand"
+				spawnrate="25"
+				minparticlelife="400"
+				maxparticlelife="700"
+				gravity="-5"
+				position="0 0 0"
+				offsetsphere="25 25 25"
+				material="/shared/effects/materials/soul_projectile2.material"
+				depthbias="25"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-6"
+					maxanglespeed="6"
+					startcolor="0 1 .5"
+					endcolor="0 0 0"
+					startsize="0"
+					endsize="75"
+					startanchor="1"
+					endanchor=".5"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_rightfoot"
+				spawnrate="25"
+				minparticlelife="400"
+				maxparticlelife="700"
+				gravity="-5"
+				position="0 0 0"
+				offsetsphere="25 25 25"
+				material="/shared/effects/materials/soul_projectile2.material"
+				depthbias="25"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-6"
+					maxanglespeed="6"
+					startcolor="0 1 .5"
+					endcolor="0 0 0"
+					startsize="0"
+					endsize="75"
+					startanchor="1"
+					endanchor=".5"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_leftfoot"
+				spawnrate="25"
+				minparticlelife="400"
+				maxparticlelife="700"
+				gravity="-5"
+				position="0 0 0"
+				offsetsphere="25 25 25"
+				material="/shared/effects/materials/soul_projectile2.material"
+				depthbias="25"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-6"
+					maxanglespeed="6"
+					startcolor="0 1 .5"
+					endcolor="0 0 0"
+					startsize="0"
+					endsize="75"
+					startanchor="1"
+					endanchor=".5"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="50"
+				minparticlelife="500"
+				maxparticlelife="1500"
+				gravity="-2"
+				position="0 0 0"
+				offsetsphere="50 50 10"
+				material="/shared/effects/materials/spark_10.material"
+				depthbias="0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startcolor="1 1 1"
+					midcolor="1 1 1"
+					endcolor="0 0 0"
+					size="5"
+					minstartscale="1"
+					maxstartscale="3"
+					endscale="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="25"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				gravity="6"
+				position="0 0 0"
+				offsetsphere="35 35 10"
+				material="/shared/effects/materials/spark_10.material"
+				depthbias="0"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					startcolor="1 1 1"
+					midcolor="1 1 1"
+					endcolor="0 0 0"
+					size="5"
+					minstartscale="1"
+					maxstartscale="3"
+					endscale="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="10"
+				particlelife="750"
+				gravity="-10"
+				speed="10"
+				drag="0.07"
+				position="0 0 0"
+				material="/shared/effects/materials/heathaze.material"
+				offsetsphere="50 50 50"
+				depthbias="25"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					startsize="50"
+					endsize="125"
+					param="0.5"
+					startalpha=".55"
+					endalpha="0"
+					lockright="1"
+					lockup="1"
+					pitch="90"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+		
+		
+		<particlesystem name="system1" space="entity" scale="1">
+
+			<model
+				position="0 0 75"
+				expirelife="500"
+				anim="idle"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				startscale="3.25"
+				endscale="3.25"
+				yawspeed="360"
+				rollspeed="90"
+			>
+
+				<template name="trails">
+					<twopointtrailemitter
+						name="trail01"
+						position="0 0 0"
+						bone_a="{bone01}"
+						bone_b="{bone02}"
+						spawnrate="25"
+						particlelife="1000"
+						subframepose="1"
+						direction="0 -1 0"
+						minangle="0"
+						maxangle="0"
+						texpostime="1000"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/hide.material"
+					>
+						<particle
+							startcolor="0 1 .5"
+							midcolor="0 1 .5"
+							endcolor="0 1 .5"
+							startalpha="0"
+							midalpha=".3"
+							endalpha="0"
+							midalpapos=".35"
+						/>
+					</twopointtrailemitter>
+				</template>
+				
+				<instance name="trails" bone01="_bone_fx_01"  bone02="_bone_fx_02"/>
+				<instance name="trails" bone01="_bone_fx_03"  bone02="_bone_fx_04"/>
+				<instance name="trails" bone01="_bone_fx_05"  bone02="_bone_fx_06"/>
+				<instance name="trails" bone01="_bone_fx_07"  bone02="_bone_fx_08"/>
+				<instance name="trails" bone01="_bone_fx_09"  bone02="_bone_fx_10"/>
+				<instance name="trails" bone01="_bone_fx_11"  bone02="_bone_fx_12"/>
+				
+				<template name="models">
+				<model
+					bone="{zbone}"
+					expirelife="750"
+					model="meteor_broken/model.mdf"
+					anim="idle"
+					color="0 1 .5"
+					startalpha=".65"
+					endalpha="0"
+					midalphapos=".5"
+					minscale=".15"
+					maxscale=".22"
+					minyawspeed="-720"
+					maxyawspeed="720"
+					minpitchspeed="-180"
+					maxpitchspeed="180"
+					material="/shared/effects/materials/shell2.material"
+				/>
+				
+				<simpleemitter
+					bone="{zbone}"
+					spawnrate="42"
+					minparticlelife="400"
+					maxparticlelife="700"
+					gravity="-5"
+					position="0 0 0"
+					offsetsphere="0 0 0"
+					material="/shared/effects/materials/soul_projectile2.material"
+					depthbias="25"
+				>
+					<particle 
+						minangle="0"
+						maxangle="360"
+						minanglespeed="-6"
+						maxanglespeed="6"
+						startcolor="0 1 .5"
+						endcolor="0 0 0"
+						startsize="0"
+						minendsize="15"
+						maxendsize="20"
+						midsizepos=".35"
+					/>
+				</simpleemitter>
+
+				</template>
+				
+				<instance name="models" zbone="_bone_fx_01"/>
+				<instance name="models" zbone="_bone_fx_05"/>
+				<instance name="models" zbone="_bone_fx_09"/>
+				<instance name="models" zbone="_bone_fx_12"/>
+
+			</model>
+
+		
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

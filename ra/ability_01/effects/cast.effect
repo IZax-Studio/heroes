@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".85">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".7"
+				sample="../sounds/cast.wav"
+			/>
+		
+			<template name="sparks" >
+				<twopointemitter
+					life="500"
+					bone_a="{boneA}"
+					bone_b="{boneB}"
+					spawnrate="50"
+					particlelife="300"
+					offsetsphere="0 0 0"
+					material="/shared/effects/materials/soul_projectile2.material"
+				>
+					<particle
+						minangle="0"
+						maxangle="360"
+						startcolor="0 .5 .5"
+						midcolor="0 .5 .5 "
+						endcolor="0 0 0"
+						midcolorpos="0.2"
+						startalpha="1"
+						endalpha="1"
+						minanglespeed="-180"
+						maxanglespeed="180"
+						startsize="20"
+						minendsize="50"
+						maxendsize="75"
+						startanchor="1"
+						endanchor=".5"
+
+					/>
+				</twopointemitter>
+			</template>
+
+			<instance name="sparks" boneA="_bone_weapon1" boneB="_bone_weapon1"/>
+			<instance name="sparks" boneA="_bone_weapon2" boneB="_bone_weapon2"/>
+			
+			<simpleemitter
+				delay="500"
+				count="25"
+				spawnrate="5000"
+				particlelife="750"
+				acceleration="0.0"
+				minangle="0"
+				maxangle="0"
+				mingravity="1"
+				maxgravity="3"
+				minspeed="350"
+				maxspeed="850"
+				direction="0 1 0"
+				offsetsphere="35 75 25"
+			>
+				<particle
+					turn="1"
+				>
+					<billboard
+						bone="_bone_origin"
+						position="0 75 75"
+						minscale=".95"
+						maxscale="1.5"
+						minlife="400"
+						maxlife="800"
+						material="/shared/effects/materials/soul_projectile2.material"
+						anim="attack_1"
+						startcolor="0 0 0"
+						midcolor="0 .5 .5"
+						endcolor="0 0 0"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						minroll="-180"
+						maxroll="180"
+						minrollspeed="-360"
+						maxrollspeed="360"
+						directionalspace="local"
+					/>
+				</particle>
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+		<spawnmodifier instance="instance1" modifier="modifier1"/>
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

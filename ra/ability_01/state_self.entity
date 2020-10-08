@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ra_Ability1_Self"
+	
+	icon="icon1.tga"
+	passiveeffect="effects/state_self.effect"
+	movespeed="20,40,60,80"
+	effecttype=""
+>
+
+	<altavatar key="Hero_Ra.Alt5"
+		passiveeffect="../alt5/ability_01/effects/state_self.effect"
+		icon="../alt5/ability_01/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Ra.Alt7"
+		passiveeffect="../alt7/ability_01/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Ra.Alt8"
+		passiveeffect="../alt8/ability_01/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Ra.Alt10"
+		passiveeffect="../alt10/ability_01/effects/state_self.effect"
+	/>
+</state>

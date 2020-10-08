@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+
+	<definitions>
+		
+		<particlesystem name="system0" space="world" scale="1.85">
+
+			<sound
+				soundloop="true"
+				fadein="300"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1500"
+				volume=".3"
+				sample="/shared/sounds/effects/fire_1.wav"
+			/>
+
+			<sound
+				soundloop="true"
+				fadein="300"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1500"
+				volume=".15"
+				sample="/shared/sounds/effects/fire_3.wav"
+			/>
+		
+			<!-- Begin Aura Effect -->
+			<terrainemitter
+				delay="0"
+				spawnrate="20"
+				particlelife="1500"
+				range="250"
+			>
+				<particle>
+				
+					<simpleemitter
+						count="25"
+						minparticlelife="650"
+						maxparticlelife="1200"
+						spawnrate="15"
+						minspeed="25"
+						maxspeed="50"
+						mingravity="-2"
+						maxgravity="-10"
+						direction="0 0 1"
+						minangle="0"
+						maxangle="1"
+						drag="0.01"
+						material="/shared/effects/materials/pyroclast_03.material"
+						offsetsphere="20 20 35"
+						position="0 0 15"
+					>
+						<particle
+							depthbias="-100"
+							color="0 .5 .5"
+							startscale="20"
+							endscale="10"
+							startalpha="0"
+							midalpha=".5"
+							endalpha="0"
+							midalphapos=".2"
+							lockup="1"
+							lockright="1"
+							minyaw="0"
+							maxyaw="360"
+							yawspeed="-35"
+						/>
+					</simpleemitter>
+				
+					<simpleemitter
+						life="800"
+						bone="_bone_fx_02"
+						spawnrate="10"
+						particlelife="200"
+						gravity="-2"
+						speed="10"
+						drag="0.07"
+						material="/shared/effects/materials/phantom_smoke_04.material"
+						offsetsphere="20 20 10"
+					>
+						<particle 
+							minangle="0"
+							maxangle="360"
+							minanglespeed="-40"
+							maxanglespeed="40"
+							startcolor="0 .5 .5"
+							endcolor="0 0 0"
+							startsize="5"
+							endsize="40"
+							startalpha="0"
+							midalpha=".4"
+							endalpha="0"
+						/>
+					</simpleemitter>
+
+					<simpleemitter
+						life="500"
+						spawnrate="20"
+						minparticlelife="350"
+						maxparticlelife="500"
+						gravity="-15"
+						speed="30"
+						drag=".003"
+						material="/shared/effects/materials/flame.material"
+						offsetsphere="10 10 0"
+						angle="90"
+					>
+						<particle 
+							minangle="-35"
+							maxangle="35"
+							startcolor="0 .5 .5"
+							endcolor="0"
+							startsize="0"
+							midsize="32"
+							endsize="5"
+							startalpha="0"
+							midalpha=".4"
+							endalpha="0"
+						/>
+						<particle 
+							minangle="-35"
+							maxangle="35"
+							startcolor="0 .5 .5"
+							endcolor="0"
+							startsize="0"
+							midsize="32"
+							endsize="5"
+							startalpha="0"
+							midalpha=".4"
+							endalpha="0"
+						/>
+					</simpleemitter>
+					
+					<simpleemitter
+						life="500"
+						spawnrate="20"
+						minparticlelife="200"
+						maxparticlelife="400"
+						gravity="-8"
+						speed="30"
+						drag="0"
+						material="/shared/effects/materials/soul_projectile2.material"
+						offsetsphere="10 10 0"
+						angle="90"
+					>
+						<particle
+							minangle="0"
+							maxangle="360"
+							startcolor="0 0 0"
+							midcolor="0 .5 .5"
+							endcolor="0 0 0"
+							midcolorpos=".2"
+							startsize="5"
+							midsize="15"
+							endsize="30"
+							startalpha="0"
+							midalpha=".3"
+							endalpha="0"
+						/>
+					</simpleemitter>
+
+					<simpleemitter
+						life="500"
+						spawnrate="20"
+						minparticlelife="350"
+						maxparticlelife="500"
+						gravity="-15"
+						speed="30"
+						drag=".003"
+						material="/shared/effects/materials/flames_07.material"
+						offsetsphere="35 35 0"
+						angle="90"
+					>
+						<particle 
+							maxanglespeed="30"
+							maxangle="360"
+							color="0 .5 .5"
+							startsize="15"
+							endsize="20"
+							startalpha="0"
+							midalpha=".4"
+							endalpha="0"
+						/>
+						<particle 
+							maxanglespeed="50"
+							maxangle="360"
+							color="0 .5 .5"
+							startsize="5"
+							endsize="10"
+							startalpha="0"
+							midalpha=".4"
+							endalpha="0"
+						/>
+					</simpleemitter>
+
+					<simpleemitter
+						timenudge="-500"
+						life="500"
+						minparticlelife="250"
+						maxparticlelife="500"
+						spawnrate="3"
+						gravity="-10"
+						minspeed="50"
+						maxspeed="150"
+						material="/shared/effects/materials/flare2.material"
+						offsetsphere="0 0 0"
+						angle="10"
+					>
+						<particle 
+							minanglespeed="-430"
+							maxanglespeed="430"
+							minangle="-360"
+							maxangle="360"
+							color="0 .5 .5"
+							minstartscale="0"
+							maxstartscale="3"
+							endsize="0"
+							endstickiness="0.8"
+							startalpha="0"
+							midalpha=".4"
+							endalpha="0"
+						/>
+					</simpleemitter>
+
+
+				</particle>
+
+			</terrainemitter>
+			
+			<simpleemitter
+				bone="Bip01 Spine"
+				spawnrate="25"
+				minparticlelife="250"
+				maxparticlelife="750"
+				gravity="-8"
+				speed="30"
+				drag="0"
+				material="/shared/effects/materials/soul_projectile2.material"
+				offsetsphere="12 12 35"
+				angle="90"
+				position="0 0 0"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					startcolor="0 0 0"
+					midcolor="0 .5 .5"
+					endcolor="0 0 0"
+					midcolorpos=".2"
+					startsize="15"
+					midsize="30"
+					endsize="65"
+					startalpha="0"
+					midalpha=".3"
+					endalpha="0"
+					startanchor="1"
+					endanchor=".6"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="3"
+				minparticlelife="750"
+				maxparticlelife="1000"
+				gravity="1"
+				speed="5"
+				drag="0"
+				acceleration="0"
+				position="0 0 25"
+				offsetsphere="5 5 25"
+				material="/shared/effects/materials/pyroclast_02.material"
+				inheritvelocity=".1"
+				depthbias="-35"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					color="0 0 0"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+					startsize="25" 
+					endsize="500"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="3"
+				minparticlelife="750"
+				maxparticlelife="1000"
+				gravity="1"
+				speed="5"
+				drag="0"
+				acceleration="0"
+				position="0 0 50"
+				offsetsphere="50 50 25"
+				material="/shared/effects/materials/heathaze.material"
+				inheritvelocity=".1"
+				depthbias="-35"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startparam="0"
+					midparam=".1"
+					endparam="0"
+					startcolor="1 1 1"
+					frame=".1"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+					midalphapos=".2"
+					startsize="25" 
+					endsize="300"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+	</thread>
+
+</effect>

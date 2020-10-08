@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ra_Ability3_Damage"
+
+	icon="icon3.tga"
+	passiveeffect=""
+	
+	effecttype=""
+>
+	<onframe>
+		<evaluate a="charges" b="frametime" op="mult" />
+		<damage effecttype="Magic DOT" amount="1" b="result" op="mult" />
+	</onframe>
+	
+	<altavatar key="Hero_Ra.Alt5"
+		icon="../alt5/ability_03/icon.tga"
+	/>
+	
+</state>
