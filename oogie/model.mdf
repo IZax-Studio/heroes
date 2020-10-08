@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="undying.model" type="K2" high="undying.model" med="undying.model" low="undying.model">
+
+
+	<anim name="idle" clip="clips/default_1.clip" fps="30" loop="true">
+	</anim>
+	
+	<anim name="bored_1" clip="clips/bored_1.clip" fps="30">
+	</anim>
+	
+	<anim name="portrait" clip="clips/portrait.clip" fps="15" loop="true"/>
+		
+	<anim name="walk_1" clip="clips/walk_1.clip" fps="30" loop="true">
+		<frameevent frame="2" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="20" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="40" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="60" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		
+		<frameevent frame="2" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="20" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="40" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="60" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		
+		<frameevent frame="2" cmd="PlaySoundLinear sounds/move_%.wav 0 800 .3"/>
+		<frameevent frame="20" cmd="PlaySoundLinear sounds/move_%.wav 0 800 .3"/>
+		<frameevent frame="40" cmd="PlaySoundLinear sounds/move_%.wav 0 800 .3"/>
+		<frameevent frame="60" cmd="PlaySoundLinear sounds/move_%.wav 0 800 .3"/>
+	</anim>
+	
+	<anim name="crazy_run" clip="clips/crazy_run.clip" fps="30" loop="true">
+		<frameevent frame="2" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="20" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="40" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="60" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		
+		<frameevent frame="2" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="20" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="40" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="60" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		
+		<frameevent frame="2" cmd="PlaySoundLinear sounds/move_%.wav 0 800 .3"/>
+		<frameevent frame="20" cmd="PlaySoundLinear sounds/move_%.wav 0 800 .3"/>
+		<frameevent frame="40" cmd="PlaySoundLinear sounds/move_%.wav 0 800 .3"/>
+		<frameevent frame="60" cmd="PlaySoundLinear sounds/move_%.wav 0 800 .3"/>
+	</anim>
+	
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="30">
+		<frameevent frame="11" cmd="PlaySoundLinear /heroes/oogie/sounds/custom/attack_%.wav 500 1300 .2"/>
+	</anim>
+	
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="30">
+		<frameevent frame="13" cmd="PlaySoundLinear /heroes/oogie/sounds/custom/attack_%.wav 500 1300 .2"/>
+	</anim>
+	
+	<anim name="ability_1" clip="clips/ability_1.clip" fps="45"/>
+	
+	<anim name="ability_2" clip="clips/ability_2.clip" fps="30">
+	</anim>
+	
+	<anim name="ability_4" clip="clips/ability_4.clip" fps="30"/>
+	
+	<anim name="death_1" clip="clips/death_1.clip" fps="36" loop="true" loopbackframe="-1">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/death_%.wav 1300 1300 1"/>
+		<frameevent frame="1" cmd="starteffect effects/death.effect 0"/>
+	</anim>
+	
+	<anim name="knock_1" clip="clips/knock_1.clip" fps="30" loop="true" loopbackframe="-1"/>
+	
+	<anim name="item_1" clip="clips/item_1.clip" fps="30"/>
+	
+	<anim name="taunt_1" clip="clips/taunt_1.clip" fps="25"/>
+	
+</model>

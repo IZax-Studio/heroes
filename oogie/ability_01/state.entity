@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Oogie_Ability1"
+
+	icon="icon1.tga"
+	
+	passiveeffect=""
+	effecttype=""
+	allowtransfer=""
+	maxcharges="5"
+	
+>
+	<onframe>
+		<compare a="charges" b="1" op="eq" >
+			<setactivemodifierkey entity="source_entity" name="Oogie_Bolt_Start" />
+		</compare>
+		<else>
+			<compare a="charges" b="2" op="eq">
+				<setactivemodifierkey entity="source_entity" name="Oogie_Bolt_Low" />
+			</compare>
+			<else>
+				<compare a="charges" b="3" op="eq">
+					<setactivemodifierkey entity="source_entity" name="Oogie_Bolt_Mid" />
+				</compare>
+				<else>
+					<compare a="charges" b="4" op="eq">
+						<setactivemodifierkey entity="source_entity" name="Oogie_Bolt_High" />
+					</compare>
+					<compare a="charges" b="5" op="eq">
+						<setactivemodifierkey entity="source_entity" name="Oogie_Bolt_Final" />
+					</compare>
+				</else>
+			</else>
+		</else>
+	</onframe>
+	
+	<onexpired>
+		<setactivemodifierkey entity="source_entity" name="" />
+		<setcharges entity="this_proxy_entity" count="0" />
+	</onexpired>
+</state>

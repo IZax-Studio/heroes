@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Oogie_Ability1_Slow"
+
+	icon="icon1.tga"
+	passiveeffect="effects/state_slow.effect"
+	
+	maxcharges="100"
+	
+    movespeedslow="0.05"
+    movespeedslowpercharge="0.002"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	negativeeffect="slowed"
+>
+	<modifier key="Oogieslowstart" modpriority="100"
+		movespeedslow="0.10"
+	/>
+	<modifier key="Oogieslowlow" modpriority="100"
+		movespeedslow="0.15"
+	/>
+	<modifier key="Oogieslowmid" modpriority="100"
+		movespeedslow="0.20"
+	/>
+	<modifier key="Oogieslowhigh" modpriority="100"
+		movespeedslow="0.25"
+	/>
+	<modifier key="Oogieslowfinal" modpriority="100"
+		movespeedslow="0.30"
+	/>
+	
+	<altavatar key="Hero_Oogie.Alt4"
+		passiveeffect="../alt4/ability_01/effects/state_slow.effect"
+	/>
+	
+	<altavatar key="Hero_Oogie.trophy_skin01"
+		passiveeffect="../trophy_skin/model_01/ability_01/effects/state_slow.effect"
+	/>
+	
+	<altavatar key="Hero_Oogie.trophy_skin02"
+		passiveeffect="../trophy_skin/model_02/ability_01/effects/state_slow.effect"
+	/>
+	
+	<altavatar key="Hero_Oogie.trophy_skin03"
+		passiveeffect="../trophy_skin/model_03/ability_01/effects/state_slow.effect"
+	/>
+	
+</state>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Oogie4"
+
+	icon="icon4.tga"
+	
+	statuseffecttooltip="State_Oogie_Ability4"
+
+	anim="ability_4"
+	casttime="0"
+	castactiontime="0"
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	
+	actiontype="target_self"
+	casteffecttype=""
+	manacost="0"
+	cooldowntime="70000"
+	
+	frontqueue="true"
+	inheritmovement="true"
+	nonaggressive="true"
+	
+	casteffect="effects/cast.effect"
+	
+	modifierkey="Oogie_Ult1,Oogie_Ult2,Oogie_Ult3"
+>
+	<onimpact>
+	    <delayannouncer duration="3000" />
+		<applystate name="State_Oogie_Ability4" target="source_entity" duration="12000" />
+	</onimpact>
+	
+	<altavatar key="Hero_Oogie.Alt"
+		casteffect="/heroes/oogie/alt/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Oogie.Alt2"
+		casteffect="/heroes/oogie/alt2/ability_04/effects/cast.effect"
+	/>
+
+	<altavatar key="Hero_Oogie.Alt3"
+		casteffect="/heroes/oogie/alt3/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Oogie.Alt4"
+		casteffect="/heroes/oogie/alt4/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Oogie.Alt5"
+		casteffect="/heroes/oogie/alt5/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Oogie.trophy_skin01"
+		casteffect="/heroes/oogie/trophy_skin/model_01/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Oogie.trophy_skin02"
+		casteffect="/heroes/oogie/trophy_skin/model_02/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Oogie.trophy_skin03"
+		casteffect="/heroes/oogie/trophy_skin/model_03/ability_04/effects/cast.effect"
+	/>
+	
+</ability>

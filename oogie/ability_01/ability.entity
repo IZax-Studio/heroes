@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Oogie1"
+
+	icon="icon1.tga"
+	
+	anim="ability_1"
+	casttime="800"
+	castactiontime="100"
+	casteffect="effects/cast.effect"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_position"
+	targetscheme="enemy_units"
+	targetradius="200"
+	targetmaterial="/shared/materials/area_cast_legion_indicator.material"
+	casteffecttype="Magic"
+	
+	range="900"
+	
+	cooldowntime="1250"
+	manacost="100"
+	maxcharges="5"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	showrangeandradiusintooltip="true"
+	
+>
+	<onimpact>
+		<spawnaffector name="Affector_Oogie_Ability1" target="target_position" param="charges" />
+		<addcharges entity="this_entity" count="1" />
+		<applystate name="State_Oogie_Ability1" target="source_entity" duration="8000" pushentity="true" proxy="this_entity" />
+		<addcharges entity="stack_entity" count="1" />
+		<starttimer duration="8000" />
+	</onimpact>
+	
+	<modifier key="Oogie_Bolt_Start" modpriority="100"
+		manacost="130"
+	>
+	</modifier>
+	
+	<modifier key="Oogie_Bolt_Low" modpriority="100"
+		manacost="160"
+	>
+	</modifier>
+
+	<modifier key="Oogie_Bolt_Mid" modpriority="100"
+		manacost="190"
+	>
+	</modifier>
+		
+	<modifier key="Oogie_Bolt_High" modpriority="100"
+		manacost="220"
+	>
+	</modifier>
+	
+	<modifier key="Oogie_Bolt_Final" modpriority="100"
+		manacost="250"
+	>
+	</modifier>
+	
+	<altavatar key="Hero_Oogie.Alt4"
+		casteffect="../alt4/ability_01/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Oogie.Alt5"
+		casteffect="../alt5/ability_01/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Oogie.trophy_skin01"
+		casteffect="/heroes/oogie/trophy_skin/model_01/ability_01/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Oogie.trophy_skin02"
+		casteffect="/heroes/oogie/trophy_skin/model_02/ability_01/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Oogie.trophy_skin03"
+		casteffect="/heroes/oogie/trophy_skin/model_03/ability_01/effects/cast.effect"
+	/>
+	
+</ability>

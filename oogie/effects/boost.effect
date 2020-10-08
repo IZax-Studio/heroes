@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+			<template name="tiny_tiki">
+				<controller
+					yaw="{yaw}"
+					yawspeed="30"
+					directionalspace="global"
+				>
+					<model
+						position="0 30 10"
+						model="/heroes/oogie/ability_04/transformed/tiny_tiki.mdf"
+						anim="{anim}"
+						scale=".15"
+						color="3 1.75 1"
+						alpha=".5"
+						yaw="180"
+					>
+						<billboard
+							maxtimenudge="1000"
+							minlife="1000"
+							maxlife="1500"
+							bone="_bone_centerofchest"
+							depthbias="-10"
+							material="/shared/effects/materials/whitedot.material"
+							scale="5"
+							startcolor=".1 .05 0"
+							midcolor=".2 .1 0"
+							endcolor=".1 .05 0"
+						/>
+					</model>
+				</controller>
+			</template>
+			
+			<instance name="tiny_tiki" yaw="0" anim="dance_1" />
+			<instance name="tiny_tiki" yaw="60" anim="dance_2" />
+			<instance name="tiny_tiki" yaw="120" anim="dance_3" />
+			<instance name="tiny_tiki" yaw="180" anim="dance_4" />
+			<instance name="tiny_tiki" yaw="240" anim="dance_3" />
+			<instance name="tiny_tiki" yaw="300" anim="dance_2" />
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread> 
+</effect>

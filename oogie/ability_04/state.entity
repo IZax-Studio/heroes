@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Oogie_Ability4"
+
+	icon="icon4.tga"
+
+	passiveeffect="effects/state_self.effect"
+	effecttype=""
+	
+	modifierkey="primalult"
+	
+	propagatetoillusions="true"
+>
+	<onframe/>
+
+	<ondamaged>
+		<givemana target="source_entity" amount="0.4,0.5,0.6" b="source_damage" op="mult" />
+	</ondamaged>
+	
+	<onactivatepreimpact>
+		<heal target="source_entity" a="combat_manacost" b="0.4,0.5,0.6" op="mult" />
+		<setchannelvolume channelid="boogie_2" volume="0.0" fade="1000" />
+	</onactivatepreimpact>
+	
+	<onexpired>
+		<hasavatarkey name="Hero_Oogie.Alt5" >
+			<playeffect effect="../alt5/ability_04/effects/expired.effect" source="source_entity" target="" />
+		</hasavatarkey>
+		<else>
+			<playeffect effect="effects/expired.effect" source="source_entity" target="" />
+		</else>
+		<setchannelvolume channelid="boogie_2" volume="0.9" fade="1000" />
+	</onexpired>
+	
+	<altavatar key="Hero_Oogie.Alt" modpriority="1"
+		modifierkey="primalultalt"
+	/>
+	
+	<altavatar key="Hero_Oogie.Alt2" modpriority="1"
+		modifierkey="primalultalt2"
+	/>
+	
+	<altavatar key="Hero_Oogie.Alt3" modpriority="1"
+		modifierkey="primalultalt3"
+	/>
+	
+	<altavatar key="Hero_Oogie.Alt4" modpriority="1"
+	    passiveeffect="../alt4/ability_04/effects/state_self.effect"
+		modifierkey="primalultalt4"
+	>
+		<onexpired>
+			<playeffect effect="../alt4/ability_04/effects/expired.effect" source="source_entity" target="" />
+		</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_Oogie.Alt5" modpriority="1"
+		modifierkey="primalultalt5"
+	/>
+	
+	<altavatar key="Hero_Oogie.trophy_skin01" modpriority="1"
+	    passiveeffect="effects/state_self.effect"
+		modifierkey="primalulttrophy01"
+	>
+		<onexpired>
+			<playeffect effect="../trophy_skin/model_01/ability_04/effects/expired.effect" source="source_entity" target="" />
+		</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_Oogie.trophy_skin02" modpriority="1"
+	    passiveeffect="effects/state_self.effect"
+		modifierkey="primalulttrophy02"
+	>
+		<onexpired>
+			<playeffect effect="../trophy_skin/model_02/ability_04/effects/expired.effect" source="source_entity" target="" />
+		</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_Oogie.trophy_skin03" modpriority="1"
+	    passiveeffect="effects/state_self.effect"
+		modifierkey="primalulttrophy03"
+	>
+		<onexpired>
+			<playeffect effect="../trophy_skin/model_03/ability_04/effects/expired.effect" source="source_entity" target="" />
+		</onexpired>
+	</altavatar>
+	
+</state>
