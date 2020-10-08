@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="aphotic_shield" deferred="1">
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale=".5">
+
+			<model
+				bone="wrist_R"
+				life="1500"
+				pitch="-90"
+				scale="3"
+				model="/heroes/scout/ability_04/effects/shuriken_projectile/model.mdf"
+				anim="idle"
+				position="40 50 10"
+			/>
+
+			<simpleemitter
+				bone="_bone_righthand"
+				startspawnrate="0"
+				endspawnrate="200"
+				particlelife="500"
+				life="1500"
+				minspeed="300"
+				maxspeed="500"
+				drag=".1"
+				material="/shared/effects/materials/phantom_smoke_03.material"
+			>
+				<particle
+					maxangle="360"
+					startsize="0"
+					endsize="70"
+					startwidth="0"
+					endwidth="140"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					startcolor="1 .5 0"
+					endcolor="1 .5 0"
+				/>
+			</simpleemitter>
+			
+			<billboard
+				bone="_bone_righthand"
+				delay="1200"
+				life="300"
+				startsize="0"
+				endsize="350"
+				rollspeed="700"
+				startcolor="1"
+				midcolor="1"
+				endcolor="0"
+				material="/shared/effects/materials/blink.material"
+			/>
+			
+		</particlesystem>
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		
+	</thread>
+</effect>

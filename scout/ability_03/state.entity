@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Scout_Ability3"
+	
+	icon="icon3.tga"
+	passiveeffect="effects/state.effect"
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	disarmed="true"
+
+	negativeeffect="disarmed"
+
+
+>
+
+	<modifier key="soccer" modpriority="150"
+		silenced="true"
+	/>
+
+</state>

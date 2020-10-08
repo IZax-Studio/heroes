@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Scout_Ability4_Slow"
+	
+	icon="icon4.tga"
+	passiveeffect="effects/state.effect"
+	
+	movespeedslow="0.2,0.3,0.4"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+>
+
+	<altavatar key="Hero_Scout.Alt6"
+		passiveeffect="../alt6/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Scout.Alt8"
+		passiveeffect="../alt8/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Scout.Alt9"
+		passiveeffect="../alt9/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Scout.Alt10"
+		passiveeffect="../alt10/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Scout.Alt11"
+		passiveeffect="../alt11/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Scout.Alt12"
+		passiveeffect="../alt12/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Scout.Alt13"
+		passiveeffect="../alt13/ability_04/effects/state.effect"
+	/>
+
+</state>

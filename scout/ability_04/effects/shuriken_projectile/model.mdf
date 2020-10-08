@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="electric_eye.max" file="shuriken.model" type="K2">
+
+	<anim name="idle" clip="default_1.clip" fps="80"  loop="true">
+	</anim>
+
+</model>
