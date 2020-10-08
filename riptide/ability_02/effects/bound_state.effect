@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="1">
+	<definitions>
+		
+		<modifier
+			name="modifier0"
+			life="250"
+			startalpha="1"
+			endalpha="0"
+		/>
+		
+		<modifier
+			name="modifier1"
+			expirelife="150"
+			startalpha="0"
+			endalpha="1"
+		/>
+
+	</definitions>
+	<thread>
+		<spawnmodifier instance="instance0" modifier="modifier0" />
+		<wait duration="250" />
+		<spawnmodifier instance="instance1" modifier="modifier1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>

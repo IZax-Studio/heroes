@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Riptide_Ability2_Silence"
+
+	icon="icon2.tga"
+	passiveeffect="effects/silence.effect"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	silenced="true"
+	
+	negativeeffect="silenced"
+>
+
+	<altavatar key="Hero_Riptide.Alt"
+		icon="../alt/ability_02/icon.tga"
+	/>
+
+</state>

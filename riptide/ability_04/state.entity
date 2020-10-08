@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Riptide_Ability4"
+	
+	ishidden="true"
+	
+	icon="icon4.tga"
+	passiveeffect=""
+	
+	effecttype=""
+	allowtransfer="false"
+	
+	modifierkey="riptide_ult_active"
+>
+	<onframe>
+		<areaofeffect
+			radius="1200"
+			center="this_owner_entity"
+			targetselection="all"
+			targetscheme="ally_heroes"
+			ignoreinvulnerable="true"
+		>
+			<applystate name="State_Riptide_Ability4_AgilityDamage" continuous="true" timeout="frametime" proxy="this_owner_entity" />
+		</areaofeffect>
+	</onframe>
+</state>
