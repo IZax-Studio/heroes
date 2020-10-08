@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ophelia_Ability3"
+
+	icon="icon3.tga"
+	passiveeffect=""
+	
+	maxhealth="40,120,160,200"
+	movespeed="10,20,30,40"
+>
+
+</state>

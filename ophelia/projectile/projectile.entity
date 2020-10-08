@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Ophelia_Attack"
+
+	speed="1100"
+	gravity="2000"
+
+	model="/shared/models/invis.mdf"
+	
+	impacteffect="effects/impact.effect"
+	traileffect="effects/trail.effect"
+>
+
+	<altavatar key="Hero_Ophelia.Alt4" modpriority="1"
+		impacteffect="/heroes/ophelia/alt4/projectile/effects/impact.effect"
+		traileffect="/heroes/ophelia/alt4/projectile/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Ophelia.Alt5" modpriority="1"
+		impacteffect="/heroes/ophelia/alt5/projectile/effects/impact.effect"
+		traileffect="/heroes/ophelia/alt5/projectile/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Ophelia.Alt6" modpriority="1"
+		impacteffect="/heroes/ophelia/alt6/projectile/effects/impact.effect"
+		traileffect="/heroes/ophelia/alt6/projectile/effects/trail.effect"
+	/>
+</projectile>

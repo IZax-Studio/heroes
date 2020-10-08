@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ophelia_Ability4"
+
+	icon="icon4.tga"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	passiveeffect=""
+	
+	healthregen="5,10,15"
+>
+
+</state>

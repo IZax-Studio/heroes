@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Ophelia3_Target"
+		
+	icon="icon3.tga"
+	
+	anim="ability_2"
+	casttime="500"
+	castactiontime="0"
+	casteffect=""
+
+	maxlevel="1"
+	baselevel="1"
+
+	actiontype="target_self"
+	targetscheme="self"
+	casteffecttype=""
+	
+	nosilence="true"
+	nostun="true"
+
+	manacost="0"
+	cooldowntime="10000"
+
+>
+	<onframe />
+	
+	<ondamaged>
+		<compare a="source_damage" b="0" op="gt">
+			<targettype type="player_controlled">
+				<targettype type="self" />
+				<else>
+					<startcooldown duration="10000" />
+				</else>
+			</targettype>
+		</compare>
+	</ondamaged>
+	
+	<onimpact>
+		<kill target="this_owner_entity" source="" />
+	</onimpact>
+</ability>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ophelia_Ability2"
+	
+	ishidden="false"
+	icon="icon2.tga"
+	effecttype="StatusBuff"
+	passiveeffect="effects/state.effect"
+	impactinterval="5500,5000,4500,4000"
+	
+	dynamicprecache="effects/teleport_impact.effect"
+>
+	<oninflict>
+		<!-- Dynamic teleport impact effect -->
+		<setscriptvalue name="teleport_impact_effect" value="effects/teleport_impact.effect" entity="this_entity" />
+	</oninflict>
+	
+	<onimpact>
+		<pushentitysearch global="true" targetscheme="ally_well" ignoreinvulnerable="true" />
+		<compare a="stack_entity" b="0" op="ne">
+			<cantarget effecttype="Push">
+				<!-- Dynamic teleport impact effect -->
+				<getscriptvalue name="teleport_impact_effect" destvar="str0" entity="this_entity" />
+				<playeffectdynamic effect="str0" source="target_position" occlude="true" />
+				
+				<unbind target="target_entity" />
+				<teleport source="target_entity" target="stack_position" interpolate="false" />
+				<disjoint target="target_entity" />
+			</cantarget>
+		</compare>
+	</onimpact>
+	
+	<altavatar key="Hero_Ophelia.Alt"
+		passiveeffect="/heroes/ophelia/alt/ability_02/effects/state.effect"
+		dynamicprecache="/heroes/ophelia/alt/ability_02/effects/teleport_impact.effect"
+	>
+		<oninflict>
+			<!-- Dynamic teleport impact effect -->
+			<setscriptvalue name="teleport_impact_effect" value="/heroes/ophelia/alt/ability_02/effects/teleport_impact.effect" entity="this_entity" />
+		</oninflict>	
+	</altavatar>
+	
+	<altavatar key="Hero_Ophelia.Alt3"
+		passiveeffect="/heroes/ophelia/alt3/ability_02/effects/state.effect"
+		dynamicprecache="/heroes/ophelia/alt3/ability_02/effects/teleport_impact.effect"
+	>
+		<oninflict>
+			<!-- Dynamic teleport impact effect -->
+			<setscriptvalue name="teleport_impact_effect" value="/heroes/ophelia/alt3/ability_02/effects/teleport_impact.effect" entity="this_entity" />
+		</oninflict>	
+	</altavatar>
+	
+	<altavatar key="Hero_Ophelia.Alt4"
+		passiveeffect="/heroes/ophelia/alt4/ability_02/effects/state.effect"
+		dynamicprecache="/heroes/ophelia/alt4/ability_02/effects/teleport_impact.effect"
+	>
+		<oninflict>
+			<!-- Dynamic teleport impact effect -->
+			<setscriptvalue name="teleport_impact_effect" value="/heroes/ophelia/alt4/ability_02/effects/teleport_impact.effect" entity="this_entity" />
+		</oninflict>	
+	</altavatar>
+	
+	<altavatar key="Hero_Ophelia.Alt5"
+		passiveeffect="/heroes/ophelia/alt5/ability_02/effects/state.effect"
+		dynamicprecache="/heroes/ophelia/alt5/ability_02/effects/teleport_impact.effect"
+	>
+		<oninflict>
+			<!-- Dynamic teleport impact effect -->
+			<setscriptvalue name="teleport_impact_effect" value="/heroes/ophelia/alt5/ability_02/effects/teleport_impact.effect" entity="this_entity" />
+		</oninflict>	
+	</altavatar>
+	
+	<altavatar key="Hero_Ophelia.Alt6"
+		passiveeffect="/heroes/ophelia/alt6/ability_02/effects/state.effect"
+		dynamicprecache="/heroes/ophelia/alt6/ability_02/effects/teleport_impact.effect"
+	>
+		<oninflict>
+			<!-- Dynamic teleport impact effect -->
+			<setscriptvalue name="teleport_impact_effect" value="/heroes/ophelia/alt6/ability_02/effects/teleport_impact.effect" entity="this_entity" />
+		</oninflict>	
+	</altavatar>
+	
+</state>

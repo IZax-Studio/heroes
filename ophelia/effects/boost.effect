@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+			<template name="trail">
+				<trailemitter
+					bone="{bone}"
+					spawnrate="25"
+					startminparticlelife="750"
+					startmaxparticlelife="1000"
+					endminparticlelife="1"
+					endmaxparticlelife="1" 
+					position="0 0 0"
+					material="/shared/effects/materials/arrow_trail.material"
+					inheritvelocity=".1"
+				>
+					<particle
+						startcolor="0 0 0"
+						midcolor="0 .2 0"
+						endcolor="0 0 0"
+						startsize="0"
+						midsize="2.5"
+						endsize="0"
+					/>
+				</trailemitter>
+
+			</template>
+			
+			<template name="soul_emitter">
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="100"
+				>
+					<particle
+					>
+						<billboard
+							life="200"
+							material="/shared/effects/materials/whitedot.material"
+							startcolor=".2 .7 .2"
+							endcolor="0"
+							size="9"
+							expirelife="300"								
+							depthbias="-20"
+							position="0 0 0"
+							startalpha="1"
+							endalpha="0"
+						/>
+					</particle>
+				</simpleemitter>
+			</template>
+
+			<simpleemitter
+				spawnrate="5"
+				particlelife="1000"
+				gravity="-55"
+				speed="40"
+				drag=".08"
+				acceleration="0"
+				position="0 0 0"
+				material="/shared/effects/materials/phantom_smoke_10.material"
+				offsetsphere="30 30 75"
+				minangle="90"
+				maxangle="-90"
+			>
+				<particle 
+					startcolor="0 0 0"
+					midcolor=".15 1 .15"
+					endcolor="0 0 0"
+					midcolorpos=".1"
+					startframe="0"
+					endframe="1"
+					startwidth="15"
+					midwidth="10"
+					endwidth="5"
+					midwidthpos=".5"
+					startheight="0"
+					endheight="75"
+					startalpha="0"
+					midalpha=".1"
+					endalpha="0"
+					midalphapos=".1"
+					lockup="true"
+				/>
+			</simpleemitter>
+
+			<model
+				loop="true"
+				directionalspace="global"
+				life="4400"
+				model="/shared/effects/models/twirl_bones_slow/twirl_bones.mdf"
+				anim="idle_slow"
+				startscale=".5"
+				endscale="1"
+			>
+				
+				<instance name="soul_emitter" bone="_bone_effect_01"/>
+				<instance name="soul_emitter" bone="_bone_effect_02"/>
+				<instance name="soul_emitter" bone="_bone_effect_03"/>
+				<instance name="soul_emitter" bone="_bone_effect_04"/>
+				
+			</model>
+			
+			<billboard
+				bone="_bone_weapon3"
+				material="/shared/effects/materials/whitedot.material"
+				color="0 .2 .5"
+				expirelife="300"								
+				size="50"
+				depthbias="-40"
+				position="0 0 0"
+			/>
+			
+
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

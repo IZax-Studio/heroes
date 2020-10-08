@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Ophelia_Ability1"
+
+	speed="3000"
+	gravity="2500"
+	canturn="false"
+	modelscale="4"
+	model=""
+
+	traileffect="projectile/trail.effect"
+	impacteffect="projectile/impact.effect"
+>
+
+	<altavatar key="Hero_Ophelia.Alt4" modpriority="1"
+		model="/heroes/ophelia/alt4/ability_01/effects/head/model.mdf"
+		modelscale="3"
+		traileffect="/heroes/ophelia/alt4/ability_01/effects/trail.effect"
+		impacteffect="/heroes/ophelia/alt4/ability_01/effects/impact.effect"
+	/>
+
+	<altavatar key="Hero_Ophelia.Alt6" modpriority="1"
+		modelscale="3"
+		traileffect="/heroes/ophelia/alt6/ability_01/effects/trail.effect"
+		impacteffect="/heroes/ophelia/alt6/ability_01/effects/impact.effect"
+	/>
+</projectile>

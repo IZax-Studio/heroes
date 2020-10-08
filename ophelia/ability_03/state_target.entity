@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ophelia_Ability3_Target"
+
+	icon="icon3.tga"
+	passiveeffect=""
+	effecttype=""
+	ishidden="true"
+
+	morphinventory3="Ability_Ophelia3_Target"
+	morphpriority="100"
+>
+
+</state>

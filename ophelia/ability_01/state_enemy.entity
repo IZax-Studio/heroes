@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ophelia_Ability1_Enemy"
+
+	icon="icon1.tga"
+	
+	movespeedslowstart="0.16,0.19,0.22,0.25"
+	movespeedslowmid="0.08,0.095,0.11,0.125"
+	movespeedslowend="0.0"
+	movespeedslowduration="6000"
+	movespeedslowmidpos="0.5"
+
+	incomingdamagemultiplier="0.16,0.19,0.22,0.25"
+	
+	passiveeffect="projectile/state_enemy.effect"
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	negativeeffect="slowed"
+>
+
+	<onframe />
+	
+	<altavatar key="Hero_Ophelia.Alt" modpriority="1"
+		passiveeffect="/heroes/ophelia/alt/ability_01/projectile/state_enemy.effect"
+	/>
+	
+	<altavatar key="Hero_Ophelia.Alt3" modpriority="1"
+		passiveeffect="/heroes/ophelia/alt3/ability_01/projectile/state_enemy.effect"
+	/>
+	
+	<altavatar key="Hero_Ophelia.Alt4" modpriority="1"
+		passiveeffect="/heroes/ophelia/alt4/ability_01/effects/state_enemy.effect"
+	/>
+	
+	<altavatar key="Hero_Ophelia.Alt6" modpriority="1"
+		passiveeffect="/heroes/ophelia/alt6/ability_01/effects/state_enemy.effect"
+	/>
+	
+</state>
