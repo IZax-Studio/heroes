@@ -8,7 +8,7 @@
 				falloffstart="1300"
 				falloffend="2500"
 				volume="1"
-				sample="/heroes/ravenor/ability_02/sounds/cast.wav"
+				sample=".../sounds/cast.wav"
 			/>
 <!--
 			<billboard

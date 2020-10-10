@@ -9,7 +9,7 @@
 				falloffstart="1400"
 				falloffend="2000"
 				volume="1"
-				sample="/heroes/ravenor/ability_01/sounds/impact.wav"
+				sample=".../sounds/impact.wav"
 			/>
 
 			<light

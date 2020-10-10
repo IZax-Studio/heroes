@@ -244,7 +244,7 @@
 				falloffstart="0"
 				falloffend="2000"
 				volume=".9"
-				sample="/heroes/ravenor/ability_02/sounds/impact_%.wav"
+				sample=".../sounds/impact_%.wav"
 			/>
 			
 			<sound

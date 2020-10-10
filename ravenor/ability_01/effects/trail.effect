@@ -13,7 +13,7 @@
 				model="wings/model.mdf"
 				material="/shared/effects/materials/shell4.material"
 				anim="idle"
-				color=".3 0 0"
+				color="0 0 0"
 				expirelife="10"
 				position="0 -35 -10"
 				startscale="1.15"
@@ -33,7 +33,7 @@
 
 			<light
 				expirelife="250"			
-				startcolor="2 0 0"			
+				startcolor="10 0 0"			
 				endcolor="0 0 0"
 				midcolorpos=".2"
 				falloffstart="75"
@@ -43,14 +43,14 @@
 
 			<billboard
 				material="/shared/effects/materials/whitedot.material"
-				color=".85 .85 .85"
-				size="20"
+				color="1.15 0 0"
+				size="50"
 				depthbias="-50"
 			/>
 
 			<billboard
 				material="/shared/effects/materials/whitedot.material"
-				color=".75 0 0"
+				color="0 0 0"
 				size="50"
 			/>
 			
@@ -149,10 +149,10 @@
 					roll="180"
 					heightdistort="0.01"
 					turn="1"
-					startcolor=".125 0 0"
+					startcolor="0 0 0"
 					endcolor="0 0 0"
-					startsize="36"
-					endsize="10"
+					startsize="360"
+					endsize="100"
 				/>
 			</simpleemitter>
 
