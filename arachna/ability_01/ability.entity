@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Arachna1"
+
+	statuseffecttooltip="State_Arachna_Ability1"
+	statuseffectheader="true"
+	icon="icon1.tga"
+
+	casttime="1000"
+	castactiontime="200"
+	casteffect="effects/cast.effect"
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	cooldowntime="0"
+	
+	activatescheme="canattack"
+	actiontype="attack"
+	targetscheme="enemy_units"
+	casteffecttype="Magic Attack"
+	projectile="Projectile_Ability_Arachna1"
+	manacost="20"
+	range="575"
+
+	targetpriorities="enemy_heroes"
+	
+	doubleactivate="true"
+>
+	<onattack>
+		<!-- Required to allow the skill to stack with Attack Modifiers -->
+		<setvalue name="combat_attackability" a="0" />
+	</onattack>
+	
+	<onimpact>
+		<cantarget effecttype="Magic">
+			<applystate name="State_Arachna_Ability1" duration="2000" disablenegativeeffectpopuponrefresh="true" />
+		</cantarget>
+	</onimpact>
+
+	<modifier key="alt_Wingbow" modpriority="100"
+		range="675"
+	/>
+	
+	<modifier key="alt_JadeSpire" modpriority="101"
+		range="325"
+	>
+		<onframe>
+			<hasmodifier name="alt_Wingbow" entity="this_entity">
+				<setactivemodifierkey name="alt_JadeSpire_and_Wingbow" entity="this_entity" />
+			</hasmodifier>
+			<else>
+				<setactivemodifierkey name="" entity="this_entity" />
+			</else>
+		</onframe>
+	</modifier>
+	
+	<modifier key="alt_JadeSpire_and_Wingbow" modpriority="102"
+		range="425"
+	>
+		<onframe>
+			<hasmodifier name="alt_Wingbow" entity="this_entity">
+				<setactivemodifierkey name="alt_JadeSpire_and_Wingbow" entity="this_entity" />
+			</hasmodifier>
+			<else>
+				<setactivemodifierkey name="" entity="this_entity" />
+			</else>
+		</onframe>
+	</modifier>
+	
+	<altavatar key="Hero_Arachna.Alt2" modpriority="1"
+		casteffect="effects/cast_alt2.effect"
+		icon="/heroes/arachna/alt2/ability_01/icon.tga"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Arachna.Alt5" modpriority="1"
+		casteffect="../alt5/ability_01/effects/cast.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Arachna.Alt7" modpriority="1"
+		casteffect="../alt7/ability_01/effects/cast.effect"
+	/>
+</ability>

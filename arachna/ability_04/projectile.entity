@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Arachna_Ability4"
+	
+	speed="1500"
+	gravity="8000"
+
+	impactstealth="true"
+	modelscale="2.4"
+	model="/heroes/midas/alt2/projectile/effects/snowball/model.mdf"
+	traileffect="/heroes/midas/alt2/projectile/effects/trail.effect"
+	effectscale="2.0"
+	impacteffect="effects/ability_01/projectile/effects/ability_01_impact.effect"
+	impactdistance="50"
+>
+	<onimpact>
+		<combatevent effecttype="AbilityBasedProjectile">
+			<onimpact>
+				<targettype type="alive" target="this_proxy_entity">
+					<spawnunit name="Gadget_Arachna_Ability4_Spiderling" target="this_position" proxy="this_proxy_entity" facing="this_proxy_entity" pushentity="true" inheritmodifiers="true" />
+					<applystate name="State_Arachna_Ability4_CountAttacks" target="stack_entity" proxy="stack_entity" duration="15000" />
+					<applystate name="State_Arachna_Ability4_ExpirePet" target="this_proxy_entity" proxy="stack_entity" duration="15000" stack="true" />
+					<applystate name="State_Arachna_Ability4" target="this_proxy_entity" duration="1500" proxy="stack_entity" />
+				</targettype>
+			</onimpact>
+		</combatevent>
+	</onimpact>
+	
+	<altavatar key="Hero_Arachna.Alt2"
+		model="../alt2/summon/model.mdf"
+		traileffect="../alt2/ability_04/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Arachna.Alt3"
+		model="../alt3/summon/model.mdf"
+		traileffect="../alt3/ability_04/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Arachna.Alt4" 
+		model="../alt4/summon/model2.mdf"
+	/>
+	
+	<altavatar key="Hero_Arachna.Alt5"
+		model="../alt5/summon/model2.mdf"
+		traileffect="../alt5/ability_04/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Arachna.Alt7" 
+		model="../alt7/summon/model.mdf"
+		traileffect="../alt7/ability_04/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Arachna.main_reskin"
+		model="../reskin/summon/model.mdf"
+	/>
+	
+</projectile>

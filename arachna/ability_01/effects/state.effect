@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+		<modifier name="modifier0"
+			color=".75 .75 2"
+		/>
+		
+		<particlesystem name="system0" space="world" scale="1">
+			
+			<model
+				parentmodel="true"
+				parentskeleton="true"
+				material="/heroes/frosty/ability_02/effects/shell_ice.material"
+				color=".5 .5 .75"
+				startalpha="1"
+				endalpha="0"
+				life="3200"
+			/>
+
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+	  <spawnmodifier instance="instance1" modifier="modifier0" />
+      <waitfordeath instance="instance0" />
+      <waitfordeath instance="instance1" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

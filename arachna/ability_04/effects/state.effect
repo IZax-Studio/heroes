@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.5">
+			
+			<simpleemitter
+				timenudge="2000"
+				bone="_bone_overhead"
+         		spawnrate="5"
+				minparticlelife="1500"
+          		maxparticlelife="3000"
+          		gravity="10"
+          		drag=".25"
+				position="0 0 0"
+				offsetsphere="10 10 0"
+				material="/shared/effects/materials/frost_burst.material"
+			>
+  				<particle 
+					maxangle="360"
+					minanglespeed="-6"
+					maxanglespeed="6"
+					startcolor="0 0 0"
+					midcolor="0 .5 1"
+					endcolor="0 0 0"
+					startsize="0"
+					endsize="100"
+					startanchor="1"
+					endanchor="1"
+				/>
+        	</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_overhead"
+				spawnrate="3"
+				particlelife="1000"
+				gravity="1"
+				speed="5"
+				drag="0"
+				acceleration="0"
+				position="0 0 0"
+				offsetsphere="10 10 0"
+				material="/shared/effects/materials/heathaze.material"
+				inheritvelocity=".5"
+			>
+				<particle 
+					angle="180"
+					startparam="0"
+					midparam=".1"
+					endparam="0"
+					startcolor="1 1 1"
+					frame=".1"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+					midalphapos=".5"
+					startsize="50" 
+					endsize="150"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="20"
+				minparticlelife="750"
+				maxparticlelife="2000"
+				position="0 0 50"
+				material="/shared/effects/materials/cloud.material"
+				offsetsphere="30 30 0"
+			>
+				<particle 
+					maxangle="360"
+					minanglespeed="-30"
+					maxanglespeed="30"
+					startcolor="0"
+					endcolor="0 .5 1"
+					startalpha="0"
+					midalpha=".75"
+					endalpha="0"
+					startsize="20"
+					minendsize="45"
+					maxendsize="200"
+					endanchor="0"
+				/>
+			</simpleemitter>
+			
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".4"
+				sample="../sounds/impact_%.wav"
+			/>
+			
+			
+
+			<debris
+				particlelife="2000"
+				position="0 0 0"
+				scale=".8"
+				model="/heroes/frosty/ability_02/effects/ice.mdf"
+				anim="idle"
+				minspeed="200.0"
+				maxspeed="400.0"
+				minrotationspeed="100.0"
+				maxrotationspeed="300.0"
+				gravity="41.0"
+				collide="true"
+				startalpha="1.0"
+				midalpha="1.0"
+				endalpha="1.0"
+				midalphapos="0.5"
+				bounce="0.7"
+				reflect="0.6"
+				animpose="true"
+			/>
+
+			<model
+				particlelife="4000"
+				parentmodel="true"
+				parentskeleton="true"
+				material="/heroes/frosty/ability_02/effects/shell_ice.material"
+				expirelife="1500"
+				startalpha="5"
+				midalpha="5"
+				endalpha="5"
+				midalphapos=".1"
+			/>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				count="10"
+				particlelife="1500"
+				material="/shared/effects/materials/smoke_01.material"
+				offsetsphere="20 20 50"
+				minangle="0"
+				maxangle="360"
+				gravity=".2"
+				speed="10"
+				direction="0 0 0"
+			>
+				<particle
+					minangle="0"
+					maxangle="0"
+					minanglespeed="100"
+					color=".4 .6 .7"
+					midcolorpos=".7"
+					maxanglespeed="0"
+					startframe="0"
+					endframe="1"
+					startsize="250"
+					endsize="180"
+					startalpha="0"
+					midalpha=".2"
+					endalpha="0"
+					midalphpos=".1"
+				/>
+			</simpleemitter>
+			
+			
+			
+			<billboard
+			bone="_bone_centerofchest"
+				life="1000"
+				startcolor="0 .5 .5"
+				midcolor="0 .5 .5"
+				midcolorpos="0.3"
+				endcolor="0"
+				startsize="175"
+				endsize="0"
+				depthbias="0"
+				material="/shared/effects/materials/whitedot.material"
+				position="0 0 0"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				position="0 0 0"
+				delay="0"
+				life="350"
+				param="0.1"	
+				startsize="50"
+				endsize="150"
+				startalpha="0"
+				midalpha=".4"
+				endalpha="0"				
+				depthbias="0"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				position="0 0 0"
+				delay="175"
+				life="350"
+				param="0.1"	
+				startsize="50"
+				endsize="150"
+				startalpha="0"
+				midalpha=".4"
+				endalpha="0"				
+				depthbias="0"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+		
+
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>

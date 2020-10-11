@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pet
+	name="Gadget_Arachna_Ability4_Spiderling_Child"
+
+	icon="icon4.tga"
+	portrait="icon4.tga"
+	model="adult_spider/model.mdf"
+	skin=""
+
+	passiveeffect=""
+	spawneffect="../summon/effects/spawn.effect"
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	portraitcampos="0 10 5"
+	
+	preglobalscale="2.2"
+	modelscale="1.0"
+	effectscale="1"
+	boundsheight="64"
+	boundsradius="16"
+	isselectable="true"
+	iscontrollable="true"
+	selectionradius="40"
+	targetoffset="0 0 0"
+	
+	maxhealth="250"
+	armor="3"
+	healthregen="0"
+
+	movespeed="350"
+	turnrate="900"
+	turnsmoothing="0.05"
+
+	cancarryitems="false"
+	unitwalking="false"
+
+	deathtime="0"
+	corpsetime="2000"
+
+	deathnumanims="1"
+	deathanim="death_%"
+	
+	expirenumanims="1"
+	expireanim="death_%"
+	immunity=""
+	
+	canattack="true"
+	ismobile="true"
+	attackduration="1000"
+	attackactiontime="400"
+	attackcooldown="1000"
+	attackdamagemin="10,15,20"
+	attackdamagemax="10,15,20"
+	attacknumanims="1"
+	attackoffset="0 60 100"
+	attackprojectile=""
+	attackrange="100"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="../summon/effects/impact.effect"
+	attacktype="melee"
+	combattype="Melee"
+	drawonmap="true"
+	sightrangeday="600"
+	sightrangenight="600"
+	
+	unittype="summoned"
+	goldbountymin="8"
+	goldbountymax="8"
+	aggrorange="600"
+	
+	lifetime="50000"
+	showlifetime="true"
+>
+
+	<modifier key="rapidfire" modpriority="100"
+		healthregenreduction="1.0"
+	>
+	</modifier>
+	
+	<altavatar key="Hero_Arachna.Alt2"
+		model="/heroes/arachna/alt2/ability_04/adult_spider/model.mdf"
+		spawneffect="/heroes/arachna/alt2/summon/effects/spawn.effect"
+	/>
+
+	<altavatar key="Hero_Arachna.Alt3"
+		model="/heroes/arachna/alt3/ability_04/adult_spider/model.mdf"
+		spawneffect="/heroes/arachna/alt3/summon/effects/spawn.effect"
+	/>
+	
+	<altavatar key="Hero_Arachna.Alt4"
+		model="/heroes/arachna/alt4/summon/model.mdf"
+		spawneffect="/heroes/arachna/alt3/summon/effects/spawn.effect"
+	/>
+	
+	<altavatar key="Hero_Arachna.Alt5"
+		model="/heroes/arachna/alt5/summon/model.mdf"
+		spawneffect="/heroes/arachna/alt5/summon/effects/spawn.effect"
+	/>
+	
+	<altavatar key="Hero_Arachna.Alt7"
+		model="/heroes/arachna/alt7/summon/model.mdf"
+		spawneffect="/heroes/arachna/alt7/summon/effects/spawn.effect"
+	/>
+	
+	<altavatar key="Hero_Arachna.main_reskin"
+		model="/heroes/arachna/reskin/ability_04/adult_spider/model.mdf"
+	/>
+	
+</pet>

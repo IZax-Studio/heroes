@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Arachna_Ability4"
+
+	icon="icon4.tga"
+	passiveeffect="effects/state.effect"
+	movespeedslow="0.4,0.6,0.8"
+	attackspeed="-0.4,-0.6,-0.8"
+	restrained="false"
+	
+	effecttype="ForceTransferrable"
+	allowtransfer="true"
+
+	negativeeffect="slowed"
+>
+	<onframe />
+
+	<onorderdisjointed>
+		<order command="attack" force="true" forceduration="15000" source="this_proxy_entity" target="source_entity" />
+	</onorderdisjointed>
+	
+	<modifier key="ult_boost" modpriority="100"
+		restrained="true"
+	>
+		<ondeath>
+			<spawnunit name="Gadget_Arachna_Ability4_Spiderling_Adult" count="1" source="this_inflictor_entity" target="this_proxy_position" />
+		</ondeath>
+	</modifier>
+	
+	<altavatar key="Hero_Arachna.Alt4"
+		passiveeffect="../alt4/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Arachna.Alt5"
+		passiveeffect="../alt5/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Arachna.Alt7"
+		passiveeffect="../alt7/ability_04/effects/state.effect"
+	/>
+</state>

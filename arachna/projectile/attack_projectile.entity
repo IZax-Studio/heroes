@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_ArachnaAttack"
+
+	speed="1200"
+	gravity="0"
+	modelscale="1"
+	model="/heroes/arachna/projectile/effects/arrow.mdf"
+
+	impacteffect="effects/impact.effect"
+	traileffect="/heroes/emerald_warden/alt6/projectile/effects/arrow_trail.effect"
+>
+	<altavatar key="Hero_Arachna.Alt4"
+		impacteffect="../alt4/projectile/effects/impact.effect"
+		traileffect="../alt4/projectile/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Arachna.Alt5"
+		model="/shared/models/invis.mdf"
+		impacteffect="../alt5/projectile/effects/impact.effect"
+		traileffect="../alt5/projectile/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Arachna.Alt7"
+		model="/shared/models/invis.mdf"
+		impacteffect="../alt7/projectile/effects/impact.effect"
+		traileffect="../alt7/projectile/effects/trail.effect"
+	/>
+</projectile>

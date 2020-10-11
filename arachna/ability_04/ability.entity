@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Arachna4"
+	
+	icon="icon4.tga"
+	passiveeffect=""
+	statuseffecttooltip="State_Arachna_Ability4"
+	
+	anim="ability_4"
+	casttime="800"
+	castactiontime="300"
+	casteffecttype="Physical"
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_entity"
+	targetscheme="enemy_units"
+	manacost="125,150,175"
+	cooldowntime="70000,50000,30000"
+	range="600"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+
+	targetpriorities="enemy_heroes"
+>
+	<onimpact>
+		<spawnprojectile name="Projectile_Arachna_Ability4" source="source_attack_offset" target="target_entity" proxy="target_entity" noresponse="true" />
+	</onimpact>
+	
+	<modifier key="ult_boost" modpriority="100"
+		targetmaterial="/shared/materials/area_cast_indicator_pointed.material"
+		showrangeandradiusintooltip="true"
+		range="900"
+		cooldowntime="35000,25000,15000"
+	>
+		<onimpact>
+			<spawnprojectile name="Projectile_Arachna_Ability4" source="source_attack_offset" target="target_entity" proxy="target_entity" noresponse="true" />
+		</onimpact>
+	</modifier>
+
+	<altavatar key="Hero_Arachna.Alt2" modpriority="1"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Arachna.Alt7" modpriority="1"
+	novoiceresponse="true"
+	>
+	</altavatar>
+
+</ability>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" useentityscale="true" space="entity" scale="1.5">
+			
+			<groundsprite
+				life="4000"
+				material="trueshot.material"
+				startsize="37"
+				midsize="37"
+				endsize="37"
+				startcolor=".5 .5 .5"
+				midcolor="1 1 1"
+				endcolor=".5 .5 .5"
+				loop="1"
+				yawspeed="-22.5"
+			/>
+		
+			<groundsprite
+				life="4000"
+				material="trueshot.material"
+				startsize="20"
+				midsize="37"
+				endsize="20"
+				startcolor=".2"
+				midcolor=".2 .5 1"
+				endcolor=".2"
+				loop="1"
+				yaw="0"
+				yawspeed="22.5"
+			/>
+
+		</particlesystem>
+	</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<waitfordeath instance="instance0" />
+</thread>
+</effect>
