@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" >
+		
+			<simpleemitter
+				bone="Bip01 Spine"
+				spawnrate="50"
+				offsetsphere="25"
+				minparticlelife="200"
+				maxparticlelife="400"
+				material="/shared/effects/materials/star_03.material"
+				direction="-1 0 0"
+				angle="0"
+				speed="200"
+				drag="0.02"
+				gravity="-20"
+			>
+				<particle
+					maxangle="360"
+					startalpha="0"
+					endalpha="1"
+					midalphapos=".5"
+					minsize="10"
+					maxsize="15"
+					startframe="0"
+					endframe="1"
+					startcolor="1 1 1"
+					midcolor="1 1 1"
+					endcolor="0"
+					midcolorpos=".65"
+				/>
+			</simpleemitter>
+			
+			<twopointtrailemitter
+				bone_a="Bone010"
+				bone_b="Bone003"
+				particlelife="200"
+				direction="0 -1 0"
+				angle="0"
+				speed="400"
+				spawnrate="30"
+				material="/shared/effects/materials/calamity_fire_scrolling_trail_blend_2.material"
+				texposscale="0"
+				texstretchscale="1.5"
+				attachtoemitter="1"
+			>
+				<particle
+					startsize="20"
+					midsize="50"
+					endsize="120"
+					midsizepos=".2"
+					startalpha="0"
+					midalpha="1"
+					endalpha="1"
+					midalphapos=".3"
+				/>
+			</twopointtrailemitter>
+			
+
+					<model
+						anim="idle"
+						model="/heroes/tundra/alt2/ability_02/pet_flying/model.mdf"
+						material="/shared/effects/materials/shell.material"
+						color="1 1 .9"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".6"
+						scale="1.3"
+					/>
+					
+					
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

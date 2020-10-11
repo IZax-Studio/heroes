@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0" >
+			<sound
+			    forcestereo="true"
+				delay="300"
+				sample="../sounds/bounce_%.wav"
+				linearfalloff="true"
+				falloffstart="300" 
+				falloffend="850" 
+				volume="1"
+			/>
+			
+			<controller
+				delay="300"
+				life="1000"
+			>
+				<model
+					life="450"
+					model="ball/model.mdf"
+					anim="bounce"
+					scale="1.5"
+				>
+					<billboard
+						timenudge="1"
+						bone="Box001"
+						material="/shared/effects/materials/whitedot_blend.material"
+						color="0 .5 1"
+						size="100"
+					/>
+					<simpleemitter
+						bone="Box001"
+						spawnrate="100"
+						offsetsphere="5"
+						minparticlelife="200"
+						maxparticlelife="375"
+						material="/shared/effects/materials/smoke_particle.material"
+						maxspeed="100"
+						gravity="-5"
+						direction="0 0 1"
+						angle="30"
+						drag="0.02"
+					>
+						<particle
+							maxangle="360"
+							minanglespeed="-200"
+							maxanglespeed="200"
+							startalpha="0"
+							midalpha="1"
+							endalpha="0"
+							midalphapos=".2"
+							minsize="40"
+							maxsize="60"
+							midsizepos=".1"
+							startcolor=".8 .9 1"
+							endcolor="0"
+						/>
+					</simpleemitter>
+					<trailemitter
+						bone="Box001"
+						spawnrate="30"
+						particlelife="200"
+						attachtoemitter="true"
+						material="/shared/effects/materials/star_03.material"
+						texposscale="0"
+						texstretchscale="1.5"
+					>
+						<particle
+							startalpha="0"
+							midalpha="1"
+							endalpha="1"
+							midalphapos=".2"
+							startsize="0"
+							midsize="15"
+							endsize="30"
+							midsizepos=".1"
+						/>
+					</trailemitter>
+				</model>
+			</controller>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
