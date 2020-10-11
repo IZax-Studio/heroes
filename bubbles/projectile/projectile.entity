@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Bubbles_Attack"
+
+	speed="900"
+	gravity="-500"
+
+	modelscale="3"
+	model="/shared/models/invis.mdf"
+
+	impacteffect="impact.effect"
+	traileffect="/heroes/bubbles/alt15/projectile/passive.effect"
+
+
+>
+	<altavatar key="Hero_Bubbles.Alt4" 
+		model="/shared/models/invis.mdf"
+
+		impacteffect="/heroes/bubbles/alt4/projectile/impact.effect"
+		traileffect="/heroes/bubbles/alt4/projectile/passive.effect"
+	/>
+	
+	<altavatar key="Hero_Bubbles.Alt9" 
+		model="/shared/models/invis.mdf"
+
+		impacteffect="/heroes/bubbles/alt9/projectile/impact.effect"
+		traileffect="/heroes/bubbles/alt9/projectile/passive.effect"
+	/>
+
+	<altavatar key="Hero_Bubbles.Alt10" 
+		model="/shared/models/invis.mdf"
+
+		impacteffect="/heroes/bubbles/alt10/projectile/impact.effect"
+		traileffect="/heroes/bubbles/alt10/projectile/passive.effect"
+	/>
+	
+	<altavatar key="Hero_Bubbles.Alt11"
+		impacteffect="/heroes/bubbles/alt11/projectile/effects/impact.effect"
+		traileffect="/heroes/bubbles/alt11/projectile/effects/passive.effect"
+	/>
+	
+	<altavatar key="Hero_Bubbles.Alt12"
+		model="/heroes/bubbles/alt12/projectile/projectile.mdf"
+		impacteffect="/heroes/bubbles/alt12/projectile/impact.effect"
+		traileffect="/heroes/bubbles/alt12/projectile/passive.effect"
+	>
+		<modifier key="Night_Set_BubblesAlt12"
+			model="/heroes/bubbles/alt13/projectile/projectile.mdf"
+			impacteffect="/heroes/bubbles/alt13/projectile/impact.effect"
+			traileffect="/heroes/bubbles/alt13/projectile/passive.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Bubbles.Alt13"
+		model="/heroes/bubbles/alt13/projectile/projectile.mdf"
+		impacteffect="/heroes/bubbles/alt13/projectile/impact.effect"
+		traileffect="/heroes/bubbles/alt13/projectile/passive.effect"
+	>
+		<modifier key="Night_Set_BubblesAlt13" 
+			model="/heroes/bubbles/alt12/projectile/projectile.mdf"
+			impacteffect="/heroes/bubbles/alt12/projectile/impact.effect"
+			traileffect="/heroes/bubbles/alt12/projectile/passive.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Bubbles.Alt14"
+		model="/shared/models/invis.mdf"
+
+		impacteffect="/heroes/bubbles/alt14/projectile/impact.effect"
+		traileffect="/heroes/bubbles/alt14/projectile/passive.effect"
+	/>
+	
+	<altavatar key="Hero_Bubbles.Alt15"
+		model="/shared/models/invis.mdf"
+
+		impacteffect="/heroes/bubbles/alt15/projectile/impact.effect"
+		traileffect="/heroes/bubbles/alt15/projectile/passive.effect"
+	/>
+	
+	<altavatar key="Hero_Bubbles.trophy_skin02"
+		model="/shared/models/invis.mdf"
+	
+		impacteffect="/heroes/bubbles/trophy_skin/projectile/impact02.effect"
+		traileffect="/heroes/bubbles/trophy_skin/projectile/passive02.effect"
+	/>
+	
+	<altavatar key="Hero_Bubbles.trophy_skin03"
+		model="/shared/models/invis.mdf"
+	
+		impacteffect="/heroes/bubbles/trophy_skin/projectile/impact03.effect"
+		traileffect="/heroes/bubbles/trophy_skin/projectile/passive03.effect"
+	/>
+</projectile>
+ 

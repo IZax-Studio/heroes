@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Bubbles2"
+
+	icon="icon3.tga"
+
+	anim="ability_2"
+	casttime="600"
+	castactiontime="100"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	targetradius="400"
+
+	actiontype="self_position"
+	targetscheme="enemy_units"
+
+	casteffecttype="Magic"
+	casteffect="effects/cast.effect"
+	manacost="100,110,120,130"
+	cooldowntime="18000,16000,14000,12000"
+
+	dynamicprecache="effects/aoe.effect"
+>
+	<onimpact>
+		<areaofeffect
+			radius="400"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+		>
+			<applystate name="State_Bubbles_Ability2" duration="750,1500,2250,3000" />
+			<damage effecttype="Magic" amount="100,160,220,280" />
+		</areaofeffect>
+
+		<!-- Dynamic visual effects -->
+		<getscriptvalue name="aoe_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" source="source_position" target="source_position" occlude="true" />
+		<hasavatarkey name="Hero_Bubbles.Alt2">
+			<playeffect effect="../alt2/ability_02/effects/aoe.effect" source="source_position" target="source_position" occlude="true" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Bubbles.Alt5">
+				<playeffect effect="../alt5/ability_02/effects/aoe.effect" source="source_position" target="source_position" occlude="true" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Bubbles.Alt6">
+					<playeffect effect="../alt6/ability_02/effects/aoe.effect" source="source_position" target="source_position" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Bubbles.Alt7">
+						<playeffect effect="../alt7/ability_02/effects/aoe.effect" source="source_position" target="source_position" occlude="true" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Bubbles.Alt8">
+							<playeffect effect="../alt8/ability_02/effects/aoe.effect" source="source_position" target="source_position" occlude="true" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Bubbles.Alt9">
+								<playeffect effect="../alt9/ability_02/effects/aoe.effect" source="source_position" target="source_position" occlude="true" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Bubbles.Alt10">
+									<playeffect effect="../alt10/ability_02/effects/aoe.effect" source="source_position" target="source_position" occlude="true" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Bubbles.Alt11">
+										<playeffect effect="../alt11/ability_02/effects/aoe.effect" source="source_position" target="source_position" occlude="true" />
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_Bubbles.Alt12">
+											<hasmodifier name="Night_Set_BubblesAlt12" >
+												<playeffect effect="../alt13/ability_02/effects/aoe.effect" source="source_position" target="source_position" occlude="true" />
+											</hasmodifier>
+											<else>
+												<playeffect effect="../alt12/ability_02/effects/aoe.effect" source="source_position" target="source_position" occlude="true" />
+											</else>
+										</hasavatarkey>
+										<else>
+											<hasavatarkey name="Hero_Bubbles.Alt13">
+												<hasmodifier name="Night_Set_BubblesAlt13" >
+													<playeffect effect="../alt12/ability_02/effects/aoe.effect" source="source_position" target="source_position" occlude="true" />
+												</hasmodifier>
+												<else>
+													<playeffect effect="../alt13/ability_02/effects/aoe.effect" source="source_position" target="source_position" occlude="true" />
+												</else>
+											</hasavatarkey>
+											<else>
+												<hasavatarkey name="Hero_Bubbles.Alt14">
+													<playeffect effect="../alt14/ability_02/effects/aoe.effect" source="source_position" target="source_position" occlude="true" />
+												</hasavatarkey>
+												<else>
+													<hasavatarkey name="Hero_Bubbles.Alt15">
+														<playeffect effect="../alt15/ability_02/effects/aoe.effect" source="source_position" target="source_position" occlude="true" />
+													</hasavatarkey>
+													<else>
+														<hasavatarkey name="Hero_Bubbles.trophy_skin02">
+															<playeffect effect="../trophy_skin/ability_02/effects/aoe02.effect" source="source_position" target="source_position" occlude="true" />
+														</hasavatarkey>
+														<else>
+															<hasavatarkey name="Hero_Bubbles.trophy_skin03">
+																<playeffect effect="../trophy_skin/ability_02/effects/aoe03.effect" source="source_position" target="source_position" occlude="true" />
+															</hasavatarkey>
+															<else>
+																<playeffect effect="effects/aoe.effect" source="source_position" target="source_position" occlude="true" />
+															</else>
+														</else>
+													</else>
+												</else>
+											</else>
+										</else>
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+	</onimpact>
+
+	<altavatar key="Hero_Bubbles.Alt2" modpriority="1"
+		casteffect="/heroes/bubbles/alt2/ability_02/effects/cast.effect"
+		icon="/heroes/bubbles/alt2/ability_02/icon.tga"
+	/>
+
+	<altavatar key="Hero_Bubbles.Alt5">
+		<modifier key="Alt5_Effects" modpriority="1"
+			casteffect="/heroes/bubbles/alt5/ability_02/effects/cast.effect"
+			icon="/heroes/bubbles/alt5/ability_02/icon.tga"
+		/>
+	</altavatar>
+
+	<altavatar key="Hero_Bubbles.Alt9" modpriority="90"
+		casteffect=""
+	/>
+
+	<altavatar key="Hero_Bubbles.Alt10" modpriority="90"
+		casteffect="/heroes/bubbles/alt10/ability_02/effects/cast.effect"
+	/>
+
+	<altavatar key="Hero_Bubbles.Alt11" modpriority="90"
+		casteffect=""
+	/>
+
+	<altavatar key="Hero_Bubbles.Alt12" modpriority="90"
+	    icon="/heroes/bubbles/alt12/ability_02/icon.tga"
+		casteffect="../alt12/ability_02/effects/cast.effect"
+	>
+		<modifier key="Night_Set_BubblesAlt12"
+		    icon="/heroes/bubbles/alt13/ability_02/icon.tga"
+			casteffect="../alt13/ability_02/effects/cast.effect"
+		/>
+	</altavatar>
+
+	<altavatar key="Hero_Bubbles.Alt13" modpriority="90"
+	    icon="/heroes/bubbles/alt13/ability_02/icon.tga"
+		casteffect="../alt13/ability_02/effects/cast.effect"
+	>
+		<modifier key="Night_Set_BubblesAlt13"
+		    icon="/heroes/bubbles/alt12/ability_02/icon.tga"
+			casteffect="../alt12/ability_02/effects/cast.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Bubbles.Alt14" modpriority="90"
+		casteffect="/heroes/bubbles/alt14/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Bubbles.Alt15" modpriority="90"
+		casteffect="/heroes/bubbles/alt15/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Bubbles.trophy_skin02" modpriority="90"
+		casteffect="/heroes/bubbles/trophy_skin/ability_02/effects/cast02.effect"
+	/>
+	
+	<altavatar key="Hero_Bubbles.trophy_skin03" modpriority="90"
+		casteffect="/heroes/bubbles/trophy_skin/ability_02/effects/cast03.effect"
+	/>
+
+</ability>

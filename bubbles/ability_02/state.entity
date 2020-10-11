@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Bubbles_Ability2"
+
+	icon="icon3.tga"
+	passiveeffect="effects/state.effect"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	silenced="true"
+	negativeeffect="silenced"
+>
+
+	<altavatar key="Hero_Bubbles.Alt2" modpriority="1"
+		passiveeffect="/heroes/bubbles/alt2/ability_02/effects/state.effect"
+		icon="/heroes/bubbles/alt2/ability_02/icon.tga"
+	>
+
+	</altavatar>
+	
+	<altavatar key="Hero_Bubbles.Alt5" >
+		<modifier key="Alt5_Effects" modpriority="1"
+			passiveeffect="/heroes/bubbles/alt5/ability_02/effects/state.effect"
+			icon="/heroes/bubbles/alt5/ability_02/icon.tga"
+		>
+
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Bubbles.Alt8" 
+			passiveeffect="/heroes/bubbles/alt8/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Bubbles.Alt9" 
+			passiveeffect="/heroes/bubbles/alt9/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Bubbles.Alt10" 
+			passiveeffect="/heroes/bubbles/alt10/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Bubbles.Alt11" 
+		passiveeffect="/heroes/bubbles/alt11/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Bubbles.Alt12" 
+	    icon="/heroes/bubbles/alt12/ability_02/icon.tga"
+		passiveeffect="/heroes/bubbles/alt12/ability_02/effects/state.effect"
+	>
+		<modifier key="Night_Set_BubblesAlt12"
+		    icon="/heroes/bubbles/alt13/ability_02/icon.tga"
+			passiveeffect="/heroes/bubbles/alt13/ability_02/effects/state.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Bubbles.Alt13" 
+	    icon="/heroes/bubbles/alt13/ability_02/icon.tga"
+		passiveeffect="/heroes/bubbles/alt13/ability_02/effects/state.effect"
+	>
+		<modifier key="Night_Set_BubblesAlt13"
+		    icon="/heroes/bubbles/alt12/ability_02/icon.tga"
+			passiveeffect="/heroes/bubbles/alt12/ability_02/effects/state.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Bubbles.Alt14" 
+		passiveeffect="/heroes/bubbles/alt14/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Bubbles.Alt15" 
+		passiveeffect="/heroes/bubbles/alt15/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Bubbles.trophy_skin02" 
+		passiveeffect="/heroes/bubbles/trophy_skin/ability_02/effects/state02.effect"
+	/>
+	
+	<altavatar key="Hero_Bubbles.trophy_skin03" 
+		passiveeffect="/heroes/bubbles/trophy_skin/ability_02/effects/state03.effect"
+	/>
+	
+</state>

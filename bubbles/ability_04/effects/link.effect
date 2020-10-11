@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2200"
+				volume=".30"
+				sample="../sounds/impact_%.wav"
+			/>
+		
+			<template name="link">
+				<beam
+					expirelife="500"
+					owner_a="source"
+					owner_b="target"
+					bone_a="{bone1}"
+					size="30"
+					color=".93 .50 .93"
+					startalpha="1 1 1"
+					endalpha="0"
+					framespeed="2"
+					material="/shared/effects/materials/bow_glow_03.material"
+				>
+				</beam>
+
+				<billboard
+					bone="{bone2}"
+					material="/shared/effects/materials/whitedot.material"
+					size="40"
+					startcolor=".93 .50 .93"
+					endcolor="0"
+					expirelife="200"
+					depthbias="-40"
+				/>
+
+				<billboard
+					bone="{bone2}"
+					material="/shared/effects/materials/whitedot.material"
+					size="40"
+					startcolor=".93 .50 .93"
+					endcolor="0"
+					expirelife="200"			
+				 	depthbias="-40"
+				/>
+
+				
+				<trackeremitter
+				bone="{bone1}"
+				timenudge="1200"
+				spawnrate="5"
+				owner="source"
+				targetbone="_bone_lefthand"
+				targetowner="target"
+				tracktype="lerp"
+				trackspeed="1"
+				drag="0"
+				particlelife="1000"
+				gravity="0"
+				speed="1750"
+				acceleration="0"
+				expirelife="500"
+			>
+				<particle>
+					<simpleemitter
+						depthbias="-55"
+						spawnrate="35"
+						particlelife="400"
+						offsetsphere="0"
+						minspeed="10"
+						maxspeed="100"
+						material="/shared/effects/materials/spark_12.material"
+						gravity="20"
+					>
+						<particle
+							minanglespeed="-100"
+							maxanglespeed="100"
+							minangle="-60"
+							maxangle="60"
+							startcolor="0 0 0"
+							midcolor=".93 .50 .93"
+							endcolor="0 0 0"
+							size="30"
+							startalpha="0"
+							midalpha="1"
+							endalpha="0"
+							minscale=".5"
+							maxscale="1"
+						/>
+						<particle
+							minanglespeed="-100"
+							maxanglespeed="100"
+							minangle="-60"
+							maxangle="60"
+							startcolor="0 0 0"
+							midcolor=".93 .50 .93"
+							endcolor="0 0 0"
+							size="30"
+							startalpha="0"
+							midalpha="1"
+							endalpha="0"
+							minscale=".5"
+							maxscale="1"
+						/>
+					</simpleemitter>
+				</particle>
+			</trackeremitter>
+
+			</template>
+			
+			<instance name="link" bone1="_bone_lefthand" bone2="_bone_lefthand" size="30" startframe=".2" framespeed="3"/>
+			<instance name="link" bone1="_bone_righthand" bone2="_bone_righthand" size="32" startframe=".5" framespeed="4.5"/>
+			<instance name="link" bone1="_bone_leftfoot" bone2="_bone_leftfoot" size="32" startframe=".5" framespeed="4.5"/>
+			<instance name="link" bone1="_bone_rightfoot" bone2="_bone_rightfoot" size="32" startframe=".5" framespeed="4.5"/>
+
+		</particlesystem>
+
+	</definitions>
+	
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+
+</effect>
