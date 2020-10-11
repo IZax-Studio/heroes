@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Armadon_Ability4_SotM"
+	
+	icon="icon4.tga"
+	passiveeffect=""
+	
+	effecttype=""
+	allowtransfer="false"
+	
+	modifierkey="Armadon_R_SotM"
+	
+	stunneddurationmultiplier="-1"
+    debuffdurationmultiplier="-1"
+>
+	
+</state>

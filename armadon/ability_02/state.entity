@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Armadon_Ability2"
+	
+	icon="icon2.tga"
+	passiveeffect=""
+	effecttype=""
+	maxcharges="6"
+>
+	<onframe />
+
+	<oninflict>
+		<addcharges count="1" timed="true" />
+		<damage effecttype="Physical Splash" amount="20,40,60,80" target="target_entity" />
+	</oninflict>
+
+
+	<onrefresh>
+		<evaluate a="25" b="charges" op="mult" />
+		<setvar0 a="result" b="20,40,60,80" op="add" />
+		<damage effecttype="Physical Splash" amount="1" b="var0" op="mult" />
+		<addcharges count="1" timed="true" />
+	</onrefresh>
+	
+	<modifier key="Armadon_Ability4_1" modpriority="100"
+	>
+		<onrefresh>
+			<evaluate a="29" b="charges" op="mult" />
+			<setvar0 a="result" b="20,40,60,80" op="add" />
+			<damage effecttype="Physical Splash" amount="1" b="var0" op="mult" />
+			<addcharges count="1" timed="true" />
+		</onrefresh>
+	</modifier>
+	
+	<modifier key="Armadon_Ability4_2" modpriority="100"
+	>
+		<onrefresh>
+			<evaluate a="33" b="charges" op="mult" />
+			<setvar0 a="result" b="20,40,60,80" op="add" />
+			<damage effecttype="Physical Splash" amount="1" b="var0" op="mult" />
+			<addcharges count="1" timed="true" />
+		</onrefresh>
+	</modifier>
+	
+	<modifier key="Armadon_Ability4_3" modpriority="100"
+	>
+		<onrefresh>
+			<evaluate a="37" b="charges" op="mult" />
+			<setvar0 a="result" b="20,40,60,80" op="add" />
+			<damage effecttype="Physical Splash" amount="1" b="var0" op="mult" />
+			<addcharges count="1" timed="true" />
+		</onrefresh>
+	</modifier>
+	
+	<altavatar key="Hero_Armadon.Alt8" modpriority="1"
+		icon="../alt8/ability_02/icon.tga"
+	/>
+</state>
