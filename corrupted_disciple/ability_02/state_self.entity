@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_CorruptedDisciple_Ability2_Self"
+
+	icon="icon2.tga"
+	effecttype=""
+	
+	damagepercharge="1.3,2.6,3.9,5.2"
+	impactinterval="200"
+
+	maxcharges="50"
+	passiveeffect="effects/state_self.effect"
+
+>
+	<oninflict>
+		<addcharges count="1" />
+	</oninflict>
+	
+	<onimpact>
+		<addcharges count="1" />
+		<compare a="charges" b="50" op="eq">
+			<expire />
+		</compare>
+	</onimpact>
+	
+	<onexpired>
+		<expire entity="this_proxy_entity" />
+		<setproxy entity="this_entity" target="" />
+		<applystate name="State_CorruptedDisciple_Ability2_Self_Damage" target="target_entity" duration="13000" pushentity="true" />
+		<setcharges entity="stack_entity" a="charges" />
+		<expirestate name="State_CorruptedDisciple_Ability2_Check" target="target_entity" />
+	</onexpired>
+	
+	<altavatar key="Hero_CorruptedDisciple.Alt3" modpriority="1"
+		passiveeffect="../alt3/ability_02/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_CorruptedDisciple.Alt4" modpriority="1"
+		passiveeffect="../alt4/ability_02/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_CorruptedDisciple.Alt5" modpriority="1"
+		passiveeffect="../alt5/ability_02/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_CorruptedDisciple.Alt6" modpriority="1"
+		passiveeffect="../alt6/ability_02/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_CorruptedDisciple.Alt7" modpriority="1"
+        icon="../alt7/ability_02/icon.tga"
+		passiveeffect="../alt7/ability_02/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_CorruptedDisciple.Alt8" modpriority="1"
+        icon="../alt8/ability_02/icon.tga"	
+		passiveeffect="../alt8/ability_02/effects/state_self.effect"
+	/>
+</state>

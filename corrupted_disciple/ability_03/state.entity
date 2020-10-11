@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_CorruptedDisciple_Ability3"
+
+	icon="icon3.tga"
+	
+	movespeedslowstart="0.8"
+	movespeedslowend="0.0"
+	passiveeffect="effects/state.effect"
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+>
+	<onframe />
+	
+	<altavatar key="Hero_CorruptedDisciple.Alt4"
+		passiveeffect="../alt4/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_CorruptedDisciple.Alt5"
+		passiveeffect="../alt5/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_CorruptedDisciple.Alt6"
+		passiveeffect="../alt6/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_CorruptedDisciple.Alt7"
+	    icon="../alt7/ability_03/icon.tga"
+		passiveeffect="../alt7/ability_03/effects/state.effect"
+	/>
+	<altavatar key="Hero_CorruptedDisciple.Alt8"
+	    icon="../alt8/ability_03/icon.tga"
+		passiveeffect="../alt8/ability_03/effects/state.effect"
+	/>
+	
+</state>

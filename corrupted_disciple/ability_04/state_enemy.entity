@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_CorruptedDisciple_Ability4_Enemy"
+
+	icon="icon4.tga"
+	
+	armorpercharge="-1"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+>
+	<oninflict>
+		<addcharges count="1" />
+	</oninflict>
+	
+	<onrefresh>
+		<addcharges count="1" />
+	</onrefresh>
+	
+	<altavatar key="Hero_CorruptedDisciple.Alt7"
+        icon="../alt7/ability_04/icon.tga"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_CorruptedDisciple.Alt8"
+        icon="../alt8/ability_04/icon.tga"	
+	>
+	</altavatar>
+	
+</state>

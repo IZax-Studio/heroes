@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.25">
+			<!--
+			<skeletonemitter
+				spawnrate="300"
+				minparticlelife="100"
+				maxparticlelife="200"
+				material="/shared/effects/materials/femme_lightning_01.material"
+				inheritvelocity="1"
+				limitinheritvelocity="500"
+				depthbias="-10"
+			>
+				<particle
+					maxangle="360"
+					size="20"
+					startcolor="0"
+					midcolor="1 .25 .75"
+					endcolor="0"
+					framespeed="3"
+				/>
+				<particle
+					maxangle="360"
+					size="20"
+					startcolor="0"
+					midcolor="1"
+					endcolor="0"
+					framespeed="3"
+				/>
+			</skeletonemitter>
+			-->
+			
+			
+			<template name="lightning_stuff" >
+				<twopointemitter
+					bone_a="_bone_centerofchest"
+					bone_b="_bone_centerofchest"
+					spawnrate="6"
+					offsetsphere="25"
+					particlelife="1000"
+					inheritvelocity="1"
+					limitinheritvelocity="500"
+					depthbias="-10"
+					minspeed="300"
+					maxspeed="700"
+				>
+					<particle>
+						<trailemitter
+							minlife="75"
+							maxlife="100"
+							spawnrate="50"
+							minparticlelife="200"
+							maxparticlelife="300"
+							offsetsphere="15"
+							mintexpostime="35"
+							maxtexpostime="65"
+							texposscale="1"
+							texstretchscale="0"
+							material="/shared/effects/materials/femme_lightning_01_trail_2d.material"
+							minparticlescale="2"
+							maxparticlescale="3"
+						>
+							<particle
+								startcolor="2"
+								midcolor=".5 .5 1"
+								endcolor="0 0 0"
+								minsize="10"
+								maxsize="20"
+								startscale="1"
+								endscale=".75"
+								midcolorpos=".5"
+								midscalepos=".4"
+							/>
+							<particle
+								startcolor="2"
+								midcolor=".5 .5 1"
+								endcolor="0 0 0"
+								minsize="10"
+								maxsize="20"
+								startscale="1"
+								endscale=".75"
+								midcolorpos=".5"
+								midscalepos=".4"
+							/>
+						</trailemitter>
+					</particle>
+				</twopointemitter>
+			</template>
+			
+			<instance name="lightning_stuff" a="Bip01 L Upperarm" b="Bip01 L Hand" />
+			<instance name="lightning_stuff" a="Bip01 R Upperarm" b="Bip01 R Hand" />
+			<instance name="lightning_stuff" a="Bip01 Neck" b="Bip01 L UpperArm" />
+			<instance name="lightning_stuff" a="Bip01 Neck" b="Bip01 R UpperArm" />
+			<instance name="lightning_stuff" a="Bip01 Pelvis" b="Bip01 R Foot" />
+			<instance name="lightning_stuff" a="Bip01 Pelvis" b="Bip01 L Foot" />
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+<!-- [min|max][start|mid|end]property[speed][pos] -->

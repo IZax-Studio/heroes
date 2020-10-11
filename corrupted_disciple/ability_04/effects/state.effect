@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+
+		<particlesystem name="bridge" space="world" scale="1">
+
+			<sound
+				soundloop="true"
+				fadein="300"
+				fadeout="500"
+				volume=".1" 
+				sample="../sounds/state.wav"
+				linearfalloff="true"
+				falloffstart="200"
+				falloffend="1400"
+			/>
+
+			<simpleemitter
+				delay="500"
+				spawnrate="100"
+				minparticlelife="1900"
+				maxparticlelife="2200"
+			
+				minspeed="5"
+				maxspeed="15"
+				drag="0.07"
+				mintimenudge="0"
+				maxtimenudge="1000"				
+				material="/shared/effects/materials/smoke_particle.material"
+				offsetsphere="30 30 0"
+				position="0 0 300"
+				inheritvelocity=".5"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					startcolor=".6"
+					endcolor=".3"
+					startsize="150"
+					endsize="200"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+					midalphapos=".075"
+					startanchor="0"
+					endanchor="1"					
+				 />	
+			</simpleemitter>	
+		
+					<simpleemitter
+						delay="350"
+						life="500"
+						loop="true"
+						spawnrate="220"			
+						minparticlelife="5500"
+						maxparticlelife="5750"
+						material="/shared/effects/materials/rain.material"
+						offsetsphere="60 60 60"
+						depthbias="-75"
+						position="0 0 250"
+						direction="0 0 -1"
+						gravity="50"
+						speed="50"
+						turn="1"
+					>
+						<particle 
+						
+						
+							startcolor=".4"
+							
+							
+							maxanglespeed="60"
+							startsize="50"
+							endsize="85"
+							height="8"
+							width="4"
+							startalpha=".6"
+							endalpha="0"
+						/>
+					</simpleemitter>
+
+
+		
+
+			
+		
+			<terrainemitter
+				delay="350"
+				spawnrate="100"
+				startrange="100"
+				endrange="100"
+				particlelife="2000"
+				position="0 0 0"
+			>
+				<particle>
+					<simpleemitter
+						count="1"
+						minparticlelife="160"
+						maxparticlelife="280"
+						spawnrate="640"
+						minspeed="5"
+						maxspeed="15"
+						gravity="5"
+						direction="0 0 1"
+						drag="0.05"
+						material="/shared/effects/materials/whitewater_02.material"
+						position="0 0 10"
+						depthbias="0"
+					>
+						<particle
+							minangle="0"
+							maxangle="360"
+							minanglespeed="-60"
+							maxanglespeed="60"
+							startsize="15"
+							endsize="45"
+							startcolor=".5"
+							endcolor="0"
+							startalpha=".1"
+							midalpha=".1"
+							endalpha="0"
+							minscale=".7"
+							maxscale="1.3"
+						/>
+					</simpleemitter>
+					
+					<simpleemitter	
+						delay="350"
+						count="1"
+						
+						minparticlelife="250"
+						maxparticlelife="350"			
+						position="0 0 20"
+						material="/shared/effects/materials/refract_ripples.material"
+					>
+						<particle
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							startparam="0.015"
+							endparam="0"
+							startsize="20"
+							endsize="50"
+							depthbias="-5"
+							lockup="true"
+							pitch="90"
+							minscale=".8"
+							maxscale="1.3"
+						/>
+					</simpleemitter>
+				</particle>
+			</terrainemitter>
+
+			<simpleemitter
+				delay="350"
+				count="2"
+				particlelife="500"
+				spawnrate="640"
+				gravity="-15"
+				direction="0 0 1"
+				drag="0.05"
+				material="/shared/effects/materials/whitewater_02.material"
+				offsetsphere="25 25 10"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-60"
+					maxanglespeed="60"
+					startsize="30"
+					endsize="75"
+					startcolor=".5"
+					endcolor="0"
+					startalpha=".1"
+					midalpha=".1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+		
+		
+		
+	
+		
+		
+		
+			<groundsprite
+				delay="350"
+				position="0 0 0"
+				expirelife="250"
+				material="/shared/effects/materials/black_spot.material"
+				size="60"				
+				color="1 1 1"
+				startalpha="1"
+				endalpha="0"
+			/>	
+		
+		
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="bridge" />
+		  
+		<waitfordeath instance="instance0" />
+		
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

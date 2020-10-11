@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" disable2dworld="true">
+	<definitions>
+	
+
+		<particlesystem name="system0" space="entity" scale="1">
+			
+			<groundsprite
+				size="60"
+				color="0 .5 1"
+				yawspeed="20"
+				material="/shared/effects/materials/cthulhu_thorns.material"
+			/>
+			
+			<groundsprite
+				life="1000"
+				loop="1"
+				startsize="0"
+				endsize="100"
+				startcolor="0 .5 1"
+				endcolor="0"
+				yawspeed="20"
+				material="/shared/effects/materials/corona_ground.material"
+			/>
+			
+			
+      </particlesystem>
+
+	  
+   </definitions>
+   <thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<spawnparticlesystem instance="instance2" particlesystem="system2" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<waitfordeath instance="instance2" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
+

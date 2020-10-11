@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_CorruptedDisciple_Attack"
+
+	speed="2500"
+	gravity="100"
+
+	modelscale="0.75"
+	model="effects/projectile.mdf"
+
+	traileffect="effects/trail.effect"
+	impacteffect="effects/impact.effect"
+>
+
+	<altavatar key="Hero_CorruptedDisciple.Alt3"
+		traileffect="../alt3/effects/trail.effect"
+		impacteffect="../alt3/effects/effects/impact.effect"
+	/>
+
+	<altavatar key="Hero_CorruptedDisciple.Alt4"
+		traileffect="../alt4/projectile/effects/trail.effect"
+		impacteffect="../alt4/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_CorruptedDisciple.Alt5"
+		traileffect="../alt5/projectile/effects/trail.effect"
+		impacteffect="../alt5/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_CorruptedDisciple.Alt6"
+		traileffect="../alt6/projectile/effects/trail.effect"
+		impacteffect="../alt6/projectile/effects/impact.effect"
+	/>
+
+	<altavatar key="Hero_CorruptedDisciple.Alt7"
+		traileffect="../alt7/projectile/effects/trail.effect"
+		impacteffect="../alt7/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_CorruptedDisciple.Alt8"
+		traileffect="../alt8/projectile/effects/trail.effect"
+		impacteffect="../alt8/projectile/effects/impact.effect"
+	/>
+
+</projectile>

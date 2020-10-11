@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Cthulhuphant_Ability4_Look"
+
+	icon="icon4.tga"
+	passiveeffect=""
+	
+	effecttype="StatusDebuff"
+	allowtransfer="false"
+	
+	maxcharges="40"
+>
+	<oninflict>
+		<setcharges a="40" />
+	</oninflict>
+	
+	<onframe>
+		<hasmodifier name="Cthulhuphant_Spirited" entity="target_entity" />
+		<else>
+			<applystate name="State_Cthulhuphant_Ability4_Slow" effecttype="Magic" continuous="true" timeout="frametime" />
+			<evaluate a="back_impact_angle" source="target_entity" target="source_entity" />
+			<compare a="result" b="110" op="ge">
+				<removecharge />
+				<compare a="charges" b="27" op="ge">
+					<applystate name="State_Cthulhuphant_Ability4_Insanity_Low" target="target_entity" continuous="true" />
+				</compare>
+				<else>
+					<compare a="charges" b="14" op="ge">
+						<expirestate name="State_Cthulhuphant_Ability4_Insanity_Low" target="target_entity" />
+						<applystate name="State_Cthulhuphant_Ability4_Insanity_Med" target="target_entity" continuous="true" />
+					</compare>
+					<else>
+						<compare a="charges" b="1" op="ge">
+							<expirestate name="State_Cthulhuphant_Ability4_Insanity_Med" target="target_entity"/>
+							<applystate name="State_Cthulhuphant_Ability4_Insanity_High" target="target_entity" continuous="true" />
+						</compare>
+					</else>
+				</else>
+				<compare a="charges" b="0" op="le">
+					<expirestate name="State_Cthulhuphant_Ability4_Insanity_High" target="target_entity" />
+					<applystate name="State_Cthulhuphant_Ability4" duration="2000,2500,3000" target="target_entity" effecttype="Magic" />
+					<expire />
+				</compare>
+			</compare>
+		</else>
+	</onframe>
+	
+	<onexpired>
+		<expirestate name="State_Cthulhuphant_Ability4_Insanity_Low" target="target_entity" />
+		<expirestate name="State_Cthulhuphant_Ability4_Insanity_Med" target="target_entity" />
+		<expirestate name="State_Cthulhuphant_Ability4_Insanity_High" target="target_entity" />
+	</onexpired>
+	
+	<modifier key="ult_boost" modpriority="100">
+		<onframe>
+			<hasmodifier name="Cthulhuphant_Spirited" entity="target_entity" />
+			<else>
+				<applystate name="State_Cthulhuphant_Ability4_Slow" effecttype="Magic" continuous="true" timeout="frametime" />
+				<removecharge />
+				<compare a="charges" b="27" op="ge">
+					<applystate name="State_Cthulhuphant_Ability4_Insanity_Low" target="target_entity" continuous="true" />
+				</compare>
+				<else>
+					<compare a="charges" b="14" op="ge">
+						<expirestate name="State_Cthulhuphant_Ability4_Insanity_Low" target="target_entity" />
+						<applystate name="State_Cthulhuphant_Ability4_Insanity_Med" target="target_entity" continuous="true" />
+					</compare>
+					<else>
+						<compare a="charges" b="1" op="ge">
+							<expirestate name="State_Cthulhuphant_Ability4_Insanity_Med" target="target_entity"/>
+							<applystate name="State_Cthulhuphant_Ability4_Insanity_High" target="target_entity" continuous="true" />
+						</compare>
+					</else>
+				</else>
+				<compare a="charges" b="0" op="le">
+					<expirestate name="State_Cthulhuphant_Ability4_Insanity_High" target="target_entity" />
+					<applystate name="State_Cthulhuphant_Ability4" duration="2000,2500,3000" target="target_entity" effecttype="Magic" />
+					<expire />
+				</compare>
+			</else>
+		</onframe>
+	</modifier>
+	
+	<modifier key="iamsheeped" modpriority="1000"
+		passiveeffect=""
+	/>
+	
+	<altavatar key="Hero_Cthulhuphant.Alt7" 
+	    icon="/heroes/cthulhuphant/alt7/ability_04/icon.tga"
+	>
+		<modifier key="Night_Set_CthulhuphantAlt7"
+			icon="/heroes/cthulhuphant/alt8/ability_04/icon.tga"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Cthulhuphant.Alt8" 
+	    icon="/heroes/cthulhuphant/alt8/ability_04/icon.tga"
+	>
+		<modifier key="Night_Set_CthulhuphantAlt8"
+			icon="/heroes/cthulhuphant/alt7/ability_04/icon.tga"
+		/> 
+	</altavatar>
+	
+	<altavatar key="Hero_Cthulhuphant.Alt9" 
+	    icon="/heroes/cthulhuphant/alt9/ability_04/icon.tga"
+	/>
+	
+	
+</state>

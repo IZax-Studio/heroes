@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+	<definitions>
+		
+		<particlesystem name="system0" space="world">
+
+		<billboard
+				bone="_bone_weapon3"	
+				material="/shared/effects/materials/whitedot.material"
+				color=".5 .5 1"
+				size="25"
+				position="0 0 0"
+			/>		
+			
+			<billboard
+				bone="_bone_weapon3"	
+				material="/shared/effects/materials/whitedot.material"
+				color=".5 .5 1"
+				size="25"
+				position="0 0 0"
+			/>
+
+			<billboard
+				bone="armor0_2"
+				size="120"
+				depthbias="-10"
+				color=".5 .5 1"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+			<simpleemitter
+				bone="armor0_2"
+				material="/shared/effects/materials/lightning_02.material"
+				spawnrate="50"
+				particlelife="300"
+				gravity="7"
+				speed="30"
+				inheritvelocity="0.21"
+				offsetsphere="30 30 30"
+				drag="0.1"
+			>
+				<particle
+				roll="180"
+				heightdistort="0.01"
+				turn="1"
+				anchor="1"
+				startcolor="0 0 0"
+				midcolor=".5 .5 1"
+				endcolor="0 0 0"
+				midcolorpos=".2"
+				startsize="50"
+				endsize="20">
+				</particle>
+			</simpleemitter>		
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/lightning_02.material"
+				spawnrate="20"
+				particlelife="300"
+				gravity="7"
+				speed="30"
+				inheritvelocity="0.21"
+				offsetsphere="10 10 10"
+				drag="0.1"
+			>
+				<particle
+				roll="180"
+				heightdistort="0.01"
+				turn="1"
+				anchor="1"
+				startcolor="0 0 0"
+				midcolor=".5 .5 1"
+				endcolor="0 0 0"
+				midcolorpos=".2"
+				startsize="50"
+				endsize="20">
+				</particle>
+			</simpleemitter>				
+				
+
+	
+
+			<template name="link">
+				<beam
+					bone_a="whip_2"
+					bone_b="whip_3"
+					size="30"
+					startcolor=".5 .5 1"
+					endcolor="0"
+					expirelife="200"
+					material="/shared/effects/materials/femme_lightning_10.material"
+					startframe="{startframe}"
+					framespeed="{framespeed}"
+				/>
+				<beam
+					bone_a="whip_3"
+					bone_b="whip_4"
+					size="30"
+					startcolor=".5 .5 1"
+					endcolor="0"
+					expirelife="200"
+					material="/shared/effects/materials/femme_lightning_10.material"
+					startframe="{startframe}"
+					framespeed="{framespeed}"
+				/>				
+				<beam
+					bone_a="whip_4"
+					bone_b="whip_5"
+					size="30"
+					startcolor=".5 .5 1"
+					endcolor="0"
+					expirelife="200"
+					material="/shared/effects/materials/femme_lightning_10.material"
+					startframe="{startframe}"
+					framespeed="{framespeed}"
+				/>				
+				<beam
+					bone_a="whip_5"
+					bone_b="whip_6"
+					size="30"
+					startcolor=".5 .5 1"
+					endcolor="0"
+					expirelife="200"
+					material="/shared/effects/materials/femme_lightning_10.material"
+					startframe="{startframe}"
+					framespeed="{framespeed}"
+				/>				
+				
+				<beam
+					bone_a="whip_6"
+					bone_b="whip_7"
+					size="30"
+					startcolor=".5 .5 1"
+					endcolor="0"
+					expirelife="200"
+					material="/shared/effects/materials/femme_lightning_10.material"
+					startframe="{startframe}"
+					framespeed="{framespeed}"
+				/>
+				
+				
+				<beam
+					bone_a="whip_2"
+					bone_b="whip_3"
+					size="15"
+					startcolor=".5 .5 1"
+					endcolor="0"
+					expirelife="200"
+					material="/shared/effects/materials/bow_glow_03.material"
+					startframe="{startframe}"
+					framespeed="{framespeed}"
+				/>
+				<beam
+					bone_a="whip_3"
+					bone_b="whip_4"
+					size="15"
+					startcolor=".5 .5 1"
+					endcolor="0"
+					expirelife="200"
+					material="/shared/effects/materials/bow_glow_03.material"
+					startframe="{startframe}"
+					framespeed="{framespeed}"
+				/>				
+				<beam
+					bone_a="whip_4"
+					bone_b="whip_5"
+					size="15"
+					startcolor=".5 .5 1"
+					endcolor="0"
+					expirelife="200"
+					material="/shared/effects/materials/bow_glow_03.material"
+					startframe="{startframe}"
+					framespeed="{framespeed}"
+				/>				
+				<beam
+					bone_a="whip_5"
+					bone_b="whip_6"
+					size="3"
+					startcolor=".5 .5 1"
+					endcolor="0"
+					expirelife="200"
+					material="/shared/effects/materials/bow_glow_03.material"
+					startframe="{startframe}"
+					framespeed="{framespeed}"
+				/>					
+				
+				<beam
+					bone_a="whip_6"
+					bone_b="whip_7"
+					size="3"
+					startcolor=".5 .5 1"
+					endcolor="0"
+					expirelife="200"
+					material="/shared/effects/materials/bow_glow_03.material"
+					startframe="{startframe}"
+					framespeed="{framespeed}"
+				/>				
+			</template>
+			
+			<instance name="link" bone1="_bone_fx_01" bone2="_bone_fx_04" startframe=".2" framespeed="3"/>
+			<instance name="link" bone1="_bone_fx_07" bone2="_bone_fx_10" startframe=".5" framespeed="4.5"/>
+
+		
+			
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+
