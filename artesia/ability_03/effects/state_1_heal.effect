@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="cyclone" deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1">
+
+			<model
+				expirelife="250"
+				bone="_bone_center"
+				model="/heroes/andromeda/ability_03/effects/orbit.mdf"
+				anim="idle"
+				scale="1.15"
+				roll="45"
+				yaw="80"
+				position="0 0 40"
+				rollspeed="-360"
+			>
+				<model
+					bone="_bone_fx"
+					startcolor=".75 2 1.25"
+					endcolor="0 0 0"
+					position="0 0 0"
+					model="/heroes/artesia/projectile/effects/orb/orb.mdf"
+					material="/shared/effects/materials/shell2.material"
+					anim="idle"
+					expirelife="50"
+					scale=".035"
+					yawspeed="180"
+					pitchspeed="180"
+				>
+				</model>
+
+				<model
+					bone="_bone_fx"
+					startcolor="0 3 0"
+					endcolor="0 0 0"
+					position="0 0 0"
+					model="/heroes/artesia/projectile/effects/orb/orb.mdf"
+					material="/shared/effects/materials/shell2.material"
+					anim="idle"
+					expirelife="50"
+					scale=".025"
+					yawspeed="-180"
+					pitchspeed="-180"
+				>
+				</model>
+
+				<simpleemitter
+					bone="_bone_fx"
+					particlelife="400"
+					spawnrate="200"
+					minspeed="250"
+					maxspeed="750"
+					acceleration="0.0"
+					position="0 0 00"
+					drag="0.1"
+					material="/shared/effects/materials/star_11.material"
+					offsetsphere="0"
+					direction="0 -1 0"
+					minangle="0"
+					maxangle="120"
+				>
+					<particle
+						turn="true"
+						startcolor="1 .25 .1"
+						midcolor="1 .25 0"
+						endcolor="0 0 0"
+						size="25"
+						startscale="1"
+						endscale="0"
+					>
+					</particle>
+				</simpleemitter>
+
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="50"
+					particlelife="500"
+					texpostime="500"
+					texposscale="0.0"
+					texstretchscale=".4"
+					position="0 0 0"
+					material="/shared/effects/materials/arrow_trail.material"
+				>
+					<particle
+						startcolor="1 .5 0"
+						midcolor="1 .75 0"
+						endcolor="0 0 0"
+						startsize="7"
+						midsize="3.5"
+						endsize="1"
+						midsizepos="0.2"
+				 />
+				</trailemitter>
+
+			</model>
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+	<!--		
+
+			<model
+				expirelife="250"
+				bone="_bone_center"
+				model="/heroes/andromeda/ability_03/effects/orbit.mdf"
+				anim="idle"
+				scale="1"
+				pitch="45"
+				position="0 0 40"
+				yawspeed="-720"
+			>
+				<model
+					bone="_bone_fx"
+					startcolor=".75 2 1.25"
+					endcolor="0 0 0"
+					position="0 0 0"
+					model="/heroes/artesia/projectile/effects/orb/orb.mdf"
+					material="/shared/effects/materials/shell2.material"
+					anim="idle"
+					expirelife="50"
+					scale=".035"
+					yawspeed="180"
+					pitchspeed="180"
+				>
+				</model>
+
+				<model
+					bone="_bone_fx"
+					startcolor="0 3 0"
+					endcolor="0 0 0"
+					position="0 0 0"
+					model="/heroes/artesia/projectile/effects/orb/orb.mdf"
+					material="/shared/effects/materials/shell2.material"
+					anim="idle"
+					expirelife="50"
+					scale=".025"
+					yawspeed="-180"
+					pitchspeed="-180"
+				>
+				</model>
+
+				<simpleemitter
+					bone="_bone_fx"
+					particlelife="400"
+					spawnrate="200"
+					minspeed="250"
+					maxspeed="750"
+					acceleration="0.0"
+					position="0 0 00"
+					drag="0.1"
+					material="/shared/effects/materials/star_11.material"
+					offsetsphere="0"
+					direction="0 -1 0"
+					minangle="0"
+					maxangle="120"
+				>
+					<particle
+						turn="true"
+						startcolor="1 .25 .1"
+						midcolor="1 .25 0"
+						endcolor="0 0 0"
+						size="25"
+						startscale="1"
+						endscale="0"
+					>
+					</particle>
+				</simpleemitter>
+
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="50"
+					particlelife="500"
+					texpostime="500"
+					texposscale="0.0"
+					texstretchscale=".4"
+					position="0 0 0"
+					material="/shared/effects/materials/arrow_trail.material"
+				>
+					<particle
+						startcolor="1 .5 0"
+						midcolor="1 .75 0"
+						endcolor="0 0 0"
+						startsize="7"
+						midsize="3.5"
+						endsize="1"
+						midsizepos="0.2"
+				 />
+				</trailemitter>
+
+			</model>
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<model
+				expirelife="250"
+				bone="_bone_center"
+				model="/heroes/andromeda/ability_03/effects/orbit.mdf"
+				anim="idle"
+				scale="1"
+				roll="-45"
+				yaw="180"
+				position="0 0 40"
+				lockup="1"
+				yawspeed="-360"
+			>
+				<model
+					bone="_bone_fx"
+					startcolor=".75 2 1.25"
+					endcolor="0 0 0"
+					position="0 0 0"
+					model="/heroes/artesia/projectile/effects/orb/orb.mdf"
+					material="/shared/effects/materials/shell2.material"
+					anim="idle"
+					expirelife="50"
+					scale=".035"
+					yawspeed="180"
+					pitchspeed="180"
+				>
+				</model>
+
+				<model
+					bone="_bone_fx"
+					startcolor="0 3 0"
+					endcolor="0 0 0"
+					position="0 0 0"
+					model="/heroes/artesia/projectile/effects/orb/orb.mdf"
+					material="/shared/effects/materials/shell2.material"
+					anim="idle"
+					expirelife="50"
+					scale=".025"
+					yawspeed="-180"
+					pitchspeed="-180"
+				>
+				</model>
+
+				<simpleemitter
+					bone="_bone_fx"
+					particlelife="400"
+					spawnrate="200"
+					minspeed="250"
+					maxspeed="750"
+					acceleration="0.0"
+					position="0 0 00"
+					drag="0.1"
+					material="/shared/effects/materials/star_11.material"
+					offsetsphere="0"
+					direction="0 -1 0"
+					minangle="0"
+					maxangle="120"
+				>
+					<particle
+						turn="true"
+						startcolor="1 .25 .1"
+						midcolor="1 .25 0"
+						endcolor="0 0 0"
+						size="25"
+						startscale="1"
+						endscale="0"
+					>
+					</particle>
+				</simpleemitter>
+
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="50"
+					particlelife="500"
+					texpostime="500"
+					texposscale="0.0"
+					texstretchscale=".4"
+					position="0 0 0"
+					material="/shared/effects/materials/arrow_trail.material"
+				>
+					<particle
+						startcolor="1 .5 0"
+						midcolor="1 .75 0"
+						endcolor="0 0 0"
+						startsize="7"
+						midsize="3.5"
+						endsize="1"
+						midsizepos="0.2"
+				 />
+				</trailemitter>
+
+			</model>
+-->
+		</particlesystem>
+
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		
+      		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

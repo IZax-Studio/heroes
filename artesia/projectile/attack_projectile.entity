@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_ArtesiaAttack"
+
+	speed="1200"
+	gravity="2200"
+	modelscale=".85"
+
+	model="/shared/models/invis.mdf"
+	
+	impacteffect="effects/impact.effect"
+	traileffect="effects/trail.effect"
+>
+
+	<altavatar key="Hero_Artesia.Alt3" modpriority="90"
+		impacteffect="../alt3/projectile/effects/impact.effect"
+		traileffect="../alt3/projectile/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Artesia.Alt5" modpriority="90"
+		impacteffect="../alt5/projectile/effects/impact.effect"
+		traileffect="../alt5/projectile/effects/trail.effect"
+	/>
+
+</projectile>

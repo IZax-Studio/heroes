@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="local" scale=".65">
+		
+			<sound
+				linearfalloff="true"
+				falloffstart="200"
+				falloffend="1300"
+				volume=".80"
+				sample="/heroes/artesia/sounds/whoosha_%.wav"
+			/>
+
+			<model
+				startcolor="2 1.25 .75"
+				endcolor="0 0 0"
+				position="0 0 0"
+				model="/heroes/artesia/projectile/effects/orb/orb.mdf"
+				material="/shared/effects/materials/shell2.material"
+				anim="idle"
+				expirelife="50"
+				scale=".03"
+				yawspeed="180"
+				pitchspeed="180"
+			>
+			</model>
+
+			<model
+				startcolor="0 0 3"
+				endcolor="0 0 0"
+				position="0 0 0"
+				model="/heroes/artesia/projectile/effects/orb/orb.mdf"
+				material="/shared/effects/materials/shell2.material"
+				anim="idle"
+				expirelife="50"
+				scale=".02"
+				yawspeed="-180"
+				pitchspeed="-180"
+			>
+			</model>
+
+			<billboard
+				life="800"
+				material="/shared/effects/materials/whitedot.material"
+				color="0 .25 .65"
+				size="35"
+				directionalspace="local"
+				startalpha="1"
+				endalpha="0"
+				pitch="-90"
+				depthbias="0"
+				lockup="1"
+				lockright="1"
+			/>
+
+			<simpleemitter
+				particlelife="400"
+				spawnrate="200"
+				minspeed="250"
+				maxspeed="750"
+				acceleration="0.0"
+				position="0 0 00"
+				drag="0.1"
+				material="/shared/effects/materials/star_12.material"
+				offsetsphere="0"
+				direction="0 -1 0"
+				minangle="0"
+				maxangle="120"
+			>
+				<particle
+					turn="true"
+					startcolor=".1 .85 .1"
+					midcolor=".5 .5 1"
+					endcolor="0 0 0"
+					size="25"
+					startscale="1"
+					endscale="0"
+				>
+				</particle>
+			</simpleemitter>
+
+			<trailemitter
+				spawnrate="50"
+				particlelife="500"
+				texpostime="500"
+			 	texposscale="0.0"
+			 	texstretchscale=".4"
+				position="0 0 0"
+				material="/shared/effects/materials/arrow_trail.material"
+			>
+				<particle
+					startcolor=".25 0 1"
+					midcolor="1 .5 0"
+					endcolor="0 0 0"
+					startsize="5"
+					midsize="2.5"
+					endsize="1"
+					midsizepos="0.2"
+			 />
+			</trailemitter>
+
+			<trailemitter
+				spawnrate="50"
+				particlelife="250"
+				texpostime="250"
+			 	texposscale="0.0"
+			 	texstretchscale=".4"
+				position="4 0 0"
+				material="/shared/effects/materials/arrow_trail.material"
+			>
+				<particle
+					startcolor=".25 0 1"
+					midcolor="1 .5 0"
+					endcolor="0 0 0"
+					midcolorpos=".7"
+					startsize="5"
+					midsize="2.5"
+					endsize="1"
+					midsizepos="0.2"
+			 />
+			</trailemitter>
+			
+			<trailemitter
+				spawnrate="50"
+				particlelife="250"
+				texpostime="250"
+			 	texposscale="0.0"
+			 	texstretchscale=".4"
+				position="-4 0 0"
+				material="/shared/effects/materials/arrow_trail.material"
+			>
+				<particle
+					startcolor=".25 0 1"
+					midcolor="1 .5 0"
+					endcolor="0 0 0"
+					midcolorpos=".7"
+					startsize="5"
+					midsize="2.5"
+					endsize="1"
+					midsizepos="0.2"
+			 />
+			</trailemitter>	
+			
+<!--
+			
+			<simpleemitter
+				spawnrate="12"
+				count="1"
+				particlelife="5500"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				directionalspace="local"
+				direction="0 0 1"
+			>
+				<particle
+				 turn="true"
+				>
+					<billboard
+						life="550"
+						startcolor=".2 0 .4"
+						midcolor=".2 0 .4"
+						endcolor="0"
+						startsize="175"
+						endsize="0"
+						depthbias="0"
+						material="/shared/effects/materials/whitedot.material"
+						position="0 0 0"
+						lockup="1"
+						lockright="1"
+						pitch="0"
+						directionalspace="local"
+					/>
+					
+					<billboard
+						position="0 0 0"
+						delay="0"
+						life="350"
+						param="0.1"	
+						startsize="75"
+						endsize="150"
+						startalpha="0"
+						midalpha=".5"
+						endalpha="0"				
+						depthbias="0"
+						material="/shared/effects/materials/refract_swell.material"
+						lockup="1"
+						lockright="1"
+						pitch="0"
+						directionalspace="local"
+					/>
+					
+					<billboard
+						position="0 0 0"
+						delay="175"
+						life="350"
+						param="0.1"	
+						startsize="75"
+						endsize="150"
+						startalpha="0"
+						midalpha=".5"
+						endalpha="0"				
+						depthbias="0"
+						material="/shared/effects/materials/refract_swell.material"
+						lockup="1"
+						lockright="1"
+						pitch="0"
+						directionalspace="local"
+					/>
+				</particle>
+			</simpleemitter>
+-->
+			<simpleemitter
+				count="1"
+				spawnrate="17"
+				particlelife="175"
+				position="0 0 0"
+				material="/shared/effects/materials/shieldstarfish.material"
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+			>
+				<particle
+					minangle="-15"
+					maxangle="-15"
+					minanglespeed="0"
+					startcolor=".25 .5 1"
+					endcolor="0 0 0"
+					maxanglespeed="00"
+					startframe="0"
+					endframe="1"
+					startsize="10"
+					endsize="100"
+					startalpha=".3"
+					midalpha=".3"
+					endalpha="0"
+					midalphapos=".5"
+					lockup="true"
+					lockright="1"
+					pitch="0"
+					flare="0"
+					yaw="00"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				count="1"
+				spawnrate="17"
+				particlelife="175"
+				position="0 0 0"
+				material="/shared/effects/materials/refract_swell.material"
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+				param=".4"
+			>
+				<particle
+					startsize="75"
+					endsize="150"
+					param="0.5"
+					startalpha=".3"
+					midalpha=".3"
+					endalpha="0"
+					midalphapos=".5"
+					lockup="true"
+					lockright="1"
+					pitch="0"
+					flare="0"
+					yaw="00"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
