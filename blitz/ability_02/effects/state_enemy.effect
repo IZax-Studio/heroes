@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".85">
+            <sound
+				soundloop="true"
+				fadein="1000"
+				fadeout="400"
+				volume=".5" 
+				sample="/heroes/blitz/ability_02/sounds/loop.wav"
+				linearfalloff="true"
+				falloffstart="200"
+				falloffend="1400"
+			/>
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<model
+			delay="250"
+				bone="_bone_overhead"
+				startcolor=".5 .5 1"
+				endcolor="0 0 0"
+				position="0 0 0"
+				model="/heroes/artesia/projectile/effects/orb/orb.mdf"
+				material="/shared/effects/materials/shell2.material"
+				anim="idle"
+				expirelife="125"
+				scale=".05"
+				yawspeed="360"
+				pitchspeed="360"
+			>
+			</model>
+			
+			<model
+			delay="250"
+				life="2000"
+				bone="_bone_overhead"
+				color=".5 .5 1"
+				position="0 0 0"
+				model="/heroes/artesia/projectile/effects/orb/orb.mdf"
+				material="/shared/effects/materials/shell2.material"
+				anim="idle"
+				startscale=".05"
+				midscale=".085"
+				endscale=".05"
+				yawspeed="360"
+				pitchspeed="360"
+				loop="true"
+			>
+			</model>
+
+			<simpleemitter
+			delay="250"
+				bone="_bone_overhead"
+				spawnrate="200"
+				particlelife="610"
+				gravity="0"
+				speed="0"
+				position="0 0 0"
+				acceleration="11"
+				material="/shared/effects/materials/flare_03.material"
+				offsetsphere="50 50 50"
+				drag="0.01"
+				direction="1 0 0"
+			>
+				<particle 
+					startstickiness="0"
+					endstickiness="1"
+					startcolor=".5 .5 1"
+					midcolor=".5 .5 1"
+					endcolor="0 0 0"
+					startsize="10"
+					endsize="0"
+					turn="1"
+					heightdistort="0.02"
+				/>
+			</simpleemitter>
+
+			<billboard
+			delay="250"
+				bone="_bone_overhead"
+				expirelife="250"
+				material="/shared/effects/materials/whitedot.material"
+				directionalspace="local"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+				startcolor=".5 .5 1"
+				endcolor="0 0 0"
+				depthbias="0"
+				size="135"
+			>
+			</billboard>
+
+			<simpleemitter
+			delay="250"
+				bone="_bone_overhead"
+				spawnrate="5"
+				particlelife="250"
+				position="0 0 0"
+				material="/shared/effects/materials/refract_swell.material"
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+			>
+				<particle
+					startsize="0"
+					endsize="300"
+					param="0.5"
+					startalpha="1"
+					midalpha=".25"
+					endalpha="0"
+					midalphapos=".75"
+					lockup="true"
+					lockright="1"
+					pitch="90"
+					flare="0"
+					yaw="00"
+				/>
+			</simpleemitter>
+			
+			<trailemitter
+			delay="250"
+				bone="_bone_overhead"
+				spawnrate="25"
+				startminparticlelife="500"
+				startmaxparticlelife="500"
+				offsetsphere="50"
+				endminparticlelife="1"
+				endmaxparticlelife="1" 
+				texpostime="1000"
+				texposscale="0"
+				texstretchscale="1"
+				position="0 0 0"
+				material="/shared/effects/materials/arrow_trail.material"
+			>
+				<particle
+					startcolor="1 1 1"
+					midcolor=".5 .5 1"
+					endcolor="0 0 0"
+					startsize="3"
+					endsize="3"
+				/>
+			</trailemitter>
+			
+			<billboard
+			delay="250"
+				bone="_bone_overhead"
+				expirelife="250"
+				startcolor=".5 .5 1"
+				endcolor="0 0 0"
+				size="75"
+				position="0 0 0"
+				material="/heroes/drunkenmaster/effects/material.material"
+				lockup="1"
+				lockright="1"
+				rollspeed="720"
+				yaw="-45"
+				directionalspace="local"
+				depthbias="0"
+			/>
+			
+			<billboard
+			delay="250"
+				bone="_bone_overhead"
+				expirelife="250"
+				startcolor=".5 .5 1"
+				endcolor="0 0 0"
+				size="75"
+				position="0 0 0"
+				material="/heroes/drunkenmaster/effects/material.material"
+				lockup="1"
+				lockright="1"
+				rollspeed="720"
+				yaw="45"
+				directionalspace="local"
+				depthbias="0"
+			/>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<simpleemitter
+			count="1"
+				bone="_bone_overhead"
+				spawnrate="2000"
+				particlelife="250"
+				position="0 0 0"
+				material="/shared/effects/materials/refract_swell.material"
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+			>
+				<particle
+					startsize="0"
+					endsize="500"
+					param="0.5"
+					startalpha="1"
+					midalpha=".25"
+					endalpha="0"
+					midalphapos=".75"
+					lockup="true"
+					lockright="1"
+					pitch="90"
+					flare="0"
+					yaw="00"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				count="1"
+				bone="_bone_overhead"
+				spawnrate="2000"
+				particlelife="250"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+			>
+				<particle
+				startcolor=".5 .5 1"
+				midcolor=".5 .5 1"
+				endcolor="0 0 0"
+				midcolorpos=".9"
+					startsize="0"
+					endsize="250"
+					param="0.5"
+					lockup="true"
+					lockright="1"
+					pitch="90"
+					flare="0"
+					yaw="00"
+				/>
+			</simpleemitter>
+			
+			<template name="feet" >
+			<simpleemitter
+				bone="{bone}"
+				directionalspace="global"
+				spawnrate="30"
+				offsetsphere="5 5 10"
+				maxspeed="500"
+				drag=".15"
+				direction="0 0 1"
+				angle="90"
+				minparticlelife="700"
+				maxparticlelife="1000"
+				material="/shared/effects/materials/flare_03.material"
+			>
+				<particle
+					startcolor=".5 .5 1"
+					endcolor="0"
+					startsize="30"
+					heightdistort="-.05"
+					endsize="40"
+					maxangle="360"
+					maxanglespeed="200"
+					turn="1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="{bone}"
+				directionalspace="global"
+				spawnrate="30"
+				offsetsphere="5 5 10"
+				maxspeed="100"
+				drag=".15"
+				direction="0 0 1"
+				angle="90"
+				minparticlelife="500"
+				maxparticlelife="700"
+				material="/shared/effects/materials/flare_03.material"
+			>
+				<particle
+					startcolor=".5 .5 1"
+					endcolor="0"
+					startsize="30"
+					heightdistort="-.05"
+					endsize="40"
+					maxangle="360"
+					maxanglespeed="200"
+					turn="1"
+					anchor="1"
+				/>
+			</simpleemitter>
+
+		</template>
+		
+		<instance name="feet" bone="_bone_lefthand" />
+		<instance name="feet" bone="_bone_righthand" />
+		
+			<trailemitter
+			delay="250"
+				bone="_bone_lefthand"
+				spawnrate="25"
+				startminparticlelife="500"
+				startmaxparticlelife="500"
+				offsetsphere="50"
+				endminparticlelife="1"
+				endmaxparticlelife="1" 
+				texpostime="1000"
+				texposscale="0"
+				texstretchscale="1"
+				position="0 0 -10"
+				material="/shared/effects/materials/arrow_trail.material"
+			>
+				<particle
+					startcolor="1 1 1"
+					midcolor=".5 .5 1"
+					endcolor="0 0 0"
+					startsize="5"
+					endsize="10"
+				/>
+			</trailemitter>
+		
+			<trailemitter
+			    delay="250"
+				bone="_bone_righthand"
+				spawnrate="25"
+				startminparticlelife="500"
+				startmaxparticlelife="500"
+				offsetsphere="50"
+				endminparticlelife="1"
+				endmaxparticlelife="1" 
+				texpostime="1000"
+				texposscale="0"
+				texstretchscale="1"
+				position="0 0 -10"
+				material="/shared/effects/materials/arrow_trail.material"
+			>
+				<particle
+					startcolor="1 1 1"
+					midcolor=".5 .5 1"
+					endcolor="0 0 0"
+					startsize="5"
+					endsize="10"
+				/>
+			</trailemitter>
+		
+		
+		<template name="link">
+				<beam
+					expirelife="500"
+					owner_a="source"
+					owner_b="target"
+					bone_a="{bone1}"
+					bone_b="{bone2}"
+					size="80"
+					color=".5 .5 1"
+					framespeed="1.75"
+					material="/shared/effects/materials/femme_lightning_10.material"
+				>
+				</beam>
+				
+				<billboard
+					bone="{bone2}"
+					material="/shared/effects/materials/whitedot.material"
+					size="10"
+					startcolor=".5 .5 1"
+					endcolor="0"
+					expirelife="200"
+					depthbias="-40"
+				/>
+			</template>
+			
+			<instance name="link" bone1="_bone_lefthand" bone2="lant1_2" size="30" startframe=".2" framespeed="3"/>
+			<instance name="link" bone1="_bone_lefthand" bone2="lant1_2" size="32" startframe=".5" framespeed="4.5"/>
+		
+			<template name="link">
+				<beam
+					expirelife="500"
+					owner_a="source"
+					owner_b="target"
+					bone_a="{bone1}"
+					bone_b="{bone2}"
+					size="80"
+					color=".5 .5 1"
+					framespeed="1.75"
+					material="/shared/effects/materials/femme_lightning_10.material"
+				>
+				</beam>
+				
+				<billboard
+					bone="{bone2}"
+					material="/shared/effects/materials/whitedot.material"
+					size="10"
+					startcolor=".5 .5 1"
+					endcolor="0"
+					expirelife="200"
+					depthbias="-40"
+				/>
+			</template>
+			
+			<instance name="link" bone1="_bone_righthand" bone2="rant2_2" size="30" startframe=".2" framespeed="3"/>
+			<instance name="link" bone1="_bone_righthand" bone2="rant2_2" size="32" startframe=".5" framespeed="4.5"/>
+		
+		</particlesystem>
+	
+		<particlesystem name="system1" space="world" scale="1.5">
+
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

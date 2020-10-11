@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+	<definitions>
+
+		<particlesystem name="system0" space="world">
+		
+
+			<billboard
+				delay="150"
+				bone="Bip01 R Hand"
+				life="1000"
+				startcolor="0 0 0"
+				midcolor="0 .25 1"
+				endcolor="0"
+				midcolorpos=".2"
+				size="65"
+				depthbias="-120"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+
+			<simpleemitter
+				delay="250"
+				count="52"
+				spawnrate="1500"
+				bone="Bip01 R Hand"
+				particlelife="800"
+				gravity="5"
+				minspeed="1"
+				maxspeed="150"
+				drag=".04"
+				pitchspeed="79"
+				material="/shared/effects/materials/whitedot.material"
+				offsetsphere="5 5 5"
+				inheritvelocity="0.35"
+				direction="0 0 1"
+			>
+				<particle 
+					startcolor=".5 .75 1"
+					midcolor="0 .5 1"
+					endcolor="0 0 0"
+					endframe="15"
+					startsize="2"
+					midsize="3"
+					endsize="3"
+					startalpha="0"
+					midalpha="0"
+					endalpha="0"
+					midalphapos="0"
+					startstickiness="0"
+					endstickiness="0"
+					turn="1"
+				/>
+			</simpleemitter>
+
+			<trackeremitter
+				delay="150"
+				count="8"
+				owner="source"
+				sourcebone="_bone_Bip01 R Hand"
+				targetbone="_bone_centerofchest"
+				targetowner="target"
+				targetposition="0 0 0"
+				tracktype="distance"
+				trackspeed="3"
+				spawnrate="80"
+				particlelife="2000"
+				speed="3000"
+				acceleration="1000"
+				direction="0 0 1"
+				inheritvelocity="0"
+				distancelife="1"
+			>
+				<particle>
+					<trailemitter
+						life="1000"
+						spawnrate="150"
+						startminparticlelife="800"
+						startmaxparticlelife="800"
+						offsetsphere="15"
+						endminparticlelife="1"
+						endmaxparticlelife="1" 
+						texpostime="800"
+					 	texposscale="0"
+					 	texstretchscale="1"
+						position="0 0 0"
+						material="/shared/effects/materials/arrow_trail.material"
+					>
+						<particle
+							startcolor="0 .5 1"
+							midcolor="0 .5 1"
+							endcolor=".0 0 .4"
+							startsize="2"
+							midsize="3"
+							endsize="2"
+							midcolorpos=".1"
+							midsizepos=".1"
+						/>
+					</trailemitter>
+				</particle>
+			</trackeremitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+

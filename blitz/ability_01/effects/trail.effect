@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  deferred="1">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+
+			<model
+				position="0 0 0"
+				scale="2.25"
+				expirelife="50"
+				model="../../model.mdf"
+				anim="ability_1_run"
+				color="1 2 3"
+				startalpha=".75"
+				midalpha=".75"
+				endalpha="0"
+				midalphapos=".35"
+			>
+			</model>
+			
+			<model
+				position="0 0 0"
+				scale="2.25"
+				expirelife="50"
+				model="../../model.mdf"
+				material="/shared/effects/materials/shell4.material"
+				anim="ability_1_run"
+				color=".25 .75 1"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".35"
+			>
+			</model>
+
+			<simpleemitter
+				spawnrate="20"
+				count="5"
+				particlelife="5500"
+				offsetsphere="0 25 0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+				turn="true"
+				>
+					<model
+						position="0 0 0"
+						scale="2.25"
+						life="200"
+						model="../../model.mdf"
+						anim="ability_1_run"
+						color="1 2 3"
+						startalpha=".5"
+						midalpha=".5"
+						endalpha="0"
+					>
+					</model>
+					
+				</particle>
+			</simpleemitter>
+
+			<template name="trails">
+				<trailemitter
+				expirelife="250"
+					spawnrate="50"
+					particlelife="1000"
+					texpostime="1000"
+					texposscale="0.0"
+					texstretchscale=".4"
+					position="{pos}"
+					material="/shared/effects/materials/arrow_trail.material"
+					startparticlecolor="1 1 1"
+					endparticlecolor="0 0 0"
+				>
+					<particle
+						 startcolor="0 .5 1"
+						 midcolor=".1 .2 .3"
+						 endcolor="0 0 0"
+						 startsize="10"
+						 midsize="70"
+						 endsize="25"
+						 midsizepos="0.2"
+					/>
+				</trailemitter>
+			</template>
+			
+			<instance name="trails" pos="-25 25 0"/>
+			<instance name="trails" pos="25 25 0"/>
+			<instance name="trails" pos="-25 25 100"/>
+			<instance name="trails" pos="25 25 100"/>
+			
+			
+			
+
+			<simpleemitter
+				spawnrate="6"
+				particlelife="250"
+				position="0 0 0"
+				material="/shared/effects/materials/shieldstarfish.material"
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+			>
+				<particle
+					minangle="-15"
+					maxangle="-15"
+					minanglespeed="0"
+					startcolor=".3 .5 1"
+					endcolor="0 0 0"
+					maxanglespeed="00"
+					startframe="0"
+					endframe="1"
+					startsize="150"
+					endsize="250"
+					startalpha=".3"
+					midalpha=".3"
+					endalpha="0"
+					midalphapos=".5"
+					lockup="true"
+					lockright="1"
+					pitch="0"
+					flare="0"
+					yaw="00"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				spawnrate="10"
+				particlelife="250"
+				position="0 0 0"
+				material="/shared/effects/materials/refract_swell.material"
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+				param=".4"
+			>
+				<particle
+					startsize="250"
+					endsize="500"
+					param="0.5"
+					startalpha=".5"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".5"
+					lockup="true"
+					lockright="1"
+					pitch="0"
+					flare="0"
+					yaw="00"
+				/>
+			</simpleemitter>
+			
+			
+
+		</particlesystem>
+	</definitions>
+	<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<waitfordeath instance="instance0" />
+	</thread>
+</effect>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+
+		<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1800"
+				volume=".80"
+				sample="/heroes/blitz/ability_01/sounds/impact.wav"
+			/>
+		
+		
+			<billboard
+				expirelife="300"
+				color="1 1 1"
+				startalpha="0"
+				endalpha="0"
+				midalphapos="0.75"
+				startparam=".1"
+				endparam="0.0"
+				startsize="128"
+				endsize="268"
+				depthbias="-100"
+				position="0 0 20"
+				material="/shared/effects/materials/refract_ring.material"
+				lockup="true"
+				pitch="90"
+			/>
+			
+			<simpleemitter
+				spawnrate="1000"
+				count="1"
+				particlelife="5500"
+				offsetsphere="0 25 0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="true"
+				>
+					<model
+						position="0 0 0"
+						scale="1.75"
+						life="800"
+						model="/heroes/blitz/model.mdf"
+						anim="ability_2_attack1"
+						color="1 2 3"
+						startalpha=".5"
+						midalpha=".5"
+						endalpha="0"
+						midalphapos=".9"
+					>
+						<trailemitter
+							bone="_bone_center"
+							expirelife="250"
+							spawnrate="50"
+							particlelife="350"
+							texpostime="350"
+							texposscale="0.0"
+							texstretchscale=".4"
+							position="0 0 15"
+							material="/shared/effects/materials/soul_projectile_blue.material"
+							startparticlecolor="1 1 1"
+							endparticlecolor="0 0 0"
+						>
+							<particle
+								 startcolor="0 .5 1"
+								 midcolor=".05 .1 .15"
+								 endcolor="0 0 0"
+								 startsize="20"
+								 midsize="140"
+								 endsize="20"
+								 midsizepos="0.2"
+							/>
+						</trailemitter>
+						
+						<trailemitter
+							bone="_bone_center"
+							expirelife="250"
+							spawnrate="50"
+							particlelife="350"
+							texpostime="350"
+							texposscale="0.0"
+							texstretchscale=".4"
+							position="0 0 -15"
+							material="/shared/effects/materials/soul_projectile_blue.material"
+							startparticlecolor="1 1 1"
+							endparticlecolor="0 0 0"
+						>
+							<particle
+								 startcolor="0 .5 1"
+								 midcolor=".05 .1 .15"
+								 endcolor="0 0 0"
+								 startsize="10"
+								 midsize="60"
+								 endsize="10"
+								 midsizepos="0.2"
+							/>
+						</trailemitter>
+
+			
+			
+			
+			
+			
+<!--
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="6"
+				particlelife="250"
+				position="0 0 0"
+				material="/shared/effects/materials/shieldstarfish.material"
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+			>
+				<particle
+					minangle="-15"
+					maxangle="-15"
+					minanglespeed="0"
+					startcolor="1 .5 .3"
+					endcolor="0 0 0"
+					maxanglespeed="00"
+					startframe="0"
+					endframe="1"
+					startsize="75"
+					endsize="125"
+					startalpha=".3"
+					midalpha=".3"
+					endalpha="0"
+					midalphapos=".5"
+					lockup="true"
+					lockright="1"
+					pitch="0"
+					flare="0"
+					yaw="00"
+					turn="true"
+				/>
+			</simpleemitter>
+-->
+			
+
+				<simpleemitter
+					count="3"
+					spawnrate="5"
+					particlelife="250"
+					position="0 0 25"
+					material="/shared/effects/materials/refract_swell.material"
+					particledirectionalspace="local"
+					offsetdirection="0 0 0"
+					offsetradial="0"
+				>
+					<particle
+						startsize="150"
+						endsize="400"
+						param="0.5"
+						startalpha="1"
+						midalpha=".25"
+						endalpha="0"
+						midalphapos=".75"
+						lockup="true"
+						lockright="1"
+						pitch="90"
+						flare="0"
+						yaw="00"
+					/>
+				</simpleemitter>
+			
+			
+				<trailemitter
+					life="500"
+					bone="_bone_centerofchest"
+					spawnrate="65"
+					startminparticlelife="500"
+					startmaxparticlelife="500"
+					offsetsphere="75"
+					endminparticlelife="1"
+					endmaxparticlelife="1" 
+					texpostime="1000"
+					texposscale="0"
+					texstretchscale="1"
+					position="0 0 0"
+					material="/shared/effects/materials/soul_projectile_blue.material"
+				>
+					<particle
+						startcolor="1 1 1"
+						midcolor="0 .5 1"
+						endcolor="0 0 0"
+						startsize="3"
+						endsize="3"
+					/>
+				</trailemitter>
+
+			
+			
+					
+					</model>
+				</particle>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

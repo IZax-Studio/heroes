@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Blitz_Ability3"
+
+	icon="icon3.tga"
+	passiveeffect="effects/state_speed.effect"
+	movespeedmultiplier="1.0,1.5,2.0,2.5"
+	
+	unitwalking="true"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	
+>
+	
+	<altavatar key="Hero_Blitz.Alt4"
+		passiveeffect="../alt4/ability_03/effects/state_speed.effect"
+	/>
+	
+	<altavatar key="Hero_Blitz.Alt5"
+		passiveeffect="../alt5/ability_03/effects/state_speed.effect"
+	/>
+	
+	<altavatar key="Hero_Blitz.Alt6"
+	    icon="../alt6/ability_03/icon.tga"
+		passiveeffect="../alt6/ability_03/effects/state_speed.effect"
+	/>
+	
+</state>

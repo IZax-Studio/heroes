@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Self_Speed_Blitz_Ability2"
+
+	icon="icon.tga"
+	
+	movespeedpercharge="3,5,7,9"
+	impactinterval="100"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	
+>
+	<onimpact>
+		<removecharge />
+		<compare a="charges" b="0" op="eq">
+			<expire />
+		</compare>
+	</onimpact>
+	
+	<altavatar key="Hero_Blitz.Alt6" 
+	    icon="../alt6/ability_02/icon.tga"
+	>
+	</altavatar>
+	
+</state>

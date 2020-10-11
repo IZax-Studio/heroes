@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Enemy_Speed_Blitz_Ability2"
+
+	icon="icon.tga"
+	
+	movespeedpercharge="-3,-5,-7,-9"
+	impactinterval="100"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	negativeeffect="slowed"
+>
+	<onimpact>
+		<removecharge />
+		<compare a="charges" b="0" op="eq">
+			<expire />
+		</compare>
+	</onimpact>
+	
+	<aura
+		gadget="Gadget_Blitz_Ability2"
+		radius="0"
+		targetscheme="self"
+	/>
+	
+	<altavatar key="Hero_Blitz.Alt6" 
+	    icon="../alt6/ability_02/icon.tga"
+	>
+	</altavatar>
+	
+</state>
