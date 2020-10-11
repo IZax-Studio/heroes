@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="false">
+	<definitions>
+		
+		<modifier
+			name="modifier0"
+			expirelife="2500"
+			life="800"
+			startcolor="1"
+			endcolor="0"
+		/>
+		
+		<particlesystem name="system0" space="world">
+			<!-- floating debris -->
+			<simpleemitter
+				spawnrate="5"
+				particlelife="3000"
+				offsetsphere="2"
+				bone="Bip001 L UpperArm"
+				yaw="90"
+			>
+				<particle
+					startanchor="1" endanchor="0.9" midanchor=".75"
+				>
+					<debris
+						offsetsphere="25" position="0 0 0"
+						minscale=".25" maxscale=".5"
+						life="1300"
+						model="/heroes/adrenaline/effects/debris/debris.mdf"
+						material="/heroes/adrenaline/material_noshadow.material"
+						anim="idle"
+						minspeed="10.0"
+						maxspeed="50.0"
+						minrotationspeed="10.0"
+						maxrotationspeed="100.0"
+						gravity="-.5" drag="0.004"
+						startcolor="3 0 0" midcolor="1 0 0" endcolor="0" midcolorpos=".5"
+						minangle="0" maxangle="40"
+						startalpha="1" 	midalpha=".75" endalpha="0"
+						animpose="false"
+					/>
+				</particle>
+			</simpleemitter>
+			
+			<template name="floating_embers" >
+			 <!-- flickering glow -->
+                <billboard
+					spawnrate="3"
+					minparticlelife="100" maxparticlelife="200" 
+                    bone="{bone}" position="{position}"
+                    startsize="30" midsize="25" endsize="35"
+                    material="/shared/effects/materials/whitedot.material"
+                    startcolor=".6 0 0"  midcolor=".2 0 0" endcolor=".6 0 0"
+                    depthbias="-18"
+                    scale="{scale}"
+					anchor="1"
+                />
+			
+			<!-- dark smoke -->			
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="80" particlelife="700"
+					direction="0 1 0"
+					gravity="-1"
+					minspeed="10"  maxspeed="30"
+					drag="0.1" 
+					material="/shared/effects/materials/phantom_white_reveal.material"
+					offsetsphere="5"
+					depthbias="-150"
+				>
+					<particle					
+						minagle="-360" maxangle="360"
+						startcolor="0" midcolor=".1 0 0" endcolor="0"
+						minsize="5" maxsize="15" scale=".7"
+						startframe="1" midframe=".1" endframe="1" midframepos=".3"
+						startalpha="0" endalpha=".7"
+						anchor="0"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="10" particlelife="1000"
+					direction="0 1 0"
+					gravity="-1"
+					minspeed="10"  maxspeed="30"
+					drag="0.1" 
+					material="/shared/effects/materials/phantom_white_reveal.material"
+					offsetsphere="10"
+					depthbias="-150"
+				>
+					<particle					
+						minagle="-360" maxangle="360"
+						startcolor="0" midcolor=".1 0 0" endcolor="0"
+						minsize="5" maxsize="15" scale=".7"
+						startframe="1" midframe=".1" endframe="1" midframepos=".3"
+						startalpha="0" endalpha=".35"
+						anchor="1"
+					/>
+				</simpleemitter>
+           
+		   <!-- floating_embers -->  
+                <simpleemitter
+                    bone="{bone}"
+                    spawnrate="40"
+                    range="80"
+                    particlelife="900"
+                    direction="0 1 1"
+                    angle="10"
+                    minspeed="10"
+                    maxspeed="20"
+                    drag="0.1"
+                    gravity="-3"
+                    offsetsphere="5 5 0"
+                >
+                    <template name="ash_particle" >
+                        <particle
+                            maxyaw="360"
+                            maxpitch="360"
+                            maxroll="360"
+                            minyawspeed="-100"
+                            maxyawspeed="100"
+                            minpitchspeed="-100"
+                            maxpitchspeed="100"
+                            minrollspeed="-100"
+                            maxrollspeed="100"
+                            startscale="0"
+                            minendscale=".5"
+                            maxendscale="1"
+                        >
+                            <billboard
+                                maxangle="360"
+                                minrollspeed="-40"
+                                maxrollspeed="40"
+                                life="900"
+                                position="20 0 0"
+                                material="/shared/effects/materials/abstract_reveal.material"
+                                startsize="5"
+                                endsize="2"
+                                startcolor="{sc}"
+                                midcolor="{mc}"
+                                endcolor="{ec}"
+                                midcolorpos="{mcpos}"
+                                startframe="0"
+                                endframe="1"
+                            />
+                        </particle>
+                    </template>
+                    <instance name="ash_particle" sc="5 0 0" mc="1 0 0" ec="-1" mcpos=".25" />
+                </simpleemitter>
+			</template>
+		
+			<instance name="floating_embers" bone="Bip001 L UpperArm" position="-7 0 8" scale=".5" />
+			<!-- <instance name="floating_embers" bone="Bip001 R UpperArm" position="2 0 5" scale=".35" /> -->
+			
+			<simpleemitter
+				life="500"
+				startspawnrate="0"
+				midspawnrate="20"
+				endspawnrate="200"
+				particlelife="500"
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/light_rays3.material"
+			>
+				<particle
+					maxyaw="360"
+					maxangle="360"
+					maxpitch="360"
+					minanglespeed="-400"
+					maxanglespeed="400"
+					minpitchspeed="-400"
+					maxpitchspeed="400"
+					minyawspeed="-400"
+					maxyawspeed="400"
+					startsize="0"
+					minendsize="300"
+					maxendsize="400"
+					startwidth="0"
+					endwidth="30"
+					startcolor="1 0 0"
+					endcolor="0"
+					anchor="1"
+				/>
+			</simpleemitter>
+			
+        
+           
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<waitfordeath  instance="instance1"/>
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

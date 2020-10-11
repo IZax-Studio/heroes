@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Apex_Ability2_Sight"
+	
+	icon="icon2.tga"
+	
+	serverentity="true"
+	sighted="true"
+	revealed="true"
+>
+	<aura
+		gadget="Gadget_FlintBeastwood_Ability4"
+		radius="0"
+		targetscheme="self"
+	/> 
+	
+	<altavatar key="Hero_Apex.Alt" 
+	    icon="../alt/ability_02/icon.tga"
+	/>
+</state>

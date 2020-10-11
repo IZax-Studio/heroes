@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Apex_Ability2_Slow"
+
+	icon="icon2.tga"
+	passiveeffect=""
+	
+	movespeedslowstart="0.8"
+	movespeedslowend="0.0"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	negativeeffect="slowed"
+>
+<altavatar key="Hero_Apex.Alt" 
+	    icon="../alt/ability_02/icon.tga"
+	/>
+</state>

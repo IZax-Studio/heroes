@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Apex_Ability4"
+	icon="icon4.tga"
+	ishidden="true"
+	passiveeffect=""
+
+	impactinterval="4000"
+>
+	<onimpact>
+		<pushentity entity="this_owner_entity" />
+		<setpos0 position="this_owner_position" positionend="stack_proxy_position" positionmodifier="pointpastline" positionvalue="40000" />
+		<spawnprojectile name="Projectile_Apex_Ability4" source="this_owner_position" target="pos0" offsetspace="this_owner_entity" owner="this_proxy_entity" />
+	</onimpact>
+	
+	<altavatar key="Hero_Apex.Alt" 
+	    icon="../alt/ability_04/icon.tga"
+	/>
+</state>

@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="5">
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				life="5000"
+				volume=".2"
+				sample="/heroes/behemoth/alt5/sounds/ab4_cast.wav"
+			/>
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				life="5000"
+				volume=".5"
+				sample="/heroes/apex/ability_04/sounds/cast.wav"
+			/>
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				life="5000"
+				volume=".5"
+				sample="../../sounds/ab4.wav"
+			/>
+			<billboard
+				delay="0"
+				life="250"
+				position="0 0 0"
+				material="/shared/effects/materials/corona_07.material"
+				startcolor=".5 0 .5"
+				endcolor="0 0 0"
+				startsize="100"
+				endsize="350"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+			<billboard
+				life="250"
+				position="0 0 0"
+				material="/shared/effects/materials/corona_07.material"
+				startcolor="0 .5 1"
+				endcolor="0 0 0"
+				startsize="100"
+				endsize="350"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+			<billboard
+				life="500"
+				position="0 0 0"
+				material="/shared/effects/materials/corona_07.material"
+				startcolor=".5 0 .5"
+				endcolor="0 0 0"
+				startsize="100"
+				endsize="350"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+			<billboard
+				life="1000"
+				position="0 0 0"
+				material="/shared/effects/materials/corona_07.material"
+				startcolor="0 .5 1"
+				midcolor="0 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".65"
+				startsize="100"
+				endsize="350"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+			<billboard
+				delay="0"
+				life="1500"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot_blend.material"
+				startcolor=".5 0 .5"
+				endcolor="0 0 0"
+				startalpha=".5"
+				endalpha="0"
+				startsize="350"
+				endsize="350"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+			<billboard
+				delay="0"
+				life="1000"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor=".5 0 .5"
+				endcolor="0 0 0"
+				startalpha=".2"
+				endalpha="0"
+				startsize="100"
+				endsize="100"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+			<billboard
+				delay="0"
+				life="250"
+				position="0 0 0"
+				material="/shared/effects/materials/refract_ripples.material"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				color=".75"
+				startsize="250"
+				endsize="350"
+				startparam=".1"
+				endparam="0"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+			<billboard
+				life="1000"
+				position="0 0 0"
+				material="/shared/effects/materials/refract_ripples.material"
+				startalpha="0"
+				midalpha=".5"
+				endalpha="0"
+				color=".5"
+				startsize="250"
+				endsize="350"
+				startparam=".1"
+				endparam="0"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+			<simpleemitter
+				particlelife="1000"
+				count="600"
+				spawnrate="20000"
+				minspeed="1800" maxspeed="2500" drag=".02"
+				minangle="90" maxangle="90"
+				material="/shared/effects/materials/frost_flash_02.material"
+				offsetsphere="100"
+				position="0 0 10"
+				depthbias="-100"
+			>
+				<particle
+					minagle="-360" maxangle="360"
+					maxpitchspeed="360"
+					maxyawspeed="360"
+					startcolor=".5 0 .5" midcolor=".5 0 .5" endcolor="0"
+					minsize="5" maxsize="20" scale=".4"
+					startframe="1" midframe=".1" endframe="1" midframepos=".3"
+					startalpha="1" midalpha=".7" endalpha="0"
+				/>
+				<particle
+					minagle="-360" maxangle="360"
+					maxpitchspeed="360"
+					maxyawspeed="360"
+					color=".5 0 .5"
+					minsize="5" maxsize="20" scale=".4"
+					startframe="1" midframe=".1" endframe="1" midframepos=".3"
+					startalpha="1" midalpha=".7" endalpha="0"
+				/>
+			</simpleemitter>
+			
+			<!-- impactful lights, refract -->	
+			<simpleemitter
+				delay="250"
+				bone="_bone_center"
+				position="0 -10 0"
+				spawnrate="5000"
+				count="3"
+				minparticlelife="1050"
+				maxparticlelife="1750"
+				acceleration="0"
+				direction="0 0 0"
+				offsetsphere="0 0 0"
+				material="/shared/effects/materials/light_rays.material"
+				depthbias="-100"
+			>
+				<particle
+					startcolor=".3 0 .3" midcolor=".3 0 .3" endcolor=".3 0 .3"
+					width="90"
+					startheight="750" endheight="25"
+					lockup="1" lockright="false"
+				/>
+				<particle
+					startcolor=".5 0 .5" midcolor=".5 0 .5" endcolor=".5 0 .5"
+					width="90"
+					startheight="750" endheight="25"
+					lockup="1" lockright="false"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				delay="400" life="1200"
+				count="300"
+				spawnrate="900"
+				minparticlelife="2500" maxparticlelife="3000"
+				direction="0 0 0"
+				gravity="-1"
+				minspeed="10"  maxspeed="30"
+				drag="0.1"
+				material="/shared/effects/materials/star_03.material"
+				offsetsphere="200 200 0"
+				depthbias="-3"
+			>
+				<particle
+					minagle="-360" maxangle="360"
+					startcolor="1 0 1" midcolor="0 .5 1" endcolor="0"
+					minsize="25" maxsize="30" scale=".1"
+					startframe="1" midframe=".1" endframe="1" midframepos=".3"
+					startalpha="1" midalpha=".7" endalpha="0"
+					startanchor=".8" endanchor=".1"
+				/>
+			</simpleemitter>
+				
+			<simpleemitter
+				delay="150"
+				bone="_bone_center"
+				position="0 -5 0"
+				spawnrate="100"
+				count="2"
+				minparticlelife="750" maxparticlelife="1250"
+				depthbias="-50"
+			>
+				<particle>
+					<billboard
+						bone="_bone_center"
+						life="300"
+						color=".5"
+						startalpha=".5" midalpha=".5" endalpha="0.0" midalphapos="0.75"
+						startparam="0.8" endparam=".2"
+						startsize="150" endsize="750"
+						position="0 0 15"
+						material="/shared/effects/materials/refract_ring.material"
+						lockup="true"
+						pitch="90"
+						depthbias="-75"
+					/>
+				</particle>
+			</simpleemitter>
+			<light
+				delay="150"
+				position="0 0 50"
+				life="400"
+				startcolor="10"
+				midcolor="3 0 3"
+				midcolorpos=".1"
+				endcolor="0"
+				falloffstart="0"
+				falloffend="1000"
+			/>
+		</particlesystem>
+		<particlesystem name="system1" space="world" scale="2">
+			<simpleemitter
+				spawnrate="4"
+				particlelife="1000"
+				inheritvelocity=".75"
+				drag="0.02"
+			>
+				<particle>
+					<simpleemitter
+						count="20"
+						minparticlelife="400"
+						maxparticlelife="600"
+						direction="0 0 1"
+						minangle="80"
+						maxangle="85"
+						minspeed="2000"
+						maxspeed="8000"
+						drag="0.01"
+						material="/shared/effects/materials/wave.material"
+					>
+						<particle
+							lockup="true"
+							lockright="true"
+							pitch="-90"
+							turn="1"
+							angle="-90"
+							startalpha="0"
+							midalpha="0.25"
+							endalpha="0"
+							startcolor="0 .5 1"
+							midcolor=".1 0 .1"
+							endcolor="0"
+							minsize="200"
+							maxsize="400"
+							minstartscale=".5"
+							maxstartscale="1"
+							minendscale="1.5"
+							maxendscale="2"
+							depthbias="-150"
+						/>
+					</simpleemitter>
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="4"
+				particlelife="1000"
+				inheritvelocity=".75"
+				drag="0.02"
+			>
+				<particle>
+					<billboard
+						maxdelay="50"
+						minlife="400"
+						maxlife="500"
+						material="/shared/effects/materials/twirl_03.material"
+						lockup="true"
+						lockright="true"
+						pitch="-90"
+						maxroll="360"
+						position="0 0 50"
+						size="60"
+						startscale="5"
+						minendscale="15"
+						maxendscale="20"
+						startcolor="0"
+						midcolor="0 .5 1"
+						endcolor="0"
+						depthbias="-50"
+					/>
+				</particle>
+			</simpleemitter>
+			<controller life="1000">
+				<model
+					life="180"
+					model="/shared/effects/models/sphere/model.mdf"
+					material="/heroes/kane/ability_04/effects/rim_gradient.material"
+					startscale="0" endscale="8"
+					startalpha="1" midalpha="1" endalpha="0"
+					startcolor=".5 0 .5" endcolor="0"
+				/>
+				<model
+					delay="120"
+					life="175"
+					model="/shared/effects/models/sphere/model.mdf"
+					material="/heroes/kane/ability_04/effects/rim_gradient.material"
+					startscale="1" midscale="5.53" endscale="6.5"
+					midscalepos=".8"
+					startalpha="1" midalpha="1" endalpha="0"
+					startcolor=".5 0 .5" midcolor=".5 0 .5" endcolor="0"
+				/>
+				<model
+					life="180"
+					model="/heroes/kane/ability_04/effects/sphere/model.mdf"
+					startscale="0" endscale="6.5"
+					startalpha="1" midalpha="1" endalpha="0"
+					startcolor=".5 0 .5" endcolor="0"
+				/>
+				<model
+					delay="120"
+					life="175"
+					model="/heroes/kane/ability_04/effects/sphere/model.mdf"
+					startscale="1" midscale="5.15" endscale="6.1"
+					midscalepos=".8"
+					startalpha="1" midalpha="1" endalpha="0"
+					startcolor=".5 0 .5" midcolor=".5 0 .5" endcolor="0"
+				/>
+				<model
+					delay="150"
+					life="175"
+					model="/heroes/kane/ability_04/effects/aura_arena/model.mdf"
+					startscale="4.15" endscale="6"
+					startalpha="1" midalpha="1" endalpha="0"
+					startcolor=".5 0 .5" endcolor="0"
+				/>
+				<model
+					delay="150"
+					life="175"
+					model="/heroes/kane/ability_04/effects/aura_arena/model.mdf"
+					yaw="180"
+					startscale="4.15" endscale="6"
+					startalpha="1" midalpha="1" endalpha="0"
+					startcolor=".05" endcolor="0"
+				/>
+			</controller>
+		<!--	
+			<model
+				maxyaw="360"
+			>
+				<simpleemitter
+					count="25"
+					spawnrate="800"
+					particlelife="1400"
+					offsetradial="300 300 0"
+					offsetsphere="300 300 0"
+				>
+					<particle>
+						<billboard
+							life="2500"
+							material="/shared/effects/materials/earth_cracks_reveal_add_blue.material"
+							lockup="true" lockright="true"
+							pitch="-90"
+							maxroll="360"
+							minsize="40" maxsize="80"
+							startscale="4" midscale="4.5" endscale="4.5" midscalepos=".01"
+							startalpha=".6" midalpha=".6" endalpha="0"
+							startparam="1" endparam="0"
+						/>
+					</particle>
+				</simpleemitter>
+			</model>
+		-->
+		
+			<groundsprite
+				life="2000"
+				material="/shared/effects/materials/earth_cracks_reveal_add_blue.material"
+				maxyaw="360"
+				size="40"
+				startscale="4" midscale="4.5" endscale="4.5" midscalepos=".01"
+				startalpha=".6" midalpha=".6" endalpha="0"
+				directionalspace="global"
+			/>
+			
+			<template name="crack" >
+				<controller  position="{pos1} {pos2} 0" life="2000" yaw="{yaw}" >
+				<groundsprite
+					life="2000"
+					material="/shared/effects/materials/earth_cracks_add_purple.material"
+					maxyaw="360"
+					size="30"
+					startscale="4" midscale="4.5" endscale="4.5" midscalepos=".01"
+					startalpha=".6" midalpha=".6" endalpha="0"
+					directionalspace="global"
+					
+				/>
+				</controller>
+			</template>
+		
+			<instance name="crack" pos1="170" pos2="170" />
+			<instance name="crack" pos1="-170" pos2="170" />
+			<instance name="crack" pos1="170" pos2="-170" />
+			<instance name="crack" pos1="-170" pos2="-170" />
+			<instance name="crack" pos1="200" pos2="0" />
+			<instance name="crack" pos1="-200" pos2="0" />
+			<instance name="crack" pos1="0" pos2="200" />
+			<instance name="crack" pos1="0" pos2="-200" />
+			
+			<template name="crack2" >
+				<controller  position="{pos1} {pos2} 0" life="2000" yaw="{yaw}" >
+				<groundsprite
+					life="2000"
+					material="/shared/effects/materials/earth_cracks_add_purple.material"
+					maxyaw="360"
+					size="40"
+					startscale="4" midscale="4.5" endscale="4.5" midscalepos=".01"
+					startalpha=".6" midalpha=".6" endalpha="0"
+					directionalspace="global"
+					
+				/>
+				</controller>
+			</template>
+			
+			<instance name="crack2" pos1="340" pos2="340" />
+			<instance name="crack2" pos1="-340" pos2="340" />
+			<instance name="crack2" pos1="340" pos2="-340" />
+			<instance name="crack2" pos1="-340" pos2="-340" />
+			<instance name="crack2" pos1="400" pos2="0" />
+			<instance name="crack2" pos1="-400" pos2="0" />
+			<instance name="crack2" pos1="0" pos2="400" />
+			<instance name="crack2" pos1="0" pos2="-400" />
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<camerashake2 scale="12" frequency="30" duration="450" falloffend="800" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>

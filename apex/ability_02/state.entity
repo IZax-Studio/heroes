@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Apex_Ability2"
+
+	icon="icon2.tga"
+	passiveeffect="effects/state_self.effect"
+	
+	movespeedmultiplier="1.0"
+	slowresistance="1.0"
+	unitwalking="true"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<onframe />
+
+	<onattackimpact>
+		<cantarget targetscheme="enemy_objects">
+			<spawnaffector name="Affector_Apex_Ability2" target="this_owner_position" direction="target_position" distance="100" />
+			<expire />
+		</cantarget>
+	</onattackimpact>
+	
+	<altavatar key="Hero_Apex.Alt" modpriority="100"
+	    icon="../alt/ability_02/icon.tga"
+		passiveeffect="../alt/ability_02/effects/state_self.effect"
+	/>
+	<altavatar key="Hero_Apex.Alt2" modpriority="100"
+		passiveeffect="../alt2/ability_02/effects/state_self.effect"
+	/>
+</state>
