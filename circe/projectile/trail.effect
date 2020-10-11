@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+				
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="500"
+				falloffend="1300"
+				volume="1" 
+				life="2000"
+				sample="../sounds/custom/attack_%.wav"
+			/>
+			
+			<trailemitter
+				spawnrate="80"
+				particlelife="150"
+				material="/shared/effects/materials/solid_bolt.material"
+				texposscale="0"
+				texstretchscale="1"
+			>
+				<particle
+					startcolor=".2 0 0"
+					midcolor="0"
+					endcolor="0"
+					midcolorpos=".4"
+					startsize="10"
+					endsize="40"
+					startalpha="1"
+					endalpha="0"
+				/>
+			</trailemitter>
+		
+			<template name="trails">
+				<trailemitter
+					direction="{dir}"
+					minspawnrate="10"
+					maxspawnrate="20"
+					particlelife="1000"
+					gravity="-2"
+					texpostime="1000"
+					texposscale="1"
+					texstretchscale="0"
+					maxspeed="60"
+					drag="0.02"
+					material="/shared/effects/materials/arrow_trail_blend.material"
+				>
+					<particle
+						startcolor="0"
+						midcolor=".1 0 0"
+						endcolor="0"
+						midcolorpos=".3"
+						startsize="40"
+						minendsize="100"
+						maxendsize="140"
+						startalpha="0"
+						midalpha=".4"
+						endalpha="0"
+						midalphapos=".3"
+					/>
+				</trailemitter>
+			</template>
+			
+			<controller
+				expirelife="1500"
+				minrollspeed="-100"
+				maxrollspeed="100"
+			>
+				<instance name="trails" dir="0 0 1"/>
+				<instance name="trails" dir="1 0 0"/>
+				<instance name="trails" dir="0 0 -1"/>
+				<instance name="trails" dir="-1 0 0"/>
+			</controller>
+		
+			<simpleemitter
+				spawnrate="120"
+				minparticlelife="500"
+				maxparticlelife="1250"
+				gravity="-2"
+				drag=".02"
+				maxspeed="20"
+				material="/shared/effects/materials/phantom_white.material"
+				depthbias="-15"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-6"
+					maxanglespeed="6"
+					startcolor=".3 0 0"
+					endcolor="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".3"
+					startsize="0"
+					midsizepos=".35"
+					minendsize="40"
+					maxendsize="150"
+				/>
+				<particle
+					maxangle="360"
+					minanglespeed="-6"
+					maxanglespeed="6"
+					color="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".2"
+					startsize="0"
+					midsizepos=".35"
+					minendsize="40"
+					maxendsize="150"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->

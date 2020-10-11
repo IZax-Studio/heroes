@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Circe_Ability1_Illusion"
+
+	icon="icon1.tga"
+	ishidden="false"
+	passiveeffect=""
+	
+	effecttype=""
+	allowtransfer="false"
+	
+	impactinterval="2000"
+>
+
+	<onimpact>
+		<distance target="proxy_entity" source="source_entity" />		
+		<compare a="result" b="1200" op="gt">
+			<expire />
+		</compare>
+		<else>
+			<spawnprojectile name="Projectile_Circe_Ability1" target="proxy_entity" />
+		</else>
+	</onimpact>
+</state>

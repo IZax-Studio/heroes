@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state 
+    name="State_Circe_Ability4_Enemy" 
+
+    icon="icon4.tga"
+    passiveeffect="effects/link.effect"
+	
+	alwaystransmitdata="true"
+	
+    effecttype=""
+	deathpersist="true"
+> 
+	<onframe>
+		<distance source="source_entity" target="this_owner_entity" />
+		<compare a="result" b="1500" op="gt">
+			<breakchannel entity="source_entity" />
+			<expire/>
+		</compare>
+	</onframe>
+
+	<onexpired>
+		<breakchannel entity="source_entity" />
+	</onexpired>
+	
+	<altavatar key="Hero_Circe.Alt" modpriority="1"
+		passiveeffect="/heroes/circe/alt/ability_04/effects/link.effect"
+	/>
+	
+	<altavatar key="Hero_Circe.Alt2" modpriority="1"
+		passiveeffect="/heroes/circe/alt2/ability_04/effects/link.effect"
+	/>
+	
+	<altavatar key="Hero_Circe.Alt3" modpriority="1"
+		passiveeffect="/heroes/circe/alt3/ability_04/effects/link.effect"
+	/>
+	
+	<altavatar key="Hero_Circe.Alt4" modpriority="1"
+		passiveeffect="/heroes/circe/alt4/ability_04/effects/link.effect"
+	/>
+	
+	<altavatar key="Hero_Circe.Alt5" modpriority="1"
+		passiveeffect="/heroes/circe/alt5/ability_04/effects/link.effect"
+	/>
+</state>

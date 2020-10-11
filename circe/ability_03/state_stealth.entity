@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Circe_Ability3_Stealth"
+
+	icon="icon3.tga"
+	passiveeffect=""
+	
+	stealthtype="hero"
+	fadetime="0"
+	unitwalking="true"
+
+	effecttype="StatusStealth"
+>
+	<onframe />
+
+	<oninflict>
+		<forgetattacks />
+		<startfade />
+	</oninflict>
+	
+	<onattack>
+		<expire />
+	</onattack>
+	
+	<onactivatepreimpact>
+		<expire />
+	</onactivatepreimpact>
+</state>

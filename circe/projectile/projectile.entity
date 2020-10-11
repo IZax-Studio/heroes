@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_CirceAttack"
+
+	speed="900"
+	gravity="1000"
+
+	model="/shared/models/invis.mdf"
+
+	impacteffect="impact.effect"
+	traileffect="trail.effect"
+>
+
+	<altavatar key="Hero_Circe.Alt4"
+		traileffect="../alt4/effects/projectile/trail.effect"
+		impacteffect="../alt4/effects/projectile/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Circe.Alt5"
+		traileffect="../alt5/effects/projectile/trail.effect"
+		impacteffect="../alt5/effects/projectile/impact.effect"
+	/>
+</projectile>

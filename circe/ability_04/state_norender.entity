@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Circe_Ability4_NoRender"
+
+	ishidden="true"
+	icon="icon4.tga"
+	passiveeffect=""
+	
+	norender="true"
+	stealthtype="unrevealable"
+	fadetime="0"
+	
+	deathpersist="true"
+
+	effecttype=""
+	allowtransfer="false"
+>
+	<onframe />
+	
+	<onrespawn>
+		<expire/>
+	</onrespawn>
+</state>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Circe_Ability4_SelfCast"
+
+	icon="icon4.tga"
+	passiveeffect="effects/chrysalis.effect"
+	effecttype=""
+	ishidden="true"
+	impactinterval="2000"
+
+	modifierkey="Circe_channel"
+>
+	<onimpact>
+		<!-- Apply a frame of unitwalking so that the mimic can spawn directly on top of Circe -->
+		<applystate name="State_Circe_Ability4_Unitwalking" target="source_entity" duration="50" />
+	</onimpact>
+	
+	<altavatar key="Hero_Circe.Alt" modpriority="1"
+		passiveeffect="/heroes/circe/alt/ability_04/effects/chrysalis.effect"
+	/>
+	
+	<altavatar key="Hero_Circe.Alt2" modpriority="1"
+		passiveeffect="/heroes/circe/alt2/ability_04/effects/chrysalis.effect"
+	/>
+	
+	<altavatar key="Hero_Circe.Alt3" modpriority="1"
+		passiveeffect="/heroes/circe/alt3/ability_04/effects/chrysalis.effect"
+	/>
+	
+	<altavatar key="Hero_Circe.Alt4" modpriority="1"
+		passiveeffect="/heroes/circe/alt4/ability_04/effects/chrysalis.effect"
+	/>
+	
+	<altavatar key="Hero_Circe.Alt5" modpriority="1"
+		passiveeffect="/heroes/circe/alt5/ability_04/effects/chrysalis.effect"
+	/>
+</state>

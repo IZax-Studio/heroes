@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Circe4"
+
+	icon="icon4.tga"
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	
+	anim="ability_4"
+	casteffect=""
+	casttime="100"
+	castactiontime="100"
+	channeltime="2000"
+	ischanneling="true"
+
+	actiontype="target_entity"
+	targetscheme="enemy_heroes_not_heropets"
+	casteffecttype="Magic"
+	
+	manacost="100,150,200"
+	cooldowntime="100000,80000,60000"
+	novoiceresponse="true"
+	
+	range="750"
+	showareacast="true"
+	
+	ignoreinvulnerable="false"
+>
+	<onimpact />
+	
+	<onactivatestart>
+		<setproxy target="target_entity" />
+	</onactivatestart>
+
+	<activatecost>
+		<!-- Cannot copy Adrenaline's Shards -->
+		<hasmodifier name="Adrenaline_Shard" entity="this_proxy_entity">
+			<invalidate />
+		</hasmodifier>
+	</activatecost>
+	
+	<onchannelstart>
+		<setactivemodifierkey name="Circe_channel" entity="this_entity" />
+		<applystate name="State_Circe_Ability4_Enemy" ischannel="true" target="target_entity" duration="2000" /> 
+		<applystate name="State_Circe_Ability4_SelfCast" ischannel="true" duration="2000" proxy="this_entity" target="source_entity" />
+	</onchannelstart>
+	
+	<onchannelbreak>
+		<setactivemodifierkey name="" entity="this_entity" />
+	</onchannelbreak>
+
+	<onchannelend>
+		<!-- Basic clear all debuffs/binds/disjoints -->
+		<dispel type="StatusBuff" target="source_entity" />
+		<dispel type="StatusDebuff" target="source_entity" />
+		<dispel type="StatusDisable" target="source_entity" />
+
+		<unbind target="source_entity" />
+		<disjoint target="source_entity" />
+		<orderdisjoint target="source_entity" />
+
+		<!-- Copy this block to remove things when you go un-targetable -->
+		<expirestate name="State_Circe_Ability4_Enemy" target="source_entity" /> <!-- Circe's state she puts on the target when she is channeling on them to copy them -->
+		<expirestate name="State_Enemy_Ravenor_Ability1" target="source_entity" />
+		<expirestate name="CTF_State_FlagHolder_Hellbourne" target="source_entity" />
+		<expirestate name="CTF_State_FlagHolder_Legion" target="source_entity" />
+
+		<lockbackpack entity="source_entity" />
+		
+		<!-- Expire certain pets -->
+		<areaofeffect
+			radius="1000"
+			targetscheme="my_units_and_gadgets"
+			targetselection="all"
+			ignoreinvulnerable="true"
+		>				
+			<entitytype type="Pet_EmeraldWarden"> <!-- Emerald Warden's Gawain -->
+				<kill target="target_entity" source="" />
+			</entitytype>		
+		</areaofeffect>
+
+		<!-- Apply self state to hide the hero and teleport him around, set the proxy of the ability to the state -->
+		<applystate name="State_Circe_Ability4_Self" duration="15000" target="source_entity" pushentity="true" />
+		<setproxy entity="this_entity" target="stack_entity" />
+
+		<!-- Spawn Mimic inflict damage multiplier does not work on spells -->
+		<spawnmimic
+			owner="source_entity"
+			source="target_entity"
+			target="source_entity"
+			receivedamagemultiplier="1.0"
+			inflictdamagemultiplier="1.0"
+			count="1"
+			lifetime="15000"
+			pushentity="true"
+			dontclonestates="true"
+
+			spawneffect=""
+			playdeathanim="true"
+		/>
+		
+		<applystate name="State_Engineer_Ability4_Zap_Immunity" duration="100" target="stack_entity" />
+		
+		<!-- Apply the out of bounds state for the Team Deathmatch mode -->
+		<hasmodifier name="team_deathmatch" entity="source_entity">
+			<applystate name="State_Team_Deathmatch_OutOfBounds" target="stack_entity" continuous="true" />
+		</hasmodifier>
+		
+		<!-- Set the self state's proxy to the mimic so it can teleport you around correctly and select the new unit -->
+		<setproxy entity="this_proxy_entity" target="stack_entity" />
+		<selectentity source="source_entity" targets="stack_entity"/>
+		
+		<inheritactions source="source_entity" target="stack_entity" />			
+		<replaceinselectionsets source="source_entity" target="stack_entity" />
+
+		<!-- Change the health of the mimic to match that of Circe and give him max mana -->
+		<setvar0 a="source_health_percent" />
+		<setvar1 target="stack_entity" a="target_health" />
+		<setvar2 target="stack_entity" a="target_maxhealth" />
+		<setvar3 a="var0" b="var2" op="mult" />
+		<evaluate a="var3" b="var1" op="sub" />
+		<changehealth target="stack_entity" a="result" />
+
+		<!-- Refresh the mimic's items and give it full mana -->
+		<givemana amount="9999" target="stack_entity" />
+		<refreshinventoryitems source="stack_entity" />
+
+		<!-- Apply a state to the mimic so that if he dies it pops the hero out of it early -->
+		<applystate name="State_Circe_Ability4_Mimic" duration="15000" target="stack_entity" proxy="source_entity" />
+		
+		<!-- Seperate effects state so that it can propagate to illusions -->
+		<applystate name="State_Circe_Ability4_Mimic_Effects" continuous="true" target="stack_entity" proxy="source_entity" />
+		
+		<!-- Apply Master's Legacy state if the target has it applied to them -->
+		<condition test="hasstate State_MastersLegacy">
+			<applystate name="State_MastersLegacy" duration="15000" target="stack_entity" />
+		</condition>
+		
+		<setactivemodifierkey name="" entity="this_entity" />
+
+		<hasavatarkey name="Hero_Circe.Alt">
+			<playeffect effect="/heroes/circe/alt/ability_04/effects/chrysalis_expire.effect" source="source_position" target="source_position" occlude="true" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Circe.Alt2">
+				<playeffect effect="/heroes/circe/alt2/ability_04/effects/chrysalis_expire.effect" source="source_position" target="source_position" occlude="true" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Circe.Alt3">
+					<playeffect effect="/heroes/circe/alt3/ability_04/effects/chrysalis_expire.effect" source="source_position" target="source_position" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Circe.Alt4">
+						<playeffect effect="/heroes/circe/alt4/ability_04/effects/chrysalis_expire.effect" source="source_position" target="source_position" occlude="true" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Circe.Alt5">
+							<playeffect effect="/heroes/circe/alt5/ability_04/effects/chrysalis_expire.effect" source="source_position" target="source_position" occlude="true" />
+						</hasavatarkey>
+						<else>
+							<playeffect effect="effects/chrysalis_expire.effect" source="source_position" target="source_position" occlude="true" />
+						</else>
+					</else>	
+				</else>
+			</else>
+		</else>
+	</onchannelend>
+
+	<modifier key="Circe_channel" modpriority="100" 
+		casteffecttype="SuperiorMagic"
+		ignoreinvulnerable="true"
+		targetscheme="enemy_heroes_deadalive"
+	>
+	</modifier>
+</ability>

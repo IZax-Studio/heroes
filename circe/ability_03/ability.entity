@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Circe3"
+	
+	icon="icon3.tga"
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	
+	anim=""
+	casttime="0"
+	castactiontime="0"
+	frontqueue="true"
+	inheritmovement="true"
+	nonaggressive="true"
+
+	actiontype="target_self"
+	manacost="70"
+	cooldowntime="32000,28000,24000,20000"
+	casteffecttype=""
+	dontshowhovercast="true"
+
+>
+	<onimpact>
+	    <spawnunit name="Gadget_Circe_Sound_Ability3" count="1" target="source_position" pushentity="true" facing="target_position"/>
+		<calculatedamage source="target_entity" target="source_entity" amount="damage_attempted" effecttype="Physical" />
+		<setvar0 a="result" />
+		<applystate name="State_Circe_Ability3" duration="50" target="source_entity" pushentity="true" />
+		<setaccumulator entity="stack_entity" value="var0" />
+		<setvalue name="damage_attempted" a="damage_attempted" b="0" op="mult" />
+	</onimpact>
+
+</ability>

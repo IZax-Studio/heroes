@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Circe_Ability4_Self"
+
+	icon="icon4.tga"
+	passiveeffect=""
+	ishidden="true"
+	
+	immobilized="true"
+	disarmed="true"
+	silenced="true"
+	perplexed="true"
+
+	norender="true"
+	stealthtype="unrevealable"
+	fadetime="0"
+
+	invulnerable="true"
+	
+	nothreat="true"
+	unitwalking="true"
+	cliffwalking="true"
+	buildingwalking="true"
+	treewalking="true"
+	slowresistance="1.0"
+	
+	unselectable="true"
+	
+	effecttype=""
+>
+	<onattackingdamageevent>
+		<setvalue name="damage_attempted" a="damage_attempted" b="0.7,0.85,1.0" op="mult" />
+	</onattackingdamageevent>
+
+	<onframe>
+		<compare a="this_proxy_entity" b="0" op="ne">
+			<teleport source="source_entity" target="this_proxy_entity" interpolate="true" facetarget="true" />
+		</compare>
+		<else>
+			<expire />
+		</else>
+	</onframe>
+	
+	<onexpired>
+		<unlockbackpack entity="this_owner_entity" />
+		<playanim name="idle" />
+	</onexpired>
+</state>

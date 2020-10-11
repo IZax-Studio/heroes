@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Circe_Ability4_Mimic"
+	
+	icon="icon4.tga"
+	passiveeffect=""
+	
+	maxcharges="2"
+	
+	impactinterval="14900"
+
+	deathpersist="true"
+
+	modifierkey="circe_iammimic"
+>
+	<onimpact>
+		<expirestate name="State_Salomon_Ability4" target="this_owner_entity" />
+		<expirestate name="State_Salomon_Ability4_Self" target="this_owner_entity" />
+	</onimpact>
+	
+	<oninflict>
+		<playanim name="idle" />
+		<setcharges a="2" />
+		
+		<!-- Expire specific modifier keys -->
+		<pushability source="this_owner_entity" name="Ability_Skrap4" />
+		<setactivemodifierkey name="" entity="stack_entity" />
+		
+		<!-- Item-specific behaviours -->
+		<foreachitem source="this_owner_entity">
+			<!-- Genjuro -->
+			<entitytype target="target_entity" type="Item_Sasuke">
+				<setcharges a="2" entity="target_entity" />
+				<setactivemodifierkey name="sasuke_fullcharges" entity="target_entity" />
+			</entitytype>
+		</foreachitem>
+	</oninflict>
+	
+	<onframe>
+		<compare a="charges" b="0" op="gt">
+			<refreshabilities target="this_owner_entity" />
+			<removecharge />
+		</compare>
+	</onframe>
+	
+	<onattackingdamageevent>
+		<setvalue name="damage_attempted" a="damage_attempted" b="0.70,0.85,1.0" op="mult" />
+	</onattackingdamageevent>
+	
+	<onkilled>
+		<expirestate name="State_Circe_Ability4_Self" target="this_proxy_entity" />
+		<teleport source="this_proxy_entity" target="source_position" interpolate="false" />		
+		<kill source="target_entity" target="this_proxy_entity" />
+		<expire />
+	</onkilled>
+	
+	<onexpired>
+		<compare a="accumulator" b="0" op="eq">
+			<!-- Change the health of the Circe to that of the mimic -->
+			<setvar0 source="this_owner_entity" a="source_health_percent" />
+			<setvar1 target="this_proxy_entity" a="target_health" />
+			<setvar2 target="this_proxy_entity" a="target_maxhealth" />
+			<setvar3 a="var0" b="var2" op="mult" />
+			<compare a="var1" b="var3" op="lt">
+				<evaluate a="var3" b="var1" op="sub" />
+				<changehealth target="this_proxy_entity" a="result" />
+			</compare>
+			<else>
+				<evaluate a="var3" b="var1" op="sub" />
+				<changehealth target="this_proxy_entity" a="result" />
+			</else>
+			
+			<!-- Expire the states so the hero pops out -->
+			<hasmodifier entity="this_owner_entity" name="ihazatokenoflife">
+				<heal target="this_proxy_entity" a="999999" />
+			</hasmodifier>
+			
+			<!-- Expire the states so the hero pops out -->
+			<expirestate name="State_Circe_Ability4_Mimic_Scar" target="this_proxy_entity" />
+			<expirestate name="State_Circe_Ability4_Self" target="this_proxy_entity" />
+			<teleport source="this_proxy_entity" target="source_position" interpolate="false" />		
+			
+			<!-- Kill off hero-specific pets: Wildsoul, Tremble, Gemini, Scout, Forsaken Archer, Defiler, Emerald Warden, Klanx, Zephyr, Riptide -->
+			<areaofeffect
+				global="true"
+				targetscheme="my_units_and_gadgets"
+				targetselection="all"
+				ignoreinvulnerable="true"
+			>				
+				<targettype type="mimic"> <!-- Kill all other mimics just in case -->
+					<entitytype type="Pet_Skrap_Ability4"> <!-- But do NOT kill Skrap's ult, but take control of it -->
+						<takecontrol source="this_proxy_entity" target="target_entity" />
+					</entitytype>
+					<else>
+						<entitytype type="Pet_Skrap_Ability1"> <!-- Or Skrap's Q rat -->
+							<takecontrol source="this_proxy_entity" target="target_entity" />
+						</entitytype>
+						<else>
+							<entitytype type="Pet_ForsakenArcher_Ability4"> <!-- Or Forsaken Archer's R image -->
+								<takecontrol source="this_proxy_entity" target="target_entity" />
+							</entitytype>
+							<else>
+								<entitytype type="Gadget_Gladiator_Ability2" /> <!-- Gladiator's W gadget -->
+								<else>
+									<entitytype type="Gadget_Gladiator_Ability2_Vision" /> <!-- Gladiator's W vision gadget -->
+									<else>
+										<entitytype type="Gadget_Kinisis_Ability4" /> <!-- Kinesis' R gadgets -->
+										<else>
+											<kill target="target_entity" source="" />
+										</else>
+									</else>
+								</else>								
+							</else>
+						</else>
+					</else>
+				</targettype>
+				
+				<entitytype type="Pet_Yogi_Ability1">
+					<kill target="target_entity" source="" />
+				</entitytype>
+				<entitytype type="Pet_Tremble_Ability4">
+					<kill target="target_entity" source="" />
+				</entitytype>
+				<entitytype type="Gadget_Tremble_Ability2">
+					<kill target="target_entity" source="" />
+				</entitytype>
+				<entitytype type="Gadget_Tremble_Ability2_Well">
+					<kill target="target_entity" source="" />
+				</entitytype>
+				<entitytype type="Heropet_Gemini_Ability4_Ice">
+					<kill target="target_entity" source="" />
+				</entitytype>
+				<entitytype type="Heropet_Gemini_Ability4_Fire">
+					<kill target="target_entity" source="" />
+				</entitytype>
+				<entitytype type="Gadget_Scout_Ability2">
+					<kill target="target_entity" source="" />
+				</entitytype>
+				<entitytype type="Pet_Defiler_Ability4">
+					<kill target="target_entity" source="" />
+				</entitytype>
+				<entitytype type="Pet_EmeraldWarden">
+					<kill target="target_entity" source="" />
+				</entitytype>
+				<entitytype type="Pet_Klanx_Ability3">
+					<kill target="target_entity" source="" />
+				</entitytype>
+				<entitytype type="Pet_Zephyr_Ability2">
+					<kill target="target_entity" source="" />
+				</entitytype>
+				<entitytype type="Gadget_Riptide_Ability2_Vision">
+					<kill target="target_entity" source="" />
+				</entitytype>				
+			</areaofeffect>
+			
+			<!-- Klanx's Goon Squad minions -->
+			<areaofeffect
+				global="true"
+				targetscheme="KlanxTowers"
+				targetselection="all"
+				ignoreinvulnerable="true"
+			>
+				<entitytype type="Gadget_Klanx_Ability4_Tower">
+					<kill target="target_entity" source="" />
+				</entitytype>
+				<entitytype type="Gadget_Klanx_Ability4_Tower2">
+					<kill target="target_entity" source="" />
+				</entitytype>
+				<entitytype type="Gadget_Klanx_Ability4_Tower3">
+					<kill target="target_entity" source="" />
+				</entitytype>
+			</areaofeffect>
+			
+			<!-- Emerald Warden's SotM-R, second Gawain -->
+			<pushability name="Ability_EmeraldWarden4" />
+			<compare a="stack_entity" b="0" op="ne">
+				<kill target="stack_proxy_entity" source="" />
+			</compare>
+			
+			<!-- Specific Projectiles -->
+			<areaofeffect
+				global="true"
+				targetscheme="projectiles"
+				targetselection="all"
+				ignoreinvulnerable="true"
+			>
+				<entitytype type="Projectile_Chi_Ability2" source="this_proxy_entity" target="target_entity"> <!-- Chi's W -->
+					<targettype type="enemy" source="this_proxy_entity" target="target_entity" />
+					<else>
+						<targettype type="friendly" source="this_proxy_entity" target="target_entity" />
+						<else>
+							<delete target="target_entity" source="" />
+						</else>
+					</else>
+				</entitytype>
+			</areaofeffect>
+			
+			<inheritactions source="this_owner_entity" target="this_proxy_entity" ignoreforcedorders="true"/>
+			<replaceinselectionsets source="this_owner_entity" target="this_proxy_entity" />
+			<transferallownership source="this_owner_entity" owner="this_proxy_entity" excluded="State_Circe_Ability4_Mimic State_Circe_Ability4_Mimic_Effects Gadget_Nitro_Turret" />
+
+			<!-- Other state expirations on Circe -->
+			<expirestate name="State_Kane_Ability3_Regen" target="this_proxy_entity" />
+			<expirestate name="State_Kane_Ability3_Regen_Mana" target="this_proxy_entity" />
+			
+			<!-- Expire regeneration/sight check state for Goldenveil's E on the opposing main base structure -->
+			<entitytype type="Hero_Goldenveil" source="this_owner_entity" target="this_owner_entity">
+				<pushentitysearch global="true" targetscheme="enemy_main_base_structure" ignoreinvulnerable="true" />
+				<expirestate name="State_Goldenveil_Ability3" target="stack_entity" />
+				
+				<foreachplayer>
+					<compare a="source_team" b="target_team" op="ne">
+						<pushhero />
+						<expirestate name="State_Goldenveil_Ability4" target="stack_entity" />
+						<expirestate name="State_Goldenveil_Ability4_Hitlist" target="stack_entity" />
+					</compare>
+				</foreachplayer>
+			</entitytype>
+			
+			<!-- Only loop once -->
+			<setaccumulator value="1" />
+			
+			<!-- Art -->
+			<hasavatarkey name="Hero_Circe.Alt">
+				<playeffect effect="/heroes/circe/alt/ability_04/effects/state_end.effect" source="source_position" target="target_position" occlude="true" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Circe.Alt2">
+					<playeffect effect="/heroes/circe/alt2/ability_04/effects/state_end.effect" source="source_position" target="target_position" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Circe.Alt3">
+						<playeffect effect="/heroes/circe/alt3/ability_04/effects/state_end.effect" source="source_position" target="target_position" occlude="true" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Circe.Alt4">
+							<playeffect effect="/heroes/circe/alt4/ability_04/effects/state_end.effect" source="source_position" target="target_position" occlude="true" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Circe.Alt5">
+								<playeffect effect="/heroes/circe/alt5/ability_04/effects/state_end.effect" source="source_position" target="target_position" occlude="true" />
+							</hasavatarkey>
+							<else>
+								<playeffect effect="effects/state_end.effect" source="source_position" target="target_position" occlude="true" />
+							</else>
+						</else>	
+					</else>
+				</else>
+			</else>
+		</compare>
+	</onexpired>
+	
+	<ondeath>
+		<!-- Fixed Prisoner ult when the mimic dies so it doesn't go off -->
+		<areaofeffect
+			radius="800"
+			targetselection="all"
+			targetscheme="enemy_heroes"
+			effecttype=""
+		>
+			<expirestate name="State_Prisoner_Ability4" />
+		</areaofeffect>
+
+		<compare a="lifetime_remaining" b="0" op="gt">
+			<applystate name="State_Circe_Ability4_Pause" target="this_owner_entity" duration="3000" />
+			<applystate name="State_Circe_Ability4_Pause" target="this_proxy_entity" duration="3000" />
+		</compare>
+	</ondeath>
+	
+	<onunkillabledeath>
+		<!-- Madman state to apply a state to Circe that kills her in either 5 seconds or if it expires, whichever comes first -->
+		<entitytype type="Hero_Scar" source="this_owner_entity" target="this_owner_entity">
+			<applystate name="State_Circe_Ability4_Mimic_Scar" target="this_proxy_entity" duration="5000" proxy="target_entity" pushentity="true" />
+		</entitytype>
+	</onunkillabledeath>
+</state>

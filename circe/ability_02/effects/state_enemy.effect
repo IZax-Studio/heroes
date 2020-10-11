@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+	<definitions>
+		
+		<modifier
+			color=".7 1.3 1.3"
+		/>
+			
+		<particlesystem name="system0" space="world" scale="1">
+		
+		<sound
+				volume="1"
+				sample="/heroes/circe/ability_02/sounds/impact_enemy.wav"
+				linearfalloff="true"
+				falloffstart="700"		
+				falloffend="1300" 
+			/>
+		
+			<skeletonemitter
+				spawnrate="200"
+				particlelife="500"
+				material="/shared/effects/materials/phantom_white.material"
+				depthbias="20"
+				maxspeed="50"
+			>
+				<particle
+					maxangle="360"
+					color="0 1 1"
+					startsize="10"
+					endsize="150"
+					startalpha="1"
+					endalpha="0"
+				/>
+			</skeletonemitter>
+		
+			<template name="cast_power">
+				<billboard
+					bone="{bone}"
+					material="/shared/effects/materials/corona_06.material"
+					expirelife="500"
+					startcolor="0 .5 .5"
+					endcolor="0"
+					size="50"
+				/>
+
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="30"
+					minparticlelife="230"
+					maxparticlelife="1000"
+					speed="100"
+					drag="0.05"
+					gravity="-1"
+					offsetsphere="10 10 10"
+					material="/shared/effects/materials/bad_healing_smoke_12.material"
+				>
+					<particle
+						minangle="-180"
+						maxangle="180"
+						minanglespeed="-150"
+						maxanglespeed="150"
+						turn="1"
+						startcolor="0 .1 .1"
+						endcolor="0"
+						size="20"
+						minendscale="4"
+						maxendscale="8"
+						startalpha=".3"
+						midalpha=".9"
+						midalphapos="0.1"
+						endalpha="0"
+					/>
+				</simpleemitter>
+
+
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="30"
+					minparticlelife="250"
+					maxparticlelife="500"
+					speed="10"
+					drag="0.05"
+					offsetsphere="5 5 5"
+					depthbias="-40"
+					material="/shared/effects/materials/phantom_smoke_04.material"
+				>
+					<particle
+						minangle="-180"
+						maxangle="180"
+						minanglespeed="-150"
+						maxanglespeed="150"
+						turn="1"
+						startcolor="0"
+						midcolorpos="0.2"
+						midcolor="0 .1 .1"
+						endcolor="0"
+						size="20"
+						startstickiness="0"
+						maxendstickiness="1"
+						minendscale="4"
+						maxendscale="8"
+						startalpha=".3"
+						midalpha="1"
+						midalphapos="0.1"
+						endalpha="0"
+					/>
+				</simpleemitter>
+				
+				<billboard
+					bone="{bone}"
+					expirelife="500"
+					startcolor="0 .5 .5"
+					endcolor="0"
+					size="65"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="10"
+					particlelife="1000"
+					offsetsphere="5 5 5"
+					material="/shared/effects/materials/refract_wave2.material"
+				>
+					<particle
+						startalpha="0"
+						midalpha=".7"
+						endalpha="0"
+						midalphapos=".2"
+						maxangle="360"
+						startsize="50"
+						endsize="70"
+						param=".2"
+						depthbias="-130"
+					/>
+				</simpleemitter>
+				
+				<trailemitter
+					bone="{bone}"
+					spawnrate="20"
+					particlelife="600"
+					material="/shared/effects/materials/arrow_trail_blend.material"
+					texposscale="0"
+					texstretchscale="1"
+				>
+					<particle
+						startsize="25"
+						endsize="0"
+						startcolor="0 1 1"
+						endcolor="0"
+						startalpha="1"
+						endalpha="0"
+					/>
+				</trailemitter>
+			</template>
+			
+			<instance name="cast_power" bone="_bone_leftfoot" />
+			<instance name="cast_power" bone="_bone_rightfoot" />
+			
+		</particlesystem>
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

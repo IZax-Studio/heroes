@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" >
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			
+			<simpleemitter
+				bone="_bone_head"
+				spawnrate="40"
+				particlelife="200"
+				gravity="0"
+				speed="10"
+				acceleration="00"
+				position="0 0 0"
+				material="/shared/effects/materials/flame.material"
+				offsetsphere="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 0 0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="180"
+					minanglespeed="50"
+					startcolor=".5 0 0"
+					midcolor=".5 0 0"
+					endcolor="1 0 0"
+					midcolorpos="1"
+					maxanglespeed="0"
+					startsize="50"
+					midsize="75"
+					endsize="10"
+					startalpha=""
+					midalpha="1"
+					endalpha="0"
+					startanchor="1"
+					endanchor=".5"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_head"
+				spawnrate="50"
+				particlelife="500"
+				gravity="-10"
+				speed="10"
+				acceleration="00"
+				position="0 0 0"
+				material="/shared/effects/materials/phantom_black.material"
+				offsetsphere="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 0 0"
+			>
+				<particle 
+					color="0 0 0"
+					minangle="0"
+					maxangle="180"
+					minanglespeed="50"
+					maxanglespeed="0"
+					startsize="50"
+					midsize="75"
+					endsize="10"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					startanchor="1"
+					endanchor=".5"
+				/>
+			</simpleemitter>			
+			
+			<simpleemitter
+				bone="_bone_lefthand"
+				spawnrate="40"
+				particlelife="200"
+				gravity="0"
+				speed="10"
+				acceleration="00"
+				position="0 15 -20"
+				material="/shared/effects/materials/flame.material"
+				offsetsphere="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 0 0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="180"
+					minanglespeed="50"
+					startcolor=".5 0 0"
+					midcolor=".5 0 0"
+					endcolor="1 0 0"
+					midcolorpos="1"
+					maxanglespeed="0"
+					startsize="50"
+					midsize="75"
+					endsize="10"
+					startalpha=""
+					midalpha="1"
+					endalpha="0"
+					startanchor="1"
+					endanchor=".5"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_lefthand"
+				spawnrate="50"
+				particlelife="500"
+				gravity="-10"
+				speed="10"
+				acceleration="00"
+				position="0 15 -20"				
+				material="/shared/effects/materials/phantom_black.material"
+				offsetsphere="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 0 0"
+			>
+				<particle 
+					color="0 0 0"
+					minangle="0"
+					maxangle="180"
+					minanglespeed="50"
+					maxanglespeed="0"
+					startsize="50"
+					midsize="75"
+					endsize="10"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					startanchor="1"
+					endanchor=".5"
+				/>
+			</simpleemitter>	
+
+			<simpleemitter
+				bone="_bone_righthand"
+				spawnrate="40"
+				particlelife="200"
+				gravity="0"
+				speed="10"
+				acceleration="00"
+				position="0 15 -15"
+				material="/shared/effects/materials/flame.material"
+				offsetsphere="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 0 0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="180"
+					minanglespeed="50"
+					startcolor=".5 0 0"
+					midcolor=".5 0 0"
+					endcolor="1 0 0"
+					midcolorpos="1"
+					maxanglespeed="0"
+					startsize="50"
+					midsize="75"
+					endsize="10"
+					startalpha=""
+					midalpha="1"
+					endalpha="0"
+					startanchor="1"
+					endanchor=".5"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_righthand"
+				spawnrate="50"
+				particlelife="500"
+				gravity="-10"
+				speed="10"
+				acceleration="00"
+				position="0 15 -15"				
+				material="/shared/effects/materials/phantom_black.material"
+				offsetsphere="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 0 0"
+			>
+				<particle 
+					color="0 0 0"
+					minangle="0"
+					maxangle="180"
+					minanglespeed="50"
+					maxanglespeed="0"
+					startsize="50"
+					midsize="75"
+					endsize="10"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					startanchor="1"
+					endanchor=".5"
+				/>
+			</simpleemitter>	
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

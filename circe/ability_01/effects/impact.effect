@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.4">
+		
+					<sound
+				volume="1"
+				sample="/heroes/circe/ability_01/sounds/impact.wav"
+				linearfalloff="true"
+				falloffstart="1000"		
+				falloffend="1300" 
+			/>
+		
+			<simpleemitter
+				count="40"
+				position="0 30 0"
+				spawnrate="1000"
+				minparticlelife="300"
+				maxparticlelife="700"
+				gravity="-2"
+				drag=".02"
+				maxspeed="500"
+				direction="0 0 1"
+				maxangle="80"
+				material="/shared/effects/materials/phantom_white.material"
+				depthbias="-15"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-6"
+					maxanglespeed="6"
+					color="0 0 0"
+					startalpha="0"
+					midalpha=".75"
+					endalpha="0"
+					midalphapos=".1"
+					startsize="0"
+					midsizepos=".35"
+					minendsize="50"
+					maxendsize="200"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				count="50"
+				position="0 30 0"
+				spawnrate="1000"
+				minparticlelife="400"
+				maxparticlelife="800"
+				material="/shared/effects/materials/whitedot_blend.material"
+				minspeed="100"
+				maxspeed="200"
+				drag="0.04"
+				inheritvelocity="-.5"
+				direction="0 0 1"
+				minangle="30"
+				maxangle="80"
+			>
+				<template name="streak_particle" >
+					<particle
+						turn="1"
+						flare="1"
+						heightdistort=".02"
+						minscale="10"
+						maxscale="30"
+						startcolor="0"
+						midcolor="{color}"
+						endcolor="0"
+						midcolorpos=".15"
+						startalpha="0"
+						midalpha=".25"
+						endalpha="0"
+						midalphapos=".1"
+					/>
+				</template>
+				<instance name="streak_particle" color=".5 0 .1" />
+				<instance name="streak_particle" color="0" />
+			</simpleemitter>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
