@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+    		
+			<sound
+			    forcestereo="true"
+				linearfalloff="true" 
+				falloffstart="700"
+				falloffend="1300"
+				volume="1" 
+				sample="/heroes/adrenaline/ability_01/sounds/mana_%.wav"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="300"
+				startsize="200"
+				midsize="300"
+				midsizepos=".2"
+				endsize="0"
+				startcolor="0 .5 1"
+				midcolor="0 .5 1"
+				endcolor="0"
+				midcolorpos=".15"
+				lockup="1"
+				pitch="90"
+				material="/shared/effects/materials/star_03.material"
+			/>
+			
+			<billboard
+				delay="100"
+				bone="_bone_centerofchest"
+				life="200"
+				startsize="0"
+				endsize="200"
+				startcolor="0 .5 1"
+				midcolor="0 .5 1"
+				endcolor="0"
+				lockup="1"
+				pitch="90"
+				material="/shared/effects/materials/star_03.material"
+			/>
+				
+			<simpleemitter
+				bone="_bone_centerofchest"
+				count="50"
+				minspeed="100"
+				maxspeed="1000"
+				drag=".05"
+				gravity="-40"
+				minparticlelife="400"
+				maxparticlelife="1000"
+				material="/shared/effects/materials/star_03.material"
+			>
+				<particle
+					maxangle="360"
+                    minrollspeed="-400"
+                    maxrollspeed="400"
+                    life="900"
+                    startsize="20"
+                    endsize="40"
+                    startcolor="0 .5 1"
+                    midcolor="0 .5 1"
+                    endcolor="-1"
+                    midcolorpos=".25"
+                    startframe="0"
+                    endframe="1"
+					minscale=".25"
+					maxscale=".7"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				delay="0"
+				bone="_bone_centerofchest"
+				position="0 0 -50"
+				count="30"
+				offsetsphere="100"
+				gravity="-40"
+				minparticlelife="400"
+				maxparticlelife="1000"
+				material="/shared/effects/materials/star_03.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor="0 .5 1"
+					endcolor="0 .5 1"
+					midcolorpos=".2"
+					startsize="2"
+					midsize="4"
+					endsize="15"
+					startwidth="2"
+					midwidth="4"
+					endwidth="0"
+					lockup="1"
+					minscale="3"
+					maxscale="4.5"
+				>
+					<billboard
+						life="400"
+						startsize="0"
+						midsize="10"
+						endsize="0"
+						startcolor="0 .5 1"
+						endcolor="0"
+						minscale=".5"
+						maxscale="1"
+						material="/shared/effects/materials/star_03.material"
+					/>
+				</particle>
+				<particle
+					startcolor="0"
+					midcolor="0 .5 1"
+					endcolor="0 .5 1"
+					midcolorpos=".2"
+					startsize="2"
+					midsize="4"
+					endsize="15"
+					startwidth="2"
+					midwidth="4"
+					endwidth="0"
+					lockup="1"
+					minscale="3"
+					maxscale="4.5"
+				/>
+			</simpleemitter>
+		</particlesystem>
+	</definitions>
+	<thread>
+		 
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

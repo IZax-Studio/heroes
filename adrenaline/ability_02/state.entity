@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Adrenaline_Ability2"
+	
+	icon="icon2.tga"
+
+	maxcharges="15,20,25,30"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	passiveeffect=""
+>
+	
+	<!-- Needs an <onframe /> event because other entities manually adds charges to this state -->
+	<onframe>
+		<compare a="charges" b="30" op="ge">
+			<setactivemodifierkey name="5_Charge" />
+		</compare>
+		<else>
+			<compare a="charges" b="22" op="ge">
+				<setactivemodifierkey name="4_Charge" />
+			</compare>
+			<else>
+				<compare a="charges" b="15" op="ge">
+					<setactivemodifierkey name="3_Charge" />
+				</compare>
+				<else>
+					<compare a="charges" b="8" op="ge">
+						<setactivemodifierkey name="2_Charge" />
+					</compare>
+					<else>
+						<compare a="charges" b="1" op="ge">
+							<setactivemodifierkey name="1_Charge" />
+						</compare>
+					</else>
+				</else>
+			</else>
+		</else>
+	</onframe>
+
+	<modifier key="1_Charge" modpriority="1"
+		passiveeffect="effects/state_1.effect"
+	/>
+
+	<modifier key="2_Charge" modpriority="2"
+		passiveeffect="effects/state_2.effect"
+	/>
+
+	<modifier key="3_Charge" modpriority="3"
+		passiveeffect="effects/state_3.effect"
+	/>
+
+	<modifier key="4_Charge" modpriority="4"
+		passiveeffect="effects/state_4.effect"
+	/>
+
+	<modifier key="5_Charge" modpriority="5"
+		passiveeffect="effects/state_5.effect"
+	/>
+	
+	
+	<altavatar key="Hero_Adrenaline.Alt" 
+	    icon="/heroes/adrenaline/alt/ability_02/icon.tga" >
+		<modifier key="1_Charge" modpriority="1"
+			passiveeffect="/heroes/adrenaline/alt/ability_02/effects/state_1.effect"
+		/>
+
+		<modifier key="2_Charge" modpriority="2"
+			passiveeffect="/heroes/adrenaline/alt/ability_02/effects/state_2.effect"
+		/>
+
+		<modifier key="3_Charge" modpriority="3"
+			passiveeffect="/heroes/adrenaline/alt/ability_02/effects/state_3.effect"
+		/>
+
+		<modifier key="4_Charge" modpriority="4"
+			passiveeffect="/heroes/adrenaline/alt/ability_02/effects/state_4.effect"
+		/>
+
+		<modifier key="5_Charge" modpriority="5"
+			passiveeffect="/heroes/adrenaline/alt/ability_02/effects/state_5.effect"
+		/>
+	</altavatar>
+	
+	
+	<altavatar key="Hero_Adrenaline.Alt2" 
+	     icon="/heroes/adrenaline/alt2/ability_02/icon.tga" >
+		 
+		<modifier key="1_Charge" modpriority="1"		    
+			passiveeffect="/heroes/adrenaline/alt2/ability_02/effects/state_1.effect"
+		/>
+
+		<modifier key="2_Charge" modpriority="2"
+			passiveeffect="/heroes/adrenaline/alt2/ability_02/effects/state_2.effect"
+		/>
+
+		<modifier key="3_Charge" modpriority="3"
+			passiveeffect="/heroes/adrenaline/alt2/ability_02/effects/state_3.effect"
+		/>
+
+		<modifier key="4_Charge" modpriority="4"
+			passiveeffect="/heroes/adrenaline/alt2/ability_02/effects/state_4.effect"
+		/>
+
+		<modifier key="5_Charge" modpriority="5"
+			passiveeffect="/heroes/adrenaline/alt2/ability_02/effects/state_5.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Adrenaline.Alt3" >
+		 
+		<modifier key="1_Charge" modpriority="1"		    
+			passiveeffect="/heroes/adrenaline/alt3/ability_02/effects/state_1.effect"
+		/>
+
+		<modifier key="2_Charge" modpriority="2"
+			passiveeffect="/heroes/adrenaline/alt3/ability_02/effects/state_2.effect"
+		/>
+
+		<modifier key="3_Charge" modpriority="3"
+			passiveeffect="/heroes/adrenaline/alt3/ability_02/effects/state_3.effect"
+		/>
+
+		<modifier key="4_Charge" modpriority="4"
+			passiveeffect="/heroes/adrenaline/alt3/ability_02/effects/state_4.effect"
+		/>
+
+		<modifier key="5_Charge" modpriority="5"
+			passiveeffect="/heroes/adrenaline/alt3/ability_02/effects/state_5.effect"
+		/>
+	</altavatar>
+	<altavatar key="Hero_Adrenaline.Alt4" >
+		 
+		<modifier key="1_Charge" modpriority="1"		    
+			passiveeffect="/heroes/adrenaline/alt3/ability_02/effects/state_1.effect"
+		/>
+
+		<modifier key="2_Charge" modpriority="2"
+			passiveeffect="/heroes/adrenaline/alt3/ability_02/effects/state_2.effect"
+		/>
+
+		<modifier key="3_Charge" modpriority="3"
+			passiveeffect="/heroes/adrenaline/alt3/ability_02/effects/state_3.effect"
+		/>
+
+		<modifier key="4_Charge" modpriority="4"
+			passiveeffect="/heroes/adrenaline/alt3/ability_02/effects/state_4.effect"
+		/>
+
+		<modifier key="5_Charge" modpriority="5"
+			passiveeffect="/heroes/adrenaline/alt3/ability_02/effects/state_5.effect"
+		/>
+	</altavatar>
+	
+	
+	<altavatar key="Hero_Adrenaline.Alt5" 
+	     icon="/heroes/adrenaline/alt5/ability_02/icon.tga" >	 
+		<modifier key="1_Charge" modpriority="1"		    
+			passiveeffect="/heroes/adrenaline/alt5/ability_02/effects/state_1.effect"
+		/>
+
+		<modifier key="2_Charge" modpriority="2"
+			passiveeffect="/heroes/adrenaline/alt5/ability_02/effects/state_2.effect"
+		/>
+
+		<modifier key="3_Charge" modpriority="3"
+			passiveeffect="/heroes/adrenaline/alt5/ability_02/effects/state_3.effect"
+		/>
+
+		<modifier key="4_Charge" modpriority="4"
+			passiveeffect="/heroes/adrenaline/alt5/ability_02/effects/state_4.effect"
+		/>
+
+		<modifier key="5_Charge" modpriority="5"
+			passiveeffect="/heroes/adrenaline/alt5/ability_02/effects/state_5.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Adrenaline.Alt6" 
+	>
+		<modifier key="1_Charge" modpriority="1"		    
+			passiveeffect="/heroes/adrenaline/alt6/ability_02/effects/state_1.effect"
+		/>
+
+		<modifier key="2_Charge" modpriority="2"
+			passiveeffect="/heroes/adrenaline/alt6/ability_02/effects/state_2.effect"
+		/>
+
+		<modifier key="3_Charge" modpriority="3"
+			passiveeffect="/heroes/adrenaline/alt6/ability_02/effects/state_3.effect"
+		/>
+
+		<modifier key="4_Charge" modpriority="4"
+			passiveeffect="/heroes/adrenaline/alt6/ability_02/effects/state_4.effect"
+		/>
+
+		<modifier key="5_Charge" modpriority="5"
+			passiveeffect="/heroes/adrenaline/alt6/ability_02/effects/state_5.effect"
+		/>
+	</altavatar>
+	
+</state>

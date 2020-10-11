@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="morphling.model" type="K2" high="morphling.model" med="morphling.model" low="morphling.model" >
+
+	<anim name="idle" clip="clips/default_1.clip" loop="true"/>
+
+	<anim name="portrait" clip="clips/default_1.clip" loop="true"/>
+	
+	<anim name="bored_1" clip="clips/bored_1.clip">
+		<frameevent frame="35" cmd="starteffect effects/bored.effect 2"/>
+		<frameevent frame="90" cmd="StopEffect 2" />
+		<endevent cmd="StopEffect 2" />
+	</anim>
+	
+	
+	<anim name="taunt_1" clip="clips/taunt_1.clip"/>
+
+	<anim name="item_1" clip="clips/item_1.clip"/>
+	
+	<anim name="death_1" clip="clips/death_1.clip" loop="true" loopbackframe="-1">
+		<frameevent frame="5" cmd="PlaySoundLinear sounds/death_%.wav 400 1800 .65"/>
+		<frameevent frame="25" cmd="starteffect effects/death.effect 0"/>
+	</anim>
+	
+	<anim name="walk_1" clip="clips/walk_1.clip" loop="true" fps="30" loopbackframe="1" >
+		<frameevent frame="12" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="1" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+
+		<frameevent frame="1" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="12" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+	</anim>
+	
+	<anim name="dash" clip="clips/walk_1.clip" loop="true" fps="90" loopbackframe="1" />
+	
+	<anim name="ability_1" clip="clips/ability_1.clip" fps="50"/>
+
+	<anim name="ability_2" clip="clips/walk_1.clip" fps="50" blendtime="0" >
+
+	</anim>
+	
+	<anim name="ability_4" clip="clips/ability_4.clip" fps="55" startframe="43" numframes="45" blendtime="0"  >
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/ab4_vox.wav 1000 2500 1"/>
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/ab4_vox.wav 1000 2500 1"/>
+	</anim>
+		
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="35">
+	</anim>
+	
+	<anim name="attack_2" clip="clips/attack_2.clip"  fps="35">
+	</anim>
+		
+	<anim name="knock_1" clip="clips/knock_1.clip" loop="true" loopbackframe="-1"/>
+	
+	<anim name="getup_1" clip="clips/getup_1.clip"/>		
+			
+</model>

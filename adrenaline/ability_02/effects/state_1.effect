@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+
+			<template name="flamey_thing" >
+			
+				<controller 
+					bone="_bone_overhead"
+					offset="{offset}"
+					scale="2.5"
+				>
+					<!-- base model -->
+					<model
+						model="/heroes/adrenaline/projectile/projectile.mdf"
+						material="/shared/effects/materials/shell3.material"
+						color="0 .5 1" 
+						scale=".3"
+						pitch="-90" 
+						rollspeed="90"
+						position="0"
+					/>
+					<model
+						model="/heroes/adrenaline/projectile/projectile.mdf"
+						material="/shared/effects/materials/shell3.material"
+						color="0 .5 1"
+						scale=".35"
+						pitch="90"
+						rollspeed="90"
+						position="0"
+					/>
+					
+					<!-- base glow -->
+					<billboard
+						material="/shared/effects/materials/glow_01.material"
+						color="0 .2 .5"
+						size="10"
+						alpha=".5"
+						depthbias="-50"
+					/>
+					<billboard
+						material="/shared/effects/materials/glow_01.material"
+						color="0 .2 .5"
+						size="20"
+						alpha=".5"
+						depthbias="-20"
+					/>
+					<!-- twirl -->
+					<simpleemitter
+						spawnrate="8"
+						minparticlelife="1750"
+						maxparticlelife="2500"
+						material="/shared/effects/materials/twirl_blend.material"
+						rollspeed="20"
+					>
+						<particle
+							anglespeed="-40" maxangle="360" 
+							startcolor="0" midcolor="0 .5 1" endcolor="0" midcolorpos=".25"
+							alpha=".1"
+							startsize="10"
+							minendsize="20"
+							maxendsize="30"
+							anchor="1"
+					/>
+					</simpleemitter>
+				</controller>
+			
+			</template>
+
+			<instance name="flamey_thing" offset="0 0 100" />
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+</effect>

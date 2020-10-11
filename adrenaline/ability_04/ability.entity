@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Adrenaline4"
+
+	icon="icon4.tga"
+	
+	anim="ability_4"
+	casttime="1000"
+	castactiontime="500"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_entity"
+	casteffecttype="Magic"
+	targetscheme="enemy_heroes"
+	casteffect="effects/cast.effect"
+	activatescheme="movement"
+
+	range="400"
+	
+	manacost="0"
+	cooldowntime="100000,80000,60000"
+	
+	targetradius="300"
+	targetmaterial="/shared/materials/area_cast_indicator_pointed.material"
+	showrangeandradiusintooltip="true"
+	
+	passiveeffect=""
+	showareacast="true"
+	novoiceresponse="true"
+	
+	checkcostinvalidvoice="nomanasound"
+	checkcostinvalidstr="error_low_mana"
+>
+	<checkcost>
+		<updatemana entity="source_entity" />
+		<hasmodifier name="rapidfire" entity="source_entity">
+			<evaluate a="source_maxmana" b="0.10" op="mult" />
+			<compare a="source_mana" b="result" op="lt">
+				<invalidate />
+			</compare>
+		</hasmodifier>
+		<else>
+			<evaluate a="source_maxmana" b="0.30" op="mult" />
+			<compare a="source_mana" b="result" op="lt">
+				<invalidate />
+			</compare>
+		</else>		
+	</checkcost>
+	
+	<onimpact>
+		<updatemana entity="source_entity" />
+		
+		<!-- Energy mechanic -->
+		<hasmodifier name="rapidfire" entity="source_entity">
+			<evaluate a="source_maxmana" b="0.10" op="mult" />
+			<takemana amount="result" target="source_entity" triggeractionscript="true" />
+		</hasmodifier>
+		<else>
+			<evaluate a="source_maxmana" b="0.30" op="mult" />
+			<takemana amount="result" target="source_entity" triggeractionscript="true" />
+		</else>
+		
+		<pushability name="Ability_Adrenaline2" />
+		<setvar0 a="source_level" source="stack_entity" />
+		<compare a="var0" b="0" op="gt">
+			<applystate name="State_Adrenaline_Ability2" duration="6000" pushentity="true" statelevel="var0" />
+			<addcharges count="14,22,30" entity="stack_entity" />
+		</compare>
+		
+		<applystate name="State_Adrenaline_Ability4" duration="1600" />
+		<order command="attack" source="source_entity" target="target_entity" />
+
+		<disjoint target="source_entity" />
+		<unbind target="source_entity" />
+		
+		<!-- Spawn the ultimate shadows: 5x, plus the real hero -->
+		<!-- Script in the hero.entity file accounts for autoattacking behaviour -->
+		<spawnillusion
+			owner="source_entity"
+			source="source_entity"
+			target="target_entity"
+			count="5"
+			spawncircular="true"
+			spawncircularradius="300"
+			spawncircularrotate="false"
+			lifetime="5000"
+			receivedamagemultiplier="4.0"
+			inflictdamagemultiplier="0.1"
+			spawneffect=""
+			deatheffect=""
+			playdeathanim="false"
+			uncontrollable="true"
+			noillusioneffect="true"
+		>
+		</spawnillusion>
+		
+		<!-- Teleport Adrenaline in place after he spawns his illusions to prevent height issues -->
+		<teleport source="source_entity" target="source_position" interpolate="true" noninterrupting="true" />
+		
+		<!-- Apply everything-walking -->
+		<applystate name="State_Adrenaline_Ability4_Self" target="this_owner_entity" duration="2000" />
+		
+		<!-- Apply visuals for Adrenaline's R Fractures -->
+		<areaofeffect
+			center="target_position"
+			radius="350"
+			targetscheme="my_illusions"
+			targetselection="all"
+		>
+			<entitytype type="Hero_Adrenaline">
+				<applystate name="State_Adrenaline_Ability1_Shard" duration="5000" />
+			</entitytype>		
+		</areaofeffect>
+		
+		<spawnunit name="Gadget_Adrenaline_Ability4" count="1" target="source_position" owner="source_entity" />
+		
+		<!-- Art -->
+		<hasavatarkey name="Hero_Adrenaline.Alt3">
+			<playeffect effect="/heroes/adrenaline/alt3/ability_04/effects/illu_death_sound.effect" source="source_position" target="source_position" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Adrenaline.Alt4">
+				<playeffect effect="/heroes/adrenaline/alt3/ability_04/effects/illu_death_sound.effect" source="source_position" target="source_position" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Adrenaline.Alt5">
+					<playeffect effect="/heroes/adrenaline/alt5/ability_04/effects/illu_death_sound.effect" source="source_position" target="source_position" />
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/illu_death_sound.effect" source="source_position" target="source_position" />
+				</else>
+			</else>
+		</else>
+	</onimpact>
+		
+	<altavatar key="Hero_Adrenaline.Alt"
+		icon="/heroes/adrenaline/alt/ability_04/icon.tga"
+		casteffect="/heroes/adrenaline/alt/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Adrenaline.Alt2"
+		icon="/heroes/adrenaline/alt2/ability_04/icon.tga"
+		casteffect="/heroes/adrenaline/alt2/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Adrenaline.Alt3"
+		casteffect="/heroes/adrenaline/alt3/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Adrenaline.Alt4"
+		casteffect="/heroes/adrenaline/alt3/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Adrenaline.Alt5"
+	    icon="/heroes/adrenaline/alt5/ability_04/icon.tga"
+		casteffect="/heroes/adrenaline/alt5/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Adrenaline.Alt6"
+		casteffect="/heroes/adrenaline/alt6/ability_04/effects/cast.effect"
+	/>
+	
+</ability>

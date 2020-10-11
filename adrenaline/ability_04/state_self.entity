@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Adrenaline_Ability4_Self"
+	
+	icon="icon4.tga"
+	passiveeffect=""
+	
+	unitwalking="true"
+	buildingwalking="true"
+	cliffwalking="true"
+	treewalking="true"
+	
+	effecttype=""
+	
+	modifierkey="adrenaline_ability4_EverythingWalking"
+>
+	<onframe />
+
+	<altavatar key="Hero_Adrenaline.Alt"
+	    icon="/heroes/adrenaline/alt/ability_04/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Adrenaline.Alt2"
+	    icon="/heroes/adrenaline/alt2/ability_04/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Adrenaline.5"
+	    icon="/heroes/adrenaline/alt5/ability_04/icon.tga"
+	/>
+
+</state>

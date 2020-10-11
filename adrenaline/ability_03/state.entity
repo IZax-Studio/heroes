@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Adrenaline_Ability3"
+	
+	icon="icon3.tga"
+	
+	ishidden="true"
+	serverentity="true"
+	passiveeffect=""
+	
+	effecttype=""
+>
+	<onkilled>
+		<targettype type="illusion" target="source_entity" />
+		<else>
+			<targettype type="heropet" target="source_entity" />
+			<else>
+				<setvar0 source="this_proxy_entity" a="0.2,0.4,0.6,0.8,1.0" b="source_maxmana" op="mult" />
+				
+				<targettype type="hero" target="source_entity">
+					<givemana amount="result" target="this_proxy_entity" />
+					
+					<!-- Art & Sound -->
+					<hasavatarkey name="Hero_Adrenaline.Alt">
+						<playeffect effect="/heroes/adrenaline/alt/ability_01/effects/mana.effect" source="this_proxy_entity" target="this_proxy_entity" />	
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Adrenaline.Alt2">
+							<playeffect effect="/heroes/adrenaline/alt2/ability_01/effects/mana.effect" source="this_proxy_entity" target="this_proxy_entity" />	
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Adrenaline.Alt3">
+								<playeffect effect="/heroes/adrenaline/alt3/ability_01/effects/mana.effect" source="this_proxy_entity" target="this_proxy_entity" />	
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Adrenaline.Alt4">
+									<playeffect effect="/heroes/adrenaline/alt3/ability_01/effects/mana.effect" source="this_proxy_entity" target="this_proxy_entity" />	
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Adrenaline.Alt4">
+										<playeffect effect="/heroes/adrenaline/alt3/ability_01/effects/mana.effect" source="this_proxy_entity" target="this_proxy_entity" />	
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_Adrenaline.Alt5">
+											<playeffect effect="/heroes/adrenaline/alt5/ability_01/effects/mana.effect" source="this_proxy_entity" target="this_proxy_entity" />	
+										</hasavatarkey>
+										<else>
+											<hasavatarkey name="Hero_Adrenaline.Alt6">
+												<playeffect effect="/heroes/adrenaline/alt6/ability_01/effects/mana.effect" source="this_proxy_entity" target="this_proxy_entity" />	
+											</hasavatarkey>
+											<else>
+												<playeffect effect="../ability_01/effects/mana.effect" source="this_proxy_entity" target="this_proxy_entity" />
+											</else>
+										</else>
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+				</targettype>
+			</else>
+		</else>
+	</onkilled>
+	
+	<altavatar key="Hero_Adrenaline.Alt"
+	    icon="/heroes/adrenaline/alt/ability_03/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Adrenaline.Alt2"
+	    icon="/heroes/adrenaline/alt2/ability_03/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Adrenaline.Alt5"
+	    icon="/heroes/adrenaline/alt5/ability_03/icon.tga"
+	/>
+	
+</state>

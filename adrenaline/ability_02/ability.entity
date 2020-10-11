@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Adrenaline2"
+
+	icon="icon2.tga"
+	
+	anim="ability_2"
+	casttime="0"
+	castactiontime="0"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_position"
+	casteffecttype=""
+	targetscheme="enemy_nonboss_units"
+	casteffect=""
+	
+	manacost="0"
+	cooldowntime="0"
+
+	range="450"
+	forcerange="450"
+	targetradius="140"
+	showrangeandradiusintooltip="true"
+	
+	usepathforrange="true"
+	activatescheme="movement"
+	allowoutofrangecast="true"
+	norangeclamp="true"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+
+	dontshowhovercast="true"
+	
+	showlinecast="true"
+	linecastrange="475"
+	linecastwidth="140"
+	
+	checkcostinvalidvoice="nomanasound"
+	checkcostinvalidstr="error_low_mana"
+>
+	
+	<checkcost>
+		<updatemana entity="source_entity" />
+		<hasmodifier name="rapidfire" entity="source_entity">
+			<evaluate a="source_maxmana" b="0.133" op="mult" />
+			<compare a="source_mana" b="result" op="lt">
+				<invalidate />
+			</compare>
+		</hasmodifier>
+		<else>
+			<evaluate a="source_maxmana" b="0.4" op="mult" />
+			<compare a="source_mana" b="result" op="lt">
+				<invalidate />
+			</compare>
+		</else>
+	</checkcost>
+	
+	<onprecost>
+		<hasmodifier name="adrenaline_ability4_EverythingWalking" />
+		<else>
+			<validpath entity="source_entity" source="source_position" target="target_position" 
+				srcestimate="false" unitwalking="true" treewalking="true" cliffwalking="false" buildingwalking="false"
+			/>
+			<else>
+				<invalidate />
+			</else>
+		</else>
+	</onprecost>
+	
+	<onattackpreimpact>
+		<cantarget targetscheme="enemy_nonboss_units">
+			<applystate name="State_Adrenaline_Ability2" duration="6000" pushentity="true" />
+			<addcharges count="2" entity="stack_entity" />
+		</cantarget>
+	</onattackpreimpact>
+	
+	<onimpact>
+		<updatemana entity="source_entity" />
+		<!-- Energy mechanic -->
+		<hasmodifier name="rapidfire" entity="source_entity">
+			<evaluate a="source_maxmana" b="0.133" op="mult" />
+			<takemana amount="result" target="source_entity" triggeractionscript="true" />
+		</hasmodifier>
+		<else>
+			<evaluate a="source_maxmana" b="0.4" op="mult" />
+			<takemana amount="result" target="source_entity" triggeractionscript="true" />
+		</else>
+		
+		<unbind target="source_entity" />
+		<hasmodifier name="adrenaline_ability4_EverythingWalking">
+			<!-- Everything-walking projectile -->
+			<spawnprojectile name="Projectile_Adrenaline_Ability2_EverythingWalking" source="source_entity" target="target_position" bind="source_entity" bindstate="State_Adrenaline_Ability2_effect" unbindondeath="true" noresponse="true" pushentity="true" />
+			<setprojectilebounds entity="stack_entity" radius="source_radius" height="source_bounding_height" />
+		</hasmodifier>
+		<else>
+			<spawnprojectile name="Projectile_Adrenaline_Ability2" source="source_entity" target="target_position" bind="source_entity" bindstate="State_Adrenaline_Ability2_effect" unbindondeath="true" noresponse="true" pushentity="true" />
+			<setprojectilebounds entity="stack_entity" radius="source_radius" height="source_bounding_height" />
+		</else>
+		
+		<!-- Visual effects -->
+		<hasavatarkey name="Hero_Adrenaline.Alt">
+			<playeffect effect="/heroes/adrenaline/alt/ability_02/effects/impact.effect" source="target_entity" target="" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Adrenaline.Alt2">
+				<playeffect effect="/heroes/adrenaline/alt2/ability_02/effects/impact.effect" source="target_entity" target="" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Adrenaline.Alt3">
+					<playeffect effect="/heroes/adrenaline/alt3/ability_02/effects/impact.effect" source="target_entity" target="" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Adrenaline.Alt4">
+						<playeffect effect="/heroes/adrenaline/alt3/ability_02/effects/impact.effect" source="target_entity" target="" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Adrenaline.Alt5">
+							<playeffect effect="/heroes/adrenaline/alt5/ability_02/effects/impact.effect" source="target_entity" target="" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Adrenaline.Alt6">
+								<playeffect effect="/heroes/adrenaline/alt6/ability_02/effects/impact.effect" source="target_entity" target="" />
+							</hasavatarkey>
+							<else>
+								<playeffect effect="effects/impact.effect" source="target_entity" target="" />
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+	</onimpact>
+	
+	<modifier key="adrenaline_ability4_EverythingWalking" modpriority="100"
+		usepathforrange="false"
+	>
+	</modifier>
+	
+	<altavatar key="Hero_Adrenaline.Alt"
+	    icon="/heroes/adrenaline/alt/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Adrenaline.Alt2"
+	    icon="/heroes/adrenaline/alt2/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Adrenaline.Alt5"
+	    icon="/heroes/adrenaline/alt5/ability_02/icon.tga"
+	/>
+	
+</ability>

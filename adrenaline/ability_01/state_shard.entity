@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Adrenaline_Ability1_Shard"
+	
+	icon="icon1.tga"
+	ishidden="true"
+	serverentity="true"
+	
+	effecttype=""
+	allowtransfer="false"
+	
+	immobilized2="true"
+	
+	modifierkey="Adrenaline_Shard"
+	
+	maxcharges="3"
+>
+	<onattack>
+		<addcharges count="1" />
+		<compare a="charges" b="3" op="ge">
+			<setaccumulator value="1" />
+			<setactivemodifierkey name="adrenaline_ability1_ShardDone" />
+		</compare>
+	</onattack>
+	
+	<onframe>
+		<compare a="accumulator" b="1" op="ge">
+			<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			
+			<!-- Delay the death by as many frames as necessary -->
+			<compare a="accumulator" b="10" op="ge">
+				<kill target="this_owner_entity" source="" />
+			</compare>
+		</compare>
+	</onframe>
+	
+	<modifier key="adrenaline_ability1_ShardDone" modpriority="100"
+		disarmed="true"
+	>
+	</modifier>
+</state>

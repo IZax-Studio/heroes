@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Adrenaline_Ability2_effect"
+
+	passiveeffect="effects/trail.effect"
+	icon="icon2.tga"
+	
+	ishidden="true"
+>
+	<onframe>
+		<killtrees source="source_entity" radius="140" usealtdeathanims="true" />
+	</onframe>
+	
+	<altavatar key="Hero_Adrenaline.Alt"
+	    icon="/heroes/adrenaline/alt/ability_02/icon.tga"
+		passiveeffect="/heroes/adrenaline/alt/ability_02/effects/trail.effect"
+	/>
+	<altavatar key="Hero_Adrenaline.Alt2"
+	    icon="/heroes/adrenaline/alt2/ability_02/icon.tga"
+		passiveeffect="/heroes/adrenaline/alt2/ability_02/effects/trail.effect"
+	/>
+	<altavatar key="Hero_Adrenaline.Alt3"
+		passiveeffect="/heroes/adrenaline/alt3/ability_02/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Adrenaline.Alt4"
+		passiveeffect="/heroes/adrenaline/alt4/ability_02/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Adrenaline.Alt5"
+	    icon="/heroes/adrenaline/alt5/ability_02/icon.tga"
+		passiveeffect="/heroes/adrenaline/alt5/ability_02/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Adrenaline.Alt6"
+		passiveeffect="/heroes/adrenaline/alt6/ability_02/effects/trail.effect"
+	/>
+	
+</state>

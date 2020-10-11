@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_AdrenalineAttack"
+
+	speed="1200"
+	gravity="0"
+	modelscale="1"
+	model="/shared/models/invis.mdf"
+
+	impacteffect="effects/impact.effect"
+	traileffect="effects/trail.effect"
+>
+	<altavatar key="Hero_Adrenaline.Alt"
+		impacteffect="../alt/projectile/effects/impact.effect"
+		traileffect="../alt/projectile/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Adrenaline.Alt2"
+		impacteffect="../alt2/projectile/effects/impact.effect"
+		traileffect="../alt2/projectile/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Adrenaline.Alt3"
+		impacteffect="../alt3/projectile/effects/impact.effect"
+		traileffect="../alt3/projectile/effects/trail.effect"
+	>
+		<modifier key="Songkran17_Set"
+			impacteffect="../alt3/projectile/effects/impact_sonkran17_set.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Adrenaline.Alt4"
+		impacteffect="../alt3/projectile/effects/impact.effect"
+		traileffect="../alt3/projectile/effects/trail.effect"
+	>
+		<modifier key="Songkran17_Set"
+			impacteffect="../alt3/projectile/effects/impact_sonkran17_set.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Adrenaline.Alt5"
+		impacteffect="../alt5/projectile/effects/impact.effect"
+		traileffect="../alt5/projectile/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Adrenaline.Alt6"
+		impacteffect="../alt6/projectile/effects/impact.effect"
+		traileffect="../alt6/projectile/effects/trail.effect"
+	/>
+	
+</projectile>

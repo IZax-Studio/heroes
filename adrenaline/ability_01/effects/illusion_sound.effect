@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+    		
+			<sound
+			    forcestereo="true"
+				linearfalloff="true" 
+				falloffstart="700"
+				falloffend="1300"
+				volume="1" 
+				sample="/heroes/adrenaline/ability_01/sounds/illu_%.wav"
+			/>
+			
+				<sound
+				life="80000"
+				delay="5000"
+				linearfalloff="true" 
+				falloffstart="700"
+				falloffend="1300"
+				volume="1" 
+				sample="/heroes/adrenaline/ability_04/sounds/illu_death.wav"
+			/>
+		
+		</particlesystem>
+	</definitions>
+	<thread>
+		 
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

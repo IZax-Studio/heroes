@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+
+	<definitions>
+
+		<!-- <modifier
+			name="modifier0"
+			life="250"
+			startcolor="0 .5 1"
+			endcolor="0 .5 1"
+		/> -->
+
+		<particlesystem name="system0" space="world" scale=".9">
+
+		
+			<sound
+			    forcestereo="true"
+				volume="1.0" 
+				sample="/heroes/adrenaline/ability_01/sounds/imp_%.wav"
+				linearfalloff="true"
+				falloffstart="700"
+				falloffend="1300"
+			/>
+
+
+			<model
+				delay="100"
+				color="0 .5 1"
+				parentmodel="true"
+				parentskeleton="true"
+				material="/heroes/martyr/ability_01/effects/material.material"
+				life="1000"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="1250"
+				startcolor="0 .5 1"
+				midcolor="0 .5 1"
+				midcolorpos="0.3"
+				endcolor="0"
+				startsize="250"
+				endsize="0"
+				depthbias="0"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+			<simpleemitter
+				life="750"
+				bone="_bone_centerofchest"
+				spawnrate="50"
+				minparticlelife="700"
+				maxparticlelife="1000"
+				gravity="-5" 
+				speed="30"
+				material="/shared/effects/materials/water_spray_add.material"
+				offsetsphere="50"
+				depthbias="-150"
+			>
+				<particle					
+					startcolor="0 .5 1" 
+					midcolor="0 .5 1" 
+					endcolor="0" 
+					midcolorpos=".2"
+					turn="1" 
+					minangle="" 
+					maxangle="360"
+					startsize="30" 
+					endsize="10"
+					startframe="1" 
+					midframe=".1" 
+					endframe="1" 
+					midframepos=".3"
+					startalpha="0" 
+					endalpha="1"
+				/>
+			</simpleemitter>
+			
+			<billboard
+				life="300"
+				position="0 0 50"			
+				startcolor="0 .5 1" 
+				endcolor="0"
+				endsize="1050"
+				depthbias="-100"
+				lockup="1"
+				pitch="90"
+				maxroll="360"
+				material="/shared/effects/materials/pulse.material"
+			/>
+			
+			<!--
+			<simpleemitter
+				bone="_bone_centerofchest"
+				count="1"
+				particlelife="5000"
+				spawnrate="10000"
+				gravity="-0"
+				speed="0.0"
+				acceleration="0.0"
+				position="0 0 0"
+			>
+				<particle>
+					<simpleemitter
+						bone="_bone_centerofchest"
+						count="4"
+						spawnrate="1000"
+						particlelife="150"
+						gravity="0"
+						minspeed="22.0"
+						maxspeed="22"
+						acceleration="0.0"
+						timenudge="0"
+						position="0 0 0"
+						offsetsphere="0 0 0"
+						material="/shared/effects/materials/cartoon_pop1.material"
+					>
+						<particle
+							startcolor="0 .5 1"
+							endcolor="0 .5 1"
+							startalpha=".75"
+							endalpha="0"
+							startscale="50"
+							endscale="150"
+							turn="true"
+						/>
+					</simpleemitter>
+				</particle> 
+			</simpleemitter>
+			-->
+			<billboard
+				bone="_bone_centerofchest"
+				life="1000"
+				startcolor="0 .5 1"
+				endcolor="0"
+				startsize="175"
+				endsize="0"
+				depthbias="0"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="350"
+				param="0.1"	
+				startsize="50"
+				endsize="250"
+				startalpha="0"
+				midalpha=".4"
+				endalpha="0"				
+				depthbias="0"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				delay="175"
+				life="350"
+				param="0.1"	
+				startsize="50"
+				endsize="250"
+				startalpha="0"
+				midalpha=".4"
+				endalpha="0"				
+				depthbias="0"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+	  	<spawnmodifier instance="instance1" modifier="modifier0"/>  
+	  	<waitfordeath instance="instance0" />
+	  	<waitfordeath instance="instance1" />	  
+	</thread>
+
+</effect>

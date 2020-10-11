@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Adrenaline1"
+
+	icon="icon1.tga"
+	
+	anim="ability_1"
+	casttime="250"
+	castactiontime="100"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_position"
+	casteffecttype="Magic"
+	targetscheme="enemy_heroes"
+
+	manacost="0"
+	cooldowntime="6000,4000,2000,0"
+
+	range="800"
+	forcerange="800"
+	targetradius="80"
+	allowoutofboundscast="true"
+	showrangeandradiusintooltip="true"
+	
+	showlinecast="true"
+	linecastrange="880"
+	linecastwidth="80"
+	
+	passiveeffect=""
+	
+	checkcostinvalidvoice="nomanasound"
+	checkcostinvalidstr="error_low_mana"
+	
+	dynamicprecache="effects/cast.effect"
+>
+	<onlearn>
+		<setscriptvalue name="cast_effect" value="effects/cast.effect" entity="this_entity" />
+	</onlearn>
+	
+	<checkcost>
+		<updatemana entity="source_entity" />
+		<hasmodifier name="rapidfire" entity="source_entity">
+			<evaluate a="source_maxmana" b="0.10" op="mult" />
+			<compare a="source_mana" b="result" op="lt">
+				<invalidate />
+			</compare>
+		</hasmodifier>
+		<else>
+			<evaluate a="source_maxmana" b="0.35" op="mult" />
+			<compare a="source_mana" b="result" op="lt">
+				<invalidate />
+			</compare>
+		</else>		
+	</checkcost>
+	
+	<onimpact>
+		<updatemana entity="source_entity" />
+		<!-- Energy mechanic -->
+		<hasmodifier name="rapidfire" entity="source_entity">
+			<evaluate a="source_maxmana" b="0.10" op="mult" />
+			<takemana amount="result" target="source_entity" triggeractionscript="true" />
+		</hasmodifier>
+		<else>
+			<evaluate a="source_maxmana" b="0.35" op="mult" />
+			<takemana amount="result" target="source_entity" triggeractionscript="true" />
+		</else>
+		
+		<spawnprojectile name="Projectile_Adrenaline_Ability1" source="source_entity" target="target_position" offsetspace="source_entity" offset="0 100 0" pushentity="true" />
+		<setparam a="accumulator" entity="stack_entity" />
+		
+		<!-- Dynamic VFX -->
+		<hasmodifier name="kinesis_Thoughtsteal" entity="source_entity" />
+		<else>
+			<getscriptvalue name="cast_effect" destvar="str0" entity="this_entity" />
+			<playeffectdynamic effect="str0" source="source_entity" occlude="true" />
+		</else>
+	</onimpact>
+	
+	<altavatar key="Hero_Adrenaline.Alt"
+	    icon="/heroes/adrenaline/alt/ability_01/icon.tga"
+		dynamicprecache="../alt/ability_01/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt/ability_01/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Adrenaline.Alt2"
+	    icon="/heroes/adrenaline/alt2/ability_01/icon.tga"
+		dynamicprecache="../alt2/ability_01/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt2/ability_01/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Adrenaline.Alt3"
+		dynamicprecache="../alt3/ability_01/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt3/ability_01/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Adrenaline.Alt4"
+		dynamicprecache="../alt4/ability_01/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt4/ability_01/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Adrenaline.Alt5"
+	    icon="/heroes/adrenaline/alt5/ability_01/icon.tga"
+		dynamicprecache="../alt5/ability_01/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt5/ability_01/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Adrenaline.Alt6"
+		dynamicprecache="../alt6/ability_01/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt6/ability_01/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+</ability>
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Adrenaline1"
+
+	icon="icon.tga"
+	
+	anim="ability_1"
+	casttime="250"
+	castactiontime="100"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_position"
+	casteffecttype="Magic"
+	targetscheme="enemy_heroes"
+
+	manacost="0"
+	cooldowntime="6000,4000,2000,0"
+
+	range="800"
+	forcerange="800"
+	targetradius="80"
+	allowoutofboundscast="true"
+	showrangeandradiusintooltip="true"
+	
+	showlinecast="true"
+	linecastrange="880"
+	linecastwidth="80"
+	
+	passiveeffect=""
+	
+	checkcostinvalidvoice="nomanasound"
+	checkcostinvalidstr="error_low_mana"
+	
+	dynamicprecache="effects/cast.effect"
+>
+	<onlearn>
+		<setscriptvalue name="cast_effect" value="effects/cast.effect" entity="this_entity" />
+	</onlearn>
+	
+	<checkcost>
+		<updatemana entity="source_entity" />
+		<hasmodifier name="rapidfire" entity="source_entity">
+			<evaluate a="source_maxmana" b="0.10" op="mult" />
+			<compare a="source_mana" b="result" op="lt">
+				<invalidate />
+			</compare>
+		</hasmodifier>
+		<else>
+			<evaluate a="source_maxmana" b="0.35" op="mult" />
+			<compare a="source_mana" b="result" op="lt">
+				<invalidate />
+			</compare>
+		</else>		
+	</checkcost>
+	
+	<onimpact>
+		<updatemana entity="source_entity" />
+		<!-- Energy mechanic -->
+		<hasmodifier name="rapidfire" entity="source_entity">
+			<evaluate a="source_maxmana" b="0.10" op="mult" />
+			<takemana amount="result" target="source_entity" triggeractionscript="true" />
+		</hasmodifier>
+		<else>
+			<evaluate a="source_maxmana" b="0.35" op="mult" />
+			<takemana amount="result" target="source_entity" triggeractionscript="true" />
+		</else>
+		
+		<spawnprojectile name="Projectile_Adrenaline_Ability1" source="source_entity" target="target_position" offsetspace="source_entity" offset="0 100 0" pushentity="true" />
+		<setparam a="accumulator" entity="stack_entity" />
+		
+		<!-- Dynamic VFX -->
+		<hasmodifier name="kinesis_Thoughtsteal" entity="source_entity" />
+		<else>
+			<getscriptvalue name="cast_effect" destvar="str0" entity="this_entity" />
+			<playeffectdynamic effect="str0" source="source_entity" occlude="true" />
+		</else>
+	</onimpact>
+	
+	<altavatar key="Hero_Adrenaline.Alt"
+	    icon="/heroes/adrenaline/alt/ability_01/icon.tga"
+		dynamicprecache="../alt/ability_01/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt/ability_01/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Adrenaline.Alt2"
+	    icon="/heroes/adrenaline/alt2/ability_01/icon.tga"
+		dynamicprecache="../alt2/ability_01/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt2/ability_01/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Adrenaline.Alt3"
+		dynamicprecache="../alt3/ability_01/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt3/ability_01/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Adrenaline.Alt4"
+		dynamicprecache="../alt4/ability_01/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt4/ability_01/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Adrenaline.Alt5"
+	    icon="/heroes/adrenaline/alt5/ability_01/icon.tga"
+		dynamicprecache="../alt5/ability_01/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt5/ability_01/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Adrenaline.Alt6"
+		dynamicprecache="../alt6/ability_01/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt6/ability_01/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+</ability>

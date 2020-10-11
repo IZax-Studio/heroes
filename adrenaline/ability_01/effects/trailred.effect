@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".7">	
+
+			<simpleemitter
+				count="8"
+				spawnrate="13"
+				particlelife="610"
+				gravity="0"
+				speed="100"
+				position="0 0 0"
+				acceleration="11"
+				offsetsphere="0 0 0"
+				drag="0.01"
+			>
+				<particle>
+					<model
+						life="350"
+						position="0 0 0"
+						model="/shared/effects/models/orb/orb.mdf"
+						material="/shared/effects/materials/shell2.material"
+						startscale=".5"
+						midscale=".5"
+						endscale=".5"
+						minyaw="0"
+						maxyaw="360"
+						startcolor=".3 .3 .3"
+						midcolor=".3 .3 .3"
+						endcolor="0 0 0"
+						rollspeed="-60"
+						yawspeed="120"
+						
+					>
+					</model>
+				</particle>
+			</simpleemitter>
+			
+			
+			
+			
+			
+			<simpleemitter
+				spawnrate="200"
+				particlelife="610"
+				gravity="0"
+				speed="0"
+				position="0 0 0"
+				acceleration="11"
+				material="/shared/effects/materials/bub.material"
+				offsetsphere="100 100 0"
+				drag="0.01"
+				direction="1 0 0"
+				
+			>
+				<particle 
+					startstickiness="0"
+					endstickiness="1"
+					startcolor=".35 .45 .5"
+					midcolor=".5 .45 .35"
+					endcolor="0 0 0"
+					startsize="35"
+					endsize="0"	
+					turn="1"
+					alpha=".75"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="200"
+				particlelife="610"
+				gravity="0"
+				speed="0"
+				position="0 0 0"
+				acceleration="11"
+				material="/shared/effects/materials/flare_03.material"
+				offsetsphere="100 100 0"
+				drag="0.01"
+				direction="1 0 0"
+				
+			>
+				<particle 
+					startstickiness="0"
+					endstickiness="1"
+					startcolor=".35 .45 .5"
+					endcolor="0 0 0"
+					startsize="50"
+					endsize="0"	
+					turn="1"
+				/>
+			</simpleemitter>
+			
+			
+				<model
+				position="0 -100 0"
+				life="1000"
+				model="/heroes/adrenaline/ability_01/effects/wave/model.mdf"
+				material="/heroes/adrenaline/ability_01/effects/wave/water.material"
+				anim="idle"
+				param0=".2"
+				color="1"
+				scale=".75"
+				startalpha="0"
+				midalpha=".25"
+				endalpha="0"
+			/>	
+
+			<simpleemitter
+				life="1500"
+				spawnrate="100"
+				minparticlelife="500"
+				maxparticlelife="750"
+				direction="0 -1 0"
+				angle="0"
+				gravity="10"
+				drag=".02"
+				speed="500"
+				acceleration="0"
+				offsetsphere="75"
+				material="/shared/effects/materials/pyroclast_01.material"
+			>
+				<particle
+					maxangle="360"			
+					minanglespeed="-24"
+					maxanglespeed="24"					
+					scale="1"					
+					color=".5"	
+					startalpha="0"
+					midalpha=".15"
+					endalpha="0"
+					midalphapos=".2"
+					startsize="80"					
+					endsize="150"				
+					lockup="true"
+					lockright="false"
+					pitch="90"
+					yaw="0"	
+				/>
+			</simpleemitter>			
+
+			<simpleemitter
+				life="1500"
+				spawnrate="200"
+				minparticlelife="500"
+				maxparticlelife="750"
+				direction="0 -1 0"
+				angle="0"
+				gravity="10"
+				drag=".02"
+				speed="500"
+				acceleration="0"
+				offsetsphere="75"
+				material="/shared/effects/materials/whitewater_02.material"
+			>
+				<particle
+					startcolor="0 0 0"
+					midcolor=".25 .35 .5"
+					endcolor="0 0 0"
+					size="25"
+					maxangle="360"
+					minendscale="1"
+					maxendscale="4"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				life="1500"
+				spawnrate="100"
+				particlelife="500"
+				offsetsphere="5"
+				direction="0 -1 0"
+				angle="0"
+				gravity="10"
+				drag=".02"
+				speed="500"
+				acceleration="0"
+				particledirectionalspace="local"
+				material="/shared/effects/materials/refract_wave2.material"
+			>
+				<particle
+					startalpha="1"
+					endalpha="0"
+					angle="-90"
+					startsize="100"
+					endsize="175"
+					param=".2"
+					depthbias="-130"
+					startanchor="1"
+					endanchor="0"
+				/>
+			</simpleemitter>		
+			
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+	</thread>
+
+</effect>

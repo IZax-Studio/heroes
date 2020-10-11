@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+						
+			<sound
+			    forcestereo="true"
+				channelid="adrenalineimp"
+				linearfalloff="true" 
+				falloffstart="800"
+				falloffend="1300"
+				volume="1"
+				sample="/heroes/adrenaline/ability_02/sounds/imp_%.ogg"
+			/>
+			
+			<controller
+				life="10000"
+				owner="source"
+				bone="_bone_centerofchest"
+				lookat="true"
+				lookatowner="source"
+				lookatbone="_bone_centerofchest"
+				lookatposition="0 0 100"
+			>
+				<simpleemitter
+					count="10"
+					minparticlelife="250"
+					maxparticlelife="400"
+					material="/shared/effects/materials/fireball_02.material"
+					depthbias="-10"
+					gravity="-50"
+				>
+					<particle
+						maxangle="360"
+						startsize="50"
+						minendsize="150"
+						maxendsize="200"
+						minendscale="1"
+						maxendscale="2"
+						startframe="1"
+						midframe="0"
+						endframe="1"
+						midframepos=".15"
+						startcolor="0 .5 1"
+						midcolor="0 .5 1"
+						endcolor="0 .5 1"
+					/>
+				</simpleemitter>
+				<simpleemitter
+					mincount="10"
+					maxcount="20"
+					minparticlelife="100"
+					maxparticlelife="150"
+					speed=".1"
+					direction="0 -1 0"
+					angle="80"
+					material="/shared/effects/materials/light_rays.material"
+					depthbias="-10"
+				>
+					<particle
+						turn="1"
+						minstartwidth="10"
+						maxstartwidth="20"
+						minendwidth="20"
+						maxendwidth="80"
+						startheight="50"
+						minendheight="100"
+						maxendheight="250"
+						startframe="0"
+						midframe=".5"
+						endframe=".8"
+						midframepos=".45"
+						startparam=".75"
+						endparam="0"
+						startcolor="0 .5 1"
+						midcolor="0 .5 1"
+						endcolor="0 .5 1"
+						lockup="true"
+						lockright="true"
+						pitch="-90"
+						angle="180"
+						offcenter="true"
+						center=".5 0"
+					/>
+				</simpleemitter>
+				
+				<light
+					timenudge="1"
+					life="500"
+					falloffend="200"
+					startcolor="0 .5 1"
+					midcolor="0 .5 1"
+					endcolor="0"
+					midcolorpos=".2"
+				/>
+
+				<debris
+					life="1500" 
+					model="/shared/effects/models/debris/debris.mdf"
+					material="/shared/effects/materials/shell2.material"
+					position="0 0 10"
+					offsetsphere="10"
+					direction="0 1 0"
+					angle="30"
+					minspeed="600"
+					maxspeed="4000"
+					minrotationspeed="-1200"
+					maxrotationspeed="1200"
+					drag="0.0025"
+					friction="200"
+					collide="1"
+					reflect="0.65"
+					bounce="0.85"
+					gravity="100"
+					scale=".15"
+					startcolor="0 .5 1"
+					midcolor="0 .5 1"
+					endcolor="0"
+					midcolorpos=".2"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+				>
+				</debris>
+				<debris
+					life="1500" 
+					model="/shared/effects/models/debris/debris.mdf"
+					material="/shared/effects/materials/shell2.material"
+					position="0 0 0"
+					offsetsphere="15"
+					direction="0 1 0"
+					angle="-30"
+					minspeed="600"
+					maxspeed="4000"
+					minrotationspeed="-1200"
+					maxrotationspeed="1200"
+					drag="0.0025"
+					friction="200"
+					collide="1"
+					reflect="0.65"
+					bounce="0.85"
+					gravity="100"
+					scale=".18"
+					startcolor="0 .5 1"
+					midcolor="0 .5 1"
+					endcolor="0"
+					midcolorpos=".2"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+				>
+				</debris>
+			</controller>
+				
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<camerashake2 scale="4" frequency="1" duration="100" falloffend="800" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityscale="true">
+
+	<definitions>
+		<modifier name="modifier0" 
+			life="350"
+			startcolor="6 4 5" endcolor="1" medcolor=".75"
+		/>
+		<particlesystem name="system0" space="world" scale=".3" useentityscale="true">
+		
+		
+			<sound
+				delay="350"
+				volume="0.8" 
+				sample="/heroes/adrenaline/ability_04/sounds/cast.wav"
+				linearfalloff="true"
+				falloffstart="1300"
+				falloffend="1300"
+			/>
+			
+		 
+		 <template name="spawn" >
+			<simpleemitter
+				bone="{bone}"
+				delay="630"
+				position="0 0 0"
+				life="400"
+				spawnrate="650"
+				count="20"
+				minparticlelife="230"
+				maxparticlelife="1000"
+				speed="2000"
+				drag="0.05"
+				gravity="-1"
+				offsetsphere="15"
+				material="/shared/effects/materials/bad_healing_smoke_12.material"
+			>
+				<particle
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					turn="1"
+					startcolor="-1"
+					endcolor="0"
+					size="50"
+					minendscale="6"
+					maxendscale="10"
+					startalpha=".3"
+					midalpha="1"
+					midalphapos="0.1"
+					endalpha="0"
+					endstickiness="1"
+				/>
+			</simpleemitter>
+		</template>
+		<instance name="spawn" bone="_bone_righthand" />
+		<instance name="spawn" bone="_bone_lefthand" />
+
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<spawnmodifier instance="instance1" modifier="modifier0"/> 
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

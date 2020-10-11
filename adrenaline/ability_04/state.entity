@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Adrenaline_Ability4"
+	
+	icon="icon4.tga"
+	
+	passiveeffect="effects/state.effect"
+	
+	stunned="true"
+	
+	isolated="true"
+	morphpriority="99"
+	morphsightrangeday="400"
+	morphsightrangenight="400"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+>
+    <!-- When the state ends, play a sound -->
+    <onexpired>
+		<playeffect effect="effects/state_expire.effect" source="target_entity" target="target_entity" />
+    </onexpired>
+	
+	<onframe />
+
+	<altavatar key="Hero_Adrenaline.Alt"
+	    icon="/heroes/adrenaline/alt/ability_04/icon.tga"
+		passiveeffect="/heroes/adrenaline/alt/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Adrenaline.Alt2"
+	    icon="/heroes/adrenaline/alt2/ability_04/icon.tga"
+		passiveeffect="/heroes/adrenaline/alt2/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Adrenaline.Alt3"
+		passiveeffect="/heroes/adrenaline/alt3/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Adrenaline.Alt4"
+		passiveeffect="/heroes/adrenaline/alt3/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Adrenaline.Alt5"
+	    icon="/heroes/adrenaline/alt5/ability_04/icon.tga"
+		passiveeffect="/heroes/adrenaline/alt5/ability_04/effects/state.effect"
+	/>
+
+	<altavatar key="Hero_Adrenaline.Alt6"
+		passiveeffect="/heroes/adrenaline/alt6/ability_04/effects/state.effect"
+	/>
+	
+</state>

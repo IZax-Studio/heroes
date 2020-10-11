@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="2">
+
+			
+			<sound
+			    fadein="500"
+				fadeout="100"
+			    soundloop="true"
+				randomloop="true"
+				volume=".8" 
+				sample="/heroes/adrenaline/ability_04/sounds/loop.wav"
+				linearfalloff="true"
+				falloffstart="800"
+				falloffend="1300"
+			/>
+			
+			<groundsprite
+				delay="0"
+				directionalspace="local"
+				life="1500"
+				material="/shared/effects/materials/crack_1_ground.material"
+				size="40"
+				startcolor="0"
+				midcolor="0 0 1"
+				endcolor="0"
+				alpha="1"
+				position="0 0 0"
+				maxyaw="360"
+			/>
+			
+			<model
+				model="/heroes/adrenaline/model.mdf" 
+				scale="1"
+				anim="idle"
+				material="/shared/effects/materials/shell3.material"
+				color="0 .5 1"
+			/>
+			
+			<simpleemitter
+				spawnrate="500"
+				count="30"
+				particlelife="300"
+				gravity="-55"
+				speed="40"
+				drag=".08"
+				acceleration="0"
+				position="0 0 0"
+				material="/shared/effects/materials/phantom_smoke_10.material"
+				offsetsphere="30 30 70"
+				minangle="90"
+				maxangle="-90"
+			>
+				<particle 
+					startcolor="0 0 0"
+					midcolor="0 .5 1"
+					endcolor="0"
+					midcolorpos=".1"
+					startframe="0"
+					endframe="1"
+					startwidth="20"
+					midwidth="15"
+					endwidth="6"
+					midwidthpos=".5"
+					startheight="0"
+					endheight="1000"
+					lockup="true"
+				/>
+			</simpleemitter>
+
+			<billboard
+				position="0 0 50"
+				delay="0"
+				life="350"
+				param="0.1"	
+				startsize="75"
+				endsize="175"
+				startalpha="0"
+				midalpha=".4"
+				endalpha="0"				
+				depthbias="0"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+			
+			<simpleemitter
+				count="3"
+				spawnrate="50"
+				particlelife="3000"
+				gravity="0"
+				speed="0"
+				drag="0"
+				acceleration="0"
+				position="0 0 0"
+				offsetsphere="0 0 0"
+			>
+				<particle>
+					<model
+						position="0 0 -3"
+						life="1500"
+						name="emitter0"
+						anim="idle"
+						model="/heroes/midas/ability_01/effects/gold_pieces/model.mdf"
+						material="/heroes/sand_wraith/ability_01/effects/material.material"
+						scale=".185"
+						startcolor="0 .5 1"
+						endcolor="0 .5 1"
+						startalpha="1"
+						endalpha="0"
+						minyaw="0"
+						maxyaw="45"
+					>
+					</model>
+					
+					<model
+						position="0 0 0"
+						life="1500"
+						name="emitter0"
+						anim="idle"
+						model="/heroes/moraxus/ability_01/effects/rocks/model.mdf"
+						material="/heroes/sand_wraith/ability_01/effects/material.material"
+						scale=".14"
+						startcolor="0 .5 1"
+						endcolor="0 .5 1"
+						startalpha="1"
+						endalpha="0"
+						minyaw="65"
+						maxyaw="110"
+					>
+					</model>
+				</particle>
+			</simpleemitter>
+
+
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
