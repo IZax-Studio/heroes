@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Bushwack_Poison"
+
+	speed="2500"
+	gravity="0"
+	modelscale=".5"
+	model="effects/arrow.mdf"
+
+	impacteffect=""
+	traileffect="effects/arrow_trail.effect"
+>
+	<altavatar key="Hero_Bushwack.Alt5" 
+		traileffect="../alt5/projectile/effects/trail_poison.effect"
+	/>
+	
+	<altavatar key="Hero_Bushwack.Alt6" 
+		traileffect="../alt6/projectile/effects/trail_poison.effect"
+	/>
+	
+	<altavatar key="Hero_Bushwack.Alt7" 
+		traileffect="../alt7/projectile/effects/trail_poison.effect"
+	/>
+	
+	<altavatar key="Hero_Bushwack.Alt8" 
+		traileffect="../alt8/projectile/effects/trail_poison.effect"
+	/>
+	
+</projectile>

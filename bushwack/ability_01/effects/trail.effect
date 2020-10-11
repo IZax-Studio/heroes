@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions> 
+		<particlesystem name="system0" space="world" scale="1">
+
+		<sound
+		        life="3000"
+			    forcestereo="true"
+				linearfalloff="true" 
+				falloffstart="700"
+				falloffend="1300"
+				volume="1"
+				sample="../sounds/blow_shoot_%.wav"
+			/>
+			
+			<billboard
+				material="flame.material"
+				scale="1"
+				directionalspace="local"
+				yaw="-90"
+				lockup="true"
+				lockright="true"
+				height="5"
+				color=".75 .125 .25"
+			/>
+			
+			<billboard
+				material="flame.material"
+				scale="1"
+				directionalspace="local"
+				yaw="0"
+				pitch="90"
+				roll="90"
+				lockup="true"
+				lockright="true"
+				height="5"
+				color=".75 .125 .25"
+			/>
+			
+			<billboard
+				position="0 -20 0"
+				material="/shared/effects/materials/whitedot.material"
+				width="40"
+				height="120"
+				directionalspace="local"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+				color=".5 0 0"
+			/>
+			
+			<trailemitter
+				position="0 10 0"
+				spawnrate="60"
+				particlelife="750"
+				material="/shared/effects/materials/swoosh_add.material"
+				texposscale="0"
+				texstretchscale="1"
+			>
+				<particle
+					startsize="0"
+					endsize="10"
+					midsizepos=".25"
+					startcolor="0"
+					midcolor=".2 0 0"
+					endcolor="0"
+					midcolorpos=".1"
+				/>
+			</trailemitter>
+			
+			
+			
+			<!-- dripping poison -->
+			<simpleemitter
+				spawnrate="200"
+				particlelife="500"
+				gravity="5"
+				minspeed="20"
+				maxspeed="60"
+				offsetsphere="5"
+				direction="0 1 0"
+				minangle="60"
+				maxangle="120"
+				material="/shared/effects/materials/flame.material"
+				inheritvelocity=".25"
+				limitinheritvelocity="150"
+				drag="0.02"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					minscale="1"
+					maxscale="3"
+					startcolor=".5 .5 .5"
+					midcolor="1 1 1"
+					endcolor="1.5 1.5 1.5"
+					midcolorpos=".1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="150"
+				particlelife="3000"
+				inheritvelocity=".25"
+				limitinheritvelocity="150"
+				drag="0.05"
+			>
+				<particle>
+					<terrainemitter
+						spawnrate="20"
+						minparticlelife="1000"
+						maxparticlelife="2000"
+						mincount="1"
+						maxcount="3"
+						offsetsphere="30"
+						material="/shared/effects/materials/flame.material"
+					>
+						<particle
+							minscale="1.5"
+							maxscale="5"
+							lockup="true"
+							lockright="true"
+							pitch="90"
+							color=".5 .25 .25"
+							startalpha=".5"
+							endalpha="0"
+						/>
+					</terrainemitter>
+				</particle>
+			</simpleemitter>
+			
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" >
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+			
+		<sound
+		        life="4000"
+				linearfalloff="true" 
+				falloffstart="450"
+				falloffend="1300"
+				volume=".8"
+				sample="/heroes/bushwack/ability_03/sounds/core_split_%.wav"
+			/>
+			
+			<template name="arrow">
+				<simpleemitter
+					position="{position}"
+					spawnrate="1000"
+					particlelife="200"
+					count="1"
+					speed="{speed}"
+					direction="{direction}"
+					directionalspace="local"
+					angle="0"
+				>
+					<particle
+						turn="1"
+					>
+						<trailemitter
+							position="0 40 0"
+							minstartspawnrate="80"
+							maxstartspawnrate="100"
+							endspawnrate="0"
+							minparticlelife="500"
+							maxparticlelife="1000"
+							material="/shared/effects/materials/flame.material"
+							texposscale="1.45"
+							texstretchscale="0"
+						>
+							<particle
+								startsize="0"
+								minendsize="10"
+								maxendsize="20"
+								startcolor="0"
+								midcolor="0 .1 0"
+								endcolor="0"
+								midcolorpos=".1"
+							/>
+							<particle
+								startsize="0"
+								minendsize="10"
+								maxendsize="20"
+								startcolor=".5 .5 0"
+								midcolor="1 1 0"
+								endcolor="1.5 1.5 0"
+								midcolorpos=".1"
+							/>
+							<particle
+								startsize="0"
+								minendsize="10"
+								maxendsize="20"
+								startcolor=".5 .5 0"
+								midcolor="1 1 0"
+								endcolor="1.5 1.5 0"
+								midcolorpos=".1"
+							/>
+						</trailemitter>
+						<billboard
+							life="200"
+							material="/shared/effects/materials/arrow.material"
+							scale="1.5"
+							directionalspace="local"
+							yaw="-90"
+							pitch="180"
+							roll="180"
+							lockup="true"
+							lockright="true"
+							height="15"
+							startcolor=".5 .5 0"
+							midcolor="1 1 0"
+							endcolor="1.5 1.5 0"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							midalphapos=".65"
+						/>
+						<billboard
+							life="200"
+							material="/shared/effects/materials/arrow.material"
+							scale="1.5"
+							directionalspace="local"
+							yaw="0"
+							pitch="90"
+							roll="90"
+							lockup="true"
+							lockright="true"
+							height="15"
+							startcolor=".5 .5 0"
+							midcolor="1 1 0"
+							endcolor="1.5 1.5 0"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							midalphapos=".65"
+						/>
+						<billboard
+							position="0 -20 0"
+							life="200"
+							material="/shared/effects/materials/flame.material"
+							width="40"
+							height="120"
+							directionalspace="local"
+							lockup="true"
+							lockright="true"
+							pitch="90"
+							startcolor=".5 .5 0"
+							midcolor="1 1 0"
+							endcolor="1.5 1.5 0"
+						/>
+						
+					</particle>
+				</simpleemitter>
+			</template>
+			
+			<instance name="arrow" position="0 0 60" direction="0 1 0" speed="2200" />
+			<instance name="arrow" position="15 0 60" direction=".225 1 0" speed="2000" />
+			<instance name="arrow" position="-15 0 60" direction="-.225 1 0" speed="2000" />
+			
+	</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

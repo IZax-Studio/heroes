@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Bushwack_Ability1"
+
+	speed="3000"
+	gravity="0"
+	modelscale=".5"
+	model="/heroes/bushwack/projectile/effects/arrow.mdf"
+
+	impacteffect="effects/impact.effect"
+	traileffect="/heroes/bushwack/projectile/effects/arrow_trail.effect"
+>
+	<onimpact>
+		<combatevent effecttype="AbilityBasedProjectile">
+			<onimpact>
+				<damage effecttype="Physical" amount="60,110,160,210" />
+				<applystate name="State_Bushwack_Ability1" target="target_entity" duration="1500" />
+				
+				<!-- Ability 4 logic -->
+				<pushability source="this_owner_entity" name="Ability_Bushwack4" />
+				<setvar0 source="stack_entity" a="source_level" />
+				<setent0 entity="stack_proxy_entity" />
+				<setent1 entity="stack_entity" />
+				<compare a="var0" b="1" op="ge">
+					<applystate name="State_Bushwack_Ability4_Damage" target="target_entity" duration="3000" pushentity="true" statelevel="var0" />
+					<addcharges count="1" entity="stack_entity" />
+					<applystate name="State_Bushwack_Ability4_Buff" target="source_entity" duration="3000" pushentity="true" statelevel="var0" />
+					
+					<hasmodifier name="ult_boost">
+						<addcharges count="1" entity="stack_entity" />
+					</hasmodifier>
+					<else>
+						<compare source="ent0" target="target_entity" a="source_entity" b="target_entity" op="eq">
+							<addcharges count="1" entity="stack_entity" />
+						</compare>
+						<else>
+							<setcharges a="1" entity="stack_entity" />
+						</else>
+					</else>
+					
+					<setproxy entity="ent1" target="target_entity" />
+				</compare>
+			</onimpact>
+		</combatevent>
+	</onimpact>
+	
+	<altavatar key="Hero_Bushwack.Alt" 
+		traileffect="../alt/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Bushwack.Alt2" 
+		traileffect="../alt2/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Bushwack.Alt5" 
+		impacteffect="../alt5/ability_01/effects/impact.effect"
+		traileffect="../alt5/ability_01/effects/trail.effect"
+	/>
+	<altavatar key="Hero_Bushwack.Alt6" 
+		impacteffect="../alt6/ability_01/effects/impact.effect"
+		traileffect="../alt6/ability_01/effects/trail.effect"
+	/>
+	<altavatar key="Hero_Bushwack.Alt7" 
+		impacteffect="../alt7/ability_01/effects/impact.effect"
+		traileffect="../alt7/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Bushwack.Alt8" 
+		impacteffect="../alt8/ability_01/effects/impact.effect"
+		traileffect="../alt8/ability_01/effects/trail.effect"
+	/>
+
+	<modifier key="soccer" modpriority="150"
+	>
+		<onimpact>
+			<combatevent effecttype="AbilityBasedProjectile">
+				<onimpact>
+					<evaluate a="1" b="source_attackdamage" op="mult" />
+					<damage effecttype="Physical" amount="20" b="result" op="add" />
+					<popup name="execution" a="result" source="target_entity" target="source_entity" />
+					<applystate name="State_Bushwack_Ability1" target="target_entity" duration="1000" />
+				</onimpact>
+			</combatevent>
+		</onimpact>
+	</modifier>
+</projectile>

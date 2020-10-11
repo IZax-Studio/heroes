@@ -88,7 +88,7 @@
 		ignorecooldown="true"
 		anim=""
 		model="model2"
-		icon="icon_b.tga"
+		icon="icon2.tga"
 		casttime="0"
 		castactiontime="0"
 		manacost="0"

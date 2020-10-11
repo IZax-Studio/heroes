@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Bushwack_Ability4_Damage"
+
+	icon="icon4.tga"
+	passiveeffect="effects/state.effect"
+	
+	revealed="true"
+	deniable="true"
+
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	attackspeedpercharge="-0.10,-0.15,-0.20"
+	
+	impactinterval="50"
+
+>
+	<!-- If attackspeedpercharge is changed, also change the # of charges in onimpact - this controls when the -AS cap sets in! -->
+	
+	<onframe>
+		<setvar0 a="charges" b="6,10,14" op="mult" />
+		<setvar0 a="var0" b="frametime" op="mult" />
+		
+		<targettype type="Boss">
+			<setvar1 a="100" b="frametime" op="mult" /> <!-- Max damage on Bosses -->
+			<setvar0 a="var0" b="var1" op="min" />
+			<damage effecttype="Physical DOT" amount="1" b="var0" op="mult" />
+		</targettype>
+		<else>
+			<damage effecttype="Physical DOT" amount="1" b="var0" op="mult" />
+		</else>
+	</onframe>
+
+	<onimpact>
+		<compare a="charges" b="4,3,2" op="ge">
+			<setactivemodifierkey name="Bushwack4_Capped" entity="this_entity" />
+		</compare>
+	</onimpact>
+	
+	<modifier key="Bushwack4_Capped" modpriority="3"
+		attackspeed="-0.5"
+		attackspeedpercharge="0"
+	>
+		<onimpact />
+	</modifier>
+	
+	<modifier key="ult_boost" modpriority="100"
+		sighted="true"
+	>	
+	</modifier>
+
+	<altavatar key="Hero_Bushwack.Alt5" 
+		passiveeffect="../alt5/ability_04/effects/state.effect"
+	/>
+	
+	<modifier key="soccer" modpriority="150" maxcharges="3" >
+		<onframe>
+			<setvar1 a="charges" b="charges" op="mult" />
+			<setvar0 a="var1" b="5" op="add" />
+			<setvar0 a="var0" b="frametime" op="mult" />
+			<damage effecttype="Physical DOT" amount="1" b="var0" op="mult"/>
+		</onframe>
+	</modifier>
+	
+	<altavatar key="Hero_Bushwack.Alt6" 
+		passiveeffect="../alt6/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Bushwack.Alt7" 
+		passiveeffect="../alt7/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Bushwack.Alt8" 
+		passiveeffect="../alt8/ability_04/effects/state.effect"
+	/>
+	
+</state>
