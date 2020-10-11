@@ -17,7 +17,7 @@
 	confirmattacksound="axe/sounds/voice/axe_attack_%.mp3"
 	nomanasound="axe/sounds/voice/axe_nomana_%.mp3"
 	cooldownsound="axe/sounds/voice/axe_notyet_%.mp3"
-	announcersound="sounds/voice/hero_select.wav"
+	announcersound="axe/sounds/voice/hero_select.ogg"
 	tauntedsound="axe/sounds/voice/axe_ability_battlehunger_2.mp3"
 	tauntkillsound="axe/sounds/voice/select_5.mp3"
 	
