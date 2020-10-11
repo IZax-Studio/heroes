@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Andromeda4"
+
+	icon="icon4.tga"
+	
+	anim="ability_4"
+	casttime="800"
+	castactiontime="300"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	
+	actiontype="target_entity"
+	casteffecttype="Physical Push"
+	targetscheme="enemy_and_willing_other_ally_heroes"
+	casteffect=""
+	
+	manacost="100,150,200"
+	cooldowntime="75000,65000,55000"
+	
+	range="700,875,1050"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+   	novoiceresponse="true"
+	 
+	targetpriorities="enemy_heroes"
+	
+	dynamicprecache="effects/appear.effect,effects/beam.effect,effects/appear2.effect"
+>
+	<onlearn>
+		<setscriptvalue name="appear_effect" value="effects/appear.effect" entity="this_entity" />
+		<setscriptvalue name="beam_effect" value="effects/beam.effect" entity="this_entity" />
+		<setscriptvalue name="appear2_effect" value="effects/appear2.effect" entity="this_entity" />
+	</onlearn>
+	
+	<onimpact>
+		<spawnaffector name="Affector_Andromeda_Ability4" target="source_entity" />
+		<spawnaffector name="Affector_Andromeda_Ability4" target="target_entity" />
+		
+		<!-- Mini-Stun -->
+		<applystate name="State_Stunned" target="target_entity" duration="50" />
+		
+		<targettype type="enemy">
+			<applystate name="State_Andromeda_Ability4" duration="3000" />
+		</targettype>
+		<applystate name="State_Andromeda_Ability4_Buff" target="source_entity" duration="3000" />
+		
+		<!-- Dynamic effects -->
+		<setpos0 position="source_position" />
+		<getscriptvalue name="appear_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" source="source_position" occlude="true" />
+		<getscriptvalue name="beam_effect" destvar="str1" entity="this_entity" />
+		<playeffectdynamic effect="str1" source="source_position" target="target_position" occlude="true" />
+		<getscriptvalue name="appear2_effect" destvar="str2" entity="this_entity" />
+		<playeffectdynamic effect="str2" source="source_position" occlude="true" />
+		
+		<!-- Swap mechanics -->
+		<setpos1 position="target_position" />
+		<unbind target="source_entity" />
+		<unbind target="target_entity" />
+		<teleport source="source_entity" target="" interpolate="false" />
+		<teleport source="target_entity" target="pos0" interpolate="false" />
+		<teleport source="source_entity" target="pos1" interpolate="false" />
+		<disjoint target="source_entity" />
+		<disjoint target="target_entity" />
+		
+		<!-- Spawn illusion at Andromeda's original position -->
+		<spawnillusion
+			source="source_entity"
+			count="1"
+			lifetime="20000"
+			receivedamagemultiplier="2.0"
+			inflictdamagemultiplier="0.25"
+			pushentity="true"
+		/>		
+		<teleport source="stack_entity" target="pos0" />
+		
+		<!-- Staff of the Master E & R effect -->
+		<hasmodifier name="ult_boost" entity="source_entity">
+			<!-- Shrunken Head state application to self -->
+			<hasmodifier name="activation_modifier" entity="source_entity" />
+			<else>
+				<applystate name="State_Item3E" duration="2000" target="source_entity" />
+			</else>
+			
+			<cantarget targetscheme="enemy_heroes">
+				<applystate name="State_Andromeda_Ability3_AttackRange" duration="4000" target="source_entity" />
+			</cantarget>
+		</hasmodifier>
+	</onimpact>
+	
+	<modifier 
+		key="ult_boost" 
+		modpriority="100"
+		displayname="true"
+		cooldowntime="20000"
+	/>
+
+	<modifier key="soccer" modpriority="150"
+		baselevel="0"
+		maxlevel="1"
+		cooldowntime="13000"
+		range="425"
+		manacost="45"
+		activatescheme="movement"
+		displayname="true"
+	> 
+		<onframe />
+		
+		<onimpact>
+			<spawnaffector name="Affector_Andromeda_Ability4" target="source_entity" />
+			<spawnaffector name="Affector_Andromeda_Ability4" target="target_entity" />
+			
+			<!-- Dynamic effects -->
+			<setpos0 position="source_position" />
+			<getscriptvalue name="appear_effect" destvar="str0" entity="this_entity" />
+			<playeffectdynamic effect="str0" source="source_position" occlude="true" />
+			<getscriptvalue name="beam_effect" destvar="str1" entity="this_entity" />
+			<playeffectdynamic effect="str1" source="source_position" target="target_position" occlude="true" />
+			<getscriptvalue name="appear2_effect" destvar="str2" entity="this_entity" />
+			<playeffectdynamic effect="str2" source="source_position" occlude="true" />
+			
+			<!-- Swap mechanics -->
+			<setpos1 position="target_position" />
+			<unbind target="source_entity" />
+			<unbind target="target_entity" />
+			<teleport source="source_entity" target="" interpolate="false" />
+			<teleport source="target_entity" target="pos0" interpolate="false" />
+			<teleport source="source_entity" target="pos1" interpolate="false" />
+			<disjoint target="source_entity" />
+			<disjoint target="target_entity" />
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Andromeda.Alt4" modpriority="100"
+		dynamicprecache="../alt4/ability_04/effects/appear.effect,../alt4/ability_04/effects/beam.effect,../alt4/ability_04/effects/appear2.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="appear_effect" value="../alt4/ability_04/effects/appear.effect" entity="this_entity" />
+			<setscriptvalue name="beam_effect" value="../alt4/ability_04/effects/beam.effect" entity="this_entity" />
+			<setscriptvalue name="appear2_effect" value="../alt4/ability_04/effects/appear2.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Andromeda.Alt5" modpriority="100"
+		dynamicprecache="../alt5/ability_04/effects/appear.effect,../alt4/ability_04/effects/beam.effect,effects/appear2.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="appear_effect" value="../alt5/ability_04/effects/appear.effect" entity="this_entity" />
+			<setscriptvalue name="beam_effect" value="effects/beam.effect" entity="this_entity" />
+			<setscriptvalue name="appear2_effect" value="effects/appear2.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Andromeda.Alt6" modpriority="100"
+		dynamicprecache="../alt6/ability_04/effects/appear.effect,../alt6/ability_04/effects/beam.effect,../alt6/ability_04/effects/appear2.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="appear_effect" value="../alt6/ability_04/effects/appear.effect" entity="this_entity" />
+			<setscriptvalue name="beam_effect" value="../alt6/ability_04/effects/beam.effect" entity="this_entity" />
+			<setscriptvalue name="appear2_effect" value="../alt6/ability_04/effects/appear2.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+</ability>

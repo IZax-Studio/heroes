@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Andromeda3"
+
+	icon="icon3.tga"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="no_target"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nonaggressive="true"
+	
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="1000"
+	cooldowntype="andromedaauratoggle"
+	noresponse="true"
+>
+	<aura name="andromedaaura" state="State_Andromeda_Ability3" radius="900" effecttype="Buff" targetscheme="ally_units" propagatecondition="not_stealthed" ignoreinvulnerable="true" />
+
+	<onlearn>
+		<activatemodifierkey name="Andromeda_Aura_Toggle_All" />
+	</onlearn>	
+	
+	<modifier key="Andromeda_Aura_Toggle_All" modpriority="100"
+		icon="icon_all.tga"
+	>
+		<onimpact>
+			<deactivatemodifierkey name="Andromeda_Aura_Toggle_All" />
+			<activatemodifierkey name="Andromeda_Aura_Toggle_Heroes" />
+		</onimpact>
+		
+		<aura name="andromedaaura" state="State_Andromeda_Ability3" radius="900" effecttype="Buff" targetscheme="ally_units" propagatecondition="not_stealthed" ignoreinvulnerable="true" />
+	</modifier>
+
+	<modifier key="Andromeda_Aura_Toggle_Heroes" modpriority="100"
+		icon="icon_hero.tga"
+	>
+		<onimpact>
+			<deactivatemodifierkey name="Andromeda_Aura_Toggle_Heroes" />
+			<activatemodifierkey name="Andromeda_Aura_Toggle_All" />
+		</onimpact>
+		
+		<aura name="andromedaaura" state="State_Andromeda_Ability3" radius="900" effecttype="Buff" targetscheme="ally_heroes" propagatecondition="not_stealthed" ignoreinvulnerable="true" />
+	</modifier>
+
+	<!-- Make the aura only heroes, not toggleable, and not work on illusions for krosmode -->
+	<modifier key="krosmode" modpriority="101"
+		actiontype="passive"
+	>
+		<onimpact />
+		
+		<aura name="andromedaaura" state="State_Andromeda_Ability3" radius="900" effecttype="Buff" targetscheme="ally_heroes" propagatecondition="not_stealthed,not_illusion" ignoreinvulnerable="true" stack="true" />
+	</modifier>
+	
+	<modifier key="ult_boost" modpriority="150"
+		displayname="true"
+	>
+	</modifier>
+</ability>

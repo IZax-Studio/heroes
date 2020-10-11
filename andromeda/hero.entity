@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_Andromeda"
+
+	team="Legion"
+	icon="Vengeful_Spirit.tga"
+	portrait="Vengeful_Spirit.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana_%.wav"
+	cooldownsound="sounds/voice/cooldown_%.wav"
+	announcersound="sounds/voice/hero_select.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+	
+	preglobalscale="1.3"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="48"
+	targetoffset="0 0 110"
+	infoheight="200"
+	portraitcampos="3 -30 45"
+	
+	category="cc"
+	difficulty="3"
+
+	solorating="0"
+	junglerating="0"
+	carryrating="0"
+	supportrating="2"
+	initiatorrating="1"
+	gankerrating="3"
+	pusherrating="0"
+	rangedrating="3"
+	meleerating="0"
+	
+	movespeed="300"
+	turnrate="540"
+	turnsmoothing="0.075"
+
+	maxhealth="150"
+	healthregen="0.25"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="0.32"
+	magicarmor="5"
+
+	inventory0="Ability_Andromeda1"
+	inventory1="Ability_Andromeda2"
+	inventory2="Ability_Andromeda3"
+	inventory3="Ability_Andromeda4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="1000"
+	attackactiontime="330"
+	attackcooldown="1700"
+	attackdamagemin="19"
+	attackdamagemax="27"
+	attacknumanims="2"
+	attackoffset="0 50 170"
+	attackprojectile="Projectile_AndromedaAttack"
+	attackrange="475"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect=""
+	attacktype="ranged"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="800"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	primaryattribute="Agility"
+	strength="18"
+	strengthperlevel="2.5"
+	agility="25"
+	agilityperlevel="2.2"
+	intelligence="16"
+	intelligenceperlevel="1.5"
+	
+	previewmodel="model.mdf"
+	previewpos="0 0 -90"
+	previewangles="0 0 0"
+	previewscale="1.3"
+	
+	storemodel="model.mdf"
+	storepos="0 0 -30"
+	storeangles="0 0 0"
+	storescale="1.25"
+	storepassiveeffect="effects/body.effect"
+	
+	corpsetime="500"
+	deathtime="500"
+	
+	tooleffectkeyname38="Item_Intelligence7"
+	tooleffectpath38="effects/boost.effect"
+	tooleffectgroup38="sotm"
+	
+	tooleffectkeyname39=""
+	tooleffectpath39="effects/body.effect"
+	tooleffectgroup39="sotm"
+>
+	<recommendeditem name="Item_ManaPotion" />
+	<recommendeditem name="Item_MinorTotem" />
+	<recommendeditem name="Item_RunesOfTheBlight" />
+	<recommendeditem name="Item_HealthPotion" />
+	<recommendeditem name="Item_HomecomingStone" />
+	
+	<recommendeditem name="Item_FlamingEye" />
+	<recommendeditem name="Item_Strength5" />
+	<recommendeditem name="Item_Striders" />
+	<recommendeditem name="Item_Intelligence7" />
+	<recommendeditem name="Item_PortalKey" />
+	<recommendeditem name="Item_Evasion" />
+	<recommendeditem name="Item_Morph" />
+	
+	<modifier key="iamsheeped" modpriority="1000"
+		passiveeffect=""
+	/>
+	
+	
+	<!-- <modifier key="gated" modpriority="200"
+		movespeed="290"
+		attackrange="550"
+		magicarmor="5"
+		armor="0.25"
+		
+		inventory0="Reborn_Ability_Andromeda1"
+		inventory1="Reborn_Ability_Andromeda2"
+		inventory2="Reborn_Ability_Andromeda3"
+		inventory3="Reborn_Ability_Andromeda4"
+		
+		attackdamagemin="10"
+		attackdamagemax="18"
+		
+		primaryattribute="Agility"
+		strength="18"
+		strengthperlevel="2.2"
+		agility="25"
+		agilityperlevel="2.5"
+		intelligence="13"
+		intelligenceperlevel="1.5"
+
+		supportrating="4"
+		gankerrating="2"
+	>
+	</modifier> -->
+	
+	<modifier key="unkillable" modpriority="100"
+		hidehealthbar="true"
+	/>
+	
+	<modifier key="soccer" modpriority="190" primaryattribute="" 
+		turnrate="650" magicarmor="0" healthregen="2.5" armor="0" manaregen="0"
+		maxmana="100"
+		attackrange="400"
+		attackcooldown="1400"
+		movespeed="320"
+		maxhealth="400"
+		attackdamagemin="45"
+		attackdamagemax="45"
+		intelligence="0"
+		strength="0"
+		agility="0"
+		inventory0="Ability_Soccer_SlideKick"
+		inventory1="Ability_Soccer_Sprint"
+		inventory2="Ability_Andromeda1"
+		inventory3="Ability_Andromeda4"
+		inventory4="Ability_Soccer_Andromeda_Passive"
+		cancarryitems="false" inventory8="" inventory12=""
+	/>
+	
+	<altavatar key="Classic"
+		icon2="icon.tga"
+		portrait="icon.tga"
+		model="model.mdf"
+	
+		passiveeffect=""
+		spawneffect=""
+		respawneffect="/shared/effects/respawn.effect"
+		selectedsound="sounds/voice/select_%.wav"
+		selectedflavorsound="sounds/voice/select_flavour_%.wav"
+		confirmmovesound="sounds/voice/move_%.wav"
+		confirmattacksound="sounds/voice/attack_%.wav"
+		nomanasound="sounds/voice/no_mana.wav"
+		cooldownsound="sounds/voice/cooldown.wav"
+		announcersound="sounds/voice/hero_select.wav"
+		tauntedsound="sounds/voice/taunt_prior.wav"
+		tauntkillsound="sounds/voice/taunt_after.wav"
+	
+		previewmodel="preview.mdf"
+		previewpos="0 0 -90"
+		previewangles="0 0 0"
+		previewscale="1.3"
+		
+		storemodel="preview.mdf"
+		storepos="0 0 -30"
+		storeangles="0 0 0"
+		storescale="1.25"
+		storepassiveeffect="effects/body.effect"
+	
+		preglobalscale="1.5"
+		modelscale="1.0"
+		effectscale="0.9"
+		boundsheight="112"
+		boundsradius="24"
+		selectionradius="48"
+		targetoffset="0 0 110"
+		infoheight="200"
+		
+		tooleffectkeyname38="Item_Intelligence7"
+		tooleffectpath38="effects/boost.effect"
+		tooleffectgroup38="sotm"
+		
+		tooleffectkeyname39=""
+		tooleffectpath39="effects/body.effect"
+		tooleffectgroup39="sotm"
+	/>
+	
+	<altavatar key="Alt"
+		preglobalscale="1.45"
+		modelscale="1.25"
+		icon2="alt/icon.tga"
+		portrait="alt/icon.tga"
+		model="alt/model.mdf"
+		infoheight="185"
+		
+		previewmodel="alt/preview.mdf"
+		previewpos="0 0 -100"
+		previewangles="0 0 0"
+		previewscale="1.5"
+		effectscale="1"
+		
+		attackoffset="0 50 120"
+		
+		passiveeffect=""
+		
+		selectedsound="alt/sounds/voice/select_%.wav"
+		selectedflavorsound="alt/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt/sounds/voice/move_%.wav"
+		confirmattacksound="alt/sounds/voice/attack_%.wav"
+		nomanasound="alt/sounds/voice/no_mana.wav"
+		cooldownsound="alt/sounds/voice/cooldown.wav"
+		announcersound="alt/sounds/voice/hero_select.wav"
+		tauntedsound="alt/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt/sounds/voice/taunt_after.wav"
+		
+		storemodel="alt/preview.mdf"
+		storepos="0 0 -36"
+		storeangles="0 0 0"
+		storescale="1.40"
+		storepassiveeffect="alt/effects/body.effect"
+		
+		tooleffectkeyname38="Item_Intelligence7"
+		tooleffectpath38="/heroes/andromeda/alt/effects/boost.effect"
+		tooleffectgroup38="sotm"
+		
+		tooleffectkeyname39=""
+		tooleffectpath39="/heroes/andromeda/alt/effects/body.effect"
+		tooleffectgroup39="sotm"
+	/>	
+
+	<altavatar key="Alt2"
+		preglobalscale="1.6"
+		modelscale="1.25"
+		icon2="alt2/icon.tga"
+		portrait="alt2/icon.tga"
+		model="alt2/model.mdf"
+		infoheight="210"
+		
+		previewmodel="alt2/preview.mdf"
+		previewpos="0 0 -95"
+		previewangles="0 0 0"
+		previewscale="1.62"
+		effectscale="1"
+		
+		attackoffset="0 20 140"
+		
+		passiveeffect=""
+		
+		selectedsound="alt2/sounds/voice/select_%.wav"
+		selectedflavorsound="alt2/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt2/sounds/voice/move_%.wav"
+		confirmattacksound="alt2/sounds/voice/attack_%.wav"
+		nomanasound="alt2/sounds/voice/no_mana.wav"
+		cooldownsound="alt2/sounds/voice/cooldown.wav"
+		announcersound="alt2/sounds/voice/hero_select.wav"
+		tauntedsound="alt2/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt2/sounds/voice/taunt_after.wav"
+		
+		storemodel="alt2/preview.mdf"
+		storepos="0 0 -27"
+		storeangles="0 0 0"
+		storescale="1.45"
+		storepassiveeffect="alt2/effects/body.effect"
+		
+		tooleffectkeyname38="Item_Intelligence7"
+		tooleffectpath38="/heroes/andromeda/alt2/effects/boost.effect"
+		tooleffectgroup38="sotm"
+		
+		tooleffectkeyname39=""
+		tooleffectpath39="/heroes/andromeda/alt2/effects/body.effect"
+		tooleffectgroup39="sotm"
+	/>
+	
+	<altavatar key="Alt3"
+		preglobalscale="1.6"
+		modelscale="1"
+		icon2="alt3/icon.tga"
+		portrait="alt3/icon.tga"
+		model="alt3/model.mdf"
+		infoheight="210"
+		
+		previewmodel="alt3/preview.mdf"
+		previewpos="0 0 -95"
+		previewangles="0 0 0"
+		previewscale="1.62"
+		effectscale="1"
+		
+		attackoffset="0 20 140"
+		
+		passiveeffect=""
+		
+		selectedsound="alt3/sounds/voice/select_%.wav"
+		selectedflavorsound="alt3/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt3/sounds/voice/move_%.wav"
+		confirmattacksound="alt3/sounds/voice/attack_%.wav"
+		nomanasound="alt3/sounds/voice/no_mana.wav"
+		cooldownsound="alt3/sounds/voice/cooldown.wav"
+		announcersound="alt3/sounds/voice/hero_select.wav"
+		tauntedsound="alt3/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt3/sounds/voice/taunt_after.wav"
+		
+		storemodel="alt3/preview.mdf"
+		storepos="0 0 -27"
+		storeangles="0 0 0"
+		storescale="1.25"
+		storepassiveeffect="alt3/effects/body.effect"
+		
+		tooleffectkeyname38="Item_Intelligence7"
+		tooleffectpath38="/heroes/andromeda/alt3/effects/boost.effect"
+		tooleffectgroup38="sotm"
+		
+		tooleffectkeyname39=""
+		tooleffectpath39="alt3/effects/body.effect"
+		tooleffectgroup39="sotm"
+	>
+		<onframe> 
+			<hasmodifier name="Deadlift_Ghost">
+				<deactivatemodifierkey name="Iron_Legion"/>
+			</hasmodifier>
+		</onframe>
+			
+		<onspawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Engineer.Alt4 aa.Hero_Nomad.Alt6 aa.Hero_FlameDragon.Alt4 aa.Hero_MasterOfArms.Alt4 aa.Hero_Armadon.Alt4 aa.Hero_Andromeda.Alt3" >
+				<activatemodifierkey name="Iron_Legion" />
+			</ownsproduct>
+		</onspawn>
+		
+		<onrespawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Engineer.Alt4 aa.Hero_Nomad.Alt6 aa.Hero_FlameDragon.Alt4 aa.Hero_MasterOfArms.Alt4 aa.Hero_Armadon.Alt4 aa.Hero_Andromeda.Alt3" >
+				<activatemodifierkey name="Iron_Legion" />
+			</ownsproduct>
+		</onrespawn>
+		
+		<onkilled>
+			<ownsproduct target="this_entity" product="aa.Hero_Engineer.Alt4 aa.Hero_Nomad.Alt6 aa.Hero_FlameDragon.Alt4 aa.Hero_MasterOfArms.Alt4 aa.Hero_Armadon.Alt4 aa.Hero_Andromeda.Alt3" >
+				<deactivatemodifierkey name="Iron_Legion" />
+			</ownsproduct>
+		</onkilled>
+		
+		<modifier key="Iron_Legion" modpriority="1000"
+			tooleffectpath37="alt3/effects/Iron_Legion.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Alt4"
+		preglobalscale="1.3"
+		modelscale="1.25"
+		icon2="alt4/icon.tga"
+		portrait="alt4/icon.tga"
+		model="alt4/model.mdf"
+		infoheight="210"
+		
+		previewmodel="alt4/preview.mdf"
+		previewpos="0 0 -95"
+		previewangles="0 0 0"
+		previewscale="1.62"
+		effectscale=".9"
+		
+		attackoffset="0 20 140"
+		
+		passiveeffect=""
+		
+		selectedsound="alt4/sounds/voice/select_%.wav"
+		selectedflavorsound="alt4/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt4/sounds/voice/move_%.wav"
+		confirmattacksound="alt4/sounds/voice/attack_%.wav"
+		nomanasound="alt4/sounds/voice/no_mana.wav"
+		cooldownsound="alt4/sounds/voice/cooldown.wav"
+		announcersound="alt4/sounds/voice/hero_select.wav"
+		tauntedsound="alt4/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt4/sounds/voice/taunt_after.wav"
+		
+		storemodel="alt4/preview.mdf"
+		storepos="0 0 -40"
+		storeangles="0 0 0"
+		storescale="1.35"
+		storepassiveeffect="alt4/effects/body.effect"
+		
+		portraitcampos="8 -45 45"
+		
+		tooleffectkeyname38="Item_Intelligence7"
+		tooleffectpath38="/heroes/andromeda/alt4/effects/boost.effect"
+		tooleffectgroup38="sotm"
+		
+		tooleffectkeyname39=""
+		tooleffectpath39="/heroes/andromeda/alt4/effects/body.effect"
+		tooleffectgroup39="sotm"
+	/>
+
+	<altavatar key="Hero_Andromeda.Alt5"
+		icon2="alt5/icon.tga"
+		model="alt5/model.mdf"
+		attackactioneffect="alt5/effects/shoot_sound.effect"
+		preglobalscale="1.8"
+		modelscale="1.0"
+		effectscale="0.9"
+
+		portraitangles="0 0 15"
+		portraitcampos="16 -40 40"
+
+		previewmodel="alt5/preview.mdf"
+
+		storemodel="alt5/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.55"
+		storepassiveeffect="alt3/effects/body.effect"
+		
+		selectedsound="alt5/sounds/voice/select_%.wav"
+		selectedflavorsound="alt5/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt5/sounds/voice/move_%.wav"
+		confirmattacksound="alt5/sounds/voice/attack_%.wav"
+		nomanasound="alt5/sounds/voice/no_mana.wav"
+		cooldownsound="alt5/sounds/voice/cooldown.wav"
+		announcersound="alt5/sounds/voice/hero_select.wav"
+		tauntedsound="alt5/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt5/sounds/voice/taunt_after.wav"
+	/>
+		
+	<altavatar key="pog_skin"
+		icon2="icon.tga"
+		portrait="icon.tga"
+		model="model.mdf"
+		
+		previewmodel="pog_skin/preview.mdf"
+		previewpos="0 0 -100"
+		previewangles="0 0 0"
+		previewscale="1.5"
+		
+		storemodel="pog_skin/preview.mdf"
+		storepos="0 0 -36"
+		storeangles="0 0 0"
+		storescale="1.40"
+	/>
+	
+	<altavatar key="soccer_skin"
+		icon2="icon.tga"
+		portrait="icon.tga"
+		model="model.mdf"
+		
+		previewmodel="soccer_skin/preview.mdf"
+		previewpos="0 0 -90"
+		previewangles="0 0 0"
+		previewscale="1.3"
+		
+		storemodel="soccer_skin/preview.mdf"
+		storepos="0 0 -30"
+		storeangles="0 0 0"
+		storescale="1.25"
+		storepassiveeffect="effects/body.effect"
+	/>
+	
+	<altavatar key="Hero_Andromeda.Alt6"
+		icon2="alt6/icon.tga"
+		model="alt6/model.mdf"
+		attackactioneffect="alt6/effects/shoot_sound.effect"
+		preglobalscale="1.7"
+		modelscale="1.0"
+		effectscale="0.9"
+
+		portraitangles="0 0 45"
+		portraitcampos="15 -30 50"
+		overrideportraiteffects="true"
+
+		previewmodel="alt6/preview.mdf"
+		previewpassiveeffect=""
+		previewpos="0 0 0"
+		previewangles="0 0 0"
+		previewscale="1.5"
+	
+		storemodel="alt6/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.55"
+		storepassiveeffect="alt6/effects/body.effect"
+		
+		selectedsound="alt6/sounds/voice/select_%.wav"
+		selectedflavorsound="alt6/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt6/sounds/voice/move_%.wav"
+		confirmattacksound="alt6/sounds/voice/attack_%.wav"
+		nomanasound="alt6/sounds/voice/no_mana.wav"
+		cooldownsound="alt6/sounds/voice/cooldown.wav"
+		announcersound="alt6/sounds/voice/hero_select.wav"
+		tauntedsound="alt6/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt6/sounds/voice/taunt_after.wav"
+		
+		tooleffectkeyname38="Item_Intelligence7"
+		tooleffectpath38="alt6/effects/boost.effect"
+		tooleffectgroup38="sotm"
+		
+		tooleffectkeyname39=""
+		tooleffectpath39="alt6/effects/body.effect"
+		tooleffectgroup39="sotm"
+	/>
+	
+</hero>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Andromeda_Ability3"
+
+	icon="icon3.tga"
+	passiveeffect="effects/state.effect"
+	
+	basedamagemultiplier="0.10,0.14,0.18,0.22"
+
+	effecttype="StatusBuff"
+>
+
+	<altavatar key="Hero_Andromeda.Alt4" modpriority="100"
+		passiveeffect="/heroes/andromeda/alt4/ability_03/effects/state.effect"
+	/>
+
+	<altavatar key="Hero_Andromeda.Alt6" modpriority="100"
+		passiveeffect="/heroes/andromeda/alt6/ability_03/effects/state.effect"
+	/>
+</state>

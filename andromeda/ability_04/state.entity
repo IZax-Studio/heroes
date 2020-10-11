@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Andromeda_Ability4"
+	
+	icon="icon4.tga"
+	passiveeffect=""
+	
+	movespeedslow="0.1,0.2,0.3"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	negativeeffect="slowed"
+>
+	
+	<onframe />
+		
+</state>

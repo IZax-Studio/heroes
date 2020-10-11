@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+		
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				volume="1" 
+				sample="../sounds/cast.wav"
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="2500"
+				life="4000"
+			/>
+			
+
+			
+			<model
+				turn="1"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				anim="idle"
+				scale=".60"
+				model="head.mdf"
+				material="/shared/effects/materials/shell_flat.material"
+				position="0 0 30"
+				life="1000"
+				color=".1 .1 .2"
+			>
+			
+					<simpleemitter
+						bone="rotate"
+						spawnrate="30"
+						particlelife="3500"
+						offsetsphere="0 0 0"
+					>
+						<particle 
+						>
+				
+
+							<billboard
+								material="/shared/effects/materials/light_rays.material"
+								startscale="1"
+								endscale="1"
+								width="120"
+								minheight="100"
+								maxheight="150"
+								startcolor=".5 .5 .5"
+								midcolor="0 .2 .5"
+								endcolor=".5 .5 .5"
+								position="0 0 30"		
+								lockup="1"
+								minlife="500"
+								maxlife="1000"
+								startalpha="0"
+								midalpha="0.01"
+								endalpha="0"
+							/>						
+						
+						
+						</particle>
+
+					</simpleemitter>
+				
+			</model>
+			
+			
+	
+		
+	
+			
+		
+		</particlesystem>
+		
+		
+		<particlesystem name="system1" space="entity" scale="1">		
+
+		
+
+	
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		
+      		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
