@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+		
+		
+
+	
+
+					
+		
+		<particlesystem name="system0" space="world" scale="1.4">
+
+			<sound
+				volume=".0" 
+				sample="../../sounds/impact.wav"
+				linearfalloff="true"
+				falloffstart="200"
+				falloffend="1400"
+			/>
+
+			<sound
+				volume=".5" 
+				sample="/heroes/corrupted_disciple/ability_04/sounds/impact_%.wav"
+				linearfalloff="true"
+				falloffstart="200"
+				falloffend="1400"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				size="50"
+				depthbias="-102"
+				life="200"
+				startcolor="1 1 1 "
+				endcolor="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+			/>			
+			<billboard
+				bone="_bone_centerofchest"
+				size="110"
+				depthbias="-100"
+				life="200"
+				startcolor="1 .65 .2"
+				endcolor="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+
+			<billboard
+				bone="_bone_centerofchest"
+				size="110"
+				depthbias="0"
+				life="250"
+				startcolor=".7 .4 .05"
+				endcolor="0 0 0"
+				position="0 0 -20"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				size="80"
+				depthbias="0"
+				life="200"
+				startcolor=".9 .6 .1"
+				endcolor="0 0 0"
+				position="0 0 -20"
+				material="/shared/effects/materials/mysticenergy2.material"
+			/>
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+

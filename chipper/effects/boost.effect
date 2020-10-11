@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" name="">
+	<definitions>
+	
+		<particlesystem name="system0" space="world">
+
+			<billboard
+				bone="_bone_energy"	
+				material="/shared/effects/materials/whitedot.material"
+				color=".2 .2 .2"
+				size="40"
+			/>
+			
+			<simpleemitter
+				bone="_bone_energy"	
+				material="/shared/effects/materials/whitedot.material"
+				spawnrate="40"
+				particlelife="100"
+			>
+				<particle
+				
+				color=".2 .2 .2"
+				startsize="20"
+				endsize="25">
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_energy"	
+				material="/shared/effects/materials/lightning_01.material"
+				spawnrate="400"
+				particlelife="300"
+				gravity="7"
+				speed="30"
+				inheritvelocity="0.21"
+				offsetsphere="5 5 5"
+				drag="0.1"
+				anchor="1"
+			>
+				<particle
+				heightdistort="0.01"
+				anchor="1"				
+				startcolor=".2 .2 .2"
+				endcolor="0 0 0"
+				startsize="10"
+				endsize="5">
+				</particle>
+			</simpleemitter>		
+
+			
+			<simpleemitter
+				bone="_bone_weapon1"
+				position="0 0 5"
+				spawnrate="25"
+				particlelife="850"
+				gravity="-5"
+				speed="20"
+				drag="0"
+				acceleration="0"
+				material="/shared/effects/materials/dust.material"
+				offsetsphere="0 0 0"
+				direction="1 0 0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="0"
+					minanglespeed="-40"
+					maxanglespeed="-140"
+					startcolor=".7 .8 .9"
+					endcolor=".2 .2 .2"
+					midcolorpos=".2"
+					startframe="0"
+					endframe="1"
+					startsize="3"
+					endsize="75"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+					midalphapos=".3"
+				/>
+			</simpleemitter>
+			
+
+
+
+		</particlesystem>
+
+		
+		<particlesystem name="system1" space="entity" scale="1">
+			<template name="flame_burst" >
+				<simpleemitter
+					timenudge="2000"
+					bone="{bone}"
+					minspawnrate=".4"
+					maxspawnrate=".6"
+					particlelife="3000"
+					direction="1 0 0"
+					speed=".5"
+					angle="0"
+				>
+					<particle
+						turn="1"
+						stickiness="1"
+						anchor="1"
+					>
+						<billboard
+							life="200"
+							material="/shared/effects/materials/whitedot.material"
+							startcolor="1 .2 0"
+							endcolor="0"
+							size="20"
+							depthbias="-2"
+						/>
+						<billboard
+							life="200"
+							material="/shared/effects/materials/whitedot.material"
+							startcolor="1 .75 0"
+							endcolor="0"
+							size="5"
+							depthbias="-2"
+						/>
+						<simpleemitter
+							mincount="2"
+							maxcount="3"
+							spawnrate="3000"
+							minparticlelife="200"
+							maxparticlelife="400"
+							gravity="0"
+							minspeed="100"
+							maxspeed="200"
+							drag="0.02"
+							acceleration="0"
+							material="/shared/effects/materials/smoke_particle.material"
+							angle="30"
+						>
+							<particle 
+								minangle="0"
+								maxangle="360"
+								minanglespeed="-40"
+								maxanglespeed="40"
+								startcolor="0"
+								midcolor=".8 .2 .1"
+								endcolor=".5"
+								startframe="0"
+								endframe="1"
+								minstartsize="20"
+								maxstartsize="25"
+								minendsize="50"
+								maxendsize="100"
+								anchor="1"
+								startalpha="0"
+								midalpha=".75"
+								endalpha="0"
+							/>
+						</simpleemitter>
+						<simpleemitter
+							mincount="15"
+							maxcount="25"
+							spawnrate="3000"
+							minparticlelife="200"
+							maxparticlelife="400"
+							gravity="0"
+							minspeed="100"
+							maxspeed="200"
+							drag="0.02"
+							acceleration="0"
+							material="/shared/effects/materials/flame.material"
+							angle="30"
+						>
+							<particle 
+								minangle="0"
+								maxangle="360"
+								minanglespeed="-40"
+								maxanglespeed="40"
+								startcolor="0"
+								midcolor=".8 .5 .175"
+								endcolor="0"
+								midcolorpos=".2"
+								startframe="0"
+								endframe="1"
+								minstartsize="10"
+								maxstartsize="20"
+								minendsize="30"
+								maxendsize="50"
+								anchor="1"
+							/>
+						</simpleemitter>
+						<simpleemitter
+							mincount="5"
+							maxcount="10"
+							spawnrate="1000"
+							minparticlelife="600"
+							maxparticlelife="800"
+							gravity="-5"
+							speed="25"
+							drag="0.02"
+							acceleration="0"
+							material="/shared/effects/materials/pyroclast_01.material"
+							angle="30"
+						>
+							<particle 
+								minangle="0"
+								maxangle="360"
+								minanglespeed="-40"
+								maxanglespeed="40"
+								startcolor=".8 .5 .3"
+								endcolor="1"
+								midcolorpos=".2"
+								minstartsize="5"
+								maxstartsize="8"
+								minendsize="10"
+								maxendsize="20"
+								startalpha="0"
+								midalpha=".25"
+								endalpha="0"
+								anchor="1"
+							/>
+						</simpleemitter>
+					</particle>
+				</simpleemitter>
+			</template>
+			
+			<instance name="flame_burst" bone="_bone_rocket" />
+			<instance name="flame_burst" bone="_bone_rocket" />
+			<instance name="flame_burst" bone="_bone_rocket" />
+			<instance name="flame_burst" bone="_bone_rocket" />
+			<instance name="flame_burst" bone="_bone_rocket" />
+			<instance name="flame_burst" bone="_bone_rocket" />
+			<instance name="flame_burst" bone="_bone_rocket" />
+			<instance name="flame_burst" bone="_bone_rocket" />
+
+			</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<spawnparticlesystem instance="instance1" particlesystem="system1"/>
+		<waitfordeath instance="instance1"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+</effect>

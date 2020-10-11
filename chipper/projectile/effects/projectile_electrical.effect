@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true">
+
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+
+
+			<template name="ball_of_fire">
+				<trailemitter
+					spawnrate="10"
+					particlelife="400"
+					texpostime="500"
+					texposscale="0.0"
+					texstretchscale=".4"
+					material="/shared/effects/materials/light_trail.material"
+					life="800"
+				>
+					<particle
+						startcolor=".2 .4 1"
+						midcolor="0 .1 1"
+						endcolor="0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".075"
+						startsize="5"
+						midsize="15"
+						endsize="5"
+						midsizepos="0.2"
+				 />
+				</trailemitter>
+			
+				<trailemitter
+					spawnrate="15"
+					particlelife="500"
+					texpostime="750"
+					texposscale="0.0"
+					texstretchscale=".4"
+					material="/shared/effects/materials/light_trail.material"
+					direction="0 0 1"
+					speed="50"
+					angle="0"
+					drag="0.02"
+					life="800"
+				>
+					<particle
+						startcolor="0"
+						midcolor="0 .5 1"
+						endcolor="0 0 0"
+						midcolorpos=".05"
+						startsize="20"
+						midsize="30"
+						endsize="30"
+						midsizepos=".1"
+				 />
+				</trailemitter>
+				
+				<billboard
+					life="500"
+					material="/shared/effects/materials/whitecircle_blend.material"
+					startcolor="1"
+					midcolor=".5 .5 1"
+					endcolor=".5 .5 1"
+					expirelife="300"								
+					startsize="0"
+					midsize="15"
+					endsize="0"
+					depthbias="-20"
+					position="0 0 4"
+					startalpha="0"
+					midalpha=".8"
+					endalpha="0"
+				/>
+				
+				<billboard
+					life="500"
+					material="/shared/effects/materials/refract_bubble.material"
+					color="1"
+					expirelife="300"								
+					startsize="0"
+					midsize="15"
+					endsize="0"
+					depthbias="-20"
+					position="0 0 4"
+					startalpha="0"
+					midalpha=".8"
+					endalpha="0"
+					param=".1"
+				/>
+			</template>
+			
+			<trackeremitter	
+				position="0 0 0"
+				targetposition="0 0 0"
+				inheritvelocity="0.5"
+				tracktype="distance"
+				trackspeed="3" 
+				spawnrate="100"
+				particlelife="500"
+				offsetsphere="20"
+				speed="300"
+				direction="0 0 1"
+				yawspeed="500"
+			>
+				<particle 
+					startsize="4"
+					endsize="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".1"
+					maxangle="360"
+					minscale=".1"
+					maxscale=".6"
+					color=".2 .5 1"					
+				>
+					<instance name="ball_of_fire"/>
+				</particle>
+			</trackeremitter>
+			
+			<billboard
+				material="/shared/effects/materials/whitedot.material"
+				color=".5"								
+				size="20"
+				depthbias="-20"
+				position="0 -15 0"
+			/>
+			
+			<billboard
+				material="/shared/effects/materials/whitedot.material"
+				color=".2 .2 .6"								
+				size="30"
+				depthbias="-20"
+				position="0 -15 0"
+			/>
+		
+			<billboard
+				material="/shared/effects/materials/refract_gush_trail.material"
+				color="1"
+				size="20"
+				param=".1"
+				alpha=".9"
+			/>
+		</particlesystem>
+
+		<particlesystem name="system1" space="world" scale=".215">
+
+			<simpleemitter
+				spawnrate="1111"
+				count="1"
+				particlelife="300"
+				position="0 0 0"
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+			>
+				<particle>
+					<billboard
+						life="200"
+						position="0 70 0"
+						material="/shared/effects/materials/whitedot.material"
+						directionalspace="local"
+						startcolor=".5 1 1"
+						endcolor="0 0 0"
+						startsize="60"
+						endsize="220"
+						lockup="true"
+						lockright="1"
+						pitch="0"
+						yaw="0"
+						flare="0"
+					/>
+
+					<groundsprite
+						directionalspace="local"
+						size="150"
+						life="300"
+						startcolor=".1"
+						midcolor="0 .1 .5"
+						endcolor="0 0 0"
+						position="0 50 0"
+						material="/shared/effects/materials/ground_arc.material"
+					/>
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				count="10"
+				spawnrate="42"
+				particlelife="250"
+				position="0 0 0"
+				material="/shared/effects/materials/shieldstarfish.material"
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+			>
+				<particle>
+				
+					<billboard
+						life="200"
+						position="0 70 0"
+						material="/shared/effects/materials/whitedot.material"
+						directionalspace="local"
+						startcolor=".125 .25 .25"
+						endcolor="0 0 0"
+						startsize="30"
+						endsize="75"
+						lockup="true"
+						lockright="1"
+						pitch="0"
+						yaw="0"
+						flare="0"
+					/>
+				
+					<billboard
+						life="200"
+						position="0 70 0"
+						material="/shared/effects/materials/whitedot.material"
+						directionalspace="local"
+						startcolor="0 .1 .25"
+						endcolor="0 0 0"
+						startsize="60"
+						endsize="220"
+						lockup="true"
+						lockright="1"
+						pitch="0"
+						yaw="0"
+						flare="0"
+					/>
+					
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				spawnrate="2000"
+				count="1"
+				particlelife="300"
+				position="0 0 0"
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+			>
+				<particle>
+					<billboard
+						life="100"
+						position="0 45 25"
+						material="/shared/effects/materials/whitedot.material"
+						directionalspace="local"
+						startcolor="1 1 1"
+						midcolor="0 0 1"
+						endcolor="0 0 0"
+						startsize="60"
+						endsize="200"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						yaw="0"
+						flare="0"
+					/>
+				</particle>
+			</simpleemitter>
+
+			<model
+				position="0 -15 0"
+				expirelife="500"
+				name="emitter0" 
+				anim="idle"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				scale=".75"
+				startcolor="0 0 0"
+				midcolor="0 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".75"
+				startalpha="0"
+				midalpha="0"
+				endalpha="0"
+				midalphapos=".4"
+				rollspeed="6000"
+			>
+			
+				<template name="trails">
+					<twopointtrailemitter
+						name="trail01"
+						position="0 0 0"
+						bone_a="{bone01}"
+						bone_b="{bone02}"
+						spawnrate="100"
+						particlelife="750"
+						subframepose="1"
+						texpostime="750"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/soul_projectile_blue.material"
+					>
+						<particle
+							startcolor=".35 .35 .8"
+							midcolor=".35 .35 .8"
+							endcolor="0 0 0"
+							midcolorpos=".2"
+						/>
+					</twopointtrailemitter>
+				</template>
+				
+				<instance name="trails" bone01="_bone_fx_01"  bone02="_bone_fx_02"/>
+				<instance name="trails" bone01="_bone_fx_03"  bone02="_bone_fx_04"/>
+				<instance name="trails" bone01="_bone_fx_05"  bone02="_bone_fx_06"/>
+
+			</model>
+		</particlesystem>
+
+   </definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
