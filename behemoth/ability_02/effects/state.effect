@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world">
+
+			<model
+				model="../../custom/totem/model.mdf"
+				parentskeleton="true"
+				expirelife="200"
+				startcolor=".5 .2 0"
+				endcolor="0"
+				material="/shared/effects/materials/shell3.material"
+			/>
+		
+			<billboard						
+				bone="_bone_weapon1"
+				material="/shared/effects/materials/whitedot.material"
+				size="120"	
+				depthbias="-50"		
+				rollspeed="-100"	
+				startcolor=".5 .2 .0"
+				endcolor="0"
+				expirelife="200"						
+			/>
+
+			<billboard						
+				bone="_bone_weapon2"
+				material="/shared/effects/materials/whitedot.material"
+				size="120"	
+				depthbias="-50"		
+				rollspeed="-100"	
+				color=".5 .2 .0"					
+				endcolor="0"
+				expirelife="200"						
+			/>
+			
+      </particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+     	 	<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

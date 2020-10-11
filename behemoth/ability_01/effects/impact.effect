@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<modifier 
+			name="modifier0"
+			alpha="0"
+		/>
+
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				life="4000"
+				soundloop="true"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1200"
+				volume=".15"
+				fadein="400"
+				fadeout="1000"
+				sample="../sounds/idle.wav"
+			/>
+	
+			<controller expirelife="200" startminscale=".9" startmaxscale="1.25" endscale="0" maxyaw="360" >	
+			<model	
+				life="6500"
+				model="../../custom/fissure/model.mdf"
+				anim="birth"
+				minscale=".35"
+				maxscale=".45"
+				color="1"
+				minyaw="0"
+				maxyaw="360"
+				position="0 0 -10"
+			/>
+
+			<groundsprite	
+				delay="300"
+				life="6500"
+				material="/shared/effects/materials/ground_smash_overlay.material"
+				minsize="95"
+				maxsize="120"			
+				color="1"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos="0.9"
+			/>
+
+			<simpleemitter
+				minparticlelife="1600"			
+				maxparticlelife="2800"
+				spawnrate="60"
+				life="300"
+				gravity="5"
+				speed="250"
+				material="/shared/effects/materials/dust.material"
+				offsetsphere="160 80 40"
+				angle="10"
+				position="0 0 40"
+				direction="0 0 1"
+				expirelife="500"
+				drag="0.15"
+				depthbias="-30"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					color=".3 .3 .3"
+					startsize="30"
+					endsize="400"
+					startalpha=".5"
+					endalpha="0"
+				/>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					color=".64 .6 .6"
+					startsize="30"
+					endsize="400"
+					startalpha=".4"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				minparticlelife="800"			
+				maxparticlelife="1600"
+				spawnrate="48"
+				life="500"
+				gravity="10"
+				speed="250"
+				material="/shared/effects/materials/dust_explosion.material"
+				offsetsphere="80 80 20"
+				angle="40"
+				position="0 0 40"
+				direction="0 0 1"
+				expirelife="500"
+				drag="0.1"
+				depthbias="-30"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					color=".4 .4 .4"
+					startsize="45"
+					endsize="260"
+					startalpha=".3"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			</controller>
+
+			
+			<controller scale=".2">
+				<billboard
+					life="300"
+					startcolor="1 .5 .5"
+					midcolor="1 .5 .5"
+					endcolor="0 0 0"
+					startsize="100"
+					endsize="1000"
+					depthbias="-100"
+					material="/shared/effects/materials/smash_add.material"
+					lockup="true"
+					pitch="90"
+					maxroll="360"	
+					position="0 0 10"			
+				/>
+
+				<billboard
+					life="300"
+					startalpha=".75"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".75"
+					startparam=".05"
+					endparam="0"
+					startsize="900"
+					endsize="3000"
+					depthbias="-100"
+					material="/shared/effects/materials/refract_ripple.material"
+					lockup="true"
+					pitch="90"
+					position="0 0 10"				
+				/>
+
+				<template name="pulse">
+					<billboard
+						delay="{delay}"
+						life="600"
+						startcolor=".4 .175 0"
+						endcolor="0"
+						startsize="50"
+						endsize="1850"
+						midsizepos=".4"				
+						position="0 0 20"
+						material="/shared/effects/materials/corona_06.material"
+						lockup="true"
+						pitch="90"
+					/>
+						
+					<billboard
+						delay="{delay}"
+						life="500"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".75"
+						startparam=".05"
+						endparam="0"
+						startsize="128"
+						endsize="1368"
+						depthbias="-100"
+						position="0 0 20"
+						material="/shared/effects/materials/refract_ring.material"
+						lockup="true"
+						pitch="90"
+					/>				
+				</template>
+			
+				<instance name="pulse" delay="0"/>
+				<instance name="pulse" delay="80"/>
+			</controller>
+		
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0" />
+		<camerashake2 scale="3.0" radius="1200" duration="1000" frequency="22" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>
