@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="false" useentityeffectscale="1" >
+	<definitions>
+		<particlesystem name="system0" space="world" scale="2.25">
+		
+			<template name="scorch">
+				<twopointemitter
+					timenudge="1000"
+					bone_a="{a}"
+					bone_b="{b}"
+					spawnrate="20"
+					particlelife="1000"
+					offsetsphere="5"
+					material="/shared/effects/materials/flame.material"
+					depthbias="40"
+				>
+					<particle
+						maxangle="360"
+						flare="1"
+						startcolor="0"
+						midcolor="0 .5 1"
+						endcolor="0"
+						midcolorpos=".2"
+						startwidth="40"
+						minendheight="70"
+						maxendheight="100"
+						minendwidth="50"
+						maxendwidth="80"
+						anchor="1"
+					/>
+				</twopointemitter>
+			</template>
+			
+			<instance name="scorch" a="_bone_leftfoot" b="_bone_centerofchest" />
+			<instance name="scorch" a="_bone_rightfoot" b="_bone_centerofchest" />
+			<instance name="scorch" a="_bone_centerofchest" b="_bone_head" />
+				
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

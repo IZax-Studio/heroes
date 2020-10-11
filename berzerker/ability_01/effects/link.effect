@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true" useentityeffectscale="true">
+	<definitions>
+		
+		<particlesystem name="system0" space="world" scale=".15">
+		
+		<sound		
+				soundloop="true"
+				fadein="100"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="2500"
+				volume=".9"
+				sample="/heroes/berzerker/ability_01/sounds/state.wav"
+			/>
+
+			<beam
+			delay="125"
+				expirelife="100"
+				owner_a="source"
+				owner_b="target"
+				bone_a="_bone_centerofchest"
+				bone_b="_bone_righthand"
+				size="75"
+				color="1 1 1"
+				startalpha="1"
+				endalpha="0"
+				material="/shared/effects/materials/chainlinkconnect.material"
+				tile="5"
+			/>
+
+			<beam
+			delay="125"
+				expirelife="100"
+				owner_a="source"
+				owner_b="target"
+				bone_a="_bone_centerofchest"
+				bone_b="_bone_righthand"
+				size="75"
+				startcolor=".5 .25 .125"
+				endcolor="0 0 0"
+				material="/shared/effects/materials/chainlinkconnect_add.material"
+				tile="5"
+			/>
+
+		</particlesystem>
+
+		<particlesystem name="system1" space="world" scale="1">
+	
+			<model
+			delay="400"
+				bone="_bone_centerofchest"
+				position="0 0 -12"
+				expirelife="150"
+				name="emitter0" 
+				anim="idle"
+				model="chains/model.mdf"
+				scale="2"
+				startcolor="1.5 1.5 1.85"
+				midcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".75"
+				startalpha="1"
+				endalpha="0"
+				roll="90"
+			/>
+			
+			
+			<model
+			delay="175"
+				bone="_bone_center"
+				position="0 0 20"
+				expirelife="150"
+				name="emitter0" 
+				anim="idle"
+				model="chains/model.mdf"
+				scale="2"
+				startcolor="1.5 1.5 1.85"
+				midcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".75"
+				startalpha="1"
+				endalpha="0"
+				roll="90"
+				yaw="180"
+			/>
+			
+			
+			
+			
+			
+			<template name="glow">
+				
+				<billboard
+					expirelife="250"
+					bone="{bone}"
+					material="/shared/effects/materials/whitedot.material"
+					startcolor=".25 .1 0"
+					endcolor="0 0 0"
+					size="250"
+					depthbias="-50"
+				/>
+				
+				<billboard
+					expirelife="250"
+					bone="{bone}"
+					material="/shared/effects/materials/whitedot.material"
+					startcolor=".125"
+					endcolor="0 0 0"
+					size="125"
+					depthbias="-50"
+				/>
+
+			</template>
+
+			<instance name="glow" bone="_bone_centerofchest"/>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<model 
+				bone="_bone_centerofchest"
+				delay="150"
+				anim="idle"
+				color="5 2.5 1"
+				model="hook_spin/model.mdf"
+				alpha=".75"
+				scale="1.6"
+				yaw="0"
+				life="350"
+			>
+
+			</model>
+			
+			
+			
+			
+
+		</particlesystem>
+
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <spawnparticlesystem instance="instance1" particlesystem="system1" />
+      <spawnparticlesystem instance="instance2" particlesystem="system2" />
+      <waitfordeath instance="instance0" />
+      <waitfordeath instance="instance1" />
+      <waitfordeath instance="instance2" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
