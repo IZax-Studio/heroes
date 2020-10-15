@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+
+		<sound
+			    soundloop="true"
+	            fadein="200"
+				fadeout="100"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="600" 
+				maxvolume="1" 
+				minvolume=".4" 
+				sample="../sounds/exhaust_%.wav"
+			/>
+			
+            <template name="jet_smoke">
+                <simpleemitter
+                    bone="{bone}"
+                    spawnrate="60"
+                    material="/shared/effects/materials/pyroclast_01_reveal.material"
+                    minparticlelife="400"
+                    maxparticlelife="800"
+                    direction="0 1 0"
+                    angle="20"
+                    minspeed="200"
+                    maxspeed="400"
+                    drag="0.05"
+                    offsetsphere="2"
+                    inheritvelocity=".5"
+                    limitinheritvelocity="200"
+                >
+                    <template name="smoke_particle">
+                        <particle
+                            minstartwidth="6"
+                            maxstartwidth="8"
+                            minendwidth="20"
+                            maxendwidth="80"
+                            minstartheight="10"
+                            maxstartheight="60"
+                            minendheight="8"
+                            maxendheight="12"
+                            startcolor="{sc}"
+                            midcolor="{mc}"
+                            endcolor="{ec}"
+                            startalpha=".6"
+                            endalpha=".2"
+                            startframe="1"
+                            midframe="0"
+                            endframe="1"
+                            midframepos=".25"
+                            lockup="true"
+                            lockright="true"
+                            turn="true"
+                            minanglespeed="-60"
+                            maxanglespeed="60"
+                            minstartscale="1"
+                            maxstartscale="1.5"
+                            minendscale="2"
+                            maxendscale="3"
+                        />
+                    </template>
+                    <instance name="smoke_particle" sc="1 .95 .875" mc=".75 .72 .65" ec="0" />
+                    <instance name="smoke_particle" sc=".7 .6 .5" mc=".4 .325 .25" ec="0" />
+                </simpleemitter>
+
+                <billboard
+                    life="20"
+                    loop="true"
+                    bone="{bone}"
+                    startsize="35"
+                    midsize="25"
+                    endsize="35"
+                    material="/shared/effects/materials/whitedot.material"
+                    startcolor=".6 .2 0"
+                    midcolor=".4 .1 0"
+                    endcolor=".6 .2 0"
+                    depthbias="-10"
+                    scale="{scale}"
+                />
+            </template>
+
+            <instance name="jet_smoke" bone="_bone_fx_smokestack_right" />
+            <instance name="jet_smoke" bone="_bone_fx_smokestack_left" />
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

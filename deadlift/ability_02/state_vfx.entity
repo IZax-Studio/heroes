@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Deadlift_Ability2_VFX"
+	
+	icon="icon2.tga"
+	passiveeffect="effects/duration.effect"
+	
+	ishidden="true"
+>	
+	<onspawn>
+		<cantarget targetscheme="all_buildings" >
+			<activatemodifierkey name="Building" />
+		</cantarget>
+	</onspawn>
+
+	<modifier key="Building" modpriority="1"
+		passiveeffect="effects/duration_building.effect"
+	/>
+	
+	<altavatar key="Hero_Deadlift.Alt" modpriority="100"
+		passiveeffect="../alt/ability_02/effects/duration.effect"
+	>
+		<modifier key="Building" modpriority="1"
+			passiveeffect="../alt/ability_02/effects/duration_building.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Deadlift.Alt2" modpriority="100"
+		passiveeffect="../alt2/ability_02/effects/duration.effect"
+	>
+		<modifier key="Building" modpriority="1"
+			passiveeffect="../alt2/ability_02/effects/duration_building.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Deadlift.Alt3" modpriority="100"
+		passiveeffect="../alt3/ability_02/effects/duration.effect"
+	>
+		<modifier key="Building" modpriority="1"
+			passiveeffect="../alt3/ability_02/effects/duration_building.effect"
+		/>
+	</altavatar>
+</state>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Deadlift_Ability1_Enemy"
+	
+	icon="icon1.tga"
+	passiveeffect="effects/state_enemy.effect"
+	
+	strengthpercharge="-1"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	maxcharges="100"
+>
+	<altavatar key="Hero_Deadlift.Alt" modpriority="90"
+		passiveeffect="../alt/ability_01/effects/state_enemy.effect"
+	/>
+
+	<altavatar key="Hero_Deadlift.Alt2" modpriority="90"
+		passiveeffect="../alt2/ability_01/effects/state_enemy.effect"
+	/>
+	
+	<altavatar key="Hero_Deadlift.Alt3" modpriority="90"
+		passiveeffect="../alt3/ability_01/effects/state_enemy.effect"
+	/>
+</state>

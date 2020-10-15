@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1">
+
+            <groundsprite
+                position="-2 12 0"
+                material="/shared/effects/materials/ground_cracks_overlay.material"
+                width="65"
+                height="40"
+            />
+
+            <template name="eyeglow" >
+                <billboard
+                    bone="{bone}"
+                    size="50"
+                    life="1000"
+                    loop="true"
+                    material="/shared/effects/materials/whitedot.material"
+                    startcolor=".3 .2 0"
+                    midcolor=".25 .15 0"
+                    endcolor=".3 .2 0"
+                    depthbias="-14"
+                />
+                <simpleemitter
+                    bone="{bone}"
+                    spawnrate="6"
+                    minparticlelife="600"
+                    maxparticlelife="1200"
+                    material="/shared/effects/materials/sparks_reveal2.material"
+                    direction="{dir}"
+                    angle="40"
+                    minspeed="15"
+                    maxspeed="20"
+                    drag="0.02"
+                    gravity="-5"
+                >
+                    <particle
+                        maxangle="360"
+                        minsize="15"
+                        maxsize="20"
+                        startframe="1"
+                        midframe=".25"
+                        endframe="1"
+                        midframepos=".25"
+                        color=".5 .25 .25"
+                    />
+                </simpleemitter>
+            </template>
+            <instance name="eyeglow" bone="_bone_lefteye" dir="-.5 1 0" />
+            <instance name="eyeglow" bone="_bone_righteye" dir=".5 1 0" />
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

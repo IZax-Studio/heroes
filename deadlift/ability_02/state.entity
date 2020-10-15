@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Deadlift_Ability2"
+	
+	icon="icon2.tga"
+	passiveeffect="effects/state.effect"
+
+	effecttype=""
+	allowtransfer="false"
+	morphpriority="101"
+	morphattacktargetscheme="all_units_and_buildings"
+	silenced="true"
+	
+	attackspeed="0.2,0.4,0.6,0.8"
+	movespeedmultiplier="100"
+	slowresistance="1"
+	unitwalking="true"
+
+	modifierkey="Deadlift_ForceAttack"
+>
+	<onframe>
+		<cantarget source="this_owner_entity" target="this_proxy_entity" ignoreinvulnerable="false" />
+		<else>
+			<order command="attack" force="true" forceduration="5000" source="this_owner_entity" target="this_proxy_entity" />
+		</else>
+
+		<targettype type="alive" source="this_proxy_entity" target="this_proxy_entity" />
+		<else>
+			<expirestate name="State_Deadlift_Ability2" target="this_owner_entity" />
+		</else>
+		
+		<distance source="this_owner_entity" target="this_proxy_entity" />
+		<compare a="result" b="1100" op="gt">
+			<expirestate name="State_Deadlift_Ability2" target="this_owner_entity" />
+		</compare>
+	</onframe>
+
+	<!-- Half damage when attacking non-buildings -->
+	<onattackingdamageevent>
+		<targettype type="building">
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.5" op="mult" />
+		</targettype>
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="0.5" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	
+	<onexpired>
+		<order command="stop" force="true" source="this_owner_entity" />
+		
+		<hasmodifier entity="this_owner_entity" name="deadlift_controls_me">
+			<order command="aggressive_wander" source="this_owner_entity" target="this_proxy_entity" force="true" forceduration="10000" />
+		</hasmodifier>
+	</onexpired>
+	
+	<altavatar key="Hero_Deadlift.Alt"
+		passiveeffect="../alt/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Deadlift.Alt2"
+		passiveeffect="../alt2/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Deadlift.Alt3"
+		passiveeffect="../alt3/ability_02/effects/state.effect"
+	/>
+</state>

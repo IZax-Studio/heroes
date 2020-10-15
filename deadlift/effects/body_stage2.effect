@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" >
+    <definitions>
+        <particlesystem name="system0" space="world" scale="1">
+        
+ 			<template name="orbitting_galaxy">
+				<controller
+					timenudge="1"
+					bone="_bone_effect"
+				>
+					<controller
+						timenudge="1"
+						position="0 0 0"
+						scale="2"
+					>
+						<billboard
+							timenudge="1"
+							material="/shared/effects/materials/glow_04.material"
+							size="7"
+							color="1 1 .5"
+						/>
+						<billboard
+							timenudge="1"
+							material="/shared/effects/materials/whitedot.material"
+							height="40"
+							width="60"
+							color="{color_glow}"
+						/>
+						<controller
+							timenudge="1"
+							minyawspeed="-60"
+							maxyawspeed="-45"
+						>
+							<billboard
+								timenudge="1"
+								lockup="true"
+								lockright="true"
+								pitch="-90"
+								material="/shared/effects/materials/twirl_blend_08.material"
+								size="22"
+								maxroll="360"
+								rollspeed="-120"
+								directionalspace="local"
+								color="0"
+								yaw="45"
+								alpha=".65"
+							/>
+							<billboard
+								timenudge="1"
+								lockup="true"
+								lockright="true"
+								pitch="-90"
+								material="/shared/effects/materials/twirl_blend_08.material"
+								size="18"
+								maxroll="360"
+								yaw="45"
+								directionalspace="local"
+							/>
+							<simpleemitter
+								timenudge="1000"
+								spawnrate="5"
+								minparticlelife="2000"
+								maxparticlelife="3000"
+								material="/shared/effects/materials/black_spot.material"
+								maxspeed="4"
+								drag="0.1"
+								offsetsphere="8 8 0"
+							>
+								<particle
+									size="1"
+									minstartscale=".75"
+									maxstartscale="1.25"
+									endscale="0"
+									startalpha="0"
+									midalpha="1"
+									endalpha="0"
+									midalphapos=".25"
+									maxangle="360"
+									minanglespeed="-30"
+									maxanglespeed="30"
+									anchor="1"
+									axisanchor="1"
+									color="0"
+								>
+									<billboard
+										life="2000"
+										timenudge="1"
+										material="/shared/effects/materials/frost_flash_15.material"
+										startcolor="0"
+										midcolor="1"
+										endcolor="0"
+										midcolorpos=".25"
+										size="12"
+										maxroll="360"
+										rollspeed="-120"
+									/>
+								</particle>
+							</simpleemitter>
+						</controller>
+						<billboard
+							timenudge="1"
+							material="/shared/effects/materials/whitedot.material"
+							height="20"
+							width="20"
+							color="{color_center}"
+						/>
+					</controller>
+				</controller>
+			</template>
+
+			<instance name="orbitting_galaxy" yaw="240" color_center="0 .3 0" color_glow=".125 .225 .125" />
+			
+        </particlesystem>
+    </definitions>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <waitfordeath instance="instance0" />
+    </thread>
+</effect>

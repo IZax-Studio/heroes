@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Deadlift_Ability2_Attack"
+	
+	icon="icon2.tga"
+	passiveeffect="effects/state_quick_attack.effect"
+	attackspeed="0.2,0.4,0.6,0.8"
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+
+
+</state>

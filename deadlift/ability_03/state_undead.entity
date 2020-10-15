@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Deadlift_Ability3_Undead"
+	
+	icon="icon3.tga"
+	passiveeffect="pet/effects/state.effect"
+
+	effecttype=""
+	unitwalking="true"
+	silenced="true"
+	allowtransfer="false"
+
+	wanderrange="250"
+	inheritvisibilityfromowner="true"
+	isnotdragselectablemulti="true"
+	isnotcontrollable="true"
+	ishidden="true"
+	impactinterval="9000"
+>
+	<!-- This state is used for revived units -->
+
+	<onimpact>
+		<!-- If they are being force attacked by ability 2, don't do the force aggressive wander -->
+		<hasmodifier entity="this_owner_entity" name="Deadlift_ForceAttack" />
+		<else>
+			<isstealthed entity="this_owner_entity" />
+			<else>
+				<order command="aggressive_wander" source="this_owner_entity" target="this_proxy_entity" force="true" forceduration="10000" />
+			</else>
+		</else>
+	</onimpact>
+
+	<onframe>
+		<targettype type="alive" source="this_proxy_entity" target="this_proxy_entity" />
+		<else>
+			<kill target="this_owner_entity" source="" />
+		</else>
+		
+		<distance source="target_owner_entity" target="target_entity" />
+		<compare a="result" b="2000" op="gt">
+			<teleport source="target_entity" target="target_owner_entity" interpolate="false" />
+			<order command="aggressive_wander" force="true" forceduration="100000" source="target_entity" target="target_owner_entity" />
+		</compare>
+
+		<hasmodifier name="Deadlift_CreepVis" entity="this_owner_entity">
+			<setactivemodifierkey name="Deadlift_CreepVis_State" />
+		</hasmodifier>
+		<else>
+			<setactivemodifierkey name="" />
+		</else>
+		
+		<!-- Creep aggro control when Deadlift is invis -->
+		<isstealthed entity="this_proxy_entity">
+			<applystate name="State_Deadlift_Ability3_Invis_AggroControl" target="target_entity" continuous="true" />
+		</isstealthed>
+		<else>
+			<expirestate name="State_Deadlift_Ability3_Invis_AggroControl" target="target_entity" />
+		</else>
+	</onframe>
+	
+	<onattack>
+		<applystate name="State_Deadlift_Ability3_Reveal" target="this_owner_entity" duration="2000" />
+	</onattack>
+
+	<onkilled>
+		<cantarget targetscheme="ally_units" target="target_entity"/>
+		<else>
+			<compare a="target_entity" b="0" op="ne">
+				<givegold amount="10" target="target_entity" source="source_entity" />
+				<giveexperience amount="10" target="target_entity" source="source_entity" />
+			</compare>
+		</else>
+	</onkilled>
+
+	<onexpired>
+		<cantarget targetscheme="owned" source="this_proxy_entity" target="this_owner_entity">
+			<kill target="this_owner_entity" source="" />
+		</cantarget>
+	</onexpired>
+	
+	<modifier key="Deadlift_CreepVis_State" modpriority="100" 
+		inheritvisibilityfromowner="false"
+		alwaysvisible="true"
+	>
+	</modifier>
+	
+	<altavatar key="Hero_Deadlift.Alt"
+		passiveeffect="../alt/ability_03/pet/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Deadlift.Alt2"
+		passiveeffect="../alt2/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Deadlift.Alt3"
+		passiveeffect="../alt3/ability_03/effects/state.effect"
+	/>
+
+</state>

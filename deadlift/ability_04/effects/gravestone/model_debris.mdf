@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model file="model_debris.model" type="K2" >
+    <anim name="idle" clip="debris.clip" loop="true" loopbackframe="-1" />
+</model>

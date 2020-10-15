@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Deadlift_Ability3_Invis_AggroControl"
+	
+	icon="icon3.tga"
+	passiveeffect=""
+
+	effecttype=""
+
+	ishidden="true"
+	serverentity="true"
+	
+	stealthtype="hero"
+>
+	<!-- This state is used to control the creep aggro when Deadlift is invis -->
+
+	<oninflict>
+		<order command="stop" force="true" forceduration="100000" source="target_entity" target="target_entity" />
+		<startfade />
+		<order command="wander" force="true" forceduration="100000" source="target_entity" target="target_owner_entity" />
+	</oninflict>
+
+	<onexpired>
+		<order command="aggressive_wander" force="true" forceduration="100000" source="target_entity" target="target_owner_entity" />
+	</onexpired>
+
+</state>

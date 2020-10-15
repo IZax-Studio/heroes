@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Deadlift_Ability4_Ghost"
+	
+	icon="icon4.tga"
+	passiveeffect="effects/state_invis.effect"
+
+	stealthtype="unrevealable"
+	fadetime="0"
+	
+	ishidden="true"
+	effecttype="StatusStealth"
+	allowtransfer="false"
+	
+	invulnerable="true"
+	disarmed="true"
+	silenced="true"
+	immobilized="true"
+	perplexed="true"
+	
+	unitwalking="true"
+	buildingwalking="true"
+	cliffwalking="true"
+	treewalking="true"
+	
+	unselectable="true"
+	
+	morphpriority="150"
+	morphinventory0="Ability_AttributeBoost"
+	morphinventory1="Ability_AttributeBoost"
+	morphinventory2="Ability_AttributeBoost"
+	morphinventory3="Ability_AttributeBoost"
+	morphinventory4="Ability_AttributeBoost"
+	morphinventory5="Ability_AttributeBoost"
+	morphinventory6="Ability_AttributeBoost"
+	morphinventory7="Ability_AttributeBoost"
+	morphinventory8="Ability_AttributeBoost"
+	morphinventory9="Ability_AttributeBoost"
+	morphsightrangeday="0"
+	morphsightrangenight="0"
+	morphmodelscale="0.8"
+
+	immunitytype="AllImmunity"
+	modifierkey="Deadlift_Ghost"
+	
+>
+	<onframe>
+		<targettype type="alive" source="this_proxy_entity" target="this_proxy_entity" />
+		<else>
+			<delete target="this_owner_entity" />
+		</else>
+
+		<dispel type="StatusBuff" target="this_owner_entity" />
+		<dispel type="StatusDebuff" target="this_owner_entity" />
+	</onframe>
+
+	<!-- This state is used for the ghost -->
+	
+	<altavatar key="Hero_Deadlift.Alt" modpriority="90"
+		passiveeffect="../alt/ability_04/effects/state_invis.effect"
+	/>
+
+</state>

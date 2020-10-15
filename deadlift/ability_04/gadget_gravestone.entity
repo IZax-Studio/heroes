@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Deadlift_Ability4_Gravestone"
+	
+	icon="icon4.tga"
+	mapicon="gravestoneoutline.tga"
+	mapiconsize=".032"
+	portrait=""
+	model="effects/gravestone/model.mdf"
+	passiveeffect="effects/gravestone/passive.effect"
+	deatheffect="effects/gravestone/death.effect"
+
+	preglobalscale="1.25"
+	modelscale="1.0"
+	effectscale="1.0"
+	selectionradius="48"
+	targetoffset="0 0 0"
+	isselectable="false"
+	iscontrollable="false"
+
+	boundsheight="50"
+	boundsradius="20"
+
+	canrotate="false"
+	ismobile="false"
+	
+	sightrangeday="0"
+	sightrangenight="0"
+
+	unitwalking="true"
+	buildingwalking="false"
+	cliffwalking="true"
+	treewalking="true"
+	canattack="false"
+	deathtime="0"
+	corpsetime="0"
+	invulnerable="false"
+	flying="true"
+	drawonmap="true"
+	inheritownercolor="true"
+	
+	flyheight="1"
+	
+	attacktype="none"
+	combattype="Ranged"
+	clearvision="false"
+	
+	isdragselectablemulti="false"
+	noglobalselect="true"
+	noblockneutralspawn="true"
+	healthregenreduction="1"
+	
+	unittype="Gravestone"
+	immunity="GadgetImmunity"
+	
+	nothreat="true"
+	goldbountymax="10"
+	goldbountymin="10"
+
+	stealthtype=""
+
+	maxhealth="3"
+>
+	<onspawn>
+		<setaccumulator value="0" />
+	</onspawn>
+	
+	<ondamaged>
+		<changedamage b="1" op="min"/>
+	</ondamaged>
+	
+	<onattackedpreimpact>
+		<setvalue name="combat_truestrike" a="1" />
+	</onattackedpreimpact>
+	
+	<onframe>
+		<targettype type="alive" target="this_proxy_entity">
+			<kill target="this_entity" source=""/>
+
+			<setscriptvalue name="deadlift_yes_i_want_rezzed" value="-1" entity="this_proxy_entity" />
+			<clientuitrigger entity="this_proxy_entity" target="this_proxy_entity" name="hide_deadlift_do_you_want_rezzed" />
+		</targettype>
+	</onframe>	
+
+	<onkilled>
+		<!-- Expire the break state to prevent resurrection and close the UI popup window -->
+		<expirestate name="State_Deadlift_Ability4_Break" target="this_entity" />
+		<setscriptvalue name="deadlift_yes_i_want_rezzed" value="-1" entity="this_proxy_entity" />
+		<clientuitrigger entity="this_proxy_entity" target="this_proxy_entity" name="hide_deadlift_do_you_want_rezzed" />
+		
+		<hasavatarkey name="Hero_Deadlift.Alt">
+			<playeffect effect="../alt/ability_04/effects/gravestone/death.effect" target="this_position" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Deadlift.Alt2">
+				<playeffect effect="../alt2/ability_04/effects/gravestone/death.effect" target="this_position" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Deadlift.Alt3">
+					<playeffect effect="../alt3/ability_04/effects/gravestone/death.effect" target="this_position" />
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/gravestone/death.effect" target="this_position" />
+				</else>
+			</else>
+		</else>
+	</onkilled>	
+
+	<modifier key="Channeling" modpriority="1"
+		isselectable="true"
+		passiveeffect="effects/gravestone/channeling.effect"
+		stealthtype=""
+		maxhealth="3"
+	/>
+
+	<modifier key="ReadyToRevive" modpriority="2"
+		passiveeffect="effects/gravestone/slow_pulse.effect"
+		maxhealth="3"
+	/>
+	
+	<altavatar key="Hero_Deadlift.Alt" modpriority="100"
+		model="../alt/ability_04/effects/gravestone/model.mdf"
+		passiveeffect="../alt/ability_04/effects/gravestone/passive.effect"
+		deatheffect="../alt/ability_04/effects/gravestone/death.effect"
+		modelscale="3"
+	>
+		<modifier key="Channeling" modpriority="1"
+			passiveeffect="../alt/ability_04/effects/gravestone/channeling.effect"
+			stealthtype=""
+			maxhealth="3"
+		/>
+
+		<modifier key="ReadyToRevive" modpriority="2"
+			passiveeffect="../alt/ability_04/effects/gravestone/slow_pulse.effect"
+			maxhealth="3"
+		/>
+	</altavatar>
+
+	<altavatar key="Hero_Deadlift.Alt2"
+		preglobalscale="1.25"
+		model="../alt2/ability_04/effects/gravestone/model.mdf"
+		passiveeffect="../alt2/ability_04/effects/gravestone/passive.effect"
+		deatheffect="../alt2/ability_04/effects/gravestone/death.effect"
+	>
+		<modifier key="Channeling" modpriority="1"
+			passiveeffect="../alt2/ability_04/effects/gravestone/channeling.effect"
+			stealthtype=""
+			maxhealth="3"
+		/>
+
+		<modifier key="ReadyToRevive" modpriority="2"
+			passiveeffect="../alt2/ability_04/effects/gravestone/slow_pulse.effect"
+			maxhealth="3"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Deadlift.Alt3"
+		preglobalscale="1.25"
+		model="../alt3/ability_04/effects/gravestone/model.mdf"
+		passiveeffect="../alt3/ability_04/effects/gravestone/passive.effect"
+		deatheffect="../alt3/ability_04/effects/gravestone/death.effect"
+	>
+		<modifier key="Channeling" modpriority="1"
+			passiveeffect="../alt3/ability_04/effects/gravestone/channeling.effect"
+			stealthtype=""
+			maxhealth="3"
+		/>
+
+		<modifier key="ReadyToRevive" modpriority="2"
+			passiveeffect="../alt3/ability_04/effects/gravestone/slow_pulse.effect"
+			maxhealth="3"
+		/>
+	</altavatar>
+	
+	<!-- This gadget is used to resurrect allies -->
+</gadget>

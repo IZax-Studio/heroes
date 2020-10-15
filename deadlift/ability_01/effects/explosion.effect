@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1" >
+		<sound
+		        forcestereo="true"
+		        life="6000"
+				linearfalloff="true" 
+				falloffstart="800"
+				falloffend="1300"
+				volume="1"
+				sample="../sounds/impact.wav"
+			/>
+            <simpleemitter
+                position="0 0 20"
+                count="6"
+                range="100"
+                material="/shared/effects/materials/shadow_cut_02_reveal_add.material"
+                minparticlelife="300"
+                maxparticlelife="400"
+            >
+                <particle
+                    maxangle="360"
+                    startsize="100"
+                    midsize="250"
+                    endsize="350"
+                    startcolor="0 .5 0"
+                    midcolor="0 .5 1"
+                    endcolor="0 .5 1"
+                    startframe=".5"
+                    endframe="1"
+                    midframepos=".6"
+                    lockup="true"
+                    lockright="true"
+                    pitch="90"
+                    minscale=".8"
+                    maxscale="1.1"
+                />
+            </simpleemitter>
+            <terrainemitter
+                count="15"
+                range="60"
+                material="/shared/effects/materials/phantom_white_reveal_02_add.material"
+                minparticlelife="150"
+                maxparticlelife="600"
+				position="0 0 -30"
+            >
+                <template name="fire_pillar">
+                    <particle
+                        yaw="{angle}"
+                        flare="1"
+                        minstartwidth="10"
+                        maxstartwidth="20"
+                        minendwidth="20"
+                        maxendwidth="30"
+                        minendheight="200"
+                        maxendheight="400"
+                        startcolor="{sc}"
+                        midcolor="{mc}"
+                        endcolor="{ec}"
+                        startframe="1"
+                        midframe="0"
+                        endframe="1"
+                        midframepos=".25"
+                        lockup="true"
+                    />
+                </template>
+                <instance name="fire_pillar" sc="0 .5 1" mc="0 .5 1" ec="0 .5 0" angle="0" />
+                <instance name="fire_pillar" sc="0 .5 1" mc="0 .5 1" ec="0 .5 0" angle="0" />
+                <instance name="fire_pillar" sc="0 .5 1" mc="0 .5 1" ec="0 .5 0" angle="180" />
+                <instance name="fire_pillar" sc="0 .5 1" mc="0 .5 1" ec=".0 .5 0" angle="180" />
+            </terrainemitter>
+			<simpleemitter
+				count="20"
+				position="0 0 25"
+				minparticlelife="500"
+				maxparticlelife="1050"
+				depthbias="-20"
+				material="/shared/effects/materials/pyroclast_01.material"
+				offsetsphere="100 100 50"
+				minspeed="0"
+				maxspeed="120"
+				minangle="0"
+				maxangle="12"
+				gravity="5"
+				drag=".005"
+				>
+				<particle
+					minangle="-25"
+					maxangle="25"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					color="0 .5 1"
+					startsize="50"
+					midsize="300"
+					endsize="400"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+					minscale=".35"
+					maxscale=".5"
+				/>
+				<particle
+					minangle="-25"
+					maxangle="25"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					color=".35"
+					startsize="50"
+					midsize="300"
+					endsize="400"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+					minscale=".35"
+					maxscale=".5"
+				/>
+				<particle
+					minangle="-25"
+					maxangle="25"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					color=".1"
+					startsize="50"
+					midsize="300"
+					endsize="420"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+					minscale=".35"
+					maxscale=".5"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				spawnrate="1000"
+				count="30"
+				minparticlelife="410"
+				maxparticlelife="510"
+				position="0 0 20"
+				acceleration="11"
+				offsetradial="150 0 0"
+				drag="0.05"
+				direction="0 0 1"
+				depthbias="-10"
+			>
+				<particle
+					startscale=".3"
+					minendscale=".9"
+					maxendscale="1.5"
+					startstickiness="0"
+					endstickiness=".95"
+					heightdistort="0.02"
+					turn="1"
+				>
+					<billboard
+						life="500"
+						maxroll="360"
+						position="10 10 0"
+						material="/shared/effects/materials/abstract_reveal.material"
+						minsize="6"
+						maxsize="10"
+						startframe="0"
+						endframe="1"
+						midframepos=".8"
+						startcolor="0 .5 1"
+						endcolor="0 .5 1"
+					/>
+					<billboard
+						life="500"
+						position="10 10 0"
+						material="/shared/effects/materials/whitedot.material"
+						size="20"
+						startcolor="0 .5 1"
+						midcolor="0 .5 1"
+						endcolor="0"
+						midcolorpos=".3"
+					/>
+				</particle>
+			</simpleemitter>
+			<simpleemitter
+				count="50"
+				spawnrate="2000"
+				minparticlelife="300"
+				maxparticlelife="400"
+				drag=".01"
+				offsetphere="140 140 20"
+				gravity="-3"
+				minspeed="550"
+				maxspeed="1550"								
+				direction="0 0 1"
+				position="0 0 10"
+				depthbias="-30"
+				material="/shared/effects/materials/blob_add.material"
+			>			
+				<particle
+					startcolor="0 .5 1"
+					endcolor="0"
+					startsize="3"
+					endsize="0"
+					minscale="1"
+					maxscale="3"
+					endstickiness=".4"
+					startheightdistort=".02"
+					endheightdistortion="0"
+					turn="1"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				life="400"
+				spawnrate="2000"
+				count="4"
+				position="0 0 50"
+				minparticlelife="200"
+				maxparticlelife="350"
+				material="/shared/effects/materials/smash_add.material"
+				depthbias="-50"
+				offsetsphere="5"
+				>
+				<particle
+				minangle="0"
+				maxangle="360"
+				startcolor="0"
+				midcolor="0 .5 1"
+				endcolor="0"
+				startsize="30"
+				endsize="80"
+				minscale="3"
+				maxscale="4"
+				/>
+			</simpleemitter>
+			<billboard
+				life="250"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".75"
+				startparam=".25"
+				endparam="0"
+				startsize="100"
+				endsize="450"
+				depthbias="-100"
+				position="0 0 30"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="0 .5 1"
+				middcolor="0 .5 1"
+				endcolor="0"
+			/>
+			<billboard
+				life="100"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".75"
+				startparam=".25"
+				endparam="0"
+				startsize="50"
+				endsize="250"
+				depthbias="-100"
+				position="0 0 30"
+				material="/shared/effects/materials/starlight.material"
+				color="0 .5 1"
+			/>
+			<billboard
+				life="550"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".75"
+				startparam=".25"
+				endparam="0"
+				startsize="0"
+				endsize="450"
+				depthbias="-100"
+				position="0 0 0"
+				material="/shared/effects/materials/refract_ring.material"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+			/>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

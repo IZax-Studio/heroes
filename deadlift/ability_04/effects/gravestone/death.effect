@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+		
+		<sound
+		        life="6000"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume="1"
+				sample="/heroes/deadlift/ability_04/sounds/tomb_destroyed.wav"
+			/>
+			
+            <debris
+                life="6000"
+                model="model_debris.mdf"
+                material="material_noshadow.material"
+                animpose="true"
+                gravity="20"
+                maxspeed="150"
+                drag="0.01"
+                minrotationspeed="-360"
+                maxrotationspeed="360"
+                reflect="0.45"
+                bounce="0.7"
+                collide="1"
+                startalpha="1"
+                midalpha="1"
+                endalpha="0"
+                midalphapos=".75"
+            />
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

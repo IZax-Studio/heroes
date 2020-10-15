@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" >
+	<definitions>
+		<modifier name="obsidian"
+			material="../../../obsidian/obsidian.material"
+		/>
+
+		<particlesystem name="system0" space="world" >
+				
+		<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="800"
+				minvolume=".5"
+				maxvolume="1"
+				sample="/heroes/deadlift/ability_03/sounds/spawn_%.wav"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/whitedot.material"
+				color="0 .2 .5"
+				depthbias="10"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+				size="120"
+			/>
+
+			<skeletonemitter
+				spawnrate="80"
+				minparticlelife="400"
+				maxparticlelife="600"
+				material="/shared/effects/materials/abstract_reveal.material"
+				gravity="-8"
+				offsetsphere="5"
+				maxspeed="10"
+				drag="0.05"
+				inheritvelocity=".5"
+				limitinheritvelocity="200"
+			>
+				<particle
+					maxangle="360"
+					color="0"
+					startframe="1"
+					midframe="0"
+					endframe="1"
+					midframepos=".25"
+					minsize="4"
+					maxsize="6"
+				/>
+			</skeletonemitter>
+
+			<skeletonemitter
+				spawnrate="200"
+				particlelife="200"
+				material="/shared/effects/materials/flame.material"
+				gravity="-100"
+				depthbias="40"
+				inheritvelocity=".5"
+				limitinheritvelocity="200"
+			>
+				<particle
+					maxangle="360"
+					minsize="25"
+					maxsize="30"
+					startcolor="0 .5 1"
+					midcolor="0 .5 0"
+					endcolor="0 0 0 "
+					midcolorpos=".4"
+				/>
+			</skeletonemitter>
+
+			<template name="flames">
+			<!--
+				<twopointtrailemitter
+					bone_a="{a}"
+					bone_b="{b}"
+					spawnrate="40"
+					particlelife="200"
+					material="fire_scrolling_trail.material"
+					speed="200"
+					direction="0 0 1"
+					angle="0"
+					texposscale="0"
+					mintexstretchscale=".7"
+					maxtexstretchscale=".8"
+					attachtoemitter="true"
+				>
+					<particle/>
+				</twopointtrailemitter>
+				<twopointemitter
+					bone_a="{a}"
+					bone_b="{b}"
+					spawnrate="100"
+					minparticlelife="100"
+					maxparticlelife="200"
+					material="/shared/effects/materials/fire_add.material"
+					gravity="-80"
+				>
+					<particle
+						maxangle="360"
+						minsize="10"
+						maxsize="12"
+						startframe="1"
+						midframe="0"
+						endframe="1"
+						midframepos=".2"
+						startcolor="0 .5 1"
+						midcolor="0 .5 0"
+						endcolor="0 0 0 "
+						midcolorpos=".4"
+						alpha=".5"
+					/>
+				</twopointemitter>
+			-->
+
+				<twopointemitter
+					bone_a="{a}"
+					bone_b="{b}"
+					spawnrate="10"
+					minparticlelife="400"
+					maxparticlelife="600"
+					material="/shared/effects/materials/spark_10.material"
+					gravity="-8"
+				>
+					<particle
+						maxangle="360"
+						minstartsize="8"
+						maxstartsize="12"
+						endsize="0"
+					/>
+				</twopointemitter>
+			</template>
+
+			<instance name="flames" a="Bip01 R Hand" b="Bip01 R Clavicle" />
+			<instance name="flames" a="Bip01 R Forearm" b="Bip01 R Clavicle" />
+			<instance name="flames" a="Bip01 L Hand" b="Bip01 L Forearm" />
+			<instance name="flames" a="Bip01 L Forearm" b="Bip01 L UpperArm" />
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier modifier="obsidian" instance="instance1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>

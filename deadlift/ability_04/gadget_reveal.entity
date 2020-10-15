@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Deadlift_Ability4_Reveal"
+	
+	icon="icon4.tga"
+	
+	isselectable="false"
+	iscontrollable="false"
+	ismobile="false"
+	
+	sightrangeday="25"
+	sightrangenight="25"
+	clearvision="false"
+
+	unitwalking="true"
+	buildingwalking="true"
+	cliffwalking="true"
+	treewalking="true"
+
+	deathtime="0"
+	corpsetime="0"
+	invulnerable="true"
+	flying="true"
+	drawonmap="false"
+	
+	flyheight="1"
+	
+	noblockneutralspawn="true"
+>
+</gadget>

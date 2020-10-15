@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Deadlift_Ability4_Channel"
+
+	icon="icon4.tga"
+	passiveeffect="effects/gravestone/channeling.effect"
+	
+	effecttype=""
+	ishidden="true"
+	ischanneling="true"
+	channeltime="3000"
+	
+	revealed="true"
+	sighted="true"
+
+	modifierkey="Channeling"
+>
+	
+	<onchannelend>	
+		<!-- Art -->
+		<hasavatarkey name="Hero_Deadlift.Alt">
+			<playeffect effect="../alt/ability_04/effects/channel_end.effect" target="this_position" />
+			<playeffect effect="../alt/ability_04/effects/finish_channel_sound.effect" target="this_position" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Deadlift.Alt2">
+				<playeffect effect="../alt2/ability_04/effects/channel_end.effect" target="this_position" />
+				<playeffect effect="../alt2/ability_04/effects/finish_channel_sound.effect" target="this_position" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Deadlift.Alt3">
+					<playeffect effect="../alt3/ability_04/effects/channel_end.effect" target="this_position" />
+					<playeffect effect="../alt3/ability_04/effects/finish_channel_sound.effect" target="this_position" />
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/channel_end.effect" target="this_position" />
+					<playeffect effect="effects/finish_channel_sound.effect" target="this_position" />
+				</else>
+			</else>
+		</else>
+	</onchannelend>
+	
+</state>

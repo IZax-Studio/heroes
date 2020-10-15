@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Deadlift_Ability3_Units"
+	
+	icon="icon3.tga"
+	passiveeffect=""
+
+	effecttype=""
+	allowtransfer="false"
+
+	strengthpercharge="1,1.5,2,2.5"
+	
+>
+
+</state>

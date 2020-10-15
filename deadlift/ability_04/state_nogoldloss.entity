@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Deadlift_Ability4_NoGoldLoss"
+	
+	icon="icon4.tga"
+	passiveeffect="effects/state_nogoldloss.effect"
+
+	allowtransfer="false"
+	
+	modifierkey="deadlift_ability4_GravestoneCooldown"
+>
+	
+	<!-- This state is used to prevent gold loss on death and now also gravestones -->
+	<onframe>
+		<compare a="lifetime_remaining" b="0" op="gt">
+			<setgoldlossbonus source="this_owner_entity" target="this_owner_entity" value="10000" />
+		</compare>
+		<else>
+			<setgoldlossbonus source="this_owner_entity" target="this_owner_entity" value="0" />
+		</else>
+	</onframe>
+	
+	<onexpired>
+		<!-- Team Deathmatch logic -->
+		<hasmodifier name="team_deathmatch" entity="this_owner_entity">
+			<preventrespawn value="true" entity="this_owner_entity" />
+		</hasmodifier>
+	</onexpired>
+	
+	<altavatar key="Hero_Deadlift.Alt" modpriority="90"
+		passiveeffect="../alt/ability_04/effects/state_nogoldloss.effect"
+	/>
+
+	<altavatar key="Hero_Deadlift.Alt2" modpriority="90"
+		passiveeffect="../alt2/ability_04/effects/state_nogoldloss.effect"
+	/>
+	
+	<altavatar key="Hero_Deadlift.Alt3" modpriority="90"
+		passiveeffect="../alt3/ability_04/effects/state_nogoldloss.effect"
+	/>
+</state>

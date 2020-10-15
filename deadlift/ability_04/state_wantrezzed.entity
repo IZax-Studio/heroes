@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Deadlift_Ability4_WantRezzed"
+
+	ishidden="true"
+	
+	icon="icon4.tga"
+	passiveeffect=""
+	
+	effecttype=""
+
+>
+	<oninflict>
+		<setrespawnposition target="this_owner_entity" position="this_proxy_entity" />
+		<setrespawnhealthmultiplier target="this_owner_entity" value="0.25,0.5,0.75" />
+		<setrespawnmanamultiplier target="this_owner_entity" value="0.25,0.5,0.75" />
+		<setrespawntime target="this_owner_entity" a="0" />
+		<applystate name="State_Deadlift_Ability4_NoGoldLoss" target="this_owner_entity" duration="30000" />
+		<selectentity source="this_owner_entity" targets="this_owner_entity" />	
+		<replaceinselectionsets source="this_owner_entity" target="this_owner_entity" />
+		
+		<playanim name="idle" />
+
+		<hasavatarkey name="Hero_Deadlift.Alt">
+			<play2dsound sample="/heroes/deadlift/alt2/sounds/ab4_vox_return.ogg" channel="10" volume="1.0" dampen="1" sourceonly="true" targetonly="true" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Deadlift.Alt2">
+				<play2dsound sample="/heroes/deadlift/alt/sounds/ab4_vox.ogg" channel="10" volume="1.0" dampen="1" sourceonly="true" targetonly="true" />
+			</hasavatarkey>
+			<else>
+			<hasavatarkey name="Hero_Deadlift.Alt3">
+				<play2dsound sample="/heroes/deadlift/alt3/sounds/ab4_pre_vox.ogg" channel="10" volume="1.0" dampen="1" sourceonly="true" targetonly="true" />
+			</hasavatarkey>
+				<else>
+					<play2dsound sample="/heroes/deadlift/ability_04/sounds/ab4_request.ogg" channel="10" volume="1.0" dampen="1" sourceonly="true" targetonly="true" />
+				</else>
+			</else>
+		</else>
+	</oninflict>
+
+
+	<onexpired>
+		<setactivemodifierkey name="" entity="this_proxy_entity" />
+		<deactivatemodifierkey name="ReadyToRevive" entity="this_owner_entity" />
+		<deactivatemodifierkey name="Channeling" entity="this_owner_entity" />
+	</onexpired>
+</state>

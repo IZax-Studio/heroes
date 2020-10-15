@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Deadlift_Ability3_Reveal"
+	
+	icon="icon3.tga"
+	passiveeffect=""
+	ishidden="true"
+	
+	modifierkey="Deadlift_CreepVis"
+>
+</state>

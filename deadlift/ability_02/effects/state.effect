@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+	
+		<modifier
+			life="5000"
+			startcolor=".4"
+			midcolor=".4"
+			endcolor="1"
+			midcolorpos=".9"
+		/>
+	
+		<particlesystem name="system0" space="world" >
+			<skeletonemitter
+				spawnrate="100"
+				particlelife="300"
+				material="/shared/effects/materials/flame.material"
+				maxspeed="100"
+				direction="0 0 1"
+				angle="0"
+				gravity="-20"
+				depthbias="-10"
+				inheritvelocity=".2"
+				limitinheritvelocity="100"
+			>
+				<particle
+					startcolor="0"
+					midcolor="0 .5 1"
+					endcolor="0"
+					minsize="20"
+					maxsize="40"
+					width="50"
+					startscale="1"
+					endscale="1.5"
+				/>
+			</skeletonemitter>
+			
+			<simpleemitter
+				spawnrate="15"
+				minparticlelife="500"
+				maxparticlelife="1500"			
+				gravity="-5"
+				minspeed="10"
+				maxspeed="50"
+				drag=".05"
+				material="/shared/effects/materials/spark_10.material"
+				offsetsphere="20"
+				minangle="70"
+				maxangle="90"
+				direction="0 0 1"
+				directionalspace="global"
+				position="0 0 10"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startcolor="0"
+					midcolor="0 .5 1"
+					endcolor="0 0 0"
+					midcolorpos=".3"
+					minstartsize="12"
+					maxstartsize="20"
+					endsize="0"
+				/>
+			</simpleemitter>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<spawnmodifier instance="instance1"/>
+		<waitfordeath instance="instance0"/>
+		<waitfordeath instance="instance1"/>
+	</thread>
+</effect>

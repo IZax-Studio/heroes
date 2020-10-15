@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Deadlift4"
+
+	icon="icon4.tga"
+	anim="ability_4_1"
+	casttime="300"
+	castactiontime="300"
+	channeltime="3000"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="self_position"
+	ischanneling="true"
+	targetscheme="ally_onlymainheroes_deadalive"
+	
+	casteffecttype="SuperiorMagic"
+	
+	manacost="250"
+	cooldowntime="160000,120000,80000"
+	targetradius="1500"
+	dontshowhovercast="true"
+	
+	novoiceresponse="true"
+
+	modifierkey="Stage2,Stage3,Stage4"
+>
+
+	<onimpact />
+
+	<onlearn propagatetoillusions="false">
+		<setaccumulator value="0" />
+		
+		<areaofeffect
+			center="source_position"
+			global="true"
+			effecttype=""
+			targetselection="all"
+			targetscheme="ally_onlymainheroes_deadalive"
+			ignoreinvulnerable="true"
+			ignore="source_entity"
+		>
+			<applystate name="State_Deadlift_Ability4_Heroes" continuous="true" target="target_entity" proxy="this_entity" />
+		</areaofeffect>
+		<compare a="result" b="4" op="lt">
+			<applystate name="State_Deadlift_Ability4_Reapply" continuous="true" target="source_entity" proxy="this_entity" />
+		</compare>
+
+		<!-- Learn effects -->
+		<hasavatarkey name="Hero_Deadlift.Alt">
+			<playeffect effect="../alt/ability_04/effects/levelup_audio_1.effect" source="source_position" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Deadlift.Alt2">
+				<playeffect effect="../alt2/ability_04/effects/levelup_audio_1.effect" source="source_position" />
+			</hasavatarkey>
+			<else>
+			<hasavatarkey name="Hero_Deadlift.Alt3">
+					<playeffect effect="../alt3/ability_04/effects/levelup_audio_1.effect" source="source_position" />
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/levelup_audio_1.effect" source="source_position" />
+				</else>
+			</else>
+		</else>
+	</onlearn>
+
+	<onupgrade propagatetoillusions="false">
+		<!-- Upgrade effects -->
+		<compare a="level" b="2" op="eq">
+			<hasavatarkey name="Hero_Deadlift.Alt">
+				<playeffect effect="../alt/ability_04/effects/levelup_audio_2.effect" source="source_position" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Deadlift.Alt2">
+					<playeffect effect="../alt2/ability_04/effects/levelup_audio_2.effect" source="source_position" />
+				</hasavatarkey>
+				<else>
+				<hasavatarkey name="Hero_Deadlift.Alt3">
+					<playeffect effect="../alt3/ability_04/effects/levelup_audio_2.effect" source="source_position" />
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/levelup_audio_2.effect" source="source_position" />
+				</else>
+				</else>
+			</else>
+		</compare>
+		<compare a="level" b="3" op="eq">
+			<hasavatarkey name="Hero_Deadlift.Alt">
+				<playeffect effect="../alt/ability_04/effects/levelup_audio_3.effect" source="source_position" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Deadlift.Alt2">
+					<playeffect effect="../alt2/ability_04/effects/levelup_audio_3.effect" source="source_position" />
+				</hasavatarkey>
+				<else>
+				<hasavatarkey name="Hero_Deadlift.Alt3">
+					<playeffect effect="../alt3/ability_04/effects/levelup_audio_3.effect" source="source_position" />
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/levelup_audio_3.effect" source="source_position" />
+				</else>
+				</else>
+			</else>
+		</compare>
+	</onupgrade>
+
+	<!-- Display number of gravestones in radius. If none, disable ability -->
+	<onframe>		
+		<areaofeffect
+			center="source_entity"
+			radius="1500"
+			targetselection="all"
+			targetscheme="Gravestone"
+			ignoreinvulnerable="true"
+		>
+		</areaofeffect>
+		<setvar0 a="result" />
+		<setcharges a="var0" entity="this_entity" />
+		<compare a="charges" b="1" op="lt">
+			<activatemodifierkey name="Deadlift_Ability4_Disabled" entity="this_entity" />
+		</compare>
+	</onframe>
+	
+	<onchannelstart>		
+		<areaofeffect
+			center="source_entity"
+			radius="1500"
+			targetselection="all"
+			targetscheme="Gravestone"
+			ignoreinvulnerable="true"
+		>
+			<applystate name="State_Deadlift_Ability4_Channel" source="source_entity" target="target_entity" ischannel="true" />
+			<spawnunit name="Gadget_Deadlift_Ability4_Reveal" source="this_proxy_entity" target="target_entity" ischannel="true" owner="this_proxy_entity" />
+			<spawnunit name="Gadget_Deadlift_Ability4_Reveal" source="this_proxy_entity" target="source_entity" ischannel="true" owner="this_proxy_entity" />
+		</areaofeffect>
+	</onchannelstart>
+
+	<onchannelbreak>
+		<!-- <expirestate name="State_Deadlift_Ability4_Channel" target="source_entity" /> -->
+	</onchannelbreak>
+
+	<onchannelend>
+		<setvar0 a="1" b="charges" op="div" />
+		<areaofeffect
+			center="source_entity"
+			radius="1500"
+			targetselection="all"
+			targetscheme="Gravestone"
+			ignoreinvulnerable="true"
+		>
+			<playeffect effect="effects/revive.effect" source="target_entity" />
+			<setrespawnposition target="target_owner_entity" position="target_entity" />
+			<setrespawnhealthmultiplier target="target_owner_entity" value="var0" />
+			<setrespawnmanamultiplier target="target_owner_entity" value="var0" />
+			<setrespawntime target="target_owner_entity" a="0" />
+			<applystate name="State_Deadlift_Ability4_NoGoldLoss" target="target_owner_entity" duration="30000" />
+			<selectentity source="target_owner_entity" targets="target_owner_entity" />	
+			<replaceinselectionsets source="target_owner_entity" target="target_owner_entity" />
+			
+			<playanim name="idle" />
+		</areaofeffect>
+
+		<areaofeffect
+			center="source_entity"
+			radius="1500"
+			targetselection="all"
+			targetscheme="all_nonhero_nonboss_corpses"
+			ignoreinvulnerable="true"
+		>
+			<spawnmimic
+				owner="source_entity"
+				source="target_entity"
+				target="target_entity"
+				receivedamagemultiplier="1"
+				inflictdamagemultiplier="1"
+				count="1"
+				lifetime="10000"
+				pushentity="true"
+				dontclonestates="true"
+
+				spawneffect=""
+				playdeathanim="true"
+				inheritvisibilityfromowner="true"	
+			/>
+			
+			<applystate name="State_Deadlift_Ability3_Movespeed" continuous="true" target="stack_entity" proxy="this_owner_entity" />
+			<applystate name="State_Deadlift_Ability3_Undead" duration="10000" target="stack_entity" proxy="this_owner_entity" />
+
+			<!-- Delete the corpse -->
+			<areaofeffect
+				center="stack_entity"
+				radius="25"
+				targetselection="closest"
+				targetscheme="ally_nonhero_corpses"
+				maxtotalimpacts="1"
+			>
+				<delete target="target_entity" />
+			</areaofeffect>
+
+			<!-- Heal the spawned creep -->
+			<changehealth target="stack_entity" a="target_maxhealth" b="0.5" op="mult" />
+			<givemana target="stack_entity" a="1000" />
+			
+			<order command="aggressive_wander" source="stack_entity" target="this_owner_entity" force="true" forceduration="100000" />
+		</areaofeffect>
+	</onchannelend>
+
+	<modifier key="Deadlift_Ability4_Disabled" modpriority="101"
+		disabled="true"
+	>
+
+		<onframe>	
+			<areaofeffect
+				center="source_entity"
+				radius="1500"
+				targetselection="all"
+				targetscheme="Gravestone"
+				ignoreinvulnerable="true"
+			>
+			</areaofeffect>
+			<compare a="result" b="0" op="gt">
+				<deactivatemodifierkey name="Deadlift_Ability4_Disabled" entity="this_entity" />
+			</compare>
+		</onframe>
+
+	</modifier>
+
+
+</ability>

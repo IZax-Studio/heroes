@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Deadlift_Ability3_Tooltip"
+
+	icon="icon3.tga"
+	passiveeffect=""
+
+	serverentity="true"
+>
+	<onframe />
+</state>
