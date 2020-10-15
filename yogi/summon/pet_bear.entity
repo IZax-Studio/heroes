@@ -13,7 +13,7 @@
 	orderconfirmedsound=""
 	
 	preglobalscale="1.53"
-	modelscale="1.60,1.67,1.73,1.80"
+	modelscale=".60,.67,.73,.80"
 	effectscale="1.26"
 	boundsheight="96"
 	boundsradius="24"
