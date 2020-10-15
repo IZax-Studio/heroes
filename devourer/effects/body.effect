@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+
+<!--
+		<modifier
+			name="modifier0"
+			alpha="0"
+		/>
+-->	
+	
+		<particlesystem name="system0" space="entity" scale="1">
+
+			<simpleemitter
+				bone="_bone_head"
+				spawnrate="10"
+				offsetsphere="20"
+				particlelife="3000"
+				depthbias="-120"
+			>
+				<particle>
+					<groundsprite						
+						loop="false"			
+						material="/shared/effects/materials/blood_pool_02.material"						
+						life="2000"
+						size="5"			
+						minscale="1"
+						maxscale="6"
+						minyaw="-360"
+						maxyaw="360"
+						startcolor=".35 .2 .2"
+						endcolor=".2 .1 .1"
+						startalpha=".8"
+						midalpha=".8"
+						endalpha="0"
+						minendwidth="10"
+						maxendwidth="15"
+						minyaspweed="-2"
+						maxyawspeed="2"
+					/>				
+				</particle>
+				<particle>
+					<groundsprite						
+						loop="false"			
+						material="/shared/effects/materials/blood_pool_02.material"						
+						life="1500"
+						size="3"			
+						minscale="1"
+						maxscale="5"
+						minyaw="-360"
+						maxyaw="360"
+						startcolor=".25 .2 .2"
+						endcolor=".15 .15 .15"
+						startalpha=".8"
+						midalpha=".8"
+						endalpha="0"
+						minendscale="1"
+						maxenscale="1"
+					/>				
+				</particle>
+			</simpleemitter>
+		
+			<template name="link">
+			<beam
+			   	  bone_a="_bone_anchor2"
+				  position_a="{pos1}"
+				  bone_b="bicep_L"
+				  position_b="{pos2}"
+				  size="{size}"
+				  startcolor="1 1 1"
+				  endcolor="0"
+				  expirelife="200"
+				  material="/shared/effects/materials/chainlinkconnect.material"
+				  startframe="{startframe}"
+				  framespeed="{framespeed}"
+				  anchor="1"
+     />
+    </template>    
+    <instance name="link" pos1="0 0 0" pos2="0 -25 0" size="10" startframe=".2" framespeed="3"/>			
+	
+	<template name="link">
+			<beam
+			   	  bone_a="_bone_anchor"
+				  position_a="{pos1}"
+				  bone_b="bicep_R"
+				  position_b="{pos2}"
+				  size="{size}"
+				  startcolor="1 1 1"
+				  endcolor="0"
+				  expirelife="200"
+				  material="/shared/effects/materials/chainlinkconnect.material"
+				  startframe="{startframe}"
+				  framespeed="{framespeed}"
+				  anchor="1"
+     />
+    </template>    
+    <instance name="link" pos1="0 0 0" pos2="0 -30 0" size="10" startframe=".2" framespeed="3"/>
+			
+		
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

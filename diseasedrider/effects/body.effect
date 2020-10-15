@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+
+
+		
+			<template name="glow">
+				<billboard
+					bone="{bone}"
+					position="0 0 0"
+					expirelife="250"
+					startcolor="0 .5 1"
+					endcolor="0 0 0"
+					size="40"
+					depthbias="-10"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+				
+				<billboard
+					bone="{bone}"
+					position="0 0 0"
+					expirelife="250"
+					startcolor=".5 .5 .5"
+					endcolor="0 0 0"
+					size="25"
+					depthbias="-10"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+
+				<billboard
+					bone="{bone}"
+					material="/shared/effects/materials/blink.material"
+					startcolor="0 0 0"
+					midcolor="0 .5 1"
+					endcolor="0"
+					maxroll="360"
+					size="25"
+					depthbias="-25"
+					life="500"
+					directionalspace="local"
+					rollspeed="-50"
+					loop="true"
+				/>
+				
+
+			</template>
+			
+			<instance name="glow" bone="_bone_weapon3"/>			
+		
+			<simpleemitter		
+				bone="_bone_leftfoot"
+				position="0 20 30"
+				spawnrate="100"			
+				particlelife="1000"			
+				speed="20"
+				depthbias="0"
+				material="/shared/effects/materials/smoke_17.material"
+				offsetsphere="25 25 25"
+
+			>
+				<particle 
+					color=".4 .75 .8"
+					startsize="75"
+					endsize="50"
+					startalpha="0.0"
+					midalpha=".3"
+					endalpha="0"
+					midalphapos=".1"
+				/>
+			</simpleemitter>
+			
+
+
+			
+			
+		
+			
+			<orbiteremitter
+				timenudge="2000"
+				spawnrate="50"
+				particlelife="5000"
+				gravity="0.0"
+				minspeed=".8"
+				maxspeed="1.5"
+				acceleration="0" 
+				drag="0.0"
+				minangle="-90" 
+				maxangle="90" 
+				position="0.0 0.0 50" 
+				origin="1.0 1 30" 
+				orbit="1.0 0.0 1.0" 
+				direction="0.0 0.0 1.0" 
+				offset="3.14 0 20"
+				cylindrical="false" 
+				material="/shared/effects/materials/snowflake.material"
+				
+			>
+				<particle
+					color=".4 .75 .8"
+					midcolorpos="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					frame="0"
+					framespeed="8"		
+					minscale="1"
+					maxscale="2.5"								
+					turn="true"
+				/>
+			</orbiteremitter>
+			<orbiteremitter
+				timenudge="2000"
+				spawnrate="20"
+				particlelife="5000"
+				gravity="0.0"
+				minspeed=".8"
+				maxspeed="1.5"
+				acceleration="0" 
+				drag="0.0"
+				minangle="-90" 
+				maxangle="90" 
+				position="0.0 0.0 80" 
+				origin="1.0 1 20" 
+				orbit="1.0 0.0 1.0" 
+				direction="0.0 0.0 -1.0" 
+				offset="10 10 25"
+				cylindrical="false" 
+				material="/shared/effects/materials/flare_02.material"
+			>
+				<particle
+					color=".4 .75 .8"
+					midcolorpos="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"					
+					frame="0"
+					framespeed="8"					
+					minscale="1"
+					maxscale="2"
+					turn="1"
+				/>
+			</orbiteremitter>		
+			
+			<orbiteremitter
+				timenudge="2000"
+				spawnrate="20"
+				particlelife="5000"
+				gravity="0.0"
+				minspeed=".8"
+				maxspeed="1.5"
+				acceleration="0" 
+				drag="0.0"
+				minangle="-90" 
+				maxangle="90" 
+				position="0.0 0.0 80" 
+				origin="1.0 1 20" 
+				orbit="1.0 0.0 1.0" 
+				direction="0.0 0.0 -1.0" 
+				offset="10 10 25"
+				cylindrical="false" 
+				material="/shared/effects/materials/star_03.material"
+			>
+				<particle
+					color=".4 .75 .8"
+					midcolorpos="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"					
+					frame="0"
+					framespeed="8"					
+					minscale="1"
+					maxscale="2"
+					turn="1"
+				/>
+			</orbiteremitter>				
+		
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

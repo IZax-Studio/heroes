@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_DiseasedRider_Ability2"
+		
+	icon=""
+	passiveeffect="/heroes/diseasedrider/alt/ability_02/effects/root.effect"
+	model="/shared/models/invis.mdf"
+
+	lifetime="4000"
+	
+	preglobalscale="1.5"
+	modelscale="1"
+	effectscale="0.9"
+	boundsheight="0"
+	boundsradius="0"
+	isselectable="false"
+	iscontrollable="false"
+	selectionradius="0"
+	targetoffset="0 0 0"
+
+	canrotate="false"
+	ismobile="false"
+
+	nothreat="true"
+
+	attacktype="none"
+	combattype="Ranged"
+	canattack="false"
+
+	deathtime="0"
+	corpsetime="0"
+	
+	invulnerable="true"
+	flying="false"
+	drawonmap="false"
+
+>
+	<aura state="State_DiseasedRider_Ability2_PushImmunity" radius="30" targetscheme="enemy_units" />
+		
+	<altavatar key="Hero_DiseasedRider.Alt" modpriority="1"
+		passiveeffect="../alt/ability_02/effects/root.effect"
+	/>
+	
+	<altavatar key="Hero_DiseasedRider.Alt3" modpriority="1"
+		passiveeffect="../alt3/ability_02/effects/root.effect"
+	/>
+	
+	<altavatar key="Hero_DiseasedRider.Alt4" modpriority="1"
+		passiveeffect="../alt4/ability_02/effects/root.effect"
+	/>
+	
+	<altavatar key="Hero_DiseasedRider.Alt5" modpriority="1"
+		passiveeffect="../alt5/ability_02/effects/root.effect"
+	/>
+	
+	<altavatar key="Hero_DiseasedRider.Alt6" modpriority="1"
+		passiveeffect="../alt6/ability_02/effects/root.effect"
+	/>
+	
+	<altavatar key="Hero_DiseasedRider.Alt7" modpriority="1"
+		passiveeffect="../alt7/ability_02/effects/root.effect"
+	/>
+	
+	<altavatar key="Hero_DiseasedRider.Alt8" modpriority="1"
+		passiveeffect="../alt8/ability_02/effects/root.effect"
+	/>
+	
+</gadget>

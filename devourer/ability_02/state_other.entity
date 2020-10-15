@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Devourer_Ability2_Other"
+
+	icon="icon2.tga"
+	passiveeffect="effects/state.effect"
+	
+	movespeedslow="0.2"
+
+	effecttype="StatusDebuff"
+
+	negativeeffect="slowed"
+>
+	<onframe />
+
+	<altavatar key="Hero_Devourer.Alt7"
+		passiveeffect="../alt7/ability_02/effects/state.effect"
+	/>
+
+	<altavatar key="Hero_Devourer.Alt8"
+		passiveeffect="../alt8/ability_02/effects/state.effect"
+	/>
+
+	<altavatar key="Hero_Devourer.Alt9"
+		passiveeffect="../alt9/ability_02/effects/state.effect"
+	/>
+
+	<altavatar key="Hero_Devourer.Alt10"
+		passiveeffect="../alt10/ability_02/effects/state.effect"
+	/>
+
+	<altavatar key="Hero_Devourer.Alt11"
+		passiveeffect="../alt11/ability_02/effects/state.effect"
+	/>
+
+	<altavatar key="Hero_Devourer.Alt12"
+		passiveeffect="../alt12/ability_02/effects/state.effect"
+	/>
+
+	<altavatar key="Hero_Devourer.Alt13" modpriority="100"
+		icon="/heroes/Devourer/alt13/ability_02/icon.tga"
+		passiveeffect="../alt13/ability_02/effects/state.effect"
+	>
+		<modifier key="Night_Set_Devourer" modpriority="101"
+			icon="/heroes/Devourer/alt14/ability_02/icon.tga"
+			passiveeffect="../alt14/ability_02/effects/state.effect"
+		/>
+	</altavatar>
+
+	<altavatar key="Hero_Devourer.Alt14" modpriority="100"
+		icon="/heroes/Devourer/alt14/ability_02/icon.tga"
+		passiveeffect="../alt14/ability_02/effects/state.effect"		
+	>
+		<modifier key="Night_Set_Devourer" modpriority="101"
+			icon="/heroes/Devourer/alt13/ability_02/icon.tga"
+			passiveeffect="../alt13/ability_02/effects/state.effect"
+		/>
+	</altavatar>
+
+
+	<altavatar key="Hero_Devourer.Clown"
+		passiveeffect="../alt/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Devourer.Alt15"
+		passiveeffect="../alt15/ability_02/effects/state.effect"
+	/>
+
+	<modifier key="soccer" modpriority="150" movespeedslow="0.35" />
+
+</state>

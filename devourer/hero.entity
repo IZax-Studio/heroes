@@ -1,0 +1,1577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_Devourer"
+
+	team="Hellbourne"
+	icon="Pudge.tga"
+	portrait="Pudge.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect="effects/body.effect"
+	spawneffect=""  
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana_%.wav"
+	cooldownsound="sounds/voice/cooldown_%.wav"
+	announcersound="sounds/voice/hero_select.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+	
+	preglobalscale="1"
+	modelscale="1.0"
+	effectscale="1.0"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="54"
+	targetoffset="0 0 92"
+	portraitcampos="-13 20 50" 
+	infoheight="180"
+
+	category="tank cc"
+	difficulty="4"
+
+	solorating="2"
+	junglerating="0"
+	carryrating="0"
+	supportrating="0"
+	initiatorrating="2"
+	gankerrating="4"
+	pusherrating="0"
+	rangedrating="0"
+	meleerating="5"
+	
+	movespeed="285" 
+	turnrate="450"
+	turnsmoothing="0.05"
+
+	maxhealth="150"
+	healthregen="1.00"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="-0.8"
+	magicarmor="5"
+
+	inventory0="Ability_Devourer1"
+	inventory1="Ability_Devourer2"
+	inventory2="Ability_Devourer3"
+	inventory3="Ability_Devourer4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="1000"
+	attackactiontime="500"
+	attackcooldown="1700"
+
+	attackdamagemin="27"
+	attackdamagemax="33"
+
+	attacknumanims="4"
+	attackoffset="0 50 100"
+	attackprojectile=""
+	attackrange="150"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="effects/impact.effect"
+	attacktype="melee"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="600"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+	
+	corpsetime="5000"
+	corpsefadetime="5000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+
+	primaryattribute="Strength"
+	strength="25"
+	strengthperlevel="3.0"
+	agility="14"
+	agilityperlevel="1.5"
+	intelligence="14"
+	intelligenceperlevel="1.5"
+	
+	previewmodel="model.mdf"
+	previewpos="0 0 -60"
+	previewangles="0 0 0"
+	previewscale="1.7"
+	
+	storemodel="model.mdf"
+	storepos="0 0 -19"
+	storeangles="0 0 0"
+	storescale=".83"
+>
+	<recommendeditem name="Item_ManaPotion" />
+	<recommendeditem name="Item_MinorTotem" />
+	<recommendeditem name="Item_RunesOfTheBlight" />
+	<recommendeditem name="Item_HealthPotion" />
+	<recommendeditem name="Item_HomecomingStone" />
+	
+	<recommendeditem name="Item_Strength5" />
+	<recommendeditem name="Item_Bottle" />
+	<recommendeditem name="Item_EnhancedMarchers" />
+	<recommendeditem name="Item_PortalKey" />
+	<recommendeditem name="Item_BarrierIdol" />
+	<recommendeditem name="Item_Intelligence7" />
+	<recommendeditem name="Item_BehemothsHeart" />
+	<recommendeditem name="Item_Damage10" />
+	
+	<modifier key="OnlyMidMap" modpriority="150"
+		strength="20"
+		strengthperlevel="1.5"
+		agility="12"
+		agilityperlevel="1.1"
+	/>
+	
+	<modifier 
+		key="devowars" 
+		modpriority="250"
+		
+		boundsradius="28"
+		
+		maxhealth="750"
+		armor="0"
+		magicarmor="0"
+		
+		inventory0="Ability_DevX_HookLevelUp_Damage"
+		inventory1="Ability_DevX_HookLevelUp_Range"
+		inventory2="Ability_DevX_HookLevelUp_Speed"
+		inventory3="Ability_DevX_HookLevelUp_Width"
+		inventory4="Ability_DevX1_Chain"
+		inventory5=""
+		inventory6=""
+		inventory7=""	
+		inventory8="Ability_Taunt"
+		inventory9=""
+		inventory10=""
+		inventory11="Ability_Dance"
+		inventory12=""
+		
+		attackcooldown="1400"
+		attackdamagemin="65"
+		attackdamagemax="65"
+		attackrange="160"
+		sightrangeday="1000"
+		sightrangenight="1000"
+		wanderrange="250"
+
+		primaryattribute="Strength"
+		strength="0"
+		strengthperlevel="1.6"
+		agility="0"
+		agilityperlevel="0"
+		intelligence="0"
+		intelligenceperlevel="0"			
+	>
+
+		<onspawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Parasite.Alt2 aa.Hero_Armadon.Alt2 aa.Hero_Jereziah.Alt2 aa.Hero_Empath.Alt2 aa.Hero_Hammerstorm.Alt2 aa.Hero_Soulstealer.Alt2 aa.Hero_Devourer.Alt4">
+				<activatemodifierkey name="Alt4_Sin_Set_Bonus" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Rhapsody.Alt3 aa.Hero_Artesia.Alt4 aa.Hero_DrunkenMaster.Alt7 aa.Hero_Zephyr.Alt7 aa.Hero_Devourer.Alt7">
+				<activatemodifierkey name="Pirate_Set_Bonus"/>
+			</ownsproduct>
+		</onspawn>	
+		
+		<onrelease>
+			<deactivatemodifierkey name="bound" />
+			<deactivatemodifierkey name="bound_friendly" />
+			<deactivatemodifierkey name="bound_hostile" />
+		</onrelease>		
+		
+		<onrespawn>
+			<applystate name="State_HeroWars_Respawn" duration="2500" />
+			<unbind target="this_entity" />
+			<ownsproduct target="this_entity" product="aa.Hero_Rhapsody.Alt3 aa.Hero_Artesia.Alt4 aa.Hero_DrunkenMaster.Alt7 aa.Hero_Zephyr.Alt7 aa.Hero_Devourer.Alt7">
+				<activatemodifierkey name="Pirate_Set_Bonus" />
+			</ownsproduct>
+		</onrespawn>
+		
+		<ondeath>
+			<unbind source="this_entity" entity="this_entity" target="this_entity" />
+		</ondeath>
+		
+		<onkilled>
+			<unbind source="this_entity" entity="this_entity" target="this_entity" />
+		</onkilled>
+		
+	</modifier>
+	
+	<modifier key="iamsheeped" modpriority="201"
+		passiveeffect=""
+	/>
+	
+	<modifier key="gated" modpriority="200"
+	>
+	</modifier>
+	<modifier key="soccer" modpriority="190" primaryattribute="" 
+		turnrate="650" magicarmor="0" healthregen="2.5" armor="0" manaregen="0"
+		maxmana="100"
+		attackrange="150"
+		attackduration="1000"
+		attackactiontime="420"
+		attackcooldown="1700"
+		movespeed="315"
+		maxhealth="625"
+		attackdamagemin="50"
+		attackdamagemax="50"
+		intelligence="0"
+		strength="0"
+		agility="0"
+		inventory0="Ability_Soccer_SlideKick"
+		inventory1="Ability_Soccer_Sprint"
+		inventory2="Ability_Devourer2"
+		inventory3="Ability_Devourer1"
+		inventory4="Ability_Soccer_Devourer_Passive"
+		cancarryitems="false" inventory8="" inventory12=""
+	/>
+	
+	<altavatar key="Classic" modpriority="1"
+		altavatar="true"
+		icon2="icon.tga"
+		portrait="icon.tga"
+		model="model.mdf"
+		skin=""
+		
+		passiveeffect="effects/body.effect"
+		spawneffect=""
+		respawneffect="/shared/effects/respawn.effect"
+		selectedsound="sounds/voice/select_%.wav"
+		selectedflavorsound="sounds/voice/select_flavour_%.wav"
+		confirmmovesound="sounds/voice/move_%.wav"
+		confirmattacksound="sounds/voice/attack_%.wav"
+		nomanasound="sounds/voice/no_mana.wav"
+		cooldownsound="sounds/voice/cooldown.wav"
+		announcersound="sounds/voice/hero_select.wav"
+		tauntedsound="sounds/voice/taunt_prior.wav"
+		tauntkillsound="sounds/voice/taunt_after.wav"
+		
+		preglobalscale="1"
+		modelscale="1.0"
+		effectscale="1.0"
+		boundsheight="112"
+		boundsradius="24"
+		selectionradius="54"
+		targetoffset="0 0 92"
+	
+		corpsetime="5000"
+		corpsefadetime="5000"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		
+		previewmodel="preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.7"
+		
+		storemodel="preview.mdf"
+		storepos="0 0 -19"
+		storeangles="0 0 0"
+		storescale="2.0"
+	/>
+
+	<!-- Staff of the master upgrade effect-->
+	<modifier key="ult_boost" modpriority="100"
+		passiveeffect=""
+	>
+		<aura state="State_Devourer_Ult_Boost" radius="0" targetscheme="self"/>
+	</modifier>
+	
+	<modifier key="devourerult_stage1" modpriority="80"
+	/>
+	<modifier key="devourerult_stage2" modpriority="90"
+	/>
+	<modifier key="devourerult_stage3" modpriority="100"
+	/>
+		
+	<altavatar key="Clown" modpriority="1"
+		altavatar="true"
+		
+		icon2="alt/icon.tga"
+		portrait="alt/icon.tga"
+		model="model.mdf"
+		preglobalscale="1"
+
+		
+		previewmodel="alt/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.7"
+		
+		storemodel="alt/preview.mdf"
+		storepos="0 0 -17"
+		storeangles="0 0 0"
+		storescale="2.0"
+		
+		passiveeffect="alt/effects/body.effect"
+		storepassiveeffect="alt/effects/body_store.effect"
+		previewpassiveeffect="alt/effects/body_store.effect"
+		portraitscale="2.34"
+		
+		portraitcampos="-35 50 120"
+	>
+		<modifier key="devourerult_stage1" modpriority="80"
+			preglobalscale=""
+			passiveeffect="alt/effects/body1.effect"
+		/>
+		<modifier key="devourerult_stage2" modpriority="90"
+			preglobalscale=""
+			passiveeffect="alt/effects/body2.effect"
+		/>
+		<modifier key="devourerult_stage3" modpriority="100"
+			preglobalscale=""
+			passiveeffect="alt/effects/body3.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Alt2" modpriority="1"
+		altavatar="true"
+		preglobalscale="2.5"
+		icon2="alt2/icon.tga"
+		portrait="alt2/icon.tga"
+		model="alt2/model.mdf"
+		infoheight="220"
+		previewmodel="alt2/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.9"
+		
+		storemodel="alt2/preview.mdf"
+		storepos="0 0 -17"
+		storeangles="0 0 0"
+		storescale="2.3"
+	/>
+	
+	<altavatar key="Alt3" modpriority="1"
+		altavatar="true"
+		preglobalscale="2.1"
+		icon2="alt3/icon.tga"
+		portrait="alt3/icon.tga"
+		model="alt3/model.mdf"
+		infoheight="170"
+		previewmodel="alt3/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.6"
+		
+		passiveeffect="alt3/effects/body.effect"
+		storepassiveeffect="/heroes/devourer/alt3/effects/body_store.effect"
+		
+		selectedsound="alt3/sounds/voice/select_%.wav"
+		selectedflavorsound="alt3/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt3/sounds/voice/move_%.wav"
+		confirmattacksound="alt3/sounds/voice/attack_%.wav"
+		nomanasound="alt3/sounds/voice/no_mana.wav"
+		cooldownsound="alt3/sounds/voice/cooldown.wav"
+		tauntedsound="alt3/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt3/sounds/voice/taunt_after.wav"
+		
+		attacknumanims="2"
+		
+		storemodel="alt3/preview.mdf"
+		storepos="0 0 -17"
+		storeangles="0 0 0"
+		storescale="2.0"
+	/>
+	
+	<altavatar key="Alt4" modpriority="1"
+		altavatar="true"
+		preglobalscale="2.5"
+		icon2="alt4/icon.tga"
+		portrait="alt4/icon.tga"
+		model="alt4/model.mdf"
+		infoheight="220"
+		previewmodel="alt4/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.9"
+		
+		passiveeffect="alt4/effects/body.effect"
+		storepassiveeffect="alt4/effects/store_body.effect"
+		previewpassiveeffect="alt4/effects/preview_body.effect"
+	
+		selectedsound="alt4/sounds/voice/select_%.wav"
+		selectedflavorsound="alt4/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt4/sounds/voice/move_%.wav"
+		confirmattacksound="alt4/sounds/voice/attack_%.wav"
+		nomanasound="alt4/sounds/voice/no_mana.wav"
+		cooldownsound="alt4/sounds/voice/cooldown.wav"
+		tauntedsound="alt4/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt4/sounds/voice/taunt_after.wav"
+		
+		attacknumanims="2"
+		
+		storemodel="alt4/preview.mdf"
+		storepos="0 0 -17"
+		storeangles="0 0 0"
+		storescale="2.3"
+	>
+		<onspawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Parasite.Alt2 aa.Hero_Armadon.Alt2 aa.Hero_Jereziah.Alt2 aa.Hero_Empath.Alt2 aa.Hero_Hammerstorm.Alt2 aa.Hero_Soulstealer.Alt2 aa.Hero_Devourer.Alt4" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey name="Alt4_Sin_Set_Bonus" />
+			</compare>
+		</onspawn>	
+	
+		<modifier key="Alt4_Sin_Set_Bonus" modpriority="10"
+			passiveeffect="alt4/sin_set_bonus/effects/body.effect"
+		/>	
+	</altavatar>
+	
+	<altavatar key="Alt5" modpriority="1"
+		altavatar="true"
+		model="Alt5/model.mdf"
+		icon2="Alt5/icon.tga"
+		portrait="Alt5/icon.tga"
+		infoheight="185"
+		passiveeffect=""
+		preglobalscale="2"
+
+		
+		attacknumanims="2"
+		
+		selectedsound="Alt5/sounds/voice/select_%.wav"
+		selectedflavorsound="Alt5/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="Alt5/sounds/voice/move_%.wav"
+		confirmattacksound="Alt5/sounds/voice/attack_%.wav"
+		nomanasound="Alt5/sounds/voice/no_mana.wav"
+		cooldownsound="Alt5/sounds/voice/cooldown.wav"
+		tauntedsound="Alt5/sounds/voice/taunt_prior.wav"
+		tauntkillsound="Alt5/sounds/voice/taunt_after.wav"
+		
+		previewmodel="Alt5/preview.mdf"
+		previewpos="0 0 -110"
+		previewangles="0 0 0"
+		previewscale="1.6"
+		
+		storemodel="Alt5/preview.mdf"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="2.1"
+		>
+		<onframe> 
+			<hasmodifier name="Deadlift_Ghost">
+				<activatemodifierkey name="ghost"/>
+			</hasmodifier>
+		</onframe>
+		
+			<onspawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Devourer.Alt5 aa.Hero_Plant.Alt2 aa.Hero_Deadwood.Alt3" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey name="Rulian_Marsh_Set" />
+				
+			</compare>
+		</onspawn>
+		
+		<onrespawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Devourer.Alt5 aa.Hero_Plant.Alt2 aa.Hero_Deadwood.Alt3" />
+			<compare a="result" b="1" op="eq">
+				<deactivatemodifierkey name="ghost" />
+				<activatemodifierkey name="Rulian_Marsh_Set" />
+			</compare>
+		</onrespawn>
+		
+		<onkilled>
+			<ownsproduct target="this_entity" product="aa.Hero_Devourer.Alt5 aa.Hero_Plant.Alt2 aa.Hero_Deadwood.Alt3" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey name="ghost" />
+			</compare>
+		</onkilled>
+		
+		<modifier key="ghost" modpriority="1"
+			model="alt5/model.mdf"
+		/>
+		
+		<modifier key="Rulian_Marsh_Set" modpriority="1"
+			tooleffectpath38=""
+			model="alt5/model2.mdf"
+		/>
+		
+	</altavatar>
+	
+	<altavatar key="Alt6" modpriority="1"
+		altavatar="true"
+		model="alt6/model.mdf"
+		icon2="alt6/icon.tga"
+		portrait="alt6/icon.tga"
+		preglobalscale="2"
+
+		
+		passiveeffect="alt6/effects/body.effect"
+		
+		attacknumanims="2"
+		respawneffect="/shared/effects/respawn_devourer.effect"
+		selectedsound="alt6/sounds/voice/select_%.wav"
+		selectedflavorsound="alt6/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt6/sounds/voice/move_%.wav"
+		confirmattacksound="alt6/sounds/voice/attack_%.wav"
+		nomanasound="alt6/sounds/voice/no_mana.wav"
+		cooldownsound="alt6/sounds/voice/cooldown.wav"
+		tauntedsound="alt6/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt6/sounds/voice/taunt_after.wav"
+		
+		corpsetime="4500"
+		corpsefadetime="5500"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+		previewmodel="alt6/preview.mdf"
+		previewpos="0 0 -110"
+		previewangles="0 0 0"
+		previewscale="1.6"
+		
+		storemodel="alt6/preview.mdf"
+		storepassiveeffect="alt6/effects/preview.effect"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="2.1"
+	>	
+		<onspawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Arachna.Alt3 aa.Hero_Bubbles.Alt4 aa.Hero_Devourer.Alt6 aa.Hero_Ebulus.Alt3 aa.Hero_EmeraldWarden.Alt5 aa.Hero_Predator.Alt4 aa.Hero_Ravenor.Alt4 aa.Hero_Riftmage.Alt2" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey name="RiftBeast_Set" />
+			</compare>
+		</onspawn>
+		
+		<onrespawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Arachna.Alt3 aa.Hero_Bubbles.Alt4 aa.Hero_Devourer.Alt6 aa.Hero_Ebulus.Alt3 aa.Hero_EmeraldWarden.Alt5 aa.Hero_Predator.Alt4 aa.Hero_Ravenor.Alt4 aa.Hero_Riftmage.Alt2" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey name="RiftBeast_Set" />
+			</compare>
+		</onrespawn>
+		
+		<modifier key="RiftBeast_Set" modpriority="101"
+			tooleffectpath38="/shared/effects/riftbeast.effect"
+		/>	
+		
+		<modifier key="Alt6_3" modpriority="2"
+			passiveeffect="alt6/effects/chainsaw.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="main_reskin" modpriority="1"
+		altavatar="true"
+		icon2="reskin/icon.tga"
+		model="model.mdf"
+		portrait="reskin/icon.tga"
+		infoheight="185"
+		passiveeffect=""
+		preglobalscale="1"
+
+		
+		previewmodel="model.mdf"
+		previewpos="0 0 -110"
+		previewangles="0 0 0"
+		previewscale="1.6"
+		
+		storemodel="model.mdf"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="1"
+	/>
+	
+	<altavatar key="Hero_Devourer.Alt7" modpriority="1"
+		altavatar="true"
+		model="alt7/model.mdf"
+		icon2="alt7/icon.tga"
+		portrait="alt7/icon.tga"
+		infoheight="195"
+		passiveeffect=""
+		
+		attacknumanims="2"
+		
+		selectedsound="alt7/sounds/voice/select_%.wav"
+		selectedflavorsound="alt7/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt7/sounds/voice/move_%.wav"
+		confirmattacksound="alt7/sounds/voice/attack_%.wav"
+		nomanasound="alt7/sounds/voice/no_mana.wav"
+		cooldownsound="alt7/sounds/voice/cooldown.wav"
+		tauntedsound="alt7/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt7/sounds/voice/taunt_after.wav"
+		
+		preglobalscale="2.34"
+		
+		previewmodel="alt7/preview.mdf"
+		previewpos="0 0 -110"
+		previewangles="0 0 0"
+		previewscale="1.6"
+		
+		storemodel="alt7/preview.mdf"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="2.1"
+	>
+	
+		<onspawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Rhapsody.Alt3 aa.Hero_Artesia.Alt4 aa.Hero_DrunkenMaster.Alt7 aa.Hero_Zephyr.Alt7 aa.Hero_Devourer.Alt7" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey name="Pirate_Set_Bonus"/>
+			</compare>
+		</onspawn>
+		
+		<onrespawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Rhapsody.Alt3 aa.Hero_Artesia.Alt4 aa.Hero_DrunkenMaster.Alt7 aa.Hero_Zephyr.Alt7 aa.Hero_Devourer.Alt7" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey name="Pirate_Set_Bonus" />
+			</compare>
+		</onrespawn>
+		
+		<modifier key="Pirate_Set_Bonus" modpriority="200"
+			passiveeffect="alt7/effects/body.effect"
+			model="alt7/model_boost.mdf"
+		/>
+	
+	</altavatar>
+	
+	<altavatar key="Hero_Devourer.Alt8" modpriority="1"
+		altavatar="true"
+		model="alt8/model.mdf"
+		icon2="alt8/icon.tga"
+		portrait="alt8/icon.tga"
+		infoheight="185"
+		passiveeffect="alt8/effects/body.effect"
+		respawneffect="/shared/effects/respawn_devourerursa.effect"
+		preglobalscale=".85"
+		modelscale="3"
+		
+		attacknumanims="2"
+		
+		selectedsound="alt8/sounds/voice/select_%.wav"
+		selectedflavorsound="alt8/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt8/sounds/voice/move_%.wav"
+		confirmattacksound="alt8/sounds/voice/attack_%.wav"
+		nomanasound="alt8/sounds/voice/no_mana.wav"
+		cooldownsound="alt8/sounds/voice/cooldown.wav"
+		tauntedsound="alt8/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt8/sounds/voice/taunt_after.wav"
+		
+		attackimpacteffect="alt8/effects/impact.effect"
+		
+		corpsetime="750"
+		corpsefadetime="2200"
+		
+		previewmodel="alt8/preview.mdf"
+		previewpos="0 0 -110"
+		previewangles="0 0 0"
+		previewscale="4.8"
+		
+		storepassiveeffect="alt8/effects/body_store.effect"
+		storemodel="alt8/preview.mdf"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="2.7"
+		
+		portraitcampos="10 -10 15"
+	>
+		<onspawn>
+			<setactivemodifierkey name="Kodia_Sound" />
+			<activatemodifierkey name="Ursa_Sound"/>
+			 <ownsproduct target="this_entity" product="aa.Hero_Kane.Alt9 aa.Hero_Artillery.Alt8" />
+			<compare a="result" b="1" op="eq">
+				<spawnunit name="Pet_Ursa" target="this_entity" source="target_entity" offset="0 -100" facing="source_entity" pushentity="true" />
+			</compare>
+		</onspawn>
+	
+		<onrespawn>
+			<setactivemodifierkey name="Kodia_Sound" />
+			<ownsproduct target="this_entity" product="aa.Hero_Kane.Alt9 aa.Hero_Artillery.Alt8" />
+			<compare a="result" b="1" op="eq">
+				<spawnunit name="Pet_Ursa" target="this_entity" source="target_entity" offset="0 -100" facing="source_entity" pushentity="true" />
+			</compare>
+		</onrespawn>
+	
+		<modifier key="ult_boost" modpriority="100"
+		>
+			<aura state="State_Devourer_Ult_Boost" radius="0" targetscheme="self"/>
+		</modifier>
+		
+		<modifier key="devourerult_stage1" modpriority="80"
+			preglobalscale="1.0"
+		/>
+		<modifier key="devourerult_stage2" modpriority="90"
+			preglobalscale="1.2"
+		/>
+		<modifier key="devourerult_stage3" modpriority="100"
+			preglobalscale="1.4"
+		/>
+	</altavatar>
+	
+	<altavatar key="Alt9" modpriority="1"
+		altavatar="true"
+		model="alt9/model.mdf"
+		icon2="alt9/icon.tga"
+		portrait="alt9/icon.tga"
+		infoheight="185"
+		passiveeffect=""
+		preglobalscale="2"
+
+		
+		attacknumanims="2"
+		portraitcampos="0 0 20"
+		
+		previewmodel="alt9/preview.mdf"
+		previewpos="0 0 -110"
+		previewangles="0 0 0"
+		previewscale="1.6"
+		
+		storemodel="alt9/preview.mdf"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="1.8"
+		
+		selectedsound="Alt9/sounds/voice/select_%.wav"
+		selectedflavorsound="Alt9/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="Alt9/sounds/voice/move_%.wav"
+		confirmattacksound="Alt9/sounds/voice/attack_%.wav"
+		nomanasound="Alt9/sounds/voice/no_mana.wav"
+		cooldownsound="Alt9/sounds/voice/cooldown.wav"
+		tauntedsound="Alt9/sounds/voice/taunt_prior.wav"
+		tauntkillsound="Alt9/sounds/voice/taunt_after.wav"
+	/>
+	
+	<altavatar key="Alt10" modpriority="1"
+		altavatar="true"
+		model="alt10/model.mdf"
+		icon2="alt10/icon.tga"
+		portrait="alt10/icon.tga"
+		infoheight="185"
+		passiveeffect="alt10/effects/body.effect"
+		preglobalscale="2"
+
+		
+		attacknumanims="4"
+		portraitcampos="10 20 10"
+		
+		previewmodel="alt10/preview.mdf"
+		previewpos="0 0 -110"
+		previewangles="0 0 0"
+		previewscale="1.6"
+		
+		storemodel="alt10/preview.mdf"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="1.9"
+		
+		attackimpacteffect="alt10/effects/impact.effect"
+		
+		selectedsound="Alt10/sounds/voice/select_%.wav"
+		selectedflavorsound="Alt10/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="Alt10/sounds/voice/move_%.wav"
+		confirmattacksound="Alt10/sounds/voice/attack_%.wav"
+		nomanasound="Alt10/sounds/voice/no_mana.wav"
+		cooldownsound="Alt10/sounds/voice/cooldown.wav"
+		tauntedsound="Alt10/sounds/voice/taunt_prior.wav"
+		tauntkillsound="Alt10/sounds/voice/taunt_after.wav"
+	>
+		<onkill propagatetoillusions="true" >
+			<setaccumulator value="0" />
+			<ownsproduct target="this_entity" product="aa.Hero_MasterOfArms.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Berzerker.Alt12">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Adrenaline.Alt5">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Bombardier.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Blitz.Alt6">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_ShadowBlade.Alt7">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			
+			<targettype type="hero">
+				<targettype type="illusion" />
+				<else>               
+					<targettype type="mimic" />
+					<else> 
+						<targettype type="self" />
+						<else>
+							<targettype type="heropet" />
+							<else>
+								<compare a="accumulator" b="4" op="ge">
+									<spawnunit name="Gadget_8bit_Death" count="1" target="target_position" pushentity="true" maxactive="3" />	
+								</compare>
+							</else>
+						</else>
+					</else>
+				</else>
+			</targettype>
+			
+			<compare a="accumulator" b="2" op="ge">
+				<cantarget targetscheme="enemy_heroes">				
+					<applystate name="State_Set_8bit_VFX" source="this_entity" target="this_entity" duration="2500" />
+				</cantarget>
+			</compare>
+		</onkill>
+		
+		<onchannelingstart>
+			<setaccumulator value="0" />
+			<ownsproduct target="this_entity" product="aa.Hero_MasterOfArms.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Berzerker.Alt12">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Adrenaline.Alt5">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Bombardier.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Blitz.Alt6">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_ShadowBlade.Alt7">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+		
+			<compare a="accumulator" b="2" op="ge">	
+				<entitytype type="Ability_Taunt" target="inflictor_entity">
+					<condition test="hasstate State_Set_8bit_VFX" target="this_entity">
+					</condition>
+					<else>
+						<applystate name="State_Set_8bit_VFX" source="this_entity" target="this_entity" duration="2500" />
+					</else>
+				</entitytype>
+			</compare>
+		</onchannelingstart>
+		
+		<onassist>
+			<setaccumulator value="0" />
+			<ownsproduct target="this_entity" product="aa.Hero_MasterOfArms.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Berzerker.Alt12">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Adrenaline.Alt5">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Bombardier.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Blitz.Alt6">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_ShadowBlade.Alt7">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			
+			
+			<compare a="accumulator" b="2" op="ge">			
+					<applystate name="State_Set_8bit_VFX" source="this_entity" target="this_entity" duration="2500" />
+			</compare>
+		</onassist>
+	
+	</altavatar>
+	
+	<altavatar key="Alt11" modpriority="1"
+		altavatar="true"
+		preglobalscale="2.5"
+		icon2="alt11/icon.tga"
+		portrait="alt11/icon.tga"
+		model="alt11/model.mdf"
+		infoheight="300"
+		previewmodel="alt11/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.6"
+
+		passiveeffect="alt11/effects/body.effect"
+		storepassiveeffect="/heroes/devourer/alt11/effects/body_store.effect"
+		
+		selectedsound="alt11/sounds/voice/select_%.wav"
+		selectedflavorsound="alt11/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt11/sounds/voice/move_%.wav"
+		confirmattacksound="alt11/sounds/voice/attack_%.wav"
+		nomanasound="alt11/sounds/voice/no_mana.wav"
+		cooldownsound="alt11/sounds/voice/cooldown.wav"
+		tauntedsound="alt11/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt11/sounds/voice/taunt_after.wav"
+			
+		attacknumanims="2"
+		
+		storemodel="alt11/preview.mdf"
+		storepos="0 0 -17"
+		storeangles="0 0 0"
+		storescale="2.0"
+	>
+	</altavatar>
+	
+	<altavatar key="Alt12" modpriority="1"
+		altavatar="true"
+		preglobalscale="2.5"
+		icon2="alt12/icon.tga"
+		portrait="alt12/icon.tga"
+		model="alt12/model.mdf"
+		infoheight="300"
+		previewmodel="alt12/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.6"
+		portraitcampos="17 0 -10"
+		
+		passiveeffect="alt12/effects/body.effect"
+		storepassiveeffect="/heroes/devourer/alt12/effects/body_store.effect"
+		
+		selectedsound="alt12/sounds/voice/select_%.wav"
+		selectedflavorsound="alt12/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt12/sounds/voice/move_%.wav"
+		confirmattacksound="alt12/sounds/voice/attack_%.wav"
+		nomanasound="alt12/sounds/voice/no_mana.wav"
+		cooldownsound="alt12/sounds/voice/cooldown.wav"
+		tauntedsound="alt12/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt12/sounds/voice/taunt_after.wav"
+			
+		attacknumanims="4"
+		
+		storemodel="alt12/preview.mdf"
+		storepos="0 0 -17"
+		storeangles="0 0 0"
+		storescale="2.0"
+	>
+	</altavatar>
+	
+	<altavatar key="Alt13" modpriority="1"
+		altavatar="true"
+		model="alt13/model.mdf"
+		icon2="alt13/icon.tga"
+		portrait="alt13/icon.tga"
+		infoheight="185"
+		passiveeffect="alt13/effects/body.effect"
+		preglobalscale="2.7"
+		
+		modelscale=".7"
+		
+		attacknumanims="2"
+		portraitcampos="-25 15 28"
+		portraitangles="0 0 15"
+		
+		previewmodel="alt13/preview.mdf"
+		previewpos="0 0 -110"
+		previewangles="0 0 0"
+		previewscale="1.6"
+		
+		storemodel="alt13/preview.mdf"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="1.6"
+		
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		corpsetime="2000"
+		corpsefadetime="5000"
+		
+		selectedsound="Alt13/sounds/voice/select_%.wav"
+		selectedflavorsound="Alt13/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="Alt13/sounds/voice/move_%.wav"
+		confirmattacksound="Alt13/sounds/voice/attack_%.wav"
+		nomanasound="Alt13/sounds/voice/no_mana.wav"
+		cooldownsound="Alt13/sounds/voice/cooldown.wav"
+		tauntedsound="Alt13/sounds/voice/taunt_prior.wav"
+		tauntkillsound="Alt13/sounds/voice/taunt_after.wav"
+		
+	>
+		<onframe>
+	   		<setactivemodifierkey name="Hero_Devourer_Alt13" />
+		</onframe>
+		<onattackimpact>
+			<hasmodifier entity="source_entity" name="Night_Set_Devourer">
+				<playeffect effect="alt14/effects/impact.effect" target="this_entity" source="target_entity" occlude="true"/>
+			</hasmodifier>
+			<else>
+				<playeffect effect="alt13/effects/impact.effect" target="this_entity" source="target_entity" occlude="true"/>
+			</else>
+		</onattackimpact>
+		
+		<onspawn>
+			<activatemodifierkey name="Plushie_Dev_Sound" />
+			<applystate name="State_Plushie_Dev_Sound_Initiator" target="source_entity" duration="2000" />
+			
+			<ownsproduct target="this_entity" product="aa.Hero_Devourer.Alt14">
+				<applystate name="State_Devourer_Day_Set" continuous="true" />
+			</ownsproduct>	
+			
+			<!-- doll set -->
+			<setaccumulator value="0" />
+			<ownsproduct target="this_entity" product="aa.Hero_Behemoth.Alt13">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Behemoth.Alt14">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hantumon.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hantumon.Alt12">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Devourer.Alt13">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Devourer.Alt14">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Cthulhuphant.Alt7">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Cthulhuphant.Alt8">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Pestilence.Alt9">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Pestilence.Alt10">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Panda.Alt10">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Panda.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Deadwood.Alt8">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Deadwood.Alt9">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Bubbles.Alt12">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Bubbles.Alt13">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hydromancer.Alt7">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hydromancer.Alt8">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			
+			<compare a="accumulator" b="6" op="ge">
+				<spawnunit name="Set_Pet_doll" target="this_entity" source="target_entity" facing="source_entity" count="1" offsetspace="source_entity" offset="-50 50" maxactive="10" pushentity="true" />
+				<setproxy entity="this_entity" target="stack_entity" />
+				<order command="wander" source="this_proxy_entity" target="source_entity" />
+			</compare>
+		</onspawn>
+		
+		<onrespawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Devourer.Alt14">
+				<applystate name="State_Devourer_Day_Set" continuous="true" />
+			</ownsproduct>	
+			
+			<!-- doll set -->
+			<setaccumulator value="0" />
+			<ownsproduct target="this_entity" product="aa.Hero_Behemoth.Alt13">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Behemoth.Alt14">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hantumon.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hantumon.Alt12">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Devourer.Alt13">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Devourer.Alt14">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Cthulhuphant.Alt7">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Cthulhuphant.Alt8">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Pestilence.Alt9">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Pestilence.Alt10">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Panda.Alt10">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Panda.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Deadwood.Alt8">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Deadwood.Alt9">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Bubbles.Alt12">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Bubbles.Alt13">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hydromancer.Alt7">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hydromancer.Alt8">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			
+			<compare a="accumulator" b="6" op="ge">
+				<spawnunit name="Set_Pet_doll" target="this_entity" source="target_entity" facing="source_entity" count="1" offsetspace="source_entity" offset="-50 50" maxactive="10" pushentity="true" />
+				<setproxy entity="this_entity" target="stack_entity" />
+				<order command="wander" source="this_proxy_entity" target="source_entity" />
+			</compare>
+		</onrespawn>
+		
+		<ondeath>
+			<ownsproduct target="this_entity" product="aa.Hero_Devourer.Alt14">
+				<applystate name="State_Devourer_Day_Set" continuous="true" />
+			</ownsproduct>
+			
+		</ondeath>
+		
+		<onassist>
+		<!-- Interaction -->
+		    <chance threshold=".50">
+				<pausevoiceovers duration="3000" />
+				<delayannouncer duration="3000" source="target_entity" sourceonly="true"/>
+				<delayannouncer duration="3000" source="this_entity" sourceonly="true"/>
+                <playeffect effect="alt13/sounds/interactions/assist_audio.effect" source="this_entity" target="this_entity" />
+			</chance>
+        </onassist>
+		
+		<onkill>
+		<!-- Interaction -->
+			<targettype type="illusion" />
+			<else>
+			<cantarget targetscheme="enemy_heroes" >
+			<pushentityproxy entity="this_proxy_entity" />
+		    <chance threshold="0.50">  
+				<compare a="stack_entity" b="inflictor_entity" op="ne"> <!--To prevent interaction to play if you have taunted them-->
+                <playeffect effect="alt13/sounds/interactions/kill_audio.effect" source="this_entity" target="this_entity" />
+				<pausevoiceovers duration="3000" /> 
+				<delayannouncer duration="3000" source="target_entity" sourceonly="true"/>
+				<delayannouncer duration="3000" source="this_entity" sourceonly="true"/>			
+				</compare>
+			</chance>
+			</cantarget>
+			</else>
+        </onkill>
+		
+		<modifier
+			key="Night_Set_Devourer" modpriority="100"
+			
+			model="alt14/model.mdf"
+			icon2="alt14/icon.tga"
+			portrait="alt14/icon.tga"
+			passiveeffect="alt14/effects/body.effect"
+			
+			previewmodel="alt14/preview.mdf"
+			
+			storemodel="alt14/preview.mdf"
+			
+			corpsefadeeffect="/shared/effects/corpse_sink.effect"
+			corpsetime="2000"
+			corpsefadetime="5000"
+			
+			selectedsound="Alt14/sounds/voice/select_%.wav"
+			selectedflavorsound="Alt14/sounds/voice/select_flavour_%.wav"
+			confirmmovesound="Alt14/sounds/voice/move_%.wav"
+			confirmattacksound="Alt14/sounds/voice/attack_%.wav"
+			nomanasound="Alt14/sounds/voice/no_mana.wav"
+			cooldownsound="Alt14/sounds/voice/cooldown.wav"
+			tauntedsound="Alt14/sounds/voice/taunt_prior.wav"
+			tauntkillsound="Alt14/sounds/voice/taunt_after.wav"
+		
+		>
+		<onassist>
+		<!-- Interaction -->
+		    <chance threshold="0.50">
+				<pausevoiceovers duration="3000" />
+				<delayannouncer duration="3000" source="target_entity" sourceonly="true"/>
+				<delayannouncer duration="3000" source="this_entity" sourceonly="true"/>
+                <playeffect effect="alt14/sounds/interactions/assist_audio.effect" source="this_entity" target="this_entity" />
+			</chance>
+        </onassist>
+		
+		<onkill>
+		<!-- Interaction -->
+			<targettype type="illusion" />
+			<else>
+			<cantarget targetscheme="enemy_heroes" >
+			<pushentityproxy entity="this_proxy_entity" />
+		    <chance threshold="0.50">  
+				<compare a="stack_entity" b="inflictor_entity" op="ne"> <!--To prevent interaction to play if you have taunted them-->
+                <playeffect effect="alt14/sounds/interactions/kill_audio.effect" source="this_entity" target="this_entity" />
+				<pausevoiceovers duration="3000" /> 
+				<delayannouncer duration="3000" source="target_entity" sourceonly="true"/>
+				<delayannouncer duration="3000" source="this_entity" sourceonly="true"/>			
+				</compare>
+			</chance>
+			</cantarget>
+			</else>
+        </onkill>
+		</modifier>
+		
+	</altavatar>
+	
+	<altavatar key="Alt14" modpriority="1"
+		altavatar="true"
+		model="alt14/model.mdf"
+		icon2="alt14/icon.tga"
+		portrait="alt14/icon.tga"
+		infoheight="185"
+		passiveeffect="alt14/effects/body.effect"
+		preglobalscale="2.7"
+		modelscale=".7"
+		
+		attacknumanims="2"
+		portraitcampos="-25 15 28"
+		portraitangles="0 0 15"
+		
+		previewmodel="alt14/preview.mdf"
+		previewpos="0 0 -110"
+		previewangles="0 0 0"
+		previewscale="1.6"
+		
+		storemodel="alt14/preview.mdf"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="1.6"
+		
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		corpsetime="2000"
+		corpsefadetime="5000"
+		
+		selectedsound="Alt14/sounds/voice/select_%.wav"
+		selectedflavorsound="Alt14/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="Alt14/sounds/voice/move_%.wav"
+		confirmattacksound="Alt14/sounds/voice/attack_%.wav"
+		nomanasound="Alt14/sounds/voice/no_mana.wav"
+		cooldownsound="Alt14/sounds/voice/cooldown.wav"
+		tauntedsound="Alt14/sounds/voice/taunt_prior.wav"
+		tauntkillsound="Alt14/sounds/voice/taunt_after.wav"
+	>
+		<onframe>
+	   		<setactivemodifierkey name="Hero_Devourer_Alt14" />
+		</onframe>
+		<onattackimpact>
+			<hasmodifier entity="source_entity" name="Night_Set_Devourer">
+				<playeffect effect="alt13/effects/impact.effect" target="this_entity" source="target_entity" occlude="true"/>
+			</hasmodifier>
+			<else>
+				<playeffect effect="alt14/effects/impact.effect" target="this_entity" source="target_entity" occlude="true"/>
+			</else>
+		</onattackimpact>
+		
+		<onspawn>
+			<activatemodifierkey name="Misfit_Dev_Sound" />
+			<applystate name="State_Misfit_Dev_Sound_Initiator" target="source_entity" duration="2000" />
+		
+			<ownsproduct target="this_entity" product="aa.Hero_Devourer.Alt13">
+				<applystate name="State_Devourer_Day_Set" continuous="true" />
+			</ownsproduct>
+			
+			<!-- doll set -->
+			<setaccumulator value="0" />
+			<ownsproduct target="this_entity" product="aa.Hero_Behemoth.Alt13">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Behemoth.Alt14">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hantumon.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hantumon.Alt12">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Devourer.Alt13">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Devourer.Alt14">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Cthulhuphant.Alt7">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Cthulhuphant.Alt8">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Pestilence.Alt9">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Pestilence.Alt10">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Panda.Alt10">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Panda.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Deadwood.Alt8">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Deadwood.Alt9">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Bubbles.Alt12">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Bubbles.Alt13">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hydromancer.Alt7">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hydromancer.Alt8">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			
+			<compare a="accumulator" b="6" op="ge">
+				<spawnunit name="Set_Pet_doll" target="this_entity" source="target_entity" facing="source_entity" count="1" offsetspace="source_entity" offset="-50 50" maxactive="10" pushentity="true" />
+				<setproxy entity="this_entity" target="stack_entity" />
+				<order command="wander" source="this_proxy_entity" target="source_entity" />
+			</compare>
+		</onspawn>
+		
+		<onrespawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Devourer.Alt13">
+				<applystate name="State_Devourer_Day_Set" continuous="true" />
+			</ownsproduct>
+			
+			<!-- doll set -->
+			<setaccumulator value="0" />
+			<ownsproduct target="this_entity" product="aa.Hero_Behemoth.Alt13">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Behemoth.Alt14">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hantumon.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hantumon.Alt12">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Devourer.Alt13">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Devourer.Alt14">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Cthulhuphant.Alt7">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Cthulhuphant.Alt8">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Pestilence.Alt9">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Pestilence.Alt10">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Panda.Alt10">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Panda.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Deadwood.Alt8">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Deadwood.Alt9">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Bubbles.Alt12">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Bubbles.Alt13">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hydromancer.Alt7">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hydromancer.Alt8">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			
+			<compare a="accumulator" b="6" op="ge">
+				<spawnunit name="Set_Pet_doll" target="this_entity" source="target_entity" facing="source_entity" count="1" offsetspace="source_entity" offset="-50 50" maxactive="10" pushentity="true" />
+				<setproxy entity="this_entity" target="stack_entity" />
+				<order command="wander" source="this_proxy_entity" target="source_entity" />
+			</compare>
+		</onrespawn>
+		
+		<ondeath>
+			<ownsproduct target="this_entity" product="aa.Hero_Devourer.Alt13">
+				<applystate name="State_Devourer_Day_Set" continuous="true" />
+			</ownsproduct>
+			
+		</ondeath>
+		
+		<onassist>
+		<!-- Interaction -->
+		    <chance threshold="0.50">
+				<pausevoiceovers duration="3000" />
+				<delayannouncer duration="3000" source="target_entity" sourceonly="true"/>
+				<delayannouncer duration="3000" source="this_entity" sourceonly="true"/>
+                <playeffect effect="alt14/sounds/interactions/assist_audio.effect" source="this_entity" target="this_entity" />
+			</chance>
+        </onassist>
+		
+		<onkill>
+		<!-- Interaction -->
+			<targettype type="illusion" />
+			<else>
+			<cantarget targetscheme="enemy_heroes" >
+			<pushentityproxy entity="this_proxy_entity" />
+		    <chance threshold="0.50">  
+				<compare a="stack_entity" b="inflictor_entity" op="ne"> <!--To prevent interaction to play if you have taunted them-->
+                <playeffect effect="alt14/sounds/interactions/kill_audio.effect" source="this_entity" target="this_entity" />
+				<pausevoiceovers duration="3000" /> 
+				<delayannouncer duration="3000" source="target_entity" sourceonly="true"/>
+				<delayannouncer duration="3000" source="this_entity" sourceonly="true"/>			
+				</compare>
+			</chance>
+			</cantarget>
+			</else>
+        </onkill>
+		
+		<modifier
+			key="Night_Set_Devourer"
+			
+			model="alt13/model.mdf"
+			icon2="alt13/icon.tga"
+			portrait="alt13/icon.tga"
+			passiveeffect="alt13/effects/body.effect"
+		
+			previewmodel="alt13/preview.mdf"
+		
+			storemodel="alt13/preview.mdf"
+		
+			corpsefadeeffect="/shared/effects/corpse_sink.effect"
+			corpsetime="2000"
+			corpsefadetime="5000"
+		
+			selectedsound="Alt13/sounds/voice/select_%.wav"
+			selectedflavorsound="Alt13/sounds/voice/select_flavour_%.wav"
+			confirmmovesound="Alt13/sounds/voice/move_%.wav"
+			confirmattacksound="Alt13/sounds/voice/attack_%.wav"
+			nomanasound="Alt13/sounds/voice/no_mana.wav"
+			cooldownsound="Alt13/sounds/voice/cooldown.wav"
+			tauntedsound="Alt13/sounds/voice/taunt_prior.wav"
+			tauntkillsound="Alt13/sounds/voice/taunt_after.wav"
+		>
+		
+		<onassist>
+		<!-- Interaction -->
+		    <chance threshold="0.50">
+				<pausevoiceovers duration="3000" />
+				<delayannouncer duration="3000" source="target_entity" sourceonly="true"/>
+				<delayannouncer duration="3000" source="this_entity" sourceonly="true"/>
+                <playeffect effect="alt13/sounds/interactions/assist_audio.effect" source="this_entity" target="this_entity" />
+			</chance>
+        </onassist>
+		
+		<onkill>
+		<!-- Interaction -->
+			<targettype type="illusion" />
+			<else>
+			<cantarget targetscheme="enemy_heroes" >
+			<pushentityproxy entity="this_proxy_entity" />
+		    <chance threshold="0.50">  
+				<compare a="stack_entity" b="inflictor_entity" op="ne"> <!--To prevent interaction to play if you have taunted them-->
+                <playeffect effect="alt13/sounds/interactions/kill_audio.effect" source="this_entity" target="this_entity" />
+				<pausevoiceovers duration="3000" /> 
+				<delayannouncer duration="3000" source="target_entity" sourceonly="true"/>
+				<delayannouncer duration="3000" source="this_entity" sourceonly="true"/>			
+				</compare>
+			</chance>
+			</cantarget>
+			</else>
+        </onkill>
+		</modifier>
+		
+	</altavatar>
+	
+	<altavatar key="Hero_Devourer.pog_skin" modpriority="1"	
+		icon2="icon.tga"
+		portrait="icon.tga"
+		model="model.mdf"
+		preglobalscale="1"
+
+		
+		previewmodel="pog_skin/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.15"
+
+		storemodel="pog_skin/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.9"
+	/>
+	
+	<altavatar key="Alt15" modpriority="1"
+		altavatar="true"
+		preglobalscale="2.35"
+		icon2="alt15/icon.tga"
+		portrait="alt15/icon.tga"
+		model="alt15/model.mdf"
+		infoheight="300"
+		
+		modelscale=".74"
+		
+		passiveeffect="alt15/effects/body.effect"
+		
+		previewmodel="alt15/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.6"
+		portraitcampos="75 -15 25"
+		portraitangles="0 0 0"
+		
+		selectedsound="alt15/sounds/voice/select_%.wav"
+		selectedflavorsound="alt15/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt15/sounds/voice/move_%.wav"
+		confirmattacksound="alt15/sounds/voice/attack_%.wav"
+		nomanasound="alt15/sounds/voice/no_mana.wav"
+		cooldownsound="alt15/sounds/voice/cooldown.wav"
+		tauntedsound="alt15/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt15/sounds/voice/taunt_after.wav"
+			
+		attacknumanims="2"
+		attackimpacteffect="alt15/effects/impact.effect"
+		
+		storemodel="alt15/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 13"
+		storescale="1.7"
+		
+		corpsetime="750"
+		corpsefadetime="3000"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	>
+	</altavatar>
+	
+</hero>

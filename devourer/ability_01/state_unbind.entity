@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Devourer_Ability1_Unbind"
+
+	icon="icon1.tga"
+	impactinterval="800,900,1000,1100"
+	ishidden="true"
+
+	effecttype=""
+>
+	<onimpact>
+		<expire entity="proxy_entity" />
+		<unbind target="target_entity" />
+	</onimpact>
+	
+	<modifier key="ult_boost" modpriority="150"
+		impactinterval="1000,1100,1200,1300"
+	/>
+	
+	<altavatar key="Hero_Devourer.Alt13" modpriority="100"
+	    icon="/heroes/Devourer/alt13/ability_01/icon.tga"
+	>
+		<modifier key="Night_Set_Devourer" modpriority="101"
+			icon="/heroes/Devourer/alt14/ability_01/icon.tga"
+		/>
+	</altavatar>
+
+	<altavatar key="Hero_Devourer.Alt14" modpriority="100"
+	    icon="/heroes/Devourer/alt14/ability_01/icon.tga"
+	>
+		<modifier key="Night_Set_Devourer" modpriority="101"
+			icon="/heroes/Devourer/alt13/ability_01/icon.tga"
+		/>
+	</altavatar>
+</state>

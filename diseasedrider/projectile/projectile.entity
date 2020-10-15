@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_DiseasedRider_Attack"
+
+	speed="1000"
+	gravity="0"
+
+	modelscale="0.3"
+	model="/heroes/armadon/ability_02/effects/spine.mdf"
+	impacteffect="effects/impact.effect"
+	traileffect="effects/trail.effect"
+>
+	<altavatar key="Hero_DiseasedRider.Alt4" modpriority="90"
+		impacteffect="../alt4/projectile/effects/impact.effect"
+		traileffect="../alt4/projectile/effects/trail.effect"
+	/>
+
+	<altavatar key="Hero_DiseasedRider.Alt5" modpriority="90"
+		impacteffect="../alt5/projectile/effects/impact.effect"
+		traileffect="../alt5/projectile/effects/trail.effect"
+	/>
+
+	<altavatar key="Hero_DiseasedRider.Alt6" modpriority="90"
+		impacteffect="../alt6/projectile/impact.effect"
+		traileffect="../alt6/projectile/trail.effect"
+	/>
+	
+		
+	<altavatar key="Hero_DiseasedRider.Alt7" modpriority="90"
+		model="/shared/models/invis.mdf"
+		impacteffect="../alt7/projectile/impact.effect"
+		traileffect="../alt7/projectile/trail.effect"
+	/>
+	
+	<altavatar key="Hero_DiseasedRider.Alt8" modpriority="90"
+		model="/shared/models/invis.mdf"
+		impacteffect="../alt8/projectile/impact.effect"
+		traileffect="../alt8/projectile/trail.effect"
+	/>
+	
+</projectile>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_DiseasedRider_Ability2_Effect"
+	
+	icon="icon2.tga"
+	passiveeffect="/heroes/diseasedrider/alt/ability_02/effects/state_link.effect"
+
+	effecttype="StatusDebuff"
+	allowtransfer="false"
+	
+	alwaystransmitdata="true"
+
+	magicarmor="-1,-2,-3,-4"
+>
+	<onframe>
+		<!-- Pull logic -->
+		<hasmodifier name="PlagueRider_W_PushImmunity" entity="this_owner_entity" />
+		<else>
+			<push force="-30" frame="true" source="this_proxy_position" />
+		</else>		
+		<hasmodifier name="PlagueRider_W_ImmobilePush" entity="this_owner_entity">
+			<push force="-500" frame="true" source="this_proxy_position" />
+		</hasmodifier>
+		
+		<!-- Expiration logic -->
+		<distance source="this_proxy_entity" target="this_owner_entity" />
+		<compare a="result" b="500" op="gt">
+			<expire />
+		</compare>
+		
+		<!-- Art -->
+		<compare a="var0" b="500" op="ge">
+			<hasavatarkey name="Hero_DiseasedRider.Alt">
+				<playeffect effect="../alt/ability_02/effects/slimeimpact.effect" source="this_owner_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_DiseasedRider.Alt3">
+					<playeffect effect="../alt3/ability_02/effects/slimeimpact.effect" source="this_owner_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_DiseasedRider.Alt4">
+						<playeffect effect="../alt4/ability_02/effects/slimeimpact.effect" source="this_owner_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_DiseasedRider.Alt5">
+							<playeffect effect="../alt5/ability_02/effects/slimeimpact.effect" source="this_owner_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_DiseasedRider.Alt6">
+								<playeffect effect="../alt6/ability_02/effects/slimeimpact.effect" source="this_owner_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_DiseasedRider.Alt7">
+									<playeffect effect="../alt7/ability_02/effects/slimeimpact.effect" source="this_owner_entity" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_DiseasedRider.Alt8">
+										<playeffect effect="../alt8/ability_02/effects/slimeimpact.effect" source="this_owner_entity" />
+									</hasavatarkey>
+									<else>
+										<playeffect effect="effects/slimeimpact.effect" source="this_owner_entity" />
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+			<expire />
+		</compare>
+		<else>
+			<compare a="var0" b="250" op="ge">
+				<applystate name="State_DiseasedRider_Ability2" target="this_owner_entity" duration="frametime" proxy="this_entity" />
+			</compare>
+		</else>		
+	</onframe>
+
+	<onexpired>
+		<kill target="this_proxy_entity" source="" />
+	</onexpired>
+	
+	<altavatar key="Hero_DiseasedRider.Alt" modpriority="1"
+		passiveeffect="../alt/ability_02/effects/state_link.effect"
+		icon="../alt/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_DiseasedRider.Alt3" modpriority="1"
+		passiveeffect="../alt3/ability_02/effects/state_link.effect"
+		icon="../alt3/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_DiseasedRider.Alt4" modpriority="1"
+		passiveeffect="../alt4/ability_02/effects/state_link.effect"
+		icon="../alt4/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_DiseasedRider.Alt5" modpriority="1"
+		passiveeffect="../alt5/ability_02/effects/state_link.effect"
+		icon="../alt5/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_DiseasedRider.Alt6" modpriority="1"
+		passiveeffect="../alt6/ability_02/effects/state_link.effect"
+		icon="../alt6/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_DiseasedRider.Alt7" modpriority="1"
+		passiveeffect="../alt7/ability_02/effects/state_link.effect"
+	/>
+	
+	<altavatar key="Hero_DiseasedRider.Alt8" modpriority="1"
+		passiveeffect="../alt8/ability_02/effects/state_link.effect"
+	/>
+	
+</state>

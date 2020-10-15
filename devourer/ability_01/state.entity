@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Devourer_Ability1"
+
+	icon="icon1.tga"
+
+	stunned="true"
+	stunneddurationunmodifiable="true"
+	immobilized="true"
+	
+	effecttype=""
+>
+
+	<altavatar key="Hero_Devourer.Alt13"
+		icon="/heroes/Devourer/alt13/ability_01/icon.tga"
+	>
+		<modifier key="Night_Set_Devourer" modpriority="100"
+			icon="/heroes/Devourer/alt14/ability_01/icon.tga"
+		/>
+	</altavatar>
+
+	<altavatar key="Hero_Devourer.Alt14"
+		icon="/heroes/Devourer/alt14/ability_01/icon.tga"
+	>
+		<modifier key="Night_Set_Devourer" modpriority="100"
+			icon="/heroes/Devourer/alt13/ability_01/icon.tga"
+		/>
+	</altavatar>
+
+
+</state>

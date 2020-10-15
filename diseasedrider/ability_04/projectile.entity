@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_DiseasedRider_Ability4"
+
+	speed="522"
+	gravity="0"
+	
+	flying="true"
+	flyheight="48"
+
+	modelscale="1.2"
+	model="/shared/effects/models/twirl_bones/twirl_bones.mdf"
+
+	impacteffect=""
+	invalideffect=""
+	traileffect="/heroes/diseasedrider/alt/ability_04/effects/trail.effect"
+	
+	dynamicprecache="/heroes/diseasedrider/alt/ability_04/effects/impact.effect"
+>
+	<onspawn>
+		<setscriptvalue name="impact_effect" value="effects/impact.effect" entity="this_entity" />
+	</onspawn>
+	
+	<onimpact>
+		<!-- Deal damage and apply state if the target is still valid -->
+		<combatevent source="source_entity" target="this_proxy_entity" effecttype="AbilityBasedProjectile">
+			<onimpact>
+				<applystate name="State_DiseasedRider_Ability4" duration="3000" />
+				<!-- Do not insta-kill Bosses -->
+				<targettype type="Boss" target="this_proxy_entity">
+					<damage effecttype="Magic" amount="280,370,460" target="this_proxy_entity" />
+				</targettype>
+				<else>
+					<cantarget targetscheme="enemy_creeps" target="this_proxy_entity">
+						<kill />
+					</cantarget>
+					<else>
+						<cantarget targetscheme="summoned_enemy_units" target="this_proxy_entity">
+							<kill />
+						</cantarget>
+						<else>
+							<cantarget targetscheme="nonstealth_enemy_units" target="this_proxy_entity">
+								<damage effecttype="Magic" amount="280,370,460" target="this_proxy_entity" />
+							</cantarget>
+						</else>
+					</else>
+				</else>
+			</onimpact>
+		</combatevent>
+		
+		<!-- Dynamic visual impact effect -->
+		<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" target="this_proxy_entity" source="this_proxy_entity" occlude="true" />
+
+		<!-- Bounce -->
+		<compare a="param" b="0" op="gt">
+			<setvar0 a="param" b="1" op="sub" />
+			<compare a="this_proxy_entity" b="0" op="ne">
+				<areaofeffect
+					radius="600"
+					maxtotalimpacts="1"
+					targetselection="random"
+					targetscheme="nonstealth_enemy_units"
+					center="this_position"
+					ignore="this_proxy_entity"
+				>
+					<spawnprojectile name="Projectile_DiseasedRider_Ability4" source="this_position" target="target_position" proxy="target_entity" param="var0" />
+				</areaofeffect>
+			</compare>
+			<else>
+				<areaofeffect
+					radius="600"
+					maxtotalimpacts="1"
+					targetselection="random"
+					targetscheme="nonstealth_enemy_units"
+					center="this_position"
+				>
+					<spawnprojectile name="Projectile_DiseasedRider_Ability4" source="this_position" target="target_position" proxy="target_entity" param="var0" />
+				</areaofeffect>
+			</else>
+		</compare>
+	</onimpact>
+	
+	<altavatar key="Hero_DiseasedRider.Alt" modpriority="90"
+		traileffect="../alt/ability_04/effects/trail.effect"
+		model="/shared/effects/models/twirl_bones/twirl_bones.mdf"
+		dynamicprecache="../alt/ability_04/effects/impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt/ability_04/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_DiseasedRider.Alt2" modpriority="90"
+		traileffect="../alt2/ability_04/effects/trail.effect"
+		model="../alt2/ability_04/effects/model.mdf"
+		dynamicprecache="../alt2/ability_04/effects/impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt2/ability_04/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_DiseasedRider.Alt3" modpriority="90"
+		traileffect="../alt3/ability_04/effects/trail.effect"
+		model="/shared/models/invis.mdf"
+		dynamicprecache="../alt3/ability_04/effects/impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt3/ability_04/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_DiseasedRider.Alt4" modpriority="90"
+		traileffect="../alt4/ability_04/effects/trail.effect"
+		model="../alt4/ability_04/effects/model.mdf"
+		dynamicprecache="../alt4/ability_04/effects/impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt4/ability_04/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_DiseasedRider.Alt5" modpriority="90"
+		traileffect="../alt5/ability_04/effects/trail.effect"
+		model="../alt5/ability_04/effects/model.mdf"
+		dynamicprecache="../alt5/ability_04/effects/impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt5/ability_04/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_DiseasedRider.Alt6" modpriority="90"
+		traileffect="../alt6/ability_04/effects/trail.effect"
+		model="../alt6/ability_04/effects/model.mdf"
+		dynamicprecache="../alt6/ability_04/effects/impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt6/ability_04/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_DiseasedRider.Alt7" modpriority="90"
+		traileffect="../alt7/ability_04/effects/trail.effect"
+		model="../alt7/ability_04/effects/model.mdf"
+		modelscale=".8"
+		dynamicprecache="../alt7/ability_04/effects/impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt7/ability_04/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_DiseasedRider.Alt8" modpriority="90"
+		traileffect="../alt8/ability_04/effects/trail.effect"
+		model="../alt8/ability_04/effects/model.mdf"
+		modelscale=".8"
+		dynamicprecache="../alt8/ability_04/effects/impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt8/ability_04/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+</projectile>

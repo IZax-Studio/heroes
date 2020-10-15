@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Devourer_Ability4_Assist"
+
+	icon="icon4.tga"
+	passiveeffect=""
+	
+	ishidden="true"
+	serverentity="true"
+	
+	effecttype="StatusDebuff"
+>
+	<altavatar key="Hero_Devourer.Alt13"
+		icon="/heroes/Devourer/alt13/ability_04/icon.tga"
+	>
+		<modifier key="Night_Set_Devourer" modpriority="100"
+			icon="/heroes/Devourer/alt14/ability_04/icon.tga"
+		/>
+	</altavatar>
+
+	<altavatar key="Hero_Devourer.Alt14"
+		icon="/heroes/Devourer/alt14/ability_04/icon.tga"
+	>
+		<modifier key="Night_Set_Devourer" modpriority="100"
+			icon="/heroes/Devourer/alt13/ability_04/icon.tga"
+		/>
+	</altavatar>
+</state>

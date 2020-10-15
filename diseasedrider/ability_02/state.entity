@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_DiseasedRider_Ability2"
+	icon="icon2.tga"
+
+	passiveeffect=""
+	effecttype="StatusDebuff"
+	ishidden="true"
+
+	maxcharges="20"
+>
+
+	<onframe>
+		<addcharges count="1" />
+		
+		<!-- Art -->
+		<compare a="charges" b="20" op="ge">
+			<hasavatarkey name="Hero_DiseasedRider.Alt">
+				<playeffect effect="../alt/ability_02/effects/slimeimpact.effect" source="this_owner_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_DiseasedRider.Alt3">
+					<playeffect effect="../alt3/ability_02/effects/slimeimpact.effect" source="this_owner_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_DiseasedRider.Alt4">
+						<playeffect effect="../alt4/ability_02/effects/slimeimpact.effect" source="this_owner_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_DiseasedRider.Alt5">
+							<playeffect effect="../alt5/ability_02/effects/slimeimpact.effect" source="this_owner_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_DiseasedRider.Alt6">
+								<playeffect effect="../alt6/ability_02/effects/slimeimpact.effect" source="this_owner_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_DiseasedRider.Alt7">
+									<playeffect effect="../alt7/ability_02/effects/slimeimpact.effect" source="this_owner_entity" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_DiseasedRider.Alt8">
+										<playeffect effect="../alt8/ability_02/effects/slimeimpact.effect" source="this_owner_entity" />
+									</hasavatarkey>
+									<else>
+										<playeffect effect="effects/slimeimpact.effect" source="this_owner_entity" />
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+			<expire entity="this_entity" />
+			<expire entity="this_proxy_entity" />
+		</compare>
+	</onframe>
+	<altavatar key="Hero_DiseasedRider.Alt" modpriority="1"
+		icon="../alt/ability_02/icon.tga"
+	/>
+		<altavatar key="Hero_DiseasedRider.Alt" modpriority="1"
+		icon="../alt/ability_02/icon.tga"
+	/>
+		<altavatar key="Hero_DiseasedRider.Alt3" modpriority="1"
+		icon="../alt3/ability_02/icon.tga"
+	/>
+		<altavatar key="Hero_DiseasedRider.Alt4" modpriority="1"
+		icon="../alt4/ability_02/icon.tga"
+	/>
+		<altavatar key="Hero_DiseasedRider.Alt5" modpriority="1"
+		icon="../alt5/ability_02/icon.tga"
+	/>
+		<altavatar key="Hero_DiseasedRider.Alt6" modpriority="1"
+		icon="../alt6/ability_02/icon.tga"
+	/>
+	
+</state>

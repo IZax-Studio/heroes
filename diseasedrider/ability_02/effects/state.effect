@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+
+		<particlesystem name="system0" space="world" useentityeffectscale="true" >
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2200"
+				volume=".45" 
+				sample="../sounds/cast.wav"
+			/>
+
+			<billboard
+				color=".2 .35 .8"
+				bone="_bone_centerofchest"
+				startsize="180"
+				midsize="190"
+				endsize="180"
+				material="/shared/effects/materials/shieldstarfish.material"
+				depthbias="-30"
+				loop="true"
+				life="1000"
+			/>
+			
+			<orbiteremitter
+				timenudge="5000"
+				spawnrate="14"
+				count="18"
+				bone="_bone_centerofchest"
+				gravity="0"
+				material="/shared/effects/materials/snowflake.material"
+				orbit="1.1 -3.7 .0"
+				origin="70 70 70"
+			>
+				<particle
+					minsize="12"
+					maxsize="30"
+					color=".15 .35 1"
+					alpha=".9"
+				/>
+			</orbiteremitter>
+
+			<orbiteremitter
+				timenudge="5000"
+				spawnrate="10"
+				count="12"
+				bone="_bone_centerofchest"
+				gravity="0"
+				material="/shared/effects/materials/snowflake.material"
+				orbit="-1.6 2.2 0.0"
+				origin="55 55 55"
+			>
+				<particle
+					minsize="15"
+					maxsize="34"
+					color=".4 .5 1"
+					alpha=".9"
+				/>
+			</orbiteremitter>
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

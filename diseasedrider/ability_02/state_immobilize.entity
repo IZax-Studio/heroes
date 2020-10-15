@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_DiseasedRider_Ability2_ImmobilePush"
+
+	icon="icon2.tga"
+	
+	ishidden="true"
+	immobilized="true"
+	
+	modifierkey="PlagueRider_W_ImmobilePush"
+>
+
+</state>
