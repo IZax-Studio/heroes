@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="tracker"  deferred="true" scale="2">
+	<definitions>
+	
+			<trailemitter
+				name="trail_01"
+				expirelife="500"
+				bone="Box03"
+				spawnrate="20"
+				particlelife="2000"
+				texpostime="2000"
+			 	texposscale="0"
+			 	texstretchscale="1"
+				position="0 0 0"
+				material="/shared/effects/materials/soul_projectile2.material"
+				startparticlecolor=".5"
+				endparticlecolor="0 0 0"
+			>
+				<particle
+					startcolor="1.0 .3 .2"
+					midcolor="1.0 .3 .2"
+					endcolor="1.0 .3 .2"
+					startsize="22"
+					midsize="30"
+					endsize="0"
+					midcolorpos=".1"
+					midsizepos=".1"
+				/>
+			</trailemitter>
+
+		<particlesystem name="system0" space="world" scale="1">
+		
+				<sound
+				delay="100"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume="1"
+				sample="../sounds/soul.wav"
+			/>
+			
+			<trackeremitter
+				count="3"
+				bone="_bone_center"
+				owner="target"
+				targetbone="_bone_centerofchest"
+				targetowner="source"
+				tracktype="distance"
+				trackspeed="22.0" 
+				drag="0"
+				spawnrate="100"
+				particlelife="3000"
+				gravity="-50"
+				offsetsphere="5 5 5"
+				speed="140"
+				direction="0.0 0.0 1.0"
+				inheritvelocity="0.0"
+				distancelife="true"
+			>
+				<particle
+					emitter0="trail_01"
+				/>
+			</trackeremitter>
+			
+			<trackeremitter
+				count="1"
+				bone="_bone_center"
+				owner="target"
+				targetbone="_bone_centerofchest"
+				targetowner="source"
+				tracktype="distance"
+				trackspeed="22.0" 
+				drag="0"
+				spawnrate="1000"
+				particlelife="3000"
+				gravity="-50"
+				offsetsphere="5 5 5"
+				speed="130"
+				direction="0.0 0.0 1.0"
+				inheritvelocity="0.0"
+				distancelife="true"
+			>
+				<particle
+					turn="true"
+				>
+					<model
+						position="0 0 0"
+						expirelife="150"
+						name="emitter0" 
+						model="/heroes/dreadknight/ability_01/effects/skull_impact/model.mdf"
+						scale="1"
+						color="1.0 .3 .2"
+						startalpha=".35"
+						endalpha="0"
+						midalphapos=".75"
+						yaw="20"
+						pitch="-45"
+						directionalspace="local"
+					/>
+					
+					<billboard
+						position="0 0 0"
+						expirelife="150"
+						name="emitter0" 
+						material="/shared/effects/materials/whitedot.material"
+						scale="1"
+						startcolor="1.0 .3 .2"
+						endcolor="0 0 0"
+						yaw="  20"
+						pitch="-45"
+						directionalspace="local"
+					/>
+				</particle>
+			</trackeremitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

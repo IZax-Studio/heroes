@@ -23,7 +23,7 @@
 			<groundsprite			
 				life="1500"
 				material="/shared/effects/materials/ground_scorch.material"
-				size="125"			
+				size="225"			
 				startalpha=".75"
 				midalpha=".75"
 				endalpha="0"
@@ -53,8 +53,8 @@
 					endcolor="0"
 					startalpha=".25"
 					endalpha="0"
-					startsize="25"
-					endsize="50"
+					startsize="75"
+					endsize="150"
 				/>
 				<particle 
 					minanglespeed="0"
@@ -67,8 +67,8 @@
 					endcolor="0"
 					startalpha=".25"
 					endalpha="0"
-					startsize="25"
-					endsize="40"
+					startsize="75"
+					endsize="140"
 				/>
 			</simpleemitter>
 
@@ -91,8 +91,8 @@
 					maxangle="360"
 					startcolor="0 1 1"
 					endcolor="0"
-					startsize="10"
-					endsize="50"
+					startsize="100"
+					endsize="150"
 					minanglespeed="-80"
 					maxanglespeed="80"
 				/>

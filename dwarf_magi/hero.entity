@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_DwarfMagi"
+
+	team="Legion"
+	icon="Ogre_Magi.tga"
+	portrait="Ogre_Magi.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect="effects/body.effect"
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound=""
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana_%.wav"
+	cooldownsound="sounds/voice/cooldown_%.wav"
+	announcersound="sounds/voice/hero_select.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+	
+	preglobalscale="0.85"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="44"
+	targetoffset="0 0 92"
+	infoheight="210"
+	portraitcampos="5 130 70"
+
+	category="cc magic"
+	difficulty="1"
+
+	solorating="0"
+	junglerating="0"
+	carryrating="0"
+	supportrating="2"
+	initiatorrating="0"
+	gankerrating="3"
+	pusherrating="0"
+	rangedrating="0"
+	meleerating="5"
+
+	movespeed="295"
+	turnrate="540"
+	turnsmoothing="0.05"
+
+	maxhealth="150"
+	healthregen="1.00"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="0.7"
+	magicarmor="5"
+
+	inventory0="Ability_DwarfMagi1"
+	inventory1="Ability_DwarfMagi2"
+	inventory2="Ability_DwarfMagi3"
+	inventory3="Ability_DwarfMagi4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="1000"
+	attackactiontime="500"
+	attackcooldown="1700"
+	attackdamagemin="37"
+	attackdamagemax="43"
+	attacknumanims="2"
+	attackoffset="0 45 60"
+	attackprojectile=""
+	attackrange="150"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="effects/impact.effect"
+	attacktype="melee"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="600"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	primaryattribute="Intelligence"
+	strength="23"
+	strengthperlevel="3.2"
+	agility="14"
+	agilityperlevel="1.5"
+	intelligence="19"
+	intelligenceperlevel="2.1"
+	
+	previewmodel="model.mdf"
+	previewpos="0 0 -60"
+	previewangles="0 0 0"
+	previewscale="1.55"
+	
+	storemodel="model.mdf"
+	storepos="0 0 -20"
+	storeangles="0 0 0"
+	storescale=".6"
+	
+	corpsetime="3000"
+	corpsefadetime="5000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+
+	tooleffectkeyname39="Item_Intelligence7"
+	tooleffectpath39="effects/sotm.effect"
+>
+	<recommendeditem name="Item_ManaPotion" />
+	<recommendeditem name="Item_MinorTotem" />
+	<recommendeditem name="Item_RunesOfTheBlight" />
+	<recommendeditem name="Item_HealthPotion" />
+	<recommendeditem name="Item_HomecomingStone" />
+	
+	<recommendeditem name="Item_Intelligence5" />	
+	<recommendeditem name="Item_Strength5" />
+	<recommendeditem name="Item_Striders" />
+	<recommendeditem name="Item_SacrificialStone" />
+	<recommendeditem name="Item_Astrolabe" />
+	<recommendeditem name="Item_Intelligence6" />
+	<recommendeditem name="Item_UltorsHeavyPlate" />
+	<recommendeditem name="Item_Morph" />
+	
+	<!-- <modifier key="gated" modpriority="200"
+		movespeed="290"
+		
+		magicarmor="5"
+		armor="6.37"
+		
+		inventory0="Reborn_Ability_Blacksmith1"
+		inventory1="Reborn_Ability_Blacksmith2"
+		inventory2="Reborn_Ability_Blacksmith3"
+		inventory3="Reborn_Ability_Blacksmith4"
+		
+		attackdamagemin="41"
+		attackdamagemax="47"
+		
+		primaryattribute="Intelligence"
+		strength="23"
+		strengthperlevel="3.5"
+		agility="14"
+		agilityperlevel="1"
+		intelligence="17"
+		intelligenceperlevel="2"
+	>
+	</modifier> -->
+	
+	<modifier key="survive" modpriority="200"
+		magicarmor="5"
+		armor="6.37"
+		
+		inventory0=""
+		inventory1=""
+		inventory2=""
+		inventory3="Ability_Nitro1_Survive"
+		
+		attackdamagemin="41"
+		attackdamagemax="47"
+		
+		primaryattribute="Strength"
+		strength="23"
+		strengthperlevel="3.5"
+		agility="14"
+		agilityperlevel="1"
+		intelligence="17"
+		intelligenceperlevel="2"
+		
+		maxhealth="350"
+		healthregen="3"
+		maxmana="500"
+		manaregen="1.5"
+		movespeed="173"
+		
+		modelscale="0.5"
+		effectscale="0.5"
+		
+		attackcooldown="1200"
+	>
+		<onspawn>
+			<applystate name="State_Steep_Survive" target="source_entity" continuous="true" />
+			<applystate name="State_Sight_Survive" target="source_entity" continuous="true" />
+			<setpos0 worldpos="3072 2506 0.0000" />
+			<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+			<setpos0 worldpos="3072 5506 128.0000" />
+			<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+			<setpos0 worldpos="3072 8506 128.0000" />
+			<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+			<setpos0 worldpos="3072 11506 128.0000" />
+			<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+			<setpos0 worldpos="6072 2506 19.7105" />
+			<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+			<setpos0 worldpos="6072 5506 128.0000" />
+			<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+			<setpos0 worldpos="6072 8506 128.0000" />
+			<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+			<setpos0 worldpos="6072 11506 128.0000" />
+			<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+			<setpos0 worldpos="9072 2506 128.0000" />
+			<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+			<setpos0 worldpos="9072 5506 126.9771" />
+			<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+			<setpos0 worldpos="9072 8506 0.0000" />
+			<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+			<setpos0 worldpos="9072 11506 0.0000" />
+			<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+			<setpos0 worldpos="12072 2506 128.0000" />
+			<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+			<setpos0 worldpos="12072 5506 128.0000" />
+			<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+			<setpos0 worldpos="12072 8506 128.0000" />
+			<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+			<setpos0 worldpos="12072 11506 128.0000" />
+			<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+			
+			<setpos0 worldpos="2572 2006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="2572 4006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="2572 6006 0.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="2572 8006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="2572 10006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="2572 12006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="2572 14006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="4572 2006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="4572 4006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="4572 6006 0.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="4572 8006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="4572 10006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="4572 12006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="4572 14006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="6572 2006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="6572 4006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="6572 6006 0.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="6572 8006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="6572 10006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="6572 12006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="6572 14006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="8572 2006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="8572 4006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="8572 6006 0.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="8572 8006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="8572 10006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="8572 12006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="8572 14006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="10572 2006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="10572 4006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="10572 6006 0.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="10572 8006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="10572 10006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="10572 12006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="10572 14006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="12572 2006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="12572 4006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="12572 6006 0.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="12572 8006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="12572 10006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="12572 12006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="12572 14006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="14572 2006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="14572 4006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="14572 6006 0.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="14572 8006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="14572 10006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="14572 12006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+				<setpos0 worldpos="14572 14006 128.0000" />
+				<spawnunit name="Gadget_FlamingEye_Public_Survive" target="pos0" proxy="source_entity" />
+		</onspawn>
+		
+		<onrespawn>
+			<applystate name="State_Stunned" continuous="true" />
+			<areaofeffect
+				radius="9999"
+				center="source_entity"
+				source="source_entity"
+				targetscheme="neutral_spawnpoint_survive"
+				maxtotalimpacts="1"
+				targetselection="random"
+				
+				ignoreinvulnerable="true"
+			>
+				<random min="0" max="2" />
+				<setvar0 a="result" />
+				<compare a="var0" b="1" op="lt">
+					<spawnunit name="Neutral_WolfCommander_Player_Survive" target="target_entity" team="254" fixedposition="true" proxy="this_owner_eneity" pushentity="true" />
+					<takecontrol source="source_entity" target="stack_entity" />
+					<selectentity source="source_entity" targets="stack_entity"/>
+				</compare>	
+				<else>
+					<spawnunit name="Neutral_Ogre_Leader_Player_Survive" target="target_entity" team="254" fixedposition="true" proxy="this_owner_eneity" pushentity="true" />
+					<takecontrol source="source_entity" target="stack_entity" />
+					<selectentity source="source_entity" targets="stack_entity"/>
+				</else>
+			</areaofeffect>
+		</onrespawn>
+	</modifier>
+	
+	<altavatar key="Hero_DwarfMagi.Alt"
+		icon2="alt/icon.tga"
+		portrait="alt/icon.tga"
+		model="alt/model.mdf"
+		
+		previewmodel="alt/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.55"
+		passiveeffect="alt/effects/body.effect"
+
+		selectedsound="alt/sounds/voice/select_%.wav"
+		selectedflavorsound="alt/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt/sounds/voice/move_%.wav"
+		confirmattacksound="alt/sounds/voice/attack_%.wav"
+		nomanasound="alt/sounds/voice/no_mana.wav"
+		cooldownsound="alt/sounds/voice/cooldown.wav"
+		announcersound="alt/sounds/voice/hero_select.wav"
+		tauntedsound="alt/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt/sounds/voice/taunt_after.wav"
+
+		storemodel="alt/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.2"
+	/>
+	
+	<altavatar key="Hero_DwarfMagi.Alt2"
+		preglobalscale="1.37"
+		
+		icon2="alt2/icon.tga"
+		portrait="alt2/icon.tga"
+		model="alt2/model.mdf"
+		
+		previewmodel="alt2/preview.mdf"
+		previewpos="-15 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.4"
+		
+		passiveeffect="alt2/effects/body.effect"
+
+		selectedsound="alt2/sounds/voice/select_%.wav"
+		selectedflavorsound="alt2/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt2/sounds/voice/move_%.wav"
+		confirmattacksound="alt2/sounds/voice/attack_%.wav"
+		nomanasound="alt2/sounds/voice/no_mana.wav"
+		cooldownsound="alt2/sounds/voice/cooldown.wav"
+		tauntedsound="alt2/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt2/sounds/voice/taunt_after.wav"
+
+		storemodel="alt2/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.4"
+		
+		tooleffectkeyname39="Item_Intelligence7"
+		tooleffectpath39="alt2/effects/sotm.effect"
+	/>
+	
+	<altavatar key="Hero_DwarfMagi.Alt3"
+		model="alt3/model.mdf"
+		icon2="alt3/icon.tga"
+		portrait="alt3/icon.tga"
+		
+		preglobalscale="1.4"
+		
+		previewmodel="alt3/preview.mdf"
+		previewpos="-15 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.4"
+
+		selectedsound="alt3/sounds/voice/select_%.wav"
+		selectedflavorsound="alt3/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt3/sounds/voice/move_%.wav"
+		confirmattacksound="alt3/sounds/voice/attack_%.wav"
+		nomanasound="alt3/sounds/voice/no_mana.wav"
+		cooldownsound="alt3/sounds/voice/cooldown.wav"
+		tauntedsound="alt3/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt3/sounds/voice/taunt_after.wav"
+		
+		storemodel="alt3/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.4"
+		
+		tooleffectkeyname39="Item_Intelligence7"
+		tooleffectpath39="alt3/effects/sotm.effect"
+	>
+		<onspawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Legionnaire.Alt4">
+				<applystate name="State_Black_Legion" target="this_entity" continuous="true" />
+			</ownsproduct>
+		</onspawn>
+
+		<onrespawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Legionnaire.Alt4">
+				<applystate name="State_Black_Legion" target="this_entity" continuous="true" />
+			</ownsproduct>
+		</onrespawn>
+	</altavatar>
+		
+	<altavatar key="Hero_DwarfMagi.Alt4"
+		model="alt4/model.mdf"
+		icon2="alt4/icon.tga"
+		portrait="alt4/icon.tga"
+		
+		preglobalscale="1.65"
+		
+		previewmodel="alt4/preview.mdf"
+		previewpos="-15 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.4"
+
+		passiveeffect="alt4/effects/body.effect"
+		
+		selectedsound="alt4/sounds/voice/select_%.wav"
+		selectedflavorsound="alt4/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt4/sounds/voice/move_%.wav"
+		confirmattacksound="alt4/sounds/voice/attack_%.wav"
+		nomanasound="alt4/sounds/voice/no_mana.wav"
+		cooldownsound="alt4/sounds/voice/cooldown.wav"
+		tauntedsound="alt4/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt4/sounds/voice/taunt_after.wav"
+		
+		storemodel="alt4/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.4"
+	>
+		<onspawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Ophelia.Alt3 aa.Hero_Rocky.Alt4 aa.Hero_Taint.Alt3 aa.Hero_DwarfMagi.Alt4">
+				<applystate name="State_Fire_Ogre_Pet" continuous="true" />
+			</ownsproduct>
+		</onspawn>
+		
+		<onrespawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Ophelia.Alt3 aa.Hero_Rocky.Alt4 aa.Hero_Taint.Alt3 aa.Hero_DwarfMagi.Alt4">
+				<applystate name="State_Fire_Ogre_Pet" continuous="true" />
+			</ownsproduct>
+		</onrespawn>
+	</altavatar>
+	
+	<altavatar key="Hero_DwarfMagi.Alt5"
+		preglobalscale="1.37"
+		
+		icon2="alt5/icon.tga"
+		portrait="alt5/icon.tga"
+		model="alt5/model.mdf"
+		
+		previewmodel="alt5/preview.mdf"
+		previewpos="-15 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.4"
+		
+		passiveeffect=""
+
+		selectedsound="alt5/sounds/voice/select_%.wav"
+		selectedflavorsound="alt5/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt5/sounds/voice/move_%.wav"
+		confirmattacksound="alt5/sounds/voice/attack_%.wav"
+		nomanasound="alt5/sounds/voice/no_mana.wav"
+		cooldownsound="alt5/sounds/voice/cooldown.wav"
+		tauntedsound="alt5/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt5/sounds/voice/taunt_after.wav"	
+
+		storemodel="alt5/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.4"
+
+		portraitcampos="11 -35 22"
+		portraitangles="0 0 30"
+	/>
+	
+	<altavatar key="Hero_DwarfMagi.pog_skin"
+		model="pog_skin/model.mdf"
+		icon2="icon.tga"
+		portrait="icon.tga"
+				
+		previewmodel="pog_skin/preview.mdf"
+		previewpos="-15 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.4"
+
+		storemodel="pog_skin/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.4"
+	/>
+	
+	<altavatar key="Hero_DwarfMagi.Alt6"
+	    icon2="alt6/icon.tga"
+		preglobalscale="1.7"
+		portrait="alt6/icon.tga"
+		model="alt6/model.mdf"
+		
+		storemodel="alt6/preview.mdf"
+		storepos="0 0 -24"
+		storeangles="0 0 0"
+		storescale="1.52"
+		
+		previewmodel="alt6/preview.mdf"
+		previewpos="-15 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.4"
+		
+		selectedsound="alt6/sounds/voice/select_%.wav"
+		selectedflavorsound="alt6/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt6/sounds/voice/move_%.wav"
+		confirmattacksound="alt6/sounds/voice/attack_%.wav"
+		nomanasound="alt6/sounds/voice/no_mana.wav"
+		cooldownsound="alt6/sounds/voice/cooldown.wav"
+		tauntedsound="alt6/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt6/sounds/voice/taunt_after.wav"	
+		
+		portraitcampos="30 -30 20"
+		tooleffectpath39="alt6/effects/sotm.effect"
+		
+		attackimpacteffect="alt6/effects/impact.effect"
+	>
+		<onspawn>
+			<setaccumulator value="0" />
+			<ownsproduct target="this_entity" product="en.dwarfmagi_alt6_ability01_upgrade">
+				<activatemodifierkey name="dwarfmagiAlt6_Ability1_Upgrade" />
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+
+			<ownsproduct target="this_entity" product="en.dwarfmagi_alt6_ability02_upgrade">
+				<activatemodifierkey name="dwarfmagiAlt6_Ability2_Upgrade" />
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+
+			<ownsproduct target="this_entity" product="en.dwarfmagi_alt6_ability03_upgrade">
+				<activatemodifierkey name="dwarfmagiAlt6_Ability3_Upgrade" />
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+
+			<ownsproduct target="this_entity" product="en.dwarfmagi_alt6_ability04_upgrade">
+				<activatemodifierkey name="dwarfmagiAlt6_Ability4_Upgrade" />
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			
+			<upgradeselected target="this_entity" upgrade="sc.punk_circle_upgrade">
+				<activatemodifierkey name="Graffiti_Punk_Circle" />
+			</upgradeselected>
+		</onspawn>
+	
+	
+		<modifier key="Graffiti_Punk_Circle" modpriority="2"
+			localselectionringmaterial="/shared/materials/selection_indicator_graffiti.material"
+		/>
+
+		<onkill propagatetoillusions="true" >
+			<targettype type="hero">
+				<targettype type="illusion" />
+				<else>               
+					<targettype type="mimic" />
+					<else> 
+						<targettype type="self" />
+						<else>
+							<targettype type="heropet" />
+							<else>
+								<spawnunit name="Gadget_DwarfMagi_Alt6" count="1" target="target_position" pushentity="true" maxactive="5" />
+								<compare a="accumulator" b="0" op="eq">
+									<setlevel entity="stack_entity" value="1" />
+								</compare>
+								<compare a="accumulator" b="1" op="eq">
+									<setlevel entity="stack_entity" value="2" />
+								</compare>
+								<compare a="accumulator" b="2" op="eq">
+									<setlevel entity="stack_entity" value="3" />
+								</compare>
+								<compare a="accumulator" b="3" op="eq">
+									<setlevel entity="stack_entity" value="4" />
+								</compare>
+								<compare a="accumulator" b="4" op="eq">
+									<setlevel entity="stack_entity" value="5" />
+								</compare>																											
+							</else>
+						</else>
+					</else>
+				</else>
+			</targettype>
+		</onkill>
+		
+	</altavatar>
+	
+	<altavatar key="Hero_DwarfMagi.Alt7"
+	    icon2="alt7/icon.tga"
+		preglobalscale="1.2"
+		portrait="alt7/icon.tga"
+		model="alt7/model.mdf"
+		
+		storemodel="alt7/preview.mdf"
+		storepos="0 0 -24"
+		storeangles="0 0 0"
+		storescale="1.52"
+		
+		previewmodel="alt7/preview.mdf"
+		previewpos="-15 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.4"
+		
+		portraitcampos="55 0 10"
+		
+		tooleffectpath39="alt7/effects/sotm.effect"
+		
+		selectedsound="alt7/sounds/voice/select_%.wav"
+		selectedflavorsound="alt7/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt7/sounds/voice/move_%.wav"
+		confirmattacksound="alt7/sounds/voice/attack_%.wav"
+		nomanasound="alt7/sounds/voice/no_mana.wav"
+		cooldownsound="alt7/sounds/voice/cooldown.wav"
+		tauntedsound="alt7/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt7/sounds/voice/taunt_after.wav"	
+	>
+	</altavatar>
+	
+</hero>
+
+	

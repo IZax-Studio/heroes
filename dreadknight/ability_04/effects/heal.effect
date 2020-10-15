@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="cyclone" deferred="true">
+	<definitions>
+	
+		<modifier
+			expirelife="250"
+			alpha="0"
+			endalpha="1"
+		/>
+	
+		<particlesystem name="system0" space="entity" scale=".5">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="1300"
+				volume=".70"
+				sample="../sounds/cast_vox_after.wav"
+			/>
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume=".60"
+				sample="../sounds/heal.wav"
+			/>
+
+
+			<billboard
+				bone="_bone_head"
+				startcolor="1.0 .3 .2"
+				endcolor="0"
+				startsize="60"
+				endsize="300"
+				startalpha="1"
+				endalpha=".9"
+				life="1000"
+				material="/shared/effects/materials/starlight.material"
+			/>
+
+			<model
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="1.0 .3 .2"
+				endcolor="0 0 0"
+				midcolorpos=".75"
+				life="1000"
+				material="/shared/effects/materials/shell3.material"
+				startscale="1"
+				endscale="1.2"
+			/>
+
+			<billboard
+				bone="_bone_head"
+				life="1000"
+				param="0.1"	
+				startsize="50"
+				endsize="500"
+				startalpha="0"
+				midalpha=".25"
+				endalpha="0"
+				midalphapos=".25"
+				depthbias="-25"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+
+		</particlesystem>
+		
+		<particlesystem name="system1" space="world" scale=".5">
+
+			<light
+				delay="0"
+				life="700"
+				startcolor="7.5 3.5 0"
+				endcolor="0 0 0"
+				midcolorpos=".2"
+				falloffstart="100"
+				falloffend="200"
+				position="0 0 40"
+			/>
+
+			<billboard
+				life="400"
+				color="1 1 1"
+				startalpha="1"
+				endalpha="0"
+				startparam="0.15"
+				endparam="0.0"
+				startsize="728"
+				endsize="124"
+				material="/shared/effects/materials/refract_ring.material"
+			/>
+
+			<billboard
+				position="0 0 80"
+				delay="460"
+				depthbias="-40"
+				life="800"
+				startalpha=".5"
+				endalpha="0"
+				startparam="0.1"
+				endparam="0.0"
+				startsize="155"
+				endsize="755"
+				material="/shared/effects/materials/refract_pinch.material"
+			/>
+
+			<billboard
+				delay="350"
+				position="0 0 80"
+				life="250"
+				color="1.0 .3 .2"
+				startalpha="1.0"
+				endalpha="1"
+				startparam="0.15"
+				endparam="0.0"
+				startsize="28"
+				midsize="200"
+				endsize="54"
+				material="/shared/effects/materials/shieldstarfish.material"
+				lockup="1"
+				pitch="90"
+			/>
+
+			<groundsprite
+				delay="300"
+				material="/shared/effects/materials/twirl_blend.material"
+				life="1000"
+				startsize="130"
+				endsize="50"
+				yawspeed="-100"
+				startcolor="0 0 0"
+				endcolor="0 0 0"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+			/>
+			
+
+			<billboard
+				delay="250"
+				startwidth="1100"
+				endwidth="000"
+				startheight="50"
+				endheight="10"
+				position="0 0 150"
+				life="210"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="0  0 0"
+				endcolor=".5 1 0"
+			/>
+
+			<billboard
+				delay="250"
+				startwidth="800"
+				endwidth="000"
+				startheight="10"
+				endheight="10"
+				position="0 0 150"
+				depthbias="-20"
+				life="210"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="0  0 0"
+				endcolor="1 0 0"
+			/>
+
+			<billboard
+				delay="250"
+				startwidth="1100"
+				endwidth="000"
+				startheight="50"
+				endheight="10"
+				position="0 0 150"
+				life="210"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="0  0 0"
+				endcolor="1 .5 0"
+			/>
+
+			<billboard
+				delay="250"
+				startwidth="800"
+				endwidth="000"
+				startheight="10"
+				endheight="10"
+				position="0 0 150"
+				depthbias="-20"
+				life="210"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="0  0 0"
+				endcolor="1 0 0"
+				
+			/>
+
+
+
+		</particlesystem>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		<particlesystem name="system2" space="world" scale=".35">
+
+			<simpleemitter
+				life="3000"
+				count="1"
+				spawnrate="222"
+				particlelife="3000"
+				direction="0 0 1"
+				speed="1600"
+				minangle="0"
+				maxangle="0"
+				position="0 0 0"
+				
+			>
+				<particle>
+
+					<model
+						position="0 0 0"
+						life="600"
+						name="emitter0" 
+						anim="idle"
+						model="/shared/effects/models/circle_of_bones/model.mdf"
+						scale="2.5"
+						startcolor="0 0 0"
+						midcolor="0 0 0"
+						endcolor="0 0 0"
+						midcolorpos=".75"
+						startalpha="0"
+						midalpha="0"
+						endalpha="0"
+						midalphapos=".4"
+						rollspeed="1500"
+					>
+					
+						<template name="trails">
+							<twopointtrailemitter
+							life="700"
+								name="trail01"
+								position="0 0 0"
+								bone_a="{bone01}"
+								bone_b="{bone02}"
+								spawnrate="100"
+								particlelife="1000"
+								subframepose="1"
+								texpostime="1000"
+								texposscale="0"
+								texstretchscale="1"
+								material="/shared/effects/materials/soul_projectile_blue.material"
+							>
+								<particle
+									startcolor="1.0 .3 .2"
+									endcolor="1.0 .3 .2"
+									startalpha="0"
+									midalpha="0"
+									endalpha="0"
+								/>
+							</twopointtrailemitter>
+						</template>
+						
+						<instance name="trails" bone01="_bone_fx_01"  bone02="_bone_fx_02"/>
+						<instance name="trails" bone01="_bone_fx_03"  bone02="_bone_fx_04"/>
+						<instance name="trails" bone01="_bone_fx_05"  bone02="_bone_fx_06"/>
+						<instance name="trails" bone01="_bone_fx_05"  bone02="_bone_fx_08"/>
+						<instance name="trails" bone01="_bone_fx_05"  bone02="_bone_fx_10"/>
+						
+					</model>
+
+					<simpleemitter
+					life="650"
+						bone="_bone_weapon3"
+						spawnrate="25"
+						particlelife="400"
+						position="0 0 0"
+						material="/shared/effects/materials/refract_swell.material"
+						particledirectionalspace="local"
+						offsetdirection="0 0 0"
+						offsetradial="0"
+						param=".4"
+					>
+						<particle
+							startsize="100"
+							endsize="225"
+							param="0.5"
+							startalpha="0"
+							midalpha=".35"
+							endalpha="0"
+							midalphapos=".5"
+							lockup="true"
+							lockright="1"
+							pitch="0"
+							flare="0"
+							yaw="0"
+						/>
+					</simpleemitter>
+
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				spawnrate="75"
+				count="20"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				gravity="-55"
+				speed="40"
+				drag=".08"
+				acceleration="0"
+				position="0 0 100"
+				material="/shared/effects/materials/phantom_smoke_10.material"
+				offsetsphere="50 50 70"
+				minangle="90"
+				maxangle="-90"
+			>
+				<particle 
+					startcolor="1.0 .3 .2"
+					midcolor="1.0 .3 .2"
+					endcolor="1.0 .3 .2"
+					midcolorpos=".1"
+					startframe="0"
+					endframe="1"
+					startwidth="40"
+					midwidth="30"
+					endwidth="12"
+					midwidthpos=".5"
+					startheight="0"
+					endheight="2000"
+					lockup="true"
+				/>
+				
+				<particle 
+					startcolor="1.0 .3 .2"
+					midcolor="1.0 .3 .2"
+					endcolor="1.0 .3 .2"
+					midcolorpos=".1"
+					startframe="0"
+					endframe="1"
+					startwidth="40"
+					midwidth="30"
+					endwidth="12"
+					midwidthpos=".5"
+					startheight="0"
+					endheight="2000"
+					lockup="true"
+				/>
+			</simpleemitter>
+<!--
+			<simpleemitter
+				spawnrate="75"
+				count="20"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				gravity="-55"
+				speed="40"
+				drag=".08"
+				acceleration="0"
+				position="0 0 100"
+				material="/shared/effects/materials/phantom_smoke_10.material"
+				offsetsphere="50 50 70"
+				minangle="90"
+				maxangle="-90"
+			>
+				<particle 
+					startcolor="1.0 .3 .2"
+					midcolor="1.0 .3 .2"
+					endcolor="1.0 .3 .2"
+					midcolorpos=".1"
+					startframe="0"
+					endframe="1"
+					startwidth="40"
+					midwidth="30"
+					endwidth="12"
+					midwidthpos=".5"
+					startheight="4000"
+					endheight="0"
+					lockup="true"
+				/>
+			
+				<particle 
+					startcolor="1.0 .3 .2"
+					midcolor="1.0 .3 .2"
+					endcolor="1.0 .3 .2"
+					midcolorpos=".1"
+					startframe="0"
+					endframe="1"
+					startwidth="40"
+					midwidth="30"
+					endwidth="12"
+					midwidthpos=".5"
+					startheight="4000"
+					endheight="0"
+					lockup="true"
+				/>
+			</simpleemitter>
+-->
+		</particlesystem>
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<spawnparticlesystem instance="instance2" particlesystem="system2" />
+		<waitfordeath  instance="instance0"/>
+		<waitfordeath  instance="instance1"/>
+		<waitfordeath  instance="instance2"/>
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

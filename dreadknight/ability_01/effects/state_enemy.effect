@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1.75">
+					
+			<sound
+				soundloop="true"
+				fadein="150"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="800"
+				volume=".20"
+				sample="/heroes/revenant/sounds/whisperdrone.wav"
+			/>
+			
+			<template name="spinning_skull" >
+				<controller
+					bone="_bone_centerofchest"
+					yaw="{yaw}"
+					yawspeed="100"
+					directionalspace="global"
+					expirelife="200"
+					startscale="1"
+					endscale="0"
+				>
+					<model
+						model="skull_impact/model.mdf"
+						anim="idle"
+						color="1.0 .3 .2"
+						position="0 -45 0"
+						pitch="-90"
+						alpha=".15"
+						scale="1.2"
+					>
+						<billboard
+							scale=".75"
+							material="/shared/effects/materials/whitedot.material"
+							color="1.0 .3 .2"
+							depthbias="-30"
+						/>
+						<groundsprite
+							scale=".65"
+							material="/shared/effects/materials/whitedot_ground.material"
+							color="1.0 .3 .2"
+						/>
+						<template name="spirit_transfer">
+							<billboard
+								position="{pos}"
+								scale=".15"
+								material="/shared/effects/materials/whitedot.material"
+								color="1 .5 0"
+								depthbias="-5"
+							/>
+							<trackeremitter
+								spawnrate="5"
+								particlelife="1000"
+								position="{pos}"
+								material="/shared/effects/materials/whitedot_blend.material"
+								targetbone="_bone_centerofchest"
+								targetowner="source"
+								tracktype="angular"
+								trackspeed="10"
+								direction="1 0 0"
+								speed="40"
+								minangle="0"
+								maxangle="20"
+								distancelife="true"
+							>
+								<particle
+									turn="1"
+									scale="20"
+									color="1 .5 0"
+									alpha=".25"
+									minframespeed="1"
+									maxframespeed="3"
+								/>
+							</trackeremitter>
+							<trackeremitter
+								spawnrate="8"
+								particlelife="1000"
+								position="{pos}"
+								material="/shared/effects/materials/femme_lightning_01.material"
+								targetbone="_bone_center"
+								targetowner="source"
+								tracktype="angular"
+								trackspeed="10"
+								direction="1 0 0"
+								speed="40"
+								minangle="0"
+								maxangle="20"
+								distancelife="true"
+							>
+								<particle
+									turn="1"
+									minheight="15"
+									maxheight="30"
+									minstartwidth="15"
+									maxstartwidth="25"
+									endwidth="5"
+									startcolor="1 .5 0"
+									midcolor="1 .5 0"
+									endcolor="1 .5 0"
+									midcolorpos=".2"
+									minframespeed="1"
+									maxframespeed="3"
+								/>
+							</trackeremitter>
+						</template>
+						<instance name="spirit_transfer" pos="6 1 8"/>
+						<instance name="spirit_transfer" pos="-1 2 9"/>
+						<instance name="spirit_transfer" pos="2 12 5"/>
+					</model>
+				</controller>
+			</template>
+			
+			<instance name="spinning_skull" yaw="0" />
+			<instance name="spinning_skull" yaw="120" />
+			<instance name="spinning_skull" yaw="240" />
+			
+			<simpleemitter
+				spawnrate="3"
+				particlelife="2000"
+				direction="0 0 1"
+				angle="0"
+				speed="75"
+			>
+				<particle>
+					<model
+						position="0 0 0"
+						life="2000"
+						name="emitter0" 
+						anim="idle"
+						model="/shared/effects/models/circle_of_bones/model.mdf"
+						startscale="1.4"
+						midscale="1.2"
+						endscale="0"
+						minyaw="-5"
+						maxyaw="5"
+						yawspeed="170"
+					>
+						<template name="trails">
+							<twopointtrailemitter
+								name="trail01"
+								timenudge="500"
+								bone_a="{bone01}"
+								bone_b="{bone02}"
+								spawnrate="10"
+								particlelife="1500"
+								texposscale="0"
+								texstretchscale="1"
+								material="/shared/effects/materials/soul_projectile2.material"
+							>
+								<particle
+									startcolor="1 .5 0"
+									endcolor="1 .5 0"
+								/>
+							</twopointtrailemitter>
+						</template>
+						
+						<instance name="trails" bone01="_bone_fx_01"  bone02="_bone_fx_02"/>
+						<instance name="trails" bone01="_bone_fx_05"  bone02="_bone_fx_06"/>
+						<instance name="trails" bone01="_bone_fx_09"  bone02="_bone_fx_10"/>
+					</model>
+				</particle>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

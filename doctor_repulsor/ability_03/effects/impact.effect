@@ -9,8 +9,8 @@
 				linearfalloff="true"
 				falloffstart="400"
 				falloffend="2000"
-				volume=".6"
-				sample="../sounds/impact2.wav"
+				volume="1"
+				sample="../sounds/impact.mp3"
 			/>
 		
 			<model
@@ -48,8 +48,8 @@
 						delay="150"
 						life="2000"
 						material="/shared/effects/materials/earth_cracks_02.material"
-						minsize="135"
-						maxsize="175"
+						minsize="75"
+						maxsize="425"
 						color="1.0 1.0 1.0"
 						startalpha="1"
 						midalpha="1"
@@ -79,8 +79,8 @@
 						life="200"
 						material="/shared/effects/materials/earth_cracks_add_blue.material"
 						startsize="75"
-						midsize="125"
-						endsize="125"
+						midsize="225"
+						endsize="425"
 						startcolor=".5 .5 1"
 						midcolor=".5 .5 1"
 						endcolor="0 0 0"

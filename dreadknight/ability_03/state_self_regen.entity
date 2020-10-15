@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Dreadknight_Ability3_Self_Regen"
+
+	icon="icon3.tga"
+	passiveeffect=""
+	effecttype=""
+	
+	healthregenpercharge="1"
+	
+	deathpersist="true"
+>	
+
+	<onframe />
+
+	<!-- Death persist removed for krosmode -->
+	<modifier key="krosmode" modpriority="100"
+		deathpersist="false"
+	/>
+	
+	<altavatar key="Hero_Dreadknight.Alt11" modpriority="1"
+		icon="/heroes/dreadknight/alt11/ability_03/icon.tga"
+	/>
+	
+</state>

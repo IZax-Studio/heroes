@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+		<particlesystem name="system0" space="world" scale=".65">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume="1"
+				sample="../sounds/impact.wav"
+			/>
+
+			<billboard
+				delay="0"
+				life="750"
+				position="0 0 15"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="1.0 .3 .2"
+				endcolor="0 0 0"
+				startsize="1000"
+				endsize="1000"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+
+			<billboard
+				delay="0"
+				life="500"
+				position="0 0 15"
+				material="/shared/effects/materials/refract_ring.material"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				startsize="50"
+				endsize="1500"
+				startparam=".5"
+				endparam="0"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+
+			<billboard
+				delay="475"
+				life="750"
+				position="0 0 15"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="1.0 .3 .2"
+				endcolor="0 0 0"
+				startsize="1000"
+				endsize="1500"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+			
+			<simpleemitter
+				delay="400"
+				life="500"
+				directionalspace="global"
+				position="0 0 5"
+				spawnrate="25"
+				minparticlelife="1000"
+				maxparticlelife="1750"
+				gravity="-3.0"
+				offsetsphere="100 100 50"
+				minangle="25"
+				maxangle="10"
+				direction="0 0 1"
+				depthbias="-50"
+				material="/shared/effects/materials/dust_smoke_02.material"
+			>
+				<particle
+					color="0 0 0"
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="0"
+					midcolorpos=".1"
+					maxanglespeed="0"
+					startsize="89"
+					endsize="500"
+					startalpha="0.0"
+					midalpha="1"
+					endalpha="0.0"
+					midalphapos="0.1"
+					scale="0.7"
+				/>
+			</simpleemitter>
+
+			<billboard
+				delay="475"
+				life="500"
+				position="0 0 15"
+				material="/shared/effects/materials/refract_ring.material"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				startsize="50"
+				endsize="1500"
+				startparam=".5"
+				endparam="0"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+
+			<simpleemitter
+				count="1"
+				particlelife="2000"
+				spawnrate="2000"
+			>
+				<particle
+				>
+
+					<model
+						life="1000"
+						model="soul/model.mdf"
+						anim="idle"
+						scale="1.85"
+						color="1.0 .3 .2"
+						startalpha=".5"
+						midalpha=".5"
+						endalpha="0"
+						midalphapos=".9"
+						position="0 0 0"
+						yaw="180"
+					>
+						<template name="flameup">
+
+							<simpleemitter
+							delay="100"
+							life="400"
+								bone="{bone}"
+								spawnrate="225"
+								minparticlelife="250"
+								maxparticlelife="750"
+								gravity="-3"
+								speed="5"
+								drag="0"
+								acceleration="0.10"
+								expirelife="300"
+								material="/shared/effects/materials/soul_projectile2.material"
+								offsetsphere="5"
+								position="{position}"
+								yawspeed="360"
+								depthbias="0"
+								inheritvelocity="0"
+							>
+
+								<particle
+									minangle="0"
+									maxangle="360"
+									minanglespeed="20"
+									maxanglespeed="150"
+									startcolor="1.0 .3 .2"
+									midcolor="1.0 .3 .2"
+									endcolor="0 0 0"
+									midcolorpos=".25"
+									startframe="0"
+									endframe="1"
+									startsize="30"
+									midsize="30"
+									endsize="15"
+									scale="{scale}"
+									midsizepos=".3"
+									startalpha="0"
+									midalpha=".45"
+									endalpha="0"
+									midalphapos=".01"
+								/>
+							</simpleemitter>
+
+							
+
+							<simpleemitter
+							delay="100"
+							life="400"
+								bone="{bone}"
+								spawnrate="100"
+								minparticlelife="250"
+								maxparticlelife="750"
+								gravity="-10"
+								speed="2"
+								drag="0"
+								acceleration="0.10"
+								expirelife="300"
+								material="/shared/effects/materials/mysticenergy2.material"
+								offsetsphere="0 0 0"
+								direction="0 0 -2"
+								position="{position}"
+								yawspeed="-360"
+								depthbias="0"
+								inheritvelocity="0"
+							>
+
+								<particle
+									scale="{scale}"
+									minangle="0"
+									maxangle="360"
+									minanglespeed="20"
+									maxanglespeed="150"
+									startcolor=".35"
+									midcolor="1.0 .3 .2"
+									endcolor="0 0 0"
+									midcolorpos=".4"
+									startframe="0"
+									endframe="1"
+									startsize="20"
+									midsize="30"
+									endsize="1"
+									midsizepos=".3"
+								/>
+								
+							</simpleemitter>
+							
+							
+							
+							<simpleemitter
+							delay="100"
+							life="400"
+								bone="{bone}"
+								spawnrate="50"
+								minparticlelife="250"
+								maxparticlelife="750"
+								gravity="-3"
+								speed="5"
+								drag="0"
+								acceleration="0.10"
+								expirelife="300"
+								material="/shared/effects/materials/heathaze.material"
+								offsetsphere="20"
+								position="{position}"
+								yawspeed="360"
+								depthbias="0"
+								inheritvelocity="0"
+							>
+
+								<particle
+								param=".5"
+									minangle="0"
+									maxangle="360"
+									minanglespeed="20"
+									maxanglespeed="150"
+									color="1 1 1"
+									startframe="0"
+									endframe="1"
+									startsize="30"
+									midsize="30"
+									endsize="15"
+									scale="{scale}"
+									midsizepos=".3"
+									startalpha="0"
+									midalpha=".5"
+									endalpha="0"
+									midalphapos=".25"
+								/>
+							</simpleemitter>
+							
+							
+							
+							
+<!--
+							<billboard
+								position="{position}"
+								bone="{bone}"
+								material="/shared/effects/materials/whitedot.material"
+								scale="{scale}"
+								depthbias="-20"
+								size="111"
+								color="1.0 .3 .2"
+							/>
+-->
+						</template>
+						
+						<instance name="flameup" bone="Bip01 L Finger1" scale="1.25" position="0 0 0"/>
+						
+						
+							<billboard
+							life="1000"
+								bone="Bip01 Spine2"
+								material="/shared/effects/materials/whitedot.material"
+								depthbias="0"
+								size="250"
+								startcolor="1.0 .3 .2"
+								endcolor="0 0 0"
+							/>
+						
+							<billboard
+							life="1000"
+								bone="Bip01 L Finger1"
+								material="/shared/effects/materials/whitedot.material"
+								depthbias="0"
+								size="100"
+								startcolor=".25"
+								midcolor=".25 .25 0"
+								endcolor="0 0 0"
+							/>
+						
+				</model>
+			
+				</particle>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Dreadknight4"
+
+	icon="icon4.tga"
+	statuseffecttooltip="State_Dreadknight_Ability4"
+	
+	anim="ability_4"
+	casttime="1000"
+	castactiontime="350"
+	casteffect="effects/cast.effect"
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_entity"
+	casteffecttype="SuperiorMagic"
+	targetscheme="enemy_heroes"
+	
+	manacost="100,150,200"
+	cooldowntime="80000,70000,60000"
+	
+	range="600"
+	
+	novoiceresponse="true"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	maxcharges="10"
+>
+	
+	<onimpact>
+		<applystate name="State_Dreadknight_Ability4" duration="12000" proxy="this_owner_entity" />
+		
+		<!-- Only art stuff below -->
+		<hasavatarkey name="Hero_Dreadknight.Alt5">
+			<hasmodifier name="Stage3">
+				<playeffect effect="../alt5/ability_04/effects/stage3/impact.effect" source="target_position" target="target_position" occlude="true" />
+			</hasmodifier>
+			<else>
+				<hasmodifier name="Stage2">
+					<playeffect effect="../alt5/ability_04/effects/stage2/impact.effect" source="target_position" target="target_position" occlude="true" />
+				</hasmodifier>
+				<else>
+					<playeffect effect="../alt5/ability_04/effects/stage1/impact.effect" source="target_position" target="target_position" occlude="true" />
+				</else>
+			</else>
+		</hasavatarkey>
+		<else>
+		<hasavatarkey name="Hero_Dreadknight.Alt7">
+				<playeffect effect="../alt7/ability_04/effects/impact.effect" source="target_position" target="target_position" occlude="true" />
+		</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Dreadknight.Alt8">
+					<playeffect effect="../alt8/ability_04/effects/impact.effect" source="target_position" target="target_position" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Dreadknight.Alt9">
+						<playeffect effect="../alt9/ability_04/effects/impact.effect" source="target_position" target="target_position" occlude="true" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Dreadknight.Alt10">
+							<playeffect effect="../alt9/ability_04/effects/impact.effect" source="target_position" target="target_position" occlude="true" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Dreadknight.Alt11">
+								<playeffect effect="../alt11/ability_04/effects/impact.effect" source="target_position" target="target_position" occlude="true" />
+							</hasavatarkey>
+							<else>
+								<playeffect effect="effects/impact.effect" source="target_position" target="target_position" occlude="true" />
+							</else>
+						</else>
+					</else>	
+				</else>	
+			</else>
+		</else>
+	</onimpact>
+	
+	<modifier key="ult_boost" modpriority="99">		
+		<onimpact>
+			<applystate name="State_Dreadknight_Ability4" duration="12000" proxy="this_owner_entity" pushentity="true" />
+			<addcharges entity="stack_entity" count="charges" />
+			
+			<!-- Only art stuff below -->
+			<hasavatarkey name="Hero_Dreadknight.Alt5">
+				<hasmodifier name="Stage3">
+					<playeffect effect="../alt5/ability_04/effects/stage3/impact.effect" source="target_position" target="target_position" occlude="true" />
+				</hasmodifier>
+				<else>
+					<hasmodifier name="Stage2">
+						<playeffect effect="../alt5/ability_04/effects/stage2/impact.effect" source="target_position" target="target_position" occlude="true" />
+					</hasmodifier>
+					<else>
+						<playeffect effect="../alt5/ability_04/effects/stage1/impact.effect" source="target_position" target="target_position" occlude="true" />
+					</else>
+				</else>
+			</hasavatarkey>
+			<else>
+			<hasavatarkey name="Hero_Dreadknight.Alt7">
+					<playeffect effect="../alt7/ability_04/effects/impact.effect" source="target_position" target="target_position" occlude="true" />
+			</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Dreadknight.Alt8">
+						<playeffect effect="../alt8/ability_04/effects/impact.effect" source="target_position" target="target_position" occlude="true" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Dreadknight.Alt9">
+							<playeffect effect="../alt9/ability_04/effects/impact.effect" source="target_position" target="target_position" occlude="true" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Dreadknight.Alt10">
+								<playeffect effect="../alt9/ability_04/effects/impact.effect" source="target_position" target="target_position" occlude="true" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Dreadknight.Alt11">
+									<playeffect effect="../alt11/ability_04/effects/impact.effect" source="target_position" target="target_position" occlude="true" />
+								</hasavatarkey>
+								<else>
+									<playeffect effect="effects/impact.effect" source="target_position" target="target_position" occlude="true" />
+								</else>
+							</else>	
+						</else>	
+					</else>	
+				</else>
+			</else>
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Dreadknight.Alt"
+		casteffect="/heroes/dreadknight/alt/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Dreadknight.Alt3"
+		casteffect="/heroes/dreadknight/alt3/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Dreadknight.Alt4"
+		casteffect="/heroes/dreadknight/alt4/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Dreadknight.Alt5"
+		casteffect="/heroes/dreadknight/alt5/ability_04/effects/stage1/cast.effect"
+	>
+		<modifier key="Stage3" modpriority="3"
+			casteffect="/heroes/dreadknight/alt5/ability_04/effects/stage3/cast.effect"
+		/>
+		<modifier key="Stage2" modpriority="2"
+			casteffect="/heroes/dreadknight/alt5/ability_04/effects/stage2/cast.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Dreadknight.Alt7"
+		casteffect="/heroes/dreadknight/alt7/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Dreadknight.Alt8"
+		casteffect="/heroes/dreadknight/alt8/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Dreadknight.Alt9"
+		casteffect="/heroes/dreadknight/alt9/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Dreadknight.Alt10"
+		casteffect="/heroes/dreadknight/alt10/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Dreadknight.Alt11"
+		icon="/heroes/dreadknight/alt11/ability_04/icon.tga"
+		casteffect="/heroes/dreadknight/alt11/ability_04/effects/cast.effect"
+	/>
+	
+</ability>

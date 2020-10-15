@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_DwarfMagi1"
+
+	icon="icon1.tga"
+	
+	anim="ability_1"
+	casttime="800"
+	castactiontime="400"
+	casteffect="effects/cast.effect"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_entity"
+	casteffecttype="Magic"
+	targetscheme="enemy_units"
+	
+	manacost="75,85,95,105"
+	cooldowntime="12000"
+
+	range="600"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+
+	targetpriorities="enemy_heroes"
+>
+	<onimpact>
+		<applystate name="State_Stunned" duration="1500" />
+		<damage effecttype="Magic" amount="100,150,200,275" />
+		<hasavatarkey name="Hero_DwarfMagi.Alt2">
+			<playeffect effect="../alt2/ability_01/effects/impact.effect" source="target_entity" />	
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_DwarfMagi.Alt6">
+				<hasmodifier name="dwarfmagiAlt6_Ability1_Upgrade">
+					<playeffect effect="../alt6/ability_01/effects/impact_upgrade.effect" source="target_entity" />	
+				</hasmodifier>
+				<else>
+					<playeffect effect="../alt6/ability_01/effects/impact.effect" source="target_entity" />	
+				</else>
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_DwarfMagi.Alt7">
+					<playeffect effect="../alt7/ability_01/effects/impact.effect" source="target_entity" />	
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/impact.effect" source="target_entity" />
+				</else>		
+			</else>
+		</else>
+	</onimpact>
+	
+	<modifier key="DwarfMagi_Ability4_1" modpriority="100"
+		cooldowntime="10000"
+		manacost="85,95,105,115"
+	>
+		<onimpact>
+			<applystate name="State_Stunned" duration="1500" />
+			<damage effecttype="Magic" amount="100,150,200,275" />
+			
+			<!-- Art -->
+			<hasavatarkey name="Hero_DwarfMagi.Alt2">
+				<playeffect effect="../alt2/ability_01/effects/impact.effect" source="target_entity" />	
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_DwarfMagi.Alt6">
+					<hasmodifier name="dwarfmagiAlt6_Ability1_Upgrade">
+						<playeffect effect="../alt6/ability_01/effects/impact1x_upgrade.effect" source="target_entity" />	
+					</hasmodifier>
+					<else>
+						<playeffect effect="../alt6/ability_01/effects/impact1x.effect" source="target_entity" />	
+					</else>
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_DwarfMagi.Alt7">
+						<playeffect effect="../alt7/ability_01/effects/impact.effect" source="target_entity" />	
+					</hasavatarkey>
+					<else>
+						<playeffect effect="effects/impact.effect" source="target_entity" />
+					</else>
+				</else>
+			</else>
+			
+			<setaccumulator entity="this_entity" value="1" />
+			<chance threshold="0.2">
+				<setaccumulator entity="this_entity" value="2" />
+				<popup name="multicast" a="2" source="target_entity" target="source_entity" />
+				<spawnaffector name="Affector_DwarfMagi_Ability1_2x" target="target_entity" />				
+			</chance>
+			
+			<hasavatarkey name="Hero_DwarfMagi.Alt7">
+				<compare a="accumulator" b="2" op="eq">
+					<playeffect effect="../alt7/ability_01/effects/impact2x_upgrade.effect" source="target_entity" />
+				</compare>
+				<else>					
+					<playeffect effect="../alt7/ability_01/effects/impact1x_upgrade.effect" source="target_entity" />	
+				</else>	
+			</hasavatarkey>
+		</onimpact>
+	</modifier>
+	
+	<modifier key="DwarfMagi_Ability4_2" modpriority="100"
+		cooldowntime="8000"
+		manacost="115,125,135,145"
+	>
+		<onimpact>
+			<applystate name="State_Stunned" duration="1500" />
+			<damage effecttype="Magic" amount="100,150,200,275" />
+			
+			<!-- Art -->
+			<hasavatarkey name="Hero_DwarfMagi.Alt2">
+				<playeffect effect="../alt2/ability_01/effects/impact.effect" source="target_entity" />	
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_DwarfMagi.Alt6">
+					<hasmodifier name="dwarfmagiAlt6_Ability1_Upgrade">
+						<playeffect effect="../alt6/ability_01/effects/impact1x_upgrade.effect" source="target_entity" />	
+					</hasmodifier>
+					<else>
+						<playeffect effect="../alt6/ability_01/effects/impact1x.effect" source="target_entity" />	
+					</else>
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_DwarfMagi.Alt7">
+						<playeffect effect="../alt7/ability_01/effects/impact.effect" source="target_entity" />	
+					</hasavatarkey>
+					<else>
+						<playeffect effect="effects/impact.effect" source="target_entity" />
+					</else>	
+				</else>
+			</else>
+			
+			<setaccumulator entity="this_entity" value="1" />
+			<chance threshold="0.4">
+				<setaccumulator entity="this_entity" value="2" />
+				<spawnaffector name="Affector_DwarfMagi_Ability1_2x" target="target_entity" />
+				<chance threshold="0.5">
+					<setaccumulator entity="this_entity" value="3" />
+					<spawnaffector name="Affector_DwarfMagi_Ability1_3x" target="target_entity" />
+				</chance>
+				<popup name="multicast" a="accumulator" source="target_entity" target="source_entity" />
+			</chance>
+			
+			<hasavatarkey name="Hero_DwarfMagi.Alt7">
+				<compare a="accumulator" b="3" op="eq">
+					<playeffect effect="../alt7/ability_01/effects/impact3x_upgrade.effect" source="target_entity" />
+				</compare>
+				<else>
+					<compare a="accumulator" b="2" op="eq">
+						<playeffect effect="../alt7/ability_01/effects/impact2x_upgrade.effect" source="target_entity" />
+					</compare>
+					<else>						
+						<playeffect effect="../alt7/ability_01/effects/impact1x_upgrade.effect" source="target_entity" />	
+					</else>		
+				</else>	
+			</hasavatarkey>
+		</onimpact>
+	</modifier>
+	
+	<modifier key="DwarfMagi_Ability4_3" modpriority="100"
+		cooldowntime="6000"
+		manacost="145,155,165,175"
+	>
+		<onimpact>
+			<applystate name="State_Stunned" duration="1500" />
+			<damage effecttype="Magic" amount="100,150,200,275" />
+			<hasavatarkey name="Hero_DwarfMagi.Alt2">
+				<playeffect effect="../alt2/ability_01/effects/impact.effect" source="target_entity" />	
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_DwarfMagi.Alt6">
+					<hasmodifier name="dwarfmagiAlt6_Ability1_Upgrade">
+						<playeffect effect="../alt6/ability_01/effects/impact1x_upgrade.effect" source="target_entity" />	
+					</hasmodifier>
+					<else>
+						<playeffect effect="../alt6/ability_01/effects/impact1x.effect" source="target_entity" />	
+					</else>
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_DwarfMagi.Alt7">
+						<playeffect effect="../alt7/ability_01/effects/impact.effect" source="target_entity" />	
+					</hasavatarkey>
+					<else>
+						<playeffect effect="effects/impact.effect" source="target_entity" />
+					</else>
+				</else>
+			</else>
+			<setaccumulator entity="this_entity" value="1" />
+			
+			<chance threshold="0.6">
+				<setaccumulator entity="this_entity" value="2" />
+				<spawnaffector name="Affector_DwarfMagi_Ability1_2x" target="target_entity" />
+				<chance threshold="0.5">
+					<setaccumulator entity="this_entity" value="3" />
+					<spawnaffector name="Affector_DwarfMagi_Ability1_3x" target="target_entity" />
+					<chance threshold="0.5">
+						<setaccumulator entity="this_entity" value="4" />
+						<spawnaffector name="Affector_DwarfMagi_Ability1_4x" target="target_entity" />
+					</chance>
+				</chance>
+				<popup name="multicast" a="accumulator" source="target_entity" target="source_entity" />
+			</chance>
+			
+			<hasavatarkey name="Hero_DwarfMagi.Alt7">
+				<compare a="accumulator" b="4" op="eq">
+					<playeffect effect="../alt7/ability_01/effects/impact4x_upgrade.effect" source="target_entity" />
+				</compare>
+				<else>
+					<compare a="accumulator" b="3" op="eq">
+						<playeffect effect="../alt7/ability_01/effects/impact3x_upgrade.effect" source="target_entity" />
+					</compare>
+					<else>
+						<compare a="accumulator" b="2" op="eq">
+							<playeffect effect="../alt7/ability_01/effects/impact2x_upgrade.effect" source="target_entity" />
+						</compare>
+						<else>
+							<playeffect effect="../alt7/ability_01/effects/impact1x_upgrade.effect" source="target_entity" />
+						</else>		
+					</else>		
+				</else>	
+			</hasavatarkey>
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_DwarfMagi.Alt2" modpriority="90"
+		icon="/heroes/dwarf_magi/alt2/ability_01/icon.tga"
+		casteffect="/heroes/dwarf_magi/alt2/ability_01/effects/cast.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_DwarfMagi.Alt4" modpriority="90"
+		casteffect="/heroes/dwarf_magi/alt4/ability_01/effects/cast.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_DwarfMagi.Alt6" modpriority="90"
+	    icon="/heroes/dwarf_magi/alt6/ability_01/icon.tga"
+		casteffect="/heroes/dwarf_magi/alt6/ability_01/effects/cast.effect"
+	>
+		<modifier key="dwarfmagiAlt6_Ability1_Upgrade"
+		icon="/heroes/dwarf_magi/alt6/ability_01/icon_u.tga"
+			casteffect="/heroes/dwarf_magi/alt6/ability_01/effects/cast_upgrade.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_DwarfMagi.Alt7" modpriority="90"
+		casteffect="/heroes/dwarf_magi/alt7/ability_01/effects/cast.effect"
+	/>
+</ability>

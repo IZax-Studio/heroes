@@ -9,7 +9,9 @@
 
 	<anim name="item_1" clip="clips/item_1.clip"/>
 		
-	<anim name="ability_1" clip="clips/ability_1.clip" fps="30" loop="false"/>
+	<anim name="ability_1" clip="clips/ability_1.clip" fps="30" loop="false">
+		<frameevent frame="1" cmd="PlaySoundLinear ability_01/sounds/cast.mp3 400 1500 .7"/>
+	</anim>
 	
 	<anim name="ability_2" clip="clips/ability_2.clip" fps="30" loop="false"/>
 

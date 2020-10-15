@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Dreadknight_Ability4"
+
+	icon="icon4.tga"
+	passiveeffect="effects/state_enemy.effect"
+	displaylevel="true"
+
+	incominghealmultiplier="-1"
+	healthregenreduction="1"
+	effecttype="ForceTransferrable"
+	allowtransfer="true"
+	
+	modifierkey="salforis_ability4_Active"
+	
+	maxcharges="10"
+>
+	<oninflict>
+		<applystate name="State_Empath_Ability4_Assist" duration="100" />
+	</oninflict>
+	
+	<ondeath>
+		<hasavatarkey name="Hero_Dreadknight.Alt8">
+			<playeffect effect="../alt8/ability_04/effects/death_sound.effect" source="this_owner_entity" target="this_owner_entity" occlude="true" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Dreadknight.Alt9">
+				<playeffect effect="../alt9/ability_04/effects/death_sound.effect" source="this_owner_entity" target="this_owner_entity" occlude="true" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Dreadknight.Alt10">
+					<playeffect effect="../alt10/ability_04/effects/death_sound.effect" source="this_owner_entity" target="this_owner_entity" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Dreadknight.Alt11">
+						<playeffect effect="../alt11/ability_04/effects/death_sound.effect" source="this_owner_entity" target="this_owner_entity" occlude="true" />
+					</hasavatarkey>
+				</else>
+			</else>
+		</else>
+		
+		<playeffect effect="effects/special_death.effect" target="this_owner_entity" source="this_owner_entity" />
+		<pushability source="this_proxy_entity" name="Ability_Dreadknight4" />
+		<addcharges entity="stack_entity" count="1" />
+		<expire />
+	</ondeath>
+	
+	<onframe>
+		<damage effecttype="DOT" amount="20,35,50" b="frametime" op="mult" />
+	</onframe>
+
+	
+	<modifier key="ult_boost" modpriority="99" >		
+		<onframe>
+			<setvar0 a="charges" b="5" op="mult" />
+			<setvar0 a="var0" b="20,35,50" op="add" />
+			<setvar0 a="var0" b="frametime" op="mult" />
+			<damage effecttype="SuperiorMagic DOT" amount="0" b="var0" op="add" />
+			
+			<targettype type="alive" target="source_entity">
+				<compare a="this_proxy_entity" b="0" op="ne">
+					<distance source="this_proxy_entity" target="this_owner_entity" />
+					<compare a="result" b="600" op="le">
+						<changeduration b="50" op="add" />
+					</compare>
+			</compare>
+			</targettype>
+		</onframe>
+	</modifier>
+
+	<altavatar key="Hero_Dreadknight.Alt5"
+		passiveeffect="../alt5/ability_04/effects/stage1/state_enemy.effect"
+	>
+		<modifier key="Stage3" modpriority="3"
+			passiveeffect="../alt5/ability_04/effects/stage3/state_enemy.effect"
+		/>
+		<modifier key="Stage2" modpriority="2"
+			passiveeffect="../alt5/ability_04/effects/stage2/state_enemy.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Dreadknight.Alt7"
+		passiveeffect="../alt7/ability_04/effects/state_enemy.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Dreadknight.Alt8"
+		passiveeffect="../alt8/ability_04/effects/state_enemy.effect"
+	/>
+	
+	<altavatar key="Hero_Dreadknight.Alt9"
+		passiveeffect="../alt9/ability_04/effects/state_enemy.effect"
+	/>
+	
+	<altavatar key="Hero_Dreadknight.Alt10"
+		passiveeffect="../alt9/ability_04/effects/state_enemy.effect"
+	/>
+	
+	<altavatar key="Hero_Dreadknight.Alt11"
+		icon="/heroes/dreadknight/alt11/ability_04/icon.tga"
+		passiveeffect="../alt11/ability_04/effects/state_enemy.effect"
+	/>
+</state>

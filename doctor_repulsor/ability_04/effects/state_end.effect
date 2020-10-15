@@ -3,6 +3,31 @@
 	<definitions>
 
 		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				channelid="repul"
+				soundloop="false"
+				fadein="100"
+				fadeout="600"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2000"
+				volume=".5"
+				sample="../sounds/state.wav"
+			/>
+			
+				<sound
+				channelid="repuls"
+				forcestereo="true"
+				soundloop="false"
+				fadein="100"
+				fadeout="800"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="1300"
+				volume="1"
+				sample="../sounds/cast_%.wav"
+			/>
 			
 			
 			<simpleemitter

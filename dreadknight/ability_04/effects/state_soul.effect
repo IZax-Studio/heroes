@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="cyclone" deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1">
+				
+
+				<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1000"
+				volume="0.50" 
+				soundloop="true"
+				fadein="150"
+				fadeout="300"
+				sample="../sounds/skullstate.wav"
+			/>
+
+			<model
+				bone="_bone_origin"
+				model="/heroes/andromeda/ability_03/effects/orbit.mdf"
+				anim="idle"
+				scale="1.5"
+				roll="45"
+				yaw="80"
+				yawspeed="120"
+				position="0 0 100"
+			>
+				<model
+					expirelife="250"
+					bone="_bone_fx"
+					model="/heroes/dreadknight/ability_01/effects/skull_impact/model.mdf"
+					anim="idle"
+					scale="1.25"
+					color="5 5 1"
+					startalpha=".5"
+					endalpha="0"
+					pitch="-45"
+					position="0 0 0"
+				/>
+			
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="25"
+					particlelife="2500"
+					texpostime="2500"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/soul_projectile2.material"
+					startparticlecolor="1 1 1"
+					endparticlecolor="0 0 0"
+				>
+					<particle
+						startcolor=".1 .25 .1"
+						endcolor="0 0 0"
+						startsize="25"
+						endsize="0"
+						startalpha="1"
+						endalpha="0"
+					/>
+				</trailemitter>
+
+				<billboard
+					expirelife="250"
+					bone="_bone_fx"
+					material="/shared/effects/materials/star_04.material"
+					startcolor=".5 .5 0"
+					endcolor="0 0 0"
+					scale="2"
+					depthbias="25"
+				/>
+				
+				<billboard
+					expirelife="250"
+					bone="_bone_fx"
+					material="/shared/effects/materials/whitedot.material"
+					startcolor=".1 .25 0"
+					endcolor="0 0 0"
+					scale="1"
+					depthbias="25"
+				/>
+				
+				
+			<simpleemitter
+				bone="_bone_fx"
+				spawnrate="50"
+				drag=".001"
+				minparticlelife="1000"
+				maxparticlelife="1500"
+				offsetsphere="12"
+				gravity="-1"
+				minspeed="10"
+				maxspeed="25"								
+				direction="0 0 1"
+				minangle="-45"
+				maxangle="45"
+				material="/shared/effects/materials/spark_10.material"
+				inheritvelocity=".35"				
+			>			
+				<particle
+					startcolor=".5 1 0"
+					midcolor=".5 1 0"
+					endcolor="0 0 0"
+					minsize="1"
+					maxsize="10"
+					lockup="false"
+					lockright="false"
+					minangle="-360"
+					maxangle="1"
+					minanglespeed="110"
+					maxanglespeed="-110"
+				/>
+			</simpleemitter>
+				
+			</model>
+			
+		</particlesystem>
+		<particlesystem name="system1" space="world" scale="1">
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+      	<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

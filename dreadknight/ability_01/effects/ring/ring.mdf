@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="ring.max" file="ring.model" type="K2" >
+<anim name="idle" loop="true" fps="60" clip="ring.clip"/>
+</model>

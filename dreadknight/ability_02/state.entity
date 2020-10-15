@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Dreadknight_Ability2"
+
+	icon="icon2.tga"
+	passiveeffect="effects/state.effect"
+	
+	impactinterval="1000"
+	damage="40,60,80,100"
+	movespeed="50"
+	lifesteal="0.7,0.8,0.9,1.0"
+	
+	effecttype=""
+>	
+	<onattackstart>
+		<playanim name="ability_2_attack" speed="source_attackspeed" target="source_entity" />
+		<playeffect effect="effects/attack_action.effect" target="source_entity" source="source_entity" occlude="true" />
+	</onattackstart>
+	
+	<onattackpreimpact>
+		<cantarget targetscheme="enemy_units">
+			<seteffecttype name="combat_damagetype" effecttype="SuperiorMagic" />
+			<seteffecttype name="combat_effecttype" effecttype="Attack SuperiorMagic" />
+		</cantarget>
+	</onattackpreimpact>
+	
+	<onattackimpact>
+		<playeffect effect="effects/impact.effect" source="target_entity" occlude="true" />
+		<playeffect effect="effects/lifesteal.effect" source="source_entity" target="target_entity" occlude="true" />
+		<expire />
+	</onattackimpact>
+	
+	
+	<onframe>
+		<hasmodifier entity="this_owner_entity" name="iamsheeped">
+			<activatemodifierkey entity="this_entity" name="iamsheeped" />
+		</hasmodifier>
+		<else>
+			<deactivatemodifierkey entity="this_entity" name="" />
+		</else>
+	</onframe>
+	
+	<modifier key="iamsheeped" modpriority="9999"
+		passiveeffect=""
+	/>
+	
+	<altavatar key="Hero_Dreadknight.Alt" modpriority="1"
+		passiveeffect="/heroes/dreadknight/alt/ability_02/effects/state.effect"
+	>
+		<onattackstart>
+			<playanim name="ability_2_attack" speed="source_attackspeed" target="source_entity" />
+			<playeffect effect="/heroes/dreadknight/alt/ability_02/effects/attack_action.effect" target="source_entity" source="source_entity" occlude="true" />
+		</onattackstart>
+		
+		<onattackpreimpact>
+			<cantarget targetscheme="enemy_units">
+				<seteffecttype name="combat_damagetype" effecttype="SuperiorMagic" />
+				<seteffecttype name="combat_effecttype" effecttype="Attack SuperiorMagic" />
+			</cantarget>
+		</onattackpreimpact>
+		
+		<onattackimpact>
+			<playeffect effect="effects/impact.effect" source="target_entity" occlude="true" />
+			<playeffect effect="effects/lifesteal.effect" source="source_entity" target="target_entity" occlude="true" />
+			<playeffect effect="effects/attack_action_large.effect" source="source_entity" occlude="true" />
+			<expire />
+		</onattackimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Dreadknight.Alt3" modpriority="1"
+		passiveeffect="/heroes/dreadknight/alt3/ability_02/effects/state.effect"
+	>
+		<onattackstart>
+			<playanim name="ability_2_attack" speed="source_attackspeed" target="source_entity" />
+			<playeffect effect="/heroes/dreadknight/alt3/ability_02/effects/attack_action.effect" target="source_entity" source="source_entity" occlude="true" />
+		</onattackstart>
+		
+		<onattackpreimpact>
+			<cantarget targetscheme="enemy_units">
+				<seteffecttype name="combat_damagetype" effecttype="SuperiorMagic" />
+				<seteffecttype name="combat_effecttype" effecttype="Attack SuperiorMagic" />
+			</cantarget>
+		</onattackpreimpact>
+		
+		<onattackimpact>
+			<playeffect effect="effects/impact.effect" source="target_entity" occlude="true" />
+			<playeffect effect="effects/lifesteal.effect" source="source_entity" target="target_entity" occlude="true" />
+			<expire />
+		</onattackimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Dreadknight.Alt4" modpriority="1"
+		passiveeffect="/heroes/dreadknight/alt4/ability_02/effects/state.effect"
+	>
+		<onattackstart>
+			<playanim name="ability_2_attack" speed="source_attackspeed" target="source_entity" />
+			<playeffect effect="/heroes/dreadknight/alt4/ability_02/effects/attack_action.effect" target="source_entity" source="source_entity" occlude="true" />
+		</onattackstart>
+		
+		<onattackpreimpact>
+			<cantarget targetscheme="enemy_units">
+				<seteffecttype name="combat_damagetype" effecttype="SuperiorMagic" />
+				<seteffecttype name="combat_effecttype" effecttype="Attack SuperiorMagic" />
+			</cantarget>
+		</onattackpreimpact>
+		
+		<onattackimpact>
+			<playeffect effect="effects/impact.effect" source="target_entity" occlude="true" />
+			<playeffect effect="effects/lifesteal.effect" source="source_entity" target="target_entity" occlude="true" />
+			<expire />
+		</onattackimpact>
+	</altavatar>
+
+	<altavatar key="Hero_Dreadknight.Alt5"
+		passiveeffect="../alt5/ability_02/effects/stage1/state.effect"
+	>
+		<modifier key="Stage3" modpriority="3"
+			passiveeffect="../alt5/ability_02/effects/stage3/state.effect"
+		/>
+
+		<modifier key="Stage2" modpriority="2"
+			passiveeffect="../alt5/ability_02/effects/stage2/state.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Dreadknight.Alt7" modpriority="1"
+		passiveeffect="/heroes/dreadknight/alt7/ability_02/effects/state.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Dreadknight.Alt8" modpriority="1"
+		passiveeffect="/heroes/dreadknight/alt8/ability_02/effects/state.effect"
+	>
+		<onattackstart>
+			<playanim name="ability_2_attack" speed="source_attackspeed" target="source_entity" />
+			<playeffect effect="/heroes/dreadknight/alt8/ability_02/effects/attack_action.effect" target="source_entity" source="source_entity" occlude="true" />
+		</onattackstart>
+		
+		<onattackpreimpact>
+			<cantarget targetscheme="enemy_units">
+				<seteffecttype name="combat_damagetype" effecttype="SuperiorMagic" />
+				<seteffecttype name="combat_effecttype" effecttype="Attack SuperiorMagic" />
+			</cantarget>
+		</onattackpreimpact>
+		
+		<onattackimpact>
+			<playeffect effect="/heroes/dreadknight/alt8/ability_02/effects/impact.effect" source="target_entity" occlude="true" />
+			<playeffect effect="/heroes/dreadknight/alt8/ability_02/effects/lifesteal.effect" source="source_entity" target="target_entity" occlude="true" />
+			<expire />
+		</onattackimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Dreadknight.Alt9" modpriority="1"
+		passiveeffect="/heroes/dreadknight/alt9/ability_02/effects/state.effect"
+	>
+		<onattackstart>
+			<playanim name="ability_2_attack" speed="source_attackspeed" target="source_entity" />
+			<playeffect effect="/heroes/dreadknight/alt9/ability_02/effects/attack_action.effect" target="source_entity" source="source_entity" occlude="true" />
+		</onattackstart>
+		
+		<onattackpreimpact>
+			<cantarget targetscheme="enemy_units">
+				<seteffecttype name="combat_damagetype" effecttype="SuperiorMagic" />
+				<seteffecttype name="combat_effecttype" effecttype="Attack SuperiorMagic" />
+			</cantarget>
+		</onattackpreimpact>
+		
+		<onattackimpact>
+			<playeffect effect="/heroes/dreadknight/alt9/ability_02/effects/impact.effect" source="target_entity" occlude="true" />
+			<playeffect effect="/heroes/dreadknight/alt9/ability_02/effects/lifesteal.effect" source="source_entity" target="target_entity" occlude="true" />
+			<expire />
+		</onattackimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Dreadknight.Alt10" modpriority="1"
+		passiveeffect="/heroes/dreadknight/alt9/ability_02/effects/state.effect"
+	>
+		<onattackstart>
+			<playanim name="ability_2_attack" speed="source_attackspeed" target="source_entity" />
+			<playeffect effect="/heroes/dreadknight/alt9/ability_02/effects/attack_action.effect" target="source_entity" source="source_entity" occlude="true" />
+		</onattackstart>
+		
+		<onattackpreimpact>
+			<cantarget targetscheme="enemy_units">
+				<seteffecttype name="combat_damagetype" effecttype="SuperiorMagic" />
+				<seteffecttype name="combat_effecttype" effecttype="Attack SuperiorMagic" />
+			</cantarget>
+		</onattackpreimpact>
+		
+		<onattackimpact>
+			<playeffect effect="/heroes/dreadknight/alt9/ability_02/effects/impact.effect" source="target_entity" occlude="true" />
+			<playeffect effect="/heroes/dreadknight/alt9/ability_02/effects/lifesteal.effect" source="source_entity" target="target_entity" occlude="true" />
+			<expire />
+		</onattackimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Dreadknight.Alt11" modpriority="1"
+		icon="/heroes/dreadknight/alt11/ability_02/icon.tga"
+		passiveeffect="/heroes/dreadknight/alt11/ability_02/effects/state.effect"
+	>
+		<onattackstart>
+			<playanim name="ability_2_attack" speed="source_attackspeed" target="source_entity" />
+			<playeffect effect="/heroes/dreadknight/alt11/ability_02/effects/attack_action.effect" target="source_entity" source="source_entity" occlude="true" />
+		</onattackstart>
+		
+		<onattackpreimpact>
+			<cantarget targetscheme="enemy_units">
+				<seteffecttype name="combat_damagetype" effecttype="SuperiorMagic" />
+				<seteffecttype name="combat_effecttype" effecttype="Attack SuperiorMagic" />
+			</cantarget>
+		</onattackpreimpact>
+		
+		<onattackimpact>
+			<playeffect effect="/heroes/dreadknight/alt11/ability_02/effects/impact.effect" source="target_entity" occlude="true" />
+			<playeffect effect="/heroes/dreadknight/alt11/ability_02/effects/lifesteal.effect" source="source_entity" target="target_entity" occlude="true" />
+			<expire />
+		</onattackimpact>
+	</altavatar>
+</state>
