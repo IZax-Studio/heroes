@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Vanya_Ability_1_Target"
+
+	
+	
+	icon="icons.tga"
+	passiveeffect="effects/state.effect"
+	silenced="true"
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	negativeeffect="silenced"
+>
+<altavatar key="Hero_Vanya.Alt5"
+		icon="/heroes/vanya/alt5/ability_1/icon.tga"
+	/>
+
+</state>

@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume=".85"
+				sample="/heroes/vanya/ability_4/sounds/impact.wav"
+			/>
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume="1"
+				sample="../../sounds/ab4.wav"
+			/>
+		
+		<!-- fires -->	
+			<simpleemitter
+				delay="0"
+				particlelife="650"
+				count="150"
+				spawnrate="500"
+				speed="325" gravity="-40.0"
+				minangle="90"
+				maxangle="90"
+				material="/shared/effects/materials/dust_smoke_02.material"
+				offsetsphere="150"
+				position="0 0 10"
+				depthbias="-100"
+			>
+				<particle
+					startalpha="1"
+					endalpha="0"
+					startcolor=".5 0 0"
+					midcolor=".5 0 0"
+					endcolor="0"
+					minangle="0"
+					maxangle="90"
+					minanglespeed="0"
+					maxanglespeed="30"
+					startsize="35"
+					endsize="65"
+					startanchor="1"
+					endanchor="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				delay="0"
+				particlelife="650"
+				count="150"
+				spawnrate="500"
+				speed="325" gravity="-40.0"
+				minangle="90"
+				maxangle="90"
+				material="/shared/effects/materials/flame.material"
+				offsetsphere="150"
+				position="0 0 10"
+				depthbias="-100"
+			>
+				<particle
+					startcolor="1 0 0"
+					midcolor="2 0 0"
+					endcolor="0"
+					minangle="0"
+					maxangle="90"
+					minanglespeed="0"
+					maxanglespeed="50"
+					startsize="150"
+					minendsize="35"
+					maxendsize="60"
+					startanchor="1"
+					endanchor=".5"
+				/>
+			</simpleemitter>
+			
+			<terrainemitter
+				offsetradial="750 750 0" 
+				spawnrate="220"
+				particlelife="500"
+				gravity="-50"
+				life="500"
+				delay="650"
+				material="/shared/effects/materials/flames_07.material"
+			>
+				<particle
+					startsize="80"
+					endsize="170"
+					startwidth="80"
+					endwidth="100"
+					color="1"
+					startalpha="1"
+					endalpha="0"
+					lockup="1"
+					depthbias="-100"
+				/>
+				<particle
+					startsize="80"
+					endsize="170"
+					startwidth="80"
+					endwidth="100"
+					color="1"
+					startalpha="1"
+					endalpha="0"
+					lockup="1"
+					yaw="180"
+					depthbias="-100"
+				/>
+			</terrainemitter>
+			
+			<terrainemitter
+				offsetradial="750 750 0" 
+				spawnrate="520"
+				particlelife="500"
+				gravity="-50"
+				life="500"
+				delay="650"
+				material="/shared/effects/materials/flames_07.material"
+			>
+				<particle
+					startsize="80"
+					endsize="170"
+					startwidth="80"
+					endwidth="100"
+					color="1 0 0"
+					startalpha="1"
+					endalpha="0"
+					lockup="1"
+					depthbias="-100"
+				/>
+				<particle
+					startsize="80"
+					endsize="170"
+					startwidth="80"
+					endwidth="100"
+					color="1 0 0"
+					startalpha="1"
+					endalpha="0"
+					lockup="1"
+					yaw="180"
+					depthbias="-100"
+				/>
+			</terrainemitter>
+			<simpleemitter
+				delay="150"
+				particlelife="1050"
+				count="150"
+				spawnrate="500"
+				speed="725"
+				minangle="90"
+				maxangle="90"
+				material="/shared/effects/materials/flare_04.material"
+				offsetsphere="150"
+				position="0 0 10"
+				depthbias="-100"
+			>
+				<particle
+					startcolor="5 0 0" midcolor="1.5 0 0" endcolor="0" midcolorpos=".25"
+					startsize="250" endsize="0" midsizepos=".25"
+					startalpha="0"
+					midalpha="0.5"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+				/>
+			</simpleemitter>
+			
+			<groundsprite
+				material="/shared/effects/materials/sand_groun.material"
+				size="1300"
+				life="1700"
+				color="0 0 0"
+				startalpha="0"
+				midalpha="0.65"
+				endalpha="0"
+				midalphapos=".35"
+			/>
+			
+			<simpleemitter
+				particlelife="1000"
+				count="68"
+				spawnrate="100000"
+				minspeed="130"
+				maxspeed="170"
+				material="/shared/effects/materials/dust.material"
+				offsetsphere="610 610 30"
+				position="0 0 30"
+			>
+				<particle
+					color="0 0 0"
+					minsize="410"
+					maxsize="530"
+					startalpha="0"
+					midalphapos="0.333"
+					midalpha="0.20"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-250"
+					maxanglespeed="250"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				delay="150"
+				particlelife="1050"
+				count="150"
+				spawnrate="100000"
+				speed="925"
+				minangle="90"
+				maxangle="90"
+				material="/shared/effects/materials/pyroclast_01.material"
+				offsetsphere="40 40 0"
+				position="0 0 10"
+			>
+				<particle
+					color=".5 0 .1"
+					minsize="280"
+					maxsize="312"
+					startalpha="0"
+					midalpha="0.5"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-320"
+					maxanglespeed="320"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				delay="150"
+				particlelife="1050"
+				count="50"
+				spawnrate="100000"
+				speed="925"
+				minangle="90"
+				maxangle="90"
+				material="/shared/effects/materials/pyroclast_01.material"
+				offsetsphere="40 40 0"
+				position="0 0 10"
+			>
+				<particle
+					color=".6 0 0"
+					minsize="200"
+					maxsize="250"
+					startalpha="0"
+					midalpha="0.5"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-320"
+					maxanglespeed="320"
+				/>
+			</simpleemitter>		
+			
+			
+			
+			<model
+				delay="300"
+				position="0 0 40"
+				life="450"
+				name="emitter0" 
+				anim="idle"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				startscale="3"
+				midscale="16"
+				endscale="26"
+				yawspeed="900"
+			>
+			
+				<template name="trails1">
+					<trailemitter
+						life="650"
+						name="trail01"
+						position="0 0 0"
+						bone="{bone01}"
+						spawnrate="120"
+						particlelife="250"
+						subframepose="1"
+						direction="0 -1 0"
+						minangle="0"
+						maxangle="0"
+						texpostime="250"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/phantom_smoke_13.material"
+						startparticlecolor="1 1 1"
+						midparticlecolor="1 1 1"
+						endparticlecolor="0 0 0"
+					>
+						<particle
+							scale="{scale=1.5}"
+							color="{color=.5 0 0}"
+						/>
+					</trailemitter>
+				</template>
+				
+				<instance name="trails1" bone01="_bone_fx_01" />
+				<instance name="trails1" bone01="_bone_fx_02" />
+				<instance name="trails1" bone01="_bone_fx_03" />
+				<instance name="trails1" bone01="_bone_fx_04" />
+				<instance name="trails1" bone01="_bone_fx_05" />
+				<instance name="trails1" bone01="_bone_fx_06" />
+				<instance name="trails1" bone01="_bone_fx_07" />
+				<instance name="trails1" bone01="_bone_fx_08" />
+				<instance name="trails1" bone01="_bone_fx_09" />
+				<instance name="trails1" bone01="_bone_fx_10" />
+				<instance name="trails1" bone01="_bone_fx_11" />
+				<instance name="trails1" bone01="_bone_fx_12" />
+				
+				<instance name="trails1" bone01="_bone_fx_01" color=".8 .8 0" scale=".3" />
+				<instance name="trails1" bone01="_bone_fx_02" color=".8 .8 0" scale=".3" />
+				<instance name="trails1" bone01="_bone_fx_03" color=".8 .8 0" scale=".3" />
+				<instance name="trails1" bone01="_bone_fx_04" color=".8 .8 0" scale=".3" />
+				<instance name="trails1" bone01="_bone_fx_05" color=".8 .8 0" scale=".3" />
+				<instance name="trails1" bone01="_bone_fx_06" color=".8 .8 0" scale=".3" />
+				<instance name="trails1" bone01="_bone_fx_07" color=".8 .8 0" scale=".3" />
+				<instance name="trails1" bone01="_bone_fx_08" color=".8 .8 0" scale=".3" />
+				<instance name="trails1" bone01="_bone_fx_09" color=".8 .8 0" scale=".3" />
+				<instance name="trails1" bone01="_bone_fx_10" color=".8 .8 0" scale=".3" />
+				<instance name="trails1" bone01="_bone_fx_11" color=".8 .8 0" scale=".3" />
+				<instance name="trails1" bone01="_bone_fx_12" color=".8 .8 0" scale=".3" />
+			
+			</model>
+			
+			<model
+				position="0 0 0"
+				life="700"
+				model="/heroes/moraxus/ability_01/effects/motion_rig/model.mdf"
+				anim="idle"
+				startscale=".7"
+				midscalepos="0.3"
+				endscale="0"
+				yawspeed="720"
+			>
+				<template name="flashes">
+					<twopointtrailemitter
+						life="700"
+						bone_a="{bone_a}"
+						bone_b="{bone_b}"
+						spawnrate="35"
+						particlelife="700"
+						texpostime="700"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/phantom_smoke_13.material"
+						startparticlecolor="1 1 1"
+						endparticlecolor="0 0 0"
+					>
+						<particle
+							scale="2"
+							color="1 0 0"
+						/>
+					</twopointtrailemitter>
+				</template>
+
+				<instance name="flashes" bone_a="_bone_fx_01" bone_b="_bone_fx_02"/>
+				<instance name="flashes" bone_a="_bone_fx_03" bone_b="_bone_fx_04"/>
+				<instance name="flashes" bone_a="_bone_fx_05" bone_b="_bone_fx_06"/>
+				<instance name="flashes" bone_a="_bone_fx_07" bone_b="_bone_fx_08"/>
+
+			</model>
+			
+			<model
+				position="0 0 0"
+				life="700"
+				model="/heroes/moraxus/ability_01/effects/motion_rig/model.mdf"
+				anim="idle"
+				startscale=".7"
+				midscalepos="0.3"
+				endscale="0"
+				yaw="45"
+				yawspeed="720"
+			>
+				<template name="flashes">
+					<twopointtrailemitter
+						life="700"
+						bone_a="{bone_a}"
+						bone_b="{bone_b}"
+						spawnrate="35"
+						particlelife="700"
+						texpostime="700"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/phantom_smoke_05.material"
+						startparticlecolor="1 1 1"
+						endparticlecolor="0 0 0"
+					>
+						<particle
+							scale="6"
+							color="0"
+						/>
+					</twopointtrailemitter>
+				</template>
+				<template name="flashes_02">
+					<twopointtrailemitter
+						life="700"
+						bone_a="{bone_a}"
+						bone_b="{bone_b}"
+						spawnrate="35"
+						particlelife="700"
+						texpostime="700"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/phantom_smoke_13.material"
+						startparticlecolor="1 1 1"
+						endparticlecolor="0 0 0"
+					>
+						<particle
+							scale="{scale=1.2}"
+							color="{color=1 0 0}"
+						/>
+					</twopointtrailemitter>
+				</template>
+				<instance name="flashes" bone_a="_bone_fx_01" bone_b="_bone_fx_02"/>
+				<instance name="flashes" bone_a="_bone_fx_03" bone_b="_bone_fx_04"/>
+				<instance name="flashes" bone_a="_bone_fx_05" bone_b="_bone_fx_06"/>
+				<instance name="flashes" bone_a="_bone_fx_07" bone_b="_bone_fx_08"/>
+				
+				<instance name="flashes_02" bone_a="_bone_fx_01" bone_b="_bone_fx_02"/>
+				<instance name="flashes_02" bone_a="_bone_fx_03" bone_b="_bone_fx_04"/>
+				<instance name="flashes_02" bone_a="_bone_fx_05" bone_b="_bone_fx_06"/>
+				<instance name="flashes_02" bone_a="_bone_fx_07" bone_b="_bone_fx_08"/>
+				
+				<instance name="flashes_02" bone_a="_bone_fx_01" bone_b="_bone_fx_02" scale=".12" color=".6 .6 0" />
+				<instance name="flashes_02" bone_a="_bone_fx_03" bone_b="_bone_fx_04" scale=".12" color=".6 .6 0" />
+				<instance name="flashes_02" bone_a="_bone_fx_05" bone_b="_bone_fx_06" scale=".12" color=".6 .6 0" />
+				<instance name="flashes_02" bone_a="_bone_fx_07" bone_b="_bone_fx_08" scale=".12" color=".6 .6 0" />
+			</model>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

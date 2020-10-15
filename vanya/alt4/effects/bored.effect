@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+	
+		<modifier 
+			name="modifier0"
+			startcolor="1 1 1"
+			endcolor="2 1 1"
+			life="450"
+			delay="1300"
+		/>
+
+		<particlesystem name="system0" space="world">
+			<template name="blackTrail">	
+				<twopointtrailemitter
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					spawnrate="44"
+					particlelife="500"
+					texpostime="500"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/soul_projectile.material"
+					subframepos="true"
+				>
+					<particle
+						startcolor="0 0 0"
+						endcolor="0 0 0" 
+						startalpha="1"
+						endalpha="0"
+					/>
+				</twopointtrailemitter>
+			</template>
+			
+			<instance name="blackTrail"
+				bone_a="Bip001 R Foot"
+				bone_b="Bip001 R Thigh"
+			/>
+
+			<instance name="blackTrail"
+				bone_a="Bip001 L Foot"
+				bone_b="Bip001 L Thigh"
+			/>
+			
+			<instance name="blackTrail"
+				bone_a="_bone_weapon2"
+				bone_b="_bone_weapon3"
+			/>
+
+			<instance name="blackTrail"
+				bone_a="_bone_weapon5"
+				bone_b="_bone_weapon6"
+			/>
+			
+			
+            <template name="trails">
+                <trailemitter
+					bone="{bone}"
+					life="1000"
+                    spawnrate="100"
+                    particlelife="1000"
+                    texpostime="1000"
+                    texposscale="0.0"
+                    texstretchscale=".4"
+                    position="0 0 0"
+                    material="/shared/effects/materials/arrow_trail.material"
+                    startparticlecolor="2 0 0"
+                    endparticlecolor="1 0 0"
+                >
+                    <particle
+                         startcolor="{startcolor}"
+                         midcolor="{midcolor}"
+                         endcolor="-1"
+                         startsize="1"
+                         midsize="{midsize}"
+                         endsize="1"
+                         midsizepos="0.2"
+                    />
+                </trailemitter>
+            </template>
+            <instance name="trails" bone="_bone_weapon2" midsize="25" startcolor=".5 0 .1" midcolor=".25 0 0" />
+            <instance name="trails" bone="_bone_weapon5" midsize="25" startcolor=".5 0 .1" midcolor=".25 0 0" />	
+			
+            <instance name="trails" bone="_bone_weapon3" midsize="5" startcolor=".5 .1 0" midcolor=".15 .05 0" />
+            <instance name="trails" bone="_bone_weapon6" midsize="5" startcolor=".5 .1 0" midcolor=".15 .05 0" />	
+
+				
+			<simpleemitter
+				delay="300"
+				bone="_bone_centerofchest"
+				spawnrate="80"
+				count="5"
+				particlelife="300"
+				gravity="0"         	
+				drag=".1"
+				acceleration="0.0"
+				position="0 0 30"
+				offsetsphere="40 40 40"
+				material="/shared/effects/materials/soul_projectile.material"
+				>
+				<particle 
+					size="180"
+					startframe="0.0"
+					endframe="1.0"
+					color="0 0 0"
+					minyaw="-360"
+					maxyaw="360"
+					lockup="1"
+					depthbias="30"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+				/>	
+			</simpleemitter>
+			
+			<simpleemitter
+				delay="300"
+				bone="_bone_centerofchest"
+				spawnrate="80"
+				count="5"
+				particlelife="300"
+				gravity="0"         	
+				drag=".1"
+				acceleration="0.0"
+				position="0 0 30"
+				offsetsphere="40 40 40"
+				material="/shared/effects/materials/3d_slash_02.material"
+			>
+				<particle 
+					size="180"
+					startframe="0.0"
+					endframe="1.0"
+					colorcolor="-1"
+					minyaw="-360"
+					maxyaw="360"
+					lockup="1"
+					depthbias="30"
+				/>
+				
+				<particle 
+					size="180"
+					startframe="0.0"
+					endframe="1.0"
+					color="1 0 0"
+					minyaw="-360"
+					maxyaw="360"
+					lockup="1"
+					depthbias="30"
+				/>
+				
+				<particle 
+					size="180"
+					startframe="0.0"
+					endframe="1.0"
+					color="1 0 0"
+					minyaw="-360"
+					maxyaw="360"
+					lockup="1"
+					depthbias="30"
+				/>		
+			</simpleemitter>					
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+     	 <waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

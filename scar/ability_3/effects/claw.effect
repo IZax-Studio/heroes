@@ -170,8 +170,8 @@
 						subframepos="true"
 					>
 						<particle
-							startcolor="1"
-							endcolor="1 0 1"
+							startcolor="1.5 0 0.2"
+							endcolor="1 0 0"
 							startsize="25"
 							endsize="0"
 							midsizepos="0.25"

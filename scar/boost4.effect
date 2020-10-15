@@ -25,7 +25,7 @@
 				subframepose="true"
 			>
 				<particle
-					startcolor="0 .75 3"
+					startcolor="3 0 0"
 					endcolor="0 0 0" 
 				/>
 			</twopointtrailemitter>
@@ -42,7 +42,7 @@
 				subframepose="true"
 			>
 				<particle
-					startcolor="0 .75 3"
+					startcolor="3 0 0"
 					endcolor="0 0 0" 
 				/>
 			</twopointtrailemitter>
@@ -51,7 +51,7 @@
 				bone_a="Bone13"
 				bone_b="bone_new001"
 				size="25"
-				color="0 .75 3"
+				color="3 0 0"
 				alpha=".0001"
 				material="/shared/effects/materials/bow_glow_03.material"
 				framespeed="5"

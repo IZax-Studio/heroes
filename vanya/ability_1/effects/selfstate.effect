@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="lifeStealEffectForDominatingCreep" deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".75"
+				sample="/heroes/vanya/ability_1/sounds/cast.wav"
+			/>
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".75"
+				sample="../../sounds/ab1.wav"
+			/>
+			
+			<template name="smoke_small">
+				<trailemitter
+					delay="300"
+					bone="{bone}"
+					spawnrate="90"
+					particlelife="1000"
+					gravity="-15"
+					material="/shared/effects/materials/solid_bolt.material"
+					position="{position}"
+					inheritvelocity=".2"
+					drag=".1"
+					direction="0 0 -1"
+					speed="20"
+				>
+					<particle
+						color="1 0 0"
+						minstartsize="5"
+						maxstartsize="15"
+						midsize="20"
+						endsize="2"
+						startalpha="0"
+						midalpha=".35"
+						endalpha="0"
+					/>
+				</trailemitter>
+			</template>
+			<instance name="smoke_small" bone="_bone_weapon1" position="0 0 0"/>	
+			<instance name="smoke_small" bone="_bone_weapon3" position="0 0 0"/>	
+			<instance name="smoke_small" bone="_bone_weapon4" position="0 0 0"/>	
+			<instance name="smoke_small" bone="_bone_weapon6" position="0 0 0"/>	
+			
+			
+			<template name="smoke">
+				<simpleemitter
+					bone="{bone}"
+					minspawnrate="50"
+					maxspawnrate="80"
+					minparticlelife="1500"
+					maxparticlelife="2500"
+					gravity="-20.0"
+					speed="0.20"
+					drag="0.1"
+					material="/shared/effects/materials/smoke_01.material"
+					offsetsphere="3"
+					inheritvelocity=".025"
+				>
+					<particle
+						minstartalpha=".15"
+						maxstartalpha=".45"
+						endalpha="0"
+						startcolor=".5 0 0"
+						midcolor=".2 0 0"
+						endcolor=".2 0 0"
+						minangle="0"
+						maxangle="90"
+						minanglespeed="0"
+						maxanglespeed="30"
+						startsize="3"
+						minendsize="15"
+						maxendsize="25"
+					/>
+				</simpleemitter>
+				
+				<trailemitter
+					delay="320"
+					bone="{bone}"
+					minspawnrate="80"
+					maxspawnrate="120"
+					particlelife="1000"
+					gravity="-20"
+					material="/shared/effects/materials/solid_bolt.material"
+					position="{position}"
+					inheritvelocity=".2"
+					drag=".05"
+					speed="10"
+				>
+					<particle
+						color="-4"
+						minstartsize="50"
+						maxstartsize="70"
+						endsize="5"
+						startalpha="0"
+						midalpha=".5"
+						endalpha="0"
+					/>
+				</trailemitter>
+				
+				<simpleemitter
+					bone="{bone}"
+					minspawnrate="50"
+					maxspawnrate="100"
+					minparticlelife="100"
+					maxparticlelife="200"
+					gravity="-5"
+					speed="5"
+					drag="2.0"
+					material="/shared/effects/materials/flame.material"
+					offsetsphere="2.5"
+					inheritvelocity=".025"
+				>
+					<particle
+						startcolor="1 0 0"
+						midcolor="2 .2 0"
+						endcolor="1 0 0"
+						minangle="0"
+						maxangle="90"
+						minanglespeed="0"
+						maxanglespeed="50"
+						startsize="30"
+						minendsize="10"
+						maxendsize="20"
+					/>
+				</simpleemitter>
+			</template>		
+			<instance name="smoke" bone="_bone_weapon2" position="0 0 0"/>	
+			<instance name="smoke" bone="_bone_weapon5" position="0 0 0"/>	
+
+			
+			<template name="ring">
+				<simpleemitter
+					bone="{bone}"
+					position="0 0 0"
+					gravity="10"
+					spawnrate="10"
+					minparticlelife="350"
+					maxparticlelife="500"
+					offsetsphere="10"
+					material="/shared/effects/materials/refract_ring.material"
+				>
+					<particle 
+						minangle="-180"
+						maxangle="180"		
+						color="-1"
+						param=".1"
+						minsize="1"
+						maxsize="5"
+						
+						minstartscale="2"
+						maxstartscale="3"
+						minendscale="7.5"
+						maxendscale="15"
+						
+						startalpha="0"
+						midalpha="1"
+						midalphapos="0.2"
+						endalpha="0"
+						anchor="0"
+					/>
+				</simpleemitter>		
+			</template>
+			<instance name="ring" bone="_bone_weapon1"/>
+			<instance name="ring" bone="_bone_weapon3"/>	
+			<instance name="ring" bone="_bone_weapon4"/>
+			<instance name="ring" bone="_bone_weapon6"/>	
+		</particlesystem>
+		
+		
+		<particlesystem name="system1" space="entity" scale="1.0">	
+			<template name="flame">
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="5"
+					particlelife="1000"
+					gravity="-20.0"
+					speed="0.20"
+					drag="2.0"
+					material="/shared/effects/materials/dust_smoke_02.material"
+					offsetsphere="3"
+					inheritvelocity=".025"
+				>
+					<particle
+						startalpha="1"
+						endalpha="0"
+						startcolor="0"
+						midcolor=".5 0 0"
+						endcolor="0"
+						minangle="0"
+						maxangle="90"
+						minanglespeed="0"
+						maxanglespeed="30"
+						startsize="4"
+						endsize="35"
+						startanchor="1"
+						endanchor="0"
+					/>
+				</simpleemitter>
+
+				<simpleemitter
+					bone="{bone}"
+					minspawnrate="8"
+					maxspawnrate="16"
+					particlelife="1200"
+					gravity="-25"
+					speed="8"
+					drag="1.0"
+					material="/shared/effects/materials/flame.material"
+					offsetsphere="2.5"
+					inheritvelocity=".025"
+				>
+					<particle
+						startcolor="1 0 0"
+						midcolor="-1"
+						endcolor="1 0 0"
+						minangle="0"
+						maxangle="90"
+						minanglespeed="0"
+						maxanglespeed="50"
+						startsize="0"
+						minendsize="35"
+						maxendsize="60"
+						startanchor="1"
+						endanchor=".5"
+					/>
+				</simpleemitter>
+				
+				<billboard
+					life="1000"
+					expirelife="300"
+					loop="true"
+					bone="{bone}"	
+					material="/shared/effects/materials/whitedot.material"
+					startcolor=".3 .02 0"
+					midcolor=".6 .1 0"
+					endcolor=".3 .03 0"
+					size="80"
+					depthbias="-50"
+					position="0 0 0"
+					width="60"
+				/>
+			
+				<billboard
+					bone="{bone}"
+					material="/shared/effects/materials/flare_02.material"
+					color="2 2 0"    
+					startsize="20"                
+					endsize="20"
+					depthbias="-50"
+					loop="true"
+					life="300"
+				/>		
+				
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="60"
+					minparticlelife="300"
+					maxparticlelife="1000"			
+					gravity="-20"
+					minspeed="10"
+					maxspeed="50"
+					drag=".05"
+					material="/shared/effects/materials/spark_10.material"
+					offsetsphere="25"
+					minangle="70"
+					maxangle="90"
+					directionalspace="global"
+				>
+					<particle 
+						minangle="0"
+						maxangle="360"
+						startcolor="1 0 0"
+						midcolor="1.5 .25 0"
+						endcolor="0 0 0"
+						midcolorpos=".3"
+						minstartsize="6"
+						maxstartsize="10"
+						endsize="0"
+					/>
+				</simpleemitter>
+			</template>
+			<instance name="flame" bone="_bone_weapon2"/>
+			<instance name="flame" bone="_bone_weapon5"/>
+
+		
+		</particlesystem>
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>

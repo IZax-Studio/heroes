@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.75">
+<!-- 			<simpleemitter
+				delay="0"
+				bone="_bone_centerofchest"
+				spawnrate="52"
+				particlelife="300"
+				gravity="0"         	
+				drag=".1"
+				acceleration="0.0"
+				position="0 0 30"
+				offsetsphere="40 40 40"
+				material="/shared/effects/materials/soul_projectile.material"
+			>
+				<particle 
+					size="180"
+					startframe="0.0"
+					endframe="1.0"
+					color="0 0 0"
+					minyaw="-360"
+					maxyaw="360"
+					lockup="1"
+					depthbias="30"
+					startalpha="0"
+					midalpha=".6"
+					endalpha="0"
+				/>
+			</simpleemitter> -->
+				<trailemitter
+					bone="_bone_centerofchest"
+					minspawnrate="80"
+					maxspawnrate="120"
+					minparticlelife="200"
+					maxparticlelife="300"
+					gravity="-20"
+					material="/shared/effects/materials/solid_bolt.material"
+					position="{position}"
+					inheritvelocity=".2"
+					drag=".05"
+					speed="10"
+				>
+					<particle
+						color="-1"
+						minstartsize="250"
+						maxstartsize="270"
+						endsize="100"
+						startalpha="0"
+						midalpha=".5"
+						endalpha="0"
+					/>
+				</trailemitter>	
+				<trailemitter
+					bone="_bone_centerofchest"
+					minspawnrate="80"
+					maxspawnrate="120"
+					minparticlelife="300"
+					maxparticlelife="500"
+					gravity="-20"
+					material="/shared/effects/materials/solid_bolt.material"
+					position="{position}"
+					inheritvelocity=".2"
+					drag=".05"
+					speed="10"
+				>
+					<particle
+						color="-1"
+						minstartsize="150"
+						maxstartsize="170"
+						endsize="50"
+						startalpha="0"
+						midalpha=".5"
+						endalpha="0"
+					/>
+				</trailemitter>			
+			
+			
+			
+			
+
+			
+			<template name="blackTrail">	
+				<twopointtrailemitter
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					spawnrate="44"
+					particlelife="500"
+					texpostime="500"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/solid_bolt.material"
+					subframepos="true"
+				>
+					<particle
+						startcolor="0 0 0"
+						endcolor="0 0 0" 
+						startalpha="1"
+						endalpha="0"
+					/>
+				</twopointtrailemitter>
+			</template>
+			
+			<instance name="blackTrail"
+				bone_a="Bip001 R Foot"
+				bone_b="Bip001 R Thigh"
+				/>
+
+			<instance name="blackTrail"
+				bone_a="Bip001 L Foot"
+				bone_b="Bip001 L Thigh"
+			/>
+						
+			<instance name="blackTrail"
+				bone_a="Bip001 Pelvis"
+				bone_b="Bip001 Head"
+			/>
+			
+			
+			
+				<simpleemitter
+					bone="_bone_centerofchest"
+					minspawnrate="50"
+					maxspawnrate="100"
+					minparticlelife="100"
+					maxparticlelife="200"
+					gravity="-5"
+					speed="5"
+					drag="2.0"
+					material="/shared/effects/materials/flame.material"
+					offsetsphere="2.5"
+					inheritvelocity=".025"
+				>
+					<particle
+						startcolor="1 0 0"
+						midcolor="2 0 0"
+						endcolor="1 0 0"
+						minangle="0"
+						maxangle="90"
+						minanglespeed="0"
+						maxanglespeed="50"
+						
+						minstartsize="50"
+						maxstartsize="120"
+						minendsize="10"
+						maxendsize="20"
+						
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					bone="_bone_centerofchest"
+					minspawnrate="50"
+					maxspawnrate="100"
+					minparticlelife="50"
+					maxparticlelife="100"
+					gravity="-5"
+					speed="5"
+					drag="2.0"
+					material="/shared/effects/materials/flame.material"
+					offsetsphere="2.5"
+					inheritvelocity=".025"
+				>
+					<particle
+						startcolor="1 0 0"
+						midcolor="2 .5 0"
+						endcolor="0"
+						minangle="0"
+						maxangle="90"
+						minanglespeed="0"
+						maxanglespeed="50"
+						
+						minstartsize="30"
+						maxstartsize="60"
+						minendsize="10"
+						maxendsize="20"
+						
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+					/>
+				</simpleemitter>		
+			
+			
+
+			
+			<template name="trail">	
+				<twopointtrailemitter
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					spawnrate="44"
+					particlelife="500"
+					texpostime="500"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/calamity_fire_scrolling_trail_blend.material"
+					subframepos="true"
+				>
+					<particle
+						startcolor="{startcolor}" midcolor="{midcolor}" endcolor="{endcolor}"  midcolorpos=".2"
+						startalpha="1" endalpha="0"
+					/>
+				</twopointtrailemitter>
+			</template>
+
+			<instance name="trail"
+				bone_a="Bip001 R Foot"
+				bone_b="Bip001 R Thigh"
+				startcolor="1 0 0"
+				midcolor="2 0 0"
+				endcolor="2 0 0"
+			/>
+
+			<instance name="trail"
+				bone_a="Bip001 L Foot"
+				bone_b="Bip001 L Thigh"
+				startcolor="1 0 0"
+				midcolor="2 0 0"
+				endcolor="2 0 0"
+			/>
+						
+			<instance name="trail"
+				bone_a="Bip001 Pelvis"
+				bone_b="Bip001 Head"
+				startcolor="2 0 0"
+				midcolor="2 1 0"
+				endcolor="2 1 0"
+			/>
+			
+			<instance name="trail"
+			 	bone_a="Bip001 L Clavicle"
+				bone_b="Bip001 L Hand"
+				startcolor="2 1 0"
+				midcolor="2 0 0"
+				endcolor="2 0 0"
+			/>
+				
+			<instance name="trail"
+				bone_a="Bip001 R Clavicle"
+				bone_b="Bip001 R Hand"
+				startcolor="2 1 0"
+				midcolor="2 0 0"
+				endcolor="2 0 0"
+			/>
+
+			
+			
+			
+			
+			<simpleemitter
+				delay="0"
+				bone="_bone_centerofchest"
+				spawnrate="52"
+				particlelife="300"
+				gravity="0"         	
+				drag=".1"
+				acceleration="0.0"
+				position="0 0 30"
+				offsetsphere="40 40 40"
+				material="/shared/effects/materials/3d_slash_02.material"
+			>
+				<particle 
+					size="150"
+					startframe="0.0"
+					endframe="1.0"
+					color="1 0 0"
+					minyaw="-360"
+					maxyaw="360"
+					lockup="1"
+					depthbias="30"
+				/>
+				
+				<particle 
+					size="180"
+					startframe="0.0"
+					endframe="1.0"
+					color="1 0 0"
+					minyaw="-360"
+					maxyaw="360"
+					lockup="1"
+					depthbias="30"
+				/>
+
+				<particle 
+					size="180"
+					startframe="0.0"
+					endframe="1.0"
+					color="1 0 0"
+					minyaw="-360"
+					maxyaw="360"
+					lockup="1"
+					depthbias="30"
+				/>
+			</simpleemitter>
+
+			
+			
+			
+			<model
+				model="/heroes/vanya/set_ascension/ability_3/effects/shock_wave/model.mdf"
+				material="/heroes/kane/ability_04/effects/aura_hero/material.material"
+                turn="1"
+				scale="1.5"
+				color="1 0 0"
+				bone="_bone_origin"
+				pitch="90"
+				position="0 70 50"
+				yaw="180"
+			/>
+			
+			<model
+				model="/heroes/vanya/set_ascension/ability_3/effects/shock_wave/model_a.mdf"
+				material="/heroes/kane/ability_04/effects/aura_hero/material.material"
+                turn="1"
+				scale="1.5"
+				color="3 0 0"
+				bone="_bone_origin"
+				pitch="90"
+				position="0 70 50"
+				yaw="180"
+			/>
+			
+			<billboard
+			    bone="_bone_origin"
+				material="/shared/effects/materials/whitedot.material"
+				color=".2 0 0"							
+				size="250"
+				depthbias="-20"
+				position="0 40 50"
+				alpha=".7"
+			/>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="300"
+				minparticlelife="500"
+				maxparticlelife="800"			
+				gravity="-5"
+				minspeed="50"
+				maxspeed="100"
+				drag=".01"
+				material="/shared/effects/materials/spark_10.material"
+				offsetsphere="30 30 0"
+				minangle="30"
+				maxangle="90"
+				direction="0 0 0"
+				directionalspace="global"
+			>
+				<particle 
+					maxangle="360"
+					minanglespeed="-100" 
+					maxanglespeed="100"
+					
+					startcolor="1 0 0"
+					midcolor="1 .2 0"
+					endcolor=".5 0 0"
+					midcolorpos=".3"
+					
+					minstartsize="5"
+					maxstartsize="15"
+					endsize="0"
+					
+					minstartframe=".6" maxstartframe=".8" minmidframe=".1" maxmidframe=".4" endframe="0"
+					param=".25"
+				/>
+			</simpleemitter>	
+
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

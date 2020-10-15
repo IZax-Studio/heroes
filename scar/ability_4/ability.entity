@@ -22,14 +22,14 @@
 
 >
 	<onimpact>
-		<applystate name="State_Scar_Ability4" duration="300000" />		
+		<applystate name="State_Scar_Ability4" duration="30000" />		
 	</onimpact>
 
 	<modifier key="ult_boost" modpriority="90" 
 		displayname="true"
 	>
 		<onimpact>
-			<applystate name="State_Scar_Ability4" duration="300000" />		
+			<applystate name="State_Scar_Ability4" duration="30000" />		
 		</onimpact>
 	</modifier>
 

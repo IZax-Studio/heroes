@@ -15,8 +15,8 @@
 				material="/shared/effects/materials/swoosh_add.material"
 			>
 				<particle
-					startcolor=".1"
-					midcolor=".1"
+					startcolor=".3"
+					midcolor=".1 0 0"
 					midcolorpos=".5"
 					endcolor=".3 0 0"
 				/>
