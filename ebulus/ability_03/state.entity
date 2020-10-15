@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ebulus_Ability3"
+
+	icon="icon3.tga"
+	passiveeffect="effects/state.effect"
+	
+	deniable="true"
+	healthregenreduction="0.2,0.4,0.6,0.8"
+	movespeedslow="0.06,0.09,0.12,0.15"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+>
+	<oninflict>
+		<!-- Krosmode change -->
+		<setaccumulator entity="this_proxy_entity" value="1" />
+	</oninflict>
+
+	<onexpired>
+		<!-- Krosmode -->
+		<setaccumulator entity="this_proxy_entity" value="0" />
+	</onexpired>
+
+	<onframe>
+		<damage effecttype="Magic DOT" amount="6,12,18,24" b="frametime" op="mult"/>		
+	</onframe>
+	
+	<onattackedpostimpact>
+		<entitytype target="inflictor_entity" type="Projectile_EbulusWardAttack">
+			<changeduration entity="this_entity" b="1000" op="add" />
+		</entitytype>
+	</onattackedpostimpact>
+	
+	<altavatar key="Hero_Ebulus.Alt5" modpriority="90"
+		passiveeffect="../alt5/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Ebulus.Alt6" modpriority="90"
+		passiveeffect="../alt6/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Ebulus.Alt5_Classic" modpriority="90"
+		passiveeffect="../alt5/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Ebulus.Alt7" modpriority="90"
+		passiveeffect="../alt7/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Ebulus.Alt8" modpriority="90"
+		passiveeffect="../alt8/ability_03/effects/state.effect"
+	/>
+</state>

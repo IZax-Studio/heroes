@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Ellonia1"
+
+	statuseffecttooltip="State_Ellonia_Ability3"
+	icon="icon1.tga"
+	anim="ability_1" 
+
+	casttime="200"
+	castactiontime="150"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_position"
+	targetscheme="enemy_units"
+	
+	casteffecttype="Magic"
+	casteffect="effects/cast.effect"
+	
+	manacost="60,70,80,90"
+	cooldowntime="5000,4000,3000,2000"
+	range="1200"
+	targetradius="110"
+
+	forcerange="1200"
+	allowoutofboundscast="true"
+	
+	showlinecast="true"
+	linecastrange="1310"
+	linecastwidth="110"
+	
+	showrangeandradiusintooltip="true"
+>
+	<onimpact>
+		<spawnunit name="Gadget_Ellonia_Ability1" target="source_position" pushentity="true" />
+		<spawnprojectile name="Projectile_Ellonia_Ability1" target="target_position" bind="stack_entity" param="1" pushentity="true" offset="0 75 0" />
+	</onimpact>
+	
+	<altavatar key="Hero_Ellonia.Alt"	
+		casteffect="/heroes/ellonia/alt/ability_01/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Ellonia.Alt4"	
+		icon="/heroes/ellonia/alt4/ability_01/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Ellonia.Alt5"	
+		casteffect="/heroes/ellonia/alt5/ability_01/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Ellonia.Alt6"	
+		casteffect="/heroes/ellonia/alt6/ability_01/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Ellonia.Alt7"
+		icon="../alt7/ability_01/icon.tga" 	
+		casteffect="/heroes/ellonia/alt7/ability_01/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Ellonia.Alt8"	
+		casteffect="/heroes/ellonia/alt8/ability_01/effects/cast.effect"
+	/>
+</ability>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ebulus_Ability4"
+
+	icon="icon4.tga"
+	passiveeffect="effects/state.effect"
+	
+	effecttype="ForceTransferrable"
+	allowtransfer="true"
+>
+	<onframe>
+		<damage effecttype="Magic DOT" amount="35,55,75" b="frametime" op="mult" nonlethal="true" />
+	</onframe>
+	
+	<onattackedpostimpact>
+		<entitytype target="inflictor_entity" type="Projectile_EbulusWardAttack">
+			<changeduration entity="this_entity" b="1000" op="add" />
+		</entitytype>
+	</onattackedpostimpact>
+	
+	<modifier key="ult_boost" modpriority="100"
+		passiveeffect="effects/state_boost.effect"
+	>
+		<onframe>
+			<damage effecttype="Magic DOT" amount="60,90,120" b="frametime" op="mult" />
+		</onframe>
+	</modifier>
+	
+	<altavatar key="Hero_Ebulus.Alt6" modpriority="90"
+		passiveeffect="../alt6/ability_04/effects/state.effect"
+	>
+		<modifier key="ult_boost" modpriority="100"
+			passiveeffect="../alt6/ability_04/effects/state_boost.effect"
+		>
+			<onframe>
+				<damage effecttype="Magic DOT" amount="60,90,120" b="frametime" op="mult" />
+			</onframe>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Ebulus.Alt7" modpriority="90"
+		passiveeffect="../alt7/ability_04/effects/state.effect"
+	>
+		<modifier key="ult_boost" modpriority="100"
+			passiveeffect="../alt7/ability_04/effects/state_boost.effect"
+		>
+			<onframe>
+				<damage effecttype="Magic DOT" amount="60,90,120" b="frametime" op="mult" />
+			</onframe>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Ebulus.Alt8" modpriority="90"
+		passiveeffect="../alt8/ability_04/effects/state.effect"
+	>
+		<modifier key="ult_boost" modpriority="100"
+			passiveeffect="../alt8/ability_04/effects/state_boost.effect"
+		>
+			<onframe>
+				<damage effecttype="Magic DOT" amount="60,90,120" b="frametime" op="mult" />
+			</onframe>
+		</modifier>
+	</altavatar>
+</state>

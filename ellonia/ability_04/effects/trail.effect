@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".7">	
+
+				<sound
+		     	soundloop="true"
+			    fadein="10"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="1800"
+				volume=".7"
+				sample="/heroes/ellonia/ability_04/sounds/iceloop.wav"
+			/>		
+
+			<model
+				position="0 0 0"
+				model="/heroes/ellonia/ability_02/effects/center/model.mdf"
+				material="/heroes/ellonia/ability_03/effects/shell_ice.material"
+				anim="idle"
+				startscale="1.75"
+				endscale="0"
+				midscalepos=".1"
+				expirelife="150"
+				startalpha="1"
+				endalpha="0"
+				minyaw="0"
+				maxyaw="0"
+				pitch="-90"
+				color="1.5"
+				yawspeed="-720"
+			>
+			</model>
+
+			<model
+				position="0 0 0"
+				model="/heroes/ellonia/ability_02/effects/center/model.mdf"
+				material="/shared/effects/materials/shell2.material"
+				anim="idle"
+				startscale="1.75"
+				endscale="0"
+				midscalepos=".1"
+				expirelife="150"
+				startalpha="1"
+				endalpha="0"
+				minyaw="0"
+				maxyaw="0"
+				pitch="-90"
+				startcolor=".125 .35 .6"
+				midcolor=".125 .35 .6"
+				endcolor="0 0 0"
+				yawspeed="-720"
+			>
+			</model>
+			
+			
+			
+			<model
+				position="0 0 0"
+				model="/heroes/ellonia/ability_02/effects/center/model.mdf"
+				material="/heroes/ellonia/ability_03/effects/shell_ice.material"
+				anim="idle"
+				startscale="1.75"
+				endscale="0"
+				midscalepos=".1"
+				expirelife="150"
+				startalpha="1"
+				endalpha="0"
+				minyaw="0"
+				maxyaw="0"
+				pitch="90"
+				color="1.5"
+				yawspeed="-720"
+			>
+			</model>
+
+			<model
+				position="0 0 0"
+				model="/heroes/ellonia/ability_02/effects/center/model.mdf"
+				material="/shared/effects/materials/shell2.material"
+				anim="idle"
+				startscale="1.75"
+				endscale="0"
+				midscalepos=".1"
+				expirelife="150"
+				startalpha="1"
+				endalpha="0"
+				minyaw="0"
+				maxyaw="0"
+				pitch="90"
+				startcolor=".125 .35 .6"
+				midcolor=".125 .35 .6"
+				endcolor="0 0 0"
+				yawspeed="-720"
+			>
+			</model>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+	</thread>
+
+</effect>

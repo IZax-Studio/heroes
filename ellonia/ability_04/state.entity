@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ellonia_Ability4"
+	
+	icon="icon4.tga"
+	
+	passiveeffect="effects/trail.effect"
+	
+	impactinterval="100,80,60"
+>
+	
+	<onimpact>
+		<hasavatarkey name="Hero_Ellonia.Alt4">
+			<playeffect effect="../alt4/ability_04/effects/ability.effect" target="this_position" source="this_owner_entity" occlude="true" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Ellonia.Alt5">
+				<playeffect effect="../alt5/ability_04/effects/ability.effect" target="this_position" source="this_owner_entity" occlude="true" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Ellonia.Alt6">
+					<playeffect effect="../alt6/ability_04/effects/ability.effect" target="this_position" source="this_owner_entity" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Ellonia.Alt7">
+						<playeffect effect="../alt7/ability_04/effects/ability.effect" target="this_position" source="this_owner_entity" occlude="true" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Ellonia.Alt8">
+							<playeffect effect="../alt8/ability_04/effects/ability.effect" target="this_position" source="this_owner_entity" occlude="true" />
+						</hasavatarkey>
+						<else>
+							<playeffect effect="effects/ability.effect" target="this_position" source="this_owner_entity" occlude="true" />
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+
+		<areaofeffect
+			center="this_owner_entity"
+			radius="400"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="SuperiorMagic"
+		>
+			<distance target="target_entity" source="this_owner_entity" />
+			<setvar0 a="result" />
+			<compare a="var0" b="400" op="lt">
+				<evaluate a="var0" b="400" op="div" />
+				<setvar1 a="1" b="result" op="sub" />
+				<damage effecttype="SuperiorMagic DOT" amount="40" b="var1" op="mult" />
+				<applystate name="State_Ellonia_Ability3" duration="4000" pushentity="true" disablenegativeeffectpopuponrefresh="true" />
+				<addcharges entity="stack_entity" count="1" />
+			</compare>
+		</areaofeffect>
+	</onimpact>
+
+	<altavatar key="Hero_Ellonia.Alt5"	
+		passiveeffect="../alt5/ability_04/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Ellonia.Alt6"	
+		passiveeffect="../alt6/ability_04/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Ellonia.Alt7"	
+		passiveeffect="../alt7/ability_04/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Ellonia.Alt8"	
+		passiveeffect="../alt8/ability_04/effects/trail.effect"
+	/>
+</state>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">	
+						
+			<sound
+		     	soundloop="true"
+			    fadein="200"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="1800"
+				volume="1"
+				sample="/heroes/ellonia/sounds/froststate_%.wav"
+			/>
+						
+				<sound
+				life="5000"
+		     	forcestereo="true"
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="1800"
+				volume="1"
+				sample="../sounds/sotm.wav"
+			/>
+			<template name="wind_streak">
+				<trailemitter
+					life="1200"
+					position="{pos}"
+					spawnrate="10"
+					particlelife="500"
+					texposscale="0"
+					texstretchscale="1"
+					material="/shared/effects/materials/swoosh_add.material"
+					startparticlecolor="0"
+					midparticlecolor="2"
+					endparticlecolor="0"
+				>
+					<particle
+						startsize="0"
+						minmidsize="10"
+						maxmidsize="20"
+						endsize="20"
+						midsizepos=".2"
+						startcolor="0"
+						endcolor=".1 .2 .3"
+					/>
+				</trailemitter>
+			</template>
+			
+			<instance name="wind_streak" pos="140 250 100" />
+			<instance name="wind_streak" pos="360 -130 80" />
+			<instance name="wind_streak" pos="-210 -10 110" />
+			<instance name="wind_streak" pos="-110 -210 90" />
+		
+			<simpleemitter
+				spawnrate="10"
+				minparticlelife="150"
+				maxparticlelife="300"
+				material="/shared/effects/materials/flare_03.material"
+				depthbias="-50"
+			>
+				<particle
+					startcolor=".3 .3 .6"
+					endcolor="0 0 0"
+					startsize="250"
+					endsize="1250"
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+				/>
+			</simpleemitter>
+			
+			<billboard
+				expirelife="250"
+				material="/shared/effects/materials/whitedot.material"
+				size="900"
+				startcolor=".05 .05 .2"
+				endcolor="0"
+				lockup="true"
+				lockright="true"
+				pitch="-90"
+			/>
+			
+			<light
+				color=".5 .5 4"
+				falloffend="600"
+			/>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

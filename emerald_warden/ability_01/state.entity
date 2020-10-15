@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_EmeraldWarden_Ability1"
+
+	
+	icon="icon1.tga"
+	passiveeffect="effects/state.effect"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	silenced="true"
+
+	negativeeffect="silenced"
+>
+
+	<altavatar key="Hero_EmeraldWarden.Alt2" modpriority="1"
+		passiveeffect="/heroes/emerald_warden/alt2/ability_01/effects/state.effect"
+		icon="/heroes/emerald_warden/alt2/ability_01/icon.tga"
+	/>
+	
+	<altavatar key="Hero_EmeraldWarden.Alt7" modpriority="1"
+		passiveeffect="/heroes/emerald_warden/alt7/ability_01/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_EmeraldWarden.Alt8" modpriority="1"
+		passiveeffect="/heroes/emerald_warden/alt8/ability_01/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_EmeraldWarden.Alt9" modpriority="1"
+		passiveeffect="/heroes/emerald_warden/alt9/ability_01/effects/state.effect"
+		icon="/heroes/emerald_warden/alt9/ability_01/icon.tga"
+	/>
+	
+	<altavatar key="Hero_EmeraldWarden.trophy_skin03" modpriority="1"
+		passiveeffect="/heroes/emerald_warden/trophy_skin/ability_01/effects/state.effect"
+	/>
+
+</state>

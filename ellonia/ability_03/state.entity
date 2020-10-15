@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ellonia_Ability3"
+
+	icon="icon3.tga"
+	passiveeffect="effects/state_slow_ability3.effect"
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	movespeedslowpercharge="0.02"
+
+	negativeeffect="slowed"
+>
+	
+	<onimpact />
+	
+	<altavatar key="Hero_Ellonia.Alt4"
+		icon="../alt4/ability_03/iconfrost.tga"
+		passiveeffect="../alt4/ability_03/effects/state_slow_ability3.effect"
+	/>
+	
+	<altavatar key="Hero_Ellonia.Alt5"
+		passiveeffect="../alt5/ability_03/effects/state_slow_ability3.effect"
+	/>
+	
+	<altavatar key="Hero_Ellonia.Alt6"
+		passiveeffect="../alt6/ability_03/effects/state_slow_ability3.effect"
+	/>
+	
+	<altavatar key="Hero_Ellonia.Alt7"
+		icon="../alt7/ability_03/iconfrost.tga"
+		passiveeffect="../alt7/ability_03/effects/state_slow_ability3.effect"
+	/>
+	
+	<altavatar key="Hero_Ellonia.Alt8"
+		passiveeffect="../alt8/ability_03/effects/state_slow_ability3.effect"
+	/>
+</state>

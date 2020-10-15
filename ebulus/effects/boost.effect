@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="false" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="2.5">
+
+			<simpleemitter
+				minparticlelife="800"
+				maxparticlelife="1600"
+				spawnrate="25"
+				material="/shared/effects/materials/poison_15.material"
+				position="0 0 20"
+				offsetsphere="35 35 20"
+				depthbias="-20"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					startcolor="0 0 0"
+					midcolor=".2 .25 .2"
+					endcolor="0 0 0"
+					midcolorpos=".2"
+					minstartsize="15"
+					maxstartsize="35"
+					minendsize="45"
+					maxendsize="75"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".2"
+					lockup="1"
+					pitch="90"
+				/>
+			</simpleemitter>
+		</particlesystem>
+		
+		<particlesystem name="system1" space="entity">
+			
+			<simpleemitter
+				timenudge="6000"
+				bone="_bone_centerofchest"
+				particlelife="4000"
+				spawnrate="1"
+			>
+				<particle>
+					<model
+						life="4000"
+						model="/heroes/andromeda/ability_03/effects/orbit.mdf"
+						anim="idle"
+						scale="1.6"
+						minroll="0"
+						maxroll="360"
+						minrollspeed="-120"
+						maxrollspeed="120"
+						minyaw="0"
+						maxyaw="360"
+						minyawspeed="-120"
+						maxyawspeed="120"
+						minpitch="0"
+						maxpitch="360"
+						minpitchspeed="-120"
+						maxpitchspeed="120"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+					>
+						<billboard
+							life="4000"
+							bone="_bone_fx"
+							size="15"
+							material="/shared/effects/materials/whitedot.material"
+							startcolor="0"
+							midcolor=".375 .75 0"
+							endcolor="0"
+							startalpha="0"
+							midalpha="1"
+							endalpha="0"
+						/>
+						
+						<trailemitter
+							life="4000"
+							bone="_bone_fx"
+							spawnrate="30"
+							particlelife="650"
+							texpostime="650"
+							texposscale="0.0"
+							texstretchscale="1.0"
+							material="/shared/effects/materials/soul_projectile.material"
+							startparticlealpha="0"
+							midparticlealpha="1"
+							endparticlealpha="0"
+						>
+							<particle
+								startcolor=".5 1 0"
+								endcolor="-0.75"
+								startalpha="1"
+								endalpha="0"
+								startsize="20"
+								endsize="0"
+							/>
+						</trailemitter>
+							
+						<trailemitter
+							life="4000"
+							bone="_bone_fx"
+							spawnrate="30"
+							particlelife="450"
+							texpostime="450"
+							texposscale="0.0"
+							texstretchscale="1.0"
+							material="/shared/effects/materials/swoosh_add.material"
+							inheritvelocity="0.1"
+							startparticlecolor="0"
+							midparticlecolor="1"
+							endparticlecolor="0"
+						>
+							<particle
+								startcolor=".25 .5 0"
+								endcolor="0"
+								startalpha="1"
+								endalpha="0"
+								startsize="15"
+								endsize="4"
+							/>
+						</trailemitter>
+					</model>
+				</particle>
+			</simpleemitter>
+			
+			
+			<!--
+			<orbiteremitter
+				timenudge="3500"
+				position="0 0 50"
+				spawnrate="1"
+				minparticlelife="3000"
+				maxparticlelife="4000"
+				orbit="-3 2 0"
+				origin="0 0 40"
+				offset="3.14 3.14 0"
+				material="/shared/effects/materials/splatter_add.material"
+			>
+				<particle
+					size="10"
+					startcolor="0"
+					midcolor="0 .5 0"
+					endcolor="0"
+					startalpha="0"
+					midalpha="10"
+					endalpha="0"
+				>
+			-->
+				<!-- wtf u can't nest other emitters inside an orbiter :( -->
+				<!--
+					<trailemitter
+						spawnrate="20"
+						particlelife="500"
+						material="/shared/effects/materials/arrow_trail.material"
+						texposscale="0"
+						texstretchscale="1"
+					>
+						<particle
+							startsize="100"
+							endsize="0"
+							startalpha="1"
+							endalpha="0"
+						/>
+					</trailemitter>
+				-->
+			<!--
+				</particle>
+			</orbiteremitter>
+			-->
+			
+		</particlesystem>
+	</definitions>
+  <thread>
+    <spawnparticlesystem instance="instance0" particlesystem="system0" />
+    <spawnparticlesystem instance="instance1" particlesystem="system1" />
+    <waitfordeath instance="instance0" />
+    <waitfordeath instance="instance1" />
+    <!-- <die /> -->
+  </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
+

@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".7">		
+
+			<simpleemitter
+				life="2500"
+				spawnrate="200"
+				minparticlelife="500"
+				maxparticlelife="1500"
+				minspeed="20"
+				maxspeed="80"
+				direction=".2 -.2 -1"
+				angle="0"
+				position="0 0 400"
+				material="/shared/effects/materials/snowflake.material"
+				offsetsphere="300 300 300"
+				depthbias="-50"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-120"
+					maxanglespeed="120"
+					size="6"
+					minscale="2"
+					maxscale="4"
+					startalpha=".65"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				delay="0"
+				count="10"
+				spawnrate="30"
+				speed="0"
+				drag="0.10"
+				offsetradial="365 0 0"
+				position="0 0 0"
+				depthbias="0"
+			>
+				<particle
+				>
+					<model
+						position="0 0 -90"
+						model="ice/ice.mdf"
+						material="/shared/effects/materials/shell2.material"
+						anim="idle"
+						minscale=".7"
+						maxscale="1.3"
+						minlife="2500"
+						maxlife="3750"
+						startalpha="1"
+						endalpha="0"
+						minyaw="0"
+						maxyaw="360"
+						startcolor="1 2 3"
+						endcolor="0 0 0"
+					>
+					</model>
+				</particle>
+			</simpleemitter>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+			<simpleemitter
+				delay="0"
+				count="15"
+				spawnrate="25"
+				speed="0"
+				drag="0.10"
+				material="/shared/effects/materials/whitedot.material"
+				offsetsphere="385 385 20"
+				position="0 0 0"
+				depthbias="0"
+			>
+				<particle
+				>
+					<groundsprite
+						delay="250"
+						material="/shared/effects/materials/ice_cracks_ground_white.material"
+						minlife="2500"
+						maxlife="3000"
+						color=".75 .85 1"
+						minyaw="0"
+						maxyaw="360"
+						startalpha="0"
+						midalpha=".8"
+						endalpha="0"
+						midalphapos=".25"
+						scale="2.2"
+					/>
+
+					<model
+						position="0 0 -85"
+						model="ice/ice.mdf"
+						material="/shared/effects/materials/shell2.material"
+						anim="idle"
+						startscale="0"
+						midscale="1"
+						endscale="1"
+						midscalepos=".25"
+						minlife="2500"
+						maxlife="3750"
+						startalpha="1"
+						endalpha="0"
+						minyaw="0"
+						maxyaw="360"
+						startcolor="1 2 3"
+						midcolor="1 2 3"
+						endcolor="0 0 0"
+					>
+					
+						<billboard
+							life="1500"
+							position="0 0 100"
+							startcolor=".075 .1 .125"
+							endcolor="0 0 0"
+							size="600"
+							material="/shared/effects/materials/flare_03.material"
+							depthbias="-50"
+							lockup="1"
+							lockright="1"
+							pitch="90"
+						/>
+						
+						<billboard
+							life="1500"
+							position="0 0 100"
+							startcolor=".075 .1 .125"
+							endcolor="0 0 0"
+							size="600"
+							material="/shared/effects/materials/flare_03.material"
+							depthbias="-50"
+							lockup="1"
+							lockright="1"
+							pitch="90"
+							yaw="90"
+						/>
+						
+						<billboard
+							life="1500"
+							position="0 0 100"
+							startcolor=".075 .1 .125"
+							endcolor="0 0 0"
+							size="750"
+							material="/shared/effects/materials/flare_03.material"
+							depthbias="-50"
+							lockup="1"
+							lockright="1"
+							pitch="90"
+							yaw="90"
+							yawspeed="-180"
+						/>
+					
+					</model>
+
+				</particle>
+			</simpleemitter>
+			
+			
+			
+			
+			
+			
+			
+			
+
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+			<billboard
+				position="0 0 75"
+				expirelife="500"
+				startcolor="0 .025 .2"
+				endcolor="0 0 0"
+				size="1750"
+				material="/shared/effects/materials/whitedot.material"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+<!--
+			<billboard
+				position="0 0 75"
+				expirelife="500"
+				startcolor=".075 .1 .125"
+				endcolor="0 0 0"
+				size="1250"
+				material="/shared/effects/materials/flare_03.material"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+
+			<billboard
+				life="1500"
+				position="0 0 250"
+				startcolor=".075 .1 .125"
+				endcolor="0 0 0"
+				size="800"
+				material="/shared/effects/materials/flare_03.material"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+			
+			<billboard
+				life="1500"
+				position="0 0 250"
+				startcolor=".075 .1 .125"
+				endcolor="0 0 0"
+				size="800"
+				material="/shared/effects/materials/flare_03.material"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				yaw="90"
+			/>
+			
+			<billboard
+				life="1500"
+				position="0 0 250"
+				startcolor=".075 .1 .125"
+				endcolor="0 0 0"
+				size="950"
+				material="/shared/effects/materials/flare_03.material"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				yaw="90"
+				yawspeed="-180"
+			/>
+-->
+			
+			
+
+			<groundsprite
+				delay="0"
+				position="-250 0 0"
+				life="4000"
+				material="/shared/effects/materials/ice_cracks_ground.material"
+				size="250"
+				color=".75 .75 1"
+				startalpha="0"
+				midalpha=".35"
+				endalpha="0"
+				midalphapos=".35"
+			/>
+
+			<groundsprite
+				delay="0"
+				position="250 0 0"
+				life="4000"
+				material="/shared/effects/materials/ice_cracks_ground.material"
+				size="250"
+				color=".75 .75 1"
+				startalpha="0"
+				midalpha=".35"
+				endalpha="0"
+				midalphapos=".35"
+			/>
+			
+			<groundsprite
+				delay="0"
+				position="50 250 0"
+				life="4000"
+				material="/shared/effects/materials/ice_cracks_ground.material"
+				size="250"
+				color=".75 .75 1"
+				startalpha="0"
+				midalpha=".35"
+				endalpha="0"
+				midalphapos=".35"
+			/>
+			
+			<groundsprite
+				delay="0"
+				position="-50 -250 0"
+				life="4000"
+				material="/shared/effects/materials/ice_cracks_ground.material"
+				size="250"
+				color=".75 .75 1"
+				startalpha="0"
+				midalpha=".35"
+				endalpha="0"
+				midalphapos=".35"
+			/>
+<!--
+			<light
+				startcolor="0 0 0"
+				endcolor="0 1 5"
+				falloffstart="200"
+				falloffend="400"
+				life="4000"
+				position="0 0 100"
+			/>
+-->
+			
+
+			<model
+				position="0 0 0"
+				model="center/model.mdf"
+				material="/heroes/ellonia/ability_03/effects/shell_ice.material"
+				anim="idle"
+				startscale="3.5"
+				endscale="0"
+				midscalepos=".1"
+				expirelife="150"
+				startalpha="1"
+				endalpha="0"
+				minyaw="0"
+				maxyaw="0"
+				color="1.5"
+			>
+			</model>
+
+			<model
+				position="0 0 0"
+				model="center/model.mdf"
+				material="/shared/effects/materials/shell2.material"
+				anim="idle"
+				startscale="3.5"
+				endscale="0"
+				midscalepos=".1"
+				expirelife="150"
+				startalpha="1"
+				endalpha="0"
+				minyaw="0"
+				maxyaw="0"
+				startcolor=".125 .35 .6"
+				midcolor=".125 .35 .6"
+				endcolor="0 0 0"
+			>
+			</model>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+			
+			<simpleemitter
+				life="3000"
+				delay="0"
+				spawnrate="15"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				minspeed="750"
+				maxspeed="1750"
+				gravity="0"
+				material="/shared/effects/materials/whitedot.material"
+				offsetsphere="300 300 0"
+				position="0 0 0"
+				depthbias="0"
+				minangle="0"
+				maxangle="1"
+				direction="0 0 1"
+				
+			>
+				<particle
+				>
+					<model
+						position="0 0 0"
+						model="shard/model.mdf"
+						material="/shared/effects/materials/shell2.material"
+						anim="idle"
+						minscale="1"
+						maxscale="2"
+						midscalepos=".25"
+						minlife="500"
+						maxlife="1000"
+						startcolor="1 2.5 5"
+						midcolor="1 2.5 5"
+						endcolor="0 0 0"
+						minyaw="0"
+						maxyaw="360"
+						minyawspeed="-360"
+						maxyawspeed="360"
+					>
+						<billboard
+							minlife="500"
+							maxlife="1000"
+							position="0 0 0"
+							startcolor=".2"
+							midcolor=".2"
+							endcolor="0 0 0"
+							size="350"
+							material="/shared/effects/materials/flare_03.material"
+							depthbias="-50"
+							lockup="1"
+							lockright="1"
+							pitch="90"
+							yaw="90"
+						/>
+					</model>	
+				</particle>
+			</simpleemitter>
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+	</thread>
+
+</effect>

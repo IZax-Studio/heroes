@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="false">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+		
+						<sound
+		     	soundloop="true"
+			    fadein="10"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="1800"
+				volume=".5"
+				sample="/heroes/ellonia/ability_01/sounds/windloop.wav"
+			/>
+		
+			<billboard
+				expirelife="200"
+				startcolor=".3"
+				endcolor="0 0 0"
+				size="150"
+				position="0 0 0"
+				material="/heroes/drunkenmaster/effects/material.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				rollspeed="1440"
+				depthbias="-25"
+			/>
+		
+			<billboard
+				expirelife="200"
+				startcolor="0 .125 .25"
+				endcolor="0 0 0"
+				size="140"
+				position="0 -50 0"
+				material="/heroes/drunkenmaster/effects/material.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				rollspeed="1440"
+				depthbias="-25"
+			/>
+			
+			<billboard
+				expirelife="200"
+				startcolor="0 .06 .125"
+				endcolor="0 0 0"
+				size="130"
+				position="0 -100 0"
+				material="/heroes/drunkenmaster/effects/material.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				rollspeed="1440"
+				depthbias="-25"
+			/>
+
+			<model
+				position="0 0 0"
+				scale="1.45"
+				expirelife="150"
+				model="staff/staff.mdf"
+				anim="idle"
+				color="1 2.5 5"
+				startalpha="0"
+				endalpha="0"
+				midalphapos=".35"
+			>
+				<model
+					bone="_bone_weapon3"
+					startcolor="1 2 3"
+					endcolor="0 0 0"
+					position="0 0 0"
+					model="/heroes/ellonia/effects/ice/model.mdf"
+					material="/shared/effects/materials/shell2.material"
+					anim="idle"
+					expirelife="150"
+					scale=".25"
+				>
+				</model>
+				
+				<model
+					bone="_bone_weapon3"
+					startcolor="1 2 3"
+					endcolor="0 0 0"
+					position="0 0 0"
+					model="/heroes/ellonia/effects/ice/model.mdf"
+					material="/shared/effects/materials/shell2.material"
+					anim="idle"
+					expirelife="150"
+					scale=".45"
+				>
+				</model>
+				
+				<model
+					bone="_bone_weapon1"
+					startcolor="1 2 3"
+					endcolor="0 0 0"
+					position="0 0 0"
+					model="/heroes/ellonia/effects/ice/model.mdf"
+					material="/shared/effects/materials/shell2.material"
+					anim="idle"
+					expirelife="150"
+					scale=".25"
+				>
+				</model>
+
+				<billboard
+					expirelife="150"
+					startsize="250"
+					endsize="0"
+					material="/shared/effects/materials/whitedot.material"
+					startcolor="0 .05 .35"
+					endcolor="0 0 0"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+				/>
+				
+				<billboard
+					expirelife="150"
+					startsize="250"
+					endsize="0"
+					material="/shared/effects/materials/flare_03.material"
+					startcolor=".15"
+					endcolor="0 0 0"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+				/>
+
+				<billboard
+					expirelife="150"
+					startsize="250"
+					endsize="0"
+					material="/shared/effects/materials/flare_03.material"
+					startcolor=".075"
+					endcolor="0 0 0"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					roll="90"
+				/>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+<!--
+				<trailemitter
+					bone="_bone_weapon3"
+					spawnrate="50"
+					particlelife="1000"
+					texpostime="1000"
+					texposscale="0.0"
+					texstretchscale=".4"
+					position="0 0 0"
+					material="/shared/effects/materials/arrow_trail.material"
+				>
+					<particle
+						 startcolor=".1"
+						 midcolor="0 .05 .25"
+						 endcolor="0 0 0"
+						 midcolorpos=".2"
+						 startsize="10"
+						 midsize="80"
+						 endsize="30"
+						 midsizepos="0.2"
+				 />
+				</trailemitter>
+-->
+				<trailemitter
+					bone="_bone_weapon3"
+					spawnrate="175"
+					particlelife="500"
+					texpostime="500"
+					texposscale="0.0"
+					texstretchscale=".4"
+					position="0 0 0"
+					material="/shared/effects/materials/arrow_trail.material"
+				>
+					<particle
+						 startcolor=".5"
+						 midcolor="0 .05 .25"
+						 endcolor="0 0 0"
+						 midcolorpos=".2"
+						 startsize="10"
+						 midsize="25"
+						 endsize="10"
+						 midsizepos="0.2"
+				 />
+				</trailemitter>
+<!--
+				<simpleemitter
+					spawnrate="25"
+					minparticlelife="250"
+					maxparticlelife="500"
+					offsetsphere="25 25 8"
+					minspeed="150"
+					maxspeed="300"
+					direction="0 0 1"
+					material="/shared/effects/materials/snowflake.material"
+				>
+					<particle
+						maxangle="359"
+						maxanglespeed="30"
+						minanglespeed="-30"
+						minscale="5"
+						maxscale="10"
+						startcolor="1 1 1"
+						midcolor="1 1 1"
+						endcolor=".35 .7 1"
+						midcolorpos=".25"
+						startalpha=".5"
+						endalpha="0"
+						midalphapos=".25"
+					/>
+				</simpleemitter>
+-->
+				
+
+				<simpleemitter
+					spawnrate="35"
+					minparticlelife="150"
+					maxparticlelife="300"
+					offsetsphere="10"
+					minspeed="150"
+					maxspeed="300"
+					direction="0 0 0"
+					position="0 25 0"
+				>
+					<particle
+					>
+						<model
+							bone="_bone_weapon3"
+							startcolor="1.5 2.5 3.5"
+							endcolor="0 0 0"
+							position="0 0 0"
+							model="/heroes/ellonia/effects/ice/model.mdf"
+							material="/shared/effects/materials/shell2.material"
+							anim="idle"
+							life="200"
+							minscale=".1"
+							maxscale=".2"
+							minyaw="0"
+							maxyaw="360"
+							rollspeed="360"
+							pitchspeed="180"
+						>
+						</model>
+					</particle>
+				</simpleemitter>
+
+			</model>
+<!--
+			<model
+				position="0 0 0"
+				scale="1.35"
+				expirelife="150"
+				model="staff/staff.mdf"
+				material="/shared/effects/materials/shell4.material"
+				anim="idle"
+				color="1.25 1.5 1.75"
+				startalpha="1"
+				endalpha="0"
+				midalphapos=".35"
+			>
+			</model>
+-->
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

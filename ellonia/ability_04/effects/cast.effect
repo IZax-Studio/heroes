@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+
+			<template name="glow">
+				<billboard
+					life="650"
+					bone="{bone}"
+					size="185"
+					material="/shared/effects/materials/flare_01.material"
+					startalpha="1"
+					endalpha="0"
+					startcolor="0 0 1"
+					midcolor=".15 .4 1"
+					endcolor="0 0 0"
+					depthbias="-10"
+				/>
+			</template>
+
+			<instance name="glow" bone="_bone_weapon1" />
+			<instance name="glow" bone="_bone_weapon2" />
+			<instance name="glow" bone="_bone_weapon3" />
+			<instance name="glow" bone="_bone_weaponattach" />
+
+			<simpleemitter
+				delay="200"
+				count="25"
+				bone="Bip01 L Hand"
+				spawnrate="150"
+				minparticlelife="250"
+				maxparticlelife="550"
+				speed="300"
+				drag="0.10"
+				material="/shared/effects/materials/whitedot.material"
+				offsetsphere="5 5 5"
+				position="0 0 0"
+				depthbias="0"
+			>
+				<particle
+					turn="1"
+					heightdistort=".1"
+					width="1"
+					startscale="25"
+					minendscale="0"
+					maxendscale="2.5"
+					startcolor=".1 .185 .2"
+					endcolor="0 0 0"
+					midcolorpos=".25"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		 
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

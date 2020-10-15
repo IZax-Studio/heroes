@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+		
+			
+			<billboard
+				bone="_bone_weapon3"
+				startcolor=".5 2 .5"
+				midcolor="0 0 0"
+				endcolor=".5 2 .5"
+				material="/shared/effects/materials/whitedot.material"
+				size="30"
+			/>		
+
+			<billboard
+				expirelife="300"
+				bone="_bone_weapon3"
+				delay="1000"
+				startcolor=".5 2 .5"
+				midcolor="0 0 0"
+				endcolor=".5 2 .5"
+				material="/shared/effects/materials/blink_02.material"
+				size="30"
+				depthbias="-60"
+				loop="true"
+				life="3000"
+			/>		
+			
+			<billboard
+				bone="_bone_centerofchest"	
+				material="/shared/effects/materials/whitedot.material"
+				color=".5 2 .5"
+				size="50"
+			/>
+			
+			<simpleemitter
+				spawnrate="50"
+				bone="_bone_head"
+				minparticlelife="400"
+				maxparticlelife="800"			
+				gravity="-1"
+				drag=".015"
+				material="/shared/effects/materials/phantom_smoke_04.material"
+				offsetsphere="5 5 1"
+				minangle="-10"
+				maxangle="40"
+				direction="0 0 1"
+				directionalspace="global"
+				inheritvelocity=".1"
+				limitinheritvelocity="200"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startcolor="0"
+					midcolor=".5 2 .5"
+					endcolor="0 0 0"
+					midcolorpos=".2"
+					minstartsize="20"
+					maxstartsize="25"
+					endsize="50"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					startanchor="1"
+					endanchor=".25"
+				/>
+			</simpleemitter>		
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

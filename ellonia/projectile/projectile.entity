@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_ElloniaAttack"
+
+	speed="1500"
+	gravity="0"
+	canturn="false"
+	modelscale="1.25"
+
+	model="/shared/models/invis.mdf"
+	traileffect="effects/trail.effect"
+	impacteffect="effects/impact.effect"
+>
+	<altavatar key="Hero_Ellonia.Alt4" modpriority="90"
+		traileffect="../alt4/projectile/effects/trail.effect"
+		impacteffect="../alt4/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Ellonia.Alt5" modpriority="90"
+		traileffect="../alt5/effects/trail.effect"
+		impacteffect="../alt5/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Ellonia.Alt6" modpriority="90"
+		traileffect="../alt6/effects/trail.effect"
+		impacteffect="../alt6/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Ellonia.Alt7" modpriority="90"
+		traileffect="../alt7/effects/trail.effect"
+		impacteffect="../alt7/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Ellonia.Alt8" modpriority="90"
+		traileffect="../alt8/projectile/effects/trail.effect"
+		impacteffect="../alt8/projectile/effects/impact.effect"
+	/>
+</projectile>

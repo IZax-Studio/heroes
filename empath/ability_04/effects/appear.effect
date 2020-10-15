@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+
+	<definitions>
+		
+		<particlesystem name="system0" space="entity" scale="1">
+
+	
+			<simpleemitter
+				delay="0"
+				life="3000"
+				count="1"
+				spawnrate="222"
+				particlelife="1300"
+				direction="0 0 1"
+				speed="2000"
+				minangle="0"
+				maxangle="0" 
+				position="0 0 0"
+			>
+				<particle>
+
+					<billboard
+						spawnrate="50"
+						particlelife="400"
+						life="150"
+						material="/shared/effects/materials/flare2.material"
+						size="200"
+						midheightpos=".75"
+						width="40"
+						lockup="1"
+						color=".075 .06 .075"
+					/>
+
+					<billboard
+						spawnrate="50"
+						particlelife="400"
+						life="150"
+						material="/shared/effects/materials/blink.material"
+						size="150"
+						lockup="1"
+						color="0 .5 0"
+					/>
+
+					<billboard
+						spawnrate="50"
+						particlelife="400"
+						life="150"
+						material="/shared/effects/materials/flare2.material"
+						startheight="0"
+						endheight="500"
+						width="10"
+						roll="90"
+						midheightpos=".75"
+						lockup="1"
+						color=".15 .75 .15"
+					/>
+
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				delay="0"
+				life="3000"
+				count="10"
+				spawnrate="35"
+				particlelife="500"
+				material="/shared/effects/materials/corona_06.material"
+				direction="0 0 -1"
+				speed="2000"
+				minangle="0"
+				maxangle="0" 
+				position="0 0 250"
+			>
+				<particle
+					startcolor=".025 .1 .025"
+					endcolor="0"
+					startsize="120"
+					endsize="85"
+					maxangle="360"
+					minendscale="2"
+					maxendscale="3"
+					startanchor="1"
+					endanchor="0"
+					lockup="true"
+					pitch="90"
+					alpha="0"
+				/>
+				<particle
+					startcolor=".1 .05 .01"
+					endcolor="0"
+					startsize="120"
+					endsize="85"
+					maxangle="360"
+					minendscale="2"
+					maxendscale="3"
+					startanchor="1"
+					endanchor="0"
+					lockup="true"
+					pitch="90"
+					alpha="0"
+				/>
+
+			</simpleemitter>
+
+			<simpleemitter
+				delay="0"
+				count="50"
+				spawnrate="500"
+				particlelife="250"
+				gravity="-55"
+				speed="40"
+				drag=".08"
+				acceleration="0"
+				position="0 0 50"
+				material="/shared/effects/materials/phantom_smoke_10.material"
+				offsetsphere="50 50 70"
+				minangle="90"
+				maxangle="-90"
+			>
+				<particle 
+					startcolor="0 0 0"
+					midcolor=".25 .125 0"
+					endcolor="0 0 0"
+					midcolorpos=".1"
+					startframe="0"
+					endframe="1"
+					startwidth="20"
+					midwidth="15"
+					endwidth="6"
+					midwidthpos=".5"
+					startheight="1500"
+					endheight="0"
+					lockup="true"
+				/>
+			</simpleemitter>
+<!--
+			<billboard 
+				position="0 50 0"
+				material="/shared/effects/materials/flare2.material" 
+				width="55"
+				height="1500"
+				life="250"
+				startcolor="0 0 0"
+				midcolor="0 .25 .05"
+				endcolor="0 0 0"
+				lockup="true"
+			/>
+
+			<billboard 
+				life="250"
+				material="/shared/effects/materials/flare2.material" 
+				width="100"
+				startheight="2000"
+				endheight="0"
+				startcolor=".125 .075 0"
+				midcolor=".05 .225 0"
+				endcolor=".125 .075 0"
+				lockup="true"
+				roll="0"
+				yaw="-180"
+			/>
+
+			<simpleemitter
+				life="300"
+				spawnrate="15"
+				particlelife="250"
+				gravity="-6"
+				speed="0.0"
+				acceleration="0.0"
+				timenudge="0"
+				position="0 0 0"
+				material="/shared/effects/materials/flare_01.material"
+			>
+				<particle
+					startcolor=".25 .5 0"
+					endcolor="0 0 0"
+					startalpha=".02"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="0"
+					maxanglespeed="0"
+					startsize="200"
+					midsize="120"
+					endsize="50"
+					lockup="true"
+					pitch="90"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				count="1"
+				particlelife="200"
+				gravity="-6"
+				speed="0.0"
+				acceleration="0.0"
+				timenudge="0"
+				position="0 0 40"
+				material="/shared/effects/materials/blink.material"
+			>
+				<particle
+					anglespeed="20"
+					startcolor="0 0 0"
+					midcolor=".5 1 0"
+					endcolor="0 0 0"
+					midcolorpos=".1"
+					startsize="350"
+					midsize="220"
+					endsize="0"
+				/>
+			</simpleemitter>
+
+			<billboard
+				position="0 0 20"
+				life="150"
+				color="1 1 1"
+				startalpha="1.0"
+				endalpha="1"
+				startparam="0.1"
+				endparam="0.0"
+				startsize="128"
+				endsize="524"
+				material="/shared/effects/materials/refract_pinch.material"
+				lockup="1"
+				pitch="90"
+			/>
+-->
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="ward_rig.max" file="ward.model" type="K2">
+
+	<spawnevent cmd="StartEffect effects/spawn.effect" />
+
+	<anim name="portrait" clip="clips/portrait.clip" loop="true"/>
+	
+	<anim name="spawn_1" clip="clips/spawn.clip" numframes="25" startframe="0" fps="50" blendtime="0">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/cast.wav 1000 1800 .45" />
+	</anim>
+
+	<anim name="idle" clip="clips/portrait.clip" loop="1"/>
+
+	<anim name="attack_1" clip="clips/default_1.clip" fps="100">
+		<frameevent frame="45" cmd="PlaySoundLinear sounds/attack.wav 1000 1800 .45" />
+		<frameevent frame="41" cmd="StartEffect effects/attack.effect" />
+	</anim>
+
+	<anim name="death_1" clip="clips/death_1.clip" numframes="30" startframe="90" loop="1" loopbackframe="-1" fps="50">
+		<startevent cmd="StartEffect effects/death.effect" />
+	</anim>
+
+</model>

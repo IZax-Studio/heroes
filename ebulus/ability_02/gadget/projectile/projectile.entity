@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_EbulusWardAttack"
+
+	speed="900"
+	gravity="1000"
+	canturn="false"
+
+	model="/shared/models/invis.mdf"
+
+	traileffect="trail.effect"
+	impacteffect="impact.effect"
+>
+	<altavatar key="Hero_Ebulus.Alt"
+		traileffect="/heroes/ebulus/alt/ability_02/gadget/projectile/trail.effect"
+		impacteffect="/heroes/ebulus/alt/ability_02/gadget/projectile/impact.effect"
+	/>
+
+	<altavatar key="Hero_Ebulus.Alt2"
+		traileffect="/heroes/ebulus/alt2/ability_02/gadget/projectile/trail.effect"
+		impacteffect="/heroes/ebulus/alt2/ability_02/gadget/projectile/impact.effect"
+	/>
+
+	<altavatar key="Hero_Ebulus.Alt3"
+		traileffect="/heroes/ebulus/alt3/ability_02/gadget/projectile/trail.effect"
+		impacteffect="/heroes/ebulus/alt3/ability_02/gadget/projectile/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Ebulus.Alt6"
+		traileffect="/heroes/ebulus/alt6/ability_02/gadget/projectile/trail.effect"
+		impacteffect="/heroes/ebulus/alt6/ability_02/gadget/projectile/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Ebulus.Alt7"
+		traileffect="/heroes/ebulus/alt7/ability_02/gadget/projectile/trail.effect"
+		impacteffect="/heroes/ebulus/alt7/ability_02/gadget/projectile/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Ebulus.Alt8"
+		traileffect="/heroes/ebulus/alt8/ability_02/gadget/projectile/trail.effect"
+		impacteffect="/heroes/ebulus/alt8/ability_02/gadget/projectile/impact.effect"
+	/>
+</projectile>

@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Empath_Ability4_Target"
+
+	icon="icon4.tga"
+	passiveeffect="effects/state.effect"
+	effecttype=""
+	
+	attackspeed="0.3,0.45,0.6"
+	damage="35,55,75"
+>
+	<oninflict>
+		<!-- Art -->
+		<hasavatarkey name="Hero_Empath.Alt2" entity="this_owner_entity">
+			<hasmodifier name="Alt2_Sin_Set_Bonus" entity="this_owner_entity">
+				<playeffect effect="../alt2/ability_04/effects/cast.effect" source="source_position" target="" occlude="true" />
+				<playeffect effect="../alt2/ability_04/effects/appear.effect" source="target_entity" target="" occlude="true" />
+			</hasmodifier>
+			<else>
+				<playeffect effect="../alt2/ability_04/effects/cast.effect" source="source_position" target="" occlude="true" />
+				<playeffect effect="../alt2/ability_04/effects/appear.effect" source="target_entity" target="" occlude="true" />
+			</else>
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Empath.Alt7" entity="this_owner_entity">
+				<playeffect effect="../alt7/ability_04/effects/cast.effect" source="source_position" target="" occlude="true" />
+				<playeffect effect="../alt7/ability_04/effects/appear.effect" source="target_entity" target="" occlude="true" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Empath.Alt8" entity="this_owner_entity">
+					<playeffect effect="../alt8/ability_04/effects/cast.effect" source="source_position" target="" occlude="true" />
+					<playeffect effect="../alt8/ability_04/effects/appear.effect" source="target_entity" target="" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Empath.Alt9" entity="this_owner_entity">
+						<playeffect effect="../alt9/ability_04/effects/cast.effect" source="source_position" target="" occlude="true" />
+						<playeffect effect="../alt9/ability_04/effects/appear.effect" source="target_entity" target="" occlude="true" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Empath.Alt10" entity="this_owner_entity">
+							<playeffect effect="../alt10/ability_04/effects/cast.effect" source="source_position" target="" occlude="true" />
+							<playeffect effect="../alt10/ability_04/effects/appear.effect" source="target_entity" target="" occlude="true" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Empath.trophy_skin01" entity="this_owner_entity">
+								<playeffect effect="../trophy_skin/model_01/ability_04/effects/cast.effect" source="source_position" target="" occlude="true" />
+								<playeffect effect="../trophy_skin/model_01/ability_04/effects/appear.effect" source="target_entity" target="" occlude="true" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Empath.trophy_skin02" entity="this_owner_entity">
+									<playeffect effect="../trophy_skin/model_02/ability_04/effects/cast.effect" source="source_position" target="" occlude="true" />
+									<playeffect effect="../trophy_skin/model_02/ability_04/effects/appear.effect" source="target_entity" target="" occlude="true" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Empath.trophy_skin03" entity="this_owner_entity">
+										<playeffect effect="../trophy_skin/model_03/ability_04/effects/cast.effect" source="source_position" target="" occlude="true" />
+										<playeffect effect="../trophy_skin/model_03/ability_04/effects/appear.effect" source="target_entity" target="" occlude="true" />
+									</hasavatarkey>
+									<else>
+										<playeffect effect="effects/cast.effect" source="source_position" target="" occlude="true" />
+										<playeffect effect="effects/appear.effect" source="target_entity" target="" occlude="true" />
+									</else>	
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+	</oninflict>
+
+	<onattackingdamageevent>
+		<applystate name="State_Empath_Ability4_Assist" target="target_entity" duration="100" inflictor="this_proxy_entity" />
+	</onattackingdamageevent>
+	
+	<onexpired>
+		<expirestate name="State_Empath_Ability4_Self" target="this_proxy_entity" />
+	</onexpired>
+	
+	<modifier key="ult_boost" modpriority="100"
+		modifierkey="ult_boost"
+	>
+		<oninflict>
+			<!-- Cooldown adjustment for certain abilities to prevent cooldown exploits -->
+			
+			<!-- Pebbles' W & SotM-R -->
+			<pushability name="Ability_Rocky2" source="this_owner_entity" />
+			<compare a="stack_entity" b="0" op="ne">
+				<getremainingcooldown target="this_owner_entity" ability="1" />
+				<setvar0 a="result" b="1000" op="mult" />
+				<compare a="var0" b="0" op="gt">
+					<pushability name="Ability_Rocky4" source="this_owner_entity" />
+					<startcooldown duration="var0" entity="stack_entity" />
+				</compare>
+			</compare>
+			
+			<!-- Solstice's E -->
+			<pushability name="Ability_Solstice3" source="this_owner_entity" />
+			<compare a="stack_entity" b="0" op="ne">
+				<evaluate a="source_charges" source="stack_entity" />
+				<compare a="result" b="3" op="eq">			
+					<removecharge entity="stack_entity" />
+				</compare>
+			</compare>
+			
+			<!-- Thunderbringer's R -->
+			<pushability name="Ability_Kunas4" source="this_owner_entity" />
+			<compare a="stack_entity" b="0" op="ne">
+				<setactivemodifierkey name="Kunas_R_SotM" entity="stack_entity" />
+			</compare>
+			
+			
+			<!-- Art -->
+			<hasavatarkey name="Hero_Empath.Alt2" entity="this_owner_entity">
+				<hasmodifier name="Alt2_Sin_Set_Bonus" entity="this_owner_entity">
+					<playeffect effect="../alt2/ability_04/effects/cast.effect" source="source_position" target="" occlude="true" />
+					<playeffect effect="../alt2/ability_04/effects/appear.effect" source="target_entity" target="" occlude="true" />
+				</hasmodifier>
+				<else>
+					<playeffect effect="../alt2/ability_04/effects/cast.effect" source="source_position" target="" occlude="true" />
+					<playeffect effect="../alt2/ability_04/effects/appear.effect" source="target_entity" target="" occlude="true" />
+				</else>
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Empath.Alt7" entity="this_owner_entity">
+					<playeffect effect="../alt7/ability_04/effects/cast.effect" source="source_position" target="" occlude="true" />
+					<playeffect effect="../alt7/ability_04/effects/appear.effect" source="target_entity" target="" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Empath.Alt8" entity="this_owner_entity">
+						<playeffect effect="../alt8/ability_04/effects/cast.effect" source="source_position" target="" occlude="true" />
+						<playeffect effect="../alt8/ability_04/effects/appear.effect" source="target_entity" target="" occlude="true" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Empath.Alt9" entity="this_owner_entity">
+							<playeffect effect="../alt9/ability_04/effects/cast.effect" source="source_position" target="" occlude="true" />
+							<playeffect effect="../alt9/ability_04/effects/appear.effect" source="target_entity" target="" occlude="true" />
+						</hasavatarkey>						
+						<else>
+							<hasavatarkey name="Hero_Empath.Alt10" entity="this_owner_entity">
+								<playeffect effect="../alt10/ability_04/effects/cast.effect" source="source_position" target="" occlude="true" />
+								<playeffect effect="../alt10/ability_04/effects/appear.effect" source="target_entity" target="" occlude="true" />
+							</hasavatarkey>						
+							<else>
+								<hasavatarkey name="Hero_Empath.trophy_skin01" entity="this_owner_entity">
+									<playeffect effect="../trophy_skin/model_01/ability_04/effects/cast.effect" source="source_position" target="" occlude="true" />
+									<playeffect effect="../trophy_skin/model_01/ability_04/effects/appear.effect" source="target_entity" target="" occlude="true" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Empath.trophy_skin02" entity="this_owner_entity">
+										<playeffect effect="../trophy_skin/model_02/ability_04/effects/cast.effect" source="source_position" target="" occlude="true" />
+										<playeffect effect="../trophy_skin/model_02/ability_04/effects/appear.effect" source="target_entity" target="" occlude="true" />
+									</hasavatarkey>						
+									<else>
+										<hasavatarkey name="Hero_Empath.trophy_skin03" entity="this_owner_entity">
+											<playeffect effect="../trophy_skin/model_03/ability_04/effects/cast.effect" source="source_position" target="" occlude="true" />
+											<playeffect effect="../trophy_skin/model_03/ability_04/effects/appear.effect" source="target_entity" target="" occlude="true" />
+										</hasavatarkey>						
+										<else>
+											<playeffect effect="effects/cast.effect" source="source_position" target="" occlude="true" />
+											<playeffect effect="effects/appear.effect" source="target_entity" target="" occlude="true" />
+										</else>	
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</oninflict>
+	
+		<onexpired>
+			<expirestate name="State_Empath_Ability4_Self" target="this_proxy_entity" />
+			
+			<!-- SotM Exploit Preventions -->
+			
+			<!-- Tremble's SotM-R ; kill the controllable Shudder -->
+			<entitytype type="Hero_Tremble" target="this_owner_entity">
+				<areaofeffect
+					radius="9999"
+					source="this_owner_entity"
+					center="this_owner_position"
+					targetselection="all"
+					targetscheme="my_other_Shudder_units"
+					ignoreinvulnerable="true"
+				>
+					<entitytype type="Pet_Tremble_Ability4_Controllable">
+						<kill target="target_entity" source="" />
+					</entitytype>
+				</areaofeffect>	
+			</entitytype>
+			
+			<!-- Solstice's E -->
+			<pushability name="Ability_Solstice3" source="this_owner_entity" />
+			<compare a="stack_entity" b="0" op="ne">
+				<addcharges count="1" entity="stack_entity" />
+				
+				<expirestate name="State_Solstice_DayFX" target="this_owner_entity" />
+				<expirestate name="State_Solstice_NightFX" target="this_owner_entity" />
+				<applystate name="State_Solstice_DayFX" target="this_owner_entity" continuous="true" />
+			</compare>
+			
+			<!-- Thunderbringer's R -->
+			<pushability name="Ability_Kunas4" source="this_owner_entity" />
+			<compare a="stack_entity" b="0" op="ne">
+				<setactivemodifierkey name="" entity="stack_entity" />
+			</compare>
+			
+			<!-- Emerald Warden's R -->
+			<pushability name="Ability_EmeraldWarden4" source="this_owner_entity" />
+			<compare a="stack_entity" b="0" op="ne">
+				<setaccumulator value="0" />
+				
+				<!-- Don't expire if Emerald Warden has Staff of the Master or Master's Legacy in his inventory, nor if Master's Legacy state is on him -->
+				<foreachitem source="this_owner_entity">
+					<entitytype target="target_entity" type="Item_Intelligence7">
+						<setaccumulator value="1" />
+					</entitytype>
+					<else>
+						<entitytype target="target_entity" type="Item_MastersLegacy">
+							<setaccumulator value="1" />
+						</entitytype>
+					</else>
+				</foreachitem>
+				
+				<condition test="hasstate State_MastersLegacy" source="this_owner_entity" target="this_owner_entity">
+					<setaccumulator value="1" />
+				</condition>
+				
+				<compare a="accumulator" b="0" op="eq">
+					<kill target="stack_proxy_entity" source="" />
+				</compare>
+			</compare>
+		</onexpired>
+	</modifier>
+	
+	<altavatar key="Hero_Empath.Alt2" modpriority="98"
+		icon="../alt2/ability_04/icon.tga"
+	>
+		<modifier key="Empathlevel6" modpriority="1"
+			passiveeffect="/heroes/empath/alt2/ability_04/effects/state1.effect"
+		/>
+		
+		<modifier key="Empathlevel11" modpriority="1"
+			passiveeffect="/heroes/empath/alt2/ability_04/effects/state2.effect"
+		/>
+		
+		<modifier key="Empathlevel16" modpriority="1"
+			passiveeffect="/heroes/empath/alt2/ability_04/effects/state3.effect"
+		/>
+		
+		<modifier key="Empathlevel6_Sin_Set_Bonus" modpriority="2"
+			passiveeffect="/heroes/empath/alt2/ability_04/effects/state1.effect"
+		/>
+		
+		<modifier key="Empathlevel11_Sin_Set_Bonus" modpriority="2"
+			passiveeffect="/heroes/empath/alt2/ability_04/effects/state2.effect"
+		/>
+		
+		<modifier key="Empathlevel16_Sin_Set_Bonus" modpriority="2"
+			passiveeffect="/heroes/empath/alt2/ability_04/effects/state3.effect"
+		/>
+
+		<modifier key="Alt2_Sin_Set_Bonus" modpriority="99"
+			icon="../alt2/ability_04/icon.tga"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Empath.Alt" modpriority="1"
+		passiveeffect="../alt/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.Alt3" modpriority="1"
+		passiveeffect="../alt3/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.Alt4" modpriority="100" >
+		<onframe>
+			<hasmodifier name="Grass" entity="source_entity" >
+				<activatemodifierkey name="Grass" entity="this_entity" />
+			</hasmodifier>
+			<else>
+				<deactivatemodifierkey name="Grass" entity="this_entity" />
+			</else>
+			<hasmodifier name="Water" entity="source_entity" >
+				<activatemodifierkey name="Water" entity="this_entity" />
+			</hasmodifier>
+			<else>
+				<deactivatemodifierkey name="Water" entity="this_entity" />
+			</else>
+			<hasmodifier name="Fire" entity="source_entity" >
+				<activatemodifierkey name="Fire" entity="this_entity" />
+			</hasmodifier>
+			<else>
+				<deactivatemodifierkey name="Fire" entity="this_entity" />
+			</else>
+			<hasmodifier name="Rock" entity="source_entity" >
+				<activatemodifierkey name="Rock" entity="this_entity" />
+			</hasmodifier>
+			<else>
+				<deactivatemodifierkey name="Rock" entity="this_entity" />
+			</else>
+		</onframe>
+		
+		<modifier key="Grass" modpriority="1"
+			passiveeffect="/heroes/empath/alt4/ability_04/effects/grass/body.effect,/heroes/empath/alt4/ability_04/effects/grass/body_2.effect,/heroes/empath/alt4/ability_04/effects/grass/body_2.effect"
+		/>
+		
+		<modifier key="Fire" modpriority="1"
+			passiveeffect="/heroes/empath/alt4/ability_04/effects/fire/body.effect,/heroes/empath/alt4/ability_04/effects/fire/body_2.effect,/heroes/empath/alt4/ability_04/effects/fire/body_2.effect"
+		/>
+		
+		<modifier key="Water" modpriority="1"
+			passiveeffect="/heroes/empath/alt4/ability_04/effects/water/body.effect,/heroes/empath/alt4/ability_04/effects/water/body_2.effect,/heroes/empath/alt4/ability_04/effects/water/body_2.effect"
+		/>
+		
+		<modifier key="Rock" modpriority="1"
+			passiveeffect="/heroes/empath/alt4/ability_04/effects/rock/body.effect,/heroes/empath/alt4/ability_04/effects/rock/body_2.effect,/heroes/empath/alt4/ability_04/effects/rock/body_2.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Empath.Alt5" modpriority="1"
+		passiveeffect="../alt5/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.Alt7" modpriority="1"
+		passiveeffect="../alt7/ability_04/effects/state.effect"
+		icon="../alt7/ability_04/icon.tga"
+	>
+		<modifier key="Alt7_Ability4_Upgrade"
+			passiveeffect="../alt7/ability_04/effects/state_upgrade.effect"
+			icon="../alt7/ability_04/icon_upgrade.tga"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Empath.Alt8" modpriority="1"
+		passiveeffect="../alt8/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.Alt9" modpriority="1"
+		passiveeffect="../alt9/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.Alt10" modpriority="1"
+		passiveeffect="../alt10/ability_04/effects/state.effect"
+	/>
+	
+	<modifier key="Combo_efx_empath" modpriority="101"
+		passiveeffect="../alt10/ability_04/effects/state_combo.effect"
+	/>
+	
+	<modifier key="soccer" modpriority="150"
+		attackspeed="0.3"
+		damage="15"
+		manaregen="5"
+	/>
+	
+	<altavatar key="Hero_Empath.trophy_skin01" modpriority="1"
+		passiveeffect="../trophy_skin/model_01/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.trophy_skin02" modpriority="1"
+		passiveeffect="../trophy_skin/model_02/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.trophy_skin03" modpriority="1"
+		passiveeffect="../trophy_skin/model_03/ability_04/effects/state.effect"
+	/>
+	
+</state>

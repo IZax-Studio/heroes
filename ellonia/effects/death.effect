@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="death" deferred="1">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1.1">
+
+			<groundsprite
+				delay="500"
+				name="emitter0" 
+				count="1"
+				loop="false"			
+				material="/shared/effects/materials/blob.material"
+				life="5000"
+				startsize="10"
+				endsize="60"				
+				position="0 -30 0"
+				minyaw="-360"
+				maxyaw="360"
+				startcolor=".5 1 1"
+				endcolor=".5 1 1"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+			/>
+		
+			<groundsprite
+				delay="600"
+				name="emitter0" 
+				count="1"
+				loop="false"			
+				material="/shared/effects/materials/blob.material"	
+				life="5000"
+				startsize="10"
+				endsize="50"				
+				position="0 -30 0"
+				minyaw="-360"
+				maxyaw="360"
+				startcolor=".5 1 1"
+				endcolor=".5 1 1"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+			/>	
+
+			<groundsprite
+				delay="800"
+				name="emitter0" 
+				count="1"
+				loop="false"			
+				material="/shared/effects/materials/blob.material"
+				life="5000"
+				startsize="10"
+				endsize="30"				
+				position="0 -30 0"
+				minyaw="-360"
+				maxyaw="360"
+				startcolor=".5 1 1"
+				endcolor=".5 1 1"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+			/>	
+
+			<billboard
+				life="3000"
+				depthbias="-75"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="0 0 0"
+				midcolor="0 .5 1"
+				endcolor="0"	
+				size="100"
+				position="0 -30 25"		
+			/>
+
+
+
+			<simpleemitter
+				position="0 -30 0"
+				life="4000"
+				minparticlelife="2100"
+				maxparticlelife="2200"
+				spawnrate="35"
+				material="/shared/effects/materials/blob_add.material"
+				offsetsphere="35 35 0"
+			>
+				<particle 
+					minanglespeed="-110"
+					maxanglespeed="130"
+					minangle="-360"
+					maxangle="360"
+					startcolor="0"
+					midcolor="0 0 .05"
+					endcolor="0"
+					startsize="35"
+					lockup="1"
+					pitch="90"
+					endsize="75"
+				/>
+			</simpleemitter>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<simpleemitter
+				life="2500"
+				spawnrate="35"
+				minparticlelife="500"
+				maxparticlelife="1500"
+				minspeed="20"
+				maxspeed="80"
+				direction=".2 -.2 -1"
+				angle="0"
+				position="0 -30 80"
+				material="/shared/effects/materials/snowflake.material" 
+				offsetsphere="25"
+				depthbias="-50"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-120"
+					maxanglespeed="120"
+					size="3"
+					minscale="2"
+					maxscale="4"
+					startalpha=".65"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			
+			
+			
+			<simpleemitter
+			delay="250"
+				life="2000"
+				spawnrate="75"
+				minparticlelife="250"
+				maxparticlelife="750"
+				minspeed="250"
+				maxspeed="500"
+				gravity="100"
+				position="0 -30 0"
+				material="/shared/effects/materials/snowflake.material" 
+				offsetsphere="12"
+				depthbias="-50"
+				minangle="0"
+				maxangle="10"
+				direction="0 0 1"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-120"
+					maxanglespeed="120"
+					size="3"
+					minscale="2"
+					maxscale="4"
+					startalpha=".65"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
+

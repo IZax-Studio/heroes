@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="death">
+	<definitions>
+<!--
+		<modifier
+			name="modifier0"
+			life="10000"
+			material="/heroes/ellonia/ability_03/effects/shell_ice.material"
+		/>
+-->
+		<particlesystem name="system0" space="entity">
+		
+			<model
+				life="10000"
+				parentmodel="true"
+				parentskeleton="true"
+				material="/shared/effects/materials/shell4.material"
+				startcolor="0 0 0"
+				midcolor=".75 1 1.25"
+				endcolor="0 0 0"
+				midcolorpos=".25"
+				scale=".99"
+			/>
+
+			<simpleemitter
+				particlelife="3000"
+				spawnrate="3"
+				speed="0"
+				gravity="0"
+				direction="0 0 0"
+				offsetsphere="30 30 0"
+				position="0 0 0"
+			>
+				<particle> 
+					<groundsprite
+						material="/shared/effects/materials/ice_cracks_ground_white.material"
+						minlife="1000"
+						maxlife="1500"
+						color=".75 .85 1"
+						minyaw="0"
+						maxyaw="360"
+						startalpha="0"
+						midalpha=".6"
+						endalpha="0"
+						midalphapos=".25"
+						scale=".8"
+					/>
+				</particle>
+			</simpleemitter>
+			
+			<model
+				bone="_bone_weapon3"
+				startcolor="1 2 3"
+				endcolor="0 0 0"
+				position="0 0 0"
+				model="ice/model.mdf"
+				material="/shared/effects/materials/shell2.material"
+				anim="idle"
+				expirelife="125"
+				scale=".45"
+			>
+			</model>
+			
+			<model
+				bone="_bone_head"
+				startcolor="1 2 3"
+				endcolor="0 0 0"
+				position="0 0 4"
+				model="ice/model.mdf"
+				material="/shared/effects/materials/shell2.material"
+				anim="idle"
+				expirelife="125"
+				scale=".35"
+			>
+			</model>
+			
+			<model
+				bone="Bip01 R Finger1"
+				startcolor="1 2 3"
+				endcolor="0 0 0"
+				position="0 0 0"
+				model="ice/model.mdf"
+				material="/shared/effects/materials/shell2.material"
+				anim="idle"
+				expirelife="125"
+				scale=".3"
+			>
+			</model>
+		
+			<simpleemitter
+				bone="_bone_weapon3"
+				spawnrate="30"
+				minparticlelife="250"
+				maxparticlelife="500"
+				gravity="-10"
+				speed="50"
+				offsetsphere="20 20 0"
+				drag="0"
+				inheritvelocity=".1"
+				direction="0 0 0"
+				material="/shared/effects/materials/star_12.material"
+			>
+				<particle 
+					startcolor=".5 1 1"
+					midcolor="0 .5 1"
+					endcolor="0 0 0"
+					midcolorpos=".8"
+					minangle="0"
+					maxangle="360"
+					startsize="0"
+					midsize="25"
+					endsize="10"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_weapon3"
+				spawnrate="30"
+				minparticlelife="250"
+				maxparticlelife="500"
+				gravity="-10"
+				speed="50"
+				offsetsphere="20 20 0"
+				drag="0"
+				inheritvelocity=".1"
+				direction="0 0 0"
+				material="/shared/effects/materials/flare_03.material"
+			>
+				<particle 
+					startcolor="1 1 1"
+					midcolor="0 .5 .5"
+					endcolor="0 0 0"
+					midcolorpos=".8"
+					minangle="0"
+					maxangle="360"
+					startsize="0"
+					midsize="20"
+					endsize="5"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_weapon3"
+				spawnrate="30"
+				minparticlelife="250"
+				maxparticlelife="500"
+				gravity="-10"
+				speed="50"
+				offsetsphere="20 20 0"
+				drag="0"
+				inheritvelocity=".1"
+				direction="0 0 0"
+				material="/shared/effects/materials/snowflake.material"
+			>
+				<particle 
+					startcolor="1 1 1"
+					midcolor="1 1 1"
+					endcolor="0 .5 .75"
+					midcolorpos=".8"
+					startalpha=".6"
+					midalpha=".6"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					startsize="0"
+					midsize="10"
+					endsize="5"
+				/>
+			</simpleemitter>
+			
+			
+			
+			
+			
+			
+			
+			<simpleemitter
+				bone="_bone_weapon3"
+				spawnrate="150"
+				minparticlelife="250"
+				maxparticlelife="550"
+				speed="300"
+				drag="0.10"
+				material="/shared/effects/materials/whitedot.material"
+				offsetsphere="5 5 5"
+				position="0 0 0"
+				depthbias="0"
+			>
+				<particle
+					turn="1"
+					heightdistort=".1"
+					width="1"
+					startscale="3"
+					minendscale="0"
+					maxendscale="2.5"
+					startcolor=".1 .185 .2"
+					endcolor="0 0 0"
+					midcolorpos=".25"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_weapon3"
+				spawnrate="150"
+				minparticlelife="250"
+				maxparticlelife="550"
+				drag="0.10"
+				material="/shared/effects/materials/whitedot.material"
+				offsetsphere="5 5 5"
+				position="0 0 0"
+				depthbias="0"
+			>
+				<particle
+					turn="1"
+					heightdistort=".1"
+					width="1"
+					startscale="1"
+					minendscale="0"
+					maxendscale="1"
+					startcolor=".5"
+					endcolor="0 0 0"
+					midcolorpos=".25"
+					anchor="1"
+				/>
+			</simpleemitter>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+			
+			<simpleemitter
+				position="0 0 20"
+				spawnrate="45"											
+				particlelife="1600"	
+				material="/shared/effects/materials/smoke_17.material"
+				offsetsphere="5 5 5"
+				inheritvelocity=".4"
+				gravity="15"
+				collide="1"
+				depthbias="-30"
+				offsetradial="30"
+				minangle="-90"
+				maxangle="90"
+				speed="50"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					color=".65"
+					startsize="85"
+					endsize="110"
+					startalpha="0"
+					midalpha=".1"
+					endalpha="0"
+					startanchor=".2"
+					endanchor="0"
+				/>
+			</simpleemitter>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+	  <spawnmodifier instance="instance1" modifier="modifier0"/> 
+      <waitfordeath instance="instance0" />
+      <waitfordeath instance="instance1" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_EmeraldWardenAttack"
+
+	speed="1050"
+	gravity="1500"
+
+	modelscale="1.3"
+	model="effects/arrow.mdf"
+
+	traileffect="effects/arrow_trail.effect"
+	impacteffect="effects/impact.effect"
+	
+>
+
+	<altavatar key="Hero_EmeraldWarden.Alt7" modpriority="1"
+		traileffect="/heroes/emerald_warden/alt7/effects/arrow_trail.effect"
+		impacteffect="/heroes/emerald_warden/alt7/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_EmeraldWarden.Alt8" modpriority="1"
+		traileffect="/heroes/emerald_warden/alt8/effects/arrow_trail.effect"
+		impacteffect="/heroes/emerald_warden/alt8/effects/impact.effect"
+		model="/shared/models/invis.mdf"
+	/>
+	<altavatar key="Hero_EmeraldWarden.trophy_skin03" modpriority="1"
+		traileffect="/heroes/emerald_warden/trophy_skin/effects/arrow_trail.effect"
+		impacteffect="/heroes/emerald_warden/trophy_skin/effects/impact.effect"
+		model="/heroes/emerald_warden/trophy_skin/effects/arrow.mdf"
+	/>
+
+</projectile>

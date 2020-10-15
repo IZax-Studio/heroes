@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+		
+			<sound
+				norestart="true"
+				channel="66034"
+				life="2000"
+				volume=".25" 
+				sample="/heroes/ellonia/ability_02/sounds/iceexplode.wav"
+				linearfalloff="true"
+				falloffstart="100"
+				falloffend="1300"
+			/>
+		
+			<sound
+				life="2000"
+				minvolume=".2"
+				maxvolume=".5" 
+				sample="/heroes/frosty/ability_04/sounds/impact_%.wav"
+				linearfalloff="true"
+				minfalloffstart="0"
+				maxfalloffstart="100"
+				minfalloffend="700"
+				maxfalloffend="1300"
+			/>
+		
+			<simpleemitter
+				mincount="1"
+				maxcount="2"
+				particlelife="1000"
+			>
+				<particle>
+					<debris
+						life="1000"
+						directionalspace="global"
+						scale=".35"
+						model="/heroes/ellonia/ability_03/effects/ice/ice.mdf"
+						material="/heroes/frosty/pedestal.material"
+						anim="idle"
+						minspeed="1000"
+						maxspeed="3000"
+						direction="0 0 1"
+						angle="60"
+						drag="0.005"
+						minrotationspeed="180"
+						maxrotationspeed="360"
+						gravity="100"
+						collide="true"
+						bounce=".5"
+						reflect=".5"
+						animpose="true"
+						yawspeed="360"
+						offsetsphere="600 600 0"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+					/>
+				</particle>
+			</simpleemitter>
+			
+			<groundsprite
+				maxangle="360"
+				material="/shared/effects/materials/ice_reveal_blend.material"
+				minlife="750"
+				maxlife="1000"
+				color=".7 .85 1"
+				minyaw="0"
+				maxyaw="360"
+				startframe=".4"
+				endframe=".1"
+				midframepos=".25"
+				startalpha="0"
+				midalpha=".5"
+				endalpha="0"
+				midalphapos=".1"
+				minscale="6"
+				maxscale="8"
+			/>
+		
+			<terrainemitter
+				minparticlelife="1000"
+				maxparticlelife="1500"
+				mincount="5"
+				maxcount="10"
+				range="300"
+				depthbias="-10"
+				material="/shared/effects/materials/snowflake_reveal.material"
+			>
+				<particle
+					maxangle="360"
+					color=".6 .8 1"
+					startframe="1"
+					minendframe="0"
+					maxendframe=".5"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+					midalphapos=".25"
+					size="50"
+					minscale="4"
+					maxscale="8"
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+				/>
+			</terrainemitter>
+			
+			
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<camerashake2 duration="50" scale="3" radius="1000" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

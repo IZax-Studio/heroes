@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="4.5">
+
+			<billboard
+				life="500"
+				startcolor="0 .4 .8"
+				midcolor="0 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".7"
+				startsize="0"
+				endsize="125"
+				depthbias="-100"
+				position="0 0 0"
+				material="/shared/effects/materials/corona_06.material"
+				lockright="true"
+				lockup="true"
+				pitch="90"
+			/>
+				
+				
+			<billboard
+				life="500"
+				startcolor=".1 .25 .5"
+				endcolor="0 0 0"
+				startparam=".5"
+				endparam="0.4"
+				startsize="25"
+				endsize="250"
+				depthbias="-100"
+				position="0 0 0"
+				material="/shared/effects/materials/stomp_01.material"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+				rollspeed="360"
+			/>
+
+			<billboard
+				life="500"
+				startcolor="0 .125 .25"
+				midcolor="0 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".7"
+				startsize="50"
+				endsize="225"
+				depthbias="-100"
+				position="0 0 0"
+				material="/shared/effects/materials/corona_06.material"
+				lockright="true"
+				lockup="true"
+				pitch="90"
+			/>
+
+			
+			<billboard
+				life="500"
+				startcolor=".1 .075 .1"
+				endcolor="0 0 0"
+				startparam=".5"
+				endparam="0.4"
+				startsize="25"
+				endsize="300"
+				depthbias="-100"
+				position="0 0 0"
+				material="/shared/effects/materials/flare_03.material"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+			/>
+			
+			<billboard
+				life="500"
+				startcolor=".1 .075 .1"
+				endcolor="0 0 0"
+				startparam=".5"
+				endparam="0.4"
+				startsize="25"
+				endsize="300"
+				depthbias="-100"
+				position="0 0 0"
+				material="/shared/effects/materials/flare_03.material"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+				yaw="90"
+			/>
+			
+			
+
+			
+			
+			
+			
+				<simpleemitter
+					spawnrate="6"
+					minparticlelife="150"
+					maxparticlelife="300"
+					offsetsphere="20"
+					minspeed="150"
+					maxspeed="300"
+					direction="0 0 0"
+					position="0 0 0"
+				>
+					<particle
+					>
+						<model
+							bone="_bone_weapon3"
+							startcolor="1.5 2.5 3.5"
+							endcolor="0 0 0"
+							position="0 0 0"
+							model="/heroes/ellonia/effects/ice/model.mdf"
+							material="/shared/effects/materials/shell2.material"
+							anim="idle"
+							life="200"
+							minscale=".05"
+							maxscale=".1"
+							minyaw="0"
+							maxyaw="360"
+							minroll="0"
+							maxroll="360"
+							rollspeed="360"
+							pitchspeed="180"
+						>
+
+						</model>
+					</particle>
+				</simpleemitter>
+
+
+				<simpleemitter
+					spawnrate="10"
+					minparticlelife="150"
+					maxparticlelife="300"
+					offsetsphere="50 50 0"
+					minspeed="100"
+					maxspeed="300"
+					direction="0 0 0"
+
+					position="0 0 0"
+				>
+					<particle
+					>
+						<billboard
+							life="500"
+							startcolor=".03 .03 .06"
+							endcolor="0 0 0"
+							startparam=".5"
+							endparam="0.4"
+							startsize="25"
+							endsize="150"
+							depthbias="-50"
+							position="0 0 0"
+							material="/shared/effects/materials/flare_03.material"
+							lockup="true"
+							lockright="true"
+							pitch="90"
+						/>
+					</particle>
+				</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		
+		<waitfordeath instance="instance0"/>
+	
+	</thread>
+
+</effect>
