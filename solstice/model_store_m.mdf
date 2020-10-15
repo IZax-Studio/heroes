@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="ssg.model" type="K2" high="ssg.model" med="ssg.model" low="ssg.model" >
+	
+	<anim name="idle" clip="clips/default_1.clip" loop="true" loopbackframe="1" >
+	</anim>
+	
+	<anim name="portrait" clip="clips/default_1.clip" loop="true" loopbackframe="1"/>
+
+	<anim name="walk_1" clip="clips/walk_1.clip" loop="true" fps="30" loopbackframe="1">
+
+	
+	
+	<frameevent frame="1" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+	<frameevent frame="12" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	
+	<frameevent frame="1" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>	
+	<frameevent frame="12" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>	
+	</anim>
+	
+	<anim name="item_1" clip="clips/default_1.clip" fps="30"/>
+	
+	<anim name="bored_1" clip="clips/bored_1.clip" fps="30">
+	</anim>
+	
+	<anim name="ability_1" clip="clips/walk_1.clip">
+
+	</anim>
+	
+	<anim name="ability_2" clip="clips/ability_2.clip"/>
+
+    <anim name="ability_3" clip="clips/ability_3_attack.clip">
+		<startevent cmd="StopSound 1"/>
+	   <startevent cmd="StopSound 3"/>
+	   <startevent cmd="StopSound 2"/>
+		<frameevent frame="13" cmd="StartEffect /heroes/solstice/ability_03/effects/day_swoosh.effect"/>
+	    <frameevent frame="5" cmd="PlaySoundLinear sounds/attack_grunt_%.wav 128 1300 1"/>
+	    <frameevent frame="10" cmd="PlaySoundLinear /shared/sounds/attacks/attack_light_%.wav 128 1300 .80"/>
+	</anim>
+	
+	<anim name="ability_4" clip="clips/ability_4.clip" startframe="0"  fps="4" loop="true">
+		<startevent cmd="StartEffect ability_04/effects/channel_self.effect 0"/>
+		<endevent cmd="StopEffect 0" />
+	</anim>
+
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="30">
+	<startevent cmd="StopSound 1"/>
+	<startevent cmd="StopSound 2"/>
+	<startevent cmd="StopSound 3"/>
+	<frameevent frame="15" cmd="PlaySoundLinear /shared/sounds/attacks/attack_light_%.wav 128 1300 .80"/>
+	</anim>
+
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="30">
+	<startevent cmd="StopSound 1"/>
+	<startevent cmd="StopSound 3"/>
+	<startevent cmd="StopSound 2"/>
+	<frameevent frame="10" cmd="PlaySoundLinear sounds/attack_grunt_%.wav 128 1300 .85"/>
+	<frameevent frame="15" cmd="PlaySoundLinear /shared/sounds/attacks/attack_light_%.wav 128 1300 .80"/>
+	</anim>
+
+	<anim name="death_1" clip="clips/death_1.clip" loop="true" loopbackframe="-1"> 
+	<frameevent frame="1" cmd="PlaySoundLinear sounds/death_grunt.wav 400 1800 1"/>
+	</anim>
+	
+	<anim name="knock_1" clip="clips/knock_1.clip" loop="true" loopbackframe="-1">
+	</anim>	
+	
+	<anim name="taunt_1" clip="clips/taunt_1.clip"/>
+
+			
+</model>

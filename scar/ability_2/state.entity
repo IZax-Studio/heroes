@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Scar_Ability2_Self"
+
+	
+	
+	icon="1.jpg"
+	passiveeffect="effects/cast.effect"
+	invulnerable="true"
+	silenced="true"
+	perplexed="true"
+	immobilized="true"
+	disarmed="true"
+>
+	<onexpired>
+		<targettype type="alive" target="this_owner_entity">
+			<playanim name="idle" target="source_entity" />
+		</targettype>
+	</onexpired>
+	
+	<altavatar key="Hero_Scar.Alt4" modpriority="90"
+		passiveeffect="../alt4/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Scar.Alt5" modpriority="90"
+		passiveeffect="../alt5/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Scar.Alt8" modpriority="90"
+		passiveeffect="../alt8/ability_02/effects/cast.effect"
+	/>
+</state>

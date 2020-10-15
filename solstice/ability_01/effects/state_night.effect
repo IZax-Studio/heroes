@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<sound
+			    fadein="50"
+				fadeout="250"
+				sample="/heroes/solstice/ability_01/sounds/state.wav"
+				soundloop="true"
+				falloffstart="1200"
+				linearfalloff="true"
+				falloffend="2000"
+				volume=".2"
+			/>
+			
+			<trackeremitter
+				position="0 125 100"
+				targetposition="0 -500 10"
+				tracktype="angular"
+				trackspeed="7.0"
+				minspeed="300"
+				maxspeed="800"
+				direction="0 -1 0"
+				minangle="100"
+				maxangle="120"
+				spawnrate="150"
+				particlelife="500"
+				material="/shared/effects/materials/whitedot_blend.material"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minstartsize="25"
+					maxstartsize="45"
+					endsize="10"
+					startcolor=".5 .6 1"
+					midcolor=".2 .35 .5"
+					endcolor="0"
+					startalpha=".75"
+					endalpha="0"
+				>
+					<trailemitter
+						life="250"
+						spawnrate="20"
+						particlelife="250"
+						texposscale="0"
+						texstretchscale="1"
+						startparticlecolor="1"
+						midparticlecolor="1"
+						endparticlecolor=".5"
+						material="/shared/effects/materials/arrow_trail.material"
+						inheritvelocity=".5"
+						drag=".01"
+					>
+						<particle
+							startcolor=".1 .4 .6"
+							midcolorpos="0"
+							endcolor="0"
+							startsize="20"
+							endsize="0"
+						/>
+					</trailemitter>
+				</particle>
+			</trackeremitter>
+			
+		
+			<template name="trails">
+				<twopointtrailemitter
+					bone_a="{bone01}"
+					bone_b="{bone02}"
+					spawnrate="100"
+					particlelife="600"
+					texpostime="500"
+					texposscale="0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/arrow_trail.material"
+					subframepos="true"
+				>
+					<particle
+						startcolor=".05 .2 .6"
+						endcolor="0" 
+					/>
+				</twopointtrailemitter>
+			</template>
+
+			<instance name="trails" bone01="Bip01 L Clavicle" bone02="Bip01 L Hand"/>
+			<instance name="trails" bone01="Bip01 R Clavicle" bone02="Bip01 R Hand"/>
+			<instance name="trails" bone01="Bip01 R Foot" bone02="Bip01 R Thigh"/>
+			<instance name="trails" bone01="Bip01 L Foot" bone02="Bip01 L Thigh"/>
+			<instance name="trails" bone01="Bip01 Pelvis" bone02="Bip01 Head"/>
+			<instance name="trails" bone01="_bone_weapon2" bone02="_bone_back"/>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+
+</effect>

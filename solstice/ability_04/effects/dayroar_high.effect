@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale="1">
+		
+
+
+			<simpleemitter
+				count="30"
+				spawnrate="300"
+				particlelife="250"
+				minangle="-30"
+				maxangle="30"
+				speed="4100"
+				direction="0 1 0"
+			>
+				<particle>
+					<simpleemitter
+						position="0 50 100"
+						spawnrate="150"
+						direction="0 0 1"
+						offsetsphere="70 70 0"
+						speed="10"
+						angle="30"
+						gravity="0"
+						minparticlelife="250"
+						maxparticlelife="250"
+						material="/shared/effects/materials/flare_02.material"
+					>
+						<particle
+							minsize="25"
+							maxsize="100"
+							startcolor="0 0 0"
+							midcolor="0 .125 .25"
+							endcolor="0"
+							midcolorpos=".25"
+						/>
+					</simpleemitter>
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				count="1"
+				spawnrate="10"
+				particlelife="1600"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+				speed="2000"
+				offsetsphere="0 0 0"
+			>
+				<particle
+					turn="true"
+				>
+					<billboard
+						life="250"
+						position="0 0 0"
+						material="/shared/effects/materials/refract_swell_directional.material"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						param=".025"
+						startsize="255"
+						endsize="1000"
+						directionalspace="local"
+					/>
+				</particle>
+			</simpleemitter>
+			
+			
+
+			<simpleemitter
+				count="1"
+				spawnrate="10"
+				particlelife="1600"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+				speed="4100"
+				offsetsphere="0 0 0"
+			>
+				<particle
+					turn="true"
+				>
+					<light
+						position="0 0 100"
+						life="250"
+						startcolor="0 0 5"
+						endcolor="0"
+						falloffstart="0"
+						falloffend="700"
+					/>
+				
+					<billboard
+						bone="_bone_fx_center"
+						life="250"
+						position="0 100 100"
+						material="/shared/effects/materials/flare_03.material" 
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						startsize="750"
+						midsize="750"
+						endsize="750"
+						height="500"
+						directionalspace="local"
+						startcolor="0 .5 1"
+						midcolor="0 .5 1"
+						endcolor="0 0 0"
+						depthbias="-75"
+					/>
+
+					<billboard
+						bone="_bone_fx_center"
+						life="250"
+						position="0 100 100"
+						material="/shared/effects/materials/whitedot.material" 
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						size="150"
+						directionalspace="local"
+						startcolor="0 .5 1"
+						endcolor="0 0 0"
+						depthbias="-75"
+					/>
+
+					<simpleemitter
+						position="0 0 100"
+						life="250"
+						spawnrate="1000"
+						minparticlelife="250"
+						maxparticlelife="500"
+						material="/shared/effects/materials/flare2.material"
+						minspeed="0"
+						maxspeed="0"
+					>
+						<particle
+							startcolor="0 .05 .125"
+							endcolor="0 0 0"
+							midcolorpos="0.5"
+							startalpha="1"
+							endalpha="0"
+							minangle="0"
+							maxangle="360"
+							minanglespeed="0"
+							maxanglespeed="0"
+							minwidth="10"
+							maxwidth="20"
+							minheight="150"
+							maxheight="200"
+							flare="true"
+							turn="true"
+						/>
+					</simpleemitter>
+
+				</particle>
+			</simpleemitter>
+			
+			
+			
+
+			<simpleemitter
+				count="25"
+				spawnrate="100"
+				particlelife="1600"
+				minangle="-30"
+				maxangle="30"
+				direction="0 1 0"
+				speed="4100"
+				offsetsphere="0 0 0"
+			>
+				<particle
+					turn="true"
+				>
+
+					<billboard
+						bone="_bone_fx_center"
+						life="250"
+						position="0 0 100"
+						material="/shared/effects/materials/flare_03.material" 
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						size="100"
+						height="500"
+						directionalspace="local"
+						startcolor="0 .35 .7"
+						endcolor="0 0 0"
+						depthbias="-75"
+					/>
+
+					<simpleemitter
+						position="0 0 100"
+						life="250"
+						spawnrate="250"
+						minparticlelife="100"
+						maxparticlelife="200"
+						material="/shared/effects/materials/flare_03.material"
+						speed="250"
+						offsetsphere="0 0 0"
+					>
+						<particle
+							startcolor="0 .5 1"
+							midcolor="0 .5 1"
+							endcolor="0 0 0"
+							midcolorpos="0.5"
+							minsize="10"
+							maxsize="20"
+						/>
+					</simpleemitter>
+
+				</particle>
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+

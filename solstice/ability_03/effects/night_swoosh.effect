@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="">
+	<definitions>
+		<particlesystem name="system0" space="world" scale=".85">
+
+
+			
+<!--
+			<billboard
+				life="1000"
+				bone="_bone_center"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor=".7 .25 0"
+				endcolor="0 0 0"
+				startsize="300"
+				endsize="0"
+				depthbias="-25"
+			/>
+-->
+
+
+<!--
+			<billboard
+			delay="150"
+				bone="_bone_origin"
+				life="200"
+				startcolor="0 0 0"
+				midcolor=".7 .35 0"
+				endcolor="0 0 0"
+				size="220"
+				position="0 0 50"
+				material="/heroes/drunkenmaster/effects/material.material"
+				lockup="1"
+				lockright="1"
+				pitch="100"
+				rollspeed="720"
+				directionalspace="local"
+				depthbias="-25"
+			/>
+			
+			<billboard
+			delay="150"
+				bone="_bone_origin"
+				life="200"
+				startcolor="0 0 0"
+				midcolor=".5 .25 0"
+				endcolor="0 0 0"
+				size="190"
+				position="0 0 50"
+				material="/heroes/drunkenmaster/effects/material.material"
+				lockup="1"
+				lockright="1"
+				pitch="100"
+				rollspeed="720"
+				directionalspace="local"
+				depthbias="-25"
+			/>
+			
+			<billboard
+			delay="150"
+				bone="_bone_origin"
+				life="200"
+				startcolor="0 0 0"
+				midcolor=".25 .1 0"
+				endcolor="0 0 0"
+				size="150"
+				position="0 0 50"
+				material="/heroes/drunkenmaster/effects/material.material"
+				lockup="1"
+				lockright="1"
+				pitch="100"
+				rollspeed="720"
+				directionalspace="local"
+				depthbias="-25"
+			/>
+-->
+			
+<!--
+			<billboard
+				bone="_bone_origin"
+				life="200"
+				startcolor=".5 .5 .25"
+				endcolor="0 0 0"
+				size="180"
+				position="0 0 100"
+				material="/shared/effects/materials/blink.material"
+				lockup="1"
+				lockright="1"
+				yaw="90"
+				rollspeed="720"
+				directionalspace="local"
+				depthbias="-25"
+			/>
+-->
+
+
+
+
+
+
+
+
+
+
+
+			<trailemitter
+				life="500"
+				bone="_bone_weapon2"
+				spawnrate="300"
+				particlelife="500"
+				texpostime="500"
+				texposscale="0"
+				texstretchscale=".8"
+				timenudge="0"
+				material="/shared/effects/materials/whitedot.material"
+				subframepose="true"
+				startparticlecolor="1 1 1"
+				endparticlecolor="0 0 0"
+			>
+				<particle
+					startsize="150"
+					midsize="30"
+					
+					endsize="1"
+					midsizepos=".3"
+
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+
+					startcolor="0 0 0"
+					midcolor="0 .25 .75"
+					endcolor="0 0 0"
+				/>
+			</trailemitter>
+			
+			<trailemitter
+				life="500"
+				bone="_bone_weapon2"
+				spawnrate="300"
+				particlelife="500"
+				texpostime="500"
+				texposscale="0"
+				texstretchscale=".8"
+				timenudge="0"
+				material="/shared/effects/materials/whitedot.material"
+				subframepose="true"
+				startparticlecolor="1 1 1"
+				endparticlecolor="0 0 0"
+			>
+				<particle
+					startsize="150"
+					midsize="30"
+					
+					endsize="1"
+					midsizepos=".3"
+
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+
+					startcolor="0 0 0"
+					midcolor="0 .1 .35"
+					endcolor="0 0 0"
+				/>
+			</trailemitter>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+<!--
+		<camerashake2 scale="11" radius="1200" duration="400" frequency="22" />
+-->
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
