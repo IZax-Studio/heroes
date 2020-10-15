@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Defiler_Ability4_Self"
+
+	ishidden="true"
+	serverentity="true"
+	icon="icon4.tga"
+
+	effecttype=""
+	allowtransfer="true"
+>
+	<oninflict>
+		<setaccumulator value="0" />
+	</oninflict>
+	
+	<ondamaged>
+		<!-- Post-damage mitigation before the heal procs -->
+		<setvar0 a="140" />
+		
+		<changeaccumulator b="damage_applied" op="add" />
+		<compare a="accumulator" b="var0" op="ge">
+			<changeaccumulator b="var0" op="sub" />
+			<applystate name="State_Defiler_Ability4_Heal" target="source_entity" duration="6000" pushentity="true" />
+			<setaccumulator value="var0" entity="stack_entity" />
+			
+			<addcharges count="1" entity="stack_entity" timed="true" />
+			<!-- Temporarily save accumulator in var1 -->
+			<setvar1 a="accumulator" />
+			<setaccumulator value="0" />
+			
+			<!-- Delete last spirit in proxy chain -->
+			<pushability name="Ability_Defiler4" />
+			<foreachproxy entity="stack_entity">
+				<changeaccumulator b="1" op="add" />
+				<compare a="accumulator" b="source_charges" source="stack_entity" op="ge">
+					<kill target="target_entity" source="" />
+				</compare>				
+			</foreachproxy>
+			
+			<removecharge entity="stack_entity" />
+			<compare a="source_charges" source="stack_entity" b="0" op="le">
+				<expire />
+			</compare>
+			
+			<!-- Set the accumulator again from var1 -->
+			<setaccumulator value="var1" />
+		</compare>
+	</ondamaged>
+	
+	<onexpired>
+		<pushability name="Ability_Defiler4" />
+		<resettimer entity="stack_entity" />
+		<setcharges a="0" entity="stack_entity" />
+	</onexpired>
+</state>

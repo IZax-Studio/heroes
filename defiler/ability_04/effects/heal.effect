@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  useentityeffectscale="1" deferred="true" >
+	<definitions >
+		
+		<particlesystem name="system0" space="world" scale="1">
+			<sound
+			    forcestereo="true"
+			    life="5000"
+			    norestart="true"
+				channel="99844"
+				linearfalloff="true" 
+				falloffstart="800"
+				falloffend="1300"
+				volume="1"
+				sample="/heroes/defiler/ability_04/sounds/heal.wav"
+			/>
+			
+			<simpleemitter
+				life="600"
+				count="3"
+				position="0 0 80"
+				spawnrate="500"				
+				particlelife="600"
+				gravity="-3.0"
+				offsetsphere="50"
+				direction="0 0 1"	
+          		material="/shared/effects/materials/phantom_smoke_03.material"
+				depthbias="-40"
+         	>
+				<particle
+					startcolor="0 .3 .3"
+					midcolor="0 .3 .3"
+					endcolor="0"
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="0"
+					midcolorpos=".5"
+					maxanglespeed="0"
+					startsize="89"			
+					endsize="222"
+					
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				minangle="-90"
+				maxangle="-90"
+				bone="_bone_centerofchest"
+				life="400"
+				spawnrate="400"
+				count="10"
+				minparticlelife="230"
+				maxparticlelife="3000"
+				speed="2000"
+				drag="0.05"
+				offsetsphere="15"
+				depthbias="-40"
+				material="/shared/effects/materials/smoke_01.material"
+			>
+				<particle
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					turn="1"
+					startcolor=".5"
+					midcolorpos="0.2"
+					midcolor=".6 .3 .1"
+					endcolor="0"
+					startsize="50"
+					startstickiness="0"
+					maxendstickiness="1"
+					minendscale="6"
+					maxendscale="10"
+					startalpha=".3"
+					midalpha="1"
+					midalphapos="0.1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				life="4500"
+				delay="200"
+				count="10"
+				spawnrate="200"
+				depthbias="-30"
+				particlelife="500"
+				speed="2"
+				material="/shared/effects/materials/phantom_smoke_10.material"
+				position="0 0 90"
+			>
+				<particle
+					startcolor="1"
+					midcolorpos="0.3"
+					endcolor="0"
+					startsize="0"
+					endsize="30"
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-30"
+					maxanglespeed="30"
+					minendscale="1"
+					maxendscale="4"
+					startalpha="1"
+					endalpha="0"
+					width="100"
+					height="2"
+					anchor="0.6"
+			 	/>
+			</simpleemitter>
+<!--
+			<billboard
+				life="600"
+				startcolor=".5 0 .5"
+				endcolor="0"
+				
+				depthbias="-120"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+-->
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

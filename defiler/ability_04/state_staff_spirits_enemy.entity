@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Defiler4_Spirit_Attacking"
+
+	serverentity="true"
+	icon="icon4.tga"
+	
+	basedamagemultiplier="-0.25"
+
+	modifierkey="Defiler4_Spirit_Attacking"
+	morphmaxmovespeed="800"
+	morphmovespeed="800"
+	morphpriority="100"
+>
+	<oninflict>
+		<order command="attack" source="this_owner_entity" target="this_proxy_entity" />
+		
+		<hasavatarkey name="Hero_Defiler.Alt2">
+			<playeffect effect="../alt2/ability_04/effects/attack.effect" source="this_owner_entity" target="" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Defiler.Alt3">
+				<playeffect effect="../alt3/ability_04/effects/attack.effect" source="this_owner_entity" target="" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Defiler.Alt4">
+					<playeffect effect="../alt3/ability_04/effects/attack.effect" source="this_owner_entity" target="" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Defiler.Alt5">
+						<playeffect effect="../alt5/ability_04/effects/attack.effect" source="this_owner_entity" target="" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Defiler.Alt6">
+							<playeffect effect="../alt6/ability_04/effects/attack.effect" source="this_owner_entity" target="" />
+						</hasavatarkey>
+						<else>
+							<playeffect effect="effects/attack.effect" source="this_owner_entity" target="" />
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+	</oninflict>
+	
+	<onframe>
+		<cantarget source="this_owner_entity" target="this_proxy_entity" targetscheme="visible_enemy_objects_and_gadgets">
+			<distance target="this_proxy_entity" />
+			<compare a="result" b="2000" op="gt">
+				<order command="aggressive_wander" source="this_owner_entity" target="this_inflictor_entity" />
+				<setactivemodifierkey entity="this_entity" name="Defiler4_Spirit_Returning" />
+			</compare>
+		</cantarget>
+		<else>
+			<order command="aggressive_wander" source="this_owner_entity" target="this_inflictor_entity" />
+			<setactivemodifierkey entity="this_entity" name="Defiler4_Spirit_Returning" />
+		</else>
+	</onframe>
+	
+	<onattackpreimpact>
+		<compare a="target_entity" b="this_proxy_entity" op="eq">
+			<order command="aggressive_wander" source="this_owner_entity" target="this_inflictor_entity" />
+			<setactivemodifierkey entity="this_entity" name="Defiler4_Spirit_Returning" />
+		</compare>
+	</onattackpreimpact>
+	
+	<modifier key="Defiler4_Spirit_Returning" modpriority="1"
+		basedamagemultiplier=""
+		
+		modifierkey="Defiler4_Spirit_Returning"
+		morphmaxmovespeed="1000"
+		morphmovespeed="1000"
+		morphpriority="100"
+	>
+		<!-- I have no idea why I have to redefine morph attributes here, but they don't work on the way home if I don't -->
+		<onattackpreimpact />
+	</modifier>
+	
+</state>

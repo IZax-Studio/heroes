@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  useentityeffectscale="1" deferred="true" >
+	<definitions >
+		
+		<particlesystem name="system0" space="world" scale="1">
+			<sound
+			    forcestereo="true"
+			    life="3000"
+			    norestart="true"
+				channel="99844"
+				linearfalloff="true" 
+				falloffstart="800"
+				falloffend="1300"
+				volume="1"
+				sample="/heroes/defiler/ability_04/sounds/attack.wav"
+			/>
+			
+			<billboard
+				life="1500"
+				
+				material="/shared/effects/materials/whitedot.material"
+				
+				startcolor="0"
+				midcolor="0 .3 .3"
+				endcolor="0"
+				midcolorpos=".1"
+				
+				startsize="100"
+				midsize="250"
+				endsize="100"
+				midsizepos=".2"
+				
+				depthbias="-20"
+				position="0 0 250"
+			/>
+			
+			<simpleemitter
+				count="1"
+			>
+				<particle
+				
+				>
+					<billboard
+						life="500"
+						
+						material="/shared/effects/materials/corona_01.material"
+						
+						startcolor="0"
+						midcolor="0 .2 .2"
+						endcolor="0"
+						midcolorpos=".4"
+						
+						startsize="50"
+						midsize="100"
+						endsize="120"
+						midsizepos=".4"
+						
+						depthbias="-20"
+						position="0 0 320"
+					/>
+				</particle>
+			</simpleemitter>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

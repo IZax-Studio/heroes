@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Defiler_Ability4_Heal"
+
+	icon="icon4.tga"
+
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<onframe>
+		<setvar0 a="accumulator" b="0.3" op="mult" />
+		<setvar0 a="var0" b="6" op="div" /> <!-- Heal divided by total state duration -->
+		<setvar0 a="var0" b="charges" op="mult" />
+		<heal a="var0" b="frametime" op="mult" />
+	</onframe>
+</state>

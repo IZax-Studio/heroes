@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Defiler_Ability4"
+
+	
+	ishidden="true"
+	icon="icon4.tga"
+
+
+	disarmed="true"
+	
+	modifierkey="Defiler4_Spirit_Attacking"
+
+>
+	<onexpired>
+		<order command="aggressive_wander" source="this_owner_entity" target="this_proxy_entity" />
+	</onexpired>
+</state>

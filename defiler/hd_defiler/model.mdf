@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="DP.model" type="K2" high="DP.model" med="DP.model" low="DP.model" >
+
+	<anim name="idle" clip="clips/default_1.clip" fps="30" loop="true" blendtime="350"/>
+	
+	<anim name="portrait" clip="clips/portrait.clip" loop="true"/>
+	
+	<anim name="taunt_1" clip="clips/taunt_1.clip"/>
+
+	<anim name="item_1" clip="clips/item_1.clip" fps="30" loop="false"/>
+		
+	<anim name="ability_1" clip="clips/ability_1.clip" fps="30" loop="false">
+		<frameevent frame="12" cmd="PlaySoundLinear /heroes/defiler/ability_01/sounds/cast.wav 400 1800 .85"/>
+	</anim>
+	
+	<anim name="ability_2" clip="clips/ability_2.clip" fps="30" loop="false"/>
+	
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="30" loop="false">
+		<frameevent frame="10" cmd="PlaySoundLinear /heroes/defiler/sounds/attack_%.wav 400 1800 .65"/>
+	</anim>
+
+	<anim name="bored_1" clip="clips/bored_1.clip"/>
+	
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="30" loop="false">
+		<frameevent frame="10" cmd="PlaySoundLinear /heroes/defiler/sounds/attack_%.wav 400 1800 .65"/>
+	</anim>
+	
+	<anim name="walk_1" clip="clips/walk_1.clip" fps="30" loop="true"/>
+	
+	<anim name="death_1" clip="clips/death_1.clip" fps="30" loop="true" numframes="44" loopbackframe="-1">
+		<frameevent frame="5" cmd="StartEffect /heroes/defiler/effects/death.effect"/>
+		<frameevent frame="5" cmd="PlaySoundLinear /heroes/defiler/sounds/death_%.wav 400 2500 .85"/>
+	</anim>
+
+	<anim name="knock_1" clip="clips/knock_1.clip" fps="30" loop="true" loopbackframe="12"/>
+	
+	<anim name="getup_1" clip="clips/getup_1.clip"/>		
+		
+</model>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Defiler_SoundTrack"
+
+	ishidden="true"
+	icon="icon4.tga"
+    passiveeffect="effects/sound_state.effect"
+	modifierkey=""
+	life="30000"
+>	
+	<altavatar key="Hero_Defiler.Alt3" modpriority="1"
+	passiveeffect="/heroes/defiler/alt3/ability_04/effects/sound_state.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Defiler.set_ascension" modpriority="1"
+	passiveeffect="/heroes/defiler/set_ascension/ability_04/effects/sound_state.effect"
+	>
+	</altavatar>
+</state>

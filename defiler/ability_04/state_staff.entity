@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Defiler_Ability4_SotM"
+
+	ishidden="true"
+	icon="icon4.tga"
+
+	modifierkey="Defiler4_SotM_Active"
+>	
+	<onexpired>
+		<setvar0 a="30000" b="lifetime_remaining" op="sub" />
+		<hasmodifier name="rapidfire">
+			<compare a="20000" b="var0" op="gt">
+				<startcooldown toolname="Ability_Defiler4" duration="20000" durationb="var0" durationop="sub" />
+			</compare>
+		</hasmodifier>
+		<else>
+			<startcooldown toolname="Ability_Defiler4" duration="100000" durationb="var0" durationop="sub" />
+		</else>
+	</onexpired>
+</state>

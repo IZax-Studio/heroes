@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Defiler4"
+
+	icon="icon4.tga"
+	
+	anim="ability_4"
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_self"
+	casteffecttype="Physical"
+	
+	manacost="200,300,400"
+	cooldowntime="100000"
+	casteffect="effects/cast.effect"
+	targetradius="850"
+	
+	range="0"
+	targetscheme=""
+	
+	showareacast="false"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+>
+	<onimpact>
+		<setcharges a="0" />
+	    <applystate name="State_Defiler_SoundTrack" source="source_entity" proxy="target_entity" duration="30000" />
+		<hasavatarkey name="Hero_Defiler.Alt3">
+			<applystate name="State_Defiler_Alt3_Ability4_Self" target="source_entity" proxy="target_entity" duration="32000" />
+		</hasavatarkey>
+		
+		<spawnaffector name="Affector_Defiler_Ability4" target="target_entity" proxy="this_entity" />
+		<starttimer duration="30000" />
+	</onimpact>
+	
+	<ondeath ignoreinvulnerable="true">
+		<resettimer />
+	</ondeath>
+	
+	<onorderdisjointed>
+		<foreachproxy>
+			<hasmodifier name="Defiler4_Spirit_Attacking" />
+			<else>
+				<order command="aggressive_wander" source="target_entity" target="source_entity" />
+			</else>
+		</foreachproxy>		
+	</onorderdisjointed>
+	
+	<modifier key="ult_boost" modpriority="99"
+		displayname="true"
+	>
+		<onimpact>
+		    <applystate name="State_Defiler_SoundTrack" source="source_entity" proxy="target_entity" duration="30000" />
+			<hasavatarkey name="Hero_Defiler.Alt3">
+				<applystate name="State_Defiler_Alt3_Ability4_Self" target="source_entity" proxy="target_entity" duration="32000" />
+			</hasavatarkey>
+		
+			<applystate name="State_Defiler_Ability4_SotM" target="source_entity" duration="30000" />
+			<spawnaffector name="Affector_Defiler_Ability4" target="target_entity" proxy="this_entity" />
+			<starttimer duration="30000" />
+			<resetcooldown entity="this_entity" />
+			<startcooldown entity="this_entity" duration="3200" />
+		</onimpact>
+	</modifier>
+	
+	<modifier key="Defiler4_SotM_Active" modpriority="100"
+		actiontype="target_entity"
+		cooldowntime="10000"
+		manacost="0"
+		range="1500"
+		targetradius="0"
+		targetscheme="all_enemy_objects_and_allied_heroes"
+		casteffect=""
+		inheritmovement="true"
+		noninterrupting="true"
+		noresponse="true"
+		showareacast="true"
+	>
+		<onimpact>
+			<setent0 entity="target_entity" />
+			<cantarget targetscheme="ally_heroes" ignoreinvulnerable="true">
+				<expirestate name="State_Defiler_SoundTrack" />
+				<expirestate name="State_Defiler_Alt3_Ability4_Self" />
+				<foreachproxy>
+					<evaluate a="target_accumulator" b="0.5" op="mult" />
+					<spawnprojectile name="Projectile_Defiler4_Heal" source="target_entity" target="ent0" bind="target_entity" proxy="target_entity" param="result" />
+					<applystate name="State_Stunned" continuous="true" />
+					<setaccumulator entity="target_entity" value="0" />
+				</foreachproxy>
+				<expirestate target="source_entity" name="State_Defiler_Ability4_SotM" />
+				<resettimer />
+			</cantarget>
+			<else>
+				<foreachproxy>
+					<applystate name="State_Defiler4_Spirit_Attacking" continuous="true" proxy="ent0" />
+				</foreachproxy>
+			</else>
+		</onimpact>
+
+		<checkcost>
+			<foreachproxy>
+				<hasmodifier entity="target_entity" name="Defiler4_Spirit_Attacking">
+					<invalidate />
+				</hasmodifier>
+				<else>
+					<hasmodifier entity="target_entity" name="Defiler4_Spirit_Returning">
+						<distance />
+						<compare a="result" b="600" op="lt">
+							<expirestate name="State_Defiler4_Spirit_Attacking" />
+						</compare>
+						<else>
+							<invalidate />
+						</else>
+					</hasmodifier>
+				</else>
+			</foreachproxy>
+		</checkcost>
+	</modifier>
+	
+	<altavatar key="Hero_Defiler.Alt" modpriority="90"
+		casteffect="../alt/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Defiler.Alt2" modpriority="90"
+		casteffect="../alt2/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Defiler.Alt3" modpriority="90"
+		casteffect="../alt3/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Defiler.Alt4" modpriority="90"
+		casteffect="../alt4/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Defiler.Alt5" modpriority="90" 
+	    icon="/heroes/defiler/alt5/ability_04/icon.tga"
+		casteffect="../alt5/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Defiler.Alt6" modpriority="90" 
+		casteffect="../alt6/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Defiler.set_ascension" modpriority="90"
+		casteffect="../set_ascension/ability_04/effects/cast.effect"
+	/>
+	
+</ability>

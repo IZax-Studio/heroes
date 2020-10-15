@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_Defiler"
+
+	team="Hellbourne"
+	icon="hd_defiler/Death_Prophet.tga"
+	portrait="hd_defiler/Death_Prophet.tga"
+	model="hd_defiler/model.mdf"
+	skin=""
+	
+	passiveeffect="effects/body.effect"
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana_%.wav"
+	cooldownsound="sounds/voice/cooldown_%.wav"
+	announcersound="sounds/voice/hero_select.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+	
+	preglobalscale="1.1"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="44"
+	targetoffset="0 0 64"
+	infoheight="200"
+	portraitcampos="12 0 63"
+
+	category="magic physical"
+	difficulty="2"
+
+	solorating="2"
+	junglerating="0"
+	carryrating="2"
+	supportrating="0"
+	initiatorrating="0"
+	gankerrating="0"
+	pusherrating="4"
+	rangedrating="5"
+	meleerating="0"
+	
+	movespeed="295"
+	turnrate="450"
+	turnsmoothing="0.1"
+
+	maxhealth="150"
+	healthregen="0.25"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="-0.5"
+	magicarmor="5"
+
+	inventory0="Ability_Defiler1"
+	inventory1="Ability_Defiler2"
+	inventory2="Ability_Defiler3"
+	inventory3="Ability_Defiler4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="1000"
+	attackactiontime="350"
+	attackcooldown="1700"
+	attackdamagemin="25"
+	attackdamagemax="31"
+	attacknumanims="2"
+	attackoffset="0 100 70"
+	attackprojectile="Projectile_DefilerAttack"
+	attackrange="600"
+	attackstarteffect="effects/attack.effect"
+	attackactioneffect=""
+	attackimpacteffect=""
+	attacktype="ranged"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="800"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	primaryattribute="Intelligence"
+	strength="23"
+	strengthperlevel="1.8"
+	agility="18"
+	agilityperlevel="1.4"
+	intelligence="20"
+	intelligenceperlevel="3"
+	
+	corpsetime="3500"
+	corpsefadetime="1000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	previewmodel="hd_defiler/model.mdf"
+	previewpos="0 0 -80"
+	previewangles="0 0 0"
+	previewscale="1.8"
+	
+	storemodel="hd_defiler/model.mdf"
+	storepos="0 0 -20"
+	storeangles="0 0 0"
+	storescale=".85"
+	
+>
+	<recommendeditem name="Item_ManaPotion" />
+	<recommendeditem name="Item_MinorTotem" />
+	<recommendeditem name="Item_RunesOfTheBlight" />
+	<recommendeditem name="Item_HealthPotion" />
+	<recommendeditem name="Item_HomecomingStone" />
+	
+	<recommendeditem name="Item_Strength5" />
+	<recommendeditem name="Item_Bottle" />
+	<recommendeditem name="Item_EnhancedMarchers" />
+	<recommendeditem name="Item_PlatedGreaves" />
+	<recommendeditem name="Item_Shield2" />
+	<recommendeditem name="Item_SacrificialStone" />
+	<recommendeditem name="Item_UltorsHeavyPlate" />
+	<recommendeditem name="Item_Morph" /> 
+	<recommendeditem name="Item_BehemothsHeart" />
+	
+	<modifier key="iamsheeped" modpriority="100"
+		passiveeffect=""
+	/>
+	
+	<modifier key="ult_boost" modpriority="100"
+	>
+		<aura state="State_Defiler_Ult_Boost" radius="0" targetscheme="self"/>
+	</modifier>
+
+	<altavatar key="Hero_Defiler.Classic" modpriority="1"
+		altavatar="true"
+		icon2="icon.tga"
+		portrait="icon.tga"
+		model="model.mdf"
+		skin=""
+		
+		passiveeffect="effects/body.effect"
+		respawneffect="/shared/effects/respawn.effect"
+		selectedsound="sounds/voice/select_%.wav"
+		selectedflavorsound="sounds/voice/select_flavour_%.wav"
+		confirmmovesound="sounds/voice/move_%.wav"
+		confirmattacksound="sounds/voice/attack_%.wav"
+		nomanasound="sounds/voice/no_mana.wav"
+		cooldownsound="sounds/voice/cooldown.wav"
+		announcersound="sounds/voice/hero_select.wav"
+		tauntedsound="sounds/voice/taunt_prior.wav"
+		tauntkillsound="sounds/voice/taunt_after.wav"
+		
+		preglobalscale="1.8"
+		modelscale="1.0"
+		effectscale="0.9"
+		boundsheight="112"
+		boundsradius="24"
+		selectionradius="44"
+		targetoffset="0 0 64"
+	
+		corpsetime="3500"
+		corpsefadetime="1000"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		
+		previewmodel="model.mdf"
+		previewpos="0 0 -80"
+		previewangles="0 0 0"
+		previewscale="1.8"
+		
+		storemodel="model.mdf"
+		storepos="0 0 -30"
+		storeangles="0 0 0"
+		storescale="1.6"
+	/>
+		
+	<altavatar key="Hero_Defiler.Alt" modpriority="1"
+		altavatar="true"
+		preglobalscale="1.8"
+		modelscale="1"
+		icon2="alt/icon.tga"
+		portrait="alt/icon.tga"
+		model="alt/model.mdf"
+		infoheight="185"
+		previewmodel="alt/preview.mdf"
+		previewpos="0 0 -80"
+		previewangles="0 0 0"
+		previewscale="1.7"
+		effectscale="1"
+		selectedsound="alt/sounds/voice/select_%.wav"
+		selectedflavorsound="alt/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt/sounds/voice/move_%.wav"
+		confirmattacksound="alt/sounds/voice/attack_%.wav"
+		nomanasound="alt/sounds/voice/no_mana.wav"
+		cooldownsound="alt/sounds/voice/cooldown.wav"
+		announcersound="alt/sounds/voice/hero_select.wav"
+		tauntedsound="alt/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt/sounds/voice/taunt_after.wav"
+		passiveeffect="alt/effects/body.effect"
+		
+		storemodel="alt/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.65"
+	/>
+		
+	<altavatar key="Hero_Defiler.Alt2" modpriority="1"
+		altavatar="true"
+		preglobalscale="1.95"
+		icon2="alt2/icon.tga"
+		portrait="alt2/icon.tga"
+		model="alt2/model.mdf"
+		infoheight="185"
+		
+		attackprojectile="Projectile_DefilerAttack_Alt2"
+		attackstarteffect="alt2/effects/attack.effect"
+		passiveeffect="alt2/effects/body.effect"
+		effectscale="1"
+		
+		selectedsound="alt2/sounds/voice/select_%.wav"
+		selectedflavorsound="alt2/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt2/sounds/voice/move_%.wav"
+		confirmattacksound="alt2/sounds/voice/attack_%.wav"
+		nomanasound="alt2/sounds/voice/no_mana.wav"
+		cooldownsound="alt2/sounds/voice/cooldown.wav"
+		announcersound="alt2/sounds/voice/hero_select.wav"
+		tauntedsound="alt2/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt2/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt2/preview.mdf"
+		previewpos="0 0 -80"
+		previewangles="0 0 0"
+		previewscale="1.7"
+		
+		storemodel="alt2/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.65"
+	
+	>
+		<onspawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Tundra.Alt3 aa.Hero_Zephyr.Alt4 aa.Hero_Ravenor.Alt3 aa.Hero_Magmar.Alt3 aa.Hero_Defiler.Alt2" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey name="Archaic" />
+			</compare>
+		</onspawn>
+		
+		<onrespawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Tundra.Alt3 aa.Hero_Zephyr.Alt4 aa.Hero_Ravenor.Alt3 aa.Hero_Magmar.Alt3 aa.Hero_Defiler.Alt2" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey name="Archaic" />
+			</compare>
+		</onrespawn>
+		
+		<modifier key="Archaic" modpriority="100"
+		>
+			<aura state="State_Archaic_Gods" radius="0" targetscheme="self"/>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Defiler.Alt3" modpriority="1"
+		altavatar="true"
+		preglobalscale="1.95"
+		icon2="alt3/icon.tga"
+		portrait="alt3/icon.tga"
+		model="alt3/model.mdf"
+		infoheight="185"
+		
+		attackprojectile="Projectile_DefilerAttack_Alt3"
+		attackoffset="0 50 100"
+		attackstarteffect="alt3/effects/attack.effect"
+		passiveeffect="alt3/effects/body.effect"
+		effectscale="1"
+		
+		selectedsound="alt3/sounds/voice/select_%.wav"
+		selectedflavorsound="alt3/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt3/sounds/voice/move_%.wav"
+		confirmattacksound="alt3/sounds/voice/attack_%.wav"
+		nomanasound="alt3/sounds/voice/no_mana.wav"
+		cooldownsound="alt3/sounds/voice/cooldown.wav"
+		announcersound="alt3/sounds/voice/hero_select.wav"
+		tauntedsound="alt3/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt3/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt3/preview.mdf"
+		previewpos="0 0 -80"
+		previewangles="0 0 0"
+		previewscale="1.7"
+		
+		storemodel="alt3/preview.mdf"
+		storepos="0 0 -40"
+		storeangles="0 0 0"
+		storescale="1.65"
+		
+		storepassiveeffect="alt3/ability_04/effects/store_preview.effect"
+		previewpassiveeffect="alt3/ability_04/effects/store_preview.effect"
+	>
+		<modifier key="Alt3_Voice" modpriority="2"
+			
+			selectedsound="alt3/sounds/voice/changed/select_%.wav"
+			confirmmovesound="alt3/sounds/voice/changed/move_%.wav"
+			confirmattacksound="alt3/sounds/voice/changed/attack_%.wav"
+			nomanasound="alt3/sounds/voice/changed/no_mana.wav"
+			cooldownsound="alt3/sounds/voice/changed/cooldown.wav"
+			tauntedsound="alt3/sounds/voice/changed/taunt_prior.wav"
+			tauntkillsound="alt3/sounds/voice/changed/taunt_after.wav"
+			model="alt3/001/model.mdf"
+			
+			passiveeffect="alt3/ability_04/effects/state_self.effect"
+			attackprojectile="Projectile_DefilerAttack_Alt3_Ult"
+			attackstarteffect="alt3/effects/attack_ult.effect"
+		/>
+		
+	</altavatar>
+		
+	<altavatar key="Hero_Defiler.Alt4" modpriority="1"
+		altavatar="true"
+		preglobalscale="1.95"
+		icon2="alt4/icon.tga"
+		portrait="alt4/icon.tga"
+		model="alt4/model.mdf"
+		infoheight="185"
+		
+		attackprojectile="Projectile_DefilerAttack_Alt4"
+		attackstarteffect="alt4/effects/attack.effect"
+		passiveeffect=""
+		effectscale="1"
+		
+		selectedsound="alt4/sounds/voice/select_%.wav"
+		selectedflavorsound="alt4/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt4/sounds/voice/move_%.wav"
+		confirmattacksound="alt4/sounds/voice/attack_%.wav"
+		nomanasound="alt4/sounds/voice/no_mana.wav"
+		cooldownsound="alt4/sounds/voice/cooldown.wav"
+		announcersound="alt4/sounds/voice/hero_select.wav"
+		tauntedsound="alt4/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt4/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt4/preview.mdf"
+		previewpos="0 0 -80"
+		previewangles="0 0 0"
+		previewscale="1.7"
+		
+		storemodel="alt4/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.65"
+	/>
+	
+	<altavatar key="Hero_Defiler.set_ascension" modpriority="1"
+		altavatar="true"
+		preglobalscale="2.30"
+		icon2="set_ascension/icon.tga"
+		portrait="set_ascension/icon.tga"
+		model="set_ascension/model.mdf"
+		infoheight="185"
+		modelscale=".9"
+		
+		attackprojectile="Projectile_DefilerAttack_set_ascension"
+		attackstarteffect="set_ascension/effects/attack.effect"
+		passiveeffect="set_ascension/effects/body.effect"
+		effectscale="1"
+		
+		selectedsound="set_ascension/sounds/voice/select_%.wav"
+		selectedflavorsound="set_ascension/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="set_ascension/sounds/voice/move_%.wav"
+		confirmattacksound="set_ascension/sounds/voice/attack_%.wav"
+		nomanasound="set_ascension/sounds/voice/no_mana.wav"
+		cooldownsound="set_ascension/sounds/voice/cooldown.wav"
+		announcersound="set_ascension/sounds/voice/hero_select.wav"
+		tauntedsound="set_ascension/sounds/voice/taunt_prior.wav"
+		tauntkillsound="set_ascension/sounds/voice/taunt_after.wav"
+		
+		corpsetime="3000"
+		
+		previewmodel="set_ascension/preview.mdf"
+		previewpos="0 0 -80"
+		previewangles="0 0 0"
+		previewscale="1.7"
+		
+		storemodel="set_ascension/preview.mdf"
+		storepassiveeffect="set_ascension/effects/body_store.effect"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.65"
+		
+		portraitcampos="8 -2 24"
+	/>
+
+	<altavatar key="Hero_Defiler.pog_skin" modpriority="1"
+		
+		icon2="icon.tga"
+		portrait="icon.tga"
+		model="hd_defiler/model.mdf"
+		
+		previewmodel="pog_skin/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.15"
+
+		storemodel="pog_skin/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.5"
+	/>
+	
+	<altavatar key="Hero_Defiler.Alt5" modpriority="1"
+		icon2="alt5/icon.tga"
+		portrait="alt5/icon.tga"
+
+		model="alt5/model.mdf"
+		
+		preglobalscale="1"
+		portraitcampos="-10 60 70"
+		portraitangles="0 0 0"
+		
+		infoheight="160"
+		previewmodel="alt5/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1"
+
+		selectedsound="alt5/sounds/voice/select_%.wav"
+		selectedflavorsound="alt5/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt5/sounds/voice/move_%.wav"
+		confirmattacksound="alt5/sounds/voice/attack_%.wav"
+		nomanasound="alt5/sounds/voice/no_mana.wav"
+		cooldownsound="alt5/sounds/voice/cooldown.wav"
+		announcersound="alt5/sounds/voice/hero_select.wav"
+		tauntedsound="alt5/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt5/sounds/voice/taunt_after.wav"
+		
+		attackstarteffect="alt5/effects/attack.effect"
+		passiveeffect="alt5/effects/body.effect"
+		
+		storemodel="alt5/preview.mdf"
+		storepassiveeffect="alt5/effects/body_store.effect"
+		storepos="0 0 -45"
+		storeangles="0 0 0"
+		storescale="1"
+		
+	/>
+	
+	<altavatar key="Hero_Defiler.Alt6" modpriority="1"
+		icon2="alt6/icon.tga"
+		portrait="alt6/icon.tga"
+
+		model="alt6/model.mdf"
+		modelscale="1.15"
+		
+		preglobalscale="1.7"
+		portraitcampos="20 -40 15"
+		portraitangles="0 0 0"
+		
+		previewmodel="alt6/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1"
+
+		infoheight="180"
+		
+		selectedsound="alt6/sounds/voice/select_%.wav"
+		selectedflavorsound="alt6/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt6/sounds/voice/move_%.wav"
+		confirmattacksound="alt6/sounds/voice/attack_%.wav"
+		nomanasound="alt6/sounds/voice/no_mana.wav"
+		cooldownsound="alt6/sounds/voice/cooldown.wav"
+		announcersound="alt6/sounds/voice/hero_select.wav"
+		tauntedsound="alt6/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt6/sounds/voice/taunt_after.wav"
+		
+		attackstarteffect="alt6/effects/attack.effect"
+		passiveeffect="alt6/effects/body.effect"
+		
+		storemodel="alt6/preview.mdf"
+		storepassiveeffect="alt6/effects/body.effect"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.75"	
+
+	/>
+		
+</hero>

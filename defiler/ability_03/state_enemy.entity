@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state 
+    name="State_Defiler_Ability3_Enemy" 
+
+    icon="icon_3.tga" 
+    passiveeffect="effects/link.effect"
+	
+	movespeedslow="0.15"
+	
+    effecttype="StatusDebuff" 
+    alwaystransmitdata="true"
+> 
+	
+	<onframe />	
+</state>

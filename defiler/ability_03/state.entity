@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state 
+    name="State_Defiler_Ability3_Self" 
+
+    icon="icon_3.tga" 
+    passiveeffect="effects/state_self.effect" 
+	
+	movespeedmultiplier="0.15"
+	
+    effecttype="StatusBuff" 
+    alwaystransmitdata="true"
+>
+	<oninflict>
+		<pushability name="Ability_Defiler3" source="source_entity" />
+		<getrange entity="stack_entity" />
+		<setaccumulator value="result" valueb="150" valueop="add" />
+	</oninflict>
+	
+    <onframe>
+		<!-- Heal -->
+		<evaluate a="target_maxhealth" target="this_proxy_entity" b="0.01,0.02,0.03,0.04" op="mult" />
+		<evaluate a="result" b="8" op="add" />
+		<evaluate a="result" b="frametime" op="mult" />
+		<heal target="this_owner_entity" a="1" b="result" op="mult" />
+		
+		<!-- Damage -->
+		<damage effecttype="Magic DOT" amount="20" b="frametime" op="mult" target="this_proxy_entity" source="this_owner_entity" />
+		
+		<distance target="this_proxy_entity" />
+		<compare a="result" b="accumulator" op="gt">
+			<expire />
+		</compare>
+    </onframe> 
+     
+    <onexpired> 
+        <expirestate name="State_Defiler_Ability3_Enemy" target="this_proxy_entity" /> 
+    </onexpired> 
+	
+</state>  
