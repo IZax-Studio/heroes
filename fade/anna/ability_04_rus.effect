@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<template name="onionskin">
+				<simpleemitter
+					delay="{delay}"
+					count="1"
+					particlelife="1000"
+					directionalspace="local"
+					direction="0 1 0"
+					angle="0"
+				>
+					<particle turn="1">
+						<model
+							life="450"
+							startalpha=".4"
+							endalpha="0"
+							startcolor="5 1 5"
+							midcolor="5 2 5"
+							endcolor="10 1 10"
+							model="onionskin.mdf"
+							material="material_noshadow.material"
+							anim="freeze_{n}"
+							parentteamcolor="true"
+							inheritparentmodifiers="true"
+						>
+					
+				
+			</model>
+					</particle>
+				</simpleemitter>
+			</template>
+			
+			<instance name="onionskin" n="15" delay="2560"/>
+			<instance name="onionskin" n="14" delay="2400"/>
+			<instance name="onionskin" n="13" delay="2240"/>
+			<instance name="onionskin" n="12" delay="2080"/>
+			<instance name="onionskin" n="11" delay="1920"/>
+			<instance name="onionskin" n="10" delay="1600"/>
+			<instance name="onionskin" n="09" delay="1440"/>
+			<instance name="onionskin" n="08" delay="1280"/>
+			<instance name="onionskin" n="07" delay="1120"/>
+			<instance name="onionskin" n="06" delay="960"/>
+			<instance name="onionskin" n="05" delay="800"/>
+			<instance name="onionskin" n="04" delay="640"/>
+			<instance name="onionskin" n="03" delay="480"/>
+			<instance name="onionskin" n="02" delay="320"/>
+			<instance name="onionskin" n="01" delay="160"/>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->

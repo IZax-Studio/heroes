@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+					
+			<sound
+				volume=".9"
+				sample="/heroes/skrap/ability_04/sounds/attack_%.wav"
+				linearfalloff="true"
+				falloffstart="400" 
+				falloffend="1300" 
+			/>
+			
+<!-- 
+			<trailemitter
+				spawnrate="30"
+				particlelife="500"
+				texposscale="0"
+			 	texstretchscale="1"
+				material="/shared/effects/materials/swoosh_add.material"
+				attachtoemitter="true"
+			>
+				<particle
+					startcolor=".2"
+					endcolor="0"
+					startsize="40"
+					endsize="10"
+				/>
+			</trailemitter> -->
+
+			<simpleemitter
+				life="600"
+				startspawnrate="15"
+				endspawnrate="0"
+				particlelife="5000"
+				startparticlescale="1"
+				endparticlescale=".25"
+			>
+				<particle>
+					<debris
+						life="1000"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						color=".6 .8 1"
+						model="/shared/effects/models/debris/debris.mdf"
+						material="/shared/effects/models/debris/debris_noshadow.material"
+						scale=".25"
+						offsetsphere="80"
+						gravity="150"
+						reflect=".65"
+						bounce=".2"
+						minrotationspeed="-1000"
+						maxrotationspeed="1000"
+						minspeed="450"
+						maxspeed="1000"
+						direction="0 0 -1"
+						angle="60"
+						collide="1"
+					/>
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				life="1200"
+				startspawnrate="45"
+				endspawnrate="20"
+				minparticlelife="1200"
+				maxparticlelife="1600"
+				material="/shared/effects/materials/dust.material"
+				startparticlealpha="1"
+				endparticlealpha=".5"
+				maxspeed="100"
+				drag="0.025"
+				gravity="5"
+				inheritvelocity=".5"
+			>
+				<template name="dust_particle" >
+					<particle
+						minsize="40"
+						maxsize="60"
+						minstartscale=".5"
+						maxstartscale="1"
+						minendscale="1.5"
+						maxendscale="2"
+						startalpha="1"
+						endalpha="0"
+						color="{color}"
+					/>
+				</template>
+				<instance name="dust_particle" color=".45" />
+				<instance name="dust_particle" color=".35" />
+				<instance name="dust_particle" color=".25" />
+			</simpleemitter>
+
+		</particlesystem>
+   	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

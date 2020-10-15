@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Empath_Ability3"
+
+	icon="icon.tga"
+	passiveeffect=""
+	displaylevel="true"
+
+	healthregen="1,2,3,4"
+	healthregenpercent="0.0005,0.001,0.0015,0.002"
+>
+
+	<altavatar key="Hero_Empath.Alt7"
+		icon="../alt7/ability_03/icon.tga"
+	>
+		<modifier key="Alt7_Ability3_Upgrade"
+			icon="../alt7/ability_03/icon_upgrade.tga"
+		/>
+	</altavatar>
+	
+</state>

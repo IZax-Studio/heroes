@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+		<modifier life="1000" startalpha="1" midalpha="0" endalpha="1" midalphapos=".5"/>
+		<!--
+		<modifier name="predator1" life="2000" startcolor="0" endcolor="500" material="predator.material" />
+		<modifier name="predator2" material="predator.material" color="500" />
+		-->
+		<particlesystem name="system0" space="world" scale="1.0">
+			
+			<controller life="5000" />
+			
+			<model
+				life="3000"
+				parentmodel="true"
+				material="predator.material"
+				parentskeleton="true"
+				startalpha="0"
+				endalpha="2"
+			/>
+			
+			<template name="jolt">
+				<twopointemitter
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					life="3000"
+					startspawnrate="-30"
+					midspawnrate="40"
+					endspawnrate="-30"
+					offsetsphere="10"
+					midspawnratepos=".5"
+					minparticlelife="200"
+					maxparticlelife="300"
+					material="/shared/effects/materials/femme_lightning_02.material"
+				>
+					<particle
+						maxangle="360"
+						flare="1"
+						startcolor="1"
+						endcolor="1 .1 0"
+						midcolorpos=".2"
+						minscale="2"
+						maxscale="3"
+						framespeed="3"
+						anchor="1"
+					/>
+				</twopointemitter>
+			</template>
+			
+			<instance name="jolt" bone_a="_bone_center" bone_b="_bone_head" />
+			<instance name="jolt" bone_a="_bone_centerofchest" bone_b="_bone_lefthand" />
+			<instance name="jolt" bone_a="_bone_centerofchest" bone_b="_bone_righthand" />
+			<instance name="jolt" bone_a="_bone_center" bone_b="_bone_leftfoot" />
+			<instance name="jolt" bone_a="_bone_center" bone_b="_bone_rightfoot" />
+				</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<wait duration="1250" />
+		<spawnmodifier instance="instance1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>

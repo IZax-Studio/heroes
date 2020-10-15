@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Jereziah3_Art"
+	
+	icon="3.png"
+	passiveeffect=""
+	
+	effecttype=""
+	
+	ishidden="true"
+	
+	modifierkey="Jeraziah_Ability3"
+>
+	<modifier key="iamsheeped" modpriority="1001"
+		passiveeffect=""
+	/>
+	
+		<altavatar key="Hero_Jereziah.Alt9"
+		icon="../alt9/ability_03/icon.tga"
+	/>
+	
+</state>

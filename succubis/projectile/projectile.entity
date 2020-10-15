@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_SuccubisAttack"
+
+	speed="900"
+	gravity="0"
+
+	model="/shared/models/invis.mdf"
+	modelscale="1.2"
+
+	impacteffect="impact.effect"
+	traileffect="trail.effect"
+>
+	<altavatar key="Hero_Succubis.Alt4" modpriority="90"
+		/>
+	
+	<altavatar key="Hero_Succubis.Alt5" modpriority="90"
+		/>
+	
+	<altavatar key="Hero_Succubis.Alt6" modpriority="90"
+		/>
+	
+	<altavatar key="Hero_Succubis.Alt7" modpriority="90"
+		/>
+
+</projectile>

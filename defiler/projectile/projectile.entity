@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_DefilerAttack"
+
+	speed="900"
+	gravity="0"
+	canturn="false"
+	modelscale="0.6"
+
+	model="/shared/models/invis.mdf"
+	traileffect="effects/body.effect"
+	impacteffect="effects/impact.effect"
+>
+	
+	<altavatar key="Hero_Defiler.Alt5" 
+		model="/shared/models/invis.mdf"
+		traileffect="../alt5/effects/projectile.effect"
+		impacteffect="../alt5/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Defiler.Alt6" 
+		model="/shared/models/invis.mdf"
+		traileffect="../alt6/effects/projectile.effect"
+		impacteffect="../alt6/effects/impact.effect"
+	/>
+	
+</projectile>

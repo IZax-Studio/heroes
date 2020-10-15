@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_DwarfMagi_Ability2"
+
+	speed="1800"
+	gravity="500"
+
+	modelscale="2"
+	model="hammer.mdf"
+
+	effectscale="2.0"
+	impacteffect="effects/impact.effect"
+	traileffect="effects/projectile.effect"
+	deatheffect="effects/death.effect"
+>
+	<onimpact>
+		<cantarget effecttype="Magic">
+			<applystate name="State_DwarfMagi_Ability2" duration="7500" />
+			<spawnaffector name="Affector_DwarfMagi_Ability2" />
+		</cantarget>
+	</onimpact>
+
+	<altavatar key="Hero_DwarfMagi.Alt"
+		modelscale="2"
+		model="/heroes/dwarf_magi/alt/ability_02/effects/hammer.mdf"
+		
+		impacteffect="/heroes/dwarf_magi/alt/ability_02/effects/impact.effect"
+		traileffect="/heroes/dwarf_magi/alt/ability_02/effects/projectile.effect"
+	/>
+	
+	<altavatar key="Hero_DwarfMagi.Alt2"
+		modelscale="1.5"
+		model="/heroes/dwarf_magi/alt2/ability_02/effects/hammer.mdf"
+		
+		impacteffect="/heroes/dwarf_magi/alt2/ability_02/effects/impact.effect"
+		traileffect="/heroes/dwarf_magi/alt2/ability_02/effects/projectile.effect"
+	/>
+	
+	<altavatar key="Hero_DwarfMagi.Alt3"
+		modelscale="2"
+		model="/heroes/dwarf_magi/alt3/ability_02/effects/hammer.mdf"
+		
+		impacteffect="/heroes/dwarf_magi/alt3/ability_02/effects/impact.effect"
+		traileffect="/heroes/dwarf_magi/alt3/ability_02/effects/projectile.effect"
+		deatheffect="/heroes/dwarf_magi/alt3/ability_02/effects/death.effect"
+	/>	
+
+	<altavatar key="Hero_DwarfMagi.Alt4"
+		model="/heroes/dwarf_magi/alt4/ability_02/effects/hammer.mdf"
+
+		impacteffect="/heroes/dwarf_magi/alt4/ability_02/effects/impact.effect"
+		traileffect="/heroes/dwarf_magi/alt4/ability_02/effects/projectile.effect"
+	/>
+	
+	<altavatar key="Hero_DwarfMagi.PogSkin"
+		model="/heroes/dwarf_magi/PogSkin/ability_02/effects/hammer.mdf"
+		deatheffect="/heroes/dwarf_magi/PogSkin/ability_02/effects/death.effect"
+	/>
+
+	<altavatar key="Hero_DwarfMagi.Alt5"
+		model="/heroes/dwarf_magi/alt5/ability_02/effects/hammer.mdf"
+	/>
+	
+	<altavatar key="Hero_DwarfMagi.Alt6"
+		modelscale="2"
+		model="/heroes/dwarf_magi/alt6/ability_02/effects/hammer.mdf"
+		impacteffect="/heroes/dwarf_magi/alt6/ability_02/effects/impact.effect"
+		traileffect="/heroes/dwarf_magi/alt6/ability_02/effects/projectile.effect"
+		deatheffect="/heroes/dwarf_magi/alt6/ability_02/effects/death.effect"
+	>
+		<modifier key="dwarfmagiAlt6_Ability2_Upgrade"
+			impacteffect="/heroes/dwarf_magi/alt6/ability_02/effects/impact_upgrade.effect"
+			traileffect="/heroes/dwarf_magi/alt6/ability_02/effects/projectile_upgrade.effect"
+			deatheffect="/heroes/dwarf_magi/alt6/ability_02/effects/death_upgrade.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_DwarfMagi.Alt7"
+		modelscale="1.6"
+		model="/heroes/dwarf_magi/alt7/ability_02/effects/hammer.mdf"
+		impacteffect="/heroes/dwarf_magi/alt7/ability_02/effects/impact.effect"
+		traileffect="/heroes/dwarf_magi/alt7/ability_02/effects/projectile.effect"
+		deatheffect="/heroes/dwarf_magi/alt7/ability_02/effects/death.effect"
+	/>
+
+</projectile>

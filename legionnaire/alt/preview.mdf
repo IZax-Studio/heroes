@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="\heroes\legionnaire/material_noshadow/model.model" type="K2" >
+	
+	<anim name="idle" clip="\heroes\legionnaire/kotori_RE/clips/bat_idle.clip" fps="30" numframes="80" loop="true" blendtime="200"/>
+	
+<anim name="ability_4" clip="\heroes\legionnaire/kotori_RE/clips/single_skill_01.clip" fps="30" startframe="7" numframes="100" blendtime="100">
+		<frameevent frame="1" cmd="PlaySoundLinear ../ability_04/sounds/cast.wav 400 2000 .75"/>
+		<frameevent frame="11" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 400 2000 .65"/>
+		<frameevent frame="1" cmd="PlaySoundLinear ../sounJP/sk4.wav 400 2000 1"/>
+		<startevent cmd="StartEffect ../cast_kotori_re.effect 9"/>
+		<endevent cmd="StopEffect 9" />
+	</anim>
+	
+	<anim name="idle2" clip="\heroes\legionnaire/kotori/clips/stand.clip" fps="30" numframes="80" loop="true" blendtime="200"/>
+
+	</model>

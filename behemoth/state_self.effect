@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="false">
+	<definitions>
+		<particlesystem name="system0" space="world">
+		
+			<terrainemitter
+				bone="_bone_centerofchest"
+				offsetradial="20"
+				offsetdirection="90 50 20"
+				spawnrate="120"
+				particlelife="500"
+				minspeed="300"
+				maxspeed="500"
+				direction="0 0 1"
+				minangle="30"
+				maxangle="60"
+				gravity="-100"
+				drag="0.02"
+				inheritvelocity="3"
+				limitinheritvelocity="1500"
+			>
+				<particle>
+					<trailemitter
+						minlife="80"
+						maxlife="120"
+						spawnrate="100"
+						particlelife="125"
+						material="/shared/effects/materials/femme_lightning_01_trail_2d.material"
+						offsetsphere="10"
+						texposscale="1"
+						texstretchscale="0"
+					>
+						<particle
+							startscale="1"
+							minmidscale="15"
+							maxmidscale="30"
+							minendscale="1"
+							maxendscale="5"
+							startcolor=".1 .4 .6"
+							midcolor=".1 .4 .6"
+							endcolor="0"
+						/>
+					</trailemitter>
+				</particle>
+			</terrainemitter>
+			
+			<!--
+			<groundsprite
+				material="/shared/effects/materials/whitedot2.material"
+				color=".1 .5 .1"
+				scale=".5"
+				yawspeed="100"
+			/>
+			
+			<groundsprite
+				life="1000"
+				loop="true"
+				material="/shared/effects/materials/whitedot2.material"
+				startcolor="0"
+				midcolor=".1 .5 .1"
+				endcolor="0"
+				scale=".495"
+				yawspeed="100"
+			/>
+			-->
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

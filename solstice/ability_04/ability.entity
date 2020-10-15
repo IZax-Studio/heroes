@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Solstice4"
+
+	icon="Cha075_Skill_R.png"
+	statuseffecttooltip="State_Solstice_Ability4_Enemy"
+
+	anim="ability_4"
+	casttime="100"
+	castactiontime="100"
+	casteffect=""
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_position"
+	casteffecttype="Magic"
+	targetscheme="enemy_units"
+
+	manacost="150,200,250"
+	cooldowntime="100000,90000,80000"
+
+	range="1400"
+
+	allowoutofrangecast="true"
+	allowoutofboundscast="true"
+	novoiceresponse="true"
+
+	ischanneling="true"
+	channeltime="3000"
+
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+>
+	<onimpact />
+
+	<modifier key="Day_Solstice" modpriority="100"
+		statuseffecttooltip="State_Solstice_Ability4_Enemy"
+		anim="ability_4"
+		icon="Cha075_Skill_R.png"
+	>
+		<onchannelstart>
+			<applystate name="State_Solstice_Ability4_Channel" ischannel="true" target="source_entity"/>
+			<spawnunit name="Gadget_Solstice_Ability4_Channel" target="source_position" pushentity="true" fixedposition="true"/>
+			<setproxy target="stack_entity"/>
+			<applystate name="State_Solstice_Ability4" target="source_entity" duration="3100" proxy="this_proxy_entity"/>
+
+			<spawnunit name="Gadget_Solstice_Ability4_Voice" ischannel="true" target="source_position" fixedposition="true"/>
+		</onchannelstart>
+
+		<onchannelbreak>
+			<kill target="this_proxy_entity" source="" />
+			<targettype target="source_entity" type="stunned">
+				<expirestate name="State_Solstice_Ability4" target="source_entity" />
+			</targettype>
+			<else>
+				<targettype target="source_entity" type="silenced">
+					<expirestate name="State_Solstice_Ability4" target="source_entity" />
+				</targettype>
+				<else>
+					<applystate name="State_Solstice_Ability4" target="source_entity" duration="5000" proxy="this_proxy_entity" />
+				</else>
+			</else>
+
+			<hasavatarkey name="Hero_Solstice.Alt5">
+				<playeffect effect="../alt5/ability_04/effects/cast.effect" target="source_entity" source="source_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Solstice.Alt6">
+					<playeffect effect="../alt6/ability_04/effects/cast.effect" target="source_entity" source="source_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Solstice.Alt7">
+						<playeffect effect="../alt7/ability_04/effects/cast.effect" target="source_entity" source="source_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Solstice.Alt8">
+							<playeffect effect="../alt8/ability_04/effects/cast.effect" target="source_entity" source="source_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Solstice.Alt9">
+								<playeffect effect="../alt9/ability_04/effects/cast.effect" target="source_entity" source="source_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Solstice.Alt10">
+									<playeffect effect="../alt10/ability_04/effects/cast.effect" target="source_entity" source="source_entity" />
+								</hasavatarkey>
+								<else>
+									<playeffect effect="effects/cast.effect" target="source_entity" source="source_entity" />
+								</else>	
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</onchannelbreak>
+
+		<onchannelend>
+			<applystate name="State_Solstice_Ability4" target="source_entity" duration="5000" proxy="this_proxy_entity" />
+			<hasavatarkey name="Hero_Solstice.Alt5">
+				<playeffect effect="../alt5/ability_04/effects/cast.effect" target="source_entity" source="source_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Solstice.Alt6">
+					<playeffect effect="../alt6/ability_04/effects/cast.effect" target="source_entity" source="source_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Solstice.Alt7">
+						<playeffect effect="../alt7/ability_04/effects/cast.effect" target="source_entity" source="source_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Solstice.Alt8">
+							<playeffect effect="../alt8/ability_04/effects/cast.effect" target="source_entity" source="source_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Solstice.Alt9">
+								<playeffect effect="../alt9/ability_04/effects/cast.effect" target="source_entity" source="source_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Solstice.Alt10">
+									<playeffect effect="../alt10/ability_04/effects/cast.effect" target="source_entity" source="source_entity" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Solstice.Alt11">
+										<playeffect effect="../alt11/ability_04/effects/cast.effect" target="source_entity" source="source_entity" />
+									</hasavatarkey>
+									<else>
+										<playeffect effect="effects/cast.effect" target="source_entity" source="source_entity" />
+									</else>	
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+			<playanim name="ability_4_end" target="source_entity" />
+		</onchannelend>
+
+		<onimpact />
+	</modifier>
+
+	<modifier key="Night_Solstice" modpriority="100"
+		statuseffecttooltip="State_Solstice_Ability4_Enemy_Night"
+		anim="ability_4_night"
+		icon="Cha075_Skill_R.png"
+	>
+		<onchannelstart>
+			<applystate name="State_Solstice_Ability4_Channel" ischannel="true" target="source_entity"/>
+			<spawnunit name="Gadget_Solstice_Ability4_Channel_Night" target="source_position" pushentity="true" fixedposition="true"/>
+			<setproxy target="stack_entity"/>
+			<applystate name="State_Solstice_Ability4" target="source_entity" duration="3100" proxy="this_proxy_entity"/>
+
+			<spawnunit name="Gadget_Solstice_Ability4_Voice_Night" ischannel="true" target="source_position" fixedposition="true"/>
+		</onchannelstart>
+
+		<onchannelbreak>
+			<kill target="this_proxy_entity" source="" />
+			<targettype target="source_entity" type="stunned">
+				<expirestate name="State_Solstice_Ability4" target="source_entity" />
+			</targettype>
+			<else>
+				<targettype target="source_entity" type="silenced">
+					<expirestate name="State_Solstice_Ability4" target="source_entity" />
+				</targettype>
+				<else>
+					<applystate name="State_Solstice_Ability4" target="source_entity" duration="5000" proxy="this_proxy_entity" />
+				</else>
+			</else>
+
+			<hasavatarkey name="Hero_Solstice.Alt5">
+				<playeffect effect="../alt5/ability_04/effects/cast_night.effect" target="source_entity" source="source_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Solstice.Alt6">
+					<playeffect effect="../alt6/ability_04/effects/cast_night.effect" target="source_entity" source="source_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Solstice.Alt7">
+						<playeffect effect="../alt7/ability_04/effects/cast_night.effect" target="source_entity" source="source_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Solstice.Alt8">
+							<playeffect effect="../alt8/ability_04/effects/cast_night.effect" target="source_entity" source="source_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Solstice.Alt9">
+								<playeffect effect="../alt9/ability_04/effects/cast_night.effect" target="source_entity" source="source_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Solstice.Alt10">
+									<playeffect effect="../alt10/ability_04/effects/cast_night.effect" target="source_entity" source="source_entity" />
+								</hasavatarkey>
+								<else>
+								<hasavatarkey name="Hero_Solstice.Alt11">
+										<playeffect effect="../alt11/ability_04/effects/cast_night.effect" target="source_entity" source="source_entity" />
+									</hasavatarkey>
+									<else>
+										<playeffect effect="effects/cast_night.effect" target="source_entity" source="source_entity" />
+									</else>	
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</onchannelbreak>
+
+		<onchannelend>
+			<applystate name="State_Solstice_Ability4" target="source_entity" duration="5000" proxy="this_proxy_entity" />
+			<hasavatarkey name="Hero_Solstice.Alt5">
+				<playeffect effect="../alt5/ability_04/effects/cast_night.effect" target="source_entity" source="source_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Solstice.Alt6">
+					<playeffect effect="../alt6/ability_04/effects/cast_night.effect" target="source_entity" source="source_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Solstice.Alt7">
+						<playeffect effect="../alt7/ability_04/effects/cast_night.effect" target="source_entity" source="source_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Solstice.Alt8">
+							<playeffect effect="../alt8/ability_04/effects/cast_night.effect" target="source_entity" source="source_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Solstice.Alt9">
+								<playeffect effect="../alt9/ability_04/effects/cast_night.effect" target="source_entity" source="source_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Solstice.Alt10">
+									<playeffect effect="../alt10/ability_04/effects/cast_night.effect" target="source_entity" source="source_entity" />
+								</hasavatarkey>
+								<else>
+									<playeffect effect="effects/cast_night.effect" target="source_entity" source="source_entity" />
+								</else>	
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+			<!-- <playanim name="ability_4_night_end" target="source_entity" /> -->
+		</onchannelend>
+		<onimpact />
+	</modifier>
+</ability>

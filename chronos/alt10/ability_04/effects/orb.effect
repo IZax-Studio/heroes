@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.3">
+	
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume="1.0" 
+				fadein="0"
+				fadeout="0n"
+				soundloop="false"
+				sample="/heroes/chronos/ability_04/sounds/ability_04.wav"
+			/>	
+
+			<groundsprite			
+				life="300"
+				material="logo.material"
+				startsize="100"
+				endsize="275"
+				startcolor="0"
+				endcolor="1 .4 0"
+				alpha="1"				
+			/>
+					
+			<groundsprite			
+				delay="300"
+				material="logo.material"
+				color="1 .4 0"
+				size="275"
+				alpha="1"
+			/>
+			
+			<groundsprite			
+				life="300"
+				material="/shared/effects/materials/ground_smash_overlay.material"
+				startsize="100"
+				endsize="400"
+				alpha="1"				
+			/>
+					
+			<groundsprite			
+				delay="300"
+				material="/shared/effects/materials/ground_smash_overlay.material"
+				size="400"
+				alpha="1"
+			/>
+			
+			<groundsprite			
+				life="300"
+				material="/shared/effects/materials/coals_add.material"
+				startsize="50"
+				endsize="350"
+				color="1 .3 0"
+				alpha="1"				
+			/>
+					
+			<groundsprite			
+				delay="300"
+				material="/shared/effects/materials/coals_add.material"
+				size="350"
+				color="1 .3 0"
+				alpha="1"
+			/>
+			
+			<groundsprite			
+				life="300"
+				material="/shared/effects/materials/shieldstarfish.material"
+				startsize="50"
+				endsize="350"
+				color="1 .3 0"
+				alpha="1"				
+			/>
+					
+			<groundsprite			
+				delay="300"
+				material="/shared/effects/materials/shieldstarfish.material"
+				size="350"
+				color="1 .3 0"
+				alpha="1"
+			/>
+			
+			<groundsprite			
+				life="300"
+				material="/shared/effects/materials/ground_corona_06.material"
+				startsize="50"
+				endsize="350"
+				color="1 .3 0"
+				alpha="1"				
+			/>
+					
+			<groundsprite			
+				delay="300"
+				material="/shared/effects/materials/ground_corona_06.material"
+				size="350"
+				color="1 .3 0"
+				alpha="1"
+			/>
+			
+			<model
+				model="/shared/effects/models/sphere/model.mdf"	
+				material="/shared/effects/materials/shell3.material"
+				yawspeed="400"
+				pitchspeed="400"
+				anim="idle"
+				startcolor="1 .4 0"
+				endcolor="0"
+				expirelife="150"
+				startscale="5"
+				endscale="0"
+			/>
+				
+			<billboard
+				life="300"
+				color="1.0 1.0 1.0"
+				startalpha="1.0"
+				midalpha="1.0"
+				endalpha="0.0"
+				midalphapos="0.75"
+				startparam="0.5"
+				endparam=".0"
+				startsize="328"
+				endsize="2068"
+				depthbias="0"
+				position="0 0 20"
+				material="/shared/effects/materials/refract_ring.material"
+				lockup="true"
+				pitch="90"
+			/>	
+		
+			<simpleemitter
+				position="0 0 50"
+				spawnrate="250"
+				minparticlelife="300"
+				maxparticlelife="400"
+				minspeed="200"
+				maxspeed="300"
+				maxangle="360"
+				direction="1"
+				offsetsphere="300 300 30"
+				material="/shared/effects/materials/lightning_11.material"
+				framespeed="2"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="300"
+					maxanglespeed="500"
+					startcolor="2 .8 .4"
+					endcolor="0"
+					minsize="10"
+					maxsize="70"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+                expirelife="700"
+				particlelife="2000"
+				spawnrate="30"
+				directionalspace="global"
+				direction="0 0 1"
+				speed="200"
+				angle="0"
+			>
+				<particle
+					maxyaw="360"
+					yawspeed="400"
+					pitchspeed="400"
+					startscale="1"
+					midscale="1.05"
+					midscalepos=".35"
+					endscale="0"
+				>
+					<trailemitter
+						life="5000"
+						position="300 0 0"
+						spawnrate="100"
+						particlelife="500"
+						texpostime="500"
+						texposscale="0"
+						texstretchscale="1"
+						offsetsphere="10"
+						material="/shared/effects/materials/lightning_11.material"
+						startparticlecolor="0"
+						midparticlecolor="1"
+						endparticlecolor="0"
+						midparticlecolorpos=".35"
+					>
+						<particle
+							startalpha=".3"
+							midalpha=".3"
+							endalpha="0"
+							startsize="0"
+							midsize="10"
+							endsize="30"
+							midsizepos=".4"
+							startcolor="0"
+							midcolor="1 .4 0"
+							endcolor="0"
+						/>
+					</trailemitter>
+					
+					<trailemitter
+						life="1500"
+						position="300 0 0"
+						spawnrate="100"
+						particlelife="500"
+						texpostime="500"
+						texposscale="0"
+						texstretchscale="1"
+						offsetsphere="10"
+						material="lightning_trail.material"
+						startparticlecolor="0"
+						midparticlecolor="1"
+						endparticlecolor="0"
+						midparticlecolorpos=".35"
+					>
+						<particle
+							startalpha=".3"
+							midalpha=".3"
+							endalpha="0"
+							startsize="0"
+							midsize="10"
+							endsize="30"
+							midsizepos=".4"
+							startcolor="0"
+							midcolor="1 .4 0"
+							endcolor="0"
+						/>
+					</trailemitter>
+					
+				</particle>
+			</simpleemitter>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+   </thread>
+</effect>

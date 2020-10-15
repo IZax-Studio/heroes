@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+	<definitions>
+
+		
+		
+		<particlesystem name="system0" space="world" scale="1.0">
+
+<simpleemitter
+					
+					directionalspace="global"
+					spawnrate="90"
+					offsetsphere="100 100 300"
+					maxspeed="500"
+					drag=".15"
+					direction="0 0 1"
+					angle="90"
+					minparticlelife="700"
+					maxparticlelife="1000"
+					material="/shared/effects/materials/phantom_smoke_01.material"
+				>
+					<particle
+						startcolor=".3"
+						endcolor="0"
+						startalpha="1"
+						endalpha="0"
+						startsize="90"
+						heightdistort="-.05"
+						endsize="70"
+						maxangle="360"
+						maxanglespeed="200"
+						turn="1"
+					/>
+				</simpleemitter>
+
+					
+   <simpleemitter
+
+				position="20 0 0"
+				
+				bone="_bone_back2"
+				spawnrate="20"
+				
+				particlelife="800"
+				gravity="-10"
+				speed="1500"
+				drag="1"
+				acceleration="0.0"
+				material="/shared/effects/materials/feather.material"
+				offsetsphere="25 25 25"
+				direction="0 0 0"
+
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				collide="true"
+				
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					anglespeed="40"
+					minsize="12"
+					maxsize="12"
+					lockup="true"
+					lockright="true"
+					pitch="150"
+					startcolor="0 0 .25"
+					midcolor=".0 0 .25"
+					endcolor=".0 0 .25"
+					midcolorpos=".15"
+					startalpha=".75"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".75"
+					
+				/>
+			</simpleemitter>		
+
+<simpleemitter
+
+				position="20 0 0"
+				
+				bone="_bone_back2"
+				spawnrate="20"
+				
+				particlelife="800"
+				gravity="2"
+				speed="1500"
+				drag="1"
+				acceleration="0.0"
+				material="/shared/effects/materials/feather.material"
+				offsetsphere="25 25 25"
+				direction="0 0 0"
+
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				collide="true"
+				
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					anglespeed="40"
+					minsize="12"
+					maxsize="12"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					startcolor="0 0 .25"
+					midcolor=".0 0 .25"
+					endcolor=".0 0 .25"
+					midcolorpos=".15"
+					startalpha=".75"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".75"
+					
+				/>
+			</simpleemitter>			
+			
+
+<simpleemitter
+
+				position="-20 0 0"
+				
+				bone="_bone_black4"
+				spawnrate="20"
+				
+				particlelife="800"
+				gravity="2"
+				speed="1500"
+				drag="1"
+				acceleration="0.0"
+				material="/shared/effects/materials/feather.material"
+				offsetsphere="25 25 25"
+				direction="0 0 0"
+
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				collide="true"
+				
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					anglespeed="40"
+					minsize="12"
+					maxsize="12"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					startcolor="0 0 .25"
+					midcolor=".0 0 .25"
+					endcolor=".0 0 .25"
+					midcolorpos=".15"
+					startalpha=".75"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".75"
+					
+				/>
+			</simpleemitter>	
+
+
+<simpleemitter
+
+				position="-20 0 0"
+				
+				bone="_bone_black4"
+				spawnrate="20"
+				
+				particlelife="800"
+				gravity="-2"
+				speed="1500"
+				drag="1"
+				acceleration="0.0"
+				material="/shared/effects/materials/feather.material"
+				offsetsphere="25 25 25"
+				direction="0 0 0"
+
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				collide="true"
+				
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					anglespeed="40"
+					minsize="12"
+					maxsize="12"
+					lockup="true"
+					lockright="true"
+					pitch="150"
+					startcolor="0 0 .25"
+					midcolor=".0 0 .25"
+					endcolor=".0 0 .25"
+					midcolorpos=".15"
+					startalpha=".75"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".75"
+					
+				/>
+			</simpleemitter>	
+
+
+<simpleemitter
+
+				position="0 0 0"
+				
+ 				bone="_bone_black2"
+				spawnrate="20"
+				
+				particlelife="800"
+				gravity="1"
+				speed="1500"
+				drag="1"
+				acceleration="0.0"
+				material="/shared/effects/materials/feather.material"
+				offsetsphere="25 25 25"
+				direction="0 0 0"
+
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				collide="true"
+				
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					anglespeed="40"
+					minsize="13"
+					maxsize="13"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					startcolor="0 0 .25"
+					midcolor=".0 0 .25"
+					endcolor=".0 0 .25"
+					midcolorpos=".15"
+					startalpha=".75"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".75"
+					
+				/>
+			</simpleemitter>		
+
+			<simpleemitter
+
+				position="0 0 0"
+				
+ 				bone="_bone_black1"
+				spawnrate="20"
+				
+				particlelife="800"
+				gravity="1"
+				speed="1500"
+				drag="1"
+				acceleration="0.0"
+				material="/shared/effects/materials/feather.material"
+				offsetsphere="25 25 25"
+				direction="0 0 0"
+
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				collide="true"
+				
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					anglespeed="40"
+					minsize="13"
+					maxsize="13"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					startcolor="0 0 .25"
+					midcolor=".0 0 .25"
+					endcolor=".0 0 .25"
+					midcolorpos=".15"
+					startalpha=".75"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".75"
+					
+				/>
+			</simpleemitter>		
+				
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

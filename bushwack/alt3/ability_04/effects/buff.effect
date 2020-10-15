@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true" deferred="true">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1.0" >
+
+		<sound
+		        randomloop="true"
+				soundloop="true"
+				fadein="100"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume="1"
+				sample="/heroes/bushwack/ability_04/sounds/stack_damage_state.wav"
+			/>
+			
+		<controller bone="Box001" expirelife="500" startscale="1" endscale="0" >
+			<billboard
+				color=".75 1 .25"
+				startsize="50"
+				midsize="125"
+				endsize="50"
+				life="1500"
+				loop="true"
+				depthbias="-30"
+				rollspeed="360"
+				material="/shared/effects/materials/cloudsspin.material"
+			/>
+		</controller>		
+			
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

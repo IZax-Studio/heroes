@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="jkwitheffect.model" med="jkwitheffect.model" low="jkwitheffect.model" >
+
+	<anim name="idle" clip="Stand Alternate.clip" fps="550" loop="true" />
+	
+	<anim name="portrait" clip="Stand Alternate.clip" fps="300" loop="true" loopbackframe="1"/>
+		
+	<anim name="item_1" clip="Attack 2 Alternate.clip" fps="550"/>
+	
+	<anim name="ability_1" clip="Spell 4 Alternate.clip" fps="550" loop="false">
+		<frameevent frame="120" cmd="PlaySoundLinear /heroes/hantumon/sounds/attack_%.wav 400 1800 .65"/>
+	</anim>	
+	
+	<anim name="ability_2_attack1" clip="Spell 1 Alternate.clip" fps="550" loop="false" blendtime="0">
+		<frameevent frame="2" cmd="starteffect /heroes/hantumon/ability_02/effects/warpin.effect"/>
+	</anim>
+	
+	<anim name="ability_2_mid" clip="Spell 1 Alternate.clip" fps="550" loop="false" blendtime="0"/>
+
+	<anim name="ability_2_start" clip="Attack 1 Alternate.clip" fps="550" startframe="400" numframes="1500" loop="false" blendtime="0">
+		<frameevent frame="1" cmd="starteffect /heroes/hantumon/ability_02/effects/warpout.effect"/>
+		
+	</anim>
+
+	<anim name="ability_3_attack_1" clip="Attack 1 Alternate.clip" fps="550" loop="false">
+		<frameevent frame="250" cmd="PlaySoundLinear /heroes/hantumon/sounds/attack_%.wav 400 1800 .65"/>
+		<frameevent frame="1" cmd="StartEffect attack_2.effect"/>
+		<startevent cmd="StartEffect effects/passive_2.effect 0"/>
+		<endevent cmd="StopEffect 0" />
+	</anim>
+
+	<anim name="ability_3_attack_2" clip="Attack 2 Alternate.clip" fps="550" loop="false">
+		<frameevent frame="250" cmd="PlaySoundLinear /heroes/hantumon/sounds/attack_%.wav 400 1800 .65"/>
+		<frameevent frame="250" cmd="PlaySoundLinear s/aa%.wav 400 1800 .4"/>
+		<frameevent frame="1" cmd="StartEffect attack_2.effect"/>
+		<startevent cmd="StartEffect effects/passive_3.effect 0"/>
+		<endevent cmd="StopEffect 0" />
+	</anim>
+
+	<anim name="ability_3_attack_3" clip="Spell 3 Alternate.clip" fps="550" loop="false">
+		<frameevent frame="250" cmd="PlaySoundLinear /heroes/hantumon/sounds/attack_%.wav 400 1800 .65"/>
+		<frameevent frame="1" cmd="StartEffect attack_2.effect"/>
+		<startevent cmd="StartEffect effects/passive.effect 0"/>
+		<endevent cmd="StopEffect 0" />
+	</anim>
+
+	<anim name="attack_1" clip="Attack 1 Alternate.clip" fps="550" loop="false">
+		<frameevent frame="250" cmd="PlaySoundLinear /heroes/hantumon/sounds/attack_%.wav 400 1800 .65"/>
+		<frameevent frame="1" cmd="StartEffect attack.effect"/>
+		<startevent cmd="StartEffect effects/passive_2.effect 0"/>
+		<endevent cmd="StopEffect 0" />
+	</anim>
+
+	<anim name="attack_2" clip="Attack 1 Alternate.clip" fps="550" loop="false">
+		<frameevent frame="250" cmd="PlaySoundLinear /heroes/hantumon/sounds/attack_%.wav 400 1800 .65"/>
+		<frameevent frame="250" cmd="PlaySoundLinear s/aa%.wav 400 1800 .4"/>
+		<frameevent frame="1" cmd="StartEffect attack.effect"/>
+		<startevent cmd="StartEffect effects/passive.effect 0"/>
+		<endevent cmd="StopEffect 0" />
+	</anim>
+
+	<anim name="attack_3" clip="Spell 3 Alternate.clip" fps="550" loop="false">
+		<frameevent frame="150" cmd="PlaySoundLinear /heroes/hantumon/sounds/attack_%.wav 400 1800 .65"/>
+		<frameevent frame="1" cmd="StartEffect attack.effect"/>
+	<startevent cmd="StartEffect effects/passive_3.effect 0"/>
+		<endevent cmd="StopEffect 0" />
+	</anim>
+ 
+	<anim name="walk_1" clip="Walk Alternate.clip" fps="500" loop="true" loopbackframe="1">
+		<frameevent frame="4" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="25" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="31" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="50" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="70" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="86" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="108" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="126" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+
+		<frameevent frame="4" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="25" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="31" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="50" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="56" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="71" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="86" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="90" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="108" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="108" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="126" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	</anim>
+
+	<anim name="death_1" clip="Death Alternate.clip" fps="550" loop="true" loopbackframe="-1">
+		<frameevent frame="1" cmd="PlaySoundLinear s/d%.wav 400 1800 .6"/>
+		<frameevent frame="330" cmd="StartEffect death.effect"/>
+		<frameevent frame="990" cmd="PlaySoundLinear /heroes/hantumon/sounds/attack_1.wav 400 1800 .35"/>
+		<frameevent frame="995" cmd="PlaySoundLinear /heroes/hantumon/sounds/attack_2.wav 400 1800 .35"/>
+		<frameevent frame="1000" cmd="PlaySoundLinear /heroes/hantumon/sounds/attack_3.wav 400 1800 .35"/>
+		<frameevent frame="1005" cmd="PlaySoundLinear /heroes/hantumon/sounds/attack_1.wav 400 1800 .35"/>
+		<frameevent frame="1010" cmd="PlaySoundLinear /heroes/hantumon/sounds/attack_2.wav 400 1800 .35"/>
+		<frameevent frame="1290" cmd="PlaySoundLinear /shared/sounds/impacts/flesh_%.wav 400 1800 .35"/>
+		<frameevent frame="1320" cmd="PlaySoundLinear /heroes/devourer/sounds/move_%.wav 400 1800 .55"/>		
+
+	</anim>
+	<anim name="bored_1" clip="s.clip" fps="550" loop="false"/>
+	<anim name="taunt_1" clip="Spell 3 Alternate.clip" fps="550" loop="false"/>
+	
+	<anim name="knock_1" clip="Death Alternate.clip" loop="true" fps="550" loopbackframe="-1"/>
+	
+	<anim name="getup_1" clip="Stand Alternate.clip"/>	
+</model>
+
+

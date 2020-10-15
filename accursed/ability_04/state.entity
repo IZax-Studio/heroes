@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Accursed_Ability4"
+	
+	icon="../icon/Cha219_Skill_I.png"
+	passiveeffect="ability.effect"
+	effecttype=""
+	
+	displaylevel="true"
+	modifierkey="blue_sword"	
+>
+	<ondamaged priority="1">
+		<heal target="source_entity" a="source_damage" />
+		<scaledamage scale="0.0" />
+	</ondamaged>
+
+	<onattackimpact>
+		<playeffect effect="../effects/impact_blue.effect" source="target_entity" target="" />
+	</onattackimpact>
+	
+	<altavatar key="Hero_Accursed.Alt" modpriority="1"
+		icon="/heroes/accursed/alt/ability_04/icon.tga"
+	/>
+
+	<altavatar key="Hero_Accursed.Alt3" modpriority="90"
+		icon="/heroes/accursed/alt3/ability_04/icon.tga"
+		passiveeffect="/heroes/accursed/alt3/ability_04/effects/ability.effect"
+	/>
+	
+	<altavatar key="Hero_Accursed.Alt4" modpriority="90"
+		passiveeffect="/heroes/accursed/alt4/ability_04/effects/ability.effect"
+	/>
+	
+	<altavatar key="Hero_Accursed.Alt5" modpriority="90"
+		passiveeffect="/heroes/accursed/alt5/ability_04/effects/ability.effect"
+	/>
+	
+	<altavatar key="Hero_Accursed.Alt6" modpriority="90"
+		passiveeffect="/heroes/accursed/alt6/ability_04/effects/ability.effect"
+	>
+	<onexpired>
+		<playeffect effect="/heroes/accursed/alt6/ability_04/effects/expired_sound.effect" source="target_entity" target="" />
+	</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_Accursed.Alt7" modpriority="90"
+		passiveeffect="/heroes/accursed/alt7/ability_04/effects/ability.effect"
+		icon="/heroes/accursed/alt7/ability_04/icon.tga"
+	>
+	<onexpired>
+		<playeffect effect="/heroes/accursed/alt7/ability_04/effects/expired_sound.effect" source="target_entity" target="" />
+	</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_Accursed.Alt8" modpriority="90"
+		passiveeffect="/heroes/accursed/alt8/ability_04/ability.effect"
+	>
+	<onexpired>
+		<playeffect effect="/heroes/accursed/alt8/ability_04/effects/expired_sound.effect" source="target_entity" target="" />
+	</onexpired>
+	</altavatar>
+	
+	<onframe />
+</state>

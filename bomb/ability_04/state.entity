@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Bombardier_Ability4"
+	
+	icon="../icon/4.png"
+	passiveeffect=""
+
+	ishidden="true"
+
+	unitwalking="true"
+	effecttype=""
+	impactinterval="250"
+	
+>
+	<oninflict>
+		<setaccumulator value="0" />
+	</oninflict>
+	
+	<onimpact>
+		<compare a="accumulator" b="0" op="eq">
+			<playeffect effect="effects/cast.effect" target="source_entity" />
+			<setaccumulator value="1" />
+		</compare>
+		<spawnaffector name="Affector_Bombardier_Ability4" target="target_position" owner="this_inflictor_entity" source="target_entity" firsttarget="" />
+	</onimpact>
+	
+		<altavatar key="Hero_Bombardier.Alt4"
+			icon="../alt4/ability_04/icon.tga"
+		>
+			<onimpact>
+				<compare a="accumulator" b="0" op="eq">
+					<playeffect effect="../alt4/ability_04/effects/cast.effect" target="source_entity" />
+					<setaccumulator value="1" />
+				</compare>
+				<spawnaffector name="Affector_Bombardier_Ability4" target="target_position" owner="this_inflictor_entity" source="target_entity" firsttarget="" />
+			</onimpact>
+		</altavatar>
+
+		<altavatar key="Hero_Bombardier.Alt5"
+		>
+			<onimpact>
+				<compare a="accumulator" b="0" op="eq">
+					<playeffect effect="../alt5/ability_04/effects/cast.effect" target="source_entity" />
+					<setaccumulator value="1" />
+				</compare>
+				<spawnaffector name="Affector_Bombardier_Ability4" target="target_position" owner="this_inflictor_entity" source="target_entity" firsttarget="" />
+			</onimpact>
+		</altavatar>
+		
+		<altavatar key="Hero_Bombardier.Alt6"
+		>
+			<onimpact>
+				<compare a="accumulator" b="0" op="eq">
+					<playeffect effect="../alt6/ability_04/effects/cast.effect" target="source_entity" />
+					<setaccumulator value="1" />
+				</compare>
+				<spawnaffector name="Affector_Bombardier_Ability4" target="target_position" owner="this_inflictor_entity" source="target_entity" firsttarget="" />
+			</onimpact>
+		</altavatar>
+		
+		<altavatar key="Hero_Bombardier.Alt8"
+		>
+			<onimpact>
+				<compare a="accumulator" b="0" op="eq">
+					<playeffect effect="../alt8/ability_04/effects/cast.effect" target="source_entity" />
+					<setaccumulator value="1" />
+				</compare>
+				<spawnaffector name="Affector_Bombardier_Ability4" target="target_position" owner="this_inflictor_entity" source="target_entity" firsttarget="" />
+			</onimpact>
+		</altavatar>
+		
+		<altavatar key="Hero_Bombardier.Alt9"
+		>
+			<onimpact>
+				<compare a="accumulator" b="0" op="eq">
+					<playeffect effect="../alt9/ability_04/effects/cast.effect" target="source_entity" />
+					<setaccumulator value="1" />
+				</compare>
+				<spawnaffector name="Affector_Bombardier_Ability4" target="target_position" owner="this_inflictor_entity" source="target_entity" firsttarget="" />
+			</onimpact>
+		</altavatar>
+		
+		<altavatar key="Hero_Bombardier.Alt10"
+		>
+			<onimpact>
+				<compare a="accumulator" b="0" op="eq">
+					<playeffect effect="../alt10/ability_04/effects/cast.effect" target="source_entity" />
+					<setaccumulator value="1" />
+				</compare>
+				<spawnaffector name="Affector_Bombardier_Ability4" target="target_position" owner="this_inflictor_entity" source="target_entity" firsttarget="" />
+			</onimpact>
+		</altavatar>
+		
+		<altavatar key="Hero_Bombardier.Alt11"
+		    icon="../alt11/ability_04/icon.tga"
+	    >
+			<onimpact>
+				<compare a="accumulator" b="0" op="eq">
+					<playeffect effect="../alt11/ability_04/effects/cast.effect" target="source_entity" />
+					<setaccumulator value="1" />
+				</compare>
+				<spawnaffector name="Affector_Bombardier_Ability4" target="target_position" owner="this_inflictor_entity" source="target_entity" firsttarget="" />
+			</onimpact>
+		</altavatar>
+		
+</state>

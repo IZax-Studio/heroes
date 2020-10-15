@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1">
+			<sound
+					delay="50"
+				    dampen="0.5"
+				    channelid="storeaud"
+					sound2d="true"
+					volume=".5"
+					sample="../yoshino/sounds/172_0_Skill_R_Fire.wav"
+			/> 
+			<sound
+					delay="1300"
+				    dampen="0.5"
+				    channelid="storeaud2"
+					sound2d="true"
+					volume=".5"
+					sample="../yoshino/sounds/sa_move_3.wav"
+			/>	
+		
+		</particlesystem>   
+		<particlesystem name="system2" space="world" >
+			 
+			<model   
+				model="\heroes\frosty\yoshino/preview_2.mdf" 
+				anim="idle2"
+				position="0 0 40"  
+			/>  
+			<model
+				model="/ui/fe2/elements/store2/pedestal/model.mdf"
+				scale=".54"
+				position="0 0 40" 
+			/>
+			
+			 <simpleemitter
+				delay="500"
+				count="1"
+				particlelife="4000"
+				offsetsphere="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+
+				<particle turn="1">
+					<model
+						life="3000"
+						position="0 -150 0"
+						model="\heroes\frosty\ability_04\effects/puppet/model.mdf"
+						anim="idle"
+						scale="3"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".8"
+					>
+					<simpleemitter
+			count="1"
+			spawnrate="11111"
+			particlelife="3000"
+		position="0 50 5"  
+			>	
+				<particle
+				>
+					
+					<groundsprite
+						life="2900"						
+						material="/shared/effects/materials/ice_puddle.material"
+						startcolor="0 0 0"					
+						midcolor=".1 .4 .6"
+						endcolor="0 0 0"
+						midcolorpos=".1"
+						startframe=".81"
+						midframe=".0"
+						endframe=".81"
+						midframepos=".1"
+						size="150"					
+					/>			
+					<groundsprite
+						life="2000"						
+						material="/shared/effects/materials/whitedot_blend.material"
+						color="0 0.1 0.3"
+						size="150"	
+						startalpha="1"					
+						midalpha="1"
+						endalpha="0 0 0"
+						midalphapos=".5"
+					/>	
+					<groundsprite
+						life="1500"						
+						material="/shared/effects/materials/iceground_add.material"
+						startcolor="0 0 0"					
+						midcolor=".3 .8 1"
+						endcolor="0 0 0"
+						midcolorpos=".1"
+						size="100"					
+					/>		
+					<groundsprite
+						life="800"						
+						material="/shared/effects/materials/iceground_add.material"
+						startcolor="0 0 0"					
+						midcolor=".8 1 1"
+						endcolor="0 0 0"
+						midcolorpos=".1"
+						size="100"					
+					/>						
+				</particle>
+			</simpleemitter>
+				
+					</model>
+				</particle> 
+			</simpleemitter> 
+			<simpleemitter
+				delay="300"
+				life="1000"
+				spawnrate="9"			
+				material="/shared/effects/materials/refract_ring.material"
+				minparticlelife="300"
+				maxparticlelife="400"
+				position="0 0 100"
+				offsetsphere="0"
+			>
+				<particle
+					color="1.0 1.0 1.0"
+					startalpha="0.0"
+					midalpha="1" 
+					endalpha="0.0"
+					midalphapos="0.75"
+					startparam="0.5"
+					endparam=".0"
+					startsize="0"
+					endsize="600"
+					anchor="1"
+				/>
+			</simpleemitter>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance2" particlesystem="system2" />
+      	<waitfordeath instance="instance0" />
+      	<waitfordeath instance="instance2" />
+		<!-- <die /> -->
+	</thread>
+</effect>

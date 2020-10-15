@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="1" useentityeffectscale="1">
+	<definitions>   
+		<particlesystem name="system0" space="world" scale="1" >
+				
+				<sound
+					norestart="true"
+				    channel="11134"
+					forcestereo="true"
+					life="5000"
+					linearfalloff="true" 
+					falloffstart="0"
+					falloffend="1300"
+					volume=".8"
+					sample="../sounds/change_sword.wav"
+				/>
+				
+			<model
+				timenudge="1"
+				model="/shared/models/invis.mdf"
+				bone="Box001"
+				scale="1"
+			>
+				<template name="eye_glow">
+					<billboard
+						timenudge="1"
+						position="{position}"
+						material="/shared/effects/materials/whitedot.material"
+						color="1 0 0"
+						size="30"
+						depthbias="-15"
+					/>
+					<trailemitter
+						position="{position}"
+						spawnrate="60"
+						particlelife="100"
+						direction="0 1 .5"
+						angle="0"
+						speed="400"
+						texposscale="0"
+						texstretchscale="1.25"
+						gravity="-600"
+						material="fire_scrolling_trail.material"
+						inheritvelocity="0"
+						limitinheritvelocity="500"
+					>
+						<particle
+							startsize="10"
+							midsize="6"
+							endsize="30"
+							midsizepos=".5"
+							startcolor="1 0 0"
+							midcolor="1 0 0"
+							endcolor="1 0 1"
+							midcolorpos=".2"
+						/>
+					</trailemitter>
+				</template>
+				
+				<instance name="eye_glow" position="1 3 36" />
+			</model>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+<!-- [min|max][start|mid|end]property[speed][position] -->

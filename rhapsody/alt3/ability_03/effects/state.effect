@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="5.5">
+		
+			<groundsprite
+				life="250"
+				yawspeed="-20"
+				material="/shared/effects/materials/music_rings_overlay.material"
+				startsize="22"
+				endsize="15"
+				color="1 .1 .1"
+				pitch="180"
+				startalpha=".5"
+				endalpha="0"
+			/>
+
+			<groundsprite
+				expirelife="350"
+				yawspeed="-20"
+				material="/shared/effects/materials/music_rings_overlay.material"
+				size="15"
+				color="1 .1 .1"
+				pitch="180"
+				startalpha=".5"
+				endalpha="0"
+			/>
+			
+			<billboard
+				position="0 0 0"
+				expirelife="350"
+				material="/shared/effects/materials/musical_ring.material"
+				color="0 0 0"
+				startalpha="1"
+				endalpha="0"
+				size="40"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				rollspeed="90"
+				roll="-1"
+				loop="true"
+				depthbias="-5"
+			/>
+
+			<billboard
+				position="0 0 0"
+				expirelife="350"
+				material="/shared/effects/materials/musical_ring_add.material"
+				startcolor=".85 0 .25"
+				endcolor="0 0 0"
+				startalpha=".5"
+				endalpha="0"
+				size="40"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				rollspeed="90"
+				roll="0"
+				loop="true"
+				depthbias="-10"
+			/>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

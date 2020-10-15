@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Grinex_Ability2"
+
+	icon="2.png"
+	passiveeffect=""
+	
+	effecttype="StatusStealth"
+	allowtransfer="true"
+
+	movespeedmultiplier="0.25"
+	unitwalking="true"
+	
+	modifierkey="stealth_run_4"
+	
+>
+	<onexpired>
+		<compare a="dispelled" b="0" op="eq">
+			<applystate name="State_Grinex_Invis_Ability2" target="this_owner_entity" duration="5000,6000,7000,8000" />
+		</compare>
+	</onexpired>
+	
+	<onframe/>
+	
+	<altavatar key="Hero_Grinex.Alt" modpriority="100"
+		modifierkey="stealth_run_4_alt"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt2" modpriority="100"
+		modifierkey="stealth_run_2_alt2"
+	/>
+</state>

@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect >
+	<definitions>
+		<particlesystem name="system2" space="world" >
+			
+			<model
+				model="\heroes\accursed\maple\effects/bored/model.mdf"
+				anim="idle"
+				material="\heroes\accursed\maple/Mtl2.material"
+				life="5000"
+			/>
+			
+		</particlesystem>
+		
+		<particlesystem name="system0" space="entity" scale="1">
+		<model
+				delay="7500"
+				scale="1"
+				model="\heroes\accursed\hd_accursed/previewGod.mdf"
+				material="../maple/effects/god_skin.material"
+				life="4000"
+				midalphapos=".8"
+				anim="idle2"
+				color="1 1 1"
+				expirelife="500"
+				startalpha="1"
+				endalpha="0"
+				yaw="0"
+			>
+				
+		</model>
+		<model
+				scale="1"
+				model="\heroes\accursed\hd_accursed/previewGod.mdf"
+
+				anim="idle2"
+				color="1 1 1"
+				expirelife="500"
+				startalpha="1"
+				endalpha="0"
+				yaw="0"
+			>
+			<simpleemitter
+			delay="7500"
+						life="2000"
+					position="0 0 0"
+					spawnrate="4"
+					minparticlelife="1000"
+					maxparticlelife="2000"
+					mingravity=".5"
+					maxgravity="5"
+					speed="150"
+					drag="0.1"
+					acceleration="0.0"
+					material="/shared/effects/materials/feather_white.material"
+					offsetsphere="65 65 25"
+					direction="0 0 0"
+					minangle="-180"
+					maxangle="180"
+					directionalspace="global"
+					collide="true"
+				>
+					<particle
+						minangle="0"
+						maxangle="360"
+						anglespeed="20"
+						minsize="6"
+						maxsize="10"
+						lockup="true"
+						lockright="true"
+						pitch="90"
+						color="2 2 2"
+						startalpha=".5"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".75"
+					/>
+				</simpleemitter>
+				<model
+				delay="7500"
+				position="0 -3 -1"
+				bone="Bip01 Spine2"
+				expirelife="500"
+				model="\heroes\martyr\alt5\ability_02\effects/wings/model.mdf"
+				material="\heroes\accursed\ability_04/material.material"
+				anim="idle"
+				startcolor="1 1 1"
+				endcolor="1 1 1"
+				startalpha=".9"
+				midalpha=".9"
+				endalpha="0"
+				midalphapos=".25"
+				startscale=".9"
+				endscale=".9"
+				yaw="0"
+				pitch="0"
+				roll="90"
+				direcionalspace="local"
+				life="2000"
+			>
+			
+			
+			</model>
+		
+		
+		<billboard
+				delay="7500"
+				life="2000"
+				bone="_bone_head"
+				expirelife="500"
+				lockup="1"
+				pitch="90"
+				position="0 0 15"
+				size="20"
+				startcolor=".5 .3 0"
+				endcolor="0"
+				material="/shared/effects/materials/corona_01.material"
+			/>
+					<simpleemitter
+				delay="7500"
+				lockup="1"
+			life="500"
+				spawnrate="500"
+				directionalspace="local"
+				particlelife="800"
+				offsetradial="80"
+				material="/shared/effects/materials/fire_add.material"
+				direction="0 0 1"
+				position="0 0 0"
+				speed="1"
+				minangle="89"
+				maxangle="90"
+				gravity="50"
+			>
+				<particle
+					startcolor=".5 .5 0"
+					midcolor="1.5 1 0"
+					endcolor="0"
+					midcolorpos=".3"
+					pitch="180"
+					scale="10"
+					startsize="0"
+					minendsize="30"
+					maxendsize="60"
+					startwidth="0"
+					minendwidth="5"
+					maxendwidth="15"
+					lockup="1"
+					lockright="false"
+				>
+				</particle>
+			</simpleemitter>	
+			<simpleemitter
+				delay="7500"
+				life="2000"
+				count="150"	
+				minparticlelife="400"
+				maxparticlelife="600"
+				material="/shared/effects/materials/phantom_smoke_03.material"
+				offsetradial="58"
+			>
+				<particle 
+					angle="0"
+					startcolor=".5 .5 .2"
+					endcolor="0"		
+					size="40"
+					startheight="220"
+					endheight="0"
+				/>
+				<particle 
+					angle="0"
+					startcolor=".225 .225 .0"
+					endcolor="0"		
+					size="40"
+					minstartheight="220"
+					maxstartheight="260"
+					endheight="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				delay="7500"
+				life="2000"
+				bone="_bone_head"
+				spawnrate="300"
+				position="0 0 15"
+				offsetradial="8 8 0"
+				minparticlelife="300"
+				maxparticlelife="500"
+				material="/shared/effects/materials/mana.material"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-200"
+					maxanglespeed="200"
+					startcolor=".8 .5 0"
+					endcolor="0"
+					startsize="0"
+					endsize="10"
+					anchor="1"
+				/>
+			</simpleemitter>
+			
+			<groundsprite
+			
+				delay="7500"
+				life="2000"
+				expirelife="500"
+				material="/shared/effects/materials/attrition.material"
+				startsize="55"
+				midsize="60"
+				endsize="50"
+				startcolor=".4 .35 .3"
+				midcolor=".4 .35 .3"
+				endcolor="0 0 0"
+				midcolorpos=".25"
+				yawspeed="90"
+				scale="1.5"
+			/>
+		
+			
+			<groundsprite
+							delay="7500"
+
+				life="900"
+				startcolor=".75 .75 .2"
+				endcolor="0"
+				startyaw="0"
+				endyaw="-48"
+				startsize="10"
+				midsize="104"
+				endsize="150"
+				midsizepos=".3"
+				
+				material="/shared/effects/materials/ground_fire_ring.material"
+			/>
+				<simpleemitter
+				delay="7500"
+
+				count="150"	
+				minparticlelife="400"
+				maxparticlelife="600"
+				material="/shared/effects/materials/phantom_smoke_03.material"
+				offsetradial="58"
+			>
+				<particle 
+					angle="0"
+					startcolor=".5 .5 .2"
+					endcolor="0"		
+					size="40"
+					startheight="220"
+					endheight="0"
+				/>
+				<particle 
+					angle="0"
+					startcolor=".225 .225 .0"
+					endcolor="0"		
+					size="40"
+					minstartheight="220"
+					maxstartheight="260"
+					endheight="0"
+				/>
+			</simpleemitter>
+
+			
+		</model>
+			<sound
+				
+				    dampen="0.5"
+				    channelid="storeaud3"
+					sound2d="true"
+					volume=".5"
+					sample="../maple/sound/272_dance.wav"
+			/>	
+			<sound
+					delay="7320"
+				    dampen="0.5"
+				    channelid="storeaud"
+					sound2d="true"
+					volume=".5"
+					sample="../maple/sound/272_r_fire.wav"
+			/>	
+			<sound
+					delay="8500"
+				    dampen="0.5"
+				    channelid="storeaud2"
+					sound2d="true"
+					volume=".7"
+					sample="../maple/sound/272_death_.wav"
+			/>	
+		
+		<simpleemitter
+				delay="7300"
+				life="500"
+				spawnrate="9"			
+				material="/shared/effects/materials/refract_ring.material"
+				minparticlelife="300"
+				maxparticlelife="400"
+				position="0 0 50"
+				offsetsphere="0"
+			>
+				<particle
+					color="1.0 1.0 1.0"
+					startalpha="0.0"
+					midalpha="1" 
+					endalpha="0.0"
+					midalphapos="0.75"
+					startparam="0.5"
+					endparam=".0"
+					startsize="0"
+					endsize="600"
+					anchor="1"
+				/>
+			</simpleemitter>
+		
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance2" particlesystem="system2" />
+				<spawnmodifier instance="instance1" modifier="god_skin" />
+
+		<waitfordeath instance="instance0" /> 
+		<waitfordeath instance="instance1" />
+		<waitfordeath instance="instance2" />
+	</thread>
+</effect>

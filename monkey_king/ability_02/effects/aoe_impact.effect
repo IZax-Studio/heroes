@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="">
+
+	<definitions>
+		<particlesystem name="system0" space="world" scale="2">
+			<billboard
+				
+				life="500"
+				startcolor=".5"
+				midcolor="1 .5 .5"
+				endcolor="0 0 0"
+				startsize="25"
+				midsize="120"
+				endsize="155"
+				midsizepos=".3"
+				depthbias="-150"
+				material="/shared/effects/materials/heart_ring.material"
+				position="0 0 25"
+				scale="1.2"
+			/>
+			<sound
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="2000"
+				volume="1" 
+				sample="\heroes\monkey_king\Elizabeth_Bathory\sounds/34_skin3_E_E_2_Fire.wav"
+			/>
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="2000"
+				volume=".70" 
+				sample="../sounds/land_%.wav" 
+			/>
+			<sound
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="2000"
+				volume=".35" 
+				sample="/heroes/behemoth/ability_02/sounds/impact.wav" 
+			/>
+			
+			<template name="ground" >
+				<groundsprite
+					position="{pos1}"
+					minsize="130"
+					maxsize="150"
+					life="1000"
+					startcolor=".6 .3 .1"
+					midcolor=".6 .3 .1"
+					endcolor="0"
+					midcolorpos=".85"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".9"
+					
+					material="/shared/effects/materials/ice_reveal.material"
+				/>
+				<billboard
+					position="{pos1}"
+					minsize="200"
+					maxsize="250"
+					life="1000"
+					startcolor=".5"
+					midcolor=".3"
+					endcolor="0"
+					startalpha="1"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".8"
+					roll="180"
+					pitch="90"
+					lockup="1"
+					depthbias="-70"
+					material="/shared/effects/materials/heart_04.material"
+				/>
+			</template>
+
+			<terrainemitter
+				life="1000"
+				count="1"
+				range="0"
+				particlelife="8000"
+			>
+				<particle
+					yaw="60"
+				>
+					<instance name="ground" pos1="0 0 0" yaw1="0" />
+
+				</particle>	
+			</terrainemitter>
+			
+			<billboard 
+				scale="4"
+				life="1000"
+				startcolor=".5 .2 .5"
+				midcolor=".5 .2 .5"
+				endcolor="0"
+				midcolorpos=".05"
+				startalpha=".65"
+				midalpha=".65"
+				endalpha="0"
+				midalphapos=".9"
+				material="/shared/effects/materials/whitedot.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				depthbias="-25"
+				position="0 0 1"
+			/>
+
+			<simpleemitter
+				count="25"
+				spawnrate="250"
+				minparticlelife="100"
+				maxparticlelife="200"
+				speed="300"
+				drag="0.10"
+				material="/shared/effects/materials/whitedot.material"
+				offsetsphere="10 10 10"
+				position="0 0 35"
+				depthbias="0"
+			>
+				<particle
+					turn="1"
+					heightdistort=".1"
+					minstartwidth="1"
+					maxwidth="7"
+					minstartscale="5"
+					maxstartscale="10"
+					minendscale="0"
+					maxendscale="4"
+					startcolor=".25 .075 .25"
+					endcolor="0 0 0"
+					midcolorpos=".25"
+				/>
+			</simpleemitter>
+
+			<billboard
+				delay="0"
+				life="250"
+				position="0 0 0"
+				material="/shared/effects/materials/refract_ripples.material"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				startsize="250"
+				endsize="350"
+				startparam=".1"
+				endparam="0"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+
+			<billboard
+				delay="0"
+				life="1000"
+				position="0 0 0"
+				material="/shared/effects/materials/refract_ripples.material"
+				startalpha="0"
+				midalpha=".5"
+				endalpha="0"
+				startsize="250"
+				endsize="350"
+				startparam=".1"
+				endparam="0"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+			
+			
+			
+			<terrainemitter
+				life="1000"
+				spawnrate="50"
+				range="200"
+				direction="0 0 1"
+				angle="0"
+				minspeed="100"
+				maxspeed="200"
+				drag=".02"
+				particlelife="1000"
+				material="/shared/effects/materials/spark_11.material"
+			>
+				<particle
+					startcolor="1 .5 0"
+					midcolor="1 0 0"
+					endcolor="0"
+					size="2"
+					minscale=".5"
+					maxscale="1"
+					minanglespeed="-300"
+					maxanglespeed="300"
+				/>
+			</terrainemitter>
+			
+			
+			<billboard
+				life="800"
+				
+				startcolor=".6 .3 .6"
+				midcolor=".2 .05 .2"
+				endcolor="0"
+				midcolorpos=".3"
+				
+				midalphapos="0.75"
+				startsize="100"
+				midsize="240"
+				endsize="290"
+				midsizepos=".3"
+				depthbias="-30"
+				position="0 0 20"
+				material="/shared/effects/materials/corona_01.material"
+				lockup="true"
+				pitch="90"
+			/> 
+		 	
+		
+			
+			
+			
+			<model
+				name="ring"
+				life="1000"
+				model="/heroes/shadowblade/ability_01/effects/circle_rig/circle.mdf"
+				anim="idle"
+				yawspeed="360"
+				startscale=".5"
+				midscale="1.6"
+				endscale="1.8"
+				midscalepos=".2"
+				position="0 0 50"
+			>
+				<template name="trails">
+					<twopointtrailemitter
+						life="800"
+						name="trail01"
+						bone_a="{bone1}"
+						bone_b="{bone2}"
+						spawnrate="50"
+						particlelife="1800"
+						startparticlealpha="1"
+						endparticlealpha="0"
+						startparticlecolor=".6 .6 .6"
+						endparticlecolor=".6 .6 .6"
+						midpartcilealphapos=".99"
+						texpostime="1800"
+						texposscale="0"
+						texstretchscale="1"
+						material="deadeye_logo.material"
+					>
+						<particle
+							startcolor=".2 0 0"
+							midcolor=".2 0 0"
+							endcolor=".2 0 0"
+							midcolorpos=".5"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							midalphapos="1"
+						/>
+						<particle
+							startcolor=".4 .2 .4"
+							midcolor=".4 .2 .4"
+							endcolor=".4 .2 .4"
+							midcolorpos=".5"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							midalphapos="1"
+						/>
+						
+					</twopointtrailemitter>
+				</template>
+
+				<instance name="trails" bone1="_bone_01" bone2="_bone_02"/>
+				<instance name="trails" bone1="_bone_02" bone2="_bone_03"/>
+				<instance name="trails" bone1="_bone_03" bone2="_bone_04"/>
+				<instance name="trails" bone1="_bone_04" bone2="_bone_05"/>
+				<instance name="trails" bone1="_bone_05" bone2="_bone_06"/>
+				<instance name="trails" bone1="_bone_06" bone2="_bone_07"/>
+				<instance name="trails" bone1="_bone_07" bone2="_bone_08"/>
+				<instance name="trails" bone1="_bone_08" bone2="_bone_09"/>
+				<instance name="trails" bone1="_bone_09" bone2="_bone_10"/>
+				<instance name="trails" bone1="_bone_10" bone2="_bone_11"/>
+				<instance name="trails" bone1="_bone_12" bone2="_bone_13"/>
+				<instance name="trails" bone1="_bone_13" bone2="_bone_14"/>
+				<instance name="trails" bone1="_bone_14" bone2="_bone_15"/>
+				<instance name="trails" bone1="_bone_15" bone2="_bone_16"/>
+				<instance name="trails" bone1="_bone_16" bone2="_bone_17"/>
+				<instance name="trails" bone1="_bone_17" bone2="_bone_18"/>
+				<instance name="trails" bone1="_bone_18" bone2="_bone_01"/>
+
+			</model>
+	</particlesystem>
+</definitions>
+
+<thread>
+	<camerashake2 scale="6" radius="1000" duration="500" frequency="22" />
+
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+
+
+
+
+
+

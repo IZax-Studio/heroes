@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="projectile_impact" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.5">
+
+		
+			<sound
+				maxdelay="100"
+				volume=".8"
+				sample="/shared/sounds/impacts/impact_flesh_%.wav"
+				linearfalloff="true"
+				falloffstart="0" 
+				falloffend="2500" 
+			/>
+		<billboard
+			bone="_bone_centerofchest"
+			startsize="1"
+			endsize="100"
+			life="150"
+			depthbias="-50"
+			startcolor="2 1 .2"
+			endcolor="0 0 0"
+			material="/shared/effects/materials/corona_06.material"
+		/>
+		
+		<billboard
+			bone="_bone_centerofchest"
+			size="200"
+			life="300"
+			depthbias="-50"
+			startcolor=".5 .25 .05"
+			endcolor="0 0 0"
+			material="/shared/effects/materials/whitedot.material"
+		/>
+		
+		<billboard
+			bone="_bone_centerofchest"
+			startsize="1"
+			endsize="90"
+			life="150"
+			depthbias="-50"
+			startcolor=".5"
+			endcolor="0 0 0"
+			material="/shared/effects/materials/corona_07.material"
+		/>
+		
+		<billboard
+			bone="_bone_centerofchest"
+			startsize="1"
+			endsize="150"
+			life="150"
+			minroll="0"
+			maxroll="360"
+			depthbias="-50"
+			startcolor="1 .2 .1"
+			endcolor="0 0 0"
+			material="/shared/effects/materials/blink.material"
+		/>
+	
+	<model
+			model="/shared/effects/models/circle_of_bones/model.mdf"
+			anim="idle"
+			scale="1"
+			yawspeed="-500"
+			rollspeed="-500"
+			life="500"
+			bone="_bone_centerofchest"
+	>
+	<template name="impact_ghost">
+	
+		<trailemitter
+				bone="{bone}"
+				life="500"
+				gravity="-20"
+				spawnrate="100"
+				particlelife="500"
+				texpostime="1000"
+				texposscale="0"
+				texstretchscale="1"
+				position="0 0 0"
+				material="/shared/effects/materials/spirit_01.material"
+			>
+				<particle
+					startcolor="1 .2 .1"
+					endcolor="0 0 0"
+					startsize="20"
+					endsize="5"
+					
+				/>
+			</trailemitter>
+			</template>
+			<instance name="impact_ghost" bone="_bone_fx_01" />
+			<instance name="impact_ghost" bone="_bone_fx_12" />
+	</model>
+	
+	<model
+			model="/shared/effects/models/circle_of_bones/model.mdf"
+			anim="idle"
+			scale="1"
+			yawspeed="500"
+			rollspeed="500"
+			life="800"
+			bone="_bone_centerofchest"
+	>
+	<template name="impact_ghost2">
+	
+		<trailemitter
+				bone="{bone}"
+				life="800"
+				gravity="-20"
+				spawnrate="100"
+				particlelife="500"
+				texpostime="1000"
+				texposscale="0"
+				texstretchscale="1"
+				position="0 0 0"
+				material="/shared/effects/materials/spirit_01.material"
+			>
+				<particle
+					startcolor="1 .2 .1"
+					endcolor="0 0 0"
+					startsize="20"
+					endsize="5"
+					
+				/>
+			</trailemitter>
+			</template>
+			<instance name="impact_ghost2" bone="_bone_fx_03" />
+			<instance name="impact_ghost2" bone="_bone_fx_09" />
+	</model>
+	
+	<simpleemitter
+				bone="_bone_centerofchest"
+				startspawnrate="1000"
+				count="10"
+				particlelife="900"
+				direction="0 0 1"
+				speed="150"
+				gravity="-10"
+				drag=".05"
+				minparticleangle="0"
+				maxparticleangle="180" 
+				position="0 0 0"
+				offsetsphere="25"
+				material="/shared/effects/materials/blink.material"
+			>
+				<particle
+					startcolor="1 .2 .1"
+					endcolor="0"
+					startsize="20"
+					endsize="1"
+					>
+					
+					<simpleemitter
+						count="1"
+						particlelife="900"
+						direction="0 0 1"
+						position="0 0 0"
+						material="/shared/effects/materials/blink.material"
+					>
+						<particle
+							startcolor="1"
+							midcolor="1"
+							midcolorpos=".7"
+							endcolor="0"
+							startsize="5"
+							endsize="1"
+							anchor="1"
+						/>
+					</simpleemitter>
+				</particle>
+			</simpleemitter>
+			
+		<model
+			life="500"
+			startscale="1.1"
+			endscale="1"
+			parentmodel="true"
+			parentskeleton="true"
+			startalpha="1"
+			midalpha="1"
+			endalpha="0"
+			startcolor="1 .2 .1"
+			midcolor="1 .2 .1"
+			midcolorpos=".7"
+			endcolor="0"
+			material="/shared/effects/materials/shell3.material"
+		/>
+	
+
+			
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

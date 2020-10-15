@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Berzerker_Ability4_Target"
+	
+	icon="1.jpg"
+	
+	passiveeffect=""
+	
+	effecttype=""
+>
+	<onkilled>
+		<targettype type="illusion" target="source_entity" />
+		<else>
+			<targettype type="heropet" target="source_entity" />
+			<else>
+				<applystate name="State_Berzerker_Ability4" target="this_inflictor_entity" pushentity="true" />
+				<changeduration b="5000" op="add" entity="stack_entity" />
+			</else>
+		</else>
+	</onkilled>
+</state>

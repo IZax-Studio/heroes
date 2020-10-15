@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true">
+	<definitions>
+
+		<modifier
+			name="modifier0"
+			life="500"
+			startcolor="4 3 1"
+			endcolor="1"
+		/>
+
+		<particlesystem name="system0" space="world" useentityeffectscale="true" scale="1.25">
+
+		<sound
+				linearfalloff="true"
+				falloffstart="700"
+				falloffend="700" 
+				volume="0.5" 
+				sample="/heroes/accursed/maple/sound/272_e_hit.wav"
+			/>
+		
+			<groundsprite			
+				life="2400"
+				material="/shared/effects/materials/ground_smash_overlay.material"
+				size="70"			
+				color="1.0 1.0 1.0"
+				startalpha="1"
+				endalpha="0"
+			/>
+		
+			<billboard
+				life="300"
+				color="1.0 1.0 1.0"
+				startalpha="1.0"
+				midalpha="1.0"
+				endalpha="0.0"
+				midalphapos="0.75"
+				startparam=".1"
+				endparam="0.0"
+				startsize="128"
+				endsize="268"
+				depthbias="-100"
+				position="0 0 20"
+				material="/shared/effects/materials/refract_ring.material"
+				lockup="true"
+				pitch="90"
+			/>	
+
+			<billboard
+				life="700"
+				startcolor="1"
+				endcolor="0 0 0"
+				startalpha="1.0"
+				midalpha="1.0"
+				endalpha="0.0"
+				midalphapos="0.75"
+				startsize="200"
+				midsize="300"
+				endsize="400"
+				scale=".4"
+				midsizepos=".4"
+				position="0 0 20"
+				material="/shared/effects/materials/stomp_01.material"
+				lockup="true"
+				pitch="90"
+				maxroll="360"
+			/>	
+
+			<billboard
+				life="600"
+				startcolor=".8 0 1"
+				endcolor="0 0 0"
+				startalpha="1.0"
+				midalpha="1.0"
+				endalpha="0.0"
+				midalphapos="0.75"
+				startparam="0.05"
+				endparam="0.0"
+				startsize="50"
+				midsize="200"
+				endsize="250"
+				midsizepos=".4"
+				position="0 0 20"
+				material="/shared/effects/materials/twirl_03.material"
+				lockup="true"
+				pitch="90"
+			/>
+
+		<simpleemitter
+			spawnrate="740"
+			maxparticlelife="400"
+			bone="_bone_centerofchest"
+			count="10"
+			offsetsphere="5"
+			minspeed="45"
+			maxspeed="120"
+			drag="0.1"
+			material="/shared/effects/materials/good_tower_02_reveal.material"
+			minangle="0"
+			maxangle="360"
+			direction="0 0 1"
+		>
+			<particle 
+				minangle="-360"
+				maxangle="360"
+				color=".5 .0 1"
+				startframe="0"
+				midframe=".1"
+				endframe="1"
+				startsize="35"
+				endsize="300"
+			/>
+
+		</simpleemitter>
+
+		<simpleemitter
+			spawnrate="20"
+			particlelife="300"
+			bone="_bone_centerofchest"
+			delay="-1600"
+			life="400"
+			material="/shared/effects/materials/starlight.material"
+			direction="0 0 1"
+		>
+			<particle 
+				minangle="0"
+				maxangle="360"
+				startcolor="0 0 0"
+				midcolor=".8 .0 1"
+				endcolor="0 0 0"
+				midcolorpos=".5"
+				endwidth="-320"
+				startsize="1"
+				midsize="-144"
+				endsize="1"
+				height="25"
+				scale="0.65"
+			/>
+
+		</simpleemitter>
+
+			<billboard
+				material="/shared/effects/materials/starbolt_02.material"
+				position="0 0 20"
+				startcolor=".8 .0 0"
+				endcolor="0"
+				startsize="0"					
+				endsize="250"
+				depthbias="-100"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+				life="450"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				delay="0"
+				life="1500"
+				startcolor=".5 .0 .7"
+				endcolor="0"
+				size="150"
+				depthbias="-120"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+			<simpleemitter
+				count="7"
+				particlelife="1500"
+				gravity="-100.0"
+				speed="500"
+				direction="0 0 1"
+				minangle="0"
+				maxangle="0"
+				offsetsphere="60 40 0"
+				position="0 0 60"
+				inheritvelocity=".025"
+			>
+				<particle>
+					<trailemitter
+						life="366"
+						directionalspace="local"
+						particledyrectionalspace="local"
+						spawnrate="100"
+						particlelife="1500"
+						depthbias="-100"
+						startparticlealpha="1"
+						midparticlealpha="1"
+						endparticlealpha="0"
+						material="/shared/effects/materials/good_tower_02_reveal.material"
+						texposscale="0"
+						texstretchscale="1"
+					>
+						<particle
+							startcolor="1 0 1"
+							midcolor="1 0 0"
+							endcolor="0"
+							midcolorpos=".3"
+							startsize="10"
+							midsize="40"
+							endsize="0"
+							startframe="0"
+							midframe=".2"
+							endframe="1"
+						/>
+					</trailemitter>
+				</particle>	
+			</simpleemitter>
+			
+			<simpleemitter
+				mincount="16"
+				maxcount="20"
+				minparticlelife="1500"
+				maxparticlelife="2000"
+				gravity="-5"
+				minspeed="700"
+				maxspeed="1000"
+				drag="0.02"
+				offsetsphere="10"
+				position="0 0 50"
+			>
+				<particle
+					maxyaw="360"
+					maxpitch="360"
+					maxroll="360"
+					minyawspeed="-600"
+					maxyawspeed="600"
+					minrollspeed="-600"
+					maxrollspeed="600"
+					minpitchspeed="-600"
+					maxpitchspeed="600"
+					minscale="1"
+					maxscale="1.5"
+				>
+					<trailemitter
+						minlife="650"
+						maxlife="1050"
+						directionalspace="local"
+						particledyrectionalspace="local"
+						spawnrate="404"
+						particlelife="350"
+						texpostime="300"
+						texposscale="0.0"
+						texstretchscale="1.0"
+						material="snake_trail.material"
+						subframepos="true"
+						position="10 10 0"
+					>
+						<particle
+							color=".5"
+							startalpha=".4"
+							endalpha="0"
+							startsize="8"
+							midsize="6"
+							endsize="0"
+						/>
+					</trailemitter>
+				</particle>
+			</simpleemitter>
+			<groundsprite
+							delay="50"
+							life="1500"
+							startcolor="1 0 0"
+							endcolor="0 0 0"
+							startalpha="0"
+							midalpha=".8"
+							endalpha="0"							
+							size="70"
+							maxyaw="360"
+							material="/shared/effects/materials/water_overlay.material"
+							position="0 0 0"
+							lockup="true"
+							lockright="true"
+						/>
+						
+						
+			
+			<simpleemitter
+				count="1"
+				position="0 0 120"
+				particlelife="800"
+			>
+				<particle
+				
+				>
+					<billboard
+						life="800"
+						material="/shared/effects/materials/whitedot.material"
+						
+						startcolor=".3 .0 .5"
+						midcolor=".8 0 1"
+						endcolor="0"
+						midcolorpos=".3"
+						
+						expirelife="300"
+						
+						startsize="20"
+						midsize="100"
+						endsize="20"
+						midsizepos=".3"
+						
+						startheight="10"
+						midheight="300"
+						endheight="100"
+						midheightpos=".3"
+					/>
+				</particle>
+			</simpleemitter>
+			
+			<groundsprite
+				life="900"
+				startcolor=".75 .0 .75"
+				endcolor="0"
+				startyaw="0"
+				endyaw="-48"
+				startsize="10"
+				midsize="104"
+				endsize="150"
+				midsizepos=".3"
+				
+				material="/shared/effects/materials/ground_fire_ring.material"
+			/>
+			
+			
+			
+			<simpleemitter
+				
+				count="150"	
+				minparticlelife="900"
+				maxparticlelife="1200"
+				material="/shared/effects/materials/phantom_smoke_10.material"
+				offsetradial="108"
+			>
+				<particle 
+					angle="0"
+					startcolor=".5 .0 .5"
+					endcolor="0"		
+					size="40"
+					startheight="220"
+					endheight="0"
+				/>
+				<particle 
+					angle="0"
+					startcolor=".225 .05 .225"
+					endcolor="0"		
+					size="40"
+					minstartheight="220"
+					maxstartheight="260"
+					endheight="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				mincount="15"
+				maxcount="20"
+				position="0 0 100"
+				material="/shared/effects/materials/pyroclast_ring.material"
+				minparticlelife="500"
+				maxparticlelife="1200"
+				gravity="-1"
+				depthbias="-10"
+			>
+				<particle
+					maxangle="360"
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+					startcolor=".8 0 1"
+					endcolor="0"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+					midalphapos=".25"
+					startsize="50"
+					midsize="300"
+					endsize="500"
+					midsizepos=".25"
+					minscale=".75"
+					maxscale="1.25"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				mincount="40"
+				maxcount="60"
+				position="0 0 120"
+				offsetsphere="40"
+				material="/shared/effects/materials/pyroclast_01_reveal.material"
+				direction="0 0 1"
+				minangle="60"
+				maxangle="120"
+				minparticlelife="500"
+				maxparticlelife="1200"
+				gravity="-5"
+				minspeed="600"
+				maxspeed="1000"
+				drag="0.04"
+				depthbias="-10"
+			>
+				<particle
+					maxangle="360"
+					minsize="60"
+					maxsize="80"
+					startscale=".5"
+					minendscale="2.0"
+					maxendscale="4.0"
+					startalpha="0"
+					midalpha=".75"
+					endalpha="1"
+					midalphapos=".25"
+					startcolor=".2 .0 0"
+					endcolor="0"
+					midcolorpos=".2"
+					startframe="0"
+					midframe=".75"
+					endframe="1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				count="1"
+				position="0 0 120"
+				particlelife="800"
+			>
+				<particle
+				
+				>
+					<billboard
+						life="800"
+						material="/shared/effects/materials/whitedot.material"
+						
+						startcolor=".5 .0 .7"
+						midcolor=".8 0 1"
+						endcolor="0"
+						midcolorpos=".3"
+						
+						expirelife="300"
+						
+						startsize="20"
+						midsize="100"
+						endsize="20"
+						midsizepos=".3"
+						
+						startheight="10"
+						midheight="400"
+						endheight="100"
+						midheightpos=".3"
+					/>
+				</particle>
+			</simpleemitter>
+      </particlesystem>
+   </definitions>
+   <thread>
+   
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+	  <spawnmodifier instance="instance1" modifier="modifier0"/>  
+	   <camerashake2 scale="11.0" radius="1200" duration="400" frequency="22" />
+     	 <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

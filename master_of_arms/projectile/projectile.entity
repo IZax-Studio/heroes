@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_MasterOfArmsAttack"
+
+	speed="1000"
+	gravity="1000"
+
+	modelscale="0.7"
+	model="/core/null/null.mdf"
+
+	traileffect=""
+	impacteffect=""
+>
+</projectile>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Behemoth4"
+
+	icon="Cha067_Skill_R.png"
+	
+	anim="ability_4"
+	casttime="700"
+	castactiontime="0"
+	casteffect="effects/cast.effect"
+	casteffecttype="Magic"
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="self_position"
+	targetscheme="enemy_units"
+	
+	manacost="145,205,265"
+	cooldowntime="130000,120000,110000"
+	targetradius="600"
+>
+	<onimpact>
+		<spawnaffector name="Affector_Behemoth_Ability4_Base" target="source_position"/>
+	</onimpact>
+	
+	<altavatar key="Hero_Behemoth.Alt5"
+		icon="../alt5/ability_04/icon.tga"
+		casteffect="../alt5/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Behemoth.Alt7"
+		casteffect="../alt7/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Behemoth.Alt8"
+		casteffect="../alt8/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Behemoth.Alt10"
+		casteffect="../alt10/ability_04/effects/cast.effect"
+		icon="../alt10/ability_04/icon.tga"
+	>
+		<modifier key="Alt10_Ability4_Upgrade" modpriority="99"
+			icon="../alt10/ability_04/iconb.tga"
+		/>
+	</altavatar>
+
+	<altavatar key="Hero_Behemoth.Alt12"
+		casteffect="../alt12/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Behemoth.Alt13"
+	    icon="/heroes/behemoth/alt13/ability_04/icon.tga"
+		casteffect="../alt13/ability_04/effects/cast.effect"
+		modpriority="100"
+	>
+		<modifier key="Night_Set_Behemoth" casteffect="../alt14/ability_04/effects/cast.effect" icon="/heroes/behemoth/alt14/ability_04/icon.tga" modpriority="101"/>
+	</altavatar>
+	
+	<altavatar key="Hero_Behemoth.Alt14"
+	    icon="/heroes/behemoth/alt14/ability_04/icon.tga"
+		casteffect="../alt14/ability_04/effects/cast.effect"
+		modpriority="100"
+	>
+		<modifier key="Night_Set_Behemoth" casteffect="../alt13/ability_04/effects/cast.effect" icon="/heroes/behemoth/alt13/ability_04/icon.tga" modpriority="101"/>
+	</altavatar>
+	
+	<altavatar key="Hero_Behemoth.Alt15"
+		casteffect="../alt15/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Behemoth.Alt16"
+		casteffect="../alt16/ability_04/effects/cast.effect"
+	/>
+</ability>

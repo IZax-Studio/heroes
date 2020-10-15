@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="	" deferred="1">
+	<definitions>
+
+	
+		<particlesystem name="system0" space="world" scale="0.75">
+
+			<terrainemitter
+				position="0 0 0"
+				spawnrate="10111"
+				count="2"	
+				offsetsphere="80 80 0"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				speed="0"
+				directionalspace="global"
+				inheritvelocity="0"
+				depthbias="-20"
+				particlelife="6000"
+			>
+				<particle>
+					<billboard
+						life="5800"
+						delay="200"
+						material="/shared/effects/materials/sand_groun.material"	
+						scale="6"
+						color="0 0 0"
+						startalpha="0.3"
+						midalpha="0.3"
+						midalphapos=".9"
+						endalpha="0"
+						lockup="true"
+						pitch="90"
+						depthbias="-30"
+					/>
+				</particle>
+			</terrainemitter>
+			
+			
+			<simpleemitter
+				life="5500"
+				position="0 0 40"
+				spawnrate="30"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				offsetradial="150"
+				offsetsphere="20 20 40"
+				directionalspace="global"
+				gravity="-8"
+				depthbias="-20"
+				material="/shared/effects/materials/dust_smoke_03.material"
+			>
+				<particle
+					maxangle="360"
+					minsize="40"
+					maxsize="70"
+					color="0"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+	
+			
+			
+			<terrainemitter
+				position="0 0 0"
+				spawnrate="11111"
+				count="2"
+				
+				gravity="0"			
+				offsetsphere="80 80 0"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				speed="0"
+				directionalspace="global"
+				inheritvelocity="0"
+				depthbias="-20"
+			>
+				<particle
+										
+				>
+				
+
+					<groundsprite
+						delay="0"
+						material="/shared/effects/materials/blood_ground.material"	
+						minscale="2.2"
+						maxscale="2.65"
+						expirelife="600"
+						color=".4 0 0"
+						minyaw="-360"
+						maxyaw="360"
+						startalpha="0.4"							
+						endalpha="0"
+					/>
+					
+					
+				</particle>
+			</terrainemitter>		
+			
+			
+				
+			
+		</particlesystem>
+	</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnmodifier instance="instance1" modifier="modifier0"/>  
+	
+	<waitfordeath instance="instance0" />
+	<wait duration="20000"/>
+	<!-- <die /> -->
+</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->

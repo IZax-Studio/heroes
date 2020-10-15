@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Jereziah_Ability2_Assist"
+
+	icon="2.png"
+	passiveeffect=""
+	
+	serverentity="true"
+	
+	effecttype="StatusDebuff"
+	
+
+>
+
+	<altavatar key="Hero_Jereziah.Alt9"
+		icon="../alt9/ability_02/icon.tga"
+	/>
+	
+</state>

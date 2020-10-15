@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Nomad_Ability3"
+
+	icon="E.png"
+	effecttype=""
+	propagatetoillusions="true"
+	maxcharges="100"
+	ishidden="true"
+	
+	passiveeffect=""
+	
+	impactinterval="100"
+>
+	<oninflict>
+		<setcharges a="0"/>
+		<setcharges a="0" entity="this_spawner_entity" />
+	</oninflict>
+
+	<onframe>
+		<evaluate a="movement" b=".1" op="mult" />
+		<addcharges count="result" />
+		<evaluate a="movement" b=".1" op="mult" />
+		<addcharges count="result" entity="this_spawner_entity"/>
+	</onframe>
+	
+	<onimpact>
+		<compare a="charges" b="25" op="lt">
+			<setactivemodifierkey name="Nomad_Sword_Effect_Low" />
+		</compare>
+		<else>
+			<compare a="charges" b="50" op="lt">
+				<setactivemodifierkey name="Nomad_Sword_Effect_Mid" />
+			</compare>
+			<else>
+				<compare a="charges" b="75" op="lt">
+					<setactivemodifierkey name="Nomad_Sword_Effect_High" />
+				</compare>
+				<compare a="charges" b="75" op="ge">
+					<setactivemodifierkey name="Nomad_Sword_Effect_Full" />
+				</compare>
+			</else>
+		</else>
+	</onimpact>
+	
+	<onattackpreimpact>
+		<cantarget targetscheme="enemy_units" effecttype="Physical">
+			<cantarget targetscheme="enemy_heroes" effecttype="Physical">
+				<compare a="charges" b="20" op="ge">
+					<evaluate a=".003,.006,.009,.012" b="charges" op="mult" />
+					<evaluate a="1" b="result" op="add" />
+					<addcritical chance="1.0" multiplier="result" />
+					<setcharges a="0" />
+					<setcharges a="0" entity="this_spawner_entity" />
+					<hasavatarkey name="Hero_Nomad.Alt9">
+						<playeffect effect="../alt9/ability_02/effects/impact.effect" target="target_entity" source="target_entity"/>
+					</hasavatarkey>
+					<else>
+						<playeffect effect="effects/impact.effect" target="target_entity" source="target_entity"/>
+					</else>
+				</compare>
+				<else>
+					<addcharges count="25" />
+					<addcharges count="25" entity="this_spawner_entity" />
+				</else>
+			</cantarget>
+		<else>
+			<compare a="charges" b="20" op="ge">
+			<evaluate a=".003,.006,.009,.012" b="charges" op="mult" />
+			<evaluate a="1" b="result" op="add" />
+			<addcritical chance="1.0" multiplier="result" />
+			<evaluate a=".5" b="charges" op="mult" />
+			<setcharges a="result" />
+			<setcharges a="result" entity="this_spawner_entity" />
+			</compare>
+		</else>
+		</cantarget>
+	</onattackpreimpact>
+	
+	<modifier key="Nomad_Sword_Effect_Low" modpriority="100"
+		passiveeffect="effects/state_self_low.effect"
+	/>
+
+	<modifier key="Nomad_Sword_Effect_Mid" modpriority="100"
+		passiveeffect="effects/state_self_mid.effect"
+	/>
+
+	<modifier key="Nomad_Sword_Effect_High" modpriority="100"
+		passiveeffect="effects/state_self_high.effect"
+	/>
+
+	<modifier key="Nomad_Sword_Effect_Full" modpriority="100"
+		passiveeffect="effects/state_self_full.effect"
+	/>
+	
+	<modifier key="iamsheeped" modpriority="1000"
+			passiveeffect=""
+	/>
+	
+	<altavatar key="Hero_Nomad.Alt6">
+		<modifier key="Nomad_Sword_Effect_Low"
+			passiveeffect="../alt6/ability_3/effects/state_self_low.effect"
+		/>
+
+		<modifier key="Nomad_Sword_Effect_Mid"
+			passiveeffect="../alt6/ability_3/effects/state_self_mid.effect"
+		/>
+
+		<modifier key="Nomad_Sword_Effect_High"
+			passiveeffect="../alt6/ability_3/effects/state_self_high.effect"
+		/>
+
+		<modifier key="Nomad_Sword_Effect_Full"
+			passiveeffect="../alt6/ability_3/effects/state_self_full.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt7"
+		icon="../alt7/ability_3/icon.tga"
+	>
+		<onattackpreimpact>
+			<cantarget targetscheme="enemy_units" effecttype="Physical">
+				<cantarget targetscheme="enemy_heroes" effecttype="Physical">
+					<compare a="charges" b="20" op="ge">
+						<evaluate a=".003,.006,.009,.012" b="charges" op="mult" />
+						<evaluate a="1" b="result" op="add" />
+						<addcritical chance="1.0" multiplier="result" />
+						<setcharges a="0" />
+						<setcharges a="0" entity="this_spawner_entity" />
+						<playeffect effect="../alt7/ability_3/effects/impact.effect" target="target_entity" source="target_entity"/>
+					</compare>
+					<else>
+						<addcharges count="25" />
+						<addcharges count="25" entity="this_spawner_entity" />
+					</else>
+				</cantarget>
+				<else>
+					<compare a="charges" b="20" op="ge">
+					<evaluate a=".003,.006,.009,.012" b="charges" op="mult" />
+					<evaluate a="1" b="result" op="add" />
+					<addcritical chance="1.0" multiplier="result" />
+					<evaluate a=".5" b="charges" op="mult" />
+					<setcharges a="result" />
+					<setcharges a="result" entity="this_spawner_entity" />
+					</compare>
+				</else>
+			</cantarget>
+		</onattackpreimpact>
+	
+		<modifier key="Nomad_Sword_Effect_Low"
+			passiveeffect="../alt7/ability_3/effects/state_self_low.effect"
+		/>
+
+		<modifier key="Nomad_Sword_Effect_Mid"
+			passiveeffect="../alt7/ability_3/effects/state_self_mid.effect"
+		/>
+
+		<modifier key="Nomad_Sword_Effect_High"
+			passiveeffect="../alt7/ability_3/effects/state_self_high.effect"
+		/>
+
+		<modifier key="Nomad_Sword_Effect_Full"
+			passiveeffect="../alt7/ability_3/effects/state_self_full.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt8"
+	>
+		<onattackpreimpact>
+			<cantarget targetscheme="enemy_units" effecttype="Physical">
+				<cantarget targetscheme="enemy_heroes" effecttype="Physical">
+					<compare a="charges" b="20" op="ge">
+						<evaluate a=".003,.006,.009,.012" b="charges" op="mult" />
+						<evaluate a="1" b="result" op="add" />
+						<addcritical chance="1.0" multiplier="result" />
+						<setcharges a="0" />
+						<setcharges a="0" entity="this_spawner_entity" />
+						<playeffect effect="../alt8/ability_03/effects/impact.effect" target="target_entity" source="target_entity"/>
+					</compare>
+					<else>
+						<addcharges count="25" />
+						<addcharges count="25" entity="this_spawner_entity" />
+					</else>
+				</cantarget>
+				<else>
+					<compare a="charges" b="20" op="ge">
+					<evaluate a=".003,.006,.009,.012" b="charges" op="mult" />
+					<evaluate a="1" b="result" op="add" />
+					<addcritical chance="1.0" multiplier="result" />
+					<evaluate a=".5" b="charges" op="mult" />
+					<setcharges a="result" />
+					<setcharges a="result" entity="this_spawner_entity" />
+					</compare>
+				</else>
+			</cantarget>
+		</onattackpreimpact>
+	
+		<modifier key="Nomad_Sword_Effect_Low"
+			passiveeffect="../alt8/ability_03/effects/state_self_low.effect"
+		/>
+
+		<modifier key="Nomad_Sword_Effect_Mid"
+			passiveeffect="../alt8/ability_03/effects/state_self_mid.effect"
+		/>
+
+		<modifier key="Nomad_Sword_Effect_High"
+			passiveeffect="../alt8/ability_03/effects/state_self_high.effect"
+		/>
+
+		<modifier key="Nomad_Sword_Effect_Full"
+			passiveeffect="../alt8/ability_03/effects/state_self_full.effect"
+		/>
+		
+		<modifier key="iamsheeped" modpriority="99"
+			passiveeffect=""
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt9">
+		<modifier key="Nomad_Sword_Effect_Low"
+			passiveeffect="../alt9/ability_03/effects/state_self_low.effect"
+		/>
+
+		<modifier key="Nomad_Sword_Effect_Mid"
+			passiveeffect="../alt9/ability_03/effects/state_self_mid.effect"
+		/>
+
+		<modifier key="Nomad_Sword_Effect_High"
+			passiveeffect="../alt9/ability_03/effects/state_self_high.effect"
+		/>
+
+		<modifier key="Nomad_Sword_Effect_Full"
+			passiveeffect="../alt9/ability_03/effects/state_self_full.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt11"
+	    icon="../alt11/ability_03/icon.tga"
+	>
+		
+		<onattackpreimpact>
+			<cantarget targetscheme="enemy_units" effecttype="Physical">
+				<cantarget targetscheme="enemy_heroes" effecttype="Physical">
+					<compare a="charges" b="20" op="ge">
+						<evaluate a=".003,.006,.009,.012" b="charges" op="mult" />
+						<evaluate a="1" b="result" op="add" />
+						<addcritical chance="1.0" multiplier="result" />
+						<setcharges a="0" />
+						<setcharges a="0" entity="this_spawner_entity" />
+						<playeffect effect="../alt11/ability_03/effects/impact.effect" target="target_entity" source="target_entity"/>
+					</compare>
+					<else>
+						<addcharges count="25" />
+						<addcharges count="25" entity="this_spawner_entity" />
+					</else>
+				</cantarget>
+				<else>
+					<compare a="charges" b="20" op="ge">
+					<evaluate a=".003,.006,.009,.012" b="charges" op="mult" />
+					<evaluate a="1" b="result" op="add" />
+					<addcritical chance="1.0" multiplier="result" />
+					<evaluate a=".5" b="charges" op="mult" />
+					<setcharges a="result" />
+					<setcharges a="result" entity="this_spawner_entity" />
+					</compare>
+				</else>
+			</cantarget>
+		</onattackpreimpact>
+	
+		<modifier key="Nomad_Sword_Effect_Low"
+			passiveeffect="../alt11/ability_03/effects/state_self_low.effect"
+		/>
+
+		<modifier key="Nomad_Sword_Effect_Mid"
+			passiveeffect="../alt11/ability_03/effects/state_self_mid.effect"
+		/>
+
+		<modifier key="Nomad_Sword_Effect_High"
+			passiveeffect="../alt11/ability_03/effects/state_self_high.effect"
+		/>
+
+		<modifier key="Nomad_Sword_Effect_Full"
+			passiveeffect="../alt11/ability_03/effects/state_self_full.effect"
+		/>
+		
+		<modifier key="iamsheeped" modpriority="99"
+			passiveeffect=""
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt12"
+	    icon="../alt12/ability_03/icon.tga"
+	>
+		<modifier key="nomadAlt12_Ability3_Upgrade"
+			icon="../alt12/ability_03/icon_u.tga"
+		/>
+		
+		<onattackpreimpact>
+			<cantarget targetscheme="enemy_units" effecttype="Physical">
+				<cantarget targetscheme="enemy_heroes" effecttype="Physical">
+					<compare a="charges" b="20" op="ge">
+						<evaluate a=".003,.006,.009,.012" b="charges" op="mult" />
+						<evaluate a="1" b="result" op="add" />
+						<addcritical chance="1.0" multiplier="result" />
+						<setcharges a="0" />
+						<setcharges a="0" entity="this_spawner_entity" />
+						<playeffect effect="../alt12/ability_03/effects/impact.effect" target="target_entity" source="target_entity"/>
+					</compare>
+					<else>
+						<addcharges count="25" />
+						<addcharges count="25" entity="this_spawner_entity" />
+					</else>
+				</cantarget>
+				<else>
+					<compare a="charges" b="20" op="ge">
+					<evaluate a=".003,.006,.009,.012" b="charges" op="mult" />
+					<evaluate a="1" b="result" op="add" />
+					<addcritical chance="1.0" multiplier="result" />
+					<evaluate a=".5" b="charges" op="mult" />
+					<setcharges a="result" />
+					<setcharges a="result" entity="this_spawner_entity" />
+					</compare>
+				</else>
+			</cantarget>
+		</onattackpreimpact>
+	
+		<onimpact>
+			<hasmodifier name="nomadAlt12_Ability3_Upgrade">
+				<compare a="charges" b="25" op="lt">
+					<setactivemodifierkey name="Nomad_Sword_Effect_Low_Upgrade" />
+				</compare>
+				<else>
+					<compare a="charges" b="50" op="lt">
+						<setactivemodifierkey name="Nomad_Sword_Effect_Mid_Upgrade" />
+					</compare>
+					<else>
+						<compare a="charges" b="75" op="lt">
+							<setactivemodifierkey name="Nomad_Sword_Effect_High_Upgrade" />
+						</compare>
+						<compare a="charges" b="75" op="ge">
+							<setactivemodifierkey name="Nomad_Sword_Effect_Full_Upgrade" />
+						</compare>
+					</else>
+				</else>
+			</hasmodifier>
+			<else>
+				<compare a="charges" b="25" op="lt">
+					<setactivemodifierkey name="Nomad_Sword_Effect_Low" />
+				</compare>
+				<else>
+					<compare a="charges" b="50" op="lt">
+						<setactivemodifierkey name="Nomad_Sword_Effect_Mid" />
+					</compare>
+					<else>
+						<compare a="charges" b="75" op="lt">
+							<setactivemodifierkey name="Nomad_Sword_Effect_High" />
+						</compare>
+						<compare a="charges" b="75" op="ge">
+							<setactivemodifierkey name="Nomad_Sword_Effect_Full" />
+						</compare>
+					</else>
+				</else>
+			</else>
+		</onimpact>
+	
+		<modifier key="Nomad_Sword_Effect_Low"
+			passiveeffect="../alt12/ability_03/effects/state_self_low.effect"
+		/>
+		<modifier key="Nomad_Sword_Effect_Low_Upgrade"
+				passiveeffect="../alt12/ability_03/effects/state_self_low_upgrade.effect"
+			/>
+
+		<modifier key="Nomad_Sword_Effect_Mid"
+			passiveeffect="../alt12/ability_03/effects/state_self_mid.effect"
+		/>
+		<modifier key="Nomad_Sword_Effect_Mid_Upgrade"
+				passiveeffect="../alt12/ability_03/effects/state_self_mid_upgrade.effect"
+			/>
+		
+		<modifier key="Nomad_Sword_Effect_High"
+			passiveeffect="../alt12/ability_03/effects/state_self_high.effect"
+		/>
+		<modifier key="Nomad_Sword_Effect_High_Upgrade"
+				passiveeffect="../alt12/ability_03/effects/state_self_high_upgrade.effect"
+			/>
+
+		<modifier key="Nomad_Sword_Effect_Full"
+			passiveeffect="../alt12/ability_03/effects/state_self_full.effect"
+		/>
+		<modifier key="Nomad_Sword_Effect_Full_Upgrade"
+				passiveeffect="../alt12/ability_03/effects/state_self_full_upgrade.effect"
+			/>
+		
+		<modifier key="iamsheeped" modpriority="99"
+			passiveeffect=""
+		/>
+	</altavatar>
+		
+	<altavatar key="Hero_Nomad.Alt13"
+	    icon="../alt13/ability_03/icon.tga"
+	>
+		
+		<onattackpreimpact>
+			<cantarget targetscheme="enemy_units" effecttype="Physical">
+				<cantarget targetscheme="enemy_heroes" effecttype="Physical">
+					<compare a="charges" b="20" op="ge">
+						<evaluate a=".003,.006,.009,.012" b="charges" op="mult" />
+						<evaluate a="1" b="result" op="add" />
+						<addcritical chance="1.0" multiplier="result" />
+						<setcharges a="0" />
+						<setcharges a="0" entity="this_spawner_entity" />
+						<playeffect effect="../alt13/ability_03/effects/impact.effect" target="target_entity" source="target_entity"/>
+					</compare>
+					<else>
+						<addcharges count="25" />
+						<addcharges count="25" entity="this_spawner_entity" />
+					</else>
+				</cantarget>
+				<else>
+					<compare a="charges" b="20" op="ge">
+					<evaluate a=".003,.006,.009,.012" b="charges" op="mult" />
+					<evaluate a="1" b="result" op="add" />
+					<addcritical chance="1.0" multiplier="result" />
+					<evaluate a=".5" b="charges" op="mult" />
+					<setcharges a="result" />
+					<setcharges a="result" entity="this_spawner_entity" />
+					</compare>
+				</else>
+			</cantarget>
+		</onattackpreimpact>
+	
+		<modifier key="Nomad_Sword_Effect_Low"
+			passiveeffect="../alt13/ability_03/effects/state_self_low.effect"
+		/>
+
+		<modifier key="Nomad_Sword_Effect_Mid"
+			passiveeffect="../alt13/ability_03/effects/state_self_mid.effect"
+		/>
+
+		<modifier key="Nomad_Sword_Effect_High"
+			passiveeffect="../alt13/ability_03/effects/state_self_high.effect"
+		/>
+
+		<modifier key="Nomad_Sword_Effect_Full"
+			passiveeffect="../alt13/ability_03/effects/state_self_full.effect"
+		/>
+		
+		<modifier key="iamsheeped" modpriority="99"
+			passiveeffect=""
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt14"
+	    icon="../alt14/ability_03/icon.tga"
+	>
+		
+		<onattackpreimpact>
+			<cantarget targetscheme="enemy_units" effecttype="Physical">
+				<cantarget targetscheme="enemy_heroes" effecttype="Physical">
+					<compare a="charges" b="20" op="ge">
+						<evaluate a=".003,.006,.009,.012" b="charges" op="mult" />
+						<evaluate a="1" b="result" op="add" />
+						<addcritical chance="1.0" multiplier="result" />
+						<setcharges a="0" />
+						<setcharges a="0" entity="this_spawner_entity" />
+						<playeffect effect="../alt14/ability_03/effects/impact.effect" target="target_entity" source="target_entity"/>
+					</compare>
+					<else>
+						<addcharges count="25" />
+						<addcharges count="25" entity="this_spawner_entity" />
+					</else>
+				</cantarget>
+				<else>
+					<compare a="charges" b="20" op="ge">
+					<evaluate a=".003,.006,.009,.012" b="charges" op="mult" />
+					<evaluate a="1" b="result" op="add" />
+					<addcritical chance="1.0" multiplier="result" />
+					<evaluate a=".5" b="charges" op="mult" />
+					<setcharges a="result" />
+					<setcharges a="result" entity="this_spawner_entity" />
+					</compare>
+				</else>
+			</cantarget>
+		</onattackpreimpact>
+	
+		<modifier key="Nomad_Sword_Effect_Low"
+			passiveeffect="../alt14/ability_03/effects/state_self_low.effect"
+		/>
+
+		<modifier key="Nomad_Sword_Effect_Mid"
+			passiveeffect="../alt14/ability_03/effects/state_self_mid.effect"
+		/>
+
+		<modifier key="Nomad_Sword_Effect_High"
+			passiveeffect="../alt14/ability_03/effects/state_self_high.effect"
+		/>
+
+		<modifier key="Nomad_Sword_Effect_Full"
+			passiveeffect="../alt14/ability_03/effects/state_self_full.effect"
+		/>
+		
+		<modifier key="iamsheeped" modpriority="99"
+			passiveeffect=""
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt15"
+	    icon="../alt13/ability_03/icon.tga"
+	>
+		
+		<onattackpreimpact>
+			<cantarget targetscheme="enemy_units" effecttype="Physical">
+				<cantarget targetscheme="enemy_heroes" effecttype="Physical">
+					<compare a="charges" b="20" op="ge">
+						<evaluate a=".003,.006,.009,.012" b="charges" op="mult" />
+						<evaluate a="1" b="result" op="add" />
+						<addcritical chance="1.0" multiplier="result" />
+						<setcharges a="0" />
+						<setcharges a="0" entity="this_spawner_entity" />
+						<playeffect effect="../alt13/ability_03/effects/impact.effect" target="target_entity" source="target_entity"/>
+					</compare>
+					<else>
+						<addcharges count="25" />
+						<addcharges count="25" entity="this_spawner_entity" />
+					</else>
+				</cantarget>
+				<else>
+					<compare a="charges" b="20" op="ge">
+					<evaluate a=".003,.006,.009,.012" b="charges" op="mult" />
+					<evaluate a="1" b="result" op="add" />
+					<addcritical chance="1.0" multiplier="result" />
+					<evaluate a=".5" b="charges" op="mult" />
+					<setcharges a="result" />
+					<setcharges a="result" entity="this_spawner_entity" />
+					</compare>
+				</else>
+			</cantarget>
+		</onattackpreimpact>
+	
+		<modifier key="Nomad_Sword_Effect_Low"
+			passiveeffect="../alt13/ability_03/effects/state_self_low.effect"
+		/>
+
+		<modifier key="Nomad_Sword_Effect_Mid"
+			passiveeffect="../alt13/ability_03/effects/state_self_mid.effect"
+		/>
+
+		<modifier key="Nomad_Sword_Effect_High"
+			passiveeffect="../alt13/ability_03/effects/state_self_high.effect"
+		/>
+
+		<modifier key="Nomad_Sword_Effect_Full"
+			passiveeffect="../alt13/ability_03/effects/state_self_full.effect"
+		/>
+		
+		<modifier key="iamsheeped" modpriority="99"
+			passiveeffect=""
+		/>
+	</altavatar>
+</state>

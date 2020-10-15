@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1" useentityscale="true">
+
+
+			
+			
+			
+			
+			
+			<billboard
+				expirelife="300"
+				startcolor="0 .1 .2"
+				endcolor="0"
+				startsize="175"
+				endsize="0"
+				bone="Bip01 L Hand"
+				depthbias="-30"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+
+			<billboard
+				bone="Bip01 L Hand"
+				expirelife="500"
+				startcolor="0 .1 .3"
+				endcolor="0 0 0"
+				startsize="175"
+				endsize="0"
+				position="0 0 0"
+				material="/shared/effects/materials/flare_03.material"
+				directionalspace="local"
+				depthbias="-60"
+				rollspeed="15"
+			/>
+			
+			<billboard
+				bone="Bip01 L Hand"
+				expirelife="500"
+				startcolor="0 .1 .3"
+				endcolor="0 0 0"
+				startsize="175"
+				endsize="0"
+				position="0 0 0"
+				material="/shared/effects/materials/flare_03.material"
+				directionalspace="local"
+				depthbias="-60"
+				rollspeed="-15"
+			/>
+			
+			<billboard
+				bone="Bip01 L Hand"
+				expirelife="500"
+				startcolor="0 .1 .3"
+				endcolor="0 0 0"
+				startsize="225"
+				endsize="0"
+				position="0 0 0"
+				material="/shared/effects/materials/flare_03.material"
+				directionalspace="local"
+				depthbias="-60"
+			/>
+			
+			
+
+			
+			<billboard
+				expirelife="300"
+				startcolor="0 .1 .2"
+				endcolor="0"
+				startsize="175"
+				endsize="0"
+				bone="Bip01 R Hand"
+				depthbias="-30"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+
+			<billboard
+				bone="Bip01 R Hand"
+				expirelife="500"
+				startcolor="0 .1 .3"
+				endcolor="0 0 0"
+				startsize="175"
+				endsize="0"
+				position="0 0 0"
+				material="/shared/effects/materials/flare_03.material"
+				directionalspace="local"
+				depthbias="-60"
+				rollspeed="15"
+			/>
+			
+			<billboard
+				bone="Bip01 R Hand"
+				expirelife="500"
+				startcolor="0 .1 .3"
+				endcolor="0 0 0"
+				startsize="175"
+				endsize="0"
+				position="0 0 0"
+				material="/shared/effects/materials/flare_03.material"
+				directionalspace="local"
+				depthbias="-60"
+				rollspeed="-15"
+			/>
+			
+			<billboard
+				bone="Bip01 R Hand"
+				expirelife="500"
+				startcolor="0 .1 .3"
+				endcolor="0 0 0"
+				startsize="225"
+				endsize="0"
+				position="0 0 0"
+				material="/shared/effects/materials/flare_03.material"
+				directionalspace="local"
+				depthbias="-60"
+			/>
+			
+			
+			
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+
+</effect>

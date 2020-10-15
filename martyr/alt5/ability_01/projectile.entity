@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Martyr_Ability1_Alt5"
+
+	speed="1600"
+	gravity="0"
+
+	modelscale="2"
+	model="/shared/models/invis.mdf"
+	traileffect="/heroes/martyr/ability_01/effects/trail.effect"
+	effectscale="1.0"
+	impacteffect="/heroes/martyr/ability_01/effects/impact.effect"
+>
+</projectile>

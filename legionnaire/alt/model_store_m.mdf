@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="\heroes\legionnaire/material_noshadow/model.model" type="K2" >
+	
+	<anim name="idle" clip="\heroes\legionnaire/kotori_RE/clips/bat_idle.clip" fps="30" numframes="80" loop="true" blendtime="200"/>
+	
+	</model>

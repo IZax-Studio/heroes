@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+	
+		<particlesystem name="system0" space="entity" scale=".65">
+
+			<sound
+				delay="3000"
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".7"
+				sample="../sounds/cast.wav"
+			/>
+
+			<!-- Meteor -->
+
+			<simpleemitter	
+				delay="3000"
+				count="1"
+				spawnrate="1000"
+				particlelife="10000"				
+				position="0 0 0"
+				angle="0"
+				direction="0 0 1"
+			>
+				<particle				
+					turn="1"				
+				>	
+
+					<model
+						life="1250"
+						model="phoenix/model.mdf"
+						material="/shared/effects/materials/shell3.material"
+						anim="idle"
+						startcolor="4 3 2"
+						midcolor="4 3 2"
+						endcolor="0"
+						midcolorpos=".2"
+						scale="1.5"
+						alpha="3"
+					/>
+					<model
+						life="1250"
+						model="phoenix/model.mdf"
+						anim="idle"
+						color="2"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".2"
+						scale="1.5"
+					>
+
+						<simpleemitter
+						bone="Box001"
+							life="1000"
+							spawnrate="250"
+							minparticlelife="250"
+							maxparticlelife="500"
+							gravity="0"
+							position="0 0 0"
+							offsetsphere="50 50 50"
+							material="/shared/effects/materials/soul_projectile2.material"
+							depthbias="75"
+						>
+							<particle 
+								minangle="0"
+								maxangle="360"
+								minanglespeed="-6"
+								maxanglespeed="6"
+								startcolor=".75 .5 .25"
+								endcolor="0 0 0"
+								startsize="0"
+								endsize="65"
+								startanchor="1"
+								endanchor="0"
+							/>
+						</simpleemitter>
+
+						<simpleemitter
+						bone="Box001"
+							life="1000"
+							spawnrate="150"
+							minparticlelife="250"
+							maxparticlelife="500"
+							gravity="0"
+							position="0 0 0"
+							offsetsphere="50 50 50"
+							material="/shared/effects/materials/soul_projectile2.material"
+							depthbias="75"
+						>
+							<particle 
+								minangle="0"
+								maxangle="360"
+								minanglespeed="-6"
+								maxanglespeed="6"
+								startcolor=".75 .5 .25"
+								endcolor="0 0 0"
+								startsize="0"
+								endsize="65"
+								startanchor="0"
+								endanchor="0"
+							/>
+						</simpleemitter>
+
+						<simpleemitter
+						bone="Box001"
+							life="1000"
+							spawnrate="250"
+							minparticlelife="250"
+							maxparticlelife="500"
+							gravity="-5"
+							position="0 0 0"
+							offsetsphere="50 50 50"
+							material="/shared/effects/materials/whitedot.material"
+							depthbias="75"
+						>
+							<particle 
+								minangle="0"
+								maxangle="360"
+								minanglespeed="-6"
+								maxanglespeed="6"
+								startcolor=".25 0 .125"
+								midcolor=".5 .4 .15"
+								endcolor="0 0 0"
+								midcolorpos=".25"
+								startsize="0"
+								endsize="35"
+								startanchor="0"
+								endanchor="0"
+							/>
+						</simpleemitter>
+
+						<trailemitter
+						bone="Box001"
+							life="1000"
+							spawnrate="50"
+							particlelife="1000"
+							texpostime="1000"
+							texposscale="0.0"
+							texstretchscale="1"
+							position="0 0 0"
+							material="/shared/effects/materials/arrow_trail.material"
+						>
+							<particle
+								startcolor=".5 0 0"
+								midcolor=".25 .15 .05"
+								endcolor="0 0 0"
+								midcolorpos=".2"
+								startsize="25"
+								midsize="25"
+								endsize="0"
+								midsizepos="0.2"
+						 />
+						</trailemitter>
+
+						<trailemitter
+						bone="Box012"
+							life="1000"
+							spawnrate="50"
+							particlelife="750"
+							texpostime="750"
+							texposscale="0.0"
+							texstretchscale="1"
+							position="0 0 0"
+							material="/shared/effects/materials/arrow_trail.material"
+						>
+							<particle
+								startcolor=".5 0 0"
+								midcolor=".25 .15 .05"
+								endcolor="0 0 0"
+								midcolorpos=".2"
+								startsize="25"
+								midsize="25"
+								endsize="0"
+								midsizepos="0.2"
+						 />
+						</trailemitter>
+						
+						<trailemitter
+						bone="Box016"
+							life="1000"
+							spawnrate="50"
+							particlelife="750"
+							texpostime="750"
+							texposscale="0.0"
+							texstretchscale="1"
+							position="0 0 0"
+							material="/shared/effects/materials/arrow_trail.material"
+						>
+							<particle
+								startcolor=".5 0 0"
+								midcolor=".25 .15 .05"
+								endcolor="0 0 0"
+								midcolorpos=".2"
+								startsize="25"
+								midsize="25"
+								endsize="0"
+								midsizepos="0.2"
+						 />
+						</trailemitter>
+
+						<simpleemitter
+						bone="Box001"
+							life="1000"
+							spawnrate="100"
+							minparticlelife="250"
+							maxparticlelife="500"
+							gravity="-5"
+							position="0 0 0"
+							offsetsphere="50 50 50"
+							material="/shared/effects/materials/heathaze.material"
+							depthbias="75"
+						>
+							<particle
+								param="0.1"
+								minangle="0"
+								maxangle="360"
+								minanglespeed="-6"
+								maxanglespeed="6"
+								color="1 1 1"
+								startsize="0"
+								endsize="125"
+								startalpha="0"
+								midalpha=".2"
+								endalpha="0"
+							/>
+						</simpleemitter>
+						
+						<billboard
+							bone="root"
+							life="500"
+							startcolor="1 0 .5"
+							midcolor=".25 0 .1"
+							endcolor="0"
+							startsize="750"
+							endsize="0"
+							depthbias="0"
+							material="/shared/effects/materials/whitedot.material"
+							position="0 0 25"
+						/>
+						
+						<simpleemitter
+							bone="root"
+							count="5"
+							spawnrate="5"
+							particlelife="5500"
+							offsetsphere="0 0 0"
+							position="0 0 0"
+							minangle="0"
+							maxangle="0"
+							direction="0 1 0"
+						>
+							<particle>
+<!--
+								<billboard
+									bone="root"
+									life="500"
+									startcolor=".4 .2 0"
+									midcolor="0 .1 .3"
+									endcolor="0"
+									startsize="500"
+									endsize="0"
+									depthbias="0"
+									material="/shared/effects/materials/whitedot.material"
+									position="0 0 25"
+								/>
+-->
+								<billboard
+									bone="root"
+									position="0 0 0"
+									delay="0"
+									life="700"
+									param="0.1"	
+									startsize="250"
+									endsize="500"
+									startalpha=".55"
+									endalpha="0"
+									material="/shared/effects/materials/refract_swell.material"
+									lockup="1"
+									lockright="1"
+									pitch="90"
+								/>
+							</particle>
+						</simpleemitter>
+						
+						
+						
+						
+						
+						
+						
+					</model>
+	
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+<!--
+					<simpleemitter							
+						speed="450"
+						spawnrate="420"
+						minparticlelife="200"
+						maxparticlelife="800"
+						life="1200"
+						offsetsphere="100"
+						material="/shared/effects/materials/woodchunk.material"	
+					>
+						<particle 
+							startcolor="1 1 0"
+							endcolor=".5 .15 0"
+							startalpha="0"
+							midalpha=".5"
+							endalpha="0"
+							startsize="10"
+							endsize="5"
+						/>
+					</simpleemitter>
+
+					<simpleemitter
+						speed="210"
+						spawnrate="220"			
+						minparticlelife="700"
+						maxparticlelife="2200"
+						life="1000"
+						material="/shared/effects/materials/pyroclast_01.material"
+						offsetsphere="25 25 0"
+					>
+						<particle 
+							minangle="0"
+							maxangle="360"
+							minanglespeed="-60"
+							startcolor=".5 .35 .2"
+							midcolor=".15"
+							endcolor="0 0 0"
+							midcolorpos=".3"
+							maxanglespeed="60"
+							startsize="100"
+							endsize="170"
+							startalpha="1"
+							endalpha="0"
+						/>
+					</simpleemitter>
+
+					<simpleemitter
+						speed="130"
+						spawnrate="70"			
+						minparticlelife="800"
+						maxparticlelife="1500"
+						life="1000"
+						material="/shared/effects/materials/pyroclast_03.material"
+						offsetsphere="35 35 0"
+					>
+						<particle 
+							minangle="0"
+							maxangle="360"
+							minanglespeed="-60"
+							startcolor="0"
+							midcolor=".2"
+							endcolor="0 0 0"
+							midcolorpos=".3"
+							maxanglespeed="60"
+							startsize="130"
+							endsize="30"
+							startalpha="0"
+							midalpha="1"
+							endalpha="0"
+						/>
+					</simpleemitter>
+
+					<simpleemitter							
+						spawnrate="20"
+						minparticlelife="600"
+						maxparticlelife="800"
+						life="500"
+						offsetsphere="40"
+						material="/shared/effects/materials/refract_wave.material"	
+					>
+						<particle 
+							angle="180"
+							param="0.5"
+							startalpha="0"
+							midalpha=".2"
+							endalpha="0"
+							startsize="120"
+							endsize="540"
+						/>
+					</simpleemitter>
+-->
+<!--
+
+					<billboard
+					life="5000"
+						color="1 .8 .6"
+						startsize="110"
+						endsize="0"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"				
+						depthbias="0"
+						material="/shared/effects/materials/meteor.material"
+					/>		
+
+					<simpleemitter	
+						speed="50"						
+						spawnrate="65"
+						minparticlelife="200"
+						maxparticlelife="1000"
+						life="2500"
+						offsetsphere="20 20 30"
+						material="/shared/effects/materials/phantom_smoke_04.material"	
+					>
+						<particle 
+							minanglespeed="-50"
+							maxanglespeed="50"
+							minangle="-360"
+							maxangle="360"
+							startcolor=".5"
+							endcolor="0"
+							startalpha="1"
+							endalpha="0"
+							startsize="160"
+							endsize="120"
+						/>
+						<particle 
+							minangle="-360"
+							maxangle="360"
+							startcolor="1 .3 .2"
+							endcolor="0"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							startsize="160"
+							endsize="80"
+						/>
+					</simpleemitter> 
+
+					<billboard
+						color=".4 .1 0"
+						startsize="540"
+						endsize="0"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"				
+						depthbias="-55"
+						material="/shared/effects/materials/whitedot.material"
+					/>
+-->
+					
+				</particle>
+			</simpleemitter> 	
+
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />		
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

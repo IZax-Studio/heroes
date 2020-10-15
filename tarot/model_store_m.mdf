@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="model.model" med="model.model" low="model.model">
+
+	<anim name="idle" clip="clips/stand.clip" fps="30" loop="true"/>
+	
+	<anim name="portrait" clip="clips/stand.clip" loop="true"/>
+	
+	<anim name="taunt_1" clip="clips/spell_channel.clip"/>
+
+	<anim name="item_1" clip="clips/spell_channel.clip"/>
+		
+	<anim name="ability_1" clip="clips/attack.clip" fps="45" loop="false">
+		<frameevent frame="9" cmd="PlaySoundLinear sounds/attack_%.wav 400 1800 .35"/>
+		<frameevent frame="7" cmd="PlaySoundLinear ../ability_01/sounds/cast.wav 400 2500 1"/>
+		<frameevent frame="23" cmd="PlaySoundLinear sounds/ab1.wav 400 2500 1"/>
+		<frameevent frame="18" cmd="PlaySoundLinear /heroes/witch_slayer/sounds/move_%.wav 0 700 .5"/>
+	</anim>
+
+	<anim name="ability_2" clip="clips/stand.clip" fps="30" loop="false" blendtime="150">
+		<frameevent frame="9" cmd="PlaySoundLinear sounds/attack2.wav 400 1800 1"/>
+		<frameevent frame="9" cmd="PlaySoundLinear ability_02/sounds/cast.wav 400 2500 .5"/>
+		<frameevent frame="18" cmd="PlaySoundLinear /heroes/witch_slayer/sounds/move_%.wav 0 700 .5"/>
+	</anim>
+	
+	<anim name="ability_3" clip="clips/spell.clip" fps="30" loop="false" blendtime="150">
+	</anim>
+	
+	<anim name="ability_4" clip="clips/spell_channel.clip" fps="30" loop="false">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/charge.wav 400 2500 1"/>
+		<frameevent frame="12" cmd="PlaySoundLinear /heroes/witch_slayer/sounds/move_%.wav 0 700 .5"/>
+	</anim>
+	
+	<anim name="attack_1" clip="clips/attack.clip" loop="false" blendtime="150" fps="30" >
+		<frameevent frame="6" cmd="StartEffect effects/grab_card.effect"/>
+		<frameevent frame="6" cmd="PlaySoundLinear sounds/red_att_%.wav 500 1300 .5"/>
+	</anim>
+	
+	<anim name="attack_2" clip="clips/spell_channel.clip" loop="false" blendtime="150" fps="30" >
+		<frameevent frame="4" cmd="StartEffect effects/grab_card.effect"/>
+		<frameevent frame="6" cmd="PlaySoundLinear sounds/red_att_%.wav 500 1300 .5"/>
+	</anim>
+	
+	<anim name="walk_1" clip="clips/walk.clip" loop="true" loopbackframe="1">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/move_%.wav 0 800 .3"/>
+		<frameevent frame="6" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="11" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="10" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="15" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="20" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="30" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="35" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="37" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="42" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+			
+		<frameevent frame="6" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="15" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="28" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="10" cmd="PlaySoundLinear sounds/jewelry_%.wav 0 800 .3"/>
+		<frameevent frame="37" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	</anim>
+
+	<anim name="bored_1" clip="clips/spell_one.clip" fps="24" loop="false" >
+	</anim>
+	
+	<anim name="death_1" clip="clips/death.clip" fps="30" loop="true" loopbackframe="-1" >
+	</anim>
+
+	<anim name="knock_1" clip="clips/death.clip" loop="true" loopbackframe="-1"/>
+
+	<anim name="walk_2" clip="clips/attack_walk_stand_spin.clip" loop="true" loopbackframe="1">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/move_%.wav 0 800 .3"/>
+		<frameevent frame="6" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="11" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="10" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="15" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="20" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="30" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="35" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="37" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="42" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+			
+		<frameevent frame="6" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="15" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="28" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="10" cmd="PlaySoundLinear sounds/jewelry_%.wav 0 800 .3"/>
+		<frameevent frame="37" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	</anim>
+
+</model>

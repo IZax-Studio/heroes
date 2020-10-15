@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Vanya_Ability3"
+
+	
+	
+	icon="3.png"
+	passiveeffect="effects/trail.effect"
+	modifierkey="attack_impact"
+	disarmed="true"
+	ishidden="true"
+
+	unitwalking="true"
+	effecttype=""
+>
+	<oninflict>
+		<setaccumulator value="1.0" />
+	</oninflict>
+	<onattack>
+		<bonusdamagemult a="accumulator" b="1" op="sub" target="" />
+		<changeaccumulator b="0.85" op="mult" />
+	</onattack>
+	<onexpired>
+		<applystate name="State_Vanya_Ability3_Attackspeed" duration="6000" />
+	</onexpired>
+	
+	
+	<altavatar key="Hero_Vanya.set_ascension" modpriority="1"
+		passiveeffect="/heroes/vanya/set_ascension/ability_3/effects/trail.effect"
+	>	
+	</altavatar>
+	
+	<altavatar key="Hero_Vanya.Alt4" modpriority="1"
+		passiveeffect="/heroes/vanya/alt4/ability_3/effects/trail.effect"
+	>	
+	</altavatar>
+	
+	<altavatar key="Hero_Vanya.Alt5" modpriority="1"
+		passiveeffect="/heroes/vanya/alt5/ability_3/effects/trail.effect"
+		icon="/heroes/vanya/alt5/ability_3/icon.tga"
+	>	
+	</altavatar>
+	
+	<altavatar key="Hero_Vanya.Alt6" modpriority="1"
+		passiveeffect="/heroes/vanya/alt6/ability_3/effects/trail.effect"
+	/>	
+	
+	<altavatar key="Hero_Vanya.Alt7" modpriority="1"
+		passiveeffect="/heroes/vanya/alt7/ability_3/effects/trail.effect"
+	/>	
+</state>

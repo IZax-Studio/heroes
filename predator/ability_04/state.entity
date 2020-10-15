@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Predator_Ability4"
+
+	icon="icon.tga"
+	
+	armor="-2,-4,-6"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	passiveeffect="effects/state_enemy.effect"
+
+	modifierkey="predator_terror"
+>
+	<onframe />
+
+	<oninflict>
+		<playeffect effect="effects/state_enemy.effect" source="target_entity" target="target_entity" />
+		<evaluate a="target_team" target="this_inflictor_entity" />
+		<setaccumulator value="result" />
+	</oninflict>
+	
+	<onattackedpreimpact>
+		<combateffecttype effecttype="AbilityBasedProjectile BindingProjectile" />
+		<else>
+			<setvar0 a="target_team" />			
+			<compare a="var0" b="accumulator" op="eq">
+				<cantarget targetscheme="player_controlled_enemy_units">
+					<hasmodifier name="ult_boost" entity="this_inflictor_entity">
+						<applystate name="State_Predator_Ability4_Buff_SOTM" duration="3500" />
+					</hasmodifier>
+					<else>
+						<applystate name="State_Predator_Ability4_Buff" duration="3500" />
+					</else>
+				</cantarget>
+			</compare>
+		</else>
+	</onattackedpreimpact>
+	
+	<modifier key="ult_boost" modpriority="100">
+		<onframe />
+	</modifier>
+
+	<modifier key="predator_nobossarmor" modpriority="100" condition="boss" notooltooltip="true"
+		armor="0"
+	/>
+	
+	<altavatar key="Hero_Predator.Alt7" modpriority="90"
+		passiveeffect="../alt7/ability_04/effects/state_enemy.effect"
+	/>
+	
+	<altavatar key="Hero_Predator.Alt8" modpriority="90"
+		passiveeffect="../alt8/ability_04/effects/state_enemy.effect"
+	>
+	
+	<oninflict>
+		<playeffect effect="../alt8/ability_04/effects/state_enemy.effect" source="target_entity" target="target_entity" />
+		<evaluate a="target_team" target="this_inflictor_entity" />
+		<setaccumulator value="result" />
+	</oninflict>
+
+	
+	</altavatar>
+	
+	<altavatar key="Hero_Predator.Alt10" modpriority="90"
+		passiveeffect="../alt10/ability_04/effects/state_enemy.effect"
+	/>
+	
+	<altavatar key="Hero_Predator.Alt12" modpriority="90"
+		passiveeffect="../alt12/ability_04/effects/state_enemy.effect"
+	/>
+	
+	<altavatar key="Hero_Predator.Alt13" modpriority="90"
+		passiveeffect="../alt13/ability_04/effects/state_enemy.effect"
+	/>
+	
+	<modifier key="Combo_efx_predator" modpriority="101"
+		passiveeffect="../alt13/ability_04/effects/state_enemy_combo.effect"
+	/>
+	
+	<altavatar key="Hero_Predator.Alt14" modpriority="90"
+		passiveeffect="../alt14/ability_04/effects/state_enemy.effect"
+	/>
+	
+</state>

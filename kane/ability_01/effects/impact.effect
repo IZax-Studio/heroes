@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1" >
+	<definitions>
+	
+		<modifier
+			life="150"
+			startcolor="3 2 2"
+			endcolor="1"
+		/>
+		
+		<particlesystem name="system0" space="world" scale="1.5">
+								
+				<sound
+				    forcestereo="true"
+				    norestart="true"
+					channel="5003"
+					life="5000"
+					linearfalloff="true" 
+					falloffstart="500"
+					falloffend="1300"
+					volume="1"
+					sample="../sounds/impact.wav"
+				/>
+				
+			<controller
+				bone="_bone_centerofchest"
+				life="3000"
+				lookat="true"
+				lookatowner="target"
+			>
+				<simpleemitter
+					mincount="20"
+					maxcount="30"
+					minparticlelife="500"
+					maxparticlelife="1000"
+					direction="-1 0 .5"
+					angle="15"
+					offsetsphere="10"
+					gravity="20"
+					minspeed="250"
+					maxspeed="10000"
+					drag="0.02"
+					material="/shared/effects/materials/phantom_white_reveal.material"
+				>
+					<template name="blood_particle">
+						<particle
+							maxangle="360"
+							startcolor="{color}"
+							endcolor=".2 0 0"
+							startframe="0"
+							endframe="1"
+							minsize="10"
+							maxsize="30"
+							startscale="3"
+							endscale="1"
+							midscalepos=".5"
+							startalpha=".75"
+							endalpha=".25"
+						/>
+					</template>
+					<instance name="blood_particle" color=".6 0 0" />
+					<instance name="blood_particle" color=".4 0 0" />
+				</simpleemitter>
+				
+				<terrainemitter
+					position="-125 0 0"
+					range="100"
+					mincount="10"
+					maxcount="15"
+					particlelife="2000"
+				>
+					<template name="blood_particle">
+						<particle>
+							<billboard
+								material="/shared/effects/materials/goop_reveal_ground_blend.material"
+								minlife="1000"
+								maxlife="1500"
+								mindelay="100"
+								maxdelay="500"
+								maxroll="360"
+								startcolor="{color}"
+								endcolor=".2 0 0"
+								startframe="0"
+								endframe="1"
+								minsize="10"
+								maxsize="20"
+								minscale="2"
+								maxscale="4"
+								startalpha="1"
+								endalpha=".25"
+								lockup="true"
+								lockright="true"
+								pitch="90"
+							/>
+						</particle>
+					</template>
+					<instance name="blood_particle" color=".6 0 0" />
+					<instance name="blood_particle" color=".4 0 0" />
+				</terrainemitter>
+			</controller>
+			<simpleemitter
+				count="25"
+				particlelife="2400"
+				spawnrate="650"
+				minspeed="100"
+				maxspeed="750"
+				gravity="10"
+				direction="0 0 1"
+				minangle="0"
+				maxangle="25"
+				drag="0.01"
+				material="sakura.material"
+				offsetsphere="25 25 10"
+				position="0 0 40"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-60"
+					maxanglespeed="60"
+					startsize="5"
+					endsize="10"
+					color="1 0 0"
+					startalpha=".5"
+					midalpha=".5"
+					endalpha="0"
+					startstickiness="0"
+					endstickiness=".4"
+				/>
+			</simpleemitter>
+<!--
+			<simpleemitter
+				count="2"
+				particlelife="1250"
+				spawnrate="650"
+				minspeed="250"
+				maxspeed="350"
+				gravity="20"
+				direction="0 0 1"
+				minangle="0"
+				maxangle="1"
+				drag="0.01"
+				material="/shared/effects/materials/pyroclast_03.material"
+				offsetsphere="10 10 10"
+				position="0 0 0"
+			>
+				<particle 
+					depthbias="-100"
+					startcolor=".8 0 0"
+					endcolor=".5 0 0"
+					height="250"
+					startwidth="25"
+					endwidth="100"
+					startscale="1"
+					endscale="2"
+					startalpha="1"
+					endalpha="0"
+					lockup="1"
+					lockright="1"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="1000"
+				count="5"
+				minparticlelife="750"
+				maxparticlelife="1500"
+				spawnrate="50"
+				speed="50"
+				gravity="0"
+				direction="0 0 0"
+				material="/shared/effects/materials/dust_smoke_02.material"
+				offsetsphere="50 50 25"
+				position="0 0 50"
+				depthbias="-25"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					startsize="150"
+					endsize="100"
+					color=".5 0 0"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+					midalphapos=".2"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+				/>
+			</simpleemitter>
+-->
+
+		</particlesystem>
+		
+	</definitions>
+	<thread>
+		<camerashake2 scale="6" falloffstart="400" falloffend="1000" duration="200" frequency="22" />
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

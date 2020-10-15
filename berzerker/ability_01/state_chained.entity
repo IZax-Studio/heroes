@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state 
+    name="State_Berzerker_Ability1_Chained" 
+
+    icon="1.jpg" 
+    passiveeffect="effects/state_pull.effect"
+	
+    effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	immobilized2="true"
+
+	negativeeffect="immobilized"
+>
+	<onframe>
+    	<cantarget effecttype="Physical" ignoreinvulnerable="false" />
+		<else>
+			<expire />
+		</else>
+    </onframe> 
+	
+	<altavatar key="Hero_Berzerker.Alt10" modpriority="1"
+		icon="../alt11/ability_01/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Berzerker.Alt11" modpriority="1"
+		icon="../alt11/ability_01/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Berzerker.Alt12" modpriority="1"
+		icon="../alt12/ability_01/icon.tga"
+	/>
+	
+</state>

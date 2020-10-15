@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+
+	<definitions>
+
+
+	
+		<particlesystem name="system1" space="world" scale="1.75">
+
+
+			<template name="bg_glow" >
+				<simpleemitter
+					timenudge="2000"
+					bone="{bone}"
+					spawnrate="10"
+					minparticlelife="1000"
+					maxparticlelife="1100"
+					depthbias="8"
+					material="/shared/effects/materials/light_rays.material"
+				>
+					<particle
+						minstartsize="15"
+						maxstartsize="30"
+						minendsize="40"
+						maxendsize="100"
+						startcolor="0"
+						midcolor="0 .05 0.1"
+						endcolor="0"
+						minanglespeed="-50"
+						maxanglespeed="50"
+
+						anchor="1"
+					/>
+				</simpleemitter>
+			</template>
+			
+
+			<instance name="bg_glow" bone="_bone_head" />
+			<instance name="bg_glow" bone="_bone_back" />
+			<instance name="bg_glow" bone="_bone_center" />
+			<instance name="bg_glow" bone="_bone_lefthand" />
+			<instance name="bg_glow" bone="_bone_righthand" />					
+			<instance name="bg_glow" bone="BoneA66" />			
+			<instance name="bg_glow" bone="Bonea65" />			
+			<instance name="bg_glow" bone="Bone06" />
+			<instance name="bg_glow" bone="Bone05" />
+
+			<billboard
+				startsize="300"
+				endsize="700"
+				position="0 0 70"
+				material="/shared/effects/materials/flare_01.material"
+				startcolor="0 .1 .3"
+				endcolor="0 0 0"
+				anchor="1"	
+			/>
+
+			<billboard
+				size="300"
+				position="0 0 70"
+				material="/shared/effects/materials/flare_01.material"
+				startcolor="0 .1 .3"
+				endcolor="0 0 0"
+				anchor="1"	
+			/>		
+
+
+				<simpleemitter	
+					bone="_bone_centerofchest"
+					spawnrate="50"
+					particlelife="400"
+					depthbias="50"		
+					acceleration="50"
+					material="/shared/effects/materials/star_03.material"
+					offsetsphere="50 50 50"
+					gravity="-25"
+					position="0 0 -40"
+				>
+					<particle 
+						minangle="-90"
+						maxangle="90"
+						minanglespeed="100"
+						color="0 .5 1"
+						maxanglespeed="0"
+						startframe="0"
+						endframe="1"				
+						minsize="4"		
+						maxsize="5"
+						midsizepos=".2"		
+						anchor="1"
+					/>
+				</simpleemitter> 
+
+
+				<simpleemitter	
+					bone="_bone_centerofchest"
+					spawnrate="200"
+					particlelife="400"
+					depthbias="50"		
+					acceleration="50"
+					material="/shared/effects/materials/flare_02.material"
+					offsetsphere="50 50 50"
+					gravity="-25"
+					position="0 0 -40"
+				>
+					<particle 
+						minangle="-90"
+						maxangle="90"
+						minanglespeed="100"
+						color=".5 .5 .5"
+						maxanglespeed="0"
+						startframe="0"
+						endframe="1"				
+						minsize="1"		
+						maxsize="3"
+						midsizepos=".2"		
+						anchor="1"
+					/>
+				</simpleemitter>
+
+
+
+			<simpleemitter
+				bone="_bone_center"
+				spawnrate="5"
+				particlelife="1200"
+				gravity="-15"
+				speed="22.20"
+				material="/shared/effects/materials/ember_reveal_blue.material"
+				offsetsphere="10 10 10"
+				position="0 0 -30"
+				inheritvelocity=".025"
+			>
+				<particle
+					startcolor="0 .74 1"
+					midcolor="0 .74 1"
+					endcolor="0 .74 1"
+					midcolorpos=".75"
+					startalpha=".1"
+					midalpha=".15"
+					endalpha="0"
+					midalphapos=".9"
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="0"
+					maxanglespeed="30"
+					startsize="165"					
+					endsize="20"
+					anchor="1"
+				/>
+			</simpleemitter>
+
+		
+			
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

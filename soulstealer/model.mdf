@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="high2.model" med="high2.model" low="high2.model" >
+
+	<anim name="idle" clip="clips2/stand.clip" loop="true"/>
+	
+	<anim name="portrait" clip="clips2/stand.clip" fps="20" loop="true"/>
+	
+	<anim name="walk_1" clip="clips2/walk.clip" loop="true" >
+	<frameevent frame="10" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="1" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+
+		<frameevent frame="1" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="10" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+	</anim>
+
+	<anim name="death_1" clip="clips2/death.clip" fps="30" loop="true" loopbackframe="-1">
+	</anim>
+
+	<anim name="attack_1" clip="clips2/attack - 1.clip" loop="false" fps="25">
+		<frameevent frame="14" cmd="PlaySoundLinear sounds/attack_%.wav 400 1800 .5"/>
+		<frameevent frame="12" cmd="PlaySoundLinear /heroes/frosty/sounds/attack_%.wav 400 1800 .65"/>
+	</anim>
+
+	<anim name="attack_2" clip="clips2/attack - 2.clip" loop="false" fps="25">
+		<frameevent frame="14" cmd="PlaySoundLinear sounds/attack_%.wav 400 1800 .5"/>
+		<frameevent frame="12" cmd="PlaySoundLinear /heroes/frosty/sounds/attack_%.wav 400 1800 .65"/>
+	</anim>
+
+	<anim name="ability_1a" clip="clips2/spell_3.clip" fps="20"/>
+	<anim name="ability_1b" clip="clips2/spell_3.clip" fps="20"/>
+	<anim name="ability_1c" clip="clips2/spell_3.clip" fps="20"/>	
+
+	<anim name="ability_4" clip="clips2/spell_1.clip" fps="18" >
+	<frameevent frame="1" cmd="PlaySoundLinear /heroes/soulstealer/alt6/sounds/ab4_pre.wav 400 1800 .35"/>
+	</anim>
+	
+	<anim name="bored_1" clip="clips2/spell_2.clip" fps="32"/>
+
+	<anim name="taunt_1" clip="clips2/spell_2.clip" fps="30"/>
+
+	<anim name="item_1" clip="clips2/attack - 2.clip" fps="30" loop="false"/>
+		
+	<anim name="knock_1" clip="clips2/death.clip" loop="true" loopbackframe="-1"/>
+	
+	<anim name="getup_1" clip="clips2/stand.clip"/>		
+					
+</model>

@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".75"
+				sample="/heroes/nomad/ability_4/sounds/cast2.wav"
+			/>
+			
+			
+					
+
+			
+					
+			
+		<template name="fire">
+		
+		
+		
+		<simpleemitter
+					bone="{bone}"
+					spawnrate="2"
+					life="300"
+					minparticlelife="300"
+					maxparticlelife="300"
+					minspeed="50"
+					maxspeed="90"
+					drag=".08"
+					offsetsphere="10"
+					
+					material="/shared/effects/materials/phantom_smoke_06.material"
+					depthbias="10"
+					
+				>
+					<particle
+					
+					
+						endalpha="0"
+						startcolor=".255 .300 200"
+						midcolor=".255 .300 200"
+						endcolor="0"
+						minstartsize="50"
+						maxstartsize="80"
+						endsize="20"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="4"
+					minparticlelife="200"
+					maxparticlelife="300"
+					life="400"
+					drag=".08"
+					offsetsphere="5"
+					
+					material="/shared/effects/materials/lightning_02.material"
+					depthbias="-10"
+				
+				>
+					<particle
+						minangle="-360"
+						maxangle="360"
+						minanglespeed="-200"
+						maxanglespeed="100"
+						startcolor="255 .300 200"
+						midcolor="255 .300 200"
+						endcolor="0 0 0"
+						size="60"
+					/>
+				</simpleemitter>
+
+	
+				
+		<simpleemitter
+		life="300"
+					bone="{bone}"
+					spawnrate="50"
+					minparticlelife="100"
+					maxparticlelife="500"
+					minspeed="200"
+					maxspeed="500"
+					drag=".08"
+					offsetsphere="10"
+					angle="15"
+					material="/shared/effects/materials/lightning_10.material"
+					depthbias="-10"
+					direction="0 -1 0"
+				>
+					<particle
+						minangle="-360"
+						maxangle="360"
+						minanglespeed="-150"
+						maxanglespeed="150"
+						startcolor="255 .300 200"
+						midcolor="255 .300 200"
+						endcolor="0 0 0"
+						minstartsize="10"
+						maxstartsize="10"
+						endsize="20"
+					/>
+				</simpleemitter>
+				
+				
+			
+			<simpleemitter
+			life="300"
+					bone="{bone}"
+					spawnrate="50"
+					minparticlelife="100"
+					maxparticlelife="200"
+					
+					drag="0.07"
+					angle="130"
+					offsetsphere="10"
+					material="/shared/effects/materials/lightning_11.material"
+					depthbias="-10"
+					direction="0 -1 0"
+				>
+					<particle
+						minangle="-180"
+						maxangle="360"
+						minanglespeed="-360"
+						maxanglespeed="360"
+						startcolor="255 .300 200"
+						midcolor="255 .300 200"
+						endcolor="0"
+						startsize="10"
+						minendscale="5"
+						maxendscale="8"
+						endalpha="0"
+					/>
+				</simpleemitter>
+			
+			
+			
+		
+			</template>
+
+			<instance name="fire" bone="_bone_centerofchest" />
+			
+		
+			
+			
+			
+
+				<instance name="fire" bone="Bip01 L Thigh" />
+			<instance name="fire" bone="Bip01 L Calf" />
+			<instance name="fire" bone="Bip01 L Foot" />
+			<instance name="fire" bone="Bip01 R Thigh" />
+			<instance name="fire" bone="Bip01 R Calf" />
+			<instance name="fire" bone="Bip01 R Foot" />
+			<instance name="fire" bone="Bip01 L UpperArm" />
+			<instance name="fire" bone="Bip01 L Forearm" />
+			<instance name="fire" bone="Bip01 L Hand" />
+			<instance name="fire" bone="Bip01 R UpperArm" />
+			<instance name="fire" bone="Bip01 R Forearm" />
+			<instance name="fire" bone="Bip01 R Hand" />
+			<instance name="fire" bone="_bone_weapon2" />
+			<instance name="fire" bone="_bone_weapon3" />
+
+
+			
+			<template name="fire">
+				<simpleemitter
+				life="800"
+					bone="{bone}"
+					spawnrate="15"
+					minparticlelife="200"
+					maxparticlelife="600"
+					gravity="-8"
+					speed="30"
+					
+					material="/shared/effects/materials/soul_projectile2.material"
+					offsetsphere="10 10 10"
+					angle="90"
+					position="0 0 0"
+				>
+					<particle
+						minangle="0"
+						maxangle="360"
+						startcolor="0 0 0"
+						midcolor="0 .2 1"
+						endcolor="0 0 0"
+						midcolorpos=".2"
+						startsize="30"
+						midsize="20"
+						endsize="15"
+						startalpha="0"
+						midalpha=".3"
+						endalpha="0"
+						startanchor="1"
+						endanchor="1"
+					/>
+				</simpleemitter>
+			</template>
+
+			<instance name="fire" bone="Bip01 L Foot" />
+			<instance name="fire" bone="Bip01 R Foot" />
+			<instance name="fire" bone="Bip01 L Toe" />
+			<instance name="fire" bone="Bip01 R Toe" />
+			
+			<simpleemitter
+			life="800"
+				spawnrate="50"
+				minparticlelife="500"
+				maxparticlelife="600"
+				gravity="-5"
+				speed="30"
+				drag="0"
+				material="/shared/effects/materials/soul_projectile2.material"
+				offsetsphere="40 40 25"
+				angle="90"
+				position="0 0 20"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					startcolor="0 0 0"
+					midcolor="0 .1 1"
+					endcolor="0 0 0"
+					midcolorpos=".2"
+					startsize="5"
+					midsize="50"
+					endsize="85"
+					startalpha="0"
+					midalpha=".3"
+					endalpha="0"
+					startanchor="1"
+				/>
+			</simpleemitter>
+		<template name="12">
+			<model
+					expirelife="1000"
+					life="1000"		model="/shared/effects/models/circle_of_bones/model.mdf"
+					anim="idle"
+					startscale="30"
+					endscale="0.1"
+					midscalepos=".2"
+					position="0 0 0"
+					yawspeed="250"
+				>
+					<billboard
+					life="1000"
+					bone="{bone}"	material="/shared/effects/materials/light_rays.material"
+					width="5"
+					startheight="0"
+					endheight="500"
+					startcolor="0"
+					midcolor="255 .300 200"
+					endcolor="0 0 0"
+					midcolorpos=".1"					
+					lockup="1"
+					yaw="90"
+				/>
+				<billboard
+					life="1000"
+					bone="{bone}"	material="/shared/effects/materials/flare_02.material"
+					size="10"
+					color="255 .300 200"
+					startalpha=".5"
+					endalpha="0"
+					position="0 0 0"
+				/>
+
+				</model>
+				</template>
+
+			<instance name="12" bone="_bone_fx_01" />
+			<instance name="12" bone="_bone_fx_02" />
+			<instance name="12" bone="_bone_fx_03" />
+			<instance name="12" bone="_bone_fx_04" />
+			<instance name="12" bone="_bone_fx_05" />
+			<instance name="12" bone="_bone_fx_06" />
+			<instance name="12" bone="_bone_fx_07" />
+			<instance name="12" bone="_bone_fx_08" />
+			<instance name="12" bone="_bone_fx_09" />
+			<instance name="12" bone="_bone_fx_10" />
+			<instance name="12" bone="_bone_fx_11" />
+			<instance name="12" bone="_bone_fx_12" />
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

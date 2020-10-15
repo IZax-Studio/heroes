@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="model.model" type="K2">
+	<anim name="attack_1_trail" clip="clips/attack_1.clip" fps="47" loop="false" startframe="12" numframes="15"/>
+	<anim name="attack_2_trail" clip="clips/attack_2.clip" fps="48" loop="false" startframe="10" numframes="15"/>
+	<anim name="ability_1_trail" clip="clips/ability_1.clip" fps="10" loop="true" startframe="15" numframes="7"/>
+</model>

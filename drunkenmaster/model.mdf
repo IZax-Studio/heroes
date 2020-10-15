@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="black.model" med="black.model" low="black.model" >
+	
+	<anim name="idle" clip="idle.clip" fps="550" loop="true">
+	</anim>
+
+	<anim name="portrait" clip="idle.clip" fps="300" loop="true"/>
+	
+	<anim name="item_1" clip="idle.clip" fps="550">
+	<frameevent frame="10" cmd="PlaySoundLinear sounds/Cup_move_%.wav 0 1000 .80"/>
+	</anim>
+	
+	<anim name="ability_1_lunge" clip="ability_1-1.clip" fps="550">
+	<frameevent frame="1" cmd="PlaySoundLinear cast_1.mp3 0 2500 1"/>
+	<frameevent frame="1" cmd="PlaySoundLinear ability_01/sounds/jump.wav 400 1500 .50"/>
+	<frameevent frame="1" cmd="PlaySoundLinear sounds/barrel_move_%.wav 0 1500 1"/>
+	<frameevent frame="1" cmd="PlaySoundLinear sounds/cup_move_%.wav 0 1500 1"/>
+	</anim>
+	
+	<anim name="ability_1_circle" clip="ability_4.clip" fps="500" startframe="5000" numframes="7000" >
+	</anim>
+	
+	<anim name="ability_1_impact" clip="ability_1-4.clip" fps="550" >
+	<frameevent frame="1" cmd="PlaySoundLinear ability_01/sounds/impact.ogg 400 2500 1"/>
+	<frameevent frame="1" cmd="PlaySoundLinear /heroes/behemoth/ability_02/sounds/impact.ogg 400 1500 .50"/>
+	<frameevent frame="1" cmd="PlaySoundLinear cast3.mp3 0 2000 .70"/>
+	</anim>
+
+	<anim name="ability_2" clip="ability_3.clip" fps="550" loop="false" startframe="1500" numframes="2000">
+		<frameevent frame="18" cmd="PlaySoundLinear sounds/taunt.wav 0 1200 .40"/>
+		<frameevent frame="65" cmd="PlaySoundLinear sounds/taunt.wav 0 1200 .40"/>
+		<frameevent frame="39" cmd="PlaySoundLinear sounds/cup_move_%.wav 400 1200 1"/>
+		<frameevent frame="82" cmd="PlaySoundLinear sounds/cup_move_%.wav 400 1200 1"/>
+		<frameevent frame="16" cmd="PlaySoundLinear ability_02/sounds/drink_%.wav 0 1200 .50"/>
+		<frameevent frame="16" cmd="PlaySoundLinear ability_02/sounds/splash_%.wav 0 1200 .50"/>
+		<frameevent frame="63" cmd="PlaySoundLinear ability_02/sounds/drink_%.wav 0 1200 .50"/>
+		<frameevent frame="63" cmd="PlaySoundLinear ability_02/sounds/splash_%.wav 0 1200 .50"/>
+	</anim>
+	
+	<anim name="ability_2_s1" clip="ability_3.clip" fps="550" loop="false" startframe="1500" numframes="2000">
+		<frameevent frame="18" cmd="PlaySoundLinear sounds/taunt.wav 0 1200 .40"/>
+		<frameevent frame="65" cmd="PlaySoundLinear sounds/taunt.wav 0 1200 .40"/>
+		<frameevent frame="39" cmd="PlaySoundLinear sounds/cup_move_%.wav 400 1200 1"/>
+		<frameevent frame="82" cmd="PlaySoundLinear sounds/cup_move_%.wav 400 1200 1"/>
+		<frameevent frame="16" cmd="PlaySoundLinear ability_02/sounds/drink_%.wav 0 1200 .50"/>
+		<frameevent frame="16" cmd="PlaySoundLinear ability_02/sounds/splash_%.wav 0 1200 .50"/>
+		<frameevent frame="63" cmd="PlaySoundLinear ability_02/sounds/drink_%.wav 0 1200 .50"/>
+		<frameevent frame="63" cmd="PlaySoundLinear ability_02/sounds/splash_%.wav 0 1200 .50"/>
+	</anim>
+	
+	<anim name="ability_2_s2" clip="ability_3.clip" fps="550" loop="false" startframe="1500" numframes="2000">
+		<frameevent frame="18" cmd="PlaySoundLinear sounds/taunt.wav 0 1200 .40"/>
+		<frameevent frame="65" cmd="PlaySoundLinear sounds/taunt.wav 0 1200 .40"/>
+		<frameevent frame="39" cmd="PlaySoundLinear sounds/cup_move_%.wav 400 1200 1"/>
+		<frameevent frame="82" cmd="PlaySoundLinear sounds/cup_move_%.wav 400 1200 1"/>
+		<frameevent frame="16" cmd="PlaySoundLinear ability_02/sounds/drink_%.wav 0 1200 .50"/>
+		<frameevent frame="16" cmd="PlaySoundLinear ability_02/sounds/splash_%.wav 0 1200 .50"/>
+		<frameevent frame="63" cmd="PlaySoundLinear ability_02/sounds/drink_%.wav 0 1200 .50"/>
+		<frameevent frame="63" cmd="PlaySoundLinear ability_02/sounds/splash_%.wav 0 1200 .50"/>
+	</anim>
+	
+	<anim name="ability_2_s3" clip="ability_3.clip" fps="550" loop="false" startframe="1500" numframes="2000">
+		<frameevent frame="18" cmd="PlaySoundLinear sounds/taunt.wav 0 1200 .40"/>
+		<frameevent frame="65" cmd="PlaySoundLinear sounds/taunt.wav 0 1200 .40"/>
+		<frameevent frame="39" cmd="PlaySoundLinear sounds/cup_move_%.wav 400 1200 1"/>
+		<frameevent frame="82" cmd="PlaySoundLinear sounds/cup_move_%.wav 400 1200 1"/>
+		<frameevent frame="16" cmd="PlaySoundLinear ability_02/sounds/drink_%.wav 0 1200 .50"/>
+		<frameevent frame="16" cmd="PlaySoundLinear ability_02/sounds/splash_%.wav 0 1200 .50"/>
+		<frameevent frame="63" cmd="PlaySoundLinear ability_02/sounds/drink_%.wav 0 1200 .50"/>
+		<frameevent frame="63" cmd="PlaySoundLinear ability_02/sounds/splash_%.wav 0 1200 .50"/>
+	</anim>
+	
+	<anim name="ability_2_s4" clip="ability_3.clip" fps="550" loop="false" startframe="1500" numframes="2000">
+		<frameevent frame="18" cmd="PlaySoundLinear sounds/taunt.wav 0 1200 .40"/>
+		<frameevent frame="65" cmd="PlaySoundLinear sounds/taunt.wav 0 1200 .40"/>
+		<frameevent frame="39" cmd="PlaySoundLinear sounds/cup_move_%.wav 400 1200 1"/>
+		<frameevent frame="82" cmd="PlaySoundLinear sounds/cup_move_%.wav 400 1200 1"/>
+		<frameevent frame="16" cmd="PlaySoundLinear ability_02/sounds/drink_%.wav 0 1200 .50"/>
+		<frameevent frame="16" cmd="PlaySoundLinear ability_02/sounds/splash_%.wav 0 1200 .50"/>
+		<frameevent frame="63" cmd="PlaySoundLinear ability_02/sounds/drink_%.wav 0 1200 .50"/>
+		<frameevent frame="63" cmd="PlaySoundLinear ability_02/sounds/splash_%.wav 0 1200 .50"/>
+	</anim>
+
+	<anim name="ability_4" clip="ability_1-2.clip" fps="550">
+	<frameevent frame="1" cmd="PlaySoundLinear ability_04/sounds/cast.wav 400 2500 .60"/>
+	<frameevent frame="10" cmd="PlaySoundLinear sounds/taunt.wav 0 1000 .80"/>
+	<frameevent frame="10" cmd="PlaySoundLinear ability_04/sounds/cast2.wav 400 2500 .60"/>
+	<frameevent frame="10" cmd="PlaySoundLinear ability_02/sounds/drink_%.wav 400 2500 1"/>
+    </anim>
+	
+	<anim name="attack_1" clip="attack_1.clip" fps="550" loop="false">
+
+		<frameevent frame="11" cmd="PlaySoundLinear sounds/whoosh_%.wav 0 1200 .70"/>
+		<frameevent frame="11" cmd="PlaySoundLinear /shared/sounds/attacks/attack_light_%.wav 400 2000 .65"/>
+	</anim>
+	
+	<anim name="attack_2" clip="attack_2.clip" fps="550" loop="false">
+
+		<frameevent frame="11" cmd="PlaySoundLinear sounds/whoosh_%.wav 0 1200 .70"/>
+		<frameevent frame="11" cmd="PlaySoundLinear /shared/sounds/attacks/attack_light_%.wav 400 2000 .65"/>
+	</anim>
+	
+	<anim name="attack_3" clip="ability_1-3.clip" fps="550" loop="false">
+	    
+		<frameevent frame="11" cmd="PlaySoundLinear sounds/whoosh_%.wav 0 1200 .70"/>
+		<frameevent frame="11" cmd="PlaySoundLinear /shared/sounds/attacks/attack_light_%.wav 400 2000 .65"/>
+	</anim>
+	
+	<anim name="attack_4" clip="attack_1.clip" fps="550" loop="false">
+		
+		<frameevent frame="11" cmd="PlaySoundLinear sounds/whoosh_%.wav 0 1200 .70"/>
+		<frameevent frame="11" cmd="PlaySoundLinear /shared/sounds/attacks/attack_light_%.wav 400 2000 .65"/>
+	</anim>
+
+	<anim name="ability_3" clip="ability_3.clip" fps="550" loop="false" startframe="1000" numframes="2000">
+		
+		<frameevent frame="11" cmd="PlaySoundLinear sounds/whoosh_%.wav 0 1200 .70"/>
+		<frameevent frame="11" cmd="PlaySoundLinear /shared/sounds/attacks/attack_light_%.wav 400 2000 .65"/>
+	</anim>
+
+	<anim name="walk_1" clip="walk_1.clip" fps="550" blendtime="300" loop="true">
+		<frameevent frame="2" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="16" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="24" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="32" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="39" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="47" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="54" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="60" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="80" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="94" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="112" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="126" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		
+		<frameevent frame="2" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="16" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="24" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="32" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="39" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="47" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="54" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="60" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="80" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="94" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="112" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="126" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+			</anim>
+	
+	<anim name="taunt_1" clip="ability_1-2.clip" fps="550">
+	<frameevent frame="12" cmd="PlaySoundLinear sounds/cup_move_%.wav 400 2200 1"/>
+	<frameevent frame="10" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+	<frameevent frame="10" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+	<frameevent frame="22" cmd="PlaySoundLinear sounds/taunt.wav 400 2200 1"/>
+	</anim>
+	
+	<anim name="bored_1" clip="ability_4.clip" fps="550" blendtime="150">
+	
+    </anim>
+	
+	<anim name="death_1" clip="death_1.clip" fps="550" loop="true" loopbackframe="-1">
+	</anim>
+	
+	<anim name="knock_1" clip="death_1.clip" fps="550" loop="true" loopbackframe="-1"/>
+	
+		
+	
+</model>

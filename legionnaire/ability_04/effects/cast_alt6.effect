@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<modifier 
+			name="modifier0"
+			startcolor="1 1 1"
+			endcolor="3 2 1"
+			life="650"
+			delay="1300"
+		/>
+
+		<particlesystem name="system0" space="world">
+
+			<model
+				life="650"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="0 1 2.5"
+				endcolor="0 0 0"
+				startscale="1"
+				midscale="1.2"
+				endscale="1"
+				midscalepos=".5"
+				material="/shared/effects/materials/shell2.material"
+				position="0 0 0"
+			/>
+			
+			<orbiteremitter
+				bone="_bone_origin"
+				spawnrate="1000"
+				life="650"
+				particlelife="400"
+				gravity="0.0"
+				minspeed="1"
+				maxspeed="5"
+				acceleration="20" 
+				drag="0.0"
+				minangle="0" 
+				maxangle="20" 
+				position="0 0 0" 
+				origin="0 0 90" 
+				orbit="1 0 0" 
+				direction="0 0 1" 
+				offset="3.14 0 2.5"
+				cylindrical="true" 
+				material="/shared/effects/materials/lightning_02.material"
+				directionalspace="local"
+			>
+				<particle 
+				minangle="0"
+				maxangle="360"
+				minanglespeed="0"
+				maxanglespeed="0"
+				startcolor="0 0 0"
+				midcolor=".8 .8 1.5"
+				endcolor=".8 .8 1.5"
+				midcolorpos=".8"
+				directionalspace="local"
+				startframe="0"
+				endframe="2"
+				startsize="5"
+				midsize="30"
+				endsize=".1"
+				startalpha="0"
+				midalpha=".3"
+				endalpha="0"
+				midalphapos=".5"
+			/>
+			
+			<particle 
+				minangle="0"
+				maxangle="360"
+				minanglespeed="0"
+				maxanglespeed="0"
+				startcolor="0 0 0"
+				midcolor=".8 .8 1.5"
+				endcolor=".8 .8 1.5"
+				midcolorpos=".8"
+				directionalspace="local"
+				startframe="0"
+				endframe="2"
+				startsize="5"
+				midsize="10"
+				endsize=".1"
+				startalpha="0"
+				midalpha=".3"
+				endalpha="0"
+				midalphapos=".5"
+			/>
+		
+			</orbiteremitter>
+			
+			<orbiteremitter
+				bone="_bone_origin"
+				spawnrate="1000"
+				life="650"
+				particlelife="400"
+				gravity="0.0"
+				minspeed="1"
+				maxspeed="5"
+				acceleration="20" 
+				drag="0.0"
+				minangle="0" 
+				maxangle="20" 
+				position="0 0 25" 
+				origin="0 0 70" 
+				orbit="1 0 0" 
+				direction="0 0 1" 
+				offset="3.14 0 1"
+				cylindrical="true" 
+				material="/shared/effects/materials/lightning_02.material"
+				directionalspace="local"
+			>
+				<particle 
+				minangle="0"
+				maxangle="360"
+				minanglespeed="0"
+				maxanglespeed="0"
+				startcolor="0 0 0"
+				midcolor=".8 .8 1.5"
+				endcolor=".8 .8 1.5"
+				midcolorpos=".8"
+				directionalspace="local"
+				startframe="0"
+				endframe="2"
+				startsize="3"
+				midsize="10"
+				endsize=".1"
+				startalpha="0"
+				midalpha=".3"
+				endalpha="0"
+				midalphapos=".5"
+			/>
+			
+			<particle 
+				minangle="0"
+				maxangle="360"
+				minanglespeed="0"
+				maxanglespeed="0"
+				startcolor="0 0 0"
+				midcolor=".8 .8 1.5"
+				endcolor=".8 .8 1.5"
+				midcolorpos=".8"
+				directionalspace="local"
+				startframe="0"
+				endframe="2"
+				startsize="5"
+				midsize="10"
+				endsize=".1"
+				startalpha="0"
+				midalpha=".3"
+				endalpha="0"
+				midalphapos=".5"
+			/>
+		
+			</orbiteremitter>
+			
+			<orbiteremitter
+				bone="_bone_origin"
+				spawnrate="1000"
+				life="650"
+				particlelife="400"
+				gravity="0.0"
+				minspeed="1"
+				maxspeed="5"
+				acceleration="20" 
+				drag="0.0"
+				minangle="0" 
+				maxangle="20" 
+				position="0 0 50" 
+				origin="0 0 50" 
+				orbit="1 0 0" 
+				direction="0 0 1" 
+				offset="3.14 0 1"
+				cylindrical="true" 
+				material="/shared/effects/materials/lightning_02.material"
+				directionalspace="local"
+			>
+				<particle 
+				minangle="0"
+				maxangle="360"
+				minanglespeed="0"
+				maxanglespeed="0"
+				startcolor="0 0 0"
+				midcolor=".8 .8 1.5"
+				endcolor=".8 .8 1.5"
+				midcolorpos=".8"
+				directionalspace="local"
+				startframe="0"
+				endframe="2"
+				startsize="3"
+				midsize="10"
+				endsize=".1"
+				startalpha="0"
+				midalpha=".3"
+				endalpha="0"
+				midalphapos=".5"
+			/>
+			
+			<particle 
+				minangle="0"
+				maxangle="360"
+				minanglespeed="0"
+				maxanglespeed="0"
+				startcolor="0 0 0"
+				midcolor=".8 .8 1.5"
+				endcolor=".8 .8 1.5"
+				midcolorpos=".8"
+				directionalspace="local"
+				startframe="0"
+				endframe="2"
+				startsize="5"
+				midsize="10"
+				endsize=".1"
+				startalpha="0"
+				midalpha=".3"
+				endalpha="0"
+				midalphapos=".5"
+			/>
+		
+			</orbiteremitter>
+			
+			
+			<billboard
+				material="/shared/effects/materials/twirl_03_blend.material"
+				position="0 0 0"
+				size="200"
+				roll="180"
+				rollspeed="760"
+				color=".5 .5 .5"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+				yaw="0"
+				life="650"
+			/>
+		
+			<billboard
+				material="/shared/effects/materials/twirl_03_blend.material"
+				position="0 0 90"
+				size="80"
+				roll="105"
+				rollspeed="800"
+				startcolor=".5 .2 .9"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+				yaw="0"
+				life="650"
+			/>
+
+			<billboard
+				material="/shared/effects/materials/twirl_03_blend.material"
+				position="0 0 80"
+				size="120"
+				roll="100"
+				rollspeed="800"
+				color=".4 .4 .5"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+				yaw="0"
+				life="650"
+			/>
+		
+			<billboard
+				material="/shared/effects/materials/twirl_03_blend.material"
+				position="0 0 0"
+				size="200"
+				roll="140"
+				rollspeed="760"
+				color=".3 .3 .5"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+				yaw="0"
+				life="650"
+			/>
+
+			<billboard
+				material="/shared/effects/materials/twirl_03_blend.material"
+				position="0 0 25"
+				size="100"
+				roll="45"
+				rollspeed="800"
+				color=".2 .0 .5"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+				yaw="0"
+				life="650"
+			/>
+
+			<billboard
+				material="/shared/effects/materials/twirl_03_blend.material"
+				position="0 0 10"
+				size="80"
+				roll="15"
+				rollspeed="800"
+				color=".5 .5 .5"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+				yaw="0"
+				life="650"
+			/>
+			
+			<billboard
+				delay="200"						
+				bone="_bone_weapon3"
+				material="/shared/effects/materials/star_03.material"
+				position="0 0 0"
+				startsize="100"
+				midsize="300"
+				endsize="100"	
+				roll="305"					
+				rollspeed="500"	
+				color="0 0 .5"					
+				alpha="1"					
+				midalphapos=".2"					
+				lockup="true"
+				lockright="true"
+				pitch="90"
+				yaw="0"
+				depthbias="-5"
+				life="500"
+			/>
+
+			<billboard	
+				delay="120"
+				bone="_bone_weapon3"
+				material="/shared/effects/materials/whitedot.material"
+				position="0 0 0"
+				size="40"	
+				roll="205"					
+				rollspeed="500"	
+				color="0 0 .5"					
+				alpha="1"					
+				midalphapos=".2"					
+				lockup="true"
+				lockright="true"
+				pitch="90"
+				yaw="0"
+				depthbias="-5"
+				life="500"
+			/>
+
+			<billboard		
+				delay="120"
+				bone="_bone_weapon3"
+				material="/shared/effects/materials/whitedot.material"
+				position="0 0 0"
+				size="125"	
+				roll="205"					
+				rollspeed="500"	
+				color="0 0 .5"					
+				alpha="1"					
+				midalphapos=".2"					
+				lockup="true"
+				lockright="true"
+				pitch="90"
+				yaw="0"
+				depthbias="-5"
+				life="500"
+			/>
+		
+			<twopointtrailemitter
+				delay="100"
+			 	bone_a="_bone_weapon3"
+				bone_b="_bone_weaponattach"
+				spawnrate="400"
+				particlelife="600"
+				texpostime="0"
+				texposscale="0.0"
+				texstretchscale="1.0"
+				material="/shared/effects/materials/swoosh_add.material"
+				subframepose="true"
+				life="280"
+			>
+	         		<particle
+					startcolor=".0 .0 .0"
+					midcolor="0 0 .5"
+					endcolor="0.0 0.0 0" 
+				/>
+			</twopointtrailemitter>
+			
+			<orbiteremitter
+				bone="_bone_weapon2"
+				spawnrate="150"
+				life="1000"
+				particlelife="250"
+				gravity="0.0"
+				minspeed="3"
+				maxspeed="8"
+				acceleration="20" 
+				drag="0.0"
+				minangle="0" 
+				maxangle="20" 
+				position="0 0 0" 
+				origin="0 0 20" 
+				orbit="1 0 0" 
+				direction="0 0 1" 
+				offset="10 10 0"
+				cylindrical="true" 
+				material="/shared/effects/materials/lightning_02.material"
+				roll="90"
+				directionalspace="local"
+			>
+				<particle 
+				minangle="0"
+				maxangle="360"
+				minanglespeed="0"
+				maxanglespeed="0"
+				startcolor="0 0 0"
+				midcolor="8 .8 1.5"
+				endcolor=".8 .8 1.5"
+				midcolorpos=".8"
+				directionalspace="local"
+				startframe="0"
+				endframe="2"
+				startsize="1"
+				midsize="13"
+				endsize=".1"
+				startalpha="0"
+				midalpha=".3"
+				endalpha="0"
+				midalphapos=".5"
+			/>
+			
+			<particle 
+				minangle="0"
+				maxangle="360"
+				minanglespeed="0"
+				maxanglespeed="0"
+				startcolor="0 0 0"
+				midcolor=".8 .8 1.5"
+				endcolor=".8 .8 1.5"
+				midcolorpos=".8"
+				directionalspace="local"
+				startframe="0"
+				endframe="2"
+				startsize="5"
+				midsize="30"
+				endsize=".1"
+				startalpha="0"
+				midalpha=".3"
+				endalpha="0"
+				midalphapos=".5"
+			/>
+			</orbiteremitter>
+
+			
+			
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+      		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

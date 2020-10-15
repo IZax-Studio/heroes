@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="bloodimpact_small">
+	<definitions>
+		
+		<modifier
+			life="10000"
+			startalpha="1"
+			midalpha="0"
+			endalpha="0"
+			midalphapos=".5"
+		/>
+		
+		<particlesystem name="system0" space="global">		
+					
+		
+			<sound
+			    delay="2300"
+				linearfalloff="true" 
+				falloffstart="1300"
+				falloffend="1300"
+				volume=".8"
+				sample="sounds/death_foley.wav"
+			/>
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="1300"
+				falloffend="1300"
+				volume=".8"
+				sample="sounds/death_foley2.wav"
+			/>
+			
+			<orbiteremitter
+				life="3500"
+				spawnrate="200"
+				position="0 0 0"
+				origin="50"
+				offset="3.14 50 20"
+				
+				startorbit="-1 0 0"
+				midorbit="-16"
+				endorbit="-.5"
+				midorbitpos=".6"
+				
+				cylindrical="true"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				material="sakura.material"
+			>
+				<particle
+					minyawspeed="-360"
+					maxyawspeed="360"
+					minrollspeed="-360"
+					maxrollspeed="360"
+					minpitchspeed="-360"
+					maxpitchspeed="360"
+					minsize="3"
+					maxsize="7"
+					startalpha="0"
+					midalpha="2"
+					endalpha="0"
+					color="1 1 1"
+				/>
+			</orbiteremitter>
+		
+			<simpleemitter
+				delay="500"
+				life="2000"
+				spawnrate="50"
+				expirelife="1000"
+				position="0 0 0"
+				minparticlelife="1500"
+				maxparticlelife="2500"
+				gravity="10"
+				minspeed="250"
+				maxspeed="550"
+				drag=".13"
+				offsetsphere="80"
+				depthbias="-10"
+				material="sakura.material"
+				collide="true"
+				friction="100"
+			>
+				<particle
+					minyawspeed="-360"
+					maxyawspeed="360"
+					minrollspeed="-360"
+					maxrollspeed="360"
+					minpitchspeed="-360"
+					maxpitchspeed="360"
+					minsize="2"
+					maxsize="6"
+					startalpha="0"
+					midalpha="2"
+					endalpha="0"
+					color="1 1 1"
+				/>
+			</simpleemitter>
+			
+			<billboard
+				life="2800"
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="0"
+				midcolor="1 .5 .5"
+				endcolor="1 .5 .5"
+				midcolorpos=".8"
+				
+				startheight="0"
+				midheight="100"
+				endheight="0"
+				midheightpos=".9"
+				
+				startwidth="50"
+				midwidth="10"
+				endwidth="0"
+				midwidthpos=".95"
+				
+				midsizepos=".8"
+				position="0 0 0"
+				depthbias="-80"
+			/>
+
+			<billboard
+				life="2800"
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="0"
+				midcolor=".5 .2 .2"
+				endcolor=".5 .2 .2"
+				midcolorpos=".8"
+				startsize="0"
+				midsize="150"
+				endsize="0"
+				midsizepos=".8"
+				position="0 0 0"
+				depthbias="-80"
+				
+				startheight="0"
+				midheight="250"
+				endheight="0"
+				midheightpos=".9"
+				
+				startwidth="150"
+				midwidth="30"
+				endwidth="0"
+				midwidthpos=".95"
+			/>
+		
+			<billboard
+				life="2800"
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="0"
+				midcolor="1 .5 .5"
+				endcolor="1 .5 .5"
+				midcolorpos=".8"
+				
+				startheight="0"
+				midheight="200"
+				endheight="0"
+				midheightpos=".9"
+				
+				startwidth="100"
+				midwidth="20"
+				endwidth="0"
+				midwidthpos=".95"
+				
+				midsizepos=".8"
+				position="0 0 0"
+				depthbias="-80"
+			/>
+		</particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+	  <spawnmodifier instance="instance1"/>
+      <!--overlay startalpha="1" endalpha="0" duration="1000" material="/shared/effects/textures/blood1.tga"/-->
+      <waitfordeath instance="instance0" />
+      <waitfordeath instance="instance1" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

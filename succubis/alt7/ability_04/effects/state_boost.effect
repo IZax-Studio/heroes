@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true" useentityeffectscale="1">
+	<definitions>
+	
+		<modifier
+			name="modifier0"
+			expirelife="750"
+			startcolor="1 .65 .65"
+			endcolor="1 1 1"
+		/>
+		
+		<simpleemitter
+			name="manaTrail"
+			life="2000"
+			spawnrate="100"
+			startminparticlelife="1000"
+			startmaxparticlelife="1500"
+			endminparticlelife="1"
+			endmaxparticlelife="2"
+			position="0 0 0"
+			material="/shared/effects/materials/phantom_smoke_04.material"
+		>
+			<particle
+				startcolor=".5 0 .2"
+				midcolor=".5 0 .2"
+				endcolor="0 0 0"
+				startsize="0"
+				midsize="8"
+				endsize="0"
+				midcolorpos=".1"
+				midsizepos=".1"
+			/>
+		</simpleemitter>
+		
+		<simpleemitter
+			name="manaTrail2"
+			life="2000"
+			spawnrate="100"
+			startminparticlelife="1000"
+			startmaxparticlelife="1500"
+			endminparticlelife="1"
+			endmaxparticlelife="2"
+			position="0 0 0"
+			material="/shared/effects/materials/phantom_smoke_04.material"
+		>
+			<particle
+				startcolor=".2 0 .5"
+				midcolor=".2 0 .5"
+				endcolor="0 0 0"
+				startsize="0"
+				midsize="8"
+				endsize="0"
+				midcolorpos=".1"
+				midsizepos=".1"
+			/>
+		</simpleemitter>
+	
+		<particlesystem name="system0" space="world" scale="1">
+
+				<sound
+				volume="1"
+				sample="/heroes/succubis/bat_sounds/nightmare%.wav"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2000"
+			/>
+
+			<sound
+				soundloop="true"
+				fadein="1500"
+				fadeout="500"
+				volume=".5"
+				sample="/heroes/succubis/bat_sounds/nightmare.wav"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2000"
+			/>
+			<model
+					scale="1.75"
+					position="0 0 100"
+					model="/heroes/succubis/effects/nightmare/model.mdf"
+					alpha="1"
+					anim="idle"
+					directionalspace="local"
+				/>
+				<model
+					expirelife="500"
+					scale="1.75"
+					position="0 0 100"
+					model="/heroes/succubis/effects/nightmare/model.mdf"
+					startalpha="1"
+					endalpha="0"
+					anim="idle"
+					directionalspace="local"
+				/>
+				<model
+					scale="1.75"
+					position="0 0 100"
+					model="/heroes/succubis/effects/nightmare/model2.mdf"
+					alpha=".5"
+					color="2 1 2"
+					anim="idle"
+					directionalspace="local"
+				/>
+				<model
+					expirelife="500"
+					scale="1.75"
+					position="0 0 100"
+					model="/heroes/succubis/effects/nightmare/model2.mdf"
+					startalpha=".5"
+					endalpha="0"
+					color="2 1 2"
+					anim="idle"
+					directionalspace="local"
+				/>
+			
+			<billboard
+				life="1500"	
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="0 0 0"
+				midcolor="0 0 .5"
+				endcolor="0 0 0"
+				size="75"
+				depthbias="-30"
+				loop="true"
+			/>
+			
+		
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				particlelife="950"
+				spawnrate="10"
+				speed="180"
+				gravity="22"
+				minangle="0"
+				maxangle="30"
+				material="/shared/effects/materials/blood1.material"
+				offsetsphere="25 25 0"
+				position="0 0 0"
+			>
+				<particle 
+					minanglespeed="-100"
+					maxanglespeed="100"
+					minangle="-60"
+					maxangle="60"
+					color=".4 0 0"
+					startsize="110"
+					endsize="75"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="1"
+				offsetsphere="65 65 0"
+				position="0 0 0"
+				particlelife="3000"
+			>
+				<particle>
+
+						<simpleemitter
+							life="1500"
+							particlelife="950"				
+							spawnrate="10"
+							speed="180"
+							gravity="22"
+							minangle="0"
+							maxangle="30"
+							material="/shared/effects/materials/toon_star_outline.material"
+							offsetsphere="0 0 0"
+							position="0 0 0"
+						>
+							<particle 
+								minanglespeed="-100"
+								maxanglespeed="100"
+								minangle="-60"
+								maxangle="60"
+								color="1 0 .6"
+								startsize="35"			
+								endsize="75"
+								startalpha="0"
+								midalpha=".6"
+								endalpha="0"
+							>
+								<groundsprite
+									material="/shared/effects/materials/splatter_blend.material"
+									life="3000"
+									startsize="20"
+									endsize="35"
+									minyaw="-360"
+									maxyaw="360"
+									startcolor=".3 0 0"
+									endcolor=".3 0 0"
+									startalpha="0"
+									midalpha="1"
+									endalpha="0"
+								/>
+							</particle>
+						</simpleemitter>
+					
+
+				</particle>
+			</simpleemitter>
+			
+			<trackeremitter
+				bone="_bone_centerofchest"
+				owner="source"
+				targetbone="_bone_fx_01"
+				targetowner="target"
+				tracktype="angular"
+				trackspeed="8"
+				drag="0"
+				spawnrate="13"
+				particlelife="4000"
+				gravity="-50"
+				offsetsphere="5 5 5"
+				minspeed="10"
+				maxspeed="220"
+				acceleration="30"
+				direction="0 0 1"
+				inheritvelocity="0"
+				distancelife="true"
+			>
+				<particle
+					emitter0="manaTrail"
+				/>
+			</trackeremitter>
+			
+			<trackeremitter
+				bone="_bone_centerofchest"
+				owner="source"
+				targetbone="_bone_fx_01"
+				targetowner="target"
+				tracktype="angular"
+				trackspeed="8"
+				drag="0"
+				spawnrate="12"
+				particlelife="3000"
+				gravity="-50"
+				offsetsphere="5 5 5"
+				minspeed="10"
+				maxspeed="220"
+				acceleration="30"
+				direction="0 0 1"
+				inheritvelocity="0"
+				distancelife="true"
+			>
+				<particle
+					emitter0="manaTrail2"
+				/>
+			</trackeremitter>
+			
+			<simpleemitter
+				delay="500"
+				bone="_bone_centerofchest"
+				spawnrate="300"
+				count="30"
+				expirelife="1000"
+				particlelife="500"
+				gravity="-5"
+				minspeed="600"
+				maxspeed="1000"
+				drag="0.05"
+				offsetsphere="30"
+				depthbias="-10"
+				collide="true"
+				friction="20"
+				position="0 0 20"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					color="1"
+					maxanglespeed="500"
+					minanglespeed="-500"
+					startsize="3"
+					minendsize="10"
+					maxendsize="15"
+				>
+					<model
+						life="500"
+						parentskeleton="1"
+						position="0 0 0"
+						scale=".15"
+						model="../../projectile/pitch_fork/model.mdf"
+						material="../../projectile/pitch_fork/material.material"
+						color="1 0 .7"
+						expirelife="700"
+						startalpha="1"
+						endalpha="0"
+						yaw="180"
+						roll="180"
+						rollspeed="400"
+						pitch="0"
+					>
+					</model>
+					
+					<model
+						life="500"
+						parentskeleton="1"
+						position="0 0 0"
+						scale=".2"
+						model="../../projectile/pitch_fork/model.mdf"
+						material="/shared/effects/materials/shell_flat_outline.material"
+						color=".5 0 .35"
+						expirelife="700"
+						startalpha="1"
+						endalpha="0"
+						yaw="180"
+						roll="180"
+						rollspeed="400"
+						pitch="0"
+					>
+					</model>
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				delay="500"
+				bone="_bone_centerofchest"
+				spawnrate="5"
+				particlelife="500"
+				gravity="-5"
+				minspeed="600"
+				maxspeed="1000"
+				drag=".04"
+				offsetsphere="30"
+				depthbias="-10"
+				collide="true"
+				friction="100"
+				position="0 0 20"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					color="1"
+					maxanglespeed="500"
+					minanglespeed="-500"
+					startsize="3"
+					minendsize="10"
+					maxendsize="15"
+					scale="2"
+				>
+					<model
+						parentskeleton="1"
+						position="0 0 0"
+						scale=".15"
+						model="../../projectile/pitch_fork/model.mdf"
+						material="../../projectile/pitch_fork/material.material"
+						color="1 0 .7"
+						life="500"
+						startalpha="1"
+						endalpha="0"
+						yaw="180"
+						roll="180"
+						rollspeed="400"
+						pitch="0"
+					>
+					</model>
+					
+					<model
+						parentskeleton="1"
+						position="0 0 0"
+						scale=".2"
+						model="../../projectile/pitch_fork/model.mdf"
+						material="/shared/effects/materials/shell_flat_outline.material"
+						color="1 0 .7"
+						life="500"
+						startalpha="1"
+						endalpha="0"
+						yaw="180"
+						roll="180"
+						rollspeed="400"
+						pitch="0"
+					>
+					</model>
+				</particle>
+			</simpleemitter>
+			
+			<template name="ball_of_fire">
+				<trailemitter
+					spawnrate="30"
+					texpostime="500"
+					texposscale="0.0"
+					texstretchscale=".4"
+					material="/shared/effects/materials/light_trail.material"
+					particlelife="500"
+				>
+					<particle
+						startcolor=".5 0 .3"
+						midcolor=".5 0 .35"
+						endcolor=".5 0 .8"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".075"
+						startsize="5"
+						midsize="15"
+						endsize="5"
+						midsizepos="0.2"
+				 />
+				</trailemitter>
+				
+				<trailemitter
+					spawnrate="30"
+					particlelife="500"
+					texpostime="750"
+					texposscale="0.0"
+					texstretchscale=".4"
+					material="/shared/effects/materials/light_trail.material"
+					direction="0 0 1"
+					speed="50"
+					angle="0"
+					drag="0.02"
+				>
+					<particle
+						startcolor=".5 0 .3"
+						midcolor=".5 0 .35"
+						endcolor=".5 0 .8"
+						midcolorpos=".05"
+						startsize="10"
+						midsize="30"
+						endsize="5"
+						midsizepos=".1"
+				 />
+				</trailemitter>
+
+				<simpleemitter
+					position="0 0 -5"
+					spawnrate="10"
+					minparticlelife="300"
+					maxparticlelife="600"
+					offsetsphere="8 8 8"
+					minspeed="10.0"
+					maxspeed="30"
+					direction="0 0 1"
+					material="/shared/effects/materials/toon_star_outline.material"
+				>
+					<particle
+					
+						startsize="5"
+						midsize="1"
+						endsize="0"
+					
+						maxangle="359"
+						maxanglespeed="30"
+						minanglespeed="-30"
+						minscale="5"
+						maxscale="10"
+						startcolor="2 .2 .2"
+						midcolor=".5 .5 2"
+						endcolor="0 0 0"
+						midcolorpos=".5"
+					
+					/>
+				</simpleemitter>
+
+				<billboard
+					expirelife="500"
+					startcolor=".8 .2 .2"
+					endcolor="0 0 0"
+					size="20"
+					material="/shared/effects/materials/whitedot.material"
+					depthbias="50"
+				/>
+
+				<billboard
+					expirelife="500"
+					startcolor=".2 0 0"
+					endcolor="0 0 0"
+					size="6"
+					material="/shared/effects/materials/glow_01.material"
+					depthbias="-50"
+				/>
+
+				<billboard
+					expirelife="500"
+					startcolor=".4 0 0"
+					endcolor="0 0 0"
+					midcolorpos=".8"
+					startsize="75"
+					endsize="10"
+					material="/shared/effects/materials/glow_01.material"
+					depthbias="-50"
+				/>
+
+				<model
+					parentskeleton="1"
+					position="0 0 0"
+					scale=".25"
+					model="../../projectile/pitch_fork/model.mdf"
+					material="../../projectile/pitch_fork/material.material"
+					color="1 0 .7"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".8"
+					yawspeed="600"
+					pitchspeed="200"
+					
+					
+					expirelife="200"
+				>
+				</model>
+				
+				<model
+					parentskeleton="1"
+					position="0 0 0"
+					scale=".3"
+					model="../../projectile/pitch_fork/model.mdf"
+					material="/shared/effects/materials/shell_flat_outline.material"
+					color="1 0 .7"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".8"
+					yawspeed="600"
+					pitchspeed="200"
+					expirelife="200"
+				>
+				</model>
+
+			</template>
+			
+			<trackeremitter
+				bone="_bone_centerofchest"
+				owner="source"
+				targetbone="_bone_righthand"
+				targetposition="0 0 0"
+				targetowner="target"
+				tracktype="distance"
+				particlelife="3000"
+				trackspeed="30"
+				drag="0"
+				spawnrate="5"
+				gravity="-50"
+				offsetsphere="5 5 5"
+				minspeed="500"
+				maxspeed="700"
+				acceleration="100"
+				direction="0 0 1"
+				inheritvelocity="0"
+				distancelife="true"
+			>
+				<particle
+
+				>
+					<instance name="ball_of_fire" life="4000"/>
+				</particle>
+			</trackeremitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<wait duration="600"/>
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+
+			<waitfordeath instance="instance0" />
+		
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<material>
+	<parameters vDiffuseColor="2">
+		<vec2 name="vUVScale" value="1 2" />
+		<vec2 name="vUVScroll" value="0 -.5" />
+		<float name="fIntensity" value="1"/>
+	</parameters>
+	<phase name="depth" vs="mesh_depth" ps="mesh_depth" srcblend="BLEND_ONE" dstblend="BLEND_ZERO" translucent="false" cull="CULL_NONE" alphatest="true"/>
+	<phase name="depth" vs="mesh_depth" ps="mesh_depth" srcblend="BLEND_ONE" dstblend="BLEND_ZERO" translucent="true" cull="CULL_NONE" alphatest="true"/>
+	<phase name="color" vs="mesh_fire" ps="mesh_fire_square" srcblend="BLEND_SRC_ALPHA" dstblend="BLEND_ONE" translucent="true" cull="CULL_NONE" alphawrite="false">
+		<sampler name="reveal" texture="lightmap_B.png" repeat_u="true" repeat_v="true" scale_u="1.0000" scale_v="1.0000" fps="15" mipmaps="true" fullquality="false" nocompress="false" filtering="true" border="false" />
+		<sampler name="gradient" texture="gradient.tga" repeat_u="true" repeat_v="true" scale_u="1.0000" scale_v="1.0000" fps="15" mipmaps="true" fullquality="false" nocompress="false" filtering="true" border="false" />
+	</phase>
+</material>

@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+
+	<definitions>
+		
+		<particlesystem name="system0" space="world" scale="1.85">
+
+
+<sound
+				volume=".35"
+				sample="slash_1.wav"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="1300"
+			/>
+
+<sound
+				volume="1"
+				sample="death_explode.wav"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="1300"
+			/>
+
+
+			<sound
+				soundloop="true"
+				fadein="300"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1500"
+				volume=".3"
+				sample="/shared/sounds/effects/fire_1.wav"
+			/>
+
+
+
+<sound
+				soundloop="true"
+				fadein="300"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1500"
+				volume="1"
+				sample="body_fire.wav"
+			/>
+
+<sound
+				soundloop="true"
+				fadein="300"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1500"
+				volume=".7"
+				sample="body_fire.wav"
+			/>
+
+
+			<sound
+				soundloop="true"
+				fadein="300"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1500"
+				volume=".15"
+				sample="/shared/sounds/effects/fire_3.wav"
+			/>
+		
+<terrainemitter
+
+				offsetradial="650 650 0" 
+				spawnrate="250"
+				particlelife="700"
+				gravity="-35"
+		
+				material="/shared/effects/materials/flame_white.material"
+			>
+				<particle
+					startsize="80"
+					endsize="270"
+					startwidth="80"
+					endwidth="100"
+					startcolor=".25 .1 0"
+					endcolor="0"
+					lockup="1"
+					depthbias="-100"
+				/>
+				<particle
+					startsize="80"
+					endsize="170"
+					startwidth="80"
+					endwidth="100"
+					startcolor=".8 .5 0"
+					endcolor="0"
+					lockup="1"
+					yaw="180"
+					depthbias="-100"
+				/>
+			</terrainemitter>
+
+
+<terrainemitter
+offsetsphere="645 645 645"
+				offsetradial="20 20 0" 
+				spawnrate="170"
+				particlelife="700"
+				gravity="-40"
+		
+				material="/shared/effects/materials/flame_white.material"
+			>
+				<particle
+					startsize="80"
+					endsize="270"
+					startwidth="80"
+					endwidth="100"
+					startcolor=".25 .1 0"
+					endcolor="0"
+					lockup="1"
+					depthbias="-100"
+				/>
+				<particle
+					startsize="80"
+					endsize="170"
+					startwidth="80"
+					endwidth="100"
+					startcolor=".8 .5 0"
+					endcolor="0"
+					lockup="1"
+					yaw="180"
+					depthbias="-100"
+				/>
+			</terrainemitter>
+
+
+
+			<!-- Begin Aura Effect -->
+			<terrainemitter
+				delay="0"
+				spawnrate="20"
+				particlelife="1500"
+				range="250"
+			>
+				<particle>
+				
+					<simpleemitter
+						count="25"
+						minparticlelife="650"
+						maxparticlelife="1200"
+						spawnrate="15"
+						minspeed="25"
+						maxspeed="50"
+						mingravity="-2"
+						maxgravity="-10"
+						direction="0 0 1"
+						minangle="0"
+						maxangle="1"
+						drag="0.01"
+						material="/shared/effects/materials/pyroclast_03.material"
+						offsetsphere="320 320 335"
+						position="0 0 15"
+					>
+						<particle
+							depthbias="-100"
+							color="-1"
+							startscale="40"
+							endscale="25"
+							startalpha="0"
+							midalpha=".5"
+							endalpha="0"
+							midalphapos=".2"
+							lockup="1"
+							lockright="1"
+							minyaw="0"
+							maxyaw="360"
+							yawspeed="-35"
+						/>
+					</simpleemitter>
+
+
+
+<simpleemitter
+								spawnrate="37"
+					minparticlelife="1000"
+				maxparticlelife="1000"
+
+directionalspace="global"
+				direction="-.5 0 -1"
+
+
+drag="0.01"
+					depthbias="5"		
+					acceleration="1"
+				maxspeed="1"	material="/shared/effects/materials/flame.material"
+					offsetsphere="200 250 245"
+					gravity="-20"
+					angle="900"
+
+				>
+					<particle 
+					maxangle="360"
+
+minanglespeed="-100"
+					maxanglespeed="100"
+
+					minsize="7"		
+						maxsize="10"
+
+					
+					color="2 .8 1"
+					
+					midcolorpos="10"
+					startanchor=".8"
+					endanchor=".6"
+
+						/>
+					</simpleemitter>
+
+
+
+
+
+
+				
+					<simpleemitter
+						life="800"
+						
+						spawnrate="10"
+						particlelife="200"
+						gravity="-2"
+						speed="10"
+						drag="0.07"
+									offsetsphere="500 520 510"
+					>
+						<particle 
+							minangle="0"
+							maxangle="360"
+							minanglespeed="-40"
+							maxanglespeed="40"
+							startcolor="1 .5 0"
+							endcolor="0 0 0"
+							startsize="5"
+							endsize="40"
+							startalpha="0"
+							midalpha=".4"
+							endalpha="0"
+						/>
+					</simpleemitter>
+
+					<simpleemitter
+						life="500"
+						spawnrate="37"
+						minparticlelife="350"
+						maxparticlelife="500"
+						gravity="-15"
+						speed="30"
+						drag=".003"
+						material="/shared/effects/materials/flame.material"
+						offsetsphere="325 325 200"
+						angle="90"
+					>
+						<particle 
+							minangle="-35"
+							maxangle="35"
+							color=".6 .9 1"
+							endcolor="0"
+							startsize="0"
+							midsize="70"
+							endsize="5"
+							startalpha="0"
+							midalpha=".4"
+							endalpha="0"
+						/>
+						<particle 
+							minangle="-35"
+							maxangle="35"
+							startcolor=".9 .5 0"
+							endcolor="0"
+							startsize="0"
+							midsize="150"
+							endsize="100"
+							startalpha="0"
+							midalpha=".4"
+							endalpha="0"
+						/>
+					</simpleemitter>
+					
+
+
+
+					<simpleemitter
+						life="500"
+						spawnrate="20"
+						minparticlelife="200"
+						maxparticlelife="400"
+						gravity="-8"
+						speed="30"
+						drag="0"
+												offsetsphere="10 10 0"
+						angle="90"
+					>
+						<particle
+							minangle="0"
+							maxangle="360"
+							startcolor="0 0 0"
+							midcolor=".8 .4 0"
+							endcolor="0 0 0"
+							midcolorpos=".2"
+							startsize="5"
+							midsize="15"
+							endsize="30"
+							startalpha="0"
+							midalpha=".3"
+							endalpha="0"
+						/>
+					</simpleemitter>
+
+								
+
+
+				</particle>
+
+			</terrainemitter>
+			
+			<simpleemitter
+				bone="Bip01 Spine"
+				spawnrate="25"
+				minparticlelife="250"
+				maxparticlelife="750"
+				gravity="-8"
+				speed="30"
+				drag="0"
+								offsetsphere="12 12 35"
+				angle="90"
+				position="0 0 0"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					startcolor="0 0 0"
+					midcolor=".8 .4 0"
+					endcolor="0 0 0"
+					midcolorpos=".2"
+					startsize="150"
+					midsize="30"
+					endsize="65"
+					startalpha="0"
+					midalpha=".3"
+					endalpha="0"
+					startanchor="1"
+					endanchor=".6"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="3"
+				minparticlelife="750"
+				maxparticlelife="1000"
+				gravity="1"
+				speed="5"
+				drag="0"
+				acceleration="0"
+				position="0 0 25"
+				offsetsphere="30 25 25"
+				material="/shared/effects/materials/pyroclast_02.material"
+				inheritvelocity=".1"
+				depthbias="-35"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					color="0 0 0"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+					startsize="25" 
+					endsize="1200"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="3"
+				minparticlelife="750"
+				maxparticlelife="1000"
+				gravity="1"
+				speed="5"
+				drag="0"
+				acceleration="0"
+				position="0 0 50"
+				offsetsphere="50 50 25"
+				material="/shared/effects/materials/heathaze.material"
+				inheritvelocity=".1"
+				depthbias="-35"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startparam="0"
+					midparam=".1"
+					endparam="0"
+					startcolor="1 1 1"
+					frame=".1"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+					midalphapos=".2"
+					startsize="250" 
+					endsize="300"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+</definitions>
+
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+	</thread>
+
+</effect>

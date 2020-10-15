@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="false">
+	<definitions>
+		<particlesystem name="system0" space="world">
+		
+<trackeremitter
+				bone="_bone_altweapon1"
+				targetbone="_bone_altweapon2"
+				tracktype="lerp"
+				trackspeed="1.1" 
+				spawnrate="50"
+				particlelife="400"
+				offsetsphere="10"
+				minspeed="75"
+				maxspeed="400"
+				material="/shared/effects/materials/lightning_02.material"
+				
+				direction="0 0 1"
+				directionalspace="local"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startcolor="1 1 .3"
+					endcolor="1 1 .4"
+					startalpha="1"
+					midalpha="1"
+					endalpha=".7"
+					midcolorpos="1"
+					startsize="10"
+					midsize="23"
+					endsize="3"
+					
+
+				/>
+			</trackeremitter>
+
+
+			<terrainemitter
+				position="0 0 100"
+				offsetradial="20"
+				offsetdirection="0 0 1"
+				spawnrate="20"
+				particlelife="500"
+				minspeed="300"
+				maxspeed="500"
+				direction="0 0 1"
+				minangle="30"
+				maxangle="60"
+				gravity="-1000"
+				drag="0.02"
+				inheritvelocity="3"
+				limitinheritvelocity="1500"
+			>
+						</terrainemitter>
+			
+			<!--
+			<groundsprite
+				material="/shared/effects/materials/whitedot2.material"
+				color=".2 .2 0"
+				scale=".5"
+				yawspeed="100"
+			/>
+			
+			<groundsprite
+				life="1000"
+				loop="true"
+				material="/shared/effects/materials/whitedot2.material"
+				startcolor="0"
+				midcolor=".25"
+				endcolor="0"
+				scale=".495"
+				yawspeed="100"
+			/>
+			-->
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

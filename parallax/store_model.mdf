@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model file="kiana/material1/model.model" type="K2">
+
+	<anim name="idle" clip="kiana/clips/default_store.clip" loop="true" loopbackframe="88">
+	
+	<frameevent frame="0" cmd="PlaySoundLinear effects/default_store.effect"/>
+	</anim>
+	
+</model>

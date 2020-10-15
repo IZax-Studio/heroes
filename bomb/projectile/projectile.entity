@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Bombardier_Attack"
+
+	speed="1000"
+	gravity="2000"
+
+	modelscale="1.45"
+	model="effects/spinner.mdf"
+
+	traileffect="effects/trail.effect"
+	impacteffect="effects/impact.effect"
+>
+
+	<altavatar key="Hero_Bombardier.Alt4"
+		model="../alt4/projectile/model.mdf"
+		traileffect="../alt4/projectile/effects/trail.effect"
+		impacteffect="../alt4/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Bombardier.Alt5"
+		model="../alt5/projectile/model.mdf"
+		traileffect="../alt5/projectile/effects/trail.effect"
+		impacteffect="../alt5/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Bombardier.Alt6"
+		model="/shared/models/invis.mdf"
+		modelscale="1"
+		traileffect="../alt6/projectile/effects/trail.effect"
+		impacteffect="../alt6/projectile/effects/impact.effect"
+	/>
+
+	<altavatar key="Hero_Bombardier.Alt8"
+		model="../alt8/projectile/bomb/model.mdf"
+		modelscale="1.5"
+		traileffect="../alt8/projectile/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Bombardier.Alt9"
+		model="../alt9/projectile/effects/model.mdf"
+		modelscale="1.5"
+		traileffect="../alt9/projectile/effects/trail.effect"
+		impacteffect="../alt9/projectile/effects/impact.effect"
+	>
+		<modifier key="Songkran17_Set"
+			impacteffect="../alt9/projectile/effects/impact_sonkran17_set.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Bombardier.Alt10"
+		model="../alt9/projectile/effects/model.mdf"
+		modelscale="1.5"
+		traileffect="../alt9/projectile/effects/trail.effect"
+		impacteffect="../alt9/projectile/effects/impact.effect"
+	>
+		<modifier key="Songkran17_Set"
+			impacteffect="../alt9/projectile/effects/impact_sonkran17_set.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Bombardier.Alt11"
+		model="/shared/models/invis.mdf"
+		modelscale="1.5"
+		traileffect="../alt11/projectile/trail.effect"
+		impacteffect="../alt11/projectile/impact.effect"
+	/>
+
+</projectile>

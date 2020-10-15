@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_ForsakenArcher_Ability2"
+
+	icon="1.png"
+	
+	effecttype=""
+	allowtransfer="false"
+	
+	deathpersist="true"
+>	
+	<onframe />
+	
+	<onattack>
+		<split count="4" range="650" damagemult="0.45,0.55,0.65,0.75" targetscheme="visible_enemy_units" fulldamageonmaintarget="true" />
+		<playeffect effect="effects/trail.effect" source="source_entity" />
+	</onattack>
+	
+	<modifier key="alt_Wingbow" modpriority="101">	
+		<onattack>
+			<split count="4" range="750" damagemult="0.45,0.55,0.65,0.75" targetscheme="visible_enemy_units" fulldamageonmaintarget="true" />
+			<playeffect effect="effects/trail.effect" source="source_entity" />
+		</onattack>
+	</modifier>
+	
+	
+	<altavatar key="Hero_ForsakenArcher.Alt9" 
+		icon="/heroes/forsaken_archer/alt9/ability_02/icon.tga"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_ForsakenArcher.Alt11" 
+		icon="/heroes/forsaken_archer/alt11/ability_02/icon.tga"
+	/>
+	
+</state>

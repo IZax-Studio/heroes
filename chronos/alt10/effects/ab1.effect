@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world">
+
+			<model
+				parentmodel="true"
+				parentskeleton="true"
+				material="/shared/effects/materials/shell3.material"
+				startalpha=".8"
+				endalpha="0"
+				midalphapos=".2"
+				color="1 .4 0"
+			/>
+			
+			<simpleemitter
+				position="0 0 75"
+				spawnrate="500"
+				minparticlelife="300"
+				maxparticlelife="400"
+				minspeed="200"
+				maxspeed="300"
+				maxangle="360"
+				direction="0 -1 0"
+				offsetsphere="30 30 100"
+				material="/shared/effects/materials/lightning_11.material"
+				framespeed="2"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="300"
+					maxanglespeed="500"
+					startcolor="2 .8 .4"
+					endcolor="0"
+					minsize="10"
+					maxsize="70"
+				/>
+			</simpleemitter>
+			
+			<twopointtrailemitter
+				directionalspace="local"
+				position_a="0 20 25"
+				position_b="0 20 175"
+				spawnrate="90"
+				particlelife="700"
+				direction="0 1 0"
+				speed="0"
+				drag=".05"
+				texpostime="350"
+				texposscale="0"
+				texstretchscale="1"
+				material="/shared/effects/materials/trail_02.material"
+			>
+				<particle
+					startcolor="2 .8 .4"
+					endcolor="0"
+				/>
+			</twopointtrailemitter>
+					
+			<template name="trail">
+				<controller bone="{bone}" expirelife="700">
+					<twopointtrailemitter
+						directionalspace="local"
+						position_a="{position_a}"
+						position_b="{position_b}"
+						spawnrate="90"
+						particlelife="550"
+						direction="0 1 0"
+						minspeed="25"
+						maxspeed="100"
+						minangle="0"
+						maxangle="30"
+						drag=".05"
+						texpostime="350"
+						texposscale="0"
+						texstretchscale="1"
+						material="lightning_trail.material"
+					>
+						<particle
+							startcolor="2 .8 .4"
+							endcolor="0"
+						/>
+					</twopointtrailemitter>
+					
+					<twopointtrailemitter
+						directionalspace="local"
+						position_a="{position_a}"
+						position_b="{position_b}"
+						spawnrate="90"
+						particlelife="550"
+						direction="0 1 0"
+						minspeed="25"
+						maxspeed="100"
+						minangle="0"
+						maxangle="30"
+						drag=".05"
+						texpostime="350"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/lightning_11.material"
+					>
+						<particle
+							startcolor="2 .8 .4"
+							endcolor="0"
+						/>
+					</twopointtrailemitter>
+					
+					<simpleemitter
+						spawnrate="45"
+						minparticlelife="500"
+						maxparticlelife="600"
+						speed="75"
+						minangle="0"
+						maxangle="{maxangle}"
+						direction="0 1 0"
+						offsetsphere="3"
+						material="/shared/effects/materials/lightning_11.material"
+					>
+						<particle
+							maxangle="360"
+							maxanglespeed="200"
+							startcolor="2 .8 .4"
+							endcolor="0"
+							minsize="15"
+							maxsize="30"
+						/>
+					</simpleemitter>
+				</controller>
+			</template>
+				
+			<instance name="trail" bone="_bone_centerofchest" position_a="0 0 50" position_b="0 0 -50" maxangle="20"/>
+			<instance name="trail" bone="_bone_leftfoot" position_a="0 0 30" position_b="0 0 -30" maxangle="8"/>
+			<instance name="trail" bone="_bone_rightfoot" position_a="0 0 30" position_b="0 0 -30" maxangle="8"/>
+			<instance name="trail" bone="_bone_lefthand" position_a="0 0 30" position_b="0 0 -30" maxangle="8"/>
+			<instance name="trail" bone="_bone_righthand" position_a="0 0 30" position_b="0 0 -30" maxangle="8"/>
+		
+		</particlesystem>
+	
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

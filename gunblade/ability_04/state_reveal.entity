@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Gunblade_Ability4_Reveal"
+
+	icon="42.png"
+
+	passiveeffect="effects/link.effect"
+
+	sighted="true"
+	revealed="true"
+	restrained="true"
+
+	negativeeffect="restrained"
+>
+	<ondamage>
+		<compare a="this_inflictor_entity" b="target_entity" op="eq">
+			<changedamage b="0.75" op="mult" />
+		</compare>
+	</ondamage>
+	
+	<onorderdisjointed>
+		<order command="follow" force="true" source="this_proxy_entity" target="source_entity" />
+	</onorderdisjointed>
+	
+	<onframe>
+		<targettype type="alive" target="target_entity" />
+		<else>
+			<expirestate name="State_Gunblade_Ability4" target="source_entity" />
+			<expire />
+		</else>
+		
+		<compare a="target_entity" b="0" op="eq">
+			<expirestate name="State_Gunblade_Ability4" target="source_entity" />
+			<expire />
+		</compare>
+	</onframe>
+
+	<onexpired>
+		<targettype type="alive" target="source_entity">
+			<playanim name="idle" target="source_entity" />
+		</targettype>
+		<expirestate name="State_Gunblade_Ability4" target="source_entity" />
+	</onexpired>
+	
+	<altavatar key="Hero_Gunblade.Alt6"
+		passiveeffect="/heroes/gunblade/alt6/ability_04/effects/link.effect"
+	/>
+	
+	<altavatar key="Hero_Gunblade.Alt8"
+	    passiveeffect="/heroes/gunblade/alt8/ability_04/effects/link.effect"
+	/>
+	
+	<altavatar key="Hero_Gunblade.Alt9"
+	    passiveeffect="/heroes/gunblade/alt9/ability_04/effects/link.effect"
+	/>
+
+</state>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Rhapsody_Ability1_Self"
+	
+	icon="../alt10/ability_01/icon.tga"
+	passiveeffect="effects/state_self.effect"
+	modifierkey="Rhapsodystaccato"
+	
+	maxcharges="4"
+>
+
+	<oninflict>
+		<setcharges a="1,2,3,4" />
+	</oninflict>
+	
+	<onframe>
+		<compare a="charges" b="0" op="eq">
+			<expire />
+		</compare>
+		<compare a="this_proxy_entity" b="0" op="eq">
+			<expire />
+		</compare>
+	</onframe>
+	
+	<onexpired>
+		<cantarget targetscheme="enemy_units" target="this_proxy_entity" effecttype="Magic" ignoreinvulnerable="false">
+			<compare a="charges" b="0" op="gt">
+				<applystate name="State_Stunned" effecttype="Magic" target="this_proxy_entity" duration="250" />
+			</compare>
+		</cantarget>
+		<damage effecttype="Magic" target="this_proxy_entity" amount="50" b="charges" op="mult" />
+		<expirestate name="State_Rhapsody_Ability1_Self_Modifier" />
+	</onexpired>
+	
+	<altavatar key="Hero_Rhapsody.Alt" modpriority="1" 
+		passiveeffect="../alt/ability_01/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Rhapsody.Alt3" modpriority="1" 
+		passiveeffect="../alt3/ability_01/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Rhapsody.Alt4" modpriority="1" 
+		passiveeffect="../alt4/ability_01/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Rhapsody.Alt5" modpriority="1" 
+		passiveeffect="../alt5/ability_01/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Rhapsody.Alt6" modpriority="1" 
+		passiveeffect="../alt6/ability_01/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Rhapsody.Alt7" modpriority="1" 
+		passiveeffect="../alt7/ability_01/effects/state_self.effect"
+	>
+		<modifier key="alt_AlacrityBand"
+			passiveeffect="../alt7/ability_01/effects/state_self_upgrade.effect"
+		/>
+		<modifier key="Alt7_Ability1_Upgrade"
+			passiveeffect="../alt7/ability_01/effects/state_self_upgrade.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Rhapsody.Alt8" modpriority="1" 
+		passiveeffect="../alt8/ability_01/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Rhapsody.Alt9" modpriority="1" 
+		passiveeffect="../alt9/ability_01/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Rhapsody.Alt10" modpriority="1" 
+	    icon="../alt10/ability_01/icon.tga"
+		passiveeffect="../alt10/ability_01/effects/state_self.effect"
+	/>
+	
+</state>

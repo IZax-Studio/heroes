@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Aluna_Ability3_Image"
+
+	icon=""
+	portrait=""
+	modelscale="1"
+	model="../model.mdf"
+	idleanim="idle"
+
+	preglobalscale="1.35"
+	
+	boundsheight="0"
+	boundsradius="0"
+	isselectable="false"
+	iscontrollable="false"
+	selectionradius="0"
+	targetoffset="0 0 0"
+
+	canrotate="false"
+	ismobile="false"
+
+	attacktype="none"
+	combattype="Ranged"
+
+	sightrangeday="0"
+	sightrangenight="0"
+	unitwalking="true"
+	canattack="false"
+	deathtime="0"
+	corpsetime="0"
+	invulnerable="true"
+	flying="false"
+	drawonmap="false"
+	
+	stealthtype="unrevealable"
+	
+	lifetime="12000"
+>
+	<altavatar key="Hero_Aluna.Alt" modpriority="1"
+		model="../alt/model.mdf"
+		preglobalscale="1.35"
+		passiveeffect="../alt/ability_03/effects/hologram.effect"
+	/>
+	
+	<altavatar key="Hero_Aluna.Alt2" modpriority="1"
+		model="../alt2/hologram.mdf"
+		anim="idle"
+		preglobalscale="1.35"
+	/>
+	
+	<altavatar key="Hero_Aluna.Alt3" modpriority="1"
+		model="../alt3/model.mdf"
+		preglobalscale="1.5"
+	/>
+	
+	<altavatar key="Hero_Aluna.Alt4" modpriority="1"
+		model="../alt4/model.mdf"
+		preglobalscale="1.4"
+	/>
+	
+	<altavatar key="Hero_Aluna.Alt5" modpriority="1"
+		model="../alt5/model.mdf"
+		preglobalscale="1.5"
+	/>
+	
+	<altavatar key="Hero_Aluna.Alt7" modpriority="1"
+		model="../alt7/model.mdf"
+		preglobalscale="2"
+	/>
+	
+	<altavatar key="Hero_Aluna.Alt8" modpriority="1"
+		model="../alt8/model.mdf"
+		preglobalscale="1.3"
+	/>
+	
+	<altavatar key="Hero_Aluna.Alt9" modpriority="1"
+		model="../alt9/model.mdf"
+		preglobalscale="1.35"
+	/>
+	
+</gadget>

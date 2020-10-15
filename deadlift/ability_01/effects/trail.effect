@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.25">
+		
+			<sound
+			    soundloop="true"
+				randomloop="true"
+				fadein="500"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1500"
+				volume="0.7"
+				sample="../sounds/loop.wav"
+			/>
+			
+			<!-- Front Arms -->
+			<simpleemitter
+				position="0 60 -20"
+				timenudge="100"
+				spawnrate="15"
+				particlelife="400"
+				direction="0 1 0"
+				angle="0"
+				speed=".1"
+				offsetsphere="40 10 10"
+			>
+				<template name="arm_particle">
+					<particle
+						turn="1"
+					>
+						<model
+							life="400"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							midalphapos=".6"
+							minscale="1"
+							maxscale="1.4"
+							model="arm/model.mdf"
+							material="../../obsidian/obsidian2.material"
+							anim="{anim}"
+							minyaw="170"
+							maxyaw="190"
+							minpitch="10"
+							maxpitch="20"
+						/>
+					</particle>
+				</template>
+				<instance name="arm_particle" anim="reach_fast1" />
+				<instance name="arm_particle" anim="reach_fast2" />
+				<instance name="arm_particle" anim="reach_fast3" />
+			</simpleemitter>
+
+			<!-- glow -->
+			<groundsprite
+				expirelife="50"
+				material="/shared/effects/materials/whitedot_ground.material"
+				startcolor=".4 .05 0"
+				endcolor="0"
+				size="80"
+			/>
+
+			<!-- Fissure -->
+			<simpleemitter
+				timenudge="100"
+				spawnrate="7"
+				particlelife="800"
+			>
+				<particle
+					minyaw="-180"
+					maxyaw="180"
+				>
+					<model
+						life="700"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						position="0 0 -10"
+						maxscale=".8"
+						minscale=".6"
+						model="fissure/model.mdf"
+						color="1 .75 .5"
+						anim="open"
+					>
+						<model
+							life="900"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							midalphapos=".6"
+							position="0 0 -10"
+							maxscale="2"
+							minscale="1.5"
+							model="arm/model.mdf"
+							material="../../obsidian/obsidian2.material"
+							color="1"
+							anim="reach"
+							minyaw="-180"
+							maxyaw="180"
+						/>
+						<model
+							life="900"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							position="0 0 -10"
+							maxscale="2"
+							minscale="1.5"
+							model="arm/model.mdf"
+							material="../../obsidian/obsidian2.material"
+							color="1"
+							anim="reach"
+							minyaw="-180"
+							maxyaw="180"
+						/>
+						
+						<simpleemitter
+							life="500"
+							count="30"
+							particlelife="600"
+							material="/shared/effects/materials/light_rays.material"
+							position="0 0 15"
+							offsetsphere="25 25 0"
+						>
+							<particle
+								startcolor=".827 .561 .2"
+								midcolor=".6 .2 0"
+								endcolor="0"
+								midcolorpos=".01"
+								
+								startsize="0"
+								minendsize="75"
+								maxendsize="125"
+							/>
+						</simpleemitter>
+						
+						<billboard
+							life="700"
+							material="/shared/effects/materials/whitedot_blend.material"
+							startcolor="0"
+							midcolor=".1 0 0"
+							endcolor="0 0 0"
+							midcolorpos=".8"
+							startalpha="0"
+							midalpha="1"
+							endalpha="0"
+							size="230"
+							depthbias="-20"
+							expirelife="300"
+							lockup="true"
+							lockright="true"
+							pitch="90"
+						/>
+						
+						<simpleemitter
+							count="10"
+							offsetsphere="30 30 0"
+						>
+							<particle
+							
+							>
+								<billboard
+									life="1000"
+									material="/shared/effects/materials/light_rays2.material"				
+									startcolor="0"
+									midcolor=".8 .6 .2"
+									endcolor="0"
+									midcolorpos=".2"
+									lockup="1"
+									lockright="1"
+									directionalspace="local"
+									minsize="60"
+									maxsize="100"
+									position="0 0 30"
+									minyaw="-180"
+									maxyaw="180"
+									minroll="-10"
+									maxroll="10"
+									depthbias="-20"
+								/>
+							</particle>
+						</simpleemitter>
+					</model>
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="70"
+				minparticlelife="500"
+				maxparticlelife="1500"			
+				gravity="-5"
+				minspeed="10"
+				maxspeed="50"
+				drag=".05"
+				material="/shared/effects/materials/spark_10.material"
+				offsetsphere="20"
+				minangle="70"
+				maxangle="90"
+				direction="0 0 1"
+				directionalspace="global"
+				position="0 0 10"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startcolor="0"
+					midcolor="1 .75 .5"
+					endcolor="0 0 0"
+					midcolorpos=".3"
+					minstartsize="15"
+					maxstartsize="30"
+					endsize="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				delay="350"
+				spawnrate="6"
+				particlelife="800"
+				acceleration="0.0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+				offsetsphere="0 0 0"
+				position="0 -35 0"
+			>
+				<particle
+					turn="1"
+				>
+					<groundsprite
+						life="1500"
+						position="0 0 0"
+						material="/shared/effects/materials/dirtpile_groundsprite_gray.material"
+						size="75"
+						color=".6 .55 .5"
+						startalpha="0"
+						midalpha=".5"
+						endalpha="0"
+						midalphapos=".1"
+						directionalspace="local"
+						yaw="180"
+					/>
+
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_fx_01"
+				spawnrate="15"
+				particlelife="1000"
+				gravity="0"
+				speed="0"
+				drag="0"
+				acceleration="0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="false"
+				>	
+					<groundsprite
+						minlife="1000"
+						maxlife="1500"
+						material="/shared/effects/materials/ground_smash_overlay_darker.material"
+						minscale="1.05"
+						maxscale="1.84"
+						
+						startsize="0"
+						midsize="25"
+						endsize="25"
+						midsizepos=".1"
+						
+						color="1 1 1"
+						startalpha=".8"
+						midalpha=".8"
+						endalpha="0"
+						directionalspace="local"
+					/>
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_fx_01"
+				spawnrate="5"
+				particlelife="1000"
+				gravity="0"
+				speed="0"
+				drag="0"
+				acceleration="0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="false"
+				>	
+					<groundsprite
+						life="750"
+						material="/shared/effects/materials/explosion.material"
+						minscale="1.05"
+						maxscale="1.84"
+						
+						startsize="0"
+						midsize="20"
+						endsize="20"
+						midsizepos=".1"
+						
+						startcolor=".8"
+						midcolor=".8"
+						endcolor="0"
+						midcolorpos=".8"
+						
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						directionalspace="local"
+					/>
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				spawnrate="10"
+				particlelife="3000"
+				acceleration="0.0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+			>
+				<particle
+					turn="1"
+				>
+					<simpleemitter
+						count="5"
+						minparticlelife="50"
+						maxparticlelife="1000"
+						spawnrate="35"
+						minspeed="25"
+						maxspeed="50"
+						gravity="2"
+						direction="0 0 0"
+						material="/shared/effects/materials/pyroclast_03.material"
+						offsetsphere="25 25 10"
+						position="0 0 0"
+					>
+						<particle
+							minangle="0"
+							maxangle="360"
+							depthbias="-25"
+							startcolor="1 1 0"
+							midcolorcolor=".25 .25 .25"
+							endcolor="0"
+							
+							startscale="50"
+							endscale="50"
+							startalpha="0"
+							midalpha=".35"
+							endalpha="0"
+						/>
+					</simpleemitter>
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_fx_01"
+				spawnrate="3"
+				particlelife="1500"
+				gravity="0"
+				speed="0"
+				drag="0"
+				acceleration="0"
+				position="0 0 0"
+				offsetsphere="35 35 0"
+				
+			>
+				<particle>
+				
+					<model
+						position="0 0 0"
+						minlife="800"
+						maxlife="1000"
+						name="emitter0"
+						anim="idle"
+						model="little_rocks/model.mdf"
+						minscale="1"
+						maxscale="1.4"
+						color=".5 .4 .35"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".9"
+						minyaw="0"
+						maxyaw="360"
+					>
+					</model>
+					
+				</particle>
+			</simpleemitter>
+
+      </particlesystem>
+   </definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnmodifier instance="instance1" modifier="modifier0"/>  
+	
+	<waitfordeath instance="instance0" />
+	<wait duration="20000"/>
+	<!-- <die /> -->
+</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->

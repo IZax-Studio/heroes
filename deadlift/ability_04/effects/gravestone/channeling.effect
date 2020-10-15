@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" >
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+
+		<sound
+			    forcestereo="true"
+		        soundloop="true"
+				randomloop="true"
+				fadein="100"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume="1"
+				sample="/heroes/deadlift/ability_04/sounds/tomb_channel.wav"
+			/>
+			
+        
+
+            <simpleemitter
+                position="0"
+                spawnrate="10"
+                minparticlelife="750"
+                maxparticlelife="1500"
+                material="/shared/effects/materials/edge_cracks_overlay_reveal.material"
+                offsetsphere="50 10 0"
+            >
+                <particle
+                    flare="1"
+                    maxangle="360"
+                    startframe="1"
+                    endframe="0"
+                    startalpha="1"
+                    midalpha="1"
+                    endalpha="0"
+                    minwidth="50"
+                    maxwidth="100"
+                    minheight="60"
+                    maxheight="140"
+                    lockup="true"
+                    lockright="true"
+                    pitch="-90"
+                />
+            </simpleemitter>
+
+            <!-- eruption -->
+            <terrainemitter
+                position="0 12 0"
+                spawnrate="5"
+                offsetsphere="50 10 0"
+                particlelife="2000"
+            >
+                <particle
+                    minscale=".2"
+                    maxscale=".6"
+                >
+                    <model
+                        maxyaw="360"
+                        minlife="1000"
+                        maxlife="1500"
+                        model="/heroes/magmar/ability_01/effects/goo.mdf"
+						material="../../../ability_01/effects/tentacle/material.material"
+                        anim="idle"
+                        startalpha="1"
+                        midalpha="1"
+                        endalpha="0"
+                        startcolor="1 .5 1"
+                        endcolor=".5 .2 .5"
+                    />
+                </particle>
+            </terrainemitter>
+
+            <meshemitter
+				position="0 0 -40"
+                timenudge="1000"
+                mesh="_baseflames"
+                spawnrate="40"
+                material="/shared/effects/materials/water_spray_add_reveal.material"
+                minparticlelife="400"
+                maxparticlelife="1000"
+                angle="0"
+                minspeed="60"
+                maxspeed="100"
+                gravity="4"
+                drag="0.02"
+                depthbias="-20"
+            >
+                <template name="fire_pillar">
+                    <particle
+                        maxangle="360"
+                        minstartsize="6"
+                        maxstartsize="8"
+                        minendsize="10"
+                        maxendsize="60"
+                        startcolor="{sc}"
+                        midcolor="{mc}"
+                        endcolor="{ec}"
+                        startframe="1"
+                        midframe=".25"
+                        endframe="1"
+                        midframepos=".5"
+                    />
+                </template>
+                <instance name="fire_pillar" sc=".25 .5 1" mc="0 .5 .5" ec="0 .5 .5" />
+                 <instance name="fire_pillar" sc=".25 .5 1" mc=".25 .5 .5" ec="0 .5 .5" />
+            </meshemitter>
+
+            <simpleemitter
+                position="0 0 -10"
+                timenudge="1000"
+                spawnrate="200"
+                material="/shared/effects/materials/phantom_white_reveal_02_add.material"
+                minparticlelife="100"
+                maxparticlelife="200"
+                angle="0"
+                minspeed="60"
+                maxspeed="100"
+                gravity="4"
+                drag="0.02"
+                depthbias="20"
+                offsetsphere="40 20 0"
+            >
+                <template name="fire_pillar">
+                    <particle
+                        flare="1"
+                        lockup="1"
+                        minstartwidth="6"
+                        maxstartwidth="8"
+                        minendwidth="10"
+                        maxendwidth="50"
+                        minstartheight="20"
+                        maxstartheight="30"
+                        minendheight="100"
+                        maxendheight="300"
+                        startcolor="{sc}"
+                        midcolor="{mc}"
+                        endcolor="{ec}"
+                        startframe="1"
+                        midframe=".25"
+                        endframe="1"
+                        midframepos=".5"
+                    />
+                </template>
+                <instance name="fire_pillar" sc="1 .25 .8" mc=".5 .25 .4" ec=".5 0 .3" />
+                   <instance name="fire_pillar" sc="1 .25 8" mc=".5 .25 .4" ec=".5 0 .3" />
+            </simpleemitter>
+
+            <!-- gravestone glows/flames -->
+            <template name="jet_flames">
+                <simpleemitter
+                    bone="{bone}"
+                    spawnrate="100"
+                    range="80"
+                    material="/shared/effects/materials/phantom_white_reveal_02_add.material"
+                    minparticlelife="50"
+                    maxparticlelife="150"
+                    direction="0 1 0"
+                    angle="10"
+                    speed="1"
+                    offsetsphere="2"
+                    depthbias="-20"
+                >
+                    <template name="fire_pillar">
+                        <particle
+                            flare="1"
+                            minstartwidth="6"
+                            maxstartwidth="8"
+                            minendwidth="2"
+                            maxendwidth="12"
+                            minendheight="60"
+                            maxendheight="140"
+                            startcolor="{sc}"
+                            midcolor="{mc}"
+                            endcolor="{ec}"
+                            startframe="1"
+                            midframe="0"
+                            endframe="1"
+                            midframepos=".25"
+                            lockup="true"
+                            lockright="true"
+                            turn="true"
+                        />
+                    </template>
+
+                    <instance name="fire_pillar" sc="1 .25 .8" mc=".5 .25 .4" ec=".5 0 .3" />
+                    <instance name="fire_pillar" sc="1 .25 .8" mc=".5 .25 .4" ec=".5 0 .3" />
+                </simpleemitter>
+            </template>
+            <instance name="jet_flames" bone="_bone_leftjet" />
+            <instance name="jet_flames" bone="_bone_rightjet" />
+
+            <template name="jet_glow">
+                <billboard
+                    life="20"
+                    loop="true"
+                    bone="{bone}"
+                    startsize="35"
+                    midsize="25"
+                    endsize="35"
+                    material="/shared/effects/materials/whitedot.material"
+                    startcolor=".6 .2 0"
+                    midcolor=".4 .1 0"
+                    endcolor=".6 .2 0"
+                    depthbias="-10"
+                />
+            </template>
+            <instance name="jet_glow" bone="_bone_leftjetglow" />
+            <instance name="jet_glow" bone="_bone_rightjetglow" />
+            
+            <billboard
+                position="0 0 30"
+                life="20"
+                loop="true"
+                startsize="400"
+                endsize="600"
+                material="/shared/effects/materials/flare_07.material"
+                startcolor="0 .1 .3"
+                endcolor="0 .2 .2"
+                midcolorpos=".25"
+                depthbias="-120"
+            />
+
+            <!-- rings -->
+            <simpleemitter
+                position="0 0 30"
+                spawnrate="10"
+                midspawnratepos=".1"
+                material="/shared/effects/materials/shadow_cut_02_reveal_add2.material"
+                minparticlelife="400"
+                maxparticlelife="600"
+            >
+                <particle
+                    maxangle="360"
+                    startsize="0"
+                    midsize="190"
+                    minendsize="250"
+                    maxendsize="350"
+                    startcolor="1 0 1"
+                    midcolor=".5 0 .2"
+                    endcolor=".1 0 0"
+                    startframe="0"
+                    midframe=".3"
+                    endframe="1"
+                    midframepos=".8"
+                    lockup="true"
+                    lockright="true"
+                    pitch="90"
+                    minscale=".9"
+                    maxscale="1.1"
+                />
+            </simpleemitter>
+	<template name="lightning" >
+		
+				
+				<beam
+				
+					life="3000"
+					position_b="0 0 0"
+					position_a="0 0 1700"
+					startsize="75" midsize="50" endsize="10"
+					startcolor="0 .3 1"  midcolor="0 .3 1"  endcolor="0" 
+					startalpha="1.0" midalpha="1" endalpha="0"
+					material="/shared/effects/materials/femme_lightning_10.material"
+					framespeed="3"
+				/>
+			</template>
+			<instance name="lightning" bone="_bone_weapon3"/> 
+			<instance name="lightning" bone="_bone_weapon3"/> 
+			<instance name="lightning" bone="_bone_weapon1"/> 
+			<instance name="lightning" bone="_bone_weapon1"/> 
+			<instance name="lightning" bone="_bone_weapon2"/> 
+			<instance name="lightning" bone="_bone_weapon2"/> 
+			
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <camerashake2 scale="5" frequency="20" radius="500" duration="2000" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

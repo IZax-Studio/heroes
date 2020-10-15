@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="fiends_grip_target">
+	<definitions>
+
+		<modifier
+			name="modifier0"
+			life="1000"
+			startcolor="3 3 1"
+			endcolor="1.0 1.0 1.0"
+		/>
+
+		<particlesystem name="system0" space="world" scale="1.3">
+
+		<sound
+			volume="0.5" 
+			sample="/heroes/pyromancer/sounds/impact_%.wav"
+			linearfalloff="true"
+			falloffstart="124"
+			falloffend="1000"
+		/>
+			
+		<billboard
+			bone="_bone_centerofchest"
+			life="200"
+			color="1 1 1"
+			startalpha="1.0"
+			midalpha="1.0"
+			endalpha="1.0"
+			startparam="0.05"
+			endparam="0.0"
+			midalphapos="0.25"
+			startsize="128"
+			endsize="250"
+			material="/shared/effects/materials/refract_ring.material"
+		/>
+		
+		<billboard
+			bone="_bone_centerofchest"
+			life="300"
+			startcolor="1 .75 .25"
+			endcolor="0"
+			startsize="0"
+			endsize="250"
+			material="/shared/effects/materials/starlight.material"
+		/>
+		
+		<billboard
+			bone="_bone_centerofchest"
+			life="300"
+			startcolor=".75 .5 .25"
+			endcolor="0"
+			startsize="0"
+			endsize="200"
+			material="/shared/effects/materials/stomp_02.material"
+		/>
+		
+		<billboard
+			bone="_bone_centerofchest"
+			life="300"
+			startcolor=".75 .5 .25"
+			endcolor="0"
+			startsize="0"
+			endsize="170"
+			material="/shared/effects/materials/corona_01.material"
+		/>
+		
+		<simpleemitter
+			spawnrate="1000"
+			count="150"
+			bone="_bone_centerofchest"
+			particlelife="700"			
+			gravity="5"
+			position="0 0 0"
+			material="/shared/effects/materials/flare_01.material"
+			minangle="0"
+			maxangle="360"
+			direction="0 0 1"
+			offsetradial="130"
+		>
+
+			<particle 
+				minangle="0"
+				maxangle="0"
+				minanglespeed="-50"
+				maxanglespeed="-150"
+				startcolor=".7 .7 .25"
+				endcolor=".7 .7 .25"
+				midcolorpos=".5"
+				startsize="3"
+				endsize=".1"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".3"
+				startstickiness="1"
+				endstickiness="0"
+				scale="3"
+				anchor="1"
+			/>
+		</simpleemitter>
+
+		<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="2350"
+				count="10"
+				minparticlelife="500"
+				maxparticlelife="1650"
+				gravity="0"
+				maxspeed="170"
+				drag="0.1"
+				material="/shared/effects/materials/flame.material"
+				offsetsphere="0"
+			>
+				<particle 
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-10"
+					maxanglespeed="10"
+					startcolor="0"
+					midcolor=".3 .3 0"
+					endcolor="0"
+					midcolorpos=".3"
+					size="4"
+					startscale="5"
+					minendscale="30"
+					maxendscale="40"
+					midsizepos=".2"
+
+				/>
+				<particle 
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-15"
+					maxanglespeed="15"
+					startcolor="1 1 0"
+					midcolor=".6 .6 0 "
+					endcolor="0"
+					midcolorpos="0.2"
+					size="4"
+					startscale="5"
+					minendscale="20"
+					maxendscale="30"
+					midsizepos=".2"
+
+				/>
+			</simpleemitter>
+
+			
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="1000"
+				count="1"
+				particlelife="500"
+			>
+				<particle
+					startscale="0"
+					endscale="4"
+					angle="15"
+					anglespeed="170"
+					anchor="1"
+				>
+					<billboard
+						position="0 0 25"
+						startsize="50"
+						endsize="7"
+						life="500"
+						startcolor=".25 .25 .125"
+						midcolor=".25 .25 .125"
+						endcolor="0"
+						material="/shared/effects/materials/corona_01.material"
+					/>
+					<billboard
+						position="0 0 15"
+						startsize="50"
+						endsize="7"
+						scale=".7"
+						life="500"
+						startcolor=".25 .25 .125"
+						midcolor=".25 .25 .125"
+						endcolor="0"
+						material="/shared/effects/materials/corona_07.material"
+					/>
+					<billboard
+						position="0 0 -20"
+						startsize="50"
+						endsize="7"
+						scale=".5"
+						life="500"
+						startcolor=".25 .25 .125"
+						midcolor=".25 .25 .125"
+						endcolor="0"
+						material="/shared/effects/materials/corona_01.material"
+					/>
+				</particle>
+						
+			
+			</simpleemitter>
+
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

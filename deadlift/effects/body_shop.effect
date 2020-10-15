@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1">
+				<sound
+				delay="3500"
+				dampen=".5"
+				channelid="storeaud"
+				sound2d="true"
+				volume=".8"
+				sample="../sound_Ereshkigal/Ereshkigal_selected_4.wav"
+			/>
+			
+			<sound
+				delay="3000"
+				dampen=".5"
+				channelid="storeaud2"
+				sound2d="true"
+				volume=".5"
+				sample="/shared/sounds/attacks/attack_medium_2.wav"
+			/>
+			<sound
+				delay="800"
+				dampen=".5"
+				channelid="storeaud2"
+				sound2d="true"
+				volume=".5"
+				sample="/shared/sounds/attacks/attack_medium_3.wav"
+			/>
+		</particlesystem>   
+		<particlesystem name="system2" space="world" >
+			 
+			<model   
+				model="\heroes\\deadlift\ereshkigal_2/preview_2.mdf" 
+				anim="idle2"
+				  
+			/>  
+			 
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance2" particlesystem="system2" />
+      	<waitfordeath instance="instance0" />
+      	<waitfordeath instance="instance2" />
+		<!-- <die /> -->
+	</thread>
+</effect>

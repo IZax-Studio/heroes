@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Dampeer_Ult_Boost"
+	
+	icon=""
+	passiveeffect=""
+	morphmodel=""
+	
+	ishidden="true"
+	
+	deathpersist="true"
+	
+	effecttype=""
+>	
+	<altavatar key="Hero_Dampeer.Alt6">
+		<modifier key="Dampeer_Soul_1" priority="102"
+			passiveeffect="alt6/effects/soul1_boost.effect" 
+		/>
+		
+		<modifier key="Dampeer_Soul_2" priority="102"
+			passiveeffect="alt6/effects/soul2_boost.effect"
+		/>
+		
+		<modifier key="Dampeer_Soul_3" priority="102"
+			passiveeffect="alt6/effects/soul3_boost.effect"
+		/>
+		
+		<modifier key="Dampeer_Soul_4" priority="102"
+			passiveeffect="alt6/effects/soul4_boost.effect"
+		/>
+		
+		<modifier key="Dampeer_Soul_5" priority="102"
+			passiveeffect="alt6/effects/soul5_boost.effect"
+		/>
+		
+		<modifier key="Dampeer_Soul_6" priority="102"
+			passiveeffect="alt6/effects/soul6_boost.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Dampeer.Alt7">
+		<modifier key="Dampeer_Soul_1" priority="102"
+			passiveeffect="alt7/effects/soul1_boost.effect" 
+		/>
+		
+		<modifier key="Dampeer_Soul_2" priority="102"
+			passiveeffect="alt7/effects/soul2_boost.effect"
+		/>
+		
+		<modifier key="Dampeer_Soul_3" priority="102"
+			passiveeffect="alt7/effects/soul3_boost.effect"
+		/>
+		
+		<modifier key="Dampeer_Soul_4" priority="102"
+			passiveeffect="alt7/effects/soul4_boost.effect"
+		/>
+		
+		<modifier key="Dampeer_Soul_5" priority="102"
+			passiveeffect="alt7/effects/soul5_boost.effect"
+		/>
+		
+		<modifier key="Dampeer_Soul_6" priority="102"
+			passiveeffect="alt7/effects/soul6_boost.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Dampeer.Alt8">
+		<modifier key="Dampeer_Soul_1" priority="102"
+			passiveeffect="alt8/effects/soul1_boost.effect" 
+		/>
+		
+		<modifier key="Dampeer_Soul_2" priority="102"
+			passiveeffect="alt8/effects/soul2_boost.effect"
+		/>
+		
+		<modifier key="Dampeer_Soul_3" priority="102"
+			passiveeffect="alt8/effects/soul3_boost.effect"
+		/>
+		
+		<modifier key="Dampeer_Soul_4" priority="102"
+			passiveeffect="alt8/effects/soul4_boost.effect"
+		/>
+		
+		<modifier key="Dampeer_Soul_5" priority="102"
+			passiveeffect="alt8/effects/soul5_boost.effect"
+		/>
+		
+		<modifier key="Dampeer_Soul_6" priority="102"
+			passiveeffect="alt8/effects/soul6_boost.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Dampeer.Alt9">
+		<modifier key="Dampeer_Soul_1" priority="102"
+			passiveeffect="alt9/effects/soul1_boost.effect" 
+		/>
+		
+		<modifier key="Dampeer_Soul_2" priority="102"
+			passiveeffect="alt9/effects/soul2_boost.effect"
+		/>
+		
+		<modifier key="Dampeer_Soul_3" priority="102"
+			passiveeffect="alt9/effects/soul3_boost.effect"
+		/>
+		
+		<modifier key="Dampeer_Soul_4" priority="102"
+			passiveeffect="alt9/effects/soul4_boost.effect"
+		/>
+		
+		<modifier key="Dampeer_Soul_5" priority="102"
+			passiveeffect="alt9/effects/soul5_boost.effect"
+		/>
+		
+		<modifier key="Dampeer_Soul_6" priority="102"
+			passiveeffect="alt9/effects/soul6_boost.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Dampeer.Alt10">
+		<modifier key="Dampeer_Soul_1" priority="102"
+			passiveeffect="alt10/effects/soul1_boost.effect" 
+		/>
+		
+		<modifier key="Dampeer_Soul_2" priority="102"
+			passiveeffect="alt10/effects/soul2_boost.effect"
+		/>
+		
+		<modifier key="Dampeer_Soul_3" priority="102"
+			passiveeffect="alt10/effects/soul3_boost.effect"
+		/>
+		
+		<modifier key="Dampeer_Soul_4" priority="102"
+			passiveeffect="alt10/effects/soul4_boost.effect"
+		/>
+		
+		<modifier key="Dampeer_Soul_5" priority="102"
+			passiveeffect="alt10/effects/soul5_boost.effect"
+		/>
+		
+		<modifier key="Dampeer_Soul_6" priority="102"
+			passiveeffect="alt10/effects/soul6_boost.effect"
+		/>
+	</altavatar>
+</state>

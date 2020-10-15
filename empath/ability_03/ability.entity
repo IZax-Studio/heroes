@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Empath3"
+
+	icon="icon.tga"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	dontshowhovercast="true"
+	actiontype="passive"
+>
+	<aura name="empathaura" state="State_Empath_Ability3" radius="99999" targetscheme="ally_heroes" ignoreinvulnerable="true" />
+
+	<!-- Make the aura stack and not work with illusions -->
+	<modifier key="krosmode" modpriority="101"
+	>
+		<aura name="empathaura" state="State_Empath_Ability3" radius="99999" targetscheme="ally_heroes" propagatecondition="not_illusion" ignoreinvulnerable="true" stack="true" />
+	</modifier>
+	
+	<altavatar key="Hero_Empath.Alt4">
+		<modifier key="Grass"
+			passiveeffect=",../alt4/ability_03/effects/aura_grass_2.effect,../alt4/ability_03/effects/aura_grass_2.effect,../alt4/ability_03/effects/aura_grass_4.effect"
+		/>
+		<modifier key="Fire"
+			passiveeffect=",../alt4/ability_03/effects/aura_fire_2.effect,../alt4/ability_03/effects/aura_fire_2.effect,../alt4/ability_03/effects/aura_fire_4.effect"
+		/>
+		<modifier key="Rock"
+			passiveeffect=",../alt4/ability_03/effects/aura_rock_2.effect,../alt4/ability_03/effects/aura_rock_2.effect,../alt4/ability_03/effects/aura_rock_4.effect"
+		/>
+		<modifier key="Water"
+			passiveeffect=",../alt4/ability_03/effects/aura_water_2.effect,../alt4/ability_03/effects/aura_water_2.effect,../alt4/ability_03/effects/aura_water_4.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Empath.Alt7"
+		passiveeffect=""
+		icon="../alt7/ability_03/icon.tga"
+	>
+		<modifier key="Alt7_Ability3_Upgrade"
+			passiveeffect="../alt7/ability_03/effects/aura_upgrade.effect"
+			icon="../alt7/ability_03/icon_upgrade.tga"
+		/>
+	</altavatar>
+	
+</ability>

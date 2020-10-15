@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="entity" scale="1">
+			
+			
+
+			
+			<billboard
+				bone="_bone_centerofchest"
+				startcolor=".4 .1 0"
+				midcolor=".4 .1 0"
+				endcolor=".4 .1 0"
+				position="0 0 -10"
+				material="/shared/effects/materials/whitedot.material"
+				startsize="40"
+				midsize="120"
+				endsize="40"
+				directionalspace="world"
+				depthbias="-90"
+				lockup="0"
+				lockright="0"
+				loop="true"
+				life="900"
+				yawspeed="0"
+				expirelife="300"
+			/>
+			<billboard
+				
+				startcolor=".4 .1 0"
+				midcolor=".4 .1 0"
+				endcolor=".4 .1 0"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				startsize="120"
+				midsize="40"
+				endsize="120"
+				directionalspace="world"
+				depthbias="-60"
+				lockup="0"
+				lockright="0"
+				loop="true"
+				life="900"
+				yawspeed="0"
+				expirelife="300"
+			/>
+				
+		
+			<simpleemitter
+				spawnrate="5"
+				particlelife="950"
+				gravity="-150"
+				speed="150"
+				drag="1"
+				acceleration="0.00"		
+				expirelife="300"
+				material="/shared/effects/materials/corona_06.material"
+				offsetsphere="0 0 0"
+				direction="0 0 1"
+				position="0 0 35"
+				particlecolor="0.2 0.2 0.2"
+				
+			>
+				<particle 
+					angle="0"
+					startcolor=".4 .1 0"
+					midcolor=".0 .0 .0"
+					endcolor="0 0 0"
+					midcolorpos=".4"
+					startframe="0"
+					endframe="1"
+					startsize="60"
+					midsize="120"
+					endsize="0"
+					
+					
+					stickiness="0"
+					depthbias="-90"
+
+				/>
+				
+			</simpleemitter>
+		</particlesystem>
+		<particlesystem name="systemEntity" space="entity" scale="1">
+			<billboard
+				life="1600" loop="true"
+				bone="_bone_origin"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor=".4 .1 0" midcolor=".4 .1 0" endcolor=".4 .1 0"
+				lockup="true" lockright="true"
+				pitch="-90"
+				depthbias="-5"
+				startsize="80" midsize="100" endsize="80"
+			/>
+			<!-- ground fire -->
+			<billboard
+				life="1000" loop="true"
+				position="0 0 0"
+				bone="_bone_origin"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor=".4 .1 0" midcolor=".4 .1 0" endcolor=".4 .1 0"
+				lockup="true" lockright="true"
+				pitch="-90"
+				depthbias="-5"
+				startsize="80" midsize="100" endsize="80" scale="1"
+			/>
+			<!-- body surround fire -->
+			<template name="bodySurroundFire">
+				<model
+					position="0 0 50"
+					name="emitter0"
+					anim="idle"
+					model="/shared/effects/models/circle_of_bones/model.mdf"
+					scale="1.1"
+					yawspeed="{yawspeed=200}" pitchspeed="{pitchspeed=-60}"
+				>
+					<template name="trails">
+						<controller minscale=".8" maxscale="1.5" bone="{bone}">
+							<billboard
+								color=".4 .1 0"
+								size="20"
+								rollspeed="120"
+								material="/shared/effects/materials/star_03.material"
+							/>
+							<billboard
+								color=".4 .1 0"
+								size="12"
+								material="/shared/effects/materials/whitedot3.material"
+							/>
+							<simpleemitter
+								position="0 0 -1"
+								spawnrate="80"
+								material="/shared/effects/materials/arrow_trail_layer1.material"
+								minparticlelife="300" maxparticlelife="650"
+								offsetsphere="1.5"
+								direction="0 0 -1"
+							>
+								<particle
+									startsize="30" endsize="15" scale=".15"
+									maxangle="360" minanglespeed="-200" maxanglepseed="200"
+									startcolor="0" midcolor=".3" endcolor="0" midcolorpos=".2"
+								/>
+							</simpleemitter>
+							<!-- light trail -->
+							<simpleemitter
+								spawnrate="40"
+								material="/shared/effects/materials/arrow_trail_layer1.material"
+								minparticlelife="300" maxparticlelife="650"
+								offsetsphere="1.5"
+								direction="0 0 -1"
+							>
+								<particle
+									startsize="30" endsize="15" scale=".3"
+									maxangle="360" minanglespeed="-200" maxanglepseed="200"
+									startcolor="0" midcolor=".4 .1 0" endcolor="0" midcolorpos=".2"
+								/>
+							</simpleemitter>
+							<!-- dark trail -->
+							<simpleemitter
+								spawnrate="40"
+								material="/shared/effects/materials/black_trail.material"
+								minparticlelife="300" maxparticlelife="650"
+								offsetsphere="1.5"
+								direction="0 0 -1"
+							>
+								<particle
+									startsize="30" endsize="15" scale=".55"
+									maxangle="360" minanglespeed="-200" maxanglepseed="200"
+									startalpha="0" midalpha=".4" endalpha="0" midalphapos=".2"
+								/>
+							</simpleemitter>
+						</controller>
+					</template>
+					<instance name="trails" bone="{bone}"/>
+				</model>
+			</template>
+			<instance name="bodySurroundFire" bone="_bone_fx_03"/>
+			<instance name="bodySurroundFire" yawspeed="-140" pitchspeed="-90" bone="_bone_fx_09"/>
+			<instance name="bodySurroundFire" yawspeed="240" pitchspeed="40" bone="_bone_fx_05"/>
+		</particlesystem>
+
+		
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instanceEntity" particlesystem="systemEntity" />
+		<waitfordeath instance="instance0" />
+		
+		<waitfordeath instance="instanceEntity" />
+	
+	</thread>
+
+</effect>

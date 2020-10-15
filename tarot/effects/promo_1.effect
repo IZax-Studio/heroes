@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="false" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<template name="rotating_card">
+				<model
+					model="/shared/models/invis.mdf"
+					bone="_bone_center"
+					yaw="{yaw}"
+					yawspeed="180"
+					directionalspace="global"
+				>
+					<model
+						model="/shared/models/invis.mdf"
+						position="0 40 0"
+					>
+						<billboard
+							expirelife="200"
+							material="/shared/effects/materials/whitedot.material"
+							lockup="true"
+							directionalspace="local"
+							color="{color}"
+							startheight="110"
+							endheight="0"
+							startwidth="40"
+							endwidth="0"
+						/>
+						<billboard
+							expirelife="200"
+							material="/shared/effects/materials/card_tarot_{n}.material"
+							lockup="true"
+							directionalspace="local"
+							color="1 1 1"
+							startheight="16"
+							endheight="0"
+							startwidth="8"
+							endwidth="0"
+						/>
+								
+						<simpleemitter
+							spawnrate="20"
+							particlelife="250"
+							material="/shared/effects/materials/sparks_reveal.material"
+							maxspeed="20"
+							inheritvelocity="0.1"
+							limitinheritvelocity="20"
+							drag="0.02"
+							gravity="-1"
+						>
+							<particle
+								maxangle="360"
+								startcolor="0"
+								midcolor="1"
+								endcolor="{color}"
+								midcolorpos=".25"
+								minsize="20"
+								maxsize="35"
+								startframe=".3"
+								endframe="1"
+							/>
+						</simpleemitter>
+					</model>
+				</model>
+			</template>
+			
+			<instance name="rotating_card" yaw="0" color="0 .4 .4" n="2" />
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+</effect>

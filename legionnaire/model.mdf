@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="kotori_RE/model.model" type="K2" >
+	
+	<anim name="idle" clip="kotori_RE/clips/bat_idle.clip" fps="30" numframes="80" loop="true" blendtime="200"/>
+	
+	<anim name="portrait" clip="kotori_RE/clips/bat_idle.clip" loop="true" fps="10" />
+	
+	<anim name="attack_1" clip="kotori_RE/clips/single_attack_1.clip" fps="28" blendtime="200">
+		<frameevent frame="10" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 400 2000 .65"/>
+		<frameevent frame="10" cmd="PlaySoundLinear sounJP/170_0_Atk_Whoosh_0%.wav 400 2000 .5"/>
+		<frameevent frame="5" cmd="PlaySoundLinear sounJP/170_0_Atk_Foley_0%.wav 400 1500 .5"/>
+		<frameevent frame="15" cmd="StartEffect effects/attack_1.effect" />
+		
+		
+		
+	</anim>
+	
+	<anim name="attack_2" clip="kotori_RE/clips/single_attack_2.clip" fps="28" blendtime="200"> 
+		<frameevent frame="10" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 400 2000 .65"/>
+		<frameevent frame="10" cmd="PlaySoundLinear sounJP/170_0_Atk_Whoosh_0%.wav 400 2000 .5"/>
+		<frameevent frame="5" cmd="PlaySoundLinear sounJP/170_0_Atk_Foley_0%.wav 400 1500 .5"/>
+		<frameevent frame="15" cmd="StartEffect effects/attack_2.effect" />
+		</anim>
+	
+	<anim name="walk_1" clip="kotori_RE/clips/bat_run.clip"  fps="30" loop="true" loopbackframe="1" blendtime="300">
+		<frameevent frame="3" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="8" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="15" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="20" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="27" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="32" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="38" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="43" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		
+		<frameevent frame="3" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="3" cmd="PlaySoundLinear /shared/sounds/footsteps/heavy_%.mp3 0 2400 .25"/>
+		<frameevent frame="15" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="15" cmd="PlaySoundLinear /shared/sounds/footsteps/heavy_%.mp3 0 2400 .25"/>
+		<frameevent frame="27" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="27" cmd="PlaySoundLinear /shared/sounds/footsteps/heavy_%.mp3 0 2400 .25"/>
+		<frameevent frame="38" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="38" cmd="PlaySoundLinear /shared/sounds/footsteps/heavy_%.mp3 0 2400 .25"/>
+	</anim>
+	
+	<anim name="death_1" clip="kotori_RE/clips/dead.clip" loop="true" loopbackframe="-1">
+	<frameevent frame="5.5" cmd="PlaySoundLinear sounJP/170_0_Dead.wav 400 2000 .5"/>
+	<frameevent frame="1" cmd="PlaySoundLinear sounJP/death_%.wav 400 2000 1"/>
+	<frameevent frame="30" cmd="StartEffect death.effect"/>
+	</anim>
+	
+	<anim name="ability_1" clip="kotori_RE/clips/single_skill_03.clip" fps="30" loop="false">
+	<frameevent frame="1" cmd="PlaySoundLinear sounJP/sk1.wav 400 2000 1"/>
+	<frameevent frame="2" cmd="PlaySoundLinear sounJP/170_0_Q_Fire.wav 400 2000 .5"/>
+	</anim>
+	
+	<anim name="ability_2_start" clip="kotori_RE/clips/single_skill_05.clip" fps="30" loop="false">
+	<frameevent frame="2" cmd="PlaySoundLinear sounJP/170_0_R_Foley.wav 400 2000 1"/>
+	</anim>
+
+	<anim name="ability_2_sprint" clip="kotori_RE/clips/single_run.clip" fps="30" loop="true" blendtime="200">
+		<frameevent frame="7" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="7" cmd="PlaySoundLinear /shared/sounds/footsteps/giant_%.wav 0 2400 .2"/>
+		<frameevent frame="17" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="17" cmd="PlaySoundLinear /shared/sounds/footsteps/giant_%.wav 0 2400 .2"/>
+		<frameevent frame="5"  cmd="PlaySoundLinear ability_02/sounds/drag_%.wav 200 1400 .2"/>
+		<frameevent frame="5"  cmd="PlaySoundLinear /heroes/bephelgor/sounds/move_%.wav 200 1400 .35"/>
+		<startevent cmd="StartEffect ability_2_sprint.effect 9"/>
+
+		<endevent cmd="StopEffect 9" />
+	</anim>
+
+	<anim name="ability_2_attack" clip="kotori_RE/clips/single_attack_3.clip" fps="40" loop="false">
+		<frameevent frame="10" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 400 2000 .65"/>
+		<frameevent frame="10" cmd="PlaySoundLinear sounJP/170_0_Atk_Whoosh_0%.wav 400 2000 .5"/>
+		<frameevent frame="5" cmd="PlaySoundLinear sounJP/170_0_Atk_Foley_0%.wav 400 1500 .5"/>
+		<frameevent frame="10" cmd="StartEffect effects/attack_3.effect" />
+		<frameevent frame="1" cmd="StartEffect ability_02/effects/swoosh.effect"/>
+	</anim>
+	
+	<anim name="ability_3" clip="kotori_RE/clips/single_skill_01.clip" fps="60" loop="false">
+	</anim>
+	
+	<anim name="ability_4" clip="kotori_RE/clips/single_skill_01.clip" fps="35" startframe="8" numframes="100" blendtime="100">
+		<frameevent frame="1" cmd="PlaySoundLinear ability_04/sounds/cast.wav 400 2000 .75"/>
+		<frameevent frame="11" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 400 2000 .65"/>
+		<frameevent frame="1" cmd="PlaySoundLinear sounJP/sk4.wav 400 2000 1"/>
+		<startevent cmd="StartEffect cast_kotori_re.effect 9"/>
+		<endevent cmd="StopEffect 9" />
+	</anim>
+
+	<anim name="bored_1" clip="kotori_RE/clips/bat_specialidle.clip" loop="false">
+	<frameevent frame="1" cmd="PlaySoundLinear sounJP/170_0_Idle.wav 400 1500 .5"/>
+	</anim>
+
+	<anim name="knock_1" clip="kotori_RE/clips/dead.clip" loop="true" loopbackframe="-1" startframe="10" numframes="400"/>
+
+	<anim name="taunt_1" clip="kotori_RE/clips/dance.clip" fps="30" loop="false" startframe="15" numframes="400" />
+
+	<anim name="item_1" clip="kotori_RE/clips/single_touzhi.clip" fps="30" loop="false"/>
+	
+	<anim name="attack_order" clip="kotori_RE/clips/single_attack_1.clip" fps="90" loop="false" blendtime="200">
+		<frameevent frame="12" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 400 2000 .65"/>
+		<frameevent frame="12" cmd="PlaySoundLinear /heroes/hiro/sounds/attack_%.wav 400 2000 .15"/>
+	</anim>
+	
+</model>

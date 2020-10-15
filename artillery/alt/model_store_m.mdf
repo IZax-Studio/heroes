@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="\heroes\artillery\model1.model" med="\heroes\artillery\model1.model" low="\heroes\artillery\model1.model" >
+
+	<anim name="idle" clip="\heroes\artillery\idle.clip" loop="true" fps="511"/>
+
+	<anim name="bored_1" clip="\heroes\artillery\idle5.clip" fps="510">
+		<frameevent frame="1" cmd="StartModelPanelEffect store2_detail_heroAvatars_large_model effects/body_store2.effect"/>
+	</anim>
+	<anim name="idle2" clip="\heroes\artillery\idle3.clip" fps="511" loop="true"/>
+</model>

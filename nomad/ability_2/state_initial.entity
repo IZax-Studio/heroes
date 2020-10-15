@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Nomad_Ability2_Initial"
+
+	icon=""
+	ishidden="true"
+	
+	unitwalking="true"	
+	impactinterval="50"
+	
+	effecttype=""
+>
+	<onimpact>
+		<disjoint target="source_entity" />
+		<spawnillusion
+			owner="source_entity"
+			source="source_entity"
+			count="1"
+			lifetime="3000"
+			receivedamagemultiplier="1"
+			inflictdamagemultiplier="1"
+			fixedposition="true"
+			uncontrollable="true"
+			pushentity="true"
+			inheritactions="true"
+		/>
+		<applystate name="State_Nomad_Ability2_Attack_Illusion" target="stack_entity" duration="3000" proxy="this_proxy_entity" />
+		<applystate name="State_Nomad_Ability2_Self" continuous="true" duration="1000" target="stack_entity"  />
+		<order command="attack" source="stack_entity" target="this_proxy_entity" queue="front" />
+		<applystate name="State_Nomad_Ability2_Sight" target="this_proxy_entity" pushentity="true" duration="5000" />
+		<applystate name="State_Nomad_Ability2_Invis" duration="3000" target="source_entity" proxy="stack_entity" />
+	</onimpact>
+	<altavatar key="Hero_Nomad.Alt12"
+		icon="../alt12/ability_02/icon.tga"
+	>
+		<modifier key="nomadAlt12_Ability2_Upgrade"
+			icon="../alt12/ability_02/icon_u.tga"
+		/>
+	</altavatar>
+</state>

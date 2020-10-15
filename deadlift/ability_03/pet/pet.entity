@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pet
+	name="Pet_Deadlift_Ability3"
+	
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="/npcs/good_melee/model.mdf"
+	skin=""
+	
+	passiveeffect="../../ability_04/effects/state.effect"
+	spawneffect="effects/spawn.effect"
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	preglobalscale="1.3"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="64"
+	boundsradius="16"
+	selectionradius="36"
+	targetoffset="0 0 54"
+
+	movespeed="325"
+	turnrate="320"
+
+	maxhealth="200"
+	healthregen="0"
+	immunity=""
+	maxmana="0"
+	manaregen="0"
+	diewithowner="true"
+	iscontrollable="true"
+	unitwalking="true"
+
+	armor="2"
+	magicarmor="0"
+
+	cancarryitems="false"
+	inventory0=""
+	inventory1=""
+	inventory2=""
+	inventory3=""
+	inventory4=""
+	inventory5=""
+	inventory6=""
+	inventory7=""
+
+	attackduration="700"
+	attackactiontime="350"
+	attackcooldown="1600"
+	attackdamagemin="30"
+	attackdamagemax="30"
+	attacknumanims="2"
+	attackoffset="0 30 100"
+	attackprojectile=""
+	attackrange="90"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="effects/impact.effect"
+	attacktargetscheme="attack"
+	attacktype="melee"
+	combattype="Melee"
+
+	aggrorange="600"
+	proximityrange="0"
+	sightrangeday="1000"
+	sightrangenight="600"
+	wanderrange="150"
+
+	experiencebounty="10"
+	goldbountymin="10"
+	goldbountymax="10"
+	
+	corpsetime="1500"
+	corpsefadetime="2500"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	lifetime="6000"
+	showlifetime="true"
+	unittype="Uninfestable"
+	inheritvisibilityfromowner="true"
+	isdragselectablemulti="true"
+>
+	<onspawn>
+		<!-- If Deadlift is dead, kill me -->
+		<targettype type="dead" target="source_entity">
+			<kill target="this_entity" />
+		</targettype>
+		<compare source="this_owner_entity" a="2" b="source_team" op="eq">
+			<setactivemodifierkey entity="this_entity" name="Hellbourne" />
+		</compare>
+
+		<order command="aggressive_wander" force="true" forceduration="100000" source="this_entity" target="this_owner_entity" />
+	</onspawn>
+	
+	<ondamage />
+	<onattack />
+	<onframe />
+
+	<onexpired>
+		<pushability name="Ability_Deadlift3" source="this_owner_entity" />
+		<compare source="stack_entity" a="source_level" b="0" op="gt">
+			<hasavatarkey name="Hero_Deadlift.Alt">
+				<playeffect effect="../../alt/ability_03/effects/strength.effect" target="this_entity" source="this_owner_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Deadlift.Alt2">
+					<playeffect effect="../../alt2/ability_03/effects/strength.effect" target="this_entity" source="this_owner_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Deadlift.Alt3">
+						<playeffect effect="../../alt3/ability_03/effects/strength.effect" target="this_entity" source="this_owner_entity" />
+					</hasavatarkey>
+					<else>
+						<playeffect effect="../effects/strength.effect" target="this_entity" source="this_owner_entity" />
+					</else>
+				</else>
+			</else>
+			<setvar0 source="this_owner_entity" a="source_maxhealth" b="0.01" op="mult" />
+			<heal target="this_owner_entity" a="var0" />
+		</compare>
+	</onexpired>
+	
+<!-- 	<onkilled>
+		<cantarget targetscheme="ally_units" target="target_entity" />
+		<else>
+			<compare a="target_entity" b="0" op="ne">
+				<givegold amount="10" target="target_entity" source="source_entity" />
+				<giveexperience amount="10" target="target_entity" source="source_entity" />
+			</compare>
+		</else>
+	</onkilled>	 -->
+
+	<modifier key="Deadlift_CreepVis" modpriority="102" 
+		inheritvisibilityfromowner="false"
+		alwaysvisible="true"
+	>
+	</modifier>
+	
+	<modifier key="Hellbourne" modpriority="101"
+		model="/npcs/bad_melee/model.mdf"
+	/>
+
+	<modifier key="deadlift_controls_me"  modpriority="110"
+		iscontrollable="false"
+		proximityrange="200"
+	>
+		<onframe>
+			<distance source="this_entity" target="this_owner_entity" />
+			<compare a="result" b="2000" op="gt">
+				<teleport source="this_entity" target="this_owner_entity" interpolate="false" />
+				<order command="aggressive_wander" force="true" forceduration="100000" source="this_entity" target="this_owner_entity" />
+			</compare>
+
+			<distance source="this_entity" target="this_owner_entity" />
+			<compare a="result" b="750" op="gt">
+				<order command="aggressive_wander" force="true" forceduration="100000" source="this_entity" target="this_owner_entity" />
+			</compare>
+			
+			<!-- Creep aggro control when Deadlift is invis -->
+			<isstealthed entity="this_owner_entity">
+				<applystate name="State_Deadlift_Ability3_Invis_AggroControl" target="this_entity" continuous="true" />
+			</isstealthed>
+			<else>
+				<expirestate name="State_Deadlift_Ability3_Invis_AggroControl" target="this_entity" />
+			</else>
+		</onframe>
+
+		<onattack>
+			<cantarget targetscheme="nonneutral_enemy_units">
+				<applystate name="State_Deadlift_Ability3_Reveal" target="this_entity" duration="2000" />
+			</cantarget>
+		</onattack>
+	</modifier>
+
+	<modifier key="Deadlift_ForceAttack"  modpriority="111"
+		iscontrollable="false"
+	/>
+
+	<altavatar key="Hero_Deadlift.Alt"
+		icon="../../alt/ability_03/pet/icon.tga"
+		passiveeffect="../../alt/ability_03/pet/effects/state.effect"
+		spawneffect="../../alt/ability_03/effects/spawn.effect"
+		attackimpacteffect="../../alt/ability_03/effects/impact.effect"
+	/>
+
+	<altavatar key="Hero_Deadlift.Alt2"
+		icon="../../alt/ability_03/pet/icon.tga"
+		passiveeffect="../../alt2/ability_03/effects/state.effect"
+		spawneffect="../../alt2/ability_03/effects/spawn.effect"
+	/>
+	
+	<altavatar key="Hero_Deadlift.Alt3"
+		icon="../../alt/ability_03/pet/icon.tga"
+		attackimpacteffect="../../alt3/ability_03/effects/impact.effect"
+		passiveeffect="../../alt3/ability_03/effects/state.effect"
+		spawneffect="../../alt3/ability_03/effects/spawn.effect"
+	/>
+</pet>

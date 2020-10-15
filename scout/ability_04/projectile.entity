@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Scout_Ability4"
+
+	speed="2000"
+	gravity="2500"
+
+	modelscale="2"
+	model="/shared/models/invis.mdf"
+
+	effectscale=".5"
+	impacteffect="effects/impact.effect"
+	traileffect="effects/trail.effect"
+>
+	<onimpact>
+		<combatevent effecttype="AbilityBasedProjectile">
+			<onimpact>
+				<cantarget ignoreinvulnerable="false">
+					<applystate name="State_Stunned" duration="200" />
+					<applystate name="State_Scout_Ability4_Slow" duration="4000" />
+					<setvar0 a="target_maxhealth" b="0.1,0.2,0.3" op="mult" />
+					<setvar0 a="var0" b="250" op="add" />
+					<damage effecttype="Magic" amount="1" b="var0" op="mult" />
+				</cantarget>
+			</onimpact>
+		</combatevent>
+	</onimpact>
+	
+	<modifier key="ult_boost">
+		<onimpact>
+			<combatevent effecttype="AbilityBasedProjectile">
+				<onimpact>
+					<cantarget ignoreinvulnerable="false">
+						<applystate name="State_Stunned" duration="200" />
+						<applystate name="State_Scout_Ability4_Slow" duration="4000" />
+						<setparam entity="this_entity" a="target_maxhealth" b="0.1,0.2,0.3" op="mult" />
+						<setparam a="param" b="250" op="add" />
+						<damage effecttype="Magic" amount="1" b="param" op="mult" />
+						
+						<applystate name="State_Scout_Ability4_Tether" duration="3000" target="source_entity" proxy="target_entity" />
+						<setproxy entity="source_entity" target="target_entity" />
+					</cantarget>
+				</onimpact>
+			</combatevent>
+		</onimpact>
+	</modifier>
+
+	<altavatar key="Hero_Scout.Alt2"
+		impacteffect="../alt2/ability_04/effects/impact.effect"
+		traileffect="../alt2/ability_04/effects/trail.effect"
+		gravity="0"
+	/>
+
+	<altavatar key="Hero_Scout.Alt3"
+		impacteffect="../alt3/ability_04/effects/impact.effect"
+		traileffect="../alt3/ability_04/effects/trail.effect"
+		gravity="0"
+	/>
+
+	<altavatar key="Hero_Scout.Alt5"
+		model="../alt5/ability_04/effects/model.mdf"
+		impacteffect="../alt5/ability_04/effects/impact.effect"
+		traileffect="../alt5/ability_04/effects/trail.effect"
+	/>
+
+	<altavatar key="Hero_Scout.Alt5_Classic"
+		model="../alt5/ability_04/effects/model.mdf"
+		impacteffect="../alt5/ability_04/effects/impact.effect"
+		traileffect="../alt5/ability_04/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Scout.Alt6"
+		impacteffect="../alt6/ability_04/effects/impact.effect"
+		traileffect="../alt6/ability_04/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Scout.Alt7"
+		traileffect="../alt7/ability_04/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Scout.Alt8"
+		traileffect="../alt8/ability_04/effects/trail.effect"
+		impacteffect="../alt8/ability_04/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Scout.Alt9"
+		traileffect="../alt9/ability_04/effects/trail.effect"
+		impacteffect="../alt9/ability_04/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Scout.Alt10"
+		traileffect="../alt10/ability_04/effects/trail.effect"
+		impacteffect="../alt10/ability_04/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Scout.Alt11"
+		traileffect="../alt11/ability_04/effects/trail.effect"
+		impacteffect="../alt11/ability_04/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Scout.Alt12"
+		traileffect="../alt12/ability_04/effects/trail.effect"
+		impacteffect="../alt12/ability_04/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Scout.Alt13"
+		traileffect="../alt13/ability_04/effects/trail.effect"
+		impacteffect="../alt13/ability_04/effects/impact.effect"
+	/>
+	
+	<modifier key="soccer" modpriority="150">
+		<onimpact>
+			<combatevent effecttype="AbilityBasedProjectile">
+				<onimpact>
+					<cantarget ignoreinvulnerable="false">
+						<applystate name="State_Scout_Ability4_Slow" duration="4000" />
+						<damage effecttype="Magic" amount="75" />
+					</cantarget>
+				</onimpact>
+			</combatevent>
+		</onimpact>
+	</modifier>
+	
+</projectile>
+

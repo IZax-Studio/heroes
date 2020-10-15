@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world"  scale="0.5">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2200"
+				volume="1"
+				sample="sa2.mp3"
+			/>
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2200"
+				volume=".2"
+				sample="/heroes/rocky/ability_01//sounds/ability_01_impact_%.wav"
+			/>
+ 
+                  <sound
+				sample="/heroes/kunas/ability_02/sounds/ability_02.wav"
+				volume="0.5"
+				linearfalloff="true"
+				falloffstart="1500"
+				falloffend="2500"
+			/>
+
+
+                  <beam
+				life="350"
+			
+				position_a="0 0 4000"
+				size="600"
+				color=".35 .35 .35"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				framespeed="1.75"
+
+			/>
+
+			<beam
+				life="350"
+			
+				position_a="0 0 4000"
+				size="150"
+				color=".5 1 1"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				framespeed="1.75"
+
+			/>
+			<beam
+				life="350"
+			
+				position_a="0 0 4000"
+				size="200"
+				color=".1 .5 .5"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				framespeed="1.75"
+			/>
+
+			<beam
+				life="350"
+				position_a="0 0 4000"
+				size="600"
+				color=".1 .5 .5"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				framespeed="1.75"
+			/>
+<billboard
+				life="200"
+				startcolor="0 0 0"
+				midcolor="0 .1 .2"
+				endcolor="0 0 0"
+				startalpha="1.0"
+				midalpha="1.0"
+				endalpha="0.0"
+				midalphapos="0.75"
+				startparam="0.05"
+				endparam="0.0"
+				startsize="400"
+				midsize="400"
+				endsize="400"
+				midsizepos=".4"
+				depthbias="-100"
+				position="0 0 20"
+				material="/shared/effects/materials/whitedot.material"
+				lockup="true"
+				pitch="90"
+			/>
+			
+			<simpleemitter
+				spawnrate="150"
+				
+				count="25"
+				particlelife="200"
+				gravity="0"
+				speed="70"
+				drag="0"
+				acceleration="0"
+				position="0 0 0"
+				material="/shared/effects/materials/lightning_02.material"
+				offsetsphere="1 1 1"
+				minangle="360"
+				maxangle="180"
+				direction="1 0 0"
+				offsetdirection="0 0 0"
+				offsetradial="0 0 0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="50"
+					maxanglespeed="150"
+					startcolor=".1 .5 .5"
+					midcolor=".1 .5 .5"
+					endcolor="0 0 0"
+					midcolorpos=".8"
+					startframe="0"
+					endframe="1"
+					startsize="1"
+					midsize="29"
+					endsize="49"
+					startalpha="0"
+					midalpha=".3"
+					endalpha="0"
+					midalphapos=".5"
+					startstickiness="0"
+					endstickiness="0"
+				/>
+			</simpleemitter>
+
+
+
+
+
+			<simpleemitter
+				offsetsphere="5"
+				spawnrate="5500"			
+				count="35"
+				gravity="-3"
+				minparticlelife="600"
+				maxparticlelife="1500"	
+				minspeed="340"		
+				maxspeed="750"
+				minangle="-90"
+				maxangle="-90"
+				depthbias="-30"
+				drag="0.0075"
+				direction="0 0 1"
+				acceleration="110"
+				position="0 0 25"
+				material="/shared/effects/materials/smoke_particle.material"	
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					color=".1 .3 .2"
+					size="125"
+					minendscale="2"
+					maxendscale="5"
+					minanglespeed="-60"
+					maxanglespeed="75"
+					startalpha="0"
+					midalpha=".3"
+					endalpha="0"
+					anchor="1"
+				/>
+
+				<particle
+					minangle="-360"
+					maxangle="360"
+					color=".1 .2 .1"
+					size="125"
+					minendscale="1.5"
+					maxendscale="6"
+					minanglespeed="-30"
+					maxanglespeed="35"
+					startalpha="0"
+					midalpha=".3"
+					endalpha="0"
+					anchor="1"
+				/>
+			</simpleemitter>
+
+			<groundsprite	
+				delay="150"
+				life="4400"
+				material="/shared/effects/materials/earth_cracks_02.material"
+				maxyaw="360"
+				minsize="150"
+				maxsize="220"			
+				color="1"
+				startalpha=".4"
+				midalpha=".4"
+				midalphapos="0.9"
+				endalpha="0"
+			/>
+		
+			<groundsprite	
+				delay="150"
+				life="4400"
+				material="/shared/effects/materials/earth_cracks_02.material"
+				maxyaw="360"
+				minsize="220"
+				maxsize="350"			
+				color="1"
+				startalpha=".8"
+				midalpha=".8"
+				midalphapos="0.9"
+				endalpha="0"
+			/>	
+		
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

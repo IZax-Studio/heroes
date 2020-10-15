@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model file="../yoshino/model.model" type="K2">
+	<anim name="idle" clip="../yoshino/clips/bat_idle.clip" fps="15" loop="true"/>
+</model>  

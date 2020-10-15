@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Bombardier_Ability1_Modifier"
+
+	icon="../icon/1.png"
+	
+	ishidden="true"
+	deathpersist="true"
+	
+	modifierkey="bombardier_bombout_1"
+>
+	<onexpired>
+		<setcharges entity="this_proxy_entity" a="0" />
+		<resettimer entity="this_proxy_entity" />
+	</onexpired>
+	
+	<altavatar key="Hero_Bombardier.Alt4" 
+		icon="../alt4/ability_01/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Bombardier.Alt11"
+	    icon="../alt11/ability_01/icon.tga"
+	/>
+		
+</state>

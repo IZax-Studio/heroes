@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true" deferred="true">
+	<definitions>
+		
+		<particlesystem name="system0" space="world" scale="2">
+
+			<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2500" 
+				volume=".4" 
+				sample="../sounds/impact.wav"
+			/>
+		
+		<sound
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="2000" 
+				volume=".8" 
+				sample=""
+				life="6000" 
+			/>
+			<billboard
+				bone="_bone_centerofchest"
+				life="250"
+				startcolor=".61 .52 .07"
+				midcolor=".61 .52 .07"
+				endcolor="0"
+				midcolorpos="0.3"
+				startsize="0"
+				endsize="200"
+				depthbias="-25"
+				material="/shared/effects/materials/music_rings_add.material"
+				position="0 0 0"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="250"
+				startcolor=".61 .52 .07"
+				midcolor=".61 .52 .07"
+				endcolor="0"
+				midcolorpos="0.3"
+				startsize="0"
+				endsize="200"
+				depthbias="-25"
+				material="/shared/effects/materials/musical_ring_add.material"
+				position="0 0 0"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+		
+			<simpleemitter
+				count="25"
+				life="250"
+				bone="_bone_centerofchest"
+				spawnrate="500"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				minspeed="10"
+				maxspeed="250"
+				drag="0.01"
+				inheritvelocity=".25"
+				offsetsphere="10 10 10"
+				gravity="2"
+				material="/shared/effects/materials/note_1.material"
+			>
+				<particle
+					color=".61 .52 .07"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".2"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					startsize="40"
+					endsize="0"
+					depthbias="-160"
+				/>
+				
+				<particle
+					color=".8 0 0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".2"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					startsize="40"
+					endsize="0"
+					depthbias="-160"
+				/>				
+				
+			</simpleemitter>
+
+			<billboard
+				delay="100"
+				bone="_bone_centerofchest"
+				position="0 0 0"
+				life="350"
+				param="0.1"	
+				startsize="50"
+				endsize="150"
+				startalpha="0"
+				midalpha=".4"
+				endalpha="0"				
+				depthbias="0"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				position="0 0 0"
+				delay="275"
+				life="350"
+				param="0.1"	
+				startsize="50"
+				endsize="150"
+				startalpha="0"
+				midalpha=".4"
+				endalpha="0"				
+				depthbias="0"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+			
+			<billboard
+				bone="_bone_center"
+				life="250"
+				startcolor="0 0 0"
+				midcolor=".61 .52 .07"
+				endcolor="0 0 0"
+				size="90"
+				material="/heroes/drunkenmaster/effects/material.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				rollspeed="180"
+				directionalspace="local"
+				depthbias="0"
+				position="0 0 25"
+			/>
+
+			<!-- Ze Birds -->
+			<model
+				position="0 0 50"
+				life="750"
+				name="emitter0" 
+				anim="idle"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				startscale="0"
+				endscale="15"
+				startcolor="0 0 0"
+				midcolor="0 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".75"
+				startalpha="0"
+				midalpha="0"
+				endalpha="0"
+				midalphapos=".4"
+				lockup="1"
+				lockright="1"
+				minyaw="-180"
+				maxyaw="180"
+			>
+
+				<template name="birds">
+					<model
+						life="500"
+						bone="{zbone}"
+						model="/heroes/rhapsody/alt3/ability_01/effects/bird/bird_fly/model.mdf"
+						material="/heroes/rhapsody/alt3/ability_01/effects/bird/bird_fly/material.material"
+						anim="idle"
+						scale=".06"
+						color="1 1 1"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".6"
+						position="0 0 0"
+						lockup="1"
+						lockright="1"
+						yaw="-80"
+					>
+					
+						<simpleemitter
+							bone="Bip01 Spine2"
+							material="/shared/effects/materials/feather_white.material"
+							spawnrate="20"
+							minparticlelife="500"
+							maxparticlelife="1000"
+							gravity="7"
+							speed="100"
+							offsetsphere="20"
+							depthbias="-10"
+						>
+							<particle
+								minangle="0"
+								maxangle="360"
+								startalpha="1"
+								midalpha="1"
+								endalpha="0"
+								midalphapos=".75"
+								heightdistort="0.01"
+								color=".5 .7 .7"
+								startsize="20"
+								endsize="20"
+							/>
+						</simpleemitter>
+					</model>
+				</template>
+
+				<instance name="birds" zbone="_bone_fx_01"/>
+				
+			</model>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
+
+

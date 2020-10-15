@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="File00000198.max" file="File00000198.model" type="K2" >
+
+<anim name="idle" clip="clips/Attack 1.clip" fps="330" loop="true" />
+
+<anim name="death_1" clip="clips/Spell two.clip" fps="550" loop="true" loopbackframe="-1">
+		<frameevent frame="1" cmd="starteffect death.effect 0"/>
+	</anim>
+
+</model>

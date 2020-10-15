@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="black.model" med="black.model" low="black.model" >
+
+	<anim name="idle" clip="sa/idle.clip" fps="550" loop="true"/>
+
+	<anim name="portrait" clip="sa/idle.clip" fps="550" loop="true"/>
+	
+	<anim name="idlezerk" clip="sa/idle.clip" fps="550" loop="true"/>
+
+	<anim name="bored_1" clip="sa/idle2.clip" fps="550"/>
+	
+	<anim name="taunt_1" clip="sa/ability_4.clip" fps="550"/>
+
+	<anim name="item_1" clip="sa/ability_2.clip" fps="550"/>
+	
+	<anim name="death_1" clip="sa/death_1.clip" loop="true" loopbackframe="-1" fps="550">
+	</anim>
+	
+	<anim name="walk_1" clip="sa/walk_1.clip" loop="true" fps="550">
+		<frameevent frame="12" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="18" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="37" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="42" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="50" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="55" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="72" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="77" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="87" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="92" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="102" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="107" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="121" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="126" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+
+		<frameevent frame="12" cmd="PlaySoundLinear /shared/sounds/footsteps/#GetTerrainType()#_%.wav 0 1800 .125"/>
+		<frameevent frame="37" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="37" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="50" cmd="PlaySoundLinear /shared/sounds/footsteps/#GetTerrainType()#_%.wav 0 1800 .125"/>
+		<frameevent frame="72" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="72" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="87" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="102" cmd="PlaySoundLinear /shared/sounds/footsteps/#GetTerrainType()#_%.wav 0 1800 .125"/>
+		<frameevent frame="121" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="131" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+	</anim>
+	
+	<anim name="ability_1" clip="sa/idle.clip" fps="550"/>
+
+	<anim name="ability_2" clip="sa/ability_2.clip" fps="550" loop="true">
+		<frameevent frame="1" cmd="PlaySoundLinear ability_2/sounds/impact.wav 1000 2500 .6"/>
+                        <frameevent frame="1" cmd="PlaySoundLinear sa41.wav 1000 2500 .55"/>
+	</anim>
+	
+	<anim name="ability_4" clip="sa/ability_4.clip" fps="550" loopbackframe="-1">
+		<frameevent frame="1" cmd="PlaySoundLinear sa4.wav 1000 2500 .9"/>
+	</anim>
+		
+	<anim name="attack_1" clip="sa/attack_2.clip" fps="550">
+		<frameevent frame="11" cmd="PlaySoundLinear /heroes/hiro/sounds/attack_%.wav  400 2000 .65"/>
+            <frameevent frame="3" cmd="StartEffect boost2.effect"/>
+	</anim>
+	
+	<anim name="attack_2" clip="sa/attack_1.clip" fps="550">
+		<frameevent frame="11" cmd="PlaySoundLinear /heroes/hiro/sounds/attack_%.wav  400 2000 .65"/>
+            <frameevent frame="50" cmd="PlaySoundLinear sa4_%.ogg 1000 2500 .75"/>
+            <frameevent frame="3" cmd="StartEffect boost3.effect"/>
+            <frameevent frame="3" cmd="StartEffect aoe.effect"/>
+	</anim>
+		
+	<anim name="knock_1" clip="sa/idle.clip" loop="true" loopbackframe="-1"/>
+	
+	<anim name="getup_1" clip="sa/idle.clip"/>		
+			
+</model>

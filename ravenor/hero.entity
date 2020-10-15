@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_Ravenor"
+
+	team="Hellbourne"
+	icon="Tenka.png"
+	portrait="Tenka.png"
+	model="inverse_tohka/model.mdf"
+	skin=""
+	
+	portraitcampos="-6 -30 25"
+	portraitangles="0 0 10"
+	infoheight="175"
+	passiveeffect=""
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sounds_tenka/joke_%_skin1.wav"
+	selectedflavorsound="sounds_tenka/joke_%_skin1.wav"
+	confirmmovesound="sounds_tenka/move_%_skin1.wav"
+	confirmattacksound="sounds_tenka/attack_%_skin1.wav"
+	nomanasound="sounds_tenka/.wav"
+	cooldownsound="sounds_tenka/.wav"
+	announcersound="sounds_tenka/pick_2.wav"
+	tauntedsound="sounds/tohka/ab2_vox_2.wav"
+	tauntkillsound="sounds/tohka/voice/taunt_after.wav"
+	
+	preglobalscale="2.1"
+	modelscale="1"
+	effectscale="0.9"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="52"
+	targetoffset="0 0 92"
+
+	category="magic"
+	difficulty="3.5"
+
+	solorating="0"
+	junglerating="0"
+	carryrating="3"
+	supportrating="0"
+	initiatorrating="0"
+	gankerrating="2"
+	pusherrating="0"
+	rangedrating="0"
+	meleerating="5"
+	
+	movespeed="300"
+	turnrate="450"
+	turnsmoothing="0.1"
+
+	maxhealth="150"
+	healthregen="1.00"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="-0.38"
+	magicarmor="5"
+
+	inventory0="Ability_Ravenor1"
+	inventory1="Ability_Ravenor2"
+	inventory2="Ability_Ravenor3"
+	inventory3="Ability_Ravenor4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="1000"
+	attackactiontime="450"
+	attackcooldown="1700"
+	attackdamagemin="25"
+	attackdamagemax="33"
+	attacknumanims="2"
+	attackoffset="0 100 110"
+	attackprojectile=""
+	attackrange="150"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="effects/impact.effect"
+	attacktype="melee"
+	combattype="Hero"
+
+	aggrorange="600"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	primaryattribute="Strength"
+	strength="23"
+	strengthperlevel="3"
+	agility="17"
+	agilityperlevel="1.5"
+	intelligence="21"
+	intelligenceperlevel="2.0"
+	
+	previewmodel="inverse_tohka/model_store.mdf"
+	previewpos="0 0 -60"
+	previewangles="0 0 0"
+	previewscale="1.35"
+	
+	storemodel="inverse_tohka/model_store.mdf"
+	storepos="0 0 -20"
+	storeangles="0 0 0"
+	storescale="2"
+	
+	tooleffectkeyname15="State_Item3E"
+	tooleffectpath15="effects/MagicImmunity.effect"
+	
+	tooleffectkeyname16="State_ElderParasite"
+	tooleffectpath16="effects/ElderParasite.effect"
+	
+	tooleffectkeyname17="State_Sasuke"
+	tooleffectpath17="effects/Sasuke.effect"
+	
+	tooleffectkeyname18="State_Item3G"
+	tooleffectpath18="effects/Sasuke.effect"
+	
+	corpsetime="2500"
+	corpsefadetime="2500"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+>
+	<recommendeditem name="Item_ManaPotion" />
+	<recommendeditem name="Item_MinorTotem" />
+	<recommendeditem name="Item_RunesOfTheBlight" />
+	<recommendeditem name="Item_HealthPotion" />
+	<recommendeditem name="Item_HomecomingStone" />
+	
+	<recommendeditem name="Item_Strength5" />
+	<recommendeditem name="Item_Intelligence5" />
+	<recommendeditem name="Item_Bottle" />
+	<recommendeditem name="Item_EnhancedMarchers" />
+	<recommendeditem name="Item_PlatedGreaves" />
+	<recommendeditem name="Item_Replenish" />
+	<recommendeditem name="Item_Astrolabe" />
+	<recommendeditem name="Item_BarrierIdol" />
+	<recommendeditem name="Item_Damage10" />
+	<recommendeditem name="Item_Morph" />
+	
+	<modifier key="Ravenor_Ult_Effect_Full" modpriority="1"
+		model="inverse_tohka/model_ult.mdf"
+	/>	
+	
+	<modifier key="iamsheeped" modpriority="1000" passiveeffect=""/>
+	
+	<!-- <modifier key="gated" modpriority="200"
+		magicarmor="5"
+		armor="0.55"
+		
+		inventory0="Reborn_Ability_Ravenor1"
+		inventory1="Reborn_Ability_Ravenor2"
+		inventory2="Reborn_Ability_Ravenor3"
+		inventory3="Reborn_Ability_Ravenor4"
+		
+		primaryattribute="Agility"
+		strength="17"
+		strengthperlevel="1.5"
+		agility="23"
+		agilityperlevel="3.0"
+		intelligence="21"
+		intelligenceperlevel="2.0"
+	/> -->
+	
+	<altavatar icon="icon.tga" key="Hero_Ravenor.Alt"
+		preglobalscale="1.95"
+		
+		passiveeffect="alt/effects/body.effect"
+		storepassiveeffect="alt/effects/store_body.effect"
+		
+		icon2="alt/icon.tga"
+		portrait="alt/icon.tga"
+		model="alt/model.mdf"
+		
+		previewmodel="alt/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.35"
+		
+		storemodel="alt/model_store.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.50"
+		
+		infoheight="200"
+		
+		selectedsound="alt/sounds/voice/select_%.wav"
+		selectedflavorsound="alt/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt/sounds/voice/move_%.wav"
+		confirmattacksound="alt/sounds/voice/attack_%.wav"
+		nomanasound="alt/sounds/voice/no_mana.wav"
+		cooldownsound="alt/sounds/voice/cooldown.wav"
+		tauntedsound="alt/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt/sounds/voice/taunt_after.wav"
+	/>
+	
+	<altavatar key="Hero_Ravenor.Alt2"
+		preglobalscale="1.8"
+		
+		icon2="1234.png"
+		portrait="1234.png"
+	
+		model="Tohka/model.mdf"
+		
+		previewmodel="Tohka/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.7"
+		
+		storemodel="Tohka/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.7"
+		
+		portraitcampos="13 -40 33"
+		portraitangles="0 0 15"
+		
+		selectedsound="Tohka/sounds/s%.wav"
+		selectedflavorsound="Tohka/sounds/s%.wav"
+		confirmmovesound="Tohka/sounds/m%.wav"
+		confirmattacksound="Tohka/sounds/a%.wav"
+		nomanasound="Tohka/sounds/.wav"
+		cooldownsound="Tohka/sounds/.wav"
+		tauntedsound="Tohka/sounds/t1.wav"
+		tauntkillsound="Tohka/sounds/t2.wav"
+		
+		tooleffectkeyname10="effect_Boots"
+		tooleffectpath10="effects/"
+
+		tooleffectkeyname6="Item_Immunity"
+		tooleffectpath6="Tohka/effects/s2.effect"
+
+	tooleffectkeyname5="Item_ElderParasite"
+	tooleffectpath5="Tohka/effects/s4.effect"
+	
+	tooleffectkeyname4="Item_Sasuke"
+	tooleffectpath4="Tohka/effects/s6.effect"
+
+	tooleffectkeyname35="Item_Stealth"
+	tooleffectpath35="Tohka/effects/s6.effect"
+
+	tooleffectkeyname7="Item_Evasion"
+	tooleffectpath7="Tohka/effects/s3.effect"
+
+	tooleffectkeyname8="Item_PortalKey"
+	tooleffectpath8="Tohka/effects/s7.effect"
+
+	tooleffectkeyname15="Ability_Ravenor4"
+	tooleffectpath15="Tohka/boost1.effect"
+
+	tooleffectkeyname14="Item_Lightning1"
+	tooleffectpath14="Tohka/effects/black1.effect"
+
+	tooleffectkeyname16="Item_TwinBlades"
+	tooleffectpath16="Tohka/TwinBlades.effect"
+	
+	tooleffectkeyname20="effect_FireBrand"
+	tooleffectpath20="Tohka/effects/fire.effect"
+		
+	tooleffectkeyname21="effect_IceBrand"
+	tooleffectpath21="Tohka/effects/ice.effect"
+		
+	tooleffectkeyname32="effect_LightBrand"
+	tooleffectpath32="Tohka/effects/light.effect"
+	/>
+	
+	<altavatar icon="icon.tga" key="Hero_Ravenor.Alt3"
+		preglobalscale="1.75"
+		
+		passiveeffect="alt3/effects/body.effect"
+		storepassiveeffect="alt3/effects/store_body.effect"
+		previewpassiveeffect="alt3/effects/store_body.effect"
+		
+		icon2="alt3/icon.tga"
+		portrait="alt3/icon.tga"
+		model="alt3/model.mdf"
+		
+		previewmodel="alt3/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1"
+		
+		selectedsound="alt3/sounds/voice/select_%.wav"
+		selectedflavorsound="alt3/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt3/sounds/voice/move_%.wav"
+		confirmattacksound="alt3/sounds/voice/attack_%.wav"
+		nomanasound="alt3/sounds/voice/no_mana.wav"
+		cooldownsound="alt3/sounds/voice/cooldown.wav"
+		tauntedsound="alt3/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt3/sounds/voice/taunt_after.wav"
+		
+		storemodel="alt3/model_store.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.6"
+	>
+		<onframe>
+			<activatemodifierkey name="Ravenor_Alt3_Sound" />
+		</onframe>
+		
+		<onspawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Tundra.Alt3 aa.Hero_Zephyr.Alt4 aa.Hero_Ravenor.Alt3 aa.Hero_Magmar.Alt3 aa.Hero_Defiler.Alt2">
+				<activatemodifierkey name="Archaic" />
+			</ownsproduct>
+		</onspawn>
+		
+		<onrespawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Tundra.Alt3 aa.Hero_Zephyr.Alt4 aa.Hero_Ravenor.Alt3 aa.Hero_Magmar.Alt3 aa.Hero_Defiler.Alt2">
+				<activatemodifierkey name="Archaic" />
+			</ownsproduct>
+		</onrespawn>
+		
+		<modifier key="Archaic" modpriority="100"
+		>
+			<aura state="State_Archaic_Gods" radius="0" targetscheme="self"/>
+		</modifier>
+	</altavatar>
+	
+	<altavatar icon="icon.tga" key="Hero_Ravenor.Alt4"
+		preglobalscale="2.1"
+		
+		passiveeffect="alt4/effects/body.effect"
+		storepassiveeffect="alt4/effects/store_body.effect"
+		previewpassiveeffect="alt4/effects/store_body.effect"
+		
+		icon2="alt4/icon.tga"
+		portrait="alt4/icon.tga"
+		model="alt4/model.mdf"
+		
+		previewmodel="alt4/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1"
+		
+		selectedsound="alt4/sounds/voice/select_%.wav"
+		selectedflavorsound="alt4/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt4/sounds/voice/move_%.wav"
+		confirmattacksound="alt4/sounds/voice/attack_%.wav"
+		nomanasound="alt4/sounds/voice/no_mana.wav"
+		cooldownsound="alt4/sounds/voice/cooldown.wav"
+		tauntedsound="alt4/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt4/sounds/voice/taunt_after.wav"
+		
+		storemodel="alt4/model_store.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.9"
+	>
+		<onspawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Arachna.Alt3 aa.Hero_Bubbles.Alt4 aa.Hero_Devourer.Alt6 aa.Hero_Ebulus.Alt3 aa.Hero_EmeraldWarden.Alt5 aa.Hero_Predator.Alt4 aa.Hero_Ravenor.Alt4 aa.Hero_Riftmage.Alt2">
+				<activatemodifierkey name="RiftBeast_Set" />
+			</ownsproduct>
+		</onspawn>
+		
+		<onrespawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Arachna.Alt3 aa.Hero_Bubbles.Alt4 aa.Hero_Devourer.Alt6 aa.Hero_Ebulus.Alt3 aa.Hero_EmeraldWarden.Alt5 aa.Hero_Predator.Alt4 aa.Hero_Ravenor.Alt4 aa.Hero_Riftmage.Alt2">
+				<activatemodifierkey name="RiftBeast_Set" />
+			</ownsproduct>
+		</onrespawn>
+		
+		<modifier key="RiftBeast_Set" modpriority="101"
+			tooleffectpath38="/shared/effects/riftbeast.effect"
+		/>	
+	</altavatar>
+	
+	<altavatar icon="icon.tga" key="Hero_Ravenor.Alt5"
+		preglobalscale="2.1"
+		
+		overrideportraiteffects="true"
+		passiveeffect="alt5/effects/body.effect"
+		storepassiveeffect="alt5/effects/store_effect.effect"
+		previewpassiveeffect="alt5/effects/store_body.effect"
+		respawneffect="/shared/effects/respawn_ravenor.effect"
+		
+		icon2="alt5/icon.tga"
+		portrait="alt5/icon.tga"
+		model="alt5/model.mdf"
+		
+		previewmodel="alt5/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1"
+		
+		selectedsound="alt5/sounds/voice/select_%.wav"
+		selectedflavorsound="alt5/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt5/sounds/voice/move_%.wav"
+		confirmattacksound="alt5/sounds/voice/attack_%.wav"
+		nomanasound="alt5/sounds/voice/no_mana.wav"
+		cooldownsound="alt5/sounds/voice/cooldown.wav"
+		tauntedsound="alt5/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt5/sounds/voice/taunt_after.wav"
+		
+		storemodel="alt5/model_store.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 35"
+		storescale="1.9"
+				
+		tooleffectkeyname1="effect_Boots"
+		tooleffectpath1="alt5/upgrade_boots/body.effect"
+		tooleffectgroup1="boots"
+		
+		tooleffectkeyname2="Item_Damage10"
+		tooleffectpath2="alt5/upgrade_wings/body.effect"
+		tooleffectgroup2="wings"
+		
+		tooleffectkeyname3="Item_BehemothsHeart"
+		tooleffectpath3="alt5/upgrade_wings/body.effect"
+		tooleffectgroup3="wings"
+		
+		tooleffectkeyname4="Item_Stealth"
+		tooleffectpath4="alt5/upgrade_wings/body.effect"
+		tooleffectgroup4="wings"
+		
+		tooleffectkeyname5="Item_Sasuke"
+		tooleffectpath5="alt5/upgrade_wings/body.effect"
+		tooleffectgroup5="wings"
+		
+		tooleffectkeyname8="Item_MagicArmor2"
+		tooleffectpath8="alt5/upgrade_belt/body.effect"
+		tooleffectgroup8="belt"
+		
+		tooleffectkeyname9="Item_BarrierIdol"
+		tooleffectpath9="alt5/upgrade_belt/body.effect"
+		tooleffectgroup9="belt"
+		
+		tooleffectkeyname10="Item_Freeze"
+		tooleffectpath10="alt5/upgrade_belt/body.effect"
+		tooleffectgroup10="belt"
+		
+		tooleffectkeyname11="Item_Protect"
+		tooleffectpath11="alt5/upgrade_belt/body.effect"
+		tooleffectgroup11="belt"
+			
+		tooleffectkeyname12=""
+		tooleffectpath12="alt5/belt/body.effect"
+		tooleffectgroup12="belt"
+		
+		tooleffectkeyname13="Item_BehemothsHeart"
+		tooleffectpath13="alt5/upgrade_horns/body.effect"
+		tooleffectgroup13="horns"
+		
+		tooleffectkeyname14="Item_Shield2"
+		tooleffectpath14="alt5/upgrade_horns/body.effect"
+		tooleffectgroup14="horns"
+		
+		tooleffectkeyname15="Item_BloodChalice"
+		tooleffectpath15="alt5/upgrade_horns/body.effect"
+		tooleffectgroup15="horns"
+		
+		tooleffectkeyname16="Item_DaemonicBreastplate"
+		tooleffectpath16="alt5/upgrade_shoulders/body.effect"
+		tooleffectgroup16="shoulders"
+		
+		tooleffectkeyname17="Item_ElderParasite"
+		tooleffectpath17="alt5/upgrade_shoulders/body.effect"
+		tooleffectgroup17="shoulders"
+		
+		tooleffectkeyname18="Item_LifeSteal5"
+		tooleffectpath18="alt5/upgrade_shoulders/body.effect"
+		tooleffectgroup18="shoulders"
+		
+		tooleffectkeyname19="Item_Immunity"
+		tooleffectpath19="alt5/upgrade_shoulders/body.effect"
+		tooleffectgroup19="shoulders"
+		
+		tooleffectkeyname20="Item_GrimoireOfPower"
+		tooleffectpath20="alt5/upgrade_weapon/body.effect"
+		tooleffectgroup20="weapon"
+		
+		tooleffectkeyname21="Item_Lightning1"
+		tooleffectpath21="alt5/upgrade_weapon/body.effect"
+		tooleffectgroup21="weapon"
+		
+		tooleffectkeyname22="effect_LightBrand"
+		tooleffectpath22="alt5/upgrade_weapon/body.effect"
+		tooleffectgroup22="weapon"
+		
+		tooleffectkeyname23="Item_ArclightCrown"
+		tooleffectpath23="alt5/upgrade_weapon/body.effect"
+		tooleffectgroup23="weapon"
+		
+		tooleffectkeyname24="Item_HarkonsBlade"
+		tooleffectpath24="alt5/upgrade_weapon/body.effect"
+		tooleffectgroup24="weapon"
+		
+		>
+		
+		<!-- elder evils set effect 
+	
+		<onspawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Soulstealer.Alt3 aa.Hero_Voodoo.Alt3 aa.Hero_Ellonia.Alt3 aa.Hero_Dampeer.Alt4 aa.Hero_Ravenor.Alt5 aa.Hero_Vanya.Alt3" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey name="Elder_Evils" />
+			</compare>
+		</onspawn>
+		
+		<onrespawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Soulstealer.Alt3 aa.Hero_Voodoo.Alt3 aa.Hero_Ellonia.Alt3 aa.Hero_Dampeer.Alt4 aa.Hero_Ravenor.Alt5 aa.Hero_Vanya.Alt3" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey name="Elder_Evils" />
+			</compare>
+		</onrespawn>
+		
+		
+		-->
+		<onspawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Vanya.Alt3 aa.Hero_Soulstealer.Alt3 aa.Hero_Ellonia.Alt3 aa.Hero_Dampeer.Alt4 aa.Hero_Voodoo.Alt3">
+				<applystate name="State_Ravenor_Collection_Effects" target="this_entity" continuous="true" />
+			</ownsproduct>
+			<applystate name="State_Ravenor_Alt5_Ability1_Effect" target="this_entity" continuous="true" />
+			<applystate name="State_Ravenor_Alt5_Walk_Effect" target="this_entity" continuous="true" />
+		</onspawn>
+		
+		<onrespawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Vanya.Alt3 aa.Hero_Soulstealer.Alt3 aa.Hero_Ellonia.Alt3 aa.Hero_Dampeer.Alt4 aa.Hero_Voodoo.Alt3">
+				<applystate name="State_Ravenor_Collection_Effects" target="this_entity" continuous="true" />				
+			</ownsproduct>
+			<applystate name="State_Ravenor_Alt5_Ability1_Effect" target="this_entity" continuous="true" />
+			<applystate name="State_Ravenor_Alt5_Walk_Effect" target="this_entity" continuous="true" />
+		</onrespawn>
+
+		<modifier key="Alt5_UpgradedWalk" modpriority="2"
+			walkanim="walk_1_fire"
+		/>
+		
+		<modifier key="Alt5_Collection" modpriority="2"
+			passiveeffect="alt5/effects/body_collection.effect"		
+		/>
+	</altavatar>
+	
+	<altavatar icon="icon.tga" key="Hero_Ravenor.Alt6"
+		preglobalscale="1.95"
+		
+		passiveeffect="alt6/effects/body.effect"
+		storepassiveeffect="alt6/effects/store_body.effect"
+		previewpassiveeffect="alt6/effects/store_body.effect"
+		
+		icon2="alt6/icon.tga"
+		portrait="alt6/icon.tga"
+		model="alt6/model.mdf"
+		
+		portraitcampos="-10 0 20"
+		
+		previewmodel="alt6/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1"
+		
+		selectedsound="alt6/sounds/voice/select_%.wav"
+		selectedflavorsound="alt6/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt6/sounds/voice/move_%.wav"
+		confirmattacksound="alt6/sounds/voice/attack_%.wav"
+		nomanasound="alt6/sounds/voice/no_mana.wav"
+		cooldownsound="alt6/sounds/voice/cooldown.wav"
+		tauntedsound="alt6/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt6/sounds/voice/taunt_after.wav"
+		
+		storemodel="alt6/model_store.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.9"
+	>
+		<onspawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_EmeraldWarden.Alt7 aa.Hero_Hammerstorm.Alt7 aa.Hero_Legionnaire.Alt8 aa.Hero_Predator.Alt9 aa.Hero_Rally.Alt7 aa.Hero_Rocky.Alt5 aa.Hero_Solstice.Alt6 aa.Hero_Dampeer.Alt5 aa.Hero_Kane.Alt3 aa.Hero_Pestilence.Alt5 aa.Hero_Ravenor.Alt6">
+				<activatemodifierkey name="ARMS_Set" />
+			</ownsproduct>
+		</onspawn>
+		
+		<onrespawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_EmeraldWarden.Alt7 aa.Hero_Hammerstorm.Alt7 aa.Hero_Legionnaire.Alt8 aa.Hero_Predator.Alt9 aa.Hero_Rally.Alt7 aa.Hero_Rocky.Alt5 aa.Hero_Solstice.Alt6 aa.Hero_Dampeer.Alt5 aa.Hero_Kane.Alt3 aa.Hero_Pestilence.Alt5 aa.Hero_Ravenor.Alt6">
+				<activatemodifierkey name="ARMS_Set" />
+			</ownsproduct>
+		</onrespawn>
+
+		<modifier key="ARMS_Set" modpriority="1"
+			tooleffectkeyname0=""
+			tooleffectpath0="/shared/effects/set_arms_red.effect"
+		/>
+	</altavatar>
+	
+	<altavatar icon="icon.tga" key="Hero_Ravenor.Alt7"
+		preglobalscale="2.3"
+		
+		passiveeffect="alt7/effects/body.effect"
+		storepassiveeffect="alt7/effects/store_body.effect"
+		previewpassiveeffect="alt7/effects/store_body.effect"
+		
+		icon2="alt7/icon.tga"
+		portrait="alt7/icon.tga"
+		model="alt7/model.mdf"
+		
+		portraitcampos="15 -30 26"
+		
+		previewmodel="alt7/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1"
+		
+		attackimpacteffect="alt7/effects/impact.effect"
+		
+		selectedsound="alt7/sounds/voice/select_%.wav"
+		selectedflavorsound="alt7/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt7/sounds/voice/move_%.wav"
+		confirmattacksound="alt7/sounds/voice/attack_%.wav"
+		nomanasound="alt7/sounds/voice/no_mana.wav"
+		cooldownsound="alt7/sounds/voice/cooldown.wav"
+		tauntedsound="alt7/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt7/sounds/voice/taunt_after.wav"
+		
+		storemodel="alt7/model_store.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.9"
+	/>
+	
+	<altavatar icon="icon.tga" key="Hero_Ravenor.Alt8"
+		preglobalscale="2.3"
+		
+		passiveeffect="alt8/effects/body.effect"
+		storepassiveeffect="alt8/effects/store_body.effect"
+		previewpassiveeffect="alt8/effects/store_body.effect"
+		
+		icon2="alt8/icon.tga"
+		portrait="alt8/icon.tga"
+		model="alt8/model.mdf"
+		
+		portraitcampos="27 -52 21"
+		portraitangles="0 0 -5"
+		
+		previewmodel="alt8/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1"
+		
+		attackimpacteffect="alt8/effects/impact.effect"
+		
+		selectedsound="alt8/sounds/voice/select_%.wav"
+		selectedflavorsound="alt8/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt8/sounds/voice/move_%.wav"
+		confirmattacksound="alt8/sounds/voice/attack_%.wav"
+		nomanasound="alt8/sounds/voice/no_mana.wav"
+		cooldownsound="alt8/sounds/voice/cooldown.wav"
+		tauntedsound="alt8/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt8/sounds/voice/taunt_after.wav"
+		
+		storemodel="alt8/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.9"
+		
+	>
+		<onspawn>
+			<upgradeselected target="this_entity" upgrade="sc.punk_circle_upgrade">
+				<activatemodifierkey name="Graffiti_Punk_Circle" />
+			</upgradeselected>
+		</onspawn>
+
+		<modifier key="Graffiti_Punk_Circle" modpriority="2"
+			localselectionringmaterial="/shared/materials/selection_indicator_graffiti.material"
+		/>
+		
+		<onkill propagatetoillusions="false" >
+			<targettype type="hero">
+				<targettype type="illusion" />
+				<else>               
+					<targettype type="mimic" />
+					<else> 
+						<targettype type="self" />
+						<else>
+							<targettype type="heropet" />
+							<else>
+								<spawnunit name="Gadget_Ravenor_Alt14" count="1" target="target_position" pushentity="true" maxactive="5" />
+							</else>
+						</else>
+					</else>
+				</else>
+			</targettype>
+		</onkill>			
+	</altavatar>
+	
+	<altavatar icon="icon.tga" key="Hero_Ravenor.Alt9"
+		preglobalscale="2.1"
+		
+		icon2="alt9/icon.tga"
+		portrait="alt9/icon.tga"
+		model="alt9/model.mdf"
+		
+		portraitcampos="-2 -32 21"
+		portraitangles="0 0 -5"
+		overrideportraiteffects="true"
+		
+		previewmodel="alt9/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1"
+		
+	    storemodel="alt9/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.9"
+		
+		passiveeffect="alt9/effects/body.effect"
+		attackimpacteffect="alt9/effects/impact.effect"
+		
+		selectedsound="alt9/sounds/voice/select_%.wav"
+		selectedflavorsound="alt9/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt9/sounds/voice/move_%.wav"
+		confirmattacksound="alt9/sounds/voice/attack_%.wav"
+		nomanasound="alt9/sounds/voice/no_mana.wav"
+		cooldownsound="alt9/sounds/voice/cooldown.wav"
+		tauntedsound="alt9/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt9/sounds/voice/taunt_after.wav"
+	
+	>
+	</altavatar>
+	
+	
+</hero>

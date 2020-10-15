@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				norestart="true"
+			    forcestereo="true"
+				channel="400"
+				linearfalloff="true" 
+				falloffstart="20000"
+				falloffend="20000"
+				volume="1"
+				sample="/heroes/sir_benzington/ability_04/sounds/cartoon_drumroll_start.wav"
+			/>
+			
+			<sound
+				life="2000"
+			    forcestereo="true"
+				channel="401"
+				fadein="1500"
+				fadeout="2000"
+				linearfalloff="true" 
+				falloffstart="20000"
+				falloffend="20000"
+				volume=".5"
+				sample="/heroes/sir_benzington/ability_04/sounds/cartoon_drumroll.wav"
+			/>
+
+<beam
+
+				
+				life="400"
+				startcolor="1 1 .75"
+				midcolor="1 1 .75"
+				endcolor="0"
+				midcolorpos=".25"
+				timenudge="1"
+				material="/shared/effects/materials/beam_04.material"
+
+
+				color="5"
+				owner_a="source"
+				
+				position_a="0 0 0"
+				position_b="0 0 1500"
+				startsize="30"
+                     midsize="140"
+				endsize="30"
+			/>
+
+		
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

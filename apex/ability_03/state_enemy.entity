@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Apex_Ability3_Enemy"
+
+	icon="1.jpg"
+	passiveeffect="effects/state_enemy.effect"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	modifierkey="apex_ability3_Burn"
+>
+	<onframe>
+		<setvar0 a="10,20,30,40" b="frametime" op="mult" />
+		<damage target="this_owner_entity" effecttype="Magic DOT" amount="1" b="var0" op="mult" />
+	</onframe>
+	
+	<altavatar key="Hero_Apex.Alt" modpriority="100"
+	    icon="../alt/ability_03/icon.tga"
+		passiveeffect="../alt/ability_03/effects/state_enemy.effect"
+	/>
+	
+	<altavatar key="Hero_Apex.Alt2" modpriority="100"
+		passiveeffect="../alt2/ability_03/effects/state_enemy.effect"
+	/>
+</state>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+	<modifier
+			
+			color="0 0 0"
+			alpha="0"
+		/>
+		<particlesystem name="system0" space="world" scale=".75">
+			<model
+				
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="0 0 0"
+				endcolor="0"
+				material="/shared/effects/materials/shell7.material"
+				scale="1"
+				startalpha="1"
+				endalpha="0"
+				
+			/>
+			<model
+				
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="3 0 0"
+				endcolor="0"
+				material="/shared/effects/materials/shell8.material"
+				scale="1"
+				startalpha="1"
+				endalpha="0"
+				
+			/>
+			<billboard
+				expirelife="250"
+				color=".4 0 0"
+				size="90"
+				depthbias="-25"
+				material="/shared/effects/materials/miku_music01.material"
+				position="0 45 .1"
+				framespeed="2"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				width="180"
+				directionalspace="local"
+			/>
+			<billboard
+				expirelife="250"
+				color=".4 0 0"
+				size="90"
+				depthbias="-25"
+				material="/shared/effects/materials/miku_music01.material"
+				position="0 -45 .1"
+				framespeed="3"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				roll="180"
+				width="180"
+				directionalspace="local"
+			/>
+			<simpleemitter
+					spawnrate="3" 
+				>
+					<particle
+					>
+						<groundsprite
+							life="1000"
+							material="/shared/effects/materials/coals_reveal_blend.material"
+							startcolor="0"
+							midcolor="0 0 0"
+							endcolor="0"
+							startscale=".2"
+							endscale="1"
+							alpha=".3"
+						/>
+					</particle>
+					
+					<particle
+					>
+						<groundsprite
+							life="1000"
+							material="/shared/effects/materials/coals_reveal_blend.material"
+							startcolor="0"
+							midcolor="0 0 0"
+							endcolor="0"
+							startscale=".2"
+							endscale="1"
+							alpha=".3"
+						/>
+					</particle>
+				</simpleemitter>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance1" particlesystem="system0" />
+		<spawnmodifier instance="instance0"/>
+		<waitfordeath  instance="instance0"/>
+		<waitfordeath  instance="instance1"/>
+	</thread>
+
+</effect>

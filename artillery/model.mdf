@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="model1.model" med="model1.model" low="model1.model" >
+
+	<anim name="idle" clip="idle.clip" loop="true" fps="511"/>
+	
+	<anim name="portrait" clip="idle.clip" loop="true" fps="511"/> 
+	
+	<anim name="item_1" clip="Spell_2.clip" fps="550"/>
+
+	<anim name="bored_1" clip="idle5.clip" fps="550">
+<frameevent frame="1" cmd="PlaySoundLinear sounds/bored.ogg 0 1300 1"/>
+<frameevent frame="5850" cmd="PlaySoundLinear sounds/bored2.ogg 0 1300 1"/>
+</anim>
+
+	<anim name="walk_1" clip="walk_1.clip" fps="511" loop="true">
+	
+		<frameevent frame="1" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="130" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="250" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="360" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="480" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="600" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+										
+		<frameevent frame="1" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="130" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="250" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="360" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="480" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="600" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	</anim>
+
+	<anim name="taunt_1" clip="Spell_1.clip" fps="511"/>
+
+	<anim name="death_1" clip="death_1.clip" fps="511" loop="true" loopbackframe="-1">
+<frameevent frame="1" cmd="PlaySoundLinear sounds/death.ogg 0 1300 1"/>
+	</anim>
+
+	<anim name="attack_1" clip="attack_1.clip" fps="500">
+		<frameevent frame="150" cmd="PlaySoundLinear a1.mp3 0 1300 .3"/>
+	</anim>
+	<anim name="bunker_attack_1" clip="attack_1.clip" fps="500">
+		<frameevent frame="150" cmd="PlaySoundLinear a1.mp3 0 1300 .4"/>
+	</anim>
+	
+	<anim name="bunker_attack_2" clip="attack_1.clip" fps="500">
+		<frameevent frame="150" cmd="PlaySoundLinear a1.mp3 0 1300 .4"/>
+	</anim>
+	
+	<anim name="bunker_walk_1" clip="walk_1.clip" loop="true" fps="550">
+	</anim>
+
+	<anim name="ability_3" clip="idle.clip" fps="550">
+	</anim>
+	
+	<anim name="ability_4" clip="Spell_2.clip" fps="550">
+	</anim>
+	
+	<anim name="ability_1" clip="ability_1.clip" loop="true" fps="501">
+<frameevent frame="50" cmd="PlaySoundLinear a1.mp3 100 2400 .35"/>
+	</anim>
+	
+	<anim name="ability_1_end" clip="idle3.clip" loop="false" fps="550"/>
+		
+	<anim name="knock_1" clip="idle4.clip" loop="true" fps="550" loopbackframe="-1"/>		
+			
+</model>

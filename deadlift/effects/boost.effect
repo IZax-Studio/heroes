@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+					<model
+				directionalspace="global"
+				model="/shared/models/invis.mdf"
+				scale="1.0"
+				
+			>
+				
+				
+				<simpleemitter
+					directionalspace="global"
+					direction="0 0 1"
+					minangle="90"
+					maxangle="80"
+					speed="1"
+					spawnrate="250"
+					particlelife="1000"
+				>
+					<particle
+						turn="1"
+						scale="1"
+						anchor="1"
+					>
+						<billboard
+							directionalspace="local"
+							life="500"
+							position="0 33 0"
+							lockup="1"
+							lockright="1"
+							pitch="-45"
+							startsize="0"
+							endsize="40"
+							startwidth="0"
+							endwidth="30"
+							startcolor=".25 .5 1"
+							endcolor="0"
+							minscale=".4"
+							maxscale="2"
+							material="/shared/effects/materials/light_rays.material"
+						/>
+					</particle>
+				</simpleemitter>
+			</model>
+		
+			<skeletonemitter
+				timenudge="1000"
+				spawnrate="90"
+				offsetsphere="10"
+				minparticlelife="600"
+				maxparticlelife="1200"
+				direction="0 0 1"
+				angle="10"
+				maxspeed="20"
+				gravity="-4"
+				material="/shared/effects/materials/flare_01.material"
+				inheritvelocity=".25"
+				limitinheritvelocity="200"
+			>
+					<particle
+						maxangle="360"
+						minsize="4"
+						maxsize="8"
+						startcolor="0"
+						midcolor=".0 .3 .5"
+						endcolor="0"
+						midcolorpos=".5"
+					/>
+			</skeletonemitter>
+				
+		<simpleemitter
+			
+				position="0 0 100"
+				spawnrate="7"
+				minparticlelife="1000"
+				maxparticlelife="3500"
+				material="/shared/effects/materials/petal_blend.material"
+				offsetsphere="60 60 40"
+				inheritvelocity=".45"
+				gravity="1"
+				drag="0.01"
+				depthbias="-30"
+				offsetradial="30"
+				directionalspace="global"
+				direction="-.5 0 -1"
+				minangle="0"
+				maxangle="45"
+				minspeed="1"
+				maxspeed="1"
+			>
+				<particle
+					minrollspeed="-400"
+					maxrollspeed="400"
+					minyawspeed="-400"
+					maxyawspeed="400"
+					minpitchspeed="-400"
+					maxpitchspeed="400"
+					size="4.5"
+					width="5"
+					lockup="true"
+					lockright="1"
+					color="1 .5 .7"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".8"
+				/>
+			</simpleemitter>
+			
+			
+	
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

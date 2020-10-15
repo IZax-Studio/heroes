@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Berzerker_Ability3"
+
+	icon="1.jpg"
+	passiveeffect="effects/state_self.effect"
+	
+	impactinterval="500"
+	strengthpercharge="1"
+	
+	maxcharges="100"
+>
+	<onimpact>
+		<areaofeffect
+			radius="600"
+			targetselection="all"
+			targetscheme="enemy_heroes"
+			effecttype=""
+			maximpactspertarget="1"
+		>
+			<applystate name="State_Berzerker_Ability3_Enemy" target="target_entity" duration="6000" />
+			<addcharges count="1" />
+			<heal a="10" target="source_entity" />
+		</areaofeffect>
+	</onimpact>
+	
+	<onframe>
+		<hasmodifier name="iamsheeped" entity="this_owner_entity">
+			<activatemodifierkey name="iamsheeped" />
+		</hasmodifier>
+		<else>
+			<deactivatemodifierkey name="iamsheeped" />
+		</else>
+	</onframe>
+	
+	<modifier key="iamsheeped" modpriority="1000"
+		passiveeffect=""
+	/>
+	
+	<onexpired>
+		<applystate name="State_Berzerker_Ability3_Buff" target="source_entity" duration="6000" pushentity="true" />
+		<addcharges count="charges" entity="stack_entity" />
+	</onexpired>
+	
+	
+	<altavatar key="Hero_Berzerker.Alt"
+		passiveeffect="/heroes/berzerker/alt/ability_02/effects/state_self.effect"
+	/>	
+	
+	<altavatar key="Hero_Berzerker.Alt2"
+		passiveeffect="/heroes/berzerker/alt2/ability_02/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Berzerker.Alt3"
+		passiveeffect="/heroes/berzerker/alt3/ability_02/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Berzerker.Alt4"
+		modifierkey="Berzerker_Alt4_Ability2_0"
+		passiveeffect=""
+	>
+		<modifier key="Berzerker_Alt4_Ability4" modpriority="2"
+			modifierkey="Berzerker_Alt4_Ability2_1"
+			passiveeffect=""
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Berzerker.Alt5"
+		passiveeffect="/heroes/berzerker/alt5/ability_02/effects/state_self.effect"
+	/>
+
+	<altavatar key="Hero_Berzerker.Alt6"
+		passiveeffect="../alt6/ability_02/effects/state_self.effect"
+	>
+		<modifier key="insanitarius_on" modpriority="2"
+			passiveeffect="../alt6/ability_02/insanitarius/effects/state_self.effect" 
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Berzerker.Alt7"
+		passiveeffect="/heroes/berzerker/alt7/ability_02/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Berzerker.Alt8"
+		passiveeffect="/heroes/berzerker/alt8/ability_02/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Berzerker.Alt10"
+		icon="../alt11/ability_02/icon.tga"
+		passiveeffect="/heroes/berzerker/alt10/ability_02/effects/state_self.effect"
+	/>
+
+	<altavatar key="Hero_Berzerker.Alt11"
+		icon="../alt11/ability_02/icon.tga"
+		passiveeffect="/heroes/berzerker/alt10/ability_02/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Berzerker.Alt12" modpriority="1"
+		passiveeffect="/heroes/berzerker/alt12/ability_02/effects/state_self.effect"
+		icon="../alt12/ability_02/icon.tga"
+	/>
+</state>

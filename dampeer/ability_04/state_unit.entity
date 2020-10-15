@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Dampeer_Ability4_Unit"
+	icon="../icon/44.png"
+
+	effecttype="StatusDebuff"
+	displaylevel="true"
+	deathpersist="false"
+>
+
+
+</state>

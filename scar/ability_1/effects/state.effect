@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world">
+			
+			<light
+				expirelife="1000"
+				startcolor="3 2 2"
+				endcolor="0 0 0"
+				falloffstart="50"
+				falloffend="75"
+				position="0 0 50"
+			/>
+
+			<billboard
+				expirelife="1000"
+				bone="_bone_centerofchest"
+				spawnrate="30"
+				material="/shared/effects/materials/whitedot.material"
+				depthbias="-20"
+				maxangle="360"
+				startcolor=".3 .15 .15"
+				endcolor="0"
+				size="40"
+			/>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="10"
+				gravity="5"
+				offsetsphere="15"
+				particlelife="500"
+				depthbias="-20"
+				material="/shared/effects/materials/refract_outsplash.material"
+			>
+				<particle 
+					param="0.05"	
+					startsize="32"
+					endsize="70"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					anchor="1"				
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="50"
+				minparticlelife="550"
+				maxparticlelife="1100"
+				gravity="2"
+				minspeed="10"
+				maxspeed="20"
+				direction="0 0 -1"
+				minangle="-30"
+				maxangle="-60"
+				offsetradial="30"
+				material="/shared/effects/materials/smoke_add.material"
+				inheritvelocity=".1"
+			>
+				<particle 
+					minangle="-180"
+					maxangle="180"
+					startcolor="1 .65 .65"
+					endcolor="0 0 0"
+					minsize="40"
+					maxsize="60"
+					endsize="80"
+					startalpha="0"
+					midalpha=".3"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="30"
+				minparticlelife="500"
+				maxparticlelife="2000"
+				offsetsphere="20"
+				gravity="2"
+				minspeed="10"
+				maxspeed="40"
+				direction="0 0 -1"
+				minangle="-30"
+				maxangle="-60"
+				material="/shared/effects/materials/leaf_04.material"
+			>
+				<particle
+					maxangle="360"
+					color="1 .65 .65"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".25"
+					midcolorpos=".25"
+					minscale="2"
+					maxscale="4"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="30"
+				minparticlelife="500"
+				maxparticlelife="2000"
+				offsetsphere="20"
+				gravity="2"
+				minspeed="10"
+				maxspeed="40"
+				direction="0 0 -1"
+				minangle="-30"
+				maxangle="-60"
+				material="/shared/effects/materials/whitedot.material"
+			>
+				<particle
+					maxangle="360"
+					startcolor="0"
+					midcolor="1 .65 .65"
+					endcolor="0"
+					midalphapos=".25"
+					midcolorpos=".25"
+					minscale="2"
+					maxscale="4"
+				/>
+			</simpleemitter>
+			
+			<template name="trail">
+				<twopointtrailemitter
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					spawnrate="100"
+					particlelife="300"
+					texpostime="300"
+					texposscale="0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/swoosh_add.material"
+					subframepos="true"
+				>
+					<particle
+						startcolor="1 .65 .65"
+						midcolor=".6 .4 .4"
+						endcolor="0 0 0" 
+					/>
+				</twopointtrailemitter>
+			</template>
+			
+				<instance name="trail"
+					bone_a="Bip01 L Forearm"
+					bone_b="Bip01 L Hand"
+				/>
+
+				<instance name="trail"
+					bone_a="Bip01 R Forearm"
+					bone_b="Bip01 R Hand"
+				/>
+
+				<instance name="trail"
+					bone_a="Bip01 R Foot"
+					bone_b="Bip01 R Knee"
+				/>
+
+				<instance name="trail"
+					bone_a="Bip01 L Foot"
+					bone_b="Bip01 L Knee"
+				/>
+
+				<instance name="trail"
+					bone_a="Bip01 Pelvis"
+					bone_b="Bip01 Head"
+				/>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

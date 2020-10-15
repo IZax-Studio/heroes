@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Dampeer_Ability3_Ally"
+	
+	
+	icon="../icon/33.png"
+	
+	passiveeffect="effects/state_ally.effect"
+	
+	effecttype="StatusBuff"
+	
+>
+	<onframe />
+	
+	<onattackimpact>
+		<targettype type="player_controlled" target="source_entity">
+			<cantarget targetscheme="enemy_units">
+				<hasavatarkey name="Hero_Dampeer.Alt5">
+					<playeffect effect="/heroes/dampeer/alt5/ability_03/effects/lifesteal.effect" source="source_entity" target="target_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Dampeer.Alt6">
+						<playeffect effect="/heroes/dampeer/alt6/ability_03/effects/lifesteal.effect" source="source_entity" target="target_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Dampeer.Alt8">
+							<playeffect effect="/heroes/dampeer/alt8/ability_03/effects/lifesteal.effect" source="source_entity" target="target_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Dampeer.Alt9">
+								<playeffect effect="/heroes/dampeer/Alt9/ability_03/effects/lifesteal.effect" source="source_entity" target="target_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Dampeer.Alt10">
+									<playeffect effect="/heroes/dampeer/Alt10/ability_03/effects/lifesteal.effect" source="source_entity" target="target_entity" />
+								</hasavatarkey>
+								<else>
+									<playeffect effect="effects/lifesteal.effect" source="source_entity" target="target_entity" />
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</cantarget>
+		</targettype>
+	</onattackimpact>
+	
+	<modifier key="Dampeer_Melee" condition="melee" modpriority="100"
+		lifesteal="0.15,0.2,0.25,0.3"
+	>
+		<onattackpredamage>
+			<cantarget targetscheme="enemy_units" />
+			<else>
+				<setvalue name="combat_lifesteal" a="combat_lifesteal" b="-0.15,-0.2,-0.25,-0.3" op="add" />
+			</else>
+		</onattackpredamage>
+	</modifier>
+	
+	<modifier key="Dampeer_Ranged" condition="ranged" modpriority="100"
+		lifesteal="0.025,0.05,0.075,0.1"
+	>
+		<onattackpredamage>
+			<cantarget targetscheme="enemy_units" />
+			<else>
+				<setvalue name="combat_lifesteal" a="combat_lifesteal" b="-0.025,-0.05,-0.075,-0.1" op="add" />
+			</else>
+		</onattackpredamage>
+	</modifier>
+	
+	<altavatar key="Hero_Dampeer.Alt10"
+		passiveeffect="../alt10/ability_03/effects/state_ally.effect"
+	/>
+</state>

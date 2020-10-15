@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Succubis_Ability1"
+
+	speed="4000"
+	gravity="0"
+
+	modelscale=".75"
+	model=""
+	impacteffect=""
+	traileffect=""
+	
+	canturn="false"
+	flying="true"
+	flyheight="130"
+	
+>
+</projectile>

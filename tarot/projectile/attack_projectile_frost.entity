@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Tarot_Attack_Frost"
+
+	speed="2200"
+	gravity="0"
+	modelscale=".7"
+	model="/items/recipes/wolf_of_the_wilds/spinner.mdf"
+
+	impacteffect="/items/recipes/wolf_of_the_wilds/impact.effect"
+	traileffect="/items/recipes/wolf_of_the_wilds/trail.effect"
+>
+	<onimpact>
+		<compare a="param" b="1" op="eq">
+			<setactivemodifierkey entity="proxy_entity" name="Tarot_nextattackneedstobeinvis" />
+			<attack source="this_owner_entity" target="target_entity" startcooldown="false" />
+		</compare>
+	</onimpact>
+</projectile>

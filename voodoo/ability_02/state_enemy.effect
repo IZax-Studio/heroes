@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true" useentityeffectscale="1">
+	<definitions>
+		<modifier
+			name="modifier0"
+			life="800"
+			startcolor="11 2 6"
+			endcolor="1.0 1.0 1.0"
+		/>
+		<particlesystem name="system0" space="world" scale=".75">
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2000"
+				volume="0.7" 
+				sample="/heroes/voodoo/ability_02/sounds/ability_02_enemy.wav"
+			/>
+			<billboard
+				expirelife="250"
+				color="0 0 .5"
+				alpha=".5"
+				size="200"
+				material="/shared/effects/materials/whitedot_blend.material"
+				position="0 0 110"
+				framespeed="2"
+				directionalspace="local"
+			/>
+			<billboard
+				expirelife="250"
+				color=".5 .1 1"
+				alpha=".8"
+				size="155"
+				depthbias="-25"
+				material="/shared/effects/materials/circle_add.material"
+				position="0 0 110"
+				framespeed="2"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				directionalspace="local"
+				rollspeed="-150"
+			/>
+			<billboard
+				expirelife="250"
+				color=".5 .1 .8"
+				alpha=".6"
+				size="105"
+				depthbias="-25"
+				material="/shared/effects/materials/circle_add.material"
+				position="0 0 110"
+				framespeed="2"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				directionalspace="local"
+				rollspeed="150"
+			/>
+			<billboard
+				expirelife="250"
+				color="1 .1 2"
+				alpha=".5"
+				size="135"
+				depthbias="-25"
+				material="/heroes/fade/alt6/effects/cyber/circle2.material"
+				position="0 0 110"
+				framespeed="2"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				directionalspace="local"
+				rollspeed="150"
+			/>
+			<billboard
+				expirelife="250"
+				color="1 .1 2"
+				alpha=".5"
+				size="85"
+				depthbias="-25"
+				material="/heroes/fade/alt6/effects/cyber/circle2.material"
+				position="0 0 110"
+				framespeed="2"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				directionalspace="local"
+				rollspeed="-200"
+			/>
+			<billboard
+				expirelife="250"
+				color="1 .1 1"
+				size="120"
+				depthbias="-25"
+				material="/shared/effects/materials/miku_music01.material"
+				position="0 60 110"
+				framespeed="2"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				width="250"
+				directionalspace="local"
+			/>
+			<billboard
+				expirelife="250"
+				color="1 .1 1"
+				size="120"
+				depthbias="-25"
+				material="/shared/effects/materials/miku_music01.material"
+				position="0 -60 110"
+				framespeed="2"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				roll="180"
+				width="250"
+				directionalspace="local"
+			/>
+			<simpleemitter
+				spawnrate="2"
+				minparticlelife="400"
+				maxparticlelife="600"
+				offsetsphere="0"
+				material="/heroes/accursed/alt7/effects/cyber/circle4.material"
+				position="0 0 110"
+			>
+				<particle
+					startsize="120"
+					endsize="230"
+					color="3 .2 3"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					anchor="1"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				spawnrate="2"
+				minparticlelife="400"
+				maxparticlelife="600"
+				offsetsphere="0"
+				material="/heroes/accursed/alt7/effects/cyber/circle4.material"
+				position="0 0 110"
+			>
+				<particle
+					startsize="120"
+					endsize="230"
+					color="3 .2 3"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					anchor="1"
+				/>
+			</simpleemitter>
+			<orbiteremitter
+				spawnrate="8"
+				minparticlelife="600"
+				maxparticlelife="850"
+				position="0.0 0.0 105" 
+				origin="0 0 80"
+				orbit="1 1 1"
+				direction="0 0 1"
+				offset="100 20 20"
+				cylindrical="ture" 
+				material="/shared/effects/materials/debris04_add.material"
+				depthbias="-15" 
+			>
+				<particle
+					startcolor=".8 0 1"
+					midcolor="1 0 1"
+					endcolor="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".2"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-70"
+					maxanglespeed="70"
+					size="40"
+					depthbias="-160"
+					framespeed="2"
+					minscale=".5"
+					maxscale="1"
+				/>
+				<particle
+					startcolor=".5 0 1"
+					midcolor=".8 0 1"
+					endcolor="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".2"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-70"
+					maxanglespeed="70"
+					size="40"
+					depthbias="-160"
+					framespeed="2"
+					minscale=".5"
+					maxscale="1"
+				/>
+			</orbiteremitter>	
+			<orbiteremitter
+				spawnrate="8"
+				minparticlelife="600"
+				maxparticlelife="850"
+				position="0.0 0.0 105" 
+				origin="0 0 80"
+				orbit="1 1 1"
+				direction="0 0 1"
+				offset="100 20 20"
+				cylindrical="ture" 
+				material="/shared/effects/materials/debris05_add.material"
+				depthbias="-15" 
+			>
+				<particle
+					startcolor=".8 0 1"
+					midcolor="1 0 1"
+					endcolor="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".2"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-70"
+					maxanglespeed="70"
+					size="40"
+					depthbias="-160"
+					framespeed="2"
+					minscale=".5"
+					maxscale="1"
+				/>
+				<particle
+					startcolor=".5 0 1"
+					midcolor=".8 0 1"
+					endcolor="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".2"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-70"
+					maxanglespeed="70"
+					size="40"
+					depthbias="-160"
+					framespeed="2"
+					minscale=".5"
+					maxscale="1"
+				/>
+			</orbiteremitter>	
+			<orbiteremitter
+				spawnrate="20"
+				minparticlelife="600"
+				maxparticlelife="850"
+				position="0.0 0.0 105" 
+				origin="0 0 100"
+				orbit="1 1 1"
+				direction="0 0 1"
+				offset="50 30 40"
+				cylindrical="ture" 
+				material="/shared/effects/materials/sparks_reveal.material"
+				depthbias="-15" 
+			>
+				<particle
+					color="1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					maxangle="90"
+					startsize="50"
+					minendsize="30"
+					maxendsize="35"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					startframe=".3"
+					endframe="1"
+					minscale="1"
+					maxscale="1.5"
+				/>
+			</orbiteremitter>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<waitfordeath instance="instance0" />
+		
+	</thread>
+</effect>
+
+
+
+
+
+
+
+

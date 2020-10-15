@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<material>
+	<parameters>
+		<vec2 name="vUVScroll1" value="0 .35" />
+		<vec2 name="vUVScroll2" value="0 0" />
+		<float name="fUVYAlphaFade" value="0.1" />
+	</parameters>
+	
+</material>

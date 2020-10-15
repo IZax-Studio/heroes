@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Frosty_Ability4"
+
+	icon="4.jpg"
+	passiveeffect=""
+
+	movespeedslow="0.25"
+	attackspeed="-0.25"
+>
+
+	<altavatar key="Hero_Frosty.Alt4"
+		icon="../alt4/ability_04/icon.tga"
+	/>
+
+</state>

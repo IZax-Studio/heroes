@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="bolt_lightning_02" useentityeffectscale="true">
+	<definitions>
+
+		<modifier
+			name="modifier0"
+			life="750"
+			startcolor=".15"
+			endcolor="1"
+		/>
+		
+		<particlesystem name="system0" space="world" scale="1.75">
+
+			<sound
+			    life="5000"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".9"
+				sample="/heroes/ravenor/ability_02/sounds/impact_%.wav"
+			/>
+			
+			<sound
+				life="5000"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".2"
+				sample="/heroes/kunas/ability_01/sounds/ability_01_impact_0%.wav"
+			/>
+
+			<model
+				life="250"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor=".25 0 .25"
+				endcolor="0 0 0"
+				startscale="1"
+				midscale="1"
+				endscale="1"
+				midscalepos=".4"
+				material="/shared/effects/materials/shell4.material"
+				startalpha="0"
+				endalpha="10"
+			/>
+
+			<beam
+				life="250"
+				bone_b="_bone_centerofchest"
+				position_a="0 0 540"
+				size="80"
+				color="0 0 0"
+				alpha="0.5"
+				material="/shared/effects/materials/trail_01_blend.material"
+				framespeed="1.75"
+			/>
+
+			<beam
+				life="250"
+				bone_b="_bone_centerofchest"
+				position_a="0 0 740"
+				size="20"
+				color=".8 0 .8"
+				alpha="1.0"
+				material="/shared/effects/materials/flux_ray.material"
+				framespeed="1.75"
+			/>
+
+			<beam
+				life="250"
+				bone_b="_bone_centerofchest"
+				position_a="0 0 440"
+				size="110"
+				color="1 0 1"
+				alpha="1.0"
+				material="/shared/effects/materials/black_energy.material"
+				framespeed="1.75"
+			/>
+
+			<beam
+				life="250"
+				bone_a="_bone_centerofchest"
+				bone_b="_bone_centerofchest"
+				position_a="0 0 440"
+				size="110"
+				color="1 0 1"
+				alpha="1.0"
+				material="/shared/effects/materials/black_energy.material"
+				framespeed="1.75"
+			/>
+			
+			 
+			<simpleemitter
+				spawnrate="75"
+				count="6"
+				minparticlelife="250"
+				maxparticlelife="250"
+				gravity="-55"
+				speed="40"
+				drag=".08"
+				acceleration="0"
+				position="0 0 0"
+				material="/shared/effects/materials/phantom_smoke_10.material"
+				offsetsphere="8 8 75"
+				minangle="90"
+				maxangle="-90"
+			>
+				<particle 
+					startcolor=".7 0 .7"
+					midcolor=".35 0 .35"
+					endcolor="0 0 0"
+					midcolorpos=".15"
+					startframe="0"
+					endframe="1"
+					startwidth="15"
+					midwidth="10"
+					endwidth="5"
+					midwidthpos=".5"
+					startheight="2000"
+					endheight="0"
+					startalpha="0"
+					midalpha=".1"
+					endalpha="0"
+					midalphapos=".1"
+					lockup="true"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				count="3"
+				spawnrate="25"
+				particlelife="750"
+				acceleration="0.0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+				offsetsphere="52 52 0"
+			>
+				<particle
+					turn="1"
+				>
+					<groundsprite
+						delay="150"
+						life="150"
+						material="/shared/effects/materials/earth_cracks_add_purple.material"
+						startsize="75"
+						midsize="100"
+						endsize="100"
+						startcolor=".5 0 .5"
+						midcolor=".5 0 .5"
+						endcolor="0 0 0"
+						midcolorpos=".35"
+						minyaw="0"
+						maxyaw="360"
+					/>
+				</particle>
+			</simpleemitter>
+				
+			<billboard
+				bone="_bone_centerofchest"
+				position="0 0 0"
+				life="300"
+				material="/shared/effects/materials/whitedot.material"
+				size="150"
+				startcolor=".5 0 .5"
+				endcolor="0 0 0"
+				midalphapos="0.05"
+				depthbias="-50"
+				lockright="1"
+				lockup="1"
+				pitch="90"
+			/>
+			<model
+				life="500"
+				model="\heroes\ravenor\alt9\ability_02\effects/model.mdf"
+				material="\heroes\ravenor\alt9\ability_02\effects/material2.material"
+				startscale="1"
+				midscale="5"
+				endscale="6"
+				midscalepos=".3"
+				position="0 0 20"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				yawspeed="-100"
+				color="1 0 1"
+			>
+			</model>
+			<model
+				life="500"
+				model="\heroes\ravenor\alt9\ability_02\effects/model.mdf"
+				material="\heroes\ravenor\alt9\ability_02\effects/material2.material"
+				startscale="1"
+				midscale="4"
+				endscale="5"
+				midscalepos=".3"
+				position="0 0 50"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				yawspeed="100"
+				color="1 0 1"
+
+			>
+			</model>
+			<model
+				life="300"
+				model="\heroes\ravenor\alt9\ability_02\effects/model.mdf"
+				material="\heroes\ravenor\alt9\ability_02\effects/material.material"
+				startscale="1"
+				midscale="4"
+				endscale="5"
+				midscalepos=".3"
+				position="0 0 50"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				yawspeed="100"
+				startcolor="1 0 1"
+				midcolor="1 0 1"
+				endcolor="0"
+			>
+			</model>
+			<model
+				life="300"
+				model="\heroes\ravenor\alt9\ability_02\effects/model.mdf"
+				material="\heroes\ravenor\alt9\ability_02\effects/material.material"
+				startscale="1"
+				midscale="5"
+				endscale="6"
+				midscalepos=".3"
+				position="0 0 20"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				yawspeed="-100"
+				startcolor="1 0 1"
+				midcolor="1 0 1"
+				endcolor="0"
+			>
+			</model>
+
+
+
+
+			<simpleemitter
+				life="3000"
+				count="1"
+				spawnrate="1000"
+				particlelife="1500"
+				direction="0 0 -1"
+				speed="1500"
+				minangle="0"
+				maxangle="0" 
+				position="0 0 500"
+			>
+				<particle>
+
+					<billboard
+						material="/shared/effects/materials/whitedot.material"
+						color=".5 0 .3"
+						size="60"
+						depthbias="-35"
+					/>
+
+					<simpleemitter
+						material="/shared/effects/materials/whitedot.material"
+						spawnrate="40"
+						particlelife="100"
+							depthbias="-35"
+					>
+						<particle
+							color=".25 0 .25"
+							startsize="16"
+							endsize="4"
+
+						/>
+					</simpleemitter>
+
+					<simpleemitter
+						material="/shared/effects/materials/whitedot.material"
+						spawnrate="400"
+						particlelife="400"
+						gravity="7"
+						speed="30"
+						inheritvelocity="0.21"
+						offsetsphere="10 10 10"
+						drag="0.1"
+						depthbias="-35"
+					>
+						<particle
+							heightdistort="0.01"
+							turn="1"
+							startcolor="1 0 .5"
+							endcolor="0 0 0"
+							startsize="3"
+							endsize="0"
+						/>
+					</simpleemitter>
+
+					<simpleemitter
+						material="/shared/effects/materials/pyroclast_02.material"
+						spawnrate="75"
+						minparticlelife="500"
+						maxparticlelife="750"
+						gravity="7"
+						speed="30"
+						inheritvelocity="0.21"
+						offsetsphere="15"
+						drag="0.1"
+					>
+						<particle
+							startalpha="0"
+							midalpha=".75"
+							endalpha="0"
+							midalphapos=".2"
+							roll="180"
+							heightdistort="0.01"
+							turn="1"
+							startcolor="0 0 0"
+							endcolor="0 0 0"
+							minsize="20"
+							maxsize="60"
+						/>
+					</simpleemitter>
+
+					<simpleemitter
+						material="/shared/effects/materials/smash_add.material"
+						spawnrate="100"
+						particlelife="200"
+						gravity="7"
+						speed="310"
+						inheritvelocity="0.21"
+						offsetsphere="10 10 10"
+						drag="0.1"
+					>
+						<particle
+							roll="180"
+							turn="1"
+							startcolor=".5 0 .5"
+							midcolor=".5 0 .5"
+							endcolor="0 0 0"
+							startsize="25"
+							endsize="44"
+						/>
+					</simpleemitter>
+
+					<simpleemitter
+						material="/shared/effects/materials/phantom_smoke_10.material"
+						spawnrate="100"
+						particlelife="600"
+						gravity="7"
+						speed="30"
+						inheritvelocity="0.21"
+						offsetsphere="10 10 10"
+						drag="0.1"
+					>
+						<particle
+							roll="180"
+							heightdistort="0.01"
+							turn="1"
+							startcolor=".125 0 .125"
+							endcolor="0 0 0"
+							startsize="36"
+							endsize="10"
+						/>
+					</simpleemitter>
+
+					<simpleemitter
+						spawnrate="20"
+						minparticlelife="150"
+						maxparticlelife="300"
+						gravity="0"
+						speed="0"
+						drag="0"
+						acceleration="0"
+						position="0 -25 0"
+						material="/shared/effects/materials/black_energy.material"
+						direction="0 0 0"
+						offsetsphere="12"
+						depthbias="0"
+					>
+						<particle 
+							minangle="0"
+							maxangle="360"
+							minanglespeed="-360"
+							maxanglespeed="360"
+							startcolor="1 0 .75"
+							midcolor="1 0 .75"
+							endcolor="1 0 .75"
+							startframe="0"
+							endframe="1"
+							startwidth="1"
+							endwidth="70"
+							height="80"
+							framespeed="3"
+						/>
+					</simpleemitter>
+
+
+					<simpleemitter
+						spawnrate="20"
+						minparticlelife="150"
+						maxparticlelife="300"
+						gravity="0"
+						speed="0"
+						drag="0"
+						acceleration="0"
+						position="0 -60 0"
+						material="/shared/effects/materials/black_energy.material"
+						direction="0 0 0"
+						offsetsphere="12"
+						depthbias="0"
+					>
+						<particle 
+							minangle="0"
+							maxangle="360"
+							minanglespeed="-360"
+							maxanglespeed="360"
+							startcolor="1 0 .75"
+							midcolor="1 0 .75"
+							endcolor="1 0 .75"
+							startframe="0"
+							endframe="1"
+							startwidth="1"
+							endwidth="35"
+							height="45"
+							framespeed="3"
+						/>
+					</simpleemitter>
+				<simpleemitter
+				material="/shared/effects/materials/whitedot.material"
+				spawnrate="40"
+				particlelife="100"
+			>
+				<particle
+					color="1 1 1"
+					startsize="16"
+					endsize="4"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				material="/shared/effects/materials/whitedot.material"
+				spawnrate="300"
+				particlelife="400"
+				gravity="7"
+				speed="30"
+				inheritvelocity="0.21"
+				offsetsphere="10 10 10"
+				drag="0.1"
+			>
+				<particle
+					heightdistort="0.01"
+					turn="1"
+					startcolor=".500 .20 .500"
+					endcolor="0 0 0"
+					startsize="3"
+					endsize="0"
+				/>
+			</simpleemitter>
+
+			
+
+		
+<simpleemitter
+				material="/shared/effects/materials/smash_add.material"
+				spawnrate="100"
+				particlelife="200"
+				gravity="7"
+				speed="310"
+				inheritvelocity="0.21"
+				offsetsphere="10 10 10"
+				drag="0.1"
+			>
+				<particle
+					roll="180"
+					turn="1"
+					startcolor=".100 .0 .50"
+					midcolor="0"
+					endcolor=".100 .0 .50"
+					startsize="50"
+					endsize="20"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+
+				material="/shared/effects/materials/phantom_smoke_10.material"
+				spawnrate="100"
+				particlelife="600"
+				gravity="7"
+				speed="30"
+				inheritvelocity="0.21"
+				offsetsphere="10 10 10"
+				drag="0.1"
+			>
+				<particle
+					roll="180"
+					heightdistort="0.01"
+					turn="1"
+					startcolor=".500 .20 .500"
+					endcolor="0 0 0"
+					startsize="36"
+					endsize="10"
+				/>
+			</simpleemitter>
+
+
+				</particle>
+			</simpleemitter>
+		</particlesystem>
+		
+		<particlesystem name="system1" space="world" scale="1.75">
+		
+			<simpleemitter
+				life="3000"
+				count="1"
+				spawnrate="1000"
+				particlelife="1500"
+				direction="0 0 -1"
+				speed="1500"
+				minangle="0"
+				maxangle="0" 
+				position="0 0 500"
+			>
+				<particle>
+					<billboard
+						material="/shared/effects/materials/whitedot.material"
+						color=".5 .0 .3"
+						size="60"
+						depthbias="-35"
+					/>
+
+					<simpleemitter
+						material="/shared/effects/materials/whitedot.material"
+						spawnrate="40"
+						particlelife="100"
+							depthbias="-35"
+					>
+						<particle
+							color=".25 .0 .1"
+							startsize="16"
+							endsize="4"
+
+						/>
+					</simpleemitter>
+					
+					<simpleemitter
+						material="/shared/effects/materials/spark_12.material"
+						spawnrate="50"
+						particlelife="300"
+						gravity="7"
+						offsetsphere="5"
+						drag="0.1"
+					>
+						<particle
+							startcolor="1 .3 .8"
+							endcolor="0 0 0"
+							startsize="30"
+							endsize="0"
+						/>
+					</simpleemitter>
+					<simpleemitter
+						delay="50"
+						position="0 0 50"
+						count="30"
+						spawnrate="100"
+						particlelife="200"
+						minspeed="120"
+						maxspeed="320"
+						inheritvelocity="0.0"
+						offsetsphere="10"
+					>
+						<particle
+						anchor="1"
+						>
+							<trailemitter
+								life="200"
+								spawnrate="61"
+								startminparticlelife="100"
+								startmaxparticlelife="200"
+								offsetsphere="5 5 5"
+								endminparticlelife="1"
+								endmaxparticlelife="1" 
+								texpostime="200"
+								texposscale="0"
+								texstretchscale="1"
+								position="0 0 0"
+								material="/shared/effects/materials/arrow_trail.material"
+							>
+								<particle
+									startcolor="1 .3 .8"
+									midcolor=".4 .0 .4"
+									endcolor="0 0 0"
+									startsize="7"
+									endsize="0"
+									midcolorpos=".1"
+									midsizepos=".1"
+								/>
+							</trailemitter>
+						</particle>
+					</simpleemitter>
+
+
+					<simpleemitter
+						material="/shared/effects/materials/whitedot.material"
+						spawnrate="50"
+						particlelife="400"
+						gravity="7"
+						speed="30"
+						inheritvelocity="0.21"
+						offsetsphere="10 10 10"
+						drag="0.1"
+						depthbias="-35"
+					>
+						<particle
+							heightdistort="0.01"
+							turn="1"
+							startcolor="1 0 1"
+							endcolor="0 0 0"
+							startsize="10"
+							endsize="0"
+						/>
+					</simpleemitter>
+					
+
+					<simpleemitter
+						material="/shared/effects/materials/smoke_particle.material"
+						spawnrate="75"
+						minparticlelife="500"
+						maxparticlelife="750"
+						gravity="7"
+						speed="30"
+						inheritvelocity="0.21"
+						offsetsphere="15"
+						drag="0.1"
+					>
+						<particle
+							maxangle="360"
+							minanglespeed="-100"
+							maxanglespeed="100"
+							startalpha="0"
+							midalpha=".3"
+							endalpha="0"
+							startcolor="0 0 0"
+							endcolor="0 0 0"
+							startsize="20"
+							endsize="60"
+							minscale="1"
+							maxscale="2"
+						/>
+					</simpleemitter>
+					
+				</particle>
+			</simpleemitter>
+		<template name="swordCrack">
+				<simpleemitter
+					bone="_bone_centerofchest"
+					life="100"
+					position="0 0 5"
+					count="1"
+					spawnrate="99999"
+					particlelife="850"
+				>
+					<particle anchor="0" pitchspeed="360">
+						<billboard
+							life="{duration}"
+							bone="_bone_centerofchest"
+							material="crack_1_reveal.material"
+							color="1"
+							width="80" height="20"
+							size="150"
+							scale="{scale}"
+							yaw="{yaw}" pitch="{pitch}" roll="{roll}"
+							depthbias="-50"
+							startframe="1" midframe=".1" endframe="0.1"
+						/>
+						<billboard
+							delay="{duration}"
+							bone="_bone_centerofchest"
+							life="250"
+							material="crack_1_reveal.material"
+							color="1"
+							startwidth="80" midwidth="80" endwidth="120"
+							startheight="20" midheight="20" endheight="10"
+							startalpha="1" midalpha="1" endalpha="0" midalphapos=".6"
+							startsize="150" midsize="280" endsize="300"
+							scale="{scale}"
+							frame="0.1"
+							depthbias="-50"
+							yaw="{yaw}" pitch="{pitch}" roll="{roll}"
+						/>
+					</particle>
+				</simpleemitter>
+			</template>
+			<instance name="swordCrack" duration="350" scale="2" yaw="0" pitch="0" roll="60"/>
+		</particlesystem>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	
+	
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<spawnmodifier instance="instance3" modifier="modifier0"/>
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

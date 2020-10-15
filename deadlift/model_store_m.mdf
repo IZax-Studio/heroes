@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model file="ereshkigal_2/model.model" type="K2" >
+	<anim name="idle" clip="ereshkigal_2/clips/relive.clip" loop="true" loopbackframe="31"/>
+</model> 

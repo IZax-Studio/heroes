@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="black.model" med="black.model" low="black.model" >
+
+	<anim name="idle" clip="idle.clip" fps="550" loop="true">
+	</anim>
+	
+	<anim name="portrait" clip="idle.clip" fps="400" loop="true"/>
+
+	<anim name="taunt_1" clip="ability_4.clip" fps="550"/>
+	
+	<anim name="item_1" clip="ability_1.clip" fps="550" loop="false">
+		
+	</anim>
+	
+	<anim name="ability_1" clip="ability_1.clip" fps="550" loop="false">
+		<frameevent frame="0" cmd="StartEffect effects/static_field/static_field_ability_01.effect" />
+	</anim>
+
+	<anim name="ability_2" clip="ability_2.clip" fps="550" loop="false">
+		<frameevent frame="0" cmd="StartEffect effects/ability_02/cast.effect" />
+	</anim>
+
+	<anim name="ability_4" clip="ability_4.clip" fps="550" loop="false">
+		<frameevent frame="0" cmd="StartEffect effects/static_field/static_field_ability_04.effect" />
+		<frameevent frame="150" cmd="StartEffect effects/ability_04/light_strike_cast.effect" />
+	</anim>
+
+	<anim name="attack_1" clip="attack_1.clip" fps="550" loop="false">
+		<frameevent frame="80" cmd="PlaySoundLinear /heroes/kunas/sounds/move_%.wav 0 800 0.1"/>	
+		<frameevent frame="136" cmd="PlaySoundLinear /heroes/kunas/sounds/move_%.wav 0 800 0.1"/>
+		<frameevent frame="135" cmd="PlaySoundLinear /heroes/kunas/sounds/attack_1.wav 400 1800 0.35"/>
+	</anim>
+
+	<anim name="attack_2" clip="attack_2.clip" fps="550" loop="false">
+		<frameevent frame="80" cmd="PlaySoundLinear /heroes/kunas/sounds/move_%.wav 0 800 0.1"/>
+		<frameevent frame="138" cmd="PlaySoundLinear /heroes/kunas/sounds/move_%.wav 0 800 0.1"/>
+		<frameevent frame="135" cmd="PlaySoundLinear /heroes/kunas/sounds/attack_2.wav 400 1800 0.35"/>
+	</anim>
+
+	<anim name="walk_1" clip="walk_1.clip" fps="550" loop="true">
+		
+			</anim>
+
+	<anim name="bored_1" clip="idle.clip" fps="550" loop="false"/>
+
+	<anim name="death_1" clip="death_1.clip" fps="550" loop="true" loopbackframe="-1">
+	</anim>
+
+	<anim name="knock_1" clip="idle.clip" loop="true" loopbackframe="-1"/>
+	
+	<anim name="getup_1" clip="idle.clip"/>		
+</model>

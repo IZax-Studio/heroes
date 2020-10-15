@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Solstice_Ability1_Enemy"
+	
+	icon="Cha110_Skill_E.png"
+
+	ishidden="true"
+	
+	stunned="true"
+	stunneddurationunmodifiable="true"
+	impactinterval="450"
+>
+	<onimpact>
+		<applystate name="State_Stunned" duration="1050"/>
+		<damage effecttype="Magic" amount="60,120,180,240"/>
+	</onimpact>
+</state>

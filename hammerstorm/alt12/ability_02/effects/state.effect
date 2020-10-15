@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" name="ability_03">
+
+<definitions>
+	<particlesystem name="system0" space="entity" scale="0.8">
+		
+		<groundsprite
+			life="1100"
+			loop="true"
+			timenudge="0"
+			material="/shared/effects/materials/toughness_aura_white.material"
+			startsize="65"
+			midsize="50"
+			endsize="65"
+			midsizepos=".5"
+			startcolor=".3 .2 .1"
+			midcolor=".6 .4 .2"
+			endcolor=".3 .2 .1"
+			midcolorpos=".2"
+			minangle="15"
+			maxangle="55"
+			angles="0 0 0"
+		/>
+		
+		<groundsprite
+			life="1100"
+			position="0 0 0"
+			loop="true"
+			timenudge="0"
+			material="/shared/effects/materials/Hammerstorm_ground2.material"
+			startsize="47"
+			midsize="37"
+			endsize="47"
+			midsizepos=".5"
+			startcolor="1"
+			midcolor=".6"
+			endcolor="1"
+			midcolorpos=".2"
+			minangle="15"
+			maxangle="55"
+			depthbias="-50"
+			angles="0 0 0"
+		/>
+	</particlesystem>
+
+</definitions>
+
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+
+
+
+
+
+

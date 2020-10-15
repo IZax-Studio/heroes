@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model file="R2/model.model" type="K2">
+
+	<anim name="idle" clip="../kiana/clips/default_1.clip" loop="true" loopbackframe="1"/>
+	
+	<anim name="portrait" clip="../kiana/clips/default_1.clip" fps="15" loop="true"/>
+		
+	<anim name="item_1" clip="../kiana/clips/item_1.clip"/>
+	
+	<anim name="ability_1" clip="../kiana/clips/ability_1.clip" fps="60" blendtime="100"/>
+	
+	<anim name="ability_2" clip="../kiana/clips/ability_2.clip" fps="60" blendtime="50">
+	<frameevent frame="1" cmd="PlaySoundLinear /heroes/parallax/kiana/S/sk2.wav 600 1300 1"/>
+	</anim>
+
+	<anim name="ability_3" clip="../kiana/clips/ability_3.clip" fps="60">
+		<frameevent frame="1" cmd="PlaySoundLinear /heroes/riftmage/ability_03/sounds/cast.wav 300 1500 1"/>
+	</anim> 
+
+	<anim name="attack_1" clip="../kiana/clips/attack_1.clip" fps="20">
+		
+		<startevent cmd="StartEffect effects/attack_1.effect 2" />
+	</anim>
+
+	<anim name="attack_2" clip="../kiana/clips/attack_2.clip" fps="20">
+		
+		<frameevent frame="5" cmd="PlaySoundLinear /heroes/parallax/kiana/S/ag(%).wav 600 1300 .5"/>
+		<startevent cmd="StartEffect effects/attack_2.effect 2" />
+	</anim>
+ 
+	<anim name="walk_1" clip="../kiana/clips/walk_1.clip" loop="true" loopbackframe="1"/>
+	
+	<anim name="walk_2" clip="../kiana/clips/walk_1.clip" loop="true" loopbackframe="1"/>
+
+	<anim name="death_1" clip="../kiana/clips/death_1.clip" fps="10">
+		<frameevent frame="4" cmd="StartEffect effects/death.effect" />
+		
+	</anim>
+	
+	<anim name="bored_1" clip="../kiana/clips/bored_1.clip">
+	<frameevent frame="15" cmd="StartEffect bored.effect" />
+		
+	</anim>
+	<anim name="taunt_1" clip="../kiana/clips/ability_4.clip"/>
+	
+	<anim name="knock_1" clip="../kiana/clips/knock_1.clip" loop="true" loopbackframe="1"/>
+	
+	<anim name="ability_4" clip="../kiana/clips/taunt_1.clip" blendtime="100" fps="50"/>
+	
+</model>

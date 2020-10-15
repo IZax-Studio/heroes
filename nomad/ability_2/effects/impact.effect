@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1" >
+
+	<definitions>
+	
+	
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".75"
+				sample="../../../ability_2/sounds/impact.wav"
+			/>
+			
+			<model
+				delay="100"
+				life="175"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="0 0 0"
+				midcolor="2.5 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".25"
+				startscale="1"
+				midscale="1"
+				endscale="1"
+				material="/shared/effects/materials/shell2.material"
+			/>
+
+			<simpleemitter
+				delay="100"
+				bone="_bone_centerofchest"
+				life="1000"
+				count="5"
+				minparticlelife="350"
+				maxparticlelife="750"
+				spawnrate="50"
+				speed="200"
+				gravity="10"
+				direction="0 0 0"
+				minangle="0"
+				maxangle="15"
+				material="/shared/effects/materials/water_spray_add.material"
+				offsetsphere="50 50 50"
+				position="0 0 20"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					startsize="110"
+					endsize="110"
+					startcolor="0 0 0"
+					midcolor=".25 0 0"
+					endcolor="0 0 0"
+					midcolorpos=".25"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				delay="100"
+				bone="_bone_centerofchest"
+				life="1000"
+				count="7"
+				particlelife="1000"
+				spawnrate="50"
+				speed="200"
+				gravity="-1"
+				direction="0 0 0"
+				minangle="0"
+				maxangle="15"
+				material="/shared/effects/materials/dust_smoke_02.material"
+				offsetsphere="35 35 25"
+				position="0 0 20"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					startsize="110"
+					endsize="110"
+					color=".5 0 0"
+					startalpha="0"
+					midalpha=".75"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_center"
+				delay="100"
+				count="10"
+				minparticlelife="300"
+				maxparticlelife="600"
+				spawnrate="100"
+				minspeed="150"
+				maxspeed="300"
+				gravity="20"
+				direction="0 0 1"
+				minangle="0"
+				maxangle="1"
+				material="/shared/effects/materials/dust_smoke_02.material"
+				offsetsphere="25 25 35"
+				position="0 0 65"
+			>
+				<particle 
+					startsize="150"
+					endsize="150"
+					startwidth="10"
+					endwidth="30"
+					color=".5 0 0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".2"
+					lockup="1"
+					lockright="1"
+					directionalspace="local"
+				/>
+			</simpleemitter>
+
+			<billboard
+				delay="100"
+				bone="_bone_centerofchest"
+				life="250"
+				startcolor=".3 0 0"
+				endcolor="0"
+				startsize="200"
+				endsize="0"
+				depthbias="0"
+				material="/shared/effects/materials/stomp_01.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				rollspeed="360"
+			/>
+			
+			<billboard
+				delay="100"
+				bone="_bone_centerofchest"
+				life="1000"
+				startcolor="1 0 0"
+				midcolor=".5 0 0"
+				midcolorpos="0.3"
+				endcolor="0"
+				startsize="175"
+				endsize="0"
+				depthbias="0"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+			<billboard
+				delay="100"
+				bone="_bone_centerofchest"
+				life="350"
+				param="0.1"
+				startsize="50"
+				endsize="150"
+				startalpha="0"
+				midalpha=".4"
+				endalpha="0"
+				depthbias="0"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+			
+			<billboard
+				delay="200"
+				bone="_bone_centerofchest"
+				life="350"
+				param="0.1"
+				startsize="50"
+				endsize="150"
+				startalpha="0"
+				midalpha=".4"
+				endalpha="0"
+				depthbias="0"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		  <spawnparticlesystem instance="instance0" particlesystem="system0"/>
+  		  <spawnmodifier instance="instance1" modifier="modifier0"/> 
+  		  <waitfordeath instance="instance0" />
+
+	</thread>
+
+</effect>

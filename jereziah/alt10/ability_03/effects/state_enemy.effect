@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="chainsofdoom" deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<simpleemitter
+				timenudge="2000"
+				bone="_bone_centerofchest"
+				spawnrate="5"
+				minparticlelife="1000"
+				maxparticlelife="1500"
+				gravity="2"
+				drag=".25"
+				position="0 0 0"
+				offsetsphere="10 10 0"
+				material="/shared/effects/materials/light_rays.material"
+				depthbias="-20"
+			>
+				<particle
+					flare="1"
+					maxangle="360"
+					minanglespeed="-6"
+					maxanglespeed="6"
+					startcolor="0 0 0"
+					midcolor=".3 .15 .3"
+					endcolor="0 0 0"
+					startsize="0"
+					endsize="120"
+					minheightdistort="1"
+					maxheightdistort="2"
+					startanchor="1"
+					endanchor="1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="3"
+				particlelife="1000"
+				gravity="1"
+				speed="5"
+				drag="0"
+				acceleration="0"
+				position="0 0 0"
+				offsetsphere="10 10 0"
+				material="/shared/effects/materials/refract_longsplash.material"
+				inheritvelocity=".5"
+				depthbias="-20"
+			>
+				<particle 
+					maxangle="360"
+					startparam="0"
+					midparam=".1"
+					endparam="0"
+					startcolor=".3 .15 .3"
+					frame=".1"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+					midalphapos=".5"
+					startsize="75" 
+					endsize="100"
+				/>
+			</simpleemitter>
+			
+			<model
+			life="350"
+				parentmodel="true"
+				parentskeleton="true"
+				expirelife="500"
+				startcolor="0"
+				midcolor="1 .7 1"
+				endcolor="0"
+				material="/shared/effects/materials/shell2.material"
+			/>
+				
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

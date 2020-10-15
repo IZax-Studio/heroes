@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1.0">
+
+			<simpleemitter
+				spawnrate="5"
+				particlelife="1000"
+			>
+				<particle>
+					<model
+						maxyaw="360"
+						life="1000"
+						model="/shared/effects/models/expanding_cone/model.mdf"
+						anim="idle_wide"
+						startcolor="0"
+						midcolor="1 1 1"
+						endcolor="0"
+						scale="3"
+					/>
+				</particle>
+			</simpleemitter>
+			
+		</particlesystem>
+		
+		<particlesystem name="system1" space="world" >
+
+			<template name="weapon_luck" >
+				
+				
+				<simpleemitter
+					spawnrate="15"
+					minparticlelife="400"
+					maxparticlelife="500"
+					material="/shared/effects/materials/star_15.material"
+					bone="{bone}"
+					offsetsphere="20"
+					maxspeed="40"
+					drag="0.01"
+					gravity="1"
+					inheritvelocity=".1"
+					limitinheritvelocity="100"
+				>
+					<particle
+						maxangle="360"
+						minanglespeed="-60"
+						maxanglespeed="60"
+						startcolor="0"
+						midcolor="1"
+						endcolor="0"
+						midcolorpos=".2"
+						minsize="10"
+						maxsize="15"
+					/>
+				</simpleemitter>
+				
+				<billboard
+					bone="{bone}"
+					material="/shared/effects/materials/whitedot.material"
+					color=".25 .25 .25"
+					size="50"
+					depthbias="-50"
+				/>
+			</template>
+			
+			<instance name="weapon_luck" bone="Dummy002" />
+			<instance name="weapon_luck" bone="Dummy003" />
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>

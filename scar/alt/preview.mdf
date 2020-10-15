@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="THINT's Mod" file="/heroes/scar/model.model" type="K2">
+	<anim name="idle" clip="/heroes/scar/clips/preview_1.clip" loop="true" loopbackframe="71">
+	
+	<frameevent frame="1" cmd="StartModelPanelEffect store2_detail_heroAvatars_large_model default_store.effect"/>
+	</anim>
+</model>

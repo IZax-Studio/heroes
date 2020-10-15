@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" name="ability_01_impact">
+	<definitions>
+		<particlesystem name="system0" space="world"  scale=".8">
+		
+			<sound
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="2000" 
+				volume=".7" 
+				sample="hit_4.ogg"
+			/>
+
+<sound
+delay="300"
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="2000" 
+				volume=".7" 
+				sample="hit_4.ogg"
+			/>
+
+<sound
+delay="600"
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="2000" 
+				volume=".7" 
+				sample="hit_4.ogg"
+			/>
+
+<sound
+delay="900"
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="2000" 
+				volume=".7" 
+				sample="hit_4.ogg"
+			/>
+
+<sound
+delay="1200"
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="2000" 
+				volume=".7" 
+				sample="hit_4.ogg"
+			/>
+
+<sound
+delay="1500"
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="2000" 
+				volume=".7" 
+				sample="hit_4.ogg"
+			/>
+
+<sound
+delay="1800"
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="2000" 
+				volume=".7" 
+				sample="hit_4.ogg"
+			/>
+
+<sound
+delay="2100"
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="2000" 
+				volume=".7" 
+				sample="hit_4.ogg"
+			/>
+
+<sound
+delay="2400"
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="2000" 
+				volume=".7" 
+				sample="hit_4.ogg"
+			/>
+
+			<sound
+				linearfalloff="true"
+				falloffstart="400"
+				falloffend="1800" 
+				volume="1" 
+				sample="sa1.ogg"
+			/>
+
+			<sound
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="2000" 
+				volume=".6" 
+				sample="/heroes/rocky/ability_01/sounds/impact_%.wav"
+			/>	
+
+			<sound
+				soundloop="true"
+				fadein="100"
+				fadeout="2000"
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="2000" 
+				volume=".4" 
+				life="3000"
+				sample="/heroes/magmar/ability_02/sounds/state.wav"
+			/>
+
+
+<simpleemitter
+				spawnrate="3"
+				count="3"
+				anchor="1"
+				timenudge="333"
+
+			>
+				<particle
+					particlelife="3000"
+				>
+						<billboard
+							position="0 0 25"
+							life="400"
+							startcolor="1 1 .3"
+							endcolor="0 0 0"
+							size="500"
+							rollspeed="-750"
+							depthbias="-50"
+						startscale=".2"
+                                endscale="2.3"
+	material="material.material"
+							lockright="true"
+							lockup="true"
+							pitch="-90"
+							directionalspace="local"
+						/>
+				</particle>
+			</simpleemitter>
+
+
+<simpleemitter
+				delay="1000"
+				spawnrate="3"
+				count="3"
+				anchor="1"
+				timenudge="333"
+
+			>
+				<particle
+					particlelife="3000"
+				>
+						<billboard
+							position="0 0 25"
+							life="400"
+							startcolor="1 1 .3"
+							endcolor="0 0 0"
+							size="500"
+							rollspeed="-750"
+							depthbias="-50"
+						startscale=".5"
+                                endscale="3"
+	material="material.material"
+							lockright="true"
+							lockup="true"
+							pitch="-90"
+							directionalspace="local"
+						/>
+				</particle>
+			</simpleemitter>	
+				
+	
+			
+
+<simpleemitter
+				delay="2000"
+				spawnrate="3"
+				count="3"
+				anchor="1"
+				timenudge="333"
+
+			>
+				<particle
+					particlelife="3000"
+				>
+						<billboard
+							position="0 0 25"
+							life="400"
+							startcolor="1 1 .3"
+							endcolor="0 0 0"
+							size="500"
+							rollspeed="-750"
+							depthbias="-50"
+						startscale="1"
+                                endscale="4.4"
+	material="material.material"
+							lockright="true"
+							lockup="true"
+							pitch="-90"
+							directionalspace="local"
+						/>
+				</particle>
+			</simpleemitter>	
+
+
+		
+			
+
+	
+			
+						
+			
+
+			
+								
+					
+					
+									<simpleemitter
+						count="1"
+						spawnrate="5"
+						particlelife="1800"
+						gravity="0"
+						speed="10"
+						drag=".003"
+						acceleration="00"
+						
+						material="/shared/effects/materials/whitedot.material"
+						offsetsphere="10 10 0"
+						minangle="0"
+						maxangle="0"
+						direction="0 0 0"
+						position="0 0 10"
+					>
+						<particle 
+							minangle="0"
+							maxangle="180"
+							minanglespeed="50"
+							startcolor=".5 .2 0"
+							endcolor="0 0 0"
+							
+							midcolorpos="1"
+							maxanglespeed="0"
+							startsize="10"
+							midsize="40"
+							endsize="100"
+							startalpha=".1"
+							midalpha=".3"
+							endalpha="0"
+							startanchor="1"
+							endanchor=".5"
+							
+							lockup="1"
+							lockright="1"
+							pitch="90"
+							
+						/>
+					</simpleemitter>						
+					
+					
+								
+			
+
+					
+
+
+					<simpleemitter
+						delay="100"
+						life="1000"
+						startparticlecolor="1"
+						endparticlecolor="0"
+						spawnrate="4"
+						particlelife="2000"
+						
+						speed="180"
+						count="30"
+						drag="0.02"						
+						
+						position="0 0 0"
+						minangle="0"
+						maxangle="1"
+						direction="0 0 1"
+						material="/shared/effects/materials/whitedot.material"
+						offsetsphere="0 0 0"
+					
+					>
+						<particle 
+							minangle="0"
+							maxangle="360"
+							minanglespeed="-30"		
+							startcolor=" 1 1 0"
+							midcolor="1 0 0"
+							endcolor="0 0 0"
+							maxanglespeed="30"
+							startsize="34"
+							endsize="75"
+
+							midalphapos=".2"
+							startanchor="0"
+							endanchor="0"					
+						 />			
+
+					</simpleemitter>				
+					
+				<model
+				position="0 0 0"
+				life="700"
+				model="/heroes/moraxus/ability_01/effects/motion_rig/model.mdf"
+				anim="idle"
+				startscale=".7"
+				midscalepos="0.3"
+				endscale="0"
+				yawspeed="720"
+			>
+				<template name="flashes">
+					<twopointtrailemitter
+						life="700"
+						bone_a="{bone_a}"
+						bone_b="{bone_b}"
+						spawnrate="35"
+						particlelife="700"
+						texpostime="700"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/phantom_smoke_13.material"
+						startparticlecolor="1 1 1"
+						endparticlecolor="0 0 0"
+					>
+						<particle
+							scale="2"
+							color="1 1 .3"
+						/>
+					</twopointtrailemitter>
+				</template>
+
+				<instance name="flashes" bone_a="_bone_fx_01" bone_b="_bone_fx_02"/>
+				<instance name="flashes" bone_a="_bone_fx_03" bone_b="_bone_fx_04"/>
+				<instance name="flashes" bone_a="_bone_fx_05" bone_b="_bone_fx_06"/>
+				<instance name="flashes" bone_a="_bone_fx_07" bone_b="_bone_fx_08"/>
+
+			</model>
+				<model
+				delay="300"
+				position="0 0 40"
+				life="450"
+				name="emitter0" 
+				anim="idle"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				startscale="3"
+				midscale="10"
+				endscale="20"
+				yawspeed="900"
+			>
+			
+				<template name="trails1">
+					<trailemitter
+						life="3000"
+						name="trail01"
+						position="0 0 0"
+						bone="{bone01}"
+						spawnrate="120"
+						particlelife="250"
+						subframepose="1"
+						direction="0 -1 0"
+						minangle="0"
+						maxangle="0"
+						texpostime="250"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/phantom_smoke_13.material"
+						startparticlecolor="1 1 1"
+						midparticlecolor="1 1 1"
+						endparticlecolor="0 0 0"
+					>
+						<particle
+							scale="1"
+							color="{color=1 1 .3}"
+						/>
+					</trailemitter>
+					
+				</template>
+				
+				<instance name="trails1" bone01="_bone_fx_01" />
+				<instance name="trails1" bone01="_bone_fx_02" />
+				<instance name="trails1" bone01="_bone_fx_03" />
+				<instance name="trails1" bone01="_bone_fx_04" />
+				<instance name="trails1" bone01="_bone_fx_05" />
+				<instance name="trails1" bone01="_bone_fx_06" />
+				<instance name="trails1" bone01="_bone_fx_07" />
+				<instance name="trails1" bone01="_bone_fx_08" />
+				<instance name="trails1" bone01="_bone_fx_09" />
+				<instance name="trails1" bone01="_bone_fx_10" />
+				<instance name="trails1" bone01="_bone_fx_11" />
+				<instance name="trails1" bone01="_bone_fx_12" />
+				
+				<instance name="trails1" bone01="_bone_fx_01" color=".8 .8 0" scale=".3" />
+				<instance name="trails1" bone01="_bone_fx_02" color=".8 .8 0" scale=".3" />
+				<instance name="trails1" bone01="_bone_fx_03" color=".8 .8 0" scale=".3" />
+				<instance name="trails1" bone01="_bone_fx_04" color=".8 .8 0" scale=".3" />
+				<instance name="trails1" bone01="_bone_fx_05" color=".8 .8 0" scale=".3" />
+				<instance name="trails1" bone01="_bone_fx_06" color=".8 .8 0" scale=".3" />
+				<instance name="trails1" bone01="_bone_fx_07" color=".8 .8 0" scale=".3" />
+				<instance name="trails1" bone01="_bone_fx_08" color=".8 .8 0" scale=".3" />
+				<instance name="trails1" bone01="_bone_fx_09" color=".8 .8 0" scale=".3" />
+				<instance name="trails1" bone01="_bone_fx_10" color=".8 .8 0" scale=".3" />
+				<instance name="trails1" bone01="_bone_fx_11" color=".8 .8 0" scale=".3" />
+				<instance name="trails1" bone01="_bone_fx_12" color=".8 .8 0" scale=".3" />
+			
+			</model>
+				
+				
+	
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+								
+								
+		
+					
+					
+					
+					
+						
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+      </particlesystem>
+	<particlesystem name="system1" space="world" scale=".6" >
+
+                  <groundsprite
+			 
+			life="300"
+			delay="0"
+			timenudge="0"
+                 minparticlelife="500"
+		      maxparticlelife="1000"
+			material="magic circle 1.material"
+
+			startsize="0"
+			endsize="500"
+			midsizepos=".1"
+              
+			yawspeed="0"
+			
+     
+		
+		/>
+     
+		
+		/>
+		</particlesystem>
+
+   </definitions>
+   <thread>
+   
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnparticlesystem instance="instance1" particlesystem="system1" /> 
+	<waitfordeath instance="instance0" />
+	<waitfordeath instance="instance1" />
+</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

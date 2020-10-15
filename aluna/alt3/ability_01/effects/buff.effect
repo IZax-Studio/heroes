@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+					
+			<beam
+				bone_a="Bip01 R Forearm"
+				bone_b="Bip01 R Hand"
+				size="100"
+				depthbias="-100"
+				framespeed="2"
+				color="0 1 0"
+				tile=".25"
+				material="/shared/effects/materials/femme_lightning_01.material"
+			/>
+			
+			<beam
+				bone_a="Bip01 L Forearm"
+				bone_b="Bip01 L Hand"
+				size="100"
+				depthbias="-100"
+				framespeed="2"
+				color="0 1 0"
+				tile=".25"
+				material="/shared/effects/materials/femme_lightning_01.material"
+			/>
+			
+			<twopointemitter
+				spawnrate="10"
+				bone_a="Bip01 L Forearm"
+				bone_b="Bip01 L Hand"
+				particlelife="500"
+				material="/shared/effects/materials/femme_lightning_07.material"
+			>
+				<particle
+					framespeed="2"
+					startcolor="0"
+					endcolor="0 1 0"
+					maxangle="360"
+					maxpitch="360"
+					maxyaw="360"
+					anchor="1"
+					size="50"
+					minscale=".5"
+					maxscale="1"
+				/>
+			</twopointemitter>
+			
+			<twopointemitter
+				spawnrate="10"
+				bone_a="Bip01 R Forearm"
+				bone_b="Bip01 R Hand"
+				minparticlelife="250"
+				maxparticlelife="500"
+				material="/shared/effects/materials/femme_lightning_07.material"
+			>
+				<particle
+					framespeed="2"
+					startcolor="0"
+					endcolor=".25 1 0"
+					maxangle="360"
+					maxpitch="360"
+					maxyaw="360"
+					anchor="1"
+					size="50"
+					minscale=".5"
+					maxscale="1"
+				/>
+			</twopointemitter>
+			
+			<twopointemitter
+				spawnrate="50"
+				bone_a="Bip01 R Forearm"
+				bone_b="Bip01 R Hand"
+				minparticlelife="250"
+				maxparticlelife="500"
+				maxspeed="250"
+				drag=".01"
+				gravity="20"
+				material="/shared/effects/materials/spark.material"
+			>
+				<particle
+					framespeed="2"
+					startcolor="0 2 0"
+					midcolor="0 2 0"
+					endcolor="0"
+					maxangle="360"
+					size="12"
+					minscale=".5"
+					maxscale="1"
+				/>
+			</twopointemitter>
+			
+			<twopointemitter
+				spawnrate="50"
+				bone_a="Bip01 L Forearm"
+				bone_b="Bip01 L Hand"
+				minparticlelife="250"
+				maxparticlelife="500"
+				maxspeed="250"
+				drag=".01"
+				gravity="20"
+				material="/shared/effects/materials/spark.material"
+			>
+				<particle
+					framespeed="2"
+					startcolor="0 2 0"
+					midcolor="0 2 0"
+					endcolor="0"
+					maxangle="360"
+					size="12"
+					minscale=".5"
+					maxscale="1"
+				/>
+			</twopointemitter>
+			
+		</particlesystem>
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world">
+		
+			<template name="flame">
+				<controller bone="_bone_weaponattach">
+					<simpleemitter
+						position="0 -20 0"
+						spawnrate="{spawnrate}"
+						speed="20"
+						particlelife="800"
+						material="{material}"
+						offsetsphere="10 0 6"
+						directionalspace="local"
+						direction="0 1 0"
+						minangle="0"
+						maxangle="55"
+					>
+						<particle
+							maxanglespeed="200"
+							maxangle="360"
+							minsize="{minsize}"
+							maxsize="{maxsize}"
+							startcolor="{startcolor}"
+							midcolor="{midcolor}"
+							endcolor="0"
+							midcolorpos=".15"
+							startalpha="0"
+							midalpha="{alpha}"
+							endalpha="0"
+							midalphapos=".15"
+							startscale="0"
+							midscale="1"
+							endscale="1"
+							midscalepos=".35"
+						/>
+					</simpleemitter>
+					<simpleemitter
+						position="0 25 0"
+						spawnrate="{spawnrate}"
+						speed="20"
+						particlelife="1100"
+						material="{material}"
+						offsetsphere="15 0 6"
+						directionalspace="local"
+						direction="0 -1 0"
+						minangle="0"
+						maxangle="55"
+					>
+						<particle
+							maxanglespeed="200"
+							maxangle="360"
+							minsize="{minsize}"
+							maxsize="{maxsize}"
+							startcolor="{startcolor}"
+							midcolor="{midcolor}"
+							endcolor="0"
+							midcolorpos=".15"
+							startalpha="0"
+							midalpha="{alpha}"
+							endalpha="0"
+							midalphapos=".15"
+							startscale="0"
+							midscale="1"
+							endscale="1"
+							midscalepos=".35"
+						/>
+					</simpleemitter>
+				</controller>
+			</template>
+		
+			<instance
+				name="flame"
+				spawnrate="25"
+				material="/shared/effects/materials/fire_add2.material"
+				startcolor="0"
+				midcolor=".5"
+				minsize="5"
+				maxsize="20"
+			/>
+			<instance
+				name="flame"
+				spawnrate="25"
+				material="/shared/effects/materials/flame_white.material"
+				startcolor="1 .65 .4"
+				midcolor="1 .35 .25"
+				minsize="5"
+				maxsize="20"
+			/>
+			<instance
+				name="flame"
+				spawnrate="45"
+				material="/shared/effects/materials/phantom_smoke_02.material"
+				startcolor="0"
+				midcolor="0"
+				alpha="1"
+				minsize="10"
+				maxsize="35"
+			/>
+	<!--
+			<template name="spinning_outer">
+				<model
+					bone="_bone_origin"
+					model="/shared/models/invis.mdf"
+					position="0 0 50"
+					pitch="{pitch}"
+					yaw="90"
+					pitchspeed="15"
+				>
+					<model
+						position="0 75 0"
+						model="/shared/models/invis.mdf"
+						yaw="90"
+						pitchspeed="2000"
+					>
+						<simpleemitter
+							position="0 50 0"
+							offsetsphere="0"
+							minparticlelife="150"
+							maxparticlelife="250"
+							minspeed="100"
+							maxspeed="200"
+							drag=".01"
+							spawnrate="400"
+							minangle="0"
+							maxangle="25"
+							directionalspace="local"
+							direction="0 0 -1"
+							material="/shared/effects/materials/whitedot.material"
+						>
+							<particle
+								angle="90"
+								turn="true"
+								height="7"
+								width="30"
+								startcolor="1 .65 .2"
+								midcolor="1 .35 .25"
+								endcolor="0"
+							/>
+						</simpleemitter>
+					</model>
+				</model>
+			</template>
+				
+			<instance
+				name="spinning_outer"
+				pitch="0"
+			/>
+				
+			<instance
+				name="spinning_outer"
+				pitch="90"
+			/>
+			
+			<instance
+				name="spinning_outer"
+				pitch="180"
+			/>
+
+			<instance
+				name="spinning_outer"
+				pitch="270"
+			/>
+
+			<model
+				bone="_bone_center"
+				model="/shared/models/invis.mdf"
+				position="0 0 0"
+				minyaw="-360"
+				maxyaw="360"
+				minpitch="-360"
+				maxpitch="360"
+				yawspeed="15"
+				pitchspeed="15"
+			>
+				<template name="spinning_inner">
+					<model
+						position="{position}"
+						model="/shared/models/invis.mdf"
+						yaw="90"
+						pitchspeed="2000"
+						scale="{scale}"
+					>
+						<simpleemitter
+							position="0 50 0"
+							offsetsphere="0"
+							minparticlelife="150"
+							maxparticlelife="250"
+							minspeed="100"
+							maxspeed="200"
+							drag=".01"
+							spawnrate="400"
+							minangle="0"
+							maxangle="25"
+							directionalspace="local"
+							direction="0 0 -1"
+							material="/shared/effects/materials/whitedot.material"
+						>
+							<particle
+								angle="90"
+								turn="true"
+								height="7"
+								width="30"
+								startcolor="1 .65 .2"
+								midcolor="1 .35 .25"
+								endcolor="0"
+							/>
+						</simpleemitter>
+					</model>
+				</template>
+				
+				<instance
+					name="spinning_inner"
+					position="0 -30 0"
+					scale=".75"
+				/>
+
+				<instance
+					name="spinning_inner"
+					position="0 0 0"
+					scale="1.1"
+				/>
+
+				<instance
+					name="spinning_inner"
+					position="0 30 0"
+					scale=".75"
+				/>
+
+			</model>
+			-->
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

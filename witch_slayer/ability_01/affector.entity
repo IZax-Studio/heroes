@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_WitchSlayer_Ability1"
+
+	radius="150"
+	arc="180"
+	
+	speed="1600"
+	
+	lifetime="500"
+	maximpactspertarget="1"
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	persist="true"
+	effect="effects/ability_01.effect"
+>
+	<onimpact>
+		<combatevent effecttype="BindingProjectile">
+			<onimpact>
+				<applystate name="State_WitchSlayer_Ability1_Enemy" duration="570" />
+				<unbind target="target_entity" />
+				<spawnprojectile name="Projectile_WitchSlayer_Ability1_Toss" source="target_entity" target="target_entity" bind="target_entity" ignoretargetoffset="true" noresponse="true" />
+			</onimpact>
+		</combatevent>
+	</onimpact>
+	
+	<altavatar key="Hero_WitchSlayer.Pimp"
+		effect="../alt/ability_01/effects/ability_01.effect"
+	/>
+	
+	<altavatar key="Hero_WitchSlayer.Alt4"
+		effect="../alt4/ability_01/effects/ability_01.effect"
+	/>
+	
+	<altavatar key="Hero_WitchSlayer.Alt5"
+	
+	/>
+	
+	<altavatar key="Hero_WitchSlayer.Alt6"
+		effect="../alt6/ability_01/effects/stage1.effect"
+	>
+		<modifier key="Stage2" modpriority="1"
+			effect="../alt6/ability_01/effects/stage2.effect"
+		/>
+		
+		<modifier key="Stage3" modpriority="2"
+			effect="../alt6/ability_01/effects/stage3.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_WitchSlayer.Alt7"
+		effect="../alt7/ability_01/effects/ability_01.effect"
+	/>
+	
+	<altavatar key="Hero_WitchSlayer.Alt8"
+		effect="../alt8/ability_01/effects/ability_01_base.effect"
+	>
+		<modifier key="Alt8_Ability1_Upgrade" modpriority="1"
+			effect="../alt8/ability_01/effects/ability_01_upgrade.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_WitchSlayer.Alt9"
+		effect="../alt9/ability_01/effects/ability_01.effect"
+	/>
+	
+	<altavatar key="Hero_WitchSlayer.Alt10"
+		effect="../alt9/ability_01/effects/ability_01.effect"
+	/>
+	
+	<altavatar key="Hero_WitchSlayer.Alt11"
+		effect="../alt11/ability_01/effects/ability_01.effect"
+	/>
+	
+</affector>

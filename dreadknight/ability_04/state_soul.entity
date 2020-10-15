@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Dreadknight_Ability4_Soul"
+
+	icon="4.jpg"
+	passiveeffect="effects/state_soul.effect"
+	
+	effecttype=""
+	modifierkey="gotchosoul"
+	deathpersist="true"
+	
+	damagepercharge="5"
+	attackspeedpercharge=".02"
+>
+
+	<onexpired>
+		<setvar0 a="charges" b="50" op="mult" />
+		<heal a="var0" target="this_owner_entity" />
+	</onexpired>
+	
+	<modifier key="krosmode" modpriority="100"
+		deathpersist="false"
+	/>
+	
+	<altavatar key="Hero_Dreadknight.Alt7"
+		passiveeffect="../alt7/ability_04/effects/state_soul.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Dreadknight.Alt8"
+		passiveeffect="../alt8/ability_04/effects/state_soul.effect"
+	/>
+	
+	<altavatar key="Hero_Dreadknight.Alt9"
+		passiveeffect="../alt9/ability_04/effects/state_soul.effect"
+	/>
+	
+	<altavatar key="Hero_Dreadknight.Alt10"
+		passiveeffect="../alt9/ability_04/effects/state_soul.effect"
+	/>
+	
+	<altavatar key="Hero_Dreadknight.Alt11"
+		passiveeffect="../alt11/ability_04/effects/state_soul.effect"
+	/>
+</state>

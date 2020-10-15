@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="THINT's Work" file="model.model" type="K2">
+
+	<anim name="idle" clip="clips/bored_1.clip" loop="true" loopbackframe="1"/>
+
+</model>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_DwarfMagi_Ability3"
+
+	
+	
+	icon="../icon/4.png"
+	passiveeffect="state.effect"
+	
+	attackspeed="0.2,0.3,0.4,0.5"
+	movespeedmultiplier="0.06,0.09,0.12,0.15"
+	castspeed="0.30"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+
+	<altavatar key="Hero_DwarfMagi.Alt2" modpriority="90"
+		icon="/heroes/dwarf_magi/alt2/ability_03/icon.tga"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_DwarfMagi.Alt6" modpriority="90"
+	icon="/heroes/dwarf_magi/alt6/ability_03/icon.tga"
+		passiveeffect="../alt6/ability_03/effects/state.effect"
+	>
+		<modifier key="dwarfmagiAlt6_Ability3_Upgrade"
+		icon="/heroes/dwarf_magi/alt6/ability_03/icon_u.tga"
+			passiveeffect="../alt6/ability_03/effects/state_upgrade.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_DwarfMagi.Alt7" modpriority="90"
+		passiveeffect="../alt7/ability_03/effects/state.effect"
+	/>
+</state>

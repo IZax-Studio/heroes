@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+
+		<modifier
+			name="modifier0"
+			material="\heroes\scout\alt12\ability_01\effects/refract.material"
+			color="0 0 0"
+			param0="1"
+			alpha="1"
+		/>
+		
+		
+	
+		<particlesystem name="system0" scale="1">
+		
+			<model
+				expirelife="100"
+				parentmodel="true"
+				parentskeleton="true"
+				material="/shared/effects/materials/shell_flat_outline.material"
+				color="1 0 0"
+				alpha="1"
+				
+			/>
+			
+			
+		</particlesystem>
+		
+	</definitions>
+	
+	<thread>
+		<spawnparticlesystem particlesystem="system0" instance="instance0" /> 
+		<spawnmodifier modifier="modifier0" instance="instance1"/> 
+		<waitfordeath instance="instance0"/>
+		<waitfordeath instance="instance1"/>
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->

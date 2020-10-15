@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="THINT's Conversion" file="high.model" type="K2">
+
+	<anim name="idle" clip="clips/new6.clip" fps="32" loop="true" />
+	
+	<anim name="portrait" clip="clips/new6.clip" fps="10" loop="true"/>
+
+	<anim name="taunt_1" clip="clips/stand ready.clip">
+	</anim>
+	
+
+	
+	<anim name="item_1" clip="clips/attack 1 alternate.clip"/>
+		
+	<anim name="ability_1" clip="clips/walk.clip" fps="40" loop="false">
+	</anim>
+	
+	<anim name="ability_1_pull" clip="clips/attack 2 alternate.clip" fps="30" startframe="7" numframes="30" loop="false">
+	</anim>
+	
+	<anim name="ability_2" clip="clips/new6.clip" fps="50" loop="false">
+	</anim>
+	
+	<anim name="ability_3" clip="clips/stand alternate.clip" fps="30" loop="true" >
+	</anim>
+	
+	<anim name="ability_4" clip="clips/spell spe 3.clip" fps="30" loop="false">
+		 <frameevent frame="1" cmd="PlaySoundLinear sa41.mp3 400 2500 1"/>
+	</anim>
+	
+	<anim name="attack_1" clip="clips/attack 1 alternate.clip" loop="false">
+	<frameevent frame="6" cmd="PlaySoundLinear sounds_kururu/120_4_Atk_Foley%.wav 0 1300 0.60"/>
+	<frameevent frame="10" cmd="PlaySoundLinear sounds_kururu/120_4_Atk_Fire%.wav 0 1300 0.60"/>
+
+	</anim>
+	
+	<anim name="attack_2" clip="clips/attack 2.clip" loop="false">
+	<frameevent frame="6" cmd="PlaySoundLinear sounds_kururu/120_4_Atk_Foley%.wav 0 1300 0.60"/>
+	<frameevent frame="10" cmd="PlaySoundLinear sounds_kururu/120_4_Atk_Fire%.wav 0 1300 0.60"/>
+	<frameevent frame="5" cmd="PlaySoundLinear a1.ogg 0 1500 .4"/>
+
+   <frameevent frame="10" cmd="StartEffect attack_1.effect" />
+
+	</anim>
+	
+	
+	<anim name="walk_1" clip="clips/walk.clip" fps="20" loop="true">
+		<frameevent frame="10" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="1" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+
+		<frameevent frame="1" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="10" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+
+	</anim>
+
+	<anim name="bored_1" clip="clips/attack 3.clip" fps="30" loop="false">
+	</anim>
+	
+	<anim name="death_1" clip="clips/death.clip" loop="true" loopbackframe="-1">
+		  <frameevent frame="1" cmd="PlaySoundLinear sounds_kururu/120_skin5_death_0%.wav 0 1300 1"/>
+	</anim>
+
+	<anim name="knock_1" clip="clips/death.clip" loop="true" loopbackframe="-1">
+	</anim>
+	
+</model>

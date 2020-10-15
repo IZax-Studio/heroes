@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Solstice_Ability1_Enemy_Night"
+	
+	icon="Cha110_Skill_E.png"
+	passiveeffect="effects/state_enemy_slow.effect"
+	ishidden="false"
+	
+	movespeedslow="0.35"
+	allowtransfer="true"
+	effecttype="StatusDebuff"
+
+	negativeeffect="slowed"
+>
+
+	<altavatar key="Hero_Solstice.Alt5"
+		passiveeffect="../alt5/ability_01/effects/state_enemy_slow.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt6"
+		passiveeffect="../alt6/ability_01/effects/state_enemy_slow.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt7"
+		passiveeffect="../alt7/ability_01/effects/state_enemy_slow.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt9"
+		passiveeffect="../alt9/ability_01/effects/state_enemy_slow.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt10"
+		passiveeffect="../alt10/ability_01/effects/state_enemy_slow.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt11"
+		passiveeffect="../alt11/ability_01/effects/state_enemy_slow.effect"
+	/>
+	
+</state>

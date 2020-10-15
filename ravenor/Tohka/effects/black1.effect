@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".4">
+		
+			<template name="fire">
+				<simpleemitter
+					bone="{zbone}"
+					spawnrate="5"
+					particlelife="1000"
+					angle="0"
+					offsetsphere="0"
+					material="/shared/effects/materials/soul_projectile2.material"
+
+				>
+					<particle
+						startcolor=".100 0 0"
+						midcolor=".500 .20 5"									endcolor="0 0 0"
+						minangle="0 0 0"
+						maxangle="200"
+						minanglespeed="0"
+						maxanglespeed="100"
+						minendsize="100"
+						startsize="70"
+						maxendsize="10"
+						flare="true"
+						startanchor=".5"
+						endanchor="0"
+						startalpha="0"
+						endalpha="0" 
+					/>
+				</simpleemitter>
+				
+
+
+			</template>	
+			
+			<instance name="fire" zbone="_bone_weapon1"/>
+			<instance name="fire" zbone="_bone_weapon2"/>
+			<instance name="fire" zbone="_bone_weapon3"/>
+			<instance name="fire" zbone="_bone_weaponattach"/>
+			
+			<instance name="fire" zbone="_bone_altweapon1"/>
+			<instance name="fire" zbone="_bone_altweapon2"/>
+			<instance name="fire" zbone="_bone_altweapon3"/>
+			<instance name="fire" zbone="_bone_altweaponattach"/>
+
+		</particlesystem>
+
+</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnmodifier instance="instance1" modifier="modifier0"/> 
+	<waitfordeath instance="instance0" />
+	<waitfordeath instance="instance1" />
+</thread>
+</effect>

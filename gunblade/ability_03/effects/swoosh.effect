@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world">
+			
+			<twopointtrailemitter
+				spawnrate="60"
+				life="500"
+				particlelife="400"
+				bone_a="_bone_altweapon1"
+				bone_b="_bone_altweaponattach"
+				material="/shared/effects/materials/swoosh_add.material"
+				texposscale="1"
+				texstretchscale="0"
+			>
+				<particle
+					startcolor="1 0 0"
+					endcolor="0"
+					midcolorpos=".2"
+				/>
+			</twopointtrailemitter>
+			
+			<twopointtrailemitter
+				spawnrate="60"
+				life="500"
+				particlelife="400"
+				bone_a="bone40"
+				bone_b="bone10"
+				material="/shared/effects/materials/swoosh_add.material"
+				texposscale="1"
+				texstretchscale="0"
+			>
+				<particle
+					startcolor="1 0 0"
+					endcolor="0"
+					midcolorpos=".2"
+				/>
+			</twopointtrailemitter>
+
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+

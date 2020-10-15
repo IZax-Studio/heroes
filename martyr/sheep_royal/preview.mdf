@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model file="model.model" type="K2">
+
+	<anim name="idle" clip="../sheep/clips/root.clip" loop="true" />
+	
+	<anim name="taunt_1" clip="../sheep/clips/bow.clip">
+	<frameevent frame="1" cmd="StartModelPanelEffect store2_detail_heroAvatars_large_model ../sounds/Hi.effect Hi"/>
+		<endevent cmd="StopEffect Hi"/>
+	</anim>
+	
+	<anim name="bored_1" clip="../sheep/clips/step1.clip" loop="true">
+	</anim>
+	
+	<anim name="bored_2" clip="../sheep/clips/sit.clip" loop="true"/>
+
+	<anim name="idle2" clip="../sheep/clips/root.clip" loop="true" />
+		
+</model>
+

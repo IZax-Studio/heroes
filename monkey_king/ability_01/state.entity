@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_MonkeyKing_Ability1"
+
+	icon="../icon/ico_1465.png"	
+
+	effecttype=""
+	allowtransfer="false"
+	modifierkey="CloudCutter"
+>
+	
+	<onexpired>
+		<targettype type="alive" target="source_entity">
+			<cantarget target="source_entity" ignoreinvulnerable="false">
+				<condition target="source_entity" test="hastrait stunned or hastrait immobilized or hastrait restrained or hastrait silenced" />
+				<else>
+					<compare a="accumulator" b="0" op="eq">
+						<unbind target="source_entity" />
+						<playanim name="ability_1_second" />
+
+						<pushability name="Ability_MonkeyKing1" />
+						<getrange entity="stack_entity" />
+						<setvar0 a="result" />
+						<spawnunit name="Gadget_MonkeyKing_Ability1" count="1" target="source_position" offset="0 300 0" offsetspace="source_entity" pushentity="true" />
+						<setpos0 position="source_position" positionend="stack_entity" positionmodifier="pointonline" positionvalue="var0" />
+						<teleport source="stack_entity" target="pos0" />
+						
+						<setproxy entity="this_entity" target="stack_entity" />
+						<spawnprojectile name="Projectile_MonkeyKing_Ability1_2" source="source_entity" target="stack_entity" bind="source_entity" bindturn="true" bindstate="State_MonkeyKing_Ability1_Rush_2" unbindondeath="true" pushentity="true" />
+						<spawnprojectile name="Projectile_MonkeyKing_Ability1_Cliff" source="source_entity" target="this_proxy_entity" proxy="stack_entity" offsetspace="source_entity" offset="0 15 0" />
+						<spawnaffector name="Affector_MonkeyKing_Ability1" target="stack_entity" />
+					</compare>
+				</else>
+			</cantarget>
+		</targettype>
+		
+		<pushability name="Ability_MonkeyKing1" />
+		<setcharges a="0" entity="stack_entity" />
+	</onexpired>
+	
+	<altavatar key="Hero_MonkeyKing.Alt15"
+		icon="../alt15/ability_01/icon.tga"
+	/>
+	
+</state>

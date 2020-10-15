@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<material>
+	<parameters>
+		<vec2 name="vUVScale" value="1 .2" />
+		<vec2 name="vUVScroll" value=".05 -.5" />
+		<float name="fBorderSharpness" value="2"/>
+	</parameters>
+	<phase
+		name="color"
+		vs="mesh_fire"
+		ps="mesh_fire" 
+		srcblend="BLEND_SRC_ALPHA"
+		dstblend="BLEND_ONE"  
+		cull="CULL_NONE"
+		translucent="true"
+		alphawrite="true"
+	>
+		<sampler
+			name="reveal"
+			texture="fire_scrolling.tga"
+			repeat_u="true"
+			repeat_v="true"
+			mipmaps="true"
+			fullquality="false"
+			nocompress="false"
+			filtering="true"
+		/>
+	</phase>
+</material>

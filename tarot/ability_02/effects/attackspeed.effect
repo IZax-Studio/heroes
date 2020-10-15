@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  useentityeffectscale="1" name="ability_03">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="2">		
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="1300"
+				volume="1" 
+				sample="/heroes/tarot/ability_02/sounds/core_cast.wav"
+			/>
+			
+			<sound
+			    delay="250"
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="1300"
+				volume="1" 
+				sample="../sounds/cast.wav"
+			/>
+			
+			<sound
+			    
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="1300"
+				volume=".2" 
+				sample="../sounds/state.wav"
+			/>
+			<sound
+			    soundloop="true"
+				randomloop="true"
+				fadein="1000"
+				fadeout="500"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="1300"
+				volume=".1"
+				sample="/heroes/shellshock/ability_04/sounds/loop_elec.wav"
+			/>
+		
+			<template name="zaps">
+				<simpleemitter
+					timenudge="1000"
+					position="0 0 40"
+					minspawnrate="4"
+					maxspawnrate="5"
+					minparticlelife="200"
+					maxparticlelife="300"
+					material="{material}"
+					offsetradial="80"
+					offsetsphere="20"
+				>
+					<particle
+						maxangle="360"
+						minscale="10"
+						maxscale="30"
+						startframe="1"
+						minmidframe="{minframe}"
+						maxmidframe="{maxframe}"
+						endframe="1"
+						midframepos=".25"
+						anchor="1"
+						color="{color}"
+					>
+						<trackeremitter
+							targetbone="_bone_center"
+							mincount=".98"
+							maxcount="1"
+							particlelife="100"
+							speed="100"
+							tracktype="angular"
+							trackspeed="1000"
+						>
+							<particle>
+								<trailemitter
+									minspawnrate="300"
+									maxspawnrate="600"
+									particlelife="100"
+									offsetsphere=".5"
+									material="/core/materials/effect_solid_add.material"
+									texposscale="1"
+									texpostime="25"
+									texstretchscale="0"
+								>
+									<particle
+										startsize="0"
+										minmidsize=".01"
+										maxmidsize=".1"
+										endsize="0"
+										startcolor="1"
+										midcolor=".25 .5 1"
+										endcolor="0 0 1"
+										midcolorpos=".25"
+										startalpha=".75"
+										endalpha="0"
+									/>
+								</trailemitter>
+							</particle>
+						</trackeremitter>
+
+						<groundsprite
+							life="100"
+							material="/shared/effects/materials/whitedot_ground.material"
+							startsize="2"
+							endsize="0"
+							startcolor=".15"
+							endcolor="0"
+							midcolorpos=".01"
+						/>
+					</particle>
+				</simpleemitter>
+			</template>
+			<instance name="zaps" material="/shared/effects/materials/energy_reveal_white.material" minframe=".2" maxframe=".8" color=".25 .5 1" />
+			<instance name="zaps" material="/shared/effects/materials/lightning_reveal.material" minframe=".6" maxframe=".7" color=".25 .5 1" />
+
+			<template name="zaps">
+				<simpleemitter
+					timenudge="1000"
+					position="0 0 40"
+					minspawnrate="7"
+					maxspawnrate="9"
+					minparticlelife="200"
+					maxparticlelife="300"
+					material="{material}"
+					offsetradial="80"
+					offsetsphere="20"
+				>
+					<particle
+						maxangle="360"
+						minscale="10"
+						maxscale="30"
+						startframe="1"
+						minmidframe="{minframe}"
+						maxmidframe="{maxframe}"
+						endframe="1"
+						midframepos=".25"
+						anchor="1"
+						color="{color}"
+					>
+						<trackeremitter
+							targetbone="_bone_center"
+							mincount=".98"
+							maxcount="1"
+							particlelife="100"
+							speed="100"
+							tracktype="angular"
+							trackspeed="1000"
+						>
+							<particle>
+								<trailemitter
+									minspawnrate="300"
+									maxspawnrate="600"
+									particlelife="100"
+									offsetsphere=".5"
+									material="/core/materials/effect_solid_add.material"
+									texposscale="1"
+									texpostime="25"
+									texstretchscale="0"
+								>
+									<particle
+										startsize="0"
+										minmidsize=".01"
+										maxmidsize=".1"
+										endsize="0"
+										startcolor="1"
+										midcolor=".25 .5 1"
+										endcolor="0 0 1"
+										midcolorpos=".25"
+										startalpha=".75"
+										endalpha="0"
+									/>
+								</trailemitter>
+							</particle>
+						</trackeremitter>
+
+						<groundsprite
+							life="100"
+							material="/shared/effects/materials/whitedot_ground.material"
+							startsize="2"
+							endsize="0"
+							startcolor=".15"
+							endcolor="0"
+							midcolorpos=".01"
+						/>
+					</particle>
+				</simpleemitter>
+			</template>
+			<instance name="zaps" material="/shared/effects/materials/energy_reveal_white.material" minframe=".2" maxframe=".8" color=".25 .5 1" />
+			<instance name="zaps" material="/shared/effects/materials/lightning_reveal.material" minframe=".6" maxframe=".7" color=".25 .5 1" />
+
+			<groundsprite
+				startcolor=".0 .1 .25"
+				endcolor="0"
+				expirelife="350"
+				size="150"
+				material="/shared/effects/materials/whitedot_ground.material"
+			/>
+			
+			<groundsprite
+				startcolor=".0 .1 .25"
+				endcolor="0"
+				expirelife="350"
+				size="70"
+				material="/shared/effects/materials/whitedot_ground.material"
+			/>
+			
+			
+			
+			
+		</particlesystem>
+<particlesystem name="system1" space="entity" scale=".65">
+			
+					
+			<model
+				expirelife="250"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="0 0 1"
+				endcolor="0 0 0"
+				scale="1.05"
+				material="/shared/effects/materials/shell2.material"
+			/>
+
+			<groundsprite
+				life="500"
+				material="/shared/effects/materials/starlight.material"
+				position="0 0 0"
+				startsize="0"
+				endsize="125"
+				midsizepos=".5"
+				color="0 0 0"
+				midcolorpos=".2"
+				minangle="0"
+				maxangle="0"
+				angles="0 0 0"
+			/>
+
+						
+			
+						<simpleemitter
+				spawnrate="10"
+				maxparticlelife="500"
+				minparticlelife="500"
+				minspeed="-25"
+				maxspeed="25"
+				acceleration="1"
+				position="0 0 0"
+				material="/shared/effects/materials/electric_impact_add.material"
+				offsetsphere="0 0 180"
+				direction="0 0 1"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					anglespeed="-1080"
+					lockup="1"
+					pitch="-90"
+					startcolor="0 0 0"
+					midcolor=".1 .25 .5"
+					endcolor="0 0 0"
+					midcolorpos=".2"
+					size="175"
+					alpha="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="10"
+				maxparticlelife="500"
+				minparticlelife="500"
+				minspeed="-25"
+				maxspeed="25"
+				acceleration="1"
+				position="0 0 0"
+				material="/shared/effects/materials/electric_impact_blend.material"
+				offsetsphere="0 0 180"
+				direction="0 0 1"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					anglespeed="-1080"
+					lockup="1"
+					pitch="-90"
+					color="0"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+					midcolorpos=".2"
+					size="175"
+				/>
+			</simpleemitter>
+			
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<wait duration="250" />
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+
+	</thread>
+</effect>

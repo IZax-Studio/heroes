@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="high.model" med="med.model" low="low.model">
+
+	<anim name="idle" clip="/heroes/kane/clips_offense/default_1.clip" fps="30" loop="true"/>
+
+
+	<anim name="ability_1" clip="/heroes/kane/clips_offense/ability_1.clip" fps="50" startframe="0" numframes="30" loop="false" >
+		
+	</anim>
+
+</model>

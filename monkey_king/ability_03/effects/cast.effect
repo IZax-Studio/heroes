@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+			
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="2000"
+				volume="1"
+				sample="\heroes\monkey_king\Elizabeth_Bathory\sounds/34_skin3_E_E_2_Hit.wav"
+			/>
+			
+			
+    			<sound
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="2000"
+				volume=".41"
+				sample="\heroes\monkey_king\Elizabeth_Bathory\sounds/34_skin3_R_Fire_loop.wav"
+			/> 
+
+			<simpleemitter
+				bone="Box005"
+				delay="0"
+				count="12"
+				spawnrate="150"
+				particlelife="5000"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+				turn="true"
+				>
+					<model
+						bone="Box005"
+						model="staff/model.mdf"
+						yawspeed="0"
+						scale="1"
+						position="0 0 0"
+						color="3 2 1"
+						directionalspace="local"
+						anim="idle"
+						life="50"
+						startalpha="1"
+						endalpha="0"
+						pitch="0"
+						yaw="180"
+					/>	
+				</particle>
+			</simpleemitter>
+			
+					<model
+					delay="100"
+						bone="Box005"
+						model="staff/model.mdf"
+						yawspeed="0"
+						scale="1.35"
+						position="0 0 0"
+						color="10 5 1"
+						directionalspace="local"
+						anim="idle"
+						life="500"
+						startalpha="1"
+						endalpha="0"
+						pitch="0"
+						yaw="180"
+					/>	
+		
+		
+
+
+			
+			
+<!--
+			<model
+				name="emitter0" 
+				bone="_bone_back"
+				model="../flag/model.mdf"
+				yawspeed="0"
+				scale=".4"
+				position="0 -10 -30"
+				roll="40"
+				directionalspace="local"
+				anim="idle"
+				expirelife="500"
+				startalpha="1"
+				endalpha="0"
+				pitch="-30"
+			/>
+			
+			<model
+				name="emitter0" 
+				bone="_bone_back"
+				model="../flag/model.mdf"
+				yawspeed="0"
+				scale=".4"
+				position="0 -10 -30"
+				roll="-40"
+				directionalspace="local"
+				anim="idle"
+				expirelife="500"
+				startalpha="1"
+				endalpha="0"
+				pitch="-30"
+			/>
+-->
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<camerashake2 scale="3" radius="1000" duration="250" frequency="22" />
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+
+</effect>

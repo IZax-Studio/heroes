@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model file="model.model" type="K2">
+
+	<anim name="idle" clip="clips_new/default_store.clip" loop="true" loopbackframe="261">
+		<startevent cmd="StartModelPanelEffect store2_detail_heroAvatars_large_model effects/body_store.effect 1"/>
+		<endevent cmd="StopModelPanelEffect 1"/>
+	</anim>
+	
+</model>

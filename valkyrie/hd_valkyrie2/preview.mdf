@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="/heroes/valkyrie/black.model" type="K2" high="/heroes/valkyrie/black.model" med="/heroes/valkyrie/black.model" low="/heroes/valkyrie/black.model"  >
+
+	<anim name="idle" clip="/heroes/valkyrie/idle.clip" fps="550" loop="true"/>
+
+		
+</model>

@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">	
+						<sound
+				linearfalloff="true" 
+				falloffstart="600"
+				falloffend="1300"
+				volume="1" 
+				sample="/heroes/tarot/sounds/215_0_Q_Hit.wav"
+			/>
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="600"
+				falloffend="1300"
+				volume="1" 
+				sample="/heroes/tarot/ability_01/sounds/cast.wav"
+			/>
+			
+			<sound
+			    delay="250"
+				linearfalloff="true" 
+				falloffstart="600"
+				falloffend="1300"
+				volume="1" 
+				sample="/heroes/tarot/alt/ability_01/sounds/impact.wav"
+			/>
+			
+			<controller
+				life="2000"
+				position="0 0 60"
+			>
+				<light
+					life="250"
+					color="2 .5 .5"
+					startfalloffend="350"
+					endfalloffend="0"
+				/>
+				
+				<billboard
+					material="/shared/effects/materials/ring_01_reveal.material"
+					life="600"
+					startcolor=".4 .3 .2"
+					endcolor="0"
+					startframe="0"
+					endframe="1"
+					midframepos=".25"
+					startsize="0"
+					midsize="500"
+					endsize="600"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+				/>
+				
+				<billboard
+					material="/shared/effects/materials/refract_ring.material"
+					life="600"
+					startsize="0"
+					midsize="500"
+					endsize="700"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					startparam="0"
+					midparam="0.02"
+					endparam="0"
+				/>
+				
+				<simpleemitter
+					mincount="16"
+					maxcount="20"
+					particlelife="2000"
+					direction="0 0 1"
+					directionalspace="global"
+					minangle="90"
+					maxangle="90"
+					gravity="-5"
+					minspeed="200"
+					maxspeed="800"
+					drag="0.02"
+				>
+					<particle
+						maxyaw="360"
+						maxpitch="360"
+						maxroll="360"
+						minyawspeed="-600"
+						maxyawspeed="600"
+						minrollspeed="-600"
+						maxrollspeed="600"
+						minpitchspeed="-600"
+						maxpitchspeed="600"
+						minscale="2"
+						maxscale="2.5"
+					>
+						<trailemitter
+							minlife="750"
+							maxlife="1250"
+							directionalspace="local"
+							particledyrectionalspace="local"
+							position="10 0 0"
+							spawnrate="20"
+							particlelife="300"
+							material="/shared/effects/materials/glow_04.material"
+							texposscale="0"
+							texstretchscale="1"
+							startparticlecolor="1"
+							midparticlecolor="1"
+							endparticlecolor="0"
+						>
+							<particle
+								startcolor="1 0 0"
+								midcolor="1 0 0"
+								endcolor="2 0 0"
+								startsize="0"
+								minmidsize="2"
+								maxmidsize="3"
+								endsize="0"
+							/>
+							
+						</trailemitter>
+						<trailemitter
+							minlife="750"
+							maxlife="1250"
+							directionalspace="local"
+							particledyrectionalspace="local"
+							position="10 0 0"
+							spawnrate="20"
+							particlelife="300"
+							material="/shared/effects/materials/glow_04.material"
+							texposscale="0"
+							texstretchscale="1"
+							startparticlecolor="1"
+							midparticlecolor="1"
+							endparticlecolor="0"
+						>
+							<particle
+								startcolor="1"
+								midcolor="1"
+								endcolor="2"
+								startsize="0"
+								minmidsize="2"
+								maxmidsize="3"
+								endsize="0"
+							/>
+							
+						</trailemitter>
+					</particle>
+				</simpleemitter>
+			</controller>
+			
+			<!--
+			<terrainemitter
+				range="200"
+				mincount="15"
+				maxcount="20"
+				gravity="-5"
+				particlelife="2000"
+				minspeed="800"
+				maxspeed="1200"
+				direction="0 0 1"
+				angle="20"
+			>
+				<particle>
+					<simpleemitter
+						minlife="150"
+						maxlife="200"
+						spawnrate="30"
+						minparticlelife="500"
+						maxparticlelife="1000"
+						material="/shared/effects/materials/sparks_reveal_blue.material"
+					>
+						<particle
+							maxangle="360"
+							startcolor="0"
+							midcolor=".5 1 1"
+							endcolor="1"
+							midcolorpos=".25"
+							startframe=".2"
+							endframe="1"
+							minsize="20"
+							maxsize="30"
+							startscale="1"
+							minendscale="2"
+							maxendscale="4"
+						/>
+					</simpleemitter>
+					<trailemitter
+						minlife="200"
+						maxlife="300"
+						directionalspace="local"
+						particledyrectionalspace="local"
+						position="10 0 0"
+						spawnrate="60"
+						particlelife="100"
+						material="/shared/effects/materials/swoosh_add.material"
+						texposscale="0"
+						texstretchscale="1"
+						startparticlecolor="1"
+						midparticlecolor="1"
+						endparticlecolor="0"
+					>
+						<particle
+							startcolor="0 1 1"
+							midcolor="1"
+							endcolor="0 1 1"
+							startsize="0"
+							minmidsize="20"
+							maxmidsize="25"
+							endsize="30"
+							midsizepos=".25"
+						/>
+					</trailemitter>
+				</particle>
+			</terrainemitter>
+			-->
+			
+			<model
+				life="500"
+				model="/shared/effects/models/sphere/model.mdf"
+				material="/heroes/tarot/alt8/ability_01/effects/sphere.material"
+				startscale="3.6"
+				endscale="4.0"
+				color="1 .1 .1"
+				midcolorpos=".2"
+				startalpha="1"
+				endalpha="0"
+				midalphapos=".3"
+			/>
+			<model
+				life="1250"
+				model="/heroes/riftmage/ability_04/effects/sphere/model.mdf"
+				material="\heroes\tarot\alt8\ability_01\effects/sphere.material"
+				startscale="2.25"
+				endscale="2.75"
+				startalpha="1"
+				endalpha="0"
+				midalphapos=".25"
+				startcolor="0"
+				midcolor="1 .1 .1"
+				endcolor="1 .1 .1"
+			/>
+			<billboard
+				life="500"
+				material="/shared/effects/materials/black_spot.material"
+				size="850"
+				color="1"
+				startalpha=".4"
+				endalpha="0"
+				lockup="true"
+				lockright="true"
+				pitch="-90"
+				depthbias="-40"
+			/>
+			<groundsprite
+				life="500"
+				material="/shared/materials/selection_indicator_b.material"
+				size="235"
+				color="2 1 1"
+				startalpha="0"
+				midalpha=".25"
+				endalpha="0"
+				midalphapos=".2"
+			/>
+			
+			<billboard
+				
+				life="300"
+				startcolor="1 .5 .5"
+				midcolor="1 .5 .5"
+				endcolor="0 0 0"
+				startsize="25"
+				midsize="120"
+				endsize="155"
+				midsizepos=".3"
+				depthbias="-100"
+				material="/shared/effects/materials/heart_04.material"
+				position="0 0 50"
+				scale="3"
+			/>
+		</particlesystem>
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->

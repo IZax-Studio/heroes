@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+	<definitions>
+
+		<particlesystem name="system1" space="world" scale="1">
+		
+			<sound
+			    soundloop="true"
+				randomloop="true"
+				fadein="500"
+				fadeout="250"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1500"
+				volume=".4"
+				sample="../sounds/loop_attached.wav"
+			/>	
+
+			<simpleemitter
+				spawnrate="5"
+				expirelife="0"
+				particlelife="1500"
+				gravity="0"
+				speed="0"
+				drag="0"
+				acceleration="0"
+				position="0 0 0"
+				offsetsphere="100 100 0"
+				
+			>
+				<particle>
+				
+					<model
+						position="0 0 0"
+						minlife="800"
+						maxlife="1000"
+						name="emitter0"
+						anim="idle"
+						model="little_rocks/model.mdf"
+						minscale="1"
+						maxscale="1"
+						color=".5 .4 .35"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".9"
+						minyaw="0"
+						maxyaw="360"
+					>
+					</model>
+					
+				</particle>
+			</simpleemitter>
+			<terrainemitter
+                spawnrate="10"
+                range="60"
+                material="/shared/effects/materials/phantom_white_reveal_02_add.material"
+                minparticlelife="150"
+                maxparticlelife="600"
+				position="0 0 -10"
+				gravity="-5"
+            >
+                <template name="fire_pillar">
+                    <particle
+                        yaw="{angle}"
+                        flare="1"
+                        minstartwidth="10"
+                        maxstartwidth="20"
+                        minendwidth="10"
+                        maxendwidth="15"
+                        minendheight="300"
+                        maxendheight="500"
+                        startcolor="{sc}"
+                        midcolor="{mc}"
+                        endcolor="{ec}"
+                        startframe="1"
+                        midframe="0"
+                        endframe="1"
+                        midframepos=".25"
+                        lockup="true"
+                    />
+                </template>
+               <instance name="fire_pillar" sc=".1 .5 .5" mc="0 .3 .5" ec="0 .1 .25" angle="0" />
+				<instance name="fire_pillar" sc=".1 .5 .5" mc="0 .25 .5" ec="0 .2 .25" angle="0" />
+				<instance name="fire_pillar" sc=".1 .5 .5" mc="0 .3 .5" ec="0 .1 .25" angle="180" />
+				<instance name="fire_pillar" sc=".1 .5 .5" mc="0 .25 .5" ec="0 0 .25" angle="180" />
+            </terrainemitter>
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />	
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>
+
+
+
+
+
+
+

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="entity" scale="1">
+			<template name="glow">
+
+				<billboard
+					bone="{bone}"
+					position="0 0 0"
+					expirelife="250"
+					startcolor=".5 0 0"
+					endcolor="0 0 0"
+					size="50"
+					rollspeed="-1250"
+					depthbias="-50"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+
+				<billboard
+					bone="{bone}"
+					position="0 0 0"
+					expirelife="250"
+					startcolor=".5 .5 0"
+					endcolor="0 0 0"
+					size="13"
+					rollspeed="-1250"
+					depthbias="-50"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+
+				<billboard
+					bone="{bone}"
+					material="/shared/effects/materials/blink.material"
+					startcolor="0 0 0"
+					midcolor=".75 .25 0"
+					endcolor="0"
+					maxroll="360"
+					size="50"
+					depthbias="-50"
+					life="500"
+					directionalspace="local"
+					rollspeed="-50"
+					loop="true"
+				/>
+
+			</template>
+			
+			<instance name="glow" bone="_bone_righthand"/>
+			<instance name="glow" bone="_bone_lefthand"/>
+
+
+			<template name="glow">
+
+
+				<billboard
+					bone="{bone}"
+					position="0 0 0"
+					expirelife="250"
+					startcolor=".2"
+					endcolor="0 0 0"
+					size="50"
+					depthbias="-50"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+
+			</template>
+			
+			<instance name="glow" bone="_bone_righthand"/>
+			<instance name="glow" bone="_bone_lefthand"/>
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>
+

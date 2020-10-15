@@ -1,0 +1,1054 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_MonkeyKing"
+	
+	team="Legion"
+	icon="Elizabeth_Bathory.jpg"
+	portrait="Elizabeth_Bathory.jpg" 
+	model="Elizabeth_Bathory/model.mdf"
+	skin=""
+	
+	passiveeffect="effects/sa1.effect"
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="Elizabeth_Bathory\voice_Elizabeth_Bathory/s_%.wav"
+	selectedflavorsound="Elizabeth_Bathory\voice_Elizabeth_Bathory/sf_%.wav"
+	confirmmovesound="Elizabeth_Bathory\voice_Elizabeth_Bathory/m_%.wav"
+	confirmattacksound="Elizabeth_Bathory\voice_Elizabeth_Bathory/a_%.wav"
+	nomanasound="Elizabeth_Bathory\voice_Elizabeth_Bathory/cd.wav"
+	cooldownsound="Elizabeth_Bathory\voice_Elizabeth_Bathory/nm.wav"
+	announcersound="Elizabeth_Bathory\sounds/34_skin3_pick_01.wav"
+	tauntedsound="Elizabeth_Bathory\voice_Elizabeth_Bathory/t1.wav"
+	tauntkillsound="Elizabeth_Bathory\voice_Elizabeth_Bathory/t2.wav"
+	
+	preglobalscale="2.1"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="44"
+	targetoffset="0 0 64"
+
+	category="physical"
+	difficulty="5"
+
+	solorating="2"
+	junglerating="0"
+	carryrating="2"
+	supportrating="0"
+	initiatorrating="0"
+	gankerrating="4"
+	pusherrating="0"
+	rangedrating="0"
+	meleerating="5"
+	
+	movespeed="300"
+	turnrate="6000"
+	turnsmoothing="0.05"
+
+	maxhealth="150"
+	healthregen="1.00"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="0"
+	magicarmor="5.0"
+
+	inventory0="Ability_MonkeyKing1"
+	inventory1="Ability_MonkeyKing2"
+	inventory2="Ability_MonkeyKing3"
+	inventory3="Ability_MonkeyKing4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="1000"
+	attackactiontime="330"
+	attackcooldown="1700"
+	attackdamagemin="27"
+	attackdamagemax="33"
+	attacknumanims="2"
+	attackoffset="0 0 75"
+	attackprojectile=""
+	attackrange="128"
+	attackstarteffect=""
+	attackactioneffect="effects/attackaction.effect"
+	attackimpacteffect="effects/impact.effect"
+	attacktype="melee"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="600"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	primaryattribute="Agility"
+	strength="20"
+	strengthperlevel="1.7"
+	agility="20"
+	agilityperlevel="2.5"
+	intelligence="17"
+	intelligenceperlevel="2"
+	
+	corpsetime="1000"
+	corpsefadetime="5000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	previewmodel="Elizabeth_Bathory/preview2.mdf"
+	previewpos="0 0 -50"
+	previewangles="0 0 0"
+	previewscale="1.75"
+	storepassiveeffect="effects/body_store2.effect"
+	storemodel="Elizabeth_Bathory/preview2.mdf"
+	storepos="0 0 -20"
+	storeangles="0 0 0"
+	storescale="1.9"
+	
+	portraitcampos="-5 -20 20"
+	portraitangles="0 0 15"
+	
+	
+	tooleffectkeyname37="Item_MastersLegacy"
+	tooleffectpath37="effects/staff_of_the_mastyer.effect"
+
+	tooleffectkeyname38="State_MastersLegacy"
+	tooleffectpath38="effects/staff_of_the_mastyer.effect"
+
+	tooleffectkeyname39="Item_Intelligence7"
+	tooleffectpath39="effects/staff_of_the_mastyer.effect"
+>
+	<recommendeditem name="Item_ManaPotion" />
+	<recommendeditem name="Item_MinorTotem" />
+	<recommendeditem name="Item_RunesOfTheBlight" />
+	<recommendeditem name="Item_HealthPotion" />
+	<recommendeditem name="Item_HomecomingStone" />
+	
+	<recommendeditem name="Item_Soulscream" />
+	<recommendeditem name="Item_Strength5" />
+	<recommendeditem name="Item_EnhancedMarchers" />
+	<recommendeditem name="Item_Steamboots" />
+	<recommendeditem name="Item_Splash" />
+	<recommendeditem name="Item_StrengthAgility" />
+	<recommendeditem name="Item_Intelligence7" />
+	<recommendeditem name="Item_Pierce" />
+	<recommendeditem name="Item_Evasion" />
+
+	<modifier key="MonkeyKingFlying" modpriority="100"
+		walkanim="cloud_walk_1"
+		attackanim="cloud_attack_%"
+		attacknumanims="2"
+		idleanim="cloud_idle"
+		boredanim="cloud_bored_1"
+		knockanim="cloud_knock_1"
+	/>
+	
+	<modifier key="soccer" modpriority="190" primaryattribute="" 
+		turnrate="650" magicarmor="0" healthregen="2.5" armor="0" manaregen="0"
+		maxmana="100"
+		attackrange="150"
+		movespeed="320"
+		maxhealth="500"
+		attackdamagemin="50"
+		attackdamagemax="50"
+		intelligence="0"
+		strength="0"
+		agility="0"
+		inventory0="Ability_Soccer_SlideKick"
+		inventory1="Ability_Soccer_Sprint"
+		inventory2="Ability_MonkeyKing1"
+		inventory3="Ability_MonkeyKing2"
+		inventory4="Ability_MonkeyKing4"
+		cancarryitems="false" inventory8="" inventory12=""
+	/>
+	
+	<!-- <modifier key="gated" modpriority="200"
+		movespeed="300"
+		magicarmor="5"
+		armor="-0.2"
+		
+		inventory0="Reborn_Ability_MonkeyKing1"
+		inventory1="Reborn_Ability_MonkeyKing2"
+		inventory2="Reborn_Ability_MonkeyKing3"
+		inventory3="Reborn_Ability_MonkeyKing4"
+		
+		attackdamagemin="28"
+		attackdamagemax="34"
+		
+		primaryattribute="Agility"
+		strength="18"
+		strengthperlevel="2.0"
+		agility="20"
+		agilityperlevel="3.0"
+		intelligence="17"
+		intelligenceperlevel="2.0"
+		
+		solorating="5"
+		junglerating="0"
+		carryrating="0"
+		supportrating="0"
+		initiatorrating="0"
+		gankerrating="5"
+		pusherrating="0"
+		rangedrating="0"
+		meleerating="5"
+	>
+	</modifier> -->
+	
+	<altavatar tooleffectkeyname37="Item_MastersLegacy"
+	tooleffectpath37="effects/.effect"
+
+	tooleffectkeyname38="State_MastersLegacy"
+	tooleffectpath38="effects/.effect"
+
+	tooleffectkeyname39="Item_Intelligence7"
+	tooleffectpath39="effects/.effect"  key="Hero_MonkeyKing.Classic" modpriority="1"
+		icon="icon.tga"
+		portrait="icon.tga"
+		model="model.mdf"
+		skin=""
+		
+		passiveeffect=""
+		spawneffect=""
+		respawneffect="/shared/effects/respawn.effect"
+		selectedsound="sounds/voice/select_%.wav"
+		selectedflavorsound="sounds/voice/select_flavour_%.wav"
+		confirmmovesound="sounds/voice/move_%.wav"
+		confirmattacksound="sounds/voice/attack_%.wav"
+		nomanasound="sounds/voice/no_mana.wav"
+		cooldownsound="sounds/voice/cooldown.wav"
+		announcersound="sounds/voice/hero_select.wav"
+		tauntedsound="sounds/voice/taunt_prior.wav"
+		tauntkillsound="sounds/voice/taunt_after.wav"
+		
+		preglobalscale="1.8"
+		modelscale="1.0"
+		effectscale="0.9"
+		boundsheight="112"
+		boundsradius="24"
+		selectionradius="44"
+		targetoffset="0 0 64"
+		
+		previewmodel="preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.5"
+		storepassiveeffect=""
+
+		storemodel="preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.75"
+		
+		portraitcampos="5 0 26"
+	/>
+	
+	<altavatar tooleffectkeyname37="Item_MastersLegacy"
+	tooleffectpath37="effects/.effect"
+
+	tooleffectkeyname38="State_MastersLegacy"
+	tooleffectpath38="effects/.effect"
+
+	tooleffectkeyname39="Item_Intelligence7"
+	tooleffectpath39="effects/.effect"  icon="icon.tga" key="Hero_MonkeyKing.Alt" modpriority="1"
+		altavatar="true"
+		
+		preglobalscale="1.8"
+		
+		icon2="alt/icon.tga"
+		portrait="alt/icon.tga"
+		model="alt/model.mdf"
+		
+		respawneffect="/shared/effects/respawn.effect"
+		selectedsound="sounds/voice/select_%.wav"
+		selectedflavorsound="sounds/voice/select_flavour_%.wav"
+		confirmmovesound="sounds/voice/move_%.wav"
+		confirmattacksound="sounds/voice/attack_%.wav"
+		nomanasound="sounds/voice/no_mana.wav"
+		cooldownsound="sounds/voice/cooldown.wav"
+		announcersound="sounds/voice/hero_select.wav"
+		tauntedsound="sounds/voice/taunt_prior.wav"
+		tauntkillsound="sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.5"
+		storepassiveeffect=""
+		storemodel="alt/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.75"
+		portraitcampos="5 0 26"
+	/>
+	
+	<altavatar tooleffectkeyname37="Item_MastersLegacy"
+	tooleffectpath37="effects/.effect"
+
+	tooleffectkeyname38="State_MastersLegacy"
+	tooleffectpath38="effects/.effect"
+
+	tooleffectkeyname39="Item_Intelligence7"
+	tooleffectpath39="effects/.effect"  icon="icon.tga" key="Hero_MonkeyKing.Alt2" modpriority="1"
+		altavatar="true"
+		
+		preglobalscale="1.7"
+		
+		icon2="alt2/icon.tga"
+		portrait="alt2/icon.tga"
+		model="alt2/model.mdf"
+		
+		selectedsound="alt2/sounds/voice/select_%.wav"
+    	selectedflavorsound="alt2/sounds/voice/select_flavour_%.wav"
+    	confirmmovesound="alt2/sounds/voice/move_%.wav"
+	    confirmattacksound="alt2/sounds/voice/attack_%.wav"
+    	nomanasound="alt2/sounds/voice/no_mana.wav"
+     	cooldownsound="alt2/sounds/voice/cooldown.wav"
+	    tauntedsound="alt2/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt2/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt2/preview.mdf"
+		previewpos="-10 0 -80"
+		previewangles="0 0 0"
+		previewscale="1.4"
+		storepassiveeffect=""
+		storemodel="alt2/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.40"
+		portraitcampos="5 0 26"
+	/>
+	
+	<altavatar tooleffectkeyname37="Item_MastersLegacy"
+	tooleffectpath37="effects/.effect"
+
+	tooleffectkeyname38="State_MastersLegacy"
+	tooleffectpath38="effects/.effect"
+
+	tooleffectkeyname39="Item_Intelligence7"
+	tooleffectpath39="effects/.effect"  icon="icon.tga" key="Hero_MonkeyKing.Alt3" modpriority="1"
+		altavatar="true"
+		
+		preglobalscale="1.9"
+	
+		passiveeffect=""
+		
+		icon2="alt3/icon.tga"
+		portrait="alt3/icon.tga"
+		model="alt3/model.mdf"
+		
+		selectedsound="alt3/sounds/voice/select_%.wav"
+    	selectedflavorsound="alt3/sounds/voice/select_flavour_%.wav"
+    	confirmmovesound="alt3/sounds/voice/move_%.wav"
+	    confirmattacksound="alt3/sounds/voice/attack_%.wav"
+    	nomanasound="alt3/sounds/voice/no_mana.wav"
+     	cooldownsound="alt3/sounds/voice/cooldown.wav"
+	    tauntedsound="alt3/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt3/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt3/preview.mdf"
+		previewpos="-10 0 -80"
+		previewangles="0 0 0"
+		previewscale="1.6"
+		storepassiveeffect=""
+		storemodel="alt3/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.6"
+		portraitcampos="5 0 26"
+	/>
+	
+	<altavatar tooleffectkeyname37="Item_MastersLegacy"
+	tooleffectpath37="effects/.effect"
+
+	tooleffectkeyname38="State_MastersLegacy"
+	tooleffectpath38="effects/.effect"
+
+	tooleffectkeyname39="Item_Intelligence7"
+	tooleffectpath39="effects/.effect"  icon="icon.tga" key="Hero_MonkeyKing.Alt4" modpriority="1"
+		altavatar="true"
+		
+		preglobalscale="1.9"
+	
+		passiveeffect=""
+		respawneffect="/shared/effects/respawn_monkeyking.effect"
+		
+		overrideportraiteffects="true"
+		icon2="alt4/icon.tga"
+		portrait="alt4/icon.tga"
+		model="alt4/model.mdf"
+		
+		selectedsound="alt4/sounds/voice/select_%.wav"
+		selectedflavorsound="alt4/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt4/sounds/voice/move_%.wav"
+		confirmattacksound="alt4/sounds/voice/attack_%.wav"
+		nomanasound="alt4/sounds/voice/no_mana.wav"
+		cooldownsound="alt4/sounds/voice/cooldown.wav"
+		tauntedsound="alt4/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt4/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt4/preview.mdf"
+		previewpos="-10 0 -80"
+		previewangles="0 0 0"
+		previewscale="1.4"
+		previewpassiveeffect="alt4/effects/store_body.effect"
+		
+		storemodel="alt4/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.9"
+		storepassiveeffect="alt4/effects/store_body.effect"
+		
+		portraitcampos="5 0 26"
+	>
+		<onspawn>
+			<applystate name="State_MonkeyKing_Alt4_Hair_Effects" target="this_entity" continuous="true" />
+			<applystate name="State_MonkeyKing_Alt4_Waist_Effects" target="this_entity" continuous="true" />
+			<applystate name="State_MonkeyKing_Alt4_Chest_Effects" target="this_entity" continuous="true" />
+			<applystate name="State_MonkeyKing_Alt4_Bottle_Effects" target="this_entity" continuous="true" />
+			<applystate name="State_MonkeyKing_Alt4_Weapon_Effects" target="this_entity" continuous="true" />
+		</onspawn>
+		
+		<onrespawn>
+			<applystate name="State_MonkeyKing_Alt4_Hair_Effects" target="this_entity" continuous="true" />
+			<applystate name="State_MonkeyKing_Alt4_Waist_Effects" target="this_entity" continuous="true" />
+			<applystate name="State_MonkeyKing_Alt4_Chest_Effects" target="this_entity" continuous="true" />
+			<applystate name="State_MonkeyKing_Alt4_Bottle_Effects" target="this_entity" continuous="true" />
+			<applystate name="State_MonkeyKing_Alt4_Weapon_Effects" target="this_entity" continuous="true" />
+		</onrespawn>
+	</altavatar>
+	
+	<altavatar tooleffectkeyname37="Item_MastersLegacy"
+	tooleffectpath37="effects/.effect"
+
+	tooleffectkeyname38="State_MastersLegacy"
+	tooleffectpath38="effects/.effect"
+
+	tooleffectkeyname39="Item_Intelligence7"
+	tooleffectpath39="effects/.effect"  icon="icon.tga" key="Hero_MonkeyKing.Alt5" modpriority="1"
+		altavatar="true"
+		
+		preglobalscale="1.9"
+	
+		passiveeffect=""
+		
+		icon2="alt5/icon.tga"
+		portrait="alt5/icon.tga"
+		model="alt5/model.mdf"
+		
+		selectedsound="alt5/sounds/voice/select_%.wav"
+    	selectedflavorsound="alt5/sounds/voice/select_flavour_%.wav"
+    	confirmmovesound="alt5/sounds/voice/move_%.wav"
+	    confirmattacksound="alt5/sounds/voice/attack_%.wav"
+    	nomanasound="alt5/sounds/voice/no_mana.wav"
+     	cooldownsound="alt5/sounds/voice/cooldown.wav"
+	    tauntedsound="alt5/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt5/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt5/preview.mdf"
+		previewpos="-10 0 -80"
+		previewangles="0 0 0"
+		previewscale="1.6"
+		
+		storemodel="alt5/preview.mdf"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="1.8"
+		storepassiveeffect=""
+		portraitcampos="5 0 26"
+	>
+		<aura state="State_MonkeyKing_Alt5_Spraypaint_Effects" radius="100" targetscheme="enemy_hero_corpses" ignoreinvulnerable="true" duration="20000"/>
+	</altavatar>
+	
+	<altavatar tooleffectkeyname37="Item_MastersLegacy"
+	tooleffectpath37="effects/.effect"
+
+	tooleffectkeyname38="State_MastersLegacy"
+	tooleffectpath38="effects/.effect"
+
+	tooleffectkeyname39="Item_Intelligence7"
+	tooleffectpath39="effects/.effect"  icon="icon.tga" key="Hero_MonkeyKing.Alt6" modpriority="1"
+		altavatar="true"
+		
+		preglobalscale="1.9"
+		passiveeffect="alt6/effects/body.effect"
+		
+		icon2="alt6/icon.tga"
+		portrait="alt6/icon.tga"
+		model="alt6/model.mdf"
+		
+		attackactioneffect="alt6/effects/attackaction.effect"
+		attackimpacteffect="alt6/effects/impact.effect"
+		
+		selectedsound="alt6/sounds/voice/select_%.wav"
+    	selectedflavorsound="alt6/sounds/voice/select_flavour_%.wav"
+    	confirmmovesound="alt6/sounds/voice/move_%.wav"
+	    confirmattacksound="alt6/sounds/voice/attack_%.wav"
+    	nomanasound="alt6/sounds/voice/no_mana.wav"
+     	cooldownsound="alt6/sounds/voice/cooldown.wav"
+	    tauntedsound="alt6/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt6/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt6/preview.mdf"
+		previewpos="-10 0 -80"
+		previewangles="0 0 0"
+		previewscale="1.6"
+		storepassiveeffect=""
+		storemodel="alt6/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.6"
+		
+		portraitcampos="5 0 26"
+	>
+		<onspawn>
+			<applystate name="State_Calamity_Sound_Initiator" target="source_entity" duration="2000" />
+			 <ownsproduct target="this_entity" product="aa.Hero_Kane.Alt9 aa.Hero_Artillery.Alt8" />
+			<compare a="result" b="1" op="eq">
+				<spawnunit name="Pet_Ursa" target="this_entity" source="target_entity" offset="0 -100" facing="source_entity" pushentity="true" />
+			</compare>
+		</onspawn>
+		
+		<oninflicted>
+			<entitytype type="State_Taunting" target="inflictor_entity">
+				<setproxy entity="this_entity" target="inflictor_entity" />
+			</entitytype>
+		</oninflicted>
+		
+		<onkill>
+			<targettype type="illusion" />
+			<else>
+				<hasmodifier entity="target_entity" name="Kodia_Sound">
+				
+					<!-- We killed Jeraziah! Did we taunt him? -->
+					<pushentityproxy entity="this_proxy_entity" />
+					<compare a="stack_entity" b="inflictor_entity" op="ne">
+						<!-- We did not! -->
+						<playeffect effect="/heroes/monkey_king/alt6/killed_kodia.effect" target="source_entity" />
+					</compare>
+				</hasmodifier>
+			</else>
+		</onkill>
+		
+		<onrespawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Kane.Alt9 aa.Hero_Artillery.Alt8" />
+			<compare a="result" b="1" op="eq">
+				<spawnunit name="Pet_Ursa" target="this_entity" source="target_entity" offset="0 -100" facing="source_entity" pushentity="true" />
+			</compare>
+		</onrespawn>
+   </altavatar>
+   
+   <altavatar tooleffectkeyname37="Item_MastersLegacy"
+	tooleffectpath37="effects/.effect"
+
+	tooleffectkeyname38="State_MastersLegacy"
+	tooleffectpath38="effects/.effect"
+
+	tooleffectkeyname39="Item_Intelligence7"
+	tooleffectpath39="effects/.effect"  icon="icon.tga" key="Hero_MonkeyKing.Alt7" modpriority="1"
+		altavatar="true"
+		
+		preglobalscale="1.9"
+		passiveeffect="alt7/effects/body.effect"
+		
+		icon2="alt7/icon.tga"
+		portrait="alt7/icon.tga"
+		model="alt7/model.mdf"
+		infoheight="225"
+
+		attackactioneffect="alt7/effects/attackaction.effect"
+		attackimpacteffect="alt7/effects/impact.effect"
+		
+		selectedsound="alt7/sounds/voice/select_%.wav"
+    	selectedflavorsound="alt7/sounds/voice/select_flavour_%.wav"
+    	confirmmovesound="alt7/sounds/voice/move_%.wav"
+	    confirmattacksound="alt7/sounds/voice/attack_%.wav"
+    	nomanasound="alt7/sounds/voice/no_mana.wav"
+     	cooldownsound="alt7/sounds/voice/cooldown.wav"
+	    tauntedsound="alt7/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt7/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt7/preview.mdf"
+		previewpos="-10 0 -80"
+		previewangles="0 0 0"
+		previewscale="1.6"
+		storepassiveeffect=""
+		storemodel="alt7/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.6"
+		
+		portraitcampos="5 0 26"
+	/>
+	
+	<altavatar tooleffectkeyname37="Item_MastersLegacy"
+	tooleffectpath37="effects/.effect"
+
+	tooleffectkeyname38="State_MastersLegacy"
+	tooleffectpath38="effects/.effect"
+
+	tooleffectkeyname39="Item_Intelligence7"
+	tooleffectpath39="effects/.effect"  icon="icon.tga" key="Hero_MonkeyKing.Alt8" modpriority="1"
+		altavatar="true"
+		
+		preglobalscale="1.9"
+		passiveeffect=""
+		
+		icon2="alt8/icon.tga"
+		portrait="alt8/icon.tga"
+		model="alt8/model.mdf"
+		infoheight="200"
+		
+		overheadoffset="50"
+
+		attackactioneffect="alt8/effects/attackaction.effect"
+		attackimpacteffect="alt8/effects/impact.effect"
+		
+		selectedsound="alt8/sounds/voice/select_%.wav"
+    	selectedflavorsound="alt8/sounds/voice/select_flavour_%.wav"
+    	confirmmovesound="alt8/sounds/voice/move_%.wav"
+	    confirmattacksound="alt8/sounds/voice/attack_%.wav"
+    	nomanasound="alt8/sounds/voice/no_mana.wav"
+     	cooldownsound="alt8/sounds/voice/cooldown.wav"
+	    tauntedsound="alt8/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt8/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt8/preview.mdf"
+		previewpos="-10 0 -80"
+		previewangles="0 0 0"
+		previewscale="1.6"
+		storepassiveeffect=""
+		storemodel="alt8/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.85"
+		
+		portraitcampos="16 -30 2"
+		portraitangles="0 0 30"
+		
+		corpsetime="5000"
+		corpsefadetime="1000"
+	/>
+	
+	<altavatar tooleffectkeyname37="Item_MastersLegacy"
+	tooleffectpath37="effects/.effect"
+
+	tooleffectkeyname38="State_MastersLegacy"
+	tooleffectpath38="effects/.effect"
+
+	tooleffectkeyname39="Item_Intelligence7"
+	tooleffectpath39="effects/.effect"  icon="icon.tga" key="Hero_MonkeyKing.Alt9" modpriority="1"
+		altavatar="true"
+		
+		preglobalscale="1.9"
+		passiveeffect="alt9/effects/body.effect"
+		
+		icon2="alt9/icon.tga"
+		portrait="alt9/icon.tga"
+		model="alt9/model.mdf"
+		infoheight="200"
+		
+		overheadoffset="50"
+
+		attackactioneffect="alt9/effects/attackaction.effect"
+		attackimpacteffect="alt9/effects/impact.effect"
+		
+		selectedsound="alt9/sounds/voice/select_%.wav"
+    	selectedflavorsound="alt9/sounds/voice/select_flavour_%.wav"
+    	confirmmovesound="alt9/sounds/voice/move_%.wav"
+	    confirmattacksound="alt9/sounds/voice/attack_%.wav"
+    	nomanasound="alt9/sounds/voice/no_mana.wav"
+     	cooldownsound="alt9/sounds/voice/cooldown.wav"
+	    tauntedsound="alt9/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt9/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt9/preview.mdf"
+		previewpos="-10 0 -80"
+		previewangles="0 0 0"
+		previewscale="1.6"
+		storepassiveeffect=""
+		storemodel="alt9/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.85"
+		
+		portraitcampos="10 -30 -5"
+		portraitangles="0 0 30"
+		
+		corpsetime="5000"
+		corpsefadetime="1000"
+	>
+	<onspawn>
+	<applystate name="State_Monkey_King_Alt9_Sound_Initiator" target="source_entity" duration="2000" />
+	</onspawn>
+	</altavatar>
+	
+	<altavatar tooleffectkeyname37="Item_MastersLegacy"
+	tooleffectpath37="effects/.effect"
+
+	tooleffectkeyname38="State_MastersLegacy"
+	tooleffectpath38="effects/.effect"
+
+	tooleffectkeyname39="Item_Intelligence7"
+	tooleffectpath39="effects/.effect"  icon="icon.tga" key="Hero_MonkeyKing.Alt11" modpriority="1"
+		altavatar="true"
+		
+		preglobalscale="1.9"
+		passiveeffect="alt11/effects/body.effect"
+		
+		icon2="alt11/icon.tga"
+		portrait="alt11/icon.tga"
+		model="alt11/model.mdf"
+		modelscale="1.1"
+		infoheight="200"
+		boredanim="bored_%"
+		borednumanims="2"
+		
+		overheadoffset="50"
+       
+		selectedsound="alt11/sounds/voice/select_%.wav"
+    	selectedflavorsound="alt11/sounds/voice/select_flavour_%.wav"
+    	confirmmovesound="alt11/sounds/voice/move_%.wav"
+	    confirmattacksound="alt11/sounds/voice/attack_%.wav"
+    	nomanasound="alt11/sounds/voice/no_mana.wav"
+     	cooldownsound="alt11/sounds/voice/cooldown.wav"
+	    tauntedsound="alt11/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt11/sounds/voice/taunt_after.wav"
+	
+		previewmodel="alt11/preview.mdf"
+		previewpos="-10 0 -80"
+		previewangles="0 0 0"
+		previewscale="1.0"
+		
+		storemodel="alt11/preview.mdf"
+		storepassiveeffect="alt11/effects/body_store.effect"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.8"
+		
+		portraitcampos="26 -17 25"
+		portraitangles="0 0 30"
+		
+		corpsetime="5000"
+		corpsefadetime="1000"
+	>
+		<onkill>
+			<ownsproduct target="this_entity" product="aa.Hero_MonkeyKing.Alt11 aa.Hero_KingKlout.Alt3 aa.Hero_Lodestone.Alt5 aa.Hero_Rocky.Alt11 aa.Hero_Kane.Alt11 aa.Hero_Zephyr.Alt9" >
+				<cantarget targetscheme="enemy_heroes">
+					<applystate name="State_Set_Striker_Score_VFX" source="this_entity" target="this_entity" duration="2500" />
+				</cantarget>
+			</ownsproduct>
+        </onkill>
+		
+		<onassist>
+			<ownsproduct target="this_entity" product="aa.Hero_MonkeyKing.Alt11 aa.Hero_KingKlout.Alt3 aa.Hero_Lodestone.Alt5 aa.Hero_Rocky.Alt11 aa.Hero_Kane.Alt11 aa.Hero_Zephyr.Alt9" >
+				<applystate name="State_Set_Striker_Score_VFX" source="this_entity" target="this_entity" duration="2500" />
+			</ownsproduct>
+        </onassist>
+		
+		<modifier key="MonkeyKingFlying" modpriority="100"
+				walkanim="cloud_walk_1"
+				attackanim="cloud_attack_%"
+				attacknumanims="2"
+				idleanim="cloud_idle"
+				boredanim="cloud_bored_1"
+				knockanim="cloud_knock_1"
+			>		
+				<onkill>
+					<ownsproduct target="this_entity" product="aa.Hero_MonkeyKing.Alt11 aa.Hero_KingKlout.Alt3 aa.Hero_Lodestone.Alt5 aa.Hero_Rocky.Alt11 aa.Hero_Kane.Alt11 aa.Hero_Zephyr.Alt9" >
+						<cantarget targetscheme="enemy_heroes">
+							<applystate name="State_Set_Striker_Score_VFX" source="this_entity" target="this_entity" duration="2500" />
+						</cantarget>
+					</ownsproduct>
+				</onkill>
+				
+				<onassist>
+					<ownsproduct target="this_entity" product="aa.Hero_MonkeyKing.Alt11 aa.Hero_KingKlout.Alt3 aa.Hero_Lodestone.Alt5 aa.Hero_Rocky.Alt11 aa.Hero_Kane.Alt11 aa.Hero_Zephyr.Alt9" >
+						<applystate name="State_Set_Striker_Score_VFX" source="this_entity" target="this_entity" duration="2500" />
+					</ownsproduct>
+				</onassist>
+		</modifier>
+	</altavatar>
+	
+	
+	<altavatar tooleffectkeyname37="Item_MastersLegacy"
+	tooleffectpath37="effects/.effect"
+
+	tooleffectkeyname38="State_MastersLegacy"
+	tooleffectpath38="effects/.effect"
+
+	tooleffectkeyname39="Item_Intelligence7"
+	tooleffectpath39="effects/.effect"  icon="Kurousagi/123.jpg" key="Hero_MonkeyKing.main_reskin" modpriority="1"
+		altavatar="true"
+		icon2="Kurousagi/123.jpg"
+		portrait="Kurousagi/123.jpg"
+		model="Kurousagi/model.mdf"
+		infoheight="185"
+		
+		preglobalscale="1.5"
+		
+		passiveeffect=""
+		selectedsound="Kurousagi/sl%.mp3"
+	selectedflavorsound="Kurousagi/sl%.mp3"
+	confirmmovesound="Kurousagi/move_%.mp3"
+	confirmattacksound="Kurousagi/atk_%.mp3"
+	nomanasound="nomana.mp3"
+										  
+	announcersound="hero.ogg"
+	tauntedsound="smack_1.mp3"
+	tauntkillsound="smack_2.mp3"
+		previewmodel="Kurousagi/model.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.3"
+		storepassiveeffect=""
+		storemodel="Kurousagi/model.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.3"
+		
+		portraitcampos="0 0 30"
+	/>
+	
+	<altavatar tooleffectkeyname37="Item_MastersLegacy"
+	tooleffectpath37="effects/.effect"
+
+	tooleffectkeyname38="State_MastersLegacy"
+	tooleffectpath38="effects/.effect"
+
+	tooleffectkeyname39="Item_Intelligence7"
+	tooleffectpath39="effects/.effect"  icon="icon.tga" key="Hero_MonkeyKing.Alt12" modpriority="1"
+		altavatar="true"
+		
+		preglobalscale="1.9"
+		passiveeffect=""
+		
+		icon2="alt12/icon.tga"
+		portrait="alt12/icon.tga"
+		model="alt12/model.mdf"
+		infoheight="200"
+		
+		overheadoffset="50"
+
+		attackactioneffect="alt12/effects/attackaction.effect"
+		attackimpacteffect="alt12/effects/impact.effect"
+		
+		selectedsound="alt12/sounds/voice/select_%.wav"
+    	selectedflavorsound="alt12/sounds/voice/select_flavour_%.wav"
+    	confirmmovesound="alt12/sounds/voice/move_%.wav"
+	    confirmattacksound="alt12/sounds/voice/attack_%.wav"
+    	nomanasound="alt12/sounds/voice/no_mana.wav"
+     	cooldownsound="alt12/sounds/voice/cooldown.wav"
+	    tauntedsound="alt12/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt12/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt12/preview.mdf"
+		previewpos="-10 0 -80"
+		previewangles="0 0 0"
+		previewscale="1.6"
+		
+		storemodel="alt12/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.85"
+		storepassiveeffect=""
+		portraitcampos="0 -30 23"
+		portraitangles="0 0 50"
+		
+		corpsetime="2000"
+		corpsefadetime="1500"
+	/>
+	
+	<altavatar tooleffectkeyname37="Item_MastersLegacy"
+	tooleffectpath37="effects/.effect"
+
+	tooleffectkeyname38="State_MastersLegacy"
+	tooleffectpath38="effects/.effect"
+
+	tooleffectkeyname39="Item_Intelligence7"
+	tooleffectpath39="effects/.effect"  icon="icon.tga" key="Hero_MonkeyKing.Alt13" modpriority="1"	
+		altavatar="true"
+		
+		preglobalscale="1.9"
+		passiveeffect=""
+		
+		icon2="alt13/icon.tga"
+		portrait="alt13/icon.tga"
+		model="alt13/model.mdf"
+		
+		previewmodel="alt13/preview.mdf"
+		previewpos="-10 0 -80"
+		previewangles="0 0 0"
+		previewscale="1.6"
+		
+		storemodel="alt13/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.8"
+		
+		portraitcampos="8 -20 -6"
+		portraitangles="0 0 20"
+		storepassiveeffect=""
+		attackactioneffect="alt13/effects/attackaction.effect"
+		attackimpacteffect="alt13/effects/impact.effect"
+		selectedsound="alt13/sounds/voice/select_%.wav"
+    	selectedflavorsound="alt13/sounds/voice/select_flavour_%.wav"
+    	confirmmovesound="alt13/sounds/voice/move_%.wav"
+	    confirmattacksound="alt13/sounds/voice/attack_%.wav"
+    	nomanasound="alt13/sounds/voice/no_mana.wav"
+     	cooldownsound="alt13/sounds/voice/cooldown.wav"
+	    tauntedsound="alt13/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt13/sounds/voice/taunt_after.wav"
+	>
+	</altavatar>
+
+	<altavatar tooleffectkeyname37="Item_MastersLegacy"
+	tooleffectpath37="effects/.effect"
+
+	tooleffectkeyname38="State_MastersLegacy"
+	tooleffectpath38="effects/.effect"
+
+	tooleffectkeyname39="Item_Intelligence7"
+	tooleffectpath39="effects/.effect"  icon="icon.tga" key="Hero_MonkeyKing.Alt14" modpriority="1"	
+		altavatar="true"
+		
+		preglobalscale="2"
+		passiveeffect=""
+		
+		icon2="alt14/icon.tga"
+		portrait="alt14/icon.tga"
+		model="alt14/model.mdf"
+		
+		previewmodel="alt14/preview.mdf"
+		previewpos="-10 0 -80"
+		previewangles="0 0 0"
+		previewscale="1.6"
+		
+		storemodel="alt14/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.8"
+		
+		selectedsound="alt14/sounds/voice/select_%.wav"
+    	selectedflavorsound="alt14/sounds/voice/select_flavour_%.wav"
+    	confirmmovesound="alt14/sounds/voice/move_%.wav"
+	    confirmattacksound="alt14/sounds/voice/attack_%.wav"
+    	nomanasound="alt14/sounds/voice/no_mana.wav"
+     	cooldownsound="alt14/sounds/voice/cooldown.wav"
+	    tauntedsound="alt14/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt14/sounds/voice/taunt_after.wav"
+		storepassiveeffect=""
+		portraitcampos="0 -20 10"
+		portraitangles="0 0 10"
+		
+		attackimpacteffect="alt14/effects/impact.effect"
+		attackactioneffect=""
+	>
+		<onkill>
+			<!-- <ownsproduct target="this_entity" product="aa.Hero_Kraken.Alt6 aa.Hero_MonkeyKing.Alt14 aa.Hero_Rally.Alt11" > -->
+				<cantarget targetscheme="enemy_heroes">
+					<applystate name="State_Set_Blood_Warrior_VFX" source="this_entity" target="this_entity" duration="2500" />
+				</cantarget>
+			<!-- </ownsproduct> -->
+        </onkill>
+		
+		<onassist>
+			<!-- <ownsproduct target="this_entity" product="aa.Hero_Kraken.Alt6 aa.Hero_MonkeyKing.Alt14 aa.Hero_Rally.Alt11" > -->
+				<applystate name="State_Set_Blood_Warrior_VFX" source="this_entity" target="this_entity" duration="2500" />
+			<!-- </ownsproduct> -->
+        </onassist>
+	</altavatar>
+
+	<altavatar tooleffectkeyname37="Item_MastersLegacy"
+	tooleffectpath37="effects/.effect"
+
+	tooleffectkeyname38="State_MastersLegacy"
+	tooleffectpath38="effects/.effect"
+
+	tooleffectkeyname39="Item_Intelligence7"
+	tooleffectpath39="effects/.effect"  icon="icon.tga" key="Hero_MonkeyKing.Alt15" modpriority="1"	
+		altavatar="true"
+		
+		preglobalscale="2"
+		passiveeffect=""
+		
+		icon2="alt15/icon.tga"
+		portrait="alt15/icon.tga"
+		model="alt15/model.mdf"
+		
+		previewmodel="alt15/preview.mdf"
+		previewpos="-10 0 -80"
+		previewangles="0 0 0"
+		previewscale="1.6"
+		storepassiveeffect=""
+		storemodel="alt15/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.8"
+		
+		selectedsound="alt15/sounds/voice/select_%.wav"
+    	selectedflavorsound="alt15/sounds/voice/select_flavour_%.wav"
+    	confirmmovesound="alt15/sounds/voice/move_%.wav"
+	    confirmattacksound="alt15/sounds/voice/attack_%.wav"
+    	nomanasound="alt15/sounds/voice/no_mana.wav"
+     	cooldownsound="alt15/sounds/voice/cooldown.wav"
+	    tauntedsound="alt15/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt15/sounds/voice/taunt_after.wav"
+		
+		portraitcampos="0 -20 17"
+		portraitangles="0 0 10"
+		
+		attackactioneffect="alt15/effects/attackaction.effect"
+		attackimpacteffect="alt15/effects/impact.effect"
+
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_MonkeyKing.Alt16" modpriority="1"
+		altavatar="true"
+		
+		preglobalscale="1.9"
+		passiveeffect=""
+		icon="icon.tga"
+		icon2="alt16/icon.tga"
+		portrait="alt16/icon.tga"
+		model="alt16/model.mdf"
+		infoheight="200"
+		
+		overheadoffset="50"
+
+		attackactioneffect="alt16/effects/attackaction.effect"
+		attackimpacteffect="alt16/effects/impact.effect"
+		
+		selectedsound="alt16/sounds/voice/select_%.wav"
+    	selectedflavorsound="alt16/sounds/voice/select_flavour_%.wav"
+    	confirmmovesound="alt16/sounds/voice/move_%.wav"
+	    confirmattacksound="alt16/sounds/voice/attack_%.wav"
+    	nomanasound="alt16/sounds/voice/no_mana.wav"
+     	cooldownsound="alt16/sounds/voice/cooldown.wav"
+	    tauntedsound="alt16/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt16/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt16/preview.mdf"
+		previewpos="-10 0 -80"
+		previewangles="0 0 0"
+		previewscale="1.6"
+		
+		storemodel="alt16/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.85"
+		
+		portraitcampos="0 -30 23"
+		portraitangles="0 0 50"
+		
+		corpsetime="2000"
+		corpsefadetime="1500"
+	/>
+</hero>
+

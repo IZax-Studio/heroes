@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="Kim22.max" file="shuvi/model.model" type="K2" high="shuvi/model.model" med="shuvi/model.model" low="shuvi/model.model" >
+	
+	<anim name="idle" clip="shuvi/clips/bat_idle.clip"  loop="true">
+			<frameevent frame="1" cmd="StopEffect 1"/>
+		<frameevent  cmd="StopEffect 2"/>
+		<frameevent  cmd="StartEffect shuvi/hood_off.effect 1"/>
+			</anim>
+	
+	</model>

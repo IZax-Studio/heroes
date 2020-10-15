@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Behemoth_Ability2_Bind"
+	
+	icon="Cha067_Skill_W2.png"
+	
+	stunned="true"
+	stunneddurationunmodifiable="true"
+	ishidden="true"
+	
+	passiveeffect="/heroes/panda/ability_03/effects/launch.effect"
+	
+	effecttype=""
+>
+	
+</state>

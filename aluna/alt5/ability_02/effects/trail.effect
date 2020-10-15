@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".6">
+		
+		<model
+			model="/shared/effects/models/circle_of_bones/model.mdf"
+			anim="idle"
+			scale="1"
+			pitchspeed="1000"
+			yaw="90"
+		>
+		<template name="ghost_trail">
+		
+		<trailemitter
+				bone="{bone}"
+				life="1000"
+				spawnrate="50"
+				startminparticlelife="1000"
+				startmaxparticlelife="1000"
+				endminparticlelife="1"
+				endmaxparticlelife="1" 
+				texpostime="1000"
+				texposscale="0"
+				texstretchscale="1"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+			>
+				<particle
+					color=".25 .12 .025"
+					startsize="50"
+					endsize="30"
+					midcolorpos=".1"
+					midsizepos=".1"
+				/>
+			</trailemitter>
+		<trailemitter
+				bone="{bone}"
+				life="1000"
+				spawnrate="50"
+				particlelife="1000"
+				texpostime="1000"
+				texposscale="0"
+				texstretchscale="1"
+				position="80 0 0"
+				material="/shared/effects/materials/spirit_01.material"
+			>
+				<particle
+					startcolor="1 0 .3"
+					endcolor="0 0 0"
+					startsize="100"
+					endsize="30"
+					midcolorpos=".1"
+					midsizepos=".1"
+				/>
+			</trailemitter>
+			
+			<billboard
+				bone="{bone}"
+				material="/shared/effects/materials/flare_01.material"
+				color="1 0 .3"
+				size="150"
+			/>
+			
+			</template>
+			
+			<instance name="ghost_trail" bone="_bone_fx_03" />
+			<instance name="ghost_trail" bone="_bone_fx_09" />
+			
+			<trailemitter
+				bone="_bone_fx_05"
+				life="1000"
+				spawnrate="50"
+				startminparticlelife="300"
+				startmaxparticlelife="300"
+				endminparticlelife="1"
+				endmaxparticlelife="1" 
+				texpostime="1000"
+				texposscale="0"
+				texstretchscale="1"
+				position="0 0 0"
+				material="/shared/effects/materials/arrow_trail.material"
+			>
+				<particle
+					startcolor="1"
+					endcolor=".0 0 0"
+					startsize="10"
+					endsize="5"
+					midcolorpos=".1"
+					midsizepos=".1"
+				/>
+			</trailemitter>
+			
+			<trailemitter
+				bone="_bone_fx_10"
+				life="1000"
+				spawnrate="50"
+				startminparticlelife="300"
+				startmaxparticlelife="300"
+				endminparticlelife="1"
+				endmaxparticlelife="1" 
+				texpostime="1000"
+				texposscale="0"
+				texstretchscale="1"
+				position="0 0 0"
+				material="/shared/effects/materials/arrow_trail.material"
+			>
+				<particle
+					startcolor="1"
+					endcolor=".0 0 0"
+					startsize="10"
+					endsize="5"
+					midcolorpos=".1"
+					midsizepos=".1"
+				/>
+			</trailemitter>
+		</model>
+		
+		<billboard
+			material="/shared/effects/materials/whitedot.material"
+			color=".5 0 .1"
+			size="200"
+		/>
+		
+		<billboard
+			material="/shared/effects/materials/corona_07.material"
+			color=".5 0 .1"
+			size="100"
+		/>
+		
+		<billboard
+			material="/shared/effects/materials/blink.material"
+			color=".5 0 .1"
+			size="250"
+			rollspeed="500"
+		/>
+		
+		<simpleemitter
+				
+				startspawnrate="40"
+				particlelife="900"
+				direction="0 0 1"
+				speed="150"
+				gravity="-10"
+				drag=".05"
+				minparticleangle="0"
+				maxparticleangle="180" 
+				position="0 0 0"
+				offsetsphere="25"
+				material="/shared/effects/materials/blink.material"
+			>
+				<particle
+					startcolor="1 0 .3"
+					endcolor="0"
+					startsize="60"
+					endsize="1"
+					>
+					
+					<simpleemitter
+						count="1"
+						particlelife="900"
+						direction="0 0 1"
+						position="0 0 0"
+						material="/shared/effects/materials/blink.material"
+					>
+						<particle
+							startcolor="1"
+							midcolor="1"
+							midcolorpos=".7"
+							endcolor="0"
+							startsize="10"
+							endsize="1"
+							anchor="1"
+						/>
+					</simpleemitter>
+				</particle>
+			</simpleemitter>
+		
+		<simpleemitter
+				count="7"
+				spawnrate="18"
+				particlelife="3000"
+				direction="0 1 0"
+				speed="0"
+				minangle="0"
+				maxangle="0" 
+				position="0 0 0"
+				offsetsphere="25 25 25"
+			>
+				<particle
+					turn="true"
+				>
+					<billboard
+						position="0 0 0"
+						life="500"
+						param="0.1"
+						startsize="100"
+						endsize="200"
+						startalpha="0"
+						midalpha=".5"
+						endalpha="0"
+						material="/shared/effects/materials/refract_pinch.material"
+						depthbias="-75"
+					/>
+				</particle>
+			</simpleemitter>
+		
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+
+

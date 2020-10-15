@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Dampeer_Ability3_Attackspeed"
+	
+	icon="../icon/33.png"
+	effecttype="StatusBuff"
+	ishidden="true"
+	passiveeffect=""
+	
+	attackspeedpercharge="0.1"
+	
+	impactinterval="1000"
+	
+	maxcharges="999"
+>
+	<oninflict>
+		<pushability source="this_inflictor_entity" name="Ability_Dampeer4" />
+		<compare source="stack_entity" a="source_level" b="1" op="ge">
+			<addcharges entity="stack_entity" count="0" />
+			<setaccumulator value="result" />
+		</compare>
+		<else>
+			<setaccumulator value="0" />
+		</else>
+		<setcharges a="accumulator" />
+	</oninflict>
+	
+	<onimpact>
+		<pushability source="this_inflictor_entity" name="Ability_Dampeer4" />
+		<compare source="stack_entity" a="source_level" b="1" op="ge">
+			<addcharges entity="stack_entity" count="0" />
+			<setaccumulator value="result" />
+		</compare>
+		<else>
+			<setaccumulator value="0" />
+		</else>
+		<setcharges a="accumulator" />
+	</onimpact>
+</state>

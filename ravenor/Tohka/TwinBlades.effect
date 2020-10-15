@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="entity" scale="1.2">
+
+		
+		
+		
+		
+			<model
+				bone="_bone_back"
+				position="0 0 0"
+				scale="3"
+				expirelife="25"
+				model="/heroes/shadowblade/ability_04/effects/sword/model.mdf"
+				inheritparentmodifiers="true"
+				anim="idle"
+				startcolor=".500 .20 1"
+				endcolor="1 1 1"
+				alpha=".5"
+				yawspeed="0"
+			>
+
+				<template name="lights">
+			
+					<simpleemitter
+						bone="{bone}"
+						spawnrate="30"
+						particlelife="850"
+						offsetsphere="0 0 0"
+						minspeed="0"
+						maxspeed="50"
+						position="0 0 0"
+						minangle="-360"
+						maxangle="360"
+						direction="0 0 1"
+					>
+						<particle
+							turn="true"
+						>
+							<billboard
+								bone="{bone}"
+								spawnrate="500"
+								count="1"
+								minlife="250"
+								maxlife="350"
+								position="0 0 0"
+								material="/shared/effects/materials/light_rays2.material"
+								directionalspace="local"
+								minyaw="-360"
+								maxyaw="360"
+								roll="180"
+								size=".5"
+								lockup="true"
+								lockright="true"
+								pitch="90"
+								startcolor=".500 .20 10"
+								endcolor="0 0 0"
+								minstartheight="25"
+								maxstartheight="135"
+								endheight="0"
+							>
+							</billboard>
+						</particle>
+					</simpleemitter>
+					
+				</template>
+
+				<instance name="lights" bone="_bone_weapon2"/>
+
+				
+
+				
+
+			</model>
+		<model
+				bone="_bone_back"
+				position="0 0 0"
+				scale="3"
+				expirelife="25"
+				model="/heroes/shadowblade/ability_04/effects/sword/model.mdf"
+				inheritparentmodifiers="true"
+				anim="idle"
+				startcolor=".500 .20 1"
+				endcolor="1 1 1"
+				alpha=".5"
+				yawspeed="0"
+				roll="90"
+			>
+
+				<template name="lights">
+			
+					<simpleemitter
+						bone="{bone}"
+						spawnrate="30"
+						particlelife="850"
+						offsetsphere="0 0 0"
+						minspeed="0"
+						maxspeed="50"
+						position="0 0 0"
+						minangle="-360"
+						maxangle="360"
+						direction="0 0 1"
+					>
+						<particle
+							turn="true"
+						>
+							<billboard
+								bone="{bone}"
+								spawnrate="500"
+								count="1"
+								minlife="250"
+								maxlife="350"
+								position="0 0 0"
+								material="/shared/effects/materials/light_rays2.material"
+								directionalspace="local"
+								minyaw="-360"
+								maxyaw="360"
+								roll="180"
+								size=".5"
+								lockup="true"
+								lockright="true"
+								pitch="90"
+								startcolor=".500 .20 1"
+								endcolor="0 0 0"
+								minstartheight="25"
+								maxstartheight="135"
+								endheight="0"
+							>
+							</billboard>
+						</particle>
+					</simpleemitter>
+					
+				</template>
+
+				<instance name="lights" bone="_bone_weapon2"/>
+
+				
+
+				
+
+			</model>
+
+
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

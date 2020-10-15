@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Dampeer4"
+
+	icon="../icon/41.jpg,../icon/42.jpg,../icon/44.png"
+	
+	anim="ability_4"
+	casttime="500"
+	castactiontime="250"
+	casteffect=""
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_entity"
+	targetscheme="enemy_units"
+	casteffecttype="Magic"
+	
+	range="150"
+	cooldowntime="30000"
+	
+	manacost="100"
+	
+	novoiceresponse="true"
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	maxcharges="3"
+>
+	<onlearn>
+		<setactivemodifierkey name="Dampeer_Sub0" />
+		<setcharges a="0" />
+	</onlearn>
+
+	<onimpact>
+		<!-- Bonus damage per charge -->
+		<setvar0 a="charges" b="30,50,70" op="mult" />
+		<damage effecttype="Magic" target="target_entity" amount="200,300,400" b="var0" op="add" />
+			
+		<cantarget targetscheme="enemy_nonhero_nonboss_nonAncient_nonElitePet_units">
+			<kill target="target_entity" />
+		</cantarget>
+		
+		<addcharges count="1" />	
+		<compare a="charges" b="3" op="ge">
+			<setactivemodifierkey name="Dampeer_Sub3" />
+			<hasavatarkey name="Hero_Dampeer.Alt2" entity="source_entity">
+				<applystate name="State_Dampeer_FullCharge_Alt2" target="source_entity" continuous="true" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Dampeer.Alt7" entity="source_entity">
+					<applystate name="State_Dampeer_FullCharge_Alt7" target="source_entity" continuous="true" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Dampeer.Alt8" entity="source_entity">
+						<applystate name="State_Dampeer_FullCharge_Alt8" target="source_entity" continuous="true" />
+						<playeffect effect="../alt8/ability_04/effects/transform_sound.effect" source="source_entity" target="source_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Dampeer.Alt9" entity="source_entity">
+							<applystate name="State_Dampeer_FullCharge_Alt9" target="source_entity" continuous="true" />
+							<playeffect effect="../alt9/ability_04/effects/transform_sound.effect" source="source_entity" target="source_entity" />
+						</hasavatarkey>
+							<else>
+							<hasavatarkey name="Hero_Dampeer.Alt10" entity="source_entity">
+								<applystate name="State_Dampeer_FullCharge_Alt10" target="source_entity" continuous="true" />
+								<playeffect effect="../alt10/ability_04/effects/transform_sound.effect" source="source_entity" target="source_entity" />
+							</hasavatarkey>
+						</else>
+					</else>
+				</else>
+			</else>
+		</compare>
+		<else>
+			<compare a="charges" b="2" op="eq">
+				<setactivemodifierkey name="Dampeer_Sub2" />
+			</compare>
+			<else>
+				<compare a="charges" b="1" op="eq">
+					<setactivemodifierkey name="Dampeer_Sub1" />
+				</compare>
+			</else>
+		</else>
+		
+		<!-- Art -->
+		<hasavatarkey name="Hero_Dampeer.Alt5">
+			<playeffect effect="../alt5/ability_04/effects/lifesteal.effect" source="source_entity" target="target_entity" />
+			<playeffect effect="../alt5/ability_04/effects/impact.effect" source="target_entity" target="target_entity" />
+			<playeffect effect="../alt5/ability_04/effects/cast.effect" source="source_entity" target="source_entity" />
+			<playeffect effect="effects/blood.effect" source="source_entity" target="source_entity" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Dampeer.Alt6">
+				<playeffect effect="../alt6/ability_04/effects/lifesteal.effect" source="source_entity" target="target_entity" />
+				<playeffect effect="../alt6/ability_04/effects/impact.effect" source="target_entity" target="target_entity" />
+				<playeffect effect="../alt6/ability_04/effects/cast.effect" source="source_entity" target="source_entity" />
+				<playeffect effect="effects/blood.effect" source="source_entity" target="source_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Dampeer.Alt8">
+					<playeffect effect="../alt8/ability_04/effects/lifesteal.effect" source="source_entity" target="target_entity" />
+					<playeffect effect="../alt8/ability_04/effects/impact.effect" source="target_entity" target="target_entity" />
+					<playeffect effect="../alt8/ability_04/effects/cast.effect" source="source_entity" target="source_entity" />
+					<playeffect effect="effects/blood.effect" source="source_entity" target="source_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Dampeer.Alt9">
+						<playeffect effect="../alt9/ability_04/effects/lifesteal.effect" source="source_entity" target="target_entity" />
+						<playeffect effect="../alt9/ability_04/effects/impact.effect" source="target_entity" target="target_entity" />
+						<playeffect effect="../alt9/ability_04/effects/cast.effect" source="source_entity" target="source_entity" />
+						<playeffect effect="effects/blood.effect" source="source_entity" target="source_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Dampeer.Alt10">
+							<playeffect effect="../alt10/ability_04/effects/lifesteal.effect" source="source_entity" target="target_entity" />
+							<playeffect effect="../alt10/ability_04/effects/impact.effect" source="target_entity" target="target_entity" />
+							<playeffect effect="../alt10/ability_04/effects/cast.effect" source="source_entity" target="source_entity" />
+							<playeffect effect="effects/blood.effect" source="source_entity" target="source_entity" />
+						</hasavatarkey>
+						<else>
+							<playeffect effect="effects/lifesteal.effect" source="source_entity" target="target_entity" />
+							<playeffect effect="effects/impact.effect" source="target_entity" target="target_entity" />
+							<playeffect effect="effects/cast.effect" source="source_entity" target="source_entity" />
+							<playeffect effect="effects/blood.effect" source="source_entity" target="source_entity" />
+						</else>
+					</else> 
+				</else> 
+			</else> 
+		</else>
+		
+		<hasavatarkey name="Hero_Dampeer.Alt3">
+			<applystate name="State_Dampeer_Art_Alt3" target="source_entity" statelevel="charges" continuous="true" />
+		</hasavatarkey>
+		
+		<targettype target="target_entity" type="hero">
+			<applystate name="State_Dampeer_Ability4_Hero" duration="250" proxy="this_entity" />
+		</targettype>
+	</onimpact>
+	
+	<ondamage>
+		<entitytype type="Ability_Dampeer4" source="inflictor_entity" target="inflictor_entity">
+			<heal target="source_entity" a="damage_applied" />
+		</entitytype>
+	</ondamage>
+	
+	<onkilled>
+		<setcharges a="0" />
+		<setactivemodifierkey name="Dampeer_Soul_0" />
+	</onkilled>
+	
+	<modifier key="ult_boost" modpriority="101"
+		maxcharges="6"
+	>
+		<onimpact>
+			<!-- Bonus damage per charge -->
+			<setvar0 a="charges" b="30,50,70" op="mult" />
+			<damage effecttype="Magic" target="target_entity" amount="200,300,400" b="var0" op="add" />
+				
+			<cantarget targetscheme="enemy_nonhero_nonboss_nonAncient_nonElitePet_units">
+				<kill target="target_entity" />
+			</cantarget>
+			
+			<addcharges count="1" />
+			
+			<compare a="charges" b="6" op="ge">
+				<setactivemodifierkey name="Dampeer_Sub6" />
+				<hasavatarkey name="Hero_Dampeer.Alt2" entity="source_entity">
+					<applystate name="State_Dampeer_FullCharge_Alt2" target="source_entity" continuous="true" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Dampeer.Alt7" entity="source_entity">
+						<applystate name="State_Dampeer_FullCharge_Alt7" target="source_entity" continuous="true" />
+					</hasavatarkey>
+					<else>
+					<hasavatarkey name="Hero_Dampeer.Alt8" entity="source_entity">
+						<applystate name="State_Dampeer_FullCharge_Alt8" target="source_entity" continuous="true" />
+						<playeffect effect="../alt8/ability_04/effects/transform_sound.effect" source="source_entity" target="source_entity"/>
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Dampeer.Alt9" entity="source_entity">
+							<applystate name="State_Dampeer_FullCharge_Alt9" target="source_entity" continuous="true" />
+							<playeffect effect="../alt9/ability_04/effects/transform_sound.effect" source="source_entity" target="source_entity"/>
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Dampeer.Alt10" entity="source_entity">
+								<applystate name="State_Dampeer_FullCharge_Alt10" target="source_entity" continuous="true" />
+								<playeffect effect="../alt10/ability_04/effects/transform_sound.effect" source="source_entity" target="source_entity"/>
+							</hasavatarkey>
+						</else>
+					</else>
+				</else>
+				</else>
+			</compare>
+			<else>
+				<compare a="charges" b="5" op="eq">
+					<setactivemodifierkey name="Dampeer_Sub5" />
+				</compare>
+				<else>
+					<compare a="charges" b="4" op="eq">
+						<setactivemodifierkey name="Dampeer_Sub4" />
+					</compare>
+					<else>
+						<compare a="charges" b="3" op="eq">
+							<setactivemodifierkey name="Dampeer_Sub3" />
+						</compare>
+						<else>
+							<compare a="charges" b="2" op="eq">
+								<setactivemodifierkey name="Dampeer_Sub2" />
+							</compare>
+							<else>
+								<compare a="charges" b="1" op="eq">
+									<setactivemodifierkey name="Dampeer_Sub1" />
+								</compare>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+			
+			<!-- Art -->
+			<hasavatarkey name="Hero_Dampeer.Alt5">
+				<playeffect effect="../alt5/ability_04/effects/lifesteal.effect" source="source_entity" target="target_entity"/>
+				<playeffect effect="../alt5/ability_04/effects/impact.effect" source="target_entity" target="target_entity"/>
+				<playeffect effect="../alt5/ability_04/effects/cast.effect" source="source_entity" target="source_entity"/>
+				<playeffect effect="effects/blood.effect" source="source_entity" target="source_entity"/>
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Dampeer.Alt6">
+					<playeffect effect="../alt6/ability_04/effects/lifesteal.effect" source="source_entity" target="target_entity"/>
+					<playeffect effect="../alt6/ability_04/effects/impact.effect" source="target_entity" target="target_entity"/>
+					<playeffect effect="../alt6/ability_04/effects/cast.effect" source="source_entity" target="source_entity"/>
+					<playeffect effect="effects/blood.effect" source="source_entity" target="source_entity"/>
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Dampeer.Alt8">
+						<playeffect effect="../alt8/ability_04/effects/lifesteal.effect" source="source_entity" target="target_entity"/>
+						<playeffect effect="../alt8/ability_04/effects/impact.effect" source="target_entity" target="target_entity"/>
+						<playeffect effect="../alt8/ability_04/effects/cast.effect" source="source_entity" target="source_entity"/>
+						<playeffect effect="effects/blood.effect" source="source_entity" target="source_entity"/>
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Dampeer.Alt9">
+							<playeffect effect="../alt9/ability_04/effects/lifesteal.effect" source="source_entity" target="target_entity"/>
+							<playeffect effect="../alt9/ability_04/effects/impact.effect" source="target_entity" target="target_entity"/>
+							<playeffect effect="../alt9/ability_04/effects/cast.effect" source="source_entity" target="source_entity"/>
+							<playeffect effect="effects/blood.effect" source="source_entity" target="source_entity"/>
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Dampeer.Alt10">
+								<playeffect effect="../alt10/ability_04/effects/lifesteal.effect" source="source_entity" target="target_entity"/>
+								<playeffect effect="../alt10/ability_04/effects/impact.effect" source="target_entity" target="target_entity"/>
+								<playeffect effect="../alt10/ability_04/effects/cast.effect" source="source_entity" target="source_entity"/>
+								<playeffect effect="effects/blood.effect" source="source_entity" target="source_entity"/>
+							</hasavatarkey>
+							<else>
+								<playeffect effect="effects/lifesteal.effect" source="source_entity" target="target_entity"/>
+								<playeffect effect="effects/impact.effect" source="target_entity" target="target_entity"/>
+								<playeffect effect="effects/cast.effect" source="source_entity" target="source_entity"/>
+								<playeffect effect="effects/blood.effect" source="source_entity" target="source_entity"/>
+							</else>
+						</else>
+					</else> 
+				</else> 
+			</else>
+			
+			<hasavatarkey name="Hero_Dampeer.Alt3">
+				<applystate name="State_Dampeer_Art_Alt3" target="source_entity" statelevel="charges" continuous="true" />
+			</hasavatarkey>
+			
+			<targettype target="target_entity" type="hero">
+				<applystate name="State_Dampeer_Ability4_Hero" duration="250" proxy="this_entity" />
+			</targettype>
+		</onimpact>
+		
+		
+		<onkilled>
+			<removecharge />
+			<removecharge />
+			<removecharge />
+			<removecharge />
+			
+			<compare a="charges" b="2" op="eq">
+				<setactivemodifierkey name="Dampeer_Sub2" />
+			</compare>
+			<else>
+				<compare a="charges" b="1" op="eq">
+					<setactivemodifierkey name="Dampeer_Sub1" />
+				</compare>
+				<else>
+					<compare a="charges" b="0" op="eq">
+						<setactivemodifierkey name="Dampeer_Sub0" />
+					</compare>
+				</else>
+			</else>
+		</onkilled>
+		
+		<onrespawn>
+			<compare a="charges" b="3" op="ge">
+				<setactivemodifierkey name="Dampeer_Sub3" />
+				<hasavatarkey name="Hero_Dampeer.Alt2" entity="source_entity">
+					<applystate name="State_Dampeer_FullCharge_Alt2" target="source_entity" continuous="true" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Dampeer.Alt7" entity="source_entity">
+						<applystate name="State_Dampeer_FullCharge_Alt7" target="source_entity" continuous="true" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Dampeer.Alt8" entity="source_entity">
+							<applystate name="State_Dampeer_FullCharge_Alt8" target="source_entity" continuous="true" />
+							<playeffect effect="../alt8/ability_04/effects/transform_sound.effect" source="source_entity" target="source_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Dampeer.Alt9" entity="source_entity">
+								<applystate name="State_Dampeer_FullCharge_Alt9" target="source_entity" continuous="true" />
+								<playeffect effect="../alt9/ability_04/effects/transform_sound.effect" source="source_entity" target="source_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Dampeer.Alt10" entity="source_entity">
+									<applystate name="State_Dampeer_FullCharge_Alt10" target="source_entity" continuous="true" />
+									<playeffect effect="../alt10/ability_04/effects/transform_sound.effect" source="source_entity" target="source_entity" />
+								</hasavatarkey>
+							</else>
+						</else>
+					</else>
+				</else>
+			</compare>
+			<else>				
+				<compare a="charges" b="2" op="eq">
+					<setactivemodifierkey name="Dampeer_Sub2" />
+				</compare>
+				<else>
+					<compare a="charges" b="1" op="eq">
+						<setactivemodifierkey name="Dampeer_Sub1" />
+					</compare>
+					<else>
+						<setactivemodifierkey name="Dampeer_Sub0" />
+					</else>
+				</else>
+			</else>
+		</onrespawn>
+	</modifier>
+
+	<!--Sets the overall Soul modifier for avatars and visuals -->
+
+	<modifier key="Dampeer_Sub6" modpriority="91"
+		modifierkey="Dampeer_Soul_6"
+	>
+	</modifier>
+	
+	<modifier key="Dampeer_Sub5" modpriority="91"
+		modifierkey="Dampeer_Soul_5"
+	>
+	</modifier>
+	
+	<modifier key="Dampeer_Sub4" modpriority="91"
+		modifierkey="Dampeer_Soul_4"
+	>
+	</modifier>
+	
+	<modifier key="Dampeer_Sub3" modpriority="90"
+		modifierkey="Dampeer_Soul_3"
+	>
+	</modifier>
+	
+	<modifier key="Dampeer_Sub2" modpriority="90"
+		modifierkey="Dampeer_Soul_2"
+	>
+	</modifier>
+	
+	<modifier key="Dampeer_Sub1" modpriority="90"
+		modifierkey="Dampeer_Soul_1"
+	>
+	</modifier>
+	
+	<modifier key="Dampeer_Sub0" modpriority="90"
+		modifierkey="Dampeer_Soul_0"
+	/>
+	
+</ability>

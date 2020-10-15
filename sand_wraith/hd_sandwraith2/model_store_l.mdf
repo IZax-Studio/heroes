@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="../mirai/model.model" type="K2">
+	<anim name="idle" clip="../mirai/clips/bat_idle.clip" fps="30" loop="true" loopbackframe="3"/>
+</model>

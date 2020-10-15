@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+	<definitions>
+
+		<particlesystem name="system1" space="world" scale="1">
+		
+			<sound
+			    soundloop="true"
+				randomloop="true"
+				fadein="500"
+				fadeout="250"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1500"
+				volume="1"
+				sample="../sounds/loop_attached.wav"
+			/>	
+			
+		<!-- 	<simpleemitter
+				spawnrate="10"
+				minparticlelife="310"
+				maxparticlelife="410"
+				bone="_bone_centerofchest"
+				gravity="80"
+				offsetsphere="60"
+				collide="true"
+			>
+				<particle
+					startscale="0"
+					minendscale=".9"
+					maxendscale="1.5"
+				>
+					<billboard
+						life="600"
+						maxroll="360"
+						position="10 10 0"
+						material="/shared/effects/materials/abstract_reveal.material"
+						minsize="6"
+						maxsize="10"
+						startframe="0"
+						endframe="1"
+						midframepos=".8"
+						startcolor="1 1 .5"
+						endcolor="1 .5 0"
+					/>
+					<billboard
+						life="600"
+						position="10 10 0"
+						material="/shared/effects/materials/whitedot.material"
+						size="20"
+						startcolor="1 1 .5"
+						midcolor=".5 0 0"
+						endcolor="0"
+						midcolorpos=".3"
+					/>
+				</particle>
+			</simpleemitter> -->
+			<simpleemitter
+				spawnrate="10"
+				minparticlelife="410"
+				maxparticlelife="510"
+				bone="_bone_lefthand"
+				gravity="80"
+				offsetsphere="30"
+				collide="true"
+			>
+				<particle
+					startscale="0"
+					minendscale=".9"
+					maxendscale="1.5"
+				>
+					<billboard
+						life="500"
+						maxroll="360"
+						position="10 10 0"
+						material="/shared/effects/materials/abstract_reveal.material"
+						minsize="6"
+						maxsize="10"
+						startframe="0"
+						endframe="1"
+						midframepos=".8"
+						startcolor="1 1 .5"
+						endcolor="1 .5 0"
+					/>
+					<billboard
+						life="500"
+						position="10 10 0"
+						material="/shared/effects/materials/whitedot.material"
+						size="20"
+						startcolor="1 1 .5"
+						midcolor=".5 0 0"
+						endcolor="0"
+						midcolorpos=".3"
+					/>
+				</particle>
+			</simpleemitter>
+			<simpleemitter
+				spawnrate="10"
+				minparticlelife="410"
+				maxparticlelife="510"
+				bone="_bone_righthand"
+				gravity="80"
+				offsetsphere="30"
+				collide="true"
+			>
+				<particle
+					startscale="0"
+					minendscale=".9"
+					maxendscale="1.5"
+				>
+					<billboard
+						life="500"
+						maxroll="360"
+						position="10 10 0"
+						material="/shared/effects/materials/abstract_reveal.material"
+						minsize="6"
+						maxsize="10"
+						startframe="0"
+						endframe="1"
+						midframepos=".8"
+						startcolor="1 1 .5"
+						endcolor="1 .5 0"
+					/>
+					<billboard
+						life="500"
+						position="10 10 0"
+						material="/shared/effects/materials/whitedot.material"
+						size="20"
+						startcolor="1 1 .5"
+						midcolor=".5 0 0"
+						endcolor="0"
+						midcolorpos=".3"
+					/>
+				</particle>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />	
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>
+
+
+
+
+
+
+

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			<controller
+				owner="source"
+				lookat="true"
+				lookatowner="target"
+				position="0 0 100"
+				lookatposition="0 0 100"
+			>
+			
+				<billboard
+					position="0 37.5 0"
+					flare="true"
+					height="60"
+					width="40"
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+					directionalspace="local"
+					material="/shared/effects/materials/whitetriangle.material"
+					color="0 .125 .1"
+					yawspeed="90"
+				/>
+			
+				<billboard
+					position="0 20 0"
+					flare="true"
+					height="80"
+					width="50"
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+					directionalspace="local"
+					material="/shared/effects/materials/whitedot.material"
+					color=".8 .1 0"
+					depthbias="20"
+				/>
+
+				<model
+					scale=".25"
+					model="/shared/effects/models/pyramid/model_smooth.mdf"
+					anim="tall_2"
+					material="pointer.material"
+					position="0 50 0"
+					directionalspace="local"
+					pitch="-90"
+					alpha="1"
+				/>
+			</controller>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

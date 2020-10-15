@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="local" scale="0.2">
+
+			
+<model
+		alpha="1"
+			parentmodel="true"
+			parentskeleton="true"
+			startcolor="1 .5 1.2"
+			endcolor="1 .5 1.2"
+			material="/shared/effects/materials/shell2.material"
+		/>
+
+			<trailemitter
+				
+				spawnrate="50"
+				particlelife="800"
+				texpostime="800"
+			 	texposscale="0.0"
+			 	texstretchscale=".45"
+				position="0 60 20"
+				material="/shared/effects/materials/arrow_trail.material"
+			>
+				<particle
+					 startcolor=".5 .2 .5"
+					 midcolor=".5 .1 .6"
+					 endcolor="0 0 0"
+					 startsize="10"
+					 midsize="50"
+					 endsize="30"
+					 midsizepos="0.2"
+			 />
+			</trailemitter>	
+
+		
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.5">
+
+			<sound
+				soundloop="true"
+				fadein="100"
+				fadeout="300"
+				linearfalloff="true" 
+				falloffstart="600"
+				falloffend="1300"
+				volume=".8"
+				sample="../sounds/stretch_loop.wav"
+			/>
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="600"
+				falloffend="1300"
+				volume="1"
+				sample="../sounds/impact.wav"
+			/>
+
+			<template name="beam">
+				<beam
+					owner_a="target"
+					owner_b="source"
+					bone_a="_bone_centerofchest"
+					bone_b="_bone_centerofchest"
+					position_a="{pos_a}"
+					position_b="{pos_b}"
+					minsize="15"
+					maxsize="40"
+					color=".5"
+					material="/shared/effects/materials/beam_05.material"
+				/>
+			</template>
+			
+			<instance name="beam" pos_a="16 -7 5" pos_b="13 21 -16" />
+			<instance name="beam" pos_a="6 31 -20" pos_b="-33 -22 11" />
+
+			<template name="beam2">
+				<beam
+					owner_a="target"
+					owner_b="source"
+					bone_a="{bone}"
+					bone_b="{bone}"
+					minsize="15"
+					maxsize="40"
+					color=".5"
+					material="/shared/effects/materials/beam_05.material"
+				/>
+				<twopointemitter
+				spawnrate="20"
+				minparticlelife="500"
+				maxparticlelife="1100"
+				owner_a="target"
+				owner_b="source"
+				bone_a="{bone}"
+				bone_b="{bone}"
+				maxspeed="50"
+				direction="0 0 0"
+				angle="90"
+				gravity="0"
+				material="/shared/effects/materials/heart_04.material"
+			>
+				<particle 
+					startcolor=".5"
+					endcolor="0"
+					startalpha="1"
+					endalpha="0"
+					minstartsize="2"
+					maxstartsize="4"
+					minendsize="2"
+					maxendsize="6"
+					minscale="1"
+					maxscale="4"
+				/>
+				<particle 
+					startcolor="1 .5 1"
+					endcolor="0"
+					startalpha="1"
+					endalpha="0"
+					minstartsize="2"
+					maxstartsize="4"
+					minendsize="2"
+					maxendsize="6"
+					minscale="1"
+					maxscale="4"
+				/>
+			</twopointemitter>	
+			<twopointemitter
+			 	owner_a="target"
+				owner_b="source"
+				bone_a="{bone}"
+				bone_b="{bone}"
+				position="0 0 10"
+				spawnrate="50"
+				minparticlelife="500"
+				maxparticlelife="750"
+				material="/shared/effects/materials/sparks_reveal_white.material"
+				directionalspace="local"
+				gravity="0"
+				direction="0 0 1"
+				angle="90"
+				drag="0.02"
+				depthbias="40"
+			>
+				<particle
+					
+					maxangle="360"
+					startcolor="0"
+					midcolor="1 .5 1"
+					endcolor="0 0 0"
+					minscale="15"
+					maxscale="18"
+					startframe="0"
+					endframe="1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					anchor="1"
+				/>
+			</twopointemitter>
+			</template>
+			
+			<instance name="beam2" bone="_bone_lefthand" />
+			<instance name="beam2" bone="_bone_righthand" />
+			<instance name="beam2" bone="_bone_leftfoot" />
+			<instance name="beam2" bone="_bone_rightfoot" />
+			<instance name="beam2" bone="_bone_weaponattach" />
+			<instance name="beam2" bone="_bone_altweaponattach" />
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

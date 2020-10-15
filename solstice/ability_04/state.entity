@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Solstice_Ability4"
+
+	icon="Cha075_Skill_R.png"
+	
+	passiveeffect=""
+	
+	impactinterval="182"
+	
+	maxcharges="17"
+	ishidden="true"
+>
+	<oninflict>
+		<addcharges count="1" />
+	</oninflict>
+	
+	<onimpact>
+		<addcharges count="1" />
+	</onimpact>
+	
+	<onrefresh>
+		<spawnaffector name="Affector_Solstice_Ability4_1,Affector_Solstice_Ability4_2,Affector_Solstice_Ability4_3" owner="this_inflictor_entity" target="source_position" level="charges" pushentity="true" />
+		<spawnunit name="Gadget_Solstice_Ability4_Explosion" target="source_position" pushentity="true" fixedposition="true" />
+		<hasavatarkey name="Hero_Solstice.Alt5">
+			<compare a="charges" b="5" op="le" >
+				<playeffect effect="../alt5/ability_04/effects/dayroar_low.effect" source="stack_entity" target="stack_entity" />
+			</compare>
+			<else>
+				<compare a="charges" b="10" op="le" >
+					<playeffect effect="../alt5/ability_04/effects/dayroar_med.effect" source="stack_entity" target="stack_entity" />
+				</compare>
+				<else>
+					<compare a="charges" b="15" op="le" >
+						<playeffect effect="../alt5/ability_04/effects/dayroar_high.effect" source="stack_entity" target="stack_entity" />
+					</compare>
+					<else>
+						<playeffect effect="../alt5/ability_04/effects/dayroar_max.effect" source="stack_entity" target="stack_entity" />
+					</else>
+				</else>
+			</else>
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Solstice.Alt6">
+				<compare a="charges" b="5" op="le" >
+					<playeffect effect="../alt6/ability_04/effects/dayroar_low.effect" source="stack_entity" target="stack_entity" />
+				</compare>
+				<else>
+					<compare a="charges" b="10" op="le" >
+						<playeffect effect="../alt6/ability_04/effects/dayroar_med.effect" source="stack_entity" target="stack_entity" />
+					</compare>
+					<else>
+						<compare a="charges" b="15" op="le" >
+							<playeffect effect="../alt6/ability_04/effects/dayroar_high.effect" source="stack_entity" target="stack_entity" />
+						</compare>
+						<else>
+							<playeffect effect="../alt6/ability_04/effects/dayroar_max.effect" source="stack_entity" target="stack_entity" />
+						</else>
+					</else>
+				</else>
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Solstice.Alt7">
+					<compare a="charges" b="5" op="le" >
+						<playeffect effect="../alt7/ability_04/effects/dayroar_low.effect" source="stack_entity" target="stack_entity" />
+					</compare>
+					<else>
+						<compare a="charges" b="10" op="le" >
+							<playeffect effect="../alt7/ability_04/effects/dayroar_med.effect" source="stack_entity" target="stack_entity" />
+						</compare>
+						<else>
+							<compare a="charges" b="15" op="le" >
+								<playeffect effect="../alt7/ability_04/effects/dayroar_high.effect" source="stack_entity" target="stack_entity" />
+							</compare>
+							<else>
+								<playeffect effect="../alt7/ability_04/effects/dayroar_max.effect" source="stack_entity" target="stack_entity" />
+							</else>
+						</else>
+					</else>
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Solstice.Alt8">
+						<compare a="charges" b="5" op="le" >
+							<playeffect effect="../alt8/ability_04/effects/dayroar_low.effect" source="stack_entity" target="stack_entity" />
+						</compare>
+						<else>
+							<compare a="charges" b="10" op="le" >
+								<playeffect effect="../alt8/ability_04/effects/dayroar_med.effect" source="stack_entity" target="stack_entity" />
+							</compare>
+							<else>
+								<compare a="charges" b="15" op="le" >
+									<playeffect effect="../alt8/ability_04/effects/dayroar_high.effect" source="stack_entity" target="stack_entity" />
+								</compare>
+								<else>
+									<playeffect effect="../alt8/ability_04/effects/dayroar_max.effect" source="stack_entity" target="stack_entity" />
+								</else>
+							</else>
+						</else>
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Solstice.Alt9">
+							<compare a="charges" b="5" op="le" >
+								<playeffect effect="../alt9/ability_04/effects/dayroar_low.effect" source="stack_entity" target="stack_entity" />
+							</compare>
+							<else>
+								<compare a="charges" b="10" op="le" >
+									<playeffect effect="../alt9/ability_04/effects/dayroar_med.effect" source="stack_entity" target="stack_entity" />
+								</compare>
+								<else>
+									<compare a="charges" b="15" op="le" >
+										<playeffect effect="../alt9/ability_04/effects/dayroar_high.effect" source="stack_entity" target="stack_entity" />
+									</compare>
+									<else>
+										<playeffect effect="../alt9/ability_04/effects/dayroar_max.effect" source="stack_entity" target="stack_entity" />
+									</else>
+								</else>
+							</else>
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Solstice.Alt10">
+								<compare a="charges" b="5" op="le" >
+									<playeffect effect="../alt10/ability_04/effects/dayroar_low.effect" source="stack_entity" target="stack_entity" />
+								</compare>
+								<else>
+									<compare a="charges" b="10" op="le" >
+										<playeffect effect="../alt10/ability_04/effects/dayroar_med.effect" source="stack_entity" target="stack_entity" />
+									</compare>
+									<else>
+										<compare a="charges" b="15" op="le" >
+											<playeffect effect="../alt10/ability_04/effects/dayroar_high.effect" source="stack_entity" target="stack_entity" />
+										</compare>
+										<else>
+											<playeffect effect="../alt10/ability_04/effects/dayroar_max.effect" source="stack_entity" target="stack_entity" />
+										</else>
+									</else>
+								</else>
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Solstice.Alt11">
+									<compare a="charges" b="5" op="le" >
+										<playeffect effect="../alt11/ability_04/effects/dayroar_low.effect" source="stack_entity" target="stack_entity" />
+									</compare>
+									<else>
+										<compare a="charges" b="10" op="le" >
+											<playeffect effect="../alt11/ability_04/effects/dayroar_med.effect" source="stack_entity" target="stack_entity" />
+										</compare>
+										<else>
+											<compare a="charges" b="15" op="le" >
+												<playeffect effect="../alt11/ability_04/effects/dayroar_high.effect" source="stack_entity" target="stack_entity" />
+											</compare>
+											<else>
+												<playeffect effect="../alt11/ability_04/effects/dayroar_max.effect" source="stack_entity" target="stack_entity" />
+											</else>
+										</else>
+									</else>
+								</hasavatarkey>
+								<else>
+									<compare a="charges" b="5" op="le" >
+										<playeffect effect="effects/dayroar_low.effect" source="stack_entity" target="stack_entity" />
+									</compare>
+									<else>
+										<compare a="charges" b="10" op="le" >
+											<playeffect effect="effects/dayroar_med.effect" source="stack_entity" target="stack_entity" />
+										</compare>
+										<else>
+											<compare a="charges" b="15" op="le" >
+												<playeffect effect="effects/dayroar_high.effect" source="stack_entity" target="stack_entity" />
+											</compare>
+											<else>
+												<playeffect effect="effects/dayroar_max.effect" source="stack_entity" target="stack_entity" />
+											</else>
+										</else>
+									</else>
+								</else>	
+							</else>			
+						</else>						
+					</else>
+				</else>
+			</else>
+		</else>
+		<breakchannel entity="source_entity" />
+		<expire />
+	</onrefresh>
+
+	<modifier key="Night_Solstice" modpriority="100"
+		anim="ability_4_night"
+		icon="icon_b.tga"
+	>
+		<onrefresh>
+			<spawnaffector name="Affector_Solstice_Ability4_1_Night,Affector_Solstice_Ability4_2_Night,Affector_Solstice_Ability4_3_Night" owner="this_inflictor_entity" target="source_position" level="charges" pushentity="true" />
+			<spawnunit name="Gadget_Solstice_Ability4_Explosion" target="source_position" pushentity="true" fixedposition="true" />
+			<hasavatarkey name="Hero_Solstice.Alt5">
+				<compare a="charges" b="5" op="le" >
+					<playeffect effect="../alt5/ability_04/effects/nightroar_low.effect" source="stack_entity" target="stack_entity" />
+				</compare>
+				<else>
+					<compare a="charges" b="10" op="le" >
+						<playeffect effect="../alt5/ability_04/effects/nightroar_med.effect" source="stack_entity" target="stack_entity" />
+					</compare>
+					<else>
+						<compare a="charges" b="15" op="le" >
+							<playeffect effect="../alt5/ability_04/effects/nightroar_high.effect" source="stack_entity" target="stack_entity" />
+						</compare>
+						<else>
+							<playeffect effect="../alt5/ability_04/effects/nightroar_max.effect" source="stack_entity" target="stack_entity" />
+						</else>
+					</else>
+				</else>
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Solstice.Alt6">
+					<compare a="charges" b="5" op="le" >
+						<playeffect effect="../alt6/ability_04/effects/nightroar_low.effect" source="stack_entity" target="stack_entity" />
+					</compare>
+					<else>
+						<compare a="charges" b="10" op="le" >
+							<playeffect effect="../alt6/ability_04/effects/nightroar_med.effect" source="stack_entity" target="stack_entity" />
+						</compare>
+						<else>
+							<compare a="charges" b="15" op="le" >
+								<playeffect effect="../alt6/ability_04/effects/nightroar_high.effect" source="stack_entity" target="stack_entity" />
+							</compare>
+							<else>
+								<playeffect effect="../alt6/ability_04/effects/nightroar_max.effect" source="stack_entity" target="stack_entity" />
+							</else>
+						</else>
+					</else>
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Solstice.Alt7">
+						<compare a="charges" b="5" op="le" >
+							<playeffect effect="../alt7/ability_04/effects/nightroar_low.effect" source="stack_entity" target="stack_entity" />
+						</compare>
+						<else>
+							<compare a="charges" b="10" op="le" >
+								<playeffect effect="../alt7/ability_04/effects/nightroar_med.effect" source="stack_entity" target="stack_entity" />
+							</compare>
+							<else>
+								<compare a="charges" b="15" op="le" >
+									<playeffect effect="../alt7/ability_04/effects/nightroar_high.effect" source="stack_entity" target="stack_entity" />
+								</compare>
+								<else>
+									<playeffect effect="../alt7/ability_04/effects/nightroar_max.effect" source="stack_entity" target="stack_entity" />
+								</else>
+							</else>
+						</else>
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Solstice.Alt8">
+							<compare a="charges" b="5" op="le" >
+								<playeffect effect="../alt8/ability_04/effects/nightroar_low.effect" source="stack_entity" target="stack_entity" />
+							</compare>
+							<else>
+								<compare a="charges" b="10" op="le" >
+									<playeffect effect="../alt8/ability_04/effects/nightroar_med.effect" source="stack_entity" target="stack_entity" />
+								</compare>
+								<else>
+									<compare a="charges" b="15" op="le" >
+										<playeffect effect="../alt8/ability_04/effects/nightroar_high.effect" source="stack_entity" target="stack_entity" />
+									</compare>
+									<else>
+										<playeffect effect="../alt8/ability_04/effects/nightroar_max.effect" source="stack_entity" target="stack_entity" />
+									</else>
+								</else>
+							</else>
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Solstice.Alt9">
+								<compare a="charges" b="5" op="le" >
+									<playeffect effect="../alt9/ability_04/effects/nightroar_low.effect" source="stack_entity" target="stack_entity" />
+								</compare>
+								<else>
+									<compare a="charges" b="10" op="le" >
+										<playeffect effect="../alt9/ability_04/effects/nightroar_med.effect" source="stack_entity" target="stack_entity" />
+									</compare>
+									<else>
+										<compare a="charges" b="15" op="le" >
+											<playeffect effect="../alt9/ability_04/effects/nightroar_high.effect" source="stack_entity" target="stack_entity" />
+										</compare>
+										<else>
+											<playeffect effect="../alt9/ability_04/effects/nightroar_max.effect" source="stack_entity" target="stack_entity" />
+										</else>
+									</else>
+								</else>
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Solstice.Alt10">
+									<compare a="charges" b="5" op="le" >
+										<playeffect effect="../alt10/ability_04/effects/nightroar_low.effect" source="stack_entity" target="stack_entity" />
+									</compare>
+									<else>
+										<compare a="charges" b="10" op="le" >
+											<playeffect effect="../alt10/ability_04/effects/nightroar_med.effect" source="stack_entity" target="stack_entity" />
+										</compare>
+										<else>
+											<compare a="charges" b="15" op="le" >
+												<playeffect effect="../alt10/ability_04/effects/nightroar_high.effect" source="stack_entity" target="stack_entity" />
+											</compare>
+											<else>
+												<playeffect effect="../alt10/ability_04/effects/nightroar_max.effect" source="stack_entity" target="stack_entity" />
+											</else>
+										</else>
+									</else>
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Solstice.Alt11">
+										<compare a="charges" b="5" op="le" >
+											<playeffect effect="../alt11/ability_04/effects/nightroar_low.effect" source="stack_entity" target="stack_entity" />
+										</compare>
+										<else>
+											<compare a="charges" b="10" op="le" >
+												<playeffect effect="../alt11/ability_04/effects/nightroar_med.effect" source="stack_entity" target="stack_entity" />
+											</compare>
+											<else>
+												<compare a="charges" b="15" op="le" >
+													<playeffect effect="../alt11/ability_04/effects/nightroar_high.effect" source="stack_entity" target="stack_entity" />
+												</compare>
+												<else>
+													<playeffect effect="../alt11/ability_04/effects/nightroar_max.effect" source="stack_entity" target="stack_entity" />
+												</else>
+											</else>
+										</else>
+									</hasavatarkey>
+									<else>
+										<compare a="charges" b="5" op="le" >
+											<playeffect effect="effects/nightroar_low.effect" source="stack_entity" target="stack_entity" />
+										</compare>
+										<else>
+											<compare a="charges" b="10" op="le" >
+												<playeffect effect="effects/nightroar_med.effect" source="stack_entity" target="stack_entity" />
+											</compare>
+											<else>
+												<compare a="charges" b="15" op="le" >
+													<playeffect effect="effects/nightroar_high.effect" source="stack_entity" target="stack_entity" />
+												</compare>
+												<else>
+													<playeffect effect="effects/nightroar_max.effect" source="stack_entity" target="stack_entity" />
+												</else>
+											</else>
+										</else>	
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+			<breakchannel entity="source_entity" />
+			<expire />
+		</onrefresh>
+	</modifier>
+</state>

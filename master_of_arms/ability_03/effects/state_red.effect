@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="0">
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale=".5713" >
+		
+			<sound
+			    life="5000"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="1500"
+				volume="1"
+				sample="../sounds/cast_red.wav"
+			/>
+		
+				<billboard
+				bone="_bone_weapon2"
+				color=".5 0 0"
+				size="50"
+				material="/shared/effects/materials/glow_01.material"
+				loop="true"
+				depthbias="-25"
+				position="0 0 0"
+			/>
+			
+			<billboard
+				expirelife="250"
+				bone="_bone_weapon2"
+				startcolor="1 .25 0"
+				endcolor="0 0 0"
+				size="30"
+				position="0 0 0"
+				material="/heroes/drunkenmaster/effects/material.material"
+				lockup="1"
+				lockright="1"
+				rollspeed="720"
+				pitch="90"
+				yawspeed="0"
+				directionalspace="local"
+			/>
+
+			
+
+		</particlesystem>
+
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1"/>
+		<waitfordeath instance="instance0" />
+	
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

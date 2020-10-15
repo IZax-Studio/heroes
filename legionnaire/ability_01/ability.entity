@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Legionnaire1"
+
+	statuseffecttooltip="State_Legionnaire_Ability1"
+	icon="1.jpg"
+	
+	anim="ability_1"
+	casttime="800"
+	castactiontime="300"
+	casteffect="effects/cast_start.effect"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="self_position"
+	targetradius="300"
+	targetscheme="nonneutral_enemy_units"
+	casteffecttype=""
+	
+	manacost="65,80,95,110"
+	cooldowntime="13000"
+	
+	dynamicprecache="effects/cast.effect"
+>
+	<onlearn>
+		<setscriptvalue name="cast_effect" value="effects/cast.effect" entity="this_entity" />
+	</onlearn>
+	
+	<onimpact>
+		<applystate name="State_Legionnaire_Ability1" duration="2000,2400,2800,3200" />
+		<spawnaffector name="Affector_Legionnaire_Ability1" target="source_entity" proxy="source_entity" />
+		
+		<!-- Dynamic visual effects -->
+		<getscriptvalue name="cast_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" source="source_entity" target="" occlude="true" />
+	</onimpact>
+	
+	<altavatar key="Hero_Legionnaire.Alt3"
+		icon="/heroes/legionnaire/alt3/ability_01/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Legionnaire.Alt6"
+		icon="/heroes/legionnaire/alt6/ability_01/icon.tga"
+		casteffect="../alt6/ability_01/cast_start.effect"
+		dynamicprecache="../alt6/ability_01/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt6/ability_01/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Legionnaire.Alt7"
+		casteffect="../alt7/ability_01/effects/cast_start.effect"
+		dynamicprecache="../alt7/ability_01/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt7/ability_01/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Legionnaire.Alt8"
+		casteffect="../alt8/ability_01/effects/cast_start.effect"
+		dynamicprecache="../alt8/ability_01/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt8/ability_01/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Legionnaire.Alt10"
+		casteffect="../alt10/legion/ability_01/effects/cast_start.effect"
+		dynamicprecache="../alt10/hellbourne/ability_01/effects/cast.effect,../alt10/legion/ability_01/effects/cast.effect"
+	>
+		<onlearn>
+			<hasmodifier name="hellbourne">
+				<setscriptvalue name="cast_effect" value="../alt10/hellbourne/ability_01/effects/cast.effect" entity="this_entity" />
+			</hasmodifier>
+			<else>
+				<setscriptvalue name="cast_effect" value="../alt10/legion/ability_01/effects/cast.effect" entity="this_entity" />
+			</else>			
+		</onlearn>
+		
+		<modifier key="hellbourne" modpriority="1"
+			casteffect="../alt10/hellbourne/ability_01/effects/cast_start.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Legionnaire.Alt11"
+		casteffect="../alt11/ability_01/effects/cast_start.effect"
+		dynamicprecache="../alt11/ability_01/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt11/ability_01/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Legionnaire.Alt13"
+		casteffect="../alt13/ability_01/effects/cast_start.effect"
+		dynamicprecache="../alt13/ability_01/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt13/ability_01/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Legionnaire.Alt15"
+		casteffect="../alt15/ability_01/effects/cast_start.effect"
+		dynamicprecache="../alt15/ability_01/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt15/ability_01/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Legionnaire.Alt16"
+		casteffect="../alt16/ability_01/effects/cast_start.effect"
+		dynamicprecache="../alt16/ability_01/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt16/ability_01/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+</ability>

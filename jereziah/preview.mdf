@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="Kim22.max" file="Ruler.model" type="K2" high="Ruler.model" med="Ruler.model" low="Ruler.model" >
+	
+	<anim name="idle" clip="Stand.clip" fps="500" loop="true"/>
+	
+		
+</model>

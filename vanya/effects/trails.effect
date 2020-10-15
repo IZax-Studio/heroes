@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world">
+		
+			
+			<twopointtrailemitter
+				life="400"
+			 	bone_a="_bone_weapon2"
+				bone_b="_bone_weapon3"
+				spawnrate="200"
+				particlelife="150"
+				texpostime="150"
+				texposscale="1.0"
+				texstretchscale="0.0"
+				material="/shared/effects/materials/soul_projectile.material"
+				subframepose="true"
+			>
+	         	<particle
+					color="0 0 0"
+					alpha="1"
+				/>
+			</twopointtrailemitter>
+				
+			<twopointtrailemitter
+				life="400"
+			 	bone_a="_bone_weapon2"
+				bone_b="_bone_weapon3"
+				spawnrate="200"
+				particlelife="150"
+				texpostime="150"
+				texposscale="1.0"
+				texstretchscale="0.0"
+				material="/shared/effects/materials/arrow_trail.material"
+				subframepose="true"
+			>
+	         	<particle
+					startcolor="0 0 0"
+					midcolor=".2 0 0"
+					endcolor="0 0 0" 
+				/>
+			</twopointtrailemitter>
+			
+		
+			<twopointtrailemitter
+				life="400"
+				spawnrate="200"
+				particlelife="300"
+				bone_a="_bone_weapon2"
+				bone_b="_bone_weapon3"
+
+				material="/shared/effects/materials/refract_gush_trail.material"
+				texposscale="1"
+				texstretchscale="0"
+				subframepos="1"
+			>
+				<particle
+					startparam="0"
+					midparam="0.1"
+					endparam="0"
+					midparampos=".1"
+				/>
+			</twopointtrailemitter>
+					
+						
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

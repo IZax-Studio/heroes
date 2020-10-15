@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="idle.max" file="high.model" type="K2" high="black.model" med="black.model" low="black.model" >
+
+	<anim name="idle" clip="idle.clip" loop="true" fps="550"/>
+			
+	<anim name="portrait" clip="idle.clip" fps="500" loop="true"/>
+	
+	<anim name="walk_1" clip="walk_1.clip" loop="true" fps="550">
+		<frameevent frame="5" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="11" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="8" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="13" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="15" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="18" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+
+		<frameevent frame="5" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="8" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="15" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="15" cmd="PlaySoundLinear /heroes/witch_slayer/sounds/move_%.wav 400 1800 .15"/>
+	</anim>
+
+	<anim name="bored_1" clip="idle.clip" fps="550"/>
+	
+	<anim name="taunt_1" clip="attack_1.clip" fps="550"/>
+	
+	<anim name="item_1" clip="attack_2.clip" fps="550"/>
+	
+	<anim name="death_1" clip="death_1.clip" fps="550" loop="true" loopbackframe="-1">
+	</anim>
+	
+	<anim name="attack_1" clip="attack_1.clip" fps="650">
+		<frameevent frame="26" cmd="PlaySoundLinear /heroes/forsaken_archer/sounds/attack_%.wav 400 1800 .75"/>
+	</anim>
+	
+	<anim name="attack_2" clip="attack_1.clip" fps="700">
+
+		<frameevent frame="26" cmd="PlaySoundLinear /heroes/forsaken_archer/sounds/attack_%.wav 400 1800 .75"/>
+	</anim>
+	
+	<anim name="ability_1" clip="ability_1.clip" fps="500">
+		<frameevent frame="5" cmd="StartEffect projectile/cast.effect"/>
+		<frameevent frame="4" cmd="PlaySoundLinear /heroes/forsaken_archer/ability_01/sounds/attack_%.wav 400 1800 .65"/>
+                        <frameevent frame="1" cmd="PlaySoundLinear /heroes/forsaken_archer/ability_01/sounds/skill_1.wav 400 1800 .65"/>
+	</anim>
+
+	<anim name="ability_4" clip="attack_2.clip" fps="620">
+		<frameevent frame="26" cmd="PlaySoundLinear /heroes/forsaken_archer/sounds/attack_%.wav 400 1800 .75"/>
+		<frameevent frame="26" cmd="PlaySoundLinear /heroes/forsaken_archer/sounds/trail_%.wav 400 1800 .75"/>
+		<frameevent frame="26" cmd="PlaySoundLinear /heroes/forsaken_archer/ability_04/sounds/attack_%.wav 400 1800 .4"/>
+	</anim>
+
+	<anim name="knock_1" clip="idle.clip" loop="true" loopbackframe="-1"/>
+	
+	<anim name="getup_1" clip="death_1.clip" fps="550"/>		
+			
+</model>

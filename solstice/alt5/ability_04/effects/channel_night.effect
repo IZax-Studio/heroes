@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="0">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<sound
+			    forcestereo="true"
+				volume=".5"
+				sample="/heroes/solstice/alt5/ability_04/sounds/cast.wav"
+				linearfalloff="true"
+				falloffstart="128"
+				falloffend="2000"
+			/>
+
+			<simpleemitter
+				life="3000"
+				startspawnrate="1"
+				endspawnrate="300"
+				particlelife="250"
+				minangle="0"
+				maxangle="27.5"
+				startminspeed="1300"
+				startmaxspeed="1300"
+				endminspeed="5000"
+				endmaxspeed="5000"
+				direction="0 1 0"
+			>
+				<particle>
+					<simpleemitter
+					position="0 50 0"
+						spawnrate="150"
+						direction="0 0 1"
+						offsetsphere="70 70 0"
+						speed="10"
+						angle="30"
+						gravity="0"
+						minparticlelife="250"
+						maxparticlelife="250"
+						material="/shared/effects/materials/flare_02.material"
+					>
+						<particle
+							minsize="25"
+							maxsize="100"
+							startcolor="0 0 0"
+							midcolor="0 .06 .125"
+							endcolor="0"
+							midcolorpos=".25"
+						/>
+					</simpleemitter>
+				</particle>
+			</simpleemitter>
+
+			
+		
+<!--
+			<simpleemitter
+				life="3000"
+				startspawnrate="1"
+				endspawnrate="300"
+				particlelife="250"
+				minangle="0"
+				maxangle="27.5"
+				startminspeed="1300"
+				startmaxspeed="1300"
+				endminspeed="5300"
+				endmaxspeed="5300"
+				direction="0 1 0"
+			>
+				<particle>
+					<billboard 
+						position="0 0 0"
+						material="/shared/effects/materials/flare2.material" 
+						width="25"
+						height="500"
+						life="1000"
+						startcolor=".1 .1 .5"
+						midcolor=".1 .1 .5"
+						endcolor="0 0 0"
+						lockup="true"
+						lockright="true"
+						pitch="0"
+						roll="90"
+						depthbias="-50"
+						directionalspace="local"
+					/>
+				</particle>
+			</simpleemitter>
+-->
+			
+			
+			
+			
+
+
+			
+
+			
+			<simpleemitter
+				count="1"
+				spawnrate="1000"
+				particlelife="3000"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="1"
+				>
+					<model
+						position="0 0 0"
+						expirelife="1000"
+						name="emitter0" 
+						anim="idle"
+						model="\heroes\solstice\ability_04\effects/cone_rig/model.mdf"
+						scale="1"
+						startcolor=".5 .5 1"
+						midcolor=".5 .5 1"
+						endcolor=".5 .5 1"
+						midcolorpos=".75"
+						startalpha="1"
+						endalpha="0"
+					>
+
+						<simpleemitter
+							spawnrate="20"
+							particlelife="1600"
+							minangle="-45"
+							maxangle="45"
+							direction="0 1 0"
+						>
+							<particle
+								turn="true"
+							>
+								<billboard
+									bone="_bone_fx_center"
+									life="500"
+									position="0 300 0"
+									material="/shared/effects/materials/flare2.material" 
+									lockup="1"
+									lockright="1"
+									width="50"
+									height="500"
+									pitch="90"
+									startsize="150"
+									endsize="150"
+									directionalspace="local"
+									startcolor=".5 .5 1"
+									endcolor="0 0 0"
+									depthbias="-75"
+								/>
+							</particle>
+						</simpleemitter>
+
+						<simpleemitter
+						delay="1000"
+							spawnrate="30"
+							particlelife="1600"
+							minangle="-45"
+							maxangle="45"
+							direction="0 1 0"
+						>
+							<particle
+								turn="true"
+							>
+								<billboard
+									bone="_bone_fx_center"
+									life="500"
+									position="0 550 0"
+									material="/shared/effects/materials/flare2.material" 
+									lockup="1"
+									lockright="1"
+									width="35"
+									height="900"
+									pitch="90"
+									startsize="150"
+									endsize="150"
+									directionalspace="local"
+									startcolor=".5 .5 1"
+									endcolor="0 0 0"
+									depthbias="-75"
+								/>
+							</particle>
+						</simpleemitter>
+						
+						<simpleemitter
+							delay="2000"
+							spawnrate="50"
+							particlelife="1600"
+							minangle="-45"
+							maxangle="45"
+							direction="0 1 0"
+						>
+							<particle
+								turn="true"
+							>
+								<billboard
+									bone="_bone_fx_center"
+									life="500"
+									position="0 750 0"
+									material="/shared/effects/materials/flare2.material" 
+									lockup="1"
+									lockright="1"
+									minwidth="20"
+									maxwidth="30"
+									height="1400"
+									pitch="90"
+									startsize="150"
+									endsize="150"
+									directionalspace="local"
+									startcolor=".5 .5 1"
+									endcolor="0 0 0"
+									depthbias="-75"
+								/>
+							</particle>
+						</simpleemitter>
+
+					</model>
+				</particle>
+			</simpleemitter>
+			
+			
+			
+			
+			<template name="trail">
+				<trailemitter
+					bone="{bone}"
+					spawnrate="100"
+					life="500"
+					particlelife="{plife}"
+					texpostime="300"
+					texposscale="0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/smoke_thin.material"
+				>
+					<particle
+						startcolor=".5 .5 1"
+						midcolor=".5 .5 1" 
+						endcolor=".5 .5 1"
+						startalpha="1" endalpha="0"
+						size="{size}"
+						startscale=".7" midscale="1" endscale="0" midscalepos=".8"
+					/>
+				</trailemitter>
+				<trailemitter
+					bone="{bone}"
+					spawnrate="100"
+					life="500"
+					particlelife="{plife}"
+					texpostime="300"
+					texposscale="0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/refract_stream.material"
+				>
+					<particle
+						param=".05"
+						startalpha=".75" endalpha="0"
+						size="{size}"
+						startscale=".7" midscale="1" endscale="0" midscalepos=".8"
+					/>
+				</trailemitter>
+			</template>
+			<!-- stage 1 -->
+			<simpleemitter
+				directionalspace="local"
+				life="3000"
+				spawnrate="20"
+				direction="0 1 0"
+				angle="0"
+				minspeed="700" maxspeed="800"
+				particlelife="500"
+			>
+				<particle
+					lockup="1"
+					lockright="1"
+					turn="1"
+					pitch="90"
+					minscale=".5" maxscale="1"
+				>
+					<model
+						model="/shared/effects/models/circle_of_bones/model.mdf"
+						yawspeed="-600"
+						maxyaw="360"
+						anim="idle"
+						life="500"
+						startscale="1"
+						endscale="8"
+						directionalspace="local"
+					>
+						<instance name="trail" bone="_bone_fx_01" size="9" plife="150"/>
+					</model>
+				</particle>
+			</simpleemitter>
+			<!-- stage 2 -->
+			<simpleemitter
+				delay="600"
+				directionalspace="local"
+				life="2200"
+				spawnrate="30"
+				direction="0 1 0"
+				angle="0"
+				minspeed="650" maxspeed="750"
+				position="0 150 0"
+				particlelife="700"
+			>
+				<particle
+					lockup="1" lockright="1"
+					turn="1"
+					pitch="90"
+					minscale=".5"
+					maxscale="1"
+				>
+					<model
+						model="/shared/effects/models/circle_of_bones/model.mdf"
+						yawspeed="-600"
+						maxyaw="360"
+						anim="idle"
+						life="700"
+						startscale="5"
+						endscale="12"
+						directionalspace="local"
+					>
+						<instance name="trail" bone="_bone_fx_01" size="7" plife="150" />
+					</model>
+				</particle>
+			</simpleemitter>
+			<!-- stage 3 -->
+			<simpleemitter
+				delay="1600"
+				directionalspace="local"
+				life="1400"
+				spawnrate="30"
+				direction="0 1 0"
+				angle="0"
+				minspeed="650" maxspeed="750"
+				position="0 450 0"
+				particlelife="700"
+			>
+				<particle
+					lockup="1" lockright="1"
+					turn="1"
+					pitch="90"
+					minscale=".5"
+					maxscale="1"
+				>
+					<model
+						model="/shared/effects/models/circle_of_bones/model.mdf"
+						yawspeed="-600"
+						maxyaw="360"
+						anim="idle"
+						life="700"
+						startscale="10"
+						endscale="18"
+						directionalspace="local"
+					>
+						<instance name="trail" bone="_bone_fx_01" size="5" plife="150" />
+					</model>
+				</particle>
+			</simpleemitter>
+			<!-- stage 4 -->
+			<simpleemitter
+				delay="2400"
+				directionalspace="local"
+				life="600"
+				spawnrate="30"
+				direction="0 1 0"
+				angle="0"
+				minspeed="650" maxspeed="750"
+				position="0 750 0"
+				particlelife="700"
+			>
+				<particle
+					lockup="1" lockright="1"
+					turn="1"
+					pitch="90"
+					minscale=".5"
+					maxscale="1"
+				>
+					<model
+						model="/shared/effects/models/circle_of_bones/model.mdf"
+						yawspeed="-720"
+						maxyaw="360"
+						anim="idle"
+						life="700"
+						startscale="16"
+						endscale="24"
+						directionalspace="local"
+					>
+						<instance name="trail" bone="_bone_fx_01" size="3" plife="150" />
+					</model>
+				</particle>
+			</simpleemitter>
+		</particlesystem>
+
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+
+

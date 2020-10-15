@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_AlunaAttack"
+
+	speed="1050"
+	gravity="800"
+
+	modelscale=".8"
+	model="effects/arrow.mdf"
+
+	traileffect="effects/arrow_trail.effect"
+	impacteffect="effects/impact.effect"
+
+>
+<altavatar key="Hero_Aluna.Alt5"
+		model="/heroes/scout/ability_04/effects/model.mdf"
+		traileffect="../alt5/projectile/trail.effect"
+		impacteffect="../alt5/projectile/projectile_impact.effect"
+/>
+
+<altavatar key="Hero_Aluna.Alt7"
+		traileffect="../alt7/projectile/effects/trail.effect"
+		impacteffect="../alt7/projectile/effects/projectile_impact.effect"
+/>
+
+<altavatar key="Hero_Aluna.Alt8"
+		traileffect="../alt8/projectile/effects/trail.effect"
+		impacteffect="../alt8/projectile/effects/projectile_impact.effect"
+/>
+</projectile>

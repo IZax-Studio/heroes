@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="3.0">
+		
+				<sound
+			    forcestereo="true"
+				linearfalloff="true" 
+				life="5000"
+				falloffstart="1000"
+				falloffend="2500"
+				volume="1.0"
+				sample="/heroes/apex/ability_02/sounds/trigger.wav"
+			/>
+			
+			<sound
+			    forcestereo="true"
+			    soundloop="true"
+				randomloop="true"
+				fadein="100"
+				fadeout="1000"
+				linearfalloff="true" 		
+				falloffstart="1000"
+				falloffend="2500"
+				volume="1.0"
+				sample="/heroes/apex/ability_02/sounds/trail.wav"
+			/>
+			
+			<groundsprite
+				material="/shared/effects/materials/ground_whitedot.material"
+				color=".75 .1 0"
+				size="20"
+				scale="5.0"
+				expirelife="500"
+				startalpha=".6"
+				endalpha="0"
+			/>
+			
+			<groundsprite
+				material="/shared/effects/materials/corona_06_ground.material"
+				scale="1.4"
+				startcolor=".1 0 .0"
+				endcolor="0"
+				expirelife="500"
+			/>
+			
+			
+			<simpleemitter
+				position="0 50 0"
+				spawnrate="80"
+				minparticlelife="300"
+				maxparticlelife="400"
+				gravity="-1"
+				offsetsphere="5"
+				minspeed="125"
+				maxspeed="150"
+				direction="0 -1 0"
+				angle="90"
+				material="/shared/effects/materials/pyroclast_04.material"
+				depthbias="-10"
+				inheritvelocity="-.1"
+			>
+				<template name="glow_particle">
+					<particle
+						maxangle="360"
+						minstartscale="10"
+						maxstartscale="20"
+						minendscale="25"
+						maxendscale="30"
+						color="{color}"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".75"
+					/>
+				</template>
+				<instance name="glow_particle" color="8 .5 0"/>
+				<instance name="glow_particle" color="7 .3 0"/>
+			</simpleemitter>
+			
+			<template name="trail" >
+			<controller scale="1.5" >
+			<!--
+			<simpleemitter
+				position="0 40 0"
+				spawnrate="40" maxparticlelife="500" 
+				gravity="0"
+				minspeed="10"  maxspeed="30"
+				direction="0 0 1"
+				particledirectionalspace="local"
+				material="/shared/effects/materials/arc_add.material"
+				offsetsphere="0"
+			>
+				<particle		
+					startcolor=".1 0 0"  endcolor="0"
+					startalpha="0" midalpha=".5" endalpha="0" midalphapos=".35"
+					lockright="1" lockup="1" pitch="-90"
+					startsize="50" endsize="100" midsizepos=".05"
+					startwidth="20" endwidth="0"
+					scale="2"
+				/>
+			</simpleemitter>
+			-->
+			<!-- dark smoke -->	
+			<simpleemitter
+				position="0 53 0"
+				spawnrate="20" particlelife="650" 
+				gravity="0"
+				minspeed="10"  maxspeed="30"
+				direction="0 0 1"
+				minangle="0" maxangle="180"
+				material="/shared/effects/materials/phantom_white_reveal.material"
+				offsetsphere="5"
+				depthbias="-150"
+			>
+				<particle					
+					startcolor="8 .5 0" midcolor="4 .5 0" endcolor="0"
+					trurn="1" minangle="" maxangle="360"
+					minsize="5" maxsize="13"
+					startframe="1" endframe=".1" midframepos=".3"
+					startalpha="0" midalpha=".7" endalpha="0" midalphapos=".25"
+					scale="5"
+				/>
+			</simpleemitter> 
+			 
+			<!-- sparks-->	
+			<simpleemitter
+				spawnrate="150"
+				position="0 53 0"
+				life="2500" particlelife="850"
+				direction="0 1 1"
+				minspeed="50"
+				maxspeed="180"
+				drag="0.01"
+				gravity="-10"
+				offsetsphere="30"
+			>
+				<template name="ash_particle" >
+					<particle
+						minyawspeed="-50"
+						maxyawspeed="50"
+						minpitchspeed="-50"
+						maxpitchspeed="50"
+						minrollspeed="-50"
+						maxrollspeed="50"
+						startscale="0"
+						minendscale=".5"
+						maxendscale="1"
+					>
+						<billboard
+							
+							life="550"
+							position="0 0 0"
+							material="/shared/effects/materials/abstract_reveal.material"
+							startsize="20"
+							endsize="30"
+							startcolor="{sc}"
+							midcolor="{mc}"
+							endcolor="{ec}"
+							midcolorpos="{mcpos}"
+							startframe="0"
+							endframe="1"
+							scale=".35"
+						/>
+					</particle>
+				</template>
+				<instance name="ash_particle" sc="8 2 0" mc="6 2 0" ec="-1" mcpos=".5" />
+			</simpleemitter>
+			<!--
+			<simpleemitter
+				position="0 53 0"
+				spawnrate="20" particlelife="250" 
+				gravity="0"
+				minspeed="10"  maxspeed="30"
+				direction="0 0 1"
+				minangle="0" maxangle="180"
+				material="/shared/effects/materials/fire_add.material"
+				offsetsphere="5"
+				depthbias="-150"
+			>
+				<particle					
+					startcolor=".5 .05 0" midcolor=".1 0 0" endcolor="0"
+					trurn="1" minangle="" maxangle="360"
+					minsize="5" maxsize="13"
+					startframe="1" midframe=".1" endframe="1" midframepos=".3"
+					startalpha="0" midalpha=".5" endalpha="0" midalphapos=".25"
+					scale="5"
+				/>
+			</simpleemitter> 
+		-->
+			</controller>
+		</template>
+					<instance name="trail" />
+					<instance name="trail" />
+					<instance name="trail" />
+					<instance name="trail" />
+			
+			<!-- inner red/orange sparks -->
+			<simpleemitter
+				position="0 40 0"
+				spawnrate="100"
+				minparticlelife="200"
+				maxparticlelife="350"
+				gravity="-1"
+				offsetsphere="30 10 10"
+				minspeed="125"
+				maxspeed="250"
+				drag="0.01"
+				direction="0 -1 0"
+				minangle="30"
+				maxangle="90"
+				material="/shared/effects/materials/flame.material"
+				depthbias="-10"
+				inheritvelocity="-.2"
+				limitinheritvelocity="1000"
+			>
+				<template name="glow_particle">
+					<particle
+						turn="1"
+						height="12"
+						minwidth="4"
+						maxwidth="6"
+						minstartscale="1"
+						maxstartscale="3"
+						minmidscale="6"
+						maxmidscale="12"
+						minendscale="5"
+						maxendscale="8"
+						startcolor="0"
+						midcolor="{color}"
+						endcolor="0"
+					/>
+				</template>
+				<instance name="glow_particle" color="7 3 0"/>
+				<instance name="glow_particle" color="7 2 0"/>
+			</simpleemitter>
+			
+			
+			<!-- outer dark sparks -->
+			<template name="purple_sparks" >
+				<simpleemitter
+					life="750"
+					position="0 100 0"
+					spawnrate="30"
+					minparticlelife="350"
+					maxparticlelife="550"
+					gravity="-1"
+					offsetsphere="5"
+					minspeed="225"
+					maxspeed="350"
+					drag="0.015"
+					direction="{dir}"
+					minangle="0"
+					maxangle="10"
+					material="/shared/effects/materials/phantom_white_reveal.material"
+					depthbias="-10"
+					inheritvelocity="-.5"
+					limitinheritvelocity="500"
+				>
+					<template name="glow_particle">
+						<particle
+							turn="1"
+							height="10"
+							minstartscale="6"
+							maxstartscale="10"
+							minmidscale="12"
+							maxmidscale="25"
+							minendscale="5"
+							maxendscale="8"
+							startcolor="8 2 0"
+							midcolor="{color}"
+							endcolor="0"
+							startframe="1" midframe=".1" endframe="1" midframepos=".3"
+							startalpha="0" endalpha=".25"
+						/>
+					</template>
+					<instance name="glow_particle" color="-1"/>
+					<instance name="glow_particle" color="0"/>
+				</simpleemitter>
+			</template>
+			
+			<instance name="purple_sparks" dir="1 0 0" />
+			<instance name="purple_sparks" dir="-1 0 0" />
+			
+			
+			
+		<!-- 	
+			<light
+				life="200"
+				falloffend="250"
+				startcolor="0"
+				endcolor="2.5 0 .75"
+			/>
+			<light
+				delay="200"
+				expirelife="200"
+				falloffend="250"
+				startcolor="2.5 0 .75"
+				endcolor="0"
+			/> -->
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

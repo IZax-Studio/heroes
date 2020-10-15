@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+	<definitions>
+		<particlesystem name="system0" space="world">
+		
+			<sound
+		        dampen="0.8"
+				life="5000"
+				linearfalloff="true" 
+				falloffstart="725"
+				falloffend="1300"
+				volume=".9"				
+				sample="182965340.wav"
+			/>
+			
+			<simpleemitter
+				timenudge="1000"
+				bone="_bone_center"
+				count="18"
+				minparticlelife="1500"
+				maxparticlelife="1500"
+				minspeed="40"
+				maxspeed="80"
+				offsetsphere="30"
+				inheritvelocity=".5"
+				limitinheritvelocity="250"
+			>
+				<particle>
+					<model
+						life="300"
+						model="/shared/effects/models/circle_of_bones/model.mdf"
+						anim="idle"
+						minyawspeed="-1500"
+						maxyawspeed="1500"
+						maxyaw="360"
+						minstartscale="1"
+						maxstartscale="1.2"
+						minmidscale="2.25"
+						maxmidscale="2.8"
+						endscale="0"
+					>
+						<trailemitter
+							spawnrate="200"
+							bone="_bone_fx_01"
+							material="/shared/effects/materials/light_trail.material"
+							particlelife="150"
+							texposscale="0"
+							texstretchscale="1"
+						>
+							<particle
+								startsize="4"
+								midsize="10"
+								endsize="4"
+								startcolor="1 .5 0"
+								endcolor="1 0 0"
+							/>
+						</trailemitter>
+					</model>
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				timenudge="1000"
+				bone="_bone_center"
+				count="18"
+				minparticlelife="1500"
+				maxparticlelife="1500"
+				minspeed="40"
+				maxspeed="80"
+				offsetsphere="30"
+				inheritvelocity=".5"
+				limitinheritvelocity="250"
+			>
+				<particle>
+					<model
+						life="300"
+						model="/shared/effects/models/circle_of_bones/model.mdf"
+						anim="idle"
+						minyawspeed="-1500"
+						maxyawspeed="1500"
+						maxyaw="360"
+						minstartscale="1"
+						maxstartscale="1.2"
+						minmidscale="2.25"
+						maxmidscale="2.8"
+						endscale="0"
+					>
+						<trailemitter
+							spawnrate="200"
+							bone="_bone_fx_01"
+							material="/shared/effects/materials/light_trail.material"
+							particlelife="150"
+							texposscale="0"
+							texstretchscale="1"
+						>
+							<particle
+								startsize="4"
+								midsize="10"
+								endsize="4"
+								startcolor="1 .25 0"
+								endcolor="1 0 0"
+							/>
+						</trailemitter>
+					</model>
+				</particle>
+			</simpleemitter>
+		
+			<simpleemitter
+				bone="_bone_center"
+				count="1"
+				particlelife="1000"
+			>
+				<particle>
+					<billboard
+						life="400"
+						material="/shared/effects/materials/corona_07.material"
+						startsize="100"
+						midsize="170"
+						endsize="185"
+						startparam=".5"
+						midparam=".1"
+						endparam="0"
+						startcolor="1 .5 0"
+						endcolor="0"
+					/>
+					<billboard
+						life="600"
+						material="/shared/effects/materials/refract_ring.material"
+						startsize="20"
+						midsize="235"
+						endsize="275"
+						startparam="0"
+						midparam="0.05"
+						endparam="0"
+						midparampos=".25"
+					/>
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_center"
+				count="30"
+				minparticlelife="100"
+				maxparticlelife="250"
+				direction="0 0 1"
+				directionalspace="global"
+				minangle="80"
+				maxangle="110"
+				minspeed="-2000"
+				maxspeed="-1000"
+				drag="0.04"
+				material="/shared/effects/materials/beam_06.material"
+			>
+				<particle
+					turn="true"
+					minsize="2"
+					maxsize="6"
+					widthdistort="0.05"
+					angle="90"
+					startcolor="1"
+					endcolor="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_center"
+				count="20"
+				minparticlelife="100"
+				maxparticlelife="250"
+				direction="0 0 1"
+				directionalspace="global"
+				minangle="80"
+				maxangle="110"
+				minspeed="-2000"
+				maxspeed="-1000"
+				drag="0.04"
+				material="/shared/effects/materials/beam_01.material"
+			>
+				<particle
+					turn="true"
+					minsize="2"
+					maxsize="6"
+					widthdistort="0.05"
+					angle="90"
+					startcolor="1"
+					endcolor="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_center"
+				count="1"
+				particledirectionalspace="local"
+				particlelife="400"
+			>
+				<particle
+					startscale="0"
+					midscale="6"
+					endscale="0"
+					midscalepos=".25"
+				>
+					<billboard
+						life="400"
+						timenudge="1"
+						directionalspace="local"
+						material="/shared/effects/materials/whitedot.material"
+						color="1 .35 0"
+						size="75"
+					/>
+					
+					<billboard
+						life="300"
+						timenudge="1"
+						directionalspace="local"
+						material="/shared/effects/materials/whitecircle_blend.material"
+						size="30"
+					/>
+					
+					<billboard
+						life="400"
+						timenudge="1"
+						directionalspace="local"
+						material="/shared/effects/materials/black_spot2.material"
+						size="28"
+					/>
+				</particle>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<camerashake2 duration="150" scale="1.5" frequency="20" radius="1200" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

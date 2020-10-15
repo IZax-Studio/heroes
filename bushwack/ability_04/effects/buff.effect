@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true" deferred="true">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1.0" >
+
+		<sound
+		        randomloop="true"
+				soundloop="true"
+				fadein="100"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume="1"
+				sample="/heroes/bushwack/ability_04/sounds/stack_damage_state.wav"
+			/>
+			 
+			
+			
+			
+			<groundsprite
+				
+				expirelife="350"
+				startsize="670"
+				endsize="0"
+				startcolor="0 0 .05"
+				endcolor="0"
+				material="/shared/effects/materials/corona_ground.material"
+			/>
+		</particlesystem>
+		<particlesystem name="system1" space="world" scale="1">
+				<simpleemitter
+				offsetradial="545"
+				spawnrate="100"
+				minangle="89"
+				maxangle="90"
+				particlelife="1500"
+				position="0 0 0"
+				gravity="-5"
+			>
+				<particle
+				>
+				<trackertrailemitter
+					particlelife="500"
+					spawnrate="15"
+					position="0 0 0"
+					direction="0 0 1"
+					speed="10"
+					offsetsphere="10"
+					material="/shared/effects/materials/trail_01_blend.material"
+					texposscale="0"
+					texstretchscale="1"
+					tracktype="angular"
+					trackspeed="5"
+				>
+					<particle
+						startcolor=".3 0 .5"
+						midcolor="0"
+						endcolor="0"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						startsize="0"
+						midsize="20"
+						endsize="0"
+					/>
+				</trackertrailemitter>
+				</particle>
+			</simpleemitter> 						
+		<simpleemitter
+				offsetradial="545"
+				spawnrate="550"
+				direction="0 0 1"
+				minangle="89"
+				maxangle="90"
+				speed="1"
+				particlelife="800"
+				position="0 0 0"
+				gravity="-10"
+				material="/shared/effects/materials/spark_12.material"
+			>
+				<particle
+					startsize="10"
+					endsize="5"
+					startcolor="0 0 1"
+					midcolor="0 0 1"
+					endcolor="0"
+					minscale="1"
+					maxscale="2"
+					maxangle="360"
+				/>
+			</simpleemitter>
+		
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

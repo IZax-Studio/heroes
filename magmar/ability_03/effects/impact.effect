@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+	
+
+		<particlesystem name="system0" space="world" scale="1.3">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".5"
+				sample="impact.wav"
+			/>
+			
+					
+					<simpleemitter
+						bone="_bone_centerofchest"
+						life="500"
+						spawnrate="50"
+						minparticlelife="350"
+						maxparticlelife="800"
+						gravity="-15"
+						speed="30"
+						drag=".003"
+						material="/shared/effects/materials/lightning_01.material"
+						offsetsphere="35 35 0"
+						angle="90"
+					>
+						<particle 
+							maxanglespeed="30"
+							maxangle="360"
+							startcolor="255 .300 200"
+							endcolor="1 1 .3"
+							startsize="60"
+							endsize="20"
+							startalpha="0"
+							midalpha=".4"
+							endalpha="0"
+						/>
+					
+					</simpleemitter>
+					
+					
+					
+					<simpleemitter
+						bone="_bone_centerofchest"
+						life="500"
+						spawnrate="40"
+						minparticlelife="350"
+						maxparticlelife="1000"
+						gravity="-15"
+						speed="20"
+						drag=".003"
+						material="/shared/effects/materials/lightning_02.material"
+						offsetsphere="20"
+						angle="360"
+					>
+						<particle 
+							maxanglespeed="300"
+							maxangle="360"
+							startcolor="1 1 .3"
+							endcolor="1 1 .3"
+							startsize="100"
+							endsize="60"
+							startalpha="0"
+							midalpha=".4"
+							endalpha="0"
+						/>
+					
+					</simpleemitter>
+					
+		</particlesystem>
+		</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="" file="fire2.model" type="K2">
+	<anim name="idle" clip="fire2.clip" fps="30"/>
+</model>

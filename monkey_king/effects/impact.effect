@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true">
+
+	<definitions>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		<particlesystem name="system0" space="world" scale="1">
+
+			<simpleemitter
+				count="15"
+				bone="_bone_centerofchest"
+				spawnrate="150"
+				minparticlelife="250"
+				maxparticlelife="550"
+				speed="300"
+				drag="0.10"
+				material="/shared/effects/materials/whitedot.material"
+				offsetsphere="10 10 10"
+				position="0 0 0"
+				depthbias="25"
+			>
+				<particle
+					turn="1"
+					heightdistort=".1"
+					width="1"
+					startscale="11"
+					minendscale="0"
+					maxendscale="5"
+					startcolor=".5 .2 .5"
+					midcolor=".2 0 .2"
+					endcolor="0 0 0"
+					midcolorpos=".25"
+				/>
+			</simpleemitter>
+			
+		</particlesystem>
+
+		<particlesystem name="system1" space="world" scale="1.85">
+
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="300"
+				startcolor="1 1 1"
+				midcolor="1 1 1"
+				endcolor="0 0 0"
+				startsize="25"
+				midsize="120"
+				endsize="155"
+				midsizepos=".3"
+				depthbias="-30"
+				material="/shared/effects/materials/heart_04.material"
+				position="0 0 0"
+				scale=".55"
+			/>
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1200"
+				volume="1"
+				sample="\heroes\monkey_king\Elizabeth_Bathory\sounds/34_skin3_Atk_Hit_0%.wav"
+			/>		
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1200"
+				volume=".70"
+				sample="/shared/sounds/impacts/impact_flesh_%.wav"
+			/>
+			
+			
+
+			
+				<billboard			
+				life="400"
+				bone="_bone_centerofchest"
+				startsize="45"
+				endsize="100"
+				material="/shared/effects/materials/blood1.material"
+				startalpha="1"
+				endalpha="0"
+				depthbias="-30"
+				maxroll="360"
+				color=".3 .05 0"
+				position="0 0 5"
+			/>
+	
+			<simpleemitter
+         			bone="_bone_centerofchest"
+         			spawnrate="2000"
+					count="15"
+					minparticlelife="400"
+          			maxparticlelife="1200"
+          			gravity="13"
+					minspeed="150"
+         			maxspeed="550"
+          			drag=".15"
+					offsetsphere="15"
+          			material="/shared/effects/materials/blood1.material"
+         		>
+  				<particle 
+					minangle="0"
+					maxangle="360"			
+					color=".5 .2 0"
+					maxanglespeed="20"
+					minanglespeed="-120"
+					startsize="10"
+					minendsize="35"
+					maxendsize="45"			
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					endstickiness=".3"
+				/>
+  				<particle 
+					minangle="0"
+					maxangle="360"			
+					color=".3"
+					maxanglespeed="55"
+					minanglespeed="-55"
+					startsize="10"
+					minendsize="55"
+					maxendsize="85"			
+					startalpha="1"
+					midalpha=".8"
+					endalpha="0"
+				/>
+  				<particle 
+					minangle="0"
+					maxangle="360"			
+					color=".2"
+					maxanglespeed="10"
+					minanglespeed="-10"
+					startsize="30"
+					minendsize="5"
+					maxendsize="10"			
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+         			bone="_bone_centerofchest"
+         			spawnrate="2000"
+				count="25"
+				minparticlelife="400"
+          			maxparticlelife="1400"
+          			gravity="10"
+				minspeed="50"
+         			maxspeed="550"
+          			drag=".05"
+				offsetsphere="10"
+          			material="/shared/effects/materials/blood1.material"
+         		>
+  				<particle 
+					minangle="0"
+					maxangle="360"			
+					color=".5 .2 0"
+					maxanglespeed="10"
+					minanglespeed="-10"
+					size="2"
+					minscale="1"
+					maxscale="2"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="500"
+				bone="_bone_head"
+				spawnrate="5"
+				offsetsphere="30 30 30"
+				particlelife="3000"
+				depthbias="-50"
+			>
+				<particle>
+					<groundsprite						
+						material="/shared/effects/materials/blood_ground.material"						
+						life="2000"
+						size="5"			
+						minscale="1"
+						maxscale="6"
+						minyaw="-360"
+						maxyaw="360"
+						startcolor=".35 .2 .2"
+						endcolor=".2 .1 .1"
+						startalpha=".8"
+						midalpha=".8"
+						endalpha="0"
+					/>				
+				</particle>
+			</simpleemitter>
+
+			
+			<billboard
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="1 .5 .75"
+				endcolor="0 0 0"
+				life="300"
+				startsize="50"
+				endsize="100"
+				scale="2"
+				depthbias="-50"
+			/>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				count="10"
+				minspeed="3700"
+				maxspeed="4000"
+				drag=".045"
+				particlelife="1000"
+			>
+				<particle
+				>
+					<trailemitter
+						life="100"
+						spawnrate="100"
+						particlelife="100"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/beam.material"
+					>
+						<particle
+							startcolor="1 .5 .75"
+							midcolor="1 .5 .75"
+							endcolor="0 0 0"
+							startsize="5"
+							midsize="7"
+							endsize="0"
+							midsizepos="0.1"
+					/>
+					</trailemitter>
+					<billboard
+						delay="100"
+						life="600"
+						startsize="0"
+						directionalspace="local"
+						position="0 -10 0"
+						midsize="8"
+						endsize="13"
+						color="1 .2 .35"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						material="/shared/effects/materials/heart_white_01.material"
+					/>
+					<simpleemitter
+						delay="100"
+						count="5"
+						directionalspace="local"
+						position="0 -0 0"
+						particlelife="500"
+						maxspeed="200"
+						material="/shared/effects/materials/spark_10.material"
+					>
+						<particle
+							startsize="10"
+							endsize="0"
+							color="1 0 1"
+							maxangle="360"
+							minanglespeed="-500"
+							maxanglespeed="500"
+						/>
+					</simpleemitter>
+				</particle>
+			</simpleemitter>
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

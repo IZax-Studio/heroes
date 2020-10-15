@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" useentityeffectscale="1" deferred="1">
+	<definitions>
+
+		<particlesystem name="system0" space="entity" scale="1">
+				
+				<sound
+				linearfalloff="true" 
+				falloffstart="200"
+				falloffend="2200"
+				volume="1"
+				sample="/heroes/berzerker/ability_02/sounds/cast.wav"
+			/>	
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="200"
+				falloffend="2200"
+				volume="1"
+				sample="/heroes/berzerker/alt10/sounds/ormarr/ab2_vox_%.wav"
+			/>	
+
+			<model
+				bone="_bone_overhead"
+				position="0 0 0"
+				expirelife="250"
+				anim="idle"
+				model="/heroes/berzerker/ability_02/effects/sword/model.mdf"
+				scale="2"
+				color="2.5 1.5 1"
+				startalpha="1"
+				endalpha="0"
+				yaw="180"
+				directionalspace="global"
+			>
+
+				<billboard
+					bone="_bone_fx_head"
+					expirelife="1500"
+					startcolor=".1 0 0"
+					endcolor="0 0 0"
+					size="225"
+					position="0 0 0"
+					material="/shared/effects/materials/whitedot.material"
+					directionalspace="local"
+					depthbias="-60"
+					minroll="-180"
+					maxroll="180"
+					rollspeed="-360"
+					loop="true"
+				/>
+
+				<billboard
+					bone="_bone_fx_head"
+					expirelife="1500"
+					startcolor=".1 0 0"
+					endcolor="0 0 0"
+					size="50"
+					position="0 0 0"
+					material="/shared/effects/materials/whitedot.material"
+					directionalspace="local"
+					depthbias="-60"
+					minroll="-180"
+					maxroll="180"
+					rollspeed="-360"
+					loop="true"
+				/>
+				
+				<simpleemitter
+					bone="_bone_fx_head"
+					spawnrate="25"
+					minparticlelife="250"
+					maxparticlelife="500"
+					gravity="-5"
+					position="0 0 0"
+					offsetsphere="8"
+					material="/shared/effects/materials/soul_projectile2.material"
+					depthbias="50"
+				>
+					<particle 
+						minangle="0"
+						maxangle="360"
+						minanglespeed="-6"
+						maxanglespeed="6"
+						startcolor=".75 .75 .75"
+						endcolor="0 0 0"
+						startsize="0"
+						endsize="35"
+					/>
+					
+					<particle 
+						minangle="0"
+						maxangle="360"
+						minanglespeed="-6"
+						maxanglespeed="6"
+						startcolor=".75 .35 .1"
+						endcolor="0 0 0"
+						startsize="0"
+						endsize="35"
+					/>
+				</simpleemitter>
+
+				<template name="zTemplate">
+					<simpleemitter
+						bone="{bone}"
+						spawnrate="50"
+						minparticlelife="200"
+						maxparticlelife="400"			
+						gravity="24"
+						minspeed="100"
+						maxspeed="200"
+						drag=".008"
+						material="/shared/effects/materials/flare_03.material"
+						offsetsphere="2"
+						minangle="-10"
+						maxangle="40"
+						direction="0 0 1"
+						directionalspace="global"
+						depthbias="-25"
+					>
+						<particle 
+							minangle="0"
+							maxangle="360"
+							startcolor="1 1 1"
+							midcolor=".5 .35 .125"
+							endcolor="0 0 0"
+							midcolorpos=".5"
+							minstartsize="10"
+							maxstartsize="10"
+							midsize="10"
+							endsize="5"
+							startalpha="0"
+							midalpha=".7"
+							endalpha="0"
+							midalphapos=".5"
+							turn="true"
+							scale="1"
+						/>
+					</simpleemitter>
+
+				</template>
+
+				<instance name="zTemplate" bone="_bone_fx_head"/>
+
+			</model>
+
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>

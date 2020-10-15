@@ -1,0 +1,852 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_Pyromancer"
+
+	team="Legion"
+	icon="11.jpg"
+	portrait="11.jpg"
+	model="Megumin/model.mdf,Megumin/model.mdf,Megumin/model.mdf,Megumin/model.mdf,Megumin/model.mdf,Megumin/model.mdf,Megumin/model.mdf,Megumin/model_2.mdf,Megumin/model_2.mdf,Megumin/model_2.mdf,Megumin/model_2.mdf,Megumin/model_2.mdf,Megumin/model_2.mdf,Megumin/model_3.mdf"
+	skin=""
+	
+	passiveeffect="effects/body.effect"
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sounds/Megumin/sa_select_%.wav"
+	selectedflavorsound=""
+	confirmmovesound="sounds/Megumin/sa_move_%.wav"
+	confirmattacksound=""
+	nomanasound=""
+	cooldownsound=""
+	announcersound="sounds/Megumin/hero.wav"
+	tauntedsound=""
+	tauntkillsound=""
+	
+	preglobalscale="1.665"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="48"
+	targetoffset="0 0 92"
+
+	category="magic"
+	difficulty="2.5"
+
+	solorating="2"
+	junglerating="0"
+	carryrating="2"
+	supportrating="1"
+	initiatorrating="0"
+	gankerrating="3"
+	pusherrating="2"
+	rangedrating="5"
+	meleerating="0"
+
+	movespeed="295"
+	turnrate="450"
+	turnsmoothing="0.05"
+
+	maxhealth="150"
+	healthregen="0.25"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="-0.7"
+	magicarmor="5"
+
+	inventory0="Ability_Pyromancer1"
+	inventory1="Ability_Pyromancer2"
+	inventory2="Ability_Pyromancer3"
+	inventory3="Ability_Pyromancer4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="1200"
+	attackactiontime="450"
+	attackcooldown="1700"
+	attackdamagemin="19"
+	attackdamagemax="25"
+	attacknumanims="2"
+	attackoffset="0 30 150"
+	attackprojectile="Projectile_PyromancerAttack"
+	attackrange="600"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect=""
+	attacktype="ranged"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="800"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+	
+	corpsetime="4000"
+	corpsefadetime="3000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+
+	primaryattribute="Intelligence"
+	strength="18"
+	strengthperlevel="1.5"
+	agility="16"
+	agilityperlevel="1.5"
+	intelligence="24"
+	intelligenceperlevel="3.2"
+	
+	previewmodel="Megumin/model.mdf"
+	previewpos="0 0 -70"
+	previewangles="0 0 0"
+	previewscale="1.75"
+	
+	storemodel="Megumin/model.mdf"
+	storepos="0 0 -20"
+	storeangles="0 0 0"
+	storescale="1.45"
+>
+	<recommendeditem name="Item_ManaPotion" />
+	<recommendeditem name="Item_MinorTotem" />
+	<recommendeditem name="Item_RunesOfTheBlight" />
+	<recommendeditem name="Item_HealthPotion" />
+	<recommendeditem name="Item_HomecomingStone" />
+	
+	<recommendeditem name="Item_FlamingEye" />
+	<recommendeditem name="Item_Strength5" />
+	<recommendeditem name="Item_Bottle" />
+	<recommendeditem name="Item_Striders" />
+	<recommendeditem name="Item_SpellShards" />
+	
+	<recommendeditem name="Item_SacrificialStone" />
+	<recommendeditem name="Item_Intelligence7" />
+	<recommendeditem name="Item_UltorsHeavyPlate" />
+	<recommendeditem name="Item_BehemothsHeart" />
+	<recommendeditem name="Item_Morph" />
+	
+	<modifier key="iamsheeped" modpriority="999"
+		passiveeffect=""
+	/>
+	
+	<!-- <modifier key="gated" modpriority="200"
+		magicarmor="5"
+		armor="-0.9"
+		
+		inventory0="Reborn_Ability_Pyromancer1"
+		inventory1="Reborn_Ability_Pyromancer2"
+		inventory2="Reborn_Ability_Pyromancer3"
+		inventory3="Reborn_Ability_Pyromancer4"
+	>
+	</modifier> -->
+
+	<modifier key="soccer" modpriority="190" primaryattribute="" 
+		turnrate="650" magicarmor="0" healthregen="2.5" armor="0" manaregen="0"
+		maxmana="100"
+		attackrange="450"
+		movespeed="310"
+		maxhealth="475"
+		attackdamagemin="40"
+		attackdamagemax="40"
+		intelligence="0"
+		strength="0"
+		agility="0"
+		inventory0="Ability_Soccer_SlideKick"
+		inventory1="Ability_Soccer_Sprint"
+		inventory2="Ability_Pyromancer2"
+		inventory3="Ability_Pyromancer1"
+		inventory4="Ability_Soccer_Pyromancer_Passive"
+		cancarryitems="false" inventory8="" inventory12=""
+	/>	
+	
+	<!-- Staff of the master upgrade effect -->
+	<modifier key="ult_boost" modpriority="100"
+		passiveeffect=""
+		attackprojectile="Projectile_PyromancerAttack"
+	>
+		<aura state="State_Pyromancer_Ult_Boost_Art" radius="0" targetscheme="self"/>
+	</modifier>
+	
+	<altavatar key="Hero_Pyromancer.Female"
+		icon="icon.tga"
+		icon2="alt/icon.tga"
+		portrait="alt/icon.tga"
+		model="alt/model.mdf"
+		
+		passiveeffect="alt/effects/body.effect"
+		
+		preglobalscale="1.5"
+		infoheight="205"
+		
+		selectedsound="alt/sounds/voice/select_%.wav"
+		selectedflavorsound="alt/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt/sounds/voice/move_%.wav"
+		confirmattacksound="alt/sounds/voice/attack_%.wav"
+		nomanasound="alt/sounds/voice/no_mana.wav"
+		cooldownsound="alt/sounds/voice/cooldown.wav"
+		announcersound="alt/sounds/voice/hero_select.wav"
+		tauntedsound="alt/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt/preview.mdf"
+		previewpos="0 0 -130"
+		previewangles="0 0 0"
+		previewscale="1.5"
+		
+		storemodel="alt/preview.mdf"
+		storepos="0 0 -35"
+		storeangles="0 0 0"
+		storescale="1.2"
+	/>
+	
+	<altavatar key="Hero_Pyromancer.Alt2"
+		icon2="alt2/icon.tga"
+		portrait="alt2/icon.tga"
+		model="alt2/model.mdf"
+		icon="icon.tga"
+		passiveeffect="alt2/effects/body.effect"
+		attackprojectile="Projectile_PyromancerAttack_Alt2"
+		
+		attackoffset="35 75 60"
+		preglobalscale="2"
+		infoheight="205"
+		
+		selectedsound="alt2/sounds/voice/select_%.wav"
+		selectedflavorsound="alt2/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt2/sounds/voice/move_%.wav"
+		confirmattacksound="alt2/sounds/voice/attack_%.wav"
+		nomanasound="alt2/sounds/voice/no_mana.wav"
+		cooldownsound="alt2/sounds/voice/cooldown.wav"
+		tauntedsound="alt2/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt2/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt2/preview.mdf"
+		previewpos="-10 0 -75"
+		previewangles="0 0 0"
+		previewscale="1.8"
+		
+		storemodel="alt2/preview.mdf"
+		storepos="0 0 -15"
+		storeangles="0 0 0"
+		storescale="2"
+	/>
+	
+	<altavatar key="Hero_Pyromancer.Alt3"
+		icon2="alt3/icon.tga"
+		portrait="alt3/icon.tga"
+		model="alt3/model.mdf"
+		icon="icon.tga"
+		passiveeffect="alt3/effects/body.effect"
+		attackprojectile="Projectile_PyromancerAttack_Alt3"
+		
+		tiltfactor="1"
+		tiltspeed="75.0"
+		
+		preglobalscale="1.1"
+		infoheight="205"
+		
+		selectedsound="alt3/sounds/voice/select_%.wav"
+		selectedflavorsound="alt3/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt3/sounds/voice/move_%.wav"
+		confirmattacksound="alt3/sounds/voice/attack_%.wav"
+		nomanasound="alt3/sounds/voice/no_mana.wav"
+		cooldownsound="alt3/sounds/voice/cooldown.wav"
+		tauntedsound="alt3/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt3/sounds/voice/taunt_after.wav"
+
+		corpsetime="2000"
+		corpsefadetime="5000"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+
+		previewmodel="alt3/preview.mdf"
+		previewpos="0 0 -130"
+		previewangles="0 0 0"
+		previewscale="1.5"
+		
+		storemodel="alt3/preview.mdf"
+		storepos="0 0 -25"
+		storeangles="0 0 35"
+		storescale="1.1"
+	/>
+	
+	<altavatar key="Hero_Pyromancer.Alt4"
+		icon2="alt4/icon.tga"
+		portrait="alt4/icon.tga"
+		model="alt4/model.mdf"
+		icon="icon.tga"
+		respawneffect="/shared/effects/respawn_pyromancer.effect"
+		passiveeffect="alt4/effects/body.effect"
+		attackprojectile="Projectile_PyromancerAttack_Alt4"
+		attackoffset="20 105 90"
+		overrideportraiteffects="true"
+		
+		preglobalscale="2.3"
+		infoheight="205"
+		
+		selectedsound="alt4/sounds/voice/select_%.wav"
+		selectedflavorsound="alt4/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt4/sounds/voice/move_%.wav"
+		confirmattacksound="alt4/sounds/voice/attack_%.wav"
+		nomanasound="alt4/sounds/voice/no_mana.wav"
+		cooldownsound="alt4/sounds/voice/cooldown.wav"
+		tauntedsound="alt4/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt4/sounds/voice/taunt_after.wav"
+
+		corpsetime="2000"
+		corpsefadetime="5000"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+
+		previewmodel="alt4/preview.mdf"
+		previewpos="0 0 -130"
+		previewangles="0 0 0"
+		previewscale="2.5"
+		previewpassiveeffect="alt4/effects/body_store.effect"
+		
+		storemodel="alt4/preview.mdf"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="2.0"
+		storepassiveeffect="alt4/effects/body_store.effect"
+		
+		tooleffectkeyname0="effect_Boots"
+		tooleffectpath0="alt4/upgraded_boots/body.effect"
+		tooleffectgroup0="boots"
+		
+		tooleffectkeyname1=""
+		tooleffectpath1="alt4/base_boots/body.effect"
+		tooleffectgroup1="boots"
+		
+		tooleffectkeyname2="effect_GraveLocket"
+		tooleffectpath2="alt4/upgraded_helm/body.effect"
+		tooleffectgroup2="helm"
+		
+		tooleffectkeyname3="Item_SacrificialStone"
+		tooleffectpath3="alt4/upgraded_helm/body.effect"
+		tooleffectgroup3="helm"
+		
+		tooleffectkeyname4=""
+		tooleffectpath4="alt4/base_helm/body.effect"
+		tooleffectgroup4="helm"
+		
+		tooleffectkeyname5="Item_SpellShards"
+		tooleffectpath5="alt4/upgraded_chest/body.effect"
+		tooleffectgroup5="chest"
+		
+		tooleffectkeyname6="Item_GrimoireOfPower"
+		tooleffectpath6="alt4/upgraded_chest/body.effect"
+		tooleffectgroup6="chest"
+		
+		tooleffectkeyname7=""
+		tooleffectpath7="alt4/base_chest/body.effect"
+		tooleffectgroup7="chest"
+		
+		tooleffectkeyname8="Item_Intelligence7 Item_ManaBattery"
+		tooleffectpath8="alt4/upgraded_arms/boost.effect"
+		tooleffectgroup8="weapon"
+		
+		tooleffectkeyname9="Item_Intelligence7 Item_PowerSupply"
+		tooleffectpath9="alt4/upgraded_arms/boost.effect"
+		tooleffectgroup9="weapon"
+		
+		tooleffectkeyname10="Item_Intelligence7"
+		tooleffectpath10="alt4/base_weapon/boost.effect"
+		tooleffectgroup10="weapon"
+		
+		tooleffectkeyname11="Item_ManaBattery"
+		tooleffectpath11="alt4/upgraded_arms/body.effect"
+		tooleffectgroup11="weapon"
+		
+		tooleffectkeyname12="Item_PowerSupply"
+		tooleffectpath12="alt4/upgraded_arms/body.effect"
+		tooleffectgroup12="weapon"
+		
+		tooleffectkeyname13=""
+		tooleffectpath13="alt4/base_weapon/body.effect"
+		tooleffectgroup13="weapon"
+		
+		tooleffectkeyname14="Item_Intelligence7 Item_PushStaff"
+		tooleffectpath14="alt4/upgraded_back/boost.effect"
+		tooleffectgroup14="back"
+		
+		tooleffectkeyname15="Item_PushStaff"
+		tooleffectpath15="alt4/upgraded_back/body.effect"
+		tooleffectgroup15="back"
+		
+		tooleffectkeyname16=""
+		tooleffectpath16="alt4/base_back/body.effect"
+		tooleffectgroup16="back"
+		
+		tooleffectkeyname17="Item_PushStaff effect_Boots"
+		tooleffectpath17="alt4/upgraded_boots_tube/body.effect"
+		tooleffectgroup17=""
+		
+		tooleffectkeyname18="Item_PushStaff Item_SpellShards"
+		tooleffectpath18="alt4/upgraded_chest_tube/body.effect"
+		tooleffectgroup18="chest_tube"
+		
+		tooleffectkeyname19="Item_PushStaff Item_GrimoireOfPower"
+		tooleffectpath19="alt4/upgraded_chest_tube/body.effect"
+		tooleffectgroup19="chest_tube"
+		
+		tooleffectkeyname20="Item_PushStaff Item_PowerSupply"
+		tooleffectpath20="alt4/upgraded_weapon_tube/body.effect"
+		tooleffectgroup20=""
+	>
+		<onspawn>
+			<applystate name="State_Pyromancer_Alt4_Dragon_Effects" target="this_entity" continuous="true" />
+			<applystate name="State_Pyromancer_Alt4_Flamethrower_Effects" target="this_entity" continuous="true" />
+			<applystate name="State_Pyromancer_Alt4_Jetpack_Effects" target="this_entity" continuous="true" />
+		</onspawn>
+		
+		<onrespawn>
+			<applystate name="State_Pyromancer_Alt4_Dragon_Effects" target="this_entity" continuous="true" />
+			<applystate name="State_Pyromancer_Alt4_Flamethrower_Effects" target="this_entity" continuous="true" />
+			<applystate name="State_Pyromancer_Alt4_Jetpack_Effects" target="this_entity" continuous="true" />
+		</onrespawn>
+
+		<modifier key="Alt4_Flamethrower" modpriority="101"
+			idleanim="idle_flamethrower"
+			attackanim="attack_%_flamethrower"
+			numattackanims="2"
+			boredanim="bored_1_flamethrower"
+			tauntanim="taunt_1_flamethrower"
+			attackprojectile="Projectile_PyromancerAttack_Alt4_Flamethrower"
+		/>
+		
+		<modifier key="Alt4_Jetpack" modpriority="2"
+			model="alt4/model_flying.mdf"
+			attackoffset="20 105 130"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Pyromancer.Alt5"
+		icon2="alt5/icon.tga"
+		portrait="alt5/icon.tga"
+		model="alt5/model.mdf"
+		icon="icon.tga"
+		passiveeffect="alt5/effects/body.effect"
+		attackprojectile="Projectile_PyromancerAttack_Alt5"
+		
+		attackoffset="35 75 60"
+		preglobalscale="1.7"
+		infoheight="205"
+		
+		selectedsound="alt5/sounds/voice/select_%.wav"
+		selectedflavorsound="alt5/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt5/sounds/voice/move_%.wav"
+		confirmattacksound="alt5/sounds/voice/attack_%.wav"
+		nomanasound="alt5/sounds/voice/no_mana.wav"
+		cooldownsound="alt5/sounds/voice/cooldown.wav"
+		tauntedsound="alt5/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt5/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt5/preview.mdf"
+		previewpos="-10 0 -75"
+		previewangles="0 0 0"
+		previewscale="1.8"
+		
+		storemodel="alt5/preview.mdf"
+		storepos="0 0 -15"
+		storeangles="0 0 0"
+		storescale="1.8"
+			
+		portraitcampos="-5 10 30"
+		
+		corpsetime="2950"
+		corpsefadetime="0"
+		corpsefadeeffect=""
+	>
+		<onframe>
+			<activatemodifierkey name="Pyromancer_Alt5_Sound" />
+		</onframe>
+	
+		<onspawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Tarot.Alt4 aa.Hero_Engineer.Alt5 aa.Hero_Kenisis.Alt4 aa.Hero_Dreadknight.Alt5"/>
+			<compare a="result" b="1" op="eq">
+				<spawnunit name="Pet_Blackwal" target="this_entity" source="target_entity" offset="0 -100" facing="source_entity" pushentity="true" />
+			</compare>
+		</onspawn>
+		
+		<onrespawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Tarot.Alt4 aa.Hero_Engineer.Alt5 aa.Hero_Kenisis.Alt4 aa.Hero_Dreadknight.Alt5" />
+			<compare a="result" b="1" op="eq">
+				<spawnunit name="Pet_Blackwal" target="this_entity" source="target_entity" offset="0 -100" facing="source_entity" pushentity="true" />
+			</compare>
+		</onrespawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Pyromancer.Alt6"
+		icon2="alt6/icon.tga"
+		portrait="alt6/icon.tga"
+		model="alt6/model.mdf"
+		icon="icon.tga"
+		passiveeffect="alt6/effects/body.effect"
+		attackprojectile="Projectile_PyromancerAttack"
+		
+		attackoffset="35 75 60"
+		preglobalscale="1.9"
+		infoheight="205"
+		
+		selectedsound="alt6/sounds/voice/select_%.wav"
+		selectedflavorsound="alt6/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt6/sounds/voice/move_%.wav"
+		confirmattacksound="alt6/sounds/voice/attack_%.wav"
+		nomanasound="alt6/sounds/voice/no_mana.wav"
+		cooldownsound="alt6/sounds/voice/cooldown.wav"
+		tauntedsound="alt6/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt6/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt6/preview.mdf"
+		previewpos="-10 0 -75"
+		previewangles="0 0 0"
+		previewscale="1.8"
+		
+		storemodel="alt6/preview.mdf"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="1.8"
+			
+		portraitcampos="19 -50 25"
+		
+		corpsetime="2950"
+		corpsefadetime="0"
+		corpsefadeeffect=""
+	>
+	<onspawn>
+			<applystate name="Hotshot_Blaze_Sound_Initiator" target="source_entity" duration="2000" />
+			<activatemodifierkey name="Blaze_Sound" />
+	</onspawn>
+	
+	<modifier key="ult_boost" modpriority="100"
+		passiveeffect=""
+		boredanim="bored_boost"
+		attackprojectile="Projectile_PyromancerAttack"
+	>
+		<aura state="State_Pyromancer_Ult_Boost_Art" radius="0" targetscheme="self"/>
+	</modifier>
+	
+	</altavatar>
+	
+	<altavatar key="Hero_Pyromancer.Alt7"
+		icon2="alt7/icon.tga"
+		portrait="alt7/icon.tga"
+		model="alt7/model.mdf"
+		passiveeffect="alt7/effects/body.effect"
+		preglobalscale="2"
+		icon="icon.tga"
+		infoheight="250"
+		
+		portraitcampos="5 -10 40"
+		portraitangles="0 0 25"
+		
+		selectedsound="alt7/sounds/voice/select_%.wav"
+		selectedflavorsound="alt7/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt7/sounds/voice/move_%.wav"
+		confirmattacksound="alt7/sounds/voice/attack_%.wav"
+		nomanasound="alt7/sounds/voice/no_mana.wav"
+		cooldownsound="alt7/sounds/voice/cooldown.wav"
+		tauntedsound="alt7/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt7/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt7/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.15"
+
+		storemodel="alt7/preview.mdf"
+		storepos="0 200 -20"
+		storeangles="0 0 0"
+		storescale="2"
+	>
+    </altavatar>
+
+	
+	<altavatar key="Hero_Pyromancer.Alt8"
+		icon="icon.tga"
+		icon2="alt8/icon.tga"
+		portrait="alt8/icon.tga"
+		model="alt8/model.mdf"
+		passiveeffect="alt8/effects/body.effect"
+		preglobalscale="2.2"
+		modelscale=".9"
+		
+		previewmodel="alt8/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.15"
+
+		storemodel="alt8/preview.mdf"
+		storepos="0 150 -20"
+		storeangles="0 0 0"
+		storescale="1.7"
+		
+		selectedsound="alt8/sounds/voice/select_%.wav"
+		selectedflavorsound="alt8/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt8/sounds/voice/move_%.wav"
+		confirmattacksound="alt8/sounds/voice/attack_%.wav"
+		nomanasound="alt8/sounds/voice/no_mana.wav"
+		cooldownsound="alt8/sounds/voice/cooldown.wav"
+		tauntedsound="alt8/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt8/sounds/voice/taunt_after.wav"
+		
+		portraitcampos="33 -50 29"
+		
+		corpsetime="2000"
+		
+	>
+		<modifier key="ult_boost" modpriority="100"
+			passiveeffect="alt8/effects/boost.effect"
+		>
+			<aura state="State_Pyromancer_Ult_Boost_Art" radius="0" targetscheme="self"/>
+		</modifier>
+		
+		<onspawn>
+			<setaccumulator value="0" />
+			<ownsproduct target="this_entity" product="en.pyromancer_alt8_ability01_upgrade">
+				<activatemodifierkey name="pyromancerAlt8_Ability1_Upgrade" />
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+
+			<ownsproduct target="this_entity" product="en.pyromancer_alt8_ability02_upgrade">
+				<activatemodifierkey name="pyromancerAlt8_Ability2_Upgrade" />
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+
+			<ownsproduct target="this_entity" product="en.pyromancer_alt8_ability03_upgrade">
+				<activatemodifierkey name="pyromancerAlt8_Ability3_Upgrade" />
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+
+			<ownsproduct target="this_entity" product="en.pyromancer_alt8_ability04_upgrade">
+				<activatemodifierkey name="pyromancerAlt8_Ability4_Upgrade" />
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			
+			<upgradeselected target="this_entity" upgrade="sc.punk_circle_upgrade">
+				<activatemodifierkey name="Graffiti_Punk_Circle" />
+			</upgradeselected>
+		</onspawn>
+		
+		<modifier key="Graffiti_Punk_Circle" modpriority="2"
+			localselectionringmaterial="/shared/materials/selection_indicator_graffiti.material"
+		/>
+
+		<onkill propagatetoillusions="false" >
+			<targettype type="hero">
+				<targettype type="illusion" />
+				<else>               
+					<targettype type="mimic" />
+					<else> 
+						<targettype type="self" />
+						<else>
+							<targettype type="heropet" />
+							<else>
+								<spawnunit name="Gadget_Pyromancer_Alt8" count="1" target="target_position" pushentity="true" maxactive="5" />
+								<compare a="accumulator" b="0" op="eq">
+									<setlevel entity="stack_entity" value="1" />
+								</compare>
+								<compare a="accumulator" b="1" op="eq">
+									<setlevel entity="stack_entity" value="2" />
+								</compare>
+								<compare a="accumulator" b="2" op="eq">
+									<setlevel entity="stack_entity" value="3" />
+								</compare>
+								<compare a="accumulator" b="3" op="eq">
+									<setlevel entity="stack_entity" value="4" />
+								</compare>
+								<compare a="accumulator" b="4" op="eq">
+									<setlevel entity="stack_entity" value="5" />
+								</compare>																											
+							</else>
+						</else>
+					</else>
+				</else>
+			</targettype>
+			</onkill>	
+	</altavatar>
+	
+    <altavatar key="Hero_Pyromancer.trophy_skin"
+		icon="icon.tga"
+        icon2="trophy_skin/icon.tga"
+        portrait="trophy_skin/icon.tga"
+
+		preglobalscale="1.665"
+        model="trophy_skin/model.mdf"
+        passiveeffect="trophy_skin/effects/body.effect"
+        
+		attackoffset="0 30 150"
+	
+		previewmodel="trophy_skin/preview.mdf"
+		previewpos="0 0 -70"
+		previewangles="0 0 0"
+		previewscale="1.75"
+		
+		storemodel="trophy_skin/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.65"
+    />
+	
+	<altavatar key="Hero_Pyromancer.Alt9"
+		icon="icon.tga"
+		icon2="Alt9/icon.tga"
+		portrait="Alt9/icon.tga"
+		model="Alt9/model.mdf"
+		passiveeffect="Alt9/effects/body.effect"
+		preglobalscale="2.2"
+		modelscale=".9"
+		
+		selectedsound="alt9/sounds/voice/select_%.wav"
+		selectedflavorsound="alt9/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt9/sounds/voice/move_%.wav"
+		confirmattacksound="alt9/sounds/voice/attack_%.wav"
+		nomanasound="alt9/sounds/voice/no_mana.wav"
+		cooldownsound="alt9/sounds/voice/cooldown.wav"
+		announcersound="alt9/sounds/voice/hero_select.wav"
+		tauntedsound="alt9/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt9/sounds/voice/taunt_after.wav"
+		
+		previewmodel="Alt9/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.15"
+
+		storemodel="Alt9/preview.mdf"
+		storepos="0 150 -20"
+		storeangles="0 0 0"
+		storescale="1.7"
+		
+		portraitcampos="28 -30 20"
+		attackoffset="0 30 130"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Pyromancer.Alt10"
+		icon="icon.tga"
+		model="alt10/model.mdf"
+		icon2="alt10/icon.tga"
+		portrait="alt10/icon.tga"
+		passiveeffect="alt10/effects/body.effect"
+		preglobalscale="2.2"
+		modelscale=".9"
+		
+		portraitcampos="0 -30 20"
+		
+		previewmodel="alt10/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.7"
+
+		storemodel="alt10/preview.mdf"
+		storepos="0 150 -20"
+		storeangles="0 0 0"
+		storescale="1.7"
+		
+		selectedsound="alt10/sounds/voice/select_%.wav"
+		selectedflavorsound="alt10/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt10/sounds/voice/move_%.wav"
+		confirmattacksound="alt10/sounds/voice/attack_%.wav"
+		nomanasound="alt10/sounds/voice/no_mana.wav"
+		cooldownsound="alt10/sounds/voice/cooldown.wav"
+		announcersound="alt10/sounds/voice/hero_select.wav"
+		tauntedsound="alt10/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt10/sounds/voice/taunt_after.wav"
+	
+	>
+		<onkill propagatetoillusions="true" >
+			<setaccumulator value="0" />
+			<ownsproduct target="this_entity" product="aa.Hero_Ellonia.Alt8">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_SandWraith.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Pyromancer.Alt10">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Kane.Alt12">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Solstice.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>		
+			
+			
+			<compare a="accumulator" b="3" op="ge">	
+				<cantarget targetscheme="enemy_heroes">
+					<applystate name="State_Set_Poker_VFX" source="this_entity" target="this_entity" duration="2500" />
+				</cantarget>	
+			</compare>
+		</onkill>
+		
+		<onchannelingstart>
+			<setaccumulator value="0" />
+			<ownsproduct target="this_entity" product="aa.Hero_Ellonia.Alt8">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_SandWraith.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Pyromancer.Alt10">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Kane.Alt12">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Solstice.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+		
+			<compare a="accumulator" b="3" op="ge">	
+				<entitytype type="Ability_Taunt" target="inflictor_entity">
+					<condition test="hasstate State_Set_Poker_VFX" target="this_entity">
+					</condition>
+					<else>
+						<applystate name="State_Set_Poker_VFX" source="this_entity" target="this_entity" duration="2500" />
+					</else>
+				</entitytype>
+			</compare>
+		</onchannelingstart>
+		
+		<onassist>
+			<setaccumulator value="0" />
+			<ownsproduct target="this_entity" product="aa.Hero_Ellonia.Alt8">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_SandWraith.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Pyromancer.Alt10">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Kane.Alt12">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Solstice.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>		
+			
+			
+			<compare a="accumulator" b="3" op="ge">	
+					<applystate name="State_Set_Poker_VFX" source="this_entity" target="this_entity" duration="2500" />
+			</compare>
+		</onassist>
+	
+		<onspawn>
+ 			<ownsproduct target="this_entity" product="aa.Hero_Ellonia.Alt8 aa.Hero_SandWraith.Alt11 aa.Hero_Pyromancer.Alt10 aa.Hero_Kane.Alt12 aa.Hero_Solstice.Alt11" >	
+				<spawnunit name="Pet_Poker_Club" target="this_entity" facing="source_entity" pushentity="true" source="target_entity" />	
+  			</ownsproduct>
+        </onspawn>
+ 
+		<onrespawn>
+  			<ownsproduct target="this_entity" product="aa.Hero_Ellonia.Alt8 aa.Hero_SandWraith.Alt11 aa.Hero_Pyromancer.Alt10 aa.Hero_Kane.Alt12 aa.Hero_Solstice.Alt11" >	
+				<spawnunit name="Pet_Poker_Club" target="this_entity" facing="source_entity" pushentity="true" source="target_entity" />	
+  			</ownsproduct>
+        </onrespawn>
+	</altavatar>
+	
+	
+</hero>

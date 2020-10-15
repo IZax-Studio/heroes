@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Behemoth_Ability2"
+
+	icon="Cha067_Skill_W2.png"
+	passiveeffect=""
+	
+	basedamagemultiplier="1.25,2.0,2.75,3.5"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	
+	modifierkey="ability2_active"
+	
+	dynamicprecache="effects/impact.effect"
+>
+	<oninflict>
+		<setscriptvalue name="impact_effect" value="effects/impact.effect" entity="this_entity" />
+	</oninflict>
+	
+	<onattack>
+		<!-- Dynamic visual effects -->
+		<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" source="target_position" target="" occlude="true" /> 
+
+		<expire />
+	</onattack>
+	
+	<modifier key="ult_boost" modpriority="100"
+		truestrike="true"
+	>	
+	</modifier>
+	
+	<modifier key="soccer" modpriority="150"
+		basedamagemultiplier=""
+		damage="75"
+	/>
+	
+	<altavatar key="Hero_Behemoth.Alt10"
+		dynamicprecache="../alt10/ability_02/effects/impact.effect,../alt10/ability_02/effects/impact_upgrade.effect"
+	>
+		<oninflict>
+			<hasmodifier name="Alt10_Ability2_Upgrade" >
+				<setscriptvalue name="impact_effect" value="../alt10/ability_02/effects/impact_upgrade.effect" entity="this_entity" />
+			</hasmodifier>
+			<else>
+				<setscriptvalue name="impact_effect" value="../alt10/ability_02/effects/impact.effect" entity="this_entity" />
+			</else>
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_Behemoth.Alt13"
+	    icon="/heroes/behemoth/alt13/ability_02/icon.tga"
+	>
+	    <modifier key="Night_Set_Behemoth" 
+		    icon="/heroes/behemoth/alt14/ability_02/icon.tga"
+	    />
+	</altavatar>
+	
+	<altavatar key="Hero_Behemoth.Alt14"
+	    icon="/heroes/behemoth/alt14/ability_02/icon.tga"
+	>
+	    <modifier key="Night_Set_Behemoth" 
+		    icon="/heroes/behemoth/alt13/ability_02/icon.tga"
+	    />
+	</altavatar>
+	
+	<altavatar key="Hero_Behemoth.Alt16"
+		dynamicprecache="/heroes/behemoth/alt16/ability_02/effects/impact.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="impact_effect" value="/heroes/behemoth/alt16/ability_02/effects/impact.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>	
+</state>

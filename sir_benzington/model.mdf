@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="black.model" med="black.model" low="black.model" >
+	
+	<anim name="idle" clip="idle.clip" fps="550" loop="true" >
+		<startevent cmd="StopSound 1"/>
+
+	</anim>
+	
+	<anim name="attack_1" clip="attack_1.clip" fps="550" loop="false" >
+		<startevent cmd="StopEffect 1"/>
+		<startevent cmd="StopSound 1"/>
+		<frameevent frame="10" cmd="PlaySoundLinear /heroes/hiro/sounds/attack_%.wav 0 1300 .35"/>
+		<frameevent frame="10" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 400 2000 .65"/>
+	</anim>
+	<anim name="attack_1_lvl2" clip="attack_1.clip" fps="550" loop="false" >
+		<startevent cmd="StartEffect effects/links.effect 1"/>
+		<startevent cmd="StopSound 1"/>
+		<frameevent frame="15" cmd="StartEffect ability_03/effects/attack.effect" />
+		<frameevent frame="10" cmd="PlaySoundLinear ability_03/sounds/attack_%.wav 0 1300 .35"/>
+		<frameevent frame="10" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 400 2000 .65"/>
+		<endevent cmd="StopEffect 1" />
+	</anim>
+	<anim name="attack_1_lvl3" clip="attack_1.clip" fps="550" loop="false" >
+		<startevent cmd="StartEffect effects/links.effect 1"/>
+		<startevent cmd="StopSound 1"/>
+		<frameevent frame="15" cmd="StartEffect ability_03/effects/attack.effect" />
+		<frameevent frame="10" cmd="PlaySoundLinear ability_03/sounds/attack_%.wav 0 1300 .35"/>
+		<frameevent frame="10" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 400 2000 .65"/>
+		<endevent cmd="StopEffect 1" />
+	</anim>
+	<anim name="attack_1_lvl4" clip="attack_1.clip" fps="550" loop="false" >
+		<startevent cmd="StartEffect effects/links.effect 1"/>
+		<startevent cmd="StopSound 1"/>
+		<frameevent frame="15" cmd="StartEffect ability_03/effects/attack.effect" />
+		<frameevent frame="10" cmd="PlaySoundLinear ability_03/sounds/attack_%.wav 0 1300 .35"/>
+		<frameevent frame="10" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 400 2000 .65"/>
+		<endevent cmd="StopEffect 1" />
+<frameevent frame="450" cmd="StartEffect attack_2.effect" />
+	</anim>
+	<anim name="attack_1_lvl5" clip="attack_1.clip" fps="550" loop="false" >
+		<startevent cmd="StartEffect effects/links.effect 1"/>
+		<startevent cmd="StopSound 1"/>
+		<frameevent frame="15" cmd="StartEffect ability_03/effects/attack.effect" />
+		<frameevent frame="10" cmd="PlaySoundLinear ability_03/sounds/attack_%.wav 0 1300 .35"/>
+		<frameevent frame="10" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 400 2000 .65"/>
+		<endevent cmd="StopEffect 1" />
+  <frameevent frame="450" cmd="StartEffect attack_1.effect" />
+
+	</anim>
+	
+	<anim name="attack_2" clip="attack_2.clip" fps="550" loop="false" >
+		<frameevent frame="6" cmd="PlaySoundLinear /heroes/hiro/sounds/attack_%.wav 0 1300 .35"/>
+		<frameevent frame="6" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 400 2000 .65"/>
+		<startevent cmd="StopSound 1"/>
+<frameevent frame="20" cmd="PlaySoundLinear attack_%.wav 0 1300 .9"/>
+	</anim>
+	<anim name="attack_2_lvl2" clip="attack_1.clip" fps="550" loop="false" >
+		<startevent cmd="StartEffect effects/links.effect 1"/>
+		<frameevent frame="15" cmd="StartEffect ability_03/effects/attack.effect" />
+		<frameevent frame="10" cmd="PlaySoundLinear ability_03/sounds/attack_%.wav 0 1300 .35"/>
+		<frameevent frame="6" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 400 2000 .65"/>
+		<startevent cmd="StopSound 1"/>
+		<endevent cmd="StopEffect 1" />
+<frameevent frame="20" cmd="PlaySoundLinear attack_%.wav 0 1300 .9"/>
+	</anim>
+	<anim name="attack_2_lvl3" clip="attack_1.clip" fps="550" loop="false" >
+		<startevent cmd="StartEffect effects/links.effect 1"/>
+		<frameevent frame="15" cmd="StartEffect ability_03/effects/attack.effect" />
+		<frameevent frame="10" cmd="PlaySoundLinear ability_03/sounds/attack_%.wav 0 1300 .35"/>
+		<frameevent frame="6" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 400 2000 .65"/>
+		<startevent cmd="StopSound 1"/>
+		<endevent cmd="StopEffect 1" />
+<frameevent frame="20" cmd="PlaySoundLinear attack_%.wav 0 1300 .9"/>
+	</anim>
+	<anim name="attack_2_lvl4" clip="attack_1.clip" fps="550" loop="false" >
+		<startevent cmd="StartEffect effects/links.effect 1"/>
+		<frameevent frame="15" cmd="StartEffect ability_03/effects/attack.effect" />
+		<frameevent frame="10" cmd="PlaySoundLinear ability_03/sounds/attack_%.wav 0 1300 .35"/>
+		<frameevent frame="6" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 400 2000 .65"/>
+		<startevent cmd="StopSound 1"/>
+		<endevent cmd="StopEffect 1" />
+<frameevent frame="450" cmd="StartEffect attack_2.effect" />
+<frameevent frame="20" cmd="PlaySoundLinear attack_%.wav 0 1300 .9"/>
+	</anim>
+	<anim name="attack_2_lvl5" clip="attack_1.clip" fps="550" loop="false" >
+		<startevent cmd="StartEffect effects/links.effect 1"/>
+		<frameevent frame="15" cmd="StartEffect ability_03/effects/attack.effect" />
+		<frameevent frame="10" cmd="PlaySoundLinear ability_03/sounds/attack_%.wav 0 1300 .35"/>
+		<frameevent frame="6" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 400 2000 .65"/>
+		<startevent cmd="StopSound 1"/>
+		<endevent cmd="StopEffect 1" />
+  <frameevent frame="450" cmd="StartEffect attack_1.effect" />
+<frameevent frame="20" cmd="PlaySoundLinear attack_%.wav 0 1300 .9"/>
+	</anim>
+	
+	<anim name="walk_1" clip="walk_1.clip" fps="550" loop="true" loopbackframe="1">
+		<frameevent frame="6" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="19" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="25" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="38" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="44" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="58" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="65" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="77" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		
+		<frameevent frame="6" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="19" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="25" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="38" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="44" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="58" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="65" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="77" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		</anim>
+	
+	<anim name="death_1" clip="death_1.clip" fps="550" loop="true" loopbackframe="-1">
+  <frameevent frame="1" cmd="PlaySoundLinear d_%.wav 500 1300 .6"/>
+	</anim>
+	
+	<anim name="ability_1_cast" clip="ability_1.clip" startframe="0" numframes="1000" fps="550" />
+	
+	<anim name="ability_1_run" clip="ability_12.clip" fps="550" loop="true"/>
+	
+	<anim name="ability_1_trail" clip="ability_12.clip" minstartframe="24" maxstartframe="39" fps="0.01" loop="true" loopbackframe="50"/>
+	
+	<anim name="ability_2" clip="idle2.clip" fps="555" loop="false">
+    </anim>
+	
+	<anim name="ability_4_cast" clip="ability_4.clip" fps="550" loop="true">
+		  <frameevent frame="1" cmd="PlaySoundLinear ability_04/sounds/cartoon_jump.wav 500 1300 .6"/>
+          <frameevent frame="15" cmd="PlaySoundLinear ability_04/sounds/vox_jump.wav 500 1300 1"/>
+		  </anim>
+	
+	<anim name="ability_4_end" clip="ability_422.clip" fps="550" loop="false"/>
+
+	<anim name="bored_1" clip="idle22.clip" fps="550" loop="false"/>
+	
+	<anim name="item_1" clip="ability_4.clip" fps="550" />
+	
+	<anim name="knock_1" clip="death_1.clip" fps="550" loop="true" loopbackframe="-1" >
+		<startevent cmd="StopSound 1"/>
+	</anim>
+	
+	<anim name="taunt_1" clip="idle3.clip" fps="550" loop="false">
+		<startevent cmd="StopSound 1"/>
+	</anim>
+	
+	<anim name="portrait" clip="idle.clip" fps="550" loop="true"/>
+	
+</model>

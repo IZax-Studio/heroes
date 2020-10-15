@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  deferred="1" >
+	<definitions>
+		<particlesystem name="system0" space="world" scale="2.5">
+		
+			<billboard
+				life="1000"
+				startcolor=".25 0 0"
+				midcolor=".25 0 0"
+				endcolor="0"
+				midcolorpos="0.3"
+				startsize="50"
+				endsize="125"
+				depthbias="-25"
+				material="/shared/effects/materials/music_rings_add.material"
+				position="0 0 12"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				loop="true"
+			/>
+			
+			<billboard
+				life="500"
+				startcolor=".5 0 0"
+				midcolor=".5 0 0"
+				endcolor="0"
+				midcolorpos="0.3"
+				startsize="50"
+				endsize="125"
+				depthbias="-25"
+				material="/shared/effects/materials/music_rings_add.material"
+				position="0 0 12"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				loop="true"
+			/>
+		
+
+			<simpleemitter
+			count="1"
+				spawnrate="1000"
+				particlelife="1000"
+				position="0 0 0"
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetsphere="0 0 0"
+			>
+				<particle>
+					<template name="squares">
+						<billboard
+							life="{life}"
+							position="{position}"
+							material="/heroes/rhapsody/Material #3.material"
+							startcolor="0 0 0"
+							midcolor="{midcolor}"
+							endcolor="0 0 0"
+							midcolorpos=".2"
+							startsize="30"
+							midsize="50"
+							endsize="30"
+							lockup="1"
+							lockright="1"
+							pitch="90"
+							depthbias="-25"
+							loop="true"
+							rollspeed="-100"
+						/>
+					</template>
+					
+					<instance name="squares" position="0 0 5" life="1000" midcolor=".3"/>
+				</particle>
+			</simpleemitter>
+		
+			<simpleemitter
+				spawnrate="1"
+				particlelife="1000"
+				position="0 0 0"
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetsphere="0 0 0"
+			>
+				<particle>
+					<template name="squares">
+						<billboard
+							life="{life}"
+							position="{position}"
+							material="/heroes/rhapsody/Material #3.material"
+							startcolor="0 0 0"
+							midcolor="{midcolor}"
+							endcolor="0 0 0"
+							midcolorpos=".2"
+							startsize="30"
+							midsize="50"
+							endsize="30"
+							lockup="1"
+							lockright="1"
+							pitch="90"
+							depthbias="-25"
+							loop="true"
+							rollspeed="-100"
+						/>
+					</template>
+					
+					<instance name="squares" position="0 0 5" life="1000" midcolor=".3"/>
+				</particle>
+			</simpleemitter>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

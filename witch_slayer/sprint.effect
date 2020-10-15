@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="1" deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world">
+		
+		
+
+			
+		<template name="trail">	
+			<twopointtrailemitter
+				expirelife="1200"
+			 	bone_a="{bone_a}"
+				bone_b="{bone_b}"
+				spawnrate="44"
+				particlelife="800"
+				texpostime="800"
+				texposscale="0.0"
+				texstretchscale=".7"
+				material="/shared/effects/materials/swoosh_add.material"
+				subframepos="true"
+			>
+	         	<particle
+					startcolor="0 .3 .8"
+					endcolor="0 0 0" 
+				/>
+			</twopointtrailemitter>
+		</template>
+		
+			<instance name="trail"
+			 	bone_a="bone_new44"
+				bone_b="bone_new11"
+			/>
+
+			<instance name="trail"
+			 	bone_a="bone_new48"
+				bone_b="bone_new47"
+			/>
+
+			<instance name="trail"
+			 	bone_a="bone_new46"
+				bone_b="bone_new45"
+			/>
+				
+						
+		
+						
+		</particlesystem>
+		<particlesystem name="system1" space="world" scale=".3">
+
+				
+				<!-- rings -->
+				<simpleemitter
+					
+					startspawnrate="4"
+					endspawnrate="12"
+					midspawnratepos=".75"
+					startminparticlelife="750"
+					startmaxparticlelife="900"
+					endminparticlelife="250"
+					endmaxparticlelife="300"
+					midparticlelifepos=".75"
+					direction="0 0 1"
+					speed="10"
+					angle="0"
+					position="0 0 20"
+					material="/shared/effects/materials/shadow_cut_02_reveal_add.material"
+					startparticlescale="1.25"
+					endparticlescale=".75"
+					depthbias="-30"
+					startparticlecolor=".5"
+					endparticlecolor="1"
+				>
+					<particle
+						maxangle="360"
+						minstartsize="25"
+						maxstartsize="50"
+						minendsize="250"
+						maxendsize="300"
+						lockup="1"
+						lockright="1"
+						pitch="-90"
+						startframe="1"
+						midframe=".2"
+						endframe="1"
+						startcolor="1"
+						endcolor=".125 .15 .15"
+					/>
+				</simpleemitter>
+
+				<!--sparkles-->
+				<simpleemitter
+					spawnrate="20"
+					particlelife="250"
+					gravity="-5"
+					speed="2"
+					drag="0"
+					acceleration="0"
+					position="0 0 300"
+					material="/shared/effects/materials/frost_flash_09.material"
+					offsetsphere="40 40 300"
+				>
+					<particle
+						minangle="135"
+						maxangle="210"
+						minanglespeed="-50"
+						maxanglespeed="-150"
+						color=".125 .15 .15"
+						startframe="0"
+						endframe="1"
+						startsize="0"
+						midsize="50"
+						endsize=".1"
+						midsizepos=".4"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".5"
+						startstickiness="0"
+						endstickiness="0"
+					/>
+				</simpleemitter>
+		
+		</particlesystem>	
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

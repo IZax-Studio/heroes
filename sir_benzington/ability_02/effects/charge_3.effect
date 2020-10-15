@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" >
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+		
+			<beam
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon2"
+				startcolor="1 0 0"
+				endcolor="0"
+				expirelife="500"
+				depthbias="-20"
+				size="25"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+		<!-- 	<twopointemitter
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon2"
+				spawnrate="50"
+				minparticlelife="100"
+				maxparticlelife="500"
+				offsetsphere="7"
+				material="/shared/effects/materials/flare_03.material"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-200"
+					maxanglespeed="200"
+					size="5"
+					startcolor=".5 1 1"
+					endcolor="0"
+					minscale=".25"
+					maxscale="1"
+					anchor="1"
+				/>
+			</twopointemitter> -->
+			
+			<controller bone="_bone_weapon1" >
+				<twopointtrailemitter
+					directionalspace="local"
+					position_a="0 0 0"
+					position_b="0 0 -35"
+					spawnrate="100"
+					particlelife="200"
+					texpostime="150"
+					texposscale="0"
+					texstretchscale="1"
+					direction="0 0 1"
+					gravity="-158"
+					material="/shared/effects/materials/light_trail.material"
+				>
+					<particle
+						startcolor="1 0 0"
+						endcolor="0"
+					/>
+				</twopointtrailemitter>
+				
+				<twopointemitter
+					position_a="0 0 0"
+					position_b="0 0 -35"
+					spawnrate="40"
+					direction="0 -1 0"
+					angle="0"
+					speed="100"
+					minparticlelife="200"
+					maxparticlelife="550"
+					material="/shared/effects/materials/spark_12.material"
+				>
+					<particle
+						maxangle="360"
+						minanglespeed="-200"
+						maxanglespeed="200"
+						size="8"
+						startcolor="1"
+						endcolor="0"
+						minscale=".5"
+						maxscale="1.3"
+					/>
+				</twopointemitter>
+				<twopointemitter
+					position_a="0 0 0"
+					position_b="0 0 -45"
+					spawnrate="20"
+					direction="0 -1 0"
+					angle="0"
+					speed="70"
+					minparticlelife="100"
+					maxparticlelife="350"
+					material="/shared/effects/materials/whitedot.material"
+				>
+					<particle
+						maxangle="360"
+						minanglespeed="-200"
+						maxanglespeed="200"
+						size="10"
+						startcolor="1"
+						endcolor="0"
+						minscale=".5"
+						maxscale="1.3"
+					/>
+				</twopointemitter>
+			</controller>
+			<controller bone="_bone_weapon3" >
+				<twopointemitter
+					position_a="0 0 0"
+					position_b="0 0 -45"
+					spawnrate="30"
+					direction="0 -1 0"
+					angle="0"
+					speed="0"
+					minparticlelife="200"
+					maxparticlelife="550"
+					material="/shared/effects/materials/whitedot.material"
+					depthbias="-35"
+				>
+					<particle
+						maxangle="360"
+						minanglespeed="-200"
+						maxanglespeed="200"
+						size="9"
+						startcolor="0"
+						midcolor="1 0 0"
+						endcolor="0"
+						minscale=".5"
+						maxscale="2"					
+						anchor="1"
+					/>
+				</twopointemitter>
+			</controller>
+<!-- 			<model
+				expirelife="150"
+				model="lance/model.mdf"
+				parentskeleton="true"
+				material="/shared/effects/materials/shell_smoke.material"
+				startcolor="1"
+				endcolor="0"
+				scale="1"
+				flamespeed="5"
+			/> -->
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

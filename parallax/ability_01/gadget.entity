@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Parallax_Ability1"
+
+	model="/shared/models/invis.mdf"
+	skin=""
+	unitwalking="true"
+	diewithowner="false"
+
+	passiveeffect="effects/gadget.effect"
+	respawneffect=""
+	deatheffect=""
+	selectsound=""
+	isselectable="false"
+	iscontrollable="false"
+	orderconfirmedsound=""
+	expireeffect=""
+	preglobalscale="1"
+	modelscale="1"
+	effectscale="1"
+	boundsheight="64"
+	boundsradius="16"
+	selectionradius="100"
+	targetoffset="0 0 0"
+
+	sightrangeday="0"
+	sightrangenight="0"
+	drawonmap="false"
+	invulnerable="true"
+	canattack="false"
+
+	corpsetime="0"
+	corpsefadetime="0"
+	deathtime="0"
+	flying="true"
+	flyheight="20"
+	unittype="magnet_orbs"
+	lifetime=""
+	nothreat="true"
+	noblockneutralspawn="true"
+	immunity="GadgetImmunity"
+
+	inheritvisibilityfromowner="false"
+	unkillable="true"
+	alwaystransmitdata="true"
+	
+	tooleffectpath39="effects/body.effect"
+>
+	<onframe>
+		<compare a="this_proxy_entity" b="0" op="eq"> <!-- For illusions and Circe, if whatever spawned me exists, I exist. if it doesn't, I don't. proxy=source_entity -->
+			<delete target="this_entity" />
+		</compare>
+
+		<isterminated entity="this_proxy_entity">
+			<delete target="this_entity" />
+		</isterminated>
+
+		<isstealthed entity="this_owner_entity">
+			<!-- changed this to a timeout="frametime" application, so it will only stay stealthed as long as the state is continuously applied, which only happens when the owner is stealthed -->
+			<applystate name="State_Parallax_Ability1_Stealth" target="this_entity" continuous="true" timeout="frametime" />
+		</isstealthed>
+
+		<hasmodifier name="parallax_bound">
+			<teleport source="this_entity" target="this_proxy_entity" interpolate="true" />
+		</hasmodifier>
+		<else>
+			<hasmodifier name="parallax_bound_dark">
+				<teleport source="this_entity" target="this_proxy_entity" interpolate="true" />
+			</hasmodifier>
+		</else>
+
+		<distance source="this_entity" target="this_owner_entity" />
+		<setvar0 a="result" />
+		
+		<pushability name="Ability_Parallax1" source="this_owner_entity" />
+		<getrange entity="stack_entity" />
+		<setvar1 a="result" b="300" op="add" />
+
+		<compare a="var0" b="var1" op="ge">
+			<hasavatarkey name="Hero_Parallax.Alt">
+				<playeffect effect="../alt/ability_01/effects/leash.effect" source="this_position" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Parallax.Alt2">
+					<playeffect effect="../alt2/ability_01/effects/leash.effect" source="this_position" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Parallax.Alt4">
+						<playeffect effect="../alt4/ability_01/effects/leash.effect" source="this_position" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Parallax.Alt6">
+							<playeffect effect="../alt6/ability_01/effects/leash.effect" source="this_position" />
+						</hasavatarkey>
+						<else>
+							<playeffect effect="effects/leash.effect" source="this_position" />
+						</else>
+					</else>	
+				</else>
+			</else>
+
+			<teleport source="this_entity" target="this_owner_entity" interpolate="false" />
+			
+			<!-- VFX -->
+			<playeffect effect="effects/pickup.effect" source="this_position" timeout="frametime" />				
+			<hasavatarkey name="Hero_Parallax.set_ascension">
+				<compare a="team" b="2" op="eq" >
+					<activatemodifierkey name="parallax_bound_dark" />
+					<activatemodifierkey name="parallax_bound_dark" entity="this_owner_entity" />
+				</compare>
+				<else>
+					<activatemodifierkey name="parallax_bound" />
+					<activatemodifierkey name="parallax_bound" entity="this_owner_entity" />
+				</else>
+			</hasavatarkey>
+			<else>
+				<activatemodifierkey name="parallax_bound" />
+				<activatemodifierkey name="parallax_bound" entity="this_owner_entity" />
+			</else>
+			
+			<deactivatemodifierkey name="parallax_bound_fly"/>
+			<deactivatemodifierkey name="parallax_bound_fly_dark"/>
+		</compare>
+
+		<compare a="var0" b="50" op="le">
+			<hasmodifier name="parallax_onprojectile" />
+			<else>
+				<hasmodifier name="parallax_bound" />
+				<else>
+					<hasmodifier name="parallax_bound_dark" />
+					<else>
+						<teleport source="this_entity" target="this_proxy_entity" interpolate="true" />
+						<playeffect effect="effects/pickup.effect" source="this_position" timeout="frametime" />
+						<hasavatarkey name="Hero_Parallax.set_ascension">
+							<compare a="team" b="2" op="eq" >
+								<activatemodifierkey name="parallax_bound_dark" />
+								<activatemodifierkey name="parallax_bound_dark" entity="this_owner_entity" />
+							</compare>
+							<else>
+								<activatemodifierkey name="parallax_bound" />
+								<activatemodifierkey name="parallax_bound" entity="this_owner_entity" />
+							</else>
+						</hasavatarkey>
+						<else>
+							<activatemodifierkey name="parallax_bound" />
+							<activatemodifierkey name="parallax_bound" entity="this_owner_entity" />
+						</else>
+						<deactivatemodifierkey name="parallax_bound_fly"/>
+						<deactivatemodifierkey name="parallax_bound_fly_dark"/>
+					</else>
+				</else>
+			</else>
+		</compare>
+	</onframe>
+
+	<modifier key="parallax_bound" modpriority="1"
+		passiveeffect=""
+	/>
+	
+	<modifier key="parallax_bound_dark" modpriority="2"
+		passiveeffect=""
+	/>
+
+	<altavatar key="Hero_Parallax.Alt"
+		passiveeffect="../alt/ability_01/effects/gadget.effect"
+		tooleffectpath39=""
+	/>
+
+	<altavatar key="Hero_Parallax.Alt2"
+		tooleffectpath39="../alt2/ability_01/effects/body.effect"
+		passiveeffect="../alt2/ability_01/effects/gadget.effect"
+	/>
+
+	<altavatar key="Hero_Parallax.set_ascension"
+		passiveeffect="../set_ascension/ability_01/effects/gadget.effect"
+	>
+		<modifier key="hellparallax"
+			passiveeffect="../set_ascension/dark/ability_01/effects/gadget.effect"
+		/>
+		<modifier key="parallax_ability3_dark" modpriority="99"
+			tooleffectpath39="../set_ascension/dark/ability_03/effects/nubela_body.effect"
+		/>
+		<modifier key="parallax_ability3" modpriority="100"
+			tooleffectpath39="../set_ascension/ability_03/effects/nubela_body.effect"
+		/>
+		
+		<modifier key="parallax_bound_fly" modpriority="3"
+			passiveeffect="../set_ascension/ability_01/effects/gadget_fly.effect"
+		/>
+		
+		<modifier key="parallax_bound_fly_dark" modpriority="2"
+			passiveeffect="../set_ascension/dark/ability_01/effects/gadget_fly.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Parallax.Alt4"
+		passiveeffect="../alt4/ability_01/effects/gadget.effect"
+		tooleffectpath39=""
+	/>
+
+	<altavatar key="Hero_Parallax.Alt6"
+		passiveeffect="../alt6/ability_01/effects/gadget.effect"
+		tooleffectpath39=""
+	/>
+</gadget>

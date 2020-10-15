@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+			    forcestereo="true"
+			    soundloop="true"
+				fadein="100"
+				fadeout="1000"
+				randomloop="true"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume="1"
+				sample="/heroes/nomad/alt8/sounds/ab_loop.wav"
+			/>
+			
+			<sound
+			    soundloop="true"
+				fadein="100"
+				fadeout="1000"
+				randomloop="true"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume="1"
+				sample="/heroes/nomad/alt8/sounds/ab1_loop2.wav"
+			/>
+
+<sound
+			    soundloop="true"
+				fadein="100"
+				fadeout="1000"
+				randomloop="true"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume="1"
+				sample="/heroes/nomad/alt8/sounds/ab1_loop2.wav"
+			/>
+
+			
+				<sound
+				forcestereo="true"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume="1"
+				sample="/heroes/nomad/alt8/sounds/ab1_cast.wav"
+			/>
+
+
+			<simpleemitter
+				spawnrate="5"
+				particlelife="1000"
+				material="/shared/effects/materials/dust.material"
+				offsetsphere="100 100 100"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				speed="520"
+				depthbias="-50"
+				direction="0 0 0"
+				inheritvelocity="0"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="100"
+					maxanglespeed="100"
+					color=".7 .6 .5"
+					startframe="0"
+					size="255"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				spawnrate="5"
+				particlelife="1200"
+				material="/shared/effects/materials/dust.material"
+				offsetsphere="100 100 100"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				speed="520"
+				depthbias="-50"
+				direction="0 0 0"
+				inheritvelocity=".6"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="25"
+					maxanglespeed="50"
+					color=".7 .65 .55"
+					startframe="0"
+					size="255"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					startalpha="0"
+					midalpha=".4"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+
+			<template name="sand">
+				<model
+					expirelife="1000"
+					model="/shared/effects/models/circle_of_bones/model.mdf"
+					anim="idle"
+					startscale="2.5"
+					endscale="0"
+					midscalepos=".2"
+					position="{zpos}"
+					yawspeed="{zyawspeed}"
+				>
+					<simpleemitter
+						bone="{bone}"
+						position="0 0 0"
+						spawnrate="15"
+						minparticlelife="1000"
+						maxparticlelife="1500"
+	material="/shared/effects/materials/whitedot.material"
+						offsetsphere="25 25 55"
+						direction="0 0 0"
+						inheritvelocity=".25"
+					>
+						<particle
+							minangle="0"
+							maxangle="360"
+							minanglespeed="90"
+							maxanglespeed="200"
+							minsize="5"
+							maxsize="10"
+							midsizepos=".6"
+							lockup="true"
+							lockright="true"
+							pitch="90"
+							color="1 .65 .65"
+							startalpha="0"
+							midalpha="1"
+							endalpha="0"
+							midalphapos=".25"
+							minscale=".1"
+							maxscale=".2"
+						/>
+					</simpleemitter>
+					<simpleemitter
+						bone="{bone}"
+						position="0 0 0"
+						spawnrate="15"
+						minparticlelife="1000"
+						maxparticlelife="1500"
+	material="/shared/effects/materials/leaf_04.material"
+						offsetsphere="25 25 55"
+						direction="0 0 0"
+						inheritvelocity=".25"
+					>
+						<particle
+							maxangle="360"
+					color="1 .65 .65"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".25"
+					midcolorpos=".25"
+					minscale="1"
+					maxscale="2"
+
+						/>
+					</simpleemitter>
+				</model>
+			</template>
+
+			<instance name="sand" zpos="0 0 15" zyawspeed="-180" bone="_bone_fx_01" />
+			<instance name="sand" zpos="0 0 20" zyawspeed="180" bone="_bone_fx_05" />
+			<instance name="sand" zpos="0 0 20" zyawspeed="-180" bone="_bone_fx_08" />
+			<instance name="sand" zpos="0 0 15" zyawspeed="180" bone="_bone_fx_013" />
+
+			<model
+				delay="150"
+				life="750"
+				model="/heroes/zephyr/ability_02/effects/cyclone_bones.mdf"
+				anim="idle"
+				startscale="1"
+				endscale=".5"
+				position="0 0 -85"
+			>
+				<template name="wind">
+
+					<billboard
+						minlife="450"
+						maxlife="750"
+						bone="{bone}"
+				material="/shared/effects/materials/twirl_03.material"
+						position="0 0 0"
+						size="{size}"
+						roll="105"
+						rollspeed="{speed}"
+						startcolor="0 0 0"
+						midcolor=".3"
+						endcolor="0 0 0"
+						midcolorpos=".5"
+						lockup="true"
+						lockright="true"
+						pitch="90"
+						yaw="0"
+					/>
+
+				</template>
+
+				<instance name="wind" size="30" roll="90" speed="1600" origin="25" bone="_bone_cyclone03"/>
+				<instance name="wind" size="130" roll="180" speed="1600" origin="40" bone="_bone_cyclone04"/>
+				<instance name="wind" size="160" roll="220" speed="400" origin="55" bone="_bone_cyclone05"/>
+				<instance name="wind" size="210" roll="300" speed="400" origin="70" bone="_bone_cyclone06"/>
+				<instance name="wind" size="250" roll="360" speed="400" origin="80" bone="_bone_cyclone07"/>
+
+			</model>
+
+			<simpleemitter
+				spawnrate="5"
+				minparticlelife="1000"
+				maxparticlelife="1500"
+				offsetsphere="130 130 0"
+				direction="0 0 0"
+			>
+				<particle
+				minscale=".5"
+				maxscale="2"
+				>
+					<model
+						life="750"
+						model="/heroes/zephyr/ability_02/effects/cyclone_bones.mdf"
+						anim="idle"
+						minstartscale=".25"
+						maxstartscale=".35"
+						minendscale=".2"
+						maxendscale=".2"
+						position="0 0 0"
+					>
+						<template name="wind">
+							<billboard
+								minlife="500"
+								maxlife="750"
+								bone="{bone}"
+								material="/shared/effects/materials/twirl_03.material"
+								position="0 0 0"
+								size="{size}"
+								roll="90"
+								rollspeed="{speed}"
+								startcolor="0 0 0"
+								midcolor=".5"
+								endcolor="0 0 0"
+								lockup="true"
+								lockright="true"
+								pitch="90"
+								yaw="0"
+							/>
+						</template>
+
+						<instance name="wind" size="30" size2="60" speed="1600" bone="_bone_cyclone03"/>
+						<instance name="wind"  size="130" size2="80" speed="1600" bone="_bone_cyclone04"/>
+						<instance name="wind"  size="160" size2="90" speed="400" bone="_bone_cyclone05"/>
+						<instance name="wind" size="210" size2="100" speed="400" bone="_bone_cyclone06"/>
+						<instance name="wind"  size="250" size2="140" speed="400" bone="_bone_cyclone07"/>
+					</model>
+				</particle>
+
+		</simpleemitter>
+				
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		  <spawnparticlesystem instance="instance0" particlesystem="system0"/>
+  		  <spawnmodifier instance="instance1" modifier="modifier0"/> 
+  		  <waitfordeath instance="instance0" />
+
+	</thread>
+
+</effect>

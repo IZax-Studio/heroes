@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="cyclone" deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1">
+			<template name="mystic_energy">
+				<twopointemitter
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					spawnrate="20"
+					particlelife="600"
+					angle="0.0"
+					offsetsphere="4 10 4"
+					material="/shared/effects/materials/mysticenergy.material"
+				>
+					<particle
+						startcolor="0.0 0.0 0.0"
+						midcolor="1.0 0 0"
+						endcolor="-1 "
+						midcolorpos="0.5"
+						startalpha="1.0"
+						endalpha="1.0"
+						maxangle="360"
+						minanglespeed="-45"
+						maxanglespeed="45"
+						minendsize="10"
+						startsize="2"
+						maxendsize="15"
+						flare="true"
+						startanchor="1"
+						endanchor=".7"
+						
+					/>
+					<particle
+						startcolor="0.0 0.0 0.0"
+						midcolor="1.0 0 0"
+						endcolor="-1 "
+						midcolorpos="0.5"
+						startalpha="1.0"
+						endalpha="1.0"
+						maxangle="360"
+						minanglespeed="-45"
+						maxanglespeed="45"
+						minendsize="10"
+						startsize="2"
+						maxendsize="25"
+						flare="true"
+						startanchor="1"
+						endanchor=".7"
+						
+					/>
+				</twopointemitter>
+
+				<twopointemitter
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					spawnrate="140"
+					particlelife="300"
+					offsetsphere="1"
+					material="/shared/effects/materials/mysticenergy2.material"
+				>
+					<particle
+						startcolor="0.0 0.0 0.0"
+						midcolor=".5 0 .1"
+						endcolor="0 "
+						midcolorpos="0.5"
+						startalpha="1.0"
+						endalpha="1.0"
+						maxangle="360"
+						minanglespeed="-45"
+						maxanglespeed="45"
+						minendsize="5"
+						startsize="5"
+						maxendsize="15"
+						flare="true"
+						anchor="1"
+					/>
+					<particle
+						startcolor="0.0 0.0 0.0"
+						midcolor="1.0 0 0"
+						endcolor="0 "
+						midcolorpos="0.5"
+						startalpha="1.0"
+						endalpha="1.0"
+						maxangle="360"
+						minanglespeed="-45"
+						maxanglespeed="45"
+						minendsize="5"
+						startsize="5"
+						maxendsize="15"
+						flare="true"
+						anchor="1"
+					/>
+				</twopointemitter>
+
+				<beam
+					bone_a="{bone_c}"
+					bone_b="{bone_b}"
+					size="50"
+					color=".7 0 0"
+					material="/shared/effects/materials/bow_glow_03.material"
+					depthbias="-30"
+					anchor="1"
+				/>
+
+				<twopointtrailemitter
+					bone_a="{bone_b}"
+					bone_b="{bone_a}"
+					spawnrate="300"
+					particlelife="150"
+					subframepose="1"
+					material="/shared/effects/materials/femme_lightning_01.material"
+				>
+					<particle 
+						size="100"
+						startalpha="1.0" 
+						endalpha="0.0" 
+						startcolor="1 0 0" 
+						endcolor="0"
+						anchor="1"
+					/>
+				</twopointtrailemitter>
+				
+				<twopointtrailemitter
+					bone_a="{bone_b}"
+					bone_b="{bone_a}"
+					spawnrate="300"
+					particlelife="150"
+					subframepose="1"
+					material="/shared/effects/materials/femme_lightning_01.material"
+				>
+					<particle 
+						
+						startalpha="1.0" 
+						endalpha="0.0" 
+						startcolor="1 0.3 0.1" 
+						endcolor="0"
+						anchor="1"
+					/>
+				</twopointtrailemitter>
+			</template>
+
+			<instance name="mystic_energy" bone_a="_bone_weaponattach" bone_b="_bone_weapon1" bone_c="_bone_weapon3"/>
+
+			<model
+				bone="_bone_center"
+				model="/heroes/andromeda/ability_03/effects/orbit.mdf"
+				anim="idle"
+				scale="1.5"
+				minroll="-360"
+				maxroll="360"
+				minyaw="-360"
+				maxyaw="360"
+				minpitch="-360"
+				maxpitch="360"
+				minrollspeed="-100"
+				maxrollspeed="100"
+				minyawspeed="-100"
+				maxyawspeed="100"
+				minpitchspeed="-100"
+				maxpitchspeed="100"
+				position="0 0 40"
+			>
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="100"
+					particlelife="700"
+					texpostime="650"
+					texposscale="0.0"
+					texstretchscale=".75"
+					material="/shared/effects/materials/bad_healing_smoke_06.material"
+				>
+					<particle
+						color="0"
+						alpha=".65"
+						startsize="15"
+						endsize="15"
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="100"
+					particlelife="700"
+					texpostime="650"
+					texposscale="0.0"
+					texstretchscale=".9"
+					material="/shared/effects/materials/magma2.material"
+				>
+					<particle
+						startcolor="0 0 0"
+						midcolor="0 0 0"
+						midcolorpos=".25"
+						endcolor="0 0 0"
+						alpha=".65"
+						startsize="15"
+						endsize="7"
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="100"
+					particlelife="500"
+					texpostime="500"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/arrow_trail.material"
+				>
+					<particle
+						startcolor=".5 .2 0"
+						endcolor="1 0 0"
+						startsize="7"
+						endsize="0"
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="100"
+					particlelife="250"
+					texpostime="250"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/arrow_trail.material"
+				>
+					<particle
+						startcolor="1 .75 0"
+						endcolor="1 .25 0"
+						startsize="13"
+						endsize="0"
+					/>
+				</trailemitter>
+				
+                <simpleemitter
+					bone="_bone_fx"
+                    material="/shared/effects/materials/ember_reveal.material"
+					inheritvelocity=".5"
+                    spawnrate="16"
+                    minparticlelife="400"
+                    maxparticlelife="800"
+                    direction="-1 1 0"
+                    angle="360"
+                    gravity="-1.25"
+                    maxspeed="60"
+                    drag="0.1"
+                >
+					<particle
+						maxangle="360"
+						minsize="8"
+						maxsize="15"
+						startframe="1"
+						midframe="0"
+						endframe="1"
+						midframepos=".25"
+						anchor="0"
+						startcolor="1 0 0"
+						endcolor="1 .5 0"
+					/>
+                </simpleemitter>
+				
+                <simpleemitter
+					bone="_bone_fx"
+                    material="/shared/effects/materials/phantom_black.material"
+					inheritvelocity=".5"
+                    spawnrate="8"
+                    minparticlelife="800"
+                    maxparticlelife="1200"
+                    direction="-1 1 0"
+                    angle="360"
+                    gravity="-1.25"
+                    maxspeed="60"
+                    drag="0.1"
+                >
+					<particle
+						maxangle="360"
+						minanglespeed="-200"
+						maxanglespeed="200"
+						minsize="25"
+						maxsize="50"
+						startframe="1"
+						midframe="0"
+						endframe="1"
+						midframepos=".25"
+						anchor="0"
+						startalpha="1"
+						endalpha="0"
+					/>
+                </simpleemitter>
+				
+				<billboard
+					bone="_bone_fx"
+					material="/shared/effects/materials/whitedot.material"
+					color="1 .5 0"
+					scale=".3"
+					depthbias="-25"
+				/>
+				
+				<billboard
+					bone="_bone_fx"
+					material="/shared/effects/materials/star_04.material"
+					color="1 .5 0"
+					scale="1"
+					depthbias="-25"
+				/>
+				
+				<billboard
+					bone="_bone_fx"
+					material="/shared/effects/materials/shockwave.material"
+					color="1 .1 0"
+					scale=".5"
+					depthbias="-25"
+				/>
+			</model>
+			
+			<model
+				bone="_bone_center"
+				model="/heroes/andromeda/ability_03/effects/orbit.mdf"
+				anim="idle"
+				scale="1.5"
+				minroll="-360"
+				maxroll="360"
+				minyaw="-360"
+				maxyaw="360"
+				minpitch="-360"
+				maxpitch="360"
+				minrollspeed="-100"
+				maxrollspeed="100"
+				minyawspeed="-100"
+				maxyawspeed="100"
+				minpitchspeed="-100"
+				maxpitchspeed="100"
+				position="0 0 40"
+			>
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="100"
+					particlelife="700"
+					texpostime="650"
+					texposscale="0.0"
+					texstretchscale=".75"
+					material="/shared/effects/materials/bad_healing_smoke_06.material"
+				>
+					<particle
+						color="0"
+						alpha=".65"
+						startsize="15"
+						endsize="15"
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="100"
+					particlelife="700"
+					texpostime="650"
+					texposscale="0.0"
+					texstretchscale=".9"
+					material="/shared/effects/materials/magma2.material"
+				>
+					<particle
+						startcolor="0 0 0"
+						midcolor="0 0 0"
+						midcolorpos=".25"
+						endcolor="0 0 0"
+						alpha=".65"
+						startsize="15"
+						endsize="7"
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="100"
+					particlelife="500"
+					texpostime="500"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/arrow_trail.material"
+				>
+					<particle
+						startcolor=".5 .2 0"
+						endcolor="1 0 0"
+						startsize="7"
+						endsize="0"
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="100"
+					particlelife="250"
+					texpostime="250"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/arrow_trail.material"
+				>
+					<particle
+						startcolor="1 .75 0"
+						endcolor="1 .25 0"
+						startsize="13"
+						endsize="0"
+					/>
+				</trailemitter>
+				
+                <simpleemitter
+					bone="_bone_fx"
+                    material="/shared/effects/materials/ember_reveal.material"
+					inheritvelocity=".5"
+                    spawnrate="16"
+                    minparticlelife="400"
+                    maxparticlelife="800"
+                    direction="-1 1 0"
+                    angle="360"
+                    gravity="-1.25"
+                    maxspeed="60"
+                    drag="0.1"
+                >
+					<particle
+						maxangle="360"
+						minsize="8"
+						maxsize="15"
+						startframe="1"
+						midframe="0"
+						endframe="1"
+						midframepos=".25"
+						anchor="0"
+						startcolor="1 0 0"
+						endcolor="1 .5 0"
+					/>
+                </simpleemitter>
+				
+                <simpleemitter
+					bone="_bone_fx"
+                    material="/shared/effects/materials/phantom_black.material"
+					inheritvelocity=".5"
+                    spawnrate="8"
+                    minparticlelife="800"
+                    maxparticlelife="1200"
+                    direction="-1 1 0"
+                    angle="360"
+                    gravity="-1.25"
+                    maxspeed="60"
+                    drag="0.1"
+                >
+					<particle
+						maxangle="360"
+						minanglespeed="-200"
+						maxanglespeed="200"
+						minsize="25"
+						maxsize="50"
+						startframe="1"
+						midframe="0"
+						endframe="1"
+						midframepos=".25"
+						anchor="0"
+						startalpha="1"
+						endalpha="0"
+					/>
+                </simpleemitter>
+				
+				<billboard
+					bone="_bone_fx"
+					material="/shared/effects/materials/whitedot.material"
+					color="1 .5 0"
+					scale=".3"
+					depthbias="-25"
+				/>
+				
+				<billboard
+					bone="_bone_fx"
+					material="/shared/effects/materials/star_04.material"
+					color="1 .5 0"
+					scale="1"
+					depthbias="-25"
+				/>
+				
+				<billboard
+					bone="_bone_fx"
+					material="/shared/effects/materials/shockwave.material"
+					color="1 .1 0"
+					scale=".5"
+					depthbias="-25"
+				/>
+			</model>
+			
+			<model
+				bone="_bone_center"
+				model="/heroes/andromeda/ability_03/effects/orbit.mdf"
+				anim="idle"
+				scale="1.5"
+				minroll="-360"
+				maxroll="360"
+				minyaw="-360"
+				maxyaw="360"
+				minpitch="-360"
+				maxpitch="360"
+				minrollspeed="-100"
+				maxrollspeed="100"
+				minyawspeed="-100"
+				maxyawspeed="100"
+				minpitchspeed="-100"
+				maxpitchspeed="100"
+				position="0 0 40"
+			>
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="100"
+					particlelife="700"
+					texpostime="650"
+					texposscale="0.0"
+					texstretchscale=".75"
+					material="/shared/effects/materials/bad_healing_smoke_06.material"
+				>
+					<particle
+						color="0"
+						alpha=".65"
+						startsize="15"
+						endsize="15"
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="100"
+					particlelife="700"
+					texpostime="650"
+					texposscale="0.0"
+					texstretchscale=".9"
+					material="/shared/effects/materials/magma2.material"
+				>
+					<particle
+						startcolor="0 0 0"
+						midcolor="0 0 0"
+						midcolorpos=".25"
+						endcolor="0 0 0"
+						alpha=".65"
+						startsize="15"
+						endsize="7"
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="100"
+					particlelife="500"
+					texpostime="500"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/arrow_trail.material"
+				>
+					<particle
+						startcolor=".5 .2 0"
+						endcolor="1 0 0"
+						startsize="7"
+						endsize="0"
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="100"
+					particlelife="250"
+					texpostime="250"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/arrow_trail.material"
+				>
+					<particle
+						startcolor="1 .75 0"
+						endcolor="1 .25 0"
+						startsize="13"
+						endsize="0"
+					/>
+				</trailemitter>
+				
+                <simpleemitter
+					bone="_bone_fx"
+                    material="/shared/effects/materials/ember_reveal.material"
+					inheritvelocity=".5"
+                    spawnrate="16"
+                    minparticlelife="400"
+                    maxparticlelife="800"
+                    direction="-1 1 0"
+                    angle="360"
+                    gravity="-1.25"
+                    maxspeed="60"
+                    drag="0.1"
+                >
+					<particle
+						maxangle="360"
+						minsize="8"
+						maxsize="15"
+						startframe="1"
+						midframe="0"
+						endframe="1"
+						midframepos=".25"
+						anchor="0"
+						startcolor="1 0 0"
+						endcolor="1 .5 0"
+					/>
+                </simpleemitter>
+				
+                <simpleemitter
+					bone="_bone_fx"
+                    material="/shared/effects/materials/phantom_black.material"
+					inheritvelocity=".5"
+                    spawnrate="8"
+                    minparticlelife="800"
+                    maxparticlelife="1200"
+                    direction="-1 1 0"
+                    angle="360"
+                    gravity="-1.25"
+                    maxspeed="60"
+                    drag="0.1"
+                >
+					<particle
+						maxangle="360"
+						minanglespeed="-200"
+						maxanglespeed="200"
+						minsize="25"
+						maxsize="50"
+						startframe="1"
+						midframe="0"
+						endframe="1"
+						midframepos=".25"
+						anchor="0"
+						startalpha="1"
+						endalpha="0"
+					/>
+                </simpleemitter>
+				
+				<billboard
+					bone="_bone_fx"
+					material="/shared/effects/materials/whitedot.material"
+					color="1 .5 0"
+					scale=".3"
+					depthbias="-25"
+				/>
+				
+				<billboard
+					bone="_bone_fx"
+					material="/shared/effects/materials/star_04.material"
+					color="1 .5 0"
+					scale="1"
+					depthbias="-25"
+				/>
+				
+				<billboard
+					bone="_bone_fx"
+					material="/shared/effects/materials/shockwave.material"
+					color="1 .1 0"
+					scale=".5"
+					depthbias="-25"
+				/>
+			</model>
+			
+			<model
+				model="../weapon.mdf"
+				material="/heroes\shaman\alt3\ability_04\effects\sphere.material"
+				color="2 .35 0"
+				parentskeleton="true"
+				parentalpha="true"
+				inheritparentmodifiers="true"
+			/>
+		</particlesystem>
+		<particlesystem name="system1" space="world" scale="1">	
+		
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		
+      		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

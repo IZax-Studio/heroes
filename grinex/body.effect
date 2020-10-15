@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="false">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+		<!-- short haire -->
+			<model
+				model="hair/shorthair.mdf"
+				material="/heroes/ichor/material.material"
+				parentskeleton="true"
+				inheritparentmodifiers="true"
+				parentalpha="true"
+				parentteamcolor="true"
+			/>
+			
+			<model
+				model="hair/shorthair.mdf"
+				material="/heroes/ichor/material.material"
+				parentskeleton="true"
+				inheritparentmodifiers="true"
+				parentalpha="true"
+				parentteamcolor="true"
+			/>
+			
+			<!-- short hair -->	
+				<model
+					model="/heroes/ichor/effects/hair/shorthair.mdf"
+					material="/heroes/ichor/material.material"
+					
+					parentskeleton="1"
+					inheritparentmodifiers="1"
+					
+					life="300"
+					startcolor="1" midcolor="1" endcolor="0 0 0"
+					midcolorpos=".5"
+					
+					parentteamcolor="true"
+					parentalpha="true"
+				/>
+				<model
+					model="/heroes/ichor/effects/hair/shorthair.mdf"
+					material="/shared/effects/materials/shell6.material"
+					
+					parentskeleton="1"
+					inheritparentmodifiers="1"
+					
+					life="300"
+					startcolor="0 0 0" midcolor="2 0 0" endcolor="0 0 0"
+					midcolorpos=".5"
+					
+					parentteamcolor="true"
+					parentalpha="true"
+				/>
+			
+			<!-- long hair -->	
+				<model
+				delay="100"
+					model="/heroes/ichor/effects/hair/longhair.mdf"
+					material="/heroes/ichor/material.material"
+					
+					parentskeleton="1"
+					inheritparentmodifiers="1"
+					parentteamcolor="true"
+					parentalpha="true"
+				/>
+				<model
+				delay="100"
+					model="/heroes/ichor/effects/hair/longhair.mdf"
+					material="/heroes/ichor/material.material"
+					
+					parentskeleton="1"
+					inheritparentmodifiers="1"
+					parentteamcolor="true"
+					parentalpha="true"
+				/>
+		 
+		</particlesystem>
+	</definitions>
+	<thread>
+		 <spawnparticlesystem instance="instance0" particlesystem="system0" /> 
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

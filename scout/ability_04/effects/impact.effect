@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="ability_02" useentityeffectscale="1" >
+
+	<definitions>
+	
+		<modifier
+			name="modifier0"
+			life="750"
+			startcolor="2 0 0"
+			endcolor="1.0 1.0 1.0"
+		/>
+
+		<particlesystem name="system0" space="world" scale="1.5">
+
+			<model
+				life="1000"
+				delay="0"
+				model="e4/model2.mdf"
+				anim="black"
+				position="0 0 0"
+				startcolor=".1"
+				midcolor=".2"
+				endcolor=".0"
+				startscale="2"
+				midscale="2"
+				endscale="2"
+			/>
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".65"
+				sample="/shared/sounds/impacts/impact_body_%.wav"
+			/>
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".4"
+				sample="../../kuro_sounds/156_0_W_Hit.wav"
+			/>
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".85"
+				sample="../sounds/impact.wav"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="300"
+				lockup="1"
+				pitch="90"
+				startsize="0"
+				endsize="200"
+				startcolor="1 .7 .3"
+				endcolor="0"
+				material="/shared/effects/materials/corona_01.material"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="200"
+				lockup="1"
+				pitch="90"
+				startsize="0"
+				endsize="200"
+				startcolor="1 0 0"
+				endcolor="0"
+				material="/shared/effects/materials/corona_01.material"
+			/>
+			
+			<simpleemitter
+				count="50"
+				bone="_bone_centerofchest"
+				particlelife="300"
+				maxspeed="400"
+				material="/shared/effects/materials/phantom_smoke_18.material"
+			>
+				<particle
+					maxangle="360"
+					startcolor=".33 0 0"
+					endcolor="0"
+					startsize="10"
+					endsize="100"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				count="5"
+				bone="_bone_centerofchest"
+				particlelife="300"
+				material="/shared/effects/materials/lightning_ring.material"
+			>
+				<particle
+					maxangle="360"
+					startcolor="1 0 0"
+					endcolor="0"
+					startsize="10"
+					endsize="200"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				count="55"
+				minparticlelife="222"
+				maxparticlelife="310"
+				offsetsphere="1"
+
+				minspeed="150"
+				maxspeed="340"							
+				direction="0 0 1"
+				
+				material="/shared/effects/materials/spark_10.material"
+			>			
+				<particle
+					startcolor="1"
+					midcolor="1 .5 0"
+					endcolor="0 0 0"
+					midcolorpos=".85"
+					minsize="14"
+					maxsize="22"
+					minangle="-360"
+					maxangle="1"
+					minanglespeed="110"
+					maxanglespeed="-110"
+					anchor="0"
+				/>
+				<particle
+					startcolor="1"
+					midcolor="1 .5 0"
+					endcolor="0 0 0"
+					midcolorpos=".85"
+					minsize="14"
+					maxsize="22"
+					minangle="-360"
+					maxangle="1"
+					minanglespeed="110"
+					maxanglespeed="-110"
+					anchor="0"
+				/>
+			</simpleemitter>
+					
+
+		</particlesystem>
+		
+		<particlesystem name="system2" space="world" scale=".8">
+
+			
+			<billboard
+				lockup="1"
+				pitch="90"
+				life="250"
+				position="0 0 50"
+				startsize="0"
+				endsize="600"
+				startcolor="1 .0 0"
+				endcolor="0"
+				material="/shared/effects/materials/corona_06.material"
+			/>
+			
+			<billboard
+				delay="75"
+				lockup="1"
+				pitch="90"
+				life="200"
+				position="0 0 100"
+				startsize="0"
+				endsize="600"
+				startcolor="1 .0 0"
+				endcolor="0"
+				material="/shared/effects/materials/corona_07.material"
+			/>
+			
+			<model
+				model="/shared/effects/models/orb/orb.mdf"
+				material="/shared/effects/materials/shell_flat.material"
+				startcolor=".5 .0 0"
+				endcolor="0"
+				startscale="0"
+				endscale="4"
+				life="400"
+			/>
+			
+			<model
+				model="/shared/effects/models/orb/orb.mdf"
+				material="/shared/effects/materials/shell_flat.material"
+				startcolor=".5 .25 .25"
+				endcolor="0"
+				startscale="0"
+				endscale="2"
+				life="400"
+			/>
+	
+			<simpleemitter
+				count="5"
+				minparticlelife="300"
+				maxparticlelife="500"
+				material="/shared/effects/materials/lightning_ring.material"
+			>
+				<particle
+					startsize="0"
+					midsize="400"
+					midsizepos=".5"
+					endsize="500"
+					maxyaw="360"
+					maxpitch="360"
+					maxangle="360"
+					startcolor=".6 .2 .2"
+					endcolor="0"
+					minscale="1"
+					maxscale="1.1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				count="70"
+				particlelife="700"
+				direction="0 0 1"
+				minangle="90"
+				maxangle="90"
+				offsetradial="250 250 0"
+				material="/shared/effects/materials/pyroclast_05.material"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-200"
+					maxanglespeed="200"
+					startcolor="1 .75 .2"
+					midcolor=".75 .5 .15"
+					endcolor=".5"
+					startalpha="1"
+					endalpha="0"
+					startsize="50"
+					endsize="200"
+					startstickiness="1"
+					midstickiness=".15"
+					endstickiness="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				position="0 0 70"
+				count="55"
+				minparticlelife="222"
+				maxparticlelife="310"
+				offsetsphere="1"
+				drag=".01"
+				minspeed="550"
+				maxspeed="1640"							
+				direction="0 0 1"
+				minangle="75"
+				maxangle="105"
+				material="/shared/effects/materials/spark_10.material"
+			>			
+				<particle
+					startcolor="1"
+					midcolor="1 .5 0"
+					endcolor="0 0 0"
+					midcolorpos=".85"
+					startsize="25"
+					endsize="5"
+					minscale=".7"
+					maxscale="1.2"
+					minangle="-360"
+					maxangle="1"
+					minanglespeed="110"
+					maxanglespeed="-110"
+					anchor="0"
+				/>
+				<particle
+					startcolor="1"
+					midcolor="1 .5 0"
+					endcolor="0 0 0"
+					midcolorpos=".85"
+					minsize="14"
+					maxsize="22"
+					minangle="-360"
+					maxangle="1"
+					minanglespeed="110"
+					maxanglespeed="-110"
+					anchor="0"
+				/>
+			</simpleemitter>
+				
+
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance2" particlesystem="system2" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<camerashake2 scale="11.0" radius="1200" duration="400" frequency="22" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance2" />
+
+	</thread>
+
+</effect>
+

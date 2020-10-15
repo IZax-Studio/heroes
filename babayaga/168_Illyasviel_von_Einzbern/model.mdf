@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="model.max" file="model.model" type="K2" >
+
+	<anim name="idle" clip="clips/bat_idle.clip" loop="true"/>
+	
+	<anim name="portrait" clip="clips/bat_idle.clip" fps="15" loop="true"/> 
+	
+	<anim name="item_1" clip="clips/single_touzhi_2.clip"/>
+
+	<anim name="bored_1" clip="clips/dance.clip"/>
+
+	<anim name="walk_1" clip="clips/bat_run.clip" loop="true">
+		<frameevent frame="11" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="16" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="24" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="29" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="36" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="41" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="46" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="51" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="49" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="54" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="65" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="70" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="77" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="81" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="88" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="93" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="90" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="95" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="106" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="111" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		
+		<frameevent frame="11" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="24" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="36" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="46" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="49" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="65" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="77" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="88" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="90" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="106" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	</anim>
+	
+	<anim name="walk_2" clip="clips/single_run.clip" loop="true">
+		<frameevent frame="1" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="6" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="13" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="18" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		
+		<frameevent frame="1" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="13" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	</anim>
+
+	<anim name="taunt_1" clip="clips/bat_specialidle.clip"/>
+
+	<anim name="death_1" clip="clips/dead.clip" loop="true" loopbackframe="-1">
+		<frameevent frame="8" cmd="PlaySoundLinear sounds/death_1.wav 0 2500 .2"/>
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/168_dead.wav 400 2500 .4"/>
+	</anim>
+
+	<anim name="attack_1" clip="clips/single_attack_attcom_1.clip" fps="16">
+		<frameevent frame="6" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 1800 .05"/>
+		<frameevent frame="8" cmd="PlaySoundLinear sounds/168_0_Atk_Foley_0%.wav 400 1800 .7"/>
+	</anim>
+
+	<anim name="attack_2" clip="clips/single_attack_attcom_2.clip" fps="16">
+		<frameevent frame="6" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 1800 .05"/>
+		<frameevent frame="8" cmd="PlaySoundLinear sounds/168_0_Atk_Foley_0%.wav 400 1800 .7"/>
+	</anim>
+
+	<anim name="ability_1" clip="clips/single_skill_03.clip">
+		<frameevent frame="10" cmd="PlaySoundLinear sounds/168_0_Q_Fire.wav 400 1800 .4"/>
+		<frameevent frame="5" cmd="PlaySoundLinear sounds/IllyasvielEinzbernSkill1.wav 400 1800 1"/>
+	</anim>
+
+	<anim name="ability_2" clip="clips/bat_specialidle.clip" fps="40" numframes="28" loopbackframe="-1"/>
+	
+	<anim name="ability_2_end" clip="clips/bat_specialidle.clip" startframe="20" numframes="19"/>
+	
+	<anim name="ability_3" clip="clips/single_skill_02.clip" fps="45"/>
+
+	<anim name="ability_4" clip="clips/single_skill_04.clip">
+		<frameevent frame="4" cmd="PlaySoundLinear sounds/Noble_Phantasm_2.wav 400 1800 .3"/>
+		<frameevent frame="4" cmd="StartEffect ability_04.effect 0"/>
+		
+	</anim>
+		
+	<anim name="knock_1" clip="clips/dead.clip" loop="true" loopbackframe="-1"/>
+	
+	<anim name="getup_1" clip="clips/bat_idle.clip" numframes="1"/>		
+			
+</model>

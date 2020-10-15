@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="kotori/model.model" type="K2" high="kotori/model.model" med="kotori/model.model" low="kotori/model.model" >
+		
+	<anim name="ability_3" clip="kotori/clips/spell_eight.clip" fps="50" loop="false">
+	</anim>
+	
+	<anim name="ability_2_sprint" clip="kotori/clips/walk_fast.clip" fps="30" loop="true" blendtime="200">
+		</anim>	
+</model>

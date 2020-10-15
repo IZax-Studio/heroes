@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0" >
+			<sound
+			    soundloop="true"
+				randomloop="true"
+				fadein="500"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume="1"
+				sample="/heroes/parallax/ability_04/sounds/loop.wav"
+			/>
+					<!-- <groundsprite
+				material="/shared/effects/materials/whitedot_ground.material"
+				color="0 .3 0"
+				scale="15"
+			/> -->
+		
+			<groundsprite
+				material="/shared/effects/materials/black_spot.material"
+				color="0"
+				alpha="1"
+				scale="15"
+			/>
+
+			<template name="inner_area_particle" >
+				<particle
+					maxangle="360"
+					startanchor="1"
+					endanchor="0"
+					startcolor="0"
+					midcolor="0 .2 .25"
+					endcolor="0"
+					midcolorpos=".25"
+					minsize="5"
+					maxsize="10"
+					startscale="1"
+					endscale="2"
+				/>
+			</template>
+			<simpleemitter
+				owner="target"
+				spawnrate="15"
+				minparticlelife="600"
+				maxparticlelife="1000"
+				offsetsphere="120 120 0"
+				direction="0 0 1"
+				angle="60"
+				maxspeed="20"
+				gravity="-10"
+				material="/shared/effects/materials/phantom_smoke_18.material"
+			>
+				<instance name="inner_area_particle" />
+			</simpleemitter>
+			<!-- <template name="inner_area_groundsprite" >
+				<particle>
+					<billboard
+						maxroll="360"
+						minlife="400"
+						maxlife="500"
+						material="/shared/effects/materials/circuits_reveal.material"
+						startframe="1"
+						minendframe="0.25"
+						maxendframe="0.5"
+						minsize="40"
+						maxsize="100"
+						startcolor=".5 1 .8"
+						midcolor=".5 1 .8"
+						endcolor="0"
+						lockup="true"
+						lockright="true"
+						pitch="-90"
+					/>
+				</particle>
+			</template>
+			<simpleemitter
+				owner="target"
+				spawnrate="30"
+				particlelife="500"
+				offsetsphere="80 80 0"
+			>
+				<instance name="inner_area_groundsprite" />
+			</simpleemitter> -->
+			<!-- lightning -->
+			<controller
+				bone="Bip01 Spine"
+				scale="2.5"
+			>
+				<billboard
+					position="0 -30 0"
+					material="/shared/effects/materials/whitedot.material"
+					size="50"
+					color="0 .15 .2"
+					depthbias="-20"
+				/>
+				<billboard
+					position="0 -30 0"
+					material="/shared/effects/materials/whitedot.material"
+					size="50"
+					color="0 .15 .2"
+					depthbias="-10"
+				/>
+				<billboard
+					position="0 -30 0"
+					material="/shared/effects/materials/whitedot.material"
+					size="50"
+					color="0 .15 .2"
+					depthbias="0"
+				/>
+				<billboard
+					position="0 -30 0"
+					material="/shared/effects/materials/whitedot.material"
+					size="50"
+					color="0 .15 .2"
+					depthbias="10"
+				/>
+				<simpleemitter
+					position="0 -30 0"
+					offsetsphere="0 0 10"
+					spawnrate="10"
+					particlelife="1500"
+				>
+					<template name="lightning_particle">
+						<particle anchor="1">
+							<billboard
+								minlife="250"
+								maxlife="500"
+								maxdelay="500"
+								material="/shared/effects/materials/lightning_05_blend.material"
+								flare="1"
+								minwidth="50"
+								maxwidth="70"
+								minheight="50"
+								maxheight="125"
+								maxroll="360"
+								yaw="{yaw}"
+								startalpha="1"
+								midalpha=".25"
+								endalpha="0"
+								midalphapos=".15"
+								minscale=".5"
+								maxscale="1"
+							/>
+						</particle>
+					</template>
+					<instance name="lightning_particle" yaw="0" />
+					<instance name="lightning_particle" yaw="180" />
+				</simpleemitter>
+			</controller>
+			
+			<simpleemitter
+				owner="target"
+				position="0 0 5"
+				offsetsphere="0 0 0"
+				spawnrate="5"
+				minparticlelife="800" maxparticlelife="1000"
+				material="/shared/effects/materials/twirl_06.material"
+				depthbias="-80"
+			>
+				<particle
+					maxangle="360"
+					frame="1"
+					startsize="55" endsize="110" scale="2"
+					alpha=""
+					anglespeed="150"
+					startcolor="0" midcolor=".3 .6 .7" endcolor="0" midcolorpos=".2"
+					lockup="true" lockright="true"
+					pitch="-90"
+					anchor="1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				owner="target"
+				position="0 0 5"
+				offsetsphere="0 0 0"
+				spawnrate="7"
+				minparticlelife="800" maxparticlelife="1000"
+				material="/shared/effects/materials/twirl_06.material"
+				depthbias="-120"
+			>
+				<particle
+					maxangle="360"
+					frame="1"
+					startsize="70" endsize="130" scale="2"
+					alpha=""
+					anglespeed="200"
+					startcolor=".5" midcolor=".0 .35 1" endcolor="0" midcolorpos=".4"
+					lockup="true" lockright="true"
+					pitch="-90"
+					anchor="1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				owner="target"
+				position="0 0 5"
+				offsetsphere="0 0 0"
+				spawnrate="8"
+				minparticlelife="800" maxparticlelife="1000"
+				material="/shared/effects/materials/twirl_06.material"
+				depthbias="-120"
+			>
+				<particle
+					maxangle="360"
+					frame="1"
+					startsize="130" endsize="160" scale="2"
+					alpha=""
+					anglespeed="250"
+					startcolor="0" midcolor=".05 .15 .15" endcolor="0" midcolorpos=".1"
+					lockup="true" lockright="true"
+					pitch="-90"
+					anchor="1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				owner="target"
+				position="0 0 5"
+				offsetsphere="0 0 0"
+				spawnrate="2"
+				minparticlelife="800" maxparticlelife="1000"
+				material="/shared/effects/materials/twirl_06.material"
+				depthbias="-120"
+			>
+				<particle
+					maxangle="360"
+					frame="1"
+					startsize="110" endsize="150" scale="2"
+					alpha=""
+					anglespeed="250"
+					startcolor="0" midcolor=".45" endcolor="0" midcolorpos=".1"
+					lockup="true" lockright="true"
+					pitch="-90"
+					anchor="1"
+				/>
+			</simpleemitter>
+			
+			<controller owner="target" yawspeed="100">
+				<orbiteremitter
+					owner="target"
+					position="0 0 5"
+					offsetsphere="0 0 10"
+					spawnrate="60"
+					minparticlelife="500" maxparticlelife="700"
+					direction="0 0 1"
+					origin="0 0 100"
+					offset="3.14 0 0"
+					orbit="0 0 -1"
+					angle="0"
+					minspeed="80" maxspeed="100" drag=".05"
+					material="/shared/effects/materials/sparks_reveal.material"
+					cylindrical="true"
+					particlealpha=".65"
+					depthbias="-120"
+				>
+					<particle
+						startcolor="0"
+						midcolor="0 .7 1"
+						endcolor="1"
+						
+						maxangle="90"
+						startsize="70"
+						minendsize="55"
+						maxendsize="60"
+						scale="1"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						startframe=".05"
+						endframe="1"
+					/>
+				</orbiteremitter>
+				
+				<orbiteremitter
+					owner="target"
+					position="0 0 5"
+					offsetsphere="0 0 10"
+					spawnrate="200"
+					minparticlelife="500" maxparticlelife="700"
+					direction="0 0 1"
+					origin="0 0 100"
+					offset="30"
+					orbit="0 0 -1"
+					angle="0"
+					minspeed="80"
+					maxspeed="100"
+					drag=".05"
+					cylindrical="true"
+					particlealpha=".65"
+					depthbias="-120"
+				>
+					<particle
+						startscale="0"
+						minmidscale=".25"
+						maxmidscale=".75"
+						endscale="0"
+					>
+						<billboard
+							life="400"
+							timenudge="1"
+							directionalspace="local"
+							material="/shared/effects/materials/whitedot.material"
+							startcolor="0 .35 1"
+							endcolor="0"
+							size="75"
+						/>
+
+						<billboard
+							life="300"
+							timenudge="1"
+							directionalspace="local"
+							material="/shared/effects/materials/whitecircle_blend.material"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							size="30"
+						/>
+
+						<billboard
+							life="400"
+							timenudge="1"
+							directionalspace="local"
+							material="/shared/effects/materials/black_spot2.material"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							size="28"
+						/>
+					</particle>
+				</orbiteremitter>
+			</controller>	
+			
+			<groundsprite
+				material="/shared/effects/materials/corona_06_ground.material"
+				color=".0 .2 .3"
+				scale="3.6"
+			/>
+			
+			<groundsprite
+				material="/shared/effects/materials/black_spot2.material"
+				color="0"
+				scale="3.4"
+				alpha=".3"
+			/>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

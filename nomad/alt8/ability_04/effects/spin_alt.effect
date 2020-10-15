@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="ability_03">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+		
+			
+			
+			<model
+				life="500"
+				model="../../model.mdf"
+				anim="ability_2_attack"
+				startcolor="1 1 1"
+				endcolor="1 1 1"
+				startalpha=".5"
+				endalpha="0"
+				startscale="1.8"
+				endscale="1"
+			>
+
+			</model>
+
+	</particlesystem>
+</definitions>
+
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnmodifier instance="instance1" modifier="modifier0"/>  
+	<waitfordeath instance="instance0" />
+</thread>
+
+</effect>
+
+
+
+
+
+
+

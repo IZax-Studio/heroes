@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="2">
+								
+			<billboard
+				bone="_bone_center"
+				life="1000"
+				color="0"
+				startalpha="0"
+				endalpha=".5"
+				material="/shared/effects/materials/whitedot_blend.material"
+				height="450"
+				width="300"
+				depthbias="10"
+			/>
+			<billboard
+				bone="_bone_center"
+				
+				expirelife="250"
+				color="0"
+				startalpha=".5"
+				endalpha="0"
+				material="/shared/effects/materials/whitedot_blend.material"
+				height="450"
+				width="300"
+				depthbias="10"
+			/>
+			
+			<billboard
+				bone="_bone_center"
+				life="1000"
+				color="0"
+				startalpha="0"
+				endalpha=".5"
+				material="/shared/effects/materials/whitedot_blend.material"
+				height="450"
+				width="300"
+				depthbias="-100"
+			/>
+			<billboard
+				bone="_bone_center"
+				delay="1000"
+				expirelife="250"
+				color="0"
+				startalpha=".5"
+				endalpha="0"
+				material="/shared/effects/materials/whitedot_blend.material"
+				height="450"
+				width="300"
+				depthbias="-100"
+			/>
+		
+			<controller bone="_bone_head" expirelife="500">
+				<controller position="0 -30 -5" expirelife="500">
+					<!--
+					<billboard
+						material="/shared/effects/materials/whitedot.material"
+						color="0 1 1"
+						size="10"
+					/>
+					-->
+					<light
+						flickeramount=".5"
+						flickerfrequency="30"
+						bone="_bone_head"
+						life="2250"
+						linearfalloff="true"
+						falloffend="100"
+						startcolor="0"
+						endcolor="-1 2 2"
+					/>
+					<light
+						flickeramount=".5"
+						flickerfrequency="30"
+						bone="_bone_head"
+						delay="2250"
+						expirelife="250"
+						linearfalloff="true"
+						falloffend="100"
+						startcolor="-1 2 2"
+						endcolor="0"
+					/>
+				</controller>
+			</controller>
+			
+			<!--
+			<groundsprite
+				startcolor="0"
+				endcolor="0 .25 .25"
+				life="1000"
+				material="/shared/effects/materials/whitedot_ground.material"
+				size="80"
+			/>
+			<groundsprite
+				startcolor="0 .25 .25"
+				endcolor="0"
+				delay="1000"
+				expirelife="250"
+				material="/shared/effects/materials/whitedot_ground.material"
+				size="80"
+			/>
+			-->
+		
+			<template name="streamer" >
+				<controller
+					expirelife="1000"
+					yaw="{angle}"
+					yawspeed="900"
+				>
+					<!--
+					<trailemitter
+						spawnrate="60"
+						speed="300"
+						direction="0 1 0"
+						angle="5"
+						particlelife="750"
+						gravity="-100"
+						drag="0.03"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/arrow_trail_blend.material"
+					>
+						<particle
+							startalpha=".5"
+							midalpha=".5"
+							endalpha="0"
+							startcolor="0"
+							midcolor="0 .4 .5"
+							endcolor="0"
+							startsize="0"
+							midsize="5"
+							endsize="50"
+							midsizepos=".2"
+						/>
+					</trailemitter>
+					-->
+					
+					<trailemitter
+						spawnrate="120"
+						speed="20"
+						direction="0 1 0"
+						angle="0"
+						particlelife="750"
+						gravity="-100"
+						drag="0.03"
+						texposscale="0"
+						texstretchscale="1.4"
+						material="/shared/effects/materials/fire_scrolling_blue_trail.material"
+					>
+						<particle
+							startcolor="1 0 0"
+							midcolor="0 0 1"
+							endcolor="0"
+							startsize="0"
+							midsize="5"
+							endsize="80"
+							midsizepos=".2"
+						/>
+					</trailemitter>
+					
+				</controller>
+			</template>
+			
+			<instance name="streamer" angle="0" />
+			<instance name="streamer" angle="180" />
+			<instance name="streamer" angle="90" />
+			
+		</particlesystem>
+	<particlesystem name="system1" space="world" scale="3" >
+
+                  <groundsprite
+			 loop="true"
+			life="8000"
+			rollspeed="500"
+			depthbias="-150"
+			delay="-50"
+			timenudge="0"
+                 minparticlelife="500"
+		             maxparticlelife="1500"
+			material="magic circle 1.material"
+			lockright="true"
+			lockup="true"
+			pitch="180"
+			directionalspace="local"
+
+			startsize="150"
+			midsize="150"
+			endsize="150"
+			midsizepos=".1"
+              
+			startcolor="1 0 0"
+			midcolor="1 0 0"
+			endcolor="0 0 1"
+			midcolorpos="-1"
+
+			startalpha="1"
+			midalpha="0"
+			endalpha="1"
+			midalphapos="5"
+
+			yawspeed="100"
+     
+		
+		/>
+		</particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnparticlesystem instance="instance1" particlesystem="system1" /> 
+	<waitfordeath instance="instance0" />
+	<waitfordeath instance="instance1" />
+</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

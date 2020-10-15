@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_WitchSlayer_Ability2"
+
+	icon="2.jpg"
+	
+	disarmed="true"
+	silenced="true"
+	perplexed="true"
+	restrained="true" 
+	movespeedslow="1"
+
+	morphpriority="101"
+	morphpreglobalscale="1.0"
+	morphmodelscale="0.5"
+	morpheffectscale="0.5"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	passiveeffect="effects/link.effect"
+	
+	modifierkey="WitchSlayer_W"
+	
+	negativeeffect="polymorphed"
+	
+> <!-- modifierkey="iamsheeped" --> <!-- no need to remove passive effects when miniaturized. -->
+	<onframe />
+	
+	<onattackedpreimpact priority="-9999">
+		<setvalue name="combat_evasion" a="0" />
+	</onattackedpreimpact>
+	
+	<onattackedpredamage priority="-9999">
+		<setvalue name="combat_deflection" a="0" />
+	</onattackedpredamage>
+	
+	<altavatar key="Hero_WitchSlayer.Alt7"
+		passiveeffect="../alt7/ability_02/effects/link.effect"
+	/>
+	
+	<altavatar key="Hero_WitchSlayer.Alt8"
+		passiveeffect="../alt8/ability_02/effects/link_base.effect"
+	>
+		<modifier key="Alt8_Ability2_Upgrade" modpriority="1"
+			passiveeffect="../alt8/ability_02/effects/link_upgrade.effect"
+			morphpreglobalscale="1.0"
+			morphmodelscale="0.5"
+			morpheffectscale="0.5"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_WitchSlayer.Alt9"
+		passiveeffect="../alt9/ability_02/effects/link.effect"
+	/>
+	
+	<altavatar key="Hero_WitchSlayer.Alt10"
+		passiveeffect="../alt9/ability_02/effects/link.effect"
+	/>
+	
+	<altavatar key="Hero_WitchSlayer.Alt11"
+		passiveeffect="../alt11/ability_02/effects/link.effect"
+	/>
+</state>

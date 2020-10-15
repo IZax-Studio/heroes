@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" >
+	<definitions>
+		<particlesystem name="system0" space="world">
+		
+			<sound
+				
+				
+				falloffstart="400"
+				falloffend="2000"
+				volume=".90"
+				sample="\heroes\monkey_king\Elizabeth_Bathory\sounds/34_0_W_Fire.wav"
+			/>
+			
+		    <sound
+				
+				fadein="0"
+				fadeout="1500"
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="2000"
+				volume=".60"
+				sample="../sounds/cast2.wav"
+			/>
+			
+			<twopointtrailemitter
+				bone_a="_bone_fx_16"
+				bone_b="_bone_fx_13"
+				spawnrate="200"
+				particlelife="1000"
+				texpostime="1000"
+				texposscale="0.0"
+				texstretchscale="1.0"
+				material="/shared/effects/materials/swoosh_blend.material"
+				subframepose="true"
+				particlecolor="1 .3 .3"
+			>
+	            <particle
+					startalpha=".8"
+					endalpha="0"
+				/>
+			</twopointtrailemitter>
+			
+			<template name="trail">
+			<twopointtrailemitter
+			 	bone_a="{bone_a}"
+				bone_b="{bone_b}"
+				spawnrate="44"
+				particlelife="300"
+				texpostime="300"
+				texposscale="0.0"
+				texstretchscale="1.0"
+				material="/shared/effects/materials/swoosh_blend.material"
+				subframepos="true"
+			>
+				<particle
+					color="1 .3 .3"
+					startalpha=".8"
+					endalpha="0"
+				/>
+			</twopointtrailemitter>
+			
+			</template>
+		
+			<instance name="trail" bone_a="Bip01 L Clavicle" bone_b="Bip01 L Hand"/>
+			<instance name="trail" bone_a="Bip01 R Clavicle" bone_b="Bip01 R Hand"/>
+			<instance name="trail" bone_a="Bip01 R Foot" bone_b="Bip01 R Thigh"/>
+			<instance name="trail" bone_a="Bip01 L Foot" bone_b="Bip01 L Thigh"/>
+			<instance name="trail" bone_a="Bip01 Pelvis" bone_b="Bip01 Head"/>
+			<template name="glow">
+				<billboard
+					life="300"
+					bone="{bone}"
+					size="50"
+					material="/shared/effects/materials/flare_01.material"
+					startalpha="1"
+					endalpha="0"
+					startcolor="1 .5 0"
+					midcolor="1 0 0"
+					endcolor="0 0 0"
+					depthbias="-25"
+				/>
+			</template>
+
+			<instance name="glow" bone="_bone_weapon3" />
+			<instance name="glow" bone="_bone_weaponattach" />
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

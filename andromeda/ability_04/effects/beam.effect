@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+	<definitions>
+		
+		
+
+	
+		
+		<particlesystem name="system0" space="world" scale="0.7">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".7"
+				sample="../sounds/impact.wav"
+			/>
+
+			
+			<template name="beam">
+				<trackeremitter
+					count="1"					
+					owner="{owner}"				
+					targetowner="{targetowner}"	
+					sourceposition="0 0 180"
+					targetposition="0 0 180"
+					tracktype="lerp"
+					trackspeed="1.0"				
+					
+					spawnrate="80"
+					particlelife="1000"		
+			
+					speed="8000.0"						
+					acceleration="0.0"							
+					inheritvelocity="0.0"
+					distancelife="1"
+				>
+					<particle>
+									
+					<model
+				expirelife="50"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="5 3 3"
+				endcolor="0 0 0"
+				scale="1.25"
+				material="/shared/effects/materials/shell2.material"
+			/>
+			
+			<trailemitter
+				spawnrate="100"
+				particlelife="200"
+				texpostime="80"
+				texposscale="0.0"
+				texstretchscale="1"
+				material="/shared/effects/materials/whitesquare.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".4 0 .4"
+					endcolor="0 0 0"
+					midcolorpos=".2"
+					size="30"
+				/>
+			</trailemitter>
+			
+			<simpleemitter
+				particledirectionalspace="local"
+				spawnrate="60"
+				minparticlelife="250"
+				maxparticlelife="350"
+				drag="0.025"
+				material="/shared/effects/materials/refract_ring.material"
+				direction="0 0 1"
+				inheritvelocity=".05"
+			>
+				<particle
+					param=".5"
+					lockright="true"
+					lockup="true"
+					minanglespeed="50"
+					maxanglespeed="150"
+					startsize="150"
+					endsize="250"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+				/>
+			</simpleemitter>						
+										
+									
+									
+							
+					</particle>				
+					
+				</trackeremitter>		
+			</template>
+
+			<instance name="beam" owner="source" targetowner="target" />
+			<instance name="beam" owner="target" targetowner="source" />
+			
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Jereziah_Ability2"
+	
+	icon="2.png"
+
+	passiveeffect="../hd_jereziah/ability_02/effects/state.effect"
+	
+	immunitytype="MagicImmunity1"
+
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>	
+	<aura name="jeraziahaura" state="State_Jereziah_Ability2_Aura" radius="350" effecttype="Debuff" targetscheme="enemy_units" propagatecondition="not_stealthed" disablenegativeeffectpopuponrefresh="true" />
+
+	<onframe />
+	
+	<onexpired>
+		<playeffect effect="effects/state_expire.effect" source="source_entity "/>
+		<setactivemodifierkey name="" entity="this_proxy_entity" />
+	</onexpired>
+		
+	<altavatar key="Hero_Jereziah.Alt" modpriority="1"
+		passiveeffect="/heroes/jereziah/hd_alt/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Jereziah.Alt2" modpriority="1"
+		passiveeffect="/heroes/jereziah/alt2/ability_02/effects/state.effect"
+	>
+		<modifier key="Alt2_Sin_Set_Bonus" modpriority="1"
+			passiveeffect="/heroes/jereziah/alt2/ability_02/effects/state.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Jereziah.Alt3" modpriority="1"
+		passiveeffect="/heroes/jereziah/alt3/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Jereziah.main_reskin" modpriority="1"
+		passiveeffect="/heroes/jereziah/reskin/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Jereziah.Alt4" modpriority="1"
+		passiveeffect="/heroes/jereziah/alt4/ability_02/effects/state.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Jereziah.Alt5" modpriority="1"
+		passiveeffect="/heroes/jereziah/alt5/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Jereziah.Alt6" modpriority="1"
+		passiveeffect="/heroes/jereziah/alt6/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Jereziah.Alt8" modpriority="1"
+		passiveeffect="/heroes/jereziah/alt8/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Jereziah.Alt9" modpriority="1"
+		icon="../alt9/ability_02/icon.tga"
+		passiveeffect="/heroes/jereziah/alt9/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Jereziah.Alt10" modpriority="1"
+		passiveeffect="/heroes/jereziah/alt10/ability_02/effects/state.effect"
+	/>
+	
+</state>

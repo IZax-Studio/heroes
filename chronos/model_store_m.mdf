@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="black.model" med="black.model" low="black.model" >
+
+	<anim name="idle" clip="idle2.clip" loop="true" fps="550"/>
+	
+	</model>

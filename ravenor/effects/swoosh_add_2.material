@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<material>
+	<parameters>
+		<float name="fBorderSharpness" value="255.0"/>
+	</parameters>
+	<phase
+		name="color"
+		vs="effect_reveal"
+		ps="effect_reveal"
+		srcblend="BLEND_ONE"
+		dstblend="BLEND_ONE"
+		cull="CULL_NONE"
+		translucent="true"
+		depthwrite="0"
+		depthbias="1"
+		depthslopebias="1"
+		alphawrite="0"
+	>
+		<sampler
+			name="diffuse"
+			texture="tx_tiaodai_8047.png"
+			repeat_u="false"
+			repeat_v="false"
+			mipmaps="true"
+			fullquality="true"
+			nocompress="true"
+			filtering="true"
+		/>
+		<sampler
+			name="reveal"
+			texture="tx_tiaodai_8047.png"
+			repeat_u="false"
+			repeat_v="false"
+			mipmaps="true"
+			fullquality="false"
+			nocompress="false"
+			filtering="true"
+		/>
+	</phase>
+</material>

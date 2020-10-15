@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="fireshield" deferred="true" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale=".9">
+
+			<sound
+				linearfalloff="true"
+				falloffstart="700"
+				falloffend="700" 
+				volume="0.5" 
+				sample="/heroes/accursed/ability_02/sounds/ability_02_cast.wav"
+			/>
+			
+			<sound
+				linearfalloff="true"
+				falloffstart="700"
+				falloffend="700" 
+				volume="0.5" 
+				sample="/heroes/accursed/maple/sound/272_w_hit.wav"
+			/>
+			
+			<sound
+			    randomloop="true"
+			    soundloop="true"
+				fadein="500"
+				fadeout="250"
+				linearfalloff="true"
+				falloffstart="700"
+				falloffend="700" 
+				volume="0.5" 
+				sample="../../sounds/ab2_loop.wav"
+			/>
+				<simpleemitter
+					bone="_bone_centerofchest"
+							spawnrate="30"
+							directionalspace="local"
+							particlelife="150"
+							direction="0 -1 0"
+							angle="45" 
+							speed="1"
+							material="/shared/effects/materials/femme_lightning_02.material"
+						>
+							<particle
+								startcolor="0"
+								endcolor=".8 0 1"
+								size="150"
+								lockup="1"
+								lockright="1"
+								turn="1"
+								anchor="1"
+								angle="90"
+								framespeed="2"
+							/>
+							<particle
+								startcolor="0"
+								endcolor=".5 .2 1"
+								size="150"
+								lockup="1"
+								lockright="1"
+								turn="1"
+								anchor="1"
+								angle="270"
+								framespeed="2"
+							/>
+						</simpleemitter>
+			<!-- shield -->
+				<model 
+					bone="_bone_centerofchest"
+					directionalspace="global"
+					anim="idle"
+					startalpha="1"
+					endalpha="0"
+					model="/heroes/accursed/alt7/ability_02/effects/shield/shield.mdf" material="/heroes/accursed/alt7/ability_02/effects/shield/invis.material"
+					color="1"
+					scale="1"
+					yawspeed="80"
+					expirelife="500"
+					position="0 0 0"
+				>	
+					<template name="Fire">
+						<controller bone="{bone1}" >
+							<billboard
+								timenudge="100"
+								directionalspace="local"
+								life="1000" loop="true"
+								startframe="0" midframe="1" endframe="0"
+								material="whiteshield.material"
+								size="15" width="40" height="45"
+								startcolor="1 0 0" midcolor=".5 0 1" endcolor="1 0 0"
+								lockup="true" lockright="true"
+								pitch="5"
+								position="0 1 0"
+							/>	
+						<billboard
+								timenudge="100"
+								directionalspace="local"
+								life="1000" loop="true"
+								startframe="0" midframe="1" endframe="0"
+								material="333.material"
+								size="15" width="40" height="45"
+								startcolor="1.8 .2 2" midcolor=".5 0 1" endcolor="1.8 .2 2"
+								lockup="true" lockright="true"
+								pitch="5"
+								position="0 1 0"
+							/>	
+							<billboard
+								timenudge="100"
+								directionalspace="local"
+								life="1000" loop="true"
+								startframe="0" midframe="1" endframe="0"
+								material="123.material"
+								size="15" width="40" height="45"
+								startcolor=".2 0 .4" midcolor="0" endcolor=".2 0 .4"
+								lockup="true" lockright="true"
+								pitch="5"
+								position="0 1 0"
+							/>	
+						</controller>
+					<simpleemitter
+							bone="{bone1}"
+							spawnrate="30"
+							directionalspace="local"
+							particlelife="150"
+							direction="0 -1 0"
+							angle="45"
+							speed="1"
+							material="/shared/effects/materials/femme_lightning_06.material"
+						>
+							<particle
+								startcolor="0"
+								endcolor=".8 0 1"
+								size="70"
+								lockup="1"
+								lockright="1"
+								turn="1"
+								anchor="1"
+								angle="90"
+								framespeed="2"
+							/>
+							<particle
+								startcolor="0"
+								endcolor=".8 0 1"
+								size="70"
+								lockup="1"
+								lockright="1"
+								turn="1"
+								anchor="1"
+								angle="270"
+								framespeed="2"
+							/>
+						</simpleemitter>
+						
+						<simpleemitter
+							bone="{bone1}"
+							spawnrate="20"
+							directionalspace="local"
+							particlelife="150"
+							material="/shared/effects/materials/femme_lightning_02.material"
+						>
+
+							<particle
+								startcolor=".2 0 .2" medcolor=".5 0 1" endcolor=".0 .0 0" medcolorpos=".1"
+								startsize="100"
+								endsize="150"
+								turn="1"
+								anchor="1"
+								maxangle="360"
+								maxpitch="360"
+								maxyaw="360"
+								framespeed="2"
+							/>
+						</simpleemitter>
+							
+						<billboard
+							bone="{bone1}"
+							color=".1 .0 .4"
+							startsize="90"
+							endsize="0"
+							expirelife="200"
+							material="/shared/effects/materials/whitedot.material"
+						/>
+							
+						
+							
+							
+					</template>
+
+					<instance name="Fire" bone1="_bone_fx03" />
+					<instance name="Fire" bone1="_bone_fx01"/>	
+					<instance name="Fire" bone1="_bone_fx02"/>
+
+				</model>	
+				
+			
+	
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

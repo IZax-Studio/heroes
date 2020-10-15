@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="model.model" type="K2" >
+
+	
+	<anim name="idle" clip="clips/bat_idle.clip" loop="true">
+	<startevent cmd="StopSound 1"/>
+	</anim>
+
+	<anim name="preview" clip="clips/bat_idle.clip" loop="true">
+		<startevent cmd="StopSound 1"/>
+	</anim>
+	
+	<anim name="dancing_idle" clip="clips/bat_idle.clip" loop="true"/>
+	
+	<anim name="portrait" clip="clips/bat_idle.clip" loop="true" fps="15"/>
+	
+	<anim name="item_1" clip="clips/single_touzhi_2.clip" fps="40"/>
+	
+	<anim name="ability_1" clip="clips/single_skill_03.clip" blendtime="100" startframe="1" numframes="30" fps="10">
+		<frameevent frame="1" cmd="PlaySoundLinear /heroes/hiro/sounds/slash_2.wav 400 2000 .65"/>
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/34_0_E_E_2_Fire.wav 400 2000 1"/>
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/34_0_E_Fire.wav 400 2000 .70"/>
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/e.wav 400 2000 1"/>
+		
+	</anim>
+	
+	<anim name="ablity_1_clone1" clip="clips/single_skill_03.clip" startframe="1" numframes="1" loop="true" loopbackframe="-1" />
+	
+	<anim name="ablity_1_clone2" clip="clips/single_attack_attcom_2.clip"  fps="60" />
+	
+	<anim name="ablity_1_clone3" clip="clips/single_skill_03.clip" startframe="15" numframes="1" loop="true" loopbackframe="-1" />
+	
+	<anim name="ability_2" clip="clips/single_skill_5.clip" startframe="0" numframes="30" fps="60">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/w%.wav 400 2000 1"/>
+	</anim>
+	
+	<anim name="ability_2_roll" clip="clips/single_skill_5.clip" startframe="20" numframes="100" fps="30"/>
+	
+	<anim name="ability_3" clip="clips/single_skill_9.clip" startframe="50" numframes="100" fps="40" blendtime="150">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/34_skin3_E_E_Fire.wav 400 2000 1"/>
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/123.wav 400 2000 1"/>
+		<frameevent frame="1" cmd="StartEffect ../effects/ability_3.effect"/>
+	</anim>
+	
+	<anim name="attack_1" clip="clips/single_attack_attcom_1.clip" fps="28">
+	<frameevent frame="3" cmd="PlaySoundLinear sounds/34_skin3_Atk_Foley_0%.wav 0 1200 .70"/>
+	<frameevent frame="6" cmd="PlaySoundLinear sounds/34_skin3_Atk_Fire_0%.wav 0 800 .83"/>
+	</anim>
+
+	<anim name="attack_2" clip="clips/single_attack_attcom_2.clip">
+	<frameevent frame="3" cmd="PlaySoundLinear sounds/34_skin3_Atk_Foley_0%.wav 0 800 .83"/>
+	<frameevent frame="10" cmd="PlaySoundLinear sounds/34_skin3_Atk_Fire_0%.wav 0 800 .83"/>
+	<frameevent frame="8" cmd="StartEffect ../effects/weapon_trail_02.effect"/>
+	</anim>
+
+
+	<anim name="walk_1" clip="clips/single_run.clip" loop="true">
+		<frameevent frame="12" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="1" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+
+		<frameevent frame="1" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="12" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+	</anim>
+
+	<anim name="bored_1" clip="clips/dance.clip" fps="29">
+	
+	<startevent cmd="StartEffect dance.effect 9"/>
+		<endevent cmd="StopEffect 9" />
+	</anim>
+
+	<anim name="taunt_1" clip="clips/bat_specialidle.clip">
+	<startevent cmd="StartEffect bat_specialidle.effect 9"/>
+		<endevent cmd="StopEffect 9" />
+	</anim>
+
+	<anim name="death_1" clip="clips/dead.clip" loop="true" loopbackframe="-1">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/34_skin3_dead.wav 400 2000 .35"/>
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/34_skin3_hit_0%.wav 400 2000 1"/>
+
+	</anim>
+	
+
+	<anim name="knock_1" clip="clips/dead.clip" loop="true" loopbackframe="-1" startframe="40" numframes="100"/>
+	
+	
+
+	<anim name="cloud_cast" clip="clips/bat_idle.clip" loop="true">
+	<startevent cmd="StopSound 1"/>
+	</anim>
+	
+	<anim name="cloud_uncast" clip="clips/cloud_uncast.clip"/>
+	
+	<anim name="cloud_idle" clip="clips/bat_idle.clip" loop="true">
+	<startevent cmd="StopSound 1"/>
+	</anim>
+	
+	<anim name="cloud_bored_1" clip="clips/batruntoidle.clip" fps="29">
+	
+	
+	</anim>
+
+	<anim name="cloud_walk_1" clip="clips/bat_run.clip" loop="true">
+		<frameevent frame="12" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="1" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+
+		<frameevent frame="1" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="12" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		
+		<startevent cmd="StartEffect cloud_walk.effect 7"/>
+		<endevent cmd="StopEffect 7" />
+	</anim>
+	
+	<anim name="cloud_attack_1" clip="clips/single_attack_attcom_1.clip" fps="33">
+	<frameevent frame="3" cmd="PlaySoundLinear sounds/34_skin3_Atk_Foley_0%.wav 0 1200 .70"/>
+	<frameevent frame="10" cmd="PlaySoundLinear sounds/34_skin3_Atk_Fire_0%.wav 0 800 .83"/>
+	
+	</anim>
+
+	<anim name="cloud_attack_2" clip="clips/single_attack_attcom_2.clip">
+	<frameevent frame="3" cmd="PlaySoundLinear sounds/34_skin3_Atk_Foley_0%.wav 0 800 .83"/>
+	<frameevent frame="10" cmd="PlaySoundLinear sounds/34_skin3_Atk_Fire_0%.wav 0 800 .83"/>
+	<frameevent frame="8" cmd="StartEffect ../effects/weapon_trail_02.effect"/>
+	</anim>	
+	
+	<anim name="cloud_knock_1" clip="clips/dead.clip" loop="true" loopbackframe="-1" startframe="40" numframes="100"/>
+	
+</model>

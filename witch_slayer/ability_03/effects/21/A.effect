@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect entityeffectscale="true" deferred="true">
+
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale="1.6" >
+			<simpleemitter
+				position="0 43 50"
+				particlelife="1000"
+				count="1"
+				particledirectionalspace="local"
+			>
+				<particle>
+					<billboard
+						life="300"
+						timenudge="1"
+						lockup="true"
+						lockright="true"
+						directionalspace="local"
+						material="magic circle 1.material"
+						
+						startcolor="1 1 1"
+						endcolor="0"
+						startsize="0"
+						midsize="40"
+						endsize="40"
+						midsizepos=".25"
+					/>
+				</particle>
+			</simpleemitter>		
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

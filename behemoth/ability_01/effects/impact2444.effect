@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<modifier 
+			name="modifier0"
+			alpha="0"
+		/>
+
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				life="4000"
+				soundloop="true"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1200"
+				volume=".15"
+				fadein="400"
+				fadeout="1000"
+				sample="/heroes/behemoth/ability_01/sounds/idle.wav"
+			/>
+			
+			<controller expirelife="200" startminscale=".9" startmaxscale="1.25" endscale="0" maxyaw="360" >
+				<model	
+					life="200"
+					model="/heroes/behemoth/ability_01/effects/fissure.mdf"
+					material="2.material"
+					startscale="0"
+					endscale="1"
+					color=".7 .86 1"
+				/>
+				
+				<model
+					delay="200"
+					expirelife="200"
+					model="/heroes/behemoth/ability_01/effects/fissure.mdf"
+					material="2.material"
+					scale="1"
+					color=".7 .86 1"
+				/>
+			</controller>
+
+			<groundsprite	
+				delay="300"
+				expirelife="200"
+				material="/shared/effects/materials/ground_smash_overlay.material"
+				minsize="75"
+				maxsize="90"			
+				color="1"
+				startalpha="1"
+				endalpha="0"
+			/>
+
+			<simpleemitter
+				delay="300"
+				minparticlelife="1600"			
+				maxparticlelife="2800"
+				spawnrate="15"
+				life="300"
+				gravity="5"
+				speed="250"
+				material="/shared/effects/materials/dust.material"
+				offsetsphere="80 80 40"
+				angle="10"
+				position="0 0 40"
+				direction="0 0 1"
+				expirelife="500"
+				drag="0.15"
+				depthbias="-30"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					color=".3 .3 .3"
+					startsize="30"
+					endsize="400"
+					startalpha=".5"
+					endalpha="0"
+				/>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					color=".6 .6 .64"
+					startsize="30"
+					endsize="400"
+					startalpha=".4"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				delay="300"
+				minparticlelife="800"			
+				maxparticlelife="1600"
+				spawnrate="12"
+				life="500"
+				gravity="10"
+				speed="250"
+				material="/shared/effects/materials/dust_explosion.material"
+				offsetsphere="40 80 20"
+				angle="40"
+				position="0 0 40"
+				direction="0 0 1"
+				expirelife="500"
+				drag="0.1"
+				depthbias="-30"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					color=".4 .4 .4"
+					startsize="45"
+					endsize="260"
+					startalpha=".3"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<!-- Lava -->
+			<simpleemitter
+				depthbias="-30"
+				timenudge="-500"
+				minparticlelife="1200"			
+				maxparticlelife="1900"
+				expirelife="100"
+				startparticlealpha="1"
+				endparticlealpha="0"		
+				spawnrate="20"
+				gravity="1"
+				speed="120"
+				material="/shared/effects/materials/bad_healing_smoke_06.material"
+				offsetsphere="35 60 5"
+				angle="0"
+				drag="0.15"
+				position="0 0 -20"
+			>
+				<particle 
+					maxangle="360"
+					color=".75 .5 1"				
+					startsize="30"
+					endsize="80"
+					startalpha="0"
+					midalpha="0.5"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				minparticlelife="400"			
+				maxparticlelife="1100"
+				expirelife="100"
+				startparticlealpha="1"
+				endparticlealpha="0"
+				spawnrate="20"
+				gravity="1"
+				speed="100"
+				material="/shared/effects/materials/blob.material"
+				offsetsphere="35 60 15"
+				angle="10"
+				drag="0.15"
+			>
+				<particle 
+					minanglespeed="-100"
+					maxanglespeed="100"
+					minangle="-360"
+					maxangle="360"
+					color="0 0.3 1"
+					startsize="60"
+					endsize="30"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					endstickiness=".6"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				depthbias="-30"
+				particlelife="1400"				
+				expirelife="100"
+				startparticlecolor="1"
+				endparticlecolor="0"	
+				spawnrate="13"
+				gravity="1"
+				speed="100"
+				material="/shared/effects/materials/flame_blue.material"
+				offsetsphere="35 50 5"
+				angle="10"
+				position="0 0 -10"
+				drag="0.15"
+			>
+				<particle 
+					maxanglespeed="30"
+					maxangle="360"
+					startcolor="0"
+					midcolor=".25 .36 .5"
+					endcolor="0"
+					startsize="40"
+					endsize="60"
+					startalpha="0"
+					midalpha=".4"
+					endalpha="0"
+				/>
+				<particle 
+					maxanglespeed="50"
+					maxangle="360"
+					startcolor="0"
+					midcolor=".5"
+					endcolor="0"
+					startsize="40"
+					endsize="60"
+					startalpha="0"
+					midalpha=".4"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				spawnrate="40"
+				minparticlelife="1"
+				maxparticlelife="1400"
+				expirelife="100"
+				startparticlecolor="1"
+				endparticlecolor="0"	
+				offsetsphere="35 50 5"
+				gravity="-1"
+				minspeed="70"
+				maxspeed="140"							
+				direction="0 0 1"
+				minangle="-40"
+				maxangle="40"
+				material="/shared/effects/materials/spark.material"
+			>			
+				<particle
+					startcolor="1"
+					midcolor="0 1 .5"
+					endcolor="0 0 0"
+					midcolorpos=".85"
+					minsize="10"
+					maxsize="20"
+					minangle="-360"
+					maxangle="1"
+					minanglespeed="110"
+					maxanglespeed="-110"
+				/>
+				<particle
+					startcolor="1"
+					midcolor="0 1 .5"
+					endcolor="0 0 0"
+					midcolorpos=".85"
+					minsize="10"
+					maxsize="20"
+					minangle="-360"
+					maxangle="1"
+					minanglespeed="110"
+					maxanglespeed="-110"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				offsetsphere="35 50 5"
+				position="0 0 50"
+				spawnrate="10"
+				particlelife="800"
+				expirelife="100"
+				startparticlealpha="1"
+				endparticlealpha="0"
+				material="/shared/effects/materials/refract_outsplash.material"
+				depthbias="-20"
+			>
+				<particle
+					startalpha="1.0"
+					endalpha="0.0"
+					minangle="0"
+					maxangle="360"
+					anglespeed="-90"
+					startsize="30"
+					endsize="100"
+					startparam=".1"
+					endparam="0"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0" />
+		<camerashake2 scale="3.0" radius="1200" duration="1000" frequency="22" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

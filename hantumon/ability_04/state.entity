@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Hantumon_Ability4"
+
+	icon="icon.tga"
+	
+	passiveeffect="effects/state.effect,effects/state_lv2.effect,effects/state_lv3.effect"
+	
+	stealthtype="hero"
+	fadetime="4500,3500,2500"
+>
+	<oninflict>
+		<startfade />
+		<starttimer entity="this_proxy_entity" duration="4500,3500,2500" />
+	</oninflict>
+	
+	<onattack>
+		<startfade />
+		<starttimer entity="this_proxy_entity" duration="4500,3500,2500" />
+	</onattack>
+	
+	<onactivatepreimpact>
+		<isitem entity="inflictor_entity" />
+		<else>
+			<startfade />
+			<starttimer entity="this_proxy_entity" duration="4500,3500,2500" />
+		</else>
+	</onactivatepreimpact>
+	
+	<onexpired>
+		<resettimer entity="this_proxy_entity" />
+	</onexpired>
+	
+	<altavatar key="Hero_Hantumon.Alt4">
+		<modifier key="Alt4_Collection"
+			passiveeffect="../alt4/ability_04/effects/state.effect"
+		/>
+		
+		<modifier key="Alt4_Collection_Mask"
+			passiveeffect="../alt4/ability_04/effects/state.effect"
+		/>
+	</altavatar>
+	<altavatar key="Hero_Hantumon.Alt11"
+	        icon="/heroes/hantumon/alt11/ability_04/icon.tga" 
+	>
+	    <modifier key ="Night_Set_Hantumon"
+		    icon="/heroes/hantumon/alt12/ability_04/icon.tga"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Hantumon.Alt12" 
+	    icon="/heroes/hantumon/alt12/ability_04/icon.tga" 
+	>
+	    <modifier key ="Night_Set_Hantumon"
+		    icon="/heroes/hantumon/alt11/ability_04/icon.tga"
+		/>
+	</altavatar>
+</state>

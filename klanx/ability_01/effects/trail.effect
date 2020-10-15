@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<sound
+			    life="5000"
+				forcestereo="true"
+				linearfalloff="true" 
+				falloffstart="350"
+				falloffend="1300"
+				volume="1"
+				sample="/heroes/klanx/ability_01/sounds/impact_%.wav"
+			/>
+			
+			<model
+				position="0 -15 0"
+				model="\heroes\klanx\alt7\ability_01\effects/diamond/model.mdf"
+				scale="6"
+				rollspeed="800"
+			/>
+			
+			<trailemitter
+				spawnrate="30"
+				particlelife="400"
+				material="/shared/effects/materials/swoosh_add.material"
+				texposscale="0"
+				texstretchscale="1"
+			>
+				<particle
+					startcolor="0 1 1"
+					midcolor="0 .2 .5"
+					endcolor="0 .2 .5"
+					startsize="20"
+					midsize="20"
+					endsize="10"
+					scale="1"
+				/>
+			</trailemitter>
+			
+			<template name="swoosh" >
+				<trailemitter
+					position="{pos}"
+					spawnrate="30"
+					particlelife="350"
+					material="/shared/effects/materials/swoosh_add.material"
+					texposscale="0"
+					texstretchscale="1"
+				>
+					<particle
+						startcolor=".1"
+						endcolor="0"
+						startsize="40"
+						midsize="10"
+						endsize="0"
+					/>
+				</trailemitter>
+			</template>
+			
+			<instance name="swoosh" pos="19 14 14" />
+			<instance name="swoosh" pos="-15 -16 20" />
+			<instance name="swoosh" pos="12 -16 -23" />
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

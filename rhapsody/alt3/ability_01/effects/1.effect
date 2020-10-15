@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<sound
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="2000" 
+				volume=".40" 
+				sample="../sounds/impact1.mp3"
+				life="6000" 
+			/>
+			
+			<beam
+				life="300"
+				owner_a="target"
+				owner_b="source"
+				bone_a="_bone_centerofchest"
+				bone_b="_bone_centerofchest"
+				size="30"
+				color="0 .5 1"
+				startalpha="1"
+				endalpha="0"
+				material="/shared/effects/materials/staff.material"
+				framespeed="1.75"
+			/>
+<!--
+			<trackeremitter
+				count="1"
+				bone="_bone_centerofchest"
+				owner="target"
+				targetbone="_bone_centerofchest"
+				targetowner="source"
+				tracktype="lerp"
+				trackspeed="1"
+				drag="0"
+				spawnrate="1000"
+				particlelife="1000"
+				gravity="0"
+				speed="2000"
+				acceleration="0"
+			>
+				<particle
+					size="100"
+				>
+					<simpleemitter
+						count="44"
+						particlelife="200"
+						spawnrate="30"
+						minspeed="5"
+						maxspeed="5"
+						direction="0 0 -1"
+						particledirectionalspace="local"
+						material="/shared/effects/materials/note_1.material"
+						offsetsphere="50 50 50"
+						position="0 0 0"
+						inheritvelocity=".5"
+					>
+						<particle
+							color="0 .5 1"
+							startsize="50"
+							minendsize="22"	
+							maxendsize="22"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							turn="0"
+						/>
+					</simpleemitter>
+				
+					<simpleemitter
+						count="44"
+						particlelife="200"
+						spawnrate="30"
+						minspeed="5"
+						maxspeed="5"
+						direction="0 0 -1"
+						particledirectionalspace="local"
+						material="/shared/effects/materials/note_2.material"
+						offsetsphere="50 50 50"
+						position="0 0 0"
+						inheritvelocity=".5"
+					>
+						<particle 
+							color="1 .0 .5"
+							startsize="50"
+							minendsize="25"
+							maxendsize="20"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							turn="0"
+						/>
+					</simpleemitter>
+
+					<simpleemitter
+						count="44"
+						particlelife="200"
+						spawnrate="30"
+						minspeed="5"
+						maxspeed="5"
+						direction="0 0 -1"
+						particledirectionalspace="local"
+						material="/shared/effects/materials/note_3.material"
+						offsetsphere="50 50 50"
+						position="0 0 0"
+						inheritvelocity=".5"
+					>
+						<particle 
+							color="0 1 .2"
+							startsize="50"
+							minendsize="25"
+							maxendsize="20"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							turn="0"
+						/>
+					</simpleemitter>
+					
+					<billboard
+						expirelife="250"
+						startcolor="0 .15 .6"
+						endcolor="0 0 0"
+						midcolorpos=".25"
+						startsize="150"
+						endsize="0"
+						material="/shared/effects/materials/whitedot.material"
+						depthbias="-15"
+					/>
+	
+				</particle>
+			</trackeremitter>
+-->
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+      		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+      		<waitfordeath instance="instance0" />
+   	</thread>
+
+</effect>

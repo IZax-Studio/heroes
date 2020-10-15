@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1">
+			
+			<!--
+			<controller life="500" bone="_bone_center" timenudge="1" >
+				<model
+					timenudge="1"
+					life="500"
+					position="0 50 0"
+					pitch="90"
+					model="sword/model.mdf"
+					material="/shared/effects/materials/shell3.material"
+					scale="2.2"
+					startalpha="3"
+					endalpha="0.1"
+					anim="idle"
+					startcolor="5 .25 0"
+					endcolor="0"
+				/>
+			</controller>
+			-->
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

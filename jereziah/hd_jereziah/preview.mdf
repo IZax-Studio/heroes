@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="Kim22.max" file="\heroes\jereziah/Ruler.model" type="K2" high="\heroes\jereziah/Ruler.model" med="\heroes\jereziah/Ruler.model" low="\heroes\jereziah/Ruler.model" >
+	
+	<anim name="idle" clip="\heroes\jereziah/Stand.clip" fps="500" loop="true"/>
+	
+		
+</model>

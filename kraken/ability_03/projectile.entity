@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Kraken_Ability3"
+
+	speed="1250"
+	gravity="1500"
+	canturn="0"
+	modelscale="1"
+	model="/shared/models/invis.mdf"
+
+	traileffect="projectile.effect"
+	impacteffect="impact.effect"
+	
+
+>
+<altavatar key="Hero_Kraken.Alt4" modpriority="90"
+		traileffect="../alt4/ability_01/effects/projectile.effect"
+		impacteffect="../alt4/ability_01/effects/impact.effect"
+	/>
+
+
+</projectile>

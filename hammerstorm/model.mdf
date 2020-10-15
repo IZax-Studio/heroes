@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model file="model.model" type="K2">
+
+	<anim name="idle" clip="clips2/stand.clip" loop="true"/>
+	
+	<anim name="ULTidle" clip="clips2/stand.clip" loop="true"/>
+	
+	<anim name="portrait" clip="clips2/stand.clip" loop="true"/>
+
+	<anim name="item_1" clip="clips2/spell_one.clip" fps="35"/>
+	
+	<anim name="taunt_1" clip="clips2/birth.clip" fps="30" loop="false"/>
+
+	<anim name="knock_1" clip="clips2/death.clip" loop="true" loopbackframe="-1"/>
+	
+	<anim name="ability_1" clip="clips2/attack_slam.clip" loop="false">
+		<frameevent frame="1" cmd="StartEffect effects/attack_ult_2.effect"/>
+		<frameevent frame="10" cmd="PlaySoundLinear Getsuga.mp3  0 1500 3"/>
+		<frameevent frame="10" cmd="PlaySoundLinear /heroes/hammerstorm/ability_01/sounds/ability_01_cast.wav 1000 2500 .5"/>
+		<frameevent frame="15" cmd="PlaySoundLinear /heroes/hammerstorm/sounds/move_%.wav 0 800 0.1"/>
+	</anim>
+
+	<anim name="ability_2" clip="clips2/spell_one.clip" fps="30" loop="false" />
+	
+	<anim name="ability_2_attack" clip="clips2/attack_2.clip" fps="14" loop="false">
+		<frameevent frame="10" cmd="PlaySoundLinear /heroes/hammerstorm/sounds/attack_grunt_%.wav 500 2000 .6"/>
+		<frameevent frame="7" cmd="PlaySoundLinear /heroes/hammerstorm/sounds/attack_2.wav 400 1800 .65"/>
+		<frameevent frame="1" cmd="StartEffect effects/attack.effect"/>
+	</anim>
+	
+	<anim name="ability_3" clip="clips2/stand.clip" fps="30" loop="false"/>
+
+	<anim name="ability_4" clip="clips2/birth.clip" loop="false">
+	<frameevent frame="8" cmd="StartEffect ability_04/effects/ability_04_cast.effect"/>
+	<frameevent frame="7" cmd="PlaySoundLinear Bankai.mp3 0 1800 2"/>
+	</anim>
+
+	<anim name="attack_1" clip="clips2/attack_1.clip" fps="17" loop="false">
+		<frameevent frame="2" cmd="PlaySoundLinear /heroes/hammerstorm/sounds/attack_1.wav 400 1800 .65"/>
+		<frameevent frame="2" cmd="PlaySoundLinear /heroes/hiro/sounds/attack_%.wav  400 2000 .25"/>
+		<frameevent frame="3" cmd="StartEffect effects/attack.effect"/>
+	</anim>
+
+	<anim name="attack_2" clip="clips2/attack_2.clip" fps="14" loop="false">
+		<frameevent frame="2" cmd="PlaySoundLinear /heroes/hammerstorm/sounds/attack_2.wav 400 1800 .65"/>
+		<frameevent frame="2" cmd="PlaySoundLinear /heroes/hiro/sounds/attack_%.wav  400 2000 .25"/>
+		<frameevent frame="1" cmd="StartEffect effects/attack.effect"/>
+	</anim>
+	
+	<anim name="str_attack_1" clip="clips2/spell_one.clip" fps="14" loop="false" >
+		<frameevent frame="2" cmd="PlaySoundLinear /heroes/hiro/sounds/attack_%.wav  400 2000 .25"/>
+		<frameevent frame="2" cmd="PlaySoundLinear s1/a%.ogg400 2000 .65"/>
+		<frameevent frame="3" cmd="StartEffect effects/attack_ult.effect"/>
+	</anim>	
+	
+	<anim name="str_attack_2" clip="clips2/attack_2.clip" fps="14" loop="false" >
+		<frameevent frame="2" cmd="PlaySoundLinear /heroes/hiro/sounds/attack_%.wav  400 2000 .25"/>
+		<frameevent frame="2" cmd="PlaySoundLinear s1/a%.ogg 400 2000 .65"/>
+		<frameevent frame="1" cmd="StartEffect effects/attack_ult.effect"/>
+	</anim>		
+
+	<anim name="walk_1" clip="clips2/walk.clip" loop="true" blendtime="200">
+		<frameevent frame="11" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="24" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+
+		<frameevent frame="11" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="24" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+	</anim>	
+
+	<anim name="ULTwalk_1" clip="clips2/walk.clip" loop="true" blendtime="200">
+		<frameevent frame="11" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="24" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+
+		<frameevent frame="11" cmd="PlaySoundLinear /shared/sounds/footsteps/heavy_%.mp3 0 2400 .12"/>
+		<frameevent frame="24" cmd="PlaySoundLinear /shared/sounds/footsteps/heavy_%.mp3 0 2400 .12"/>
+		<frameevent frame="11" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="24" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+	</anim>
+
+	<anim name="bored_1" clip="clips2/spell_two.clip" loop="false"/>
+
+	<anim name="death_1" clip="clips2/death.clip" loop="true" loopbackframe="-1"/>
+
+</model>

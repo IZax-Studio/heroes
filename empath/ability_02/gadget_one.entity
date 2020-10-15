@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Empath_Ability2_One"
+		
+	icon=""
+	portrait=""
+	modelscale="1"
+	model="effects/wall/model.mdf"
+	skin=""
+	
+	passiveeffect="effects/state_gadget_one 1.effect,effects/state_gadget_one 2.effect,effects/state_gadget_one 3.effect,effects/state_gadget_one 4.effect"
+	spawneffect=""
+	respawneffect=""
+	isselectable="false"
+	iscontrollable="false"
+	invulnerable="true"
+	selectsound=""
+	orderconfirmedsound=""
+	unitwalking="true"
+	drawonmap="false"
+	
+	preglobalscale="0.9"
+	effectscale="1.0"
+	boundsheight="38"
+	boundsradius="42"
+	selectionradius="0"
+	targetoffset="0 0 0"
+
+	canrotate="false"
+	ismobile="false"
+	isflying="false"
+	clearvision="true"
+	
+	sightrangeday="200"
+	sightrangenight="200"
+
+	attacktype="none"
+	
+	lifetime="3000"
+	corpsetime="0"
+	deathtime="0"
+	corpsefadetime="0"
+	blocking="false"
+	noblockneutralspawn="true"
+	
+>
+	<modifier key="Alt2_Sin_Set_Bonus" modpriority="100"
+		model="../alt2/sin_set_bonus/ability_02/effects/wall/model.mdf"
+		passiveeffect="../alt2/sin_set_bonus/ability_02/effects/state_gadget_one.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.Alt4"
+		model="../alt4/ability_02/effects/wall/model.mdf"
+	>
+		<onspawn>
+			<!-- Set unique modifier here so that it doesn't change when Empath walks over other terrain.
+			     While this is cool, it could give away Empath's position through fog. -->
+			<hasmodifier name="Grass">
+				<activatemodifierkey name="Grass_Ability2" />
+			</hasmodifier>
+			<hasmodifier name="Water">
+				<activatemodifierkey name="Water_Ability2" />
+			</hasmodifier>
+			<hasmodifier name="Fire">
+				<activatemodifierkey name="Fire_Ability2" />
+			</hasmodifier>
+			<hasmodifier name="Rock">
+				<activatemodifierkey name="Rock_Ability2" />
+			</hasmodifier>
+		</onspawn>
+		
+		<modifier key="Grass_Ability2"
+			skin=",grass,grass,grass"
+			passiveeffect="effects/state_gadget_one.effect,../alt4/ability_02/effects/state_gadget_2.effect,../alt4/ability_02/effects/state_gadget_2.effect,../alt4/ability_02/effects/state_gadget_grass_4.effect"
+		/>
+		<modifier key="Fire_Ability2"
+			skin=",fire,fire,fire"
+			passiveeffect="effects/state_gadget_one.effect,../alt4/ability_02/effects/state_gadget_2.effect,../alt4/ability_02/effects/state_gadget_2.effect,../alt4/ability_02/effects/state_gadget_fire_4.effect"
+		/>
+		<modifier key="Rock_Ability2"
+			skin=",rock,rock,rock"
+			passiveeffect="effects/state_gadget_one.effect,../alt4/ability_02/effects/state_gadget_2.effect,../alt4/ability_02/effects/state_gadget_2.effect,../alt4/ability_02/effects/state_gadget_rock_4.effect"
+		/>
+		<modifier key="Water_Ability2"
+			skin=",water,water,water2"
+			passiveeffect="effects/state_gadget_one.effect,../alt4/ability_02/effects/state_gadget_2.effect,../alt4/ability_02/effects/state_gadget_2.effect,../alt4/ability_02/effects/state_gadget_water_4.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Empath.Alt5"
+		model="../alt5/ability_02/effects/wall/model.mdf"
+		modelscale="3.5"
+		passiveeffect="../alt5/ability_02/effects/state_gadget_one.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.Alt7"
+		model="../alt7/ability_02/effects/wall/model.mdf"
+		modelscale="1.5"
+		passiveeffect="../alt7/ability_02/effects/state_gadget_one.effect"
+	>
+		<modifier key="Alt7_Ability2_Upgrade"
+			passiveeffect="../alt7/ability_02/effects/state_gadget_one_upgrade.effect"
+		/>
+	</altavatar>
+
+	<altavatar key="Hero_Empath.Alt8"
+		model="../alt8/ability_02/effects/wall/model.mdf"
+		modelscale="1"
+		passiveeffect="../alt8/ability_02/effects/state_gadget_one.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.Alt9"
+		model="../alt9/ability_02/effects/wall/model.mdf"
+		modelscale="1.5"
+		passiveeffect="../alt9/ability_02/effects/state_gadget_one.effect"
+	>
+		<modifier key="Alt9_Ability2_Upgrade"
+			passiveeffect="../alt9/ability_02/effects/state_gadget_one_upgrade.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Empath.Alt10"
+		model="../alt10/ability_02/effects/wall/model.mdf"
+		modelscale="4.8"
+		passiveeffect="../alt10/ability_02/effects/state_gadget_one.effect"
+	>
+	</altavatar>
+	
+	<modifier key="Combo_efx_empath" modpriority="101"
+		model="../alt10/ability_02/effects/wall/model.mdf"
+		modelscale="4.8"
+		passiveeffect="../alt10/ability_02/effects/state_gadget_one_combo.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.trophy_skin01"
+		model="effects/wall/model.mdf"
+		modelscale="1"
+		passiveeffect="../trophy_skin/model_01/ability_02/effects/state_gadget_one.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Empath.trophy_skin02"
+		model="../trophy_skin/model_02/ability_02/effects/wall/model.mdf"
+		modelscale="1"
+		passiveeffect="../trophy_skin/model_02/ability_02/effects/state_gadget_one.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Empath.trophy_skin03"
+		model="../trophy_skin/model_03/ability_02/effects/wall/model.mdf"
+		modelscale="1"
+		passiveeffect="../trophy_skin/model_03/ability_02/effects/state_gadget_one.effect"
+	>
+	</altavatar>
+	
+</gadget>

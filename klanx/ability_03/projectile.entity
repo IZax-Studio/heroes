@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Klanx_Ability3"
+
+	speed="1800"
+
+	modelscale="1.0"
+	model="effects/projectile/model.mdf"
+	traileffect="effects/projectile/trail.effect"
+	deatheffect="effects/projectile/death.effect"
+	canturn="true"
+	
+>
+	
+	<onimpact propagatetoillusions="true">
+		<hasavatarkey name="Hero_Klanx.Alt">
+			<playeffect effect="../alt/ability_03/effects/projectile/impact.effect" target="target_entity" source="target_entity" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Klanx.Alt2">
+				<playeffect effect="../alt2/ability_03/effects/projectile/impact.effect" target="target_entity" source="target_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Klanx.Alt3">
+					<playeffect effect="../alt3/ability_03/effects/projectile/impact.effect" target="target_entity" source="target_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Klanx.Alt4">
+						<playeffect effect="../alt3/ability_03/effects/projectile/impact.effect" target="target_entity" source="target_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Klanx.Alt5">
+							<playeffect effect="../alt5/ability_03/effects/projectile/impact.effect" target="target_entity" source="target_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Klanx.Alt7">
+								<playeffect effect="../alt7/ability_03/effects/projectile/impact.effect" target="target_entity" source="target_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Klanx.Alt8">
+									<playeffect effect="../alt8/ability_03/effects/projectile/impact.effect" target="target_entity" source="target_entity" />
+								</hasavatarkey>
+								<else>
+									<playeffect effect="effects/projectile/impact.effect" target="target_entity" source="target_entity" />
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+		
+		<!-- Damage -->
+		<hasmodifier name="ult_boost">
+			<targettype type="illusion" target="source_entity" >
+				<damage effecttype="Magic" amount="0.33" b="60,70,80,90" op="mult" target="target_entity" />
+			</targettype>
+			<else>
+				<damage effecttype="Magic" amount="1" b="60,70,80,90" op="mult" target="target_entity" />
+			</else>
+		</hasmodifier>
+		<else>
+			<targettype type="illusion" target="source_entity" >
+				<damage effecttype="Magic" amount="0.33" b="30,40,50,60" op="mult" target="target_entity" />
+			</targettype>
+			<else>
+				<damage effecttype="Magic" amount="1" b="30,40,50,60" op="mult" target="target_entity" />
+			</else>
+		</else>
+	</onimpact>
+	
+	<altavatar key="Hero_Klanx.Alt"
+		modelscale="2.0"
+		model="../alt/ability_03/effects/projectile/model.mdf"
+		traileffect="../alt/ability_03/effects/projectile/trail.effect"
+		deatheffect="../alt/ability_03/effects/projectile/death.effect"
+	/>
+	
+	<altavatar key="Hero_Klanx.Alt2"
+		modelscale="1.0"
+		model="../alt2/ability_03/effects/projectile/model.mdf"
+		traileffect="../alt2/ability_03/effects/projectile/trail.effect"
+		deatheffect="../alt2/ability_03/effects/projectile/death.effect"
+	/>
+	
+	<altavatar key="Hero_Klanx.Alt3"
+		modelscale="2.0"
+		model="../alt3/ability_03/effects/projectile/model.mdf"
+		traileffect="../alt3/ability_03/effects/projectile/trail.effect"
+		deatheffect="../alt3/ability_03/effects/projectile/death.effect"
+	/>
+	
+	<altavatar key="Hero_Klanx.Alt4"	
+		modelscale="2.0"
+		model="../alt3/ability_03/effects/projectile/model.mdf"
+		traileffect="../alt3/ability_03/effects/projectile/trail.effect"
+		deatheffect="../alt3/ability_03/effects/projectile/death.effect"
+	/>
+	
+	<altavatar key="Hero_Klanx.Alt5"	
+		modelscale=".5"
+		model="../alt5/ability_03/effects/projectile/model.mdf"
+		traileffect="../alt5/ability_03/effects/projectile/trail.effect"
+		deatheffect="../alt5/ability_03/effects/projectile/death.effect"
+	/>
+	
+	<altavatar key="Hero_Klanx.Alt7"	
+		modelscale=".5"
+		model="/shared/models/invis.mdf"
+		traileffect="../alt7/ability_03/effects/projectile/trail.effect"
+		deatheffect="../alt7/ability_03/effects/projectile/death.effect"
+	/>
+	
+	<altavatar key="Hero_Klanx.Alt8"	
+		modelscale=".9"
+		model="../alt8/ability_03/effects/projectile/model.mdf"
+		traileffect="../alt8/ability_03/effects/projectile/trail.effect"
+		deatheffect="../alt8/ability_03/effects/projectile/death.effect"
+	/>
+	
+</projectile>

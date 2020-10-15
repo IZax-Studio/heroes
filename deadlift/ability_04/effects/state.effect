@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" >
+	<definitions>
+		<modifier
+			color=".1 .2 .3"
+		/>
+
+		<particlesystem name="system0" space="world" >
+				
+		<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="800"
+				minvolume=".5"
+				maxvolume="1"
+				sample="/heroes/deadlift/alt2/sounds/ab3_spawn_%.wav"
+			/>
+			<model
+
+				parentmodel="true"
+				parentskeleton="true"
+				material="/shared/effects/materials/shell_flat_outline.material"
+				startcolor="1 1 1"
+				midcolor="1 1 1"
+				endcolor="0"
+				startalpha="1"
+				endalpha="10"
+			/>
+			<billboard
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor=".1 .1 .1"
+				endcolor="0"
+				depthbias="-60"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+				size="175"
+				minlife="15"
+				maxlife="25"
+				loop="true"
+			/>
+
+            <skeletonemitter
+				spawnrate="80"
+                minparticlelife="50"
+                maxparticlelife="75"
+                material="/shared/effects/materials/lightning_reveal.material"
+                offsetsphere="5"
+            >
+                <template name="lightning_particle" >
+                    <particle
+                        maxangle="360"
+                        startcolor="1 1 1"
+                        midcolor=".5 .5 .5"
+                        endcolor="0"
+                        midcolorpos=".8"
+                        size="40"
+                        startframe="1"
+                        midframe=".4"
+                        endframe="1"
+                        minscale=".25"
+                        maxscale="1"
+                    />
+                </template>
+   
+            </skeletonemitter>
+
+			<skeletonemitter
+				spawnrate="50"
+				minparticlelife="60"
+				maxparticlelife="120"
+				minspeed="200"
+				maxspeed="800"
+				drag="0.01"
+				direction="0 0 1"
+				angle="60"
+				material="/shared/effects/materials/spark_10.material"
+				gravity="-8"
+			>
+				<particle
+					maxangle="360"
+					minstartsize="22"
+					maxstartsize="34"
+					endsize="0"
+				/>
+			</skeletonemitter>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>

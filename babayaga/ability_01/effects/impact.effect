@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="impact" useentityeffectscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" useentityeffectscale="true" scale="1">
+
+		<sound
+				linearfalloff="true" 
+				falloffstart="800"
+				falloffend="1300"
+				minvolume=".4" 
+				maxvolume=".8"
+				sample="\heroes\babayaga\168_Illyasviel_von_Einzbern\sounds/168_0_Q_Hit.wav"
+			/>
+			
+			 
+		<simpleemitter
+			bone="_bone_centerofchest"
+			count="30"
+			minparticlelife="400"
+			maxparticlelife="550"
+			minspeed="180"
+			maxspeed="210"
+			direction="0 0 1"
+			life="250"
+			material="/shared/effects/materials/flame.material"
+		>
+			<particle
+				startcolor="0 0 0"
+				midcolor="1 .5 1"
+				endcolor="-1 "
+				midcolorpos="0.5"
+				startalpha="1.0"
+				endalpha="1.0"
+				maxangle="360"
+				minanglespeed="-45"
+				maxanglespeed="45"
+				minendsize="100"
+				startsize="25"
+				maxendsize="120"
+				flare="true"
+				startanchor="1"
+				endanchor="1"
+			/>
+			<particle
+				startcolor="0 0 0"
+				midcolor="1 .5 1"
+				endcolor="-1 "
+				midcolorpos="0.5"
+				startalpha="1.0"
+				endalpha="1.0"
+				maxangle="360"
+				minanglespeed="-45"
+				maxanglespeed="45"
+				minendsize="100"
+				startsize="25"
+				maxendsize="110"
+				flare="true"
+				startanchor="1"
+				endanchor="1"
+			/>
+		</simpleemitter>
+			
+		<simpleemitter		
+			count="20"
+			spawnrate="1055"
+			particlelife="500"
+			gravity="0"
+			minspeed="150"
+			maxspeed="250"
+			acceleration="0.0"
+			timenudge="0"
+			position="0 0 0"
+			
+			bone="_bone_centerofchest"
+			material="/shared/effects/materials/flare_01.material"
+			
+		>
+			<particle
+				startcolor="1 .4 .5	"
+				midcolor="1 .5 1"
+				endcolor="0 0 .1"
+				midcolorpos=".7"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				minanglespeed="-50"
+				maxanglespeed="50"
+				minscale="5"
+				maxscale="8"					
+			>
+				<billboard
+					size="5"
+					startcolor=".5 .25 .5"
+					endcolor="0"
+					life="400"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+				<billboard
+					size="5"
+					startcolor=".5 .25 .5"
+					endcolor="0"
+					life="400"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+			</particle>
+			
+		</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->

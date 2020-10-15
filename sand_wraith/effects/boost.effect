@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+
+		<particlesystem name="system0" space="entity" scale=".5">
+
+		
+			<trackeremitter
+				bone="_bone_weapon2"
+				targetbone="_bone_weapon3"
+				tracktype="lerp"
+				trackspeed="1" 
+				spawnrate="50"
+				particlelife="1000"
+				offsetsphere="50 50 0"
+				minspeed="75"
+				maxspeed="150"
+				material="/shared/effects/materials/water_spray_blend.material"
+				distancelife="1"
+				direction="0 0 1"
+				directionalspace="local"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					color=".325 0 0"
+					startalpha="0"
+					midalpha=".4"
+					endalpha="0"
+					midcolorpos=".2"
+					startsize="0"
+					midsize="75"
+					endsize="0"
+					misizepos=".2"
+
+				/>
+			</trackeremitter>
+			
+			=
+
+			<trackeremitter
+				bone="_bone_weapon2"
+				targetbone="_bone_weapon3"
+				tracktype="lerp"
+				trackspeed="1" 
+				spawnrate="100"
+				particlelife="1000"
+				offsetsphere="25 25 0"
+				minspeed="100"
+				maxspeed="200"
+				material="/shared/effects/materials/flare_01.material"
+				distancelife="1"
+				direction="0 0 1"
+				directionalspace="local"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					color="2 .4 .1"
+					midcolorpos=".2"
+					startsize="0"
+					midsize="25"
+					endsize="0"
+					misizepos=".2"
+					scale=".5"
+
+				/>
+			</trackeremitter>
+		
+		
+
+		</particlesystem>
+
+		<particlesystem name="system1" space="world" scale="1">
+			
+		
+
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+

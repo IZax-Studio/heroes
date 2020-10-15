@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale="1">
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="1400"
+				falloffend="2000"
+				volume="1"
+				sample="/heroes/ravenor/ability_01/sounds/impact.wav"
+			/>
+
+			<light
+				life="250"
+				startcolor=".500 .20 1"
+				endcolor="0 0 0"
+				midcolorpos=".2"
+				falloffstart="00"
+				falloffend="255"
+				position="0 0 20"
+			/>
+
+			<light
+				delay="330"
+				life="250"
+				startcolor=".500 .20 1"
+				endcolor="0 0 0"
+				midcolorpos=".2"
+				falloffstart="00"
+				falloffend="255"
+				position="0 0 20"
+			/>
+
+			<billboard
+				position="0 0 20"
+				life="200"
+				color="1 1 1"
+				startalpha="1.0"
+				endalpha="1"
+				startparam="0.05"
+				endparam="0.0"
+				startsize="128"
+				endsize="524"
+				material="/shared/effects/materials/refract_pinch.material"
+				lockup="1"
+				pitch="90"
+			/>
+			
+			<billboard
+				position="0 0 20"
+
+				delay="350"
+				life="300"
+				color="1 1 1"
+				startalpha="1.0"
+				endalpha="1.0"
+				startparam="0.05"
+				endparam="0.0"
+				startsize="524"
+				endsize="128"
+				lockup="1"
+				pitch="90"
+				material="/shared/effects/materials/refract_pinch.material"
+			/>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<model
+				life="250"
+				model="/heroes/artesia/ability_01/effects/sphere/orb2.mdf"
+				startcolor="0 0 0"
+				midcolor=".500 .20 1"
+				endcolor="0 0 0"
+				midcolorpos=".75"
+				expirelife="500"
+				startscale="2.5"
+				midscale="2.5"
+				endscale="1"
+				midscalepos=".6"
+				yawspeed="180"
+			/>
+			
+			<model
+				life="250"
+				model="/heroes/artesia/ability_01/effects/sphere/orb2.mdf"
+				startcolor="0 0 0"
+				midcolor=".500 .20 1"
+				endcolor="0 0 0"
+				midcolorpos=".75"
+				expirelife="500"
+				startscale="2.5"
+				midscale="2.5"
+				endscale="1"
+				midscalepos=".6"
+				yawspeed="-180"
+			/>
+			
+			<billboard
+				delay="100"
+				life="500"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".35"
+				param=".25"
+				startsize="0"
+				endsize="750"
+				depthbias="-100"
+				position="0 0 20"
+				material="/shared/effects/materials/refract_ring.material"
+				lockup="true"
+				pitch="90"
+			/>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+		</particlesystem>
+
+		<particlesystem name="system1" space="world" scale="2">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			<simpleemitter
+				life="3000"
+				count="1"
+				spawnrate="222"
+				particlelife="1500"
+				position="0 0 25"
+			>
+				<particle>
+
+					<simpleemitter
+						position="0 0 0"
+						life="150"
+						material="/shared/effects/materials/whitedot.material"
+						spawnrate="300"
+						particlelife="400"
+						gravity="7"
+						speed="30"
+						inheritvelocity="0.21"
+						offsetsphere="10 10 10"
+						drag="0.1"
+					>
+						<particle
+							heightdistort="0.01"
+							turn="1"
+							startcolor="1 0 0"
+							endcolor="0 0 0"
+							startsize="3"
+							endsize="0"
+						/>
+					</simpleemitter>
+<!--
+					<simpleemitter
+						position="0 0 0"
+						life="150"
+						material="/shared/effects/materials/smoke_01.material"
+						spawnrate="50"
+						minparticlelife="500"
+						maxparticlelife="750"
+						gravity="7"
+						speed="30"
+						inheritvelocity="0.21"
+						offsetsphere="10 10 10"
+						drag="0.1"
+					>
+						<particle
+							startalpha="0"
+							midalpha=".5"
+							endalpha="0"
+							midalphapos=".25"
+							roll="180"
+							heightdistort="0.01"
+							turn="1"
+							startcolor=".500 .20 1"
+							endcolor="0 0 0"
+							startsize="60"
+							endsize="20"
+						/>
+					</simpleemitter>
+-->
+					<simpleemitter
+						position="0 0 0"
+						life="150"
+						material="/shared/effects/materials/smash_add.material"
+						spawnrate="100"
+						particlelife="200"
+						gravity="7"
+						speed="150"
+						inheritvelocity="0.21"
+						offsetsphere="5 5 5"
+						drag="0.1"
+					>
+						<particle
+							roll="180"
+							turn="1"
+							startcolor=".500 .20 1"
+							midcolor=".500 .20 1"
+							endcolor="0 0 0"
+							startsize="15"
+							endsize="30"
+						/>
+					</simpleemitter>
+
+					<simpleemitter
+						position="0 0 0"
+						life="150"
+						material="/shared/effects/materials/phantom_smoke_10.material"
+						spawnrate="100"
+						particlelife="600"
+						gravity="7"
+						speed="30"
+						inheritvelocity="0.21"
+						offsetsphere="10 10 10"
+						drag="0.1"
+					>
+						<particle
+							roll="180"
+							heightdistort="0.01"
+							turn="1"
+							startcolor=".500 .20 1"
+							endcolor="0 0 0"
+							startsize="36"
+							endsize="10"
+						/>
+					</simpleemitter>
+
+					<billboard
+						position="0 0 0"
+						life="150"
+						material="/shared/effects/materials/whitedot.material"
+						color=".500 .20 1"
+						size="20"
+						depthbias="-50"
+					/>
+
+					<billboard
+						position="0 0 0"
+						life="150"
+						material="/shared/effects/materials/whitedot.material"
+						color=".500 .20 1"
+						size="50"
+						depthbias="-50"
+					/>
+					
+					<simpleemitter
+						position="0 0 0"
+						life="150"
+						material="/shared/effects/materials/whitedot.material"
+						spawnrate="40"
+						particlelife="100"
+					>
+						<particle
+							color=".500 .20 1"
+							startsize="16"
+							endsize="4"
+						/>
+					</simpleemitter>
+
+				</particle>
+			</simpleemitter>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+
+		</particlesystem>
+		
+		
+		
+		
+		
+		
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_SirBenzington_Active_Ability2"
+
+	icon="2.png"
+	
+	maxcharges="3"
+	
+	passiveeffect="effects/state_self.effect"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	attackrange="100"
+	
+>
+	<onframe>
+		<hasmodifier name="iamsheeped" entity="this_owner_entity" >
+			<activatemodifierkey entity="this_entity" name="sheeped" />
+		</hasmodifier>
+	</onframe>
+	
+	<onspawn>
+		<entitytype type="Hero_SirBenzington"/>
+		<else>
+			<activatemodifierkey name="not_benzington"/>
+		</else>
+	</onspawn>
+	
+	<onattackimpact>
+		<cantarget targetscheme="enemy_units" effecttype="Magic">
+			<hasavatarkey name="Hero_SirBenzington.Alt">
+				<playeffect effect="../alt/ability_03/effects/impact.effect" source="target_entity" occlude="true" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_SirBenzington.Alt2">
+					<playeffect effect="../alt2/ability_03/effects/impact.effect" source="target_entity" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_SirBenzington.Alt3">
+						<playeffect effect="../alt3/ability_03/effects/impact.effect" source="target_entity" occlude="true" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_SirBenzington.Alt4">
+							<playeffect effect="../alt4/ability_03/effects/impact.effect" source="target_entity" occlude="true" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_SirBenzington.Alt5">
+								<playeffect effect="../alt5/ability_03/effects/impact.effect" source="target_entity" occlude="true" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_SirBenzington.Alt6">
+									<playeffect effect="../alt6/ability_03/effects/impact.effect" source="target_entity" occlude="true" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_SirBenzington.Alt8">
+										<playeffect effect="../alt8/ability_03/effects/impact.effect" source="target_entity" occlude="true" />
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_SirBenzington.Alt9">
+											<playeffect effect="../alt8/ability_03/effects/impact.effect" source="target_entity" occlude="true" />
+										</hasavatarkey>
+										<else>
+											<hasavatarkey name="Hero_SirBenzington.Alt10">
+												<playeffect effect="../alt10/ability_02/effects/impact.effect" source="target_entity" occlude="true" />
+											</hasavatarkey>
+											<else>
+												<hasavatarkey name="Hero_SirBenzington.Alt11">
+													<playeffect effect="../alt11/ability_02/effects/impact.effect" source="target_entity" occlude="true" />
+												</hasavatarkey>
+												<else>
+													<hasavatarkey name="Hero_SirBenzington.Alt12">
+														<playeffect effect="../alt12/ability_02/effects/impact.effect" source="target_entity" occlude="true" />
+													</hasavatarkey>
+													<else>
+														<hasavatarkey name="Hero_SirBenzington.Alt13">
+															<playeffect effect="../alt12/ability_02/effects/impact.effect" source="target_entity" occlude="true" />
+														</hasavatarkey>
+														<else>
+															<playeffect effect="effects/impact.effect" source="target_entity" occlude="true" />
+														</else>	
+													</else>		
+												</else>
+											</else>
+										</else>
+									</else>										
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+			<setvar0 a="charges" b="15,30,45,60" op="mult" />
+			<damage effecttype="Magic" amount="30,60,90,120" b="var0" op="add" />
+		</cantarget>
+		
+		<expire />
+	</onattackimpact>
+	
+	<modifier key="sheeped" modpriority="100"
+		passiveeffect=""
+	/>
+	
+	<altavatar key="Hero_SirBenzington.Alt" modpriority="1"
+		passiveeffect="../alt/ability_03/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_SirBenzington.Alt2" modpriority="1"
+		passiveeffect="../alt2/ability_03/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_SirBenzington.Alt3" modpriority="1"
+		passiveeffect="../alt3/ability_03/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_SirBenzington.Alt4" modpriority="1"
+		passiveeffect="../alt4/ability_03/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_SirBenzington.Alt5" modpriority="1"
+		passiveeffect="../alt5/ability_03/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_SirBenzington.Alt6" modpriority="1"
+		passiveeffect="../alt6/ability_03/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_SirBenzington.Alt8" modpriority="1"
+		icon="../alt8/ability_03/icon.tga"
+		passiveeffect="../alt8/ability_03/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_SirBenzington.Alt9" modpriority="1"
+		icon="../alt8/ability_03/icon.tga"
+		passiveeffect="../alt8/ability_03/effects/state_self.effect"
+	/>
+	<altavatar key="Hero_SirBenzington.Alt10" modpriority="1"
+		passiveeffect="../alt10/ability_02/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_SirBenzington.Alt11" modpriority="1"
+		passiveeffect="../alt11/ability_02/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_SirBenzington.Alt12" modpriority="1"
+		passiveeffect="../alt12/ability_02/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_SirBenzington.Alt13" modpriority="1"
+		passiveeffect="../alt12/ability_02/effects/state_self.effect"
+	/>
+	<!-- Parasite Ability04 -->
+	
+	<modifier key="not_benzington" modpriority="100"
+		passiveeffect="effects/state_parasite.effect"
+	/>
+</state>

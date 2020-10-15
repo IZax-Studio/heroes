@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true" persistent="1" useentityeffectscale="1">
+	<definitions>
+	
+		<modifier
+			name="modifier0"
+			life="1000"
+			startcolor="5 4 5"
+			endcolor="1"
+		/>
+	
+		<particlesystem name="system0" space="world" scale="1.4">
+
+			<sound
+				volume=".7"
+				sample="/heroes/succubis/bat_sounds/dreamDazzle_hit.wav"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2000"
+			/>
+			<sound
+				volume="1"
+				sample="/heroes/succubis/bat_sounds/dreamDazzle%.wav"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2000"
+			/>
+			<sound
+				volume=".3"
+				sample="/heroes/pyromancer/sounds/impact_%.wav"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2000"
+			/>
+		
+			<billboard
+				life="500"
+				bone="_bone_origin"
+				material="/heroes/succubis/effects/dreamDazzle/Ring_Shadow.material"
+				depthbias="-20"
+				directionalspace="local"
+				startsize="50"
+				endsize="250"
+				startcolor="0"
+				midcolor="1"
+				endcolor="0"
+				maxroll="360"
+				rollspeed="200"
+				pitch="-90"
+				lockup="true"
+				lockright="true"
+			/>
+			
+			<billboard
+				life="650"
+				bone="_bone_origin"
+				material="/heroes/succubis/effects/dreamDazzle/HitGround4.material"
+				depthbias="-20"
+				directionalspace="local"
+				startsize="50"
+				midsize="140"
+				endsize="150"
+				midsizepos=".35"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".8"
+				maxroll="360"
+				rollspeed="200"
+				pitch="-90"
+				lockup="true"
+				lockright="true"
+			/>
+			
+			<simpleemitter
+				bone="_bone_origin"
+				count="4"
+				minparticlelife="250"
+				maxparticlelife="350"
+				spawnrate="10"
+				gravity="0"
+				speed="350"
+				angle="5"
+				position="0 0 0"
+				material="/heroes/succubis/effects/dreamDazzle/Line_Wave1.material"
+				depthbias="-50"
+				offsetsphere="10 10 0"
+				direction="0 0 1"
+			>
+				<particle
+					minangle="-10"
+					maxangle="10"
+					startcolor="1 .5 1"
+					midcolor="1 .5 1"
+					endcolor="0 0 0"
+					midcolorpos=".5"
+					minstartheight="25"
+					maxstartheight="50"
+					minendheight="75"
+					maxendheight="150"
+					minstartwidth="0"
+					maxstartwidth="25"
+					minendwidth="50"
+					maxendwidth="100"
+					lockup="1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_center"
+				mincount="20"
+				maxcount="30"
+				minparticlelife="50"
+				maxparticlelife="150"
+				spawnrate="40"
+				gravity="0"
+				minspeed="10"
+				maxspeed="30"
+				angle="360"
+				position="0 0 0"
+				material="/heroes/succubis/effects/dreamDazzle/Ray2.material"
+				depthbias="-50"
+				offsetsphere="50 50 100"
+				direction="0 0 1"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					startcolor="1 .75 1"
+					midcolor="1"
+					endcolor="0 0 0"
+					midcolorpos=".5"
+					height="25"
+					startwidth="25"
+					minendwidth="100"
+					maxendwidth="300"
+					lockup="1"
+				/>
+			</simpleemitter>
+		
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Bushwack_Alt2"
+
+	speed="2500"
+	gravity="0"
+	modelscale=".3"
+	model="/heroes/Gunblade/ability_01/effects/projectile/bullet.mdf"
+
+	impacteffect=""
+	traileffect="effects/trail.effect"
+>
+</projectile>

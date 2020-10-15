@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world">
+			<sound
+					delay="1000"
+				    channelid="storeaud"
+					sound2d="true"
+					volume="1"
+					sample="Ds_%.wav"
+			/>
+		<sound
+	
+				    channelid="storeaud2"
+					sound2d="true"
+					volume=".2"
+					sample="M.wav"
+			/>
+
+			<template name="weapon">
+				<controller
+					bone="{bone}"
+					roll="{roll}"
+				>
+					<controller pitch="90">
+						<model
+							model="../../kiana/effects/weapon/model.mdf"
+							material="../../kiana/material6.material"
+							parentalpha="true"
+							parentteamcolor="true"
+							inheritparentmodifiers="true"
+						>
+							<controller
+								bone="Changmao02"
+							>
+								<model
+									model="../../kiana/effects/changmao/model.mdf"
+									material="../../kiana/material6.material"
+									yawspeed="-360"
+									parentalpha="true"
+									parentteamcolor="true"
+									inheritparentmodifiers="true"
+								/>
+							</controller>
+						</model>
+						<model
+							model="../../kiana/effects/weapon/model.mdf"
+							material="../../kiana/material6_glow.material"
+							color="0 .35 1"
+							parentalpha="true"
+							parentteamcolor="true"
+							inheritparentmodifiers="true"
+						/>
+					</controller>
+				</controller>
+			</template>
+			
+			<instance name="weapon" bone="Dummy001" roll="45"/>
+			<instance name="weapon" bone="Dummy002" roll="0"/>
+			<instance name="weapon" bone="Dummy003" roll="-45"/>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+      	<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>

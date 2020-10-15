@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true" useentityeffectscale="1">
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale=".75">
+		
+			<billboard
+				bone="_bone_centerofchest"
+				expirelife="250"
+				startcolor="0 .03 .06"
+				endcolor="0"
+				midcolorpos="0.3"
+				startsize="250"
+				endsize="0"
+				depthbias="-25"
+				material="/shared/effects/materials/whitedot.material"
+				position="0 0 0"
+			/>
+			
+			<template name="rings">
+			<controller bone="_bone_centerofchest" scale="1.8">
+				<billboard
+					material="/shared/effects/materials/corona_07.material"
+					startcolor="0 2.06 2.09"
+					endcolor="0"
+					size="60"
+					expirelife="250"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					pitchspeed="{zpitchspeed}"
+					yawspeed="{zyawspeed}"
+				/>
+				
+				<billboard
+					material="/shared/effects/materials/corona_07.material"
+					startcolor="0 .3 .6"
+					endcolor="0"
+					size="70"
+					expirelife="250"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					pitchspeed="{zpitchspeed}"
+					yawspeed="{zyawspeed}"
+				/>
+				
+				<billboard
+					material="/shared/effects/materials/corona_07.material"
+					startcolor="0 .3 .3"
+					endcolor="0"
+					size="80"
+					expirelife="250"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					pitchspeed="{zpitchspeed}"
+					yawspeed="{zyawspeed}"
+				/>
+				
+				<billboard
+					material="/shared/effects/materials/corona_07.material"
+					startcolor="0 .2 .2"
+					endcolor="0"
+					size="90"
+					expirelife="250"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					pitchspeed="{zpitchspeed}"
+					yawspeed="{zyawspeed}"
+				/>
+				
+				<billboard
+					material="/shared/effects/materials/corona_07.material"
+					startcolor="0 .3 .3"
+					endcolor="0"
+					size="100"
+					expirelife="250"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					pitchspeed="{zpitchspeed}"
+					yawspeed="{zyawspeed}"
+				/>
+
+				<billboard
+					material="/shared/effects/materials/corona_07.material"
+					startcolor=".2"
+					endcolor="0"
+					size="110"
+					expirelife="250"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					pitchspeed="{zpitchspeed}"
+					yawspeed="{zyawspeed}"
+				/>
+			</controller>
+			</template>	
+			
+			<instance name="rings" zyawspeed="0" zpitchspeed="0"/>
+			
+		<template name="notes">			
+			<model
+				bone="_bone_centerofchest"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				scale="2.5"
+				yawspeed="-200"
+				alpha="0"
+				anim="idle"
+				expirelife="100"
+				yaw="{yaw}"
+				directionalspace="global"
+			>
+				<model
+					bone="_bone_fx_01"
+					model="/heroes/rhapsody/alt7/ability_01/effects/note/model.mdf"
+					scale="1"
+					yawspeed="-75"
+					expirelife="90"
+					startalpha=".5"
+					endalpha="0"
+					maxyaw="359"
+					color="0 2.06 2.09"
+				>
+					<model
+						model="/heroes/rhapsody/alt7/ability_01/effects/note/model.mdf"
+						material="../../effects/opal.material"
+						scale="1"
+						expirelife="90"
+						startalpha=".5"
+						endalpha="0"
+						color=".5 .5 1"
+					/>
+				</model>
+			</model>
+		</template>
+		
+		<instance name="notes" yaw="0" />
+		<instance name="notes" yaw="60" />
+		<instance name="notes" yaw="120" />
+		<instance name="notes" yaw="180" />
+		<instance name="notes" yaw="240" />
+		<instance name="notes" yaw="300" />
+		
+
+		
+		<template name="waves">
+			<model
+				bone="_bone_centerofchest"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				scale="2.75"
+				yawspeed="-100"
+				alpha="0"
+				yaw="{yaw}"
+				anim="idle"
+				expirelife="100"
+				directionalspace="global"
+			>
+				<billboard
+					lockup="1"
+					lockright="1"
+					yaw="87"
+					startframe="1"
+					endframe="19"
+					framespeed="1"
+					startcolor="0 2.06 2.09"
+					endcolor="0"
+					directionalspace="local"
+					position="-5 10 0"
+					bone="_bone_fx_01"
+					expirelife="100"
+					size="25"
+					width="17"
+					turn="1"
+					material="/shared/effects/materials/sound_wave.material"
+				/>
+				
+				<billboard
+					lockup="1"
+					lockright="1"
+					yaw="87"
+					startframe="10"
+					endframe="19"
+					framespeed="2"
+					startcolor="0 2.06 2.09"
+					endcolor="0"
+					directionalspace="local"
+					position="-5 10 0"
+					bone="_bone_fx_01"
+					expirelife="100"
+					size="12"
+					width="17"
+					turn="1"
+					material="/shared/effects/materials/sound_wave.material"
+				/>
+			</model>
+		</template>
+		
+			<instance name="waves" yaw="0"/>
+			<instance name="waves" yaw="30"/>
+			<instance name="waves" yaw="60"/>
+			<instance name="waves" yaw="90"/>
+			<instance name="waves" yaw="120"/>
+			<instance name="waves" yaw="150"/>
+			<instance name="waves" yaw="180"/>
+			<instance name="waves" yaw="210"/>
+			<instance name="waves" yaw="240"/>
+			<instance name="waves" yaw="270"/>
+			<instance name="waves" yaw="300"/>
+			<instance name="waves" yaw="330"/>
+		</particlesystem>
+
+</definitions>
+
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<waitfordeath instance="instance0" />
+</thread>
+
+</effect>
+
+
+
+
+
+
+

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="ability_02">
+
+	<definitions>
+	
+		<modifier
+			name="modifier0"
+			life="200"
+			startcolor="0 0 0"
+			endcolor="1 1 1"
+			startalpha="0"
+			midalpha="0"
+			endalpha="1"
+			midalphapos=".2"
+			material="../../material_invis.material"
+		/>
+		
+		<particlesystem name="system0" space="world" scale="1.5">
+		
+			<model
+				life="500"
+				parentmodel="true"
+				parentskeleton="true"
+				material="/shared/effects/materials/shell5.material"
+				startcolor="8 0 0"
+				endcolor="0"
+			/>
+			
+			<sound
+			    forcestereo="true"
+				linearfalloff="true" 
+				falloffstart="450"
+				falloffend="1500"
+				volume=".8" 
+				sample="/heroes/grinex/ability_01/sounds/core_impact.wav"
+			/>
+			
+			<sound
+			    delay="150"
+			    forcestereo="true"
+				linearfalloff="true" 
+				falloffstart="450"
+				falloffend="1500"
+				volume=".6" 
+				sample="../sounds/impact.wav"
+			/>
+
+			<template name="swoosh_trail" >
+			<twopointtrailemitter
+				life="500"
+			 	bone_a="{bone_a}"
+				bone_b="{bone_b}"
+				spawnrate="50"
+				particlelife="500"
+				texpostime="500"
+				texposscale="0.0"
+				texstretchscale="1.0"
+				material="/shared/effects/materials/swoosh_add.material"
+				subframepos="true"
+			>
+				<particle
+					startcolor=".4 0 0"
+					endcolor="0 0 0" 
+				/>
+			</twopointtrailemitter>
+			</template>
+			
+			<instance name="swoosh_trail" bone_a="Bip01 L Clavicle" bone_b="Bip01 L Hand" />
+			<instance name="swoosh_trail" bone_a="Bip01 R Clavicle" bone_b="Bip01 R Hand" />
+			<instance name="swoosh_trail" bone_a="Bip01 L Foot" bone_b="Bip01 L Thigh" />
+			<instance name="swoosh_trail" bone_a="Bip01 R Foot" bone_b="Bip01 R Thigh" />
+			<instance name="swoosh_trail" bone_a="Bip01 Pelvis" bone_b="Bip01 Head" />
+			
+	
+			
+			<!-- crappy emitter - try again
+			<simpleemitter 
+				bone="_bone_centerofchest"
+				count="20"
+         		spawnrate="222"				
+				minparticlelife="100"
+          		maxparticlelife="2200"
+          		gravity="0"
+          		drag="0"
+				speed="20"
+				position="0 0 0"
+				offsetsphere="20 20 20"          			
+      			  >
+				  
+				<particle>
+					<billboard
+						life="200"
+						color="1.0 1.0 1.0"						
+						midalphapos="0.25"
+						
+						param="0.01555"	
+						
+						startsize="20"
+						endsize="164"
+						startalpha="0"
+						midalpha=".9"
+						endalpha="0"				
+						
+						depthbias="-19"
+						position="0 0 0"
+						material="/shared/effects/materials/refract_pinch.material"
+						lockup="0"
+						pitch="0"
+					/>						
+				</particle>			
+			</simpleemitter>
+			-->	
+			
+		
+			<!--
+			<billboard
+				bone="_bone_righthand"
+				life="900"
+				startcolor="1 0 0"
+				endcolor="0 0 0"
+				startalpha="1.0"
+				midalpha="1.0"
+				endalpha="0.0"
+				midalphapos="0.75"
+				startparam="0.05"
+				endparam="0.0"
+				
+				
+				startsize="0"
+				midsize="80"
+				endsize="0"
+				midsizepos=".4"
+				
+				
+				depthbias="0"
+				position="0 0 0"
+				material="/shared/effects/materials/blink.material"
+				lockup="true"
+				pitch="90"
+			/>
+			-->
+			
+			
+	</particlesystem>
+</definitions>
+
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnmodifier instance="instance1" modifier="modifier0"/>  
+	
+	<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+
+
+
+
+
+

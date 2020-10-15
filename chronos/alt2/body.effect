@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+
+			<particlesystem name="system0" space="world" scale=".525">
+		
+					
+			<template name="fire">
+				<simpleemitter
+					bone="{zbone}"
+					spawnrate="25"
+					particlelife="1000"
+					angle="0"
+					offsetsphere="0"
+					material="/shared/effects/materials/flame.material"
+					depthbias="-25"
+				>
+					<particle
+						startcolor="0 0 0"
+						midcolor="0 .2 .7"
+						endcolor="0 0 0"
+						maxangle="360"
+						minanglespeed="-45"
+						maxanglespeed="45"
+						minendsize="50"
+						startsize="10"
+						maxendsize="105"
+						flare="true"
+						startanchor="1"
+						endanchor=".7"
+					/>
+					
+					<particle
+						startcolor="0 0 0"
+						midcolor="0 .2 .7"
+						endcolor="-1 "
+						midcolorpos="0.5"
+						startalpha="1.0"
+						endalpha="1.0"
+						maxangle="360"
+						minanglespeed="-45"
+						maxanglespeed="45"
+						minendsize="45"
+						startsize="10"
+						maxendsize="100"
+						flare="true"
+						startanchor="1"
+						endanchor="1"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					bone="{zbone}"
+					spawnrate="25"
+					particlelife="1000"
+					offsetsphere="10"
+					speed="10"
+					material="/shared/effects/materials/flare_03.material"
+				>
+					<particle
+						startcolor="0"
+						midcolor=".1 .5 1"
+						endcolor="0 0 0"
+						midcolorpos=".2"
+						maxangle="360"
+						minanglespeed="-45"
+						maxanglespeed="45"
+						size="5"
+						flare="true"
+						startanchor="1"
+						endanchor="1"
+					/>
+				</simpleemitter>
+				
+			</template>	
+			
+			<instance name="fire" zbone="_bone_weapon1"/>
+			<instance name="fire" zbone="_bone_weapon2"/>
+			<instance name="fire" zbone="_bone_weapon3"/>
+			<instance name="fire" zbone="_bone_weaponattach"/>
+			
+			<instance name="fire" zbone="_bone_altweapon1"/>
+			<instance name="fire" zbone="_bone_altweapon2"/>
+			<instance name="fire" zbone="_bone_altweapon3"/>
+			<instance name="fire" zbone="_bone_altweaponattach"/>
+
+		</particlesystem>
+
+</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnmodifier instance="instance1" modifier="modifier0"/> 
+	<waitfordeath instance="instance0" />
+	<waitfordeath instance="instance1" />
+</thread>
+</effect>

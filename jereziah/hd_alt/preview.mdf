@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="Kim22.max" file="../Jeanne_Alter/Jeanne_Alter.model" type="K2" >
+	
+	<anim name="idle" clip="../Jeanne_Alter/Stand.clip" fps="500" loop="true"/>
+	
+		
+</model>

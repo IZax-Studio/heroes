@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="tracker" persistent="true">
+	<definitions>
+	
+		<simpleemitter
+			name="trail_01"
+			life="2000"
+			spawnrate="10"
+			startminparticlelife="2000"
+			startmaxparticlelife="2000"
+			endminparticlelife="500"
+			endmaxparticlelife="500"
+			startparticlealpha="1"
+			midparticlealpha="1"
+			endparticlealpha="0"
+			position="0 0 0"
+			speed="25"
+			material="/shared/effects/materials/star_06.material"
+		>
+			<particle
+				startcolor="1 0 0"
+				midcolor=".6 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".1"
+				minstartsize="10"
+				maxstartsize="30"
+				minendsize="0"
+				maxendsize="0"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".1"
+				minangle="0"
+				maxangle="360"
+				minanglespeed="200"
+				maxanglespeed="400"
+			/>
+		</simpleemitter>
+		
+		<particlesystem name="system0" space="world" >
+
+			<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume=".7"
+				sample="../sounds/impact.wav"
+			/>
+			
+			<trackeremitter
+				count="10"
+				bone="_bone_centerofchest"
+				owner="target"
+				targetbone="_bone_centerofchest"
+				targetowner="source"
+				tracktype="angular"
+				trackspeed="8.0"
+				drag="0"
+				spawnrate="250"
+				particlelife="3000"
+				gravity="-50"
+				offsetsphere="25 25 25"
+				minspeed="10.0"
+				maxspeed="220.0"
+				acceleration="60.0"
+				direction="0.0 0.0 1.0"
+				inheritvelocity="0.0"
+				distancelife="true"
+				material="/shared/effects/materials/starlight.material"
+			>
+				<particle
+					startcolor="1 0 0"
+					endcolor="0"
+					size="10"
+					minscale="1"
+					maxscale="2"
+					emitter0="trail_01"
+				/>
+			</trackeremitter>
+
+		</particlesystem>
+	</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<waitfordeath instance="instance0" />
+</thread>
+</effect>
+

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="model.model" type="K2" high="\shared\effects\taunts\paragon\paragon/model.model" med="\shared\effects\taunts\paragon\paragon/model.model" low="\shared\effects\taunts\paragon\paragon/model.model" >
+	<anim name="idle" clip="\shared\effects\taunts\paragon\paragon/default_1.clip" fps="550"/>
+</model>

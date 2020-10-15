@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume=".4"
+				sample="/heroes/hunter/sounds/impact_%.wav"
+			/>
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume="1"
+				sample="/shared/sounds/impacts/flesh_%.wav"
+			/>
+
+			<sound
+				sample="/heroes/hammerstorm/ability_04/sounds/ability_04_impact_0%.wav"
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="2200"
+				volume=".7"
+			/>
+
+			<template name="trails">
+			
+			<simpleemitter
+				life="1000"
+				count="1"
+				particlelife="2000"
+			>
+				<particle>
+					<model
+						life="5000"
+						model="/shared/models/invis.mdf"
+						anim="idle"
+						minyaw="{min}"
+						maxyaw="{max}"
+						scale="1.5"
+						position="0 0 0"
+						pitch="1"
+						lockup="true"
+					>
+						<twopointtrailemitter
+							life="1000"
+							bone_a="_bone_fx_01"
+							bone_b="_bone_fx_02"
+							spawnrate="30"
+							particlelife="650"
+							texpostime="650"
+							texposscale="0"
+							texstretchscale="1"
+							material="/shared/effects/materials/soul_projectile.material"
+							lockup="true"
+						>
+							<particle
+								startcolor="0 0 0"
+								midcolor="0 0 0"
+								endcolor=".1 0 0"
+								startalpha=".65"
+								endalpha="0"
+							/>
+						</twopointtrailemitter>
+						
+						<twopointtrailemitter
+							life="1000"
+							bone_a="_bone_fx_03"
+							bone_b="_bone_fx_04"
+							spawnrate="30"
+							particlelife="650"
+							texpostime="650"
+							texposscale="0"
+							texstretchscale="1"
+							material="/shared/effects/materials/soul_projectile.material"
+						>
+							<particle
+								startcolor="0 0 0"
+								midcolor="0 0 0"
+								endcolor=".3 0 0"
+								startalpha=".65"
+								endalpha="0"
+							/>
+						</twopointtrailemitter>
+							
+						<twopointtrailemitter
+							life="1000"
+							bone_a="_bone_fx_05"
+							bone_b="_bone_fx_06"
+							spawnrate="30"
+							particlelife="650"
+							texpostime="650"
+							texposscale="0"
+							texstretchscale="1"
+							material="/shared/effects/materials/soul_projectile.material"
+						>
+							<particle
+								startcolor="0 0 0"
+								midcolor="0 0 0"
+								endcolor=".2 0 0"
+								startalpha=".65"
+								endalpha="0"
+							/>
+						</twopointtrailemitter>
+					</model>
+					
+				</particle>
+			</simpleemitter>
+			
+			</template>
+			
+			<instance name="trails" yaw="0" max="90" min="45"/>
+			<instance name="trails" yaw="0" max="180" min="120"/>
+			<instance name="trails" yaw="0" max="360" min="350"/>
+
+			<simpleemitter
+				bone="_bone_center"
+				minangle="-90"
+				maxangle="-90"
+				life="400"
+				spawnrate="650"
+				count="15"
+				minparticlelife="250"
+				maxparticlelife="2000"
+				speed="2000"
+				drag="0.05"
+				gravity="-5"
+				offsetsphere="20 20 0"
+				position="0 0 75"
+				material="/shared/effects/materials/bad_healing_smoke_12.material"
+			>
+				<particle
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					turn="1"
+					startcolor="0 0 0"
+					midcolor="0 0 0"
+					endcolor="-1"
+					midcolorpos="0.2"
+					startsize="50"
+					minendscale="6"
+					maxendscale="10"
+					startalpha=".25"
+					midalpha=".5"
+					midalphapos="0.1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_center"
+				life="600"
+				count="10"
+				spawnrate="500"				
+				particlelife="600"
+				gravity="-3.0"
+				offsetsphere="100 100 0"
+				direction="0 0 1"
+				position="0 0 50"						
+				material="/shared/effects/materials/dust.material"
+				depthbias="-40"
+			>
+				<particle
+					startcolor="0"
+					endcolor="0"
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="0"
+					midcolorpos=".1"
+					maxanglespeed="0"
+					startsize="89"			
+					endsize="222"			
+					startalpha=".75"
+					endalpha="0"						
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_center"
+				minangle="-90"
+				maxangle="-90"
+				life="400"
+				spawnrate="650"
+				count="20"
+				minparticlelife="250"
+				maxparticlelife="1000"
+				speed="2000"
+				drag="0.03"
+				offsetsphere="15 15 0"
+				depthbias="-40"
+				material="/shared/effects/materials/mysticenergy2.material"
+			>
+				<particle
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-250"
+					maxanglespeed="250"
+					turn="1"
+					startcolor="0 0 0"
+					midcolor="0 0 0"
+					endcolor=".3 0 0"
+					midcolorpos="0.6"
+					startsize="15"
+					startstickiness="0"
+					maxendstickiness="2"
+					minendscale="6"
+					maxendscale="10"
+					startalpha=".3"
+					midalpha="1"
+					midalphapos="0.1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<billboard
+				bone="_bone_center"
+				life="500"
+				startsize="250"
+				endsize="400"
+				startcolor="0 0 0"
+				endcolor=".1 0 0"
+				position="0 0 75"
+				material="/shared/effects/materials/starlight.material"
+			/>
+
+			<billboard
+				bone="_bone_center"
+				material="/shared/effects/materials/whitedot_blend.material"
+				startcolor="0 0 0"
+				endcolor=".2 0 0"
+				life="300"
+				startsize="0"
+				midsize="250"
+				endsize="0"
+				depthbias="-50"
+			/>
+			
+			<billboard
+				bone="_bone_center"
+				life="450"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".75"
+				startparam=".25"
+				endparam="0"
+				startsize="0"
+				endsize="550"
+				depthbias="-100"
+				material="/shared/effects/materials/refract_wellwave.material"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+			/>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

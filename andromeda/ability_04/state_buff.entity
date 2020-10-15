@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Andromeda_Ability4_Buff"
+	
+	icon="/heroes/andromeda/ability_04/icon.tga"
+	passiveeffect=""
+	
+	movespeedmultiplier="0.1,0.2,0.3"
+	
+	effecttype=""
+	allowtransfer="false"
+	
+	modifierkey="Andro_R1,Andro_R2,Andro_R3"
+>
+	
+	<onframe />
+	
+	<modifier key="ult_boost" modpriority="100"
+		passiveeffect="MagicImmunity.effect"
+		immunitytype="MagicImmunity1" 
+	>	
+	</modifier>
+</state>

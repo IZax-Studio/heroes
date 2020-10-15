@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="anna/model.model" type="K2">
+
+	<anim name="idle" clip="anna/clips/relive.clip" fps="30" loop="true" loopbackframe="30">
+	<startevent cmd="StartModelPanelEffect store2_detail_heroAvatars_large_model effects/body_store1.effect 9"/>
+		<endevent cmd="StopModelPanelEffect 9"/>
+
+	</anim>
+	
+</model>

@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+
+			<groundsprite	
+				startsize="0"
+				midsize="400"
+				endsize="400"
+				midsizepos=".2"
+				life="750"
+				material="/shared/effects/materials/whitedot_ground.material"
+				position="-15 5 0"
+				startcolor=".35 0 0"
+				endcolor="0 0 0"
+				alpha="1"	
+				yawspeed="50"				
+			/>
+
+			<billboard
+				material="/shared/effects/materials/bulb_add.material"
+				startcolor=".5 0 0"
+				endcolor="0 0 0"
+				life="250"
+				position="0 0 10"
+				startsize="200"
+				endsize="750"
+				depthbias="-150"
+			/>
+			
+			<billboard
+				delay="100"
+				material="/shared/effects/materials/bulb_add.material"
+				startcolor=".5 0 0"
+				endcolor="0 0 0"
+				life="250"
+				position="0 0 10"
+				startsize="200"
+				endsize="750"
+				depthbias="-150"
+			/>
+			
+			<billboard
+				delay="200"
+				material="/shared/effects/materials/bulb_add.material"
+				startcolor=".15 0 0"
+				endcolor="0 0 0"
+				life="250"
+				position="0 0 10"
+				startsize="200"
+				endsize="750"
+				depthbias="-150"
+			/>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<trackeremitter
+				life="250"
+				tracktype="lerp"
+				trackspeed="1"
+				spawnrate="35"
+				particlelife="2500"
+				acceleration="0.0"
+				speed="100"
+				minangle="0"
+				maxangle="0"
+				direction="0 0 1"
+				offsetradial="25 0 0"
+			>
+				<particle
+					turn="1"
+				>
+					<model
+						position="0 0 0"
+						minlife="500"
+						maxlife="650"
+						anim="idle"
+						model="single_bug/model.mdf"
+						scale=".3"
+						color="1 1 1"
+						startalpha="0"
+						midalpha="0"
+						endalpha="0"
+						midalphapos=".85"
+						lockup="1"
+						lockright="1"
+						pitch="0"
+						yaw="180"
+						directionalspace="local"
+					>
+						<simpleemitter
+							count="1"
+							position="0 0 0"
+							spawnrate="1000"
+							particlelife="2000"
+							offsetsphere="50 50 0"
+						>
+							<particle>
+<!--
+								<billboard
+									material="/shared/effects/materials/goo_trail_blend.material"
+									scale="2"
+									width="150"
+									minheight="1000"
+									maxheight="1500"
+									color="0 0 0"
+									position="0 0 200"						
+									lockup="1"
+									life="250"
+									depthbias="0"
+									startalpha=".25"
+									endalpha="0"
+								/>
+
+								<billboard
+									material="/shared/effects/materials/light_rays.material"
+									scale="2"
+									width="250"
+									minheight="2000"
+									maxheight="3000"
+									startcolor=".2 .05 0"
+									endcolor="0 0 0"
+									position="0 0 200"						
+									lockup="1"
+									life="250"
+									depthbias="-25"
+								/>
+								
+								<billboard
+									material="/shared/effects/materials/light_rays.material"
+									scale="2"
+									width="250"
+									minheight="1000"
+									maxheight="1500"
+									startcolor=".2 .05 0"
+									endcolor="0 0 0"
+									position="0 0 200"						
+									lockup="1"
+									life="250"
+									depthbias="-25"
+								/>
+-->
+							</particle>
+						</simpleemitter>
+
+					</model>
+				</particle>
+			</trackeremitter>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+
+
+			<model
+				name="ring"
+				life="1000"
+				model="circle_rig/circle.mdf"
+				anim="idle"
+				yawspeed="360"
+				startscale="1"
+				midscale="5"
+				endscale="5"
+				midscalepos=".2"
+				position="0 0 45"
+			>
+				<template name="trails">
+					<twopointtrailemitter
+						life="350"
+						name="trail01"
+						bone_a="{bone1}"
+						bone_b="{bone2}"
+						spawnrate="50"
+						particlelife="1800"
+						startparticlealpha="1"
+						endparticlealpha="0"
+						startparticlecolor="1 1 1"
+						endparticlecolor="1 1 1"
+						midpartcilealphapos=".99"
+						texpostime="1800"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/goo_trail_blend.material"
+					>
+						<particle
+							startcolor=".5 0 .25"
+							midcolor="-1 -1 -1"
+							endcolor="-1 -1 -1"
+							midcolorpos=".1"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							midalphapos=".85"
+						/>
+					</twopointtrailemitter>
+				</template>
+
+				<instance name="trails" bone1="_bone_01" bone2="_bone_02"/>
+				<instance name="trails" bone1="_bone_02" bone2="_bone_03"/>
+				<instance name="trails" bone1="_bone_03" bone2="_bone_04"/>
+				<instance name="trails" bone1="_bone_04" bone2="_bone_05"/>
+				<instance name="trails" bone1="_bone_05" bone2="_bone_06"/>
+				<instance name="trails" bone1="_bone_06" bone2="_bone_07"/>
+				<instance name="trails" bone1="_bone_07" bone2="_bone_08"/>
+				<instance name="trails" bone1="_bone_08" bone2="_bone_09"/>
+				<instance name="trails" bone1="_bone_09" bone2="_bone_10"/>
+				<instance name="trails" bone1="_bone_10" bone2="_bone_11"/>
+				<instance name="trails" bone1="_bone_12" bone2="_bone_13"/>
+				<instance name="trails" bone1="_bone_13" bone2="_bone_14"/>
+				<instance name="trails" bone1="_bone_14" bone2="_bone_15"/>
+				<instance name="trails" bone1="_bone_15" bone2="_bone_16"/>
+				<instance name="trails" bone1="_bone_16" bone2="_bone_17"/>
+				<instance name="trails" bone1="_bone_17" bone2="_bone_18"/>
+				<instance name="trails" bone1="_bone_18" bone2="_bone_01"/>
+
+			</model>
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<simpleemitter
+			delay="75"
+				life="3000"
+				count="1"
+				spawnrate="222"
+				particlelife="1500"
+				direction="0 0 1"
+				speed="2000"
+				minangle="0"
+				maxangle="0"
+				position="0 0 0"
+			>
+				<particle>
+					<billboard
+						delay="0"
+						life="300"
+						startcolor="0 0 0"
+						midcolor=".25 0 0"
+						endcolor="0 0 0"
+						midcolorpos=".2"
+						startsize="250"
+						endsize="0"
+						position="0 0 0"
+						material="/shared/effects/materials/whitedot.material"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						depthbias="0"
+					/>
+					
+					<billboard
+						delay="0"
+						life="300"
+						startcolor="0 0 0"
+						midcolor=".5 .1 .1"
+						endcolor="0 0 0"
+						midcolorpos=".2"
+						startsize="250"
+						endsize="0"
+						position="0 0 350"
+						material="/shared/effects/materials/whitedot.material"
+						lockup="1"
+						lockright="1"
+						pitch="0"
+						height="1000"
+						width="75"
+						depthbias="0"
+					/>
+					
+					<billboard
+						delay="0"
+						life="300"
+						startcolor="0 0 0"
+						midcolor=".15 .05 .05"
+						endcolor="0 0 0"
+						midcolorpos=".2"
+						startsize="250"
+						endsize="0"
+						position="0 0 350"
+						material="/shared/effects/materials/whitedot.material"
+						lockup="1"
+						lockright="1"
+						pitch="0"
+						height="1000"
+						width="25"
+						depthbias="0"
+					/>
+
+					<billboard
+						life="500"
+						position="0 0 45"
+						startalpha="0"
+						midalpha=".25"
+						endalpha="0"
+						midalphapos=".2"
+						startsize="250"
+						endsize="550"
+						depthbias="-50"
+						startparam=".5"
+						endparam="0"
+						lockup="1"
+						pitch="90"
+						material="/shared/effects/materials/refract_ring.material"
+					/>
+				</particle>
+			</simpleemitter>
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<simpleemitter
+				life="3000"
+				count="1"
+				spawnrate="222"
+				particlelife="1300"
+				direction="0 0 1"
+				speed="1750"
+				minangle="0"
+				maxangle="0" 
+				position="0 0 0"
+			>
+				<particle>
+				
+					<model
+						name="ring"
+						life="1500"
+						model="circle_rig/circle.mdf"
+						anim="idle"
+						yawspeed="360"
+						startscale="3.5"
+						midscale="1.5"
+						endscale="0"
+						midscalepos=".125"
+						position="0 0 0"
+					>
+						<template name="trails">
+							<twopointtrailemitter
+								life="500"
+								name="trail01"
+								bone_a="{bone1}"
+								bone_b="{bone2}"
+								spawnrate="50"
+								particlelife="1800"
+								startparticlealpha="1"
+								endparticlealpha="0"
+								startparticlecolor="1 1 1"
+								endparticlecolor="1 1 1"
+								midpartcilealphapos=".99"
+								texpostime="1800"
+								texposscale="0"
+								texstretchscale="1"
+								material="/shared/effects/materials/goo_trail_blend.material"
+							>
+								<particle
+									startcolor=".5 0 0"
+									midcolor="-1 -1 -1"
+									endcolor="-1 -1 -1"
+									midcolorpos=".1"
+									startalpha="1"
+									midalpha="1"
+									endalpha="0"
+									midalphapos=".85"
+								/>
+							</twopointtrailemitter>
+						</template>
+
+						<instance name="trails" bone1="_bone_01" bone2="_bone_02"/>
+						<instance name="trails" bone1="_bone_02" bone2="_bone_03"/>
+						<instance name="trails" bone1="_bone_03" bone2="_bone_04"/>
+						<instance name="trails" bone1="_bone_04" bone2="_bone_05"/>
+						<instance name="trails" bone1="_bone_05" bone2="_bone_06"/>
+						<instance name="trails" bone1="_bone_06" bone2="_bone_07"/>
+						<instance name="trails" bone1="_bone_07" bone2="_bone_08"/>
+						<instance name="trails" bone1="_bone_08" bone2="_bone_09"/>
+						<instance name="trails" bone1="_bone_09" bone2="_bone_10"/>
+						<instance name="trails" bone1="_bone_10" bone2="_bone_11"/>
+						<instance name="trails" bone1="_bone_12" bone2="_bone_13"/>
+						<instance name="trails" bone1="_bone_13" bone2="_bone_14"/>
+						<instance name="trails" bone1="_bone_14" bone2="_bone_15"/>
+						<instance name="trails" bone1="_bone_15" bone2="_bone_16"/>
+						<instance name="trails" bone1="_bone_16" bone2="_bone_17"/>
+						<instance name="trails" bone1="_bone_17" bone2="_bone_18"/>
+						<instance name="trails" bone1="_bone_18" bone2="_bone_01"/>
+
+					</model>
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				life="3000"
+				count="1"
+				spawnrate="222"
+				particlelife="1300"
+				direction="0 0 1"
+				speed="3000"
+				minangle="0"
+				maxangle="0" 
+				position="0 0 0"
+			>
+				<particle>
+				
+					<model
+						name="ring"
+						life="1500"
+						model="circle_rig/circle.mdf"
+						anim="idle"
+						yawspeed="0"
+						startscale="1.5"
+						midscale="1.5"
+						endscale="0"
+						midscalepos=".125"
+						position="0 0 0"
+					>
+						<template name="trails">
+							<twopointtrailemitter
+								life="350"
+								name="trail01"
+								bone_a="{bone1}"
+								bone_b="{bone2}"
+								spawnrate="50"
+								particlelife="1800"
+								startparticlealpha="1"
+								endparticlealpha="0"
+								startparticlecolor="1 1 1"
+								endparticlecolor="1 1 1"
+								midpartcilealphapos=".99"
+								texpostime="1800"
+								texposscale="0"
+								texstretchscale="1"
+								material="/shared/effects/materials/goo_trail_blend.material"
+							>
+								<particle
+									startcolor=".5 0 0"
+									midcolor="-1 -1 -1"
+									endcolor="-1 -1 -1"
+									midcolorpos=".1"
+									startalpha="1"
+									midalpha=".75"
+									endalpha="0"
+									midalphapos=".85"
+								/>
+							</twopointtrailemitter>
+						</template>
+
+						<instance name="trails" bone1="_bone_01" bone2="_bone_02"/>
+
+						<instance name="trails" bone1="_bone_03" bone2="_bone_04"/>
+
+						<instance name="trails" bone1="_bone_05" bone2="_bone_06"/>
+
+						<instance name="trails" bone1="_bone_07" bone2="_bone_08"/>
+
+						<instance name="trails" bone1="_bone_09" bone2="_bone_10"/>
+
+						<instance name="trails" bone1="_bone_12" bone2="_bone_13"/>
+
+						<instance name="trails" bone1="_bone_14" bone2="_bone_15"/>
+
+						<instance name="trails" bone1="_bone_16" bone2="_bone_17"/>
+
+						<instance name="trails" bone1="_bone_18" bone2="_bone_01"/>
+
+					</model>
+				</particle>
+			</simpleemitter>
+
+			<billboard
+				life="750"
+				position="0 0 45"
+				startalpha="0"
+				midalpha=".5"
+				endalpha="0"
+				midalphapos=".2"
+				startsize="500"
+				endsize="1100"
+				depthbias="-50"
+				startparam="0.5"
+				endparam="0"
+				lockup="1"
+				pitch="90"
+				material="/shared/effects/materials/refract_ring.material"
+			/>
+
+			<light
+				life="500"			
+				startcolor="15 0 0"			
+				endcolor="0 0 0"
+				midcolorpos=".2"
+				falloffstart="100"
+				falloffend="350"
+				position="0 0 40"	
+			/>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<camerashake2 scale="8" radius="1200" duration="250" frequency="22" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

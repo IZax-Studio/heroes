@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="portee" deferred="1" useentityeffectscale="0">
+
+<definitions>
+	<particlesystem name="system0" space="world" scale=".5">
+
+		<sound
+			
+			linearfalloff="true" 
+			falloffstart="1000"
+			falloffend="2500"
+			volume=".9"
+			sound2d="true"
+			sample="../../sound_Leticia/120_skin_dazhao.wav"
+		/>
+		<sound
+			delay="300"
+			linearfalloff="true" 
+			falloffstart="1000"
+			falloffend="2500"
+			volume=".9"
+			sample="../sounds/cast.wav"
+		/>
+		<billboard
+			delay="300"
+			life="300"
+			position="0 0 350"
+			material="/shared/effects/materials/flare2.material"
+			startheight="000"
+			midheight="1500"
+			endheight="1500"
+			midheightpos=".75"
+			startwidth="1"
+			midwidth="20"
+			endwidth="20"
+			midwidthpos=".3"
+			lockup="1"
+			startcolor="0 0 0"
+			midcolor="1 1 0"
+			endcolor="0"			
+			midcolorpos=".3"
+		/>
+
+		<billboard
+			delay="600"
+			life="1000"
+			position="0 0 350"
+			material="/shared/effects/materials/flare2.material"
+			height="1500"				
+			width="20"
+			lockup="1"
+			startcolor="0"
+			midcolor=".4 .4 .0"
+			endcolor="0 0 0"			
+		/>
+		
+		<model		
+			position="0 0 0"			
+			model="prism.mdf"
+			anim="idle"						
+			life="2000"
+			bone="_bone_overhead"
+			startscale="1.0"
+			midscale="1.0"
+			endscale="0"
+			midscalepos=".95"
+			yawspeed="100"		
+		>			
+		</model>
+
+		<billboard	
+			bone="_bone_overhead"	
+			life="1500"
+			roll="40"
+			startcolor=".8"				
+			endcolor="0"				
+			startsize="20"
+			midsize="120"
+			endsize="120"
+			midsizepos=".2"
+			rollspeed="40"
+			depthbias="0"
+			material="/shared/effects/materials/rainbow_add.material"
+			lockup="true"
+			pitch="90"
+		/>	
+		
+		<billboard	
+			bone="_bone_overhead"
+			life="1500"
+			roll="0"
+			startcolor=".9"				
+			endcolor="0"
+			yawspeed="130"				
+			startsize="20"
+			midsize="120"
+			endsize="120"
+			midsizepos=".2"
+			rollspeed="-40"
+			depthbias="0"
+			
+			material="/shared/effects/materials/rainbow_add.material"
+			lockup="true"
+			pitch="90"
+		/>
+
+		<billboard	
+			bone="_bone_overhead"	
+			life="1500"
+			roll="0"
+			startcolor=".9"				
+			endcolor="0"
+			pitchspeed="130"				
+			startsize="20"
+			midsize="120"
+			endsize="120"
+			midsizepos=".2"
+			rollspeed="-40"
+			depthbias="0"
+			
+			material="/shared/effects/materials/rainbow_add.material"
+			lockup="true"
+			pitch="90"
+		/>
+	</particlesystem>
+</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	
+	
+	
+	<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

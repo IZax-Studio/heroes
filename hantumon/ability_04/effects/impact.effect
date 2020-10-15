@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  useentityeffectscale="1" deferred="true" >
+	<definitions >
+		
+		<particlesystem name="system0" space="world" scale="1">
+			<billboard
+				life="130"
+				position="0 0 50"
+				startframe="0"
+				scale="2"
+				endframe="1"
+				material="/shared/effects/materials/3d_claw.material"
+				startcolor=".4 .4 1"
+				endcolor=".4 .4 1"	
+				depthbias="-100"
+			/>
+			
+			<simpleemitter
+				position="0 0 100"
+				minangle="-90"
+				maxangle="-90"
+				life="400"
+				spawnrate="650"
+				count="50"
+				minparticlelife="230"
+				maxparticlelife="2000"
+				speed="2000"
+				drag="0.1"
+				gravity="-1"
+				offsetsphere="15"
+				material="/shared/effects/materials/bad_healing_smoke_12.material"
+			>
+				<particle
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					turn="1"
+					startcolor=".2 .5 1"
+					midcolorpos="0.5"
+					midcolor=".1 .2 .6"
+					endcolor="0"
+					startsize="50"
+					minendscale="6"
+					maxendscale="10"
+					startalpha="0"
+					midalpha=".3"
+					endalpha="0"
+					midalphapos="0.1"
+				/>
+			</simpleemitter>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

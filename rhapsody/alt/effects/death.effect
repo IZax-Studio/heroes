@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+		<modifier
+			alpha="0"
+		/>
+		<particlesystem name="system0" space="world" scale="1.0">
+			<model
+				color="1"
+				parentmodel="true"
+				parentskeleton="true"
+				life="1300"
+			/>
+			
+		<!-- 	<billboard
+				delay="1300"
+				life="550"
+				position="0 0 650"
+				material="/shared/effects/materials/flare2.material"
+				startheight="1500"
+				midheight="1500"
+				endheight="100"
+				midheightpos=".75"
+				width="40"
+				lockup="1"
+				startcolor="0 .2 .3"
+				midcolor="0 .2 .3"
+				endcolor="0 0 0"
+			/> -->
+			<billboard
+				delay="1300"
+				position="0 0 50"
+				spawnrate="50"
+				life="300"
+				material="/shared/effects/materials/blink.material"
+				startsize="150"
+				endsize="0"
+				lockup="1"
+				color="0 1 1"
+			/>
+			<!-- <simpleemitter
+				delay="1350"
+				life="3000"
+				count="1"
+				spawnrate="222"
+				particlelife="300"
+				direction="0 0 1"
+				speed="500"
+				minangle="0"
+				maxangle="0" 
+				position="0 0 0"
+			>
+				<particle>
+					<billboard
+						spawnrate="50"
+						particlelife="300"
+						life="300"
+						material="/shared/effects/materials/blink.material"
+						startsize="150"
+						endsize="0"
+						lockup="1"
+						color="0 1 1"
+					/>
+				</particle>
+			</simpleemitter> -->
+			
+			
+			<simpleemitter
+				delay="1250"
+				life="300"
+				spawnrate="80"
+				position="0 0 0"
+				particlelife="1000"
+				gravity="-20"
+				material="/shared/effects/materials/sparks_reveal.material"
+				offsetsphere="30"
+				minspeed="200"
+				maxspeed="300"
+				minangle="0"
+				maxangle="0" 
+			>
+				<particle
+					color="1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					maxangle="90"
+					startsize="50"
+					minendsize="30"
+					maxendsize="35"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					startframe=".3"
+					endframe="1"
+					minscale=".7"
+					maxscale="1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				delay="1250"
+				life="300"
+				spawnrate="100"
+				position="0 0 20"
+				minparticlelife="400"
+				maxparticlelife="700"
+				material="/shared/effects/materials/whitesquare.material"
+				offsetsphere="20"
+				minspeed="200"
+				maxspeed="300"
+				minangle="0"
+				maxangle="0" 
+			>
+				<particle
+					startcolor="1 0 0"
+					midcolor="1 0 0"
+					endcolor="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					size="7"
+					framespeed="3"
+					minscale=".3"
+					maxscale="1"
+					lockup="ture"
+					minheight="10"
+					maxheight="80"
+				/>
+				<particle
+					startcolor="0 0 0"
+					midcolor="0 0 0"
+					endcolor="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					size="7"
+					framespeed="3"
+					minscale=".3"
+					maxscale="1"
+					lockup="ture"
+					minheight="10"
+					maxheight="80"
+				/>
+				<particle
+					startcolor="1 0 0"
+					midcolor="0 .5 1"
+					endcolor="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					size="7"
+					framespeed="3"
+					minscale=".3"
+					maxscale="1"
+					lockup="ture"
+					minheight="10"
+					maxheight="80"
+				/>
+				<particle
+					startcolor="0 0 0"
+					midcolor="0 0 0"
+					endcolor="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					size="7"
+					framespeed="3"
+					minscale=".3"
+					maxscale="1"
+					lockup="ture"
+					minheight="0"
+					maxheight="80"
+				/>
+				<particle
+					startcolor="1 0 0"
+					midcolor="1 0 0"
+					endcolor="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					size="7"
+					framespeed="3"
+					minscale=".3"
+					maxscale="1"
+					lockup="ture"
+					minheight="10"
+					maxheight="80"
+				/>
+			</simpleemitter>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<spawnmodifier instance="instance1" />
+	
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

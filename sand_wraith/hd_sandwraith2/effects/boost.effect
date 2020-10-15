@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+
+		<particlesystem name="system0" space="entity" scale="1">
+
+			<template name="glow">
+				<billboard
+					bone="{bone}"
+					size="{zSize}"
+					expirelife="1000"
+					startcolor=".7 0 0"
+					endcolor="0 0 0"
+					material="/shared/effects/materials/whitedot.material"
+					loop="true"
+					position="{position=0 0 0}"
+					depthbias="-25"
+				/>
+
+				<billboard
+					bone="{bone}"
+					size="{zSizeWhite}"
+					expirelife="1000"
+					startcolor=".7 .5 0"
+					endcolor="0 0 0"
+					material="/shared/effects/materials/whitedot.material"
+					position="{position=0 0 0}"
+					depthbias="-25"
+				/>
+				
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="50"
+					minparticlelife="300"
+					maxparticlelife="500"
+					offsetsphere="20"
+					speed="50"
+					minangle="0"
+					maxangle="10"
+					material="/shared/effects/materials/spark_10.material"
+					particledirectionspace="global"
+				>
+					<particle
+						maxangle="359"
+						maxanglespeed="30"
+						minanglespeed="-30"
+						scale="5"
+						startcolor="1 1 1"
+						midcolor=".5 .45 .4"
+						endcolor="0 0 0"
+						midcolorpos=".85"
+						height="2"
+						width="1"
+					/>
+					<particle
+						maxangle="359"
+						maxanglespeed="30"
+						minanglespeed="-30"
+						scale="5"
+						startcolor="1 1 1"
+						midcolor=".5 .35 .2"
+						endcolor="0 0 0"
+						midcolorpos=".85"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="20" 
+					minparticlelife="500" maxparticlelife="800"
+					direction="0 1 0"
+					gravity="-3"
+					minspeed="20"  maxspeed="40"
+					drag="0.1" 
+					material="/shared/effects/materials/phantom_white_reveal.material"
+					offsetsphere="35"
+					depthbias="-150"
+				>
+					<particle					
+						minagle="-360" maxangle="360"
+						startcolor="0" midcolor=".1 0 0" endcolor="0"
+						size="15"
+						minscale=".2" maxscale="1.5"
+						startframe="1" midframe=".1" endframe="1" midframepos=".3"
+						startalpha="0" endalpha=".7"
+						anchor="0"
+						minanglespeed="10"
+						maxanglespeed="30"
+					/>
+				</simpleemitter>
+			</template>
+
+			<instance name="glow" bone="_bone_weapon3" zSizeWhite="40" zSize="100" />
+			<instance name="glow" bone="_bone_weapon2" zSizeWhite="25" zSize="75" />
+
+			<trackeremitter
+				bone="_bone_weapon2"
+				targetbone="_bone_weapon3"
+				tracktype="lerp"
+				trackspeed="1" 
+				spawnrate="50"
+				particlelife="1000"
+				offsetsphere="50 50 0"
+				minspeed="75"
+				maxspeed="150"
+				material="/shared/effects/materials/water_spray_blend.material"
+				distancelife="1"
+				direction="0 0 1"
+				directionalspace="local"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					color=".325 0 0"
+					startalpha="0"
+					midalpha=".4"
+					endalpha="0"
+					midcolorpos=".2"
+					startsize="0"
+					midsize="75"
+					endsize="0"
+					misizepos=".2"
+
+				/>
+			</trackeremitter>
+			
+			<trackeremitter
+				targetbone="_bone_weapon3"
+				tracktype="lerp"
+				trackspeed="1" 
+				spawnrate="50"
+				particlelife="1000"
+				offsetsphere="100 100 0"
+				minspeed="75"
+				maxspeed="150"
+				material="/shared/effects/materials/water_spray_blend.material"
+				distancelife="1"
+				direction="0 0 1"
+				directionalspace="local"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					color=".325 0 0"
+					startalpha="0"
+					midalpha=".6"
+					endalpha="0"
+					midcolorpos=".2"
+					startsize="0"
+					midsize="75"
+					endsize="0"
+					misizepos=".2"
+
+				/>
+			</trackeremitter>
+			
+			<trackeremitter
+			targetbone="_bone_weapon3"
+				tracktype="lerp"
+				trackspeed="1" 
+				spawnrate="100"
+				particlelife="1000"
+				offsetsphere="100 100 0"
+				minspeed="75"
+				maxspeed="150"
+				material="/shared/effects/materials/phantom_white_reveal.material"
+				distancelife="1"
+				direction="0 0 1"
+				directionalspace="local"
+
+				>
+					<particle					
+						minagle="-360" maxangle="360"
+						startcolor="0" midcolor=".1 0 0" endcolor="0"
+						size="15"
+						minscale=".2" maxscale="1.5"
+						startframe="1" midframe=".1" endframe="1" midframepos=".3"
+						startalpha="0" endalpha=".7"
+						anchor="0"
+						minanglespeed="10"
+						maxanglespeed="30"
+					/>
+				</trackeremitter>
+
+			<trackeremitter
+				bone="_bone_weapon2"
+				targetbone="_bone_weapon3"
+				tracktype="lerp"
+				trackspeed="1" 
+				spawnrate="100"
+				particlelife="1000"
+				offsetsphere="25 25 0"
+				minspeed="100"
+				maxspeed="200"
+				material="/shared/effects/materials/flare_01.material"
+				distancelife="1"
+				direction="0 0 1"
+				directionalspace="local"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					color="2 .4 .1"
+					midcolorpos=".2"
+					startsize="0"
+					midsize="25"
+					endsize="0"
+					misizepos=".2"
+					scale=".5"
+
+				/>
+			</trackeremitter>
+		
+			<trackeremitter
+				targetbone="_bone_weapon2"
+				tracktype="lerp"
+				trackspeed="1" 
+				spawnrate="100"
+				particlelife="1000"
+				offsetsphere="75 75 0"
+				minspeed="100"
+				maxspeed="200"
+				material="/shared/effects/materials/flare_01.material"
+				distancelife="1"
+				direction="0 0 1"
+				directionalspace="local"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					color="2 .4 .1"
+					midcolorpos=".2"
+					startsize="0"
+					midsize="25"
+					endsize="0"
+					misizepos=".2"
+					scale=".5"
+				/>
+			</trackeremitter>
+
+		</particlesystem>
+
+		<particlesystem name="system1" space="world" scale="1">
+			
+			<terrainemitter
+				position="0 0 0"
+				spawnrate="3"
+				gravity="0"	
+				particlelife="1000"				
+				offsetsphere="0 0 0"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				speed="0"
+				directionalspace="global"
+				inheritvelocity="0"
+				depthbias="-20"
+			>
+				<particle
+				>
+					<groundsprite
+						delay="0"
+						material="/shared/effects/materials/sand_groun.material"	
+						startscale="1.5"
+						endscale="2.25"
+						life="1000"
+						color=".5 0 0"
+						minyaw="-360"
+						maxyaw="360"
+						startalpha="0"
+						midalpha=".65"						
+						endalpha="0"
+						midalphapos=".15"
+					/>
+					
+					
+				</particle>
+			</terrainemitter>
+			
+			<trackeremitter
+				targetbone="_bone_weapon3"
+				tracktype="lerp"
+				trackspeed="1" 
+				spawnrate="25"
+				particlelife="1000"
+				offsetsphere="75 75 0"
+				minspeed="75"
+				maxspeed="150"
+				gravity="-10"
+				material="/shared/effects/materials/water_spray_blend.material"
+				distancelife="1"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					color=".325 0 0"
+					startalpha="0"
+					midalpha=".65"
+					endalpha="0"
+					midalphapos=".1"
+					startsize="0"
+					midsize="75"
+					endsize="0"
+					misizepos=".2"
+
+				/>
+			</trackeremitter>
+		</particlesystem>
+
+		<particlesystem name="system1" space="entity" scale="1">
+			<template name="lights">
+
+				<simpleemitter
+					delay="200"
+					bone="{bone}"
+					spawnrate="10"
+					minparticlelife="500"
+					maxparticlelife="900"
+					offsetsphere="5 5 5"
+					minspeed="0"
+					maxspeed="0"
+					position="0 0 0"
+					minangle="0"
+					maxangle="360"
+					direction="0 0 0"
+					material="/shared/effects/materials/light_rays.material"
+				>
+					<particle
+						turn="true"
+						minangle="0"
+						maxangle="360"
+						color=".35 .1 0"
+						startalpha="0"
+						midalpha=".65"
+						endalpha="0"
+						midalphapos=".1"
+						startsize="0"
+						midsize="75"
+						endsize="0"
+						misizepos=".2"
+						width="11"
+						startheight="25"
+						minendheight="75"
+						maxendheight="125"
+						startanchor="1"
+						endanchor="1"
+					/>
+				</simpleemitter>
+			</template>
+
+			<instance name="lights" bone="_bone_weapon2" />
+
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="../Elizabeth_Bathory/preview_model/model.model" type="K2" >
+	
+	<anim name="idle" clip="../Elizabeth_Bathory/clips/store.clip" fps="30" loop="true" numframes="71" loopbackframe="30">
+	<startevent cmd="StartModelPanelEffect store2_detail_heroAvatars_large_model ../effects/body_store.effect 9"/>
+		<endevent cmd="StopModelPanelEffect 9"/>
+		
+
+	</anim>
+
+</model>

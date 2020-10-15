@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale=".75">	
+		
+			<controller delay="500" bone="_bone_orb" >
+				
+				<controller position="0 0 10" scale="2.25" >
+		
+					<simpleemitter
+						life="4000"
+						startspawnrate="1"
+						midspawnrate="4"
+						endspawnrate="1"
+						midspawnratepos=".8"
+						particlelife="750"
+						material="/shared/effects/materials/twirl_05.material"
+						startparticlescale="1"
+						midparticlescale="2"
+						endparticlescale="1"
+						midparticlescalepos=".8"
+					>
+						<particle
+							startcolor="0"
+							midcolor="0 1 1"
+							endcolor="0"
+							midcolorpos=".25"
+							startsize="0"
+							endsize="15"
+							maxangle="360"
+							anglespeed="150"
+						/>
+					</simpleemitter>
+		
+					<simpleemitter
+						life="4000"
+						startspawnrate="2"
+						midspawnrate="8"
+						endspawnrate="2"
+						midspawnratepos=".8"
+						particlelife="800"
+						material="/shared/effects/materials/sparks_reveal_blue.material"
+						startparticlescale="1"
+						midparticlescale="2"
+						endparticlescale="1"
+						midparticlescalepos=".8"
+					>
+						<particle
+							color="0 1 1"
+							startframe="0"
+							endframe="1"
+							startsize="0"
+							maxangle="360"
+							minendsize="20"
+							maxendsize="30"
+						/>
+					</simpleemitter>
+					
+				</controller>
+			</controller>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->

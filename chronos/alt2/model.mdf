@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="black.model" med="black.model" low="black.model" >
+
+	<anim name="idle" clip="idle.clip" fps="550" loop="true"/>
+	
+	<anim name="bored_1" clip="idle2.clip" fps="550"/>
+	
+	<anim name="portrait" clip="idle.clip" fps="550" loop="true"/>
+	
+	<anim name="taunt_1" clip="idle2.clip" fps="550"/>
+	
+	<anim name="item_1" clip="attack_1.clip" fps="550"/>
+	
+	<anim name="walk_1" clip="walk_1.clip" fps="550" loop="true">
+		<frameevent frame="1" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="6" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="12" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="17" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		
+		<frameevent frame="1" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="12" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+	</anim>
+	
+	<anim name="attack_1" clip="attack_1.clip" fps="550">
+		<frameevent frame="6" cmd="PlaySoundLinear /shared/sounds/attacks/attack_light_sword_%.wav 0 1800 .6"/>
+	</anim>
+	
+	<anim name="attack_2" clip="attack_2.clip" fps="550">
+		<frameevent frame="6" cmd="PlaySoundLinear /shared/sounds/attacks/attack_light_sword_%.wav 0 1800 .6"/>
+	</anim>
+	
+	<anim name="ability_walk_1" clip="walk_1.clip" fps="550" loop="true">
+		<frameevent frame="2" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="7" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="14" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="19" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		
+		<frameevent frame="2" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="14" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	</anim>
+	
+	<anim name="death_1" clip="death_1.clip" fps="550" loop="true" loopbackframe="-1">
+	</anim>
+	
+	<anim name="ability_4" clip="ability_4.clip" fps="550">
+	<frameevent frame="1" cmd="PlaySoundLinear sa4.ogg 0 1300 .8"/>
+	</anim>
+	
+	<anim name="knock_1" clip="death_1.clip" fps="550" loop="true" loopbackframe="-1">
+	</anim>
+	
+	<anim name="getup_1" clip="idle.clip" fps="550" loop="true"/>
+			
+</model>

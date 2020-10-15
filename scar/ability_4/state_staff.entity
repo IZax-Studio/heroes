@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Scar_Ability4_Staff"
+	
+	icon="../icons/ab4.tga"
+	passiveeffect="effects/last_stand.effect"
+	deathpersist="true"
+	
+	modifierkey="unkillable"
+	unkillable="true"
+>	
+	<onexpired>
+		<expirestate name="State_Scar_Ability4" target="source_entity" />
+		<kill target="this_owner_entity" source="this_proxy_entity" />
+	</onexpired>
+	
+	<onkill>
+		<cantarget targetscheme="enemy_nonillusion_nonmimic_nonpet_heroes" ignoreinvulnerable="true">
+			<changeduration entity="this_entity" b="4000" op="add" />
+			<popup name="additional_seconds" a="4" source="source_entity" target="source_entity" />
+		</cantarget>
+	</onkill>
+	
+	<altavatar key="Hero_Scar.Classic" modpriority="1"
+		passiveeffect="effects/last_stand_classic.effect"
+	/>
+	
+	<altavatar key="Hero_Scar.Alt4" modpriority="1"
+		passiveeffect="../alt4/ability_04/effects/last_stand.effect"
+	/>
+	
+	<altavatar key="Hero_Scar.Alt5" modpriority="1"
+		passiveeffect="../alt5/ability_04/effects/last_stand.effect"
+	/>
+</state>

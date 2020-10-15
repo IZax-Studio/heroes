@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="" file="model.model" type="K2" >
+
+	<anim name="idle" clip="clips/idle.clip" loop="true"/>
+	
+	<anim name="portrait" clip="clips/idle.clip" fps="10" loop="true"/>
+	
+	<anim name="taunt_1" clip="clips/specialidle.clip" fps="33">
+	<startevent cmd="StartEffect bat_specialidle.effect 8"/>
+		<endevent cmd="StopEffect 8" />
+	</anim>
+
+	<anim name="item_1" clip="clips/touzhi.clip"/>
+		
+	<anim name="ability_1" clip="clips/skill_01.clip" fps="25" loop="false">
+		<frameevent frame="9" cmd="PlaySoundLinear ../sounds/attack_%.wav 400 1800 .35"/>
+		<frameevent frame="7" cmd="PlaySoundLinear ../sounds/ab1_cast.wav 400 2500 1"/>
+		<frameevent frame="23" cmd="PlaySoundLinear ../sounds/ab1_ball.wav 400 2500 1"/>
+		<frameevent frame="18" cmd="PlaySoundLinear /heroes/witch_slayer/sounds/move_%.wav 0 700 .5"/>
+	</anim>
+
+	<anim name="ability_2" clip="clips/touzhi.clip"  loop="false" blendtime="150">
+		<frameevent frame="9" cmd="PlaySoundLinear ../sounds/attack2.wav 400 1800 1"/>
+		<frameevent frame="9" cmd="PlaySoundLinear ../ability_02/sounds/cast.wav 400 2500 .5"/>
+		<frameevent frame="18" cmd="PlaySoundLinear /heroes/witch_slayer/sounds/move_%.wav 0 700 .5"/>
+	</anim>
+	
+	<anim name="ability_3" clip="clips/skill_02.clip" fps="60" loop="false" blendtime="150">
+	</anim>
+	
+	<anim name="ability_4" clip="clips/attack_1.clip" fps="25" loop="false" blendtime="150">
+		<frameevent frame="8" cmd="PlaySoundLinear ../sounds/215_0_Atk_Fire_0%.wav 500 1300 .5"/>
+		<frameevent frame="6" cmd="PlaySoundLinear ../sounds/215_0_Atk_Foley_0%.wav 500 1300 .5"/>
+	</anim>
+	
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="25" loop="false" >
+		<frameevent frame="8" cmd="PlaySoundLinear ../sounds/215_0_Atk_Fire_0%.wav 500 1300 .5"/>
+		<frameevent frame="6" cmd="PlaySoundLinear ../sounds/215_0_Atk_Foley_0%.wav 500 1300 .5"/>
+	</anim>
+	
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="25" loop="false" >
+		<frameevent frame="8" cmd="PlaySoundLinear ../sounds/215_0_Atk_Fire_0%.wav 500 1300 .5"/>
+		<frameevent frame="6" cmd="PlaySoundLinear ../sounds/215_0_Atk_Foley_0%.wav 500 1300 .5"/>
+	</anim>
+	
+	<anim name="walk_1" clip="clips/run2.clip"  loop="true" fps="20" loopbackframe="1">
+		<frameevent frame="1" cmd="PlaySoundLinear ../sounds/move_%.wav 0 800 .3"/>
+		<frameevent frame="6" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="11" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="10" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="15" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="20" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="30" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="35" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="37" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="42" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+			
+		<frameevent frame="6" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="15" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="28" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="10" cmd="PlaySoundLinear sounds/jewelry_%.wav 0 800 .3"/>
+		<frameevent frame="37" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	</anim>
+
+	<anim name="bored_1" clip="clips/dance.clip" fps="25" loop="false" >
+		<startevent cmd="StartEffect dance.effect 8"/>
+		<endevent cmd="StopEffect 8" />
+	</anim>
+	
+	<anim name="death_1" clip="clips/dead.clip" fps="25" loop="true" loopbackframe="-1" >
+		<frameevent frame="1" cmd="PlaySoundLinear ../sounds/death_%.wav 1300 1300 .5"/>
+		<frameevent frame="1" cmd="PlaySoundLinear ../sounds/215_0_Dead.wav 1300 1300 .3"/>
+	</anim>
+	
+
+	<anim name="knock_1" clip="clips/dead.clip" loop="true" loopbackframe="-1"/>
+
+</model>

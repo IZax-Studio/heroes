@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				volume="1"
+				sample="/heroes/chronos/alt10/sounds/flash/ab1_imp_%.wav"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="1800"
+			/>
+
+			<model
+				life="300"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="2 .5 0"
+				endcolor="0"
+				material="/shared/effects/materials/shell3.material"
+				expirelife="300"
+				startscale="1"
+				endscale="1.2"
+			/>
+
+			<billboard
+				life="300"
+				bone="_bone_chest1"
+				material="../../ability_04/effects/logo.material"
+				startcolor="2 .4 0"
+				endcolor="0 0 0"
+				startalpha="1"
+				endalpha="0"
+				startsize="15"
+				endsize="150"
+				directionalspace="local"
+				pitch="-30"
+				lockup="1"
+				lockright="1"
+			/>
+			
+			<groundsprite
+				life="300"
+				material="../../ability_04/effects/logo.material"
+				startcolor="2 .4 0"
+				endcolor="0 0 0"
+				startalpha="1"
+				endalpha="0"
+				startsize="50"
+				endsize="150"
+				directionalspace="local"
+			/>
+			
+			<simpleemitter
+				life="300"
+				bone="_bone_center"
+				spawnrate="250"
+				minparticlelife="200"
+				maxparticlelife="350"
+				speed="200"
+				maxangle="360"
+				offsetsphere="30 30 75"
+				material="/shared/effects/materials/lightning_11.material"
+			>
+				<particle
+					maxangle="360"
+					maxanglespeed="200"
+					startcolor="1 .4 .2"
+					endcolor="0"
+					minsize="30"
+					maxsize="60"
+				/>
+			</simpleemitter>
+				
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

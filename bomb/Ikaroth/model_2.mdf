@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="model.model" type="K2">
+
+	<anim name="idle" clip="clips/bat_idle.clip" fps="30" loop="true" >
+	
+	</anim>
+	
+	<anim name="portrait" clip="clips/bat_idle.clip" loop="true" fps="15"/>
+
+	<anim name="taunt_1" clip="clips/bat_specialidle.clip"/>
+	
+	<anim name="item_1" clip="clips/single_touzhi_2.clip"/>
+	
+	<anim name="ability_1" clip="clips/single_skill_04.clip" fps="80" startframe="5" numframes="400" blendtime="50">
+	<frameevent frame="1" cmd="PlaySoundLinear /heroes/bomb/aa.wav 400 2000 1"/>
+<startevent cmd="StartEffect 11.effect 8"/>
+	<endevent cmd="StopEffect 8"/>
+
+	</anim>
+	
+	<anim name="ability_2" clip="clips/single_touzhi_2.clip" fps="40" loop="false">
+		<frameevent frame="1" cmd="PlaySoundLinear /heroes/bomb/sa4.wav 400 2000 1"/>
+
+		<frameevent frame="2" cmd="PlaySoundLinear ../sounds/move_%.wav 0 800 .2"/>
+		<frameevent frame="2" cmd="PlaySoundLinear /heroes/bephelgor/sounds/move_%.wav 0 800 .2"/>
+	</anim>
+
+	<anim name="ability_3" clip="clips/single_touzhi_2.clip" fps="30" loop="false">
+		<frameevent frame="2" cmd="PlaySoundLinear sounds/move_%.wav 0 800 .2"/>
+		<frameevent frame="2" cmd="PlaySoundLinear /heroes/bephelgor/sounds/move_%.wav 0 800 .2"/>
+		<frameevent frame="4" cmd="PlaySoundLinear /shared/sounds/attacks/attack_light_%.wav 400 2000 .35"/>
+	</anim>
+
+	<anim name="ability_4" clip="clips/single_skill_01.clip" fps="20" loop="false">
+		<frameevent frame="2" cmd="PlaySoundLinear sounds/move_%.wav 0 800 .2"/>
+		<frameevent frame="2" cmd="PlaySoundLinear /heroes/bephelgor/sounds/move_%.wav 0 800 .2"/>
+		<frameevent frame="32" cmd="PlaySoundLinear sounds/move_%.wav 0 800 .2"/>
+		<frameevent frame="32" cmd="PlaySoundLinear /heroes/bephelgor/sounds/move_%.wav 0 800 .2"/>
+	</anim>
+	
+	<anim name="attack_1" clip="clips/single_attack_attcom_1.clip" fps="25">
+		<frameevent frame="7" cmd="PlaySoundLinear ../sounds_Ikaroth/138_0_Atk_Whoosh_0%.wav 200 1300 .4"/>
+		<frameevent frame="10" cmd="PlaySoundLinear ../sounds_Ikaroth/138_0_Atk_Foley_0%.wav 200 1300 .8"/>
+	</anim>
+
+	<anim name="attack_2" clip="clips/single_attack_attcom_2.clip" fps="25">
+		<frameevent frame="7" cmd="PlaySoundLinear ../sounds_Ikaroth/138_0_Atk_Whoosh_0%.wav 200 1300 .4"/>
+		<frameevent frame="10" cmd="PlaySoundLinear ../sounds_Ikaroth/138_0_Atk_Foley_0%.wav 200 1300 .8"/>
+	</anim>
+	
+	
+	<anim name="walk_1" clip="clips/single_run.clip" fps="30" loop="true">
+		<frameevent frame="3" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="8" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="24" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="29" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+
+		<frameevent frame="10" cmd="PlaySoundLinear /heroes/valkyrie/alt10/sounds/wing_%.wav 0 800 .15"/>		
+		<frameevent frame="30" cmd="PlaySoundLinear /heroes/valkyrie/alt10/sounds/wing_%.wav 0 800 .15"/>
+	</anim>
+
+	<anim name="bored_1" clip="clips/dance.clip" fps="30" loop="false"/>
+	
+	<anim name="death_1" clip="clips/dead.clip" fps="30" loop="true" loopbackframe="-1">
+	<frameevent frame="1" cmd="PlaySoundLinear /heroes/bomb/sounds_Ikaroth/death_2.wav 400 2000 .5"/>
+	</anim>
+
+	<anim name="knock_1" clip="clips/dead.clip" loop="true"  startframe="15" numframes="400" loopbackframe="-1"/>
+	
+	<anim name="getup_1" clip="clips/getup_1.clip"/>		
+	
+	
+</model>

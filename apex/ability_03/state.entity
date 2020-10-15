@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Apex_Ability3"
+
+	icon="1.jpg"
+	passiveeffect="effects/state_self.effect"
+	
+	effecttype=""
+	allowtransfer="false"
+	
+	healthregenpercent="0.04,0.05,0.06,0.07"
+>
+	<onframe />
+	
+	<modifier key="ult_boost" modpriority="90"
+		movespeedslow="0.25"
+		healthregenpercent="0.05,0.06,0.07,0.08"
+		modifierkey="ApexE_Channel"
+	>
+		<onframe>
+			<targettype type="stunned">
+				<expire />
+			</targettype>
+			<targettype type="silenced">
+				<expire />
+			</targettype>
+		</onframe>
+
+		<onactivatepreimpact ignoreresponsetype="Staccato Item_NonInterrupting"> <!-- Because it is not technically considered a channel, still responds to all items. -->
+			<entitytype type="Ability_Rhapsody4" source="inflictor_entity" target="inflictor_entity"/>
+			<else>
+				<!-- Item_NonInterrupting responsetype on flagged items prevent them from breaking the channel -->
+				<expire />
+			</else>
+		</onactivatepreimpact>
+
+		<onattack>
+			<expire />
+		</onattack>
+
+		<onexpired>
+			<hidechannelbar toolname="Ability_Apex3" />
+			<playanim name="idle" />
+		</onexpired>
+	</modifier>
+	
+	<altavatar key="Hero_Apex.Alt" modpriority="100"
+	    icon="../alt/ability_03/icon.tga"
+		passiveeffect="../alt/ability_03/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Apex.Alt2" modpriority="100"
+		passiveeffect="../alt2/ability_03/effects/state_self.effect"
+	/>
+</state>

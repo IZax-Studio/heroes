@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Solstice_Ability2_Night_Reveal"
+	
+	icon=""
+	passiveeffect="effects/state_night_reveal.effect"
+	revealed="false"
+	sighted="true"
+	serverentity="true"
+>
+	<altavatar key="Hero_Solstice.Alt6" modpriority="100"
+		passiveeffect="/heroes/solstice/alt6/ability_02/effects/state_night_reveal.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt7" modpriority="100"
+		passiveeffect="/heroes/solstice/alt7/ability_02/effects/state_night_reveal.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt9" modpriority="100"
+		passiveeffect="/heroes/solstice/alt9/ability_02/effects/state_night_reveal.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt10" modpriority="100"
+		passiveeffect="/heroes/solstice/alt10/ability_02/effects/state_night_reveal.effect"
+	/>
+
+</state>

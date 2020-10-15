@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Solstice3"
+
+	icon="Cha075_Skill_I.jpg"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="passive"
+	maxcharges="3"
+	
+	dynamicprecache="/heroes/solstice/ability_03/effects/day_impact.effect,/heroes/solstice/ability_03/effects/night_impact.effect"
+>
+	<onlearn>
+		<setcharges a="3" />
+		
+		<setscriptvalue name="day_effect" value="/heroes/solstice/ability_03/effects/day_impact.effect" entity="this_entity" />
+		<setscriptvalue name="night_effect" value="/heroes/solstice/ability_03/effects/night_impact.effect" entity="this_entity" />
+	</onlearn>
+	
+	<onattackstart>
+		<compare a="charges" b="1" op="eq">
+			<playanim name="ability_3" speed="source_attackspeed" target="source_entity" />
+		</compare>
+	</onattackstart>
+	
+	<onattack>
+		<hasmodifier name="Day_Solstice">
+			<!-- Day mode logic -->
+			<setaccumulator value="40,60,80,100" /> <!-- Damage -->
+			
+			<cantarget targetscheme="enemy_units">
+				<removecharge />
+				<compare a="charges" b="0" op="eq">
+					<addattackpreimpactactions>
+						<cantarget targetscheme="enemy_heroes">
+							<setvar0 a="accumulator" />
+							
+							<bonusdamageadd target="" a="var0"  /> <!-- Add bonus damage to your attack -->
+							<setvar0 a="var0" b="source_attackdamage" op="add" /> <!-- Calculate damage specifically for lifesteal -->
+							<calculatedamage amount="var0" effecttype="Physical" />
+							<heal target="source_entity" a="result" b="0.10,0.15,0.20,0.25" op="mult" />
+							<spawnaffector name="Affector_Solstice_Ability3" source="source_entity" target="source_entity" ignore="target_entity" />
+						</cantarget>
+						<else>
+							<setvar0 a="accumulator" b="2.2" op="mult" /> <!-- Bonus damage multiplier vs. creeps -->
+							
+							<bonusdamageadd target="" a="var0" />
+							<setvar0 a="var0" b="source_attackdamage" op="add" />
+							<calculatedamage amount="var0" effecttype="Physical" />
+							<heal target="source_entity" a="result" b="0.10,0.15,0.20,0.25" op="mult" />
+							<spawnaffector name="Affector_Solstice_Ability3" source="source_entity" target="source_entity" proxy="target_entity" ignore="target_entity" />
+						</else>
+					</addattackpreimpactactions>
+					
+					<!-- Charge reset mechanism & Staff of the Master -->
+					<hasmodifier name="ult_boost">
+						<setcharges a="2" />
+					</hasmodifier>
+					<else>
+						<setcharges a="3" />
+					</else>
+					
+					<!-- VFX -->
+					<getscriptvalue name="day_effect" destvar="str0" entity="this_entity" />
+					<playeffectdynamic effect="str0" source="target_entity" occlude="true" />
+				</compare>
+			</cantarget>
+		</hasmodifier>
+		<else>
+			<!-- Night mode logic -->
+			<setaccumulator value="60,90,120,150" /> <!-- Damage -->
+			
+			<cantarget targetscheme="enemy_units">
+				<removecharge />
+				<compare a="charges" b="0" op="eq">
+					<addattackpreimpactactions>
+						<setvar0 a="accumulator" />
+						
+						<bonusdamageadd target="" a="var0" />
+						<setvar0 a="var0" b="source_attackdamage" op="add" />
+						<calculatedamage amount="var0" effecttype="Physical" />
+						<heal target="source_entity" a="result" b="0.10,0.15,0.20,0.25" op="mult" />					
+					</addattackpreimpactactions>
+					
+					<!-- Charge reset mechanism & Staff of the Master -->
+					<hasmodifier name="ult_boost">
+						<setcharges a="2" />
+					</hasmodifier>
+					<else>
+						<setcharges a="3" />
+					</else>
+					
+					<!-- VFX -->
+					<getscriptvalue name="night_effect" destvar="str0" entity="this_entity" />
+					<playeffectdynamic effect="str0" source="target_entity" occlude="true" />
+				</compare>
+			</cantarget>
+		</else>
+	</onattack>
+
+	<modifier key="Day_Solstice" modpriority="100"
+		icon="Cha075_Skill_I.jpg"
+		targetradius="250"
+	>
+		<onframe>
+			<hasmodifier name="ult_boost" entity="source_entity">
+				<setactivemodifierkey name="Day_Solstice_Ult" />
+			</hasmodifier>
+			<else>
+				<setactivemodifierkey name="" />
+			</else>
+		</onframe>
+	</modifier>
+	
+	<modifier key="Night_Solstice" modpriority="100"
+		icon="Cha075_Skill_I.jpg"
+	>
+		<onframe>
+			<hasmodifier name="ult_boost" entity="source_entity">
+				<setactivemodifierkey name="Night_Solstice_Ult" />
+			</hasmodifier>
+			<else>
+				<setactivemodifierkey name="" />
+			</else>
+		</onframe>
+	</modifier>
+	
+	<!-- Below 2 modifiers are required to make the text work on ability descriptions when the sotm is active -->
+	
+	<modifier key="Day_Solstice_Ult" modpriority="110"
+		actiontype="no_target"
+		frontqueue="true"
+		inheritmovement="true"
+		noninterrupting="true"
+	>
+		<onframe>
+			<hasmodifier name="ult_boost" entity="source_entity" />
+			<else>
+				<setactivemodifierkey name="" />
+			</else>
+		</onframe>
+		
+		<onimpact>
+			<applystate name="State_Solstice_NightFX" target="this_owner_entity" continuous="true" />
+			<expirestate name="State_Solstice_DayFX" target="this_owner_entity" />
+			<setactivemodifierkey name="Night_Solstice_Ult" />
+		</onimpact>
+	</modifier>
+	
+	<modifier key="Night_Solstice_Ult" modpriority="110"
+		actiontype="no_target"
+		frontqueue="true"
+		inheritmovement="true"
+		noninterrupting="true"
+	>
+		<onframe>
+			<hasmodifier name="ult_boost" entity="source_entity" />
+			<else>
+				<setactivemodifierkey name="" />
+			</else>
+		</onframe>
+		
+		<onimpact>
+			<applystate name="State_Solstice_DayFX" target="this_owner_entity" continuous="true" />
+			<expirestate name="State_Solstice_NightFX" target="this_owner_entity" />
+			<setactivemodifierkey name="Day_Solstice_Ult" />
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Solstice.Alt5"
+		dynamicprecache="/heroes/solstice/alt5/ability_03/effects/day_impact.effect,/heroes/solstice/alt5/ability_03/effects/night_impact.effect"
+	>
+		<onlearn>
+			<setcharges a="3" />
+			
+			<setscriptvalue name="day_effect" value="/heroes/solstice/alt5/ability_03/effects/day_impact.effect" entity="this_entity" />
+			<setscriptvalue name="night_effect" value="/heroes/solstice/alt5/ability_03/effects/night_impact.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Solstice.Alt6"
+		dynamicprecache="/heroes/solstice/alt6/ability_03/effects/day_impact.effect,/heroes/solstice/alt6/ability_03/effects/night_impact.effect"
+	>
+		<onlearn>
+			<setcharges a="3" />
+			
+			<setscriptvalue name="day_effect" value="/heroes/solstice/alt6/ability_03/effects/day_impact.effect" entity="this_entity" />
+			<setscriptvalue name="night_effect" value="/heroes/solstice/alt6/ability_03/effects/night_impact.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Solstice.Alt7"
+		dynamicprecache="/heroes/solstice/alt7/ability_03/effects/day_impact.effect,/heroes/solstice/alt7/ability_03/effects/night_impact.effect"
+	>
+		<onlearn>
+			<setcharges a="3" />
+			
+			<setscriptvalue name="day_effect" value="/heroes/solstice/alt7/ability_03/effects/day_impact.effect" entity="this_entity" />
+			<setscriptvalue name="night_effect" value="/heroes/solstice/alt7/ability_03/effects/night_impact.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Solstice.Alt8"
+		dynamicprecache="/heroes/solstice/alt8/ability_03/effects/day_impact.effect,/heroes/solstice/alt8/ability_03/effects/night_impact.effect"
+	>
+		<onlearn>
+			<setcharges a="3" />
+			
+			<setscriptvalue name="day_effect" value="/heroes/solstice/alt8/ability_03/effects/day_impact.effect" entity="this_entity" />
+			<setscriptvalue name="night_effect" value="/heroes/solstice/alt8/ability_03/effects/night_impact.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Solstice.Alt9"
+		dynamicprecache="/heroes/solstice/alt9/ability_03/effects/day_impact.effect,/heroes/solstice/alt9/ability_03/effects/night_impact.effect"
+	>
+		<onlearn>
+			<setcharges a="3" />
+			
+			<setscriptvalue name="day_effect" value="/heroes/solstice/alt9/ability_03/effects/day_impact.effect" entity="this_entity" />
+			<setscriptvalue name="night_effect" value="/heroes/solstice/alt9/ability_03/effects/night_impact.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Solstice.Alt10"
+		dynamicprecache="/heroes/solstice/alt10/ability_03/effects/day_impact.effect,/heroes/solstice/alt10/ability_03/effects/night_impact.effect"
+	>
+		<onlearn>
+			<setcharges a="3" />
+			
+			<setscriptvalue name="day_effect" value="/heroes/solstice/alt10/ability_03/effects/day_impact.effect" entity="this_entity" />
+			<setscriptvalue name="night_effect" value="/heroes/solstice/alt10/ability_03/effects/night_impact.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Solstice.Alt11"
+		dynamicprecache="/heroes/solstice/alt11/ability_03/effects/day_impact.effect,/heroes/solstice/alt11/ability_03/effects/night_impact.effect"
+	>
+		<onlearn>
+			<setcharges a="3" />
+			
+			<setscriptvalue name="day_effect" value="/heroes/solstice/alt11/ability_03/effects/day_impact.effect" entity="this_entity" />
+			<setscriptvalue name="night_effect" value="/heroes/solstice/alt11/ability_03/effects/night_impact.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+</ability>

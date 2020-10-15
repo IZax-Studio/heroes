@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+		
+		<particlesystem name="system0" space="world" scale=".75">
+ 
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1200"
+				volume=".5"
+				sample="\heroes\monkey_king\Elizabeth_Bathory\sounds/34_skin3_relive.wav"
+			/>
+			
+			<model
+				position="0 0 0"
+				life="5000"
+				anim="idle"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				scale="1.725"
+				startcolor="1 .5 1"
+				midcolor="0 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".75"
+				startalpha="0"
+				midalpha="0"
+				endalpha="0"
+				midalphapos=".4"
+				
+			>
+				<billboard
+					life="500"
+					bone="Scene Root"
+					startcolor=".5 .3 .5"
+					endcolor="0 0 0"
+					size="70"
+					position="0 0 10"
+				material="/shared/effects/materials/heart_04.material"
+					lockup="1"
+					lockright="1"
+					rollspeed="0"
+					pitch="90"
+					yawspeed="0"
+					directionalspace="local"
+				/>
+				
+				<billboard
+				delay="250"
+					life="500"
+					bone="Scene Root"
+					startcolor=".5 .3 .5"
+					endcolor="0 0 0"
+					size="70"
+					position="0 0 20"
+				material="/shared/effects/materials/heart_04.material"
+					lockup="1"
+					lockright="1"
+					rollspeed="0"
+					pitch="90"
+					yawspeed="0"
+					directionalspace="local"
+				/>
+				
+				<billboard
+				delay="250"
+					life="250"
+					bone="Scene Root"
+					startcolor=".5 .3 .5"
+					endcolor="0 0 0"
+					size="70"
+					position="0 0 30"
+				material="/shared/effects/materials/heart_04.material"
+					lockup="1"
+					lockright="1"
+					rollspeed="0"
+					pitch="90"
+					yawspeed="0"
+					directionalspace="local"
+				/>
+				<billboard
+			
+					life="1500"
+					
+					color="1 1 1"
+					startalpha=".4"
+					midalpha=".1"
+					endalpha="0"
+					midalphapos=".25"
+					size="80"
+					position="0 0 5"
+				material="/shared/effects/materials/heart_02.material"
+					lockup="1"
+					lockright="1"
+					rollspeed="0"
+					pitch="-90"
+					yawspeed="0"
+					directionalspace="local"
+				/>
+			</model>
+					
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" >
+			<model
+				model="gloves/model.mdf"
+				parentskeleton="true"
+			/>
+			<model
+				model="glowing_hands/model.mdf"
+				parentskeleton="true"
+			/>
+			
+			<template name="Eyes">
+				<billboard
+					expirelife="300"
+					startcolor="1 .5 .2"
+					endcolor="0"
+					startsize="7"
+					endsize="0"
+					bone="{bone}"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+				
+				<billboard
+					expirelife="300"
+					startcolor=".3 .2 0"
+					endcolor="0"
+					startsize="10"
+					endsize="0"
+					bone="{bone}"
+					depthbias="-5"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+				
+				<trailemitter
+					bone="{bone}"
+					spawnrate="100"
+					particlelife="250"
+					position="0 2 0"
+					direction="{dir}"
+					angle="0"
+					speed="50"
+					drag="0"
+					gravity="-10"
+					texpostime="500"
+					texposscale="0"
+					texstretchscale="1"
+					material="/shared/effects/materials/trail_03.material"
+				>
+					<particle
+						startcolor="1 .5 .2"
+						endcolor="0"
+						size="10"
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					bone="{bone}"
+					spawnrate="100"
+					particlelife="250"
+					position="0 2 0"
+					direction="{dir}"
+					angle="0"
+					speed="50"
+					drag="0"
+					gravity="-10"
+					texpostime="500"
+					texposscale="0"
+					texstretchscale="1"
+					material="/shared/effects/materials/trail_08.material"
+				>
+					<particle
+						startcolor="1 .5 .2"
+						endcolor="0"
+						startsize="10"
+						endsize="30"
+					/>
+				</trailemitter>
+				
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="70"
+					particlelife="300"
+					position="0 2 0"
+					speed="30"
+					angle="0"
+					gravity="-5"
+					direction="{dir}"
+					offsetsphere="2"
+					material="/shared/effects/materials/femme_lightning_01.material"
+				>
+					<particle
+						maxangle="360"
+						maxanglespeed="200"
+						startcolor="1 .6 .3"
+						endcolor="0"
+						minsize="1"
+						maxsize="5"
+					/>
+				</simpleemitter>
+			</template>
+
+			<instance name="Eyes" bone="_bone_lefteye" dir="1 0 0"/>
+			<instance name="Eyes" bone="_bone_righteye" dir="-1 0 0"/>
+			
+		</particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <waitfordeath instance="instance0" />
+   </thread>
+</effect>

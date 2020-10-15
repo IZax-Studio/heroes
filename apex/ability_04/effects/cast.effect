@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="3.6">
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				life="5000"
+				volume=".2"
+				sample="/heroes/behemoth/alt5/sounds/ab4_cast.wav"
+			/>
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				life="5000"
+				volume=".5"
+				sample="/heroes/apex/ability_04/sounds/cast.wav"
+			/>
+
+
+<model
+life="1500"
+delay="0"
+				model="e4/model2.mdf"
+anim="black"
+				position="0 0 100"
+					startcolor=".5"
+midcolor="1"
+				endcolor=".2"
+				startscale="8"
+midscale="5.5"
+endscale="5"
+/>
+
+
+
+
+<model
+life="1000"
+delay="1"
+				model="sa/model.mdf"
+				position="0 0 0"
+					startcolor="2 0 0"
+midcolor="1 0 0"
+				endcolor="0 0 0"
+				startscale="3"
+midscale="23"
+endscale="26"
+/>
+
+
+
+
+<billboard
+				life="1200"
+				position="0 0 100"
+				material="/shared/effects/materials/corona_07.material"
+				startcolor=".5 0 0"
+midcolor=".4 0 0"
+				endcolor=".3 0 0"
+				startsize="100"
+midsize="500"
+				endsize="550"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+
+<billboard
+delay="1200"
+				life="1500"
+				position="0 0 100"
+				material="/shared/effects/materials/corona_07.material"
+				startcolor=".3 0 0"
+midcolor=".1 0 0"
+				endcolor="0 0 0"
+				startsize="550"
+midsize="600"
+				endsize="650"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+
+
+
+<billboard
+delay="0"
+				life="1200"
+				position="0 0 50"
+				material="/shared/effects/materials/corona_07.material"
+				startcolor=".5 0 0"
+midcolor=".4 0 0"
+				endcolor=".3 0 0"
+				startsize="10"
+midsize="400"
+				endsize="450"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+
+<billboard
+delay="1200"
+				life="1500"
+				position="0 0 50"
+				material="/shared/effects/materials/corona_08.material"
+					startcolor=".3 0 0"
+midcolor=".1 0 0"
+				endcolor="0 0 0"
+				startsize="450"
+midsize="500"
+				endsize="550"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+
+
+<billboard
+				life="1200"
+				position="0 0 140"
+				material="/shared/effects/materials/corona_07.material"
+				startcolor=".5 0 0"
+midcolor=".4 0 0"
+				endcolor=".3 0 0"
+				startsize="100"
+midsize="350"
+				endsize="400"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+
+<billboard
+delay="1200"
+				life="1500"
+				position="0 0 140"
+				material="/shared/effects/materials/corona_08.material"
+				startcolor=".3 0 0"
+midcolor=".1 0 0"
+				endcolor="0 0 0"
+				startsize="400"
+midsize="450"
+				endsize="500"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+
+
+
+
+
+
+
+
+
+		
+			<billboard
+				delay="0"
+				life="250"
+				position="0 0 0"
+				material="/shared/effects/materials/corona_07.material"
+				startcolor=".25 .125 0"
+				endcolor="0 0 0"
+				startsize="100"
+				endsize="350"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+		
+			<billboard
+				life="250"
+				position="0 0 0"
+				material="/shared/effects/materials/corona_07.material"
+				startcolor=".25 .125 0"
+				endcolor="0 0 0"
+				startsize="100"
+				endsize="350"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+			
+			<billboard
+				life="500"
+				position="0 0 0"
+				material="/shared/effects/materials/corona_07.material"
+				startcolor=".25 .125 0"
+				endcolor="0 0 0"
+				startsize="100"
+				endsize="350"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+			
+			<billboard
+				life="1000"
+				position="0 0 0"
+				material="/shared/effects/materials/corona_07.material"
+				startcolor=".125 .065 0"
+				midcolor="0 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".65"
+				startsize="100"
+				endsize="350"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+		
+			<billboard
+				delay="0"
+				life="1500"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot_blend.material"
+				startcolor=".75 0 0"
+				endcolor="0 0 0"
+				startalpha=".5"
+				endalpha="0"
+				startsize="350"
+				endsize="350"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+			
+			<billboard
+				delay="0"
+				life="1000"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor=".5 0 0"
+				endcolor="0 0 0"
+				startalpha=".2"
+				endalpha="0"
+				startsize="100"
+				endsize="100"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+
+			<billboard
+				delay="0"
+				life="250"
+				position="0 0 0"
+				material="/shared/effects/materials/refract_ripples.material"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				color=".75"
+				startsize="250"
+				endsize="350"
+				startparam=".1"
+				endparam="0"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+
+			<billboard
+				delay="0"
+				life="1000"
+				position="0 0 0"
+				material="/shared/effects/materials/refract_ripples.material"
+				startalpha="0"
+				midalpha=".5"
+				endalpha="0"
+				color=".5"
+				startsize="250"
+				endsize="350"
+				startparam=".1"
+				endparam="0"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+			
+			<simpleemitter
+				particlelife="1000"
+				count="50"
+				spawnrate="1000"
+				speed="475"
+				minangle="90"
+				maxangle="90"
+				material="/shared/effects/materials/phantom_white_reveal.material"
+				offsetsphere="100"
+				position="0 0 10"
+				depthbias="-100"
+				
+			>
+				<particle
+					startcolor="1 0 0" midcolor="0" endcolor="-1" midcolorpos=".5"
+					startsize="50" midsize="100" endsize="0" midsizepos=".95"
+					startalpha=".1" 	midalpha=".5" endalpha="0" midalphapos=".5"
+					minangle="0"
+					maxangle="360"
+					startframe="1" midframe=".1" endframe="1" midframepos=".3"
+				/>
+			</simpleemitter>
+		
+			<!--
+			<model
+				delay="200"
+				position="0 0 40"
+				life="2450"
+				name="emitter0" 
+				anim="idle"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				startscale="0"
+				midscale="50"
+				endscale="100"
+				yawspeed="900"
+				depthbias="-50"
+			>
+r				<template name="trails1">
+					<trailemitter
+						life="2650"
+						name="trail01"
+						position="0 0 0"
+						bone="{bone01}"
+						spawnrate="120"
+						particlelife="2550"
+						subframepose="1"
+						direction="0 -1 0"
+						minangle="0"
+						maxangle="0"
+						texpostime="2550"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/phantom_smoke_13.material"
+						startparticlecolor="1"
+						midparticlecolor="1 1 1"
+						endparticlecolor="0 0 0"
+					>
+						<particle
+							scale="{scale=2}"
+							color="{color=.5 0 0}"
+						/>
+					</trailemitter>
+				</template>
+				
+				<instance name="trails1" bone01="_bone_fx_01" />
+				<instance name="trails1" bone01="_bone_fx_02" />
+				<instance name="trails1" bone01="_bone_fx_03" />
+				<instance name="trails1" bone01="_bone_fx_04" />
+				<instance name="trails1" bone01="_bone_fx_05" />
+				<instance name="trails1" bone01="_bone_fx_06" />
+				<instance name="trails1" bone01="_bone_fx_07" />
+				<instance name="trails1" bone01="_bone_fx_08" />
+				<instance name="trails1" bone01="_bone_fx_09" />
+				<instance name="trails1" bone01="_bone_fx_10" />
+				<instance name="trails1" bone01="_bone_fx_11" />
+				<instance name="trails1" bone01="_bone_fx_12" />
+				
+				<instance name="trails1" bone01="_bone_fx_01" color="-1" scale="4" />
+				<instance name="trails1" bone01="_bone_fx_02" color="-1" scale="4" />
+				<instance name="trails1" bone01="_bone_fx_03" color="-1" scale="4" />
+				<instance name="trails1" bone01="_bone_fx_04" color="-1" scale="4" />
+				<instance name="trails1" bone01="_bone_fx_05" color="-1" scale="4" />
+				<instance name="trails1" bone01="_bone_fx_06" color="-1" scale="4" />
+				<instance name="trails1" bone01="_bone_fx_07" color="-1" scale="4" />
+				<instance name="trails1" bone01="_bone_fx_08" color="-1" scale="4" />
+				<instance name="trails1" bone01="_bone_fx_09" color="-1" scale="4" />
+				<instance name="trails1" bone01="_bone_fx_10" color="-1" scale="4" />
+				<instance name="trails1" bone01="_bone_fx_11" color="-1" scale="4" />
+				<instance name="trails1" bone01="_bone_fx_12" color="-1" scale="4" />
+			
+			</model>
+			-->
+			
+			 <model
+				delay="300"
+				life="800"
+                position="-8 -8 0"
+                model="/shared/effects/models/expanding_cone/model.mdf"
+                material="/heroes/deadlift/alt2/ability_03/effects/lightning_material.material"
+                anim="idle_fast"
+                startscale="10" endscale="30" midscalepos=".7"
+                startcolor="2 0 0"
+                endcolor="-1"
+                startalpha="1"
+                endalpha="0"
+            />
+			
+		<!-- impactful lights, refract -->	
+	
+			<simpleemitter
+					delay="250"
+					bone="_bone_fx_center"
+					position="0 -10 0"
+					spawnrate="5000"
+					count="3"
+					minparticlelife="1050"
+					maxparticlelife="1750"
+					acceleration="0"
+					direction="0 0 0"
+					offsetsphere="0 0 0"
+					material="/shared/effects/materials/light_rays.material"
+					depthbias="-100"
+				>
+					<particle
+						startcolor=".5 0 0" midcolor="0 0 0" endcolor="0 0 0"
+						width="90"
+						startheight="750" endheight="25"
+						lockup="1" lockright="false"
+					/>
+					<particle
+						startcolor=".5 .1 .1" midcolor="0 0 0" endcolor="0 0 0"
+						width="90"
+						startheight="750" endheight="25"
+						lockup="1" lockright="false"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					delay="150"
+					bone="_bone_fx_center"
+					position="0 -5 0"
+					spawnrate="100"
+					count="2"
+					minparticlelife="750" maxparticlelife="1250"
+					depthbias="-50"
+				>
+					<particle>
+						<billboard
+							bone="_bone_fx_center"
+							life="300"
+							color=".5"
+							startalpha=".5" midalpha=".5" endalpha="0.0" midalphapos="0.75"
+							startparam="0.8" endparam=".2"
+							startsize="150" endsize="750"
+							position="0 0 15"
+							material="/shared/effects/materials/refract_ring.material"
+							lockup="true"
+							pitch="90"
+							depthbias="-75"
+						/>
+					</particle>
+				</simpleemitter>
+				
+				
+				
+				<light
+					delay="150"
+					position="0 0 50"
+					life="400"
+					startcolor="10"
+					midcolor="5 0 0"
+					midcolorpos=".1"
+					endcolor="0"
+					falloffstart="0"
+					falloffend="1000"
+				/>
+				
+			<controller  life="2000" position="0 0 50" delay="150" scale=".6" >
+				<simpleemitter
+					count="200"
+					minspeed="100"
+					maxspeed="1200"
+					drag=".05"
+					gravity="-20"
+					minparticlelife="200"
+					maxparticlelife="1500"
+					direction="0 0 1"
+					minangle="30"
+					maxangle="90"
+					material="/shared/effects/materials/abstract_reveal.material"
+				>
+					<particle
+						maxangle="360"
+						minrollspeed="-40"
+						maxrollspeed="40"
+						life="900"
+						startsize="3"
+						endsize="3"
+						startcolor="5 0 0"
+						midcolor="1 0 0"
+						endcolor="-1"
+						midcolorpos=".25"
+						startframe="0"
+						endframe=".5"
+						scale=".75"
+					/>
+					<particle
+						maxangle="360"
+						minrollspeed="-40"
+						maxrollspeed="40"
+						life="900"
+						startsize="3"
+						endsize="3"
+						startcolor="0"
+						midcolor="0"
+						endcolor="-1"
+						midcolorpos=".25"
+						startframe="0"
+						endframe=".5"
+						scale=".75"
+					/>
+				</simpleemitter>
+				
+				
+				<simpleemitter
+					count="100" particlelife="800"
+					direction="0 1 0"
+					gravity="-1"
+					minspeed="500"  maxspeed="1500"
+					drag="0.05" 
+					material="/shared/effects/materials/phantom_white_reveal.material"
+					offsetsphere="5"
+					depthbias="-150"
+				>
+					<particle					
+						minagle="-360" maxangle="360"
+						startcolor="0" midcolor=".1 0 0" endcolor="0"
+						minsize="5" maxsize="15" scale="2"
+						startframe="1" midframe=".1" endframe="1" midframepos=".3"
+						startalpha=".7" endalpha="0"
+						anchor="0"
+					/>
+				</simpleemitter>
+			</controller>
+			
+
+	</particlesystem>
+		
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<camerashake2 scale="12" frequency="30" duration="450" falloffend="800" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

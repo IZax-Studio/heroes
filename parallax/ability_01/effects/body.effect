@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale=".7">
+			<billboard
+				life="750"
+				lockup="true"
+				lockright="true"
+				pitch="-90"
+				startsize="0"
+				midsize="300"
+				endsize="400"
+				midsizepos=".4"
+				material="/shared/effects/materials/corona_01_blend.material"
+				startcolor="1 .75 .25"
+				endcolor=".5 .4 .125"
+				startalpha=".5"
+				midalpha=".25"
+				endalpha="0"
+				midalphapos=".25"
+				depthbias="-100"
+			/>
+
+			<billboard
+				lockup="true" lockright="true"
+				pitch="-90"
+				size="450" scale="1.5"
+				rollspeed="-60"
+				material="/shared/effects/materials/refract_swirl.material"
+				param=".002"
+				depthbias="-5"
+			/>
+			<template name="galaxy">
+				<controller delay="{delay=0}" yaw="0" pitch="0">
+					<model
+						model="/heroes/parallax/set_ascension/ability_03/effects/nubela.mdf"
+						anim="idle"
+						position="{position}"
+						maxyaw="0"
+						pitch="{pitch=0}"
+						scale="{scale}"
+					>
+						<trailemitter
+							bone="_bone_fx_001"
+							spawnrate="8"
+							particlelife="3500"
+							texpostime="1000" texposscale=".0"
+							texstretchscale=".1"
+							position="0"
+							material="/shared/effects/materials/steam_01.material"
+						>
+							<particle
+								 color="{midcolor}"
+								 startsize="0" minmidsize="45" maxmidsize="50" endsize="5"
+								 lockup="true" lockright="true"
+							/>
+						</trailemitter>
+						<!-- star -->
+						<simpleemitter
+							bone="_bone_fx_001"
+							offsetsphere="20"
+							spawnrate="25"
+							direction="0 10 0"
+							minspeed="1" maxspeed="4"
+							drag=".02"
+							minparticlelife="2000" maxparticlelife="3000"
+							material="/shared/effects/materials/whitedot.material"
+						>
+							<particle
+								startcolor="0" midcolor=".7" endcolor="0"
+								startsize="4.5" endsize="0"
+								minscale=".3" maxscale=".5"
+							/>
+							<particle
+								startcolor="0" midcolor="1.00000 0.780000 0.140000" endcolor="0"
+								startsize="4.5" endsize="0"
+								minscale=".3" maxscale=".5"
+							/>
+						</simpleemitter>
+					</model>
+				</controller>
+			</template>
+			<instance name="galaxy" delay="0" scale="1.5" position="0 0 20" midcolor=".75 .5 .25"/>
+			<instance name="galaxy" delay="500" scale="3" position="0 0 21" midcolor=".5 .3 .25"/>
+			<instance name="galaxy" delay="1000" scale="4.5" position="0 0 22" midcolor=".2 .1 0"/>
+			<instance name="galaxy" delay="1500" scale="6" position="0 0 23" midcolor=".2 .09 0"/>
+
+			<billboard
+				life="1200" loop="true"
+				lockup="true" lockright="true"
+				pitch="-90"
+				position="0 0 0"
+				startsize="300" midsize="320" endsize="300" scale="1.1"
+				color="1.000000 0.500000 0.000000" alpha=".74"
+				material="/shared/effects/materials/whitedot_blend.material"
+				depthbias="-5"
+			/>
+			<billboard
+				life="750" loop="true"
+				lockup="true" lockright="true"
+				pitch="-90"
+				position="0 0 0"
+				startsize="300" midsize="320" endsize="300" scale="1.8"
+				color="1.000000 0.570000 0.140000" alpha=".3"
+				material="/shared/effects/materials/whitedot_blend.material"
+				depthbias="-4"
+			/>
+			<billboard
+				life="1500" loop="true"
+				lockup="true" lockright="true"
+				pitch="-90"
+				position="0 0 0"
+				startsize="300" midsize="320" endsize="300" scale="4"
+				color="0.200000 0.0800 0.000000" alpha=".15"
+				material="/shared/effects/materials/whitedot_blend.material"
+				depthbias="-3"
+			/>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale=".5">
+		
+			<controller bone="Bip001 R Finger1" >
+
+				<beam
+					delay="400"
+					position_b="0 -40 12"
+					position_a="0 180 12"
+					size="60"
+					color="0 .25 1"
+					framespeed="1.15"
+					depthbias="-80"
+					material="/shared/effects/materials/femme_fire_trail.material"
+				/>
+				<beam
+					delay="400"
+					position_b="0 -40 12"
+					position_a="0 200 12"
+					size="25"
+					color="0 .65 .5"
+					framespeed="1.5"
+					depthbias="-20"
+					material="/shared/effects/materials/femme_fire_trail.material"
+				/>
+			</controller>
+
+		</particlesystem>
+		<particlesystem name="system1" space="world" scale="1.5">
+	
+			<model
+				position="10 20 50"
+			
+				life="500"
+				
+				anim="idle_slow"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				startscale="2"
+				endscale="0"
+				color="0 0 0"
+				alpha="0"
+				minyaw="-5"
+				maxyaw="5"
+				yawspeed="-400"
+				pitch="90"
+			>
+				<template name="trails">
+					<trailemitter
+						bone="{bone01}"
+						spawnrate="100"
+						particlelife="1000"
+						subframepose="1"
+						direction="0 -1 0"
+						position="0 5 0"
+						angle="0"
+						texpostime="750"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/soul_projectile2.material"
+					>
+						<particle
+							startcolor=".1 .15 .2"
+							endcolor=".1 .25 .4"
+							startalpha="1"
+							midalpha="1"
+							endalpha="1"
+							midalphapos=".2"
+							size="3"
+						/>
+					</trailemitter>
+				
+					<trailemitter
+						bone="{bone01}"
+						spawnrate="100"
+						particlelife="1000"
+						subframepose="1"
+						direction="0 -1 0"
+						position="0 5 0"
+						angle="0"
+						texpostime="750"
+						texposscale="0"
+						texstretchscale=".8"
+						material="/shared/effects/materials/fire_scrolling_blue.material"
+					>
+						<particle
+							color=".0 .5 1"
+							startalpha="1"
+							midalpha="1"
+							endalpha="1"
+							midalphapos=".2"
+							size="2"
+						/>
+					</trailemitter>
+				
+					
+				</template>
+				
+				<instance name="trails" bone01="_bone_fx_01"  bone02="_bone_fx_03"/>
+				<instance name="trails" bone01="_bone_fx_04"  bone02="_bone_fx_05"/>
+				<instance name="trails" bone01="_bone_fx_07"  bone02="_bone_fx_08"/>
+				<instance name="trails" bone01="_bone_fx_10"  bone02="_bone_fx_11"/>
+
+			</model>
+			
+			<billboard
+				delay="400"
+				life="500"
+				position="0 0 50"
+				midalpha=".6"			
+				startalpha=".6"
+				endalpha="0"
+				startsize="100"
+				endsize="1000"
+				depthbias="-50"
+				startparam="0.3"
+				endparam="0"
+				scale=".2"
+				material="/shared/effects/materials/refract_ring.material"
+			/>
+			
+			
+		</particlesystem>
+	<particlesystem name="system2" space="world" scale=".5">
+		<simpleemitter
+				delay="400"
+				life="1500"
+				spawnrate="300"
+				position="0 75 10"
+				minparticlelife="250"			
+				maxparticlelife="400"	
+				depthbias="-30"
+				material="/shared/effects/materials/smoke_add.material"			
+				offsetsphere="25 15 5"
+				minspeed="1300"
+				maxspeed="1500"
+				angle="30"
+				direction="0 -1 0"
+				drag=".0009"
+			>
+				<particle 
+					minangle="-25"
+					maxangle="25"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					color=".85 .82 .75"
+					startsize="25"
+					endsize="100"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+				/>
+				<particle 
+					minangle="-25"
+					maxangle="25"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					color=".95"
+					startsize="25"
+					endsize="100"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+				/>
+				<particle 
+					minangle="-25"
+					maxangle="25"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					color=".8"
+					startsize="50"
+					midsize="50"
+					endsize="125"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+				/>
+			</simpleemitter>
+		
+		
+			<billboard 
+				delay="400"
+				scale="3.5"
+				life="150"
+				position="0 0 125"
+				startcolor=".0 .3 .5"
+				endcolor=" 0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<spawnparticlesystem instance="instance2" particlesystem="system2" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<waitfordeath instance="instance2" />
+	</thread>
+</effect>

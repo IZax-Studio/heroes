@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" >
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.2" >
+			
+            <simpleemitter
+                count="1"
+                particlelife="5000"
+                directionalspace="local"
+                direction="0 1 0"
+                angle="0"
+                speed=".1"
+            >
+                <particle turn="true">
+                    <groundsprite
+                        directionalspace="local"
+                        yaw="180"
+                        life="2000"
+                        position="0 45 0"
+                        material="/shared/effects/materials/ground_cracks_overlay.material"
+                        size="50"
+                        startalpha="1"
+                        midalpha="1"
+                        endalpha="0"
+                    />
+                    <groundsprite
+                        directionalspace="local"
+                        yaw="180"
+                        life="1500"
+                        position="0 45 0"
+                        material="/shared/effects/materials/ground_cracks_add.material"
+                        size="50"
+                        startcolor="1 .25 0"
+                        endcolor="0"
+                    />
+
+                    <terrainemitter
+                        position="0 45 0"
+                        count="15"
+                        range="25"
+                        material="/shared/effects/materials/phantom_white_reveal_add.material"
+                        minparticlelife="150"
+                        maxparticlelife="600"
+                    >
+                        <template name="fire_pillar">
+                            <particle
+                                flare="1"
+                                minstartwidth="15"
+                                maxstartwidth="30"
+                                minendwidth="40"
+                                maxendwidth="80"
+                                minendheight="200"
+                                maxendheight="300"
+                                startcolor="{sc}"
+                                midcolor="{mc}"
+                                endcolor="{ec}"
+                                startframe="1"
+                                midframe="0"
+                                endframe="1"
+                                midframepos=".25"
+                                lockup="true"
+                            />
+                        </template>
+                        <instance name="fire_pillar" sc="1 .5 .25" mc=".5   0 0" ec=".5 0 0" />
+                        <instance name="fire_pillar" sc="1 .5 .25" mc=".5 .25 0" ec=".5 0 0" />
+                    </terrainemitter>
+                </particle>
+            </simpleemitter>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

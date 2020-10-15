@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" >
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+				
+				<sound
+				life="5000"
+		        forcestereo="true"
+				volume=".7"
+				sample="/heroes/sir_benzington/ability_02/sounds/charge.wav"
+				linearfalloff="true"
+				falloffstart="700"		
+				falloffend="1300" 
+			/>
+			
+			<sound
+			    soundloop="true"
+				fadein="1000"
+				fadeout="500"
+				volume=".5"
+				sample="/heroes/sir_benzington/ability_02/sounds/cartoon_state.wav"
+				linearfalloff="true"
+				falloffstart="0"		
+				falloffend="1300" 
+			/>
+			
+			<twopointemitter
+				spawnrate="50"
+				minparticlelife="500"
+				maxparticlelife="700"
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon2"
+				offsetsphere="8"
+				maxspeed="30"
+				direction="0 0 1"
+				angle="90"
+				gravity="1"
+				material="/shared/effects/materials/flame.material"
+			>
+				<particle
+					maxangle="360"
+					minstartscale="5"
+					maxstartscale="8"
+					minendscale="16"
+					maxendscale="22"
+					startcolor="0"
+					midcolor="1 0 0"
+					endcolor="0"
+					midcolorpos=".1"
+					startanchor=".8"
+					endanchor=".6"
+				/>
+			</twopointemitter>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

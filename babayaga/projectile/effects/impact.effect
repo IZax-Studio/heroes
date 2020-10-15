@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="local" scale="1">
+		
+		<sound
+				linearfalloff="true" 
+				falloffstart="550"
+				falloffend="1300" 
+				minvolume=".4"
+				maxvolume=".8"
+				sample="/heroes/babayaga/168_Illyasviel_von_Einzbern/sounds/168_0_Atk_HitS_0%.wav"
+			/> 
+			
+		<simpleemitter
+			bone="_bone_centerofchest"
+			spawnrate="50"
+			minparticlelife="500"
+			maxparticlelife="650"
+			gravity="1"
+			minspeed="100"
+			maxspeed="150"
+			drag=".05"
+			direction="0 0 1"
+			life="250"
+			material="/shared/effects/materials/good_tower_02_reveal.material"
+		>
+			<particle
+				turn="1"
+				color=".8 .7 1"
+				startalpha="0"
+				midalpha="1"
+				endalpha="1"
+				midalphapos=".15"
+				startframe="0"
+				endframe="1"					
+				size="7"
+				startwidth="10"
+				midwidth="7"
+				endwidth="10"
+				minscale="4"
+				maxscale="6"
+			/>
+		</simpleemitter>
+		
+		<simpleemitter
+			bone="_bone_centerofchest"
+			count="30"
+			minparticlelife="300"
+			maxparticlelife="650"
+			gravity="1"
+			minspeed="100"
+			maxspeed="200"
+			drag=".05"
+			direction="0 0 1"
+			material="/shared/effects/materials/blood_drop_white2.material"
+		>
+			<particle
+				turn="1"
+				color=".65 0.4 .7"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".6"
+				size="3"
+				startwidth="2"
+				midwidth="3"
+				endwidth="2"
+				minscale="1"
+				maxscale="2"
+			/>
+		</simpleemitter>
+		
+		<billboard 
+			bone="_bone_centerofchest"
+			life="400"
+			startsize="0"
+			endsize="150"
+			startcolor="1 .5 1"
+			midcolor="1 .3 .5"
+			endcolor="0"
+			material="/shared/effects/materials/whitedot.material"
+		/>
+		
+		<billboard 
+			bone="_bone_centerofchest"
+			life="400"
+			startsize="0"
+			endsize="90"
+			startcolor="1"
+			midcolor=".5"
+			endcolor="0"
+			material="/shared/effects/materials/star_02.material"
+		/>
+		
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Nomad_Ability2_Invis"
+
+	passiveeffect="effects/invis.effect"
+	icon="icon.tga"
+	
+	stealthtype="hero"
+	fadetime="0"
+	unitwalking="true"
+	
+	effecttype="StatusStealth"
+>
+	<oninflict>
+		<forgetattacks />
+		<startfade />
+	</oninflict>
+	
+	<onframe />
+
+	<onattack>
+		<expire />
+	</onattack>
+	
+	<onactivatepreimpact>
+		<expire />
+	</onactivatepreimpact>
+	
+	<onexpired>
+		<expire entity="this_proxy_entity" />
+	</onexpired>
+
+	<modifier key="nomadinvis1" modpriority="90" movespeedmultiplier=".02" />
+	<modifier key="nomadinvis2" modpriority="90" movespeedmultiplier=".04" />
+	<modifier key="nomadinvis3" modpriority="90" movespeedmultiplier=".06" />
+	<modifier key="nomadinvis4" modpriority="90" movespeedmultiplier=".08" />
+	
+	<altavatar key="Hero_Nomad.Alt7"
+		passiveeffect="../alt7/ability_2/effects/invis.effect"
+	/>
+	
+	<altavatar key="Hero_Nomad.Alt8"
+		passiveeffect="../alt8/ability_02/effects/invis.effect"
+	/>
+	
+	<altavatar key="Hero_Nomad.Alt11"
+		passiveeffect="../alt11/ability_02/effects/invis.effect"
+	/>
+	
+	<altavatar key="Hero_Nomad.Alt12"
+	    icon="../alt12/ability_02/icon.tga"
+		passiveeffect="../alt12/ability_02/effects/invis.effect"
+	>
+		<modifier key="nomadAlt12_Ability2_Upgrade"
+			icon="../alt12/ability_02/icon_u.tga"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt13"
+		passiveeffect="../alt13/ability_02/effects/invis.effect"
+	/>
+	
+	<altavatar key="Hero_Nomad.Alt14"
+		passiveeffect="../alt14/ability_02/effects/invis.effect"
+	/>
+	
+	<altavatar key="Hero_Nomad.Alt15"
+		passiveeffect="../alt14/ability_02/effects/invis.effect"
+	/>
+</state>

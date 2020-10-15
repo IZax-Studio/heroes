@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="entity">
+		
+			<sound
+				delay="500"
+				dampen=".5"
+				channelid="storeaud"
+				sound2d="true"
+				volume=".5"
+				sample="../Elizabeth_Bathory/sounds/34_skin3_move_01.wav"
+			/>
+			
+			<sound
+				dampen=".5"
+				channelid="storeaud2"
+				sound2d="true"
+				volume="1"
+				sample="../Elizabeth_Bathory/sounds/34_skin3_relive.wav"
+			/>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+      	<waitfordeath instance="instance0" />
+	</thread>
+</effect>

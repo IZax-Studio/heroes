@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+		<particlesystem name="system0" space="world" scale=".9">
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".75"
+				sample="../sounds/cast.wav"
+			/>
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".75"
+				sample="/heroes/legionnaire/alt10/sounds/ab3_vox_%.wav"
+			/>
+		
+			<model
+				life="500"
+				name="spin"
+				model="/heroes/legionnaire/alt10/legion/model.mdf"
+				material="/heroes/legionnaire/alt10/legion/material_noshadow.material"
+				anim="ability_3"
+				startcolor="1 0 0"
+				endcolor="0"
+				startalpha="1"
+				endalpha="0"
+				scale="1.5"
+				directionalspace="global"
+			/>
+			
+			<simpleemitter
+				timenudge="1"
+				bone="_bone_origin"
+				position="0 0 50"
+				count="8"
+				minparticlelife="300"
+				maxparticlelife="350"
+				material="/shared/effects/materials/flux_ring_reveal_02_blend.material"
+				directionalspace="global"
+			>
+				<template name="spin_particle">
+					<particle
+						minsize="140"
+						maxsize="160"
+						minscale="2"
+						maxscale="5"
+						startcolor="{color}"
+						endcolor="0"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						angle="-45"
+						anglespeed="1500"
+						depthbias="-25"
+						startframe="1"
+						midframe=".1"
+						endframe="0"
+						midframepos=".4"
+					/>
+				</template>
+				<instance name="spin_particle" color="0 0 .5" />
+				<instance name="spin_particle" color="0 0 0" />
+			</simpleemitter>
+			
+			<simpleemitter
+				timenudge="1"
+				bone="_bone_origin"
+				position="0 0 50"
+				count="8"
+				minparticlelife="300"
+				maxparticlelife="350"
+				material="/shared/effects/materials/flux_ring_reveal_02_blend.material"
+				directionalspace="global"
+			>
+				<template name="spin_particle">
+					<particle
+						minsize="140"
+						maxsize="160"
+						minscale="4.5"
+						maxscale="6"
+						startcolor="{color}"
+						endcolor="0"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".25"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						angle="-45"
+						anglespeed="1500"
+						depthbias="-25"
+						startframe="1"
+						midframe=".1"
+						endframe="0"
+						midframepos=".4"
+					/>
+				</template>
+				<instance name="spin_particle" color=".5 0 0" />
+				<instance name="spin_particle" color="0 0 0" />
+			</simpleemitter>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

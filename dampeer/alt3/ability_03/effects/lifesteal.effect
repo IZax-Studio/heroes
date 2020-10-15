@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="0">
+	<definitions>
+
+		<trailemitter
+			name="additive"
+			life="2000"
+			spawnrate="20"
+			startminparticlelife="2000"
+			startmaxparticlelife="2000"
+			endminparticlelife="1"
+			endmaxparticlelife="1"
+			position="0 0 0"
+			material="/shared/effects/materials/beam.material"
+			texposscale="60"
+			texstretchscale="0"
+		>
+			<particle
+				startcolor="1 0 0"
+				midcolor=".3 0 0"
+				endcolor="0 0 0"
+				startsize="0"
+				midsize="8"
+				endsize="0"
+				midcolorpos=".1"
+				midsizepos=".1"
+			/>
+		</trailemitter>
+		
+		<simpleemitter
+			name="blood_trail"
+			life="1500"
+			spawnrate="15"
+			startminparticlelife="2000"
+			startmaxparticlelife="2000"
+			endminparticlelife="1"
+			endmaxparticlelife="1"
+			position="0 0 0"
+			speed="25"
+			material="/shared/effects/materials/pyroclast_04.material"
+		>
+			<particle
+				maxangle="360"
+				startcolor="1 0 0"
+				midcolor=".5 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".1"
+				startsize="0"
+				midsize="20"
+				endsize="0"
+				midsizepos=".1"
+				startalpha="0"
+				midalpha=".75"
+				endalpha="0"
+				midalphapos=".1"
+			/>
+		</simpleemitter>
+		
+		<particlesystem name="system0" space="world" >
+
+			<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume=".55"
+				sample="/heroes/dampeer/ability_04/sounds/impact.wav"
+			/>
+
+
+			
+			<trackeremitter
+				count="5"
+				bone="_bone_centerofchest"
+				owner="target"
+				targetbone="_bone_centerofchest"
+				targetowner="source"
+				tracktype="angular"
+				trackspeed="10"
+				drag="0"
+				spawnrate="250"
+				particlelife="3000"
+				gravity="-50"
+				offsetsphere="5 5 5"
+				minspeed="200"
+				maxspeed="500"
+				acceleration="30"
+				direction="0 0 1"
+				inheritvelocity="0"
+				distancelife="true"
+			>
+					<particle
+						emitter0="blood_trail"
+						emitter1="additive"
+					>
+						<billboard
+							expirelife="100"
+							startcolor=".5 0 0"
+							endcolor="0"
+							size="40"
+							material="/shared/effects/materials/wisp_02.material"
+						/>
+					</particle>
+			</trackeremitter>
+
+		</particlesystem>
+	</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<waitfordeath instance="instance0" />
+</thread>
+</effect>
+

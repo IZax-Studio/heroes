@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".18">
+			
+			
+			
+			<template name="21">
+				<controller yaw="{yaw}" >
+					<template name="lightning_ring">
+						<beam
+							position_a="{pos_a}"
+							position_b="{pos_b}"
+							material="/shared/effects/materials/femme_lightning_06.material"
+							framespeed="3"
+							size="100"
+							color="0 .2 .6"
+						/>
+						
+						<twopointemitter
+							
+							position_a="{pos_a}"
+							position_b="{pos_b}"
+							spawnrate="600"
+							minparticlelife="200"
+							maxparticlelife="350"
+							maxangle="360"
+							maxspeed="240"
+							offsetsphere="10"
+							material="/shared/effects/materials/whitedot.material"
+						>
+							<particle
+								startcolor="0"
+								midcolor="0 .2 .6"
+								endcolor="0"
+								midcolorpos="0.75"
+								minsize="3"
+								maxsize="8"
+								anchor="1"
+							/>
+						</twopointemitter>
+						
+						<twopointemitter
+							position_a="{pos_a}"
+							position_b="{pos_b}"
+							spawnrate="300"
+							minparticlelife="30"
+							maxparticlelife="50"
+							material="/shared/effects/materials/lightning_11.material"
+							offsetsphere="25"
+						>
+							<particle
+								minsize="30"
+								maxsize="60"
+								color="0 .2 .6"
+								maxangle="360"
+							/>
+						</twopointemitter>
+						
+						<twopointemitter
+							position_a="{pos_a}"
+							position_b="{pos_b}"
+							spawnrate="180"
+							particlelife="500"
+							angle="0.0"
+							offsetsphere="20"
+							material="/shared/effects/materials/phantom_black.material"
+						>
+							<particle
+								color="1 1 1"
+								midcolorpos="0.5"
+								startalpha="0"
+								midalpha=".25"
+								endalpha="0"
+								minangle="0"
+								maxangle="360"
+								minanglespeed="-45"
+								maxanglespeed="45"
+								startsize="90"
+								endsize="30"
+								flare="false"
+								anchor="1"
+							/>
+						</twopointemitter>
+					</template>
+				
+					<instance name="lightning_ring" pos_a="0 0 0" pos_b="-90 155 0"/>
+				
+				</controller>
+			</template>
+			
+			<instance name="21" yaw="0"/>
+			<instance name="21" yaw="45"/>
+			<instance name="21" yaw="90"/>
+			<instance name="21" yaw="135"/>
+			<instance name="21" yaw="180"/>
+			<instance name="21" yaw="225"/>
+			<instance name="21" yaw="270"/>
+			<instance name="21" yaw="315"/>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+	</thread>
+
+</effect>
+
+
+

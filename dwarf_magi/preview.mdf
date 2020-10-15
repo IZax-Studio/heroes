@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="hoppo/model.model" type="K2"  >
+	<anim name="idle" clip="hoppo/clips/store.clip" loopbackframe="62" loop="true" >
+		<startevent cmd="StartModelPanelEffect store2_detail_heroAvatars_large_model hoppo/effects/store.effect 9"/>
+		<endevent cmd="StopModelPanelEffect 9"/>
+	</anim>	
+</model>

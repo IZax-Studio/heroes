@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_MonkeyKing3"
+
+	icon="../icon/ico_1477.png"	
+	
+	anim="ability_3"
+	casttime="200"
+	castactiontime="200"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="facing"
+	casteffecttype="Magic"
+	targetradius="200"
+	targetscheme="enemy_units"
+	
+	manacost="80"
+	cooldowntime="13000,11000,9000,7000"
+	allowoutofboundscast="true"
+	
+	dynamicprecache="effects/cast.effect,effects/impact.effect"
+>
+	<onlearn>
+		<setscriptvalue name="cast_effect" value="effects/cast.effect" entity="this_entity" />
+		<setscriptvalue name="impact_effect" value="effects/impact.effect" entity="this_entity" />
+	</onlearn>
+	
+	<onimpact>	
+		<unbind target="source_entity" />
+		<starttimer duration="2000" />
+		<spawnunit name="Gadget_MonkeyKing_Ability3" count="1" target="source_entity" offset="0 200 0" offsetspace="source_entity" pushentity="true" />
+		<spawnaffector name="Affector_MonkeyKing_Ability3" target="stack_position" />
+		
+		<!-- Dynamic visual effects -->
+		<getscriptvalue name="cast_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" source="source_entity" target="source_entity" occlude="true" />
+		<getscriptvalue name="impact_effect" destvar="str1" entity="this_entity" />
+		<playeffectdynamic effect="str1" source="stack_entity" target="stack_entity" occlude="true" />
+	</onimpact>
+	
+	<modifier key="Speeding" modpriority="100"
+		casttime="0"
+		castactiontime="0"
+	>
+	</modifier>
+	
+	<altavatar key="Hero_MonkeyKing.Alt"
+		dynamicprecache="../alt/ability_03/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt/ability_03/effects/cast.effect" entity="this_entity" />
+			<setscriptvalue name="impact_effect" value="effects/impact.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_MonkeyKing.Alt2"
+		dynamicprecache="../alt2/ability_03/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt2/ability_03/effects/cast.effect" entity="this_entity" />
+			<setscriptvalue name="impact_effect" value="effects/impact.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_MonkeyKing.Alt3"
+		dynamicprecache="../alt3/ability_03/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt3/ability_03/effects/cast.effect" entity="this_entity" />
+			<setscriptvalue name="impact_effect" value="effects/impact.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_MonkeyKing.Alt5"
+		dynamicprecache="../alt5/ability_03/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt5/ability_03/effects/cast.effect" entity="this_entity" />
+			<setscriptvalue name="impact_effect" value="../alt5/ability_03/effects/impact.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_MonkeyKing.Alt6"
+		dynamicprecache="../alt6/ability_03/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt6/ability_03/effects/cast.effect" entity="this_entity" />
+			<setscriptvalue name="impact_effect" value="../alt6/ability_03/effects/impact.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_MonkeyKing.Alt7"
+		dynamicprecache="../alt7/ability_03/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt7/ability_03/effects/cast.effect" entity="this_entity" />
+			<setscriptvalue name="impact_effect" value="../alt7/ability_03/effects/impact.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_MonkeyKing.Alt8"
+		dynamicprecache="../alt8/ability_03/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt8/ability_03/effects/cast.effect" entity="this_entity" />
+			<setscriptvalue name="impact_effect" value="../alt8/ability_03/effects/impact.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_MonkeyKing.Alt9"
+		dynamicprecache="../alt9/ability_03/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt9/ability_03/effects/cast.effect" entity="this_entity" />
+			<setscriptvalue name="impact_effect" value="../alt9/ability_03/effects/impact.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_MonkeyKing.Alt11"
+	    icon="/heroes/monkey_king/alt11/ability_03/icon.tga"	
+		dynamicprecache="../alt11/ability_03/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt11/ability_03/effects/cast.effect" entity="this_entity" />
+			<setscriptvalue name="impact_effect" value="../alt11/ability_03/effects/impact.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_MonkeyKing.Alt12"
+		dynamicprecache="../alt12/ability_03/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt12/ability_03/effects/cast.effect" entity="this_entity" />
+			<setscriptvalue name="impact_effect" value="../alt12/ability_03/effects/impact.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+		
+	<altavatar key="Hero_MonkeyKing.Alt13"
+		dynamicprecache="../alt13/ability_03/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt13/ability_03/effects/cast.effect" entity="this_entity" />
+			<setscriptvalue name="impact_effect" value="../alt13/ability_03/effects/impact.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_MonkeyKing.Alt14"
+		dynamicprecache="../alt14/ability_03/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt14/ability_03/effects/cast.effect" entity="this_entity" />
+			<setscriptvalue name="impact_effect" value="../alt14/ability_03/effects/impact.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_MonkeyKing.Alt15"
+		icon="../alt15/ability_03/icon.tga"
+		dynamicprecache="../alt15/ability_03/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt15/ability_03/effects/cast.effect" entity="this_entity" />
+			<setscriptvalue name="impact_effect" value="../alt15/ability_03/effects/impact.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>	
+	
+	<altavatar key="Hero_MonkeyKing.Alt16"
+		dynamicprecache="../alt16/ability_03/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt16/ability_03/effects/cast.effect" entity="this_entity" />
+			<setscriptvalue name="impact_effect" value="../alt16/ability_03/effects/impact.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_MonkeyKing.main_reskin"
+		dynamicprecache="../alt/ability_03/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../reskin/ability_03/effects/cast.effect" entity="this_entity" />
+			<setscriptvalue name="impact_effect" value="effects/impact.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+</ability>

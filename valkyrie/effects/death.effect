@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<modifier
+			name="modifier0"
+			life="20000"
+			startalpha="1"
+			midalpha="0"
+			midalphapos=".03"
+			endalpha="0"
+		/>
+		<particlesystem name="system0" space="world">
+
+			<simpleemitter
+				life="400"
+				bone="_bone_centerofchest"
+				spawnrate="90"
+				minparticlelife="500"
+				maxparticlelife="2000"
+				offsetsphere="30"
+				gravity="-2"
+				minspeed="10"
+				maxspeed="25"
+				direction="0 0 1"
+				material="/shared/effects/materials/feather.material"
+			>
+				<particle
+					maxangle="360"
+					color="0 0 .25"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".25"
+					midcolorpos=".25"
+					minscale="2"
+					maxscale="4"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				delay="100"
+				position="0 0 20"
+				spawnrate="1000"
+				life="300"
+				particlelife="1500"
+				gravity="-3"
+				direction="0 -1 1"
+				minspeed="20"
+				maxspeed="40"
+				drag=".01"
+				offsetsphere="35 35 50"
+				material="/shared/effects/materials/debris01.material"
+			>
+				<particle 
+					minsize="1"
+					maxsize="5"
+					color=".4 0 0"
+					minangle="-360"
+					maxangle="360"
+					depthbias="-30"
+					startalpha=".6"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				life="500"
+				spawnrate="50"
+				minparticlelife="1100"
+				maxparticlelife="2200"
+				gravity="-2"
+				minspeed="10"
+				maxspeed="20"
+				direction="0 0 1"
+				minangle="-30"
+				maxangle="-60"
+				offsetradial="40"
+				material="/shared/effects/materials/smoke_01.material"
+				inheritvelocity=".1"
+			>
+				<particle 
+					minangle="-180"
+					maxangle="180"
+					startcolor="0 0 0"
+					endcolor="0 0 0"
+					minsize="80"
+					maxsize="120"
+					endsize="160"
+					startalpha="0"
+					midalpha=".3"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>

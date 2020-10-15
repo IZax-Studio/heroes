@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale=".7">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".6"
+				sample="../sounds/return.wav"
+			/>
+
+			<billboard			
+				life="400"
+				bone="_bone_overhead"
+				startsize="45"
+				minendsize="180"
+				maxendsize="230"
+				material="/shared/effects/materials/blink.material"
+				startcolor="1 0 0"
+				endcolor="0"
+				depthbias="-20"
+				
+			/>
+
+			<billboard			
+				life="100"
+				bone="_bone_weapon3"
+				startsize="35"
+				endsize="120"
+				material="/shared/effects/materials/blink.material"
+				startcolor="1"
+				endcolor="0"
+				depthbias="-20"
+				maxroll="360"
+			/>
+
+			<twopointemitter
+				life="400"
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+				spawnrate="355"
+				minparticlelife="100"
+				maxparticlelife="300"
+				angle="0"
+				offsetsphere="10"
+				material="/shared/effects/materials/blink.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor="1"
+					endcolor="0"
+					midcolorpos="0.5"
+					minangle="0"
+					maxangle="350"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					startsize="10"
+					maxendsize="30"
+					flare="1"
+					anchor="1"
+					height="6"
+				/>
+			</twopointemitter>
+			
+			<beam
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+				size="50"
+				width="300"
+				startcolor=".7 .85 1"
+				endcolor="0"
+				life="400"
+				material="/shared/effects/materials/flare2.material"
+				anchor="1"
+			/>
+
+		</particlesystem>
+		<particlesystem name="system1" space="entity" scale="1">
+		
+			
+
+			
+			<model
+				
+				position="0 0 50"				model="/shared/effects/models/circle_of_bones/model.mdf"
+				anim="idle"
+				expirelife="125"
+				startscale="2"
+				endscale="0"
+				yawspeed="540"
+				pitchspeed="540"
+			>
+				<template name="trails">
+					<trailemitter
+						bone="{bone01}"
+						spawnrate="100"
+						particlelife="750"
+						texpostime="750"
+						texposscale="0.0"
+						texstretchscale=".4"
+						position="0 0 0"
+						material="/shared/effects/materials/arrow_trail.material"
+					>
+						<particle
+							startcolor="1 0.5 0"
+							midcolor="0 0 0"
+							endcolor="0 0 0"
+							startsize="5"
+							midsize="2.5"
+							endsize="1"
+							midsizepos="0.2"
+					 />
+					</trailemitter>
+					
+					<billboard
+						bone="{bone01}"
+						expirelife="125"
+						startcolor="1 0.5 0"
+						endcolor="0 0 0"
+						startsize="13"
+						endsize="0"
+						position="0 0 0"
+						material="/shared/effects/materials/whitedot.material"
+						lockup="true"
+						pitch="90"
+					/>
+					
+					<billboard
+						bone="{bone01}"
+						expirelife="125"
+						startcolor="0 .5 .75"
+						endcolor="0 0 0"
+						startsize="3"
+						endsize="0"
+						position="0 0 0"
+						material="/shared/effects/materials/whitedot.material"
+						lockup="true"
+						pitch="90"
+					/>
+					
+					
+				</template>
+				
+				
+				<instance name="trails" bone01="_bone_fx_01"/>
+				
+				<instance name="trails" bone01="_bone_fx_07"/>
+							</model>
+				<model
+				
+				position="0 0 50"				model="/shared/effects/models/circle_of_bones/model.mdf"
+				anim="idle"
+				expirelife="125"
+				startscale="2"
+				endscale="0"
+				yawspeed="540"
+				pitchspeed="-540"
+			>
+				<template name="trails">
+					<trailemitter
+						bone="{bone01}"
+						spawnrate="100"
+						particlelife="750"
+						texpostime="750"
+						texposscale="0.0"
+						texstretchscale=".4"
+						position="0 0 0"
+						material="/shared/effects/materials/arrow_trail.material"
+					>
+						<particle
+							startcolor="1 0.5 0"
+							midcolor="0 0 0"
+							endcolor="0 0 0"
+							startsize="5"
+							midsize="2.5"
+							endsize="1"
+							midsizepos="0.2"
+					 />
+					</trailemitter>
+					
+					<billboard
+						bone="{bone01}"
+						expirelife="125"
+						startcolor="1 0.5 0"
+						endcolor="0 0 0"
+						startsize="13"
+						endsize="0"
+						position="0 0 0"
+						material="/shared/effects/materials/whitedot.material"
+						lockup="true"
+						pitch="90"
+					/>
+					
+					<billboard
+						bone="{bone01}"
+						expirelife="125"
+						startcolor="0 .5 .75"
+						endcolor="0 0 0"
+						startsize="3"
+						endsize="0"
+						position="0 0 0"
+						material="/shared/effects/materials/whitedot.material"
+						lockup="true"
+						pitch="90"
+					/>
+					
+					
+				</template>
+				
+				
+				<instance name="trails" bone01="_bone_fx_01"/>
+				
+				<instance name="trails" bone01="_bone_fx_07"/>
+							</model>
+			
+	
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

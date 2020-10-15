@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world">
+			<sound
+					delay="500"
+				    dampen="0.5"
+				    channelid="storeaud"
+					sound2d="true"
+					volume=".5"
+					sample="../flandre/sounds/pick_1.wav"
+			/>
+			<sound
+				    dampen="0.5"
+				    channelid="storeaud2"
+					sound2d="true"
+					volume=".5"
+					sample="../flandre/sounds/230_0_dance.wav"
+			/>
+			<model
+				model="../flandre/effects/passive/model.mdf"
+				parentskeleton="true"
+				parentalpha="true"
+			/>
+			
+			<template name="sparkling">
+				<twopointemitter
+					bone_a="Bone029"
+					bone_b="Bone031"
+					spawnrate="25"
+					speed="20"
+					minparticlelife="150"
+					maxparticlelife="300"
+					direction="0 1 0"
+					angle="180"
+					directionalspace="local"
+					material="../flandre/effects/tx_xingguang_0067.material"
+					offsetsphere="15"
+				>
+					<particle
+						startcolor="0 .5 .5"
+						endcolor="0"
+						minsize="{minsize}"
+						maxsize="{maxsize}"
+						maxangle="180"
+						minanglespeed="-100"
+						maxanglespeed="100"
+						anchor=".25"
+					/>
+					<particle
+						startcolor="0 0 .5"
+						endcolor="0"
+						minsize="{minsize}"
+						maxsize="{maxsize}"
+						maxangle="180"
+						minanglespeed="-100"
+						maxanglespeed="100"
+						anchor=".25"
+					/>
+					<particle
+						startcolor=".5 0 .5"
+						endcolor="0"
+						minsize="{minsize}"
+						maxsize="{maxsize}"
+						maxangle="180"
+						minanglespeed="-100"
+						maxanglespeed="100"
+						anchor=".25"
+					/>
+					<particle
+						startcolor=".5 0 0"
+						endcolor="0"
+						minsize="{minsize}"
+						maxsize="{maxsize}"
+						maxangle="180"
+						minanglespeed="-100"
+						maxanglespeed="100"
+						anchor=".25"
+					/>
+					<particle
+						startcolor=".5 .5 0"
+						endcolor="0"
+						minsize="{minsize}"
+						maxsize="{maxsize}"
+						maxangle="180"
+						minanglespeed="-100"
+						maxanglespeed="100"
+						anchor=".25"
+					/>
+					<particle
+						startcolor=".5 .25 0"
+						endcolor="0"
+						minsize="{minsize}"
+						maxsize="{maxsize}"
+						maxangle="180"
+						minanglespeed="-100"
+						maxanglespeed="100"
+						anchor=".25"
+					/>
+					<particle
+						startcolor="0 .5 0"
+						endcolor="0"
+						minsize="{minsize}"
+						maxsize="{maxsize}"
+						maxangle="180"
+						minanglespeed="-100"
+						maxanglespeed="100"
+						anchor=".25"
+					/>
+				</twopointemitter>
+				<twopointemitter
+					bone_a="Bone024"
+					bone_b="Bone026"
+					spawnrate="25"
+					speed="20"
+					minparticlelife="150"
+					maxparticlelife="300"
+					direction="0 1 0"
+					angle="180"
+					directionalspace="local"
+					material="../flandre/effects/tx_xingguang_0067.material"
+					offsetsphere="15"
+				>
+					<particle
+						startcolor="0 .5 .5"
+						endcolor="0"
+						minsize="{minsize}"
+						maxsize="{maxsize}"
+						maxangle="180"
+						minanglespeed="-100"
+						maxanglespeed="100"
+						anchor=".25"
+					/>
+					<particle
+						startcolor="0 0 .5"
+						endcolor="0"
+						minsize="{minsize}"
+						maxsize="{maxsize}"
+						maxangle="180"
+						minanglespeed="-100"
+						maxanglespeed="100"
+						anchor=".25"
+					/>
+					<particle
+						startcolor=".5 0 .5"
+						endcolor="0"
+						minsize="{minsize}"
+						maxsize="{maxsize}"
+						maxangle="180"
+						minanglespeed="-100"
+						maxanglespeed="100"
+						anchor=".25"
+					/>
+					<particle
+						startcolor=".5 0 0"
+						endcolor="0"
+						minsize="{minsize}"
+						maxsize="{maxsize}"
+						maxangle="180"
+						minanglespeed="-100"
+						maxanglespeed="100"
+						anchor=".25"
+					/>
+					<particle
+						startcolor=".5 .5 0"
+						endcolor="0"
+						minsize="{minsize}"
+						maxsize="{maxsize}"
+						maxangle="180"
+						minanglespeed="-100"
+						maxanglespeed="100"
+						anchor=".25"
+					/>
+					<particle
+						startcolor=".5 .25 0"
+						endcolor="0"
+						minsize="{minsize}"
+						maxsize="{maxsize}"
+						maxangle="180"
+						minanglespeed="-100"
+						maxanglespeed="100"
+						anchor=".25"
+					/>
+					<particle
+						startcolor="0 .5 0"
+						endcolor="0"
+						minsize="{minsize}"
+						maxsize="{maxsize}"
+						maxangle="180"
+						minanglespeed="-100"
+						maxanglespeed="100"
+						anchor=".25"
+					/>
+				</twopointemitter>
+			</template>
+			
+			<instance name="sparkling" minsize="5" maxsize="10"/>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+</effect>

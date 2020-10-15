@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="model.model" type="K2">
+
+	<anim name="idle" clip="clips/idle.clip" fps="30" loop="true"/>
+	
+	<anim name="portrait" clip="clips/idle.clip" loop="true" fps="15"/>
+
+	<anim name="item_1" clip="clips/touzhi.clip" fps="25"/>
+	
+	<anim name="taunt_1" clip="clips/skill_04.clip" fps="30" loop="false"/>
+
+	<anim name="knock_1" clip="clips/dead.clip" loop="true" loopbackframe="-1"/>
+	
+	<anim name="ability_1" clip="clips/skill_02.clip" fps="25" blendtime="100" >
+		<frameevent frame="1" cmd="StartEffect ability_01.effect 1" />
+	
+	</anim>
+	
+	<anim name="ability_2" clip="clips/touzhi.clip" fps="30" loop="false" >
+	</anim>
+	
+	<anim name="ability_3" clip="clips/ability_3.clip" fps="30" loop="false">
+	</anim>
+	
+	<anim name="ability_4_1" clip="clips/specialidle.clip" fps="30" loop="false">
+		<frameevent frame="1" cmd="StartEffect ../ability_04/effects/channel.effect 1" />
+		<frameevent frame="75" cmd="StopEffect 1" />
+		<endevent cmd="StopEffect 1" />
+	</anim>
+	
+	<anim name="ability_4_2" clip="clips/ability_4.clip" fps="30" loop="false">
+		<frameevent frame="25" cmd="StartEffect ../ability_04/effects/channel.effect 1" />
+		<frameevent frame="100" cmd="StopEffect 1" />
+		<endevent cmd="StopEffect 1" />
+	</anim>
+	
+	<anim name="ability_4_3" clip="clips/ability_4.clip" fps="30" loop="false">
+		<frameevent frame="25" cmd="StartEffect ../ability_04/effects/channel.effect 1" />
+		<frameevent frame="75" cmd="StopEffect 1" />
+		<endevent cmd="StopEffect 1" />
+	</anim>
+
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="28" loop="false">
+        <frameevent frame="7" cmd="PlaySoundLinear /shared/sounds/attacks/attack_light_sword_%.wav 0 1000 .4"/>
+		<frameevent frame="7" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 0 1300 0.5"/>
+		<frameevent frame="11" cmd="StartEffect ../effects/weapon_trail_02.effect"/>
+	</anim>
+
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="30" loop="false">
+		<frameevent frame="7" cmd="PlaySoundLinear /shared/sounds/attacks/attack_light_sword_%.wav 0 1000 .4"/>
+		<frameevent frame="7" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 0 1300 0.5"/>
+		<frameevent frame="9" cmd="StartEffect ../effects/weapon_trail.effect"/>
+	</anim>
+	
+	<anim name="attack_3" clip="clips/attack_1.clip" fps="28" loop="false">
+        <frameevent frame="7" cmd="PlaySoundLinear /shared/sounds/attacks/attack_light_sword_%.wav 0 1000 .4"/>
+		<frameevent frame="7" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 0 1300 0.5"/>
+		<frameevent frame="11" cmd="StartEffect ../effects/weapon_trail.effect"/>
+	</anim>
+
+	<anim name="walk_1" clip="clips/run.clip" fps="22" loop="true" >
+		<frameevent frame="12" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="1" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+
+		<frameevent frame="1" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="12" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+	</anim>
+	
+	<anim name="walk_2" clip="clips/run2.clip" fps="22" loop="true" >
+		<frameevent frame="12" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="1" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+
+		<frameevent frame="1" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="12" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+	</anim>
+
+
+	<anim name="bored_1" clip="clips/dance.clip" fps="30" loop="false">
+	</anim>
+
+	<anim name="death_1" clip="clips/dead.clip" fps="30" loop="true" loopbackframe="-1">
+		<frameevent frame="1" cmd="PlaySoundLinear ../sound_Ereshkigal/EreshkigalDefeated%.wav 800 1500"/>
+	</anim>
+
+</model>

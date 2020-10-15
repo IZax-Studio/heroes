@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="default_1.max" file="../jibril/model.model" type="K2">
+
+	<anim name="idle" clip="../jibril/clips/bat_idle.clip"  fps="25" loop="true"/>
+	
+	
+</model>

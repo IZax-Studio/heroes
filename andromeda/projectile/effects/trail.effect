@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1" >
+			<sound
+				volume=".4" 
+				sample="../../jibril_sounds/138_0_Q_Trace1_0%.wav"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="1300"
+			/>
+		
+			<controller
+				scale="1"
+			>
+				<billboard
+					timenudge="1"
+					material="/shared/effects/materials/corona_06.material"
+					color=".03 0 .04"
+					size="200"
+				/>
+
+				<billboard
+					timenudge="1"
+					material="/shared/effects/materials/corona_01.material"
+					color=".0625 0 .015"
+					size="140"
+				/>
+
+				<billboard
+					timenudge="1"
+					material="/shared/effects/materials/corona_06.material"
+					color=".15 0 .2"
+					size="120"
+				/>
+
+				<billboard
+					timenudge="1"
+					material="/shared/effects/materials/corona_01.material"
+					color=".5 0 .175"
+					size="80"
+				/>
+
+				<billboard
+					timenudge="1"
+					material="/shared/effects/materials/whitedot.material"
+					color=".8 0 1"
+					size="75"
+				/>
+
+				<billboard
+					timenudge="1"
+					material="/shared/effects/materials/whitecircle_blend.material"
+					size="30"
+				/>
+
+				<billboard
+					timenudge="1"
+					material="/shared/effects/materials/black_spot2.material"
+					size="20"
+				/>
+			</controller>
+
+			<model
+				timenudge="1"
+				model="/shared/models/invis.mdf"
+				roll="90"
+			>
+				<template name="swirlyTrail">
+					<trailemitter
+						position="{position}"
+						spawnrate="50"
+						particlelife="300"
+						direction="{position}"
+						speed="400"
+						angle="0"
+						drag="0.25"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/smoke_scrolling_trail.material"
+						attachtoemitter="true"
+					>
+						<particle
+							startsize="50"
+							endsize="80"
+							startcolor="0 0 0"
+							endcolor=".5 0 .6"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+						/>
+					</trailemitter>
+					<trailemitter
+						position="{position}"
+						spawnrate="50"
+						particlelife="200"
+						direction="{position}"
+						speed="400"
+						angle="0"
+						drag="0.25"
+						texposscale="1"
+						texpostime="50"
+						texstretchscale="-1"
+						material="/shared/effects/materials/whitedot_blend_repeat.material"
+						attachtoemitter="true"
+					>
+						<particle
+							startsize="50"
+							endsize="20"
+							color=".8 0 1"
+							startalpha="1"
+							endalpha="0"
+						/>
+					</trailemitter>
+					<trailemitter
+						position="{position}"
+						spawnrate="50"
+						particlelife="200"
+						direction="{position}"
+						speed="400"
+						angle="0"
+						drag="0.25"
+						texposscale="0"
+						texpostime="60"
+						texstretchscale="1"
+						material="/shared/effects/materials/trail_01.material"
+						attachtoemitter="true"
+					>
+						<particle
+							startsize="50"
+							midsize="40"
+							endsize="0"
+							startcolor="1 0 .8"
+							midcolor="1 0 .8"
+							endcolor="0"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+						/>
+					</trailemitter>
+				</template>
+				<instance name="swirlyTrail" position="0 0 15" />
+				<instance name="swirlyTrail" position="0 0 -15" />
+			</model>
+
+
+			<simpleemitter
+				delay="5"
+				count="1"
+				particledirectionalspace="local"
+				particlelife="400"
+			>
+				<particle
+					startscale="1"
+					endscale="5"
+					midscalepos=".25"
+				>
+					<billboard
+						life="400"
+						timenudge="1"
+						lockup="true"
+						lockright="true"
+						directionalspace="local"
+						material="/shared/effects/materials/whitedot.material"
+						startcolor=".8 0 1"
+						endcolor="0"
+						size="75"
+					/>
+
+					<billboard
+						life="300"
+						timenudge="1"
+						lockup="true"
+						lockright="true"
+						directionalspace="local"
+						material="/shared/effects/materials/whitecircle_blend.material"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						size="30"
+					/>
+
+					<billboard
+						life="400"
+						timenudge="1"
+						lockup="true"
+						lockright="true"
+						directionalspace="local"
+						material="/shared/effects/materials/black_spot2.material"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						size="18"
+					/>
+				</particle>
+			</simpleemitter>
+
+
+
+
+
+
+
+
+			<model
+				position="0 50 0"
+				color="2 1 2"
+				model="\heroes\adrenaline\projectile/projectile.mdf" scale="2"
+				anim="idle"
+				material="\heroes\adrenaline/material.material"
+				rollspeed="1500"
+				
+			>
+			<template name="trail" >
+					<!-- dark smoke -->		
+					<simpleemitter
+						bone="{bone}" life="1500"
+						spawnrate="150" particlelife="200" count="20"
+						gravity="5"
+						minspeed="20"  maxspeed="50"
+						direction="0 0 1"
+						minangle="0" maxangle="180"
+						material="/shared/effects/materials/phantom_white_reveal.material"
+						offsetsphere="5"
+						depthbias="-50"
+					>
+						<particle					
+							startcolor=".5 0 .5" midcolor="0 0 .0" endcolor="0"
+							turn="1" minangle="-30" maxangle="30"
+							minsize="5" maxsize="13"
+							startframe=".1" midframe=".1" endframe="1" midframepos=".3"
+							startalpha=".2" midalpha=".3" endalpha="0"
+						/>
+					</simpleemitter>
+					
+					<!-- trails-->		
+					<trailemitter
+						bone="{bone}"
+						spawnrate="50"
+						life="1500" particlelife="150"
+						texpostime="150"
+						texposscale="0.0"
+						texstretchscale=".4"
+						material="/shared/effects/materials/arrow_trail.material"
+						subframepos="true"
+						position="0 0 0"
+					>
+						<particle
+							startcolor="1 0 1"
+							midcolor="0"
+							endcolor="0"
+							startsize="5"
+							midsize="3"
+							endsize="0"
+							midsizepos="0.25"
+					/>
+					</trailemitter>
+					 
+					<!-- sparks-->	
+					<simpleemitter
+						bone="{bone}"
+						spawnrate="50"
+						range="80"
+						life="1500" particlelife="250"
+						direction="0 1 1"
+						angle="10"
+						minspeed="30"
+						maxspeed="80"
+						drag="0.05"
+						gravity="-1"
+						offsetsphere="10"
+					>
+						<template name="ash_particle" >
+							<particle
+								minyawspeed="-50"
+								maxyawspeed="50"
+								minpitchspeed="-150"
+								maxpitchspeed="150"
+								minrollspeed="-150"
+								maxrollspeed="150"
+								startscale="0"
+								minendscale=".5"
+								maxendscale="1"
+							>
+								<billboard
+									maxangle="360"
+									minrollspeed="-400"
+									maxrollspeed="400"
+									life="250"
+									position="20 0 0"
+									material="/shared/effects/materials/abstract_reveal.material"
+									startsize="8"
+									endsize="15"
+									startcolor="{sc}"
+									midcolor="{mc}"
+									endcolor="{ec}"
+									midcolorpos="{mcpos}"
+									startframe="0"
+									endframe="1"
+								/>
+							</particle>
+						</template>
+						<instance name="ash_particle" sc="3 1 3" mc="1 0 1" ec="-1" mcpos=".5" />
+					</simpleemitter>
+				
+				</template>
+				
+				<instance name="trail" bone="Bone001" />
+				<instance name="trail" bone="Bone002" />
+				<instance name="trail" bone="Bone003" />
+				<instance name="trail" bone="Bone004" />
+			
+			</model>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+      	<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

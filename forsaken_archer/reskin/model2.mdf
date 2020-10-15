@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="idle.max" file="high.model" type="K2" high="black.model" med="black.model" low="black.model" >
+
+	<anim name="idle" clip="ability_1.clip" fps="550">
+      <frameevent frame="1" cmd="PlaySoundLinear ability_01/sounds/attack_1.ogg 400 1800 1"/>
+      <frameevent frame="1" cmd="PlaySoundLinear ability_01/sounds/skill_1.wav 400 1800 1"/>
+      </anim>
+			
+</model>

@@ -1,0 +1,1777 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_Bubbles"
+
+	team="Legion"
+	icon="icon1.jpg"
+	portrait="icon1.jpg"
+	model="model.mdf"
+	skin=""
+
+	portraitcampos="-3 10 50"
+
+	passiveeffect="body.effect"
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sa_select_%.wav"
+	selectedflavorsound=""
+	confirmmovesound="sa_move_%.wav"
+	confirmattacksound=""
+	nomanasound=""
+	cooldownsound=""
+	announcersound="sounds/voice/hero_select.wav"
+	tauntedsound=""
+	tauntkillsound=""
+
+	preglobalscale="1.3"
+	modelscale="1.0"
+	effectscale="1"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="48"
+	targetoffset="0 0 64"
+
+	category="magic cc"
+	difficulty="4"
+
+	solorating="2"
+	junglerating="0"
+	carryrating="0"
+	supportrating="0"
+	initiatorrating="3"
+	gankerrating="1"
+	pusherrating="0"
+	rangedrating="5"
+	meleerating="0"
+
+	movespeed="295"
+	turnrate="450"
+	turnsmoothing="0.05"
+	infoheight="180"
+
+	maxhealth="150"
+	healthregen="0.25"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="-0.56"
+	magicarmor="6"
+
+	inventory0="Ability_Bubbles1"
+	inventory1="Ability_Bubbles2"
+	inventory2="Ability_Bubbles3"
+	inventory3="Ability_Bubbles4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="1300"
+	attackactiontime="500"
+	attackcooldown="1700"
+	attackdamagemin="20"
+	attackdamagemax="25"
+	attacknumanims="2"
+	attackoffset="-35 124 100"
+	attackprojectile="Projectile_Bubbles_Attack"
+	attackrange="550"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect=""
+	attacktype="ranged"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="800"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	corpsetime="3300"
+	corpsefadetime="3000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+
+	primaryattribute="Intelligence"
+	strength="15"
+	strengthperlevel="1.7"
+	agility="22"
+	agilityperlevel="1.7"
+	intelligence="25"
+	intelligenceperlevel="2.4"
+
+	previewmodel="model.mdf"
+	previewpos="0 0 -80"
+	previewangles="0 0 0"
+	previewscale="1.4"
+	
+	storemodel="model.mdf"
+	storepos="0 0 -70"
+	storeangles="0 0 0"
+	storescale="1.4"
+>
+	<recommendeditem name="Item_ManaPotion" />
+	<recommendeditem name="Item_MinorTotem" />
+	<recommendeditem name="Item_RunesOfTheBlight" />
+	<recommendeditem name="Item_HealthPotion" />
+	<recommendeditem name="Item_HomecomingStone" />
+
+	<recommendeditem name="Item_Intelligence5" />
+	<recommendeditem name="Item_PortalKey" />
+	<recommendeditem name="Item_PostHaste" />
+	<recommendeditem name="Item_Intelligence6" />
+	<recommendeditem name="Item_Protect" />
+	<recommendeditem name="Item_UltorsHeavyPlate" />
+	<recommendeditem name="Item_Silence" />
+	<recommendeditem name="Item_BehemothsHeart" />
+	<recommendeditem name="Item_Morph" />
+	<recommendeditem name="Item_Freeze" />
+
+	<oninflicted>
+		<entitytype type="State_Taunting" target="inflictor_entity">
+			<setproxy entity="this_entity" target="inflictor_entity" />
+		</entitytype>
+	</oninflicted>
+
+	<modifier key="bubbles_noshell" modpriority="100"
+		idleanim="noshell_idle"
+		boredanim="noshell_bored_1"
+		attackanim="noshell_attack_%"
+		attacknumanims="2"
+		walkanim="noshell_walk_1"
+	/>
+
+	<modifier key="ult_boost" modpriority="100">
+		<aura state="Ult_Boost_Bubbles" radius="0" targetscheme="self" continuous="false"/>
+	</modifier>
+	
+	<!-- <modifier key="gated" modpriority="200"
+		movespeed="290"
+		magicarmor="5"
+		armor="-1.6"
+		
+		inventory0="Reborn_Ability_Bubbles1"
+		inventory1="Reborn_Ability_Bubbles2"
+		inventory2="Reborn_Ability_Bubbles3"
+		inventory3="Reborn_Ability_Bubbles4"
+		
+		attackdamagemin="28"
+		attackdamagemax="39"
+		
+		primaryattribute="Intelligence"
+		strength="15"
+		strengthperlevel="2.0"
+		agility="22"
+		agilityperlevel="1.5"
+		intelligence="25"
+		intelligenceperlevel="2.4"
+		
+		solorating="0"
+		junglerating="0"
+		carryrating="0"
+		supportrating="0"
+		initiatorrating="5"
+		gankerrating="5"
+		pusherrating="0"
+		rangedrating="5"
+		meleerating="0"
+	>
+	</modifier> -->
+
+	<modifier key="soccer" modpriority="190" primaryattribute=""
+		turnrate="650" magicarmor="0" healthregen="2.5" armor="0" manaregen="0"
+		maxmana="100"
+		attackrange="400"
+		movespeed="320"
+		maxhealth="400"
+		attackdamagemin="40"
+		attackdamagemax="40"
+		intelligence="0"
+		strength="0"
+		agility="0"
+		inventory0="Ability_Soccer_SlideKick"
+		inventory1="Ability_Soccer_Sprint"
+		inventory2="Ability_Bubbles1"
+		inventory3="Ability_Bubbles4"
+		inventory4="Ability_Bubbles3"
+		cancarryitems="false" inventory8="" inventory12=""
+	/>
+
+	<altavatar icon="icon.tga" key="Hero_Bubbles.Alt" modpriority="1"
+		altavatar="true"
+		selectedsound="sounds/voice/select_%.wav"
+		selectedflavorsound="sounds/voice/select_flavour_%.wav"
+		confirmmovesound="sounds/voice/move_%.wav"
+		confirmattacksound="sounds/voice/attack_%.wav"
+		nomanasound="sounds/voice/no_mana.wav"
+		cooldownsound="sounds/voice/cooldown.wav"	
+		tauntedsound="sounds/voice/taunt_prior.wav"
+		tauntkillsound="sounds/voice/taunt_after.wav"
+		
+		icon2="alt/icon.tga"
+		portrait="alt/icon.tga"
+		model="alt/model.mdf"
+
+		previewmodel="alt/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.15"
+
+		storemodel="alt/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.1"
+
+		tooleffectkeyname39="Item_Intelligence7"
+		tooleffectpath39="effects/sotm.effect"
+		tooleffectgroup39="effects"
+	>
+	</altavatar>
+
+	<altavatar icon="icon.tga" key="Hero_Bubbles.Alt2" modpriority="1"
+		altavatar="true"
+
+		attackprojectile="Projectile_Bubbles_Attack_Alt2"
+
+		attackoffset="15 75 100"
+
+		icon2="alt2/icon.tga"
+		portrait="alt2/icon.tga"
+		model="alt2/model.mdf"
+
+		passiveeffect="alt2/effects/body.effect"
+
+		selectedsound="alt2/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt2/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt2/sounds/voice/move_%.wav"
+	    confirmattacksound="alt2/sounds/voice/attack_%.wav"
+	    nomanasound="alt2/sounds/voice/no_mana.wav"
+	    cooldownsound="alt2/sounds/voice/cooldown.wav"
+	    tauntedsound="alt2/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt2/sounds/voice/taunt_after.wav"
+
+		previewmodel="alt2/preview.mdf"
+		previewpos="-10 0 -50"
+		previewangles="0 0 25"
+		previewscale="1.30"
+
+		storemodel="alt2/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.25"
+
+		tooleffectkeyname39="Item_Intelligence7"
+		tooleffectpath39="effects/sotm.effect"
+		tooleffectgroup39="effects"
+	>
+	</altavatar>
+
+	<altavatar icon="icon.tga" key="Hero_Bubbles.Alt3" modpriority="1"
+		altavatar="true"
+
+		preglobalscale="1.15"
+
+		passiveeffect="alt3/effects/self.effect"
+		attackoffset="0 45 50"
+
+		attackprojectile="Projectile_Bubbles_Attack_Alt3"
+
+		icon2="alt3/icon.tga"
+		portrait="alt3/icon.tga"
+		model="alt3/model.mdf"
+
+		previewmodel="alt3/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.15"
+
+		selectedsound="alt3/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt3/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt3/sounds/voice/move_%.wav"
+	    confirmattacksound="alt3/sounds/voice/attack_%.wav"
+	    nomanasound="alt3/sounds/voice/no_mana.wav"
+	    cooldownsound="alt3/sounds/voice/cooldown.wav"
+	    tauntedsound="alt3/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt3/sounds/voice/taunt_after.wav"
+
+		storemodel="alt3/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.1"
+
+		tooleffectkeyname39="Item_Intelligence7"
+		tooleffectpath39="effects/sotm.effect"
+		tooleffectgroup39="effects"
+	>
+	</altavatar>
+
+	<altavatar icon="icon.tga" key="Hero_Bubbles.Alt4" modpriority="1"
+		altavatar="true"
+
+		preglobalscale="1.4"
+
+		passiveeffect="alt4/effects/body.effect"
+		attackoffset="0 45 50"
+
+		icon2="alt4/icon.tga"
+		portrait="alt4/icon.tga"
+		model="alt4/model.mdf"
+		infoheight="200"
+
+		previewmodel="alt4/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.15"
+
+		selectedsound="alt4/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt4/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt4/sounds/voice/move_%.wav"
+	    confirmattacksound="alt4/sounds/voice/attack_%.wav"
+	    nomanasound="alt4/sounds/voice/no_mana.wav"
+	    cooldownsound="alt4/sounds/voice/cooldown.wav"
+	    tauntedsound="alt4/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt4/sounds/voice/taunt_after.wav"
+
+		storemodel="alt4/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.1"
+
+		tooleffectkeyname39="Item_Intelligence7"
+		tooleffectpath39="effects/sotm.effect"
+		tooleffectgroup39="effects"
+	>
+		<onspawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Arachna.Alt3 aa.Hero_Bubbles.Alt4 aa.Hero_Devourer.Alt6 aa.Hero_Ebulus.Alt3 aa.Hero_EmeraldWarden.Alt5 aa.Hero_Predator.Alt4 aa.Hero_Ravenor.Alt4 aa.Hero_Riftmage.Alt2">
+				<activatemodifierkey name="RiftBeast_Set" />
+			</ownsproduct>
+		</onspawn>
+
+		<onrespawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Arachna.Alt3 aa.Hero_Bubbles.Alt4 aa.Hero_Devourer.Alt6 aa.Hero_Ebulus.Alt3 aa.Hero_EmeraldWarden.Alt5 aa.Hero_Predator.Alt4 aa.Hero_Ravenor.Alt4 aa.Hero_Riftmage.Alt2">
+				<activatemodifierkey name="RiftBeast_Set" />
+			</ownsproduct>
+		</onrespawn>
+
+		<modifier key="RiftBeast_Set" modpriority="101"
+			tooleffectpath38="/shared/effects/riftbeast.effect"
+		/>
+
+	</altavatar>
+
+	<altavatar icon="icon.tga" key="Hero_Bubbles.Alt5" modpriority="1"
+		altavatar="true"
+
+		preglobalscale="1.4"
+		respawneffect="/shared/effects/respawn_bubbles.effect"
+
+		attackoffset="-35 124 100"
+
+		icon2="alt5/icon.tga"
+		portrait="alt5/icon.tga"
+		model="alt5/model.mdf"
+		infoheight="200"
+
+		previewpassiveeffect="alt5/effects/body_store.effect"
+		previewmodel="alt5/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.15"
+
+		selectedsound="alt5/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt5/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt5/sounds/voice/move_%.wav"
+	    confirmattacksound="alt5/sounds/voice/attack_%.wav"
+	    nomanasound="alt5/sounds/voice/no_mana.wav"
+	    cooldownsound="alt5/sounds/voice/cooldown.wav"
+	    tauntedsound="alt5/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt5/sounds/voice/taunt_after.wav"
+
+		storepassiveeffect="alt5/effects/body_store.effect"
+		storemodel="alt5/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.1"
+
+		tooleffectkeyname0="Item_PushStaff"
+		tooleffectpath0="alt5/upgraded_jetpack/body.effect"
+		tooleffectgroup0="back"
+
+		tooleffectkeyname1="Item_PortalKey"
+		tooleffectpath1="alt5/upgraded_jetpack/body.effect"
+		tooleffectgroup1="back"
+
+		tooleffectpath2="alt5/base_shell/body.effect"
+		tooleffectgroup2="back"
+
+		tooleffectkeyname3="effect_GraveLocket"
+		tooleffectpath3="alt5/upgraded_chest/body.effect"
+		tooleffectgroup3="chest"
+
+		tooleffectkeyname5="Item_ManaRegen3"
+		tooleffectpath5="alt5/upgraded_chest/body.effect"
+		tooleffectgroup5="chest"
+
+		tooleffectkeyname6="Item_PowerSupply"
+		tooleffectpath6="alt5/upgraded_chest/body.effect"
+		tooleffectgroup6="chest"
+
+		tooleffectkeyname7="Item_MysticVestments"
+		tooleffectpath7="alt5/upgraded_chest/body.effect"
+		tooleffectgroup7="chest"
+
+		tooleffectkeyname8="Item_Bottle"
+		tooleffectpath8="alt5/upgraded_chest/body.effect"
+		tooleffectgroup8="chest"
+
+		tooleffectkeyname9="Item_Nuke"
+		tooleffectpath9="alt5/upgraded_chest/body.effect"
+		tooleffectgroup9="chest"
+
+		tooleffectpath10="alt5/base_chest/body.effect"
+		tooleffectgroup10="chest"
+
+		tooleffectkeyname11="effect_Boots"
+		tooleffectpath11="alt5/upgraded_boots/body.effect"
+		tooleffectgroup11="boots"
+
+		tooleffectpath12="alt5/base_feet/body.effect"
+		tooleffectgroup12="boots"
+
+		tooleffectkeyname13="Item_Weapon1"
+		tooleffectpath13="alt5/upgraded_helmet/body.effect"
+		tooleffectgroup13="head"
+
+		tooleffectkeyname14="Item_SpellShards"
+		tooleffectpath14="alt5/upgraded_helmet/body.effect"
+		tooleffectgroup14="head"
+
+		tooleffectkeyname15="Item_Silence"
+		tooleffectpath15="alt5/upgraded_helmet/body.effect"
+		tooleffectgroup15="head"
+
+		tooleffectkeyname16="Item_Spell_Sunder"
+		tooleffectpath16="alt5/upgraded_helmet/body.effect"
+		tooleffectgroup16="head"
+
+		tooleffectkeyname17="Item_HarkonsBlade"
+		tooleffectpath17="alt5/upgraded_helmet/body.effect"
+		tooleffectgroup17="head"
+
+		tooleffectkeyname18="Item_UltorsHeavyPlate"
+		tooleffectpath18="alt5/upgraded_helmet/body.effect"
+		tooleffectgroup18="head"
+
+		tooleffectkeyname19="Item_NeophytesBook"
+		tooleffectpath19="alt5/upgraded_weapon/body.effect"
+		tooleffectgroup19="weapon"
+
+		tooleffectkeyname20="Item_Intelligence6"
+		tooleffectpath20="alt5/upgraded_weapon/body.effect"
+		tooleffectgroup20="weapon"
+
+		tooleffectkeyname21="effect_brand"
+		tooleffectpath21="alt5/upgraded_weapon/body.effect"
+		tooleffectgroup21="weapon"
+
+		tooleffectkeyname22="Item_Confluence"
+		tooleffectpath22="alt5/upgraded_effects/body.effect"
+		tooleffectgroup22="effects"
+
+		tooleffectkeyname23="Item_Regen"
+		tooleffectpath23="alt5/upgraded_effects/body.effect"
+		tooleffectgroup23="effects"
+
+		tooleffectkeyname24="Item_Protect"
+		tooleffectpath24="alt5/upgraded_effects/body.effect"
+		tooleffectgroup24="effects"
+
+		tooleffectkeyname25="Item_Morph"
+		tooleffectpath25="alt5/upgraded_effects/body.effect"
+		tooleffectgroup25="effects"
+
+		tooleffectkeyname26="Item_Immunity"
+		tooleffectpath26="alt5/upgraded_effects/body.effect"
+		tooleffectgroup26="effects"
+
+		tooleffectkeyname39="Item_Intelligence7"
+		tooleffectpath39="effects/sotm.effect"
+		tooleffectgroup39="effects"
+	>
+
+
+
+
+
+
+	<onspawn propagatetoillusions="false" >
+		<applystate name="State_Bubbles_Alt5_Weapon_Effects" target="this_entity" continuous="true" />
+		<applystate name="State_Bubbles_Alt5_Voice" target="this_entity" continuous="true" />
+		<applystate name="State_Bubbles_Alt5_Jetpack_Effects" target="this_entity" continuous="true" />
+		<applystate name="State_Bubbles_Alt5_Ability_Effects" target="this_entity" continuous="true" />
+
+			<ownsproduct target="this_entity" product="aa.Hero_Plant.Alt3 aa.Hero_Ebulus.Alt4 aa.Hero_Panda.Alt4">
+				<targettype type="mimic" target="this_entity" >
+				</targettype>
+				<else>
+					<playeffect effect="alt5/effects/gift/xmas_set.effect"/>
+					<playanim name="surprise"/>
+				</else>
+			</ownsproduct>
+
+
+		</onspawn>
+
+		<onrespawn propagatetoillusions="false" >
+			<applystate name="State_Bubbles_Alt5_Voice" target="this_entity" continuous="true" />
+			<applystate name="State_Bubbles_Alt5_Weapon_Effects" target="this_entity" continuous="true" />
+			<applystate name="State_Bubbles_Alt5_Jetpack_Effects" target="this_entity" continuous="true" />
+			<applystate name="State_Bubbles_Alt5_Ability_Effects" target="this_entity" continuous="true" />
+
+			<ownsproduct target="this_entity" product="aa.Hero_Plant.Alt3 aa.Hero_Ebulus.Alt4 aa.Hero_Panda.Alt4">
+				<targettype type="mimic" target="this_entity" >
+				</targettype>
+				<else>
+					<playanim name="surprise"/>
+					<playeffect effect="alt5/effects/gift/xmas_set.effect"/>
+				</else>
+			</ownsproduct>
+		</onrespawn>
+
+
+
+
+		<modifier key="Alt5_Weapon" modpriority="3"
+			attackprojectile="Projectile_BubblesAttack_Alt5_Weapon"
+		/>
+
+		<modifier key="Alt5_Voice" modpriority="2"
+			passiveeffect="alt5/effects/breath.effect"
+
+			selectedsound="alt5/sounds/voice/helmet/select_%.wav"
+			selectedflavorsound="alt5/sounds/voice/helmet/select_flavour_%.wav"
+			confirmmovesound="alt5/sounds/voice/helmet/move_%.wav"
+			confirmattacksound="alt5/sounds/voice/helmet/attack_%.wav"
+			nomanasound="alt5/sounds/voice/helmet/no_mana.wav"
+			cooldownsound="alt5/sounds/voice/helmet/cooldown.wav"
+			tauntedsound="alt5/sounds/voice/helmet/taunt_prior.wav"
+			tauntkillsound="alt5/sounds/voice/helmet/taunt_after.wav"
+		/>
+
+		<modifier key="alt_Boots" modpriority="2"
+			walkanim="walk_2"
+		/>
+
+		<modifier key="Alt5_Jetpack" modpriority="2"
+			deathanim="death_2"
+			boredanim="bored_1_gas"
+			corpsetime="0"
+			corpsefadetime="0"
+			corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		/>
+
+		<modifier key="bubbles_noshell" modpriority="100"
+			idleanim="noshell_idle"
+			boredanim="noshell_bored_1"
+			attackanim="noshell_attack_%"
+			attacknumanims="2"
+			walkanim="noshell_walk_1"
+		/>
+
+		<modifier key="Alt5_Jetpack_Noshell" modpriority="99"
+			passiveeffect="alt5/effects/jetpack_noshell/gasleak.effect"
+		/>
+	</altavatar>
+
+	<altavatar icon="icon.tga" key="Hero_Bubbles.Alt6" modpriority="1"
+		altavatar="true"
+
+		preglobalscale="1.75"
+
+		passiveeffect="alt6/effects/body.effect"
+		attackoffset="0 45 50"
+
+		icon2="alt6/icon.tga"
+		portrait="alt6/icon.tga"
+		model="alt6/model.mdf"
+		infoheight="200"
+
+		selectedsound="alt6/sounds/voice/select_%.wav"
+		selectedflavorsound="alt6/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt6/sounds/voice/move_%.wav"
+		confirmattacksound="alt6/sounds/voice/attack_%.wav"
+		nomanasound="alt6/sounds/voice/no_mana.wav"
+		cooldownsound="alt6/sounds/voice/cooldown.wav"
+		tauntedsound="alt6/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt6/sounds/voice/taunt_after.wav"
+
+		previewmodel="alt6/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.15"
+
+		storemodel="alt6/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.6"
+
+		tooleffectkeyname39="Item_Intelligence7"
+		tooleffectpath39="effects/sotm.effect"
+		tooleffectgroup39="effects"
+	>
+		<onspawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Solstice.Alt7 aa.Hero_Kraken.Alt4 aa.Hero_Pearl.Alt6 aa.Hero_Hantumon.Alt6 aa.Hero_Ophelia.Alt4 aa.Hero_EmeraldWarden.Alt6 aa.Hero_Ebulus.Alt5 aa.Hero_MasterOfArms.Alt6 aa.Hero_Martyr.Alt5 aa.Hero_Magmar.Alt5 aa.Hero_Riptide.Alt2">
+				<activatemodifierkey name="Zodiac_Set" />
+			</ownsproduct>
+		</onspawn>
+
+		<onrespawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Solstice.Alt7 aa.Hero_Kraken.Alt4 aa.Hero_Pearl.Alt6 aa.Hero_Hantumon.Alt6 aa.Hero_Ophelia.Alt4 aa.Hero_EmeraldWarden.Alt6 aa.Hero_Ebulus.Alt5 aa.Hero_MasterOfArms.Alt6 aa.Hero_Martyr.Alt5 aa.Hero_Magmar.Alt5 aa.Hero_Riptide.Alt2">
+				<activatemodifierkey name="Zodiac_Set" />
+			</ownsproduct>
+		</onrespawn>
+
+		<!-- <onframe>
+			<activatemodifierkey name="Zodiac_Set" />
+		</onframe> -->
+
+		<modifier key="Zodiac_Set" modpriority="1"
+			tooleffectkeyname0=""
+			tooleffectpath0="/shared/effects/set_zodiac.effect"
+		/>
+	</altavatar>
+
+	<altavatar icon="icon.tga" key="Hero_Bubbles.Alt7" modpriority="1"
+		altavatar="true"
+
+		preglobalscale="1.9"
+
+		passiveeffect="alt7/effects/body.effect"
+		attackoffset="0 120 100"
+		attackprojectile="Projectile_Bubbles_Attack_Alt7"
+
+		icon2="alt7/icon.tga"
+		portrait="alt7/icon.tga"
+		model="alt7/model.mdf"
+		infoheight="200"
+
+		selectedsound="alt7/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt7/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt7/sounds/voice/move_%.wav"
+		confirmattacksound="alt7/sounds/voice/attack_%.wav"
+		nomanasound="alt7/sounds/voice/no_mana.wav"
+		cooldownsound="alt7/sounds/voice/cooldown.wav"
+		tauntedsound="alt7/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt7/sounds/voice/taunt_after.wav"
+
+		previewmodel="alt7/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.15"
+
+		storepassiveeffect="alt7/effects/body_store.effect"
+		storemodel="alt7/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.6"
+
+		tooleffectkeyname39="Item_Intelligence7"
+		tooleffectpath39="effects/sotm.effect"
+		tooleffectgroup39="effects"
+	/>
+
+		<altavatar icon="icon.tga" key="Hero_Bubbles.Alt8" modpriority="1"
+		altavatar="true"
+
+		preglobalscale="1.75"
+
+		passiveeffect=""
+		attackoffset="0 45 50"
+		attackprojectile="Projectile_Bubbles_Attack_Alt8"
+
+		icon2="alt8/icon.tga"
+		portrait="alt8/icon.tga"
+		model="alt8/model.mdf"
+		infoheight="200"
+
+		selectedsound="alt8/sounds/voice/select_%.wav"
+		selectedflavorsound="alt8/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt8/sounds/voice/move_%.wav"
+		confirmattacksound="alt8/sounds/voice/attack_%.wav"
+		nomanasound="alt8/sounds/voice/no_mana.wav"
+		cooldownsound="alt8/sounds/voice/cooldown.wav"
+		tauntedsound="alt8/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt8/sounds/voice/taunt_after.wav"
+
+		previewmodel="alt8/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.15"
+
+		storemodel="alt8/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.6"
+
+		tooleffectkeyname39="Item_Intelligence7"
+		tooleffectpath39="effects/sotm.effect"
+		tooleffectgroup39="effects"
+	/>
+
+	<altavatar icon="icon.tga" key="Hero_Bubbles.Alt9" modpriority="1"
+		altavatar="true"
+
+		preglobalscale="1.5"
+
+		attackoffset="0 45 50"
+		attackactioneffect="alt9/effects/sound_attack.effect"
+
+
+		icon2="alt9/icon.tga"
+		portrait="alt9/icon.tga"
+		model="alt9/model.mdf"
+		infoheight="200"
+
+		selectedsound="alt9/sounds/voice/select_%.wav"
+		selectedflavorsound="alt9/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt9/sounds/voice/move_%.wav"
+		confirmattacksound="alt9/sounds/voice/attack_%.wav"
+		nomanasound="alt9/sounds/voice/no_mana.wav"
+		cooldownsound="alt9/sounds/voice/cooldown.wav"
+		tauntedsound="alt9/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt9/sounds/voice/taunt_after.wav"
+
+		previewmodel="alt9/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.15"
+
+		storemodel="alt9/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.3"
+
+		portraitcampos="-5 50 -20"
+
+		skin="blue"
+		passiveeffect="alt9/effects/body_blue.effect"
+		boredanim="bored_2"
+		deathanim="death_2"
+		attackprojectile="Projectile_Bubbles_Alt9_Attack_Upgrade"
+
+		tooleffectkeyname39="Item_Intelligence7"
+		tooleffectpath39="effects/sotm.effect"
+		tooleffectgroup39="effects"
+	>
+		<onlevelup>
+			<condition test="level ge 6">
+				<setactivemodifierkey name="Level_6" />
+				<playeffect effect="alt9/effects/levelup.effect" source="target_position" occlude="true" />
+			</condition>
+			<else>
+				<setactivemodifierkey name="" />
+			</else>
+		</onlevelup>
+
+		<modifier key="Level_6" modpriority="6"
+			skin=""
+			passiveeffect="alt9/effects/body.effect"
+			boredanim="bored_1"
+			deathanim="death_1"
+			attackprojectile="Projectile_Bubbles_Attack"
+		/>
+
+		<modifier key="bubbles_noshell" modpriority="100"
+			idleanim="noshell_idle"
+			attackanim="noshell_attack_%"
+			attacknumanims="2"
+			walkanim="noshell_walk_1"
+		/>
+	
+		<onkill propagatetoillusions="true" >
+			<setaccumulator value="0" />
+			<ownsproduct target="this_entity" product="aa.Hero_MasterOfArms.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Berzerker.Alt12">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Adrenaline.Alt5">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Bombardier.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Blitz.Alt6">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_ShadowBlade.Alt7">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			
+			<targettype type="hero">
+				<targettype type="illusion" />
+				<else>               
+					<targettype type="mimic" />
+					<else> 
+						<targettype type="self" />
+						<else>
+							<targettype type="heropet" />
+							<else>
+								<compare a="accumulator" b="4" op="ge">
+									<spawnunit name="Gadget_8bit_Death" count="1" target="target_position" pushentity="true" maxactive="3" />	
+								</compare>
+							</else>
+						</else>
+					</else>
+				</else>
+			</targettype>
+			
+			<compare a="accumulator" b="2" op="ge">
+				<cantarget targetscheme="enemy_heroes">				
+					<applystate name="State_Set_8bit_VFX" source="this_entity" target="this_entity" duration="2500" />
+				</cantarget>
+			</compare>
+		</onkill>
+		
+		<onchannelingstart>
+			<setaccumulator value="0" />
+			<ownsproduct target="this_entity" product="aa.Hero_MasterOfArms.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Berzerker.Alt12">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Adrenaline.Alt5">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Bombardier.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Blitz.Alt6">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_ShadowBlade.Alt7">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+		
+			<compare a="accumulator" b="2" op="ge">	
+				<entitytype type="Ability_Taunt" target="inflictor_entity">
+					<condition test="hasstate State_Set_8bit_VFX" target="this_entity">
+					</condition>
+					<else>
+						<applystate name="State_Set_8bit_VFX" source="this_entity" target="this_entity" duration="2500" />
+					</else>
+				</entitytype>
+			</compare>
+		</onchannelingstart>
+		
+		<onassist>
+			<setaccumulator value="0" />
+			<ownsproduct target="this_entity" product="aa.Hero_MasterOfArms.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Berzerker.Alt12">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Adrenaline.Alt5">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Bombardier.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Blitz.Alt6">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_ShadowBlade.Alt7">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			
+			
+			<compare a="accumulator" b="2" op="ge">			
+					<applystate name="State_Set_8bit_VFX" source="this_entity" target="this_entity" duration="2500" />
+			</compare>
+		</onassist>
+
+	</altavatar>
+
+
+	<altavatar icon="icon.tga" key="Hero_Bubbles.Alt10" modpriority="1"
+		altavatar="true"
+
+		preglobalscale="1.35"
+
+		passiveeffect="alt10/effects/body.effect"
+		attackoffset="-35 200 100"
+		attackprojectile="Projectile_Bubbles_Attack_Alt10"
+		attackactioneffect="alt10/projectile/sound_attack.effect"
+
+		icon2="alt10/icon.tga"
+		portrait="alt10/icon.tga"
+		model="alt10/model.mdf"
+		infoheight="200"
+
+		selectedsound="alt10/sounds/voice/select_%.wav"
+		selectedflavorsound="alt10/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt10/sounds/voice/move_%.wav"
+		confirmattacksound="alt10/sounds/voice/attack_%.wav"
+		nomanasound="alt10/sounds/voice/no_mana.wav"
+		cooldownsound="alt10/sounds/voice/cooldown.wav"
+		tauntedsound="alt10/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt10/sounds/voice/taunt_after.wav"
+
+		previewmodel="alt10/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.15"
+
+		storemodel="alt10/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.2"
+		portraitcampos="-15 30 -10"
+
+
+		>
+
+
+
+		<onspawn propagatetoillusions="false">
+			<ownsproduct target="this_entity" product="aa.Hero_Rocky.Alt8 aa.Hero_Mumra.Alt5 aa.Hero_Artesia.Alt5 aa.Hero_Bubbles.Alt10">
+				<targettype type="mimic" target="this_entity" >
+				</targettype>
+				<else>
+					<activatemodifierkey name="steam_works"	/>
+				</else>
+			</ownsproduct>
+		</onspawn>
+
+		<onrespawn propagatetoillusions="false">
+			<ownsproduct target="this_entity" product="aa.Hero_Rocky.Alt8 aa.Hero_Mumra.Alt5 aa.Hero_Artesia.Alt5 aa.Hero_Bubbles.Alt10">
+				<targettype type="mimic" target="this_entity" >
+				</targettype>
+				<else>
+					<activatemodifierkey name="steam_works"	/>
+				</else>
+			</ownsproduct>
+		</onrespawn>
+
+	<ondeath>
+
+		<deactivatemodifierkey name="steam_works"/>
+		<expirestate name="State_Steamworks_Set" target="this_entity" />
+	</ondeath>
+
+		<modifier key="steam_works" modpriority="100"
+			passiveeffect="alt10/effects/body.effect"
+		>
+			<aura state="State_Steamworks_Set" radius="0" targetscheme="self" continuous="false"/>
+		</modifier>
+
+
+
+		<modifier key="iamsheeped" modpriority="1000"
+			passiveeffect=""
+		/>
+		<modifier key="bubbles_noshell" modpriority="101"
+			passiveeffect="alt10/effects/body_noshell.effect"
+		/>
+
+
+	</altavatar>
+
+	<altavatar icon="icon.tga" key="Hero_Bubbles.Alt11" modpriority="1"
+		altavatar="true"
+
+		preglobalscale="1.35"
+
+		passiveeffect="alt11/effects/body.effect"
+		attackoffset="0 150 50"
+		attackactioneffect="alt11/projectile/sound_attack.effect"
+
+		icon2="alt11/icon.tga"
+		portrait="alt11/icon.tga"
+		model="alt11/model.mdf"
+		infoheight="200"
+
+		selectedsound="alt11/sounds/voice/select_%.wav"
+		selectedflavorsound="alt11/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt11/sounds/voice/move_%.wav"
+		confirmattacksound="alt11/sounds/voice/attack_%.wav"
+		nomanasound="alt11/sounds/voice/no_mana.wav"
+		cooldownsound="alt11/sounds/voice/cooldown.wav"
+		tauntedsound="alt11/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt11/sounds/voice/taunt_after.wav"
+
+		previewmodel="alt11/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.15"
+
+		storemodel="alt11/preview.mdf"
+		storepassiveeffect="alt11/effects/body_store.effect"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.2"
+		portraitcampos="-5 30 10"
+		portraitangles="0 0 0"
+	>
+
+		<onspawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Predator.Alt11 aa.Hero_Kunas.Alt9 aa.Hero_Bubbles.Alt11 aa.Hero_Tundra.Alt5 aa.Hero_Hunter.Alt8 aa.Hero_Hydromancer.Alt6">
+				<activatemodifierkey name="Apex_Set" />
+			</ownsproduct>
+		</onspawn>
+
+		<onrespawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Predator.Alt11 aa.Hero_Kunas.Alt9 aa.Hero_Bubbles.Alt11 aa.Hero_Tundra.Alt5 aa.Hero_Hunter.Alt8 aa.Hero_Hydromancer.Alt6">
+				<activatemodifierkey name="Apex_Set" />
+			</ownsproduct>
+		</onrespawn>
+
+		<ondeath>
+			<deactivatemodifierkey name="Apex_Set" />
+		</ondeath>
+
+		<modifier key="Apex_Set" modpriority="1"
+			tooleffectkeyname0=""
+			tooleffectpath0="/shared/effects/apex_set.effect"
+		/>
+
+		<modifier key="iamsheeped" modpriority="1"
+			passiveeffect=""
+		/>
+	</altavatar>
+
+	<altavatar icon="icon.tga" key="Hero_Bubbles.pog_skin"
+		selectedsound="sounds/voice/select_%.wav"
+		selectedflavorsound="sounds/voice/select_flavour_%.wav"
+		confirmmovesound="sounds/voice/move_%.wav"
+		confirmattacksound="sounds/voice/attack_%.wav"
+		nomanasound="sounds/voice/no_mana.wav"
+		cooldownsound="sounds/voice/cooldown.wav"	
+		tauntedsound="sounds/voice/taunt_prior.wav"
+		tauntkillsound="sounds/voice/taunt_after.wav"
+		
+		icon2="icon.tga"
+		portrait="icon.tga"
+		model="pog_skin/model.mdf"
+
+		previewmodel="pog_skin/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.15"
+
+		storemodel="pog_skin/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.1"
+
+		tooleffectkeyname39="Item_Intelligence7"
+		tooleffectpath39="effects/sotm.effect"
+		tooleffectgroup39="effects"
+	/>
+
+	<altavatar icon="icon.tga" key="Hero_Bubbles.Alt12" modpriority="1"
+		altavatar="true"
+		icon2="alt12/icon.tga"
+		portrait="alt12/icon.tga"
+		preglobalscale="1.4"
+		model="alt12/model.mdf"
+		infoheight="200"
+		portraitcampos="14 25 -10"
+		passiveeffect="alt12/effects/self.effect"
+		
+		
+		previewmodel="alt12/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.15"
+		
+		storemodel="alt12/preview.mdf"
+		storepos="0 0 -22"
+		storeangles="0 0 0"
+		storescale="1.25"
+
+		tooleffectkeyname39="Item_Intelligence7"
+		tooleffectpath39="alt12/effects/sotm.effect"
+		tooleffectgroup39="effects"
+		selectedsound="alt12/sounds/voice/select_%.wav"
+		selectedflavorsound="alt12/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt12/sounds/voice/move_%.wav"
+		confirmattacksound="alt12/sounds/voice/attack_%.wav"
+		nomanasound="alt12/sounds/voice/no_mana.wav"
+		cooldownsound="alt12/sounds/voice/cooldown.wav"
+		tauntedsound="alt12/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt12/sounds/voice/taunt_after.wav"
+	>
+		<onframe>
+	   		<setactivemodifierkey name="Hero_Bubbles_Alt12" />
+		</onframe>
+
+		<onspawn>
+			<activatemodifierkey name="Plushie_Bub_Sound" />
+			<applystate name="State_Plushie_Bub_Sound_Initiator" target="source_entity" duration="2000" />
+
+			<ownsproduct target="this_entity" product="aa.Hero_Bubbles.Alt13">
+				<applystate name="State_BubblesAlt12_Day_Set" continuous="true" />
+			</ownsproduct>
+
+			<!-- doll set -->
+			<setaccumulator value="0" />
+			<ownsproduct target="this_entity" product="aa.Hero_Behemoth.Alt13">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Behemoth.Alt14">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hantumon.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hantumon.Alt12">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Devourer.Alt13">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Devourer.Alt14">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Cthulhuphant.Alt7">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Cthulhuphant.Alt8">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Pestilence.Alt9">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Pestilence.Alt10">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Panda.Alt10">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Panda.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Deadwood.Alt8">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Deadwood.Alt9">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Bubbles.Alt12">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Bubbles.Alt13">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hydromancer.Alt7">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hydromancer.Alt8">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+
+			<compare a="accumulator" b="6" op="ge">
+				<spawnunit name="Set_Pet_doll" target="this_entity" source="target_entity" facing="source_entity" count="1" offsetspace="source_entity" offset="-50 50" maxactive="10" pushentity="true" />
+				<setproxy entity="this_entity" target="stack_entity" />
+				<order command="wander" source="this_proxy_entity" target="source_entity" />
+			</compare>
+		</onspawn>
+
+		<onrespawn >
+			<ownsproduct target="this_entity" product="aa.Hero_Bubbles.Alt13">
+				<applystate name="State_BubblesAlt12_Day_Set" continuous="true" />
+			</ownsproduct>
+
+			<!-- doll set -->
+			<setaccumulator value="0" />
+			<ownsproduct target="this_entity" product="aa.Hero_Behemoth.Alt13">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Behemoth.Alt14">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hantumon.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hantumon.Alt12">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Devourer.Alt13">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Devourer.Alt14">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Cthulhuphant.Alt7">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Cthulhuphant.Alt8">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Pestilence.Alt9">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Pestilence.Alt10">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Panda.Alt10">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Panda.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Deadwood.Alt8">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Deadwood.Alt9">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Bubbles.Alt12">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Bubbles.Alt13">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hydromancer.Alt7">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hydromancer.Alt8">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+
+			<compare a="accumulator" b="6" op="ge">
+				<spawnunit name="Set_Pet_doll" target="this_entity" source="target_entity" facing="source_entity" count="1" offsetspace="source_entity" offset="-50 50" maxactive="10" pushentity="true" />
+				<setproxy entity="this_entity" target="stack_entity" />
+				<order command="wander" source="this_proxy_entity" target="source_entity" />
+			</compare>
+		</onrespawn>
+
+		<ondeath>
+			<ownsproduct target="this_entity" product="aa.Hero_Deadwood.Alt8">
+				<applystate name="State_BubblesAlt12_Day_Set" continuous="true" />
+			</ownsproduct>
+		</ondeath>
+
+		<onassist>
+		<!-- Interaction -->
+		    <chance threshold="0.50">
+				<pausevoiceovers duration="3000" />
+				<delayannouncer duration="3000" source="target_entity" sourceonly="true"/>
+				<delayannouncer duration="3000" source="this_entity" sourceonly="true"/>
+                <playeffect effect="alt12/sounds/interactions/assist_audio.effect" source="this_entity" target="this_entity" />
+			</chance>
+        </onassist>
+
+		<onkill>
+		<!-- Interaction -->
+			<targettype type="illusion" />
+			<else>
+			<cantarget targetscheme="enemy_heroes" >
+			<pushentityproxy entity="this_proxy_entity" />
+		    <chance threshold="0.50">
+				<compare a="stack_entity" b="inflictor_entity" op="ne"> <!--To prevent interaction to play if you have taunted them-->
+                <playeffect effect="alt12/sounds/interactions/kill_audio.effect" source="this_entity" target="this_entity" />
+				<pausevoiceovers duration="3000" />
+				<delayannouncer duration="3000" source="target_entity" sourceonly="true"/>
+				<delayannouncer duration="3000" source="this_entity" sourceonly="true"/>
+				</compare>
+			</chance>
+			</cantarget>
+			</else>
+        </onkill>
+
+		<modifier key="iamsheeped" modpriority="1"
+			passiveeffect=""
+		/>
+
+		<modifier key="bubbles_noshell" modpriority="100"
+			model="alt12/model2.mdf"
+		/>
+		
+		<modifier modpriority="101"
+			key="Night_Set_BubblesAlt12"
+
+			preglobalscale="1.3"
+			model="alt13/model.mdf"
+			passiveeffect="alt13/effects/self.effect"
+			tooleffectpath39="alt13/effects/sotm.effect"
+			
+			portraitcampos="18 28 7"
+			
+			selectedsound="alt13/sounds/voice/select_%.wav"
+			selectedflavorsound="alt13/sounds/voice/select_flavour_%.wav"
+			confirmmovesound="alt13/sounds/voice/move_%.wav"
+			confirmattacksound="alt13/sounds/voice/attack_%.wav"
+			nomanasound="alt13/sounds/voice/no_mana.wav"
+			cooldownsound="alt13/sounds/voice/cooldown.wav"
+			tauntedsound="alt13/sounds/voice/taunt_prior.wav"
+			tauntkillsound="alt13/sounds/voice/taunt_after.wav"
+		>
+			<modifier key="bubbles_noshell"
+				model="alt12/model2.mdf"
+			/>
+		</modifier>		
+	</altavatar>
+
+	<altavatar icon="icon.tga" key="Hero_Bubbles.Alt13" modpriority="1"
+		altavatar="true"
+		icon2="alt13/icon.tga"
+		preglobalscale="1.3"
+		model="alt13/model.mdf"
+		portraitcampos="18 28 7"
+		passiveeffect="alt13/effects/self.effect"
+		
+		previewmodel="alt13/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.15"
+		
+		storemodel="alt13/preview.mdf"
+		storepos="0 0 -22"
+		storeangles="0 0 0"
+		storescale="1.23"
+
+		tooleffectkeyname39="Item_Intelligence7"
+		tooleffectpath39="alt13/effects/sotm.effect"
+		tooleffectgroup39="effects"
+
+		selectedsound="alt13/sounds/voice/select_%.wav"
+		selectedflavorsound="alt13/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt13/sounds/voice/move_%.wav"
+		confirmattacksound="alt13/sounds/voice/attack_%.wav"
+		nomanasound="alt13/sounds/voice/no_mana.wav"
+		cooldownsound="alt13/sounds/voice/cooldown.wav"
+		tauntedsound="alt13/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt13/sounds/voice/taunt_after.wav"
+	>
+		<onframe>
+	   		<setactivemodifierkey name="Hero_Bubbles_Alt13"/>
+		</onframe>
+		<onspawn>
+			<activatemodifierkey name="Misfit_Bub_Sound" />
+			<applystate name="State_Misfit_Bub_Sound_Initiator" target="source_entity" duration="2000" />
+			
+			<ownsproduct target="this_entity" product="aa.Hero_Bubbles.Alt12">
+				<applystate name="State_BubblesAlt13_Day_Set" continuous="true" />
+			</ownsproduct>
+
+			<!-- doll set -->
+			<setaccumulator value="0" />
+			<ownsproduct target="this_entity" product="aa.Hero_Behemoth.Alt13">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Behemoth.Alt14">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hantumon.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hantumon.Alt12">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Devourer.Alt13">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Devourer.Alt14">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Cthulhuphant.Alt7">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Cthulhuphant.Alt8">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Pestilence.Alt9">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Pestilence.Alt10">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Panda.Alt10">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Panda.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Deadwood.Alt8">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Deadwood.Alt9">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Bubbles.Alt12">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Bubbles.Alt13">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hydromancer.Alt7">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hydromancer.Alt8">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+
+			<compare a="accumulator" b="6" op="ge">
+				<spawnunit name="Set_Pet_doll" target="this_entity" source="target_entity" facing="source_entity" count="1" offsetspace="source_entity" offset="-50 50" maxactive="10" pushentity="true" />
+				<setproxy entity="this_entity" target="stack_entity" />
+				<order command="wander" source="this_proxy_entity" target="source_entity" />
+			</compare>
+		</onspawn>
+
+		<onrespawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Bubbles.Alt12">
+				<applystate name="State_BubblesAlt13_Day_Set" continuous="true" />
+			</ownsproduct>
+
+			<!-- doll set -->
+			<setaccumulator value="0" />
+			<ownsproduct target="this_entity" product="aa.Hero_Behemoth.Alt13">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Behemoth.Alt14">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hantumon.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hantumon.Alt12">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Devourer.Alt13">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Devourer.Alt14">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Cthulhuphant.Alt7">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Cthulhuphant.Alt8">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Pestilence.Alt9">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Pestilence.Alt10">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Panda.Alt10">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Panda.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Deadwood.Alt8">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Deadwood.Alt9">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Bubbles.Alt12">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Bubbles.Alt13">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hydromancer.Alt7">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Hydromancer.Alt8">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+
+			<compare a="accumulator" b="6" op="ge">
+				<spawnunit name="Set_Pet_doll" target="this_entity" source="target_entity" facing="source_entity" count="1" offsetspace="source_entity" offset="-50 50" maxactive="10" pushentity="true" />
+				<setproxy entity="this_entity" target="stack_entity" />
+				<order command="wander" source="this_proxy_entity" target="source_entity" />
+			</compare>
+		</onrespawn>
+
+		<ondeath>
+			<ownsproduct target="this_entity" product="aa.Hero_Bubbles.Alt12">
+				<applystate name="State_BubblesAlt13_Day_Set" continuous="true" />
+			</ownsproduct>
+		</ondeath>
+
+		<onassist>
+		<!-- Interaction -->
+		    <chance threshold="0.50">
+				<pausevoiceovers duration="3000" />
+				<delayannouncer duration="3000" source="target_entity" sourceonly="true"/>
+				<delayannouncer duration="3000" source="this_entity" sourceonly="true"/>
+                <playeffect effect="alt13/sounds/interactions/assist_audio.effect" source="this_entity" target="this_entity" />
+			</chance>
+        </onassist>
+
+		<onkill>
+		<!-- Interaction -->
+			<targettype type="illusion" />
+			<else>
+			<cantarget targetscheme="enemy_heroes" >
+			<pushentityproxy entity="this_proxy_entity" />
+		    <chance threshold="0.50">
+				<compare a="stack_entity" b="inflictor_entity" op="ne"> <!--To prevent interaction to play if you have taunted them-->
+                <playeffect effect="alt13/sounds/interactions/kill_audio.effect" source="this_entity" target="this_entity" />
+				<pausevoiceovers duration="3000" />
+				<delayannouncer duration="3000" source="target_entity" sourceonly="true"/>
+				<delayannouncer duration="3000" source="this_entity" sourceonly="true"/>
+				</compare>
+			</chance>
+			</cantarget>
+			</else>
+        </onkill>
+
+		<modifier key="iamsheeped" modpriority="1"
+			passiveeffect=""
+		/>
+
+		<modifier key="bubbles_noshell" modpriority="100"
+			model="alt13/model2.mdf"
+		/>
+		
+		<modifier modpriority="101"
+			key="Night_Set_BubblesAlt13"
+
+			preglobalscale="1.4"
+			model="alt12/model.mdf"
+			passiveeffect="alt12/effects/self.effect"
+			tooleffectpath39="alt12/effects/sotm.effect"
+			
+			portraitcampos="14 25 -10"
+			
+			selectedsound="alt12/sounds/voice/select_%.wav"
+			selectedflavorsound="alt12/sounds/voice/select_flavour_%.wav"
+			confirmmovesound="alt12/sounds/voice/move_%.wav"
+			confirmattacksound="alt12/sounds/voice/attack_%.wav"
+			nomanasound="alt12/sounds/voice/no_mana.wav"
+			cooldownsound="alt12/sounds/voice/cooldown.wav"
+			tauntedsound="alt12/sounds/voice/taunt_prior.wav"
+			tauntkillsound="alt12/sounds/voice/taunt_after.wav"
+		/>
+	</altavatar>
+	
+	<altavatar icon="icon.tga" key="Hero_Bubbles.Alt14" modpriority="1"
+		altavatar="true"
+
+		preglobalscale="1.6"
+
+		portraitcampos="-9 -30 28"
+		overrideportraiteffects="true"
+		
+		passiveeffect="alt14/effects/self.effect"
+		attackoffset="0 45 50"
+
+		attackprojectile="Projectile_Bubbles_Attack"
+
+		icon2="alt14/icon.tga"
+		portrait="alt14/icon.tga"
+		model="alt14/model.mdf"
+
+		previewmodel="alt14/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.4"
+
+		selectedsound="alt14/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt14/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt14/sounds/voice/move_%.wav"
+	    confirmattacksound="alt14/sounds/voice/attack_%.wav"
+	    nomanasound="alt14/sounds/voice/no_mana.wav"
+	    cooldownsound="alt14/sounds/voice/cooldown.wav"
+	    tauntedsound="alt14/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt14/sounds/voice/taunt_after.wav"
+
+		storemodel="alt14/preview.mdf"
+		storepos="0 500 -20"
+		storeangles="0 0 0"
+		storescale="1.5"
+
+		tooleffectkeyname39="Item_Intelligence7"
+		tooleffectpath39="alt14/effects/sotm.effect"
+		tooleffectgroup39="effects"
+	>
+
+	    <modifier key="bubbles_noshell" modpriority="100"
+			model="alt14/model2.mdf"
+		/>
+
+	</altavatar>
+	
+	<altavatar icon="icon.tga" key="Hero_Bubbles.trophy_skin"
+		icon2="trophy_skin/icon.tga"
+		portrait="trophy_skin/icon.tga"
+		model="trophy_skin/model.mdf"
+		skin="trophy_skin"
+		passiveeffect="trophy_skin/effects/body.effect"
+		selectedsound="sounds/voice/select_%.wav"
+		selectedflavorsound="sounds/voice/select_flavour_%.wav"
+		confirmmovesound="sounds/voice/move_%.wav"
+		confirmattacksound="sounds/voice/attack_%.wav"
+		nomanasound="sounds/voice/no_mana.wav"
+		cooldownsound="sounds/voice/cooldown.wav"	
+		tauntedsound="sounds/voice/taunt_prior.wav"
+		tauntkillsound="sounds/voice/taunt_after.wav"
+		
+		previewmodel="trophy_skin/preview.mdf"
+		previewpassiveeffect="trophy_skin/effects/body_m.effect"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.15"
+
+		storemodel="trophy_skin/preview.mdf"
+		storepassiveeffect="trophy_skin/effects/body_store.effect"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.15"
+	>
+		<modifier key="bubbles_noshell" modpriority="100"
+			model="trophy_skin/model.mdf"
+			
+			idleanim="noshell_idle"
+			boredanim="noshell_bored_1"
+			attackanim="noshell_attack_%"
+			attacknumanims="2"
+			walkanim="noshell_walk_1"
+		/>
+	
+	</altavatar>
+	
+	<altavatar icon="icon.tga" key="Hero_Bubbles.trophy_skin02"
+		icon2="trophy_skin/icon.tga"
+		portrait="trophy_skin/icon.tga"
+		model="trophy_skin/model.mdf"
+		skin="trophy_skin02"
+		passiveeffect="trophy_skin/effects/body_level02.effect"
+		selectedsound="sounds/voice/select_%.wav"
+		selectedflavorsound="sounds/voice/select_flavour_%.wav"
+		confirmmovesound="sounds/voice/move_%.wav"
+		confirmattacksound="sounds/voice/attack_%.wav"
+		nomanasound="sounds/voice/no_mana.wav"
+		cooldownsound="sounds/voice/cooldown.wav"	
+		tauntedsound="sounds/voice/taunt_prior.wav"
+		tauntkillsound="sounds/voice/taunt_after.wav"
+		
+	    previewmodel="trophy_skin/preview.mdf"
+		previewpassiveeffect="trophy_skin/effects/body_level02_m.effect"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.15"
+
+		storemodel="trophy_skin/preview.mdf"
+		storepassiveeffect="trophy_skin/effects/body_level02_store.effect"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.15"
+	>
+		<modifier key="bubbles_noshell" modpriority="100"
+			model="trophy_skin/model.mdf"
+			
+			idleanim="noshell_idle"
+			boredanim="noshell_bored_1"
+			attackanim="noshell_attack_%"
+			attacknumanims="2"
+			walkanim="noshell_walk_1"
+		/>
+	
+	</altavatar>
+	
+	<altavatar icon="icon.tga" key="Hero_Bubbles.trophy_skin03"
+		icon2="trophy_skin/icon.tga"
+		portrait="trophy_skin/icon.tga"
+		model="trophy_skin/model.mdf"
+		skin="trophy_skin03"
+		passiveeffect="trophy_skin/effects/body_level03.effect"
+		selectedsound="sounds/voice/select_%.wav"
+		selectedflavorsound="sounds/voice/select_flavour_%.wav"
+		confirmmovesound="sounds/voice/move_%.wav"
+		confirmattacksound="sounds/voice/attack_%.wav"
+		nomanasound="sounds/voice/no_mana.wav"
+		cooldownsound="sounds/voice/cooldown.wav"	
+		tauntedsound="sounds/voice/taunt_prior.wav"
+		tauntkillsound="sounds/voice/taunt_after.wav"
+		
+		previewmodel="trophy_skin/preview.mdf"
+		previewpassiveeffect="trophy_skin/effects/body_level03_m.effect"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.15"
+
+		storemodel="trophy_skin/preview.mdf"
+		storepassiveeffect="trophy_skin/effects/body_level03_store.effect"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.15"
+	>
+		<modifier key="bubbles_noshell" modpriority="100"
+			model="trophy_skin/model.mdf"
+			
+			idleanim="noshell_idle"
+			boredanim="noshell_bored_1"
+			attackanim="noshell_attack_%"
+			attacknumanims="2"
+			walkanim="noshell_walk_1"
+		/>
+	
+	</altavatar>
+	
+	<altavatar icon="icon.tga" key="Hero_Bubbles.Alt15" modpriority="1"
+		altavatar="true"
+		preglobalscale="1.6"
+
+		icon2="alt15/icon.tga"
+		portrait="alt15/icon.tga"
+		model="alt15/model.mdf"
+
+		portraitcampos="-32 -20 28"
+		overrideportraiteffects="true"
+		
+		passiveeffect="alt15/effects/self.effect"
+		attackoffset="0 45 50"
+		attackprojectile="Projectile_Bubbles_Attack"
+
+		previewmodel="alt15/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.4"
+		
+		storemodel="alt15/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.5"
+
+		selectedsound="alt15/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt15/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt15/sounds/voice/move_%.wav"
+	    confirmattacksound="alt15/sounds/voice/attack_%.wav"
+	    nomanasound="alt15/sounds/voice/no_mana.wav"
+	    cooldownsound="alt15/sounds/voice/cooldown.wav"
+	    tauntedsound="alt15/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt15/sounds/voice/taunt_after.wav"
+		
+		tooleffectkeyname39="Item_Intelligence7"
+		tooleffectpath39="alt15/effects/sotm.effect"
+		tooleffectgroup39="effects"
+	>
+
+	    <modifier key="bubbles_noshell" modpriority="100"
+			model="alt15/model2.mdf"
+			
+		/>
+		
+		<onspawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Sapphire.Alt3 aa.Hero_Prophet.Alt9 aa.Hero_Vanya.Alt7 aa.Hero_Bubbles.Alt15" >
+				<applystate name="Set_FourSymbols_Tortoise" continuous="true"/>
+			</ownsproduct>
+		</onspawn>
+
+	</altavatar>
+
+</hero>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_MasterofArms_Ability2_Chemical"
+
+	effecttype="StatusDebuff"
+	
+	icon="2.jpg"
+	passiveeffect=""
+	
+	armor="-1,-2,-3,-4"
+>
+	<onframe>
+		<!-- Damage -->
+		<setvar0 a="15,30,45,60" b="frametime" op="mult" />
+		<targettype type="hero">
+			<damage effecttype="Physical DOT" amount="1" b="var0" op="mult" source="source_owner_entity" />
+		</targettype>
+		<else>
+			<damage effecttype="Physical DOT" amount="0.75" b="var0" op="mult" source="source_owner_entity" />
+		</else>		
+	</onframe>
+	
+	<modifier key="masterofarms_nobossarmor" modpriority="100" condition="boss" notooltooltip="true"
+		armor="0"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt11"
+	    icon="../alt11/ability_02/icon_mag.tga"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt12"
+	    icon="../alt12/ability_02/icon_mag.tga"
+	/>
+		
+</state>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="model.model" type="K2" >
+	
+
+	<anim name="idle" clip="clips/bat_idle.clip" loop="true">
+	<startevent cmd="StartEffect effects/body.effect 8"/>
+	<endevent cmd="StopEffect 8"/>
+	</anim>
+	
+	<anim name="portrait" clip="clips/bat_idle.clip" loop="true" fps="15">
+	<startevent cmd="StartEffect effects/body.effect 8"/>
+	<endevent cmd="StopEffect 8"/>
+	</anim>
+	
+	<anim name="walk_1" clip="clips/single_run.clip" loop="true" fps="25">
+		<startevent cmd="StartEffect effects/body.effect 8"/>
+	<endevent cmd="StopEffect 8"/>
+		<frameevent frame="4" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="9" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="17" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="22" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		
+		<frameevent frame="4" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="17" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	</anim>
+
+	<anim name="death_1" clip="clips/dead.clip" loop="true" loopbackframe="-1">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/death_1_skin1.wav 400 1800 .3"/>
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/23_dead_skin1.wav 400 1800 .6"/>
+	</anim>
+	
+	<anim name="attack_1" clip="clips/single_skill_04.clip" fps="20">
+		<frameevent frame="8" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 1800 .65"/>
+	<startevent cmd="StartEffect effects/body.effect 8"/>
+	<endevent cmd="StopEffect 8"/>
+	</anim>
+	
+	<anim name="attack_2" clip="clips/single_skill_02.clip" fps="20">
+		<frameevent frame="8" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 1800 .65"/>
+	<startevent cmd="StartEffect effects/body.effect 8"/>
+	<endevent cmd="StopEffect 8"/>
+	</anim>
+
+	<anim name="item_1" clip="clips/single_touzhi_2.clip"/>
+
+	<anim name="ability_1" clip="clips/single_attack_attcom_2.clip">
+	
+	</anim>
+
+	<anim name="ability_2" clip="clips/single_skill_03.clip" fps="15" blendtime="300">
+		<frameevent frame="12" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 1800 .65"/>
+		<frameevent frame="12" cmd="PlaySoundLinear ../ability_02/sounds/ability_02.wav 400 1800 .65"/>
+	</anim>
+
+	<anim name="ability_3" clip="clips/single_skill_01.clip" fps="30"/>
+	
+	<anim name="bored_1" clip="clips/dance.clip" >
+	<endevent cmd="StopEffect 8" />
+	</anim>	
+
+	<anim name="taunt_1" clip="clips/bat_specialidle.clip" >
+	<startevent cmd="StartEffect bat_specialidle.effect 9"/>
+		<endevent cmd="StopEffect 9" />
+	</anim>	
+	
+	<anim name="knock_1" clip="clips/single_chuansong.clip" loop="true" fps="20"/>
+	
+	<anim name="getup_1" clip="clips/default_1.clip" numframes="1"/>			
+</model>

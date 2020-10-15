@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Martyr_Ability4_Root"
+
+	icon="../sheep/ab4.tga"
+	passiveeffect="effects/root.effect"
+	
+	ishidden="false"
+
+	effecttype=""
+
+	immobilized2="true"
+>
+
+	<altavatar key="Hero_Martyr.Alt6" modpriority="1"
+	
+	/>
+
+</state>

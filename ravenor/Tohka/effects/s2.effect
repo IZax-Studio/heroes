@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="false">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1.9">
+		
+			<!-- Wings -->
+			<template name="wing_fire">
+				<twopointemitter
+					bone_a="{a}"
+					bone_b="{b}"
+					spawnrate="35"
+					minparticlelife="300"
+					maxparticlelife="450"
+					gravity="-1.0"
+					minspeed="100"
+					maxspeed="250"
+					drag="0.02"
+					material="/shared/effects/materials/flames_07.material"
+					direction="{direction}"
+					directionalspace="local"
+					minangle="0"
+					maxangle="20"
+				>
+					<particle
+						startcolor="1"
+						midcolor=".500 .20 1"
+						endcolor="0"
+						minangle="0"
+						maxangle="360"
+						minanglespeed="0"
+						maxanglespeed="30"
+						startsize="30"
+						minendsize="40"
+						maxendsize="100"
+						startalpha="1"
+						midalpha=".8"
+						endalpha="0"
+					/>
+				</twopointemitter>
+				<twopointemitter
+					bone_a="{a}"
+					bone_b="{b}"
+					spawnrate="20"
+					minparticlelife="200"
+					maxparticlelife="450"
+					gravity="20.0"
+					minspeed="0"
+					maxspeed="250"
+					drag="0.02"
+					material="/shared/effects/materials/fire.material"
+					offsetsphere="6"
+					direction="{direction}"
+					minangle="0"
+					maxangle="20"
+					position="0 0 0"
+				>
+					<particle
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".2"
+						startcolor="1"
+						midcolor=".500 .20 1"
+						endcolor="0"
+						minangle="0"
+						maxangle="360"
+						minanglespeed="0"
+						maxanglespeed="30"
+						minstartsize="30"
+						maxstartsize="60"
+						minendsize="60"
+						maxendsize="100"
+					/>
+				</twopointemitter>
+			</template>
+			
+			
+			<model
+				model="/heroes/martyr/alt5/ability_02/effects/wings/model.mdf"
+				bone="_bone_back"
+				anim="default_1"
+				directionalspace="local"
+				inheritparentmodifiers="true"
+				roll="0"
+				yaw="180"
+				position="0 0 0"
+				material="/shared/effects/materials/shell2.material"
+				color=".500 .20 1"
+				scale="0.77"
+			/>
+	
+		</particlesystem>
+		
+		<particlesystem name="system1" space="world" scale="1" >
+		
+			<template name="wing_trail">
+				<twopointtrailemitter
+					bone_a="{a}"
+					bone_b="{b}"
+					spawnrate="25"
+					particlelife="150"
+					texposscale="0"
+					texstretchscale="1"
+					material="/shared/effects/materials/flux_trail.material"
+					gravity="30.0"
+					speed="200"
+					drag="0.02"
+					direction="{direction}"
+					directionalspace="local"
+					angle="0"
+				>
+					<particle
+						startcolor="0"
+						midcolor=".500 .20 1"
+						endcolor="0"
+						midcolorpos=".25"
+					/>
+				</twopointtrailemitter>
+			</template>
+			
+			<template name="wing_extra">
+				<twopointemitter
+					bone_a="{a}"
+					bone_b="{b}"
+					spawnrate="40"
+					minparticlelife="200"
+					maxparticlelife="750"
+					gravity="-10"
+					minspeed="20"
+					maxspeed="30"
+					drag="0.02"
+					material="/shared/effects/materials/spark_10.material"
+					direction="{direction}"
+					directionalspace="local"
+					minangle="-65"
+					maxangle="360"
+				>
+					<particle
+						startcolor="0"
+						midcolor="1"
+						endcolor="0"
+						minangle="180"
+						maxangle="360"
+						minanglespeed="0"
+						maxanglespeed="30"
+						startsize="6"
+						minendsize="10"
+						maxendsize="20"
+					/>
+				</twopointemitter>
+			</template>
+			
+			<model
+				model="/heroes/martyr/alt5/ability_02/effects/wings/model.mdf"
+				anim="default_1"
+				bone="_bone_back"
+				inheritparentmodifiers="true"
+				roll="0"
+				yaw="180"
+				position="0 4 0"
+				alpha="0"
+				scale="0.77"
+			>
+				<!-- right -->
+				<instance name="wing_trail" a="_bone_fx_027" b="_bone_fx_028" direction="-1 -2 -2" />
+				<instance name="wing_trail" a="_bone_fx_028" b="_bone_fx_029" direction="-1 -2 -2" />
+				<instance name="wing_extra" a="_bone_fx_026" b="_bone_fx_030" direction="1 -2 -1" />
+				<!-- left -->
+				<instance name="wing_trail" a="_bone_fx_032" b="_bone_fx_033" direction="1 -2 -2" />
+				<instance name="wing_trail" a="_bone_fx_033" b="_bone_fx_034" direction="1 -2 -2" />
+				<instance name="wing_extra" a="_bone_fx_031" b="_bone_fx_035" direction="-1 -2 -1" />
+			</model>
+			
+		</particlesystem>
+	</definitions>
+	
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />		
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />	
+		<waitfordeath instance="instance0" />	
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

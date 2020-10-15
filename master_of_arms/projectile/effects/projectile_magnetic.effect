@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system1" space="world" scale=".275">
+						
+				<sound
+				life="5000"	
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="1200"
+				volume=".3"
+				sample="/heroes/master_of_arms/alt10/sounds/pis_%.wav"
+			/>
+			
+
+			<simpleemitter
+				spawnrate="1111"
+				count="1"
+				particlelife="300"
+				position="0 0 0"
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+			>
+				<particle>
+					<billboard
+						life="200"
+						position="0 0 0"
+						material="/shared/effects/materials/whitedot.material"
+						directionalspace="local"
+						startcolor=".5 .1 0"
+						endcolor="0 0 0"
+						startsize="60"
+						endsize="500"
+						lockup="true"
+						lockright="1"
+						pitch="0"
+						yaw="0"
+						flare="0"
+					/>
+
+					<groundsprite
+						directionalspace="local"
+						size="100"
+						life="300"
+						startcolor=".1"
+						midcolor=".3 .1 0"
+						endcolor="0 0 0"
+						position="0 50 0"
+						material="/shared/effects/materials/ground_arc.material"
+					/>
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				count="10"
+				spawnrate="45"
+				particlelife="250"
+				position="0 0 0"
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+			>
+				<particle>
+				
+					<billboard
+						life="200"
+						position="0 70 0"
+						material="/shared/effects/materials/whitedot.material"
+						directionalspace="local"
+						startcolor=".5 .1 0"
+						endcolor="0 0 0"
+						startsize="30"
+						endsize="75"
+						lockup="true"
+						lockright="1"
+						pitch="0"
+						yaw="0"
+						flare="0"
+					/>
+				
+					<billboard
+						life="200"
+						position="0 70 0"
+						material="/shared/effects/materials/whitedot.material"
+						directionalspace="local"
+						startcolor="1 .1 0"
+						endcolor="0 0 0"
+						startsize="60"
+						endsize="170"
+						lockup="true"
+						lockright="1"
+						pitch="0"
+						yaw="0"
+						flare="0"
+					/>
+
+					<billboard
+						directionalspace="local"
+						position="0 0 0"
+						delay="0"
+						life="250"
+						param="0.1"
+						startsize="150"
+						endsize="300"
+						startalpha="0"
+						midalpha=".25"
+						endalpha="0"
+						depthbias="0"
+						material="/shared/effects/materials/refract_swell.material"
+						lockup="true"
+						lockright="1"
+						pitch="0"
+						yaw="0"
+						flare="0"
+					/>
+					
+					<billboard
+						life="200"
+						position="0 70 0"
+						material="/shared/effects/materials/corona_07.material"
+						directionalspace="local"
+						startcolor=".85 0 0"
+						endcolor="0 0 0"
+						startsize="50"
+						endsize="165"
+						lockup="true"
+						lockright="1"
+						pitch="0"
+						yaw="0"
+						flare="0"
+					/>
+
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				spawnrate="2000"
+				count="1"
+				particlelife="300"
+				position="0 0 0"
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+			>
+				<particle>
+					<billboard
+						life="100"
+						position="0 45 25"
+						material="/shared/effects/materials/whitedot.material"
+						directionalspace="local"
+						startcolor="1 0 0"
+						midcolor="1 0 0"
+						endcolor="0 0 0"
+						startsize="60"
+						endsize="200"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						yaw="0"
+						flare="0"
+					/>
+				</particle>
+			</simpleemitter>
+
+			<model
+				position="0 -15 0"
+				expirelife="500"
+				name="emitter0" 
+				anim="idle"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				scale=".75"
+				startcolor="0 0 0"
+				midcolor="0 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".75"
+				startalpha="0"
+				midalpha="0"
+				endalpha="0"
+				midalphapos=".4"
+				rollspeed="6000"
+			>
+			
+				<template name="trails">
+					<twopointtrailemitter
+						name="trail01"
+						position="0 0 0"
+						bone_a="{bone01}"
+						bone_b="{bone02}"
+						spawnrate="100"
+						particlelife="350"
+						subframepose="1"
+						texpostime="350"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/soul_projectile.material"
+					>
+						<particle
+							startcolor="1 0 0"
+							midcolor="1 0 0"
+							endcolor="1 0 0"
+							midcolorpos=".2"
+							startalpha="1"
+							endalpha="0"
+						/>
+					</twopointtrailemitter>
+				</template>
+				
+				<instance name="trails" bone01="_bone_fx_01"  bone02="_bone_fx_02"/>
+				<instance name="trails" bone01="_bone_fx_03"  bone02="_bone_fx_04"/>
+				<instance name="trails" bone01="_bone_fx_05"  bone02="_bone_fx_06"/>
+
+			</model>
+			
+			<trailemitter
+				spawnrate="50"
+				particlelife="400"
+				texpostime="400"
+				texposscale="0.0"
+				texstretchscale=".4"
+				material="/shared/effects/materials/arrow_trail.material"
+			>
+				<particle
+					startcolor=".3 .1 0"
+					endcolor="0 0 0"
+					startsize="10"
+					midsize="50"
+					endsize="30"
+					midsizepos="0.2"
+			/>
+			</trailemitter>
+			
+			<billboard
+				expirelife="250"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				directionalspace="local"
+				startcolor="1 0 0"
+				endcolor="0 0 0"
+				startsize="100"
+				endsize="0"
+				lockup="true"
+				lockright="1"
+				pitch="90"
+				depthbias="-25"
+			/>
+			
+			<billboard
+				expirelife="250"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				directionalspace="local"
+				startcolor="1 .5 0"
+				endcolor="0 0 0"
+				startsize="50"
+				endsize="0"
+				lockup="true"
+				lockright="1"
+				pitch="90"
+				depthbias="-25"
+			/>
+			
+			<billboard
+				expirelife="250"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				directionalspace="local"
+				startcolor="1 .5 0"
+				endcolor="0 0 0"
+				startsize="50"
+				endsize="0"
+				lockup="true"
+				lockright="1"
+				pitch="90"
+				depthbias="-25"
+			/>
+
+		</particlesystem>
+
+   </definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

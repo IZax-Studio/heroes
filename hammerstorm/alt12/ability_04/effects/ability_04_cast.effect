@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="ability_04_cast">
+	<definitions>
+		<particlesystem name="system0" space="entity" >
+			<sound
+			    dampen="0.7"
+				linearfalloff="true"
+				falloffstart="500"
+				falloffend="2000" 
+				volume="1.0" 
+				sample="../../sounds/ab4.wav"
+			/>
+			
+			<sound
+			    life="3000"
+			    dampen="0.7"
+				linearfalloff="true"
+				falloffstart="500"
+				falloffend="2000" 
+				volume="1.0" 
+				sample="../../sounds/ab4_vox.wav"
+			/>
+			
+			<model	
+				delay="100"
+				life="300"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor=".8 .7 .3"
+				midcolor=".8 .4 .1"
+				endcolor="0 0 0"
+				material="/shared/effects/materials/shell.material"
+				startalpha="0"
+				endalpha="35"
+			/>
+			<billboard
+				delay="120"
+				life="800"				
+				bone="Bone022"	
+				material="/shared/effects/materials/femme_lightning_06.material"				
+				height="80"
+				width="300"
+				startcolor="1 .6 .2"
+				endcolor="0 0 0"
+				lockup="1"
+				position="0 0 150"
+				roll="90"
+				size="150"
+				depthbias="-30"
+				frame="0.5"
+				framespeed="1.95"				
+			/>	
+			<billboard
+				delay="120"
+				life="800"				
+				bone="Bone022"	
+				material="/shared/effects/materials/femme_lightning_06.material"
+				height="80"
+				width="400"
+				startcolor="1 .6 0"
+				endcolor="0 0 0"
+				lockup="1"
+				position="0 0 150"
+				roll="90"
+				size="150"
+				depthbias="-30"
+				frame="0.0"
+				framespeed="1.95"				
+			/>	
+			<billboard
+				delay="120"
+				life="800"				
+				bone="Bone022"	
+				material="/shared/effects/materials/femme_lightning_06.material"
+				height="80"
+				width="400"
+				startcolor="1 .9 .5"
+				endcolor="0 0 0"
+				lockup="1"
+				position="0 0 300"
+				roll="90"
+				size="150"
+				depthbias="-30"
+				frame="0.3"
+				framespeed="1.95"				
+			/>				
+			<billboard
+				delay="100"
+				life="1000"				
+				bone="Bone022"	
+				material="/shared/effects/materials/whitedot.material"
+				startcolor=".7 .2 0.0"
+				endcolor="0 0 0"
+				size="150"
+				depthbias="-30"
+			/>
+			<simpleemitter
+				life="300"
+				spawnrate="30"
+				minparticlelife="500"
+				maxparticlelife="600"
+				speed="40"
+				drag=".08"
+				acceleration="0"
+				material="/shared/effects/materials/phantom_smoke_10.material"
+				offsetsphere="15"
+				minangle="90"
+				maxangle="-90"
+				position="0 0 350"
+				gravity="100"
+			>
+				<particle 
+					startcolor="1 .5 0"
+					midcolor="1 0 1"
+					endcolor="0"
+					midcolorpos=".3"
+					startframe="0"
+					endframe="1"
+					startwidth="50"
+					midwidth="30"
+					endwidth="12"
+					midwidthpos=".5"
+					startheight="2000"
+					endheight="0"
+					lockup="true"
+					scale=".5"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				delay="50"
+				life="3000"
+				count="1"
+				spawnrate="1000"
+				particlelife="1500"
+				gravity="500"
+				minangle="0"
+				maxangle="0" 
+				position="0 0 650"
+			>
+				<particle>
+					<simpleemitter
+						material="/shared/effects/materials/hammerstorm_key_blend.material"
+						spawnrate="20"
+						particlelife="200"
+						depthbias="-35"
+						gravity="100"
+					>
+						<particle
+							color="1"
+							size="40"
+							lockup="1"
+							lockright="1"
+						/>
+					</simpleemitter>
+					<simpleemitter
+						material="/shared/effects/materials/whitedot.material"
+						spawnrate="400"
+						particlelife="400"
+						gravity="7"
+						speed="30"
+						inheritvelocity="0.21"
+						offsetsphere="10 10 10"
+						drag="0.1"
+						depthbias="-35"
+					>
+						<particle
+							heightdistort="0.01"
+							turn="1"
+							startcolor="1 .8 .3"
+							endcolor="0 0 0"
+							startsize="4"
+							endsize="0"
+						/>
+					</simpleemitter>
+				</particle>
+			</simpleemitter>
+			<billboard
+				life="400"
+				startcolor="1 .9 .4"
+				midcolor="1 .7 .2"
+				endcolor="0"
+				midcolorpos=".3"
+				midalphapos="0.75"
+				startsize="70"
+				midsize="140"
+				endsize="190"
+				midsizepos=".3"
+				depthbias="-30"
+				position="0 0 20"
+				material="/shared/effects/materials/shockwave4.material"
+				lockup="true"
+				pitch="90"
+				scale=".7"
+			/>
+			<billboard
+				delay="100"
+				life="200"
+				startcolor="1 .9 .4"
+				midcolor="1 .7 .2"
+				endcolor="0"
+				midcolorpos=".3"
+				midalphapos="0.75"
+				startsize="70"
+				midsize="140"
+				endsize="190"
+				midsizepos=".3"
+				depthbias="-30"
+				position="0 0 60"
+				material="/shared/effects/materials/corona_06.material"
+				scale=".8"
+			/>
+			<billboard
+				life="300"
+				startcolor=".8 .6 .3"
+				midcolor=".8 .4 0"
+				endcolor="0"
+				midcolorpos=".3"
+				midalphapos="0.75"
+				startsize="70"
+				midsize="140"
+				endsize="190"
+				midsizepos=".3"
+				depthbias="-30"
+				position="0 0 50"
+				material="/shared/effects/materials/whitedot.material"
+				scale="1.3"
+			/>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+<!-- [min|max][start|mid|end]property[speed][pos] -->

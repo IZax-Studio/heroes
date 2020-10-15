@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		
+		<particlesystem name="system0" scale="1" space="entity">
+			<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="1300" 
+				volume="1" 
+				sample="/heroes/apex/ability_03/sounds/cast.wav"
+			/>
+			
+				<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="1300" 
+				volume="1" 
+				sample="../../sounds/laugh_2.wav"
+			/>
+			
+			<sound
+			    soundloop="true"
+				fadein="500"
+				fadeout="500"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="1300" 
+				volume="0.8" 
+				sample="/heroes/apex/ability_03/sounds/state.wav"
+			/>
+			
+			<sound
+			    soundloop="true"
+				fadein="500"
+				fadeout="500"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="1300" 
+				volume="0.8" 
+				sample="/heroes/apex/ability_02/sounds/trail.wav"
+			/>
+		
+			<template name="floating_embers" >
+			 <!-- flickering glow -->
+                <billboard
+					spawnrate="3"
+					minparticlelife="100" maxparticlelife="200" 
+                    bone="{bone}" position="{position}"
+                    startsize="30" midsize="25" endsize="35"
+                    material="/shared/effects/materials/whitedot.material"
+                    startcolor=".6 0 .0"  midcolor=".2 0 0" endcolor=".6 0 0"
+                    depthbias="-18"
+                    scale="{scale}"
+					anchor="1"
+                />
+			<!-- dark smoke -->			
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="60" particlelife="700"
+					direction="0 1 0"
+					gravity="-1"
+					minspeed="10"  maxspeed="30"
+					drag="0.1" 
+					material="/shared/effects/materials/phantom_white_reveal.material"
+					offsetsphere="5"
+					depthbias="-10"
+				>
+					<particle					
+						minagle="-360" maxangle="360"
+						startcolor=".5 0 .0" midcolor=".7 0 0" endcolor="0"
+						minsize="5" maxsize="15" scale=".1"
+						startframe="1" midframe=".1" endframe="1" midframepos=".3"
+						startalpha="0" endalpha=".7"
+						anchor="0"
+					/>
+				</simpleemitter>
+			
+		   <!-- sparks  -->  
+                <simpleemitter
+                    bone="{bone}" 
+                    spawnrate="80"
+                    particlelife="900"
+                    direction="0 1 1"
+                    minspeed="30"
+                    maxspeed="80"
+                    drag="0.3"
+                    gravity="-5"
+                    offsetsphere="5 5 0"
+                >
+                    <template name="ash_particle" >
+                        <particle
+                            maxyaw="360"
+                            maxpitch="360"
+                            maxroll="360"
+                            minyawspeed="-100"
+                            maxyawspeed="100"
+                            minpitchspeed="-100"
+                            maxpitchspeed="100"
+                            minrollspeed="-100"
+                            maxrollspeed="100"
+                            startscale="0"
+                            minendscale=".5"
+                            maxendscale="1"
+                        >
+                            <billboard
+                                maxangle="360"
+                                minrollspeed="-40"
+                                maxrollspeed="40"
+                                life="900"
+                                material="/shared/effects/materials/abstract_reveal.material"
+                                startsize="7.5"
+                                endsize="2"
+                                startcolor="{sc}"
+                                midcolor="{mc}"
+                                endcolor="{ec}"
+                                midcolorpos="{mcpos}"
+                                startframe="0"
+                                endframe="1"
+                            />
+                        </particle>
+                    </template>
+                    <instance name="ash_particle" sc="2 0 0" mc="1 0 0" ec="-1" mcpos=".5" />
+                    <instance name="ash_particle" sc="2 .6 .6" mc="-1" ec="-1" mcpos=".5" />
+                </simpleemitter>
+			</template>
+			
+			<instance name="floating_embers" bone="_bone_back" position="0 0 0" scale=".5" />
+			<instance name="floating_embers" bone="_bone_chest" position="0 0 0" scale=".35" />
+		</particlesystem>
+		
+		<particlesystem name="system2" space="world" scale=".5">
+			<!-- light trails -->
+			<template name="light_trail">
+				<trailemitter
+					spawnrate="30"
+					particlelife="400"
+					texpostime="500"
+					texposscale="0.0"
+					texstretchscale=".4"
+					material="/shared/effects/materials/light_trail.material"
+					life="1600"
+				>
+					<particle
+						startcolor="1 .1 .1"
+						midcolor="1 0 .0"
+						endcolor="0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".075"
+						startsize="5"
+						midsize="15"
+						endsize="5"
+						midsizepos="0.2"
+				 />
+				</trailemitter>
+			
+				<trailemitter
+					spawnrate="45"
+					particlelife="500"
+					texpostime="750"
+					texposscale="0.0"
+					texstretchscale=".4"
+					material="/shared/effects/materials/light_trail.material"
+					direction="0 0 1"
+					speed="50"
+					angle="0"
+					drag="0.02"
+					life="1600"
+				>
+					<particle
+						startcolor="0"
+						midcolor="1 .0 0"
+						endcolor="-1"
+						midcolorpos=".05"
+						startsize="5"
+						midsize="10"
+						endsize="10"
+						midsizepos=".1"
+				 />
+				</trailemitter>
+			</template>
+			
+			<trackeremitter	
+				position="0 40 160"
+				targetbone="_bone_centerofchest"
+				inheritvelocity="0.25"
+				tracktype="distance"
+				trackspeed="3" 
+				spawnrate="300"
+				particlelife="500"
+				offsetsphere="50"
+				speed="150"
+				direction="0 0 1"
+				yawspeed="500"
+			>
+				<particle 
+					startsize="4"
+					endsize="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".1"
+					maxangle="360"
+					minscale=".1"
+					maxscale=".6"
+					color="1 .5 0"					
+				>
+					<instance name="light_trail"/>
+				</particle>
+			</trackeremitter>
+			
+			<!-- sparks tracker -->
+			<trackeremitter	
+				position="0 40 160"
+				targetbone="_bone_centerofchest"
+				inheritvelocity="0.25"
+				tracktype="distance"
+				trackspeed="13" 
+				spawnrate="450"
+				particlelife="300"
+				offsetsphere="50"
+				speed="150"
+				direction="0 0 1"
+				material="/shared/effects/materials/abstract_reveal.material"
+				rollspeed="200"
+				distancelife="1"
+				
+			>
+				<particle 
+					startsize="20"
+					endsize="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="1"
+					midalphapos=".1"
+					maxangle="360"
+					minscale=".1"
+					maxscale=".6"
+					startcolor="-1" midcolor="2 .5 0" endcolor="2 0 0" midcolorpos=".5"
+					startframe="1"
+                    endframe="0"					
+				>
+				</particle>
+			</trackeremitter>	
+			
+			<trackeremitter	
+				position="0 40 160"
+				targetbone="_bone_centerofchest"
+				inheritvelocity="0.25"
+				tracktype="distance"
+				trackspeed="13" 
+				spawnrate="450"
+				particlelife="300"
+				offsetsphere="90"
+				speed="150"
+				direction="0 0 1"
+				material="/shared/effects/materials/abstract_reveal.material"
+				rollspeed="200"
+				distancelife="1"
+				
+			>
+				<particle 
+					startsize="20"
+					endsize="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="1"
+					midalphapos=".1"
+					maxangle="360"
+					minscale=".1"
+					maxscale=".6"
+					startcolor="-1" midcolor="2 .5 0" endcolor="2 0 0" midcolorpos=".5"
+					startframe="1"
+                    endframe="0"					
+				>
+				</particle>
+			</trackeremitter>
+			
+			<!-- debris -->
+			<template name="debris">
+				<debris
+					insize=".25" maxsize=".5" scale="1"
+					life="1000"
+					model="/heroes/adrenaline/effects/debris/debris.mdf"
+					material="/heroes/apex/material_noshadow.material"
+					minspeed="100.0"
+					maxspeed="1000.0"
+					gravity="0" drag="0.008" 
+					startcolor="0" midcolor="1 .8 .8" endcolor="2 .25 0" midcolorpos=".5"
+					maxangle="0"  minangle="-30"
+					startalpha="0" 	midalpha="1" endalpha="0"
+					animpose="false"
+				/>
+			</template>
+			
+			<trackeremitter	
+				position="0 40 160"
+				targetbone="_bone_centerofchest"
+				inheritvelocity="0.25"
+				tracktype="distance"
+				trackspeed="3" 
+				spawnrate="100"
+				particlelife="1500"
+				offsetsphere="50"
+				speed="450"
+				direction="0 -1 0"
+				yawspeed="500"
+			>
+				<particle 
+					startsize="4"
+					endsize="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".1"
+					maxangle="30"
+					minscale=".1"
+					maxscale=".6"
+					color="1 .5 0"					
+				>
+					<instance name="debris"/>
+				</particle>
+			</trackeremitter> 
+			
+		</particlesystem>
+			
+		<particlesystem name="system1" space="entity" scale=".3">
+			
+			<template name="glowChest">
+				<billboard
+					bone="{bone}"
+					delay="200"
+					position="8 2 0"
+					life="250"
+					color="8 1 0"
+					size="55"
+					rollspeed="-1250"
+					depthbias="-50"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+				
+				
+				<billboard
+					expirelife="500"
+					bone="{bone}"
+					delay="200"
+					position="0 -.5 0"
+					startcolor="8 .5 0"
+					endcolor="0 0 0"
+					size="55"
+					rollspeed="-1250"
+					depthbias="-10"
+					material="/shared/effects/materials/flare_01.material"
+				/>
+
+				<simpleemitter
+					delay="0"
+					bone="{bone}"
+					position="0 -.5 0" 
+					spawnrate="100"
+					particlelife="500"
+					gravity="0.0"
+					offsetsphere="5"
+					speed="300"
+					drag="0"
+					acceleration="0"
+					material="/shared/effects/materials/phantom_smoke_03.material"
+					minangle="0"
+					maxangle="10"
+					direction="{direction}"
+				>
+					<particle 
+						startcolor="0 0 0"
+						midcolor="8 .1 0"
+						endcolor="0 0 0"
+						midcolorpos=".5"
+						minangle="0"
+						maxangle="360"
+						startsize="45"
+						endsize="45"
+						minanglespeed="-90"
+						maxanglespeed="90"
+						lockright="true"
+						lockup="true"
+						pitch="90"
+						directionalspace="local"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					delay="0"
+					bone="{bone}"
+					position="0 -.5 0" 
+					spawnrate="100"
+					particlelife="350"
+					gravity="0.0"
+					offsetsphere="10"
+					speed="250"
+					drag="0"
+					acceleration="0"
+					material="/shared/effects/materials/flare_01.material"
+					minangle="0"
+					maxangle="10"
+					direction="{direction}"
+				>
+					<particle 
+						startcolor="0 0 0"
+						midcolor="8 .75 0"
+						endcolor="0 0 0"
+						midcolorpos=".5"
+						minangle="0"
+						maxangle="360"
+						startsize="30"
+						endsize="15"
+						minanglespeed="-90"
+						maxanglespeed="90"
+						lockright="true"
+						lockup="true"
+						pitch="90"
+						directionalspace="local"
+					/>
+				</simpleemitter>
+			</template>
+
+			<instance name="glowChest" bone="_bone_lefteye" direction="1 2 1" />
+			<instance name="glowChest" bone="_bone_righteye" direction="1 -2 1" />
+
+		</particlesystem>
+	</definitions>
+	
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system2" />
+		<spawnparticlesystem instance="instance2" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<waitfordeath instance="instance2" />
+		<!-- <die /> -->
+	</thread>
+
+</effect>

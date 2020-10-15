@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="Kim22.max" file="sinon.model" type="K2" high="Fia.model" med="Fia.model" low="Fia.model" >
+
+	<anim name="idle" clip="C/Stand Ready.clip" loop="true" fps="550"/>
+			
+<anim name="ability_2" clip="C/New.clip" fps="500" loop="false" numframes="400" >
+		<frameevent frame="250" cmd="PlaySoundLinear /heroes/aluna/ability_02/sounds/cast_grunt.wav 400 1800 .85"/>
+		<frameevent frame="250" cmd="PlaySoundLinear /heroes/aluna/ability_02/sounds/throw.wav 400 1800 .85"/>
+	</anim>
+
+			
+</model>

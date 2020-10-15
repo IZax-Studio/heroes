@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<skeletonemitter
+				spawnrate="150"
+				minparticlelife="550"
+				maxparticlelife="1050"
+				minspeed="10"
+				maxspeed="20"
+				gravity=".5"
+				inheritvelocity="-.1"
+				material="/shared/effects/materials/star_04.material"
+				offsetsphere="40 40 40"
+			>
+				<particle
+					startcolor="1"
+					endcolor="0"
+					startsize="5"
+					midsize="10"
+					endsize="2"
+					maxangle="359"
+					minscale=".5"
+					maxscale="1"
+				/>
+			</skeletonemitter>
+		<!--	
+			<groundsprite
+				expirelife="250"
+				startsize="75"
+				endsize="150"
+				startcolor=".5 .5 .1"
+				endcolor="0"
+				material="/shared/effects/materials/whitedot_ground.material"
+			/>
+		-->			
+			
+			
+			
+		
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

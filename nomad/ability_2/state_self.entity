@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Nomad_Ability2_Self"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	movespeed="600"
+	unitwalking="true"
+	buildingwalking="true"
+	perplexed="true"	
+	
+	ishidden="true"
+
+	maxmovespeed="78"
+>
+	<oninflict>
+		<playeffect effect="effects/warp.effect" source="this_owner_entity" />
+	</oninflict>
+	
+	<onframe>
+		<targettype target="this_owner_entity" type="stunned">
+			<expire />
+		</targettype>
+		<targettype target="this_owner_entity" type="immobilized">
+			<expire />
+		</targettype>
+		<targettype target="this_owner_entity" type="restrained">
+			<expire />
+		</targettype>
+	</onframe>
+	
+	<altavatar key="Hero_Nomad.Alt5">
+		<oninflict>
+			<playeffect effect="../alt5/ability_2/effects/warp.effect" source="this_owner_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt7">
+		<oninflict>
+			<playeffect effect="../alt7/ability_2/effects/warp.effect" source="this_owner_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt8">
+		<oninflict>
+			<playeffect effect="../alt8/ability_02/effects/warp.effect" source="this_owner_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt9">
+		<oninflict>
+			<playeffect effect="../alt9/ability_02/effects/warp.effect" source="this_owner_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt11">
+		<oninflict>
+			<playeffect effect="../alt11/ability_02/effects/warp.effect" source="this_owner_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt12"
+		icon="../alt12/ability_02/icon.tga"
+	>
+		<modifier key="nomadAlt12_Ability2_Upgrade"
+			icon="../alt12/ability_02/icon_u.tga"
+		/>
+		<oninflict>
+			<hasmodifier name="nomadAlt12_Ability2_Upgrade">
+				<playeffect effect="../alt12/ability_02/effects/warp_upgrade.effect" source="this_owner_entity" />
+			</hasmodifier>
+			<else>
+				<playeffect effect="../alt12/ability_02/effects/warp.effect" source="this_owner_entity" />
+			</else>
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt13">
+		<oninflict>
+			<playeffect effect="../alt13/ability_02/effects/warp.effect" source="this_owner_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt14">
+		<oninflict>
+			<playeffect effect="../alt14/ability_02/effects/warp.effect" source="this_owner_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt15">
+		<oninflict>
+			<playeffect effect="../alt15/ability_02/effects/warp.effect" source="this_owner_entity" />
+		</oninflict>
+	</altavatar>
+</state>

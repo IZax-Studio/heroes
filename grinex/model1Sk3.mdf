@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="bolts.max" file="high.model" type="K2" high="sa2/black.model" med="sa2/black.model" low="sa2/black.model">
+	<anim name="idle" clip="sa2/ability_2.clip" fps="550"/>
+				
+</model>

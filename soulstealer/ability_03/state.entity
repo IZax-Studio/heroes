@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Soulstealer_Ability3"
+
+	
+	
+	icon="1.jpg"
+	passiveeffect=""
+	
+	armor="-2,-3,-4,-5"
+	
+	effecttype=""
+>
+	<altavatar key="Hero_Soulstealer.Alt5"
+		icon="../alt5/ability_03/icon.tga"
+	>
+	</altavatar>
+	
+</state>

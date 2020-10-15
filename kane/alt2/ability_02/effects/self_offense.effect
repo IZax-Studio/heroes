@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>   
+		<particlesystem name="system0" space="world" scale="1" >
+
+			<sound
+				norestart="true"
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="1800"
+				volume="1"
+				sample="../../omen/sounds/ab2_sword_start.wav"
+			/>
+			
+			<sound
+				norestart="true"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1500"
+				volume="1"
+				sample="../../omen/sounds/ab2_vox_%.wav"
+			/>
+			
+			<billboard
+				bone="_bone_righthand"
+				material="../../omen/custom/ef_ww_spot_01.material"
+				color=".9 .4 .7"
+				size="50"
+				depthbias="-15"
+				rollspeed="100"
+			/>
+					
+			<twopointtrailemitter
+				bone_a="Bip01 R Hand"
+				bone_b="Bip01 R Forearm"
+				spawnrate="60"
+				particlelife="100"
+				direction="0 0 0"
+				angle="0"
+				texposscale="0"
+				texstretchscale="1.25"
+				gravity="-1200"
+				material="fire_scrolling_trail.material"
+			>
+				<particle
+					startsize="10"
+					midsize="6"
+					endsize="30"
+					midsizepos=".5"
+					startcolor=".4 0 1"
+					midcolor=".4 0 1"
+					endcolor="0"
+					midcolorpos=".2"
+				/>
+			</twopointtrailemitter>
+			
+			<trailemitter
+				bone="_bone_fx_04"
+				spawnrate="60"
+				particlelife="50"
+				direction="0 0 0"
+				angle="0"
+				texposscale="0"
+				texstretchscale="1"
+				material="../../omen/custom/ef_x_line_05_solid_931c1451.material"
+			>
+				<particle
+					size="10"
+					startcolor="1 0 0"
+					midcolor=".75 .25 1"
+					endcolor="0"
+				/>
+			</trailemitter>
+			<trailemitter
+				bone="_bone_fx_06"
+				spawnrate="60"
+				particlelife="75"
+				direction="0 0 0"
+				angle="0"
+				texposscale="0"
+				texstretchscale="1"
+				material="../../omen/custom/ef_x_line_05_solid_931c1451.material"
+			>
+				<particle
+					size="20"
+					startcolor="1 0 0"
+					midcolor=".75 .25 1"
+					endcolor="0"
+				/>
+			</trailemitter>
+			<trailemitter
+				bone="_bone_fx_08"
+				spawnrate="60"
+				particlelife="100"
+				direction="0 0 0"
+				angle="0"
+				texposscale="0"
+				texstretchscale="1"
+				material="../../omen/custom/ef_x_line_05_solid_931c1451.material"
+			>
+				<particle
+					size="30"
+					startcolor="1 0 0"
+					midcolor=".75 .25 1"
+					endcolor="0"
+				/>
+			</trailemitter>
+					
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

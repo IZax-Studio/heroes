@@ -1,0 +1,1036 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_Fade"
+	
+	team="Hellbourne"
+	icon="../anna.png"
+	portrait="../anna.png"
+	model="anna/model.mdf,anna/model.mdf,anna/model.mdf,anna/model.mdf,anna/model.mdf,anna/model_2.mdf"
+	skin=""
+	infoheight="170"
+	passiveeffect=""
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="anan_sounds/joke_%.wav"
+	selectedflavorsound="anan_sounds/joke_%.wav"
+	confirmmovesound="anan_sounds/move_%.wav"
+	confirmattacksound="anan_sounds/attack_%.wav"
+	nomanasound="anan_sounds/no_mana.wav"
+	cooldownsound="anan_sounds/cooldown.wav"
+	announcersound="anan_sounds/pick_1.wav" 
+	tauntedsound="anan_sounds/taunt_prior.wav"
+	tauntkillsound="anan_sounds/taunt_after.wav"
+	
+	preglobalscale="1.85"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="48"
+	targetoffset="0 0 64"
+
+	category="magic cc"
+	difficulty="3"
+
+	solorating="2"
+	junglerating="0"
+	carryrating="0"
+	supportrating="0"
+	initiatorrating="1"
+	gankerrating="5"
+	pusherrating="0"
+	rangedrating="0"
+	meleerating="5"
+
+	movespeed="290"
+	turnrate="540"
+	turnsmoothing="0.05"
+
+	maxhealth="150"
+	healthregen="1.00"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="1.48"
+	magicarmor="5.0"
+
+	inventory0="Ability_Fade1"
+	inventory1="Ability_Fade2"
+	inventory2="Ability_Fade3"
+	inventory3="Ability_Fade4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="1000"
+	attackactiontime="400"
+	attackcooldown="1700"
+	attackdamagemin="28"
+	attackdamagemax="32"
+	attacknumanims="2"
+	attackoffset="0 0 0"
+	attackprojectile=""
+	attackrange="150"
+	attackstarteffect=""
+	attackactioneffect="effects/impact2.effect"
+	attackimpacteffect="effects/impact.effect"
+	attacktype="melee"
+	combattype="Hero"
+
+	aggrorange="600"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	primaryattribute="Intelligence"
+	strength="18"
+	strengthperlevel="2.2"
+	agility="18"
+	agilityperlevel="2.1"
+	intelligence="18"
+	intelligenceperlevel="2.3"
+	
+	previewmodel="preview.mdf"
+	previewpos="0 0 -88"
+	previewangles="0 0 0"
+	previewscale="1.8"
+	portraitcampos="-4 -30 20"
+	portraitangles="0 0 10"
+	storemodel="preview.mdf"
+	storepos="0 0 -21"
+	storeangles="0 0 0"
+	storescale="1.8"
+	storepassiveeffect="effects/body_store2.effect"
+	tooleffectkeyname18="State_Fade_Ability4_Stealth"
+	tooleffectpath18="anna/ability_04_eye.effect"
+	
+	>
+	<recommendeditem name="Item_ManaPotion" />
+	<recommendeditem name="Item_MinorTotem" />
+	<recommendeditem name="Item_RunesOfTheBlight" />
+	<recommendeditem name="Item_HealthPotion" />
+	<recommendeditem name="Item_HomecomingStone" />
+	
+	<recommendeditem name="Item_IronShield" />	
+	<recommendeditem name="Item_Strength5" />
+	<recommendeditem name="Item_EnhancedMarchers" />
+	<recommendeditem name="Item_Bottle" />
+	<recommendeditem name="Item_PushStaff" />
+	<recommendeditem name="Item_PortalKey" />
+	<recommendeditem name="Item_Summon" />
+	<recommendeditem name="Item_Nuke" />
+	<recommendeditem name="Item_Morph" />
+
+	<modifier key="iamsheeped" modpriority="201"
+		passiveeffect=""
+	/>
+
+	<modifier key="fadereflectionstealth" modpriority="100"
+		attackduration="100"
+		attackactiontime="100"
+		model="anna/model_2_4.mdf"		
+
+	/>
+	
+	<modifier key="Fade_E_active" modpriority="100"
+		isselectable="false"
+		ignoreunselectableforself="true"
+		immunity="AttackImmunity"
+		
+	/>
+	
+	<!-- <modifier key="gated" modpriority="200"
+		magicarmor="5"
+		armor="1.3"
+		
+		inventory0="Reborn_Ability_Fayde1"
+		inventory1="Reborn_Ability_Fayde2"
+		inventory2="Reborn_Ability_Fayde3"
+		inventory3="Reborn_Ability_Fayde4"
+	>
+	</modifier> -->
+
+	<altavatar icon="icon.tga" key="Hero_Fade.Alt" modpriority="1"
+		altavatar="true"
+		icon2="alt/icon.tga"
+		portrait="alt/icon.tga"
+		model="alt/model.mdf"
+		selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana.wav"
+	cooldownsound="sounds/voice/cooldown.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+		corpsetime="3000"
+		corpsefadetime="2500"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		storepassiveeffect=""
+		previewmodel="alt/preview.mdf"
+		previewpos="-10 0 -70"
+		previewangles="0 0 0"
+		previewscale="1.95"
+		storemodel="alt/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.85"
+		
+		preglobalscale="2.25"
+		passiveeffect="effects/body.effect"
+	>
+	<modifier key="iamsheeped" modpriority="201"
+		passiveeffect=""
+	/>
+
+	<modifier key="fadereflectionstealth" modpriority="100"
+		attackduration="100"
+		attackactiontime="100"
+				
+
+	/>
+	
+	<modifier key="Fade_E_active" modpriority="100"
+		isselectable="false"
+		ignoreunselectableforself="true"
+		immunity="AttackImmunity"
+		
+	/>
+	</altavatar>
+	
+	<altavatar icon="icon.tga" key="Hero_Fade.Alt2" modpriority="1"
+		altavatar="true"
+		icon2="alt2/icon.tga"
+		portrait="alt2/icon.tga"
+		model="alt2/model.mdf"
+		storepassiveeffect=""
+		corpsetime="3000"
+		corpsefadetime="5500"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		
+		selectedsound="alt2/sounds/voice/select_%.wav"
+		selectedflavorsound="alt2/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt2/sounds/voice/move_%.wav"
+		confirmattacksound="alt2/sounds/voice/attack_%.wav"
+		nomanasound="alt2/sounds/voice/no_mana.wav"
+		cooldownsound="alt2/sounds/voice/cooldown.wav"
+		tauntedsound="alt2/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt2/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt2/preview.mdf"
+		previewpos="-10 0 -70"
+		previewangles="0 0 0"
+		previewscale="1.95"
+		
+		storemodel="alt2/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.85"
+		
+		preglobalscale="1.9"
+		passiveeffect="alt2/effects/body.effect"
+	>
+		<modifier key="iamsheeped" modpriority="201"
+		passiveeffect=""
+	/>
+
+	<modifier key="fadereflectionstealth" modpriority="100"
+		attackduration="100"
+		attackactiontime="100"
+				
+
+	/>
+	
+	<modifier key="Fade_E_active" modpriority="100"
+		isselectable="false"
+		ignoreunselectableforself="true"
+		immunity="AttackImmunity"
+		
+	/>
+		<onspawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Fade.Alt2 aa.Hero_Pearl.Alt4 aa.Hero_Hammerstorm.Alt5 aa.Hero_Deadwood.Alt4 aa.Hero_Hantumon.Alt4 aa.Hero_BabaYaga.Alt3">
+				<applystate name="State_Flying_Monkey" target="this_entity" continuous="true" />
+			</ownsproduct>
+		</onspawn>
+		
+		<onrespawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Fade.Alt2 aa.Hero_Pearl.Alt4 aa.Hero_Hammerstorm.Alt5 aa.Hero_Deadwood.Alt4 aa.Hero_Hantumon.Alt4 aa.Hero_BabaYaga.Alt3">
+				<applystate name="State_Flying_Monkey" target="this_entity" continuous="true" />
+			</ownsproduct>
+		</onrespawn>
+		
+	</altavatar>
+	
+	<altavatar icon="icon.tga" key="Hero_Fade.Alt3" modpriority="1"
+		altavatar="true"
+		icon2="alt3/icon.tga"
+		portrait="alt3/icon.tga"
+		model="alt3/model.mdf"
+		storepassiveeffect=""
+		corpsetime="1000"
+		corpsefadetime="5500"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		
+		selectedsound="alt3/sounds/voice/select_%.wav"
+		selectedflavorsound="alt3/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt3/sounds/voice/move_%.wav"
+		confirmattacksound="alt3/sounds/voice/attack_%.wav"
+		nomanasound="alt3/sounds/voice/no_mana.wav"
+		cooldownsound="alt3/sounds/voice/cooldown.wav"
+		tauntedsound="alt3/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt3/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt3/preview.mdf"
+		previewpos="-10 0 -70"
+		previewangles="0 0 0"
+		previewscale="1.95"
+		storemodel="alt3/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.85"
+		
+		preglobalscale="2.0"
+		passiveeffect="alt3/effects/body.effect"
+		attacknumanims="3"
+	>
+		<modifier key="iamsheeped" modpriority="201"
+		passiveeffect=""
+	/>
+
+	<modifier key="fadereflectionstealth" modpriority="100"
+		attackduration="100"
+		attackactiontime="100"
+				
+
+	/>
+	
+	<modifier key="Fade_E_active" modpriority="100"
+		isselectable="false"
+		ignoreunselectableforself="true"
+		immunity="AttackImmunity"
+		
+	/>
+		<onspawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Javaras.Alt4 aa.Hero_Circe.Alt3 aa.Hero_PuppetMaster.Alt4 aa.Hero_Fade.Alt3 aa.Hero_ShadowBlade.Alt3">
+				<activatemodifierkey name="Shroud_Set_Bonus" />
+			</ownsproduct>
+		</onspawn>
+		
+		<onrespawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Javaras.Alt4 aa.Hero_Circe.Alt3 aa.Hero_PuppetMaster.Alt4 aa.Hero_Fade.Alt3 aa.Hero_ShadowBlade.Alt3">
+				<activatemodifierkey name="Shroud_Set_Bonus" />
+			</ownsproduct>
+		</onrespawn>
+		
+		<modifier key="Shroud_Set_Bonus" modpriority="200"
+			passiveeffect="alt3/effects/body_boost.effect"
+			model="alt3/model_boost.mdf"
+		    attackimpacteffect="alt3/effects/impact.effect"
+		/>
+	
+	</altavatar>
+	
+	<altavatar icon="icon.tga" key="Hero_Fade.Alt4" modpriority="1"
+		altavatar="true"
+		icon2="alt4/icon.tga"
+		portrait="alt4/icon.tga"
+		model="alt4/model.mdf"
+		storepassiveeffect=""
+		corpsetime="3000"
+		corpsefadetime="5500"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		
+		previewmodel="alt4/preview.mdf"
+		previewpos="-10 0 -70"
+		previewangles="0 0 0"
+		previewscale="1.95"
+		
+		storemodel="alt4/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.85"
+		
+		preglobalscale="1.9"
+		passiveeffect="alt4/effects/body.effect"
+		selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana.wav"
+	cooldownsound="sounds/voice/cooldown.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+		portraitcampos="35 -20 15"
+	>
+	<modifier key="iamsheeped" modpriority="201"
+		passiveeffect=""
+	/>
+
+	<modifier key="fadereflectionstealth" modpriority="100"
+		attackduration="100"
+		attackactiontime="100"
+				
+
+	/>
+	
+	<modifier key="Fade_E_active" modpriority="100"
+		isselectable="false"
+		ignoreunselectableforself="true"
+		immunity="AttackImmunity"
+		
+	/>
+	</altavatar>
+	
+	<altavatar icon="icon.tga" key="Hero_Fade.Alt5" modpriority="1"
+		altavatar="true"
+		icon2="alt5/icon.tga"
+		portrait="alt5/icon.tga"
+		model="alt5/model.mdf"
+		
+		corpsetime="3000"
+		corpsefadetime="5500"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		storepassiveeffect=""
+		previewmodel="alt5/preview.mdf"
+		previewpos="-10 0 -70"
+		previewangles="0 0 0"
+		previewscale="1.95"
+		
+		selectedsound="alt5/sounds/voice/select_%.wav"
+		selectedflavorsound="alt5/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt5/sounds/voice/move_%.wav"
+		confirmattacksound="alt5/sounds/voice/attack_%.wav"
+		nomanasound="alt5/sounds/voice/no_mana.wav"
+		cooldownsound="alt5/sounds/voice/cooldown.wav"
+		tauntedsound="alt5/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt5/sounds/voice/taunt_after.wav"
+		
+		storemodel="alt5/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.65"
+		
+		preglobalscale="1.9"
+		passiveeffect="alt5/effects/body_store.effect"
+		
+		portraitcampos="5 -35 -50"
+		infoheight="160"
+	>
+	<modifier key="iamsheeped" modpriority="201"
+		passiveeffect=""
+	/>
+
+	<modifier key="fadereflectionstealth" modpriority="100"
+		attackduration="100"
+		attackactiontime="100"
+				
+
+	/>
+	
+	<modifier key="Fade_E_active" modpriority="100"
+		isselectable="false"
+		ignoreunselectableforself="true"
+		immunity="AttackImmunity"
+		
+	/>
+	</altavatar>
+	
+	
+	<altavatar icon="icon.tga" key="Hero_Fade.Alt_reskin" modpriority="1"
+		altavatar="true"
+		icon2="alt/reskin/icon.tga"
+		portrait="alt/reskin/icon.tga"
+		model="alt/reskin/model.mdf"
+		selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana.wav"
+	cooldownsound="sounds/voice/cooldown.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+		corpsetime="3000"
+		corpsefadetime="2500"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		storepassiveeffect=""
+		previewmodel="alt/reskin/preview.mdf"
+		previewpos="-10 0 -70"
+		previewangles="0 0 0"
+		previewscale="1.95"
+		storemodel="alt/reskin/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.85"
+		
+		preglobalscale="2.25"
+		passiveeffect="effects/body.effect"
+	>
+	<modifier key="iamsheeped" modpriority="201"
+		passiveeffect=""
+	/>
+
+	<modifier key="fadereflectionstealth" modpriority="100"
+		attackduration="100"
+		attackactiontime="100"
+				
+
+	/>
+	
+	<modifier key="Fade_E_active" modpriority="100"
+		isselectable="false"
+		ignoreunselectableforself="true"
+		immunity="AttackImmunity"
+		
+	/>
+	</altavatar>
+	
+	<altavatar icon="icon.tga" key="Hero_Fade.pog_skin"
+		icon2="icon.tga"
+		portrait="icon.tga"
+		model="pog_skin/model.mdf"
+		storepassiveeffect=""
+		previewmodel="pog_skin/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.15"
+		selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana.wav"
+	cooldownsound="sounds/voice/cooldown.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+		storemodel="pog_skin/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.8"
+	/>
+	
+	<altavatar icon="icon.tga" key="Hero_Fade.trophy_skin"
+		icon2="trophy_skin/icon.tga"
+		portrait="trophy_skin/icon.tga"
+		model="trophy_skin/model.mdf"
+		passiveeffect="trophy_skin/effects/body.effect"
+		selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana.wav"
+	cooldownsound="sounds/voice/cooldown.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+		previewmodel="trophy_skin/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.15"
+		storepassiveeffect=""
+		storemodel="trophy_skin/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.8"
+	>
+	<modifier key="iamsheeped" modpriority="201"
+		passiveeffect=""
+	/>
+
+	<modifier key="fadereflectionstealth" modpriority="100"
+		attackduration="100"
+		attackactiontime="100"
+				
+
+	/>
+	
+	<modifier key="Fade_E_active" modpriority="100"
+		isselectable="false"
+		ignoreunselectableforself="true"
+		immunity="AttackImmunity"
+		
+	/>
+	</altavatar>
+	
+	<altavatar icon="icon.tga" key="Hero_Fade.Alt6" modpriority="1"
+		altavatar="true"
+		icon2="alt6/icon.tga"
+		portrait="alt6/icon.tga"
+		model="alt6/model.mdf"
+storepassiveeffect=""
+		infoheight="200"
+		
+		corpsetime="3000"
+		corpsefadetime="5500"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		attackimpacteffect="alt6/effects/impact.effect"
+		
+		selectedsound="alt6/sounds/voice/select_%.wav"
+		selectedflavorsound="alt6/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt6/sounds/voice/move_%.wav"
+		confirmattacksound="alt6/sounds/voice/attack_%.wav"
+		nomanasound="alt6/sounds/voice/no_mana.wav"
+		cooldownsound="alt6/sounds/voice/cooldown.wav"
+		tauntedsound="alt6/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt6/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt6/preview.mdf"
+		previewpos="-10 0 -70"
+		previewangles="0 0 0"
+		previewscale="1.95"
+		
+		storemodel="alt6/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.7"
+		
+		portraitcampos="-18 -30 20"
+		preglobalscale="2.1"
+		passiveeffect="alt6/effects/body.effect"
+		
+		overheadoffset="-50"
+	>
+		<modifier key="iamsheeped" modpriority="201"
+		passiveeffect=""
+	/>
+
+	<modifier key="fadereflectionstealth" modpriority="100"
+		attackduration="100"
+		attackactiontime="100"
+				
+
+	/>
+	
+	<modifier key="Fade_E_active" modpriority="100"
+		isselectable="false"
+		ignoreunselectableforself="true"
+		immunity="AttackImmunity"
+		
+	/>
+		<onspawn propagatetoillusions="false">
+			<ownsproduct target="this_entity" product="aa.Hero_Mumra.Alt6 aa.Hero_Fade.Alt6 aa.Hero_Artillery.Alt11 aa.Hero_Vanya.Alt5 aa.Hero_Gunblade.Alt8 aa.Hero_Hellbringer.Alt7 aa.Hero_Accursed.Alt7">
+				<activatemodifierkey name="Cyber_set" />
+			</ownsproduct>
+		</onspawn>
+
+		<onrespawn propagatetoillusions="false">
+			<ownsproduct target="this_entity" product="aa.Hero_Mumra.Alt6 aa.Hero_Fade.Alt6 aa.Hero_Artillery.Alt11 aa.Hero_Vanya.Alt5 aa.Hero_Gunblade.Alt8 aa.Hero_Hellbringer.Alt7 aa.Hero_Accursed.Alt7">
+				<activatemodifierkey name="Cyber_set" />
+			</ownsproduct>
+		</onrespawn>
+		
+		<onkilled>
+			<ownsproduct target="this_entity" product="aa.Hero_Mumra.Alt6 aa.Hero_Fade.Alt6 aa.Hero_Artillery.Alt11 aa.Hero_Vanya.Alt5 aa.Hero_Gunblade.Alt8 aa.Hero_Hellbringer.Alt7 aa.Hero_Accursed.Alt7">
+				<deactivatemodifierkey name="Cyber_set" />
+			</ownsproduct>
+		</onkilled>
+		
+		<modifier key="iamsheeped" modpriority="100"
+			passiveeffect=""
+		>
+			<deactivatemodifierkey name="Cyber_set" />
+		</modifier>
+		
+		<modifier key="Cyber_set" modpriority="1000"
+			tooleffectpath37="alt6/effects/body_set_cyber.effect"
+		/>
+	</altavatar>
+	
+	<altavatar icon="icon.tga" key="Hero_Fade.set_ascension" modpriority="1"
+		altavatar="true"
+		icon2="set_ascension/icon.tga"
+		portrait="set_ascension/icon.tga"
+		model="set_ascension/model.mdf"
+		storepassiveeffect=""
+		corpsetime="3000"
+		corpsefadetime="5500"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		
+		selectedsound="set_ascension/sounds/voice/select_%.wav"
+		selectedflavorsound="set_ascension/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="set_ascension/sounds/voice/move_%.wav"
+		confirmattacksound="set_ascension/sounds/voice/attack_%.wav"
+		nomanasound="set_ascension/sounds/voice/no_mana.wav"
+		cooldownsound="set_ascension/sounds/voice/cooldown.wav"
+		tauntedsound="set_ascension/sounds/voice/taunt_prior.wav"
+		tauntkillsound="set_ascension/sounds/voice/taunt_after.wav"
+		
+		previewmodel="set_ascension/preview.mdf"
+		previewpos="-10 0 -70"
+		previewangles="0 0 0"
+		previewscale="1.95"
+		
+		storemodel="set_ascension/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.7"
+		
+		portraitcampos="0 -50 20"
+		portraitangles="0 0 0"
+		
+		preglobalscale="2.1"
+		passiveeffect="set_ascension/effects/body.effect"
+		
+		overheadoffset="-50"
+	>
+	<modifier key="iamsheeped" modpriority="201"
+		passiveeffect=""
+	/>
+
+	<modifier key="fadereflectionstealth" modpriority="100"
+		attackduration="100"
+		attackactiontime="100"
+				
+
+	/>
+	
+	<modifier key="Fade_E_active" modpriority="100"
+		isselectable="false"
+		ignoreunselectableforself="true"
+		immunity="AttackImmunity"
+		
+	/>
+	</altavatar>
+	
+	<altavatar icon="icon.tga" key="Hero_Fade.Alt7"
+		altavatar="true"
+		icon2="alt7/icon.tga"
+		portrait="alt7/icon.tga"
+		model="alt7/level_1/model.mdf"
+		modelscale="1"
+		
+		corpsetime="0"
+		corpsefadetime="3000"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		
+		selectedsound="alt7/sounds/voice/select_%.wav"
+		selectedflavorsound="alt7/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt7/sounds/voice/move_%.wav"
+		confirmattacksound="alt7/sounds/voice/attack_%.wav"
+		nomanasound="alt7/sounds/voice/no_mana.wav"
+		cooldownsound="alt7/sounds/voice/cooldown.wav"
+		tauntedsound="alt7/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt7/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt7/level_3/model.mdf"
+		previewpassiveeffect="/heroes/fade/alt7/effects/body_level_3.effect"
+		previewpos="-10 0 -70"
+		previewangles="0 0 0"
+		previewscale="1.95"
+		
+		storemodel="alt7/level_3/model.mdf"
+		storepassiveeffect="/heroes/fade/alt7/effects/body_store.effect"
+		storepos="0 0 -40"
+		storeangles="0 0 0"
+		storescale="1.7"
+		
+		portraitcampos="5 0 10"
+		portraitangles="0 0 0"
+		
+		preglobalscale="2.1"
+		passiveeffect="alt7/effects/body.effect"
+		overrideportraiteffects="false"
+		tooleffectkeyname39=""
+		tooleffectpath39="alt7/effects/weapon_level_1.effect"
+		
+		overheadoffset="-50"
+		
+		infoheight="170"
+	>
+	<modifier key="iamsheeped" modpriority="201"
+		passiveeffect=""
+	/>
+
+	<modifier key="fadereflectionstealth" modpriority="100"
+		attackduration="100"
+		attackactiontime="100"
+				
+
+	/>
+	
+	<modifier key="Fade_E_active" modpriority="100"
+		isselectable="false"
+		ignoreunselectableforself="true"
+		immunity="AttackImmunity"
+		
+	/>
+		<onspawn propagatetoillusions="false" >
+			<applystate name="State_Fade_Alt7_Boots_Effects" target="this_entity" continuous="true" />
+			<applystate name="State_Fade_Alt7_Codex_Effects" target="this_entity" continuous="true" />
+			<applystate name="State_Fade_Alt7_Dawnbringer_Effects" target="this_entity" continuous="true" />
+			<applystate name="State_Fade_Alt7_GraveLocket_Effects" target="this_entity" continuous="true" />
+			<applystate name="State_Fade_Alt7_GrimoireOfPower_Effects" target="this_entity" continuous="true" />
+			<applystate name="State_Fade_Alt7_NullStone_Effects" target="this_entity" continuous="true" />
+			<applystate name="State_Fade_Alt7_PortalKey_Effects" target="this_entity" continuous="true" />
+			<!-- <applystate name="State_Fade_Alt7_Spellshards_Effects" target="this_entity" continuous="true" /> -->
+			<applystate name="State_Fade_Alt7_LexTalionis_Effects" target="this_entity" continuous="true" />
+		</onspawn>
+		
+		<onrespawn propagatetoillusions="false" >
+			<applystate name="State_Fade_Alt7_Boots_Effects" target="this_entity" continuous="true" />
+			<applystate name="State_Fade_Alt7_Codex_Effects" target="this_entity" continuous="true" />
+			<applystate name="State_Fade_Alt7_Dawnbringer_Effects" target="this_entity" continuous="true" />
+			<applystate name="State_Fade_Alt7_GraveLocket_Effects" target="this_entity" continuous="true" />
+			<applystate name="State_Fade_Alt7_GrimoireOfPower_Effects" target="this_entity" continuous="true" />
+			<applystate name="State_Fade_Alt7_NullStone_Effects" target="this_entity" continuous="true" />
+			<applystate name="State_Fade_Alt7_PortalKey_Effects" target="this_entity" continuous="true" />
+			<!-- <applystate name="State_Fade_Alt7_Spellshards_Effects" target="this_entity" continuous="true" /> -->
+			<applystate name="State_Fade_Alt7_LexTalionis_Effects" target="this_entity" continuous="true" />
+		</onrespawn>
+	
+		<onframe>
+			<compare a="level" b="10" op="gt">
+				<hasmodifier name="alt_Spellshards">
+					<setactivemodifierkey name="fadeSpellshardsLv3"/>
+				</hasmodifier>
+				<else>
+					<setactivemodifierkey name="level_3"/>
+					<playeffect effect="/heroes/fade/alt7/sounds/lvl11_sound.effect" source="source_entity" />
+				</else>				
+			</compare>
+			<else>
+				<compare a="level" b="5" op="gt">
+					<hasmodifier name="alt_Spellshards">
+						<setactivemodifierkey name="fadeSpellshardsLv2"/>
+					</hasmodifier>
+					<else>
+						<setactivemodifierkey name="level_2"/>
+						<playeffect effect="/heroes/fade/alt7/sounds/lvl6_sound.effect" source="source_entity" />
+					</else>
+				</compare>
+				<else>
+					<hasmodifier name="alt_Spellshards">
+						<setactivemodifierkey name="fadeSpellshardsLv1"/>
+					</hasmodifier>
+					<else>
+						<setactivemodifierkey name="level_1"/>
+					</else>
+				</else>
+			</else>
+		</onframe>
+		
+		<!-- general level up -->
+		<modifier key="level_1"
+			model="alt7/level_1/model.mdf"
+			infoheight="170"
+			passiveeffect="alt7/effects/body.effect"
+			tooleffectpath39="alt7/effects/weapon_level_1.effect"
+		/>
+		<modifier key="level_2"
+			model="alt7/level_2/model.mdf"
+			infoheight="170"
+			passiveeffect="alt7/effects/body_level_2.effect"
+			tooleffectpath39="alt7/effects/weapon_level_2.effect"
+		/>
+		<modifier key="level_3"
+			model="alt7/level_3/model.mdf"
+			portraitcampos="5 5 34"
+			infoheight="240"
+			passiveeffect="alt7/effects/body_level_3.effect"
+			tooleffectpath39="alt7/effects/weapon_level_3.effect"
+		/>
+		<!-- spell shards level up -->
+		<modifier key="fadeSpellshardsLv1"
+			model="alt7/level_1/model.mdf"
+			infoheight="170"
+			passiveeffect="alt7/effects/body.effect"
+			attackimpacteffect="alt7/item_fx/spell_shards/impact.effect"
+			tooleffectpath39="alt7/effects/weapon_spellshards_level_1.effect"
+		/>
+		<modifier key="fadeSpellshardsLv2"
+			model="alt7/level_2/model.mdf"
+			infoheight="170"
+			passiveeffect="alt7/effects/body_level_2.effect"
+			attackimpacteffect="alt7/item_fx/spell_shards/impact.effect"
+			tooleffectpath39="alt7/effects/weapon_spellshards_level_2.effect"
+		/>
+		<modifier key="fadeSpellshardsLv3"
+			model="alt7/level_3/model.mdf"
+			infoheight="240"
+			passiveeffect="alt7/effects/body_level_3.effect"
+			attackimpacteffect="alt7/item_fx/spell_shards/impact.effect"
+			tooleffectpath39="alt7/effects/weapon_spellshards_level_3.effect"
+			portraitcampos="0 15 35"
+		/>
+		
+		<!-- grimoire of power -->
+		<modifier key="fadeGrimoireOfPowerLv1"
+			attackimpacteffect="alt7/item_fx/grimoire_of_power/impact.effect"
+		/>
+		<modifier key="fadeGrimoireOfPowerLv2"
+			attackimpacteffect="alt7/item_fx/grimoire_of_power/impact.effect"
+		/>
+		<modifier key="fadeGrimoireOfPowerLv3"
+			attackimpacteffect="alt7/item_fx/grimoire_of_power/impact.effect"
+		/>
+	</altavatar>
+	
+	<altavatar icon="icon.tga" key="Hero_Fade.Alt8" modpriority="1"
+		altavatar="true"
+		icon2="alt8/icon.tga"
+		portrait="alt8/icon.tga"
+		model="alt8/model.mdf"
+		storepassiveeffect=""
+		corpsetime="3000"
+		corpsefadetime="5500"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		attackimpacteffect="alt8/effects/impact.effect"
+		
+		selectedsound="alt8/sounds/voice/select_%.wav"
+		selectedflavorsound="alt8/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt8/sounds/voice/move_%.wav"
+		confirmattacksound="alt8/sounds/voice/attack_%.wav"
+		nomanasound="alt8/sounds/voice/no_mana.wav"
+		cooldownsound="alt8/sounds/voice/cooldown.wav"
+		tauntedsound="alt8/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt8/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt8/preview.mdf"
+		previewpos="-10 0 -70"
+		previewangles="0 0 0"
+		previewscale="1.95"
+		
+		storemodel="alt8/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.7"
+		
+		portraitcampos="-18 -30 20"
+		preglobalscale="2.1"
+		passiveeffect="alt8/effects/body.effect"
+		
+		overheadoffset="-50"
+	>
+	<modifier key="iamsheeped" modpriority="201"
+		passiveeffect=""
+	/>
+
+	<modifier key="fadereflectionstealth" modpriority="100"
+		attackduration="100"
+		attackactiontime="100"
+				
+
+	/>
+	
+	<modifier key="Fade_E_active" modpriority="100"
+		isselectable="false"
+		ignoreunselectableforself="true"
+		immunity="AttackImmunity"
+		
+	/>
+	</altavatar>
+	
+	
+	<altavatar icon="icon.tga" key="Hero_Fade.Alt10" modpriority="1"
+		altavatar="true"
+		icon2="alt10/icon.tga"
+		portrait="alt10/icon.tga"
+		model="alt10/model.mdf"
+		storepassiveeffect=""
+		corpsetime="3000"
+		corpsefadetime="5500"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		attackimpacteffect="effects/impact.effect"
+		
+		selectedsound="alt10/sounds/voice/select_%.wav"
+		selectedflavorsound="alt10/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt10/sounds/voice/move_%.wav"
+		confirmattacksound="alt10/sounds/voice/attack_%.wav"
+		nomanasound="alt10/sounds/voice/no_mana.wav"
+		cooldownsound="alt10/sounds/voice/cooldown.wav"
+		tauntedsound="alt10/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt10/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt10/preview.mdf"
+		previewpos="-10 0 -70"
+		previewangles="0 0 0"
+		previewscale="1.95"
+		
+		storemodel="alt10/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.7"
+		
+		portraitcampos="-10 -30 20"
+		preglobalscale="2.1"
+		passiveeffect="alt10/effects/body.effect"
+		
+	>
+	<modifier key="iamsheeped" modpriority="201"
+		passiveeffect=""
+	/>
+
+	<modifier key="fadereflectionstealth" modpriority="100"
+		attackduration="100"
+		attackactiontime="100"
+				
+
+	/>
+	
+	<modifier key="Fade_E_active" modpriority="100"
+		isselectable="false"
+		ignoreunselectableforself="true"
+		immunity="AttackImmunity"
+		
+	/>
+	</altavatar>
+	
+	<altavatar icon="icon.tga" key="Hero_Fade.Alt9" modpriority="1"
+		icon2="alt9/icon.tga"
+		portrait="alt9/icon.tga"
+		model="alt9/model.mdf"
+		
+		corpsetime="3000"
+		corpsefadetime="5500"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		attackimpacteffect="alt9/effects/impact.effect"
+		attackactioneffect="alt9/effects/impact2.effect"
+		
+		selectedsound="alt9/sounds/voice/select_%.wav"
+		selectedflavorsound="alt9/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt9/sounds/voice/move_%.wav"
+		confirmattacksound="alt9/sounds/voice/attack_%.wav"
+		nomanasound="alt9/sounds/voice/no_mana.wav"
+		cooldownsound="alt9/sounds/voice/cooldown.wav"
+		tauntedsound="alt9/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt9/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt9/preview.mdf"
+		previewpos="-10 0 -70"
+		previewangles="0 0 0"
+		previewscale="1.95"
+		storepassiveeffect=""
+		storemodel="alt9/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.7"
+		
+		portraitcampos="35 -30 20"
+		preglobalscale="2.1"
+		passiveeffect="alt9/effects/body.effect"
+		
+		overheadoffset="-50"
+	>
+	<modifier key="iamsheeped" modpriority="201"
+		passiveeffect=""
+	/>
+
+	<modifier key="fadereflectionstealth" modpriority="100"
+		attackduration="100"
+		attackactiontime="100"
+				
+
+	/>
+	
+	<modifier key="Fade_E_active" modpriority="100"
+		isselectable="false"
+		ignoreunselectableforself="true"
+		immunity="AttackImmunity"
+		
+	/>
+	</altavatar>
+		
+	
+</hero>

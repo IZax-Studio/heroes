@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="THINT's Mods" file="/heroes/scar/model.model" type="K2" >
+	
+	<anim name="idle" clip="/heroes/scar/clips/preview_1.clip" loop="true" startframe="71" numframes="60" loopbackframe="71"/>
+
+</model>

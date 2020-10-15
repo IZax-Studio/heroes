@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Solstice1"
+ 
+	icon="Cha110_Skill_E.png"
+	statuseffecttooltip=""
+	
+	anim="ability_2_start"
+	casttime="0"
+	castactiontime="0"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_entity"
+	targetscheme="enemy_units"
+	casteffecttype="Magic"
+	
+	activatescheme="movement"
+	
+	frontqueue="true"
+	
+	manacost="90,100,110,120"
+	cooldowntime="14000"
+	novoiceresponse="true"
+	
+	range="600,800,1000,1200"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+
+	targetpriorities="enemy_heroes"
+	
+>
+	<onpreimpact>
+		<applystate name="State_Solstice_Ability1_Sight" target="target_entity" duration="100" />
+	</onpreimpact>
+	
+	<onimpact />
+	
+	<modifier key="Day_Solstice" modpriority="100" condition="day"
+		icon="Cha110_Skill_E.png"
+		statuseffecttooltip="State_Solstice_Ability1_Armor"
+	>
+		<onimpact>
+			<order command="event" source="source_entity" target="target_entity" ordername="Order_Solstice_Ability1" />
+		</onimpact>
+	</modifier>
+	
+	<modifier key="Night_Solstice" modpriority="100" condition="night"
+		icon="Cha110_Skill_E.png"
+		statuseffecttooltip="State_Solstice_Ability1_Attack"
+	>
+		<onimpact>
+			<order command="event" source="source_entity" target="target_entity" ordername="Order_Solstice_Ability1_Night" />
+		</onimpact>
+	</modifier>
+	
+	<!-- Staff of the Master -->
+	<modifier key="Day_Solstice_Ult" modpriority="200"
+		icon="Cha110_Skill_E.png"
+		statuseffecttooltip="State_Solstice_Ability1_Armor"
+	>
+		<onimpact>
+			<order command="event" source="source_entity" target="target_entity" ordername="Order_Solstice_Ability1" />
+		</onimpact>
+	</modifier>
+	
+	<modifier key="Night_Solstice_Ult" modpriority="200"
+		icon="Cha110_Skill_E.png"
+		statuseffecttooltip="State_Solstice_Ability1_Attack"
+	>
+		<onimpact>
+			<order command="event" source="source_entity" target="target_entity" ordername="Order_Solstice_Ability1_Night" />
+		</onimpact>
+	</modifier>
+	
+	
+</ability>

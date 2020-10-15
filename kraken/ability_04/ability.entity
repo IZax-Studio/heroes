@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Kraken4"
+
+	icon="4.png"
+	anim="ability_4"
+	casteffect="effects/cast.effect"
+	
+	actiontype="target_position"
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	passiveeffect=""
+	
+	targetradius="300"
+	targetmaterial="/shared/materials/area_cast_indicator.material"
+	targetscheme="nonboss_enemy_units"
+	casteffecttype="SuperiorMagic"
+
+	manacost="150"
+	cooldowntime="100000,90000,80000"
+
+	novoiceresponse="true"
+	
+	range="600"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	showrangeandradiusintooltip="true"
+>
+	<onimpact>
+		<spawnunit name="Gadget_Kraken_Ability4" count="1" maxactive="1" target="target_position" pushentity="true" />
+	</onimpact>
+	
+	<altavatar key="Hero_Kraken.Alt2" modpriority="1"
+		anim="ability_1"
+		casteffect="effects/cast_alt2.effect"
+	/>
+	
+	<altavatar key="Hero_Kraken.Alt3" modpriority="1"
+		casteffect="../alt3/ability_04/effects/cast.effect"
+	/>
+	<altavatar key="Hero_Kraken.Alt4" modpriority="1"
+		casteffect="../alt4/ability_04/effects/cast.effect"
+	/>
+	<modifier key="soccer" modpriority="150" 
+		baselevel="0"
+		maxlevel="1"
+		manacost="35"
+		cooldowntime="15000"
+	>
+		<onimpact>
+			<spawnunit name="Gadget_Soccer_Kraken_Ability4_Whirlpool" count="1" maxactive="1" target="target_position" pushentity="true" />
+		</onimpact>
+	</modifier>
+	
+</ability>
+

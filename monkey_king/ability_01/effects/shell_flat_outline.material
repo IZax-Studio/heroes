@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<material>
+	<parameters>
+		<float
+			name="fTexRotate"
+			value="0"
+			valuespeed=".1"
+		/>
+	</parameters>
+	<phase
+		name="color"
+		vs="mesh_unlit_shell_2denviro_anim2"
+		ps="effect_reveal"
+		srcblend="BLEND_ONE"
+		dstblend="BLEND_ONE"
+		cull="CULL_FRONT"
+		translucent="true"
+		depthwrite="1"
+		depthbias="1"
+		depthslopebias="1"
+		alphawrite="1"
+	>
+		<sampler
+			name="diffuse"
+			texture="$white"
+			repeat_u="false"
+			repeat_v="false"
+			mipmaps="true"
+			fullquality="true"
+			nocompress="true"
+			filtering="true"
+		/>
+		<sampler
+			name="reveal"
+			texture="$white"
+			repeat_u="false"
+			repeat_v="false"
+			mipmaps="true"
+			fullquality="false"
+			nocompress="false"
+			filtering="true"
+		/>
+	</phase>
+</material>

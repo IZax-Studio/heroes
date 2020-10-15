@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Hunter_Ability3_Self"
+
+	icon="3.jpg"
+	
+	passiveeffect="effects/thirst.effect"
+	
+	effecttype="StatusBuff"
+	
+	movespeedmultiplier="0.11,0.22,0.33,0.44"
+	modifierkey="bloodthirst"
+>
+	<modifier key="iamsheeped" modpriority="1000"
+		passiveeffect=""
+	/>
+	
+	<altavatar key="Hero_Hunter.Alt"
+		passiveeffect="/heroes/hunter/alt/ability_03/effects/thirst.effect"
+	/>
+	
+	<altavatar key="Hero_Hunter.Alt5"
+		passiveeffect="/heroes/hunter/alt5/ability_03/effects/thirst.effect"
+	/>
+
+	<altavatar key="Hero_Hunter.Alt6"
+		passiveeffect="/heroes/hunter/alt6/ability_03/effects/thirst.effect"
+	/>
+	
+	<altavatar key="Hero_Hunter.Alt7"
+		passiveeffect="/heroes/hunter/alt7/ability_03/effects/thirst.effect"
+	/>
+	
+	<altavatar key="Hero_Hunter.Alt8"
+		passiveeffect="/heroes/hunter/alt8/ability_03/effects/thirst.effect"
+	/>
+	
+	<altavatar key="Hero_Hunter.Alt9"
+		passiveeffect="/heroes/hunter/alt9/ability_03/effects/thirst.effect"
+	/>
+	
+	<altavatar key="Hero_Hunter.Alt10"
+		passiveeffect="/heroes/hunter/alt10/ability_03/effects/thirst.effect"
+	/>
+	
+	<altavatar key="Hero_Hunter.Alt11"
+		passiveeffect="/heroes/hunter/alt11/ability_03/effects/thirst.effect"
+	/>
+	
+	<altavatar key="Hero_Hunter.Alt12"
+		passiveeffect="/heroes/hunter/alt12/ability_03/effects/thirst.effect"
+	/>
+</state>

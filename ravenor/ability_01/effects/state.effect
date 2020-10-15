@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+	
+		<particlesystem name="system0" space="entity" scale=".5">
+		
+			<sound
+			    soundloop="true"
+				fadein="500"
+				fadeout="1000"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".5"
+				sample="/heroes/ravenor/ability_01/sounds/loop.wav"
+			/>
+
+			<model
+				bone="_bone_center"
+				model="/heroes/andromeda/ability_03/effects/orbit.mdf"
+				anim="idle"
+				scale="1.3"
+				pitch="45"
+				position="0 0 40"
+			>		
+				<model
+					bone="_bone_fx"
+					model="/heroes/midas/alt2/projectile/effects/snowball/model.mdf"
+					scale="1.85"
+					color="1 1 1"
+					startalpha="0"
+					endalpha="0"
+				>
+
+
+
+					<billboard
+				material="/shared/effects/materials/whitedot.material"
+				color=".500 .20 1"
+				size="20"
+				depthbias="-50"
+			/>
+
+			<billboard
+				material="/shared/effects/materials/whitedot.material"
+				color=".500 .20 1"
+				size="50"
+			/>
+			
+			<simpleemitter
+				material="/shared/effects/materials/whitedot.material"
+				spawnrate="40"
+				particlelife="100"
+			>
+				<particle
+					color=".500 .20 1"
+					startsize="16"
+					endsize="4"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				material="/shared/effects/materials/whitedot.material"
+				spawnrate="300"
+				particlelife="400"
+				gravity="7"
+				speed="30"
+				inheritvelocity="0.21"
+				offsetsphere="10 10 10"
+				drag="0.1"
+			>
+				<particle
+					heightdistort="0.01"
+					turn="1"
+					startcolor="1 0 0"
+					endcolor="0 0 0"
+					startsize="3"
+					endsize="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+			position="0 20 0"
+				material="/shared/effects/materials/smoke_01.material"
+				spawnrate="50"
+				minparticlelife="500"
+				maxparticlelife="750"
+				gravity="7"
+				speed="30"
+				inheritvelocity="0.21"
+				offsetsphere="10 10 10"
+				drag="0.1"
+			>
+				<particle
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".25"
+					roll="180"
+					heightdistort="0.01"
+					turn="1"
+					startcolor=".500 .20 1"
+					midcolor=".075"
+					endcolor="0 0 0"
+					startsize="60"
+					endsize="20"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				material="/shared/effects/materials/smash_add.material"
+				spawnrate="100"
+				particlelife="200"
+				gravity="7"
+				speed="310"
+				inheritvelocity="0.21"
+				offsetsphere="10 10 10"
+				drag="0.1"
+			>
+				<particle
+					roll="180"
+					turn="1"
+					startcolor=".500 .20 1"
+					midcolor=".500 .20 1"
+					endcolor="0 0 0"
+					startsize="25"
+					endsize="44"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+
+				material="/shared/effects/materials/phantom_smoke_10.material"
+				spawnrate="100"
+				particlelife="600"
+				gravity="7"
+				speed="30"
+				inheritvelocity="0.21"
+				offsetsphere="10 10 10"
+				drag="0.1"
+			>
+				<particle
+					roll="180"
+					heightdistort="0.01"
+					turn="1"
+					startcolor=".500 .20 1"
+					endcolor="0 0 0"
+					startsize="36"
+					endsize="10"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				spawnrate="20"
+				minparticlelife="150"
+				maxparticlelife="500"
+				gravity="0"
+				speed="0"
+				drag="0"
+				acceleration="0"
+				position="0 0 0"
+				material="/shared/effects/materials/femme_lightning_07.material"
+				direction="0 0 0"
+				offsetsphere="12"
+				depthbias="0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-360"
+					maxanglespeed="360"
+					startcolor=".500 .20 1"
+					midcolor=".500 .20 1"
+					endcolor=".5 0 .25"
+					startframe="0"
+					endframe="1"
+					startsize="10"
+					midsize="50"
+					endsize="0"
+					framespeed="3"
+				/>
+			</simpleemitter>
+
+				</model>
+
+
+			</model>
+
+
+		</particlesystem>
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		
+	</thread>
+</effect>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="No shadow/black.model" med="No shadow/black.model" low="No shadow/black.model" >
+	
+		<anim name="ability_1_trail" clip="ability_12.clip" minstartframe="24" maxstartframe="39" fps="0.01" loop="true" loopbackframe="50"/>
+	
+		
+</model>

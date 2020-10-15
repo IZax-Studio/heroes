@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" useentityeffectscale="1" deferred="true">
+
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1">
+
+			<template name="trail">	
+				<twopointtrailemitter
+					life="100"
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					spawnrate="44"
+					particlelife="500"
+					texpostime="500"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/calamity_fire_scrolling_trail_blend.material"
+					subframepos="true"
+				>
+					<particle
+						startcolor="{startcolor}" midcolor="{midcolor}" endcolor="{endcolor}"  midcolorpos=".2"
+						startalpha="1" endalpha="0"
+					/>
+				</twopointtrailemitter>
+			</template>
+
+			<instance name="trail"
+				bone_a="Bip001 R Foot"
+				bone_b="Bip001 R Thigh"
+				startcolor="1 0 0"
+				midcolor="2 0 0"
+				endcolor="2 0 0"
+			/>
+
+			<instance name="trail"
+				bone_a="Bip001 L Foot"
+				bone_b="Bip001 L Thigh"
+				startcolor="1 0 0"
+				midcolor="2 0 0"
+				endcolor="2 0 0"
+			/>
+						
+			<instance name="trail"
+				bone_a="Bip001 Pelvis"
+				bone_b="Bip001 Head"
+				startcolor="2 0 0"
+				midcolor="2 1 0"
+				endcolor="2 2 0"
+			/>
+			
+			<instance name="trail"
+			 	bone_a="Bip001 L Clavicle"
+				bone_b="Bip001 L Hand"
+				startcolor="2 2 0"
+				midcolor="2 0 0"
+				endcolor="2 0 0"
+			/>
+				
+			<instance name="trail"
+				bone_a="Bip001 R Clavicle"
+				bone_b="Bip001 R Hand"
+				startcolor="2 2 0"
+				midcolor="2 0 0"
+				endcolor="2 0 0"
+			/>
+
+			
+			
+			
+			
+			<simpleemitter
+				life="100"
+				delay="0"
+				bone="_bone_centerofchest"
+				spawnrate="152"
+				particlelife="300"
+				gravity="0"         	
+				drag=".1"
+				acceleration="0.0"
+				position="0 0 0"
+				offsetsphere="40 40 40"
+				material="/shared/effects/materials/3d_slash_02.material"
+			>
+				<particle 
+					size="150"
+					startframe="0.0"
+					endframe="1.0"
+					color="1"
+					minyaw="-360"
+					maxyaw="360"
+					
+					
+				/>
+				
+						</simpleemitter>
+
+			<light
+				life="500"
+				delay="100"			
+				startcolor="-1 -1 -1"
+				midcolor="-.5 -.5 -.5"			
+				endcolor="0 0 0"
+				falloffstart="75"
+				falloffend="100"
+				position="0 0 50"	
+			/>
+
+			<simpleemitter
+				delay="100"
+				spawnrate="60"
+				count="5"
+				bone="Bip01 Spine"
+				particlelife="850"			
+				gravity="-65"
+				speed="60"
+				drag="0"
+				acceleration="0"
+				position="0 0 -20"
+				material="/shared/effects/materials/soul_projectile.material"
+				offsetsphere="40 40 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 0 0"
+				offsetdirection="0 105 0"
+				offsetradial="0 0 0"
+			>
+
+				<particle 
+					minangle="0"
+					maxangle="0"
+					minanglespeed="0"
+					maxanglespeed="0"
+					startcolor="0 0 0"
+					midcolor=".0 0 0"
+					endcolor="0 0 0"
+					midcolorpos=".4"
+					startframe="0"
+					endframe="1"
+					startwidth="10"
+					midwidth="7.5"
+					endwidth="10"
+					midwidthpos=".5"
+					startheight="0"
+					endheight="820"
+					startalpha="0"
+					midalpha=".4"
+					endalpha="0"
+					midalphapos=".1"
+					startstickiness="0"
+					endstickiness=".6"
+					lockup="true"
+				/>
+
+			</simpleemitter>
+
+			<simpleemitter
+				delay="100"
+				spawnrate="60"
+				count="10"
+				bone="Bip01 Spine"
+				particlelife="850"			
+				gravity="-75"
+				speed="60"
+				drag=".08"
+				acceleration="0"
+				position="0 0 0"
+				material="/shared/effects/materials/soul_projectile.material"
+				offsetsphere="40 40 0"
+				minangle="90"
+				maxangle="-90"
+				direction="0 0 0"
+				offsetdirection="40 40 0"
+				offsetradial="0 0 0"
+			>
+
+				<particle 
+					minangle="0"
+					maxangle="0"
+					minanglespeed="0"
+					maxanglespeed="0"
+					startcolor="0 0 0"
+					midcolor="0 0 0"
+					endcolor="0 0 0"
+					midcolorpos=".1"
+					startframe="0"
+					endframe="1"
+					startwidth="10"
+					midwidth="7.5"
+					endwidth="3"
+					midwidthpos=".5"
+					startheight="0"
+					endheight="820"
+					startalpha="0"
+					midalpha=".4"
+					endalpha="0"
+					midalphapos=".1"
+					startstickiness="0"
+					endstickiness="0"
+					lockup="true"
+				/>
+
+			</simpleemitter>
+			
+			<simpleemitter
+				delay="100"
+				spawnrate="60"
+				count="5"
+				bone="Bip01 Spine"
+				particlelife="850"			
+				gravity="-65"
+				speed="60"
+				drag="0"
+				acceleration="0"
+				position="0 0 -20"
+				material="/shared/effects/materials/flare_07.material"
+				offsetsphere="40 40 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 0 0"
+				offsetdirection="0 105 0"
+				offsetradial="0 0 0"
+			>
+
+				<particle 
+					minangle="0"
+					maxangle="0"
+					minanglespeed="0"
+					maxanglespeed="0"
+					startcolor="0 0 0"
+					midcolor=".5 0 0"
+					endcolor="0 0 0"
+					midcolorpos=".4"
+					startframe="0"
+					endframe="1"
+					startwidth="10"
+					midwidth="7.5"
+					endwidth="10"
+					midwidthpos=".5"
+					startheight="0"
+					endheight="820"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".1"
+					startstickiness="0"
+					endstickiness=".6"
+					lockup="true"
+				/>
+
+			</simpleemitter>
+
+			<simpleemitter
+				delay="100"
+				spawnrate="60"
+				count="10"
+				bone="Bip01 Spine"
+				particlelife="850"			
+				gravity="-75"
+				speed="60"
+				drag=".08"
+				acceleration="0"
+				position="0 0 0"
+				material="/shared/effects/materials/flare_07.material"
+				offsetsphere="40 40 0"
+				minangle="90"
+				maxangle="-90"
+				direction="0 0 0"
+				offsetdirection="40 40 0"
+				offsetradial="0 0 0"
+			>
+
+				<particle 
+					minangle="0"
+					maxangle="0"
+					minanglespeed="0"
+					maxanglespeed="0"
+					startcolor="0 0 0"
+					midcolor=".5 0 0"
+					endcolor="0 0 0"
+					midcolorpos=".1"
+					startframe="0"
+					endframe="1"
+					startwidth="10"
+					midwidth="7.5"
+					endwidth="3"
+					midwidthpos=".5"
+					startheight="0"
+					endheight="820"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".1"
+					startstickiness="0"
+					endstickiness="0"
+					lockup="true"
+				/>
+
+			</simpleemitter>
+			
+		</particlesystem>
+
+	</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnparticlesystem instance="instance1" particlesystem="system1" />
+	<waitfordeath instance="instance0" />
+	<waitfordeath instance="instance1" />
+</thread>
+
+</effect>

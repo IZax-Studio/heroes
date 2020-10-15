@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+		<controller scale="1" position="0 0 250" >
+			<billboard
+				startcolor=".4 0 0"
+				midcolor=".8 0 0"
+				endcolor="1.2 0 0"
+				position="0 0 50"
+				material="/shared/effects/materials/sol.material"
+				startsize="10"
+				endsize="130"
+				depthbias="-60"
+				life="500"
+			/>
+
+			<billboard
+				startcolor="0 0 0"
+				midcolor="2 0 0"
+				endcolor="0 0 0"
+				position="0 0 35"
+				material="/shared/effects/materials/corona_06.material"
+				startsize="15"
+				midsize="20"
+				endsize="90"
+				pitch="100"
+				depthbias="-160"
+				lockup="1"
+				lockright="1"
+				loop="true"
+				life="900"
+				expirelife="300"
+			/>
+
+			<billboard
+				startcolor="2 0 0"
+				midcolor="1 0 0"
+				endcolor=".5 0 0"
+				position="0 0 35"
+				material="/shared/effects/materials/sol.material"
+				startsize="15"
+				midsize="70"
+				endsize="15"
+				pitch="100"
+				depthbias="-160"
+				lockup="1"
+				lockright="1"
+				loop="true"
+				life="900"
+				yawspeed="360"
+				expirelife="300"
+			/>
+		</controller>
+		
+		<groundsprite
+				expirelife="500"
+				material="/shared/effects/materials/attrition.material"
+				startsize="55"
+				midsize="60"
+				endsize="50"
+				startcolor=".4 0 0"
+				midcolor=".8 0 0"
+				endcolor=".01 0 0"
+				midcolorpos=".25"
+				yawspeed="90"
+				scale="4"
+			/>
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	
+	</thread>
+
+</effect>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+		<particlesystem name="system0" space="world">
+		
+			
+				
+			<twopointtrailemitter
+			 	bone_a="_bone_weapon1"
+				bone_b="_bone_weapon21"
+				spawnrate="200"
+				particlelife="500"
+				texpostime="500"
+				texposscale="0.0"
+				texstretchscale="1.0"
+				material="/shared/effects/materials/swoosh_add.material"
+				subframepose="true"
+			>
+	         	<particle
+					startcolor="0 .3 .6"
+					endcolor="0 0 0" 
+				/>
+			</twopointtrailemitter>
+			
+			<twopointtrailemitter
+			 	bone_a="_bone_weapon2"
+				bone_b="_bone_weapon3"
+				spawnrate="200"
+				particlelife="500"
+				texpostime="500"
+				texposscale="0.0"
+				texstretchscale="1.0"
+				material="/shared/effects/materials/swoosh_add.material"
+				subframepose="true"
+			>
+	            <particle
+					startcolor="0 .3 .6"
+					endcolor="0 0 0" 
+				/>
+			</twopointtrailemitter>
+					
+                                     <twopointtrailemitter
+			 	bone_a="_bone_altweapon1"
+				bone_b="_bone_altweapon2"
+				spawnrate="200"
+				particlelife="500"
+				texpostime="500"
+				texposscale="0.0"
+				texstretchscale="1.0"
+				material="/shared/effects/materials/swoosh_add.material"
+				subframepose="true"
+			>
+	            <particle
+					startcolor="0 .3 .6"
+					endcolor="0 0 0" 
+				/>
+			</twopointtrailemitter>
+
+                                    <twopointtrailemitter
+			 	bone_a="_bone_weaponattach"
+				bone_b="_bone_weapon1"
+				spawnrate="200"
+				particlelife="500"
+				texpostime="500"
+				texposscale="0.0"
+				texstretchscale="1.0"
+				material="/shared/effects/materials/swoosh_add.material"
+				subframepose="true"
+			>
+	            <particle
+					startcolor="0 .3 .6"
+					endcolor="0 0 0" 
+				/>
+			</twopointtrailemitter>
+
+			
+                                   <beam
+			 	bone_a="_bone_weapon1"
+				bone_b="_bone_weapon21"
+				
+				size="45"
+
+				color="0 .3 .6"
+
+
+				alpha="8"
+
+				material="/shared/effects/materials/bow_glow_03.material"
+
+				framespeed="5"
+				
+			/>
+
+                                       <beam
+			 	bone_a="_bone_altweapon2"
+				bone_b="_bone_weapon11"
+				
+				size="45"
+
+				color="0 .3 .6"
+
+
+
+				alpha="10"
+
+				material="/shared/effects/materials/bow_glow_03.material"
+
+				framespeed="5"
+				
+			/>
+
+			<beam
+			 	bone_a="_bone_weapon2"
+				bone_b="_bone_weapon31"
+				
+				size="45"
+
+				color="0 .3 .6"
+
+
+
+				alpha="10"
+
+				material="/shared/effects/materials/bow_glow_03.material"
+
+				framespeed="5"
+				
+			/>
+
+                                    <beam
+			 	bone_a="_bone_altweapon1"
+				bone_b="_bone_altweapon21"
+				
+				size="45"
+
+color="0 .3 .6"
+
+
+
+				alpha="10"
+
+				material="/shared/effects/materials/bow_glow_03.material"
+
+				framespeed="5"
+				
+			/>
+
+
+			<beam
+			 	bone_a="_bone_weapon3"
+				bone_b="_bone_weapon11"
+				
+				size="45"
+
+				color="0 .3 .6"
+
+
+
+				alpha="10"
+
+				material="/shared/effects/materials/bow_glow_03.material"
+
+				framespeed="5"
+				
+			/>
+			
+			<beam
+			 	bone_a="_bone_weaponattach"
+				bone_b="_bone_weapon1"
+				
+				size="45"
+
+				color="0 .3 .6"
+
+
+
+				alpha="10"
+
+				material="/shared/effects/materials/bow_glow_03.material"
+
+				framespeed="5"
+				
+			/>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

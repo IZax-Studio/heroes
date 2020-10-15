@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="false">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">	
+					<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume=".5"
+				sample="/heroes/parallax/sounds/pick_up.wav"
+			/>
+			
+			<model
+				life="600"
+				timenudge="1000"	model="../../../kiana/effects/weapon/model.mdf"
+	material="../../../kiana/material6.material"
+				
+				position="0 0 100"
+				startscale="2"
+				endscale="1.5"
+				startalpha="1"
+				endalpha="0"
+				yawspeed="-600"
+				>
+				<model
+					model="../../../kiana/effects/changmao/model.mdf"
+					material="../../../kiana/material6.material"
+					yawspeed="-360"
+					parentalpha="true"
+					parentteamcolor="true"
+					inheritparentmodifiers="true"
+				/>
+
+				<model
+					model="../../../kiana/effects/weapon/model.mdf"
+					material="../../../kiana/material6_glow.material"
+					color="0 .35 1"
+					parentalpha="true"
+					parentteamcolor="true"
+					inheritparentmodifiers="true"
+				/>
+				<!-- crystal shine -->
+				<simpleemitter
+					timenudge="1000"
+					spawnrate="5"
+					particlelife="1000"
+					material="/shared/effects/materials/blink.material"
+					maxspeed="4"
+					drag="0.02"
+					depthbias="5"
+					offsetsphere="0 0 5"
+				>
+					<particle
+						maxangle="360"
+						startcolor="0"
+						midcolor="0 .225 .3"
+						endcolor="0"
+						midcolorpos=".2"
+						minstartscale=".5"
+						maxstartscale="1"
+						minendscale="1"
+						maxendscale="2"
+						size="20"
+						anchor="1"
+					/>
+				</simpleemitter>
+
+				<!-- center beam -->
+				<beam
+					position_a="0 0 -50"
+					position_b="0 0 80"
+					material="beam.material"
+					size="32"
+					color="0 .5 1"
+				/>
+
+				<simpleemitter
+					bone="Dummy001"
+					position="0 0 20"
+					offsetsphere="2"
+					spawnrate="10"
+					direction="0 0 1"
+					angle="0"
+					maxspeed="20"
+					minspeed="-20"
+					minparticlelife="2000"
+					maxparticlelife="3000"
+					material="/shared/effects/materials/whitedot.material"
+				>
+					<particle
+						startcolor="0"
+						midcolor=".0 .4 .5"
+						endcolor="0"
+						minwidth="4"
+						maxwidth="6"
+						minheight="8"
+						maxheight="12"
+						anchor="1"
+						startscale="1"
+						endscale=".25"
+					/>
+				</simpleemitter>
+
+				<!-- artifact sparkles -->
+				<simpleemitter
+					bone="Dummy001"
+					offsetsphere="14 14 40"
+					mingravity="-2"
+					maxgravity="-5"
+					spawnrate="10"
+					minparticlelife="800"
+					maxparticlelife="1000"
+					material="/core/materials/effect_solid_add.material"
+				>
+					<particle
+						startcolor="0"
+						midcolor=".0 .175 0.25"
+						endcolor="0"
+						minstartsize="1"
+						maxstartsize="4"
+						minendsize="1"
+						maxendsize="4"
+						minscale=".5"
+						maxscale="1"
+						anchor="1"
+					>
+						<billboard
+							life="800"
+							material="/shared/effects/materials/blink.material"
+							startcolor="0"
+							midcolor=".0 .4 0.5"
+							endcolor="0"
+							height="16"
+							width="4"
+						/>
+					</particle>
+				</simpleemitter>
+
+			</model>
+			<simpleemitter
+				position="0 0 100"
+				count="1"
+				particledirectionalspace="local"
+				particlelife="400"
+			>
+				<particle
+					startscale="0"
+					midscale="0"
+					endscale="6"
+					midscalepos=".25"
+				>
+					<billboard
+						life="400"
+						timenudge="1"
+						directionalspace="local"
+						material="/shared/effects/materials/whitedot.material"
+						color="0 .35 1"
+						size="75"
+					/>
+					
+					<billboard
+						life="300"
+						timenudge="1"
+						directionalspace="local"
+						material="/shared/effects/materials/whitecircle_blend.material"
+						size="30"
+					/>
+					
+					<billboard
+						life="400"
+						timenudge="1"
+						directionalspace="local"
+						material="/shared/effects/materials/black_spot2.material"
+						size="28"
+					/>
+				</particle>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+	</thread>
+</effect>

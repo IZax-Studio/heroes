@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_DwarfMagi4"
+	
+	icon="../icon/5.png"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="passive"
+
+	modifierkey="DwarfMagi_Ability4_1,DwarfMagi_Ability4_2,DwarfMagi_Ability4_3"
+
+	noshuffle="true"
+>
+	<onimpact />
+
+	<onattackimpact />
+
+	<modifier key="ult_boost" modpriority="100"
+		anim="ability_1"
+		casttime="800"
+		castactiontime="400"
+		casteffect="effects/cast.effect"
+
+		actiontype="target_entity"
+		casteffecttype="Magic"
+		targetscheme="enemy_units"
+		
+		cooldowntime="8000"
+
+		range="600"
+		
+		showareacast="true"
+		areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+
+		targetpriorities="enemy_heroes"
+	>
+		
+		<onimpact>
+			<updatemana entity="source_entity" />
+			<evaluate a="source_mana" b="0.6" op="mult" />
+			<takemana amount="result" target="source_entity" triggeractionscript="true" />
+			
+			<applystate name="State_Stunned" duration="1500" />
+			<damage effecttype="Magic" amount="275" />
+			
+			<!-- VFX -->
+			<hasavatarkey name="Hero_DwarfMagi.Alt2">
+				<playeffect effect="../alt2/ability_01/effects/impact.effect" source="target_entity" />	
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_DwarfMagi.Alt6">
+					<hasmodifier name="dwarfmagiAlt6_Ability1_Upgrade">
+						<playeffect effect="../alt6/ability_01/effects/impact_upgrade.effect" source="target_entity" />	
+					</hasmodifier>
+					<else>
+						<playeffect effect="../alt6/ability_01/effects/impact.effect" source="target_entity" />	
+					</else>
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_DwarfMagi.Alt7">
+						<playeffect effect="../alt7/ability_01/effects/impact.effect" source="target_entity" />	
+					</hasavatarkey>
+					<else>
+						<playeffect effect="effects/impact.effect" source="target_entity" />
+					</else>		
+				</else>
+			</else>
+			
+			<!-- Multicast -->
+			<!-- Level 1 ultimate -->
+			<hasmodifier name="DwarfMagi_Ability4_1">				
+				<setaccumulator entity="this_entity" value="1" />
+				<chance threshold="0.2">
+					<setaccumulator entity="this_entity" value="2" />
+					<popup name="multicast" a="2" source="target_entity" target="source_entity" />
+					<spawnaffector name="Affector_DwarfMagi_Ability4_2x" target="target_entity" level="accumulator" />
+				</chance>
+			</hasmodifier>
+			
+			<!-- Level 2 ultimate -->
+			<hasmodifier name="DwarfMagi_Ability4_2">
+				<setaccumulator entity="this_entity" value="1" />
+				<chance threshold="0.4">
+					<pushability name="Ability_DwarfMagi1" />
+					<setaccumulator source="stack_entity" value="source_level" /> <!-- Ability level -->
+					<spawnaffector name="Affector_DwarfMagi_Ability4_2x" target="target_entity" level="accumulator" />
+					
+					<!-- Multicast popup accumulator -->
+					<setaccumulator entity="this_entity" value="2" />
+					<chance threshold="0.5">
+						<pushability name="Ability_DwarfMagi1" />
+						<setaccumulator source="stack_entity" value="source_level" /> <!-- Ability level -->									
+						<spawnaffector name="Affector_DwarfMagi_Ability4_3x" target="target_entity" level="accumulator" />
+						
+						<!-- Multicast popup accumulator -->
+						<setaccumulator entity="this_entity" value="3" />
+					</chance>
+					<popup name="multicast" a="accumulator" source="target_entity" target="source_entity" />
+				</chance>
+			</hasmodifier>
+			
+			<!-- Level 3 ultimate -->
+			<hasmodifier name="DwarfMagi_Ability4_3">
+				<setaccumulator entity="this_entity" value="1" />
+				<chance threshold="0.6">
+					<pushability name="Ability_DwarfMagi1" />
+					<setaccumulator source="stack_entity" value="source_level" /> <!-- Ability level -->								
+					<spawnaffector name="Affector_DwarfMagi_Ability4_2x" target="target_entity" level="accumulator" />
+					
+					<!-- Multicast popup accumulator -->
+					<setaccumulator entity="this_entity" value="2" />
+					<chance threshold="0.5">
+						<pushability name="Ability_DwarfMagi1" />
+						<setaccumulator source="stack_entity" value="source_level" /> <!-- Ability level -->	
+						<spawnaffector name="Affector_DwarfMagi_Ability4_3x" target="target_entity" level="accumulator" />
+						
+						<!-- Multicast popup accumulator -->
+						<setaccumulator entity="this_entity" value="3" />									
+						<chance threshold="0.5">
+							<pushability name="Ability_DwarfMagi1" />
+							<setaccumulator source="stack_entity" value="source_level" /> <!-- Ability level -->
+							<spawnaffector name="Affector_DwarfMagi_Ability4_4x" target="target_entity" level="accumulator" />
+							
+							<!-- Multicast popup accumulator -->
+							<setaccumulator entity="this_entity" value="4" />
+						</chance>
+					</chance>
+					<popup name="multicast" a="accumulator" source="target_entity" target="source_entity" />
+				</chance>
+			</hasmodifier>
+		</onimpact>
+		
+		<onattackimpact propagatetoillusions="false">
+			<!-- Chance to cast Fireball -->
+			<chance threshold="0.1">
+				<cantarget targetscheme="enemy_units" effecttype="Physical Magic">
+					<pushability name="Ability_DwarfMagi1" />
+					<setaccumulator source="stack_entity" value="source_level" /> <!-- Ability level -->
+
+					<!-- Do nothing if the ability isn't leveled -->
+					<compare a="accumulator" b="0" op="gt">
+						<!-- VFX -->
+						<hasavatarkey name="Hero_DwarfMagi.Alt6">
+							<hasmodifier name="dwarfmagiAlt6_Ability4_Upgrade">
+								<playeffect effect="../alt6/ability_01/effects/fireball_upgrade.effect" source="source_entity" target="source_entity" />	
+							</hasmodifier>
+							<else>
+								<playeffect effect="../alt6/ability_01/effects/fireball.effect" source="source_entity" target="source_entity" />
+							</else>
+						</hasavatarkey>
+						<else>
+							<playeffect effect="effects/fireball.effect" source="source_entity" target="source_entity" />	
+						</else>
+						<applystate name="State_Stunned" duration="1500" />
+						<compare a="accumulator" b="1" op="eq">
+							<damage effecttype="Magic" amount="100" />
+						</compare>
+						<compare a="accumulator" b="2" op="eq">
+							<damage effecttype="Magic" amount="150" />
+						</compare>
+						<compare a="accumulator" b="3" op="eq">
+							<damage effecttype="Magic" amount="200" />
+						</compare>
+						<compare a="accumulator" b="4" op="eq">
+							<damage effecttype="Magic" amount="275" />
+						</compare>
+						
+						<!-- Level 1 ultimate -->
+						<hasmodifier name="DwarfMagi_Ability4_1">
+							<!-- VFX -->
+							<hasavatarkey name="Hero_DwarfMagi.Alt2">
+								<playeffect effect="../alt2/ability_01/effects/impact.effect" source="target_entity" />	
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_DwarfMagi.Alt6">
+									<hasmodifier name="dwarfmagiAlt6_Ability4_Upgrade">
+										<playeffect effect="../alt6/ability_01/effects/impact_upgrade.effect" source="target_entity" />	
+									</hasmodifier>
+									<else>
+										<playeffect effect="../alt6/ability_01/effects/impact.effect" source="target_entity" />	
+									</else>
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_DwarfMagi.Alt7">
+										<playeffect effect="../alt7/ability_01/effects/impact.effect" source="target_entity" />	
+									</hasavatarkey>
+									<else>
+										<playeffect effect="../ability_01/effects/impact.effect" source="target_entity" />
+									</else>
+								</else>
+							</else>
+							
+							<setaccumulator entity="this_entity" value="1" />
+							<chance threshold="0.2">
+								<setaccumulator entity="this_entity" value="2" />
+								<popup name="multicast" a="2" source="target_entity" target="source_entity" />
+								<spawnaffector name="Affector_DwarfMagi_Ability1_2x" target="target_entity" level="accumulator" />
+							</chance>
+							
+							<!-- VFX -->
+							<hasavatarkey name="Hero_DwarfMagi.Alt7">
+								<compare a="accumulator" b="2" op="eq">
+									<playeffect effect="../alt7/ability_01/effects/impact2x_upgrade.effect" source="target_entity" />
+								</compare>
+								<else>					
+									<playeffect effect="../alt7/ability_01/effects/impact1x_upgrade.effect" source="target_entity" />	
+								</else>	
+							</hasavatarkey>
+						</hasmodifier>
+						
+						<!-- Level 2 ultimate -->
+						<hasmodifier name="DwarfMagi_Ability4_2">
+							<!-- VFX -->
+							<hasavatarkey name="Hero_DwarfMagi.Alt2">
+								<playeffect effect="../alt2/ability_01/effects/impact.effect" source="target_entity" />	
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_DwarfMagi.Alt6">
+									<hasmodifier name="dwarfmagiAlt6_Ability4_Upgrade">
+										<playeffect effect="../alt6/ability_01/effects/impact_upgrade.effect" source="target_entity" />	
+									</hasmodifier>
+									<else>
+										<playeffect effect="../alt6/ability_01/effects/impact.effect" source="target_entity" />	
+									</else>
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_DwarfMagi.Alt7">
+										<playeffect effect="../alt7/ability_01/effects/impact.effect" source="target_entity" />	
+									</hasavatarkey>
+									<else>
+										<playeffect effect="../ability_01/effects/impact.effect" source="target_entity" />
+									</else>
+								</else>
+							</else>
+						
+							<setaccumulator entity="this_entity" value="1" />
+							<chance threshold="0.4">
+								<pushability name="Ability_DwarfMagi1" />
+								<setaccumulator source="stack_entity" value="source_level" /> <!-- Ability level -->
+								<spawnaffector name="Affector_DwarfMagi_Ability1_2x" target="target_entity" level="accumulator" />
+								
+								<!-- Multicast popup accumulator -->
+								<setaccumulator entity="this_entity" value="2" />
+								<chance threshold="0.5">
+									<pushability name="Ability_DwarfMagi1" />
+									<setaccumulator source="stack_entity" value="source_level" /> <!-- Ability level -->									
+									<spawnaffector name="Affector_DwarfMagi_Ability1_3x" target="target_entity" level="accumulator" />
+									
+									<!-- Multicast popup accumulator -->
+									<setaccumulator entity="this_entity" value="3" />
+								</chance>
+								<popup name="multicast" a="accumulator" source="target_entity" target="source_entity" />
+							</chance>
+							
+							<!-- VFX -->
+							<hasavatarkey name="Hero_DwarfMagi.Alt7">
+								<compare a="accumulator" b="3" op="eq">
+									<playeffect effect="../alt7/ability_01/effects/impact3x_upgrade.effect" source="target_entity" />
+								</compare>
+								<else>
+									<compare a="accumulator" b="2" op="eq">
+										<playeffect effect="../alt7/ability_01/effects/impact2x_upgrade.effect" source="target_entity" />
+									</compare>
+									<else>						
+										<playeffect effect="../alt7/ability_01/effects/impact1x_upgrade.effect" source="target_entity" />	
+									</else>		
+								</else>	
+							</hasavatarkey>
+						</hasmodifier>
+						
+						<!-- Level 3 ultimate -->
+						<hasmodifier name="DwarfMagi_Ability4_3">
+							<!-- VFX -->
+							<hasavatarkey name="Hero_DwarfMagi.Alt2">
+								<playeffect effect="../alt2/ability_01/effects/impact.effect" source="target_entity" />	
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_DwarfMagi.Alt6">
+									<hasmodifier name="dwarfmagiAlt6_Ability4_Upgrade">
+										<playeffect effect="../alt6/ability_01/effects/impact_upgrade.effect" source="target_entity" />	
+									</hasmodifier>
+									<else>
+										<playeffect effect="../alt6/ability_01/effects/impact.effect" source="target_entity" />	
+									</else>
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_DwarfMagi.Alt7">
+										<playeffect effect="../alt7/ability_01/effects/impact.effect" source="target_entity" />	
+									</hasavatarkey>
+									<else>
+										<playeffect effect="../ability_01/effects/impact.effect" source="target_entity" />
+									</else>
+								</else>
+							</else>
+							
+							<setaccumulator entity="this_entity" value="1" />
+							<chance threshold="0.6">
+								<pushability name="Ability_DwarfMagi1" />
+								<setaccumulator source="stack_entity" value="source_level" /> <!-- Ability level -->								
+								<spawnaffector name="Affector_DwarfMagi_Ability1_2x" target="target_entity" level="accumulator" />
+								
+								<!-- Multicast popup accumulator -->
+								<setaccumulator entity="this_entity" value="2" />
+								<chance threshold="0.5">
+									<pushability name="Ability_DwarfMagi1" />
+									<setaccumulator source="stack_entity" value="source_level" /> <!-- Ability level -->	
+									<spawnaffector name="Affector_DwarfMagi_Ability1_3x" target="target_entity" level="accumulator" />
+									
+									<!-- Multicast popup accumulator -->
+									<setaccumulator entity="this_entity" value="3" />									
+									<chance threshold="0.5">
+										<pushability name="Ability_DwarfMagi1" />
+										<setaccumulator source="stack_entity" value="source_level" /> <!-- Ability level -->
+										<spawnaffector name="Affector_DwarfMagi_Ability1_4x" target="target_entity" level="accumulator" />
+										
+										<!-- Multicast popup accumulator -->
+										<setaccumulator entity="this_entity" value="4" />
+									</chance>
+								</chance>
+								<popup name="multicast" a="accumulator" source="target_entity" target="source_entity" />
+							</chance>
+							
+							<!-- VFX -->
+							<hasavatarkey name="Hero_DwarfMagi.Alt7">
+								<compare a="accumulator" b="4" op="eq">
+									<playeffect effect="../alt7/ability_01/effects/impact4x_upgrade.effect" source="target_entity" />
+								</compare>
+								<else>
+									<compare a="accumulator" b="3" op="eq">
+										<playeffect effect="../alt7/ability_01/effects/impact3x_upgrade.effect" source="target_entity" />
+									</compare>
+									<else>
+										<compare a="accumulator" b="2" op="eq">
+											<playeffect effect="../alt7/ability_01/effects/impact2x_upgrade.effect" source="target_entity" />
+										</compare>
+										<else>
+											<playeffect effect="../alt7/ability_01/effects/impact1x_upgrade.effect" source="target_entity" />
+										</else>		
+									</else>		
+								</else>	
+							</hasavatarkey>
+						</hasmodifier>
+					</compare>
+				</cantarget>
+			</chance>
+			
+			<!-- Chance to cast Flaming Hammer -->
+			<chance threshold="0.1">
+				<cantarget targetscheme="enemy_units" effecttype="Physical Magic">
+					<pushability name="Ability_DwarfMagi2" />
+					<setaccumulator source="stack_entity" value="source_level" /> <!-- Ability level -->
+
+					<!-- Do nothing if the ability isn't leveled -->
+					<compare a="accumulator" b="0" op="gt">
+						<!-- Level of ultimate dictates the Flaming Hammer affector radius already -->
+						<applystate name="State_DwarfMagi_Ability2" duration="7500" statelevel="accumulator" />
+						<spawnaffector name="Affector_DwarfMagi_Ability2" level="accumulator" />
+					</compare>
+				</cantarget>
+			</chance>
+			
+			<!-- Chance to cast Frenzy -->
+			<chance threshold="0.1">
+				<pushability name="Ability_DwarfMagi3" />
+				<setaccumulator source="stack_entity" value="source_level" /> <!-- Ability level -->
+
+				<!-- Do nothing if the ability isn't leveled -->
+				<compare a="accumulator" b="0" op="gt">
+					<applystate name="State_DwarfMagi_Ability3" duration="30000" target="source_entity" statelevel="accumulator" />
+					
+					<!-- Level 1 ultimate -->
+					<hasmodifier name="DwarfMagi_Ability4_1">
+						<chance threshold="0.25">
+							<areaofeffect
+								radius="600"
+								maxtotalimpacts="1"
+								effecttype="Magic"
+								targetselection="random"
+								targetscheme="ally_heroes"
+								center="source_position"
+								ignore="target_entity"
+							>
+								<applystate name="State_DwarfMagi_Ability3" duration="30000" statelevel="accumulator" />
+							</areaofeffect>
+							<compare a="result" b="1" op="lt">
+								<areaofeffect
+									radius="600"
+									maxtotalimpacts="1"
+									effecttype="Magic"
+									targetselection="random"
+									targetscheme="ally_nonhero_units"
+									center="source_position"
+									ignore="target_entity"
+									>
+									<applystate name="State_DwarfMagi_Ability3" duration="30000" statelevel="accumulator" />
+								</areaofeffect>
+							</compare>	
+							<popup name="multicast" a="2" target="source_entity" />
+						</chance>
+					</hasmodifier>
+					
+					<!-- Level 2 ultimate -->
+					<hasmodifier name="DwarfMagi_Ability4_2">
+						<chance threshold="0.4">
+							<areaofeffect
+								radius="600"
+								maxtotalimpacts="1"
+								effecttype="Magic"
+								targetselection="random"
+								targetscheme="ally_heroes"
+								center="source_position"
+								ignore="target_entity"
+							>
+								<applystate name="State_DwarfMagi_Ability3" duration="30000" statelevel="accumulator" />
+							</areaofeffect>
+							<compare a="result" b="1" op="lt">
+								<areaofeffect
+									radius="600"
+									maxtotalimpacts="1"
+									effecttype="Magic"
+									targetselection="random"
+									targetscheme="ally_nonhero_units"
+									center="source_position"
+									ignore="target_entity"
+								>
+									<applystate name="State_DwarfMagi_Ability3" duration="30000" statelevel="accumulator" />
+								</areaofeffect>
+							</compare>
+							
+							<!-- Multicast popup accumulator -->
+							<setaccumulator entity="this_entity" value="2" />
+							<chance threshold="0.5">
+								<pushability name="Ability_DwarfMagi3" />
+								<setaccumulator source="stack_entity" value="source_level" /> <!-- Ability level -->
+								
+								<areaofeffect
+									radius="600"
+									maxtotalimpacts="2"
+									effecttype="Magic"
+									targetselection="random"
+									targetscheme="ally_heroes"
+									center="source_position"
+									ignore="target_entity"
+								>
+									<applystate name="State_DwarfMagi_Ability3" duration="30000" statelevel="accumulator" />
+								</areaofeffect>
+								<compare a="result" b="2" op="lt">
+									<evaluate a="2" b="result" op="sub" />
+									<areaofeffect
+										radius="600"
+										maxtotalimpacts="result"
+										effecttype="Magic"
+										targetselection="random"
+										targetscheme="ally_nonhero_units"
+										center="source_position"
+										ignore="target_entity"
+									>
+										<applystate name="State_DwarfMagi_Ability3" duration="30000" statelevel="accumulator" />
+									</areaofeffect>
+								</compare>
+								
+								<!-- Multicast popup accumulator -->
+								<setaccumulator entity="this_entity" value="3" />
+							</chance>
+							<popup name="multicast" a="accumulator" target="source_entity" />
+						</chance>
+					</hasmodifier>
+					
+					<!-- Level 3 ultimate -->
+					<hasmodifier name="DwarfMagi_Ability4_3">
+						<applystate name="State_DwarfMagi_Ability3" duration="30000" target="source_entity" statelevel="accumulator" />
+						<chance threshold="0.5">
+							<areaofeffect
+								radius="600"
+								maxtotalimpacts="1"
+								effecttype="Magic"
+								targetselection="random"
+								targetscheme="ally_heroes"
+								center="source_position"
+								ignore="target_entity"
+							>
+								<applystate name="State_DwarfMagi_Ability3" duration="30000" statelevel="accumulator" />
+							</areaofeffect>
+							<compare a="result" b="1" op="lt">
+								<areaofeffect
+									radius="600"
+									maxtotalimpacts="1"
+									effecttype="Magic"
+									targetselection="random"
+									targetscheme="ally_nonhero_units"
+									center="source_position"
+									ignore="target_entity"
+									>
+									<applystate name="State_DwarfMagi_Ability3" duration="30000" statelevel="accumulator" />
+								</areaofeffect>
+							</compare>
+							
+							<!-- Multicast popup accumulator -->
+							<setaccumulator entity="this_entity" value="2" />
+							<chance threshold="0.5">
+								<pushability name="Ability_DwarfMagi3" />
+								<setaccumulator source="stack_entity" value="source_level" /> <!-- Ability level -->
+								
+								<areaofeffect
+									radius="600"
+									maxtotalimpacts="2"
+									effecttype="Magic"
+									targetselection="random"
+									targetscheme="ally_heroes"
+									center="source_position"
+									ignore="target_entity"
+								>
+									<applystate name="State_DwarfMagi_Ability3" duration="30000" statelevel="accumulator" />
+								</areaofeffect>
+								<compare a="result" b="2" op="lt">
+									<evaluate a="2" b="result" op="sub" />
+									<areaofeffect
+										radius="600"
+										maxtotalimpacts="result"
+										effecttype="Magic"
+										targetselection="random"
+										targetscheme="ally_nonhero_units"
+										center="source_position"
+										ignore="target_entity"
+										>
+										<applystate name="State_DwarfMagi_Ability3" duration="30000" statelevel="accumulator" />
+									</areaofeffect>
+								</compare>
+								
+								<!-- Multicast popup accumulator -->
+								<setaccumulator entity="this_entity" value="3" />
+								<chance threshold="0.5">
+									<pushability name="Ability_DwarfMagi3" />
+									<setaccumulator source="stack_entity" value="source_level" /> <!-- Ability level -->
+									
+									<areaofeffect
+										radius="600"
+										maxtotalimpacts="3"
+										effecttype="Magic"
+										targetselection="random"
+										targetscheme="ally_heroes"
+										center="source_position"
+										ignore="target_entity"
+									>
+										<applystate name="State_DwarfMagi_Ability3" duration="30000" statelevel="accumulator" />
+									</areaofeffect>
+									<compare a="result" b="3" op="lt">
+										<evaluate a="3" b="result" op="sub" />
+										<areaofeffect
+											radius="600"
+											maxtotalimpacts="result"
+											effecttype="Magic"
+											targetselection="random"
+											targetscheme="ally_nonhero_units"
+											center="source_position"
+											ignore="target_entity"
+											>
+											<applystate name="State_DwarfMagi_Ability3" duration="30000" statelevel="accumulator" />
+										</areaofeffect>
+									</compare>
+									
+									<!-- Multicast popup accumulator -->
+									<setaccumulator entity="this_entity" value="4" />
+								</chance>
+							</chance>
+							<popup name="multicast" a="accumulator" target="source_entity" />
+						</chance>
+					</hasmodifier>
+				</compare>
+			</chance>
+		</onattackimpact>
+	</modifier>
+	
+	<altavatar key="Hero_DwarfMagi.Alt2" modpriority="90"
+		icon="/heroes/dwarf_magi/alt2/ability_04/icon.tga"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_DwarfMagi.Alt6" modpriority="90"
+		icon="/heroes/dwarf_magi/alt6/ability_04/icon.tga"
+	>
+	<modifier key="dwarfmagiAlt6_Ability4_Upgrade"
+		icon="/heroes/dwarf_magi/alt6/ability_04/icon_u.tga"
+	/>
+	</altavatar>
+</ability>

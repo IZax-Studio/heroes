@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="model.model" type="K2">
+
+	<anim name="idle" clip="clips/idle.clip" loop="true"/>
+	
+	<anim name="portrait" clip="clips/idle.clip" loop="true" fps="15"/>
+	
+	<anim name="bored_1" clip="clips/specialidle.clip">
+	<startevent cmd="StartEffect bat_specialidle.effect 8"/>
+		<endevent cmd="StopEffect 8" />
+	</anim>
+	
+	<anim name="taunt_1" clip="clips/dance.clip"/>
+
+	<anim name="item_1" clip="clips/touzhi.clip"/>
+	
+	<anim name="death_1" clip="clips/dead.clip" loop="true" loopbackframe="-1">
+	<frameevent frame="1" cmd="PlaySoundLinear ../kuro_sounds/156_2_Dead.wav 200 1800 .4"/>
+	<frameevent frame="1" cmd="PlaySoundLinear ../kuro_sounds2/ChloeEinzbernDefeated%.wav 0 1800 .7"/>
+	</anim>
+	
+	<anim name="walk_1" clip="clips/run.clip" loop="true" loopbackframe="1">
+		<frameevent frame="3" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="8" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="13" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="18" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		
+		<frameevent frame="3" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="13" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	</anim>
+	
+	<anim name="ability_1" clip="clips/specialidle.clip" startframe="25" numframes="60"/>
+	
+	<anim name="ability_1b" clip="clips/skill_04_3.clip" fps="10">
+		<frameevent frame="4" cmd="PlaySoundLinear ../kuro_sounds2/ChloeEinzbernAttack%.wav 400 2000 .75"/>
+		<frameevent frame="4" cmd="PlaySoundLinear ../kuro_sounds/156_0_a_fire3_zhuanshu.wav 400 2000 1"/>
+
+		<frameevent frame="6" cmd="StartEffect effects/attack_3.effect"/>
+	</anim>
+	
+	<anim name="ability_2" clip="clips/touzhi.clip">
+		<frameevent frame="5" cmd="PlaySoundLinear /heroes/scout/ability_02/sounds/cast.wav 400 2000 .65"/>
+	</anim>
+	
+	<anim name="ability_4channel" clip="clips/skill_01.clip" loop="true" loopbackframe="23">
+	<frameevent frame="45" cmd="PlaySoundLinear ../kuro_sounds/156_0_W_Fire2.wav 1000 2500 1"/>
+
+		<frameevent frame="15" cmd="PlaySoundLinear ../kuro_sounds2/ChloeEinzbernExtra_Attack.wav 400 2000 .5"/>
+		<startevent cmd="StartEffect effects/channeling.effect 0"/>
+		<endevent cmd="StopEffect 0"/>
+	</anim>
+		
+	<anim name="ability_4fire" clip="clips/skill_01_fire.clip">
+	<startevent cmd="StartEffect effects/channeling.effect 0"/>
+		<endevent cmd="StopEffect 0"/>
+	</anim>
+
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="12">
+		<frameevent frame="2" cmd="PlaySoundLinear ../kuro_sounds/156_1_Atk_Foley_0%.wav 1000 2000 1"/>
+		<frameevent frame="4" cmd="PlaySoundLinear ../kuro_sounds/156_1_Atk_Whoosh_0%.wav 400 2000 .6"/>
+	</anim>
+	
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="14">
+		<frameevent frame="2" cmd="PlaySoundLinear ../kuro_sounds/156_1_Atk_Foley_0%.wav 1000 2000 1"/>
+		<frameevent frame="4" cmd="PlaySoundLinear ../kuro_sounds/156_1_Atk_Whoosh_0%.wav 400 2000 .6"/>
+	</anim>
+	
+	<anim name="strong_attack_1" clip="clips/skill_04_1.clip" fps="10">
+		<frameevent frame="1" cmd="PlaySoundLinear ../kuro_sounds/156_1_Atk_Foley_0%.wav 1000 2000 1"/>
+		<frameevent frame="1" cmd="PlaySoundLinear ../kuro_sounds/156_0_a_fire1_zhuanshu.wav 400 2000 .5"/>
+		<frameevent frame="4" cmd="StartEffect effects/attack_1.effect"/>
+	</anim>
+	
+	<anim name="strong_attack_2" clip="clips/skill_04_2.clip" fps="10">
+		<frameevent frame="1" cmd="PlaySoundLinear ../kuro_sounds/156_1_Atk_Foley_0%.wav 1000 2000 1"/>
+		<frameevent frame="1" cmd="PlaySoundLinear ../kuro_sounds/156_0_a_fire2_zhuanshu.wav 400 2000 .5"/>
+		<frameevent frame="4" cmd="StartEffect effects/attack_2.effect"/>
+	</anim>
+	
+	<anim name="knock_1" clip="clips/dead.clip" loop="true" loopbackframe="-1"/>
+	
+	<anim name="getup_1" clip="clips/idle.clip" numframes="1"/>		
+</model>

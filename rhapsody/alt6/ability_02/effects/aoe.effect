@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  deferred="1" disable2dworld="true">
+	<definitions>
+		<particlesystem name="system0" space="world">
+			<sound
+			    delay="500"
+			    channelid="rhap_2"
+			    soundloop="true"
+				fadein="0"
+				fadeout="1000"
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".4"
+				sample="/heroes/rhapsody/alt6/sounds/new/song_%.wav"
+			/>
+			
+			<sound
+			 	falloffstart="1000"
+				falloffend="2500"
+				volume=".5"
+				sample="/heroes/rhapsody/alt10/sounds/ab2_start.wav"
+			/>
+			
+			<sound
+			    dampen="0.7"
+			 	falloffstart="1000"
+				falloffend="2500"
+				volume="1"
+				sample="/heroes/rhapsody/alt10/sounds/ab2_vox.wav"
+			/>
+			
+			<billboard
+				expirelife="400"
+				material="/shared/effects/materials/corona_08_blend.material"
+				size="800"
+				color=".3 0 0"
+				startalpha="1"
+				endalpha="0"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+			/>
+			
+			<billboard
+				expirelife="500"
+				position="0 0 .1"
+				material="/shared/effects/materials/whitedot.material"
+				startalpha=".2"
+				endalpha="0"
+				color=".3 0 0"
+				scale="10"
+				
+				size="160"
+				midsizepos=".5"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+			/>
+			
+			<simpleemitter
+				count="50"
+				spawnrate="1000"
+				minparticlelife="500"
+				maxparticlelife="750"
+				minspeed="1500"
+				maxspeed="2500"
+				drag="0.01"
+				offsetsphere="0 0 0"
+				gravity="10"
+				angle="90"
+				material="../../ability_04/effects/debris03_blend.material"
+			>
+				<particle
+					color="1 0 0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					minstartsize="50"
+					maxstartsize="100"
+					endsize="0"
+				/>
+				<particle
+					color="0 0 0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					minstartsize="50"
+					maxstartsize="100"
+					endsize="0"
+				/>
+				<particle
+					color="1 0 .3"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					minstartsize="50"
+					maxstartsize="100"
+					endsize="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				spawnrate="300"
+				minparticlelife="500"
+				maxparticlelife="750"
+				speed="20"
+				drag="0.01"
+				offsetsphere="375 375 0"
+				gravity="-30"
+				angle="90"
+				material="../../ability_04/effects/debris03_blend.material"
+			>
+				<particle
+					color="1 0 0"
+					startalpha=".3"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					minstartsize="10"
+					maxstartsize="20"
+					endsize="50"
+				/>
+				<particle
+					color="0 0 0"
+					startalpha=".3"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					minstartsize="10"
+					maxstartsize="20"
+					endsize="50"
+				/>
+			</simpleemitter>
+			
+			<controller scale="4.5">
+				<template name="position">
+				<billboard
+					material="/shared/effects/materials/volume.material"
+					position="{position}"
+					size="20"
+					roll="{roll}"
+					height="30"
+					color="1 0 0"
+					alpha=".6"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					framespeed="1.5"
+					turn="1"
+					directionalspace="local"
+				/>
+				</template>
+				<instance name="position" position="80 0 0.5" roll="-90"/>
+				<instance name="position" position="0 80 0.5" roll="180"/>
+				<instance name="position" position="-57 -57 0.5" roll="45"/>
+				<instance name="position" position="57 57 0.5" roll="225"/>
+				<template name="position">
+				<billboard
+					material="/shared/effects/materials/volume.material"
+					position="{position}"
+					size="20"
+					roll="{roll}"
+					height="30"
+					color="1 0 0"
+					alpha=".6"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					framespeed="2"
+					turn="1"
+					directionalspace="local"
+				/>
+				</template>
+				<instance name="position" position="-80 0 0.5" roll="90"/>
+				<instance name="position" position="0 -80 0.5" roll="0"/>
+				<instance name="position" position="57 -57 0.5" roll="-45"/>
+				<instance name="position" position="-57 57 0.5" roll="-225"/>
+			</controller>
+			<controller yaw="22.5" scale="4">
+				<template name="position">
+				<billboard
+					material="/shared/effects/materials/volume.material"
+					position="{position}"
+					size="15"
+					roll="{roll}"
+					height="45"
+					color="0"
+					alpha=".6"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					framespeed="1"
+					turn="1"
+					directionalspace="local"
+				/>
+				</template>
+				<instance name="position" position="75 0 .5" roll="-90"/>
+				<instance name="position" position="0 75 .5" roll="180"/>
+				<instance name="position" position="-55 -55 .5" roll="45"/>
+				<instance name="position" position="55 55 .5" roll="225"/>
+				
+				<template name="position">
+				<billboard
+					material="/shared/effects/materials/volume.material"
+					position="{position}"
+					size="15"
+					roll="{roll}"
+					height="45"
+					color="0"
+					alpha=".6"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					framespeed="1.5"
+					turn="1"
+					directionalspace="local"
+				/>
+				</template>
+				<instance name="position" position="-75 0 .5" roll="90"/>
+				<instance name="position" position="0 -75 .5" roll="0"/>
+				<instance name="position" position="55 -55 .5" roll="-45"/>
+				<instance name="position" position="-55 55 .5" roll="-225"/>
+			</controller>
+			<simpleemitter
+				spawnrate="15"
+				minparticlelife="800"
+				maxparticlelife="1300"
+				minspeed="0"
+				maxspeed="1"
+				drag="0.01"
+				inheritvelocity=".25"
+				offsetsphere="15 15 5"
+				gravity="-1"
+				material="/shared/effects/materials/whitecircle_blend.material"
+			>
+				<particle
+					startcolor="1 0 0"
+					midcolor="1 0 0"
+					endcolor="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					startsize="2.5"
+					endsize="1"
+					depthbias="-160"
+					minscale=".1"
+					maxscale=".25"
+				/>
+				
+				<particle
+					color="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					startsize="2.5"
+					endsize="1"
+					depthbias="-160"
+					minscale=".1"
+					maxscale=".25"
+				/>
+			</simpleemitter>
+			
+			<controller loop="true" life="800" startscale="1" midscale="3.5" endscale="1" yawspeed="100">
+			<billboard
+				expirelife="250"
+				startcolor="1 0 0"
+				endcolor="0"
+				size="120"
+				depthbias="-25"
+				material="/shared/effects/materials/miku_music01.material"
+				position="0 60 .5"
+				framespeed="2"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				width="250"
+				directionalspace="local"
+			/>
+			<billboard
+				expirelife="250"
+				startcolor="1 0 0"
+				endcolor="0"
+				size="120"
+				depthbias="-25"
+				material="/shared/effects/materials/miku_music01.material"
+				position="0 -60 .5"
+				framespeed="2"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				roll="180"
+				width="250"
+				directionalspace="local"
+			/>
+			</controller>
+			
+			<simpleemitter
+				spawnrate="100"
+				material="/shared/effects/materials/sparks_reveal.material"
+				minparticlelife="400"
+				maxparticlelife="800"
+				depthbias="10"
+				offsetsphere="18 18 10"
+				gravity="-1"
+			>
+				<particle
+					startcolor="0"
+					midcolor="1"
+					endcolor="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					maxangle="90"
+					startsize="10"
+					endsize="12"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					startframe=".3"
+					endframe="1"
+					minscale=".2"
+					maxscale=".3"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="33"
+				minparticlelife="600"
+				maxparticlelife="1000"
+				offsetsphere="400 400 0"
+				position="0 0 5"
+				angle="90"
+				material="/shared/effects/materials/whitesquare_blend.material"
+			>
+				<particle
+					color="1 0 0"
+					startalpha=".3"
+					midalpha=".6"
+					endalpha="0"
+					midalphapos=".2"
+					minsize="40"
+					maxsize="60"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					depthbias="-25"
+					loop="true"
+				/>
+				<particle
+					color="0 0 0"
+					startalpha=".3"
+					midalpha=".6"
+					endalpha="0"
+					midalphapos=".2"
+					minsize="40"
+					maxsize="60"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					depthbias="-25"
+					loop="true"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+                expirelife="700"
+				particlelife="2000"
+				spawnrate="30"
+				direction="0 0 1"
+				directionalspace="global"
+				gravity="-15"
+				angle="0"
+			>
+				<particle
+					maxyaw="360"
+					yawspeed="400"
+					scale="11"
+				>
+					<trailemitter
+						life="1000"
+						position="30 0 0"
+						spawnrate="100"
+						particlelife="500"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/soul_projectile_white.material"
+						startparticlecolor="0"
+						midparticlecolor="1"
+						endparticlecolor="0"
+						midparticlecolorpos=".2"
+					>
+						<particle
+							startalpha=".3"
+							midalpha=".3"
+							endalpha="0"
+							startsize="0"
+							midsize="5"
+							endsize="10"
+							midsizepos=".4"
+							startcolor="0"
+							midcolor=".6 .1 0"
+							endcolor="0"
+						/>
+					</trailemitter>
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+                expirelife="700"
+				particlelife="3000"
+				spawnrate="10"
+				direction="0 0 1"
+				directionalspace="global"
+				gravity="-5"
+				angle="0"
+			>
+				<particle
+					maxyaw="360"
+					yawspeed="400"
+					startscale="2"
+					endscale="17"
+				>
+					<trailemitter
+						life="2000"
+						position="30 0 0"
+						spawnrate="100"
+						particlelife="500"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/soul_projectile_white.material"
+						startparticlecolor="0"
+						midparticlecolor="1"
+						endparticlecolor="0"
+						midparticlecolorpos=".2"
+						depthbias="-50"
+					>
+						<particle
+							alpha=".6"
+							startsize="0"
+							midsize="5"
+							endsize="10"
+							midsizepos=".4"
+							startcolor="0"
+							midcolor=".6 .1 0"
+							endcolor="0"
+						/>
+					</trailemitter>
+				</particle>
+			</simpleemitter>
+			
+		</particlesystem>
+		
+		<particlesystem name="system1" space="entity" scale="5.5">
+			<model
+				expirelife="1000"
+				position="0 0 2"
+				scale="2.3"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				yawspeed="-200"
+				anim="idle"
+				directionalspace="global"
+			>
+				<template name="glows">
+					<controller scale=".1" bone="{bone}">
+						<simpleemitter
+							expirelife="1000"
+							spawnrate="30"
+							position="0 0 0"
+							particlelife="1000"
+							gravity="-10"
+							speed="100"
+							drag=".1"
+							direction="0 0 1"
+							material="/shared/effects/materials/sparks_reveal.material"
+							offsetsphere="10"
+							inheritvelocity=".5"
+						>
+							<particle
+								color="1"
+								startalpha="0"
+								midalpha="1"
+								endalpha="0"
+								midalphapos=".5"
+								maxangle="90"
+								startsize="50"
+								minendsize="30"
+								maxendsize="35"
+								lockup="1"
+								lockright="1"
+								pitch="90"
+								startframe=".3"
+								endframe="1"
+							/>
+						</simpleemitter>
+					</controller>
+				</template>
+				
+				<instance name="glows" bone="_bone_fx_01"/>
+				<instance name="glows" bone="_bone_fx_07"/>
+			</model>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>

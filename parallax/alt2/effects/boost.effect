@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="false">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1">
+
+			<template name="field">
+				<!-- glowy trails -->
+				<simpleemitter
+					position="0 0 65"
+					offsetsphere="0 0 20"
+					spawnrate="4"
+					particlelife="700"
+				>
+					<particle
+						anchor="1"
+					>
+						<controller
+							minyaw="{minyaw}"
+							maxyaw="{maxyaw}"
+							minyawspeed="{minyawspeed}"
+							maxyawspeed="{maxyawspeed}"
+							minpitch="5"
+							maxpitch="10"
+							minscale=".9"
+							maxscale="1.1"
+						>
+							<twopointtrailemitter
+								minlife="500"
+								maxlife="700"
+								position_a="0 50 40"
+								position_b="0 50 -40"
+								spawnrate="10"
+								particlelife="400"
+								material="/shared/effects/materials/light_trail.material"
+								texposscale="0"
+								texstretchscale="1"
+								startparticlecolor="1"
+								midparticlecolor="1"
+								endparticlecolor="0"
+								attachtoemitter="true"
+								mingravity="-20"
+								maxgravity="20"
+							>
+								<particle
+									startcolor="0"
+									midcolor="0 .15 .4"
+									endcolor="0"
+									midcolorpos=".25"
+								/>
+							</twopointtrailemitter>
+						</controller>
+					</particle>
+				</simpleemitter>
+
+				<!-- bright streaks -->
+				<simpleemitter
+					position="0 0 65"
+					offsetsphere="0 0 30"
+					spawnrate="8"
+					particlelife="600"
+				>
+					<particle
+						anchor="1"
+					>
+						<controller
+							minyaw="{minyaw}"
+							maxyaw="{maxyaw}"
+							minyawspeed="{minyawspeed}"
+							maxyawspeed="{maxyawspeed}"
+							minpitchspeed="-200"
+							maxpitchspeed="200"
+							minscale=".8"
+							maxscale="1.1"
+						>
+							<trailemitter
+								position="0 45 0"
+								minlife="400"
+								maxlife="600"
+								spawnrate="25"
+								particlelife="200"
+								material="/shared/effects/materials/trail_flex_02.material"
+								texposscale="0"
+								texstretchscale="1"
+								startparticlecolor="0"
+								midparticlecolor="1"
+								endparticlecolor="0"
+								attachtoemitter="true"
+								mingravity="-50"
+								maxgravity="10"
+							>
+								<particle
+									startcolor="0"
+									midcolor="0 .5 .4"
+									endcolor="-1 -1 0"
+									midcolorpos=".3"
+									startsize="10"
+									endsize="15"
+								/>
+							</trailemitter>
+						</controller>
+					</particle>
+				</simpleemitter>
+				<simpleemitter
+					position="0 0 65"
+					offsetsphere="0 0 30"
+					spawnrate="8"
+					particlelife="600"
+				>
+					<particle
+						anchor="1"
+					>
+						<controller
+							minyaw="{minyaw}"
+							maxyaw="{maxyaw}"
+							minyawspeed="{minyawspeed}"
+							maxyawspeed="{maxyawspeed}"
+							minpitchspeed="-200"
+							maxpitchspeed="200"
+							minscale=".8"
+							maxscale="1.1"
+						>
+							<trailemitter
+								position="0 45 0"
+								minlife="400"
+								maxlife="600"
+								spawnrate="25"
+								particlelife="200"
+								material="/shared/effects/materials/trail_03.material"
+								texposscale="0"
+								texstretchscale="1"
+								startparticlecolor="0"
+								midparticlecolor="1"
+								endparticlecolor="0"
+								attachtoemitter="true"
+								mingravity="-50"
+								maxgravity="10"
+							>
+								<particle
+									startcolor="0"
+									midcolor="1"
+									endcolor="-1 -1 0"
+									midcolorpos=".3"
+									startsize="10"
+									endsize="15"
+								/>
+							</trailemitter>
+						</controller>
+					</particle>
+				</simpleemitter>
+			</template>
+
+			<instance name="field" minyaw="0" maxyaw="20" minyawspeed="140" maxyawspeed="360" />
+			<instance name="field" minyaw="0" maxyaw="-20" minyawspeed="-140" maxyawspeed="-360" />
+
+			<!--
+			<orbiteremitter
+				position="0 0 50"
+				spawnrate="300"
+				minspeed="1"
+				maxspeed="1.5"
+				orbit="2 50 .1"
+				origin="0 0 50"
+				offset="3.14 40 10"
+				cylindrical="true"
+				minparticlelife="600"
+				maxparticlelife="1200"
+				material="/shared/effects/materials/water_spray_add_reveal.material"
+			>
+				<particle
+					maxangle="360"
+					startcolor="0"
+					midcolor="1 0 0"
+					endcolor="0"
+					minsize="12"
+					maxsize="20"
+					anchor="1"
+					startframe="0"
+					endframe="1"
+					startscale=".5"
+					endscale="1"
+				/>
+			</orbiteremitter>
+			-->
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

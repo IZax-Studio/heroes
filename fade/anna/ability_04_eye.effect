@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+		
+
+
+				
+				
+				<billboard
+					expirelife="500"
+					bone="_bone_righteye"
+					delay="200"
+					position="0 0 0"
+					startcolor="1 .2 1"
+					endcolor="0 0 0"
+					size="15"
+					depthbias="-1"
+					material="/shared/effects/materials/flare_01.material"
+				/>
+
+				<billboard
+					expirelife="500"
+					bone="_bone_righteye"
+					delay="200"
+					position="0 0 0"
+					startcolor=".5 0 .5"
+					endcolor="0 0 0"
+					size="2"
+					depthbias="-1"
+					material="/shared/effects/materials/whitedot.material"
+				/>			
+		
+
+			
+			<billboard
+					expirelife="500"
+					bone="_bone_lefteye"
+					delay="200"
+					position="0 0 0"
+					startcolor="1 .2 1"
+					endcolor="0 0 0"
+					size="15"
+					depthbias="-1"
+					material="/shared/effects/materials/flare_01.material"
+				/>
+
+				<billboard
+					expirelife="500"
+					bone="_bone_lefteye"
+					delay="200"
+					position="0 0 0"
+					startcolor=".5 0 .5"
+					endcolor="0 0 0"
+					size="2"
+					depthbias="-1"
+					material="/shared/effects/materials/whitedot.material"
+				/>			
+				
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance2" particlesystem="system2" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance2" />
+	</thread>
+</effect>

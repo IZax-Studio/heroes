@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			<sound
+				life="5000"
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="1300"
+				volume=".5"				
+				sample="cast.wav" 
+			/>		
+			<sound
+				life="5000"
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="1300"
+				volume="1"				
+				sample="108689688.wav" 
+			/>
+			<trailemitter
+				position="0 0 120"
+				spawnrate="50"
+				particlelife="250"
+				material="/shared/effects/materials/techno_reveal.material"
+				texposscale="1"
+				texpostime="1000"
+				texstretchscale="1"
+			>
+				<particle
+					startcolor="0"
+					midcolor="0 .5 1"
+					midcolorpos=".15"
+					endcolor="0"
+					startframe="0"
+					endframe="1"
+					size="55"
+				/>
+			</trailemitter>
+			
+			<simpleemitter
+				count="1"
+				position="0 5 100"
+				particlelife="500"
+				material="/shared/effects/materials/corona_07.material"
+			>
+				<particle
+					startsize="60"
+					endsize="300"
+					lockup="1"
+					pitch="90"
+					loop="1"
+					anchor="1"
+					startcolor="0 .5 1"
+					endcolor="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="5"
+				position="0 5 100"
+				particlelife="500"
+				material="/shared/effects/materials/corona_07.material"
+			>
+				<particle
+					startsize="60"
+					endsize="300"
+					lockup="1"
+					pitch="90"
+					loop="1"
+					anchor="1"
+					startcolor="0 .5 1"
+					endcolor="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				position="0 0 120"
+				offsetcube="35 10 70"
+				spawnrate="75"
+				minparticlelife="300"
+				maxparticlelife="600"
+				direction="0 1 0"
+				angle="0"
+				maxspeed="10"
+				inheritvelocity=".1"
+				particledirectionalspace="local"
+				material="/shared/effects/materials/whitesquare.material"
+			>
+				<particle
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					minsize="10"
+					maxsize="30"
+					startheightdistort=".2"
+					endheightdistort="0"
+					startcolor="0 0 0"
+					midcolor=".0 .35 .7"
+					midcolorpos=".15"
+					endcolor="0"
+					startscale="1"
+					endscale="0"
+				/>
+
+			</simpleemitter>
+			
+			<simpleemitter
+				position="0 0 120"
+				offsetcube="35 10 70"
+				spawnrate="150"
+				minparticlelife="300"
+				maxparticlelife="600"
+				direction="0 1 0"
+				angle="0"
+				maxspeed="10"
+				inheritvelocity=".1"
+				particledirectionalspace="local"
+				material="/shared/effects/materials/whitesquare.material"
+			>
+				<particle
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					minsize="10"
+					maxsize="30"
+					startheightdistort=".2"
+					endheightdistort="0"
+					startcolor="0 0 0"
+					midcolor="0 .5 1"
+					midcolorpos=".15"
+					endcolor="0"
+					startscale=".25"
+					endscale="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				position="0 0 120"
+				offsetcube="35 10 70"
+				spawnrate="75"
+				minparticlelife="300"
+				maxparticlelife="600"
+				direction="0 1 0"
+				angle="0"
+				maxspeed="10"
+				inheritvelocity=".1"
+				particledirectionalspace="local"
+				material="/shared/effects/materials/whitesquare_blend.material"
+			>
+				<particle
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					minsize="10"
+					maxsize="30"
+					startheightdistort=".2"
+					endheightdistort="0"
+					color="0"
+					startalpha="0"
+					midalpha=".7"
+					midalphapos=".15"
+					endcolor="0"
+					startscale="1"
+					endscale="0"
+				/>
+
+			</simpleemitter>
+			
+			<simpleemitter
+				position="0 0 120"
+				offsetcube="35 10 70"
+				spawnrate="150"
+				minparticlelife="300"
+				maxparticlelife="600"
+				direction="0 1 0"
+				angle="0"
+				maxspeed="10"
+				inheritvelocity=".1"
+				particledirectionalspace="local"
+				material="/shared/effects/materials/whitesquare_blend.material"
+			>
+				<particle
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					minsize="10"
+					maxsize="30"
+					startheightdistort=".2"
+					endheightdistort="0"
+					color="0"
+					startalpha="0"
+					midalpha="1"
+					midalphapos=".15"
+					endalpha="0"
+					startscale=".25"
+					endscale="0"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

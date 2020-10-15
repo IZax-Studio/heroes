@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".75">
+
+	<template name="sparks">
+		<simpleemitter
+			bone="{bone}"
+			spawnrate="70"
+			minspeed="50"
+			maxspeed="100"
+			particlelife="500"
+			gravity="7"
+			life="1200"
+			material="/shared/effects/materials/spark_10.material"
+		>
+			<particle
+				minangle="0"
+				maxangle="360"
+				minanglespeed="100"
+				maxanglespeed="200"
+				startcolor="1 1 0"
+				midcolor="1 1 0"
+				endcolor="0"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				startsize="10"
+				endsize="30"
+				minscale=".25"
+				maxscale=".5"
+			/>
+		</simpleemitter>
+	</template>
+	
+	<instance name="sparks" bone="Bip01 R Forearm" />
+	<instance name="sparks" bone="Bip01 L Forearm" />
+	<instance name="sparks" bone="Bip01 Head" />
+	<instance name="sparks" bone="Bip01 R Calf" />
+	<instance name="sparks" bone="Bip01 L Calf" />
+	
+			<simpleemitter
+				bone="_bone_centerofchest"
+				life="1000"
+				spawnrate="15"
+				minparticlelife="100"
+				maxparticlelife="200"
+				offsetsphere="40"
+				material="/shared/effects/materials/lightning_01.material"
+			>
+				<particle
+					startcolor="1 1 1"
+					midcolor="1 0 0"
+					endcolor="0"
+					size="50"
+					minscale=".25"
+					maxscale="1"
+					minangle="0"
+					maxangle="360"
+					startframe="0"
+					endframe="1"
+					anchor="1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				life="1000"
+				spawnrate="20"
+				minparticlelife="150"
+				maxparticlelife="200"
+				offsetsphere="50"
+				material="/shared/effects/materials/lightning_02.material"
+			>
+				<particle
+					startcolor="1 1 1"
+					midcolor="1 0 0"
+					endcolor="0"
+					size="50"
+					minscale=".25"
+					maxscale="2"
+					minangle="0"
+					maxangle="360"
+					startframe="0"
+					endframe="1"
+				/>
+			</simpleemitter>
+			
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath  instance="instance0"/>
+
+	</thread>
+
+</effect>

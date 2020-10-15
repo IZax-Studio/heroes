@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Magmar_Ability1_Self"
+	
+	icon="1.jpg"
+	
+	passiveeffect="effects/state.effect"
+	disarmed="true"
+	stunned="true"
+	stunneddurationunmodifiable="true"
+	invulnerable="true"
+>
+	<onexpired>
+		<playanim name="emerge" target="source_entity" />
+		<playeffect effect="effects/steam.effect" target="source_entity" occlude="true" />
+	</onexpired>
+	
+	<altavatar key="Hero_Magmar.Alt3" modpriority="1"
+		passiveeffect="../alt3/ability_01/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Magmar.Alt4" modpriority="1"
+		passiveeffect="../alt4/ability_01/effects/state.effect"
+		icon="../alt4/ability_01/icon.tga"
+	>
+	<onexpired>
+		<playanim name="emerge" target="source_entity" />
+		<playeffect effect="../alt4/ability_01/effects/steam.effect" target="source_entity" occlude="true" />
+	</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_Magmar.Alt5" modpriority="1"
+		passiveeffect="../alt5/ability_01/effects/state.effect"
+	>
+		<onexpired>
+			<playanim name="emerge" target="source_entity" />
+			<playeffect effect="../alt5/ability_01/effects/steam.effect" target="source_entity" occlude="true" />
+		</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_Magmar.Alt6" modpriority="1"
+		passiveeffect="../alt6/ability_01/effects/state.effect"
+	>
+		<onexpired>
+			<playanim name="emerge" target="source_entity" />
+			<playeffect effect="../alt6/ability_01/effects/steam.effect" target="source_entity" occlude="true" />
+		</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_Magmar.Alt7" modpriority="1"
+		passiveeffect="../alt7/ability_01/effects/state.effect"
+	>
+		<onexpired>
+			<playanim name="emerge" target="source_entity" />
+			<playeffect effect="../alt7/ability_01/effects/steam.effect" target="source_entity" occlude="true" />
+		</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_Magmar.Alt9" modpriority="1"
+		passiveeffect="../alt9/ability_01/effects/state.effect"
+	>
+		<onexpired>
+			<playanim name="emerge" target="source_entity" />
+			<playeffect effect="../alt9/ability_01/effects/steam.effect" target="source_entity" occlude="true" />
+		</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_Magmar.set_ascension" modpriority="1"
+		passiveeffect="../set_ascension/ability_01/effects/state.effect"
+	>
+		<onexpired>
+			<playanim name="emerge" target="source_entity" />
+			<playeffect effect="../set_ascension/ability_01/effects/steam.effect" target="source_entity" occlude="true" />
+		</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_Magmar.Alt11" modpriority="1"
+		passiveeffect="../alt11/ability_01/effects/state.effect"
+	>
+		<onexpired>
+			<playanim name="emerge" target="source_entity" />
+			<playeffect effect="../alt11/ability_01/effects/steam.effect" target="source_entity" occlude="true" />
+		</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_Magmar.Alt12" modpriority="1"
+		passiveeffect="../alt12/ability_01/effects/state.effect"
+	>
+		<onexpired>
+			<playanim name="emerge" target="source_entity" />
+			<playeffect effect="../alt12/ability_01/effects/steam.effect" target="source_entity" occlude="true" />
+		</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_Magmar.Alt13" modpriority="1"
+		passiveeffect="../alt13/ability_01/effects/state.effect"
+	>
+		<onexpired>
+			<playanim name="emerge" target="source_entity" />
+			<playeffect effect="../alt13/ability_01/effects/steam.effect" target="source_entity" occlude="true" />
+		</onexpired>
+	</altavatar>
+	
+</state>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Hammerstorm_Ability1"
+
+	speed="1300"
+	gravity="0"
+
+	modelscale="2.5"
+	model="/shared/models/invis.mdf"
+
+	effectscale="2.0"
+	impacteffect="projectile/effects/ability_01_impact.effect"
+	traileffect="affector.effect"
+
+>
+	<onimpact>
+		<combatevent effecttype="AbilityBasedProjectile">
+			<onimpact>
+				<spawnaffector name="Affector_Hammerstorm_Ability1" target="this_position" />
+				
+				<!-- Staff of the Master -->
+				<hasmodifier name="ult_boost" entity="source_entity">
+					<spawnunit name="Gadget_Hammerstorm_Ability1" target="this_position" offset="0 0 300" pushentity="true" />
+					<setproxy entity="this_proxy_entity" target="stack_entity" />
+					<applystate name="State_Hammerstorm_Ability1" target="source_entity" duration="3000" proxy="stack_entity" />
+					<starttimer duration="3000" entity="this_proxy_entity" />
+				</hasmodifier>
+			</onimpact>
+		</combatevent>
+	</onimpact>
+
+	<modifier key="ult_boost" modpriority="100"
+		speed="3000"
+	>
+	</modifier>
+
+	<altavatar key="Hero_Hammerstorm.Alt2" modpriority="1"
+		gravity="4000"
+		model="../alt2/ability_01/projectile/model.mdf"
+		impacteffect="../alt2/ability_01/projectile/effects/ability_01_impact.effect"
+	>
+		<modifier key="Alt2_Sin_Set_Bonus" modpriority="2"
+			model="../alt2/sin_set_bonus/ability_01/projectile/model.mdf"
+			impacteffect="../alt2/sin_set_bonus/ability_01/projectile/effects/ability_01_impact.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Hammerstorm.Alt4" modpriority="1"
+		modelscale="1.5"
+		gravity="4000"
+		model="../alt4/effects/ability_01/projectile/model.mdf"
+	/>
+	
+	<altavatar key="Hero_Hammerstorm.Alt5" modpriority="1"
+		gravity="4000"
+		model="../alt5/effects/ability_01/projectile/model.mdf"
+	>
+		<modifier key="ability4_alt5" modpriority="2"
+			model="../alt5/effects/ability_01/projectile2/model.mdf"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Hammerstorm.Alt6" modpriority="1"
+		model="../alt6/effects/ability_01/projectile/model.mdf"
+		impacteffect="../alt6/effects/ability_01/projectile/effects/ability_01_impact.effect"
+	/>
+	
+	<altavatar key="Hero_Hammerstorm.Alt7" modpriority="1"
+		model="../alt7/ability_01/effects/projectile/model.mdf"
+		traileffect="../alt7/ability_01/effects/trail.effect"
+		impacteffect="../alt7/ability_01/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Hammerstorm.Alt8" modpriority="1"
+		model="../alt8/ability_01/effects/projectile/model.mdf"
+		traileffect="../alt8/ability_01/effects/trail.effect"
+		impacteffect="../alt8/ability_01/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Hammerstorm.Alt9" modpriority="1"
+		model="../alt9/ability_01/effects/projectile/model.mdf"
+		impacteffect="../alt9/ability_01/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Hammerstorm.Alt10" modpriority="1"
+		model="../alt10/ability_01/effects/projectile/model.mdf"
+		traileffect="../alt10/ability_01/effects/trail.effect"
+		impacteffect="../alt10/ability_01/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Hammerstorm.Alt11" modpriority="1"
+		icon="/heroes/Hammerstorm/alt11/ability_01/icon.tga"
+		model="../alt11/ability_01/effects/projectile/model.mdf"
+		modelscale="3"
+		traileffect="../alt11/ability_01/effects/trail.effect"
+		impacteffect="../alt11/ability_01/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Hammerstorm.Alt12" modpriority="1"
+		model="../alt12/ability_01/projectile/model.mdf"
+		impacteffect="../alt12/ability_01/effects/impact.effect"
+	/>
+	
+	<modifier key="Combo_efx_hammerstorm" modpriority="1"
+		model="../alt12/ability_01/projectile/model.mdf"
+		impacteffect="../alt12/ability_01/effects/impact_combo.effect"
+	/>
+	
+	<altavatar key="Hero_Hammerstorm.Alt13" modpriority="1"
+		model="../alt13/ability_01/effects/projectile/model.mdf"
+		impacteffect="../alt13/ability_01/effects/ability_01_impact.effect"
+		traileffect="../alt13/ability_01/effects/ability_01_projectile.effect"
+	/>
+</projectile>

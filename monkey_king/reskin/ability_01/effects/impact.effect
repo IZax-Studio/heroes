@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+
+	<definitions>
+		
+		
+		<modifier
+			name="modifier0"
+			startcolor="4 2 0"
+			endcolor="1 1 1"
+			alpha="1"
+			life="250"
+		/>
+
+		<particlesystem name="system2" space="world" scale=".5">
+		
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".30" 
+				sample="../../sounds/impact_%.wav"
+			/>
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".30"
+				sample="../../sounds/attack_%.wav"
+			/>
+
+			<billboard
+				bone="_bone_centerofchest"
+				life="1000"
+				startcolor="1 .25 0"
+				midcolor=".5 0 0"
+				midcolorpos="0.3"
+				endcolor="0"
+				startsize="350"
+				endsize="0"
+				depthbias="0"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="350"
+				param="0.1"	
+				startsize="100"
+				endsize="300"
+				startalpha="0"
+				midalpha=".4"
+				endalpha="0"				
+				depthbias="0"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				delay="175"
+				life="350"
+				param="0.1"	
+				startsize="100"
+				endsize="300"
+				startalpha="0"
+				midalpha=".4"
+				endalpha="0"				
+				depthbias="0"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+		
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<spawnparticlesystem instance="instance2" particlesystem="system2"/>
+		<spawnmodifier instance="instance1" modifier="modifier0"/> 
+		<waitfordeath instance="instance0"/>
+		<waitfordeath instance="instance2"/>
+	</thread>
+
+</effect>

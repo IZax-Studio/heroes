@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="scarlet_witch_infinity_war/model.model" type="K2">
+
+	<anim name="idle" clip="scarlet_witch_infinity_war/clips/store_1.clip" loop="true" loopbackframe="81"/>
+	
+</model>

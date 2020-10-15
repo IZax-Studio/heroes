@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_RiftmageAttack"
+
+	speed="700"
+	gravity="1000"
+	canturn="false"
+	modelscale="0.35"
+
+	model="/shared/models/invis.mdf"
+	traileffect="effects/trail.effect"
+	impacteffect="effects/impact.effect"
+>
+	<altavatar key="Hero_Riftmage.Alt4"
+		traileffect="../alt4/effects/trail.effect"
+		impacteffect="../alt4/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Riftmage.Alt5"
+		traileffect="../alt5/projectile/effects/trail.effect"
+		impacteffect="../alt5/projectile/effects/impact.effect"
+	/>
+
+</projectile>

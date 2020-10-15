@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true" useentityeffectscale="1">
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale="1.25">
+		
+			<billboard
+				bone="_bone_centerofchest"
+				expirelife="250"
+				startcolor="0 .06 .09"
+				endcolor="0"
+				midcolorpos="0.3"
+				startsize="250"
+				endsize="0"
+				depthbias="-25"
+				material="/shared/effects/materials/whitedot.material"
+				position="0 0 0"
+			/>
+			
+			<billboard
+				expirelife="250"
+				bone="_bone_centerofchest"
+				startcolor="0 .225 .225"
+				endcolor="0 0 0"
+				size="125"
+				position="0 0 0"
+				material="/heroes/drunkenmaster/effects/material.material"
+				lockup="1"
+				lockright="1"
+				rollspeed="360"
+				pitch="90"
+				yawspeed="0"
+				directionalspace="local"
+			/>
+			
+			<billboard
+				expirelife="250"
+				bone="_bone_center"
+				startcolor="0 .225 .225"
+				endcolor="0 0 0"
+				size="125"
+				position="0 0 0"
+				material="/heroes/drunkenmaster/effects/material.material"
+				lockup="1"
+				lockright="1"
+				rollspeed="360"
+				pitch="90"
+				yawspeed="0"
+				directionalspace="local"
+			/>
+			
+			<template name="notes">			
+				<model
+					bone="_bone_centerofchest"
+					model="/shared/effects/models/circle_of_bones/model.mdf"
+					scale="2.5"
+					yawspeed="-200"
+					alpha="0"
+					anim="idle"
+					expirelife="100"
+					yaw="{yaw}"
+					minrollspeed="-50"
+					maxrollspeed="50"
+					minpitchspeed="-50"
+					maxpitchspeed="50"
+					directionalspace="global"
+				>
+					<model
+						bone="_bone_fx_01"
+						model="/heroes/rhapsody/alt7/ability_01/effects/note/model.mdf"
+						scale=".6"
+						yawspeed="-75"
+						expirelife="90"
+						startalpha=".5"
+						endalpha="0"
+						maxyaw="359"
+						color="0 2.06 2.09"
+					>
+						<model
+							model="/heroes/rhapsody/alt7/ability_01/effects/note/model.mdf"
+							material="../../effects/opal.material"
+							scale="1"
+							expirelife="90"
+							startalpha=".5"
+							endalpha="0"
+							color="0 2.06 2.09"
+						/>
+					</model>
+				</model>
+			</template>
+			
+			<instance name="notes" yaw="0" />
+			<instance name="notes" yaw="120" />
+			<instance name="notes" yaw="240" />
+<!--
+			<simpleemitter
+				spawnrate="35"
+				bone="_bone_centerofchest"
+				minparticlelife="500"
+				maxparticlelife="750"
+				speed="300"
+				drag="0.10"
+				material="/shared/effects/materials/whitedot.material"
+				offsetsphere="10 10 10"
+				position="0 0 0"
+				depthbias="0"
+			>
+				<particle
+					turn="1"
+					heightdistort=".1"
+					width=".75"
+					startscale="15"
+					minendscale="0"
+					maxendscale="5"
+					startcolor=".05 .15 0"
+					midcolor=".05 .15 0"
+					endcolor="0 0 0"
+					midcolorpos=".25"
+				/>
+				<particle
+					turn="1"
+					heightdistort=".1"
+					width=".75"
+					startscale="15"
+					minendscale="0"
+					maxendscale="5"
+					startcolor=".15 0 0"
+					midcolor=".15 0 0"
+					endcolor="0 0 0"
+					midcolorpos=".25"
+				/>
+				<particle
+					turn="1"
+					heightdistort=".1"
+					width=".75"
+					startscale="15"
+					minendscale="0"
+					maxendscale="5"
+					startcolor="0 0 .15"
+					midcolor="0 0 .15"
+					endcolor="0 0 0"
+					midcolorpos=".25"
+				/>
+				
+				<particle
+					turn="1"
+					heightdistort=".1"
+					width=".75"
+					startscale="15"
+					minendscale="0"
+					maxendscale="5"
+					startcolor="0 .1 0"
+					midcolor="0 .1 0"
+					endcolor="0 0 0"
+					midcolorpos=".25"
+				/>
+				
+				<particle
+					turn="1"
+					heightdistort=".1"
+					width=".75"
+					startscale="15"
+					minendscale="0"
+					maxendscale="5"
+					startcolor="0 .05 .175"
+					midcolor="0 .05 .175"
+					endcolor="0 0 0"
+					midcolorpos=".25"
+				/>
+			</simpleemitter>
+-->
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="500"
+				startcolor="0 0 0"
+				midcolor="0 .35 0"
+				endcolor="0"
+				startsize="175"
+				endsize="175"
+				depthbias="-25"
+				material="/shared/effects/materials/whitedot.material"
+				loop="true"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="500"
+				param="0.1"	
+				startsize="50"
+				endsize="300"
+				startalpha="0"
+				midalpha=".5"
+				endalpha="0"
+				midalphapos=".25"				
+				depthbias="-35"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				loop="true"
+			/>
+			
+
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

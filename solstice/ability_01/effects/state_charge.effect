@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+	<definitions>
+		<modifier
+			name="modifier0"
+			color="1.5 1 1"
+		/>
+		<particlesystem name="system0" space="world" >
+			
+
+<sound
+			    life="5500"
+				volume="1"
+				sample="/heroes/solstice/ability_01/sounds/cast.wav"
+				linearfalloff="true"
+				falloffstart="1200"
+				falloffend="2000"
+			/>
+
+<sound
+			    life="5500"
+				volume=".35"
+				sample="cast_ball.wav"
+				linearfalloff="true"
+				falloffstart="1200"
+				falloffend="2000"
+			/>
+			
+
+
+			<sound
+			    fadein="50"
+				fadeout="250"
+				sample="/heroes/solstice/ability_01/sounds/state.wav"
+				soundloop="true"
+				falloffstart="1200"
+				linearfalloff="true"
+				falloffend="2000"
+				volume=".2"
+			/>
+
+
+
+
+
+			<template name="flame">
+				<twopointemitter
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					spawnrate="50"
+					particlelife="400"
+					material="/shared/effects/materials/fire_add.material"
+					drag=".01"
+					angle="0"
+					speed="0"
+					gravity="-3"
+					offsetsphere="5"
+				>
+					<particle
+						startcolor=".3 .1 0"
+						midcolor="1 .2 0"
+						endcolor="0"
+						startsize="3"
+						endsize="15"
+						startalpha=".35"
+						midalpha=".8"
+						endalpha="0"
+						maxangle="360"
+						minanglespeed="-300"
+						maxanglespeed="300"
+					/>
+				</twopointemitter>
+				<twopointemitter
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					spawnrate="25"
+					particlelife="400"
+					material="/shared/effects/materials/soul_projectile2.material"
+					drag=".01"
+					angle="0"
+					speed="0"
+					gravity="-3"
+					offsetsphere="5"
+				>
+					<particle
+						startcolor=".3 .1 0"
+						midcolor="1 .2 0"
+						endcolor="0"
+						startsize="3"
+						endsize="15"
+						startalpha=".35"
+						midalpha=".8"
+						endalpha="0"
+						maxangle="360"
+						minanglespeed="-300"
+						maxanglespeed="300"
+					/>
+					<particle
+						startcolor=".3 .2 0"
+						midcolor="1 .5 0"
+						endcolor="0"
+						startsize="3"
+						endsize="15"
+						startalpha=".35"
+						midalpha=".8"
+						endalpha="0"
+						maxangle="360"
+						minanglespeed="-300"
+						maxanglespeed="300"
+					/>
+				</twopointemitter>
+				<twopointemitter
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					spawnrate="25"
+					particlelife="400"
+					
+					drag=".01"
+					angle="0"
+					speed="0"
+					gravity="-3"
+					offsetsphere="5"
+				>
+					<particle
+						startcolor=".3 .1 0"
+						midcolor="1 .2 0"
+						endcolor="0"
+						startsize="3"
+						endsize="15"
+						startalpha=".35"
+						midalpha=".8"
+						endalpha="0"
+						maxangle="360"
+						minanglespeed="-300"
+						maxanglespeed="300"
+					/>
+					<particle
+						startcolor=".3 .2 0"
+						midcolor="1 .5 0"
+						endcolor="0"
+						startsize="3"
+						endsize="15"
+						startalpha=".35"
+						midalpha=".8"
+						endalpha="0"
+						maxangle="360"
+						minanglespeed="-300"
+						maxanglespeed="300"
+					/>
+				</twopointemitter>
+				<twopointemitter
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					spawnrate="25"
+					particlelife="500"
+					angle="0.0"
+					offsetsphere="5"
+					material="/shared/effects/materials/phantom_black.material"
+				>
+					<particle
+						startalpha="0"
+						midalpha=".85"
+						endalpha="0"
+						maxangle="360"
+						minanglespeed="-45"
+						maxanglespeed="45"
+						startsize="35"
+						endsize="10"
+					/>
+				</twopointemitter>
+				<twopointtrailemitter
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					spawnrate="100"
+					particlelife="500"
+					angle="0.0"
+					material="/shared/effects/materials/swoosh_add.material"
+					texstretchscale="1"
+					texposscale="0"
+					texpostime="500"
+					subframepos="1"
+				>
+					<particle
+						startcolor=".8 0 0"
+						midcolor=".4 .3 0"
+						endcolor="0"
+					/>
+				</twopointtrailemitter>
+			</template>
+			
+			<instance name="flame" bone_a="_bone_lefthand" bone_b="_bone_righthand"/>
+			<instance name="flame" bone_a="_bone_rightfoot" bone_b="_bone_leftfoot"/>
+			<instance name="flame" bone_a="_bone_weapon1" bone_b="_bone_weapon2"/>
+			<instance name="flame" bone_a="_bone_weapon3" bone_b="_bone_centerofchest"/>
+			
+			<twopointemitter
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+				spawnrate="50"
+				particlelife="400"
+				material="/shared/effects/materials/fire_add.material"
+				drag=".01"
+				angle="0"
+				speed="0"
+				gravity="-3"
+				offsetsphere="5"
+			>
+				<particle
+					startcolor=".3 .1 0"
+					midcolor="1 .2 0"
+					endcolor="0"
+					startsize="3"
+					endsize="15"
+					startalpha=".35"
+					midalpha=".8"
+					endalpha="0"
+					maxangle="360"
+					minanglespeed="-300"
+					maxanglespeed="300"
+				/>
+			</twopointemitter>
+			<twopointemitter
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+				spawnrate="25"
+				particlelife="400"
+				material="/shared/effects/materials/soul_projectile2.material"
+				drag=".01"
+				angle="0"
+				speed="0"
+				gravity="-3"
+				offsetsphere="5"
+			>
+				<particle
+					startcolor=".3 .1 0"
+					midcolor="1 .2 0"
+					endcolor="0"
+					startsize="3"
+					endsize="15"
+					startalpha=".35"
+					midalpha=".8"
+					endalpha="0"
+					maxangle="360"
+					minanglespeed="-300"
+					maxanglespeed="300"
+				/>
+				<particle
+					startcolor=".3 .2 0"
+					midcolor="1 .5 0"
+					endcolor="0"
+					startsize="3"
+					endsize="15"
+					startalpha=".35"
+					midalpha=".8"
+					endalpha="0"
+					maxangle="360"
+					minanglespeed="-300"
+					maxanglespeed="300"
+				/>
+			</twopointemitter>
+			<twopointemitter
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+				spawnrate="25"
+				particlelife="400"
+								drag=".01"
+				angle="0"
+				speed="0"
+				gravity="-3"
+				offsetsphere="5"
+			>
+				<particle
+					startcolor=".3 .1 0"
+					midcolor="1 .2 0"
+					endcolor="0"
+					startsize="3"
+					endsize="15"
+					startalpha=".35"
+					midalpha=".8"
+					endalpha="0"
+					maxangle="360"
+					minanglespeed="-300"
+					maxanglespeed="300"
+				/>
+				<particle
+					startcolor=".3 .2 0"
+					midcolor="1 .5 0"
+					endcolor="0"
+					startsize="3"
+					endsize="15"
+					startalpha=".35"
+					midalpha=".8"
+					endalpha="0"
+					maxangle="360"
+					minanglespeed="-300"
+					maxanglespeed="300"
+				/>
+			</twopointemitter>
+			<twopointemitter
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+				spawnrate="25"
+				particlelife="500"
+				angle="0.0"
+				offsetsphere="5"
+				material="/shared/effects/materials/phantom_black.material"
+			>
+				<particle
+					startalpha="0"
+					midalpha=".85"
+					endalpha="0"
+					maxangle="360"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					startsize="35"
+					endsize="10"
+				/>
+			</twopointemitter>
+				
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance1" particlesystem="system0" />
+		<spawnmodifier instance="instance0" modifier="modifier0"/>
+		<waitfordeath  instance="instance0"/>
+		<waitfordeath  instance="instance1"/>
+	</thread>
+</effect>

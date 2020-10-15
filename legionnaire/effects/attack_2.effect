@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world">
+		
+			<template name="swing">
+				<controller life="200" position="20 20 60">
+					<billboard
+						life="200"
+						material="{mat}.material"
+						startcolor="0 0 0"
+						midcolor=".3 .1 0"
+						endcolor="0 0 0"
+						size="{size}"
+						depthbias="-30"
+						startroll="90"
+						endroll="420"
+						directionalspace="local"
+						lockup="true"
+						lockright="true"
+						pitch="95"
+						yaw="0"
+					/>
+				</controller>
+			</template>
+
+			<instance name="swing" mat="Daoguang_df_02b" size="200"/>
+			<instance name="swing" mat="Daoguang_df_03" size="250"/>
+			
+		</particlesystem>
+	
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+
+		<modifier 
+			name="modifier0"
+			color="1"
+			life="1000"
+		/>
+
+		<particlesystem name="system0" space="world" scale=".5">
+
+		<sound
+			
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume="0.8"
+				sample="/heroes/forsaken_archer/sounds/attack_1.ogg"
+			/>
+			
+			<sound
+			    delay="1100"
+				volume=".6"
+				sample="/heroes/forsaken_archer/ability_01/sounds/end_cast.wav"
+				linearfalloff="true"
+				falloffstart="0" 
+				falloffend="800" 
+			/>
+			
+			<sound
+			    delay="1100"
+				volume=".9"
+				sample="/heroes/forsaken_archer/sounds/move_%.wav"
+				linearfalloff="true"
+				falloffstart="0" 
+				falloffend="800" 
+			/>
+			
+			<model
+				life="1600"
+				name="spin"
+				model="/heroes/forsaken_archer/model3.mdf"
+				anim="idle"
+				startcolor="5 2 1"
+				endcolor="1 2 5"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				scale="2"
+			/>
+
+			<twopointemitter
+				timenudge="0"
+				life="1000"
+				depthbias="-30"
+				position_a="0 0 0"
+				position_b="0 0 10"
+				spawnrate="100"
+				minparticlelife="50"
+				maxparticlelife="1200"
+				offsetsphere="80 80 0"
+				speed="100"
+				material="/shared/effects/materials/dust.material"
+				expirelife="1000"
+				startparticlealpha="0"
+				midparticlealpha="0"
+				endparticlealpha="1"
+			>
+				<particle
+					startcolor="0 .2 0"
+					endcolor="-1"
+					startalpha=".8"
+					endalpha="0"
+					maxangle="360"
+					startsize="50"
+					endsize="120"
+					startanchor="1"
+					endanchor="0"
+			/>
+			</twopointemitter>
+			
+
+			<twopointemitter
+				life="0"
+				depthbias="-30"
+				position_a="0 0 0"
+				position_b="0 0 30"
+				spawnrate="200"
+				minparticlelife="200"
+				maxparticlelife="1200"
+				offsetsphere="40"
+				speed="100"
+				material="/shared/effects/materials/phantom_smoke_03.material"
+				expirelife="1000"
+				startparticlealpha="0"
+				midparticlealpha="0"
+				endparticlealpha="1"
+			>
+				<particle
+					startcolor="0 1 0"
+					midcolor="0 1 0"
+					endcolor="0"
+					midcolorpos="0.3"
+					startalpha="1.0"
+					endalpha="1.0"
+					maxangle="360"
+					startsize="20"
+					endsize="120"
+					startanchor="1"
+					endanchor="0"
+				/>
+			</twopointemitter>
+			
+			<billboard
+				delay="100"
+				life="200"
+				bone="Bip01 Spine1"
+				depthbias="-60"
+				material="/shared/effects/materials/corona_01.material"
+				startcolor="0 .5 0"
+				endcolor="0"	
+				startsize="300"
+				endsize="0"			
+				maxangle="360"
+			/>
+			
+			<billboard
+				delay="1100"
+				life="200"
+				position="0 0 70"
+				depthbias="-60"
+				material="/shared/effects/materials/corona_01.material"
+				startcolor="50 .50 50"
+				midcolor="50 .50 50"
+				midcolorpos=".5"
+				endcolor="0"	
+				startsize="0"
+				endsize="300"			
+				maxangle="360"
+			/>
+
+			<simpleemitter
+				expirelife="1000"
+				startparticlealpha="0"
+				midparticlealpha="0"
+				endparticlealpha="1"
+				life="1000"
+				bone="_bone_back"
+				spawnrate="40"
+				minparticlelife="1"
+				maxparticlelife="1000"
+				offsetsphere="50 50 30"
+				gravity="-1"
+				minspeed="70"
+				maxspeed="140"							
+				direction="0 0 1"
+				minangle="-40"
+				maxangle="40"
+				material="/shared/effects/materials/spark_10.material"
+			>			
+				<particle
+					startcolor=".2 1 0"
+					endcolor="0 0 0"
+					minsize="7"
+					maxsize="25"
+					minangle="-360"
+					maxangle="1"
+					minanglespeed="110"
+					maxanglespeed="-110"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				expirelife="1000"
+				startparticlealpha="0"
+				midparticlealpha="0"
+				endparticlealpha="1"
+				life="1000"
+				offsetsphere="75 75 15"
+				spawnrate="15"
+				minparticlelife="300"
+				maxparticlelife="500"
+				speed="30"
+				material="/shared/effects/materials/refract_outsplash.material"
+			>
+				<particle
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					startsize="120"
+					endsize="250"
+					param=".1"
+					depthbias="-50"
+					turn="true"
+					startanchor="1"
+					endanchor="0"
+				/>
+			</simpleemitter>
+			
+				<simpleemitter
+				expirelife="1000"
+				startparticlealpha="1"
+				midparticlealpha="0"
+				endparticlealpha="1"
+				life="1000"
+				offsetsphere="75 75 15"
+				spawnrate="15000"
+				count="20"
+				minparticlelife="300"
+				maxparticlelife="500"
+				speed="30"
+				material="/shared/effects/materials/refract_outsplash.material"
+			>
+				<particle
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					startsize="120"
+					endsize="250"
+					param=".1"
+					depthbias="-50"
+					turn="true"
+					startanchor="1"
+					endanchor="0"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+     	 	<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

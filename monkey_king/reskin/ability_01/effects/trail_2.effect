@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.5" >
+						<simpleemitter
+				spawnrate="10"
+				count="1"
+				particlelife="5500"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="true"
+				>
+					<model
+						position="0 0 0"
+						scale="1.3"
+						life="200"
+						model="/heroes/monkey_king/Kurousagi/model.mdf"
+						anim="ablity_1_clone1"
+						material="/shared/effects/materials/shell6.material"
+						color=".1 .1 .4"
+						startalpha=".75"
+						midalpha=".75"
+						endalpha="0"
+						midalphapos=".5"
+					>
+					</model>
+				</particle>
+			</simpleemitter>
+			<simpleemitter
+				spawnrate="6"
+				count="1"
+				particlelife="5500"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="true"
+				>
+					<model
+						position="0 0 0"
+						scale="1.3"
+						life="200"
+						model="/heroes/monkey_king/Kurousagi/model.mdf"
+						anim="ablity_1_clone3"
+						material="/shared/effects/materials/shell6.material"
+						color=".1 .1 .4"
+						startalpha=".75"
+						midalpha=".75"
+						endalpha="0"
+						midalphapos=".5"
+					>
+					</model>
+				</particle>
+			</simpleemitter>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

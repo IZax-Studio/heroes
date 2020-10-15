@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="default_1.max" file="../jibril/model.model" type="K2">
+
+	<anim name="idle" clip="../jibril/clips/bat_idle.clip"  fps="25" loop="true"/>
+	
+	<anim name="portrait" clip="../jibril/clips/bat_idle.clip"  fps="10" loop="true"/>
+	
+	<anim name="item_1" clip="../jibril/clips/single_attack_attcom_1.clip"/>
+
+	<anim name="bored_1" clip="../jibril/clips/dance.clip">
+	<frameevent frame="1" cmd="PlaySoundLinear ../jibril_sounds/46_3_dance.wav 200 1800 1"/>   
+	</anim>
+
+	<anim name="walk_1" clip="../jibril/clips/single_run.clip"  loop="true" fps="20">
+	
+	</anim>
+
+	<anim name="death_1" clip="../jibril/clips/dead.clip" loop="true" loopbackframe="-1">
+	<frameevent frame="5" cmd="PlaySoundLinear ../jibril_sounds/death_1.wav 200 1800 .65"/>  
+	<frameevent frame="2" cmd="PlaySoundLinear ../jibril_sounds/46_3_dead.wav 200 1800 .65"/>   	
+	</anim>
+
+	<anim name="attack_1" clip="../jibril/clips/single_attack_attcom_1.clip" fps="25">
+	
+		<frameevent frame="11" cmd="PlaySoundLinear ../jibril_sounds/46_3_Atk_fire_%.wav 200 1800 .65"/>
+		<frameevent frame="8" cmd="PlaySoundLinear ../jibril_sounds/46_3_Atk_Foley_%.wav 200 1800 .65"/>
+	</anim>
+	
+	<anim name="attack_2" clip="../jibril/clips/single_attack_attcom_2.clip" fps="25">
+	    
+		<frameevent frame="11" cmd="PlaySoundLinear ../jibril_sounds/46_3_Atk_fire_%.wav 200 1800 .65"/>
+		<frameevent frame="8" cmd="PlaySoundLinear ../jibril_sounds/46_3_Atk_Foley_%.wav 200 1800 .65"/>
+	</anim>
+
+	<anim name="ability_1" clip="../jibril/clips/single_skill_04.clip" fps="60">
+		<frameevent frame="1" cmd="StartEffect cast_ability_01.effect"/>
+		<frameevent frame="11" cmd="PlaySoundLinear ../jibril_sounds/138_0_Atk_Whoosh_0%.wav 200 1800 1"/>
+		<frameevent frame="11" cmd="PlaySoundLinear ../jibril_sounds/138_2_R_Trace_Start.wav 200 1800 .45"/>
+	</anim>
+
+	<anim name="ability_2" clip="../jibril/clips/single_skill_01.clip" fps="30"/>
+
+	<anim name="ability_4" clip="../jibril/clips/single_touzhi_2.clip" fps="30">
+		<frameevent frame="9" cmd="StartEffect cast_ability_04.effect"/>
+		<frameevent frame="1" cmd="PlaySoundLinear ../jibril_sounds/46_3_e_fire.wav 1000 2200 1"/>
+		<frameevent frame="12" cmd="PlaySoundLinear ../jibril_sounds/dazhao_1.wav 1000 2200 1"/>
+	</anim>
+		
+	<anim name="knock_1" clip="../jibril/clips/dead.clip" loop="true" fps="50" loopbackframe="-1"/>
+	
+	<anim name="getup_1" clip="../jibril/clips/bat_idle.clip"/>
+
+	<anim name="taunt_1" clip="../jibril/clips/bat_specialidle.clip" fps="45">
+	
+	</anim>
+</model>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="1" deferred="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="2.65">
+
+			<sound
+				soundloop="true"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="1000"
+				fadein="100"
+				fadeout="500" 
+				volume="0.3" 
+				sample=""
+			/>		
+				
+			<simpleemitter			
+				spawnrate="211"
+				particlelife="1000"
+				count="40"		
+
+				acceleration="50"
+				position="0 0 50"
+				timenudge="000"
+				minspeed="20"
+				maxspeed="100"
+				
+				offsetsphere="30 30 30"
+				minangle="0"
+				maxangle="360"
+				direction="0 0 0"
+				particledirectionalspace="local"
+			>
+
+				<particle 
+					framespeed="8"
+					size="10"
+					turn="1"
+					startalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter> 			
+			
+			<billboard	
+				life="300"
+				bone="_bone_centerofchest"
+				
+				color=".2"
+				alpha=".4"
+                        startsize="40"
+				endsize="200"
+				material="/shared/effects/materials/corona_01.material"
+				
+				depthbias="-50"
+				position="0 0 30"
+			/>		
+			
+                  <billboard	
+	                 delay="301"
+				bone="_bone_centerofchest"
+				
+				color=".03"
+				alpha=".1"
+				size="200"
+				material="/shared/effects/materials/corona_01.material"
+				
+				depthbias="-50"
+				position="0 0 30"
+			/>		
+
+			
+			
+			
+			<trackeremitter				
+				bone="_bone_centerofchest"
+				targetbone="_bone_centerofchest"
+				tracktype="distance"
+				position="0 0 20"
+				trackspeed="1.4" 
+				spawnrate="100"
+				particlelife="3000"
+				offsetsphere="33 33 33"
+				minspeed="0.0"
+				maxspeed="260"
+				direction="0 0 1"
+			material="/shared/effects/materials/flare_03.material"
+			>
+				<particle 
+					framespeed="8"
+					startalpha="1"
+					endalpha="0"
+					midalphapos=".7"
+					maxangle="359"
+					maxanglespeed="30"
+					minanglespeed="-30"
+					minscale="3"
+					maxscale="4.5"
+                              startcolor="0 0 9"
+					midcolor="0 .75 3"
+                              endcolor="1 0 0"
+				/>
+			</trackeremitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

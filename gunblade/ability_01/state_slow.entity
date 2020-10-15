@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Gunblade_Ability1_Slow"
+	
+	icon="1.png"
+	passiveeffect="effects/state.effect"
+	
+	movespeedslowpercharge="0.08,0.11,0.14,0.17"
+	maxcharges="3"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	negativeeffect="slowed"
+>
+	<oninflict>
+		<addcharges count="1" />
+	</oninflict>
+	<onrefresh>
+		<addcharges count="1" />
+	</onrefresh>
+	
+	<altavatar key="Hero_Gunblade.Alt8" 
+		icon="../alt8/ability_01/icon.tga"
+	>
+	</altavatar>
+	
+</state>

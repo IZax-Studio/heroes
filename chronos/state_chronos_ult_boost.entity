@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Chronos_Ult_Boost"
+
+	icon=""
+	passiveeffect="sotm.effect"
+	
+	ishidden="true"
+	
+	effecttype=""
+>
+	<modifier key="iamsheeped" modpriority="101"
+		passiveeffect=""
+	/>
+	
+	<altavatar key="Hero_Chronos.Alt"
+		passiveeffect="sotm.effect"
+	/>
+	
+	<altavatar key="Hero_Chronos.Alt2"
+		passiveeffect="sotm.effect"
+	/>
+	
+	<altavatar key="Hero_Chronos.Alt4"
+		passiveeffect="/heroes/chronos/alt4/effects/boost.effect"
+	/>
+	
+	<altavatar key="Hero_Chronos.Alt5"
+		passiveeffect="/heroes/chronos/alt5/effects/boost.effect"
+	>
+		<modifier key="Virtue_Set_Bonus" modpriority="1"
+			passiveeffect="/heroes/chronos/alt5/effects/boost_virtue.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Chronos.Alt6"
+		passiveeffect="/heroes/chronos/alt6/effects/boost.effect"
+	/>
+	
+	<altavatar key="Hero_Chronos.Alt8"
+		passiveeffect="/heroes/chronos/alt8/effects/boost.effect"
+	/>
+	
+	<altavatar key="Hero_Chronos.Alt9"
+		passiveeffect="/heroes/chronos/alt9/effects/boost.effect"
+	/>
+	
+	<altavatar key="Hero_Chronos.Alt10"
+		passiveeffect="/heroes/chronos/alt10/effects/boost.effect"
+	/>
+	
+	<altavatar key="Hero_Chronos.Alt11"
+		passiveeffect="/heroes/chronos/alt11/effects/boost.effect"
+	/>
+		
+</state>

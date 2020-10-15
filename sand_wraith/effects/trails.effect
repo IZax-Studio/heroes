@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world">
+		
+			
+			<twopointtrailemitter
+                                               life="300"
+			 	bone_a="_bone_weapon1"
+				bone_b="_bone_weaponattach"
+				spawnrate="200"
+				particlelife="500"
+				texpostime="500"
+				texposscale="0.0"
+				texstretchscale="1.0"
+				material="/shared/effects/materials/swoosh_add.material"
+				subframepose="true"
+			>
+	         	<particle
+					startcolor=".5 0 0"
+					endcolor=".5 0 0" 
+				/>
+			</twopointtrailemitter>
+				
+			<twopointtrailemitter
+				life="300"
+			 	bone_a="_bone_weapon11"
+				bone_b="_bone_weaponattach1"
+				spawnrate="200"
+				particlelife="150"
+				texpostime="150"
+				texposscale="1.0"
+				texstretchscale="0.0"
+				material="/shared/effects/materials/arrow_trail.material"
+				subframepose="true"
+			>
+	         	<particle
+					startcolor="0 0 0"
+					midcolor=".2 .0 .5"
+					endcolor="0 0 0" 
+				/>
+			</twopointtrailemitter>
+			
+			<twopointtrailemitter
+			delay="50"
+				life="300"
+				bone_a="_bone_altweapon2"
+				bone_b="_bone_altweapon3"
+				spawnrate="200"
+				particlelife="75"
+				texpostime="75"
+				texposscale="1.0"
+				texstretchscale="0.0"
+				material="/shared/effects/materials/soul_projectile.material"
+				subframepose="true"
+			>
+	            <particle
+					color="0 0 0"
+					alpha="1"
+				/>
+			</twopointtrailemitter>
+
+			<twopointtrailemitter
+			delay="50"
+				life="300"
+				bone_a="_bone_altweapon2"
+				bone_b="_bone_altweapon3"
+				spawnrate="200"
+				particlelife="75"
+				texpostime="75"
+				texposscale="1.0"
+				texstretchscale="0.0"
+				material="/shared/effects/materials/arrow_trail.material"
+				subframepose="true"
+			>
+	            <particle
+					startcolor="0 1 1"
+					midcolor=".5 0 .2"
+					endcolor="0 0 0"  
+					
+				/>
+			</twopointtrailemitter>
+					
+						
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

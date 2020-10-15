@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+	
+		<modifier name="ghost"
+			 life="700"
+			alpha=".5"
+			color="1"
+		/>
+		
+		<particlesystem name="system0" space="world" >
+							
+							
+			<model
+				life="700"
+				parentskeleton="true"
+				parentmodel="true"
+				startcolor="0 .75 3"
+				midcolor="0 .4 1"
+				endcolor="0 .4 1"
+				midcolorpos=".45"
+				startscale="1"
+				midscale="1"
+				endscale="1"
+				midscalepos=".35"
+				material="/shared/effects/materials/shell2.material"
+			/>
+			<skeletonemitter
+				 life="700"
+				spawnrate="30"
+				minparticlelife="500"
+				maxparticlelife="750"
+				material="/shared/effects/materials/phantom_white_reveal.material"
+				maxspeed="20"
+				drag="0.01"
+				gravity="-1"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-60"
+					maxanglespeed="60"
+					minsize="60"
+					maxsize="80"
+					color=".2 .2 .2"
+					startalpha="0"
+					endalpha="1"
+					startframe="0"
+					endframe="1"
+				/>
+			</skeletonemitter>
+			
+			<template name="streamer" >
+				<trailemitter
+					 life="700"
+					bone="{bone}"
+					spawnrate="20"
+					particlelife="600"
+					texposscale="1"
+					texstretchscale="0"
+					material="/shared/effects/materials/arrow_trail.material"
+				>
+					<particle
+						startalpha="1"
+						endalpha="0"
+						size="25"
+						startcolor="0 .2 .5"
+						endcolor="0"
+					/>
+				</trailemitter>
+			</template>
+			
+			<instance name="streamer" bone="_bone_lefthand" />
+			<instance name="streamer" bone="_bone_righthand" />
+			<instance name="streamer" bone="_bone_leftfoot" />
+			<instance name="streamer" bone="_bone_rightfoot" />
+			<instance name="streamer" bone="_bone_head" />
+			
+			
+			<trailemitter
+				 life="700"
+				bone="_bone_center"
+				spawnrate="30"
+				particlelife="1000"
+				material="/shared/effects/materials/refract_longsplash_scroll.material"
+				texposscale="1"
+				texpostime="1000"
+				texstretchscale="0"
+			>
+				<particle
+					size="100"
+					param="0.01"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".2"
+				/>
+			</trailemitter>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="ghost" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.3">
+
+			<billboard
+				bone="_bone_origin"
+				position="0 35 70"
+				life="250"
+				material="../../custom/Daoguang_df_03.material"
+				directionalspace="local"
+				startcolor="0"
+				midcolor=".35"
+				endcolor="0"
+				size="200"
+				lockup="1"
+				lockright="1"
+				pitch="-85"
+				yaw="100"
+				startroll="175"
+				endroll="-25"
+			/>
+
+			<billboard
+				bone="_bone_origin"
+				position="0 35 70"
+				life="250"
+				material="../../custom/daoguang_van_02.material"
+				directionalspace="local"
+				startcolor="0"
+				midcolor=".35"
+				endcolor="0"
+				size="200"
+				lockup="1"
+				lockright="1"
+				pitch="-85"
+				yaw="100"
+				startroll="220"
+				endroll="20"
+			/>
+			
+			<billboard
+				bone="_bone_origin"
+				position="0 35 70"
+				life="250"
+				material="../../custom/EF_Tex518_attack01.material"
+				directionalspace="local"
+				startcolor="0"
+				midcolor=".35"
+				endcolor="0"
+				size="200"
+				lockup="1"
+				lockright="1"
+				pitch="-85"
+				yaw="100"
+				startroll="220"
+				endroll="20"
+			/>
+			
+			<billboard
+				bone="_bone_origin"
+				position="0 35 70"
+				life="250"
+				material="../../custom/EF_Tex518_attack03.material"
+				directionalspace="local"
+				startcolor="0"
+				midcolor=".35"
+				endcolor="0"
+				size="200"
+				lockup="1"
+				lockright="1"
+				pitch="-85"
+				yaw="100"
+				startroll="220"
+				endroll="20"
+			/>
+			
+			<billboard
+				bone="_bone_origin"
+				position="0 35 70"
+				life="250"
+				material="../../custom/EF_Tex518_attack04.material"
+				directionalspace="local"
+				startcolor="0"
+				midcolor=".35"
+				endcolor="0"
+				size="200"
+				lockup="1"
+				lockright="1"
+				pitch="-85"
+				yaw="100"
+				startroll="220"
+				endroll="20"
+			/>
+			
+			<billboard
+				bone="_bone_origin"
+				position="0 35 70"
+				life="250"
+				material="../../custom/UI_Light_02.material"
+				directionalspace="local"
+				startcolor="0"
+				midcolor=".35"
+				endcolor="0"
+				size="200"
+				lockup="1"
+				lockright="1"
+				pitch="-85"
+				yaw="100"
+				startroll="220"
+				endroll="20"
+			/>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

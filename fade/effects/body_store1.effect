@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="entity">
+		
+			<sound
+				delay="700"
+				dampen=".5"
+				channelid="storeaud"
+				sound2d="true"
+				volume=".8"
+				sample="../anan_sounds/move_3.wav"
+			/>
+			
+			<sound
+				dampen=".5"
+				channelid="storeaud2"
+				sound2d="true"
+				volume="1"
+				sample="../anan_sounds/210_4_relive.wav"
+			/>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+      	<waitfordeath instance="instance0" />
+	</thread>
+</effect>

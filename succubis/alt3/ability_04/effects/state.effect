@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true">
+	<definitions>
+	<!--
+		<modifier
+			name="modifier0"
+			expirelife="750"
+			startcolor="1 .65 .65"
+			endcolor="1 1 1"
+		/>
+		-->
+		<simpleemitter
+			name="manaTrail"
+			life="2000"
+			spawnrate="100"
+			startminparticlelife="1000"
+			startmaxparticlelife="1500"
+			endminparticlelife="1"
+			endmaxparticlelife="2"
+			position="0 0 0"
+			material="/shared/effects/materials/light_trail.material"
+		>
+			<particle
+				startcolor=".2 0 .4"
+				midcolor=".1 0 .4"
+				endcolor="0 0 0"
+				startsize="0"
+				midsize="8"
+				endsize="0"
+				midcolorpos=".1"
+				midsizepos=".1"
+			/>
+		</simpleemitter>
+	
+		<particlesystem name="system0" space="world" scale=".5">
+
+			<sound
+				volume="1"
+				sample="/heroes/succubis/bat_sounds/nightmare%.wav"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2000"
+			/>
+
+			<sound
+				soundloop="true"
+				fadein="1500"
+				fadeout="500"
+				volume=".5"
+				sample="/heroes/succubis/bat_sounds/nightmare.wav"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2000"
+			/>
+		
+			<controller bone="_bone_righthand" owner="target">
+				<billboard
+					life="1500"
+					material="/heroes/succubis/effects/nightmare/drainLife1.material"
+					startcolor="0 0 0"
+					midcolor="1"
+					endcolor="0 0 0"
+					rollspeed="200"
+					size="45"
+					depthbias="-30"
+					loop="true"
+				/>
+			</controller>
+			
+			<template name="whip">
+				<controller
+					name="righthand"
+					owner="target"
+					bone="_bone_righthand"
+				/>
+					
+				<controller
+					owner="source"
+					name="{name}"
+					position="{pos}"
+				/>
+			
+				<beam
+					delay="500"
+					owner_a="{name}"
+					owner_b="righthand"
+					material="/heroes/succubis/effects/nightmare/nightmare_bolt.material"
+					size="15"
+					color="1"
+					alpha=".75"
+					tile="1"
+				/>
+			</template>
+
+			<instance name="whip" pos="0 0 5"/>
+			<instance name="whip" pos="0 0 180"/>
+			<instance name="whip" pos="80 0 90"/>
+			<instance name="whip" pos="-80 0 90"/>
+			
+				<model
+					scale="1.75"
+					position="0 0 100"
+					model="/heroes/succubis/effects/nightmare/model.mdf"
+					alpha="1"
+					anim="idle"
+					directionalspace="local"
+				/>
+				<model
+					expirelife="500"
+					scale="1.75"
+					position="0 0 100"
+					model="/heroes/succubis/effects/nightmare/model.mdf"
+					startalpha="1"
+					endalpha="0"
+					anim="idle"
+					directionalspace="local"
+				/>
+				<model
+					scale="1.75"
+					position="0 0 100"
+					model="/heroes/succubis/effects/nightmare/model2.mdf"
+					alpha=".5"
+					color="2 1 2"
+					anim="idle"
+					directionalspace="local"
+				/>
+				<model
+					expirelife="500"
+					scale="1.75"
+					position="0 0 100"
+					model="/heroes/succubis/effects/nightmare/model2.mdf"
+					startalpha=".5"
+					endalpha="0"
+					color="2 1 2"
+					anim="idle"
+					directionalspace="local"
+				/>
+			
+			<trackeremitter
+				bone="_bone_centerofchest"
+				owner="source"
+				targetbone="_bone_righthand"
+				targetowner="target"
+				tracktype="angular"
+				trackspeed="8"
+				drag="0"
+				spawnrate="25"
+				particlelife="3000"
+				offsetsphere="5 5 5"
+				minspeed="220"
+				maxspeed="440"
+				acceleration="30"
+				direction="0 1 0"
+				inheritvelocity="0"
+				distancelife="true"
+			>
+				<particle
+					emitter0="manaTrail"
+				/>
+			</trackeremitter>
+			
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<wait duration="600"/>
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+
+			<waitfordeath instance="instance0" />
+		
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

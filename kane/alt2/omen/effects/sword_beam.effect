@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world">
+		
+			<template name="sword_beam">
+				<beam
+					expirelife="300"
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					material="../custom/ef_gq_lobby_loki_ray310.material"
+					size="40"
+					startcolor=".5 .25 1"
+					endcolor="0"
+				/>
+				
+				<beam
+					expirelife="300"
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					material="../custom/ef_gq_xiaohei_zhezhao_lobby.material"
+					size="45"
+					startcolor=".75 .5 1"
+					endcolor="0"
+				/>
+				
+				<beam
+					expirelife="300"
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					material="/shared/effects/materials/femme_lightning_10.material"
+					size="10"
+					startcolor=".3 .1 .5"
+					endcolor="0"
+					framespeed="3"
+				/>
+			</template>
+			
+			<instance name="sword_beam" bone_a="_bone_fx_03" bone_b="_bone_fx_04"/>
+			<instance name="sword_beam" bone_a="_bone_fx_05" bone_b="_bone_fx_06"/>
+			<instance name="sword_beam" bone_a="_bone_fx_07" bone_b="_bone_fx_08"/>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

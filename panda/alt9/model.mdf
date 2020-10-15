@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="model.model" med="model.model" low="model.model" >
+	
+	<anim name="idle" clip="idle.clip" fps="550" loop="true"/>
+	
+	<anim name="attack_1" clip="attack_1.clip" fps="550" loop="false">
+		<frameevent frame="250" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 1800 .65"/>
+<frameevent frame="450" cmd="PlaySoundLinear impact_4.wav 400 1800 .95"/>
+
+	</anim>
+	
+	<anim name="attack_2" clip="attack_2.clip" fps="550" loop="false">
+		<frameevent frame="250" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 1800 .65"/>
+<frameevent frame="450" cmd="PlaySoundLinear impact_4.wav 400 1800 .95"/>
+
+	</anim>
+	
+	<anim name="walk_1" clip="walk_1.clip" fps="550" loop="true">
+		<frameevent frame="6" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="11" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="17" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="21" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		
+		<frameevent frame="6" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="17" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	</anim>
+	
+	<anim name="death_1" clip="death_1.clip" fps="550" loop="true" loopbackframe="-1">
+	</anim>
+	
+	<anim name="ability_1" clip="ab1_1.clip" fps="550" loop="false">
+		<frameevent frame="10" cmd="PlaySoundLinear sounds/attack_%.wav 400 2000 .65"/>
+	</anim>
+	
+	<anim name="attackability1_1" clip="ab1_2.clip" fps="550" loop="false">
+<frameevent frame="100" cmd="StartEffect attack_1.effect" />
+		<frameevent frame="10" cmd="PlaySoundLinear MLS_HW.wav 400 2000 .7"/>
+	</anim>
+
+	<anim name="attackability1_2" clip="ab1_1.clip" fps="550" loop="false">
+<frameevent frame="100" cmd="StartEffect attack_1.effect" />
+		<frameevent frame="1" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 2000 .65"/>
+	</anim>
+	
+	<anim name="attackability1_3" clip="ab1_1.clip" fps="550" loop="false">
+<frameevent frame="100" cmd="StartEffect attack_1.effect" />
+		<frameevent frame="7" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 2000 .65"/>
+	</anim>
+	
+	<anim name="attackability1_4" clip="ab1_1.clip" fps="550" loop="false">
+  <frameevent frame="100" cmd="StartEffect attack_1.effect" />		<frameevent frame="10" cmd="PlaySoundLinear MLS_HW.wav 400 2000 .65"/>
+	</anim>
+	
+	<anim name="ability_2" clip="ab2_2.clip" fps="24" loop="false">
+		 <frameevent frame="0" cmd="PlaySoundLinear ability_03/sounds/cast.wav 400 2000 .65"/>
+		<frameevent frame="15" cmd="PlaySoundLinear ability_02/sounds/cast.wav 400 2000 .65"/>
+	</anim>
+	
+	<anim name="ability_2_leap" clip="ab2_1.clip" fps="30" loop="true" loopbackframe="-1">
+	</anim>
+	 
+	<anim name="ability_3" clip="ab3_1.clip" fps="550"  loopbackframe="1">
+		<frameevent frame="1" cmd="PlaySoundLinear ability_03/sounds/cast.wav 400 2000 .8"/>
+            <frameevent frame="650" cmd="PlaySoundLinear sounds/YM-CAtk-11.wav 400 2000 .65"/>
+		<frameevent frame="1050" cmd="StartEffect cast.effect"/>
+	</anim>
+	
+	<anim name="ability_3_stuck" clip="ab3_2.clip" fps="550" loop="false">
+	</anim>	
+	
+	<anim name="ability_4" clip="ab4.clip" fps="42" loop="true">
+		<frameevent frame="25" cmd="PlaySoundLinear attack1.wav 400 2000 .35"/>
+<frameevent frame="29" cmd="PlaySoundLinear attack1.wav 400 2000 .35"/>
+<frameevent frame="33" cmd="PlaySoundLinear attack1.wav 400 2000 .35"/>
+<frameevent frame="37" cmd="PlaySoundLinear attack1.wav 400 2000 .35"/>
+<frameevent frame="25" cmd="PlaySoundLinear Youmu_SlashHit.wav 400 2000 .7"/>
+<frameevent frame="29" cmd="PlaySoundLinear Youmu_SlashHit.wav 400 2000 .7"/>
+<frameevent frame="33" cmd="PlaySoundLinear Youmu_SlashHit.wav 400 2000 .7"/>
+<frameevent frame="37" cmd="PlaySoundLinear Youmu_SlashHit.wav 400 2000 .7"/>
+<frameevent frame="90" cmd="PlaySoundLinear Youmu_SlashHit.wav 400 2000 1"/>
+<frameevent frame="0" cmd="PlaySoundLinear Youmu_SlashHit.wav 400 2000 1"/>
+		<frameevent frame="0" cmd="PlaySoundLinear YM-CAtk-15.wav 400 2000 .9"/>
+		<frameevent frame="90" cmd="PlaySoundLinear 166667.wav 400 2000 .75"/>
+		<frameevent frame="156" cmd="PlaySoundLinear 166665.wav 400 2000 .65 1"/>
+<frameevent frame="156" cmd="PlaySoundLinear 166665.wav 400 2000 .65 1"/>
+<frameevent frame="156" cmd="PlaySoundLinear 166665.wav 400 2000 .65 1"/>
+		<frameevent frame="55" cmd="PlaySoundLinear Kzi_Hit5.wav 400 2000 .65 .6"/>
+		<frameevent frame="131" cmd="PlaySoundLinear KJ_03.wav 400 2000 1"/>
+
+<frameevent frame="12" cmd="StartEffect attack_2.effect" />
+<frameevent frame="29" cmd="StartEffect attack_2.effect" />
+<frameevent frame="33" cmd="StartEffect attack_3.effect" />
+<frameevent frame="37" cmd="StartEffect attack_2.effect" />
+<frameevent frame="95" cmd="StartEffect attack_4.effect" />
+	<startevent cmd="StartEffect boy/state.effect 9"/>
+		<endevent cmd="StopEffect 9" />
+	</anim>
+
+
+
+	<anim name="bored_1" clip="idle2.clip" fps="550" loop="false"/>
+	<anim name="item_1" clip="attack_1.clip" fps="550" loop="false"/>
+	<anim name="knock_1" clip="death_1.clip" fps="550" loop="true" loopbackframe="-1"/>
+	<anim name="taunt_1" clip="ab1_2.clip" fps="550" loop="false"/>
+	<anim name="portrait" clip="idle.clip" fps="550" loop="true"/>
+	
+</model>

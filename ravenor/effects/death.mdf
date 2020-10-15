@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="Ravenor_Death.max" file="death.model" type="K2" >
+	<anim name="idle" clip="death.clip"/>
+</model>

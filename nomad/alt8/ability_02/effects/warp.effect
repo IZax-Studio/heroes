@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" persistent="true" >
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="2">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".75"
+				sample="../sounds/cast.wav"
+			/>
+		
+	<template name="fire">
+				<simpleemitter
+				life="500"
+					bone="{bone}"
+					spawnrate="40"
+					minparticlelife="250"
+					maxparticlelife="600"
+					minspeed="0"
+					maxspeed="500"
+					drag=".08"
+					offsetsphere="15"
+					angle="15"
+					material="/shared/effects/materials/lightning_02.material"
+					depthbias="-10"
+					direction="0 -1 0"
+				>
+					<particle
+						minangle="-360"
+						maxangle="360"
+						minanglespeed="-150"
+						maxanglespeed="150"
+						startcolor="255 .300 200"
+						midcolor="255 .300 200"
+						endcolor="0 0 0"
+						minstartsize="15"
+						maxstartsize="30"
+						endsize="80"
+					/>
+				</simpleemitter>
+				
+			</template>
+
+			<instance name="fire" bone="Bip01 L Foot" />
+			<instance name="fire" bone="Bip01 R Foot" />
+			<instance name="fire" bone="Bip01 L Toe" />
+			<instance name="fire" bone="Bip01 R Toe" />
+			
+			<simpleemitter
+			life="500"
+					bone="{bone}"
+					spawnrate="40"
+					minparticlelife="250"
+					maxparticlelife="600"
+					minspeed="0"
+					maxspeed="500"
+					drag=".08"
+					offsetsphere="15"
+					angle="15"
+					material="/shared/effects/materials/lightning_02.material"
+					depthbias="-10"
+					direction="0 -1 0"
+				>
+					<particle
+						minangle="-360"
+						maxangle="360"
+						minanglespeed="-150"
+						maxanglespeed="150"
+						startcolor="255 .300 200"
+						midcolor="255 .300 200"
+						endcolor="0 0 0"
+						minstartsize="15"
+						maxstartsize="30"
+						endsize="80"
+					/>
+				</simpleemitter>
+				
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+	  
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
+

@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+
+	<definitions>
+	
+	<modifier 
+		name="modifier0"
+		alpha="0"
+	/>
+	<particlesystem name="system0" space="world" scale="1">
+	
+		<model
+			parentmodel="true"
+			parentskeleton="true"
+			inheritparentmodifiers="false"
+			life="5000"
+			startalpha="1"
+			midalpha="1"
+			endalpha="0"
+			midalphapos=".8"
+		
+		/>
+		
+		<model
+			scale="1"
+			parentmodel="true"
+			parentskeleton="true"
+			inheritparentmodifiers="false"
+			life="5000"
+			startcolor="0"
+			midcolor=".2 1 2"
+			midcolorpos=".8"
+			endcolor="0"
+			material="/shared/effects/materials/shell6.material"	
+		/>
+		
+		<billboard
+				life="5000"
+				bone="_bone_centerofchest"
+				position="0 0 50"
+				startcolor="0"
+				midcolor=".05 .25 .5"
+				midcolorpos=".8"
+				endcolor="0"
+				startscale="5"
+				endscale="10"
+				depthbias="-30"
+				material="/shared/effects/materials/whitedot.material"
+				lockup="true"
+				pitch="90"
+			/>
+		
+		<terrainemitter
+			bone="_bone_centerofchest"
+			delay="2000"
+			life="2500"
+			spawnrate="10"
+			minparticlelife="1300"
+			maxparticlelife="3000"
+			offsetsphere="30 30 0"
+			position="0 90 0"
+			material="/shared/effects/materials/light_rays.material"
+			depthbias="-30"
+		>
+			<particle
+				width="100"
+				endheight="600"
+				startcolor="0"
+				midcolor=".1 .5 1"
+				endcolor="0"
+				scale="1"
+				lockup="true"
+				
+			/>
+			
+		</terrainemitter>
+		
+		
+		<simpleemitter
+			life="3000"
+			bone="_bone_centerofchest"
+			delay="2000"
+			position="0 0 0" 
+			spawnrate="2"
+			minparticlelife="300"
+			maxparticlelife="700"
+			gravity="-10"
+			offsetsphere="10"
+			drag="0"
+			acceleration="0"
+			material="/shared/effects/materials/phantom_smoke_03.material"
+			direction="0 0 1"
+			speed="0"
+			depthbias="-20"
+		>
+			<particle 
+				scale="2"
+				startcolor="0 0 0"
+				midcolor=".05 .25 .5"
+				endcolor="0 0 0"
+				midcolorpos=".5"
+				startsize="100"
+				endsize="50"
+				lockright="true"
+				lockup="true"
+				directionalspace="local"
+				minendheight="100"
+				maxendheight="300"
+			/>
+		</simpleemitter>
+		
+		<simpleemitter
+				bone="_bone_centerofchest"
+				startspawnrate="1000"
+				count="15"
+				particlelife="900"
+				direction="0 0 1"
+				speed="150"
+				gravity="-10"
+				drag=".05"
+				minparticleangle="0"
+				maxparticleangle="180" 
+				position="0 0 0"
+				offsetsphere="25"
+				material="/shared/effects/materials/blink.material"
+			>
+				<particle
+					startcolor=".1 .5 1"
+					endcolor="0"
+					startsize="30"
+					endsize="1"
+					>
+					
+					<simpleemitter
+						count="1"
+						particlelife="900"
+						direction="0 0 1"
+						position="0 0 0"
+						material="/shared/effects/materials/blink.material"
+					>
+						<particle
+							startcolor="1"
+							midcolor="1"
+							midcolorpos=".7"
+							endcolor="0"
+							startsize="10"
+							endsize="1"
+							anchor="1"
+						/>
+					</simpleemitter>
+				</particle>
+			</simpleemitter>
+		
+		<simpleemitter
+			life="3000"
+			bone="_bone_centerofchest"
+			delay="2000"
+			position="0 0 0" 
+			spawnrate="3"
+			minparticlelife="600"
+			maxparticlelife="1200"
+			gravity="-10"
+			offsetsphere="35"
+			drag="0"
+			acceleration="0"
+			material="/shared/effects/materials/spirit_02.material"
+			direction="0 0 1"
+			speed="0"
+			depthbias="-20"
+		>
+			<particle 
+				scale="1"
+				startcolor="0 0 0"
+				midcolor=".05 .25 .5"
+				endcolor="0 0 0"
+				midcolorpos=".5"
+				startsize="100"
+				endsize="50"
+				lockright="true"
+				lockup="true"
+				directionalspace="local"
+				minendheight="200"
+				maxendheight="500"
+			/>
+		</simpleemitter>
+		
+		<simpleemitter
+			life="3500"
+			bone="_bone_origin"
+			position="0 0 30" 
+			spawnrate="10"
+			minparticlelife="600"
+			maxparticlelife="1200"
+			gravity="-10"
+			offsetsphere="50"
+			drag=".05"
+			acceleration="0"
+			material="/shared/effects/materials/whitedot.material"
+			direction="0 0 1"
+			speed="0"
+			depthbias="-10"
+		>
+			<particle 
+				scale="1"
+				startcolor="0 0 0"
+				midcolor=".1 .9 1"
+				endcolor="0 0 0"
+				midcolorpos=".5"
+				minstartsize="3"
+				maxstartsize="5"
+				endsize="1"
+			>
+					
+				
+			</particle>
+		</simpleemitter>
+			
+				
+	
+					
+	</particlesystem>
+		<particlesystem name="system2" space="entity" scale=".275">
+		
+			<template name="glowChest">
+								
+				
+				<billboard
+					bone="{bone}"
+					life="3500"
+					position="0 0 0"
+					startcolor="0 1 0"
+					endcolor=".1 .5 1"
+					size="150"
+					rollspeed="-1250"
+					depthbias="-10"
+					material="/shared/effects/materials/flare_01.material"
+				/>
+
+				<simpleemitter
+					life="3500"
+					bone="{bone}"
+					position="0 0 0" 
+					spawnrate="25"
+					particlelife="500"
+					gravity="0.0"
+					offsetsphere="5"
+					speed="50"
+					drag="0"
+					acceleration="0"
+					material="/shared/effects/materials/phantom_smoke_03.material"
+					minangle="0"
+					maxangle="10"
+					direction="0 1 0"
+				>
+					<particle 
+						startcolor="0 0 0"
+						midcolor="0 .5 0"
+						endcolor=".1 .9 1"
+						midcolorpos=".5"
+						minangle="0"
+						maxangle="360"
+						startsize="45"
+						endsize="45"
+						minanglespeed="-90"
+						maxanglespeed="90"
+						lockright="true"
+						lockup="true"
+						pitch="90"
+						directionalspace="local"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					life="3500"
+					bone="{bone}"
+					position="0 0 0" 
+					spawnrate="50"
+					particlelife="350"
+					gravity="0.0"
+					offsetsphere="10"
+					speed="75"
+					drag="0"
+					acceleration="0"
+					material="/shared/effects/materials/flare_01.material"
+					minangle="0"
+					maxangle="10"
+					direction="0 -1 0"
+				>
+					<particle 
+						startcolor="0 0 0"
+						midcolor=".5"
+						endcolor=".1 .9 1"
+						midcolorpos=".5"
+						minangle="0"
+						maxangle="360"
+						startsize="30"
+						endsize="15"
+						minanglespeed="-90"
+						maxanglespeed="90"
+						lockright="true"
+						lockup="true"
+						pitch="90"
+						directionalspace="local"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					life="3500"
+					bone="{bone}"
+					position="0 0 0" 
+					spawnrate="10"
+					particlelife="350"
+					gravity="0.0"
+					offsetsphere="10"
+					speed="150"
+					drag="0"
+					acceleration="0"
+					minangle="-5"
+					maxangle="5"
+					direction="0 -1 0"
+				>
+					<particle
+						turn="true"
+					>
+						<billboard
+							bone="{bone}"
+							spawnrate="500"
+							minlife="150"
+							maxlife="350"
+							position="0 0 0"
+							material="/shared/effects/materials/light_rays.material"
+							directionalspace="local"
+							yaw="180"
+							roll="180"
+							lockup="true"
+							lockright="true"
+							pitch="90"
+							startcolor="0 .1 0"
+							midcolor="0 .3 0"
+							endcolor=".1 .9 1"
+							minheight="50"
+							maxheight="80"
+						>
+						</billboard>
+					</particle>
+				</simpleemitter>
+			</template>
+
+			<instance name="glowChest" bone="_bone_fx_01" />
+			
+			<template name="glowHands">
+				<billboard
+					bone="{bone}"
+					delay="200"
+					position="0 0 0"
+					life="3500"
+					startcolor="0 .2 0"
+					midcolor="0 .2 0"
+					endcolor="0"
+					midcolorpos=".8"
+					size="55"
+					rollspeed="-1250"
+					depthbias="-50"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+				
+				<billboard
+					life="3500"
+					bone="{bone}"
+					position="0 0 0"
+					startcolor="0 .2 0"
+					midcolor="0 .2 0"
+					endcolor="0"
+					midcolorpos=".8"
+					size="135"
+					rollspeed="-1250"
+					depthbias="-10"
+					material="/shared/effects/materials/flare_01.material"
+				/>
+
+				<simpleemitter
+					life="3500"
+					bone="{bone}"
+					position="0 0 0" 
+					spawnrate="50"
+					particlelife="500"
+					gravity="0.0"
+					offsetsphere="5"
+					speed="150"
+					drag="0"
+					acceleration="0"
+					material="/shared/effects/materials/phantom_smoke_03.material"
+					minangle="0"
+					maxangle="10"
+					direction="0 -1 0"
+				>
+					<particle 
+						startcolor="0 .2 0"
+						midcolor="0 .2 0"
+						endcolor="0"
+						midcolorpos=".8"
+						minangle="0"
+						maxangle="360"
+						startsize="45"
+						endsize="45"
+						minanglespeed="-90"
+						maxanglespeed="90"
+						lockright="true"
+						lockup="true"
+						pitch="90"
+						directionalspace="local"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					delay="0"
+					life="3500"
+					bone="{bone}"
+					position="0 0 0" 
+					spawnrate="50"
+					particlelife="350"
+					gravity="0.0"
+					offsetsphere="10"
+					speed="75"
+					drag="0"
+					acceleration="0"
+					material="/shared/effects/materials/flare_01.material"
+					minangle="0"
+					maxangle="10"
+					direction="0 -1 0"
+				>
+					<particle 
+						startcolor="0 .2 0"
+						midcolor="0 .2 0"
+						endcolor="0"
+						midcolorpos=".8"
+						minangle="0"
+						maxangle="360"
+						startsize="30"
+						endsize="15"
+						minanglespeed="-90"
+						maxanglespeed="90"
+						lockright="true"
+						lockup="true"
+						pitch="90"
+						turn="true"
+						directionalspace="local"
+					/>
+				</simpleemitter>
+			</template>
+
+			<instance name="glowHands" bone="_bone_fx_02" />
+			<instance name="glowHands" bone="_bone_fx_03" />
+
+			
+			
+			<billboard
+					life="3500"
+					bone="_bone_weapon1"
+					position="0 0 0"
+					startcolor="0 .2 0"
+					midcolor="0 .2 0"
+					endcolor="0"
+					midcolorpos=".8"
+					size="180"
+					depthbias="-10"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+			
+			<billboard
+					life="3500"
+					bone="_bone_weapon1"
+					position="0 0 0"
+					startcolor="0 .2 0"
+					midcolor="0 .2 0"
+					endcolor="0"
+					midcolorpos=".8"
+					size="135"
+					depthbias="-10"
+					material="/shared/effects/materials/flare_01.material"
+				/>
+			<billboard
+				life="3500"
+				bone="_bone_weapon3"
+				position="0 0 0"
+				startcolor="0 .2 0"
+				midcolor="0 .2 0"
+				endcolor="0"
+				midcolorpos=".8"
+				size="180"
+				depthbias="-10"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+			<billboard
+				life="3500"
+				bone="_bone_weapon3"
+				position="0 0 0"
+				startcolor="0 .2 0"
+				midcolor="0 .2 0"
+				endcolor="0"
+				midcolorpos=".8"
+				size="135"
+				depthbias="-10"
+				material="/shared/effects/materials/flare_01.material"
+			/>
+				
+			<billboard
+				life="3000"
+				bone="_bone_centerofchest"
+				position="0 0 0"
+				color=".05 .25 .5"
+				scale="7"
+				depthbias="-30"
+				material="/shared/effects/materials/whitedot.material"
+				lockup="true"
+				
+			/>
+			
+		
+		</particlesystem>
+		
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+		<spawnparticlesystem instance="instance2" particlesystem="system2" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+		<waitfordeath instance="instance2" /> 
+	</thread>
+
+</effect>

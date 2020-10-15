@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_Chronos"
+
+	team="Hellbourne"
+	icon="423.jpg"
+	portrait="423.jpg"
+	model="model.mdf"
+	skin=""
+	
+	portraitcampos="10 -50 30"
+
+	passiveeffect="body.effect"
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sa_select_%.wav"
+	selectedflavorsound="sa_select_%.wav"
+	confirmmovesound="sa_move_%.wav"
+	confirmattacksound="atk_%.mp3"
+	nomanasound=""
+	cooldownsound=""
+	announcersound="sa_select_3.ogg"
+	tauntedsound="smack_1.mp3"
+	tauntkillsound="smackdown_1.mp3"
+	
+	preglobalscale="1.94"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="48"
+	targetoffset="0 0 64"
+
+	category="cc physical"
+	difficulty="3"
+
+	solorating="0"
+	junglerating="0"
+	carryrating="5"
+	supportrating="0"
+	initiatorrating="2"
+	gankerrating="0"
+	pusherrating="0"
+	rangedrating="0"
+	meleerating="5"
+
+	movespeed="300"
+	turnrate="450"
+	turnsmoothing="0.05"
+
+	maxhealth="150"
+	healthregen="1.00"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="-0.3"
+	magicarmor="5.0"
+
+	inventory0="Ability_Chronos1"
+	inventory1="Ability_Chronos2"
+	inventory2="Ability_Chronos3"
+	inventory3="Ability_Chronos4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="800"
+	attackactiontime="500"
+	attackcooldown="1700"
+	attackdamagemin="33"
+	attackdamagemax="39"
+	attacknumanims="2"
+	attackoffset="0 30 100"
+	attackprojectile=""
+	attackrange="150"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="effects/impact.effect"
+	attacktype="melee"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="600"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	primaryattribute="Agility"
+	strength="22"
+	strengthperlevel="1.4"
+	agility="20"
+	agilityperlevel="2.8"
+	intelligence="15"
+	intelligenceperlevel="1.5"
+	
+	previewmodel="preview.mdf"
+	previewpos="0 0 -60"
+	previewangles="0 0 0"
+	previewscale="1.9"
+	
+	storemodel="preview.mdf"
+	storepos="0 0 -20"
+	storeangles="0 0 0"
+	storescale="1.9"
+>
+	<recommendeditem name="Item_MinorTotem" />
+	<recommendeditem name="Item_RunesOfTheBlight" />
+	<recommendeditem name="Item_HealthPotion" />
+	<recommendeditem name="Item_HomecomingStone" />
+	
+	<recommendeditem name="Item_LoggersHatchet" />
+	<recommendeditem name="Item_Strength5" />
+	<recommendeditem name="Item_Soulscream" />
+	<recommendeditem name="Item_Steamboots" />
+	<recommendeditem name="Item_IronShield" />
+	<recommendeditem name="Item_ElderParasite" />
+	<recommendeditem name="Item_Weapon3" />
+	<recommendeditem name="Item_Intelligence7" />
+	<recommendeditem name="Item_Evasion" />
+	<recommendeditem name="Item_Pierce" />
+	
+	
+	<!-- Staff of the master upgrade effect-->
+	<modifier key="ult_boost" modpriority="100"
+		passiveeffect=""
+	>
+		<aura state="State_Chronos_Ult_Boost" radius="0" targetscheme="self"/>
+	</modifier>
+	
+	<!-- <modifier key="gated" modpriority="200"
+		magicarmor="5"
+		armor="0.35"
+		
+		inventory0="Reborn_Ability_Chronos1"
+		inventory1="Reborn_Ability_Chronos2"
+		inventory2="Reborn_Ability_Chronos3"
+		inventory3="Reborn_Ability_Chronos4"
+	>
+	</modifier> -->
+
+	<modifier key="soccer" modpriority="190" 
+		turnrate="650" magicarmor="0" healthregen="2.5" armor="0" manaregen="0"
+		maxmana="100"
+		attackrange="150"
+		attackduration="1000"
+		attackactiontime="430"
+		attackcooldown="1700"
+		movespeed="315"
+		maxhealth="400"
+		attackdamagemin="45"
+		attackdamagemax="45"
+		primaryattribute=""
+		intelligence="0"
+		strength="0"
+		agility="0"
+		inventory0="Ability_Soccer_SlideKick"
+		inventory1="Ability_Soccer_Sprint"
+		inventory2="Ability_Chronos1"
+		inventory3="Ability_Soccer_Chronos4"
+		inventory4="Ability_Soccer_Chronos_Passive"
+		cancarryitems="false" inventory8="" inventory12=""
+	/>
+	
+	<altavatar key="Hero_Chronos.Alt"
+		icon="hd_chronos/icon.tga"
+		icon2="alt2/33.jpg"
+		portrait="alt2/33.jpg"
+		model="alt2/model.mdf"
+
+		previewmodel="alt2/model.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.85"
+		storemodel="alt2/model.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.85"
+		
+		preglobalscale="2.09"
+		
+		portraitcampos="-10 0 25"
+		portraitangles="0 0 20"
+	/>
+	
+	<altavatar key="Hero_Chronos.Alt2"
+		icon="hd_chronos/icon.tga"
+		icon2="alt2/33.jpg"
+		portrait="alt2/33.jpg"
+		model="alt2/model.mdf"
+
+		previewmodel="alt2/model.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.85"
+		storemodel="alt2/model.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.85"
+		
+		preglobalscale="2.09"
+		
+		portraitcampos="-10 0 25"
+		portraitangles="0 0 20"
+	/>
+
+	<altavatar key="Hero_Chronos.Alt3"
+		icon="hd_chronos/icon.tga"
+		icon2="alt3/icon.tga"
+		portrait="alt3/icon.tga"
+		model="alt3/model.mdf"
+		
+		selectedsound="alt3/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt3/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt3/sounds/voice/move_%.wav"
+	    confirmattacksound="alt3/sounds/voice/attack_%.wav"
+	    nomanasound="alt3/sounds/voice/no_mana.wav"
+     	cooldownsound="alt3/sounds/voice/cooldown.wav"
+	    tauntedsound="alt3/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt3/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt3/preview.mdf"
+		previewpos="0 0 -70"
+		previewangles="0 0 0"
+		previewscale="0.95"
+		
+		storemodel="alt3/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale=".90"
+		
+		preglobalscale="1.1"
+	/>
+	
+	<altavatar key="Hero_Chronos.Alt4"
+		icon="hd_chronos/icon.tga"
+		icon2="alt4/icon.tga"
+		portrait="alt4/icon.tga"
+		model="alt4/model.mdf"
+		attackimpacteffect="alt4/effects/impact.effect"
+		selectedsound="alt4/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt4/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt4/sounds/voice/move_%.wav"
+	    confirmattacksound="alt4/sounds/voice/attack_%.wav"
+	    nomanasound="alt4/sounds/voice/no_mana.wav"
+     	cooldownsound="alt4/sounds/voice/cooldown.wav"
+	    tauntedsound="alt4/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt4/sounds/voice/taunt_after.wav"
+		previewmodel="alt4/preview.mdf"
+		previewpos="0 0 -70"
+		previewangles="0 0 0"
+		previewscale="0.95"
+		storemodel="alt4/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.05"
+		
+		preglobalscale="1.1"
+		
+		passiveeffect="alt4/effects/body.effect"
+		
+		portraitcampos="0 -8 22"
+		portraitangles="0 0 10"
+	/>
+	
+	<altavatar key="Hero_Chronos.Alt5"
+		icon="hd_chronos/icon.tga"
+		icon2="alt5/icon.tga"
+		portrait="alt5/icon.tga"
+		model="alt5/model.mdf"
+		
+		attackimpacteffect="alt5/effects/impact.effect"
+		selectedsound="alt5/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt5/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt5/sounds/voice/move_%.wav"
+	    confirmattacksound="alt5/sounds/voice/attack_%.wav"
+	    nomanasound="alt5/sounds/voice/no_mana.wav"
+     	cooldownsound="alt5/sounds/voice/cooldown.wav"
+	    tauntedsound="alt5/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt5/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt5/preview.mdf"
+		previewpos="0 0 -70"
+		previewangles="0 0 0"
+		previewscale="0.95"
+		
+		storemodel="alt5/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="0.85"
+		
+		portraitcampos="0 8 22"
+		portraitangles="0 0 10"
+		
+		preglobalscale="0.925"
+		
+		passiveeffect="alt5/effects/body.effect"
+	>
+		<onspawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Chronos.Alt5 aa.Hero_Maliken.Alt5 aa.Hero_Midas.Alt4 aa.Hero_Nomad.Alt5 aa.Hero_Prisoner.Alt4 aa.Hero_Succubis.Alt3 aa.Hero_Xalynx.Alt4" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey name="Virtue_Set_Bonus" />
+			</compare>
+		</onspawn>
+		
+		<onrespawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Chronos.Alt5 aa.Hero_Maliken.Alt5 aa.Hero_Midas.Alt4 aa.Hero_Nomad.Alt5 aa.Hero_Prisoner.Alt4 aa.Hero_Succubis.Alt3 aa.Hero_Xalynx.Alt4" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey name="Virtue_Set_Bonus" />
+			</compare>
+		</onrespawn>
+		
+		<modifier key="Virtue_Set_Bonus" modpriority="1"
+			passiveeffect="alt5/effects/virtue_bonus.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Chronos.Alt6"
+		icon="hd_chronos/icon.tga"
+		icon2="alt6/icon.tga"
+		portrait="alt6/icon.tga"
+		model="alt6/model.mdf"
+		
+		portraitcampos="5 -20 78"
+		portraitangles="0 0 10"
+		
+		respawneffect="/shared/effects/respawn_chronos.effect"
+		selectedsound="alt6/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt6/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt6/sounds/voice/move_%.wav"
+	    confirmattacksound="alt6/sounds/voice/attack_%.wav"
+	    nomanasound="alt6/sounds/voice/no_mana.wav"
+     	cooldownsound="alt6/sounds/voice/cooldown.wav"
+	    tauntedsound="alt6/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt6/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt6/preview.mdf"
+		previewpassiveeffect="alt6/effects/preview.effect"
+		previewpos="0 0 -70"
+		previewangles="0 0 0"
+		previewscale="0.95"
+		
+		storemodel="alt6/preview.mdf"
+		storepassiveeffect="alt6/effects/preview.effect"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.55"
+		
+		preglobalscale="1.9"
+		
+		tooleffectkeyname0="Item_Weapon3"
+		tooleffectpath0="alt6/effects/savage_mace.effect"
+		tooleffectgroup0="effects"
+	
+		tooleffectkeyname1="Item_Voulge"
+		tooleffectpath1="alt6/effects/slayer.effect"
+		tooleffectgroup1="effects"
+		
+		tooleffectkeyname2="Item_Warhammer"
+		tooleffectpath2="alt6/effects/warhammer.effect"
+		tooleffectgroup2="effects"
+			
+		tooleffectkeyname3=""
+		tooleffectpath3="alt6/effects/base.effect"
+		tooleffectgroup3="effects"
+
+	>
+		<onspawn>
+			<applystate name="State_Chronos_Alt6_Effects" target="this_entity" continuous="true" />
+		</onspawn>
+		
+		<onrespawn>
+			<applystate name="State_Chronos_Alt6_Effects" target="this_entity" continuous="true" />
+		</onrespawn>
+	
+		<modifier key="SavageMace" modpriority="105"
+			model="alt6/savage_form/model.mdf"
+			deathanim="death_4"
+			portraitcampos="-15 55 20"
+			selectedsound="alt6/sounds/voice/savage/select_%.wav"
+	        selectedflavorsound="alt6/sounds/voice/savage/select_flavour_%.wav"
+	        confirmmovesound="alt6/sounds/voice/savage/move_%.wav"
+	        confirmattacksound="alt6/sounds/voice/savage/attack_%.wav"
+	        nomanasound="alt6/sounds/voice/savage/no_mana.wav"
+     	    cooldownsound="alt6/sounds/voice/savage//cooldown.wav"
+	        tauntedsound="alt6/sounds/voice/savage/taunt_prior.wav"
+	        tauntkillsound="alt6/sounds/voice/savage/taunt_after.wav"
+		/>
+		
+		<modifier key="Slayer" modpriority="100"
+			deathanim="death_3"
+		/>
+		
+		<modifier key="Warhammer" modpriority="100"
+			skin="Upgrade"
+			deathanim="death_2"
+		/>
+
+		
+	</altavatar>
+	
+	<altavatar key="Hero_Chronos.Alt8"
+		icon="hd_chronos/icon.tga"
+	    icon2="alt8/icon.tga"
+		model="alt8/model.mdf"
+		portraitcampos="28 -10 45"
+		preglobalscale="1.2"
+
+		previewmodel="alt8/preview.mdf"
+		previewpos="0 0 -70"
+		previewangles="0 0 0"
+		previewscale="0.95"
+		
+		storemodel="alt8/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="0.85"
+		
+		selectedsound="alt8/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt8/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt8/sounds/voice/move_%.wav"
+	    confirmattacksound="alt8/sounds/voice/attack_%.wav"
+	    nomanasound="alt8/sounds/voice/no_mana.wav"
+     	cooldownsound="alt8/sounds/voice/cooldown.wav"
+	    tauntedsound="alt8/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt8/sounds/voice/taunt_after.wav"
+		
+		attackimpacteffect="alt8/effects/impact.effect"
+	>
+		
+	</altavatar>
+	
+	<altavatar key="Hero_Chronos.Alt9"
+		icon="hd_chronos/icon.tga"
+	    icon2="alt9/icon.tga"
+		model="alt9/model.mdf"
+		passiveeffect="alt9/effects/body.effect"
+		portraitcampos="-43 20 32"
+		preglobalscale="1.06"
+		
+		previewmodel="alt9/preview.mdf"
+		previewpos="0 0 -70"
+		previewangles="0 0 0"
+		previewscale="0.95"
+		
+		storemodel="alt9/preview.mdf"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="0.9"
+		
+		corpsetime="100"
+		corpsefadetime="4000"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		
+		attackimpacteffect="alt9/effects/impact.effect"
+		
+		selectedsound="alt9/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt9/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt9/sounds/voice/move_%.wav"
+	    confirmattacksound="alt9/sounds/voice/attack_%.wav"
+	    nomanasound="alt9/sounds/voice/no_mana.wav"
+     	cooldownsound="alt9/sounds/voice/cooldown.wav"
+	    tauntedsound="alt9/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt9/sounds/voice/taunt_after.wav"
+
+
+	>
+		<onkill propagatetoillusions="false" >
+			<targettype type="hero">
+				<targettype type="illusion" />
+				<else>               
+					<targettype type="mimic" />
+					<else> 
+						<targettype type="self" />
+						<else>
+							<targettype type="heropet" />
+							<else>
+								<spawnunit name="Gadget_Chronos_Alt9" count="1" target="target_position" pushentity="true" maxactive="5" />
+							</else>
+						</else>
+					</else>
+				</else>
+			</targettype>
+		</onkill>
+		
+		<onspawn>
+			<upgradeselected target="this_entity" upgrade="sc.punk_circle_upgrade">
+				<activatemodifierkey name="Graffiti_Punk_Circle" />
+			</upgradeselected>
+		</onspawn>
+		
+		<modifier key="Graffiti_Punk_Circle" modpriority="2"
+			localselectionringmaterial="/shared/materials/selection_indicator_graffiti.material"
+		/>
+		
+	</altavatar>
+	
+	<altavatar key="Hero_Chronos.Alt10"
+		icon="alt10/icons/hero.tga"
+	    	icon2="alt10/icons/hero.tga"
+		model="alt10/model.mdf"
+		portraitcampos="0 10 45"
+		preglobalscale="1.1"
+		passiveeffect="alt10/effects/body.effect"
+		previewmodel="alt10/preview.mdf"
+		previewpos="0 0 -60"
+	previewangles="0 0 0"
+	previewscale="1.0"
+	previewpassiveeffect="hd_chronos/effects/body.effect"
+		
+		storemodel="alt10/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1"
+		storepassiveeffect="alt10/effects/body.effect"
+		
+		corpsetime="100"
+		corpsefadetime="4000"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		
+		selectedsound="alt10/sounds/flash/voice/select_%.wav"
+	    selectedflavorsound="alt10/sounds/flash/voice/select_flavour_%.wav"
+	    confirmmovesound="alt10/flash/sounds/voice/move_%.wav"
+	    confirmattacksound="alt10/flash/sounds/voice/attack_%.wav"
+	    nomanasound="alt10/sounds/flash/voice/no_mana.wav"
+     	cooldownsound="alt10/sounds/flash/voice/cooldown.wav"
+	    tauntedsound="alt10/sounds/flash/voice/taunt_prior.wav"
+	    tauntkillsound="alt10/sounds/flash/voice/taunt_after.wav"
+		
+		attackimpacteffect="alt10/effects/impact.effect"
+	>
+			</altavatar>
+	
+	
+	<altavatar key="Hero_Chronos.pog_skin" modpriority="1"
+		icon="hd_chronos/icon.tga"
+		icon2="icon.tga"
+		portrait="icon.tga"
+		model="pog_skin/model.mdf"
+		
+		previewmodel="pog_skin/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.15"
+
+		storemodel="pog_skin/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.1"
+		
+		portraitcampos="-5 10 30"
+	>
+
+	</altavatar>
+	
+	<altavatar key="Hero_Chronos.Alt11"
+		icon="hd_chronos/icon.tga"
+	    icon2="alt11/icon.tga"
+		model="alt11/model.mdf"
+		portraitcampos="30 40 45"
+		preglobalscale="1.05"
+
+		previewmodel="alt11/preview.mdf"
+		previewpos="0 0 -70"
+		previewangles="0 0 0"
+		previewscale="0.95"
+		
+		storemodel="alt11/preview.mdf"
+		storepos="0 0 -27"
+		storeangles="0 0 0"
+		storescale=".95"
+		
+		attackimpacteffect="alt11/effects/impact.effect"
+		
+		selectedsound="alt11/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt11/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt11/sounds/voice/move_%.wav"
+	    confirmattacksound="alt11/sounds/voice/attack_%.wav"
+	    nomanasound="alt11/sounds/voice/no_mana.wav"
+     	cooldownsound="alt11/sounds/voice/cooldown.wav"
+	    tauntedsound="alt11/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt11/sounds/voice/taunt_after.wav"
+	>
+	</altavatar>
+
+<altavatar key="Hero_Chronos.trophy_skin01"
+		icon="hd_chronos/icon.tga"
+	    icon2="trophy_skin/model_01/icon.tga"
+		model="trophy_skin/model_01/model.mdf"
+		portraitcampos="-5 10 35"
+		preglobalscale="1.035"
+		
+		passiveeffect="trophy_skin/model_01/effects/body.effect"
+
+		previewmodel="trophy_skin/model_01/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.0"
+		
+		storemodel="trophy_skin/model_01/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 -30"
+		storescale="1"
+		
+		attackimpacteffect="trophy_skin/model_01/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Chronos.trophy_skin02"
+		icon="hd_chronos/icon.tga"
+	    icon2="trophy_skin/model_02/icon.tga"
+		model="trophy_skin/model_02/model.mdf"
+		portraitcampos="-5 10 35"
+		preglobalscale="1.035"
+		
+		passiveeffect="trophy_skin/model_02/effects/body.effect"
+
+		previewmodel="trophy_skin/model_02/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.0"
+		
+		storemodel="trophy_skin/model_02/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 -30"
+		storescale="1"
+		
+		attackimpacteffect="trophy_skin/model_02/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Chronos.trophy_skin03"
+		icon="hd_chronos/icon.tga"
+	    icon2="trophy_skin/model_03/icon.tga"
+		model="trophy_skin/model_03/model.mdf"
+		portraitcampos="-5 10 35"
+		preglobalscale="1.035"
+		
+		passiveeffect="trophy_skin/model_03/effects/body.effect"
+
+		previewmodel="trophy_skin/model_03/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.0"
+		
+		storemodel="trophy_skin/model_03/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 -30"
+		storescale="1"
+		
+		attackimpacteffect="trophy_skin/model_03/effects/impact.effect"
+	/>
+
+</hero>
+

@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+		
+		<particlesystem name="system0" space="world" scale=".5">
+			<billboard
+				
+				life="500"
+				startcolor="10"
+				midcolor="1"
+				endcolor="0 0 0"
+				startsize="25"
+				midsize="120"
+				endsize="155"
+				midsizepos=".3"
+				depthbias="-300"
+				material="/shared/effects/materials/heart_04.material"
+				position="0 0 50"
+				scale="3"
+			/>
+		
+			<sound
+				volume=".4"
+				sample="/heroes/rocky/ability_02/sounds/ability_02_impact.wav"
+				linearfalloff="true"
+				falloffstart="0" 
+				falloffend="2500" 
+			/>
+			<sound
+				volume="1"
+				sample="\heroes\monkey_king\Elizabeth_Bathory\sounds/34_skin3_W_hit.wav"
+				linearfalloff="true"
+				falloffstart="0" 
+				falloffend="2500" 
+			/>
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1500"
+				volume="1"
+				sample="../sounds/bass.wav"
+			/>
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1500"
+				volume=".30"
+				sample="../sounds/bass.wav"
+			/>
+			
+			<light
+				position="0 0 50"
+				life="200"
+				startcolor="10"
+				midcolor="1 .5 .3"
+				midcolorpos=".1"
+				endcolor="0"
+				falloffstart="0"
+				falloffend="1000"
+			/>
+			
+			
+			<simpleemitter	
+				life="400"				
+				spawnrate="2000"
+				count="4"
+				position="0 0 50"
+				minparticlelife="200"			
+				maxparticlelife="350"				
+				material="/shared/effects/materials/smash_add.material"			
+				depthbias="-50"
+				offsetsphere="5"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startcolor="0"
+					midcolor=".3 .1 0"
+					endcolor="0"
+					minsize="130"
+					maxsize="200"
+					startscale="1"
+					endscale="3"
+				/>
+			</simpleemitter>
+			<simpleemitter	
+				speed="300"
+				life="300"				
+				endspawnrate="700"
+				count="35"
+				position="0 0 50"
+				minparticlelife="200"			
+				maxparticlelife="500"				
+				material="/shared/effects/materials/soul_projectile2.material"			
+				depthbias="-30"
+				offsetsphere="115"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					startcolor="2"
+					midcolor=".65 .3 .1"
+					endcolor="0 0 0"
+					size="40"
+					midsizepos=".75"
+					endsize="70"
+					startscale="1"
+					endscale="2"
+					endstickiness="1"
+				/>
+			</simpleemitter>
+			<simpleemitter	
+				speed="300"
+				life="300"				
+				endspawnrate="700"
+				count="15"
+				position="0 0 90"
+				minparticlelife="400"			
+				maxparticlelife="700"				
+				material="/shared/effects/materials/pyroclast_06.material"			
+				offsetsphere="95"
+				depthbias="-20"
+			>
+				<particle 
+					minanglespeed="-80"
+					maxanglespeed="80"
+					startcolor=".3"
+					endcolor=".1"
+					size="40"
+					midsizepos=".65"
+					endsize="70"
+					startscale="2"
+					endscale="4"
+					endstickiness=".9"
+					startalpha=".2"
+					midalpha=".4"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			<billboard
+				life="300"
+				position="0 0 50"			
+				startcolor="1"
+				endcolor="0"
+				size="550"
+				depthbias="-100"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+			
+			<simpleemitter
+				count="10"
+				spawnrate="2000"
+				minparticlelife="600"
+				maxparticlelife="800"
+				drag=".01"
+				offsetphere="140 140 20"
+				gravity="70"
+				minspeed="650"
+				maxspeed="1250"								
+				direction="0 0 1"
+				position="0 0 50"
+				depthbias="-30"
+				minangle="50"
+				maxangle="90"
+				material="/shared/effects/materials/note_4.material"
+			>			
+				<particle
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-120"
+					maxanglespeed="120"
+					startsize="25"	
+					endsize="15"								
+					depthbias="-100"
+					startcolor="1 .6 1"
+					midcolor="1 .6 1"
+					endcolor="0"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".25"
+					minscale="2"
+					maxscale="4"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				count="8"
+				spawnrate="2000"
+				minparticlelife="600"
+				maxparticlelife="800"
+				drag=".01"
+				offsetphere="140 140 20"
+				gravity="70"
+				minspeed="650"
+				maxspeed="1250"								
+				direction="0 0 1"
+				position="0 0 50"
+				depthbias="-30"
+				minangle="50"
+				maxangle="90"
+				material="/shared/effects/materials/heart_04.material"
+			>			
+				<particle
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-120"
+					maxanglespeed="120"
+					startsize="25"	
+					endsize="15"								
+					depthbias="-100"
+					startcolor="1 1 .5"
+					midcolor="1 .6 .3"
+					endcolor="0"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".25"
+					minscale="1"
+					maxscale="3"
+				/>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-120"
+					maxanglespeed="120"
+					startsize="25"	
+					endsize="15"								
+					depthbias="-100"
+					startcolor="1 1 .5"
+					midcolor="1 1 .5"
+					endcolor="0"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".25"
+					minscale="1"
+					maxscale="3"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				count="10"
+				spawnrate="2000"
+				minparticlelife="600"
+				maxparticlelife="800"
+				drag=".007"
+				offsetphere="140 140 20"
+				gravity="70"
+				minspeed="650"
+				maxspeed="2250"								
+				direction="0 0 1"
+				position="0 0 50"
+				depthbias="-30"
+				angle="30"
+				material="/shared/effects/materials/heart_02.material"
+			>			
+				<particle
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-120"
+					maxanglespeed="120"
+					startsize="25"	
+					endsize="15"								
+					depthbias="-100"
+					startcolor="1 1 .5"
+					midcolor="1 .6 .3"
+					endcolor="0"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".25"
+					minscale="1"
+					maxscale="3"
+				/>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-120"
+					maxanglespeed="120"
+					startsize="25"	
+					endsize="15"								
+					depthbias="-100"
+					startcolor="1 1 .5"
+					midcolor="1 1 .5"
+					endcolor="0"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".25"
+					minscale="1"
+					maxscale="3"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				count="5"
+				spawnrate="2000"
+				minparticlelife="600"
+				maxparticlelife="800"
+				drag=".006"
+				offsetphere="140 140 20"
+				gravity="70"
+				minspeed="650"
+				maxspeed="2250"								
+				direction="0 0 1"
+				position="0 0 50"
+				depthbias="-30"
+				maxangle="50"
+			>			
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-120"
+					maxanglespeed="120"
+				>
+				
+				</particle>
+			</simpleemitter>
+
+		</particlesystem>
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+		
+		
+		
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

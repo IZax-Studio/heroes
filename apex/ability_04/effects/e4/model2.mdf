@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="black.max" file="black.model" type="K2" high="black.model" med="black.model" low="black.model" >
+	
+	<anim name="black" clip="idle.clip" fps="500"/>
+
+</model>

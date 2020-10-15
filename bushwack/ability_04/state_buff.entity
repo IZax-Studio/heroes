@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Bushwack_Ability4_Buff"
+
+	icon="4.jpg"
+	passiveeffect="effects/buff.effect"
+
+	maxcharges="20"
+
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	
+	attackspeedpercharge="0.10,0.15,0.20"
+	
+>
+	<onframe />	
+</state>

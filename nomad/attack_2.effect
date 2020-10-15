@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="savage_quick_attack_1">
+
+<definitions>
+	<particlesystem name="system0" space="entity">
+
+<simpleemitter
+				count="1"
+				spawnrate="5000"
+
+				particlelife="2000"
+				acceleration="0.0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="1"
+				>
+						<billboard
+							position="0 0 50"
+							life="100"
+							startcolor="1"
+							endcolor="1"
+							size="200"
+							rollspeed="-300"
+							depthbias="-100"
+						startscale="1.1"
+                                endscale="1.3"
+	material="material.material"
+lockup="1"
+				lockright="true"
+				pitch="90"
+				
+				directionalspace="local"
+                     roll="-50"
+						/>
+				</particle>
+			</simpleemitter>
+
+		
+
+	</particlesystem>
+</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

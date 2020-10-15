@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Empath_Ability4_Self_InvisCheck"
+
+	icon="1.jpg,2.jpg,3.jpg,4.jpg"
+	passiveeffect=""
+	
+	ishidden="true"
+	serverentity="true"
+
+	effecttype=""
+>
+	<onframe>
+		<!-- This line and modifier key prevents Parasite from accidentally dispelling enemy Veiled Rot -->
+		<isstealthed entity="this_proxy_entity">
+			<activatemodifierkey name="Empath_R_Stealthed" entity="this_entity" />
+		</isstealthed>
+	</onframe>
+	
+	<modifier key="Empath_R_Stealthed" modpriority="99"
+		stealthtype="hero"
+		fadetime="0"
+	>
+		<onframe>
+			<compare a="this_proxy_entity" b="0" op="ne">
+				<teleport source="source_entity" target="this_proxy_entity" interpolate="true" facetarget="true" />
+			</compare>
+			<else>
+				<expire />
+			</else>
+			
+			<isstealthed entity="this_proxy_entity" />
+			<else>
+				<deactivatemodifierkey name="Empath_R_Stealthed" entity="this_entity" />
+			</else>
+		</onframe>	
+	</modifier>
+	
+</state>

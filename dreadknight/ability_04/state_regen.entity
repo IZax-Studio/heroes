@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Dreadknight_Ability4_Regen"
+
+	icon="4.jpg"
+	passiveeffect=""
+	displaylevel="true"
+
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	
+	healthregen="15"
+	healthregenpercharge="3"
+	
+>
+	<onframe>
+		<setvar0 a="source_missinghealth" b="100" op="div" />
+		<setcharges a="var0" />
+	</onframe>
+	
+	<altavatar key="Hero_Dreadknight.Alt11"
+		icon="/heroes/dreadknight/alt11/ability_04/icon.tga"
+	/>
+	
+</state>

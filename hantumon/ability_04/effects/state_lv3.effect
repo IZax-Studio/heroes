@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world">
+			
+			<sound
+				delay="1000"
+				linearfalloff="true"
+				falloffstart="500"
+				falloffend="2000" 
+				volume=".3" 
+				sample="/heroes/hantumon/alt2/sounds/quillen/ab4_start.wav"
+			/>
+			
+			<sound
+				delay="2000"
+				linearfalloff="true"
+				falloffstart="500"
+				falloffend="2000" 
+				volume=".3" 
+				sample="/heroes/hantumon/alt2/sounds/quillen/ab4_start2_%.wav"
+			/>
+			
+			<sound
+				randomloop="true"
+				soundloop="true"
+				fadein="2500"
+				fadeout="500"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="1300" 
+				volume=".3" 
+				sample="/heroes/hantumon/alt2/sounds/quillen/ab4_loop.wav"
+			/>
+			
+			<model
+				life="2500"
+				parentmodel="true"
+				parentskeleton="true"
+				material="material.material"
+				color="1"
+				startalpha="0"
+				endalpha=".35"
+			/>
+
+			<model
+				delay="2500"
+				expirelife="1000"
+				parentmodel="true"
+				parentskeleton="true"
+				material="material.material"
+				color="1"
+				startalpha=".35"
+				endalpha="0"
+			/>
+
+			<model
+				life="2500"
+				parentmodel="true"
+				parentskeleton="true"
+				material="/shared/effects/materials/shell_rim_white.material"
+				color="1"
+				startalpha="0"
+				endalpha=".35"
+			/>
+
+			<model
+				delay="2500"
+				expirelife="1000"
+				parentmodel="true"
+				parentskeleton="true"
+				material="/shared/effects/materials/shell_rim_white.material"
+				color="1"
+				startalpha=".35"
+				endalpha="0"
+			/>
+			<template name="jolt">
+				<twopointemitter
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					life="3000"
+					startspawnrate="-30"
+					midspawnrate="40"
+					endspawnrate="-30"
+					offsetsphere="10"
+					midspawnratepos=".5"
+					minparticlelife="200"
+					maxparticlelife="300"
+					material="/shared/effects/materials/femme_lightning_02.material"
+				>
+					<particle
+						maxangle="360"
+						flare="1"
+						startcolor="1"
+						endcolor="1 .1 0"
+						midcolorpos=".2"
+						minscale="2"
+						maxscale="3"
+						framespeed="3"
+						anchor="1"
+					/>
+				</twopointemitter>
+			</template>
+			
+			<instance name="jolt" bone_a="_bone_center" bone_b="_bone_head" />
+			<instance name="jolt" bone_a="_bone_centerofchest" bone_b="_bone_lefthand" />
+			<instance name="jolt" bone_a="_bone_centerofchest" bone_b="_bone_righthand" />
+			<instance name="jolt" bone_a="_bone_center" bone_b="_bone_leftfoot" />
+			<instance name="jolt" bone_a="_bone_center" bone_b="_bone_rightfoot" />
+			<template name="21">
+			<trailemitter
+				bone="{bone}"
+				
+				spawnrate="500"
+				particlelife="200"
+				texpostime="1000"
+				texposscale="0.0"
+				texstretchscale="1.0"
+				material="/shared/effects/materials/swoosh_add.material"
+			>
+				<particle
+					startcolor=".5 0 0"
+					midcolor=".5 0 0"
+					midcolorpos=".5"
+					endcolor=".8 0 0"
+				/>
+			</trailemitter>
+			<billboard
+			material="/shared/effects/materials/whitedot.material"
+			color=".22 0 0"
+			size="15"
+			depthbias="-30"
+			bone="{bone}"
+		/>
+			</template>
+			<instance name="21" bone="Box69"/>
+			<instance name="21" bone="Box67"/>
+			<instance name="21" bone="Box68"/>
+			<instance name="21" bone="Box70"/>
+			<instance name="21" bone="Box71"/>
+		</particlesystem>
+	</definitions>
+	<thread>
+		  <spawnparticlesystem instance="instance0" particlesystem="system0"/>
+  		  <waitfordeath instance="instance0" />
+	</thread>
+</effect>

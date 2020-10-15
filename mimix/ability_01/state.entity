@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Mimix_Ability1"
+
+	icon="../icon/Q.png"
+	passiveeffect="effects/state.effect"
+	
+	effecttype="StatusBuff"
+	allowtransfer="false"
+
+	impactinterval="1500"
+>
+	<onframe />
+	
+	<onimpact>
+		<targettype type="illusion" target="this_owner_entity">
+			<pushability source="source_entity" slot="3" />
+			<getlevel entity="stack_entity" />
+			<setvar0 a="result" />
+			
+			<setvar1 a="0.7" /> <!-- Damage multiplier past a certain number of explosions -->
+
+			<compare a="var0" b="1" op="eq">
+				<areaofeffect
+					center="this_owner_entity"
+					radius="300"
+					targetselection="all"
+					targetscheme="enemy_units"
+					effecttype="Magic"
+				>
+					<applystate name="State_Mimix_Ability1_Charges" duration="2000" pushentity="true" />
+					<setvar0 a="source_charges" source="stack_entity" />
+					<compare a="var0" b="3" op="ge">
+						<setvar0 a="var0" b="2" op="sub" />
+						<setvar0 a="var0" b="1" op="max" /> <!-- Makes sure the value is 1 at minimum, just in case -->
+						<setvar0 a="var1" b="var0" op="pow" />
+						<setvar0 a="var0" b="0.5" op="mult" /> <!-- Original damage multiplier from R -->
+						<damage effecttype="Magic" amount="100,145,190,235" b="var0" op="mult" />
+					</compare>
+					<else>
+						<damage effecttype="Magic" amount="100,145,190,235" b="0.5" op="mult" />
+					</else>
+				</areaofeffect>
+			</compare>
+		
+			<compare a="var0" b="2" op="eq">
+				<areaofeffect
+					center="this_owner_entity"
+					radius="300"
+					targetselection="all"
+					targetscheme="enemy_units"
+					effecttype="Magic"
+				>
+					<applystate name="State_Mimix_Ability1_Charges" duration="2000" pushentity="true" />
+					<setvar0 a="source_charges" source="stack_entity" />
+					<compare a="var0" b="3" op="ge">
+						<setvar0 a="var0" b="2" op="sub" />
+						<setvar0 a="var0" b="1" op="max" /> <!-- Makes sure the value is 1 at minimum, just in case -->
+						<setvar0 a="var1" b="var0" op="pow" />
+						<setvar0 a="var0" b="0.75" op="mult" /> <!-- Original damage multiplier from R -->
+						<damage effecttype="Magic" amount="100,145,190,235" b="var0" op="mult" />
+					</compare>
+					<else>
+						<damage effecttype="Magic" amount="100,145,190,235" b="0.75" op="mult" />
+					</else>
+				</areaofeffect>
+			</compare>
+
+			<compare a="var0" b="3" op="eq">
+				<areaofeffect
+					center="this_owner_entity"
+					radius="300"
+					targetselection="all"
+					targetscheme="enemy_units"
+					effecttype="Magic"
+				>
+					<applystate name="State_Mimix_Ability1_Charges" duration="2000" pushentity="true" />
+					<setvar0 a="source_charges" source="stack_entity" />
+					<compare a="var0" b="3" op="ge">
+						<setvar0 a="var0" b="2" op="sub" />
+						<setvar0 a="var0" b="1" op="max" /> <!-- Makes sure the value is 1 at minimum, just in case -->
+						<setvar0 a="var1" b="var0" op="pow" />
+						<setvar0 a="var0" b="1" op="mult" /> <!-- Original damage multiplier from R -->
+						<damage effecttype="Magic" amount="100,145,190,235" b="var0" op="mult" />
+					</compare>
+					<else>
+						<damage effecttype="Magic" amount="100,145,190,235" b="1" op="mult" />
+					</else>
+				</areaofeffect>
+			</compare>
+		</targettype>
+
+		<else>
+			<areaofeffect
+				center="this_owner_entity"
+				radius="300"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Magic"
+			>
+				<applystate name="State_Mimix_Ability1_Charges" duration="2000" pushentity="true" />
+				<setvar0 a="source_charges" source="stack_entity" />
+				<compare a="var0" b="3" op="ge">
+					<setvar0 a="var0" b="2" op="sub" />
+					<setvar0 a="var0" b="1" op="max" /> <!-- Makes sure the value is 1 at minimum, just in case -->
+					<setvar0 a="var1" b="var0" op="pow" />
+					<damage effecttype="Magic" amount="100,145,190,235" b="var0" op="mult" />
+				</compare>
+				<else>
+					<damage effecttype="Magic" amount="100,145,190,235" />
+				</else>
+			</areaofeffect>
+		</else>
+		
+		
+		<!-- Art stuff -->
+		<targettype type="illusion" target="this_owner_entity">
+			<hasavatarkey name="Hero_Mimix.Alt2">
+				<playeffect effect="../alt2/ability_01/effects/impact_illu.effect" source="this_owner_position" target="" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Mimix.Alt">
+					<playeffect effect="../alt/ability_01/effects/impact_illu.effect" source="this_owner_position" target="" />
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/impact_illu.effect" source="this_owner_position" target="" />
+				</else>
+			</else>
+		</targettype>
+		<else>				
+			<hasavatarkey name="Hero_Mimix.Alt2">
+				<playeffect effect="../alt2/ability_01/effects/impact.effect" source="this_owner_position" target="" />
+			</hasavatarkey>
+			<else>	
+				<hasavatarkey name="Hero_Mimix.Alt">
+					<playeffect effect="../alt/ability_01/effects/impact.effect" source="this_owner_position" target="" />
+				</hasavatarkey>
+				<else>						
+					<playeffect effect="effects/impact.effect" source="this_owner_position" target="" />					
+				</else>	
+			</else>	
+		</else>
+	</onimpact>
+	
+	<altavatar key="Hero_Mimix.Alt" modpriority="1"
+		passiveeffect="/heroes/mimix/alt/ability_01/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Mimix.Alt2" modpriority="1"
+		passiveeffect="../alt2/ability_01/effects/state.effect"
+	/>
+	
+</state>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Tarot_Attack_Harkons"
+
+	speed="1200"
+	gravity="0"
+
+	modelscale="1.75"
+	model="/items/recipes/harkons_blade/effects/projectile/model.mdf"
+
+	effectscale="1.5"
+	impacteffect="/items/recipes/harkons_blade/effects/projectile/impact.effect"
+	traileffect="/items/recipes/harkons_blade/effects/projectile/trail.effect"
+>
+	<onimpact>
+		<compare a="param" b="1" op="eq">
+			<setactivemodifierkey entity="proxy_entity" name="Tarot_nextattackneedstobeinvis" />
+			<attack source="this_owner_entity" target="target_entity" startcooldown="false" />
+		</compare>
+	</onimpact>
+</projectile>

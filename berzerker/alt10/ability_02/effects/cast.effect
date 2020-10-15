@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1.5">
+		
+			<sound
+				linearfalloff="true" 
+				falloffstart="200"
+				falloffend="2200"
+				volume=".80"
+				sample="/heroes/berzerker/ability_03/sounds/cast.wav"
+			/>	
+		
+			<beam
+				life="350"
+				bone_b="_bone_origin"
+				position_a="0 0 1080"
+				size="40"
+				color=".35 .35 .35"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				framespeed="1.75"
+			/>
+
+			<beam
+				life="350"
+				bone_b="_bone_origin"
+				position_a="0 0 1080"
+				size="40"
+				color="1 .65 .15"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				framespeed="1.75"
+
+			/>
+			<beam
+				life="350"
+				bone_b="_bone_origin"
+				position_a="0 0 1080"
+				size="60"
+				color=".5 0 0"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				framespeed="1.75"
+			/>
+
+			<beam
+				life="350"
+				bone_b="_bone_origin"
+				position_a="0 0 880"
+				size="60"
+				color=".5 .2 0"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				framespeed="1.75"
+			/>
+
+			<beam
+				life="500"
+				position_a="0 0 -50"
+				position_b="0 0 500"
+				startcolor="0"
+				midcolor="1 .35 0"
+				endcolor="0"
+				size="400"
+				midcolorpos=".15"
+				material="../../effects/EF_BA_mouth_spit0659.material"
+			/>
+
+			<simpleemitter
+				count="1"
+				particlelife="1500"
+			>
+				<particle>
+					<groundsprite
+						life="1500"
+						material="../../effects/Dilie_a_0006.material"
+						size="175"
+						color="1"
+						maxyaw="360"
+						startalpha=".5"
+						midalpha=".5"
+						midalphapos=".85"
+						endalpha="0"
+					/>
+					<groundsprite
+						life="1500"
+						material="../../effects/lieheng_van_02.material"
+						size="175"
+						color="1"
+						maxyaw="360"
+						startalpha=".5"
+						midalpha=".5"
+						midalphapos=".85"
+						endalpha="0"
+					/>
+					<groundsprite
+						life="300"
+						material="../../effects/Glow_DF_02.material"
+						startsize="100"
+						endsize="300"
+						startcolor="5"
+						midcolor="5"
+						endcolor="0"
+						maxyaw="360"
+					/>
+				 </particle>
+			</simpleemitter>	
+			
+			<template name="zTemplate">
+				<simpleemitter
+					bone="{bone}"
+					life="400"
+					spawnrate="2000"
+					count="20"
+					minparticlelife="250"
+					maxparticlelife="750"
+					speed="2000"
+					drag="0.05"
+					gravity="-1"
+					offsetsphere="15"
+					material="/shared/effects/materials/dust.material"
+				>
+					<particle
+						minangle="-180"
+						maxangle="180"
+						minanglespeed="-150"
+						maxanglespeed="150"
+						turn="1"
+						color="0 0 0"
+						size="50"
+						minendscale="6"
+						maxendscale="10"
+						startalpha="0"
+						midalpha=".5"
+						endalpha="0"
+						midalphapos=".15"
+					/>
+				</simpleemitter>
+
+				<simpleemitter
+					bone="{bone}"
+					life="400"
+					spawnrate="2000"
+					count="20"
+					minparticlelife="150"
+					maxparticlelife="300"
+					speed="2000"
+					drag="0.05"
+					offsetsphere="15"
+					depthbias="-40"
+					material="/shared/effects/materials/phantom_smoke_04.material"
+				>
+					<particle
+						minangle="-180"
+						maxangle="180"
+						minanglespeed="-150"
+						maxanglespeed="150"
+						turn="1"
+						startcolor="1 1 1"
+						midcolor=".5 .25 0"
+						endcolor="0"
+						size="50"
+						startstickiness="0"
+						maxendstickiness="1"
+						minendscale="2"
+						maxendscale="5"
+						startalpha=".3"
+						midalpha="1"
+						midalphapos="0.1"
+						endalpha="0"
+					/>
+				</simpleemitter>
+
+				<simpleemitter
+					bone="{bone}"
+					life="1800"
+					spawnrate="2000"
+					count="50"
+					minparticlelife="250"
+					maxparticlelife="750"			
+					gravity="24"
+					minspeed="350"
+					maxspeed="1600"
+					drag=".008"
+					material="/shared/effects/materials/flare_03.material"
+					offsetsphere="2"
+					minangle="-10"
+					maxangle="40"
+					direction="0 0 1"
+					directionalspace="global"
+				>
+					<particle 
+						minangle="0"
+						maxangle="360"
+						startcolor="1"
+						midcolor="1 .25 0"
+						endcolor="0 0 0"
+						midcolorpos=".5"
+						minstartsize="20"
+						maxstartsize="25"
+						midsize="15"
+						endsize="10"
+						startalpha="0"
+						midalpha=".7"
+						endalpha="0"
+						midalphapos=".5"
+						turn="true"
+						scale="2"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					bone="{bone}"
+					life="1800"
+					spawnrate="2000"
+					count="50"
+					minparticlelife="250"
+					maxparticlelife="750"			
+					gravity="24"
+					minspeed="350"
+					maxspeed="1600"
+					drag=".008"
+					material="/shared/effects/materials/spark_10.material"
+					offsetsphere="2"
+					minangle="-10"
+					maxangle="40"
+					direction="0 0 1"
+					directionalspace="global"
+				>
+					<particle 
+						minangle="0"
+						maxangle="360"
+						startcolor="1"
+						midcolor="1 .25 0"
+						endcolor="0 0 0"
+						midcolorpos=".5"
+						minstartsize="20"
+						maxstartsize="25"
+						midsize="15"
+						endsize="10"
+						startalpha="0"
+						midalpha=".7"
+						endalpha="0"
+						midalphapos=".5"
+						turn="true"
+						scale="2"
+					/>
+				</simpleemitter>
+
+				<simpleemitter
+					bone="{bone}"
+					life="300"
+					count="10"
+					spawnrate="1500"
+					minparticlelife="150"
+					maxparticlelife="300"
+					offsetsphere="5"
+					depthbias="-50"
+					material="/shared/effects/materials/whitedot.material"
+				>
+					<particle
+						minangle="-360"
+						maxangle="360"
+						minanglespeed="-60"
+						maxanglespeed="60"
+						startcolor=".5"
+						midcolor="1 .25 .05"
+						endcolor="0 0 0"
+						size="3"
+						minendscale="6"
+						maxendscale="10"
+						startalpha=".3"
+						midalpha="1"
+						midalphapos="0.1"
+						endalpha="0"
+						minendwidth="100"
+						maxendwidth="135"
+						anchor="1"
+					/>
+				</simpleemitter>
+				
+				<billboard
+					bone="{bone}"
+					life="300"
+					startcolor=".5 0 0"
+					midcolor=".5 0 0"
+					endcolor="0"
+					midcolorpos="0.75"
+					size="350"
+					depthbias="-120"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+
+				<billboard
+					bone="{bone}"
+					life="150"
+					startcolor="1 1 1"
+					midcolor=".5 .1 0"
+					endcolor="0"
+					midcolorpos="0.75"
+					size="200"
+					depthbias="-120"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+
+				<simpleemitter
+					bone="{bone}"
+					life="200"
+					count="3"
+					spawnrate="2550"
+					minparticlelife="200"
+					maxparticlelife="400"
+					offsetsphere="15"
+					angle="0"
+					material="/shared/effects/materials/refract_wave2.material"
+				>
+					<particle
+						startalpha=".25"
+						endalpha="0.0"
+						minangle="0"
+						maxangle="360"
+						startsize="100"
+						endsize="500"
+						param=".2"
+						depthbias="-130"
+						anchor="1"
+					/>
+				</simpleemitter>
+			</template>
+
+			<instance name="zTemplate" bone="_bone_weapon2"/>
+			<instance name="zTemplate" bone="_bone_altweapon2"/>
+			
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<spawnmodifier instance="instance1" modifier="modifier0"/> 
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

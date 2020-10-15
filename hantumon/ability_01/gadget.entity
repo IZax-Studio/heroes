@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Hantumon_Ability1"
+
+	modelscale="1.18"
+
+	isselectable="false"
+	iscontrollable="false"
+	ismobile="false"
+	canrotate="false"
+	invulnerable="true"
+	drawonmap="false"
+
+	model="/shared/models/invis.mdf"
+	passiveeffect="effects/ability_01.effect"
+
+	lifetime="6000"
+	deathtime="0"
+	corpsetime="0"
+>
+	<aura state="State_Hantumon_Ability1" radius="325" targetscheme="enemy_units" effecttype="Magic" disablenegativeeffectpopuponrefresh="true" />
+
+	<altavatar key="Hero_Hantumon.Alt5"
+		passiveeffect="../alt5/ability_01/effects/ability_01.effect"
+	/>
+	
+	<altavatar key="Hero_Hantumon.Alt6"
+		passiveeffect="../alt6/ability_01/effects/ability_01.effect"
+	/>
+	
+	<altavatar key="Hero_Hantumon.Alt7"
+		passiveeffect="../alt7/ability_01/effects/ability_01.effect"
+	/>
+
+	<altavatar key="Hero_Hantumon.Alt9"
+		passiveeffect="../alt9/ability_01/effects/ability_01.effect"
+	/>
+
+	<altavatar key="Hero_Hantumon.Alt10"
+		passiveeffect="../alt10/ability_01/effects/ability_01.effect"
+	/>
+
+	<altavatar key="Hero_Hantumon.Alt11"
+		passiveeffect="../alt11/ability_01/effects/ability_01.effect"
+	>
+		<modifier key="Night_Set_Hantumon" modpriority="101"
+			passiveeffect="../alt12/ability_01/effects/ability_01.effect"
+		/>
+	</altavatar>
+
+	<altavatar key="Hero_Hantumon.Alt12"
+		passiveeffect="../alt12/ability_01/effects/ability_01.effect"
+	>
+		<modifier key="Night_Set_Hantumon" modpriority="101"
+			passiveeffect="../alt11/ability_01/effects/ability_01.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Hantumon.Alt13"
+		passiveeffect="../alt13/ability_01/effects/ability_01.effect"
+	/>
+	
+</gadget>

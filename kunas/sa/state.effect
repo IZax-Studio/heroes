@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+<!--
+		<modifier
+			name="modifier0"
+			material="material.material"
+			color="1 1 1"
+			expirelife="750"
+			startalpha="1"
+			endalpha="0"
+		/>			
+		</particlesystem>
+		
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+		<spawnparticlesystem instance="instance2" particlesystem="system2" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+		<waitfordeath instance="instance2" /> 
+	</thread>
+
+</effect>

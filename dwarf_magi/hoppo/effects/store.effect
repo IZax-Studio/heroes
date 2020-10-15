@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system1" space="entity" scale="1.0">
+			<sound
+				
+				dampen=".5"
+				channelid="storeaud"
+				sound2d="true"
+				volume="1"
+				sample="../sounds/23_relive_skin1.wav"
+			/>
+			
+			<sound
+				dampen=".5"
+				channelid="storeaud2"
+				sound2d="true"
+				volume="1"
+				sample="../sounds/34_skin3_relive.wav"
+			/>
+			<model
+				life="6010"
+				model="plane/HandPlane.mdf"
+				parentskeleton="true"
+			/>
+			
+			<model
+				life="2010"
+				model="plane/BigPlane.mdf"
+				parentskeleton="true"
+			/>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+	</thread>
+</effect>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<modifier
+			name="modifier0"
+			startcolor="0 .4 1"
+			endcolor="1"
+			alpha="1"
+			life="300"
+		/>
+
+		<particlesystem name="system0" space="world" scale=".75">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="550"
+				falloffend="2500"
+				volume=".75"
+				sample="multiple explosions 2.wav"
+			/>
+
+			
+
+			
+		
+		<template name="orbs">
+		
+        <billboard
+				material="/shared/effects/materials/star_04.material"
+				bone="{bone}"
+				color="0 .4 1"
+				startalpha="1"
+				endalpha="0"
+				loop="0"
+				life="750"
+				expirelife="750"
+				position="0 0 10"
+				size="100"
+				depthbias="-75"			
+			/>
+			<billboard
+				material="/shared/effects/materials/corona_07.material"
+				bone="{bone}"
+				color="0 .4 1"
+				loop="0"
+				startalpha="1"
+				endalpha="0"
+				life="750"
+				expirelife="750"
+				position="0 0 10"
+				size="18"
+				depthbias="-75"			
+			/>
+			
+			<trailemitter
+					bone="{bone}"
+					spawnrate="50"
+					particlelife="1000"
+					expirelife="750"
+					life="750"
+					texpostime="1350"
+					texposscale="0.0"
+					texstretchscale=".5"
+					material="/shared/effects/materials/wave_trail.material"
+					position="0 0 10"
+					depthbias="0"
+				>
+					<particle
+						color="0 .4 1"
+						endcolor="0 0 0"
+						startalpha="1"
+						endalpha="0"
+						startsize="12"
+						endsize="0"
+						
+					/>
+				</trailemitter>		
+			
+			
+		</template>	
+
+		<instance name="orbs" bone="_bone_righthand"/>
+		<instance name="orbs" bone="_bone_lefthand"/>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<spawnmodifier instance="instance1" modifier="modifier0"/> 
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

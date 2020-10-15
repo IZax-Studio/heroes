@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".5">
+
+			<sound
+				volume="1" 
+				sample="/shared/sounds/impacts/impact_flesh_%.ogg"
+				linearfalloff="true"
+				falloffstart="200"
+				falloffend="1400"
+			/>	
+			
+			<billboard
+				expirelife="300"
+				startcolor="0 .15 .3"
+				endcolor="0"
+				startsize="235"
+				endsize="0"
+				bone="_bone_centerofchest"
+				depthbias="-50"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+
+			<model
+			bone="_bone_center"
+				expirelife="1500"
+				name="emitter0" 
+				anim="idle"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				startscale="5.5"
+				endscale="0"
+				startcolor="0 0 0"
+				midcolor="0 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".75"
+				startalpha="0"
+				midalpha="0"
+				endalpha="0"
+				midalphapos=".4"
+				minyaw="-5"
+				maxyaw="5"
+				yawspeed="360"
+				rollspeed="90"
+			>
+			
+				<template name="trails">
+					<twopointtrailemitter
+						name="trail01"
+						position="0 0 0"
+						bone_a="{bone01}"
+						bone_b="{bone02}"
+						spawnrate="120"
+						particlelife="750"
+						subframepose="1"
+						direction="0 -1 0"
+						minangle="0"
+						maxangle="0"
+						texpostime="750"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/hide.material"
+					>
+						<particle
+							color="0 0 0"
+							startalpha="0"
+							midalpha=".5"
+							endalpha="0"
+						/>
+					</twopointtrailemitter>
+				</template>
+				
+				<instance name="trails" bone01="_bone_fx_01"  bone02="_bone_fx_02"/>
+				<instance name="trails" bone01="_bone_fx_03"  bone02="_bone_fx_04"/>
+				<instance name="trails" bone01="_bone_fx_05"  bone02="_bone_fx_06"/>
+				<instance name="trails" bone01="_bone_fx_07"  bone02="_bone_fx_08"/>
+				<instance name="trails" bone01="_bone_fx_09"  bone02="_bone_fx_10"/>
+				<instance name="trails" bone01="_bone_fx_11"  bone02="_bone_fx_12"/>
+				
+			</model>
+			
+			
+			<simpleemitter
+			bone="_bone_centerofchest"
+				spawnrate="50"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				material="/shared/effects/materials/flare2.material"
+			>
+				<particle
+					startcolor="0 .15 .5"
+					midcolor="0 .15 .5"
+					endcolor="0 0 0"
+					midcolorpos="0.5"
+					startalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="0"
+					maxanglespeed="0"
+					width="19"
+					startheight="0"
+					endheight="250"
+					flare="true"
+					turn="true"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+
+</effect>

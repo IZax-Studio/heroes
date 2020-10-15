@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="model.max" file="model.model" type="K2"  >
+	<anim name="idle" clip="default_1.clip" fps="60" loop="1">
+		<frameevent frame="1" cmd="PlaySoundLinear /heroes/master_of_arms/ability_02/sounds/bottle_%.wav 400 1800 1"/>
+	</anim>
+</model>

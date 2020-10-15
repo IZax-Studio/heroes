@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  deferred="1" >
+	<definitions>
+		<particlesystem name="system0" space="world" scale="2.5">
+		
+			<billboard
+				life="1000"
+				color=".35 0 0"
+				startsize="50"
+				endsize="125"
+				depthbias="-25"
+				material="/shared/effects/materials/music_rings_overlay.material"
+				position="0 0 12"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				loop="true"
+			/>
+			
+			<billboard
+				life="500"
+				color=".35 0 0"
+				startsize="50"
+				endsize="125"
+				depthbias="-25"
+				material="/shared/effects/materials/music_rings_overlay.material"
+				position="0 0 12"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				loop="true"
+			/>
+		
+			<simpleemitter
+			count="1"
+				spawnrate="1000"
+				particlelife="1000"
+				position="0 0 0"
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetsphere="0 0 0"
+			>
+				<particle>
+					<template name="squares">
+						<billboard
+							life="{life}"
+							position="{position}"
+							material="/shared/effects/materials/whitesquare.material"
+							startcolor="0 0 0"
+							midcolor="{midcolor}"
+							endcolor="0 0 0"
+							midcolorpos=".2"
+							size="40"
+							lockup="1"
+							lockright="1"
+							pitch="90"
+							depthbias="-25"
+							loop="true"
+						/>
+					</template>
+					
+					<instance name="squares" position="0 0 5" life="1000" midcolor=".25"/>
+					<instance name="squares" position="35 0 5" life="500" midcolor=".3 0 .2"/>
+					<instance name="squares" position="-35 0 5" life="1000" midcolor=".3 0 .2"/>
+					<instance name="squares" position="0 35 5" life="500" midcolor=".25"/>
+					<instance name="squares" position="0 -35 5" life="1000" midcolor=".25"/>
+				</particle>
+			</simpleemitter>
+		
+			<simpleemitter
+				spawnrate="1"
+				particlelife="1000"
+				position="0 0 0"
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetsphere="0 0 0"
+			>
+				<particle
+				>
+					<template name="squares">
+						<billboard
+							life="{life}"
+							position="{position}"
+							material="/shared/effects/materials/whitesquare.material"
+							startcolor="0 0 0"
+							midcolor="{midcolor}"
+							endcolor="0 0 0"
+							midcolorpos=".2"
+							size="40"
+							lockup="1"
+							lockright="1"
+							pitch="90"
+							depthbias="-25"
+							loop="true"
+						/>
+					</template>
+					
+					<instance name="squares" position="0 0 5" life="1000" midcolor=".25"/>
+					<instance name="squares" position="35 0 5" life="500" midcolor=".3 0 .2"/>
+					<instance name="squares" position="-35 0 5" life="1000" midcolor=".3 0 .2"/>
+					<instance name="squares" position="0 35 5" life="500" midcolor=".25"/>
+					<instance name="squares" position="0 -35 5" life="1000" midcolor=".25"/>
+				</particle>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

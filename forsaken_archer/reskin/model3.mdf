@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="idle.max" file="high.model" type="K2" high="black.model" med="black.model" low="black.model" >
+
+	<anim name="idle" clip="attack_1.clip" fps="550">
+      <frameevent frame="26" cmd="PlaySoundLinear sounds/attack_%.wav 400 1800 .75"/>
+      </anim>
+			
+</model>

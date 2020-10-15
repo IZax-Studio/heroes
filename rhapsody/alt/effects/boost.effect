@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<simpleemitter
+				spawnrate="50"
+				bone="_bone_centerofchest"
+				offsetsphere="40"
+				maxspeed="50"
+				inheritvelocity=".5"
+				limitinheritvelocity="300"
+				drag="0.02"
+				minparticlelife="300"
+				maxparticlelife="600"
+				material="/shared/effects/materials/note_1.material"
+			>
+				<template name="sparkle">
+					<particle
+						maxangle="360"
+						minanglespeed="-200"
+						maxanglespeed="200"
+						startcolor="0"
+						midcolor="{color}"
+						endcolor="0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						minscale="3"
+						maxscale="7"
+					/>
+				</template>
+				
+				<instance name="sparkle" color="1 0 0"/>
+				<instance name="sparkle" color="0 0 0"/>
+				<instance name="sparkle" color="1 0 0"/>
+				<instance name="sparkle" color="0 0 0"/>
+				<instance name="sparkle" color="1 0 0"/>
+				<instance name="sparkle" color="0 0 0"/>
+			</simpleemitter>
+			
+			<trackeremitter
+				bone="_bone_centerofchest"
+				spawnrate="10"
+				particlelife="1000"
+				offsetsphere="50"
+				targetbone="_bone_centerofchest"
+				direction="0 0 1"
+				minangle="60"
+				maxangle="120"
+				minspeed="100"
+				maxspeed="150"
+				drag="0.02"
+				tracktype="angular"
+				trackspeed="3"
+				inheritvelocity="1.5"
+				limitinheritvelocity="750"
+			>
+				<template name="sparkle_trail">
+					<particle
+						turn="1"
+						minscale="3"
+						maxscale="7"
+						minanglespeed="-200"
+						maxanglespeed="200"
+					>
+						<model
+							model="/shared/effects/models/circle_of_bones/model.mdf"
+							anim="idle"
+							scale=".25"
+							pitch="90"
+						>
+							<billboard
+								life="1000"
+								size="6"
+								bone="_bone_fx_01"
+								material="/shared/effects/materials/note_1.material"
+								maxangle="360"
+								minanglespeed="-200"
+								maxanglespeed="200"
+								startcolor="0"
+								midcolor="{color}"
+								endcolor="0"
+								startalpha="0"
+								midalpha="1"
+								endalpha="0"
+							/>
+							<trailemitter
+								bone="_bone_fx_01"
+								life="1000"
+								spawnrate="30"
+								particlelife="500"
+								material="/shared/effects/materials/flux_trail.material"
+								texposscale="1"
+								texstretchscale="0"
+								startparticlecolor="0"
+								midparticlecolor="1"
+								endparticlecolor="0"
+							>
+								<particle
+									startsize="8"
+									endsize="2"
+									startcolor="{color}"
+									endcolor="0"
+								/>
+							</trailemitter>
+						</model>
+					</particle>
+				</template>
+				
+				<instance name="sparkle_trail" color="1 0 0"/>
+				<instance name="sparkle_trail" color="1 1 1"/>
+				<instance name="sparkle_trail" color="1 0 0"/>
+				<instance name="sparkle_trail" color="1 1 1"/>
+				<instance name="sparkle_trail" color="1 0 0"/>
+				<instance name="sparkle_trail" color="1 1 1"/>
+			</trackeremitter>
+		
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

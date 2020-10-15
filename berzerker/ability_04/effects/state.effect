@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" >
+	<definitions>
+		<particlesystem name="system0" space="world" >
+		
+			<sound
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="2500"
+				volume="1"
+				sample="/heroes/berzerker/ability_04/sounds/cast.wav"
+			/>	
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="2500"
+				volume="1"
+				sample="/heroes/berzerker/ability_04/sounds/cast_vox2.wav"
+			/>	
+		
+			<sound		
+				soundloop="true"
+				fadein="1000"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume=".75"
+				sample="/heroes/berzerker/ability_04/sounds/state.wav"
+			/>
+
+			<model
+				model="horn/model.mdf"
+				parentskeleton="true"
+				inheritparentmodifiers="true"
+				parentalpha="true"
+			/>
+
+		<model
+				model="horn/model.mdf"
+				parentskeleton="true"
+				inheritparentmodifiers="true"
+				parentalpha="true"
+			material="/shared/effects/materials/shell2.material"
+				color="3 .35 0"
+			/>
+			<model
+				directionalspace="global"
+				scale="1.0"
+			>
+				<groundsprite
+					directionalspace="global"
+				
+					color="2 .5 .5"
+					size="41"
+				/>
+				<model
+					life="1000"
+					loop="true"	model="/shared/effects/models/expanding_cone/model.mdf"
+					material="fire_material.material"
+					anim="idle_tall_fast"
+					scale="2"
+					position="0 0 0"
+					color=".15 0 0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</model>
+
+				
+	<simpleemitter
+			bone="_bone_centerofchest"
+			spawnrate="30"			
+		
+			gravity="-11"
+			minparticlelife="600"
+			maxparticlelife="900"				
+			position="0 0 -10"
+			material="/shared/effects/materials/phantom_smoke_02.material"
+			offsetsphere="30 30 30"
+			direction="0 0 0"
+			inheritvelocity=".2"
+		>
+
+			<particle 
+				minangle="-360"
+				maxangle="360"
+				minsize="40"
+				maxsize="50"
+				color="1 0 0"
+				startalpha="1"
+				endalpha="0"			
+			/>
+		</simpleemitter>
+		<template name="glowChest">
+
+				
+				
+				<billboard
+					expirelife="500"
+					bone="{bone}"
+					delay="200"
+					position="0 0 0"
+					startcolor="1 0 0"
+					endcolor="0 0 0"
+					size="8"
+					depthbias="-1"
+					material="/shared/effects/materials/flare_01.material"
+				/>
+
+				<billboard
+					expirelife="500"
+					bone="{bone}"
+					delay="200"
+					position="0 0 0"
+					startcolor="1 0 0"
+					endcolor="0 0 0"
+					size=".5"
+					depthbias="-1"
+					material="/shared/effects/materials/whitedot.material"
+				/>			
+				
+			</template>
+
+			<instance name="glowChest" bone="_bone_lefteye" />
+			<instance name="glowChest" bone="_bone_righteye" />
+			<template name="glowy_eye">
+				<controller bone="{bone}" >
+					<billboard
+						material="/shared/effects/materials/whitedot.material"
+						color="1"
+						size="1"
+						depthbias="-2"
+					/>
+					
+					<billboard
+						material="/shared/effects/materials/whitedot.material"
+						directionalspace="local"
+						lockup="true"
+						lockright="true"
+						roll="{roll}"
+						yaw="{yaw}"
+						height="10"
+						width="4"
+						color=".5 0 0"
+						depthbias="-50"
+						scale=".5"
+					/>
+					<billboard
+						material="/shared/effects/materials/whitedot.material"
+						directionalspace="local"
+						lockup="true"
+						lockright="true"
+						roll="{roll}"
+						yaw="{yaw}"
+						height="10"
+						width="2"
+						color="1"
+						depthbias="-5"
+						scale=".2"
+					/>
+				</controller>
+			</template>
+			
+			<instance name="glowy_eye" bone="_bone_lefteye" roll="90" yaw="45"/>
+
+
+					</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
+

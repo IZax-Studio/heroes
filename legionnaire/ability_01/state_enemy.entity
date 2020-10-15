@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Legionnaire_Ability1_Enemy"
+
+	icon="1.jpg"
+	passiveeffect="effects/state.effect"
+	
+	silenced="true"
+	perplexed="true"
+
+	negativeeffect="taunted"
+	
+	effecttype="StatusDisable"
+	allowtransfer="false"
+	
+	modifierkey="forced_Attack"
+>
+	<onframe>
+		<targettype type="alive" target="source_entity" />
+		<else>
+			<expire/>
+		</else>
+	</onframe>
+	
+	<oninflict>
+		<aggression />
+		<order command="attack" force="true" forceduration="2000,2400,2800,3200" source="target_entity" target="proxy_entity" />
+	</oninflict>
+	
+	<onrefresh>
+		<aggression />
+		<order command="attack" force="true" forceduration="2000,2400,2800,3200" source="target_entity" target="proxy_entity" />
+	</onrefresh>
+
+	<onexpired>
+		<targettype type="creep" >
+			<order command="stop" source="this_owner_entity" target="this_owner_entity" />
+		</targettype>
+	</onexpired>
+	
+	<altavatar key="Hero_Legionnaire.Alt6" modpriority="1"
+		passiveeffect="../alt6/ability_01/state.effect"
+		icon="/heroes/legionnaire/alt6/ability_01/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Legionnaire.Alt7" modpriority="1"
+		passiveeffect="../alt7/ability_01/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Legionnaire.Alt8" modpriority="1"
+		passiveeffect="../alt8/ability_01/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Legionnaire.Alt11" modpriority="1"
+		passiveeffect="../alt11/ability_01/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Legionnaire.Alt13" modpriority="1"
+		passiveeffect="../alt13/ability_01/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Legionnaire.Alt16" modpriority="1"
+		passiveeffect="../alt16/ability_01/effects/state.effect"
+	/>
+	
+</state>

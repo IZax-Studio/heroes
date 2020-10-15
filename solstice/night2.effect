@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".5">
+	
+
+<terrainemitter
+life="250"
+				offsetradial="149 149 0" 
+				spawnrate="1520"
+				particlelife="800"
+				gravity="-120"
+		
+				material="/shared/effects/materials/flame_white.material"
+			>
+				<particle
+
+					startsize="80"
+					endsize="170"
+					startwidth="80"
+					endwidth="100"
+					startcolor=".15 .05 0"
+					endcolor="0"
+					lockup="1"
+					depthbias="-100"
+				/>
+				<particle
+					startsize="80"
+					endsize="170"
+					startwidth="80"
+					endwidth="100"
+					startcolor=".7 .4 0"
+					endcolor="0"
+					lockup="1"
+					yaw="180"
+					depthbias="-100"
+				/>
+			</terrainemitter>
+
+
+
+
+
+<terrainemitter
+
+				offsetradial="149 149 0" 
+				spawnrate="220"
+				particlelife="800"
+				gravity="-30"
+		
+				material="/shared/effects/materials/flame_white.material"
+			>
+				<particle
+					startsize="80"
+					endsize="270"
+					startwidth="80"
+					endwidth="100"
+					startcolor=".25 .1 0"
+					endcolor="0"
+					lockup="1"
+					depthbias="-100"
+				/>
+				<particle
+					startsize="80"
+					endsize="170"
+					startwidth="80"
+					endwidth="100"
+					startcolor=".8 .5 0"
+					endcolor="0"
+					lockup="1"
+					yaw="180"
+					depthbias="-100"
+				/>
+			</terrainemitter>
+
+
+			
+
+			
+			<terrainemitter
+offsetsphere="170 170 170"
+				offsetradial="20 20 0" 
+				spawnrate="120"
+				particlelife="800"
+				gravity="-75"
+		
+				material="/shared/effects/materials/flame_white.material"
+			>
+				<particle
+					startsize="80"
+					endsize="270"
+					startwidth="80"
+					endwidth="100"
+					startcolor=".25 .1 0"
+					endcolor="0"
+					lockup="1"
+					depthbias="-100"
+				/>
+				<particle
+					startsize="80"
+					endsize="170"
+					startwidth="80"
+					endwidth="100"
+					startcolor=".8 .5 0"
+					endcolor="0"
+					lockup="1"
+					yaw="180"
+					depthbias="-100"
+				/>
+			</terrainemitter>
+
+
+			
+			<simpleemitter
+				count="300"
+				spawnrate="500"
+		
+				particlelife="800"
+				offsetradial="149"
+				material="/shared/effects/materials/fire_add.material"
+				direction="0 0 1"
+				position="0 0 0"
+				speed="1"
+				minangle="89"
+				maxangle="90"
+				gravity="50"
+			>
+				<particle
+					startcolor=".5 .5 0"
+					midcolor="1.5 1 0"
+					endcolor="0"
+					midcolorpos=".3"
+					pitch="180"
+					scale="10"
+					startsize="0"
+					minendsize="30"
+					maxendsize="60"
+					startwidth="0"
+					minendwidth="5"
+					maxendwidth="15"
+					lockup="1"
+					lockright="false"
+				>
+				</particle>
+			</simpleemitter>			
+			
+			
+
+			
+			
+	
+			
+			
+			<simpleemitter
+				position="0 0 60"
+				mincount="6" maxcount="8"
+				minparticlelife="650" maxparticlelife="1200"
+				material="/shared/effects/materials/sparks_reveal_white.material"
+				depthbias="-150"
+				offsetsphere="40"
+			>
+				<particle
+					startsize="50" minendsize="300" maxendsize="600" midsizepos=".3"
+					startframe="0" endframe="1"
+					maxangle="360"
+					startcolor="1 .25 0" midcolor=".9 .9 0" endcolor="0 0 0 "
+				/>
+			</simpleemitter>		
+	
+
+
+	
+		
+		
+
+<model
+				owner="target"
+				timenudge="1"
+				model="/shared/effects/models/hollow_cylinder/model.mdf"
+				material="\heroes\parallax\ability_04\effects/arcmesh.material"
+				anim="idle"
+				scale="4.5"
+alpha=".7"
+				color="2 .5 0"
+				param0=".04"
+			/>
+
+
+
+
+
+
+
+			
+
+
+
+
+			<twopointemitter
+delay="0"
+			bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+
+				spawnrate="50"
+				expirelife="200"
+				minparticlelife="350"
+				maxparticlelife="600"
+				gravity="-30"
+			offsetsphere="20 20 20"	material="/shared/effects/materials/flame.material"
+			>
+				<particle
+					startcolor=".5 .2 0"
+					endcolor="0 0 0"
+					maxangle="360"
+					startsize="50"
+					endsize="100"
+					anchor="1"
+				/>
+			</twopointemitter>
+			
+			<twopointemitter
+delay="1000"
+			bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+
+				spawnrate="50"
+				expirelife="200"
+				minparticlelife="350"
+				maxparticlelife="600"
+				gravity="-15"
+			offsetsphere="20 20 20"	material="/shared/effects/materials/flame.material"
+			>
+				<particle
+					
+					color=".7 .25 0"
+					maxangle="360"
+					startsize="50"
+					endsize="100"
+					anchor="1"
+				/>
+			</twopointemitter>
+
+
+
+
+<twopointemitter
+delay="2000"
+			bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+
+				spawnrate="300"
+				expirelife="200"
+				minparticlelife="350"
+				maxparticlelife="600"
+				gravity="-10"
+			offsetsphere="20 20 20"	material="/shared/effects/materials/flame.material"
+			>
+				<particle
+				pitch="9000"
+					color="1 .5 0"
+					maxangle="360"
+					startsize="50"
+					endsize="100"
+					anchor="1"
+				/>
+			</twopointemitter>
+
+
+
+
+
+
+		
+
+		</particlesystem>
+
+
+</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnmodifier instance="instance1" modifier="modifier0"/> 
+	<waitfordeath instance="instance0" />
+	<waitfordeath instance="instance1" />
+</thread>
+</effect>

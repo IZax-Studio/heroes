@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="1" deferred="1">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="2.1">
+		
+		<!-- sword animation -->
+			<model
+				life="550"
+				startcolor="0"
+				midcolor="1"
+				endcolor="0"
+				midcolorpos=".75"
+				model="rigged_sword/model.mdf"
+				anim="ability_1"
+				material="/heroes/kane/swordshield.material"
+				position="0 50 0"
+			/>
+			
+		<!-- cast effect -->	
+			<model
+				life="550"
+				startcolor="0"
+				midcolor="2 .75 .75"
+				endcolor="0"
+				midcolorpos=".25"
+				model="rigged_sword/model.mdf"
+				anim="ability_1"
+				material="sword/rim_gradient.material"
+				position="0 50 0"
+			>
+			
+				<twopointtrailemitter
+					life="150"
+					spawnrate="200"
+					particlelife="200"
+					bone_a="_bone_altweapon1"
+					bone_b="_bone_altweapon3"
+					material="/shared/effects/materials/fire_scrolling_trail_blend.material"
+					texposscale="0"
+					texstretchscale="1.25"
+					subframepos="1"
+				>
+					<particle
+						startcolor="0 0 0"
+						midcolor="1 0 0"
+						endcolor="1 0 0"
+						midcolorpos=".4"
+						startalpha="0"
+						midalpha="1"
+						endalpha="1"
+						midalphapos=".1"
+					/>
+				</twopointtrailemitter>
+				
+				<twopointtrailemitter
+					life="150"
+					spawnrate="200"
+					particlelife="200"
+					bone_a="_bone_altweapon1"
+					bone_b="_bone_altweapon3"
+					material="/shared/effects/materials/refract_gush_trail.material"
+					texposscale="0"
+					texstretchscale="1.0"
+					subframepos="1"
+				>
+					<particle
+						startparam="0"
+						midparam="0.15"
+						endparam="0.15"
+						midparampos=".1"
+					/>
+				</twopointtrailemitter>
+			
+			</model>
+			
+			
+		<!-- pull effect -->
+		
+			<simpleemitter
+				delay="300"
+				count="12"
+				position="15 750 50"
+				offsetsphere="60 150 30"
+				direction="0 -1 0"
+				minspeed="2500"
+				maxspeed="3000"
+				acceleration="-20000"
+				particlelife="500"
+				angle="0"
+				material="/shared/effects/materials/whitedot.material"
+			>
+				<template name="swoosh_trail">
+					<particle
+						minscale=".25"
+						maxscale="1"
+						color="0"
+					>
+						<trailemitter
+							minlife="125"
+							maxlife="200"
+							spawnrate="100"
+							particlelife="250"
+							texposscale="0"
+							texpostime="150"
+							texstretchscale="1"
+							material="/shared/effects/materials/fire_scrolling_trail_blend.material"
+							startparticlealpha="2"
+							midparticlealpha="2"
+							endparticlealpha="0"
+						>
+							<particle
+								color="{color}"
+								startsize="0"
+								midsize="15"
+								endsize="0"
+								midsizepos=".2"
+							/>
+						</trailemitter>
+					</particle>
+				</template>
+				<instance name="swoosh_trail" color="0" />
+				<instance name="swoosh_trail" color=".5 0 0" />
+				<instance name="swoosh_trail" color="1 0 0" />
+			</simpleemitter>
+			
+			
+		
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+</effect>
+<!-- [min|max][start|mid|end]property[speed][position] -->

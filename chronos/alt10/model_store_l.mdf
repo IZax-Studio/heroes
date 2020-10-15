@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model file="high.model" type="K2">
+
+	<anim name="idle" clip="clips/default_1.clip" fps="24" loop="true"/>
+
+	<anim name="taunt_1" clip="clips/ability_4.clip" fps="48">
+				<frameevent frame="1" cmd="StartModelPanelEffect store2_detail_heroAvatars_large_model effects/walk_2.effect walk"/>
+		<endevent cmd="StopEffect walk"/>
+	</anim>
+
+	
+	<anim name="idle2" clip="clips/default_1.clip" fps="24" loop="true"/>
+</model>

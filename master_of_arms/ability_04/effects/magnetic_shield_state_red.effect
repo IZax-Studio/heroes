@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1">
+			
+			<billboard
+				expirelife="250"
+				bone="Scene Root"
+				startcolor="0 .05 .4"
+				endcolor="0 0 0"
+				size="225"
+				position="0 0 10"
+				material="/heroes/drunkenmaster/effects/material.material"
+				lockup="1"
+				lockright="1"
+				rollspeed="720"
+				pitch="90"
+				yawspeed="0"
+				directionalspace="local"
+				depthbias="-25"
+			/>
+		
+			<model
+				expirelife="250"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="0 0 1"
+				endcolor="0 0 0"
+				scale="1.05"
+				material="/shared/effects/materials/shell2.material"
+			/>
+
+			<groundsprite
+				life="300"
+				material="/shared/effects/materials/starlight.material"
+				position="0 0 0"
+				startsize="0"
+				endsize="125"
+				midsizepos=".5"
+				color="0 0 .5"
+				midcolorpos=".2"
+				minangle="0"
+				maxangle="0"
+				angles="0 0 0"
+			/>
+
+			<groundsprite
+				delay="300"
+				expirelife="1000"
+				material="/shared/effects/materials/starlight.material"
+				position="0 0 0"
+				startsize="125"
+				endsize="0"
+				midsizepos=".5"
+				color="0 0 .5"
+				midcolorpos=".2"
+				minangle="0"
+				maxangle="0"
+				angles="0 0 0"
+			/>
+
+			<simpleemitter
+				spawnrate="60"
+				expirelife="1000"
+				maxparticlelife="500"
+				minparticlelife="400"
+				minspeed="-50"
+				maxspeed="51"
+				acceleration="1"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				material="/shared/effects/materials/corona_07.material"
+				offsetsphere=" 0 0 180"
+				direction="0 0 1"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					anglespeed="220"
+					lockup="1"
+					pitch="-90"
+					startcolor="0 0 0"
+					midcolor=".1 .1 .25"
+					endcolor="0 0 0"
+					midcolorpos=".25"
+					startsize="60"
+					midsize="180"
+					endsize="60"
+					midsizepos=".3"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".6"
+					startstickiness="0"
+					endstickiness="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="60"
+				expirelife="1000"
+				maxparticlelife="500"
+				minparticlelife="400"
+				minspeed="-50"
+				maxspeed="51"
+				acceleration="1"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				material="/shared/effects/materials/corona_07.material"
+				offsetsphere=" 0 0 180"
+				direction="0 0 1"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					anglespeed="220"
+					lockup="1"
+					pitch="-90"
+					startcolor="0 0 0"
+					midcolor="0 0 .25"
+					endcolor="0 0 0"
+					midcolorpos=".25"
+					startsize="60"
+					midsize="180"
+					endsize="60"
+					midsizepos=".3"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".6"
+					startstickiness="0"
+					endstickiness="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="60"
+				expirelife="1000"
+				maxparticlelife="500"
+				minparticlelife="400"
+				minspeed="-50"
+				maxspeed="51"
+				acceleration="1"
+				position="0 0 45"
+				minangle="0"
+				maxangle="0"
+				material="/shared/effects/materials/refract_ring.material"
+				offsetsphere=" 0 0 90"
+				direction="0 0 1"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					anglespeed="220"
+					lockup="1"
+					pitch="-90"
+					color="1 1 1"
+					param=".1"
+					startsize="250"
+					endsize="250"
+					midsizepos=".3"
+					startalpha="0"
+					midalpha=".1"
+					endalpha="0"
+					midalphapos=".6"
+					startstickiness="0"
+					endstickiness="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				spawnrate="25"
+				maxparticlelife="500"
+				minparticlelife="500"
+				minspeed="-25"
+				maxspeed="25"
+				acceleration="1"
+				position="0 0 0"
+				material="/shared/effects/materials/electric_impact_add.material"
+				offsetsphere="0 0 180"
+				direction="0 0 1"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					anglespeed="1080"
+					lockup="1"
+					pitch="-90"
+					startcolor="0 0 0"
+					midcolor=".1 .25 .5"
+					endcolor="0 0 0"
+					midcolorpos=".2"
+					size="175"
+					alpha="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="25"
+				maxparticlelife="500"
+				minparticlelife="500"
+				minspeed="-25"
+				maxspeed="25"
+				acceleration="1"
+				position="0 0 0"
+				material="/shared/effects/materials/electric_impact_add.material"
+				offsetsphere="0 0 180"
+				direction="0 0 1"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					anglespeed="-1080"
+					lockup="1"
+					pitch="-90"
+					startcolor="0 0 0"
+					midcolor=".1 .25 .5"
+					endcolor="0 0 0"
+					midcolorpos=".2"
+					size="175"
+					alpha="0"
+				/>
+			</simpleemitter>
+			
+			<!-- gun effects -->
+				
+				<simpleemitter
+					bone="_bone_weapon2"
+					spawnrate="20"
+					minparticlelife="300"
+					maxparticlelife="700"
+					material="/shared/effects/materials/flux_ring.material"
+				>
+					<particle
+						anchor="1"
+						startsize="0"
+						endsize="80"
+						maxangle="360"
+						anglespeed="400"
+						startcolor="1 .2 .2"
+						endcolor="0"
+					/>
+				</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

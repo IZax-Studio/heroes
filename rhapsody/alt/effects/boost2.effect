@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			
+			<trackeremitter
+				bone="_bone_centerofchest"
+				spawnrate="10"
+				particlelife="1000"
+				offsetsphere="50"
+				targetbone="_bone_centerofchest"
+				direction="0 0 1"
+				minangle="60"
+				maxangle="120"
+				minspeed="100"
+				maxspeed="150"
+				drag="0.02"
+				tracktype="angular"
+				trackspeed="3"
+				inheritvelocity="1.5"
+				limitinheritvelocity="750"
+			>
+
+					<particle
+						turn="1"
+						minscale="3"
+						maxscale="7"
+						minanglespeed="-200"
+						maxanglespeed="200"
+					>
+						<model
+							model="/shared/effects/models/circle_of_bones/model.mdf"
+							anim="idle"
+							scale=".25"
+							pitch="90"
+						>
+<!-- 							<billboard
+								life="1000"
+								size="12"
+								bone="_bone_fx_01"
+								material="/shared/effects/materials/miku_triangle01_add.material"
+								maxangle="360"
+								minanglespeed="-200"
+								maxanglespeed="200"
+								color="1 0 0"
+								startalpha="0"
+								midalpha="1"
+								endalpha="0"
+								framespeed="5"
+							/> -->
+							
+							<template name="streak">
+								<trailemitter
+									bone="_bone_fx_01"
+									life="1000"
+									spawnrate="30"
+									material="/shared/effects/materials/arrow_trail.material"
+									texposscale="1"
+									texstretchscale="0"
+									startparticlecolor="0"
+									midparticlecolor="1"
+									endparticlecolor="0"
+									position="{position}"
+									startminparticlelife="{life}"
+									startmaxparticlelife="{life}"
+									endminparticlelife="1"
+									endmaxparticlelife="1" 
+									texpostime="{life}"
+								>
+									<particle
+										startsize="1"
+										endsize=".5"
+										startcolor="1 0 0"
+										midcolor="1 1 1"
+										endcolor="0 0 0"
+									/>
+								</trailemitter>
+							</template>
+							
+							<instance name="streak" life="350" position="-5 0 0"/>
+							<instance name="streak" life="450" position="-2 0 0"/>
+							<instance name="streak" life="550" position="0 0 0"/>
+							<instance name="streak" life="450" position="2 0 0"/>
+							<instance name="streak" life="350" position="5 0 0"/>
+							
+							
+						<!-- 	<simpleemitter
+								bone="_bone_fx_01"
+								spawnrate="20"
+								position="0 0 0"
+								minparticlelife="400"
+								maxparticlelife="700"
+								minspeed="0"
+								maxspeed="10"
+								drag=".05"
+								direction="0 0 1"
+								material="/shared/effects/materials/debris01_add.material"
+								offsetsphere="0"
+								inheritvelocity=".5"
+							>
+								<particle
+									startcolor="1 0 0"
+									midcolor="1 1 1"
+									endcolor="0"
+									startalpha="0"
+									midalpha="1"
+									endalpha="0"
+									midalphapos=".5"
+									maxangle="360"
+									startsize="50"
+									endsize="25"
+									framespeed="2"
+									minscale=".1"
+									maxscale=".3"
+								/>
+							</simpleemitter> -->
+							<simpleemitter
+								bone="_bone_fx_01"
+								spawnrate="20"
+								position="0 0 0"
+								minparticlelife="400"
+								maxparticlelife="700"
+								minspeed="0"
+								maxspeed="10"
+								drag=".05"
+								direction="0 0 1"
+								material="/shared/effects/materials/debris03_add.material"
+								offsetsphere="0"
+								inheritvelocity=".5"
+							>
+								<particle
+									startcolor="1 1 1"
+									midcolor="1 0 0"
+									endcolor="0"
+									startalpha="0"
+									midalpha="1"
+									endalpha="0"
+									midalphapos=".5"
+									maxangle="360"
+									startsize="50"
+									endsize="25"
+									framespeed="2"
+									minscale=".1"
+									maxscale=".3"
+								/>
+								<particle
+									startcolor="1 0 0"
+									midcolor="1 1 1"
+									endcolor="0"
+									startalpha="0"
+									midalpha="1"
+									endalpha="0"
+									midalphapos=".5"
+									maxangle="360"
+									startsize="50"
+									endsize="25"
+									framespeed="2"
+									minscale=".1"
+									maxscale=".3"
+								/>
+							</simpleemitter>
+						</model>
+					</particle>
+
+			</trackeremitter>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true" deferred="true">
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale="1.1">
+
+		
+		
+		<sound
+			linearfalloff="true" 
+			falloffstart="1000"
+			falloffend="1800"
+			volume=".5" 
+				sample="/heroes/frosty\yoshino/sounds/172_0_Skill_E_Break.wav"
+		/>
+
+		<simpleemitter
+			count="1"
+			spawnrate="11111"
+			particlelife="5000"
+			>	
+				<particle
+				>
+					<debris
+						position="0 0 50"
+						
+						scale="0.8"
+						
+						life="1800"
+						model="debris.mdf"
+						anim="idle"	
+						minspeed="200.0"
+						maxspeed="600.0"
+						minrotationspeed="100.0"
+						maxrotationspeed="300.0"
+						gravity="41.0"
+					
+						minangle="0"
+						maxangle="90"
+						direction="0 0 1"
+						collide="true"
+						startalpha=".6"
+						midalpha=".6"
+						endalpha="0"
+
+						bounce="0.7"
+						reflect="0.6"
+						animpose="true"
+					/>	
+												
+
+					
+					
+					<groundsprite
+						life="3100"						
+						material="/shared/effects/materials/ice_reveal.material"
+						
+						startcolor="0 0 0"					
+						midcolor=".6 .8 1"
+						endcolor="0 0 0"
+						midcolorpos=".1"
+						
+						startframe=".81"
+						midframe=".0"
+						endframe=".81"
+						midframepos=".1"
+						
+						size="400"					
+
+
+					/>			
+			
+			
+					
+				
+
+
+
+					<simpleemitter
+						bone="_bone_centerofchest"
+						life="400"
+						spawnrate="10"
+						particlelife="400"
+						minspeed="0"
+						maxspeed="3000"
+						drag="0.07"
+						offsetsphere="15"
+						material="/shared/effects/materials/refract_outsplash.material"
+					>
+						<particle
+							startalpha="1.0"
+							endalpha="0.0"
+							minangle="0"
+							maxangle="360"
+							anglespeed="-90"
+							startsize="120"
+							endsize="280"
+							param=".1"
+							depthbias="-130"
+						/>
+					</simpleemitter>
+					
+
+
+					
+					<billboard
+						
+						bone="_bone_centerofchest"
+						life="500"
+						startcolor=".2 .5 1"
+						endcolor="0 0 0"
+						startalpha="1.0"
+						midalpha="1.0"
+						endalpha="0.0"
+						midalphapos="0.75"
+						startparam="0.05"
+						endparam="0.0"
+										
+						startsize="100"
+						midsize="130"
+						endsize="250"
+						midsizepos=".4"
+										
+						depthbias="0"
+						position="0 0 20"
+						material="/shared/effects/materials/smash_add.material"
+						lockup="true"
+						pitch="90"
+					/>	
+					<billboard
+						delay="110"
+						bone="_bone_centerofchest"
+						life="200"
+						yaw="20"
+						startcolor=".5 1 1"
+						endcolor="0 0 0"
+						startalpha="1.0"
+						midalpha="1.0"
+						endalpha="0.0"
+						midalphapos="0.75"
+						startparam="0.05"
+						endparam="0.0"
+										
+						startsize="100"
+						midsize="200"
+						endsize="300"
+						midsizepos=".4"
+										
+						depthbias="0"
+						position="0 0 50"
+						material="/shared/effects/materials/frost_burst.material"
+						lockup="true"
+						pitch="90"
+					/>	
+
+					<billboard
+						delay="210"
+						bone="_bone_centerofchest"
+						life="200"
+						yaw="90"
+						startcolor=".5 1 1"
+						endcolor="0 0 0"
+						startalpha="1.0"
+						midalpha="1.0"
+						endalpha="0.0"
+						midalphapos="0.75"
+						startparam="0.05"
+						endparam="0.0"
+										
+						startsize="100"
+						midsize="200"
+						endsize="300"
+						midsizepos=".4"
+										
+						depthbias="0"
+						position="0 0 50"
+						material="/shared/effects/materials/frost_burst.material"
+						lockup="true"
+						pitch="90"
+					/>	
+
+
+					<billboard
+						delay="0"
+						bone="_bone_centerofchest"
+						life="200"
+						startcolor=".1 .3 1"
+						endcolor="0 0 0"
+						startalpha="1.0"
+						midalpha="1.0"
+						endalpha="0.0"
+						midalphapos="0.75"
+						startparam="0.05"
+						endparam="0.0"
+										
+						startsize="100"
+						midsize="200"
+						endsize="300"
+						midsizepos=".4"
+										
+						depthbias="0"
+						position="0 0 50"
+						material="/shared/effects/materials/frost_burst.material"
+						lockup="true"
+						pitch="90"
+					/>						
+				</particle>
+				
+
+			</simpleemitter>
+
+			
+			
+			<simpleemitter
+				minangle="-90"
+				maxangle="-90"
+				bone="_bone_centerofchest"
+				life="200"
+				spawnrate="650"
+				count="40"
+				minparticlelife="230"
+				maxparticlelife="1000"
+				speed="2000"
+				drag="0.05"
+				offsetsphere="5 5 5"
+				depthbias="-40"
+				material="/shared/effects/materials/neb_add.material"
+			>
+				<particle
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					turn="1"
+					startcolor="1 1 .5"
+					midcolorpos="0.2"
+					midcolor=".2 .3 .5"
+					endcolor="0"
+					startsize="50"
+					startstickiness="0"
+					maxendstickiness="1"
+					minendscale="4"
+					maxendscale="6"
+					startalpha=".3"
+					midalpha="1"
+					midalphapos="0.1"
+					endalpha="0"
+				/>
+			</simpleemitter>			
+			
+			<!--
+			<simpleemitter
+				bone="_bone_centerofchest"
+				life="200"
+				spawnrate="650"
+				count="20"
+				minparticlelife="230"
+				maxparticlelife="1000"
+				speed="300"
+				drag="0.05"
+				offsetsphere="0 0 0"
+				depthbias="-40"
+				material="/shared/effects/materials/frost_burst.material"
+			>
+				<particle
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					turn="1"
+					startcolor="1 1 .5"
+					midcolorpos="0.2"
+					midcolor=".2 .5 1"
+					endcolor="0"
+					startsize="70"
+
+		
+					startalpha=".3"
+					midalpha="1"
+					midalphapos="0.1"
+					endalpha="0"
+				/>
+			</simpleemitter>			
+			-->
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+			
+				spawnrate="650"
+				count="10"
+				minparticlelife="230"
+				maxparticlelife="400"
+				speed="200"
+				drag="0.05"
+				offsetsphere="0 0 0"
+				depthbias="-40"
+				material="/shared/effects/materials/frost_burst.material"
+			>
+				<particle
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					turn="1"
+					startcolor="1 1 .5"
+					midcolorpos="0.2"
+					midcolor=".2 .5 1"
+					endcolor="0"
+					startsize="70"					
+					endsize="100"
+					startalpha=".3"
+					midalpha="1"
+					midalphapos="0.1"
+					endalpha="0"
+				/>
+			</simpleemitter>		
+
+			<simpleemitter
+				position="0 0 50"	
+				count="2000"
+				gravity="15"
+				life="300"
+				minspeed="10000"
+				maxspeed="20000"
+				drag="0.05"
+				depthbias="-50"
+				spawnrate="2200"			
+				particlelife="2000"
+				material="/shared/effects/materials/snowflake.material"
+				offsetsphere="150 150 150"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-300"
+					color=".8 .8 .8"
+					midcolorpos=".25"
+					maxanglespeed="300"
+					minsize="10"
+					maxsize="20"
+					startalpha=".5"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				position="0 0 50"	
+				count="100"
+				gravity="15"
+				life="300"
+				minspeed="10000"
+				maxspeed="20000"
+				drag="0.05"
+				depthbias="-50"
+				spawnrate="1000"			
+				particlelife="2000"
+				material="/shared/effects/materials/whitedot.material"
+				offsetsphere="20"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-300"
+					startcolor=".2 .3 .4"
+					midcolor=".2 .3 .4"
+					endcolor="0"
+					midcolorpos=".25"
+					maxanglespeed="300"
+					minsize="10"
+					maxsize="20"
+					startalpha=".5"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+		</particlesystem>
+		
+		<particlesystem name="system1" space="local" scale="7">
+			
+			<billboard
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="1"
+				midcolor=".5 .7 1"
+				endcolor="0"
+				startsize="5"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				endsize="40"
+				life="300"
+				depthbias="-20"
+				position="0 0 20"
+			/>
+			
+			<billboard
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="1"
+				midcolor="1"
+				endcolor="0"
+				startsize="1"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				endsize="15"
+				life="300"
+				depthbias="-20"
+				position="0 0 20"
+			/>
+			
+		</particlesystem>
+
+<particlesystem name="system2" space="local" scale="2.1">
+
+		<simpleemitter
+				count="50"
+				spawnrate="800"	
+				life="800"
+				particlelife="1200"	
+				material="/shared/effects/materials/smokering.material"
+				minangle="-90"
+				maxangle="-90"
+				direction="0 0 -1"
+				offsetradial="120"
+				depthbias="-30"
+			>
+				<particle
+					startcolor="0 .3 .6"
+					endcolor="0 0 0"
+					midcolorpos="0.0"
+					startsize="16"
+					endsize="87"
+				/>
+
+			</simpleemitter>
+			<groundsprite	
+				life="1100"
+				expirelife="1500"
+				timenudge="750"
+				material="spell_reveal.material"
+				startframe="1"
+				midframe="0"
+				endframe="1"
+				color="0 .2 .3"
+				size="100"
+			/>
+</particlesystem>
+
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance2" particlesystem="system2" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+		<waitfordeath instance="instance2" /> 
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

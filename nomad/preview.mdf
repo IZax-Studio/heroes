@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="alt4/youmu/model1.model" type="K2" high="alt4/youmu/model.model" med="alt4/youmu/model.model" low="alt4/youmu/model.model" >
+	
+	<anim name="idle" clip="alt4/youmu/clips3/stand.clip" loop="true"/>
+	
+		
+</model>
+

@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<sound
+			    life="5500"
+				volume="1"
+				sample="/heroes/solstice/ability_01/sounds/cast.wav"
+				linearfalloff="true"
+				falloffstart="1200"
+				falloffend="2000"
+			/>
+			
+						<sound
+			    forcestereo="true"
+				delay="250"
+			    life="5500"
+				volume="1"
+				sample="ad1.wav"
+				linearfalloff="true"
+				falloffend="2000"
+				falloffstart="1200"
+			/>
+			
+
+	<template name="flame">
+				<twopointemitter
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					spawnrate="50"
+					particlelife="400"
+					material="/shared/effects/materials/fire_add.material"
+					drag=".01"
+					angle="0"
+					speed="0"
+					gravity="-3"
+					offsetsphere="5"
+				>
+					<particle
+						startcolor=".3 .1 0"
+						midcolor="1 .2 0"
+						endcolor="0"
+						startsize="3"
+						endsize="15"
+						startalpha=".35"
+						midalpha=".8"
+						endalpha="0"
+						maxangle="360"
+						minanglespeed="-300"
+						maxanglespeed="300"
+					/>
+				</twopointemitter>
+				<twopointemitter
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					spawnrate="25"
+					particlelife="400"
+					material="/shared/effects/materials/soul_projectile2.material"
+					drag=".01"
+					angle="0"
+					speed="0"
+					gravity="-3"
+					offsetsphere="5"
+				>
+					<particle
+						startcolor=".3 .1 0"
+						midcolor="1 .2 0"
+						endcolor="0"
+						startsize="3"
+						endsize="15"
+						startalpha=".35"
+						midalpha=".8"
+						endalpha="0"
+						maxangle="360"
+						minanglespeed="-300"
+						maxanglespeed="300"
+					/>
+					<particle
+						startcolor=".3 .2 0"
+						midcolor="1 .5 0"
+						endcolor="0"
+						startsize="3"
+						endsize="15"
+						startalpha=".35"
+						midalpha=".8"
+						endalpha="0"
+						maxangle="360"
+						minanglespeed="-300"
+						maxanglespeed="300"
+					/>
+				</twopointemitter>
+				<twopointemitter
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					spawnrate="25"
+					particlelife="400"
+					
+					drag=".01"
+					angle="0"
+					speed="0"
+					gravity="-3"
+					offsetsphere="5"
+				>
+					<particle
+						startcolor=".3 .1 0"
+						midcolor="1 .2 0"
+						endcolor="0"
+						startsize="3"
+						endsize="15"
+						startalpha=".35"
+						midalpha=".8"
+						endalpha="0"
+						maxangle="360"
+						minanglespeed="-300"
+						maxanglespeed="300"
+					/>
+					<particle
+						startcolor=".3 .2 0"
+						midcolor="1 .5 0"
+						endcolor="0"
+						startsize="3"
+						endsize="15"
+						startalpha=".35"
+						midalpha=".8"
+						endalpha="0"
+						maxangle="360"
+						minanglespeed="-300"
+						maxanglespeed="300"
+					/>
+				</twopointemitter>
+				<twopointemitter
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					spawnrate="25"
+					particlelife="500"
+					angle="0.0"
+					offsetsphere="5"
+					material="/shared/effects/materials/phantom_black.material"
+				>
+					<particle
+						startalpha="0"
+						midalpha=".85"
+						endalpha="0"
+						maxangle="360"
+						minanglespeed="-45"
+						maxanglespeed="45"
+						startsize="35"
+						endsize="10"
+					/>
+				</twopointemitter>
+				<twopointtrailemitter
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					spawnrate="100"
+					particlelife="500"
+					angle="0.0"
+					material="/shared/effects/materials/swoosh_add.material"
+					texstretchscale="1"
+					texposscale="0"
+					texpostime="500"
+					subframepos="1"
+				>
+					<particle
+						startcolor=".8 0 0"
+						midcolor=".4 .3 0"
+						endcolor="0"
+					/>
+				</twopointtrailemitter>
+			</template>
+			
+			<instance name="flame" bone_a="_bone_rightfoot" bone_b="_bone_rightfoot"/>
+			<instance name="flame" bone_a="_bone_leftfoot" bone_b="_bone_leftfoot"/>
+			<instance name="flame" bone_a="_bone_rightfoot" bone_b="_bone_rightfoot"/>
+			<instance name="flame" bone_a="_bone_rightfoot" bone_b="_bone_rightfoot"/>
+
+
+			<template name="flamez">
+				<simpleemitter
+					life="500"
+					spawnrate="30"
+					minparticlelife="300"
+					maxparticlelife="400"
+					offsetsphere="5 20 5"
+					minspeed="10"
+					maxspeed="60"
+					gravity="-6"
+					direction="-1 0 0"
+					angle="10"
+					material="/shared/effects/materials/fire_reveal.material"
+					inheritvelocity=".2"
+					limitinheritvelocity="100"
+				>
+					<particle
+						flare="1"
+						turn="1"
+						startcolor="1.5 1.5 .75"
+						endcolor="1 -.25 0"
+						minangle="-30"
+						maxangle="30"
+						startframe="0"
+						endframe="1"
+						minmidframepos=".2"
+						maxmidframepos=".5"
+						minstartscale="2"
+						maxstartscale="8"
+						minendscale="6"
+						maxendscale="14"
+						startalpha="0"
+						midalpha=".65"
+						endalpha="1"
+						midalphapos=".7"
+					/>
+				</simpleemitter>
+				<simpleemitter
+					life="500"
+					minspawnrate="2.8"
+					maxspawnrate="3.5"
+					minparticlelife="600"
+					maxparticlelife="1000"
+					direction="0 0 1"
+					directionalspace="global"
+					angle="10"
+					minspeed="10"
+					maxspeed="20"
+					gravity="-2"
+					depthbias="-20"
+					offsetsphere="0 7 0"
+					material="/shared/effects/materials/refract_wellwave.material"
+					inheritvelocity=".2"
+					limitinheritvelocity="100"
+				>
+					<particle
+						maxangle="360"
+						minanglespeed="-200"
+						maxanglespeed="200"
+						minstartscale="2"
+						maxstartscale="8"
+						minendscale="6"
+						maxendscale="14"
+						startalpha="0"
+						midalpha=".5"
+						endalpha="0"
+						param="0.04"
+						midalphapos=".4"
+					/>
+				</simpleemitter>
+			</template>
+			
+			<!--
+			<simpleemitter
+				spawnrate="10"
+				particlelife="2000"
+				directionalspace="local"
+				angle="0"
+				speed="1"
+				direction="0 1 0"
+			>
+				<particle
+					turn="true"
+				>
+					<controller
+						position="25 0 0"
+						roll="115"
+						scale="3"
+					>
+						<instance name="flamez"/>
+					</controller>
+					
+					<controller
+						position="-25 0 0"
+						roll="45"
+						scale="3"
+					>
+						<instance name="flamez"/>
+					</controller>
+				</particle>
+			</simpleemitter>
+			-->
+			
+			
+			
+			
+			
+			
+			
+			
+<!--
+			<model
+				parentmodel="true"
+				parentskeleton="true"
+				material="/shared/effects/materials/shell5.material"
+				color="3 1 0"
+				alpha=".1"
+			/>
+			
+			<model
+				parentmodel="true"
+				parentskeleton="true"
+				material="/shared/effects/materials/shell4.material"
+				color="1 .5 0"
+			/>
+-->
+			<simpleemitter
+				spawnrate="6"
+				count="4"
+				particlelife="5500"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				speed="200"
+				direction="0 1 0"
+				
+			>
+				<particle
+					turn="true"
+				>
+					<model
+						position="0 0 0"
+						scale="2.5"
+						life="750"
+						model="\heroes\solstice\model2.mdf"
+				
+						anim="walk_1"
+						startcolor="1 1 1"
+						endcolor="0 0 0"
+						startalpha="1"
+						endalpha="0"
+					>
+					</model>
+					
+				</particle>
+			</simpleemitter>
+			
+			
+			
+			
+		<template name="trail">	
+			<twopointtrailemitter
+			 	bone_a="{bone_a}"
+				bone_b="{bone_b}"
+				spawnrate="40"
+				particlelife="1000"
+				texposscale="0"
+				texstretchscale="1.25"
+				material="\heroes\solstice\alt5\ability_01\effects/fire_scrolling_trail_blend.material"
+				speed="200"
+				direction="0 -1 0"
+				gravity="-10"
+				angle="7.5"
+				timenudge="1000"
+			>
+				<particle
+					endscale="10"
+					startalpha="0"
+					midalpha=".3"
+					endalpha="1.5" 
+					midalphapos=".2"
+					param="0"
+				/>
+			</twopointtrailemitter>
+		</template>
+		
+			<instance name="trail"
+			 bone_a="_bone_rightfoot"
+				bone_b="_bone_leftfoot"
+
+			/>
+				
+				<instance name="trail"
+				bone_a="_bone_rightfoot"
+				bone_b="_bone_leftfoot"
+
+				/>
+					
+				<instance name="trail"
+				bone_a="_bone_rightfoot"
+				bone_b="_bone_leftfoot"
+
+				/>
+
+				<instance name="trail"
+				bone_a="_bone_rightfoot"
+				bone_b="_bone_leftfoot"
+
+			/>
+						
+			<instance name="trail"
+				bone_a="_bone_rightfoot"
+				bone_b="_bone_leftfoot"
+
+			/>
+			
+			<instance name="trail"
+				bone_a="_bone_rightfoot"
+				bone_b="_bone_leftfoot"
+			/>
+			
+			<instance name="trail"
+				bone_a="_bone_alt_rightfoot"
+				bone_b="_bone_alt_leftfoot"
+			/>
+			
+			<instance name="trail"
+				bone_a="_bone_chest"
+				bone_b="_bone_back"
+			/>
+			
+			
+			
+			
+			
+			
+			
+			
+			<simpleemitter
+			bone="_bone_centerofchest"
+				position="0 0 0"
+				spawnrate="300"
+				minparticlelife="100"
+				maxparticlelife="500"
+				offsetsphere="65 65 0"
+				material="/shared/effects/materials/flare_03.material"
+				depthbias="0"
+			>
+				<particle
+					startcolor="1 .75 .35"
+					midcolor="1 .75 .35"
+					endcolor="0 0 0"
+					minsize="10"
+					maxsize="30"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					minangle="0"
+					maxangle="360"
+				/>
+			</simpleemitter>
+			
+			
+			
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+
+</effect>

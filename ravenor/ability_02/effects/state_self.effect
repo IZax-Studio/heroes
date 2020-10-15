@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".7">
+			
+			<twopointemitter
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3" 
+				spawnrate="355"
+				minparticlelife="100"
+				maxparticlelife="300"
+				angle="0"
+				offsetsphere="10"
+				material="/shared/effects/materials/femme_lightning_01.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".500 .20 1"
+					endcolor="0"
+					midcolorpos="0.5"
+					minangle="0"
+					maxangle="350"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					startsize="10"
+					maxendsize="30"
+					flare="1"
+					anchor="1"
+					height="6"
+				/>
+			</twopointemitter>
+			
+			<twopointemitter
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+				spawnrate="130"
+				particlelife="300"
+				offsetsphere="2"
+				material="/shared/effects/materials/black_energy.material"
+			>
+				<particle
+					color=".500 .20 1"
+					midcolorpos="0.5"
+					startalpha="1.0"
+					endalpha="1.0"
+					maxangle="360"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					minendsize="5"
+					startsize="5"
+					endsize="25"
+					flare="0"
+					anchor="1"
+					height="5"
+				/>
+			</twopointemitter>
+
+			<beam
+				bone_a="_bone_weapon3"
+				bone_b="_bone_weapon1"
+				size="60"
+				startcolor=".100 .100 .0"
+				endcolor="0"
+				material="/shared/effects/materials/black_energy.material"
+				framespeed="1"
+				depthbias="-20"
+				anchor="1"
+			/>
+
+			<billboard
+				bone="_bone_fx_08"	
+				material="/shared/effects/materials/black_energy.material"
+				startcolor=".100 .100 .0"
+				endcolor="0"
+				size="80"
+			/>
+
+
+
+
+
+
+
+			
+			<twopointemitter
+				bone_a="_bone_weapon3"
+				bone_b="_bone_weapon1"
+				spawnrate="50"
+				minparticlelife="1"
+				maxparticlelife="1200"			
+				gravity="-2"
+				minspeed="10"
+				maxspeed="50"
+				drag=".015"
+				material="/shared/effects/materials/whitedot.material"
+				offsetsphere="6"
+				minangle="-10"
+				maxangle="40"
+				direction="0 0 1"
+				directionalspace="global"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startcolor="1 .0 .7"
+					midcolor="1 .0 .55"
+					endcolor="0 0 0"
+					midcolorpos=".3"
+					minstartsize="3"
+					maxstartsize="6"
+					endsize="0"
+					anchor="1"
+					turn="true"
+				/>
+			</twopointemitter>
+
+			<twopointemitter
+				bone_a="_bone_weapon3"
+				bone_b="_bone_weapon1"
+				spawnrate="10"
+				particlelife="600"
+				minspeed="0"
+				maxspeed="30"
+				drag="0.07"
+				offsetsphere="15"
+				material="/shared/effects/materials/refract_outsplash.material"
+			>
+				<particle
+					startalpha=".6"
+					endalpha="0.0"
+					minangle="0"
+					maxangle="360"
+					startsize="30"
+					endsize="120"
+					param=".2"
+					anchor="1"
+				/>
+			</twopointemitter>
+
+			<twopointemitter
+				bone_a="_bone_weapon3"
+				bone_b="_bone_weapon1"
+				material="/shared/effects/materials/whitedot.material"
+				spawnrate="300"
+				particlelife="400"
+				gravity="7"
+				speed="30"
+				inheritvelocity="0.21"
+				offsetsphere="10 10 10"
+				drag="0.1"
+			>
+				<particle
+					heightdistort="0.01"
+					turn="1"
+					startcolor="1 0 .5"
+					midcolor="1 .25 .5"
+					endcolor="1"
+					startsize="3"
+					endsize="0"
+					anchor="1"
+				/>
+			</twopointemitter>
+
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

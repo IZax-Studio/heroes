@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+	<modifier
+		name="modifier1"
+		material="material.material"
+		life="250000"
+	/>
+	
+		<particlesystem name="system0" space="entity" scale="1">
+			
+			<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="1300" 
+				volume="0.5"  
+				sample="/heroes/hammerstorm/alt12/sounds/ab4_end.wav"
+			/>
+
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

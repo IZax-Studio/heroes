@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_MasterOfArmsAttack_Chemical"
+
+	speed="900"
+	gravity="0"
+
+	modelscale="0.7"
+	model="/shared/models/invis.mdf"
+
+	traileffect="chemical.effect"
+	impacteffect=""
+>
+	<onspawn>
+		<playeffect effect="chemical.effect" />
+	</onspawn>
+</projectile>

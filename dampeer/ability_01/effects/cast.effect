@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="1" >
+	<definitions>
+	
+
+		<particlesystem name="system0" space="world" scale=".9">
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume="1"
+				sample="/heroes/dampeer/sounds/lmly_R.wav"
+			/>
+			
+			<simpleemitter
+				count="10"
+				particlelife="2000"
+				spawnrate="100"
+				speed="2.0"
+				position="0 0 40"
+				direction="0 0 1"
+				minangle="90"
+				maxangle="90"
+				offsetsphere="25 25 0"
+			>
+				<particle
+					directionalspace="local"
+					turn="1"
+				>	
+					<simpleemitter
+						count="1"
+						spawnrate="25"
+						particlelife="450"
+						particledirectionalspace="local"
+						material="/shared/effects/materials/whitedot.material"
+						inheritvelocity="1"
+						speed="700"
+						direction="0 1 0"
+						minangle="0"
+						maxangle="1"
+						depthbias="-100"
+					>
+						<particle
+							size="77"
+							startscale="10"
+							endscale="2"
+							startcolor=".1 .05 0"
+							endcolor="0"
+							turn="0"
+							lockup="1"
+							lockright="1"
+							pitch="-90" 
+						/>
+					</simpleemitter>
+				</particle>
+			</simpleemitter>
+			
+			<billboard
+				life="700"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".75"
+				startparam=".05"
+				endparam="0"
+				startsize="120"
+				endsize="1200"
+				depthbias="-100"
+				position="0 0 120"
+				material="/shared/effects/materials/refract_ring.material"
+				lockup="true"
+				pitch="90"
+			/>
+			
+			<model
+				life="500"
+				model="fire.mdf"
+				scale=".9"
+				anim="idle"
+				color="1"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				yawspeed="750"
+				maxyaw="180"
+			/>
+			
+			<model
+				life="500"
+				model="fire2.mdf"
+				scale=".9"
+				anim="idle"
+				color="1"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				yawspeed="750"
+				maxyaw="180"
+			/>
+			
+			<simpleemitter
+				life="100"
+				position="0 0 75"
+				spawnrate="400"
+				speed="750"
+				gravity="0"
+				particlelife="400"
+				material="/shared/effects/materials/flame_white.material"
+				minangle="90"
+				maxangle="90"
+				offsetradial="75 75 100"
+			>
+				<particle
+					startsize="100"
+					endsize="300"
+					startcolor=".5 .25 0"
+					endcolor="0"
+					maxangle="360"
+					minanglespeed="-300"
+					maxanglespeed="300"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="100"
+				position="0 0 75"
+				spawnrate="200"
+				speed="750"
+				gravity="0"
+				particlelife="400"
+				material="/shared/effects/materials/phantom_black.material"
+				minangle="90"
+				maxangle="90"
+				offsetradial="75 75 100"
+			>
+				<particle
+					startsize="100"
+					endsize="300"
+					startalpha=".35"
+					midalpha=".55"
+					endalpha="0"
+					midalphapos=".8"
+					maxangle="360"
+					minanglespeed="-300"
+					maxanglespeed="300"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="150"
+				position="0 0 75"
+				spawnrate="400"
+				speed="750"
+				gravity="0"
+				particlelife="400"
+				material="/shared/effects/materials/fire_add2.material"
+				minangle="90"
+				maxangle="90"
+				offsetradial="75 75 100"
+			>
+				<particle
+					startsize="100"
+					endsize="300"
+					startcolor="0 0 .25"
+					endcolor="0"
+					maxangle="360"
+					minanglespeed="-300"
+					maxanglespeed="300"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="150"
+				position="0 0 75"
+				spawnrate="500"
+				speed="750"
+				gravity="0"
+				particlelife="400"
+				material="/shared/effects/materials/refract_wave.material"
+				minangle="90"
+				maxangle="90"
+				offsetradial="25 25 50"
+			>
+				<particle
+					startsize="75"
+					endsize="225"
+					maxangle="360"
+					minanglespeed="-300"
+					maxanglespeed="300"
+					startalpha=".5"
+					midalpha=".5"
+					endalpha="0"
+					param=".25"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

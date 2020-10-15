@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<twopointemitter
+				spawnrate="70"
+				minparticlelife="500"
+				maxparticlelife="1100"
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weaponattach"
+				offsetsphere="1"
+				maxspeed="10"
+				direction="0 0 1"
+				angle="90"
+				gravity="-1"
+				material="/shared/effects/materials/flame.material"
+			>
+				<particle
+					maxangle="360"
+					minstartscale="5"
+					maxstartscale="8"
+					minendscale="16"
+					maxendscale="17"
+					startcolor="0"
+					midcolor=".500 .20 1"
+					endcolor="0"
+					midcolorpos=".1"
+					startanchor=".8"
+					endanchor=".6"
+				/>
+			</twopointemitter>
+		
+			<twopointemitter
+				spawnrate="70"
+				minparticlelife="500"
+				maxparticlelife="1100"
+				bone_a="_bone_altweapon11"
+				bone_b="_bone_altweaponattach1"
+				offsetsphere="1"
+				maxspeed="10"
+				direction="0 0 1"
+				angle="90"
+				gravity="-1"
+				material="/shared/effects/materials/smoke_17.material"
+				depthbias="-10"
+			>
+				<particle
+					maxangle="360"
+					minstartscale="5"
+					maxstartscale="8"
+					minendscale="16"
+					maxendscale="17"
+					color=".6 .8 1"
+					startalpha="0"
+					midalpha=".75"
+					endalpha="0"
+					midalphapos=".1"
+					startanchor=".5"
+					endanchor=".3"
+				/>
+			</twopointemitter>
+			
+			
+			
+		
+			<twopointemitter
+				bone_a="_bone_altweapon11"
+				bone_b="_bone_altweaponattach1"
+				spawnrate="40"
+				particlelife="1050"
+				gravity="-4"
+				minspeed="75"
+				maxspeed="125"
+				drag="0.02"
+				direction="0 0 1"
+				minangle="140"
+				maxangle="150"
+				material="/shared/effects/materials/mysticenergy2.material"
+				yawspeed="360"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="20"
+					maxanglespeed="150"
+					startcolor="0"
+					midcolor=".3 .35 .5"
+					endcolor="0 0 0"
+					midcolorpos=".4"
+					startsize="10"
+					midsize="20"
+					endsize="10"
+					midsizepos=".3"
+					startanchor=".75"
+					endanchor=".6"
+				/>
+			</twopointemitter>
+			
+			<twopointemitter
+				bone_a="_bone_altweapon21"
+				bone_b="_bone_altweapon31"
+				spawnrate="30"
+				minparticlelife="800"
+				particlelife="1000"
+				gravity="-6"
+				minspeed="75"
+				maxspeed="125"
+				drag="0.01"
+				direction="0 0 1"
+				minangle="150"
+				maxangle="180"
+				material="/shared/effects/materials/flare_02.material"
+				yawspeed="360"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="20"
+					maxanglespeed="150"
+					startcolor="0"
+					midcolor=".2 .3 .75"
+					endcolor="0 0 0"
+					midcolorpos=".4"
+					minstartscale="12"
+					maxstartscale="22"
+					minendscale="25"
+					maxendscale="30"
+					startanchor=".75"
+					endanchor=".6"
+				/>
+			</twopointemitter>
+		
+		</particlesystem>
+		
+		<particlesystem name="system1" space="entity">
+			<simpleemitter
+				bone="Bip01 Neck"
+				spawnrate="15"
+				minparticlelife="1400"
+				maxparticlelife="2000"
+				gravity="-1.5"
+				maxspeed="15"
+				material="/shared/effects/materials/mysticenergy2.material"
+				offsetsphere="2"
+				direction="0 1 0"
+				angle="0"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					startcolor="0"
+					midcolor=".3 .3 .35"
+					endcolor="0"
+					midcolorpos=".15"
+					minstartscale="1"
+					maxstartscale="2"
+					minendscale="4"
+					maxendscale="8"
+					anchor="1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="Bip01 Neck"
+				spawnrate="15"
+				minparticlelife="1250"
+				maxparticlelife="1500"
+				gravity="-1.5"
+				maxspeed="15"
+				material="/shared/effects/materials/wisp_02.material"
+				offsetsphere="3"
+				direction="0 1 0"
+				angle="40"
+				depthbias="-5"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					startcolor="0"
+					midcolor=".2 .4 .65"
+					endcolor="0"
+					midcolorpos=".25"
+					minstartscale="4"
+					maxstartscale="6"
+					minendscale="9"
+					maxendscale="11"
+					midscalepos=".7"
+					anchor="1"
+				/>
+			</simpleemitter>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

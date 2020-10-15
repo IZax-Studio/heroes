@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="weapon_trail">
+	<definitions>
+		<particlesystem name="system0" space="world">
+				<trailemitter
+					position="0 0 10"
+					life="80"
+					bone="Bone007"
+					spawnrate="300"
+					particlelife="50"
+					texpostime="100"
+					texposscale="0"
+					texstretchscale=".8"
+					timenudge="0"
+					material="/shared/effects/materials/trail_03.material"
+					subframepose="true"
+				>
+					<particle
+						alpha="2"
+						startsize="23"
+						endsize="1"
+						color="5 2 5"
+
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					position="0 0 10"
+					life="150"
+					bone="Bone007"
+					spawnrate="300"
+					particlelife="200"
+					texpostime="500"
+					texposscale="0"
+					texstretchscale=".8"
+					timenudge="0"
+					material="/shared/effects/materials/swoosh_blend.material"
+					subframepose="true"
+				>
+					<particle
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						size="15"
+						color="1 .5 1"
+
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					position="0 0 10"
+					life="150"
+					bone="Bone007"
+					spawnrate="300"
+					particlelife="200"
+					texpostime="500"
+					texposscale="0"
+					texstretchscale=".8"
+					timenudge="0"
+					material="/shared/effects/materials/swoosh_white.material"
+					subframepose="true"
+				>
+					<particle
+						startalpha="1"
+						endalpha="0"
+						size="13"
+						color="1"
+
+					/>
+				</trailemitter> 
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

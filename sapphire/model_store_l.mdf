@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="modelearth.model" med="modelearth.model" low="modelearth.model" >
+
+	<anim name="idle" clip="idle.clip" loop="true" fps="550"/>
+
+	<anim name="ability_4" clip="ability_4.clip" fps="550">
+	</anim>
+
+	<anim name="idle2" clip="idle.clip" loop="true" fps="550"/>
+
+	
+				
+</model>

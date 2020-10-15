@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Parallax4"
+
+	icon="icon.tga"
+	anim="ability_4"
+	casteffect="effects/cast_sound.effect"
+	
+	casttime="0"
+	castactiontime="0"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	casteffecttype="Magic"
+	actiontype="toggle"
+
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nonaggressive="true"
+	
+	range="350"
+	
+	cooldowntime="70000,60000,50000"
+	manacost="100,175,250"
+	toggleoffmanacost="0"
+
+	noshuffle="true"
+>
+	<onimpact />
+	
+	<onaction>
+		<resetcooldown />
+		<startcooldown duration="1000" />
+	</onaction>
+	
+	<onlearn>
+		<pushability name="Ability_Parallax1" source="source_entity" />
+		<setproxy entity="this_entity" target="stack_proxy_entity" />
+	</onlearn>
+
+	<ontoggleon>
+		<setactivemodifierkey name="Parallax4_ToggledOn" entity="this_entity" />
+		<hasavatarkey name="Alt">
+			<playeffect effect="../alt/ability_04/effects/cast_sound.effect" source="source_entity" />
+		</hasavatarkey>
+		<else>
+			<playeffect effect="effects/cast_sound.effect" source="source_entity" />
+		</else>
+		
+		
+		<applystate name="State_Parallax_Ability4_Stasis" source="source_entity" target="source_entity" continuous="true" istoggle="true" proxy="this_proxy_entity" />
+		<applystate name="State_Parallax_Ability4_Data"  source="source_entity" target="source_entity" continuous="true" />
+		
+		<pushability name="Ability_Parallax3" source="source_entity" /> <!-- Setting this accumulator to 0 since we only want this to get 5 charges -->
+		<setaccumulator value="0" entity="stack_entity" />
+	</ontoggleon>
+	
+	<ontoggleoff>
+		<setactivemodifierkey name="" entity="this_entity" />
+		<hasavatarkey name="Alt">
+			<playeffect effect="../alt/ability_04/effects/cast_sound_end.effect" source="source_entity" />
+		</hasavatarkey>
+		<else>
+			<playeffect effect="effects/cast_sound_end.effect" source="source_entity" />
+		</else>
+
+		<expirestate name="State_Parallax_Ability4_Stasis" target="source_entity" />
+		<expirestate name="State_Parallax_Ability4_Data" target="source_entity" />
+		
+		<hasmodifier name="ult_boost">
+			<startcooldown duration="35000,30000,25000" />
+		</hasmodifier>
+		<else>
+			<startcooldown duration="70000,60000,50000" />
+		</else>
+		
+		<pushability name="Ability_Parallax3" source="source_entity" /> <!-- Setting this accumulator to 99 so you gain no more charges -->
+		<setaccumulator value="99" entity="stack_entity" />
+	</ontoggleoff>
+
+	<onimpact />
+	
+	<modifier key="Parallax4_ToggledOn" modpriority="100"
+		manacost="0"
+	/>
+	
+	<modifier key="manabattery_parallax" condition="toggle_active" modpriority="90"
+		noresponse="true"
+	>
+	</modifier>
+	
+	<modifier key="ult_boost" modpriority="101"
+		cooldowntime="35000,30000,25000"
+		casteffecttype="SuperiorMagic"
+	>
+		<onimpact />
+	</modifier>
+</ability>

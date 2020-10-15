@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="black.model" med="black.model" low="black.model">
+
+	<anim name="idle" clip="idle.clip" fps="550" loop="true"/>
+	
+	<anim name="portrait" clip="idle.clip" fps="550" loop="true" loopbackframe="1"/>
+	
+	<anim name="walk_1" clip="idle.clip" fps="550" loop="true"/>
+
+	<anim name="death_1" clip="idle.clip" fps="550" loop="true" loopbackframe="-1">
+	  <frameevent frame="1" cmd="PlaySoundLinear ../sounds/death.wav 550 1300 1"/>
+	</anim>
+	
+	<anim name="fake_attack_1" clip="attack_1.clip" fps="550"/>
+	
+</model>

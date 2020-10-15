@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="THINT's Conversion" file="high.model" type="K2" >
+
+	<anim name="idle" clip="clips/new6.clip" fps="25" loop="true" blendtime="300"/>
+	
+	<anim name="idle2" clip="clips/stand alternate.clip" fps="100" loop="false">
+	</anim>
+	
+</model> 

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" >
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.3">
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume="1"
+				sample="../../sound_Ereshkigal/22.wav"
+			/>
+			<sound
+			    forcestereo="true"
+		        soundloop="true"
+				randomloop="true"
+				fadein="100"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume="1"
+				sample="/heroes/deadlift/ability_04/sounds/channel.wav"
+			/>
+			
+				<sound
+			    delay="3000"
+			    life="5000"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume="1"
+				sample="../../sound_Ereshkigal/Np_end.wav"
+			/>
+		<sound
+				delay="1000"
+			    forcestereo="true"
+		        soundloop="true"
+				randomloop="true"
+				fadein="100"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume="1"
+				sample="\heroes\kunas\ability_04\sounds/staff_loop.wav"
+			/>
+          	<template name="lightning" >
+				<trackeremitter
+					delay="1000"
+					minlife="200" maxlife="500"
+					position="0 0 80"
+					targetposition="0 0 700"
+					targetbone="{bone}"
+					
+					tracktype="distance"
+					trackspeed="10"
+					spawnrate="13"
+					count="10"
+					particlelife="300"
+					speed="3000"
+					acceleration="0.0"
+					direction="0.0 0.0 1"
+					inheritvelocity="0"
+					distancelife="1"
+					offsetsphere="1"
+				>
+					<particle>
+						<trailemitter						
+							spawnrate="100"
+							particlelife="200"
+							offsetsphere="15" 
+							texpostime="1000"
+							texposscale="0"
+							texstretchscale="1"
+							position="0 0 0"
+							material="/shared/effects/materials/arrow_trail.material"
+							gravity="-10"
+						>
+							<particle
+								startcolor="0"
+								midcolor="0 .3 1"
+								endcolor="0"
+								startsize="5"
+								midsize="3"
+								endsize="1"
+								midcolorpos=".1"
+								midsizepos=".1"
+							/>
+						</trailemitter>
+					</particle>
+				</trackeremitter>
+				
+				<beam
+					delay="1000"
+					life="1550"
+					bone_a="{bone}"
+					position_b="0 0 1700"
+					startsize="100" midsize="50" endsize="10"
+					startcolor="0 .3 1"  midcolor="0 .3 1"  endcolor="0" 
+					startalpha="1.0" midalpha="1" endalpha="0"
+					material="/shared/effects/materials/femme_lightning_10.material"
+					framespeed=".75"
+				/>
+			</template>
+			<instance name="lightning" bone="_bone_weapon3"/> 
+			<instance name="lightning" bone="_bone_weapon1"/> 
+			<instance name="lightning" bone="_bone_weapon2"/> 
+		<trailemitter
+				delay="1000"
+				life="2000"
+				bone="_bone_weapon3"
+				spawnrate="300"
+				particlelife="300"
+				texpostime="800"
+				texposscale="0"
+				texstretchscale=".8"
+				timenudge="0"
+				material="/shared/effects/materials/whitedot.material"
+				subframepose="true"
+			>
+				<particle
+					startsize="50"
+					midsize="20"
+					endsize="1"
+					midsizepos=".3"
+
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+
+					startcolor="0 0 0"
+					midcolor="0 .35 .5"
+					endcolor="0 0 0"
+				/>
+			</trailemitter>
+
+			<trailemitter
+				delay="1000"
+				life="2000"
+				bone="_bone_weapon3"
+				spawnrate="300"
+				particlelife="500"
+				texpostime="800"
+				texposscale="0"
+				texstretchscale=".8"
+				timenudge="0"
+				material="/shared/effects/materials/shock_01.material"
+				subframepose="true"
+			>
+				<particle
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					size="15"
+					startcolor="0 0 0"
+					midcolor="0 .5 1"
+					endcolor="0 0 0"
+				/>
+			</trailemitter>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

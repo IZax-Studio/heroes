@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.03">
+				<sound
+				delay="1600"
+				
+		        forcestereo="true"
+				volume="1"
+sample="sa4.wav"
+								linearfalloff="true"
+				falloffstart="5000"		
+				falloffend="6000" 
+			/>
+		
+			
+						<sound
+		        forcestereo="true"
+				volume="1"
+				sample="sa44.wav"
+				linearfalloff="true"
+				falloffstart="5000"		
+				falloffend="6000" 
+			/>
+
+			
+			<sound
+			    soundloop="true"
+				fadein="500"
+				fadeout="500"
+		        forcestereo="true"
+				volume=".8"
+								linearfalloff="true"
+				falloffstart="5000"		
+				falloffend="6000" 
+			/>
+			
+			<controller scale="1.6" >
+				<groundsprite
+					delay="500"
+					life="2500"
+					material="/shared/effects/materials/twirl_13_blend.material"
+					startcolor=".2"
+					endcolor=".3"
+					startalpha=".4"
+					midalpha=".6"
+					endalpha="0"
+					midalphapos=".95"
+					startscale="0"
+					midscale="5"
+					endscale="6.0"
+					midscalepos=".8"
+					size="77"
+					yawspeed="500"
+				/>
+				
+				<groundsprite
+					delay="500"
+					life="2500"
+					material="/shared/effects/materials/black_spot.material"
+					startcolor=".2"
+					endcolor=".3"
+					startalpha=".4"
+					midalpha=".6"
+					endalpha="0"
+					midalphapos=".95"
+					startscale="0"
+					midscale="5"
+					endscale="6.0"
+					midscalepos=".8"
+					size="80"
+				/>
+				
+				<template name="particle" >	
+					<model					
+						position="0 0 0"
+						delay="500"
+						life="2500"
+						anim="idle"
+						model="/shared/effects/models/circle_of_bones/model.mdf"
+						startscale="0"
+						midscale="12"
+						endscale="17"
+						midscalepos=".8"
+						yaw="{yaw}"
+						yawspeed="{yawspeed}"
+					>
+						<controller life="2500" bone="{bone}" position="0 0 0" startscale="1" midscale=".8" endscale=".4" midscalepos=".8">
+							<simpleemitter
+								spawnrate="100" minparticlelife="100" maxparticlelife="250"							
+								material="/shared/effects/materials/star_03.material"
+								offsetsphere="0"
+								depthbias="-10"
+							>
+								<particle					
+									minagle="-360" maxangle="360"
+									minanglespeed="-200"
+									maxanglespeed="200"
+									startcolor="1 .2 .2" midcolor="1 .2 .2" endcolor="0"
+									minsize="5" maxsize="15" startscale=".7" endscale="1.3"
+									minscale=".5"
+									maxscale="1"
+									anchor="0"
+								/>
+							</simpleemitter>
+						</controller>	
+						<controller life="2500" bone="{bone}" position="0 10 0" startscale="1" midscale=".8" endscale=".4" midscalepos=".8">
+							<simpleemitter
+								spawnrate="100" minparticlelife="100" maxparticlelife="250"
+								material="/shared/effects/materials/star_03.material"
+								offsetsphere="0"
+								depthbias="-10"
+							>
+								<particle					
+									minagle="-360" maxangle="360"
+									minanglespeed="-200"
+									maxanglespeed="200"
+									startcolor="1 .2 .2" midcolor="1 .2 .2" endcolor="0"
+									minsize="5" maxsize="15" startscale=".7" endscale="1.3"
+									minscale=".5"
+									maxscale="1"
+									anchor="0"
+								/>
+							</simpleemitter>
+						</controller>		
+					</model>	
+				</template>
+				
+				<instance name="particle" yaw="0" yawspeed="300" bone="_bone_fx_01" />
+				<instance name="particle" yaw="90" yawspeed="300" bone="_bone_fx_01" />
+				<instance name="particle" yaw="180" yawspeed="300" bone="_bone_fx_01" />
+				<instance name="particle" yaw="270" yawspeed="300" bone="_bone_fx_01" />
+				
+			</controller>
+			
+            <groundsprite
+			    loop="1"
+				life="500"
+				material="crosshair1.material"
+				startsize="170" endsize="150" midsizepos=".5"
+				color="1"
+				minangle="0" maxangle="360"
+				angles="0 0 0"
+				startalpha="1" endalpha="0"
+
+			/>
+			<groundsprite
+			    loop="5"
+				life="1000"
+				material="01 - Default.material"
+				startsize="370" endsize="300" midsizepos=".5"
+				color=".4 0 0"
+				minangle="0" maxangle="360"
+				angles="0 0 0"
+				startalpha="1" endalpha="0"
+				yawspeed="100"
+			/>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<wait duration="2000"/>
+		<camerashake2 scale="1.0" radius="600" duration="250" frequency="22" />
+		<wait duration="200"/>
+		<camerashake2 scale="2.0" radius="700" duration="250" frequency="22" />
+		<wait duration="200"/>
+		<camerashake2 scale="4.0" radius="800" duration="250" frequency="22" />
+		<wait duration="200"/>
+		<camerashake2 scale="8.0" radius="900" duration="250" frequency="22" />
+		<wait duration="200"/>
+		<camerashake2 scale="16.0" radius="1000" duration="250" frequency="22" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

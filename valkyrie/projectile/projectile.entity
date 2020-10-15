@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_ValkyrieAttack"
+
+	speed="1100"
+	gravity="0"
+	canturn="true"
+	modelscale="2"
+
+	model="/heroes/valkyrie/sa/spear.mdf"
+	traileffect="effects/trail.effect"
+	impacteffect="effects/impact.effect"
+>
+	<altavatar key="Hero_Valkyrie.Alt"
+		model="../alt/projectile/effects/spear.mdf"
+		traileffect="../alt/projectile/effects/trail.effect"
+		impacteffect="../alt/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Valkyrie.Alt2"
+		modelscale="1.3"
+		
+		model="../alt2/projectile/effects/spear.mdf"
+		traileffect="../alt2/projectile/effects/trail.effect"
+		impacteffect="../alt2/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Valkyrie.Alt3"
+		modelscale="1.3"
+		
+		model="../alt3/projectile/effects/spear.mdf"
+		traileffect="../alt3/projectile/effects/trail.effect"
+		impacteffect="../alt3/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Valkyrie.Alt4"
+		modelscale="1.2"
+		
+		model="../alt4/projectile/effects/spear.mdf"
+		traileffect="../alt4/projectile/effects/trail.effect"
+		impacteffect="../alt4/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Valkyrie.Alt5"
+		modelscale="1.2"
+		
+		model="../alt5/projectile/effects/spear.mdf"
+		traileffect="../alt5/projectile/effects/trail.effect"
+		impacteffect="../alt5/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Valkyrie.Alt6"
+		modelscale="1.2"
+		model="../alt6/projectile/effects/spear.mdf"
+		traileffect="../alt6/projectile/effects/trail.effect"
+		impacteffect="../alt6/projectile/effects/impact.effect"
+	>
+		<modifier key="Rulian_Bonus_Skiver" modpriority="100"
+			modelscale="1.4"
+
+			model="../alt6/projectile/effects/rulian_spear.mdf"
+			traileffect="../alt6/projectile/effects/rulian_trail.effect"
+			impacteffect="../alt6/projectile/effects/rulian_impact.effect"
+		>
+		</modifier>
+	</altavatar>
+
+	<altavatar key="Hero_Valkyrie.Alt7"
+		modelscale="1.2"
+		model="../alt7/projectile/effects/spear.mdf"
+		traileffect="../alt7/projectile/effects/trail.effect"
+		impacteffect="../alt7/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Valkyrie.Alt8"
+		modelscale="1.6"
+		model="../alt8/projectile/model.mdf"
+		traileffect="../alt8/projectile/effects/trail.effect"
+		impacteffect="../alt8/projectile/effects/impact.effect"
+	/>	
+	
+	<altavatar key="Hero_Valkyrie.Alt9"
+		modelscale="1.6"
+		model="../alt9/projectile/effects/spear.mdf"
+		traileffect="../alt9/projectile/effects/trail.effect"
+		impacteffect="../alt9/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Valkyrie.Alt10"
+		modelscale="1.6"
+		model="../alt10/projectile/effects/spear.mdf"
+		traileffect="../alt10/projectile/effects/trail.effect"
+		impacteffect="../alt10/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Valkyrie.Alt11"
+		modelscale=".8"
+		model="../alt11/projectile/model.mdf"
+		traileffect="../alt11/projectile/effects/trail.effect"
+		impacteffect="../alt11/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Valkyrie.Alt12"
+		modelscale=".7"
+		model="../alt12/projectile/effects/spear.mdf"
+		traileffect="../alt12/projectile/effects/trail.effect"
+		impacteffect="../alt12/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Valkyrie.Alt13"
+		modelscale="1.2"
+		model="../alt13/projectile/effects/spear.mdf"
+		traileffect="../alt13/projectile/effects/trail.effect"
+		impacteffect="../alt13/projectile/effects/impact.effect"
+	/>	
+</projectile>
+

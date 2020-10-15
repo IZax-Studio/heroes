@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+		<particlesystem name="system0" space="world">
+
+			<twopointtrailemitter
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weaponattach"
+				spawnrate="150"
+				particlelife="250"
+				texpostime="300"
+				texposscale="0.0"
+				texstretchscale=".35"
+				material="/shared/effects/materials/swoosh_add.material"
+				subframepose="true"
+			>
+				<particle
+					startcolor="0 .75 3"
+					endcolor="0 0 0" 
+				/>
+			</twopointtrailemitter>
+			
+			<twopointtrailemitter
+				bone_a="_bone_altweapon1"
+				bone_b="_bone_altweaponattach"
+				spawnrate="150"
+				particlelife="250"
+				texpostime="300"
+				texposscale="0.0"
+				texstretchscale=".35"
+				material="/shared/effects/materials/swoosh_add.material"
+				subframepose="true"
+			>
+				<particle
+					startcolor="0 .100 3"
+					endcolor="0 0 0" 
+				/>
+			</twopointtrailemitter>
+
+                  <twopointtrailemitter
+				bone_a="_bone_weapon11"
+				bone_b="_bone_weapon21"
+				spawnrate="200"
+				particlelife="500"
+				texpostime="500"
+				texposscale="0.0"
+				texstretchscale=".8"
+				material="/shared/effects/materials/swoosh_add.material"
+				subframepose="true"
+			>
+				<particle
+					startcolor=".3 .35 .5"
+					endcolor="0 0 0" 
+				/>
+			</twopointtrailemitter>
+
+			<beam
+				bone_a="_bone_altweapon1"
+				bone_b="_bone_altweaponattach"
+				size="25"
+				color="0 .100 3"
+				alpha=".0001"
+				material="/shared/effects/materials/bow_glow_03.material"
+				framespeed="5"
+			/>
+
+			<beam
+				bone_a="_bone_alt2weapon11"
+				bone_b="_bone_alt2weapon21"
+				size="70"
+				color=".6 .8 1"
+				alpha=".0001"
+				material="/shared/effects/materials/bow_glow_03.material"
+				framespeed="5"
+			/>
+
+			<beam
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weaponattach"
+				size="25"
+				color="0 .75 3"
+				alpha=".0001"
+				material="/shared/effects/materials/bow_glow_03.material"
+				framespeed="5"
+			/>
+
+			<beam
+				bone_a="_bone_fx_16"
+				bone_b="_bone_fx_13"
+				size="70"
+				color="0 .1 .6"
+				alpha=".0001"
+				material="/shared/effects/materials/bow_glow_03.material"
+				framespeed="5"
+			/>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

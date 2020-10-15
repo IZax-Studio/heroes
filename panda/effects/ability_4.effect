@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect >
+	<definitions>
+	
+		<modifier
+			
+			life="6000"
+			name="modifier0"
+			startalpha="0"
+			midalpha="0"
+			endalpha="1"
+			midalphapos=".8"
+		/>	
+		<particlesystem name="system0" space="entity"  scale="0.75">
+
+			<sound
+				delay="300"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume=".8"
+				sample="../sounds/R.wav"
+			/>
+			<sound
+				delay="4150"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume=".8"
+				sample="\heroes\panda\ability_04/sounds/impact.wav"
+			/>
+			<sound
+				delay="950"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume="1"
+				sample="\heroes\panda\sounds/attack_1.wav"
+			/>
+			<sound
+				delay="1850"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume="1"
+				sample="\heroes\panda\sounds/attack_2.wav"
+			/>
+			<sound
+				delay="2750"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume="1"
+				sample="\heroes\panda\sounds/attack_3.wav"
+			/>
+			<sound
+				delay="3550"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume="1"
+				sample="/shared/sounds/attacks/attack_medium_1.wav"
+			/>
+			
+			<sound
+				delay="3750"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume="1"
+				sample="\heroes\panda\ability_03\sounds/cast.wav"
+			/>
+			<sound
+				sound2d="true"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume=".8"
+				sample="\heroes\panda\ability_04/sounds/sa4.wav"
+			/>
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume="1"
+				sample="\heroes\panda\ability_04/sounds/cast_1.wav"
+			/>
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume="1"
+				sample="\heroes\panda\ability_01\effects/attack.wav"
+			/>
+			<!--[-1-]-->
+			<simpleemitter
+			
+				count="1"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="true" 
+				>
+					<model
+				
+						position="0 0 0"
+						scale="1.25"
+						minlife="1050"
+						maxlife="1050"
+						model="Yaya/model.mdf"
+						anim="attackability1_4"
+						color="1 1 1"
+						startalpha="1"
+						midalpha="1"
+						endalpha="1"
+						midalphapos=".8"
+
+					>
+					
+
+			<simpleemitter
+				delay="300"
+				count="2"
+				spawnrate="110"
+				particlelife="1600"
+				gravity="1.0"
+				speed="10.0"
+				drag="0.0"
+				acceleration="0.0"
+				angle="0"
+				position="0 44 0"
+				direction="0 1 0"
+				offsetdirection="0 0 0"
+				offsetradial="0 0 0"
+				particledirectionalspace="local"	
+				inheritvelocity="0"
+			>
+				<particle>
+					<billboard
+						life="150"
+						position="0 0 50"
+						material="\heroes\panda\ability_01\effects/arc.material"
+						startcolor="1.1 .2 .2"
+						midcolor="1.1 .2 .2"
+						endcolor="2 0 0"
+						startalpha="1"
+						endalpha="0"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						param=".012"
+						startsize="125"
+						endsize="180"
+						directionalspace="local"
+						minroll="150"					
+						maxroll="250"
+						minrollspeed="-200"
+						maxrollspeed="200"
+					/>
+					<billboard
+						life="450"
+						position="0 0 50"
+						material="\heroes\panda\ability_01\effects/arc2.material"
+						startcolor="1.1 .2 .2"
+						midcolor="1.1 .2 .2"
+						endcolor="2 0 0"
+						startalpha="1"
+						endalpha="0"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						param=".012"
+						startsize="125"
+						endsize="180"
+						directionalspace="local"
+						minroll="150"					
+						maxroll="250"
+						minrollspeed="-200"
+						maxrollspeed="200"
+					/>
+				</particle>	
+			</simpleemitter>
+				<simpleemitter
+				bone="_bone_center"
+				spawnrate="15"
+				particlelife="1200"
+				gravity="-15"
+				speed="22.20"
+				material="/shared/effects/materials/ember_reveal.material"
+				offsetsphere="10 10 10"
+				position="0 0 -30"
+				inheritvelocity=".025"
+			>
+				<particle
+					startcolor=".5 0 0"
+					midcolor=".7 0 0"
+					endcolor=".5 0 0"
+					startalpha=".05"
+					midalpha=".075"
+					endalpha="0"
+					midalphapos=".9"
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="0"
+					maxanglespeed="30"
+					startsize="165"					
+					endsize="20"
+					anchor="1"
+				/>
+			</simpleemitter>
+					</model>
+				</particle>
+			</simpleemitter>
+			
+			<!--[-2-]-->
+			<simpleemitter
+				delay="1000"
+				count="1"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="true" 
+				>
+					<model
+				
+						position="0 0 0"
+						scale="1.25"
+						minlife="1050"
+						maxlife="1050"
+						model="Yaya/model.mdf"
+						anim="attack_1"
+						color="1 1 1"
+						startalpha="1"
+						midalpha="1"
+						endalpha="1"
+						midalphapos=".8"
+
+					>
+					 <template name="foot_trail">
+       
+			
+			<trailemitter
+			
+				bone="{bone}"
+				spawnrate="20"
+				particlelife="150"
+				texposscale="0"
+				texstretchscale="1"
+				material="\heroes\panda\ability_03\effects/trail_01.material"
+			>
+				<particle
+					startsize="150"
+					endsize="0"
+					startcolor=".5 .5 .5"
+					midcolor=".4 .4 .4"
+					endcolor="0"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".2"
+				/>
+			</trailemitter>
+      </template>
+      <instance name="foot_trail" bone="_bone_leftfoot" color=".7 .5 .2" />
+      <instance name="foot_trail" bone="_bone_rightfoot" color=".7 .5 .2" />
+	  
+				<simpleemitter
+				bone="_bone_center"
+				spawnrate="15"
+				particlelife="1200"
+				gravity="-15"
+				speed="22.20"
+				material="/shared/effects/materials/ember_reveal.material"
+				offsetsphere="10 10 10"
+				position="0 0 -30"
+				inheritvelocity=".025"
+			>
+				<particle
+					startcolor=".5 0 0"
+					midcolor=".7 0 0"
+					endcolor=".5 0 0"
+					startalpha=".05"
+					midalpha=".075"
+					endalpha="0"
+					midalphapos=".9"
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="0"
+					maxanglespeed="30"
+					startsize="165"					
+					endsize="20"
+					anchor="1"
+				/>
+			</simpleemitter>
+					</model>
+				</particle>
+			</simpleemitter>
+			
+			<!--[-3-]-->
+			<simpleemitter
+				delay="2000"
+				count="1"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="true" 
+				>
+					<model
+				
+						position="0 0 0"
+						scale="1.25"
+						minlife="1050"
+						maxlife="1050"
+						model="Yaya/model.mdf"
+						anim="attack_2"
+						color="1 1 1"
+						startalpha="1"
+						midalpha="1"
+						endalpha="1"
+						midalphapos=".8"
+
+					>
+					 <template name="foot_trail">
+       
+			
+			<trailemitter
+			
+				bone="{bone}"
+				spawnrate="20"
+				particlelife="150"
+				texposscale="0"
+				texstretchscale="1"
+				material="\heroes\panda\ability_03\effects/trail_01.material"
+			>
+				<particle
+					startsize="150"
+					endsize="0"
+					startcolor=".5 .5 .5"
+					midcolor=".4 .4 .4"
+					endcolor="0"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".2"
+				/>
+			</trailemitter>
+      </template>
+      <instance name="foot_trail" bone="_bone_leftfoot" color=".7 .5 .2" />
+      <instance name="foot_trail" bone="_bone_rightfoot" color=".7 .5 .2" />
+					<simpleemitter
+				bone="_bone_center"
+				spawnrate="15"
+				particlelife="1200"
+				gravity="-15"
+				speed="22.20"
+				material="/shared/effects/materials/ember_reveal.material"
+				offsetsphere="10 10 10"
+				position="0 0 -30"
+				inheritvelocity=".025"
+			>
+				<particle
+					startcolor=".5 0 0"
+					midcolor=".7 0 0"
+					endcolor=".5 0 0"
+					startalpha=".05"
+					midalpha=".075"
+					endalpha="0"
+					midalphapos=".9"
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="0"
+					maxanglespeed="30"
+					startsize="165"					
+					endsize="20"
+					anchor="1"
+				/>
+			</simpleemitter>
+					</model>
+				</particle>
+			</simpleemitter>
+
+			<!--[-3-]-->
+			<simpleemitter
+				delay="3000"
+				count="1"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="true" 
+				>
+					<model
+				
+						position="0 0 0"
+						scale="1.25"
+						minlife="1050"
+						maxlife="1050"
+						model="Yaya/model.mdf"
+						anim="attackability1_1"
+						color="1 1 1"
+						startalpha="1"
+						midalpha="1"
+						endalpha="1"
+						midalphapos=".8"
+
+					>
+					 <template name="foot_trail">
+       
+			
+			<trailemitter
+			
+				bone="{bone}"
+				spawnrate="20"
+				particlelife="150"
+				texposscale="0"
+				texstretchscale="1"
+				material="\heroes\panda\ability_03\effects/trail_01.material"
+			>
+				<particle
+					startsize="150"
+					endsize="0"
+					startcolor=".5 .5 .5"
+					midcolor=".4 .4 .4"
+					endcolor="0"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".2"
+				/>
+			</trailemitter>
+      </template>
+      <instance name="foot_trail" bone="_bone_leftfoot" color=".7 .5 .2" />
+      <instance name="foot_trail" bone="_bone_rightfoot" color=".7 .5 .2" />
+					<simpleemitter
+				bone="_bone_center"
+				spawnrate="15"
+				particlelife="1200"
+				gravity="-15"
+				speed="22.20"
+				material="/shared/effects/materials/ember_reveal.material"
+				offsetsphere="10 10 10"
+				position="0 0 -30"
+				inheritvelocity=".025"
+			>
+				<particle
+					startcolor=".5 0 0"
+					midcolor=".7 0 0"
+					endcolor=".5 0 0"
+					startalpha=".05"
+					midalpha=".075"
+					endalpha="0"
+					midalphapos=".9"
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="0"
+					maxanglespeed="30"
+					startsize="165"					
+					endsize="20"
+					anchor="1"
+				/>
+			</simpleemitter>
+					</model>
+				</particle>
+			</simpleemitter>
+			
+			<!--[-4-]-->
+			<simpleemitter
+				delay="4000"
+				count="1"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="true" 
+				>
+					<model
+				
+						position="0 0 0"
+						scale="1.25"
+						minlife="1050"
+						maxlife="1050"
+						model="Yaya/model.mdf"
+						anim="ability_3"
+						color="1 1 1"
+						startalpha="1"
+						midalpha="1"
+						endalpha="1"
+						midalphapos=".8"
+
+					>
+					<trailemitter
+				delay="150"
+				life="800"
+				bone="_bone_centerofchest"
+				spawnrate="100"
+				particlelife="400"
+				texposscale="0"
+				texstretchscale="1"
+				material="\heroes\panda\ability_03\effects/trail_01.material"
+			>
+				<particle
+					startsize="150"
+					endsize="0"
+					startcolor=".5 .5 .5"
+					midcolor=".4 .4 .4"
+					endcolor="0"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".2"
+				/>
+			</trailemitter>
+
+			<trailemitter
+				delay="150"
+				life="800"
+				bone="_bone_centerofchest"
+				spawnrate="100"
+				particlelife="300"
+				texposscale="0"
+				texstretchscale="1"
+				material="\heroes\panda\ability_03\effects/trail_01.material"
+			>
+				<particle
+					startsize="350"
+					endsize="0"
+					startcolor=".5 .5 .5"
+					midcolor=".4 .4 .4"
+					endcolor="0"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".2"
+				/>
+			</trailemitter>
+					<simpleemitter
+				bone="_bone_center"
+				spawnrate="15"
+				particlelife="1200"
+				gravity="-15"
+				speed="22.20"
+				material="/shared/effects/materials/ember_reveal.material"
+				offsetsphere="10 10 10"
+				position="0 0 -30"
+				inheritvelocity=".025"
+			>
+				<particle
+					startcolor=".5 0 0"
+					midcolor=".7 0 0"
+					endcolor=".5 0 0"
+					startalpha=".05"
+					midalpha=".075"
+					endalpha="0"
+					midalphapos=".9"
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="0"
+					maxanglespeed="30"
+					startsize="165"					
+					endsize="20"
+					anchor="1"
+				/>
+			</simpleemitter>
+			<light
+		
+				life="400"			
+				startcolor="3 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".2"
+				falloffstart="100"
+				falloffend="200"
+				position="0 0 80"	
+			/>
+
+			<billboard
+			
+				life="600"
+				bone="_bone_centerofchest"
+				depthbias="-60"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="0"
+				midcolor=".5 0 0"
+				midcolorpos="0.75"
+				endcolor=".5 .0 0"	
+				startsize="430"
+				endsize="0"			
+				maxangle="360"
+			/>
+
+					</model>
+				</particle>
+			</simpleemitter>
+      </particlesystem>
+	  	<particlesystem name="system2" space="world" scale=".6">
+
+				
+
+
+			<light
+		
+				life="400"			
+				startcolor="8 4 4"
+				endcolor="0 0 0"
+				midcolorpos=".2"
+				falloffstart="100"
+				falloffend="200"
+				position="0 0 80"	
+			/>
+
+			<billboard
+			
+				life="600"
+				bone="_bone_centerofchest"
+				depthbias="-60"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="0"
+				midcolor=".5 .25 .25"
+				midcolorpos="0.75"
+				endcolor=".5 .25 .25"	
+				startsize="430"
+				endsize="0"			
+				maxangle="360"
+			/>
+
+			<simpleemitter
+				expirelife="1000"
+				startparticlealpha="0"
+				midparticlealpha="0"
+				endparticlealpha="1"
+				life="1000"
+				bone="_bone_centerofchest"
+				spawnrate="40"
+				minparticlelife="1"
+				maxparticlelife="1200"
+				offsetsphere="50 50 30"
+				gravity="-1"
+				minspeed="70"
+				maxspeed="140"							
+				direction="0 0 1"
+				minangle="-40"
+				maxangle="40"
+				material="/shared/effects/materials/spark_10.material"
+			>			
+				<particle
+					startcolor="1 .25 .25"
+					endcolor="0 0 0"
+					minsize="7"
+					maxsize="25"
+					minangle="-360"
+					maxangle="1"
+					minanglespeed="110"
+					maxanglespeed="-110"
+				/>
+				<particle
+					startcolor=".7 .35 .175"
+					endcolor="0 0 0"
+					minsize="15"
+					maxsize="25"
+					minangle="-360"
+					maxangle="1"
+					minanglespeed="110"
+					maxanglespeed="-110"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				expirelife="2000"
+				life="500"
+				offsetsphere="75 75 15"
+				bone="_bone_centerofchest"
+				spawnrate="15"
+				minparticlelife="300"
+				maxparticlelife="1000"
+				speed="30"
+				material="/shared/effects/materials/refract_outsplash.material"
+			>
+				<particle
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					startsize="120"
+					endsize="450"
+					param=".1"
+					depthbias="-50"
+					stickiness="0"
+					endstickiness="1"
+				/>
+			</simpleemitter>
+
+			<billboard
+				life="500"
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/refract_swell.material"
+				startsize="350"
+				endsize="140"			
+				startparam=".05"
+				endparam="0"
+				startalpha=".5"
+				endalpha="0"
+			/>
+
+			<billboard
+				delay="200"
+				life="300"
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/refract_bubble.material"
+				startsize="50"
+				endsize="340"			
+				startparam=".1"
+				endparam="0"
+				startalpha="1"
+				endalpha="0"
+			/>
+
+		</particlesystem>
+		
+		<particlesystem name="system3" space="world" scale=".2">
+	
+
+		</particlesystem>
+   </definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance2" particlesystem="system2" />
+		<spawnparticlesystem instance="instance3" particlesystem="system3" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<waitfordeath instance="instance2" />
+		<waitfordeath instance="instance3" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

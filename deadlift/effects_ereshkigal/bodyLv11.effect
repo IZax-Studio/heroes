@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+	<!-- STOM effect -->
+		<particlesystem name="system0" space="world" scale=".7">
+			
+			<twopointemitter
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+				spawnrate="255"
+				minparticlelife="100"
+				maxparticlelife="300"
+				angle="0"
+				offsetsphere="10"
+				material="/shared/effects/materials/lightning_05.material"
+			>
+				<particle
+					startcolor=".5"
+					midcolor=".7 .5 1"
+					endcolor="0"
+					midcolorpos="0.5"
+					minangle="0"
+					maxangle="350"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					startsize="10"
+					maxendsize="30"
+					flare="1"
+					anchor="1"
+					startframe=".3" endframe="1"
+				/>
+			</twopointemitter>
+			
+			<twopointemitter
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+				spawnrate="100"
+				particlelife="300"
+				offsetsphere="3"
+				material="/shared/effects/materials/whitedot.material"
+			>
+				<particle
+					color="1 1 1"
+					midcolorpos="0.5"
+					startalpha="1.0"
+					endalpha="1.0"
+					maxangle="360"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					minendsize="5"
+					startsize="5"
+					endsize="25"
+					flare="0"
+					anchor="1"
+					height="7"
+				/>
+			</twopointemitter>
+
+			<beam
+				bone_a="_bone_weapon3"
+				bone_b="_bone_weapon1"
+				size="75"
+				startcolor="1 .8 .5"
+				endcolor="0"
+				material="/shared/effects/materials/femme_lightning_01.material"
+				framespeed="1"
+				depthbias="-20"
+				anchor="1"
+			/>
+
+			<beam						
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+				size="15"
+				color="1.5 .75 1"					
+				material="/shared/effects/materials/femme_lightning_10.material"
+				startframe=".7"
+				framespeed="5"
+			/>
+			<template name="trail">	
+			<twopointtrailemitter
+			 	bone_a="{bone_a}"
+				bone_b="{bone_b}"
+				spawnrate="80"
+				particlelife="300"
+				texpostime="300"
+				texposscale="0.0"
+				texstretchscale="1.0"
+				material="/shared/effects/materials/swoosh_add.material"
+				subframepos="true"
+			>
+	         	<particle
+					startcolor=".1 .1 .1"
+					endcolor="0 0 0"
+					
+					startalpha=".2"
+					endalpha="0" 
+				/>
+			</twopointtrailemitter>
+		</template>
+								
+			<instance name="trail"
+				bone_a="_bone_weapon3"
+				bone_b="_bone_weapon1"
+			/>
+			
+			
+		</particlesystem>
+		
+		<!-- body effect -->
+		
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<spawnparticlesystem instance="instance2" particlesystem="system2" />	
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<waitfordeath instance="instance2" />
+	</thread>
+
+</effect>

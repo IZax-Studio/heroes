@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Grinex3"
+	
+	statuseffecttooltip="State_Grinex_Ability3"
+	
+	icon="3.png"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	dontshowhovercast="true"
+	actiontype="passive"	
+>	
+	<onabilityimpact>
+		<applystate name="State_Grinex_Ability3" duration="9000" target="source_entity" pushentity="true" />
+	</onabilityimpact>
+	
+	<modifier key="ult_boost" modpriority="100">
+		<onabilityimpact>
+			<applystate name="State_Grinex_Ability3" duration="9000" target="source_entity" pushentity="true" />
+		</onabilityimpact>
+	</modifier>
+</ability>

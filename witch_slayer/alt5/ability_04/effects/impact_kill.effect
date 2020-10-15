@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+
+	<definitions>
+
+		<particlesystem name="system0" space="world">
+
+			<sound
+				delay="800"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume="1"
+				sample="/heroes/witch_slayer/ability_04/sounds/shell_drop.wav"
+			/>
+			
+			<sound
+			sound2d="true"
+				dampen="0.5"
+			    channelid="rhap_4"
+			    
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="2000" 
+				volume=".3"
+			sample="\heroes\witch_slayer\ability_04\effects/213.wav"
+		/>
+
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

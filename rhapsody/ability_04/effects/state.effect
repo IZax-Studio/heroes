@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+	
+		<particlesystem name="system0" space="entity" scale="1.5">
+
+			<template name="rings">
+				<billboard
+					material="/shared/effects/materials/miku_ring2_add.material"
+					bone="_bone_center"
+					startcolor="0 .8 .8"
+					endcolor="0"
+					size="60"
+					expirelife="600"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					pitchspeed="{zpitchspeed}"
+					yawspeed="{zyawspeed}"
+					rollspeed="200"
+				/>
+				
+				<!-- <billboard
+					life="{life}"
+					delay="600"
+					loop="true"
+					material="/shared/effects/materials/corona_07.material"
+					bone="_bone_center"
+					startcolor="{startcolor}"
+					endcolor="0"
+					size="60"
+					expirelife="600"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					pitchspeed="{zpitchspeed}"
+					yawspeed="{zyawspeed}"
+				/>
+				 -->
+				<!-- <billboard
+					life="{life}"
+					delay="700"
+					loop="true"
+					material="/shared/effects/materials/corona_07.material"
+					bone="_bone_center"
+					startcolor="{startcolor}"
+					endcolor="0"
+					size="70"
+					expirelife="600"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					pitchspeed="{zpitchspeed}"
+					yawspeed="{zyawspeed}"
+				/> -->
+				
+				<billboard
+					material="/shared/effects/materials/miku_ring2_add.material"
+					bone="_bone_center"
+					startcolor="0 .8 .8"
+					endcolor="0"
+					size="70"
+					expirelife="600"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					pitchspeed="{zpitchspeed}"
+					yawspeed="{zyawspeed}"
+					rollspeed="-200"
+				/>
+				
+				<!-- <billboard
+					material="/shared/effects/materials/corona_07.material"
+					bone="_bone_center"
+					startcolor="0 .2 .5"
+					endcolor="0"
+					size="80"
+					expirelife="600"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					pitchspeed="{zpitchspeed}"
+					yawspeed="{zyawspeed}"
+				/> -->
+				
+				<billboard
+					life="{life}"
+					delay="800"
+					loop="true"
+					material="/shared/effects/materials/corona_07.material"
+					bone="_bone_center"
+					startcolor="{startcolor}"
+					endcolor="0"
+					size="80"
+					expirelife="600"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					pitchspeed="{zpitchspeed}"
+					yawspeed="{zyawspeed}"
+				/>
+				
+				<!-- <billboard
+					material="/shared/effects/materials/corona_07.material"
+					bone="_bone_center"
+					startcolor="0 .2 .5"
+					endcolor="0"
+					size="90"
+					expirelife="600"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					pitchspeed="{zpitchspeed}"
+					yawspeed="{zyawspeed}"
+				/> -->
+				
+				<controller scale=".5" bone="_bone_centerofchest" >
+				<billboard
+					expirelife="250"
+					color="0 .5 .7"
+					size="120"
+					depthbias="-25"
+					material="/shared/effects/materials/miku_music01.material"
+					position="0 60 -20"
+					framespeed="2"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					width="250"
+					directionalspace="local"
+				/>
+				<billboard
+					expirelife="250"
+					color="0 .5 .7"
+					size="120"
+					depthbias="-25"
+					material="/shared/effects/materials/miku_music01.material"
+					position="0 -60 -20"
+					framespeed="2"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					roll="180"
+					width="250"
+					directionalspace="local"
+				/>
+				</controller>
+				<controller scale=".45" bone="_bone_centerofchest" >
+				<billboard
+					expirelife="250"
+					color="0 .5 .7"
+					size="120"
+					depthbias="-25"
+					material="/shared/effects/materials/miku_music01.material"
+					position="0 60 -50"
+					framespeed="2"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					width="250"
+					directionalspace="local"
+				/>
+				<billboard
+					expirelife="250"
+					color="0 .5 .7"
+					size="120"
+					depthbias="-25"
+					material="/shared/effects/materials/miku_music01.material"
+					position="0 -60 -50"
+					framespeed="2"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					roll="180"
+					width="250"
+					directionalspace="local"
+				/>
+				</controller>
+				
+				<billboard
+					life="{life}"
+					delay="900"
+					loop="true"
+					material="/shared/effects/materials/corona_07.material"
+					bone="_bone_center"
+					startcolor="{startcolor}"
+					endcolor="0"
+					size="90"
+					expirelife="600"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					pitchspeed="{zpitchspeed}"
+					yawspeed="{zyawspeed}"
+				/>
+				
+				<!-- <billboard
+					material="/shared/effects/materials/corona_07.material"
+					bone="_bone_center"
+					startcolor="0 .2 .5"
+					endcolor="0"
+					size="100"
+					expirelife="600"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					pitchspeed="{zpitchspeed}"
+					yawspeed="{zyawspeed}"
+				/> -->
+				
+				<!-- <billboard
+					life="{life}"
+					delay="1000"
+					loop="true"
+					material="/shared/effects/materials/corona_07.material"
+					bone="_bone_center"
+					startcolor="{startcolor}"
+					endcolor="0"
+					size="100"
+					expirelife="600"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					pitchspeed="{zpitchspeed}"
+					yawspeed="{zyawspeed}"
+				/> -->
+
+				<billboard
+					material="/shared/effects/materials/miku_ring2_add.material"
+					bone="_bone_center"
+					startcolor="0 .8 .8"
+					endcolor="0"
+					size="100"
+					expirelife="600"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					pitchspeed="{zpitchspeed}"
+					yawspeed="{zyawspeed}"
+					rollspeed="300"
+				/>
+				
+				<billboard
+					life="{life}"
+					delay="1100"
+					loop="true"
+					material="/shared/effects/materials/corona_07.material"
+					bone="_bone_center"
+					startcolor="{startcolor}"
+					endcolor="0"
+					size="110"
+					expirelife="600"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					pitchspeed="{zpitchspeed}"
+					yawspeed="{zyawspeed}"
+				/>
+			</template>	
+			
+			<instance name="rings" zyawspeed="0" zpitchspeed="0" life="700" startcolor=".8 .3 .8"/>
+
+			<!-- <billboard
+				life="4000"
+				material="/shared/effects/materials/musical_ring.material"
+				bone="_bone_center"
+				startcolor="1"
+				midcolor="0 .5 1"
+				endcolor="1"
+				alpha="1"
+				size="120"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				rollspeed="90"
+				loop="true"
+			/> -->
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="8"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				minspeed="30"
+				maxspeed="70"
+				drag="0.01"
+				inheritvelocity=".25"
+				offsetsphere="30 30 10"
+				gravity="-10"
+				material="/shared/effects/materials/debris03_add.material"
+			>
+				<particle
+					color="1 0 1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					startsize="50"
+					endsize="0"
+					minscale=".8"
+					maxscale="1.2"
+				/>
+				<particle
+					color=".5 0 1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					startsize="50"
+					endsize="0"
+					minscale=".8"
+					maxscale="1.2"
+				/>
+				<particle
+					color="0 1 1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					startsize="50"
+					endsize="0"
+					minscale=".8"
+					maxscale="1.2"
+				/>
+				<particle
+					color="0 .5 1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					startsize="50"
+					endsize="0"
+					minscale=".8"
+					maxscale="1.2"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				bone="_bone_origin"
+				spawnrate="35"
+				particlelife="1000"
+				gravity="-55"
+				speed="40"
+				drag=".08"
+				acceleration="0"
+				material="/shared/effects/materials/phantom_smoke_10.material"
+				offsetsphere="25 25 10"
+				minangle="90"
+				maxangle="-90"
+			>
+				<particle 
+					startcolor="0 0 0"
+					midcolor="0 .3 .3"
+					endcolor="0"
+					midcolorpos=".1"
+					startframe="0"
+					endframe="1"
+					startwidth="20"
+					midwidth="15"
+					endwidth="6"
+					midwidthpos=".5"
+					startheight="0"
+					endheight="400"
+					lockup="true"
+				/>
+
+			</simpleemitter>
+			
+			<billboard
+				expirelife="250"
+				bone="Scene Root"
+				startcolor="0 .5 1"
+				endcolor="0 0 0"
+				size="150"
+				position="0 0 10"
+				material="/heroes/drunkenmaster/effects/material.material"
+				lockup="1"
+				lockright="1"
+				rollspeed="720"
+				pitch="90"
+				yawspeed="0"
+				directionalspace="local"
+				depthbias="-25"
+			/>
+
+		
+		</particlesystem>
+
+</definitions>
+
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<waitfordeath instance="instance0" />
+</thread>
+
+</effect>
+
+
+
+
+
+
+

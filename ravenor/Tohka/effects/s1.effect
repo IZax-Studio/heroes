@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<controller bone="_bone_head" expirelife="500">
+				<controller position="0 -30 -5" expirelife="500">
+					<!--
+					<billboard
+						material="/shared/effects/materials/whitedot.material"
+						color="0 1 1"
+						size="10"
+					/>
+					-->
+					<light
+						flickeramount=".5"
+						flickerfrequency="30"
+						bone="_bone_head"
+						life="2250"
+						linearfalloff="true"
+						falloffend="100"
+						startcolor="0"
+						endcolor=".500 .20 1"
+					/>
+					<light
+						flickeramount=".5"
+						flickerfrequency="30"
+						bone="_bone_head"
+						delay="2250"
+						expirelife="250"
+						linearfalloff="true"
+						falloffend="100"
+						startcolor=".500 .20 1"
+						endcolor="0"
+					/>
+				</controller>
+			</controller>
+			
+			<!--
+			<groundsprite
+				startcolor="0"
+				endcolor=".500 .20 1"
+				life="1000"
+				material="/shared/effects/materials/whitedot_ground.material"
+				size="400"
+			/>
+			<groundsprite
+				startcolor=".500 .20 1"
+				endcolor="0"
+				delay="1000"
+				expirelife="250"
+				material="/shared/effects/materials/whitedot_ground.material"
+				size="400"
+			/>
+			-->
+		
+			<template name="streamer" >
+				<controller
+					expirelife="1000"
+					yaw="{angle}"
+					yawspeed="900"
+				>
+					<!--
+					<trailemitter
+						spawnrate="60"
+						speed="600"
+						direction="0 1 0"
+						angle="5"
+						particlelife="750"
+						gravity="-100"
+						drag="0.03"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/arrow_trail_blend.material"
+					>
+						<particle
+							startalpha=".5"
+							midalpha=".5"
+							endalpha="0"
+							startcolor=".500 .20 1"
+							midcolor=".500 .20 1"
+							endcolor="0"
+							startsize="0"
+							midsize="15"
+							endsize="70"
+							midsizepos=".2"
+						/>
+					</trailemitter>
+					-->
+					
+					<trailemitter
+						spawnrate="60"
+						speed="500"
+						direction="0 1 0"
+						angle="0"
+						particlelife="750"
+						gravity="-100"
+						drag="0.03"
+						texposscale="0"
+						texstretchscale="1.6"
+						material="/shared/effects/materials/fire_scrolling_blue_trail.material"
+					>
+						<particle
+							startcolor=".500 .20 1"
+							midcolor=".500 .20 1"
+							endcolor="0"
+							startsize="0"
+							midsize="5"
+							endsize="80"
+							midsizepos=".2"
+						/>
+					</trailemitter>
+					
+				</controller>
+			</template>
+			
+			<instance name="streamer" angle="0" />
+			<instance name="streamer" angle="180" />
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->

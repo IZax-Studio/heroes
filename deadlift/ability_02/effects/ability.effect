@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true">
+	<definitions>
+
+		<modifier
+			name="modifier0"
+			life="500"
+			startcolor="4 3 1"
+			endcolor="1"
+		/>
+
+		<particlesystem name="system0" space="world" useentityeffectscale="true" scale="1.25">
+
+			<sound
+			    forcestereo="true"
+			    life="5000"
+				linearfalloff="true"
+				falloffstart="700"
+				falloffend="1300" 
+				volume="1" 
+				sample="../sounds/cast.wav"
+			/>
+			
+			<controller bone="_bone_centerofchest">
+				<billboard
+					life="400"
+					color="1 1 1"
+					param=".1"
+					startalpha="1"
+					endalpha="0"
+					startsize="20"
+					endsize="300"
+					position="0 0 3"
+					material="/shared/effects/materials/refract_ripples.material"
+					lockup="true"
+					pitch="90"
+				/>
+				
+				<controller scale=".7">
+					<simpleemitter
+						count="5"
+						minparticlelife="500"
+						maxparticlelife="1000"
+						spawnrate="35"
+						minspeed="250"
+						maxspeed="350"
+						gravity="20"
+						direction="0 0 1"
+						minangle="0"
+						maxangle="1"
+						drag="0.01"
+						material="/shared/effects/materials/whitedot.material"
+						offsetsphere="25 25 35"
+						position="0 0 0"
+						depthbias="-100"
+					>
+						<particle
+							depthbias="-100"
+							startcolor=".5 .15 0"
+							endcolor="0 0 0"
+							minheight="100"
+							maxheight="185"
+							startwidth="25"
+							endwidth="50"
+							startscale="2"
+							endscale="5"
+							startalpha=".5"
+							endalpha="0"
+							lockup="1"
+							lockright="1"
+							minyaw="0"
+							maxyaw="360"
+							yawspeed="-35"
+						/>
+					</simpleemitter>
+				</controller>
+
+				<billboard
+					life="300"
+					position="0 0 0"
+					startcolor="1 .2 0"
+					endcolor="0"
+					endsize="300"
+					depthbias="-75"
+					lockup="1"
+					pitch="90"
+					material="/shared/effects/materials/corona_06.material"
+				/>
+			</controller>
+      </particlesystem>
+   </definitions>
+   <thread>
+   
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+	  <spawnmodifier instance="instance1" modifier="modifier0"/>  
+	   <camerashake2 scale="11.0" radius="1200" duration="400" frequency="22" />
+     	 <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

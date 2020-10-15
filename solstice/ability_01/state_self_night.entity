@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Solstice_Ability1_Self_Night"
+	
+	icon="Cha110_Skill_E.png"
+	passiveeffect=""
+	ishidden="false"
+	
+	movespeed="350"
+	
+	stealthtype="hero"
+	fadetime="500"
+	
+	unitwalking="true"
+	treewalking="true"
+	
+	effecttype="StatusStealth"
+	
+>
+	<oninflict>
+		<startfade />
+	</oninflict>
+	
+	<onframe>
+		<condition target="source_entity" test="hastrait stunned or hastrait immobilized or hastrait restrained">
+			<expire />
+		</condition>
+	</onframe>
+	
+	<onexpired>
+		<compare a="accumulator" b="1" op="eq">
+			<targettype type="alive" target="source_entity">
+				<playanim name="idle" />
+			</targettype>
+		</compare>
+	</onexpired>
+</state>

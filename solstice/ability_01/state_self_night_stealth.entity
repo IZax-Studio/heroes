@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Solstice_Ability1_Self_Night_Stealth"
+	
+	icon="Cha110_Skill_E.png"
+	passiveeffect=""
+	ishidden="false"
+	
+	stealthtype="hero"
+	fadetime="500"
+	
+	effecttype="StatusStealth"
+	
+	modifierkey="SolsticeAbility1NightCharging"
+>	
+	<oninflict>
+		<startfade />
+	</oninflict>
+	
+	<onframe>
+		<targettype target="this_owner_entity" type="stunned">
+			<expire />
+		</targettype>
+		<targettype target="this_owner_entity" type="immobilized">
+			<expire />
+		</targettype>
+		<targettype target="this_owner_entity" type="restrained">
+			<expire />
+		</targettype>
+	</onframe>
+</state>

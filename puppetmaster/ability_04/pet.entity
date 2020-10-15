@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<heropet
+	name="Pet_PuppetMaster_Ability4"
+
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="ragdoll/ragdoll.mdf"
+	skin=""
+
+	passiveeffect=""
+	spawneffect=""
+	respawneffect=""
+	isselectable="true"
+	iscontrollable="false"
+	invulnerable="false"
+	selectsound=""
+	orderconfirmedsound=""
+	spawnanim="spawn_1"
+
+	maxhealth="500,750,1000"
+	healthregen="0"
+	maxmana="0"
+	manaregen="0"
+
+	preglobalscale="2.6"
+	modelscale="1.0"
+	effectscale="1.3"
+	boundsheight="64"
+	boundsradius="40"
+	selectionradius="48"
+	targetoffset="0 0 0"
+	deniable="false"
+
+	cancarryitems="false"
+
+	canrotate="false"
+	ismobile="false"
+	isflying="false"
+	clearvision="false"
+	drawonmap="false"
+	canattack="false"
+	immunity="PuppetImmunity"
+
+	deathnumanims="1"
+	deathanim="death_%"
+
+	expirenumanims="1"
+	expireanim="death_%"
+
+	magicarmor="0"
+
+	attacktype="none"
+
+	unittype="AntiTP PuppetPuppet heropet"
+
+	corpsetime="0"
+	corpsefadetime="0"
+	deathtime="0"
+
+	dynamicprecache="ragdoll/death/death.effect,effects/transfer.effect"
+>
+	<onframe>
+		<distance source="this_entity" target="this_proxy_entity" />
+		<compare a="result" b="1500" op="gt">
+			<kill source="" target="this_entity" />
+		</compare>
+		<compare a="this_proxy_entity" b="0" op="eq">
+			<kill source="" target="this_entity" />
+		</compare>
+		<targettype type="alive" target="this_proxy_entity" />
+		<else>
+			<kill source="" target="this_entity" />
+		</else>
+
+		<cantarget source="this_entity" target="this_proxy_entity" effecttype="Magic">
+			<copystates source="this_entity" target="this_proxy_entity" effecttype="StatusDebuff" inflictor="this_owner_entity" transfer="true" />
+			<copystates source="this_entity" target="this_proxy_entity" effecttype="StatusDisable" inflictor="this_owner_entity" transfer="true" />
+			<compare a="result" b="0" op="ne">
+				<!-- Dynamic visual effects for state transfers -->
+				<getscriptvalue name="transfer_effect" destvar="str0" entity="this_entity" />
+				<playeffectdynamic effect="str0" source="this_entity" target="this_proxy_entity" />
+			</compare>
+
+			<copystates source="this_entity" target="this_proxy_entity" effecttype="ForceTransferrable" inflictor="this_owner_entity" transfer="true" />
+			<compare a="result" b="0" op="ne">
+				<!-- Dynamic visual effects for state transfers -->
+				<getscriptvalue name="transfer_effect" destvar="str0" entity="this_entity" />
+				<playeffectdynamic effect="str0" source="this_entity" target="this_proxy_entity" />
+			</compare>
+
+			<hasmodifier name="channeled_stun_ability">
+				<applystate name="State_Stunned" target="this_proxy_entity" inflictor="this_owner_entity" timeout="frametime" continuous="true" />
+			</hasmodifier>
+		</cantarget>
+	</onframe>
+
+	<onspawn>
+		<playeffect effect="effects/link.effect" source="this_entity" target="this_proxy_entity" />
+
+		<!-- Dynamic death & transfer effects -->
+		<setscriptvalue name="death_effect" value="ragdoll/death/death.effect" entity="this_entity" />
+		<setscriptvalue name="transfer_effect" value="effects/transfer.effect" entity="this_entity" />
+	</onspawn>
+
+	<ondamaged priority="-1">
+		<compare a="source_damage" b="0" op="gt">
+			<compare a="source_health" b="damage_applied" op="ge">
+				<damageeffecttype effecttype="DOT">
+					<damage effecttype="Magic Returned DOT" amount="1.2,1.5,1.8" b="damage_applied" op="mult" source="this_owner_entity" target="this_proxy_entity"  />
+				</damageeffecttype>
+				<else>
+					<damage effecttype="Magic Returned" amount="1.2,1.5,1.8" b="damage_applied" op="mult" source="this_owner_entity" target="this_proxy_entity"  />
+				</else>
+				<cantarget targetscheme="ally_units" source="this_owner_entity" target="target_entity">
+					<applystate name="State_PuppetMaster_Ability4_Assist" inflictor="target_entity" target="this_proxy_entity" duration="100" />
+				</cantarget>
+			</compare>
+			<else>
+				<evaluate a="damage_applied" b="1" op="mult" />
+				<setvar0 a="result" b="source_health" op="sub" />
+				<evaluate a="source_health" b="1.2,1.5,1.8" op="mult" />
+				<setvar1 a="var0" b="result" op="add" />
+				<damageeffecttype effecttype="DOT">
+					<damage effecttype="Magic Returned DOT" amount="1" b="var1" op="mult" source="this_owner_entity" target="this_proxy_entity" />
+				</damageeffecttype>
+				<else>
+					<damage effecttype="Magic Returned" amount="1" b="var1" op="mult" source="this_owner_entity" target="this_proxy_entity" />
+				</else>
+
+				<cantarget targetscheme="ally_units" source="this_owner_entity" target="target_entity">
+					<applystate name="State_PuppetMaster_Ability4_Assist" inflictor="target_entity" target="this_proxy_entity" duration="100" />
+				</cantarget>
+			</else>
+		</compare>
+
+		<!-- Effects for Alt7 -->
+		<hasavatarkey name="Hero_PuppetMaster.Alt7">
+			<damageeffecttype effecttype="DOT">
+				<playeffect effect="../alt7/ability_04/ragdoll/effects/damage_dot.effect" source="this_entity" target="proxy_entity" />
+			</damageeffecttype>
+			<else>
+				<playeffect effect="../alt7/ability_04/ragdoll/effects/damage.effect" source="this_entity" target="proxy_entity" />
+				<playanim name="damage" target="this_entity" />
+			</else>
+		</hasavatarkey>
+		<else>
+			<!-- Dynamic effects when damaged if not Alt7 -->
+			<getscriptvalue name="damage_effect" destvar="str0" entity="this_entity" />
+			<setstr1 a="" />
+			<comparestrings a="str0" b="str1" op="ne">
+				<playeffectdynamic effect="str0" source="this_entity" target="this_proxy_entity" />
+			</comparestrings>
+		</else>
+	</ondamaged>
+
+	<ondeath>
+		<!-- Death dynamic effects -->
+		<getscriptvalue name="death_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" source="this_entity" />
+	</ondeath>
+
+	<altavatar key="Hero_PuppetMaster.Alt2"
+		model="/heroes/puppetmaster/alt2/ability_04/ragdoll/ragdoll.mdf"
+
+		dynamicprecache="../alt2/ability_04/ragdoll/death.effect,effects/transfer.effect"
+	>
+		<onspawn>
+			<playeffect effect="effects/link.effect" source="this_entity" target="this_proxy_entity" />
+
+			<!-- Dynamic death & transfer effects -->
+			<setscriptvalue name="death_effect" value="../alt2/ability_04/ragdoll/death.effect" entity="this_entity" />
+			<setscriptvalue name="transfer_effect" value="effects/transfer.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+
+	<altavatar key="Hero_PuppetMaster.Alt4"
+		model="/heroes/puppetmaster/alt4/ability_04/ragdoll/ragdoll.mdf"
+		deathnumanims="1"
+		deathanim="death_1"
+		expireanim="death_1"
+
+		dynamicprecache="../alt4/ability_04/ragdoll/death/death.effect,effects/transfer.effect"
+	>
+		<onspawn>
+			<playeffect effect="effects/link.effect" source="this_entity" target="this_proxy_entity" />
+
+			<!-- Dynamic death & transfer effects -->
+			<setscriptvalue name="death_effect" value="../alt4/ability_04/ragdoll/death/death.effect" entity="this_entity" />
+			<setscriptvalue name="transfer_effect" value="effects/transfer.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+
+	<altavatar key="Hero_PuppetMaster.Alt5"
+		passiveeffect="../alt5/ability_04/effects/state.effect"
+		model="../alt5/ability_04/ragdoll/ragdoll.mdf"
+		deathnumanims="1"
+		deathanim="death_1"
+		expireanim="death_1"
+
+		dynamicprecache="../alt5/ability_04/ragdoll/damage.effect,../alt5/ability_04/ragdoll/death/death.effect,../alt5/ability_04/effects/transfer.effect"
+	>
+		<onspawn>
+			<playeffect effect="../alt5/ability_04/effects/link.effect" source="this_entity" target="this_proxy_entity" />
+
+			<!-- Dynamic damaged, death & transfer effects -->
+			<setscriptvalue name="damage_effect" value="../alt5/ability_04/ragdoll/damage.effect" entity="this_entity" />
+			<setscriptvalue name="death_effect" value="../alt5/ability_04/ragdoll/death/death.effect" entity="this_entity" />
+			<setscriptvalue name="transfer_effect" value="../alt5/ability_04/effects/transfer.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+
+	<altavatar key="Hero_PuppetMaster.Alt6"
+		passiveeffect="../alt6/ability_04/effects/state.effect"
+		model="../alt6/ability_04/ragdoll/ragdoll.mdf"
+		deathnumanims="1"
+		deathanim="death_1"
+		expireanim="death_1"
+
+		dynamicprecache="../alt6/ability_04/ragdoll/damage.effect,../alt6/ability_04/ragdoll/death/death.effect,../alt6/ability_04/effects/transfer.effect"
+	>
+		<onspawn>
+			<playeffect effect="../alt6/ability_04/effects/link.effect" source="this_entity" target="this_proxy_entity" />
+
+			<!-- Dynamic damaged, death & transfer effects -->
+			<setscriptvalue name="damage_effect" value="../alt6/ability_04/ragdoll/damage.effect" entity="this_entity" />
+			<setscriptvalue name="death_effect" value="../alt6/ability_04/ragdoll/death/death.effect" entity="this_entity" />
+			<setscriptvalue name="transfer_effect" value="../alt6/ability_04/effects/transfer.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+
+	<altavatar key="Hero_PuppetMaster.Alt7"
+		passiveeffect="../alt7/ability_04/effects/state.effect"
+		model="../alt7/ability_04/ragdoll/model.mdf"
+		modelscale="2.4"
+		deathnumanims="1"
+		deathanim="death_1"
+		expireanim="death_1"
+
+		dynamicprecache="../alt7/ability_04/ragdoll/effects/death.effect,effects/transfer.effect"
+	>
+		<onspawn>
+			<playeffect effect="../alt7/ability_04/effects/link.effect" source="this_entity" target="this_proxy_entity" />
+
+			<!-- Dynamic death & transfer effects -->
+			<setscriptvalue name="damage_effect" value="../alt7/ability_04/ragdoll/damage.effect" entity="this_entity" />
+			<setscriptvalue name="death_effect" value="../alt7/ability_04/ragdoll/effects/death.effect" entity="this_entity" />
+			<setscriptvalue name="transfer_effect" value="effects/transfer.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+
+	<altavatar key="Hero_PuppetMaster.Alt8"
+		passiveeffect="../alt8/ability_04/effects/state.effect"
+		model="../alt8/ability_04/ragdoll/ragdoll.mdf"
+		deathnumanims="1"
+		deathanim="death_1"
+		expireanim="death_1"
+
+		dynamicprecache="../alt8/ability_04/ragdoll/death/death.effect,effects/transfer.effect"
+	>
+		<onspawn>
+			<playeffect effect="../alt8/ability_04/effects/link.effect" source="this_entity" target="this_proxy_entity" />
+
+			<!-- Dynamic death & transfer effects -->
+			<setscriptvalue name="death_effect" value="../alt8/ability_04/ragdoll/death/death.effect" entity="this_entity" />
+			<setscriptvalue name="transfer_effect" value="effects/transfer.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+
+	<altavatar key="Hero_PuppetMaster.Alt9"
+		passiveeffect="../alt9/ability_04/effects/state.effect"
+		model="../alt9/ability_04/ragdoll/ragdoll.mdf"
+		deathnumanims="1"
+		deathanim="death_1"
+		expireanim="death_1"
+
+		dynamicprecache="../alt9/ability_04/ragdoll/death.effect,../alt9/ability_04/effects/transfer.effect"
+	>
+		<onspawn>
+			<playeffect effect="../alt9/ability_04/effects/link.effect" source="this_entity" target="this_proxy_entity" />
+
+			<!-- Dynamic death & transfer effects -->
+			<setscriptvalue name="death_effect" value="../alt9/ability_04/ragdoll/death.effect" entity="this_entity" />
+			<setscriptvalue name="transfer_effect" value="../alt9/ability_04/effects/transfer.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+
+	<altavatar key="Hero_PuppetMaster.Alt10"
+		passiveeffect="../alt10/ability_04/puppet/state.effect"
+		model="../alt10/ability_04/puppet/puppet.mdf"
+
+		dynamicprecache="../alt10/ability_04/puppet/death.effect,../alt10/ability_04/effects/transfer.effect"
+	>
+		<onspawn>
+			<hasmodifier name="Alt10_Ability4_Upgrade" entity="this_owner_entity">
+				<activatemodifierkey name="Alt10_Ability4_Upgrade" />
+				<playeffect effect="../alt10/ability_04/effects/link_upgraded.effect" source="this_entity" target="this_proxy_entity" />
+				<playeffect effect="../alt10/ability_04/effects/spawn_sound.effect" source="this_entity"/>
+			</hasmodifier>
+			<else>
+				<playeffect effect="../alt10/ability_04/effects/link.effect" source="this_entity" target="this_proxy_entity" />
+				<playeffect effect="../alt10/ability_04/effects/spawn_vo.effect" source="this_entity"/>
+			</else>
+
+			<!-- Dynamic death & transfer effects -->
+			<setscriptvalue name="death_effect" value="../alt10/ability_04/puppet/death.effect" entity="this_entity" />
+			<setscriptvalue name="transfer_effect" value="../alt10/ability_04/effects/transfer.effect" entity="this_entity" />
+		</onspawn>
+
+		<modifier key="Alt10_Ability4_Upgrade" modpriority="1"
+			model="../alt10/ability_04/puppet/puppet_upgraded.mdf"
+			passiveeffect="../alt10/ability_04/puppet/state_upgraded.effect"
+		/>
+	</altavatar>
+
+	<altavatar key="Hero_PuppetMaster.Alt11"
+		passiveeffect="../alt11/ability_04/effects/state.effect"
+		model="../alt11/effects/pot/pot.mdf"
+		deathnumanims="1"
+		deathanim="death_1"
+		expireanim="death_1"
+
+		dynamicprecache="../alt11/ability_04/effects/damage.effect,../alt11/ability_04/effects/death.effect,../alt11/ability_04/effects/transfer.effect"
+	>
+		<onspawn>
+			<playeffect effect="../alt11/ability_04/effects/link.effect" source="this_entity" target="this_proxy_entity" />
+
+			<setscriptvalue name="damage_effect" value="../alt11/ability_04/effects/damage.effect" entity="this_entity" />
+			<setscriptvalue name="death_effect" value="../alt11/ability_04/effects/death.effect" entity="this_entity" />
+			<setscriptvalue name="transfer_effect" value="../alt11/ability_04/effects/transfer.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>	
+	
+	<altavatar key="Hero_PuppetMaster.Alt12"
+	    icon="../alt12/ability_04/icon.tga"
+		passiveeffect="../alt12/ability_04/effects/state.effect"
+		model="../alt12/ability_04/statue/statue.mdf"
+		deathnumanims="1"
+		deathanim="death_1"
+		expireanim="death_1"
+		modelscale="1.3"
+
+		dynamicprecache="../alt12/ability_04/statue/damage.effect,../alt12/ability_04/statue/death/death.effect,../alt12/ability_04/effects/transfer.effect"
+	>
+		<onspawn>
+			<playeffect effect="../alt12/ability_04/effects/link.effect" source="this_entity" target="this_proxy_entity" />
+
+			<!-- Dynamic damaged, death & transfer effects -->
+			<setscriptvalue name="damage_effect" value="../alt12/ability_04/statue/damage.effect" entity="this_entity" />
+			<setscriptvalue name="death_effect" value="../alt12/ability_04/statue/death/death.effect" entity="this_entity" />
+			<setscriptvalue name="transfer_effect" value="../alt12/ability_04/effects/transfer.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+</heropet>

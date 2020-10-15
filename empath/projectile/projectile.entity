@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Empath_Attack"
+
+	speed="1100"
+	gravity="1500"
+	modelscale=".5"
+
+	model="/shared/models/invis.mdf"
+	
+	impacteffect="effects/impact.effect"
+	traileffect="effects/trail.effect"
+>
+	<altavatar key="Hero_Empath.Alt5" modpriority="50"
+		impacteffect="../alt5/effects/impact.effect"
+		traileffect="../alt5/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.Alt7" modpriority="50"
+		impacteffect="../alt7/effects/impact.effect"
+		traileffect="../alt7/effects/trail.effect"
+	/>
+	
+	
+	<altavatar key="Hero_Empath.Alt8" modpriority="50"
+		impacteffect="../alt8/projectile/impact.effect"
+		traileffect="../alt8/projectile/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.Alt9" modpriority="50"
+		impacteffect="../alt9/projectile/impact.effect"
+		traileffect="../alt9/projectile/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.Alt10" modpriority="50"
+		impacteffect="../alt10/effects/impact.effect"
+		traileffect="../alt10/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.trophy_skin01" modpriority="50"
+		impacteffect="../trophy_skin/model_01/projectile/effects/impact.effect"
+		traileffect="../trophy_skin/model_01/projectile/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.trophy_skin02" modpriority="50"
+		impacteffect="../trophy_skin/model_02/projectile/effects/impact.effect"
+		traileffect="../trophy_skin/model_02/projectile/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.trophy_skin03" modpriority="50"
+		impacteffect="../trophy_skin/model_03/projectile/effects/impact.effect"
+		traileffect="../trophy_skin/model_03/projectile/effects/trail.effect"
+	/>
+	
+</projectile>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Deadlift_Ability2_Speed"
+	
+	icon="icon.tga"
+	passiveeffect="effects/state_charge_night.effect"
+	
+	movespeedmultiplier="100"
+	slowresistance="1"
+	
+	unitwalking="true"
+	perplexed="false"
+	
+	effecttype=""
+	allowtransfer="false"
+>
+	<onframe>
+		<condition target="source_entity" test="hastrait stunned or hastrait immobilized or hastrait restrained">
+			<expire />
+		</condition>
+	</onframe>
+	
+	<onexpired>
+		<compare a="accumulator" b="1" op="eq">
+			<targettype type="alive" target="source_entity">
+				<playanim name="idle" />
+			</targettype>
+		</compare>
+	</onexpired>
+
+</state>

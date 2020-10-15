@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="THINT's Sasuke Last(Naruto)" file="model.model" type="K2">
+	
+	<anim name="idle" clip="clips/default_1.clip" loop="true"/>
+	
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="20">
+		<frameevent frame="6" cmd="PlaySoundLinear sounds/69_0_Atk_Fire_0%.wav 400 2000 .35"/>
+	</anim>
+	
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="20">
+		<frameevent frame="6" cmd="PlaySoundLinear sounds/69_0_Atk_Fire_0%.wav 400 2000 .35"/>
+	</anim>
+	
+	<anim name="walk_1" clip="clips/walk_1.clip" loop="true">
+		<frameevent frame="4" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="13" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+			
+		<frameevent frame="4" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="13" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	</anim>
+	
+	<anim name="death_1" clip="clips/death_1.clip" fps="15" loop="true" loopbackframe="-1">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/death_1.wav 400 2000 .85"/>	
+	</anim>
+	
+	<anim name="ability_1" clip="clips/attack_1.clip" fps="20">
+		<frameevent frame="6" cmd="PlaySoundLinear sounds/69_0_Atk_Fire_0%.wav 400 2000 .65"/>
+		<frameevent frame="8" cmd="PlaySoundLinear /heroes/maliken/ability_01/effects/37009021.wav 1400 2000 1"/>
+	</anim>
+	
+	<anim name="ability_2_fireDefault" clip="clips/default_1.clip" loop="true"/>
+	
+	<anim name="ability_2_fireAttack_1" clip="clips/attack_1.clip" fps="20">
+		<frameevent frame="6" cmd="PlaySoundLinear sounds/69_0_Atk_Fire_0%.wav 400 2000 .35"/>
+	</anim>
+
+	<anim name="ability_2_fireAttack_2" clip="clips/attack_3.clip" fps="20">
+		<frameevent frame="6" cmd="PlaySoundLinear sounds/69_0_Atk_Fire_0%.wav 400 2000 .35"/>
+	</anim>
+	
+	<anim name="ability_2_LifeDefault" clip="clips/default_1.clip" loop="true"/>
+	
+	<anim name="ability_2_LifeAttack_1" clip="clips/attack_1.clip" fps="20">
+		<frameevent frame="6" cmd="PlaySoundLinear sounds/69_0_Atk_Fire_0%.wav 400 2000 .35"/>
+	</anim>
+
+	<anim name="ability_2_LifeAttack_2" clip="clips/attack_2.clip" fps="20">
+		<frameevent frame="6" cmd="PlaySoundLinear sounds/69_0_Atk_Fire_0%.wav 400 2000 .35"/>
+	</anim>
+	
+	<anim name="ability_4" clip="clips/ability_4.clip"/>
+
+	<anim name="bored_1" clip="clips/bored_1.clip" loop="true"/>
+
+	<anim name="item_1" clip="clips/item_1.clip"/>
+
+	<anim name="knock_1" clip="clips/death_1.clip" loop="true" loopbackframe="-1"/>
+
+	<anim name="taunt_1" clip="clips/taunt_1.clip"/>
+
+	<anim name="portrait" clip="clips/bored_1.clip" loop="true"/>
+	
+</model>

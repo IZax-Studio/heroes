@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect >
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<controller
+				position="0 0 -7"
+				scale=".25"
+				lookatowner="target"
+			>
+				<billboard
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					color="1 0 0"
+					alpha=".75"
+					directionalspace="local"
+					size="160"
+					roll="0"
+					position="0 0 30"
+					material="circle_third_plank.material"
+				/>
+
+				<billboard
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					color=".1 .1 .1"
+					alpha="0"
+					directionalspace="local"
+					size="162"
+					roll="0"
+					position="0 0 40"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+
+				<billboard
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					color="1 1 1"
+					alpha=".5"
+					directionalspace="local"
+					size="162"
+					roll="0"
+					position="0 0 30"
+					material="/shared/effects/materials/circle_third_plankglow.material"
+				/>
+				<billboard
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					color="1 0 0"
+					alpha=".75"
+					directionalspace="local"
+					size="160"
+					roll="120"
+					position="0 0 30"
+					material="circle_third_plank.material"
+				/>				
+				<billboard
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					color="1 1 1"
+					alpha=".5"
+					directionalspace="local"
+					size="162"
+					roll="120"
+					position="0 0 30"
+					material="/shared/effects/materials/circle_third_plankglow.material"
+				/>
+				<billboard
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					color="1 0 0"
+					alpha=".75"
+					directionalspace="local"
+					size="160"
+					roll="230"
+					position="0 0 30"
+					material="circle_third_plank.material"
+				/>
+				<billboard
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					color="1 1 1"
+					alpha=".5"
+					directionalspace="local"
+					size="162"
+					roll="230"
+					position="0 0 30"
+					material="/shared/effects/materials/circle_third_plankglow.material"
+				/>
+
+			</controller>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+
+

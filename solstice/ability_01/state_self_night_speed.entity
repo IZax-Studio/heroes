@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Solstice_Ability1_Self_Night_Speed"
+	
+	icon="Cha110_Skill_E.png"
+	passiveeffect="effects/state_charge_night.effect"
+	ishidden="false"
+	
+	movespeed="350"
+	
+	unitwalking="true"
+	treewalking="true"
+	perplexed="true"
+	
+	effecttype=""
+	allowtransfer="false"
+>
+	<onframe>
+		<condition target="source_entity" test="hastrait stunned or hastrait immobilized or hastrait restrained">
+			<expire />
+		</condition>
+	</onframe>
+	
+	<onexpired>
+		<compare a="accumulator" b="1" op="eq">
+			<targettype type="alive" target="source_entity">
+				<playanim name="idle" />
+			</targettype>
+		</compare>
+	</onexpired>
+	
+	<altavatar key="Hero_Solstice.Alt" modpriority="1"
+		passiveeffect="/heroes/solstice/alt/ability_01/effects/state_charge_night.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt2" modpriority="1"
+		passiveeffect="/heroes/solstice/alt2/ability_01/effects/state_charge_night.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt3" modpriority="1"
+		passiveeffect="/heroes/solstice/alt3/ability_01/effects/state_charge_night.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt4" modpriority="1"
+		passiveeffect="/heroes/solstice/alt4/ability_01/effects/state_charge_night.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt5" modpriority="1"
+		passiveeffect="/heroes/solstice/alt5/ability_01/effects/state_charge_night.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt6" modpriority="1"
+		passiveeffect="/heroes/solstice/alt6/ability_01/effects/state_charge_night.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt7" modpriority="1"
+		passiveeffect="/heroes/solstice/alt7/ability_01/effects/state_charge_night.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt8" modpriority="1"
+		passiveeffect="/heroes/solstice/alt8/ability_01/effects/state_charge_night.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt9" modpriority="1"
+		passiveeffect="/heroes/solstice/alt9/ability_01/effects/state_charge_night.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt10" modpriority="1"
+		passiveeffect="/heroes/solstice/alt10/ability_01/effects/state_charge_night.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt11" modpriority="1"
+		passiveeffect="/heroes/solstice/alt11/ability_01/effects/state_charge_night.effect"
+	/>
+</state>

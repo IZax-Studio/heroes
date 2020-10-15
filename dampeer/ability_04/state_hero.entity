@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Dampeer_Ability4_Hero"
+	
+	icon="../icon/44.png"
+
+	effecttype="StatusDebuff"
+	
+	modifierkey="dampeer_ability4_Target"
+>
+	<onframe />
+	
+	<ondeath>
+		<addcharges entity="this_proxy_entity" count="2" />
+		<setvar0 a="result" />
+		<compare a="var0" b="3" op="ge">
+			<setactivemodifierkey entity="this_proxy_entity" name="Dampeer_Sub3" />
+			<hasavatarkey entity="this_inflictor_entity" name="Hero_Dampeer.Alt2">
+				<applystate name="State_Dampeer_FullCharge_Alt2" target="this_inflictor_entity" continuous="true" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey entity="this_inflictor_entity" name="Hero_Dampeer.Alt7">
+					<applystate name="State_Dampeer_FullCharge_Alt7" target="this_inflictor_entity" continuous="true" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey entity="this_inflictor_entity" name="Hero_Dampeer.Alt8">
+						<applystate name="State_Dampeer_FullCharge_Alt8" target="this_inflictor_entity" continuous="true" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey entity="this_inflictor_entity" name="Hero_Dampeer.Alt9">
+							<applystate name="State_Dampeer_FullCharge_Alt9" target="this_inflictor_entity" continuous="true" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey entity="this_inflictor_entity" name="Hero_Dampeer.Alt10">
+								<applystate name="State_Dampeer_FullCharge_Alt10" target="this_inflictor_entity" continuous="true" />
+							</hasavatarkey>
+						</else>
+					</else>
+				</else>
+			</else>
+		</compare>
+		<else>
+			<compare a="var0" b="2" op="eq">
+				<setactivemodifierkey entity="this_proxy_entity" name="Dampeer_Sub2" />
+			</compare>
+			<else>
+				<compare a="var0" b="1" op="eq">
+					<setactivemodifierkey entity="this_proxy_entity" name="Dampeer_Sub1" />
+				</compare>
+			</else>
+		</else>
+	</ondeath>
+	
+	
+	<modifier key="ult_boost" modpriority="101">
+		<ondeath>
+			<addcharges entity="this_proxy_entity" count="2" />
+			<setvar0 a="result" />
+			<compare a="var0" b="6" op="ge">
+				<setactivemodifierkey entity="this_proxy_entity" name="Dampeer_Sub6" />
+				<hasavatarkey entity="this_inflictor_entity" name="Hero_Dampeer.Alt2">
+					<applystate name="State_Dampeer_FullCharge_Alt2" target="this_inflictor_entity" continuous="true" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey entity="this_inflictor_entity" name="Hero_Dampeer.Alt7">
+						<applystate name="State_Dampeer_FullCharge_Alt7" target="this_inflictor_entity" continuous="true" />
+					</hasavatarkey>
+						<else>
+						<hasavatarkey entity="this_inflictor_entity" name="Hero_Dampeer.Alt8">
+							<applystate name="State_Dampeer_FullCharge_Alt8" target="this_inflictor_entity" continuous="true" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey entity="this_inflictor_entity" name="Hero_Dampeer.Alt9">
+								<applystate name="State_Dampeer_FullCharge_Alt9" target="this_inflictor_entity" continuous="true" />
+							</hasavatarkey>
+								<else>
+								<hasavatarkey entity="this_inflictor_entity" name="Hero_Dampeer.Alt10">
+									<applystate name="State_Dampeer_FullCharge_Alt10" target="this_inflictor_entity" continuous="true" />
+								</hasavatarkey>
+							</else>
+						</else>
+					</else>
+				</else>
+			</compare>
+			<else>
+				<compare a="var0" b="5" op="eq">
+					<setactivemodifierkey entity="this_proxy_entity" name="Dampeer_Sub5" />
+				</compare>
+				<else>
+					<compare a="var0" b="4" op="eq">
+						<setactivemodifierkey entity="this_proxy_entity" name="Dampeer_Sub4" />
+					</compare>
+					<else>
+						<compare a="var0" b="3" op="eq">
+							<setactivemodifierkey entity="this_proxy_entity" name="Dampeer_Sub3" />
+						</compare>
+						<else>
+							<compare a="var0" b="2" op="eq">
+								<setactivemodifierkey entity="this_proxy_entity" name="Dampeer_Sub2" />
+							</compare>
+							<else>
+								<compare a="var0" b="1" op="eq">
+									<setactivemodifierkey entity="this_proxy_entity" name="Dampeer_Sub1" />
+								</compare>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</ondeath>
+	</modifier>
+</state>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Legionnaire_Ability1"
+
+	icon="1.jpg"
+	armor="8,12,16,20"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+
+	<altavatar key="Hero_Legionnaire.Alt6" modpriority="1"
+		icon="/heroes/legionnaire/alt6/ability_01/icon.tga"
+	/>
+</state>

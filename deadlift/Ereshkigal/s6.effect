@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		
+		<particlesystem name="system0" space="world" scale="1.0">
+			
+			<simpleemitter
+				position="0 0 70"
+				spawnrate="30"
+				minparticlelife="500"
+				maxparticlelife="2000"
+				offsetsphere="40 20 5"
+				gravity="-2"
+				minspeed="10"
+				maxspeed="40"
+				direction="0 0 1"
+				directionalspace="global"
+				minangle="30"
+				maxangle="60"
+				material="/shared/effects/materials/flare_01.material"
+			>
+				<particle
+					maxangle="360"
+					startcolor="0"
+					midcolor=".500 .20 1"
+					endcolor="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".25"
+					midcolorpos=".25"
+					minscale="3"
+					maxscale="7"
+				/>
+			</simpleemitter>
+			
+			
+			<!--
+			<billboard
+				directionalspace="local"
+				bone="Cylinder001"
+				delay="250"
+				expirelife="250"
+				position="0 0 60"
+				material="/shared/effects/materials/whitedot.material"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+				startcolor=".500 .20 1"
+				endcolor="0"
+				width="100"
+				height="50"
+			/>
+			-->
+			
+			<!-- base fillers -->
+			<simpleemitter
+				
+				bone="bone_new1"
+				timenudge="2500"
+				spawnrate="30"
+				minparticlelife="1000"
+				maxparticlelife="1500"
+				offsetsphere="10 10 10"
+				position="0 0 5"
+				minspeed="1"
+				maxspeed="2"
+				direction="0 0 1"
+				directionalspace="global"
+				minangle="90"
+				maxangle="90"
+				material="/shared/effects/materials/whitedot.material"
+				depthbias="-20"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-30"
+					maxanglespeed="30"
+					startcolor="0"
+					midcolor=".500 .20 1"
+					endcolor="0"
+					startalpha="0"
+					midalpha="0"
+					endalpha=".1"
+					midalphapos=".25"
+					midcolorpos=".25"
+					minscale="2"
+					maxscale="4"
+					anchor="1"
+				/>
+			</simpleemitter>
+			
+			
+			<simpleemitter
+				spawnrate="20"
+				particlelife="800"
+			
+			>
+				<particle
+				>
+					<orbiteremitter
+						spawnrate="50"
+						particlelife="800"
+						origin="0 0 -20" 
+						orbit="4 0 0"
+						friction="6"
+						speed="1"
+						direction="0 0 1" 
+						offset="30 100 30"
+						cylindrical="true" 
+					
+						
+						directionalspace="global"
+					>
+						<particle				
+							maxangle="360"
+							minanglespeed="-1030"
+							maxanglespeed="1710"
+							startcolor="0"
+							midcolor=".500 .20 1"
+							endcolor="0"
+							minsize="4"
+							maxsize="10"
+							startalpha="0"
+							midalpha="1"
+							endalpha="0"
+						/>
+
+					</orbiteremitter>
+				</particle>
+			</simpleemitter>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

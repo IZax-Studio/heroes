@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="idle.max" file="\heroes\forsaken_archer/black.model" type="K2" >
+
+	<anim name="idle" clip="\heroes\forsaken_archer/idle.clip" loop="true" fps="550"/>
+			
+	
+			
+</model>

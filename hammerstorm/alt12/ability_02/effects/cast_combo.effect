@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.2">
+			
+			<sound
+			    norestart="true"
+				channel="887655"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume="1"
+				sample="../../sounds/ab2.wav"
+			/>
+			
+			<sound
+			    norestart="true"
+				channelid="hammervox"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume="1"
+				sample="../../sounds/ab2_vox.wav"
+			/>
+			
+			<groundsprite
+				life="250"
+				material="/shared/effects/materials/Hammerstorm_ground1.material"
+				startsize="50"
+				midsize="50"
+				endsize="50"
+				midsizepos=".5"
+				startcolor="0 0 0"
+				midcolor=".3"
+				endcolor="0 0 0"
+				midcolorpos=".2"
+			/>
+			<groundsprite
+				delay="100"
+				life="250"
+				material="/shared/effects/materials/Hammerstorm_ground1.material"
+				startsize="125"
+				midsize="125"
+				endsize="125"
+				midsizepos=".5"
+				startcolor="0 0 0"
+				midcolor=".5"
+				endcolor="0 0 0"
+				midcolorpos=".2"
+			/>
+			
+			<groundsprite
+				delay="200"
+				life="250"
+				material="/shared/effects/materials/Hammerstorm_ground1.material"
+				startsize="200"
+				midsize="200"
+				endsize="200"
+				midsizepos=".5"
+				startcolor="0 0 0"
+				midcolor=".6"
+				endcolor="0 0 0"
+				scale=".85"
+			/>
+			<groundsprite
+				delay="100"
+				life="250"
+				material="/shared/effects/materials/heart_outline_add_02.material"
+				startsize="125"
+				midsize="205"
+				endsize="235"
+				midsizepos=".5"
+				startcolor="0 0 0"
+				midcolor="0 0 .5"
+				endcolor="0 0 0"
+				midcolorpos=".2"
+			/>
+			<groundsprite
+				life="250"
+				material="/shared/effects/materials/hammerstorm_ground2.material"
+				startsize="60"
+				midsize="110"
+				endsize="120"
+				midsizepos=".2"
+				color="1"
+				startalpha="0 0 0"
+				midalpha="1"
+				endalpha="0 0 0"
+				midalphapos=".2"
+				scale=".9"
+			/>
+			<!-- <controller yaw="90">
+			<template name="tex">
+				<billboard
+					delay="150"
+					life="250"
+					material="/shared/effects/materials/hammerstorm_key_blend.material"
+					size="{size}"
+					color="1"
+					startalpha="0 0 0"
+					midalpha="1"
+					endalpha="0 0 0"
+					midalphapos=".2"
+					roll="{roll}"
+					lockup="1"
+					lockright="1"
+					pitch="{pitch}"
+					position="{position}"
+					directionalspace="local"
+				/>
+			</template>
+			<instance name="tex" size="220" roll="-230" pitch="-90" position="0 -10 .5"/>
+			<instance name="tex" size="220" roll="-230" pitch="90" position="0 10 .5"/>
+			</controller> -->
+			<!-- <groundsprite
+				life="250"
+				material="/shared/effects/materials/hammerstorm_ground2.material"
+				startsize="50"
+				midsize="50"
+				endsize="50"
+				midsizepos=".5"
+				color="1"
+				startalpha="0 0 0"
+				midalpha=".8"
+				endalpha="0 0 0"
+				midalphapos=".2"
+			/>
+			<groundsprite
+				delay="100"
+				life="250"
+				material="/shared/effects/materials/hammerstorm_ground2.material"
+				startsize="125"
+				midsize="125"
+				endsize="125"
+				midsizepos=".5"
+				color="1"
+				startalpha="0 0 0"
+				midalpha=".8"
+				endalpha="0 0 0"
+				midalphapos=".2"
+			/>
+			
+			<groundsprite
+				delay="200"
+				life="250"
+				material="/shared/effects/materials/hammerstorm_ground2.material"
+				startsize="200"
+				midsize="200"
+				endsize="200"
+				color="1"
+				startalpha="0 0 0"
+				midalpha=".8"
+				endalpha="0 0 0"
+				midalphapos=".2"
+			/> -->
+			
+			<!-- <template name="tex">
+				<groundsprite
+					delay="{delay}"
+					life="250"
+					material="/shared/effects/materials/hammerstorm_key_blend.material"
+					size="{size}"
+					width="{width}"
+					color="1"
+					startalpha="0 0 0"
+					midalpha=".5"
+					endalpha="0 0 0"
+					midalphapos=".2"
+					yaw="{yaw}"
+					position="{position}"
+					directionalspace="local"
+				/>
+			</template>
+			<instance name="tex" delay="0" size="40" width="50" yaw="90" position="0 30 0"/>
+			<instance name="tex" delay="0" size="40" width="50" yaw="-30" position="25 -8 0"/>
+			<instance name="tex" delay="0" size="40" width="50" yaw="210" position="-20 -10 0"/>
+			<instance name="tex" delay="100" size="125" width="70" yaw="90" position="0 75 0"/>
+			<instance name="tex" delay="100" size="125" width="70" yaw="-30" position="65 -13 0"/>
+			<instance name="tex" delay="100" size="125" width="70" yaw="210" position="-60 -25 0"/>
+			<instance name="tex" delay="200" size="220" width="100" yaw="90" position="0 130 0"/>
+			<instance name="tex" delay="200" size="220" width="100" yaw="-30" position="115 -40 0"/>
+			<instance name="tex" delay="200" size="220" width="100" yaw="210" position="-110 -50 0"/>
+				
+			 -->
+			<billboard
+				position="0 0 10"
+				delay="0"
+				life="300"
+				param="0.01"	
+				startsize="75"
+				endsize="550"			
+				depthbias="0"
+				material="/shared/effects/materials/whitedot.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				startcolor="0 0 1"
+				endcolor="0"
+			/>
+			
+			<billboard
+				position="0 0 10"
+				delay="200"
+				life="100"
+				param="0.01"	
+				startsize="75"
+				endsize="850"			
+				depthbias="0"
+				material="/shared/effects/materials/whitedot.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				startcolor=".6 .4 .2"
+				endcolor="0"
+			/>
+			
+			<billboard
+				position="0 0 10"
+				delay="0"
+				life="400"
+				param="0.01"	
+				startsize="75"
+				endsize="350"
+				startalpha="0"
+				midalpha=".75"
+				endalpha="0"				
+				depthbias="0"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+			
+			<billboard
+				position="0 0 10"
+				delay="250"
+				life="400"
+				param="0.01"	
+				startsize="75"
+				endsize="350"
+				startalpha="0"
+				midalpha=".75"
+				endalpha="0"				
+				depthbias="0"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+
+			
+			<billboard
+				position="0 0 10"
+				delay="0"
+				life="400"
+				
+				startsize="75"
+				midsize="300"
+				endsize="350"
+				midsizepos=".3"
+				
+				startcolor="0"
+				midcolor=".8 .5 .2"
+				endcolor="0"
+				midcolorpos=".3"
+				
+				depthbias="0"
+				material="/shared/effects/materials/twirl_06.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				rollspeed="500"
+			/>
+			
+			<billboard
+				position="0 0 10"
+				delay="0"
+				life="400"
+				
+				startsize="75"
+				midsize="200"
+				endsize="350"
+				midsizepos=".3"
+				
+				startcolor="0"
+				midcolor=".6 .4 .2"
+				endcolor="0"
+				midcolorpos=".3"
+				
+				depthbias="0"
+				material="/shared/effects/materials/twirl_06.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				rollspeed="500"
+			/>
+			
+			<billboard
+				life="500"
+				
+				startcolor=".3 .2 .1"
+				midcolor=".1 .05 0"
+				endcolor="0"
+				midcolorpos=".3"
+				
+				midalphapos="0.75"
+				startsize="120"
+				midsize="300"
+				endsize="360"
+				midsizepos=".3"
+				depthbias="-30"
+				position="0 0 10"
+				material="/shared/effects/materials/corona_01.material"
+				lockup="true"
+				pitch="90"
+			/>
+			
+			<!-- <billboard
+				life="600"
+				
+				startcolor="0.4 0.2 0.2"
+				midcolor=".1 0.1 0.2"
+				endcolor="0"
+				midcolorpos=".3"
+				
+				midalphapos="0.75"
+				startsize="120"
+				midsize="400"
+				endsize="480"
+				midsizepos=".3"
+				depthbias="-30"
+				position="0 0 0"
+				material="/shared/effects/materials/ring_01.material"
+				lockup="true"
+				pitch="90"
+			/>
+ -->
+		</particlesystem>
+	</definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <!--overlay startalpha="1" endalpha="0" duration="1000" material="/shared/effects/textures/blood1.tga"/-->
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
+

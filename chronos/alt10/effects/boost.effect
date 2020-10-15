@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+
+			<model
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="2 .5 0"
+				endcolor="0"
+				material="../hd_chronos/material2.material"
+				expirelife="300"
+			/>
+
+			<billboard
+				expirelife="300"
+				bone="_bone_chest1"
+				material="../ability_04/effects/logo.material"
+				startcolor="2 .4 0"
+				endcolor="0 0 0"
+				startalpha="1"
+				endalpha="0"
+				startsize="15"
+				endsize="65"
+				directionalspace="local"
+				pitch="-30"
+				lockup="1"
+				lockright="1"
+			/>
+			
+			<simpleemitter
+				bone="_bone_center"
+				spawnrate="40"
+				minparticlelife="200"
+				maxparticlelife="350"
+				speed="150"
+				maxangle="360"
+				offsetsphere="30 30 80"
+				material="/shared/effects/materials/lightning_11.material"
+			>
+				<particle
+					maxangle="360"
+					maxanglespeed="200"
+					startcolor="1 .4 .2"
+					endcolor="0"
+					minsize="10"
+					maxsize="30"
+				/>
+			</simpleemitter>
+				
+			<template name="speedforce">
+				<billboard
+					expirelife="300"
+					startcolor="1 .4 .2"
+					endcolor="0"
+					startsize="3"
+					endsize="0"
+					bone="{bone}"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+				
+				<billboard
+					expirelife="300"
+					startcolor=".3 .1 0"
+					endcolor="0"
+					startsize="10"
+					endsize="0"
+					bone="{bone}"
+					depthbias="-5"
+					material="/shared/effects/materials/flare.material"
+				/>
+				
+				<trailemitter
+					bone="{bone}"
+					spawnrate="100"
+					particlelife="60"
+					direction="{dir}"
+					maxangle="15"
+					speed="200"
+					drag="0"
+					gravity="-200"
+					texpostime="500"
+					texposscale="0"
+					texstretchscale="1"
+					material="../hd_chronos/effects/lightning_trail.material"
+				>
+					<particle
+						startcolor="1 .5 0"
+						endcolor="0"
+						size="5"
+					/>
+				</trailemitter>
+				
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="35"
+					minparticlelife="200"
+					maxparticlelife="350"
+					speed="50"
+					angle="0"
+					gravity="-10"
+					direction="{dir}"
+					offsetsphere="1"
+					material="/shared/effects/materials/lightning_11.material"
+				>
+					<particle
+						maxangle="360"
+						maxanglespeed="200"
+						startcolor="1 .4 .2"
+						endcolor="0"
+						minsize="1"
+						maxsize="5"
+					/>
+				</simpleemitter>
+			</template>
+
+			<instance name="speedforce" bone="_bone_lefteye" dir="2 .5 0"/>
+			<instance name="speedforce" bone="_bone_righteye" dir="-2 .5 0"/>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

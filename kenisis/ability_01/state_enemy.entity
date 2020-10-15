@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Kenisis_Ability1_Enemy"
+	
+	icon="../scarlet_witch_infinity_war/ab1.tga"
+	passiveeffect=""
+
+	effecttype=""
+
+	deathpersist="true"
+
+>
+
+	<onframe />
+</state>

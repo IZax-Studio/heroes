@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>   
+		<particlesystem name="system0" space="world" scale="1" >
+		
+			<sound
+				norestart="true"
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="1800"
+				volume="1"
+				sample="../../omen/sounds/ab2_shield_start.wav"
+			/>
+			
+			<sound
+				norestart="true"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume="1"
+				sample="../../omen/sounds/ab2_vox_%.wav"
+			/>
+
+			<model
+				timenudge="1"
+				position="0 0 120"
+				expirelife="500"
+				model="../../omen/custom/shield/model.mdf"
+				anim="idle"
+				material="../../omen/custom/smoke_amos_ui_01_solid_82b9f3b3.material"
+				color=".6 .3 1"
+				maxyaw="360"
+				yawspeed="100"
+				startscale="1"
+				endscale="0"
+			>
+				<template name="trail">
+					<billboard
+						bone="{bone}"
+						material="../../omen/custom/ef_ww_spot_01.material"
+						startcolor=".5 .25 .75"
+						endcolor="0"
+						size="50"
+						rollspeed="100"
+					/>
+					<trailemitter
+						bone="{bone}"
+						spawnrate="200"
+						speed="600"
+						direction="0 1 0"
+						angle="0"
+						material="../../omen/custom/ef_x_line_05_solid_931c1451.material"
+						particlelife="200"
+						texpostime="200"
+						texposscale="0"
+						texstretchscale="1"
+						startparticlecolor="1"
+						endparticlecolor="0"
+					>
+						<particle
+							alpha="1"
+							color=".75 .25 1"
+							startsize="10"
+							midsize="80"
+							endsize="80"
+							midsizepos=".2"
+						/>
+					</trailemitter>
+					<trailemitter
+						bone="{bone}"
+						spawnrate="200"
+						angle="0"
+						material="fire_scrolling_trail.material"
+						speed="1000"
+						direction="0 1 0"
+						particlelife="200"
+						texpostime="200"
+						texposscale="0"
+						texstretchscale="1"
+						startparticlecolor="1"
+						endparticlecolor="0"
+					>
+						<particle
+							color=".25 .1 1"
+							startsize="0"
+							midsize="30"
+							endsize="30"
+							midsizepos=".1"
+						/>
+					</trailemitter>
+				</template>
+					
+				<instance name="trail" bone="_bone_fx_01"/>
+				<instance name="trail" bone="_bone_fx_02"/>
+				<instance name="trail" bone="_bone_fx_03"/>
+					
+			</model>
+			
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

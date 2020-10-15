@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect entityeffectscale="true" deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1.2" >
+
+                                               <twopointemitter
+                     life="300"
+				bone_a="_bone_righthand"
+				bone_b="_bone_righthand"
+				spawnrate="200"
+				minparticlelife="100"
+				maxparticlelife="300"
+				angle="0"
+				offsetsphere="10"
+				material="/shared/effects/materials/femme_lightning_01.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".2 .7 1"
+					endcolor="0"
+					midcolorpos="0.5"
+					minangle="0"
+					maxangle="350"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					startsize="15"
+					maxendsize="5"
+					flare="1"
+					anchor="1"
+					height="6"
+				/>
+			</twopointemitter>
+
+
+				<simpleemitter
+                          life="300"
+					bone="_bone_righthand"
+					spawnrate="150"
+					particlelife="500"
+					angle="0"
+					offsetsphere="0"
+					material="/shared/effects/materials/femme_lightning_06.material"
+				>
+					<particle
+						startcolor="0 .75 25"
+						midcolor="0 .75 25"
+						endcolor="0 .75 25"
+						minangle="0"
+						maxangle="360"
+						minanglespeed="-60"
+						maxanglespeed="60"
+						minendsize="5"
+						startsize="10"
+						maxendsize="17"
+						flare="true"
+						startanchor="1"
+						endanchor=".5000"
+					/>
+				</simpleemitter>
+
+					
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

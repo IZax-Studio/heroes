@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="model.model" type="K2" >
+	
+	<anim name="freeze_01" clip="clips/single_run.clip" startframe="4" fps=".01" loop="true"/>
+	<anim name="freeze_02" clip="clips/single_run.clip" startframe="8" fps=".01" loop="true"/>
+	<anim name="freeze_03" clip="clips/single_run.clip" startframe="12" fps=".01" loop="true"/>
+	<anim name="freeze_04" clip="clips/single_run.clip" startframe="16" fps=".01" loop="true"/>
+	<anim name="freeze_05" clip="clips/single_run.clip" startframe="20" fps=".01" loop="true"/>
+	<anim name="freeze_06" clip="clips/single_run.clip" startframe="24" fps=".01" loop="true"/>
+	<anim name="freeze_07" clip="clips/single_run.clip" startframe="28" fps=".01" loop="true"/>
+	<anim name="freeze_08" clip="clips/single_run.clip" startframe="32" fps=".01" loop="true"/>
+	<anim name="freeze_09" clip="clips/single_run.clip" startframe="36" fps=".01" loop="true"/>
+	<anim name="freeze_10" clip="clips/single_run.clip" startframe="40" fps=".01" loop="true"/>
+	<anim name="freeze_11" clip="clips/single_run.clip" startframe="44" fps=".01" loop="true"/>
+	<anim name="freeze_12" clip="clips/single_run.clip" startframe="48" fps=".01" loop="true"/>
+	<anim name="freeze_13" clip="clips/single_run.clip" startframe="52" fps=".01" loop="true"/>
+	<anim name="freeze_14" clip="clips/single_run.clip" startframe="56" fps=".01" loop="true"/>
+	<anim name="freeze_15" clip="clips/single_run.clip" startframe="60" fps=".01" loop="true"/>
+			
+</model>

@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="">
+	<definitions>
+<particlesystem name="system1" space="world" scale=".75">
+				<sound
+				forcestereo="true"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume=".6"
+				sample="sa2.ogg"
+			/>
+				<sound
+				volume=".15"
+				sample="engine_idle_2.wav"
+				linearfalloff="true"
+				falloffstart="0"		
+				falloffend="1300" 
+			/>
+				<model
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="0"
+				midcolor=".5 1 2"
+				endcolor="0"
+				material="/shared/effects/materials/shell4.material"
+				startalpha="0"
+				endalpha="1"
+				startsize="1.15"
+				endsize="1.05"
+				
+			/>
+
+			<simpleemitter
+				depthbias="-30"
+				life="1500"
+				minparticlelife="750"				
+				maxparticlelife="1300"				
+				startspawnrate="500"
+				endspawnrate="0"
+				minspeed="0"
+				maxspeed="1750"
+				gravity="65"
+				direction="0 0 1"
+				minangle="0"
+				maxangle="15"
+				drag="0.01"
+				material="/shared/effects/materials/blood_white.material"
+				offsetsphere="-25 -25 *50"
+				position="0 0 20"
+				collide="1"
+			>
+				<particle 
+					minangle="0"
+					maxangle="160"
+					minanglespeed="-10"
+					maxanglespeed="10"
+					startsize="10"
+					endsize="50"
+					startcolor="1"
+					midcolor=".5 .8 1"					
+					endcolor="1"				
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minscale=".5"
+					maxscale="1"
+				/>
+				<particle 
+					minangle="0"
+					maxangle="160"
+					minanglespeed="-10"
+					maxanglespeed="10"
+					startsize="20"
+					endsize="80"
+					startcolor="1"
+					midcolor=".6 1 1"					
+					endcolor="1"				
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minscale=".5"
+					maxscale="1"
+				/>
+				<particle 
+					minangle="0"
+					maxangle="260"
+					minanglespeed="-20"
+					maxanglespeed="20"
+					startsize="110"
+					endsize="0"
+					startcolor="1"
+					endcolor=".8 1 1"				
+					startalpha=".5"
+					midalpha="1"
+					endalpha="0"
+					minscale=".5"
+					maxscale="1"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				depthbias="-30"
+				
+				minparticlelife="750"				
+				maxparticlelife="1500"				
+				spawnrate="40"
+				minspeed="0"
+				maxspeed="1450"
+				gravity="55"
+				direction="0 0 1"
+				minangle="20"
+				maxangle="15"
+				drag="0.01"
+				material="/shared/effects/materials/refract_outsplash.material"
+				offsetsphere="-25 -25 -50"
+				position="0 0 20"
+			>
+				<particle 
+					maxangle="360"
+					startsize="25"
+					endsize="55"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					startparam="0.5"
+					endparam="0"
+				/>
+			</simpleemitter>
+			
+			<billboard
+				
+				startcolor="0 .5 1"
+				midcolor=".1 .55 1"
+				midcolorpos="0.3"
+				endcolor="0"
+				startsize="250"
+				endsize="600"
+				depthbias="0"
+				material="/shared/effects/materials/whitedot.material"
+				position="0 0 15"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+			/>
+
+			<billboard
+				depthbias="-30"
+				position="0 0 -15"
+				
+				material="/shared/effects/materials/refract_ripple.material"
+				startsize="135"
+				endsize="525"
+				startalpha="0"
+				midalpha=".75"
+				endalpha="0"
+				startparam="0.02"
+				endparam="0"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+			/>
+
+			<billboard
+				delay="50"
+				
+				material="/shared/effects/materials/outsplash_blend.material"
+				position="0 0 15"
+				depthbias="-30"
+				startcolor="1 1 1"
+				endcolor="1 1 1"
+				startsize="105"
+				endsize="305"
+				startalpha="0"
+				midalphapos=".2"
+				midalpha=".75"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+				anchor=".8"
+			/>
+		</particlesystem>
+		<particlesystem name="system0" space="world">
+						
+						
+			<model
+				bone="Bip01 Hand"
+				anim="idle"
+				yaw="180"
+				pitch="180"
+				roll="-90"
+				model="/heroes/klanx/flying_device/model.mdf"
+			/>
+			
+			<groundsprite
+				expirelife="200"
+				color="0"
+				material="/shared/effects/materials/black_spot.material"
+				startalpha=".6"
+				endalpha="0"
+				size="50"
+			/>
+			
+			<terrainemitter
+				spawnrate="70"
+				particlelife="1000"
+				inheritvelocity="1"
+			>
+				<particle>
+					<simpleemitter
+						count="1"
+						position="0 0 25"
+						offsetsphere="0 0 10"
+						particlelife="250"
+						direction="0 0 1"
+						directionalspace="global"
+						minangle="120"
+						maxangle="120"
+						minspeed="150"
+						maxspeed="400"
+						drag="0.06"
+						gravity="-2"
+						material="/shared/effects/materials/wave.material"
+					>
+						<particle
+							turn="1"
+							angle="-90"
+							startwidth="15"
+							endwidth="30"
+							startheight="20"
+							endheight="50"
+							startcolor="0"
+							midcolor=".04 .035 .02"
+							endcolor="0"
+							lockup="true"
+							lockright="true"
+							pitch="-90"
+							anchor="1"
+						/>
+					</simpleemitter>
+				</particle>
+			</terrainemitter>
+			
+			<terrainemitter
+				spawnrate="5"
+				minparticlelife="400"
+				maxparticlelife="500"
+				material="/shared/effects/materials/flux_ring.material"
+				depthbias="-10"
+				offsetsphere="5"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-500"
+					maxanglespeed="0"
+					minstartscale="10"
+					maxstartscale="20"
+					minendscale="50"
+					maxendscale="75"
+					midsizepos=".35"
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+					anchor="1"
+					startcolor="0"
+					midcolor=".1 .09 .08"
+					endcolor="0"
+				/>
+			</terrainemitter>
+			
+			<simpleemitter
+				position="0 0 50"
+				spawnrate="10"
+				particlelife="400"
+				direction="0 0 -1"
+				speed="300"
+				angle="0"
+				material="/shared/effects/materials/outsplash_blend_white.material"
+				drag="0.01"
+				offsetsphere="5"
+			>
+				<particle
+					maxangle="360"
+					maxanglespeed="-1000"
+					minstartscale="18"
+					maxstartscale="22"
+					minendscale="25"
+					maxendscale="30"
+					midsizepos=".35"
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+					anchor="1"
+					startalpha="0"
+					midalpha=".04"
+					endalpha="0"
+					midalphapos=".9"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+	
+	</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnparticlesystem instance="instance1" particlesystem="system1" /> 
+	<waitfordeath instance="instance0" />
+	<waitfordeath instance="instance1" />
+</thread>
+
+</effect>

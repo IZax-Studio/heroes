@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Gunblade_Ability3_Melee"
+
+	icon="3.png"
+	
+	ishidden="true"
+	modifierkey="gunblade_E_melee"
+>
+
+</state>

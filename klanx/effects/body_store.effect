@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+		<particlesystem name="system0" space="world" scale=".7">
+
+			<model
+				position="50 -10 0"
+				model="../ability_03/model.mdf"
+				anim="idle"
+			/>
+			
+			
+		
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+
+	<definitions>
+		
+		<particlesystem name="system0" space="world" scale=".75">
+		
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".75"
+				sample="../sounds/cast.wav"
+			/>
+			<sound
+				
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".3"
+				sample="../sounds/hit.mp3"
+			/>
+								<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".75"
+				sample="../../sounds/strength.wav"
+			/>
+
+			<billboard
+				bone="_bone_weapon2"
+				life="650"
+				startcolor=".5 0 0"
+				endcolor="0 0 0"
+				startsize="250"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				directionalspace="local"
+				depthbias="-10"
+				minroll="-180"
+				maxroll="180"
+				rollspeed="-360"
+			/>
+
+			<billboard
+				bone="_bone_weapon2"
+				life="650"
+				startcolor=".5 .5 .5"
+				endcolor="0 0 0"
+				startsize="100"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				directionalspace="local"
+				depthbias="-10"
+				minroll="-180"
+				maxroll="180"
+				rollspeed="-360"
+			/>
+
+		</particlesystem>
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/> 
+		<waitfordeath instance="instance0" />
+		
+	</thread>
+</effect>

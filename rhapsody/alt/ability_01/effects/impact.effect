@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true" deferred="true">
+	<definitions>
+		
+		<particlesystem name="system0" space="world" scale=".85">
+
+			<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2500" 
+				volume=".4" 
+				sample="../sounds/impact.wav"
+			/>
+		
+			<template name="rings">
+			<controller bone="_bone_centerofchest" life="250" startscale="1.8" endscale="2.2">
+				<billboard
+					material="/shared/effects/materials/corona_07.material"
+					startcolor="0 0 0"
+					endcolor="0"
+					startsize="60"
+					endsize="120"
+					life="250"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					pitchspeed="{zpitchspeed}"
+					yawspeed="{zyawspeed}"
+				/>
+				
+				<billboard
+					material="/shared/effects/materials/corona_07.material"
+					startcolor="1 1 1"
+					endcolor="0"
+					startsize="70"
+					endsize="130"
+					life="250"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					pitchspeed="{zpitchspeed}"
+					yawspeed="{zyawspeed}"
+				/>
+				
+				<billboard
+					material="/shared/effects/materials/corona_07.material"
+					startcolor=".3 .3 .3"
+					endcolor="0"
+					startsize="80"
+					endsize="140"
+					life="250"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					pitchspeed="{zpitchspeed}"
+					yawspeed="{zyawspeed}"
+				/>
+				
+				<billboard
+					material="/shared/effects/materials/corona_07.material"
+					startcolor="1 1 1"
+					endcolor="0"
+					startsize="90"
+					endsize="150"
+					life="250"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					pitchspeed="{zpitchspeed}"
+					yawspeed="{zyawspeed}"
+				/>
+				
+				<billboard
+					material="/shared/effects/materials/corona_07.material"
+					startcolor="1 1 1"
+					endcolor="0"
+					startsize="100"
+					endsize="160"
+					life="250"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					pitchspeed="{zpitchspeed}"
+					yawspeed="{zyawspeed}"
+				/>
+
+				<billboard
+					material="/shared/effects/materials/corona_07.material"
+					startcolor="1 1 1"
+					endcolor="0"
+					startsize="110"
+					endsize="170"
+					life="250"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					pitchspeed="{zpitchspeed}"
+					yawspeed="{zyawspeed}"
+				/>
+			</controller>
+			</template>	
+			
+			<instance name="rings" zyawspeed="0" zpitchspeed="0"/>
+			
+		<!--
+			<billboard
+				bone="_bone_centerofchest"
+				life="250"
+				startcolor="1 1 1"
+				midcolor="1 1 1"
+				endcolor="0"
+				midcolorpos="0.3"
+				startsize="0"
+				endsize="200"
+				depthbias="-25"
+				material="/shared/effects/materials/music_rings_add.material"
+				position="0 0 0"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="250"
+				startcolor="1 1 1"
+				midcolor="1 1 1"
+				endcolor="0"
+				midcolorpos="0.3"
+				startsize="0"
+				endsize="200"
+				depthbias="-25"
+				material="/shared/effects/materials/musical_ring_add.material"
+				position="0 0 0"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+		-->
+		<controller bone="_bone_centerofchest" scale="2" >
+			<simpleemitter
+				count="25"
+				life="250"
+				spawnrate="500"
+				particlelife="750"
+				minspeed="10"
+				maxspeed="250"
+				drag="0.01"
+				inheritvelocity=".25"
+				offsetsphere="10 10 10"
+				gravity="2"
+				material="/shared/effects/materials/note_1.material"
+			>
+				<particle
+					color="1 1 1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".2"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					startsize="40"
+					endsize="0"
+					depthbias="-160"
+				/>
+				
+				<particle
+					color="0 0 0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".2"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					startsize="40"
+					endsize="0"
+					depthbias="-160"
+				/>
+<!--
+				<particle
+					color="1 1 1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					startsize="50"
+					endsize="0"
+					depthbias="-160"
+				/>
+				
+				<particle
+					color="0 0 0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					startsize="50"
+					endsize="0"
+					depthbias="-160"
+				/>
+-->
+				
+				
+			</simpleemitter>
+			
+
+						
+			
+			
+<!--
+			<billboard
+				delay="100"
+				bone="_bone_centerofchest"
+				life="1000"
+				startcolor="0 0 0"
+				endcolor="0"
+				midcolorpos="0.3"
+				startsize="175"
+				endsize="0"
+				depthbias="0"
+				material="/shared/effects/materials/whitedot.material"
+				position="0 0 0"
+			/>
+			
+			<billboard
+				delay="100"
+				bone="_bone_centerofchest"
+				life="1000"
+				startcolor="1 1 1"
+				endcolor="0"
+				midcolorpos="0.25"
+				startsize="125"
+				endsize="0"
+				depthbias="0"
+				material="/shared/effects/materials/starlight.material"
+				position="0 0 0"
+			/>
+-->
+			<billboard
+				delay="100"
+				bone="_bone_centerofchest"
+				position="0 0 0"
+				life="350"
+				param="0.1"	
+				startsize="50"
+				endsize="150"
+				startalpha="0"
+				midalpha=".4"
+				endalpha="0"				
+				depthbias="0"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				position="0 0 0"
+				delay="275"
+				life="350"
+				param="0.1"	
+				startsize="50"
+				endsize="150"
+				startalpha="0"
+				midalpha=".4"
+				endalpha="0"				
+				depthbias="0"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+			
+			<billboard
+				bone="_bone_center"
+				life="250"
+				startcolor="0 0 0"
+				midcolor="1 0 0"
+				endcolor="0 0 0"
+				size="90"
+				material="/heroes/drunkenmaster/effects/material.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				rollspeed="180"
+				directionalspace="local"
+				depthbias="0"
+				position="0 0 25"
+			/>
+		</controller>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
+
+

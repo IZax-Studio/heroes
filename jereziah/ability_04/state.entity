@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Jereziah_Ability4"
+	
+	icon="4.png"
+	healthregen="15,20,25"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	passiveeffect="effects/state.effect"
+	
+>
+	<onframe />
+	
+	<ondamaged priority="5">
+		<damageeffecttype effecttype="Physical">
+			<scaledamage scale="0.2,0.1,0.0" />
+		</damageeffecttype>
+	</ondamaged>
+	
+	<altavatar key="Hero_Jereziah.Alt" modpriority="2"
+		passiveeffect="../hd_alt/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Jereziah.Alt2"
+	>
+		<modifier key="Alt2_Sin_Set_Bonus" modpriority="2"
+			passiveeffect="../alt2/sin_set_bonus/ability_04/effects/state.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Jereziah.Alt3" modpriority="2"
+		passiveeffect="../alt3/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Jereziah.Alt4" modpriority="2"
+		passiveeffect="../alt4/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Jereziah.Alt5" modpriority="2"
+		passiveeffect="../alt5/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Jereziah.Alt6" modpriority="2"
+		passiveeffect="../alt6/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Jereziah.Alt8" modpriority="2"
+		passiveeffect="../alt8/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Jereziah.Alt9" modpriority="2"
+		icon="../alt9/ability_04/icon.tga"
+		passiveeffect="../alt9/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Jereziah.Alt10" modpriority="2"
+		passiveeffect="../alt10/ability_04/effects/state.effect"
+	/>
+	
+	<modifier key="ult_boost" modpriority="100"
+	>
+	</modifier>
+
+</state>

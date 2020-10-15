@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Solstice_Ability2_Day"
+
+	icon="Cha075_Skill_Q.png"
+	passiveeffect=""
+
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<aura
+		gadget="Gadget_Solstice_Ability2_Reveal_Day"
+		radius="0"
+		targetscheme="self"
+	/>
+	
+	<onframe />
+	
+</state>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+			
+			<twopointemitter
+				bone_a="_bone_altweapon1"
+				bone_b="_bone_altweapon3"
+				spawnrate="50"
+				particlelife="1000"
+				angle="0.0"
+				offsetsphere="0"
+				material="/shared/effects/materials/flame.material"
+			>
+				<particle
+					startcolor="0 0 0"
+					midcolor=".2 0 0"
+					endcolor=".2 0 0"
+					midcolorpos="0.5"
+					startalpha="1.0"
+					endalpha="1.0"
+					maxangle="360"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					minendsize="25"
+					startsize="5"
+					maxendsize="40"
+					flare="true"
+					startanchor="1"
+					endanchor="1"
+				/>
+				<particle
+					startcolor="0 0 0"
+					midcolor=".2 0 0"
+					endcolor=".2 0 0"
+					midcolorpos="0.5"
+					startalpha="1.0"
+					endalpha="1.0"
+					maxangle="360"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					minendsize="25"
+					startsize="5"
+					maxendsize="35"
+					flare="true"
+					startanchor="1"
+					endanchor="1"
+				/>
+			</twopointemitter>
+			<twopointtrailemitter
+				bone_a="_bone_altweapon1"
+				bone_b="_bone_altweapon3"
+				spawnrate="150"
+				particlelife="250"
+				texpostime="300"
+				texposscale="0.0"
+				texstretchscale=".35"
+				material="/shared/effects/materials/swoosh_add.material"
+				subframepose="true"
+			>
+				<particle
+					startcolor=".4 0 0"
+					endcolor="0 0 0" 
+				/>
+			</twopointtrailemitter>
+			
+			<twopointtrailemitter
+				bone_a="_bone_altweapon1"
+				bone_b="_bone_altweaponattach"
+				spawnrate="150"
+				particlelife="250"
+				texpostime="300"
+				texposscale="0.0"
+				texstretchscale=".35"
+				material="/shared/effects/materials/swoosh_add.material"
+				subframepose="true"
+			>
+				<particle
+					startcolor=".4 0 .0"
+					endcolor="0 0 0" 
+				/>
+			</twopointtrailemitter>
+
+                
+
+			<beam
+				bone_a="_bone_altweapon3"
+				bone_b="_bone_altweaponattach"
+				size="40"
+				color=".4 0 .0"
+				alpha=".0001"
+				material="/shared/effects/materials/bow_glow_03.material"
+				framespeed="5"
+			/>
+			<beam
+				bone_a="_bone_altweapon1"
+				bone_b="_bone_altweapon2"
+				size="40"
+				color=".4 0 .0"
+				alpha=".0001"
+				material="/shared/effects/materials/bow_glow_03.material"
+				framespeed="5"
+			/>
+			
+
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

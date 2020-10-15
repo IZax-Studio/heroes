@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="ability_03">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".85">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".75"
+				sample="../sounds/cast.wav"
+			/>
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".75"
+				sample="/heroes/legionnaire/alt3/sounds/attack_grunt_%.wav"
+			/>
+		
+			<model
+				life="500"
+				model="/heroes/legionnaire/alt3/ability_03/effects/model.mdf"
+				color="1.5"
+				startalpha=".5"
+				endalpha="0"
+				scale="1.5"
+				yawspeed="1500"
+			>
+
+			</model>
+			
+			
+			<billboard
+				bone="_bone_origin"
+				life="175"
+				startcolor=".1 .25 1"
+				midcolor=".1 .25 3"
+				endcolor="0 0 0"
+				size="450"
+				position="0 0 50"
+				material="/heroes/drunkenmaster/effects/material.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				roll="-90"
+				rollspeed="-1500"
+				directionalspace="local"
+				depthbias="-25"
+			/>
+			
+			<billboard
+				bone="_bone_origin"
+				life="175"
+				startcolor="0 .125 .25"
+				midcolor="0 .125 .25"
+				endcolor="0 0 0"
+				size="420"
+				position="0 0 50"
+				material="/heroes/drunkenmaster/effects/material.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				roll="-90"
+				rollspeed="-1500"
+				directionalspace="local"
+				depthbias="-25"
+			/>
+			
+
+
+	</particlesystem>
+</definitions>
+
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnmodifier instance="instance1" modifier="modifier0"/>  
+	<waitfordeath instance="instance0" />
+</thread>
+
+</effect>
+
+
+
+
+
+
+

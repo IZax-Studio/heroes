@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Deadlift_Ability1"
+
+	radius="350"
+	
+	lifetime="500"
+	
+	dynamiceffectscale="true"
+	
+	effect="../ability_01/effects/explosion.effect"
+>
+	<onspawn>
+		<!-- Damage -->
+		<setvar1 a="25,50,75,100" />
+		
+		<!-- We are using onspawn instead of the normal affector logic because the affector is only used for visuals -->
+		<areaofeffect
+			center="this_entity"
+			radius="350"
+			targetscheme="enemy_units"
+			targetselection="all"
+			effecttype="Magic"
+		>
+			<targettype type="hero" source="target_entity" target="target_entity">
+				<applystate name="State_Deadlift_Ability1_Self" target="this_owner_entity" duration="30000" pushentity="true" />
+				<addcharges entity="stack_entity" count="4" timed="true" />
+				<applystate name="State_Deadlift_Ability1_Enemy" target="target_entity" duration="30000" pushentity="true" />
+				
+				<!-- Reduce a target hero's Strength to a minimum of 15 -->
+				<setvar0 a="target_strength" b="15" op="sub" />
+				<setvar0 a="var0" b="0" op="max" />
+				<compare a="var0" b="4" op="gt">
+					<addcharges entity="stack_entity" count="4" timed="true" />
+				</compare>
+				<else>					
+					<addcharges entity="stack_entity" count="var0" timed="true" />
+				</else>
+				<damage effecttype="Magic" target="target_entity" amount="1" b="var1" op="mult" />
+			</targettype>
+			<else>
+				<!-- 3x damage to non-hero units -->
+				<damage effecttype="Magic" target="target_entity" amount="2" b="var1" op="mult" />
+			</else>
+		</areaofeffect>
+	</onspawn>
+	
+	<modifier key="ult_boost" modpriority="100">
+		<onspawn>
+			<!-- Damage -->
+			<setvar1 a="25,50,75,100" />
+			
+			<!-- We are using onspawn instead of the normal affector logic because the affector is only used for visuals -->
+			<areaofeffect
+				center="this_entity"
+				radius="350"
+				targetscheme="enemy_units"
+				targetselection="all"
+				effecttype="Magic"
+			>
+				<targettype type="hero" source="target_entity" target="target_entity">
+					<applystate name="State_Deadlift_Ability1_Self" target="this_owner_entity" duration="30000" pushentity="true" />
+					<addcharges entity="stack_entity" count="10" timed="true" />
+					<applystate name="State_Deadlift_Ability1_Enemy" target="target_entity" duration="30000" pushentity="true" />
+					
+					<!-- Reduce a target hero's Strength to a minimum of 15 -->
+					<setvar0 a="target_strength" b="15" op="sub" />
+					<setvar0 a="var0" b="0" op="max" />
+					<compare a="var0" b="10" op="gt">
+						<addcharges entity="stack_entity" count="10" timed="true" />
+					</compare>
+					<else>					
+						<addcharges entity="stack_entity" count="var0" timed="true" />
+					</else>
+					<damage effecttype="Magic" target="target_entity" amount="1" b="var1" op="mult" />
+				</targettype>
+				<else>
+					<!-- 3x damage to non-hero units -->
+					<damage effecttype="Magic" target="target_entity" amount="2" b="var1" op="mult" />
+				</else>
+			</areaofeffect>
+		</onspawn>
+	</modifier>
+
+	<altavatar key="Hero_Deadlift.Alt" modpriority="90"
+		effect="../ability_01/effects/explosion_alt.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Deadlift.Alt2" modpriority="90"
+		effect="../ability_01/effects/explosion_alt2.effect"
+		lifetime="2400"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Deadlift.Alt3" modpriority="90"
+		effect="../ability_01/effects/explosion_alt3.effect"
+	>
+	</altavatar>
+	
+</affector>

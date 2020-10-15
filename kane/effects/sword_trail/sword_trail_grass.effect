@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+		
+			<model
+				position="-27 -40 0" 
+				model="/shared/models/invis.mdf"
+				directionalspace="local"
+			>
+				<sound
+					soundloop="true"
+					fadein="10"
+					fadeout="250"
+					linearfalloff="true" 
+					falloffstart="0"
+					falloffend="800"
+					volume=".05"
+					sample="/heroes/prisoner/ability_01/sounds/surface/dirt_drag.wav"
+				/>
+				
+				<terrainemitter
+					mincount="0"
+					maxcount="1"
+					particlelife="3000"
+				>
+					<!--
+					<particle>
+						<model
+							minscale=".3"
+							maxscale=".5"
+							life="1500"
+							model="/heroes/rampage/ability_01/effects/rocks/model.mdf"
+							anim="idle"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							maxyaw="360"
+							color="1 .8 .4"
+						/>
+					</particle>
+					-->
+					<particle>
+						<debris
+							position="0 0 10"
+							minscale=".05"
+							maxscale=".15"
+							life="1500"
+							model="/shared/effects/models/debris/debris.mdf"
+							material="/shared/effects/models/debris/debris_noshadow.material"
+							anim="idle"
+							minspeed="100.0"
+							maxspeed="400.0"
+							minrotationspeed="300.0"
+							maxrotationspeed="1200.0"
+							gravity="80.0"
+							drag="0.004"
+							color=".6 .5 .3"
+							minangle="0"
+							maxangle="120"
+							collide="true"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							bounce="0.75"
+							reflect="0.6"
+							animpose="false"
+						/>
+					</particle>
+				</terrainemitter>
+					
+				<!-- dust -->
+				<terrainemitter
+					spawnrate="40"
+					minparticlelife="500"
+					maxparticlelife="1000"
+					material="/shared/effects/materials/dust.material"
+					position="0 0 5"
+					offsetsphere="10 10 10"
+					gravity="-1"
+					minspeed="5"
+					maxspeed="40"
+					drag="0.02"
+					direction="0 0 1"
+					directionalspace="global"
+					angle="80"
+					depthbias="-15"
+				>
+					<particle
+						maxangle="360"
+						minstartscale="5"
+						maxstartscale="8"
+						minendscale="10"
+						maxendscale="20"
+						startalpha="0"
+						midalpha=".25"
+						endalpha="0"
+						midalphapos=".1"
+						color="1 .8 .5"
+					/>
+				</terrainemitter>
+				
+				
+				<!-- Cracks -->
+				<simpleemitter
+					position="0 -5 0"
+					count="1"
+					minparticlelife="650"
+					maxparticlelife="850"
+					depthbias="-5"
+					material="/shared/effects/materials/crack_4_ground.material"
+					direction="0 1 0"
+					angle="0"
+					directionalspace="local"
+					speed=".01"
+				>
+					<particle
+						turn="1"
+						lockup="true"
+						lockright="true"
+						minheight="20"
+						maxheight="25"
+						minwidth="30"
+						maxwidth="40"
+						pitch="-90"
+						angle="90"
+						startalpha="0"
+						midalpha=".5"
+						endalpha="0"
+						midalphapos=".1"
+						color="1 .75 .25"
+					/>
+				</simpleemitter>
+				<!--
+				<terrainemitter
+					spawnrate="12"
+					particlelife="1000"
+					depthbias="-15"
+					offsetsphere="20 20 0"
+				>
+					<particle>
+						<billboard
+							minlife="500"
+							maxlife="1000"
+							material="/shared/effects/materials/earth_cracks_overlay.material"
+							lockup="true"
+							lockright="true"
+							pitch="90"
+							maxroll="360"
+							minsize="40"
+							maxsize="95"
+							startalpha=".5"
+							midalpha=".5"
+							endalpha="0"
+							midalphapos=".25"
+							color="1"
+						/>
+					</particle>
+				</terrainemitter>
+				
+				<terrainemitter
+					spawnrate="12"
+					particlelife="1000"
+					depthbias="-15"
+					offsetsphere="20 20 0"
+				>
+					<particle>
+						<billboard
+							minlife="500"
+							maxlife="1000"
+							material="/shared/effects/materials/earth_cracks_reveal_add.material"
+							lockup="true"
+							lockright="true"
+							pitch="90"
+							maxroll="360"
+							minsize="40"
+							maxsize="95"
+							startcolor=".5"
+							midcolor=".5"
+							endcolor="0"
+							midcolorpos=".25"
+						/>
+					</particle>
+				</terrainemitter>
+				-->
+				<!--
+				<twopointtrailemitter
+					bone_a="_bone_fx_trail3"
+					bone_b="_bone_fx_trail4"
+					spawnrate="15"
+					particlelife="2000"
+					material="/shared/effects/materials/drag_cracks_notile.material"
+					texposscale="1"
+					texpostime="150"
+					texstretchscale="0"
+				>
+					<particle
+						lockup="true"
+						lockright="true"
+						color=".8"
+						minscale="30"
+						maxscale="34"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".05"
+					/>
+					<particle
+						color=".65"
+						minscale="30"
+						maxscale="34"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".05"
+					/>
+				</twopointtrailemitter>
+				-->
+				<twopointtrailemitter
+					bone_a="_bone_fx_trail1"
+					bone_b="_bone_fx_trail2"
+					spawnrate="15"
+					particlelife="1500"
+					material="/shared/effects/materials/drag_cracks_notile.material"
+					texposscale="1"
+					texpostime="50"
+					texstretchscale="0"
+				>
+					<particle
+						color=".35"
+						minscale="24"
+						maxscale="29"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".05"
+					/>
+				</twopointtrailemitter>
+			</model>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

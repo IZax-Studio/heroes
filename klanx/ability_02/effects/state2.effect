@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="">
+	<definitions>
+		<particlesystem name="system0" space="world">
+						
+			<sound
+				volume=".8"
+				sample=""
+				linearfalloff="true"
+				falloffstart="0"		
+				falloffend="1300" 
+			/>
+			
+				<sound
+				forcestereo="true"
+				delay="550"
+				volume="1"
+				sample="../sounds/sa2.wav"
+				linearfalloff="true"
+				falloffstart="0"		
+				falloffend="1300" 
+			/>
+			
+			<model
+				bone="Bip01 L Hand"
+				anim="idle"
+				yaw="180"
+				pitch="180"
+				roll="-90"
+				model="/heroes/klanx/flying_device/model.mdf"
+			/>
+			
+			<groundsprite
+				expirelife="200"
+				color="0"
+				material="/shared/effects/materials/black_spot.material"
+				startalpha=".6"
+				endalpha="0"
+				size="50"
+			/>
+			
+			<terrainemitter
+				spawnrate="70"
+				particlelife="1000"
+				inheritvelocity="1"
+			>
+				<particle>
+					<simpleemitter
+						count="1"
+						position="0 0 25"
+						offsetsphere="0 0 10"
+						particlelife="250"
+						direction="0 0 1"
+						directionalspace="global"
+						minangle="120"
+						maxangle="120"
+						minspeed="150"
+						maxspeed="400"
+						drag="0.06"
+						gravity="-2"
+						material="/shared/effects/materials/wave.material"
+					>
+						<particle
+							turn="1"
+							angle="-90"
+							startwidth="15"
+							endwidth="30"
+							startheight="20"
+							endheight="50"
+							startcolor="0"
+							midcolor=".04 .035 .02"
+							endcolor="0"
+							lockup="true"
+							lockright="true"
+							pitch="-90"
+							anchor="1"
+						/>
+					</simpleemitter>
+				</particle>
+			</terrainemitter>
+			
+			<terrainemitter
+				spawnrate="5"
+				minparticlelife="400"
+				maxparticlelife="500"
+				material="/shared/effects/materials/flux_ring.material"
+				depthbias="-10"
+				offsetsphere="5"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-500"
+					maxanglespeed="0"
+					minstartscale="10"
+					maxstartscale="20"
+					minendscale="50"
+					maxendscale="75"
+					midsizepos=".35"
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+					anchor="1"
+					startcolor="0"
+					midcolor=".1 .09 .08"
+					endcolor="0"
+				/>
+			</terrainemitter>
+			
+			<simpleemitter
+				position="0 0 50"
+				spawnrate="10"
+				particlelife="400"
+				direction="0 0 -1"
+				speed="300"
+				angle="0"
+				material="/shared/effects/materials/outsplash_blend_white.material"
+				drag="0.01"
+				offsetsphere="5"
+			>
+				<particle
+					maxangle="360"
+					maxanglespeed="-1000"
+					minstartscale="18"
+					maxstartscale="22"
+					minendscale="25"
+					maxendscale="30"
+					midsizepos=".35"
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+					anchor="1"
+					startalpha="0"
+					midalpha=".04"
+					endalpha="0"
+					midalphapos=".9"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<waitfordeath instance="instance0" />
+</thread>
+</effect>

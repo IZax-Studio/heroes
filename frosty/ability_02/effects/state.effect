@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true" deferred="true">
+	<definitions>
+	
+			
+		<modifier
+			name="modifier0"
+			
+			startcolor=".5 1.5 1.5"
+			midcolor=".5 1.5 1.5"
+			endcolor="1 1 1"
+			midcolorpos="0.889"
+			alpha=".8"
+		/>
+		
+		<particlesystem name="system0" space="world" scale="1.2">
+
+			<sound				
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume="0.80"
+				sample="/heroes/frosty\yoshino/sounds/172_0_Skill_Q_Hit (2).wav"
+			/>
+			<sound
+				soundloop="true"
+				fadein="100"
+				fadeout="200"
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".5"
+				sample="/heroes/frosty\yoshino/sounds/172_0_Skill_Q_Hit_Loop.wav"
+			/>	
+			<model
+				model="platform.mdf"
+				
+				scale=".6"
+			/>
+			
+			<debris
+				position="0 0 0"				
+				scale="0.4"				
+				model="ice.mdf"
+				anim="idle"	
+				minspeed="200.0"
+				maxspeed="400.0"
+				minrotationspeed="100.0"
+				maxrotationspeed="300.0"
+				gravity="41.0"			
+				collide="true"
+				startalpha="1.0"
+				midalpha="1.0"
+				endalpha="1.0"
+				midalphapos="0.5"
+				bounce="0.7"
+				reflect="0.6"
+				animpose="true"
+			/>
+			
+			<model
+				parentmodel="true"
+				parentskeleton="true"
+				material="/shared/effects/materials/shell3.material"
+				color=".35 .65 1"
+			/>		
+			<model
+				parentmodel="true"
+				parentskeleton="true"
+				material="/shared/effects/materials/shell.material"
+				color=".35 .65 1"
+			/>
+			<model
+				parentmodel="true"
+				parentskeleton="true"
+				material="shell_ice.material"
+				expirelife="1500"
+				startalpha="1.0"
+				endalpha="0.0"	
+			/>
+
+			
+			<template name="twopoint">
+				<twopointemitter 
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					count="{count}"			
+					offsetsphere="{offset} {offset} {offset}"					
+				>
+					<particle
+						anchor="1"
+					>
+						<model							
+							minscale=".5"						
+							maxscale="2"							
+							model="point.mdf"			
+							alpha="1"
+							lockup="1"
+							lockright="1"
+						/>					
+					
+					</particle>			
+				</twopointemitter>
+			</template>			
+			
+			<instance name="twopoint" count="5" bone_a="_bone_lefthand" bone_b="Bip01 L Forearm" offset="4"/>
+			<instance name="twopoint" count="5" bone_a="_bone_righthand" bone_b="Bip01 R Forearm" offset="4"/>
+			<instance name="twopoint" count="5" bone_a="Bip01 L UpperArm" bone_b="Bip01 L Forearm" offset="4"/>	
+			<instance name="twopoint" count="5" bone_a="Bip01 R UpperArm" bone_b="Bip01 R Forearm" offset="4"/>
+			<instance name="twopoint"  count="13" bone_a="_bone_head" bone_b="_bone_chest" offset="15"/>
+			
+	
+				
+			<template name="point">
+				<simpleemitter 
+					bone="{bone}"
+					count="3"			
+					offsetsphere="{offset} {offset} {offset}"					
+				>
+					<particle
+						anchor="1"
+					>
+						<model							
+							minscale=".5"						
+							maxscale="3"							
+							model="point.mdf"			
+							alpha="1"
+							lockup="1"
+							lockright="1"
+						/>					
+					
+					</particle>			
+				</simpleemitter>
+			</template>
+
+			
+			<instance name="point" bone="Bip01 R Calf" offset="4"/>
+			<instance name="point" bone="Bip01 L Calf" offset="4"/>
+			
+			<simpleemitter
+				count="1"
+				life="7000"
+				particlelife="5000"
+			>
+				<particle>				
+					<groundsprite
+						life="4100"						
+						material="/shared/effects/materials/ice_reveal.material"
+						
+						startcolor="0 0 0"					
+						midcolor=".6 .8 1"
+						endcolor="0 0 0"
+						midcolorpos=".1"
+						
+						startframe=".81"
+						midframe=".0"
+						endframe=".81"
+						midframepos=".1"
+						
+						startsize="150"					
+						endsize="150"
+					/>			
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+			
+				bone="_bone_centerofchest"
+				count="4"										
+				particlelife="2600"	
+				material="/shared/effects/materials/smoke_01.material"
+				offsetsphere="20 20 50"
+				minangle="0"
+				maxangle="360"
+				gravity=".2"
+				speed="10"
+				direction="0 0 0"					
+			>
+
+				<particle 
+					minangle="0"
+					maxangle="0"
+					minanglespeed="100"
+					
+					color=".4 .6 .7"
+					
+					midcolorpos=".7"
+					maxanglespeed="0"
+					startframe="0"
+					endframe="1"
+					startsize="50"						
+					endsize="180"					
+				
+					startalpha="0"
+					midalpha=".2"
+					endalpha="0"
+					midalphpos=".1"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="100"
+				particlelife="1800"
+				material="/shared/effects/materials/snowflake_reveal.material"
+				position="0 0 0"
+				offsetsphere="70"
+				gravity="4"
+			>
+				<particle
+					turn="true"
+					maxangle="360"
+					startcolor="0"
+					midcolor="1"
+					endcolor="0 0 1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midcolorpos=".25"
+					startsize="20"
+					minendsize="30"
+					maxendsize="40"
+					anchor="0"
+					startframe=".3"
+					endframe="1"
+					minanglespeed="30"
+					maxanglespeed="300"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="35"
+				particlelife="800"
+				position="0 0 30"
+				offsetsphere="100"
+				gravity="5"
+			>
+				<particle
+				>
+
+					<simpleemitter
+						spawnrate="4"
+						particlelife="400"
+						depthbias="-10"		
+						acceleration="50"
+						material="/shared/effects/materials/frost_flash_15.material"
+						particledirectionalspace="local"				
+					>
+						<particle 
+							minangle="-90"
+							maxangle="90"
+							minanglespeed="100"
+							startcolor="0 0 0"
+							midcolor="1"
+							endcolor="0 0 0"
+							midcolorpos=".7"
+							maxanglespeed="0"
+							startframe="0"
+							endframe="1"				
+							minsize="5"		
+							maxsize="30"
+							midsizepos=".7"		
+							anchor=".6"
+							alpha=".2"
+						/>
+					</simpleemitter>
+					
+					<simpleemitter
+						spawnrate="7"
+						particlelife="500"			
+						speed="15"
+						position="0 0 10"
+						offsetsphere="10"
+						acceleration="0"
+						gravity="2"
+						material="/shared/effects/materials/whitedot.material"
+						inheritvelocity="0"
+					>
+
+						<particle
+							minangle="-360"
+							maxangle="360"
+							
+							startcolor="0"
+							midcolor=".5 .7 1"
+							endcolor="0"
+							
+							minsize=".7"
+							maxsize="1"
+							
+							startalpha="0"
+							midalpha="0.8"
+							endalpha="0"
+							midalphapos="0.9"
+							anchor="0"
+							depthbias="0"
+						/>
+					</simpleemitter>
+					
+					<billboard
+						material="/shared/effects/materials/whitedot.material"
+						startcolor=".2"
+						midcolor=".1 .3 .6"
+						endcolor=".2"
+						startsize="5"
+						midsize="20"
+						endsize="5"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						life="1000"
+						depthbias="-20"
+						loop="true"
+					/>
+					
+					<billboard
+						material="/shared/effects/materials/whitedot.material"
+						startcolor="0"
+						midcolor=".5"
+						endcolor="0"
+						startsize="2"
+						midsize="20"
+						endsize="2"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						life="1000"
+						depthbias="-20"
+						loop="true"
+					/>
+			
+				</particle>
+			</simpleemitter>
+		
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
+
+

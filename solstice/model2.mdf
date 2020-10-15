@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="model.model" med="model.model" low="model.model" >
+	
+	<anim name="idle" clip="idle.clip" fps="550" loop="true">
+
+	</anim>
+
+	
+	<anim name="bored_1" clip="idle3.clip" fps="550">
+	<startevent cmd="StopSound 3"/>
+	</anim>
+	
+	<anim name="portrait" clip="idle2.clip" loop="true" fps="550"/>
+
+		<anim name="walk_1" clip="walk_2.clip" loop="true" fps="500" loopbackframe="1">
+	<startevent cmd="StopSound 1"/>
+	<startevent cmd="StopSound 3"/>
+	
+	<startevent cmd="PlaySoundLoopingLinear sounds/body_loop.wav 0 500 .9 2 100 300"/>
+	
+	<frameevent frame="100" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+	<frameevent frame="312" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	
+	<frameevent frame="100" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>	
+	<frameevent frame="320" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>	
+	</anim>
+	
+		<anim name="ability_1" clip="walk_1.clip" fps="550" loop="true">
+</anim>
+	
+	<anim name="ability_2" clip="ability_2.clip" fps="550">
+	<frameevent frame="10" cmd="PlaySoundLinear ad2.wav 0 3000 1"/>
+	<startevent cmd="StartEffect state_frenzy.effect 0"/>
+		<endevent cmd="StopEffect 0" />
+	</anim>
+
+
+    <anim name="ability_3" clip="attack_4.clip" fps="501">
+	 <frameevent frame="170" cmd="PlaySoundLinear ad3.wav 0 1800 .8"/>
+		 <frameevent frame="150" cmd="PlaySoundLinear /shared/sounds/attacks/attack_light_sword_%.wav 0 1800 .55"/>
+	    <frameevent frame="150" cmd="PlaySoundLinear attack_%.wav 128 1300 .45"/>
+	</anim>
+	
+<anim name="ability_4_night" clip="ability_4.clip" fps="550">
+
+		<startevent cmd="StartEffect night2.effect 0"/>
+		<endevent cmd="StopEffect 0" />
+	</anim>
+
+	<anim name="attack_1" clip="attack_1.clip" fps="501">
+<frameevent frame="410" cmd="StartEffect attack_1.effect" />
+	 <frameevent frame="150" cmd="PlaySoundLinear /shared/sounds/attacks/attack_light_sword_%.wav 0 1800 .55"/>
+
+	</anim>
+
+	<anim name="attack_2" clip="attack_2.clip" fps="501">
+<frameevent frame="400" cmd="StartEffect attack_2.effect" />
+	 <frameevent frame="150" cmd="PlaySoundLinear /shared/sounds/attacks/attack_light_sword_%.wav 0 1800 .55"/>
+
+	</anim>
+
+	<anim name="death_1" clip="death_1.clip" fps="550" loop="true" loopbackframe="-1"> 
+	</anim>
+
+	
+	<anim name="knock_1" clip="idle4.clip" fps="550" loop="true" loopbackframe="834" startframe="1" numframes="2000">
+	</anim>	
+	
+	<anim name="getup_1" clip="idle4.clip" fps="550"/>	
+
+	<anim name="taunt_1" clip="idle3.clip" fps="550"/>
+
+	
+      <anim name="item_1" clip="idle5.clip" fps="550"/>
+			
+</model>

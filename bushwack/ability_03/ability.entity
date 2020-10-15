@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Bushwack3"
+
+	icon="3.jpg"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	anim=""
+	casttime="0"
+	castactiontime="0"
+	
+	actiontype="passive"
+	casteffecttype=""
+	
+	cooldowntime="10000"
+	
+>	
+	<onattackstart>
+		<cantarget targetscheme="enemy_units">
+			<isready>
+				<!-- Add special anim here if desired -->
+				<addcritical chance="1.0" multiplier="1.2,1.4,1.6,1.8" />
+			</isready>
+		</cantarget>
+	</onattackstart>
+	
+	<onattackimpact>
+		<cantarget targetscheme="enemy_units">
+			<isready>
+				<startcooldown />
+			</isready>
+		</cantarget>
+	</onattackimpact>
+	
+	<onabilityimpact>
+		<entitytype type="Ability_Soccer_Sprint" target="inflictor_entity" source="inflictor_entity" />
+		<else>
+			<resetcooldown entity="this_entity" />
+		</else>
+	</onabilityimpact>
+	
+	<onattack />
+	
+</ability>

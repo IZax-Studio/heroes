@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true">
+	<definitions>
+		
+		<particlesystem name="system0" space="world" scale=".135">
+		
+			<sound
+				soundloop="true"
+				fadein="100"
+				fadeout="200"
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".65"
+				sample="../sounds/state.wav"
+			/>		
+			
+			<!-- enemy's magic circle -->
+			<controller 
+				name="enemy_circle2"
+				bone="_bone_origin" owner="source" 
+				lookatowner="target" lookatbone="_bone_centerofchest" lookat="1"
+			>
+				
+			</controller>
+			<!-- end of circle for enemy -->
+			
+			<!-- self's magic circle -->
+			
+			<!-- end of circle for self -->
+				
+			
+
+			<trackeremitter
+			
+				
+				owner="enemy_circle2"
+				sourcebone="_bone_centerofchest"
+				targetbone="_bone_centerofchest"
+				position="0 0 400"
+				targetowner="target"
+				targetposition="0 100 250"
+				tracktype="distance"
+				trackspeed="1.8"
+				spawnrate="8"
+				particlelife="1500"
+				speed="3000.0"
+				acceleration="0.0"
+				direction="0.0 0.0 1.0"
+				inheritvelocity="0.0"
+				distancelife="1"
+			>
+				<particle
+				anchor="1">
+					<!--spirit02-->
+					<model
+						name="skeleton"
+						model="/shared/effects/models/circle_of_bones/model.mdf"
+						anim="idle"
+						pitch="90"
+						yaw="270"
+						yawspeed="100"
+						scale=".8"
+					>
+						<simpleemitter
+							spawnrate="100"
+							particlelife="1500"
+							gravity="-10"
+							speed="0"
+							material="/shared/effects/materials/spark.material"
+							offsetsphere="250"
+							minangle="0"
+							maxangle="360"
+						>
+							<particle 
+								startcolor="1"
+								midcolor="0 .5 1"
+								endcolor="0 0 0"
+								midcolorpos=".2"
+								startsize="7"
+								midsize="3"
+								endsize="2"
+								startalpha="0"
+								midalpha=".7"
+								endalpha="0"
+								midalphapos=".5"
+								scale="5"
+								/>
+						</simpleemitter>
+						<simpleemitter
+							spawnrate="5"
+							expirelife="500"
+							minparticlelife="250"
+							maxparticlelife="500"			
+							offsetsphere="10 0 10"
+							position="0 0 0"
+							material="/shared/effects/materials/femme_lightning_07.material"
+						>
+							<particle 
+								maxangle="360"
+								startcolor="1"
+								endcolor=".2 .6 1"
+								startsize="0"
+								midsize="10"
+								endsize="10"
+								framespeed="5"
+								minscale="10"
+								maxscale="20"
+								anchor="1"
+							/>
+						</simpleemitter>
+							<simpleemitter
+								depthbias="-55"
+								spawnrate="45"
+								minparticlelife="1250"
+								maxparticlelife="1750"
+								offsetsphere="30"
+								angle="10"
+								speed="30"
+								material="/shared/effects/materials/mana.material"
+							>
+								<particle
+									startcolor="0 .3 .5"
+									endcolor="0"
+									startsize="70"
+									endsize="100"
+									maxangle="360"
+									minendscale="2"
+									maxendscale="4"
+									endstickiness="0"
+								/>
+							</simpleemitter>
+
+							<trailemitter
+								spawnrate="50"
+								particlelife="1000"
+								texpostime="1000"
+								texposscale="0"
+								texstretchscale=".4"
+								material="/shared/effects/materials/soul_projectile3.material"
+								subframepos="true"
+							>
+								<particle
+									 startcolor="2"
+									 midcolor=".3 0.6 1"
+									 endcolor="0 0 0"
+									 startsize="100"
+									 midsize="140"
+									 endsize="30"
+									 midsizepos="0.2"
+							/>
+							</trailemitter>
+							<trailemitter
+								spawnrate="50"
+								particlelife="500"
+								texpostime="1000"
+								texposscale="0"
+								texstretchscale=".4"
+								material="/shared/effects/materials/flux_ray.material"
+								subframepos="true"
+							>
+								<particle
+									 startcolor=".5 .75 1"
+									 midcolor=".3 0.6 1"
+									 endcolor="0 0 0"
+									 startsize="100"
+									 midsize="140"
+									 endsize="30"
+									 midsizepos="0.2"
+									 scale="2"
+							/>
+							</trailemitter>
+							<billboard 
+								life="1200"
+								expirelife="100"
+								startcolor="1"
+								midcolor="0 .75 1"
+								endcolor="0"
+								midcolorpos=".75"
+								size="250"
+								maxroll="360"
+								minrollspeed="-100"
+								maxrollspeed="100"
+								material="/shared/effects/materials/flare_03.material"
+							/>
+					</model>
+				</particle>
+			</trackeremitter>
+
+
+			
+			<simpleemitter
+				life="1000"
+				bone="_bone_centerofchest"
+				owner="source"
+				depthbias="-55"
+				spawnrate="20"
+				minparticlelife="1000"
+				maxparticlelife="1250"
+				offsetsphere="50 50 50"
+				angle="10"
+				speed="30"
+				material="/shared/effects/materials/mysticenergy.material"
+				loop="true"
+			>
+				<particle
+					startcolor="0 .3 .5"
+					endcolor="0"
+					startsize="100"
+					endsize="250"
+					maxangle="360"
+					minendscale="2"
+					maxendscale="3"
+					endstickiness="0"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+		
+		<particlesystem name="system1" space="world" scale="1">
+			<simpleemitter
+				
+				count="1"
+				spawnrate="222"
+				particlelife="1300"
+				direction="0 0 -1"
+				speed="1000"
+				minangle="0"
+				maxangle="0" 
+				position="0 0 300"
+			>
+				<particle>
+
+					<billboard
+						spawnrate="50"
+						particlelife="400"
+												material="/shared/effects/materials/flare2.material"
+						size="200"
+						midheightpos=".75"
+						width="40"
+						lockup="1"
+						color="0 .5 3"
+					/>
+
+					<billboard
+						spawnrate="50"
+						particlelife="400"
+						
+						material="/shared/effects/materials/blink.material"
+						size="150"
+						lockup="1"
+						color="0 .5 3"
+					/>
+
+					<billboard
+						spawnrate="50"
+						particlelife="400"
+						
+						material="/shared/effects/materials/flare2.material"
+						startheight="0"
+						endheight="500"
+						width="10"
+						roll="90"
+						midheightpos=".75"
+						lockup="1"
+						color="0 .5 3"
+					/>
+
+				</particle>
+			</simpleemitter>
+			<simpleemitter
+				linearfalloff="true"
+				
+				spawnrate="5"
+				particlelife="800"
+				material="/shared/effects/materials/corona_06.material"
+				direction="0 0 -1"
+				speed="200"
+				minangle="0"
+				maxangle="0" 
+				position="0 0 120"
+			>
+				<particle
+					startcolor="0 .5 3"
+					endcolor="0"
+					startsize="80"
+					endsize="40"
+					maxangle="360"
+					minendscale="2"
+					maxendscale="3"
+					startanchor="1"
+					endanchor="0"
+					lockup="true"
+					pitch="90"
+					alpha="0"
+				/>
+				<particle
+					startcolor="0 .5 3"
+					endcolor="0"
+					startsize="80"
+					endsize="40"
+					maxangle="360"
+					minendscale="2"
+					maxendscale="3"
+					startanchor="1"
+					endanchor="0"
+					lockup="true"
+					pitch="90"
+					alpha="0"
+				/>
+
+			</simpleemitter>
+
+			
+			
+			<billboard 
+				
+				material="/shared/effects/materials/flare2.material" 
+				width="100"
+				startheight="400"
+				endheight="0"
+				startcolor="0 .5 3"
+				midcolor="0 .5 3"
+				endcolor="0 .5 3"
+				lockup="true"
+				roll="0"
+				yaw="-180"
+			/>
+
+			<simpleemitter
+				
+				spawnrate="7"
+				particlelife="250"
+				gravity="-6"
+				speed="0.0"
+				acceleration="0.0"
+				timenudge="0"
+				position="0 0 0"
+				material="/shared/effects/materials/flare_01.material"
+			>
+				<particle
+					startcolor="0 .5 3"
+					endcolor="0 0 0"
+					startalpha=".02"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="0"
+					maxanglespeed="0"
+					startsize="200"
+					midsize="120"
+					endsize="50"
+					lockup="true"
+					pitch="90"
+				/>
+			</simpleemitter>
+
+
+			
+
+		
+			
+			
+
+		</particlesystem>
+	  
+	  
+	  
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <spawnparticlesystem instance="instance1" particlesystem="system1" />
+	  
+      <waitfordeath instance="instance0" />
+      <waitfordeath instance="instance1" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

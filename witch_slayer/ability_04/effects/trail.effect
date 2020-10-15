@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			<sound
+				volume="1" 
+				sample="\heroes\witch_slayer\Shiro_sounds/215_1_R_Trace.wav"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="1300"
+			/>
+			<light
+				color="1 0 0"
+				falloffstart="0"
+				falloffend="1055"
+			/>
+
+		<model
+			
+				model="/heroes/vanya/set_ascension/ability_3/effects/shock_wave/model.mdf"
+				material="\shared\effects\materials/fire_scrolling_beam.material"
+				scale="2"
+				color="1 .0 0"
+				position="0 100 0"
+				pitch="90"
+			/>
+			
+		
+
+			<simpleemitter
+				count="1"
+				particlelife="800"
+				material="/shared/effects/materials/refract_swell.material"
+				particledirectionalspace="local"
+			>
+				<particle
+					startparam="0.05"
+					endparam="0"
+					startsize="200"
+					midsize="600"
+					endsize="800"
+					midsizepos=".4"
+					lockup="true"
+					lockright="true"
+					turn="1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="20"
+				minparticlelife="100"
+				maxparticlelife="500"
+				material="/shared/effects/materials/refract_gush2.material"
+				particledirectionalspace="local"
+			>
+				<particle
+					startparam="0.15"
+					endparam="0"
+					startsize="50"
+					endsize="300"
+					midsizepos=".4"
+					turn="1"
+					minscale="1"
+					maxscale="1.25"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="400"
+				spawnrate="20"
+				particlelife="400"
+				particledirectionalspace="local"
+				startparticlescale="1.5"
+				midparticlescale=".25"
+				endparticlescale=".5"
+				midparticlescalepos=".4"
+			>
+				<particle
+					maxangle="360"
+				>
+					<simpleemitter
+						count="1"
+						particlelife="1200"
+						particledirectionalspace="local"
+					>
+						<particle>
+							<model
+								life="300"
+								model="/shared/effects/models/semisphere/model.mdf"
+								material="/shared/effects/models/semisphere/shockwave2.material"
+								anim="idle"
+								startcolor=".75 0 0"
+								endcolor="0"
+								pitch="-90"
+								scale="4"
+								startparam0=".2"
+								endparam0="1"
+							/>
+							<model
+								life="800"
+								model="/shared/effects/models/semisphere/model.mdf"
+								material="/shared/effects/models/semisphere/shockwave2.material"
+								anim="stretch_2"
+								startcolor=".5 0 0"
+								endcolor="0"
+								pitch="-90"
+								scale="3"
+								startparam0=".2"
+								endparam0="1"
+							/>
+						</particle>
+					</simpleemitter>
+				</particle>
+			</simpleemitter>
+
+			<trailemitter
+				spawnrate="30"
+				particlelife="600"
+				material="/shared/effects/materials/glow_02_blend.material"
+				texposscale="0"
+				texstretchscale="1"
+			>
+				<particle
+					startsize="50"
+					midsize="250"
+					endsize="250"
+					midsizepos=".2"
+					color="0"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".2"
+				/>
+			</trailemitter>
+
+			<trailemitter
+				spawnrate="30"
+				particlelife="600"
+				material="trail_01.material"
+				texposscale="0"
+				texstretchscale="1"
+			>
+				<particle
+					startsize="0"
+					midsize="300"
+					endsize="0"
+					midsizepos=".2"
+					minscale=".8"
+					maxscale="1.2"
+					startcolor="1"
+					midcolor="1"
+					endcolor="0"
+					midcolorpos=".6"
+				/>
+			</trailemitter>
+
+			<trailemitter
+				
+				minexpirelife="400"
+				maxexpirelife="600"
+				spawnrate="90"
+				particlelife="1200"
+				material="trail_01.material"
+				texposscale="0"
+				texstretchscale="1"
+				startparticlecolor="1"
+				endparticlecolor="0"
+				offsetsphere="10"
+				maxspeed="5000"
+				drag="0.5"
+			>
+				<particle
+					size="80"
+					minscale=".25"
+					maxscale="1.25"
+				/>
+			</trailemitter>
+
+			<trailemitter
+				minexpirelife="400"
+				maxexpirelife="600"
+				spawnrate="60"
+				particlelife="1200"
+				material="trail_01.material"
+				texposscale="0"
+				texstretchscale="1"
+				startparticlecolor="1"
+				endparticlecolor="0"
+				offsetsphere="80"
+				maxspeed="15000"
+				drag="0.25"
+			>
+				<particle
+					size="60"
+					minscale=".25"
+					maxscale="1.25"
+				/>
+			</trailemitter>
+			<simpleemitter
+				spawnrate="100"
+				minparticlelife="800"
+				maxparticlelife="1200"
+				material="/shared/effects/materials/lightning_11.material"
+			>
+				<particle
+					flare="1"
+					minsize="50"
+					maxsize="150"
+					maxangle="360"
+					startcolor=".6 0 0"
+					endcolor=".4 0 0"
+					midcolorpos=".25"
+					startalpha="1"
+					midalpha=".25"
+					endalpha="0"
+					midalphapos=".2"
+				/>
+			</simpleemitter>
+		
+		
+		
+		
+		
+		
+		
+			
+				<template name="shockwave">
+				<simpleemitter
+					delay="{delay}"
+					count="1"
+					particlelife="{life}"
+					speed=".1"
+					direction="0 1 0"
+					angle="0"
+					material="/shared/effects/materials/ring_01_reveal.material"
+					particledirectionalspace="local"
+					position="{position}"
+				>
+					<particle
+						turn="1"
+						size="{size}"
+						startframe="0"
+						midframe=".5"
+						endframe=".7"
+						midframepos=".45"
+						startparam=".75"
+						endparam=".2"
+						startcolor=".5 0 0"
+						endcolor=".5 0 0"
+						startalpha="{alpha}"
+						endalpha="0"
+						lockup="true"
+						lockright="true"
+					/>
+				</simpleemitter>
+
+				<simpleemitter
+					count="1"
+					particlelife="500"
+					speed=".1"
+					direction="0 1 0"
+					angle="0"
+					particledirectionalspace="local"
+					position="{position}"
+				>
+					<particle>
+						<model
+							delay="{delay}"
+							life="{life}"
+							model="/heroes/nitro/ability_01/effects/shockwave_ring/model.mdf"
+							anim="{anim}"
+							startcolor="1 0 0"
+							endcolor="0 0 0"
+							scale="{scale}"
+							startalpha="{alpha}"
+							midalpha="{alpha}"
+							endalpha="0"
+							midalphapos=".75"
+
+						/>
+					</particle>
+				</simpleemitter>
+
+				<simpleemitter
+					delay="{delay}"
+					count="1"
+					particlelife="{life}"
+					speed=".1"
+					direction="0 1 0"
+					angle="0"
+					material="/shared/effects/materials/ring_01_reveal.material"
+					particledirectionalspace="local"
+					position="{position}"
+				>
+					<particle
+						turn="1"
+						startsize="0"
+						endsize="{size}"
+						startcolor=".5 0 0"
+						endcolor=".5 0 0"
+						startalpha="{alpha}"
+						endalpha="0"
+						lockup="true"
+						lockright="true"
+						param="0.5"
+					/>
+				</simpleemitter>
+			</template>
+
+			<instance name="shockwave" delay="0" life="300" anim="idle_90" scale="4" size="400" alpha="1" position="0 -40 0" />
+			<instance name="shockwave" delay="0" life="200" anim="idle_120" scale="2.5" size="200" alpha=".75" position="0 -80 0" />
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

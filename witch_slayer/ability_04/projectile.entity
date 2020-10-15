@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_WitchSlayer_Ability4"
+
+	speed="3000"
+	gravity="0"	 
+	modelscale="0.65"
+	model="/shared/models/invis.mdf"
+	deatheffect="effects/impact.effect"
+	effectscale="1"
+	impactstealth="true"
+	canturn="true"
+	traileffect="effects/trail.effect"
+	impacteffect="effects/ability_04_impact.effect"
+>
+	<onimpact>
+		<combatevent effecttype="AbilityBasedProjectile">
+			<onimpact>
+				<!-- Nested priority: soccer, then SotM, then regular -->
+				<hasmodifier name="soccer">
+					<damage effecttype="Magic" amount="175" target="this_proxy_entity" />
+				</hasmodifier>
+				<else>
+					<hasmodifier name="ult_boost">
+						<damage effecttype="SuperiorMagic" amount="600,800,1025" target="this_proxy_entity" />
+					</hasmodifier>
+					<else>
+						<damage effecttype="Magic" amount="500,650,850" target="this_proxy_entity" />
+					</else>
+				</else>				
+				
+				<!-- Sound -->
+				<hasavatarkey name="Hero_WitchSlayer.Alt8">
+					<!-- set the proxy of the sound state to the taunted enemy if there was one -->
+					<pushentityproxy entity="source_entity" />
+					<pushentityproxy entity="stack_entity" />
+					<applystate name="State_WitchSlayer_Ability4_Sound" target="target_entity" duration="0" proxy="stack_entity" />
+				</hasavatarkey>
+				<else>
+					<applystate name="State_WitchSlayer_Ability4_Sound" target="target_entity" duration="0" />
+				</else>
+			</onimpact>
+		</combatevent>
+	</onimpact>
+	
+	<altavatar key="Hero_WitchSlayer.Pimp"
+		model="effects/bullet.mdf"
+		traileffect="../alt/ability_04/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_WitchSlayer.Alt2"
+		model="../alt2/ability_04/effects/bullet.mdf"
+		impacteffect="../alt2/ability_04/effects/ability_04_impact.effect"
+	/>
+	
+	<altavatar key="Hero_WitchSlayer.Alt3"
+		model="/shared/models/invis.mdf"
+		traileffect="../alt3/ability_04/effects/trail.effect"
+		impacteffect="../alt3/ability_04/effects/ability_04_impact.effect"
+	/>
+
+	<altavatar key="Hero_WitchSlayer.Alt6"
+		model="/shared/models/invis.mdf"
+		traileffect="../alt6/ability_04/effects/trail.effect"
+		impacteffect="../alt6/ability_04/effects/ability_04_impact.effect"
+	/>
+	
+	<altavatar key="Hero_WitchSlayer.Alt7"
+		model="effects/bullet.mdf"
+		traileffect="../alt7/ability_04/effects/trail.effect"
+		impacteffect="../alt7/ability_04/effects/ability_04_impact.effect"
+	/>
+	
+	<altavatar key="Hero_WitchSlayer.Alt8"
+		model="effects/bullet.mdf"
+		traileffect="../alt8/ability_04/effects/trail_base.effect"
+		impacteffect="../alt8/ability_04/effects/ability_04_impact_base.effect"
+	>
+		<modifier key="Alt8_Ability4_Upgrade" modpriority="1"
+			model="effects/bullet.mdf"
+			traileffect="../alt8/ability_04/effects/trail_upgrade.effect"
+			impacteffect="../alt8/ability_04/effects/ability_04_impact_upgrade.effect"
+		/>
+	</altavatar> 
+	
+	<altavatar key="Hero_WitchSlayer.Alt9"
+		model="effects/bullet.mdf"
+		traileffect="../alt9/ability_04/effects/trail.effect"
+		impacteffect="../alt9/ability_04/effects/ability_04_impact.effect"
+	/>
+	
+	<altavatar key="Hero_WitchSlayer.Alt10"
+		model="effects/bullet.mdf"
+		traileffect="../alt9/ability_04/effects/trail.effect"
+		impacteffect="../alt9/ability_04/effects/ability_04_impact.effect"
+	/>
+	
+	<altavatar key="Hero_WitchSlayer.Alt11"
+		model="effects/bullet.mdf"
+		traileffect="../alt11/ability_04/effects/trail.effect"
+		impacteffect="../alt11/ability_04/effects/ability_04_impact.effect"
+	/>
+</projectile>

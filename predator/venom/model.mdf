@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="THINT's Work" file="model.model" type="K2">
+
+	<anim name="idle" clip="clips/default_1.clip" fps="30" loop="true" loopbackframe="1"/>
+	
+	<anim name="portrait" clip="clips/bored_1.clip" fps="15" loop="true" loopbackframe="1"/>
+
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="30">
+		<frameevent frame="12" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 2000 .65"/>
+	</anim>
+	
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="12" blendtime="100">
+		<frameevent frame="15" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 2000 .65"/>
+	</anim>
+	
+	<anim name="walk_1" clip="clips/walk_1.clip" fps="30" loop="true" loopbackframe="1">
+		<frameevent frame="5" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="16" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="28" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="40" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		
+		<frameevent frame="5" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="16" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="28" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="40" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+	</anim>
+	
+	<anim name="death_1" clip="clips/death_1.clip" fps="30" loop="true" loopbackframe="-1"/>
+	
+	<anim name="ability_1_start" clip="clips/ability_1_start.clip" fps="40" blendtime="100" loop="true" loopbackframe="-1">
+		<frameevent frame="5" cmd="PlaySoundLinear sounds/ab1_cast.wav 1000 2500 .8"/>
+	</anim>
+
+	<anim name="ability_1_hit" clip="clips/ability_1_hit.clip" fps="30" blendtime="100"/>
+	
+	<anim name="ability_2" clip="clips/ability_2.clip" fps="30">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/ab2_cast.wav 1000 2500 1"/>
+	</anim>	
+	
+	<anim name="ability_4" clip="clips/ability_4.clip" fps="30">
+		<frameevent frame="1" cmd="PlaySoundLinear ../ability_04/sounds/cast.wav 1000 2500 1"/>
+	</anim>	
+	<anim name="knock_1" clip="clips/knock_1.clip" fps="30" loop="true"/>
+		
+	<anim name="bored_1" clip="clips/bored_1.clip" fps="30" loop="true" loopbackframe="1"/>
+	
+	<anim name="taunt_1" clip="clips/taunt_1.clip" fps="30"/>
+
+	<anim name="item_1" clip="clips/ability_2.clip" fps="30" loopbackframe="1"/>
+	
+</model>

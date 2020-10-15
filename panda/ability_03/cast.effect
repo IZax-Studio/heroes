@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+
+<!--
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".8"
+				sample="attack.wav"
+			/>
+      <billboard
+        delay="00"		
+        bone="_bone_centerofchest"
+        material="/shared/effects/materials/whitedot.material"
+        position="0 0 0"
+        color=".3 0 .6"
+        size="380"
+        endsize="0"
+        midsizepos=".3"
+        depthbias="-100"
+      />
+      
+			<simpleemitter 
+				bone="_bone_centerofchest"
+				count="10"
+        spawnrate="222"				
+				minparticlelife="800"
+        maxparticlelife="1000"
+        gravity="0"
+        drag="0"
+				speed="50"
+				position="0 0 0"
+				offsetsphere="20 20 20"
+        material="/shared/effects/materials/neb_blend.material"
+				inheritvelocity="0.25"
+      >
+				<particle 
+					maxangle="360"			
+					minanglespeed="-44"
+					maxanglespeed="44"
+					scale="6"					
+					color=".1 0 .2"
+					startalpha="0"
+					midalpha=".7"
+					endalpha="0"
+					startsize="75"
+					midsize="11"
+					endsize="44"
+				/>
+      </simpleemitter>
+-->
+      <template name="foot_trail">
+        <billboard
+          bone="{bone}"
+          material="/shared/effects/materials/whitedot.material"
+          color="{color}"
+          size="30"
+        />
+        <trailemitter
+          bone="{bone}"
+          spawnrate="150"
+          particlelife="850"
+          texposscale="0"
+          texstretchscale="1"
+          material="/shared/effects/materials/arrow_trail_blend.material"
+        >
+          <particle
+            startcolor="{color}"
+            endcolor="0"
+            startalpha="1"
+            endalpha="0"
+            startsize="30"
+            endsize="0"
+          />
+        </trailemitter>
+      </template>
+      
+      <instance name="foot_trail" bone="_bone_leftfoot" color=".65 .2 .2" />
+      <instance name="foot_trail" bone="_bone_rightfoot" color=".65 .2 .2" />
+	<instance name="foot_trail" bone="_bone_lefthand" color=".65 .2 .2" />
+	<instance name="foot_trail" bone="_bone_righthand" color=".65 .2 .2" />
+
+    </particlesystem>
+  </definitions>
+  
+  <thread>
+    <spawnparticlesystem instance="instance0" particlesystem="system0" />
+    <waitfordeath instance="instance0" />
+    <!-- <die /> -->
+  </thread>
+  
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

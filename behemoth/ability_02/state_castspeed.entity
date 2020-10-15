@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Behemoth_Ability2_CastSpeed"
+
+	icon="Cha067_Skill_W2.png"
+	passiveeffect=""
+	
+	ishidden="true"
+	
+	effecttype=""
+	allowtransfer="false"
+	
+	castspeed="8"
+>
+	
+</state>

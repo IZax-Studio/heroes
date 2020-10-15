@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_ParallaxAttack"
+
+	speed="1200"
+	gravity="0"
+	canturn="false"
+	modelscale="0.35"
+
+	model="/shared/models/invis.mdf"
+	traileffect="effects/trail.effect"
+	impacteffect="effects/impact.effect"
+>
+
+    <altavatar key="Hero_Parallax.Alt"
+        traileffect="../alt/projectile/effects/trail.effect"
+        impacteffect="../alt/projectile/effects/impact.effect"
+    />
+
+    <altavatar key="Hero_Parallax.Alt2"
+		
+	
+        traileffect="effects_2/trail.effect"
+        impacteffect="effects_2/impact.effect"
+    />
+	
+	<altavatar key="Hero_Parallax.set_ascension"
+        traileffect="../set_ascension/projectile/effects/trail.effect"
+        impacteffect="../set_ascension/projectile/effects/impact.effect"
+    >
+		<modifier key="hellparallax"
+			traileffect="../set_ascension/dark/projectile/effects/trail.effect"
+			impacteffect="../set_ascension/dark/projectile/effects/impact.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Parallax.Alt4"
+        traileffect="../alt4/projectile/effects/trail.effect"
+        impacteffect="../alt4/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Parallax.Alt6"
+        traileffect="../alt6/projectile/effects/trail.effect"
+        impacteffect="../alt6/projectile/effects/impact.effect"
+	/>
+    
+</projectile>

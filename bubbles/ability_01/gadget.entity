@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Bubbles_Ability1"
+	
+	icon=""
+	portrait=""
+	
+	model="effects/model.mdf"
+	passiveeffect="effects/wake2.effect"
+	preglobalscale="3.5"
+	modelscale="1.0"
+	effectscale="1.0"
+	boundsheight="0"
+	boundsradius="0"
+	isselectable="false"
+	selectionradius="0"
+	targetoffset="0 0 0"
+
+	canrotate="true"
+	ismobile="false"
+
+	attacktype="none"
+	combattype="Ranged"
+
+	sightrangeday="800"
+	sightrangenight="800"
+	unitwalking="true"
+	canattack="false"
+	deathtime="0"
+	corpsetime="0"
+	
+	invulnerable="true"
+	flying="false"
+	drawonmap="false"
+	clearvision="true"
+
+>
+	<ondeath>
+		<expirestate name="State_Bubbles_Ability1" target="this_owner_entity"/>
+		<spawnunit name="Gadget_Bubbles_Ability1_Linger" count="1" target="this_position" />
+	</ondeath>
+	
+	<altavatar key="Hero_Bubbles.Alt2" modpriority="1"
+		model="/heroes/bubbles/alt2/ability_01/effects/shield/model.mdf"
+		passiveeffect="/heroes/bubbles/alt2/ability_01/effects/wake.effect"
+		modelscale="1.15"
+		preglobalscale="1.4"
+	>
+
+	</altavatar>
+	
+	<altavatar key="Hero_Bubbles.Alt3" modpriority="1"
+		model="/heroes/bubbles/alt3/ability_01/effects/soccer/model.mdf"
+		passiveeffect="/heroes/bubbles/alt3/ability_01/effects/wake.effect"
+		modelscale="1.15"
+		preglobalscale="1.4"
+	>
+
+	</altavatar>
+	
+	<altavatar key="Hero_Bubbles.Alt4" modpriority="1"
+		model="/heroes/bubbles/alt4/ability_01/effects/shell/model.mdf"
+		passiveeffect="/heroes/bubbles/alt4/ability_01/effects/wake.effect"
+		modelscale="1.15"
+		preglobalscale="1.4"
+	>
+
+	</altavatar>
+	
+	<altavatar key="Hero_Bubbles.Alt5" modpriority="1"
+		model="/heroes/bubbles/alt5/ability_01/effects/shell/model.mdf"
+		passiveeffect="/heroes/bubbles/alt5/ability_01/effects/wake.effect"
+		modelscale="1.35"
+		preglobalscale="1.4"
+	>
+		
+		<modifier key="Alt5_Jetpack" modpriority="1"
+			model="/heroes/bubbles/alt5/ability_01/effects/shell_upgraded/model.mdf"
+		/>		
+	</altavatar>
+	
+	<altavatar key="Hero_Bubbles.pog_skin" modpriority="1"
+		model="/heroes/bubbles/pog_skin/ability_01/effects/model.mdf"
+		preglobalscale="1.4"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Bubbles.Alt6" modpriority="1"
+		model="/heroes/bubbles/alt6/ability_01/effects/model.mdf"
+		modelscale="2"
+		passiveeffect="/heroes/bubbles/alt6/ability_01/effects/wake.effect"
+		preglobalscale="1.4"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Bubbles.Alt7" modpriority="1"
+		model="/heroes/bubbles/alt7/ability_01/effects/model.mdf"
+		modelscale="2"
+		passiveeffect="/heroes/bubbles/alt7/ability_01/effects/wake.effect"
+		preglobalscale="1.4"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Bubbles.Alt8" modpriority="1"
+		model="/heroes/bubbles/alt8/ability_01/effects/model.mdf"
+		modelscale="2"
+		passiveeffect="/heroes/bubbles/alt8/ability_01/effects/wake.effect"
+		preglobalscale="1.4"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Bubbles.Alt9" modpriority="1"
+		model="/heroes/bubbles/alt9/ability_01/effects/model.mdf"
+		modelscale="1.5"
+		passiveeffect="/heroes/bubbles/alt9/ability_01/effects/wake.effect"
+		preglobalscale="1.4"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Bubbles.Alt10" modpriority="1"
+		model="/heroes/bubbles/alt10/effects/cogs/model.mdf"
+		modelscale="1.2"
+		passiveeffect="/heroes/bubbles/alt10/ability_01/effects/wake.effect"
+		preglobalscale="1.4"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Bubbles.Alt11" modpriority="1"
+		model="/heroes/bubbles/alt11/ability_01/shell/model.mdf"
+		passiveeffect="/heroes/bubbles/alt11/ability_01/effects/wake.effect"
+		modelscale="1.15"
+		preglobalscale="1.4"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Bubbles.Alt12" modpriority="1"
+	    icon="/heroes/bubbles/alt12/ability_01/icon.tga"
+		model="/heroes/bubbles/alt12/ability_01/effects/model.mdf"
+		passiveeffect="/heroes/bubbles/alt12/ability_01/effects/wake.effect"
+		modelscale="1.15"
+		preglobalscale="1.4"
+	>
+		<modifier key="Night_Set_BubblesAlt12"
+		    icon="/heroes/bubbles/alt13/ability_01/icon.tga"
+			model="/heroes/bubbles/alt13/ability_01/effects/model.mdf"
+			passiveeffect="/heroes/bubbles/alt13/ability_01/effects/wake.effect"
+			modelscale="1.15"
+			preglobalscale="1.4"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Bubbles.Alt13" modpriority="1"
+	    icon="/heroes/bubbles/alt13/ability_01/icon.tga"
+		model="/heroes/bubbles/alt13/ability_01/effects/model.mdf"
+		passiveeffect="/heroes/bubbles/alt13/ability_01/effects/wake.effect"
+		modelscale="1.15"
+		preglobalscale="1.4"
+	>
+		<modifier key="Night_Set_BubblesAlt13"
+		    icon="/heroes/bubbles/alt12/ability_01/icon.tga"
+			model="/heroes/bubbles/alt12/ability_01/effects/model.mdf"
+			passiveeffect="/heroes/bubbles/alt12/ability_01/effects/wake.effect"
+			modelscale="1.15"
+			preglobalscale="1.4"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Bubbles.Alt14" modpriority="1"
+		model="/heroes/bubbles/alt14/ability_01/effects/model.mdf"
+		passiveeffect="/heroes/bubbles/alt14/ability_01/effects/wake.effect"
+		modelscale="1.15"
+		preglobalscale="1.4"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Bubbles.Alt15" modpriority="1"
+		model="/heroes/bubbles/alt15/ability_01/effects/model.mdf"
+		passiveeffect="/heroes/bubbles/alt15/ability_01/effects/wake.effect"
+		modelscale="1.15"
+		preglobalscale="1.4"
+	>
+	</altavatar>
+	
+	<modifier key="soccer" modpriority="90" 
+		baselevel="0"
+		maxlevel="1"
+		manacost="30"
+		activatescheme="movement"
+		cooldowntime="12000"
+		range="1600"
+		linecastrange="1600"
+	>
+		<onframe>
+			<comparetiledefinition name="outside" position="this_entity">
+				<pushability source="this_owner_entity" name="Ability_Bubbles1" />	
+				<activatemodifierkey entity="stack_entity" name="soccerdisabled" />
+			</comparetiledefinition>
+			<else>
+				<comparetiledefinition name="inside" position="this_entity">
+					<pushability source="this_owner_entity" name="Ability_Bubbles1" />	
+					<activatemodifierkey entity="stack_entity" name="soccerdisabled" />
+				</comparetiledefinition>
+			</else>		
+		</onframe>
+		
+		<ondeath>
+			<expirestate name="State_Bubbles_Ability1" target="this_owner_entity"/>
+			<spawnunit name="Gadget_Bubbles_Ability1_Linger" count="1" target="this_position" />
+			<pushability source="this_owner_entity" name="Ability_Bubbles1" />
+			<deactivatemodifierkey entity="stack_entity" name="soccerdisabled" />			
+		</ondeath>
+		
+		<onexpired>
+			<expirestate name="State_Bubbles_Ability1" target="this_owner_entity"/>
+			<spawnunit name="Gadget_Bubbles_Ability1_Linger" count="1" target="this_position" />
+			<pushability source="this_owner_entity" name="Ability_Bubbles1" />
+			<deactivatemodifierkey entity="stack_entity" name="soccerdisabled" />			
+		</onexpired>
+		
+		<onkilled>
+			<expirestate name="State_Bubbles_Ability1" target="this_owner_entity"/>
+			<spawnunit name="Gadget_Bubbles_Ability1_Linger" count="1" target="this_position" />
+			<pushability source="this_owner_entity" name="Ability_Bubbles1" />
+			<deactivatemodifierkey entity="stack_entity" name="soccerdisabled" />			
+		</onkilled>
+	</modifier>
+	
+	<altavatar key="Hero_Bubbles.trophy_skin" modpriority="1"
+		model="effects/model.mdf"
+		skin="trophy_skin"
+		passiveeffect="effects/wake.effect"
+		modelscale="1.0"
+		preglobalscale="1.4"
+	/>
+	
+	<altavatar key="Hero_Bubbles.trophy_skin02" modpriority="1"
+		model="effects/model.mdf"
+		skin="trophy_skin02"
+		passiveeffect="/heroes/bubbles/trophy_skin/ability_01/effects/wake02.effect"
+		modelscale="1.0"
+		preglobalscale="1.4"
+	/>
+	
+	<altavatar key="Hero_Bubbles.trophy_skin03" modpriority="1"
+		model="effects/model.mdf"
+		skin="trophy_skin03"
+		passiveeffect="/heroes/bubbles/trophy_skin/ability_01/effects/wake03.effect"
+		modelscale="1.0"
+		preglobalscale="1.4"
+	/>
+</gadget>

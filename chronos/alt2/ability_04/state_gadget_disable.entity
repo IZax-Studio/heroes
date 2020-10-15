@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Chronos_Ability4_GadgetDisable"
+
+	icon="4.jpg"
+	displaylevel="true"
+	passiveeffect=""
+	
+	frozen="true"
+	stunned="true"
+	stunneddurationunmodifiable="true"
+>
+	<onframe />
+	
+	<altavatar key="Hero_Chronos.Alt8" 
+		icon="../alt8/ability_04/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Chronos.Alt9" 
+		icon="../alt9/ability_04/icon.tga"
+	/>
+</state>

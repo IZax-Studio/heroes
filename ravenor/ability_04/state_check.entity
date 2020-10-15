@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Check_Ravenor_Ability4"
+
+	icon="4.jpg"
+	serverentity="true"
+	modifierkey="Ravenor_Charges"
+>
+	
+</state>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="1" useentityeffectscale="1">
+	<definitions>   
+		<particlesystem name="system0" space="world" scale="1" >
+			
+			<groundsprite
+				material="/shared/effects/materials/kane_shield.material"
+				life="1500"
+				loop="true"
+				startsize="40"
+				midsize="55"
+				endsize="40"
+				startalpha=".5"
+				midalpha=".7"
+				endalpha=".5"
+			/>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+<!-- [min|max][start|mid|end]property[speed][position] -->

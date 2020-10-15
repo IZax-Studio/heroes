@@ -1,0 +1,995 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_Magmar"
+
+	team="Hellbourne"
+	icon="311.jpg"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect="effects/boost12.effect"
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sa_select_%.wav"
+	selectedflavorsound=""
+	confirmmovesound="sa_move_%.wav"
+	confirmattacksound="sa_attack_%.wav"
+	nomanasound=""
+	cooldownsound=""
+	announcersound="sa_select_3.wav"
+	tauntedsound=""
+	tauntkillsound=""
+	
+	preglobalscale="1.75"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="52"
+	targetoffset="0 0 92"
+	infoheight="180"
+	
+	category="cc magic"
+	difficulty="3.5"
+
+	solorating="0"
+	junglerating="0"
+	carryrating="0"
+	supportrating="1"
+	initiatorrating="4"
+	gankerrating="2"
+	pusherrating="0"
+	rangedrating="0"
+	meleerating="5"
+
+	movespeed="300"
+	turnrate="450"
+	turnsmoothing="0.05"
+
+	maxhealth="150"
+	healthregen="1.00"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="-0.66"
+	magicarmor="4"
+
+	inventory0="Ability_Magmar1"
+	inventory1="Ability_Magmar2"
+	inventory2="Ability_Magmar3"
+	inventory3="Ability_Magmar4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="1000"
+	attackactiontime="530"
+	attackcooldown="1700"
+	attackdamagemin="28"
+	attackdamagemax="39"
+	attacknumanims="2"
+	attackoffset="0 120 100"
+	attackprojectile=""
+	attackrange="150"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="effects/impact.effect"
+	attacktype="melee"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="600"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+	
+
+
+	primaryattribute="Strength"
+	strength="22"
+	strengthperlevel="2.3"
+	agility="19"
+	agilityperlevel="2.1"
+	intelligence="16"
+	intelligenceperlevel="1.8"
+	
+	previewmodel="model2.mdf"
+	previewpos="0 0 -55"
+	previewangles="0 0 0"
+	previewscale="1.75"
+	
+	storemodel="model2.mdf"
+	storepos="0 0 -20"
+	storeangles="0 0 0"
+	storescale="1.75"
+	
+	portraitscale="1"
+>
+	<recommendeditem name="Item_ManaPotion" />
+	<recommendeditem name="Item_MinorTotem" />
+	<recommendeditem name="Item_RunesOfTheBlight" />
+	<recommendeditem name="Item_HealthPotion" />
+	<recommendeditem name="Item_HomecomingStone" />
+	
+	<recommendeditem name="Item_Strength5" />
+	<recommendeditem name="Item_Bottle" />
+	<recommendeditem name="Item_Striders" />
+	<recommendeditem name="Item_Steamboots" />
+	<recommendeditem name="Item_PortalKey" />
+	<recommendeditem name="Item_Immunity" />
+	<recommendeditem name="Item_Intelligence7" />
+	<recommendeditem name="Item_BehemothsHeart" />
+	
+	<modifier key="ult_boost" modpriority="101"
+	>
+		<aura state="State_Magmar_Ult_Boost" radius="0" targetscheme="self"/>
+	</modifier>
+	
+	<modifier key="gated" modpriority="200"
+		movespeed="290"
+		magicarmor="5"
+		armor="0.35"
+		
+		inventory0="Reborn_Ability_Magmar1"
+		inventory1="Reborn_Ability_Magmar2"
+		inventory2="Reborn_Ability_Magmar3"
+		inventory3="Reborn_Ability_Magmar4"
+		
+		attackdamagemin="30"
+		attackdamagemax="49"
+		
+		primaryattribute="Strength"
+		strength="22"
+		strengthperlevel="2.0"
+		agility="19"
+		agilityperlevel="1.6"
+		intelligence="15"
+		intelligenceperlevel="1.8"
+		
+		solorating="0"
+		junglerating="0"
+		carryrating="0"
+		supportrating="0"
+		initiatorrating="5"
+		gankerrating="0"
+		pusherrating="0"
+		rangedrating="0"
+		meleerating="5"
+	>
+	</modifier>
+	
+	<modifier key="iamsheeped" modpriority="103"
+		passiveeffect=""
+	/>
+
+	<altavatar key="Hero_Magmar.Scorpion"
+		icon="icon.tga"
+		icon2="alt/icon.tga"
+		portrait="alt/icon.tga"
+		model="alt/model.mdf"
+		
+		preglobalscale="2.25"
+		
+		previewmodel="alt/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 -20"
+		previewscale="1.8"
+		
+		storemodel="alt/preview.mdf"
+		storepos="0 0 -15"
+		storeangles="0 0 0"
+		storescale="1.9"
+		
+		portraitcampos="-22 60 25"
+		portraitangles="10 0 0"
+		portraitscale="1"
+		
+		tiltfactor="1.0"
+		tiltspeed="90.0"
+	/>
+	
+	<altavatar key="Hero_Magmar.Alt2"
+		icon="icon.tga"
+		icon2="alt2/icon.tga"
+		portrait="alt2/icon.tga"
+		model="alt2/model.mdf"
+		
+		passiveeffect="alt2/effects/body.effect"
+		
+		preglobalscale="2"
+		infoheight="210"
+		
+		previewmodel="alt2/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 -20"
+		previewscale="1.8"
+		previeweffectscale=".2"
+			
+		selectedsound="alt2/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt2/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt2/sounds/voice/move_%.wav"
+	    confirmattacksound="alt2/sounds/voice/attack_%.wav"
+	    nomanasound="alt2/sounds/voice/no_mana.wav"
+	    cooldownsound="alt2/sounds/voice/cooldown.wav"
+	    tauntedsound="alt2/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt2/sounds/voice/taunt_after.wav"
+		
+		storemodel="alt2/preview.mdf"
+		storepos="0 0 -15"
+		storeangles="0 0 0"
+		storescale="1.7"
+		storepassiveeffect="alt2/effects/store_body.effect"
+		
+		tiltfactor="1.0"
+		tiltspeed="90.0"
+		
+		portraitcampos="-5 25 25"
+		portraitangles="0 0 0"
+		portraitscale="1"
+	/>
+	
+	<altavatar key="Hero_Magmar.Alt3"
+		icon="icon.tga"
+		icon2="alt3/icon.tga"
+		portrait="alt3/icon.tga"
+		model="alt3/model.mdf"
+		
+		passiveeffect="alt3/effects/body.effect"
+		
+		preglobalscale="1.25"
+		infoheight="210"
+		
+		previewmodel="alt3/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 -20"
+		previewscale="1.8"
+		previeweffectscale=".2"
+			
+		selectedsound="alt3/sounds/voice/select_%.wav"
+		selectedflavorsound="alt3/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt3/sounds/voice/move_%.wav"
+		confirmattacksound="alt3/sounds/voice/attack_%.wav"
+		nomanasound="alt3/sounds/voice/no_mana.wav"
+		cooldownsound="alt3/sounds/voice/cooldown.wav"
+		tauntedsound="alt3/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt3/sounds/voice/taunt_after.wav"
+		
+		storemodel="alt3/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.2"
+		
+		portraitcampos="-22 60 25"
+		portraitangles="0 0 0"
+		portraitscale="1"
+	>
+		<onspawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Tundra.Alt3 aa.Hero_Zephyr.Alt4 aa.Hero_Ravenor.Alt3 aa.Hero_Magmar.Alt3 aa.Hero_Defiler.Alt2">
+				<activatemodifierkey name="Archaic" />
+			</ownsproduct>
+		</onspawn>
+		
+		<onrespawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Tundra.Alt3 aa.Hero_Zephyr.Alt4 aa.Hero_Ravenor.Alt3 aa.Hero_Magmar.Alt3 aa.Hero_Defiler.Alt2">
+				<activatemodifierkey name="Archaic" />
+			</ownsproduct>
+		</onrespawn>
+		
+		<modifier key="Archaic" modpriority="100"
+		>
+			<aura state="State_Archaic_Gods" radius="0" targetscheme="self"/>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Magmar.Alt4"
+		icon="icon.tga"
+		icon2="alt4/icon.tga"
+		portrait="alt4/icon.tga"
+		model="alt4/model.mdf"
+		
+		passiveeffect="alt4/effects/body.effect"
+		attackimpacteffect="alt4/effects/impact.effect"
+		
+		preglobalscale="1.5"
+		infoheight="210"
+		
+		previewmodel="alt4/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 -20"
+		previewscale="1.8"
+		previeweffectscale=".2"
+			
+		selectedsound="alt4/sounds/voice/select_%.wav"
+		selectedflavorsound="alt4/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt4/sounds/voice/move_%.wav"
+		confirmattacksound="alt4/sounds/voice/attack_%.wav"
+		nomanasound="alt4/sounds/voice/no_mana.wav"
+		cooldownsound="alt4/sounds/voice/cooldown.wav"
+		tauntedsound="alt4/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt4/sounds/voice/taunt_after.wav"
+		
+		storemodel="alt4/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.5"
+		
+		portraitcampos="5 10 25"
+		portraitangles="0 0 0"
+		portraitscale="1"
+	/>
+	
+	<altavatar key="Hero_Magmar.Alt5"
+		icon="icon.tga"
+		icon2="alt5/icon.tga"
+		portrait="alt5/icon.tga"
+		model="alt5/model.mdf"
+		
+		passiveeffect="alt5/effects/body.effect"
+		attackimpacteffect="alt5/effects/impact.effect"
+		
+		preglobalscale="1"
+		infoheight="210"
+		
+		previewmodel="alt5/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 -20"
+		previewscale="1.8"
+		previeweffectscale=".2"
+		
+		portraitcampos="5 40 7.5"
+		portraitangles="0 0 0"
+		portraitscale="1"
+			
+		selectedsound="alt5/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt5/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt5/sounds/voice/move_%.wav"
+	    confirmattacksound="alt5/sounds/voice/attack_%.wav"
+	    nomanasound="alt5/sounds/voice/no_mana.wav"
+	    cooldownsound="alt5/sounds/voice/cooldown.wav"
+	    tauntedsound="alt5/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt5/sounds/voice/taunt_after.wav"
+		
+		storemodel="alt5/preview.mdf"
+		storepos="0 0 -15"
+		storeangles="0 0 0"
+		storescale="1.0"
+		storepassiveeffect="alt2/effects/store_body.effect"
+		
+		tiltfactor="1.0"
+		tiltspeed="90.0"
+
+		corpsetime="2000"
+		corpsefadetime="2000"
+	>
+		<onspawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Solstice.Alt7 aa.Hero_Kraken.Alt4 aa.Hero_Pearl.Alt6 aa.Hero_Bubbles.Alt6 aa.Hero_Ophelia.Alt4 aa.Hero_EmeraldWarden.Alt6 aa.Hero_Ebulus.Alt5 aa.Hero_MasterOfArms.Alt6 aa.Hero_Martyr.Alt5 aa.Hero_Hantumon.Alt6 aa.Hero_Riptide.Alt2">
+				<activatemodifierkey name="Zodiac_Set" />
+			</ownsproduct>
+		</onspawn>
+
+		<onrespawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Solstice.Alt7 aa.Hero_Kraken.Alt4 aa.Hero_Pearl.Alt6 aa.Hero_Bubbles.Alt6 aa.Hero_Ophelia.Alt4 aa.Hero_EmeraldWarden.Alt6 aa.Hero_Ebulus.Alt5 aa.Hero_MasterOfArms.Alt6 aa.Hero_Martyr.Alt5 aa.Hero_Hantumon.Alt6 aa.Hero_Riptide.Alt2">
+				<activatemodifierkey name="Zodiac_Set" />
+			</ownsproduct>
+		</onrespawn>
+
+		<modifier key="Zodiac_Set" modpriority="1"
+			tooleffectkeyname0=""
+			tooleffectpath0="/shared/effects/set_zodiac.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Magmar.Alt6"
+		icon="icon.tga"
+		icon2="alt6/icon.tga"
+		portrait="alt6/icon.tga"
+		model="alt6/model.mdf"
+		
+		passiveeffect="alt6/effects/body.effect"
+		portraitcampos="-35 50 10"
+		preglobalscale="1.65"
+		infoheight="210"
+		
+		previewmodel="alt6/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 -20"
+		previewscale="1.8"
+		previeweffectscale=".2"
+			
+		selectedsound="alt6/sounds/voice/select_%.wav"
+		selectedflavorsound="alt6/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt6/sounds/voice/move_%.wav"
+		confirmattacksound="alt6/sounds/voice/attack_%.wav"
+		nomanasound="alt6/sounds/voice/no_mana.wav"
+		cooldownsound="alt6/sounds/voice/cooldown.wav"
+		tauntedsound="alt6/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt6/sounds/voice/taunt_after.wav"
+		attackimpacteffect="alt6/effects/impact.effect"
+			
+		storemodel="alt6/preview.mdf"
+		storepassiveeffect="alt6/effects/body_shop.effect"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.4"
+	>
+		<onspawn>
+			<setactivemodifierkey name="Scoria_Sound" />
+			<activatemodifierkey name="Ursa_Sound"/>
+			<ownsproduct target="this_entity" product="aa.Hero_Kane.Alt9 aa.Hero_Artillery.Alt8">
+				<spawnunit name="Pet_Ursa" target="this_entity" source="target_entity" offset="0 -100" facing="source_entity" pushentity="true" />
+			</ownsproduct>
+		</onspawn>
+		
+		<onrespawn>
+			<setactivemodifierkey name="Scoria_Sound" />
+			<ownsproduct target="this_entity" product="aa.Hero_Kane.Alt9 aa.Hero_Artillery.Alt8">
+				<spawnunit name="Pet_Ursa" target="this_entity" source="target_entity" offset="0 -100" facing="source_entity" pushentity="true" />
+			</ownsproduct>
+		</onrespawn>
+	</altavatar>
+
+	<altavatar key="Hero_Magmar.Alt7"
+		icon="icon.tga"
+		icon2="alt7/icon.tga"
+		portrait="alt7/icon.tga"
+		model="alt7/model.mdf"
+		
+		passiveeffect="alt7/effects/body.effect"
+		portraitcampos="-35 50 10"
+		preglobalscale="1.65"
+		infoheight="210"
+		
+		previewmodel="alt7/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 -20"
+		previewscale="1.8"
+		previeweffectscale=".2"
+			
+		selectedsound="alt7/sounds/voice/select_%.wav"
+		selectedflavorsound="alt7/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt7/sounds/voice/move_%.wav"
+		confirmattacksound="alt7/sounds/voice/attack_%.wav"
+		nomanasound="alt7/sounds/voice/no_mana.wav"
+		cooldownsound="alt7/sounds/voice/cooldown.wav"
+		tauntedsound="alt7/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt7/sounds/voice/taunt_after.wav"
+		attackimpacteffect="alt7/effects/impact.effect"
+			
+		storemodel="alt7/preview.mdf"
+		storepassiveeffect="alt7/effects/body_shop.effect"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.4"
+	/>
+	
+	<altavatar key="Hero_Magmar.Alt8"
+		icon="icon.tga"
+		icon2="alt8/icon.tga"
+		portrait="alt8/icon.tga"
+		model="alt8/model.mdf"
+		
+		passiveeffect=""
+		portraitcampos="-35 50 10"
+		preglobalscale="1.65"
+		infoheight="210"
+		
+		previewmodel="alt8/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 -20"
+		previewscale="1.8"
+		previeweffectscale=".2"
+			
+		selectedsound="alt8/sounds/voice/select_%.wav"
+		selectedflavorsound="alt8/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt8/sounds/voice/move_%.wav"
+		confirmattacksound="alt8/sounds/voice/attack_%.wav"
+		nomanasound="alt8/sounds/voice/no_mana.wav"
+		cooldownsound="alt8/sounds/voice/cooldown.wav"
+		tauntedsound="alt8/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt8/sounds/voice/taunt_after.wav"
+		attackimpacteffect="alt8/effects/impact.effect"
+			
+		storemodel="alt8/preview.mdf"
+		storepassiveeffect="alt8/effects/body_shop.effect"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.4"
+	/>
+	
+	<altavatar key="Hero_Magmar.Alt9"
+		icon="icon.tga"
+		icon2="alt9/icon.tga"
+		portrait="alt9/icon.tga"
+		model="alt9/model.mdf"
+		skin=""
+		
+		passiveeffect="alt9/effects/body.effect"
+		portraitcampos="-10 45 0"
+		portraitangles="0 0 60"
+		preglobalscale="1.4"
+		infoheight="210"
+		
+		overrideportraiteffects="true"
+		previewmodel="alt9/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 -20"
+		previewscale="1.8"
+		previeweffectscale=".2"
+			
+		selectedsound="alt9/sounds/voice/select_%.wav"
+		selectedflavorsound="alt9/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt9/sounds/voice/move_%.wav"
+		confirmattacksound="alt9/sounds/voice/attack_%.wav"
+		nomanasound="alt9/sounds/voice/no_mana.wav"
+		cooldownsound="alt9/sounds/voice/cooldown.wav"
+		tauntedsound="alt9/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt9/sounds/voice/taunt_after.wav"
+		
+		corpsetime="1500"
+		corpsefadetime="2000"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		
+		attackimpacteffect="alt9/effects/impact.effect"
+			
+		storemodel="alt9/preview.mdf"
+		storepassiveeffect="alt9/level_11/effects/body_shop.effect"
+		storepos="0 0 -10"
+		storeangles="0 0 0"
+		storescale="1.5"
+		
+		tooleffectkeyname0="effect_Boots"
+		tooleffectpath0="alt9/effects/boots/boots.effect"
+		tooleffectgroup0="boots"
+		
+		tooleffectpath1=""
+		tooleffectgroup1="boots"
+		
+		tooleffectkeyname2="Item_SpellShards"
+		tooleffectpath2="alt9/effects/spellshards/spellshards.effect"
+		tooleffectgroup2="spellshards"
+		
+		tooleffectpath3=""
+		tooleffectgroup3="spellshards"
+		
+		tooleffectkeyname4="Item_PushStaff"
+		tooleffectpath4="alt9/effects/tablet/tablet.effect"
+		tooleffectgroup4="tablet"
+		
+		tooleffectpath5=""
+		tooleffectgroup5="tablet"
+		
+		tooleffectkeyname6="Item_PortalKey"
+		tooleffectpath6="alt9/effects/weapon/portalkey.effect"
+		tooleffectgroup6="weapon"
+		
+		tooleffectpath7="alt9/effects/weapon/base_weapon.effect"
+		tooleffectgroup7="weapon"
+
+		tooleffectpath9=""
+		tooleffectgroup9="shoulder"
+		
+		tooleffectkeyname12="effect_RingOfSorcery"
+		tooleffectpath12="alt9/effects/ringofsorcery/ringofsorcery.effect"
+		tooleffectgroup12="ringofsorcery"
+		
+		tooleffectpath13=""
+		tooleffectgroup13="ringofsorcery"
+		
+		tooleffectkeyname14="Item_BloodChalice"
+		tooleffectpath14="alt9/effects/blood_cha_sound.effect"
+		tooleffectgroup14="bloodchalice"
+	>
+		<onlevelup>
+			<condition test="level ge 11">
+				<setactivemodifierkey name="Level_11" />
+				<playeffect effect="alt9/effects/level_sound_3.effect" source="this_entity" target="this_entity" />
+			</condition>
+			<else>
+				<condition test="level ge 6">
+					<setactivemodifierkey name="Level_6" />
+					<playeffect effect="alt9/effects/level_sound_2.effect" source="this_entity" target="this_entity" />
+				</condition>
+				<else>
+					<setactivemodifierkey name="" />
+				</else>
+			</else>
+		</onlevelup>
+		
+		<onspawn>	
+		    <activatemodifierkey name="Paragon_Sound_Spectrum" />
+			<ownsproduct target="this_entity" product="en.paragon_trail">
+				<applystate name="State_Paragon_Trail" target="this_entity" continuous="true" />
+			</ownsproduct>
+
+			<upgradeselected target="this_entity" upgrade="sc.paragon_circle_upgrade">
+				<activatemodifierkey name="Alt9_Paragon_Circle" />
+			</upgradeselected>
+			
+			<ownsproduct target="this_entity" product="en.magmar_ability01_upgrade">
+				<activatemodifierkey name="Alt9_Ability1_Upgrade" />
+			</ownsproduct>
+			
+			<ownsproduct target="this_entity" product="en.magmar_ability02_upgrade">
+				<activatemodifierkey name="Alt9_Ability2_Upgrade" />
+			</ownsproduct>
+			
+			<ownsproduct target="this_entity" product="en.magmar_ability03_upgrade">
+				<activatemodifierkey name="Alt9_Ability3_Upgrade" />
+			</ownsproduct>
+			
+			<ownsproduct target="this_entity" product="en.magmar_ability04_upgrade">
+				<activatemodifierkey name="Alt9_Ability4_Upgrade" />
+			</ownsproduct>
+
+            <ownsproduct target="this_entity" product="en.paragon_pet">
+                <spawnunit name="Pet_Paragon" target="this_entity" source="target_entity" offset="0 -100" facing="source_entity" pushentity="true" />
+                <activatemodifierkey name="Pet_Paragon_Spectrum" entity="stack_entity" />
+            </ownsproduct>
+			<hasmodifier name="grimms_crossing" entity="this_entity">
+			<applystate name="State_Spectrum_Normal_Enemy" target="source_entity" duration="15000" />
+			<playeffect effect="alt9/effects/grimmhunt_spawn_allies.effect" source="this_entity" target="this_entity" occlude="false" visibility="allies"/>
+			<else>
+			</else>
+			</hasmodifier>
+		</onspawn>
+
+        <onrespawn>
+			<ownsproduct target="this_entity" product="en.paragon_trail">
+				<applystate name="State_Paragon_Trail" target="this_entity" continuous="true" />
+			</ownsproduct>
+			
+            <ownsproduct target="this_entity" product="en.paragon_pet">
+                <spawnunit name="Pet_Paragon" target="this_entity" source="target_entity" offset="0 -100" facing="source_entity" pushentity="true" />
+                <activatemodifierkey name="Pet_Paragon_Spectrum" entity="stack_entity" />
+            </ownsproduct>
+			
+			<ownsproduct target="this_entity" product="en.magmar_stat_track">
+                <!-- <playeffect effect="/shared/effects/paragon_stats.effect" source="this_entity" target="this_entity" /> -->
+				<applystate name="State_Paragon_Stats_VFX" source="this_entity" target="this_entity" duration="4000" />
+			</ownsproduct>
+        </onrespawn>
+		
+		<onchannelingstart>
+			<ownsproduct target="this_entity" product="en.magmar_stat_track">
+				<entitytype type="Ability_Taunt" target="inflictor_entity">
+                    <!-- <playeffect effect="/shared/effects/paragon_stats.effect" source="this_entity" target="this_entity" /> -->
+					<applystate name="State_Paragon_Stats_VFX" source="this_entity" target="this_entity" duration="4000" />
+				</entitytype>
+			</ownsproduct>
+		</onchannelingstart>
+		
+		<onkill>
+			<ownsproduct target="this_entity" product="en.magmar_stat_track">
+                <cantarget targetscheme="enemy_heroes" >
+                    <!-- <playeffect effect="/shared/effects/paragon_stats.effect" source="this_entity" target="this_entity" /> -->
+					<applystate name="State_Paragon_Stats_VFX" source="this_entity" target="this_entity" duration="4000" />
+                </cantarget>
+			</ownsproduct>
+        </onkill>
+	
+		<onassist>
+			<ownsproduct target="this_entity" product="en.magmar_stat_track">
+                <!-- <playeffect effect="/shared/effects/paragon_stats.effect" source="this_entity" target="this_entity" /> -->
+				<applystate name="State_Paragon_Stats_VFX" source="this_entity" target="this_entity" duration="4000" />
+			</ownsproduct>
+        </onassist>
+		
+		<onframe>
+			<hasmodifier name="alt_BloodChalice" entity="this_entity" >
+				<activatemodifierkey name="BloodChalice" entity="this_entity" />
+			</hasmodifier>
+			<else>
+			<hasmodifier name="alt_Sheepstick" entity="this_entity" >
+			  <playeffect effect="alt9/effects/sheepstick_sound.effect" source="this_entity" target="this_entity" />
+			</hasmodifier>
+			<else>
+				<deactivatemodifierkey name="BloodChalice" entity="this_entity" />
+			</else>
+			</else>
+		</onframe>
+
+		<modifier key="Alt9_Paragon_Circle" modpriority="2"
+            localselectionringmaterial="/shared/materials/selection_indicator_paragon.material"
+        />
+		
+		<modifier key="BloodChalice" modpriority="102"
+			skin="bloodchalice"
+		/>
+		
+		<modifier key="Level_6" modpriority="6"
+			model="alt9/level_6/model.mdf"
+			passiveeffect="alt9/level_6/effects/body.effect"
+			
+			portraitcampos="15 15 0"
+			portraitangles="0 0 30"
+			
+			tooleffectpath7="alt9/level_6/effects/weapon/base_weapon.effect"
+			tooleffectgroup7="weapon"
+			
+			tooleffectpath9="alt9/level_6/effects/tablet/base.effect"
+			tooleffectgroup9="shoulder"
+			
+		/>
+		
+		<modifier key="Level_11" modpriority="11"
+			model="alt9/level_11/model.mdf"
+			passiveeffect="alt9/level_11/effects/body.effect"
+			
+			portraitcampos="15 15 -5"
+			portraitangles="0 0 30"
+			
+			tooleffectpath7="alt9/level_11/effects/weapon/base_weapon.effect"
+			tooleffectgroup7="weapon"
+			
+			tooleffectpath9="alt9/level_11/effects/tablet/base.effect"
+			tooleffectgroup9="shoulder"
+
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Magmar.Alt10"
+		icon="icon.tga"
+		icon2="alt10/icon.tga"
+		portrait="alt10/icon.tga"
+		model="model_alt10.mdf"
+		
+		passiveeffect="effects/body_alt10.effect"
+		
+		previewmodel="preview_alt10.mdf"
+			
+		storemodel="preview_alt10.mdf"
+		
+		portraitcampos="-13 30 20"
+		portraitangles="0 0 0"
+		portraitscale="1"
+		
+	/>
+	
+	<altavatar key="Hero_Magmar.Alt11"
+		icon="icon.tga"
+		icon2="alt11/icon.tga"
+		portrait="alt11/icon.tga"
+		model="alt11/model.mdf"
+		
+		passiveeffect=""
+		portraitcampos="-35 50 10"
+		preglobalscale="1.55"
+		infoheight="210"
+		
+		previewmodel="alt11/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 -20"
+		previewscale="1.8"
+		previeweffectscale=".2"
+			
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+			
+		selectedsound="alt11/sounds/voice/select_%.wav"
+		selectedflavorsound="alt11/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt11/sounds/voice/move_%.wav"
+		confirmattacksound="alt11/sounds/voice/attack_%.wav"
+		nomanasound="alt11/sounds/voice/no_mana.wav"
+		cooldownsound="alt11/sounds/voice/cooldown.wav"
+		tauntedsound="alt11/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt11/sounds/voice/taunt_after.wav"
+		attackimpacteffect="alt11/effects/impact.effect"
+			
+		storemodel="alt11/preview.mdf"
+		storepassiveeffect="alt11/effects/body_shop.effect"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.4"
+		
+		corpsetime="50"
+		corpsefadetime="2500"
+	>
+		<modifier key="ult_boost" modpriority="101"
+			passiveeffect="alt11/effects/boost.effect"
+		>
+			<aura state="State_Accursed_Ult_Boost" radius="0" targetscheme="self"/>
+		</modifier>
+	</altavatar>
+	
+	
+	<altavatar key="Hero_Magmar.trophy_skin" modpriority="1"
+		icon="icon.tga"
+		
+		icon2="trophy_skin/icon.tga"
+		portrait="trophy_skin/icon.tga"
+		model="trophy_skin/model.mdf"
+		passiveeffect="trophy_skin/effects/body.effect"
+		
+		previewmodel="trophy_skin/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.15"
+
+		storemodel="trophy_skin/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.6"
+	/>
+	
+	<altavatar key="Hero_Magmar.pog_skin" modpriority="1"
+		icon="icon.tga"
+		
+		icon2="icon.tga"
+		portrait="icon.tga"
+		model="pog_skin/model.mdf"
+		
+		previewmodel="pog_skin/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.15"
+
+		storemodel="pog_skin/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.6"
+		
+		portraitcampos="-20 60 23"
+		portraitangles="0 0 0"
+		portraitscale="1"
+	/>
+	
+	<altavatar key="Hero_Magmar.set_ascension"
+		icon="icon.tga"
+		icon2="set_ascension/icon.tga"
+		portrait="set_ascension/icon.tga"
+		model="set_ascension/model.mdf"
+		
+		modelscale=".95"
+		
+		passiveeffect="set_ascension/effects/body.effect"
+		portraitcampos="-19 40 20"
+		preglobalscale="1.8"
+		infoheight="210"
+		
+		attackimpacteffect="set_ascension/effects/impact.effect"
+		
+		previewmodel="set_ascension/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 -20"
+		previewscale="1.8"
+		previeweffectscale=".2"
+			
+		selectedsound="set_ascension/sounds/voice/select_%.wav"
+		selectedflavorsound="set_ascension/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="set_ascension/sounds/voice/move_%.wav"
+		confirmattacksound="set_ascension/sounds/voice/attack_%.wav"
+		nomanasound="set_ascension/sounds/voice/no_mana.wav"
+		cooldownsound="set_ascension/sounds/voice/cooldown.wav"
+		tauntedsound="set_ascension/sounds/voice/taunt_prior.wav"
+		tauntkillsound="set_ascension/sounds/voice/taunt_after.wav"
+		
+			
+		storemodel="set_ascension/preview.mdf"
+		storepassiveeffect="set_ascension/effects/body_shop.effect"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.4"
+	/>
+	<altavatar key="Hero_Magmar.Alt12"
+		icon="icon.tga"
+		icon2="alt12/icon.tga"
+		portrait="alt12/icon.tga"
+		model="alt12/model.mdf"
+		
+		passiveeffect=""
+		
+		preglobalscale="1.75"
+		infoheight="210"
+		
+		previewmodel="alt12/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.15"
+
+		storemodel="alt12/preview.mdf"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="1.7"
+		
+		portraitcampos="15 -20 30"
+		portraitangles="0 0 0"
+		portraitscale="1"
+		
+		corpsetime="1000"
+		corpsefadetime="2000"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+
+		selectedsound="alt12/sounds/voice/select_%.wav"
+		selectedflavorsound="alt12/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt12/sounds/voice/move_%.wav"
+		confirmattacksound="alt12/sounds/voice/attack_%.wav"
+		nomanasound="alt12/sounds/voice/no_mana.wav"
+		cooldownsound="alt12/sounds/voice/cooldown.wav"
+		tauntedsound="alt12/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt12/sounds/voice/taunt_after.wav"
+		
+	
+	>
+		<modifier key="ult_boost" modpriority="101"
+			passiveeffect="alt12/effects/boost.effect"
+		>
+			<aura state="State_Accursed_Ult_Boost" radius="0" targetscheme="self"/>
+		</modifier>
+	
+    </altavatar>
+	
+
+	
+	<altavatar key="Hero_Magmar.Alt13"
+		icon="icon.tga"
+		icon2="alt13/icon.tga"
+		portrait="alt13/icon.tga"
+		model="alt13/model.mdf"
+		
+		corpsetime="800"
+		corpsefadetime="2000"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		
+		passiveeffect="alt13/effects/body.effect"
+		portraitcampos="-43 50 25"
+		
+		preglobalscale="1.65"
+		infoheight="210"
+		
+		previewmodel="alt13/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.5"
+
+		storemodel="alt13/preview.mdf"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="1.5"
+
+		attackimpacteffect="alt13/effects/impact.effect"
+		
+		selectedsound="alt13/sounds/voice/select_%.wav"
+		selectedflavorsound="alt13/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt13/sounds/voice/move_%.wav"
+		confirmattacksound="alt13/sounds/voice/attack_%.wav"
+		nomanasound="alt13/sounds/voice/no_mana.wav"
+		cooldownsound="alt13/sounds/voice/cooldown.wav"
+		tauntedsound="alt13/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt13/sounds/voice/taunt_after.wav"
+	>
+		<onspawn>
+			<setactivemodifierkey name="Hero_Magmar_Alt13" />
+		</onspawn>
+    </altavatar>
+	
+		<altavatar key="Hero_Magmar.Alt14"
+		icon="icon.tga"
+		icon2="alt14/icon.tga"
+		portrait="alt14/icon.tga"
+		model="alt14/model.mdf"
+		
+		passiveeffect=""
+
+		
+		preglobalscale="1.75"
+		infoheight="210"
+		
+		previewmodel="alt14/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.6"
+
+		storemodel="alt14/preview.mdf"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="1.6"
+
+	>
+    </altavatar>
+
+</hero>

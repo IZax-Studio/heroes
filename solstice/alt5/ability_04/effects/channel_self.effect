@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="0">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+		<!--
+			<simpleemitter
+				timenudge="1500"
+				life="3000"
+				startspawnrate="1"
+				midspawnrate="4"
+				endspawnrate="10"
+				particlelife="2000"
+			>
+			</simpleemitter>
+		
+			<terrainemitter
+				life="3000"
+				startspawnrate="10"
+				endspawnrate="200"
+				minparticlelife="750"
+				maxparticlelife="1000"
+				angle="30"
+				minspeed="0"
+				maxspeed="30"
+				direction="0 0 1"
+				offsetsphere="70"
+				mingravity="-40"
+				maxgravity="-20"
+				material="/shared/effects/materials/flame.material"
+			>
+				<particle
+					maxangle="360"
+					minstartsize="10"
+					maxstartsize="20"
+					minendsize="40"
+					maxendsize="60"
+					startcolor="0"
+					midcolor="1 .5 0"
+					endcolor="0"
+					midcolorpos=".2"
+				/>
+			</terrainemitter>
+		
+			<model
+				life="500"
+				parentmodel="true"
+				parentskeleton="true"
+				material="/shared/effects/materials/shell2.material"
+				startcolor="0"
+				endcolor="10 1 0"
+			/>
+			<model
+				delay="500"
+				expirelife="500"
+				parentmodel="true"
+				parentskeleton="true"
+				material="/shared/effects/materials/shell2.material"
+				startcolor="10 1 0"
+				endcolor="0"
+			/>
+		
+
+
+		-->
+		
+		
+		
+<!--
+			<billboard
+				bone="_bone_effect1"
+				expirelife="500"
+				startcolor=".5 .5 .5"
+				endcolor="0 0 0"
+				startsize="50"
+				endsize="0"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				directionalspace="local"
+				depthbias="-60"
+			/>
+			
+			<billboard
+				bone="_bone_effect2"
+				expirelife="500"
+				startcolor=".5 .5 .5"
+				endcolor="0 0 0"
+				startsize="50"
+				endsize="0"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				directionalspace="local"
+				depthbias="-60"
+			/>
+-->
+			
+			
+
+			<billboard
+				bone="_bone_lefthand"
+				expirelife="500"
+				startcolor=".5 .5 .5"
+				endcolor="0 0 0"
+				startsize="50"
+				endsize="0"
+				position="0 0 0"
+				material="/shared/effects/materials/flare_03.material"
+				directionalspace="local"
+				depthbias="-60"
+				rollspeed="15"
+			/>
+			
+			<billboard
+				bone="_bone_righthand"
+				expirelife="500"
+				startcolor=".5 .5 .5"
+				endcolor="0 0 0"
+				startsize="50"
+				endsize="0"
+				position="0 0 0"
+				material="/shared/effects/materials/flare_03.material"
+				directionalspace="local"
+				depthbias="-60"
+				rollspeed="-15"
+			/>
+			
+			<billboard
+				bone="L_hand"
+				expirelife="500"
+				startcolor=".5 .5 .5"
+				endcolor="0 0 0"
+				startsize="50"
+				endsize="0"
+				position="0 0 0"
+				material="/shared/effects/materials/flare_03.material"
+				directionalspace="local"
+				depthbias="-60"
+			/>
+
+			<billboard
+				bone="R_hand"
+				expirelife="500"
+				startcolor=".5 .5 .5"
+				endcolor="0 0 0"
+				startsize="50"
+				endsize="0"
+				position="0 0 0"
+				material="/shared/effects/materials/flare_03.material"
+				directionalspace="local"
+				depthbias="-60"
+			/>	
+		
+		
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+

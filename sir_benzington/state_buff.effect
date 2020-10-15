@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1">
+
+<twopointtrailemitter
+                     
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon2"
+				spawnrate="150"
+				particlelife="200"
+				texpostime="500"
+				texposscale="0.0"
+				texstretchscale=".9"
+				material="/shared/effects/materials/swoosh_add.material"
+				subframepose="true"
+			>
+				<particle
+					startcolor=".3 0 0"
+					endcolor="0 0 0" 
+				/>
+			</twopointtrailemitter>
+
+		
+<beam
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon2"
+				size="15"
+				color="1 .5 .5"
+				alpha=".5"
+				material="/shared/effects/materials/bow_glow_03.material"
+				framespeed="5"
+			/>
+
+<beam
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon2"
+				size="30"
+				color=".3 0 0"
+				alpha=".5"
+				material="/shared/effects/materials/bow_glow_03.material"
+				framespeed="5"
+			/>
+
+<beam
+
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon2"
+				size="35"
+				color=".1 0 0"
+				alpha=".5"
+				material="/shared/effects/materials/bow_glow_03.material"
+				framespeed="5"
+			/>
+
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>

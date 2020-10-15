@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.5">
+
+			<sound
+				life="5000"
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".55"
+				sample="holyLight_start.wav"
+			/>
+			
+			<model
+				life="2000"
+				model="../../sheep/effects/holyLight/model.mdf"
+				anim="idle_1"
+				startscale="0"
+				midscale=".65"
+				endscale=".65"
+				midscalepos=".1"
+				startcolor=".6"
+				midcolor=".6"
+				endcolor="0"
+				midcolorpos=".85"
+				directionalspace="global"
+				expirelife="250"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".6"
+			/>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

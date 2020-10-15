@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="1" >
+	<definitions>
+	
+
+		<particlesystem name="system0" space="world" scale="1">
+						
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume="1"
+				sample="../../sounds/ab1.wav"
+			/>
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume="1"
+				sample="/heroes/dampeer/ability_01/sounds/cast.wav"
+			/>
+			
+			
+		<template name="flashwave" >
+			<simpleemitter
+				delay="{delay}"
+				offsetradial="{offsetradial}"
+				spawnrate="50000"
+				count="{count}"
+				direction="0 0 1"
+				minangle="89"
+				maxangle="90"
+				speed="1"
+				particlelife="150"
+				position="0 0 0"
+				gravity="-5"
+				material="/shared/effects/materials/flare2.material"
+			>
+				<particle
+					lockup="1"
+					startsize="0"
+					endsize="{size}"
+					startwidth="0"
+					endwidth="10"
+					startcolor="1 0 0"
+					endcolor="0"
+					scale="3"
+					pitch="180"
+				/>
+				
+				<particle
+					lockup="1"
+					startsize="0"
+					endsize="{size}"
+					startwidth="0"
+					endwidth="10"
+					startcolor="1 .2 0"
+					endcolor="0"
+					scale="3"
+					pitch="180"
+				/>
+				
+				<particle
+					lockup="1"
+					startsize="0"
+					endsize="{size}"
+					startwidth="0"
+					endwidth="10"
+					startcolor="1 -.5 -.5"
+					endcolor="0"
+					scale="3"
+					pitch="180"
+				/>
+			</simpleemitter>
+		</template>
+		
+		<controller delay="200" >
+		<instance name="flashwave" delay="0" offsetradial="30" count="50" size="20" />
+		<instance name="flashwave" delay="25" offsetradial="60" count="75" size="30" />
+		<instance name="flashwave" delay="50" offsetradial="100" count="100" size="40" />
+		<instance name="flashwave" delay="75" offsetradial="150" count="150" size="50" />
+		<instance name="flashwave" delay="100" offsetradial="200" count="150" size="60" />
+		<instance name="flashwave" delay="125" offsetradial="250" count="200" size="70" />
+		</controller>
+		
+			<billboard
+				life="700"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".75"
+				startparam=".05"
+				endparam="0"
+				startsize="120"
+				endsize="1200"
+				depthbias="-100"
+				position="0 0 120"
+				material="/shared/effects/materials/refract_ring.material"
+				lockup="true"
+				pitch="90"
+				scale=".6"
+				delay="200"
+			/>
+			
+			
+			<billboard
+				life="200"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".75"
+				startparam=".05"
+				endparam="0"
+				startsize="120"
+				endsize="1200"
+				depthbias="-100"
+				startcolor="1 .5 0"
+				midcolor=".5 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".8"
+				position="0 0 100"
+				material="/shared/effects/materials/outsplash_blend_white.material"
+				lockup="true"
+				pitch="90"
+				scale=".6"
+				delay="200"
+			/>
+			
+			<groundsprite
+				life="600"
+				startalpha=".75"
+				midalpha=".75"
+				endalpha="0"
+				midalphapos=".33"
+				startparam=".05"
+				endparam="0"
+				startsize="12"
+				midsize="700"
+				endsize="700"
+				midsizepos=".5"
+				depthbias="0"
+				material="/shared/effects/materials/black_spot.material"
+				scale=".6"
+				delay="200"
+			/>
+			
+			<simpleemitter
+				spawnrate="5000"
+				count="100"
+				mingravity="-40"
+				maxgravity="-20"
+				position="0 0 0"
+				offsetsphere="275 275 0"
+				minparticlelife="500"
+				maxparticlelife="700"
+				delay="200"
+				material="/shared/effects/materials/wisp_02.material"
+			>
+				<particle
+					startcolor="1"
+					midcolor="1 0 0"
+					endcolor="0"
+					midcolorpos=".8"
+					lockup="true"
+					size="20"
+					startwidth="1"
+					endwidth="20"
+					minscale=".5"
+					maxscale=".75"
+				/>
+			</simpleemitter>
+			
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				life="700"
+				spawnrate="30"
+				minparticlelife="100"
+				maxparticlelife="200"
+				offsetsphere="20"
+				delay="200"
+				material="/shared/effects/materials/lightning_01.material"
+			>
+				<particle
+					startcolor="1 0 0"
+					midcolor="1 0 0"
+					endcolor="0"
+					size="50"
+					minscale=".25"
+					maxscale="1"
+					minangle="0"
+					maxangle="360"
+					startframe="0"
+					endframe="1"
+					anchor="1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				life="700"
+				spawnrate="20"
+				minparticlelife="200"
+				maxparticlelife="300"
+				delay="200"
+				offsetsphere="100"
+				material="/shared/effects/materials/lightning_02.material"
+			>
+				<particle
+					startcolor="1 0 0"
+					midcolor="1 0 0"
+					endcolor="0"
+					size="50"
+					minscale=".25"
+					maxscale="2"
+					minangle="0"
+					maxangle="360"
+					startframe="0"
+					endframe="1"
+				/>
+			</simpleemitter>
+				
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

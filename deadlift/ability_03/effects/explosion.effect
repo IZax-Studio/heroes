@@ -1,0 +1,811 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect entityeffectscale="true" deferred="true">
+
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale="1.6" >
+
+               
+
+
+             <sound
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="1300"
+				volume=".5"
+				sample="sa2.mp3"
+			/>
+
+                                      <sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume="1"
+				sample="\heroes\deadlift\sound_Ereshkigal/Ereshkigal_AttackG2_%.wav"
+			/>
+                                     
+			<sound
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="1300"
+				volume=".8"
+				sample="\heroes\dreadknight\ability_02\sounds/land.wav"
+			/>
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="1300"
+				volume=".8"
+				sample="\heroes\dreadknight\ability_02\sounds/land.wav"
+			/>
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume=".70"
+				sample="\heroes\dreadknight\ability_02\sounds/dirt.wav"
+			/>
+		
+			
+			<simpleemitter
+				count="1"
+				spawnrate="5000"
+				particlelife="750"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="1"
+				>
+					<groundsprite
+						delay="100"
+						life="2000"
+						material="/shared/effects/materials/ground_scorch.material"
+						size="85"
+						color="1"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".65"
+						minyaw="0"
+						maxyaw="360"
+					/>
+
+					
+					<groundsprite
+						delay="200"
+						position="0 50 0"
+						life="2000"
+						material="/shared/effects/materials/bigger_cracks.material"
+						size="80"
+						color="1.0 1.0 1.0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos="0.05"
+						directionalspace="local"
+					/>
+
+					<groundsprite
+						delay="350"
+						position="0 100 0"
+						life="2000"
+						material="/shared/effects/materials/bigger_cracks.material"
+						size="55"
+						color="1.0 1.0 1.0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos="0.05"
+						directionalspace="local"
+					/>
+
+					<groundsprite
+						delay="500"
+						position="0 185 0"
+						life="2000"
+						material="/shared/effects/materials/bigger_cracks.material"
+						size="35"
+						color="1.0 1.0 1.0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos="0.05"
+						directionalspace="local"
+					/>
+
+					<groundsprite
+						delay="200"
+						position="0 -50 0"
+						life="2000"
+						material="/shared/effects/materials/bigger_cracks.material"
+						size="80"
+						color="1.0 1.0 1.0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos="0.05"
+						minyaw="0"
+						maxyaw="360"
+						directionalspace="local"
+					/>
+					
+					<groundsprite
+						delay="350"
+						position="0 -100 0"
+						life="2000"
+						material="/shared/effects/materials/bigger_cracks.material"
+						size="55"
+						color="1.0 1.0 1.0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos="0.05"
+						minyaw="0"
+						maxyaw="360"
+						directionalspace="local"
+					/>
+<!--
+					<groundsprite
+						delay="500"
+						position="0 -185 0"
+						life="2000"
+						material="/shared/effects/materials/bigger_cracks.material"
+						minsize="35"
+						maxsize="55"
+						color="1.0 1.0 1.0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos="0.05"
+						minyaw="0"
+						maxyaw="360"
+						directionalspace="local"
+					/>
+-->
+					
+					<groundsprite
+						delay="200"
+						position="-50 0 0"
+						life="2000"
+						material="/shared/effects/materials/bigger_cracks.material"
+						size="80"
+						color="1.0 1.0 1.0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos="0.05"
+						minyaw="0"
+						maxyaw="360"
+						directionalspace="local"
+					/>
+					
+					<groundsprite
+						delay="350"
+						position="-100 0 0"
+						life="2000"
+						material="/shared/effects/materials/bigger_cracks.material"
+						size="55"
+						color="1.0 1.0 1.0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos="0.05"
+						minyaw="0"
+						maxyaw="360"
+						directionalspace="local"
+					/>
+	
+<!--
+					<groundsprite
+						delay="500"
+						position="-185 0 0"
+						life="2000"
+						material="/shared/effects/materials/bigger_cracks.material"
+						minsize="35"
+						maxsize="55"
+						color="1.0 1.0 1.0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos="0.05"
+						minyaw="0"
+						maxyaw="360"
+						directionalspace="local"
+					/>
+-->
+					
+					<groundsprite
+						delay="200"
+						position="50 0 0"
+						life="2000"
+						material="/shared/effects/materials/bigger_cracks.material"
+						size="80"
+						color="1.0 1.0 1.0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos="0.05"
+						minyaw= "0"
+						maxyaw="360"
+						directionalspace="local"
+					/>
+					
+					<groundsprite
+						delay="350"
+						position="100 0 0"
+						life="2000"
+						material="/shared/effects/materials/bigger_cracks.material"
+						size="55"
+						color="1.0 1.0 1.0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos="0.05"
+						minyaw="0"
+						maxyaw="360"
+						directionalspace="local"
+					/>
+					
+<!--
+					<groundsprite
+						delay="350"
+						position="185 0 0"
+						life="2000"
+						material="/shared/effects/materials/bigger_cracks.material"
+						minsize="35"
+						maxsize="55"
+						color="1.0 1.0 1.0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos="0.05"
+						minyaw="0"
+						maxyaw="360"
+						directionalspace="local"
+					/>
+-->
+					
+				</particle>
+			</simpleemitter>
+			
+			
+			
+			
+			
+			
+			
+			
+
+			
+			
+			
+			
+			
+			
+			
+
+			<billboard
+			delay="150"
+				life="350"
+				startalpha=".8"
+				midalpha=".8"
+				endalpha="0"
+				midalphapos=".75"
+				startparam=".5"
+				endparam="0"
+				startsize="0"
+				endsize="700"
+				depthbias="-100"
+				position="0 0 20"
+				material="/shared/effects/materials/refract_ring.material"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+			/>
+
+			<billboard
+			delay="150"
+				material="/shared/effects/materials/bulb_add.material"				
+				startcolor="0.5"				
+				endcolor="0 0 0"
+				life="250"	
+				position="0 0 10"
+				startsize="50"
+				endsize="425"
+				depthbias="-150"			
+			/>
+			
+			<billboard
+				delay="250"
+				material="/shared/effects/materials/bulb_add.material"				
+				startcolor="0.5"					
+				endcolor="0 0 0"
+				life="250"	
+				position="0 0 10"
+				startsize="50"
+				endsize="425"
+				depthbias="-150"			
+			/>
+			
+			<billboard
+				delay="350"
+				material="/shared/effects/materials/bulb_add.material"				
+				startcolor="0.5"				
+				endcolor="0 0 0"
+				life="250"	
+				position="0 0 10"
+				startsize="50"
+				endsize="425"
+				depthbias="-150"			
+			/>
+			
+			<billboard
+			delay="150"
+				material="/shared/effects/materials/whitedot.material"				
+				startcolor="0.5"				
+				endcolor="0 0 0"
+				life="500"	
+				position="0 0 25"
+				startsize="400"
+				endsize="400"
+				depthbias="-150"			
+			/>
+<!--
+			<billboard
+			delay="150"
+				material="/shared/effects/materials/whitedot.material"				
+				startcolor="0 0 0"				
+				midcolor="0.4"				
+				endcolor="0 0 0"
+				midcolorpos=".25"
+				life="3000"	
+				position="0 0 25"
+				startsize="400"
+				endsize="400"
+				depthbias="-150"			
+			/>
+-->
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+			<template name="dust">
+				<simpleemitter
+					delay="{zDelay}"
+					count="1"
+					spawnrate="2000"
+					particlelife="5000"
+					gravity="0"
+					speed="0"
+					drag="0"
+					acceleration="0"
+					position="{zPosition}"
+					minangle="0"
+					maxangle="0"
+					direction="0 1 0"
+					offsetsphere="0 0 0"
+				>
+					<particle>
+
+						<simpleemitter
+							count="10"
+							spawnrate="100"
+							particlelife="3000"
+							acceleration="0.0"
+							minangle="0"
+							maxangle="0"
+							direction="0 1 0"
+							offsetsphere="0 0 0"
+							position="0 0 0"
+						>
+							<particle
+								turn="1"
+							>
+							
+							
+								<simpleemitter
+									count="5"
+									minparticlelife="500"
+									maxparticlelife="1000"
+									spawnrate="35"
+									minspeed="250"
+									maxspeed="350"
+									gravity="20"
+									direction="0 0 1"
+									minangle="0"
+									maxangle="1"
+									drag="0.01"
+									material="/shared/effects/materials/pyroclast_03.material"
+									offsetsphere="10 10 50"
+									position="0 0 0"
+								>
+									<particle
+										startcolor="1"
+										endcolor="1"
+										height="100"
+										startwidth="25"
+										endwidth="50"
+										startscale="2.5"
+										endscale="5"
+										startalpha=".5"
+										endalpha="0"
+										lockup="1"
+										lockright="1"
+										minyaw="0"
+										maxyaw="360"
+										yawspeed="-35"
+									/>
+								</simpleemitter>
+
+								<simpleemitter
+									count="5"
+									minparticlelife="50"
+									maxparticlelife="1000"
+									spawnrate="35"
+									minspeed="25"
+									maxspeed="50"
+									gravity="2"
+									direction="0 0 0"
+									material="/shared/effects/materials/pyroclast_03.material"
+									offsetsphere="25 25 10"
+									position="0 0 0"
+								>
+									<particle
+										minangle="0"
+										maxangle="360"
+										depthbias="-25"
+										color="1"
+										startscale="50"
+										endscale="100"
+										startalpha="0"
+										midalpha=".35"
+										endalpha="0"
+									/>
+								</simpleemitter>
+
+							</particle>
+						</simpleemitter>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+
+						<simpleemitter
+						count="1"
+							spawnrate="5"
+							particlelife="1500"
+							gravity="0"
+							speed="0"
+							drag="0"
+							acceleration="0"
+							position="0 50 0"
+							offsetsphere="0 0 0"
+							
+						>
+							<particle>
+							
+								<model
+									position="0 0 20"
+									minlife="800"
+									maxlife="1000"
+									name="emitter0"
+									anim="idle"
+									model="/heroes/midas/ability_01/effects/gold_pieces/model.mdf"
+									material="/heroes/sand_wraith/ability_01/effects/material.material"
+									scale=".35"
+									color="1"
+									startalpha="1"
+									midalpha="1"
+									endalpha="0"
+									midalphapos=".9"
+									minyaw="0"
+									maxyaw="360"
+								>
+								</model>
+								
+								<model
+									position="0 0 20"
+									minlife="800"
+									maxlife="1000"
+									name="emitter0"
+									anim="idle"
+									model="/heroes/moraxus/ability_01/effects/rocks/model.mdf"
+									material="/heroes/sand_wraith/ability_01/effects/material.material"
+									scale=".25"
+									color=".5"
+									startalpha="1"
+									midalpha="1"
+									endalpha="0"
+									midalphapos=".9"
+									minyaw="0"
+									maxyaw="360"
+								>
+								</model>
+
+							</particle>
+						</simpleemitter>
+						
+						<simpleemitter
+						count="1"
+							spawnrate="5"
+							particlelife="1500"
+							gravity="0"
+							speed="0"
+							drag="0"
+							acceleration="0"
+							position="0 -50 0"
+							offsetsphere="0 0 0"
+							
+						>
+							<particle>
+							
+								<model
+									position="0 0 20"
+									minlife="800"
+									maxlife="1000"
+									name="emitter0"
+									anim="idle"
+									model="/heroes/midas/ability_01/effects/gold_pieces/model.mdf"
+									material="/heroes/sand_wraith/ability_01/effects/material.material"
+									scale=".35"
+									color=".5"
+									startalpha="1"
+									midalpha="1"
+									endalpha="0"
+									midalphapos=".9"
+									minyaw="0"
+									maxyaw="360"
+								>
+								</model>
+								
+								<model
+									position="0 0 20"
+									minlife="800"
+									maxlife="1000"
+									name="emitter0"
+									anim="idle"
+									model="/heroes/moraxus/ability_01/effects/rocks/model.mdf"
+									material="/heroes/sand_wraith/ability_01/effects/material.material"
+									scale=".25"
+									color=".5"
+									startalpha="1"
+									midalpha="1"
+									endalpha="0"
+									midalphapos=".9"
+									minyaw="0"
+									maxyaw="360"
+								>
+								</model>
+
+							</particle>
+						</simpleemitter>
+						
+						<simpleemitter
+						delay="250"
+						count="1"
+							spawnrate="5"
+							particlelife="1500"
+							gravity="0"
+							speed="0"
+							drag="0"
+							acceleration="0"
+							position="100 0 0"
+							offsetsphere="0 0 0"
+							
+						>
+							<particle>
+							
+								<model
+									position="0 0 20"
+									minlife="800"
+									maxlife="1000"
+									name="emitter0"
+									anim="idle"
+									model="/heroes/midas/ability_01/effects/gold_pieces/model.mdf"
+									material="/heroes/sand_wraith/ability_01/effects/material.material"
+									scale=".35"
+									color="1"
+									startalpha="1"
+									midalpha="1"
+									endalpha="0"
+									midalphapos=".9"
+									minyaw="0"
+									maxyaw="360"
+								>
+								</model>
+								
+								<model
+									position="0 0 20"
+									minlife="800"
+									maxlife="1000"
+									name="emitter0"
+									anim="idle"
+									model="/heroes/moraxus/ability_01/effects/rocks/model.mdf"
+									material="/heroes/sand_wraith/ability_01/effects/material.material"
+									scale=".2"
+									color=".5"
+									startalpha="1"
+									midalpha="1"
+									endalpha="0"
+									midalphapos=".9"
+									minyaw="0"
+									maxyaw="360"
+								>
+								</model>
+
+							</particle>
+						</simpleemitter>
+						
+						<simpleemitter
+						delay="120"
+						count="1"
+							spawnrate="5"
+							particlelife="1500"
+							gravity="0"
+							speed="0"
+							drag="0"
+							acceleration="0"
+							position="-60 0 0"
+							offsetsphere="0 0 0"
+							
+						>
+							<particle>
+							
+								<model
+									position="0 0 20"
+									minlife="800"
+									maxlife="1000"
+									name="emitter0"
+									anim="idle"
+									model="/heroes/midas/ability_01/effects/gold_pieces/model.mdf"
+									material="/heroes/sand_wraith/ability_01/effects/material.material"
+									scale=".35"
+									color=".5"
+									startalpha="1"
+									midalpha="1"
+									endalpha="0"
+									midalphapos=".9"
+									minyaw="0"
+									maxyaw="360"
+								>
+								</model>
+								
+								<model
+									position="0 0 20"
+									minlife="800"
+									maxlife="1000"
+									name="emitter0"
+									anim="idle"
+									model="/heroes/moraxus/ability_01/effects/rocks/model.mdf"
+									material="/heroes/sand_wraith/ability_01/effects/material.material"
+									scale=".2"
+									color=".5"
+									startalpha="1"
+									midalpha="1"
+									endalpha="0"
+									midalphapos=".9"
+									minyaw="0"
+									maxyaw="360"
+								>
+								</model>
+
+							</particle>
+						</simpleemitter>
+
+					</particle>
+				</simpleemitter>
+			
+			</template>
+
+			<instance name="dust" zDelay="0" zPosition="0 0 0" />
+
+			<model
+				position="0 0 0"
+				life="2000"
+				name="emitter0" 
+				anim="idle"
+				model="\heroes\dreadknight\ability_02\effects/rocks/model.mdf"
+				scale=".425"
+				color="1"
+				startalpha="1"
+				midalpha="1"
+				endalpha="1"
+				midalphapos=".9"
+			/>
+	
+			<model
+				position="0 0 0"
+				life="2000"
+				name="emitter0" 
+				anim="idle"
+				model="\heroes\dreadknight\ability_02\effects/rocks/model.mdf"
+				material="/shared/effects/materials/shell2.material"
+				scale=".425"
+				startcolor="1"
+				midcolor="0 0 0"
+				endcolor="0 0 0"
+			/>
+			
+			<billboard
+			delay="500"
+				life="1000"
+				startsize="150"
+				endsize="750"
+				param=".25"
+				depthbias="-100"
+				material="/shared/effects/materials/refract_ring.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				startalpha=".5"
+				endalpha="0"
+			/>
+			
+			<billboard
+			delay="1000"
+				life="1000"
+				startsize="150"
+				endsize="750"
+				param=".25"
+				depthbias="-100"
+				material="/shared/effects/materials/refract_ring.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				startalpha=".25"
+				endalpha="0"
+			/>
+			
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier1"/> 
+	   <camerashake2 scale="6" radius="1200" duration="400" frequency="22" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

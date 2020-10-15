@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="bolts.max" file="high.model" type="K2" high="sa2/black.model" med="sa2/black.model" low="sa2/black.model">
+	<anim name="idle" clip="sa2/idle.clip" fps="550" loop="true"/>
+	
+	<anim name="portrait" clip="sa2/idle.clip" fps="500" loop="true"/>
+	
+	<anim name="bored_1" clip="sa2/idle.clip" fps="550"/>
+	
+	<anim name="taunt_1" clip="sa2/attack_1.clip" fps="550"/>
+
+	<anim name="item_1" clip="sa2/attack_1.clip" fps="550"/>
+	
+	<anim name="death_1" clip="sa2/death_1.clip" fps="550" loop="true" loopbackframe="-1">
+	</anim>
+	
+	<anim name="walk_1" clip="sa2/walk_1.clip" fps="550" loop="true">
+		<frameevent frame="1" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="13" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+	    <frameevent frame="25" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+	    <frameevent frame="36" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="48" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="60" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+										
+		<frameevent frame="1" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="13" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="25" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+	    <frameevent frame="36" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="48" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="60" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	</anim>
+
+	
+	<anim name="ability_1" clip="sa2/ability_1.clip" fps="550">
+             <frameevent frame="1" cmd="starteffect ability_01/effects/warpout.effect"/>
+		<frameevent frame="15" cmd="starteffect ability_01/effects/warpin.effect"/>
+      </anim>
+
+	
+	<anim name="ability_2" clip="sa2/walk_1.clip" loop="true" loopbackframe="1" fps="550"/>
+	
+	<anim name="ability_3" clip="sa2/ability_1.clip" fps="550"/>
+
+	<anim name="ability_4" clip="sa2/walk_1.clip" fps="550" loop="true" loopbackframe="1"/>
+	
+	<anim name="ability_2_run" clip="sa2/walk_1.clip" loop="true" loopbackframe="1" fps="550"/>
+
+	<anim name="attack_1" clip="sa2/attack_1.clip" fps="550" blendtime="200">
+		<frameevent frame="180" cmd="PlaySoundLinear /shared/sounds/attacks/attack_light_%.wav 128 1300 .80"/>
+		<frameevent frame="180" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 0 2000 .4"/>
+		<frameevent frame="1" cmd="StartEffect effects/attack.effect"/>
+	</anim>
+	
+	<anim name="attack_2" clip="sa2/attack_2.clip" fps="550" blendtime="200">
+		<frameevent frame="180" cmd="PlaySoundLinear /shared/sounds/attacks/attack_light_%.wav 128 1300 .80"/>
+		<frameevent frame="180" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 0 2000 .4"/>
+		<frameevent frame="1" cmd="StartEffect effects/attack.effect"/>
+	</anim>
+
+	<anim name="knock_1" clip="sa2/death_1.clip" fps="550" loopbackframe="-1" loop="true"/>
+			
+</model>

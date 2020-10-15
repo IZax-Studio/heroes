@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="impact" useentityeffectscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" useentityeffectscale="true" scale="1">
+			
+		<template name="pulse">
+					<billboard
+						delay="{delay}"
+						life="600"
+						startcolor=".4 .2 .4"
+						midcolor=".3 .1 .3"
+						endcolor="0 0 0"
+						
+						startalpha="1.0"
+						midalpha="1.0"
+						endalpha="0.0"
+						midalphapos="0.75"
+						startparam="0.05"
+						endparam="0.0"				
+						
+						startsize="40"
+						
+						endsize="180"
+						midsizepos=".4"				
+						
+						depthbias="-50"
+						position="0 0 60"
+						material="/shared/effects/materials/corona_06.material"
+						lockup="true"
+						pitch="90"
+					/>
+					
+					
+		</template>		
+		<instance name="pulse" delay="0"/>
+		<instance name="pulse" delay="100"/>
+		<instance name="pulse" delay="200"/>			
+			
+			
+			
+			
+			
+			<simpleemitter	
+				position="0 0 60"
+				count="1"
+				particlelife="2000"
+				spawnrate="10000"
+				gravity="-0"
+				speed="0.0"
+				acceleration="0.0"		
+		
+				
+			>
+				<particle>				
+					<simpleemitter			
+						count="4"
+						spawnrate="1055"
+						particlelife="800"
+						gravity="0"
+						minspeed="50"
+						maxspeed="150"
+						position="0 0 40"
+						offsetsphere="10"
+						minangle="0"
+						maxangle="45"
+						direction="0 0 1"
+						material="/shared/effects/materials/blood_drop_white2.material"
+						
+					>
+						<particle
+							startcolor="1 .4 1"
+							midcolor="1 .4 1"
+							endcolor=".1 0 .0"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							minanglespeed="-50"
+							maxanglespeed="50"
+							minscale="5.5"
+							maxscale="7"
+						/>
+					</simpleemitter>			
+				</particle>
+			</simpleemitter>			
+		
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  useentityeffectscale="1" name="ability_03">
+
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1">
+
+
+		<groundsprite
+			life="2200"
+			loop="true"
+			timenudge="0"
+			material="/shared/effects/materials/mana_regen.material"
+
+			startsize="75"
+			midsize="50"
+			endsize="75"
+
+			midsizepos=".5"
+			startcolor="0 .5 1"
+			midcolor="0 .5 1"
+			endcolor="0 .5 1"
+			midcolorpos=".2"
+			minangle="15"
+			maxangle="55"
+
+			angles="0 0 0"
+
+
+		/>
+		
+		<simpleemitter
+			spawnrate="10"
+			offsetradial="40 40"
+			particlelife="600"
+			direction="0 0 1"
+			minangle="0"
+			maxangle="0"
+			minspeed="100"
+			maxspeed="300"
+		>
+			<particle
+				minscale=".1"
+				maxscale=".3"
+				turn="1"
+			>
+				<model
+					life="500"
+					model="/heroes/frosty/alt8/ability_01/effects/shard/model.mdf"
+					startscale="1"
+					endscale="0"
+					startcolor="2.5"
+					endcolor="0 3 5"
+					pitch="90"
+				/>
+			</particle>
+		</simpleemitter>
+					
+		<model
+				life="4000"
+				parentmodel="true"
+				parentskeleton="true"
+				material="/shared/effects/materials/shell4_outline.material"
+				startcolor="0 0 0"
+				midcolor="0 .5 1"
+				endcolor="0 0 0"
+				loop="true"
+
+			/>	
+
+
+
+
+
+	</particlesystem>
+
+
+
+
+
+</definitions>
+
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+
+
+
+
+
+
+

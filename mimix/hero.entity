@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_Mimix"
+	
+	team="Legion"
+	icon="flandre.png"
+	portrait="flandre.png"
+	model="flandre/model.mdf"
+	skin=""
+	portraitcampos="8 -30 37"
+	portraitangles="0 0 17"	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound=""
+	selectedflavorsound=""
+	confirmmovesound=""
+	confirmattacksound=""
+	nomanasound=""
+	cooldownsound=""
+	announcersound="flandre/sounds/pick_1.wav"
+	tauntedsound=""
+	tauntkillsound=""
+
+	preglobalscale="1"
+	modelscale="1.6"
+	effectscale="0.9"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="44"
+	targetoffset="0 0 64"
+	infoheight="180"
+
+	category="physical"
+	difficulty="2"
+
+	solorating="0"
+	junglerating="0"
+	carryrating="5"
+	supportrating="0"
+	initiatorrating="0"
+	gankerrating="0"
+	pusherrating="0"
+	rangedrating="0"
+	meleerating="5"
+	
+	movespeed="300"
+	turnrate="450"
+	turnsmoothing="0.05"
+
+	maxhealth="150"
+	healthregen="1.00"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="1"
+	magicarmor="5.0"
+
+	inventory0="Ability_Mimix1"
+	inventory1="Ability_Mimix2"
+	inventory2="Ability_Mimix3"
+	inventory3="Ability_Mimix4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="1000"
+	attackactiontime="400"
+	attackcooldown="1700"
+	attackdamagemin="26"
+	attackdamagemax="30"
+	attacknumanims="2"
+	attackoffset="0 30 100"
+	attackprojectile=""
+	attackrange="150"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="effects/impact.effect"
+	attacktype="melee"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="600"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	primaryattribute="Strength"
+	strength="24"
+	strengthperlevel="2.5"
+	agility="12"
+	agilityperlevel="1.4"
+	intelligence="17"
+	intelligenceperlevel="2.0"
+
+	corpsetime="2500"
+	corpsefadetime="2500"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	previewmodel="preview_2.mdf"
+	previewpos="0 0 -60"
+	previewangles="0 0 0"
+	previewscale="1.6"
+	
+	storemodel="preview_2.mdf"
+	storepos="0 0 -40"
+	storeangles="0 0 0"
+	storescale="1.6"
+	
+	tooleffectkeyname37="Item_MastersLegacy"
+	tooleffectpath37="flandre/effects/staff_of_the_mastyer.effect"
+
+	tooleffectkeyname38="State_MastersLegacy"
+	tooleffectpath38="flandre/effects/staff_of_the_mastyer.effect"
+
+	tooleffectkeyname39="Item_Intelligence7"
+	tooleffectpath39="flandre/effects/staff_of_the_mastyer.effect"
+	
+	storepassiveeffect="flandre/effects/body.effect"
+	previewpassiveeffect="flandre/effects/body.effect"
+	tooleffectkeyname18="State_Mimix_Ability3"
+	tooleffectpath18="flandre/effects/body.effect"
+>
+	<recommendeditem name="Item_MinorTotem" />
+	<recommendeditem name="Item_RunesOfTheBlight" />
+	<recommendeditem name="Item_HealthPotion" />
+	<recommendeditem name="Item_HomecomingStone" />
+
+	<recommendeditem name="Item_IronShield" />
+	<recommendeditem name="Item_Soulscream" />
+	<recommendeditem name="Item_Steamboots" />
+	<recommendeditem name="Item_ManaBurn2" />
+	<recommendeditem name="Item_Brutalizer" />
+	<recommendeditem name="Item_Pierce" />
+	<recommendeditem name="Item_LifeSteal4" />
+	<recommendeditem name="Item_Evasion" />
+	
+	<modifier key="Mimix_Ability4_Affected" modpriority="100"	
+		passiveeffect="flandre/effects/body_2.effect"
+		
+		turnrate="900"
+		selectedsound=""
+		selectedflavorsound=""
+		confirmmovesound=""
+		confirmattacksound=""
+		nomanasound=""
+		cooldownsound=""
+		tauntedsound="sounds/voice/taunt_prior.wav"
+		tauntkillsound="sounds/voice/taunt_after.wav"
+	>
+	</modifier>
+	
+	<modifier key="iamsheeped" modpriority="1000"
+		passiveeffect=""
+	/>
+	<ondeath>
+		<condition target="inflictor_entity" test="illusion" />
+		<else>
+			<hasavatarkey name="Hero_Mimix.Alt">
+				<playeffect effect="effects/death_sound.effect" target="target_position" />				
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Mimix.Alt2">
+					<playeffect effect="alt2/effects/death_sound.effect" target="target_position" />				
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/death_sound.effect" target="target_position" />
+				</else>
+			</else>
+		</else>
+	</ondeath>
+	
+	 <onspawn>
+	 <!-- Interaction -->
+		    <pausevoiceovers duration="6000" />
+			<hasavatarkey name="Hero_Mimix.Alt">
+				<activatemodifierkey name="Mimix_Alt_Sound" />
+				<applystate name="State_Mimix_Alt_Sound_Initiator" target="source_entity" duration="2000" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Mimix.Alt2">
+					<activatemodifierkey name="Mimix_Alt2_Sound" />
+					<applystate name="State_Mimix_Alt2_Sound_Initiator" target="source_entity" duration="2000" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Mimix.Alt3" />
+					<else>
+						<activatemodifierkey name="Hero_Mimix_Sound" />
+						<applystate name="State_Hero_Mimix_Sound_Initiator" target="source_entity" duration="2000" />
+					</else>
+				</else>
+			</else>
+		</onspawn>
+		
+		<onassist>
+		<!-- Interaction -->
+		    <chance threshold="0.50">
+					<hasavatarkey name="Hero_Mimix.Alt">
+							<pausevoiceovers duration="6000" />
+							<delayannouncer duration="6000" source="target_entity" sourceonly="true"/>
+							<delayannouncer duration="6000" source="this_entity" sourceonly="true"/>
+						<playeffect effect="alt/sounds/interactions/assist_audio.effect" source="this_entity" target="this_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Mimix.Alt2">
+								<pausevoiceovers duration="3000" />
+								<delayannouncer duration="3000" source="target_entity" sourceonly="true"/>
+								<delayannouncer duration="3000" source="this_entity" sourceonly="true"/>
+								<playeffect effect="alt2/sounds/interactions/assist_audio.effect" source="this_entity" target="this_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Mimix.Alt3" />
+							<else>
+								<pausevoiceovers duration="3000" />
+								<delayannouncer duration="3000" source="target_entity" sourceonly="true"/>
+								<delayannouncer duration="3000" source="this_entity" sourceonly="true"/>
+								<playeffect effect="sounds/interactions/assist_audio.effect" source="this_entity" target="this_entity" />
+							</else>
+						</else>
+					</else>
+			</chance>
+        </onassist>
+		
+		<onkill>
+		<!-- Interaction -->
+			<targettype type="illusion" />
+			<else>
+				<cantarget targetscheme="enemy_heroes" >
+				<pushentityproxy entity="this_proxy_entity" />
+				<chance threshold="0.50">  
+					<compare a="stack_entity" b="inflictor_entity" op="ne"> <!--To prevent interaction to play if you have taunted them-->
+					<pausevoiceovers duration="3000" /> 
+					<delayannouncer duration="3000" source="target_entity" sourceonly="true"/>
+					<delayannouncer duration="3000" source="this_entity" sourceonly="true"/>
+						<hasavatarkey name="Hero_Mimix.Alt">
+							<playeffect effect="alt/sounds/interactions/kill_audio.effect" source="this_entity" target="this_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Mimix.Alt2">
+								<playeffect effect="alt2/sounds/interactions/kill_audio.effect" source="this_entity" target="this_entity" />
+							</hasavatarkey>							
+							<else>
+								<hasavatarkey name="Hero_Mimix.Alt3"/>							
+								<else>
+									<playeffect effect="sounds/interactions/kill_audio.effect" source="this_entity" target="this_entity" />
+								</else>
+							</else>
+						</else>						
+					</compare>
+				</chance>
+				</cantarget>
+			</else>
+        </onkill>
+		
+
+	<altavatar key="Hero_Mimix.Alt" modpriority="1"
+		altavatar="true"
+		
+		preglobalscale="1"
+		
+		icon2="alt/icon.tga"
+		icon="icon.tga"
+		portrait="alt/icon.tga"
+		model="alt/model.mdf"
+		passiveeffect="alt/effects/body.effect"
+		
+		previewmodel="alt/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1"
+		
+		storemodel="alt/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.3"
+		portraitcampos="0 - 30"
+		
+		corpsetime="1000"
+		corpsefadetime="1500"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		
+		selectedsound="alt/sounds/voice/select_%.wav"
+		selectedflavorsound="alt/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt/sounds/voice/move_%.wav"
+		confirmattacksound="alt/sounds/voice/attack_%.wav"
+		nomanasound="alt/sounds/voice/no_mana.wav"
+		cooldownsound="alt/sounds/voice/cooldown.wav"
+		tauntedsound="alt/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt/sounds/voice/taunt_after.wav"
+		
+		storepassiveeffect=""
+		previewpassiveeffect=""
+		tooleffectkeyname18="State_Mimix_Ability3"
+		tooleffectpath18=""
+	/>
+	
+	<altavatar key="Hero_Mimix.Alt2" modpriority="1"
+		altavatar="true"
+				
+		icon2="icon/Icon_Young_Mistress_Flandre.png"
+		portrait="icon/Icon_Young_Mistress_Flandre.png"
+		model="flandre/model_alt2.mdf"
+		
+		attackimpacteffect="alt2/effects/impact.effect"
+	
+		previewmodel="alt2/preview_2.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.6"
+	
+		storemodel="alt2/preview_2.mdf"
+		storepos="0 0 -40"
+		storeangles="0 0 0"
+		storescale="1.6"
+	
+
+		corpsetime="2500"
+		corpsefadetime="1500"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		
+
+	/>
+</hero>

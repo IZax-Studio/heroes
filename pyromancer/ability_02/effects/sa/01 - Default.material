@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<material>
+	<parameters vDiffuseColor=".6" fSpecularLevel="0.0000" fGlossiness="8" fOpacity="1.0000" fReflect="1.0000"/>
+	<phase name="color" vs="mesh_color_flat" ps="mesh_color_flat" srcblend="BLEND_ONE" dstblend="BLEND_ONE" translucent="true"   cull="CULL_NONE" layer="0">
+		<sampler
+			name="diffuse"
+			texture="1.tga"
+			repeat_u="true"
+			repeat_v="true"
+			mipmaps="true"
+			fullquality="true"
+			nocompress="true"
+			filtering="true"
+		/>
+</phase>
+</material>

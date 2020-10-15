@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="model.model" type="K2" >
+	<anim name="idle" clip="idle3.clip" fps="550" loop="true" loopbackframe="2095" startframe="1" numframes="3200">
+		<frameevent frame="1" cmd="StartModelPanelEffect store2_detail_heroAvatars_large_model ready_sound.effect"/>
+	</anim>
+</model>

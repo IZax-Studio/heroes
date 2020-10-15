@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+    		
+			<sound
+				volume="1" 
+				sample="../jibril_sounds/138_0_Q_End.wav"
+				linearfalloff="true"
+				falloffstart="200"
+				falloffend="2000"
+			/>
+			<simpleemitter
+				position="0 100 180"
+				
+				count="1"
+				particledirectionalspace="local"
+				particlelife="400"
+			>
+				<particle
+					startscale="0"
+					midscale="5"
+					endscale="5"
+					anchor="1"
+				>
+					<billboard
+						life="500"
+						timenudge="1"
+						lockup="true"
+						lockright="true"
+						directionalspace="local"
+						material="/shared/effects/materials/whitedot.material"
+						color="1 0 1"
+						size="75"
+					/>
+					
+					<billboard
+						life="500"
+						timenudge="1"
+						lockup="true"
+						lockright="true"
+						directionalspace="local"
+						material="/shared/effects/materials/whitecircle_blend.material"
+						size="30"
+					/>
+					
+					<billboard
+						life="500"
+						timenudge="1"
+						lockup="true"
+						lockright="true"
+						directionalspace="local"
+						material="/shared/effects/materials/black_spot2.material"
+						size="28"
+					/>
+				</particle>
+			</simpleemitter>
+			<!-- flickering glow -->
+            <template name="glow" >    
+				<billboard
+					life="750"
+                    bone="{bone}"
+                    startsize="35" midsize="25" endsize="35"
+                    material="/shared/effects/materials/whitedot_blend.material"
+                    startcolor="3 1 3" midcolor=".4 .1 .4" endcolor="0"
+                    depthbias="-20"
+                    scale="{scale}"
+                />
+			</template>
+			<instance name="glow" bone="_bone_righthand" scale=".75" />
+			<instance name="glow" bone="_bone_lefthand" scale=".75" />
+		</particlesystem>
+	</definitions>
+	<thread>
+		 
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

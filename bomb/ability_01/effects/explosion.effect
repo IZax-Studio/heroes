@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect persistent="1">
+
+	<definitions>
+		
+		<particlesystem name="system0" space="world" scale="1">
+
+			<model	
+						directionalspace="local"
+						life="800"
+			
+						startscale="1.5"
+						endscale="5.0"
+						model="sphere/sphere.mdf"
+						anim="idle"
+						startcolor="1 1 1"
+						endcolor="0 0 0"
+						yawspeed="-180"
+						pitchspeed="180"
+						startalpha="1"
+						midalpha=".9"
+						endalpha="0"
+						depthbias="-150"
+						
+						
+						position="0 0 0"
+				>
+				
+				
+				
+	
+		<sound
+				sample="single explosion.wav"
+				linearfalloff="false"
+				falloffstart="0" 
+				falloffend="0" 
+				volume="1.5"
+				life="1500"
+			/>
+
+			<template name="waves">	
+
+				
+
+ <billboard
+				material="/shared/effects/materials/star_04.material"
+				
+				startcolor=".2 .2 .8"
+				endcolor="0 0 0"
+				loop="0"
+				life="750"
+				
+				position="0 0 0"
+				size="70"
+				depthbias="-150"
+			    startalpha=".95"
+						midalpha=".80"
+						endalpha="0"
+						
+			/>
+			<billboard
+				material="/shared/effects/materials/corona_07.material"
+			
+				startcolor="0 .2 1"
+				endcolor="0 0 0"
+				loop="0"
+				life="750"
+				position="0 0 0"
+				startsize="0"
+				endsize="60"
+				depthbias="-150"
+				startalpha=".95"
+			    midalpha=".80"
+				endalpha="0"
+				
+			/>
+
+			<billboard
+				material="/shared/effects/materials/corona_07.material"
+			
+				startcolor="0 .2 1"
+				endcolor="0 0 0"
+				loop="0"
+				life="750"
+				position="0 0 0"
+				startsize="0"
+				endsize="100"
+				depthbias="-150"
+				pitch="65"
+				yaw="45"
+				startalpha=".95"
+			    midalpha=".80"
+				endalpha="0"
+				
+			/>
+			
+			<billboard
+				material="/shared/effects/materials/corona_07.material"
+			
+				startcolor="0 .2 1"
+				endcolor="0 0 0"
+				loop="0"
+				life="750"
+				position="0 0 0"
+				startsize="0"
+				endsize="100"
+				depthbias="-150"
+				pitch="245"
+				yaw="225"
+				startalpha=".95"
+			    midalpha=".80"
+				endalpha="0"
+			/>
+			
+			<billboard
+				position="{position}"
+				life="750"
+				color="1 1 1"
+				startalpha="1.0"
+				endalpha="1"
+				startparam="0.01"
+				endparam="0.0"
+				startsize="0"
+				endsize="150"
+				material="/shared/effects/materials/refract_ripple.material"
+				lockup="1"
+				pitch="90"
+			/>
+
+			
+			</template>
+			
+			
+
+			<template name="sound_pulse">	
+
+			
+			
+			</template>
+						
+			<instance delay1="0" delay2="150" delay3="300" name="waves" endsize1="50" endsize2="100" endsize3="200"/>
+			<instance delay1="1000" delay2="1150" delay3="1300" name="waves" endsize1="25" endsize2="150" endsize3="75"/>
+			<instance delay1="2000" delay2="2150" delay3="2300" name="waves" endsize1="50" endsize2="250" endsize3="100"/>
+			<instance delay1="3000" delay2="3150" delay3="3300" name="waves" endsize1="75" endsize2="350" endsize3="175"/>
+			
+			<instance delay1="4000" delay2="4150" delay3="4300" name="waves" endsize1="100" endsize2="450" endsize3="150"/>
+
+			
+			<instance delay1="5000" delay2="5150" delay3="5300" name="waves" endsize1="175" endsize2="550" endsize3="175"/>
+			
+
+			<instance delay1="6000" delay2="6150" delay3="6300" name="waves" endsize1="150" endsize2="650" endsize3="200"/>
+			<instance delay1="7000" delay2="7150" delay3="7300" name="waves" endsize1="175" endsize2="750" endsize3="225"/>
+			<instance delay1="8000" delay2="8150" delay3="8300" name="waves" endsize1="200" endsize2="850" endsize3="250"/>		
+
+
+			<instance  name="sound_pulse" delay="0" volume=".2"/>
+			<instance  name="sound_pulse" delay="1000" volume=".2"/>
+			<instance  name="sound_pulse" delay="2000" volume=".3"/>
+			<instance  name="sound_pulse" delay="3000" volume=".4"/>
+			<instance  name="sound_pulse" delay="4000" volume=".5"/>
+			<instance  name="sound_pulse" delay="5000" volume=".6"/>
+			<instance  name="sound_pulse" delay="6000" volume=".7"/>
+			<instance  name="sound_pulse" delay="7000" volume=".8"/>
+			<instance  name="sound_pulse" delay="8000" volume=".9"/>				
+				
+				
+				
+				
+				
+				
+				
+				</model>
+				
+			<model	
+						directionalspace="local"
+						life="800"
+						
+						startscale="1.45"
+						endscale="3.9"
+						model="sphere/sphere.mdf"
+						anim="idle"
+						color="1 1 1"
+						yawspeed="180"
+						pitchspeed="-180"
+						startalpha="1"
+						midalpha=".9"
+						endalpha="0"
+						depthbias="-150"
+						
+						
+						position="0 0 0"
+				>
+				</model>
+				
+				
+				
+				
+			
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />		
+	</thread>
+
+</effect>

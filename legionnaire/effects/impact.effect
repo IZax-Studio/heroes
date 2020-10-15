@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="2">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume=".4"
+				sample="/heroes/hunter/sounds/impact_%.wav"
+			/>
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume=".5"
+				sample="\heroes\legionnaire\sounJP/170_0_Atk_HitF_0%.wav"
+			/>
+
+		
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".2"
+				sample="/heroes/devourer/sounds/move_%.wav"
+			/>
+			
+			<billboard			
+				life="400"
+				bone="_bone_centerofchest"
+				startsize="45"
+				endsize="100"
+				material="/shared/effects/materials/blood1.material"
+				startalpha="1"
+				endalpha="0"
+				depthbias="-30"
+				maxroll="360"
+				color=".3 .05 0"
+				position="0 0 5"
+			/>
+	
+			<simpleemitter
+         			bone="_bone_centerofchest"
+         			spawnrate="2000"
+				count="15"
+				minparticlelife="400"
+          			maxparticlelife="1200"
+          			gravity="13"
+				minspeed="150"
+         			maxspeed="550"
+          			drag=".15"
+				offsetsphere="15"
+          			material="/shared/effects/materials/blood1.material"
+         		>
+  				<particle 
+					minangle="0"
+					maxangle="360"			
+					color=".5 .2 0"
+					maxanglespeed="20"
+					minanglespeed="-120"
+					startsize="10"
+					minendsize="35"
+					maxendsize="45"			
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					endstickiness=".3"
+				/>
+  				<particle 
+					minangle="0"
+					maxangle="360"			
+					color=".3"
+					maxanglespeed="55"
+					minanglespeed="-55"
+					startsize="10"
+					minendsize="55"
+					maxendsize="85"			
+					startalpha="1"
+					midalpha=".8"
+					endalpha="0"
+				/>
+  				<particle 
+					minangle="0"
+					maxangle="360"			
+					color=".2"
+					maxanglespeed="10"
+					minanglespeed="-10"
+					startsize="30"
+					minendsize="5"
+					maxendsize="10"			
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+         			bone="_bone_centerofchest"
+         			spawnrate="2000"
+				count="25"
+				minparticlelife="400"
+          			maxparticlelife="1400"
+          			gravity="10"
+				minspeed="50"
+         			maxspeed="550"
+          			drag=".05"
+				offsetsphere="10"
+          			material="/shared/effects/materials/blood1.material"
+         		>
+  				<particle 
+					minangle="0"
+					maxangle="360"			
+					color=".5 .2 0"
+					maxanglespeed="10"
+					minanglespeed="-10"
+					size="2"
+					minscale="1"
+					maxscale="2"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="500"
+				bone="_bone_head"
+				spawnrate="5"
+				offsetsphere="30 30 30"
+				particlelife="3000"
+				depthbias="-50"
+			>
+				<particle>
+					<groundsprite						
+						material="/shared/effects/materials/blood_ground.material"						
+						life="2000"
+						size="5"			
+						minscale="1"
+						maxscale="6"
+						minyaw="-360"
+						maxyaw="360"
+						startcolor=".35 .2 .2"
+						endcolor=".2 .1 .1"
+						startalpha=".8"
+						midalpha=".8"
+						endalpha="0"
+					/>				
+				</particle>
+			</simpleemitter>
+			<billboard			
+				life="400"
+				bone="_bone_centerofchest"
+				startsize="20"
+				endsize="100"
+				material="/shared/effects/materials/whitedot.material"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				depthbias="-30"
+				startcolor=".75 .15 0"
+				midcolor=".65 .05 0"
+				endcolor="0"
+				position="0 0 0"
+			/>
+			
+			<billboard			
+				life="200"
+				bone="_bone_centerofchest"
+				startsize="10"
+				endsize="30"
+				material="/shared/effects/materials/whitedot.material"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				depthbias="-30"
+				startcolor=".75 .15 0"
+				midcolor=".5"
+				endcolor="0"
+				position="0 0 0"
+			/>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				count="70"
+				minparticlelife="200"
+				maxparticlelife="1000"			
+				gravity="-5"
+				minspeed="10"
+				maxspeed="50"
+				drag=".05"
+				material="/shared/effects/materials/spark_10.material"
+				offsetsphere="30"
+				minangle="70"
+				maxangle="90"
+				direction="0 0 1"
+				directionalspace="global"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startcolor="0"
+					midcolor=".75 .15 0"
+					endcolor="0 0 0"
+					midcolorpos=".3"
+					minstartsize="5"
+					maxstartsize="8"
+					endsize="0"
+				/>
+			</simpleemitter>
+		</particlesystem>
+<particlesystem name="system1" space="world" scale=".85">
+
+			<billboard
+				bone="_bone_centerofchest"
+				delay="100" life="500"
+				startcolor=".25 0 0"
+				endcolor="0 0 0"
+				size="500"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				directionalspace="local"
+				depthbias="-100"
+				minroll="-180"
+				maxroll="180"
+				rollspeed="-360"
+			/>
+			<billboard
+				bone="_bone_centerofchest"
+				delay="100" life="500"
+				startcolor=".5 0 0"
+				endcolor="0 0 0"
+				size="200"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				directionalspace="local"
+				depthbias="-100"
+				minroll="-180"
+				maxroll="180"
+				rollspeed="-360"
+			/>
+			<billboard
+				bone="_bone_centerofchest"
+				delay="100" life="500"
+				startcolor=".75 .5 0"
+				endcolor="0 0 0"
+				size="50"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				directionalspace="local"
+				depthbias="-100"
+				minroll="-180"
+				maxroll="180"
+				rollspeed="-360"
+			/>
+
+			<billboard
+				life="300"
+				position="0 0 45"
+				startalpha="0" midalpha=".5" endalpha="0" midalphapos=".4"
+				startsize="200" endsize="1100" scale=".7"
+				depthbias="-50"
+				startparam="1.5" endparam="0"
+				lockup="1"
+				pitch="90"
+				material="/shared/effects/materials/refract_ring.material"
+			/>
+			<template name="swordCrack">
+				<simpleemitter
+					bone="_bone_centerofchest"
+					life="100"
+					position="0 0 5"
+					count="1"
+					spawnrate="99999"
+					particlelife="850"
+				>
+					<particle anchor="0" pitchspeed="360">
+						<billboard
+							life="350"
+							bone="_bone_centerofchest"
+							material="crack_1_reveal.material"
+							color="1"
+							width="100" height="10"
+							size="200"
+							scale="{scale}"
+							yaw="{yaw}" pitch="{pitch}" roll="{roll}"
+							depthbias="-50"
+							startframe="1" midframe=".1" endframe="0.1"
+						/>
+						<billboard
+							delay="{duration}"
+							bone="_bone_centerofchest"
+							life="250"
+							material="crack_1_reveal.material"
+							color="1"
+							startwidth="80" midwidth="100" endwidth="160"
+							startheight="20" midheight="20" endheight="5"
+							startalpha="1" midalpha="1" endalpha="0" midalphapos=".6"
+							startsize="150" midsize="280" endsize="300"
+							scale="{scale}"
+							frame="0.1"
+							depthbias="-50"
+							yaw="{yaw}" pitch="{pitch}" roll="{roll}"
+						/>
+					</particle>
+				</simpleemitter>
+			</template>
+			<instance name="swordCrack" duration="250" scale="3" yaw="0" pitch="0" roll="60"/>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>

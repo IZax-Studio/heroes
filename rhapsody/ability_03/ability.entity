@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Rhapsody3"
+	
+	icon="../alt10/ability_03/icon.tga"
+	passiveeffect=""
+	
+	anim="ability_3"
+	casttime="0"
+	castactiontime="0"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="passive"
+
+>
+	<aura state="State_Rhapsody_Ability3" radius="500" targetscheme="ally_heroes" ignoreinvulnerable="true" />
+	
+	<altavatar key="Hero_Rhapsody.Alt2" modpriority="1"
+		passiveeffect="/heroes/rhapsody/alt2/ability_03/effects/sound_loop.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Rhapsody.Alt3" modpriority="1"
+		passiveeffect="/heroes/rhapsody/alt3/ability_03/effects/sound_loop.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Rhapsody.Alt5" modpriority="1"
+	>
+		<onlearn>
+			<pausevoiceovers duration="2000" />
+			<delayannouncer duration="2000" sourceonly="true"/>
+			<playeffect effect="../alt5/ability_03/effects/onlearn_sound.effect" target="source_entity" />
+		</onlearn>
+	</altavatar>
+
+	<altavatar key="Hero_Rhapsody.Alt7"
+		icon="../alt7/ability_03/icon.tga"
+	>
+		<modifier key="Alt7_Ability3_Upgrade"
+			icon="../alt7/ability_03/icon_upgrade.tga"
+		/>
+	</altavatar>
+
+	<altavatar key="Hero_Rhapsody.Alt10"
+		icon="../alt10/ability_03/icon.tga"
+	>
+	</altavatar>
+
+</ability>

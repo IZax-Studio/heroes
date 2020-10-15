@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" >
+			
+			<sound
+			    soundloop="true"
+				fadein="500"
+				fadeout="250"
+				linearfalloff="true" 
+				falloffstart="1300"
+				falloffend="1300"
+				volume=".7"
+				sample="/heroes/kane/s/Sk4_m.wav"
+			/>
+			
+						<sound
+			    soundloop="true"
+				fadein="500"
+				fadeout="250"
+				linearfalloff="true" 
+				falloffstart="1300"
+				falloffend="1300"
+				volume=".5"
+				sample="/heroes/kane/ability_04/sounds/state_loop.wav"
+			/>
+			
+			<light
+				position="0 0 100"
+				expirelife="200"
+				startcolor="2.5 .5 0"
+				endcolor="0"
+				falloffend="350"
+			/>
+			
+			<!-- darken surroundings -->
+			<template name="darkness">
+				<billboard
+					expirelife="500"
+					material="/shared/effects/materials/whitedot_blend.material"
+					color="0 0 0"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					size="2000"
+					startalpha=".16"
+					endalpha="0"
+					depthbias="{depthbias}"
+				/>
+			</template>
+			<instance name="darkness" depthbias="-5" />
+			<instance name="darkness" depthbias="-50" />
+			<instance name="darkness" depthbias="-100" />
+			
+			<!-- dust -->
+			<simpleemitter
+				spawnrate="4"
+				particlelife="1000"
+				inheritvelocity=".75"
+				drag="0.02"
+			>
+				<particle>
+					<simpleemitter
+						count="20"
+						minparticlelife="400"
+						maxparticlelife="600"
+						direction="0 0 1"
+						minangle="80"
+						maxangle="85"
+						minspeed="2000"
+						maxspeed="8000"
+						drag="0.01"
+						material="/shared/effects/materials/wave.material"
+					>
+						<particle
+							lockup="true"
+							lockright="true"
+							pitch="-90"
+							turn="1"
+							angle="-90"
+							startalpha="0"
+							midalpha="0.25"
+							endalpha="0"
+							startcolor="0"
+							midcolor=".06 .05 .04"
+							endcolor="0"
+							minsize="200"
+							maxsize="400"
+							minstartscale=".5"
+							maxstartscale="1"
+							minendscale="1.5"
+							maxendscale="2"
+							depthbias="-150"
+						/>
+					</simpleemitter>
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="4"
+				particlelife="1000"
+				inheritvelocity=".75"
+				drag="0.02"
+			>
+				<particle>
+					<billboard
+						maxdelay="50"
+						minlife="400"
+						maxlife="500"
+						material="/shared/effects/materials/twirl_03.material"
+						lockup="true"
+						lockright="true"
+						pitch="-90"
+						maxroll="360"
+						position="0 0 50"
+						size="60"
+						startscale="5"
+						minendscale="15"
+						maxendscale="20"
+						startcolor="0"
+						midcolor=".3 .25 .2"
+						endcolor="0"
+						depthbias="-50"
+					/>
+				</particle>
+			</simpleemitter>
+			
+			<!-- refract rings -->
+			<!--
+			<simpleemitter
+				spawnrate="3"
+				particlelife="1000"
+				inheritvelocity=".75"
+				drag="0.02"
+			>
+				<particle>
+					<billboard
+						maxdelay="200"
+						minlife="200"
+						maxlife="300"
+						material="/shared/effects/materials/refract_ring.material"
+						lockup="true"
+						lockright="true"
+						pitch="-90"
+						maxroll="360"
+						position="0 0 50"
+						size="60"
+						startscale="5"
+						minendscale="10"
+						maxendscale="15"
+						startparam="0"
+						midparam="0.05"
+						endparam="0"
+						depthbias="-50"
+					/>
+				</particle>
+			</simpleemitter>
+			-->
+			
+			<!-- main sphere -->
+			<model
+				life="250"
+				model="/shared/effects/models/sphere/model.mdf"
+				material="rim_gradient.material"
+				startscale="0"
+				endscale="3.5"
+				color=".5 .4 .3"
+			/>
+			<model
+				delay="250"
+				life="175"
+				loop="true"
+				model="/shared/effects/models/sphere/model.mdf"
+				material="rim_gradient.material"
+				startscale="3.5"
+				midscale="3.53"
+				endscale="3.5"
+				midscalepos=".8"
+				startcolor=".5 .4 .3"
+				midcolor=".5 .3 .1"
+				endcolor=".5 .4 .3"
+			/>
+			<model
+				life="250"
+				model="sphere/model.mdf"
+				startscale="0"
+				endscale="2.1"
+				color=".25 .2 .15"
+			/>
+			<model
+				delay="250"
+				life="175"
+				loop="true"
+				model="sphere/model.mdf"
+				startscale="2.1"
+				midscale="2.15"
+				endscale="2.1"
+				midscalepos=".8"
+				startcolor=".25 .2 .15"
+				midcolor=".25 .15 .05"
+				endcolor=".25 .2 .15"
+			/>
+			<model
+				delay="250"
+				life="175"
+				loop="true"
+				model="aura_arena/model.mdf"
+				scale="4.15"
+				color=".05"
+			/>
+			<model
+				delay="250"
+				life="175"
+				loop="true"
+				model="aura_arena/model.mdf"
+				yaw="180"
+				scale="4.15"
+				color=".05"
+			/>
+			
+			<!-- shields -->
+			<!--
+			<template name="shield_pylon">
+				<model
+					yaw="{angle}"
+				>
+					<model
+						position="0 200 0"
+						model="shield/model.mdf"
+						anim="idle"
+						scale="2.75"
+						alpha=".5"
+						color="2"
+					/>
+				</model>
+			</template>
+			<instance name="shield_pylon" angle="0" />
+			<instance name="shield_pylon" angle="60" />
+			<instance name="shield_pylon" angle="120" />
+			<instance name="shield_pylon" angle="180" />
+			<instance name="shield_pylon" angle="240" />
+			<instance name="shield_pylon" angle="300" />
+			-->
+			
+			<!-- lightning -->
+			<trackeremitter
+				targetposition="0 0 100"
+				tracktype="cgravity"
+				trackspeed="40000"
+				offsetsphere="0"
+				minspeed="16000"
+				maxspeed="20000"
+				drag="0.006"
+				minoffsetradial="50"
+				maxoffsetradial="350"
+				offsetdirection="0 0 1"
+				minoffsetangle="90"
+				maxoffsetangle="90"
+				direction="0 0 1"
+				angle="30"
+				spawnrate="10"
+				particlelife="1000"
+				distancelife="false"
+			>
+				<template name="lightning_trail">
+					<particle>
+						<trailemitter
+							mincount="2"
+							maxcount="8"
+							minlife="150"
+							maxlife="250"
+							spawnrate="80"
+							particlelife="400"
+							material="/shared/effects/materials/beam_04.material"
+							texposscale="1"
+							texpostime="100"
+							texstretchscale="0.0"
+							minparticlescale=".5"
+							maxparticlescale="1.75"
+							offsetsphere="30"
+							startparticlecolor="1"
+							midparticlecolor="1"
+							endparticlecolor="0"
+						>
+							<particle
+								size="40"
+								color="{color}"
+							/>
+						</trailemitter>
+					</particle>
+				</template>
+				<instance name="lightning_trail" color=".6 0 0" />
+				<instance name="lightning_trail" color="1" />
+			</trackeremitter>
+			
+			<!-- lightning -->
+			<!--
+			<trackeremitter
+				targetposition="0 0 100"
+				tracktype="cgravity"
+				trackspeed="70000"
+				offsetsphere="0"
+				minspeed="16000"
+				maxspeed="20000"
+				drag="0.0065"
+				minoffsetradial="50"
+				maxoffsetradial="300"
+				offsetdirection="0 0 1"
+				minoffsetangle="90"
+				maxoffsetangle="90"
+				direction="0 0 1"
+				angle="30"
+				spawnrate="20"
+				particlelife="1000"
+				distancelife="false"
+			>
+				<template name="lightning_trail">
+					<particle>
+						<trailemitter
+							minlife="50"
+							maxlife="100"
+							spawnrate="120"
+							particlelife="100"
+							material="/core/materials/effect_solid.material"
+							texposscale="0"
+							texstretchscale="1.0"
+							minparticlescale=".5"
+							maxparticlescale="1.5"
+							offsetsphere="30"
+						>
+							<particle
+								startsize="0"
+								minmidsize="2"
+								maxmidsize="5"
+								endsize="0"
+								startcolor="1"
+								endcolor="{color}"
+								framespeed="1"
+							/>
+						</trailemitter>
+					</particle>
+				</template>
+				<instance name="lightning_trail" color=".6 0 0" />
+				<instance name="lightning_trail" color=".4 0 0" />
+				<instance name="lightning_trail" color=".2 0 0" />
+			</trackeremitter>
+			-->
+			
+			
+			<!-- cracks -->
+			<model
+				maxyaw="360"
+			>
+				<groundsprite
+					life="300"
+					startframe="1"
+					endframe="0"
+					material="/shared/effects/materials/earth_cracks_overlay_reveal_2.material"
+					size="225"
+					directionalspace="local"
+					startalpha="1"
+					endalpha=".5"
+				/>
+				<groundsprite
+					delay="300"
+					expirelife="3000"
+					startalpha=".5"
+					endalpha="0"
+					material="/shared/effects/materials/earth_cracks_overlay_reveal_2.material"
+					size="225"
+					directionalspace="local"
+				/>
+			</model>
+			<!--
+			<groundsprite
+				expirelife="6000"
+				material="/shared/effects/materials/crater.material"
+				size="300"
+				startalpha=".75"
+				midalpha=".75"
+				endalpha="0"
+			/>
+			-->
+			<groundsprite
+				expirelife="10000"
+				material="/shared/effects/materials/ground_crater.material"
+				size="300"
+				startalpha=".75"
+				endalpha="0"
+			/>
+				<orbiteremitter
+				spawnrate="800"
+				position="0 0 0"
+				origin="50"
+				offset="30 100 200"
+				
+				startorbit="-1 0 0"
+				midorbit="-16"
+				endorbit="-.5"
+				midorbitpos=".6"
+				
+				cylindrical="true"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				material="sakura.material"
+			>
+				<particle
+					minyawspeed="-360"
+					maxyawspeed="360"
+					minrollspeed="-360"
+					maxrollspeed="360"
+					minpitchspeed="-360"
+					maxpitchspeed="360"
+					minsize="3"
+					maxsize="7"
+					startalpha="0"
+					midalpha="2"
+					endalpha="0"
+					color="1 0 0"
+				/>
+			</orbiteremitter>
+		
+			<simpleemitter
+				spawnrate="100"
+				expirelife="1000"
+				position="0 0 0"
+				minparticlelife="1500"
+				maxparticlelife="2500"
+				gravity="10"
+				minspeed="250"
+				maxspeed="550"
+				drag=".13"
+				offset="0 100 200"
+				offsetsphere="200"
+				depthbias="-10"
+				material="sakura.material"
+				collide="true"
+				friction="100"
+			>
+				<particle
+					minyawspeed="-360"
+					maxyawspeed="360"
+					minrollspeed="-360"
+					maxrollspeed="360"
+					minpitchspeed="-360"
+					maxpitchspeed="360"
+					minsize="2"
+					maxsize="6"
+					startalpha="0"
+					midalpha="2"
+					endalpha="0"
+					color="1 0 0"
+				/>
+			</simpleemitter>
+		</particlesystem>
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<camerashake2 scale="8" frequency="22" radius="1200" duration="400" />
+		<waitfordeath instance="instance0" />
+	</thread> 
+</effect>

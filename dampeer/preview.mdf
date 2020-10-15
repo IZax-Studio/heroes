@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="" file="model.model" type="K2">
+	<anim name="idle" clip="clips/Stand.clip" fps="25" loop="true" blendtime="250">
+
+	</anim>
+
+	
+</model>
+
+
+
+

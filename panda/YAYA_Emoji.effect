@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1.5">
+
+
+			<controller bone="_bone_overhead" directionalspace="global" pitch="-30" position="0 0 100" >
+				
+						
+						<simpleemitter
+							delay="00"
+							count="1"
+							particlelife="750"
+							material="/shared/effects/materials/corona_01.material"
+						>
+							<particle
+								startscale="0"
+								endscale=".75"
+								size="180"
+								angle="100"
+								startcolor="0"
+								midcolor=".75 .4 .125"
+								endcolor="0"
+								midcolorpos=".5"
+								anglespeed="-70"
+								anchor="1"
+							>
+								<billboard
+									position="110 0 0"
+									life="700"
+									startsize="20"
+									endsize="40"
+									startcolor=".75 .5 0"
+									midcolor=".75 .5 0"
+									endcolor="0"
+									midcolorpos=".25"
+									material="/shared/effects/materials/corona_01.material"
+								/>
+								<billboard
+									position="160 0 0"
+									life="700"
+									startsize="20"
+									endsize="40"
+									startcolor=".75 .5 0"
+									midcolor=".75 .5 0"
+									endcolor="0"
+									midcolorpos=".25"
+									scale=".5"
+									material="/shared/effects/materials/corona_01.material"
+								/>
+								<billboard
+									position="-100 0 0"
+									life="700"
+									startsize="20"
+									endsize="40"
+									startcolor=".75 .5 .1"
+									midcolor=".75 .5 .1"
+									endcolor="0"
+									midcolorpos=".25"
+									scale="2"
+									material="/shared/effects/materials/corona_01.material"
+								/>
+								<billboard
+									position="-150 0 0"
+									life="700"
+									startsize="20"
+									endsize="40"
+									startcolor=".75 .5 0"
+									midcolor=".75 .5 0"
+									endcolor="0"
+									midcolorpos=".25"
+									scale=".8"
+									material="/shared/effects/materials/corona_01.material"
+								/>
+							</particle>
+						</simpleemitter>
+					
+			</controller>
+
+
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+
+		<waitfordeath instance="instance0" />
+
+	</thread>
+</effect>
+

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system1" space="world" scale="1">
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="52"
+				count="4"
+				particlelife="300"
+				gravity="0"         	
+				drag=".1"
+				acceleration="0.0"
+				offsetsphere="30 30 30"
+				material="/shared/effects/materials/3d_slash.material"
+         	>
+				<particle 
+					size="120"
+					startframe="0.0"
+					endframe="1.0"
+					color="1 .65 .65"
+					minyaw="-360"
+					maxyaw="360"
+					roll="180"
+					lockup="1"
+					depthbias="30"
+				/>
+				
+				<particle 
+					size="120"
+					startframe="0.0"
+					endframe="1.0"
+					color="1 .85 .85"
+					minyaw="-360"
+					maxyaw="360"
+					roll="180"
+					lockup="1"
+					depthbias="30"
+				/>
+
+				<particle 
+					size="120"
+					startframe="0.0"
+					endframe="1.0"
+					color="1 .35 .35"
+					minyaw="-360"
+					maxyaw="360"
+					roll="180"
+					lockup="1"
+					depthbias="30"
+				/>
+			</simpleemitter>	
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance1" particlesystem="system1"/>
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>

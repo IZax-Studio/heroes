@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="THINT's Work" file="model.model" type="K2">
+
+	<anim name="idle" clip="clips_new/default_2.clip" loop="true" />
+	<anim name="preview" clip="clips_new/bored_2.clip" loop="true" />
+	
+	<anim name="portrait" clip="clips_new/bored_2.clip" loop="true"/>
+	
+	<anim name="taunt_1" clip="clips_new/ability_2.clip"/>
+
+	<anim name="item_1" clip="clips_new/ability_2.clip"/>
+		
+	<anim name="ability_1" clip="clips_new/ability_1_2.clip" fps="22">
+		<frameevent frame="4" cmd="PlaySoundLinear sounds_Sinon/167_1_Q_Foley.wav 400 1800 1"/>
+	<frameevent frame="10" cmd="PlaySoundLinear sounds_Sinon/167_1_E1_Fire.wav 400 1800 1"/>
+	<frameevent frame="8" cmd="PlaySoundLinear sounds_Sinon/dazhao_1.wav 400 1800 .3"/>
+	</anim>
+	
+	<anim name="ability_1_mag" clip="clips_new/ability_1_2.clip">
+		<frameevent frame="7" cmd="PlaySoundLinear sounds/red_attack_%.wav 400 1800 1"/>
+		<frameevent frame="7" cmd="PlaySoundLinear ability_01/sounds/cast_red2.wav 400 1800 1"/>
+	</anim>
+	
+	<anim name="ability_2" clip="clips_new/ability_2.clip">
+		<frameevent frame="7" cmd="PlaySoundLinear sounds/blue_attack_%.wav 400 1800 .4"/>
+	</anim>
+	
+	<anim name="ability_2_slow" clip="clips_new/ability_2.clip">
+	
+		<frameevent frame="7" cmd="PlaySoundLinear ability_02/sounds/cast_red_%.wav 400 2500 1"/>
+	</anim>
+	
+	<anim name="ability_3" clip="clips_new/default_2.clip" numframes="1">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/move_%.wav 0 800 .50"/>
+		<frameevent frame="1" cmd="PlaySoundLinear ability_03/sounds/vox_gunchange_%.wav 0 1800 .50"/>
+	</anim>
+	
+	<anim name="ability_4" clip="clips_new/ability_4.clip"/>
+	
+	<anim name="attack_1" clip="clips_new/attack_1_2.clip">
+		<frameevent frame="7" cmd="PlaySoundLinear /heroes/engineer/sounds/attack.wav 400 1800 .4"/>
+	</anim>
+	
+	<anim name="attack_2" clip="clips_new/attack_1_2.clip">
+		<frameevent frame="7" cmd="PlaySoundLinear /heroes/engineer/sounds/attack.wav 400 1800 .4"/>
+	</anim>
+	
+	<anim name="attack_elec" clip="clips_new/attack_1_2.clip">
+		<frameevent frame="0" cmd="StartEffect projectile/effects/projectile_electrical_charge.effect 2"/>
+		<frameevent frame="11" cmd="StopEffect 2"/>
+		<frameevent frame="15" cmd="StartEffect projectile/effects/projectile_electrical_fire.effect 3"/>
+		<endevent cmd="StopEffect 2"/>
+		<endevent cmd="StopEffect 3"/>
+	</anim>
+
+	<anim name="attack_1_red" clip="clips_new/attack_1_2.clip"/>
+	
+	<anim name="walk_1" clip="clips_new/walk_2.clip" fps="30" loop="true">
+		<frameevent frame="5" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="15" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="27" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="37" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		
+		<frameevent frame="5" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="15" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="27" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="37" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+	</anim>
+
+	<anim name="bored_1" clip="clips_new/bored_2.clip" fps="30" loop="true"/>
+	
+	<anim name="death_1" clip="clips_new/death_1.clip" fps="30" loop="true" loopbackframe="-1">
+	</anim>
+
+	<anim name="knock_1" clip="clips_new/knock_1.clip" loop="true" loopbackframe="-1"/>
+	
+</model>

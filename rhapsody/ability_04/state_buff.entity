@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Rhapsody_Ability4_Buff"
+	
+	icon="../alt10/ability_04/icon.tga"
+	passiveeffect="effects/state.effect"
+>
+	<onattackingdamageevent>
+		<applystate name="State_Rhapsody_Ability4_Assist" target="target_entity" duration="100" inflictor="this_inflictor_entity" />
+	</onattackingdamageevent>
+	
+	<ondamaged priority="5">
+		<damageeffecttype effecttype="Magic" >
+			<scaledamage scale="0.0" />
+		</damageeffecttype>
+		<damageeffecttype effecttype="SuperiorMagic" >
+			<scaledamage scale="0.0" />
+		</damageeffecttype>
+		<damageeffecttype effecttype="Physical" >
+			<scaledamage scale="0.0" />
+		</damageeffecttype>
+		<damageeffecttype effecttype="SuperiorPhysical" >
+			<scaledamage scale="0.0" />
+		</damageeffecttype>
+	</ondamaged>
+	
+	<altavatar key="Hero_Rhapsody.Alt" modpriority="1"
+		passiveeffect="/heroes/rhapsody/alt/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Rhapsody.Alt3" modpriority="1"
+		passiveeffect="/heroes/rhapsody/alt3/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Rhapsody.Alt4" modpriority="1"
+		passiveeffect="/heroes/rhapsody/alt4/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Rhapsody.Alt5" modpriority="1"
+		passiveeffect="/heroes/rhapsody/alt5/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Rhapsody.Alt6" modpriority="1"
+		passiveeffect="/heroes/rhapsody/alt6/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Rhapsody.Alt7" modpriority="1"
+		passiveeffect="/heroes/rhapsody/alt7/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Rhapsody.Alt8" modpriority="1"
+		passiveeffect="/heroes/rhapsody/alt8/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Rhapsody.Alt9" modpriority="1"
+		passiveeffect="/heroes/rhapsody/alt9/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Rhapsody.Alt10" modpriority="1"
+	    icon="../alt10/ability_04/icon.tga"
+		passiveeffect="/heroes/rhapsody/alt10/ability_04/effects/state.effect"
+	/>
+	
+</state>

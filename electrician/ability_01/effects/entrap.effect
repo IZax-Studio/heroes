@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+
+		<particlesystem name="system1" space="world" scale=".75">
+			<sound
+				soundloop="true"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2000"
+				volume=".6"
+				fadein="100"
+				fadeout="400"
+				sample="../sounds/state.wav"
+			/>
+			<template name="sparks">
+				<model
+					owner="{owner}"
+					bone="_bone_overhead"
+					name="ring"
+					model="../../ability_04/effects/manaburn1_sphere/shield.mdf"
+					anim="idle"
+					yawspeed="0"
+					scale="1.2"
+					color=".0 .2 .2"
+				/>
+				<!--blueSmoke-->
+				<simpleemitter
+					owner="{owner}"
+					timenudge="1000"	
+						spawnrate="15"				
+					minparticlelife="1500"
+						maxparticlelife="3000"
+					offsetsphere="20 20 0"
+					bone="_bone_overhead"
+					material="/shared/effects/materials/phantom_smoke_17.material"
+				>
+					<particle 
+						maxangle="360"			
+						minanglespeed="-6"
+						maxanglespeed="6"
+						startcolor="0 0 0"
+						midcolor=".02 .035 .0"
+						endcolor="0 0 0"
+						startalpha=".5 1 1"
+						endalpha="0 0 0"
+						startsize="0"
+						endsize="350"
+						endanchor="0"
+						stickiness="1"
+					/>
+				</simpleemitter>
+				<!--blueBoltSmoke-->
+				<simpleemitter
+					owner="{owner}"
+					timenudge="1000"
+						spawnrate="15"
+					minparticlelife="1500"
+						maxparticlelife="3000"
+					offsetsphere="110 110 110"
+					bone="_bone_overhead"
+					material="/shared/effects/materials/lightning_10.material"
+				>
+					<particle 
+						maxangle="360"
+						minanglespeed="-6"
+						maxanglespeed="6"
+						startcolor="0 0 0"
+						midcolor=".00 .03 .03"
+						endcolor="0 0 0"
+						startalpha=".5 1 1"
+						endalpha="0 0 0"
+						startsize="0"
+						endsize="300 0 0"
+						endanchor="0"
+						stickiness="1"
+					/>
+				</simpleemitter>
+				<!-- white to light -->
+				<simpleemitter
+					owner="{owner}"
+					spawnrate="50"
+					particlelife="300"
+					gravity="0"
+					speed="70"
+					drag="0"
+					acceleration="0"
+					bone="_bone_overhead"
+					material="/shared/effects/materials/lightning_02.material"
+					offsetsphere="1 1 1"
+					minangle="360"
+					maxangle="180"
+					direction="1 0 0"
+					offsetdirection="0 0 0"
+					offsetradial="0 0 0"
+				>
+					<particle 
+						minangle="0"
+						maxangle="360"
+						minanglespeed="50"
+						maxanglespeed="150"
+						startcolor=".5 .5 1"
+						midcolor="0 .1 .1"
+						endcolor="0 0 0"
+						midcolorpos=".8"
+						startframe="0"
+						endframe="1"
+						startsize="2"
+						midsize="60"
+						endsize="100"
+						startalpha="0"
+						midalpha=".3"
+						endalpha="0"
+						midalphapos=".5"
+						startstickiness="0"
+						endstickiness="0"
+					/>
+				</simpleemitter>
+				<!--white lightning -->
+				<simpleemitter
+					owner="{owner}"
+					spawnrate="50"
+					maxparticlelife="500"
+					gravity="0"
+					speed="70"
+					drag="0"
+					acceleration="0"
+					bone="_bone_overhead"
+					material="/shared/effects/materials/lightning_02.material"
+					offsetsphere="25"
+					minangle="360"
+					maxangle="180"
+					direction="1 0 0"
+					offsetdirection="0 0 0"
+				>
+					<particle 
+						minangle="0"
+						maxangle="360"
+						minanglespeed="50"
+						maxanglespeed="150"
+						startcolor=".5 .5 1"
+						midcolor=".5 .5 1"
+						endcolor="0 0 0"
+						midcolorpos=".8"
+						startsize="2"
+						midsize="20"
+						maxendsize="30"
+						startstickiness="0"
+						endstickiness="1"
+						flare="1"
+					/>
+				</simpleemitter>
+			</template>
+			
+			<instance name="sparks" owner="target"/>
+			<instance name="sparks" owner="source"/>
+			
+		</particlesystem>
+		<particlesystem name="bridge" space="world" scale=".75">
+
+
+			
+
+			<beam
+				delay="100"
+				owner_a="target"
+				owner_b="source"
+				size="75"
+				color="0 .1 .5"
+				
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				bone_a="_bone_overhead"
+				bone_b="_bone_overhead"
+				startframe=".6"
+				framespeed="5"
+			/>
+
+			
+			<beam
+				delay="100"
+				owner_a="target"
+				owner_b="source"
+				size="75"
+				color="0 .1 .3"
+				
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				bone_a="_bone_overhead"
+				bone_b="_bone_overhead"
+				startframe="0"
+				framespeed="4"
+			/>		
+
+
+			<groundsprite
+				life="300"
+				material="/shared/effects/materials/starlight.material"
+				position="0 0 0"
+				startsize="0"				
+				endsize="65"
+				midsizepos=".5"
+			
+				
+				color=".0 .3 .5"
+
+				midcolorpos=".2"
+				minangle="0"
+				maxangle="0"
+				angles="0 0 0"
+				
+			/>
+
+			<groundsprite
+				delay="300"
+				expirelife="1000"
+				material="/shared/effects/materials/starlight.material"
+				position="0 0 0"
+				startsize="65"				
+				endsize="0"
+				midsizepos=".5"
+				color=".0 .3 .5"
+
+				midcolorpos=".2"
+				minangle="0"
+				maxangle="0"
+				angles="0 0 0"
+				
+			/>
+
+			
+
+			<simpleemitter
+				spawnrate="50"
+				expirelife="1000"
+				startparticlecolor="1 1 1"
+				endparticlecolor="1 1 1"
+				bone="_bone_centerofchest"
+				maxparticlelife="500"
+				minparticlelife="400"
+							
+				gravity="-22"
+				speed="25"
+				drag=".2"
+				acceleration="1"
+				position="0 0 0"
+
+
+				material="/shared/effects/materials/neb_add.material"
+				offsetsphere="40 40 40"
+
+				direction="0 0 0"
+
+			>
+
+				<particle 
+					minangle="90"
+					maxangle="360"
+					minanglespeed="60"
+					maxanglespeed="100"
+					startcolor="0 0 0"
+					midcolor=".0 1 1"
+					endcolor="0 0 0"
+					midcolorpos=".5"
+
+					startframe="0"
+					endframe="1"
+
+					startsize="15"
+					midsize="50"
+					endsize="70"
+
+					midsizepos=".3"
+
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".6"
+					startstickiness="0"
+					endstickiness="0"
+				/>
+			</simpleemitter>
+
+
+			<simpleemitter
+				spawnrate="60"
+				expirelife="1000"
+				startparticlecolor="1 1 1"
+				endparticlecolor="1 1 1"
+				
+				maxparticlelife="500"
+				minparticlelife="400"
+							
+				minspeed="-50"
+				maxspeed="51"
+				
+				acceleration="1"
+				position="0 0 0"
+
+				minangle="0"
+				maxangle="0"
+				material="/shared/effects/materials/electric_impact_add.material"
+				
+				offsetsphere=" 0 0 180"
+
+				direction="0 0 1"
+
+			>
+
+				<particle 
+
+					minangle="-360"
+					maxangle="360"
+					anglespeed="220"
+					lockup="1"
+					pitch="-90"
+					startcolor="0 0 0"
+					midcolor="0 .3 .4"
+					endcolor="0 0 0"
+					midcolorpos=".5"
+
+		
+
+					startsize="60"
+					midsize="180"
+					endsize="60"
+
+					midsizepos=".3"
+
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".6"
+					startstickiness="0"
+					endstickiness="0"
+				/>
+			</simpleemitter>
+
+			
+			
+			<orbiteremitter
+				expirelife="500"
+				startparticlecolor="1 1 1"
+				endparticlecolor="0 0 0"
+				minspawnrate="60"
+				maxspawnrate="81"
+				particlelife="2000"
+				origin="0 0 -50" 
+				orbit="5 0 1" 
+				direction="0 0 1" 
+				offset="0 60 0"
+				cylindrical="true"
+				position="0 0 60"				
+				material="/shared/effects/materials/voodoo_03.material"
+				
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-200"
+					maxanglespeed="200"					
+					color="0 1 1"
+					startalpha="0"
+					minsize="10"
+					maxsize="42"
+					
+					heightdistor="1"
+					
+	
+					
+				/>
+			</orbiteremitter>			
+			
+			
+		</particlesystem>
+		<particlesystem name="system3" space="world" scale="2">
+			
+			<sound
+			    randomloop="true"
+				soundloop="true"
+				fadein="500"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume="1"
+				sample="../../sounds/ab3.wav"
+			/>
+			
+
+			
+
+			
+			<!-- ground glows -->
+			<trackeremitter
+				spawnrate="5"
+				bone="_bone_overhead"
+				owner="source"
+				targetowner="target"
+				tracktype="lerp"
+				trackspeed="1"
+				minspeed="400"
+				maxspeed="500"
+				direction="0 0 1"
+				angle="0"
+				particlelife="2000"
+				distancelife="true"
+				startparticlescale="1"
+				endparticlescale="0"
+				expirelife="200"
+				depthbias="-50"
+				offsetsphere="40"
+			>
+				<particle
+					turn="1"
+					startscale="2"
+					endscale="1"
+					midscalepos=".4"
+				>
+					<groundsprite
+						minlife="600"
+						maxlife="800"
+						material="/shared/effects/materials/whitedot_ground.material"
+						width="50"
+						height="120"
+						startcolor="-.2 .1 .2"
+						midcolor="0 .1 .1"
+						endcolor="0"
+						midcolorpos=".7"
+						directionalspace="local"
+						startscale="0"
+						midscale="1"
+						endscale="1"
+						midscalepos=".2"
+					/>
+				</particle>
+			</trackeremitter>
+
+			<!-- Main beam -->
+			<trackertrailemitter
+				timenudge="1000"
+				spawnrate="10"
+				bone="_bone_overhead"
+				owner="source"
+				targetbone="_bone_overhead"
+				targetowner="target"
+				tracktype="lerp"
+				trackspeed="1"
+				speed="400"
+				particlelife="1000"
+				distancelife="true"
+				material="\heroes\witch_slayer\alt6\ability_03\effects/link_main.material"
+				texposscale="0"
+				texstretchscale="1"
+				startparticlescale="1"
+				endparticlescale="0"
+				expirelife="200"
+			>
+				<particle
+					startscale="3"
+					midscale="6"
+					endscale="0"
+					midscalepos=".4"
+					startcolor="-.1"
+					midcolor="0 .5 1"
+					endcolor="0 .2 .2"
+					midcolorpos=".2"
+				/>
+			</trackertrailemitter>
+
+			<!-- Dark inner beam -->
+			<trackertrailemitter
+				timenudge="1000"
+				spawnrate="10"
+				bone="_bone_overhead"
+				owner="source"
+				targetbone="_bone_overhead"
+				targetowner="target"
+				tracktype="lerp"
+				trackspeed="1"
+				speed="400"
+				particlelife="1000"
+				distancelife="true"
+				material="/shared/effects/materials/mysticenergy.material"
+				texposscale="0"
+				texstretchscale="1"
+				startparticlescale="1"
+				endparticlescale="0"
+				expirelife="200"
+			>
+				<particle
+					startscale="0"
+					midscale="10"
+					endscale="10"
+					midscalepos=".4"
+					startcolor="0 .5 1"
+					midcolor="0 .5 1"
+					endcolor="0 .5 1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="1"
+					midalphapos=".1"
+				/>
+			</trackertrailemitter>
+
+			<!-- swirly trails around the beam -->
+			<trackeremitter
+				spawnrate="25"
+				bone="_bone_overhead"
+				owner="source"
+			
+		
+				
+				minspeed="300"
+				maxspeed="400"
+				direction="0 0 1"
+				angle="90"
+				particlelife="1500"
+				distancelife="true"
+				startparticlescale="1"
+				endparticlescale="0"
+				expirelife="200"
+			>
+				<particle
+					minyawspeed="-750"
+					maxyawspeed="750"
+					minstartscale=".5"
+					maxstartscale="2"
+					minmidscale=".25"
+					maxmidscale="2.25"
+					minendscale="0"
+					maxendscale=".25"
+				>
+					<billboard
+						maxroll="360"
+						position="10 0 0"
+						life="1000"
+						material="/shared/effects/materials/flare_05.material"
+						size="20"
+						startcolor=".2 .8 1"
+						midcolor=".2 .6 .8"
+						endcolor="0"
+						midcolorpos=".8"
+						directionalspace="local"
+						startscale="0"
+						minscale="1"
+						maxscale="2"
+						midscalepos=".2"
+					/>
+					<trailemitter
+						life="1000"
+						position="10 0 0"
+						spawnrate="30"
+						particlelife="400"
+						material="/shared/effects/materials/beam_05.material"
+						texposscale="0"
+						texstretchscale="1"
+						startparticlecolor="-.2"
+						midparticlecolor="0 1 1"
+						endparticlecolor="0 .5 .8"
+						midparticlecolorpos=".2"
+						framespeed="1"
+					>
+						<particle
+							size="16"
+							startcolor="0"
+							midcolor="2"
+							endcolor="0"
+						/>
+					</trailemitter>
+					
+					<simpleemitter
+						minspawnrate="10"
+						maxspawnrate="30"
+						minparticlelife="600"
+						maxparticlelife="1000"
+						material="/shared/effects/materials/abstract_reveal_nomips.material"
+						gravity="10"
+						inheritvelocity=".1"
+						drag="0.02"
+						maxspeed="20"
+					>
+						<template name="glowy_particle" >
+							<particle
+								maxangle="360"
+								startframe="1"
+								midframe=".2"
+								endframe="1"
+								minsize="2"
+								maxsize="3"
+								startcolor="2"
+								endcolor="{color}"
+							>
+								<billboard
+									life="600"
+									material="/shared/effects/materials/whitedot.material"
+									startcolor="0"
+									endcolor="{color}"
+									midcolorpos=".75"
+									startsize="16"
+									endsize="0"
+								/>
+							</particle>
+						</template>
+						<instance name="glowy_particle" color=".125 .25 .5" />
+						<instance name="glowy_particle" color=".2 .4 .5" />
+						<instance name="glowy_particle" color=".1 .5 .5" />
+					</simpleemitter>
+					
+				</particle>
+			</trackeremitter>
+
+			
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="bridge" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<spawnparticlesystem instance="instance3" particlesystem="system3" />
+		  <spawnmodifier instance="instance2" modifier="modifier0"/> 
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />	
+		<waitfordeath instance="instance2" />	
+		<waitfordeath instance="instance3" />	
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="/heroes/chronos/alt2/black.model" med="/heroes/chronos/alt2/black.model" low="/heroes/chronos/alt2/black.model" >
+	
+	<anim name="idle" clip="/heroes/chronos/alt2/idle.clip" fps="550" loop="true"/>
+	
+	<anim name="ability_4" clip="/heroes/chronos/alt2/ability_4.clip" fps="550">
+	<frameevent frame="1" cmd="PlaySoundLinear sa4.ogg 0 1300 .8"/>
+	</anim>
+
+	<anim name="idle2" clip="/heroes/chronos/alt2/idle.clip" fps="550" loop="true"/>
+	</model>

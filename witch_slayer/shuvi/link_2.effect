@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="cyclone" deferred="true" useentityeffectscale="1">
+	<definitions>
+
+		<particlesystem name="system0" space="entity" scale=".9">
+
+			<model
+				bone="_bone_lefthand"
+				model="/heroes/andromeda/ability_03/effects/orbit.mdf"
+				anim="idle"
+				scale=".5"
+				roll="45"
+				yaw="80"
+				position="0 0 20"
+			>		
+				<model
+					bone="_bone_fx"
+					model="/shared/models/invis.mdf"
+					anim="idle"
+					scale=".85"
+					color="0 .5 1"
+					alpha=".5"
+					roll="90"
+					position="0 0 0"
+				/>
+			
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="10"
+					particlelife="650"
+					texpostime="650"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/soul_projectile3.material"
+				>
+					<particle
+						color="0 .5 1"
+						endcolor="0 0 0"
+						startsize="50"
+						endsize="0"
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="10"
+					particlelife="500"
+					texpostime="500"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/arrow_trail.material"
+				>
+					<particle
+						color="0 .2 .5"
+						endcolor="0 0 0"
+						startsize="7"
+						endsize="0"
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="10"
+					particlelife="250"
+					texpostime="250"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/arrow_trail.material"
+				>
+					<particle
+						color="0 .25 1"
+						endcolor="0 0 0"
+						startsize="20"
+						endsize="0"
+					/>
+				</trailemitter>
+				
+				<billboard
+					bone="_bone_fx"
+					material="/shared/effects/materials/star_04.material"
+					color="0 .5 1"
+					scale="2"
+					depthbias="-25"
+				/>
+			</model>
+		
+			<model
+				bone="_bone_lefthand"
+				model="/heroes/andromeda/ability_03/effects/orbit.mdf"
+				anim="idle"
+				scale=".5"
+				pitch="45"
+				position="0 0 20"
+			>	
+				<model
+					bone="_bone_fx"
+					model="/shared/models/invis.mdf"
+					anim="idle"
+					scale=".85"
+					color="0 .5 1"
+					alpha=".5"
+					roll="90"
+					position="0 0 0"
+				/>
+			
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="10"
+					particlelife="650"
+					texpostime="650"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/soul_projectile3.material"
+				>
+					<particle
+						color="0 .5 1"
+						endcolor="0 0 0"
+						startsize="50"
+						endsize="0"
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="10"
+					particlelife="500"
+					texpostime="500"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/arrow_trail.material"
+				>
+					<particle
+						color="0 .2 .5"
+						endcolor="0 0 0"
+						startsize="7"
+						endsize="0"
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="10"
+					particlelife="250"
+					texpostime="250"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/arrow_trail.material"
+				>
+					<particle
+						color="0 .25 1"
+						endcolor="0 0 0"
+						startsize="20"
+						endsize="0"
+					/>
+				</trailemitter>
+				
+				<billboard
+					bone="_bone_fx"
+					material="/shared/effects/materials/star_04.material"
+					color="0 .5 1"
+					scale="2"
+					depthbias="-25"
+				/>
+			</model>
+
+			
+			<model
+				bone="_bone_lefthand"
+				model="/heroes/andromeda/ability_03/effects/orbit.mdf"
+				anim="idle"
+				scale=".5"
+				roll="-45"
+				yaw="180"
+				position="0 0 20"
+				lockup="1"
+			>
+				<model
+					bone="_bone_fx"
+					model="/shared/models/invis.mdf"
+					anim="idle"
+					scale=".85"
+					color="0 .5 1"
+					alpha=".5"
+					roll="90"
+					position="0 0 0"
+				/>
+			
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="10"
+					particlelife="650"
+					texpostime="650"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/soul_projectile3.material"
+				>
+					<particle
+						color="0 .5 1"
+						endcolor="0 0 0"
+						startsize="50"
+						endsize="0"
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="10"
+					particlelife="500"
+					texpostime="500"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/arrow_trail.material"
+				>
+					<particle
+						color="0 .2 .5"
+						endcolor="0 0 0"
+						startsize="7"
+						endsize="0"
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="10"
+					particlelife="250"
+					texpostime="250"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/arrow_trail.material"
+				>
+					<particle
+						color="0 .25 1"
+						endcolor="0 0 0"
+						startsize="20"
+						endsize="0"
+					/>
+				</trailemitter>
+				
+				<billboard
+					bone="_bone_fx"
+					material="/shared/effects/materials/star_04.material"
+					color="0 .5 1"
+					scale="2"
+					depthbias="-25"
+				/>
+			</model>
+			<model
+				bone="_bone_centerofchest"
+				model="/heroes/andromeda/ability_03/effects/orbit.mdf"
+				anim="idle"
+				scale="1.2"
+				roll="-90"
+				
+				position="0 0 -30"
+				lockup="1"
+			>
+				<model
+					bone="_bone_fx"
+					model="/shared/models/invis.mdf"
+					anim="idle"
+					scale=".85"
+					color="0 .5 1"
+					alpha=".5"
+					roll="90"
+					position="0 0 0"
+				/>
+			
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="10"
+					particlelife="650"
+					texpostime="650"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/soul_projectile3.material"
+				>
+					<particle
+						color="0 .5 1"
+						endcolor="0 0 0"
+						startsize="50"
+						endsize="0"
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="10"
+					particlelife="500"
+					texpostime="500"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/arrow_trail.material"
+				>
+					<particle
+						color="0 .2 .5"
+						endcolor="0 0 0"
+						startsize="7"
+						endsize="0"
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="10"
+					particlelife="250"
+					texpostime="250"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/arrow_trail.material"
+				>
+					<particle
+						color="0 .25 1"
+						endcolor="0 0 0"
+						startsize="20"
+						endsize="0"
+					/>
+				</trailemitter>
+				
+				<billboard
+					bone="_bone_fx"
+					material="/shared/effects/materials/star_04.material"
+					color="0 .5 1"
+					scale="2"
+					depthbias="-25"
+				/>
+			</model>
+			<model
+				bone="_bone_centerofchest"
+				model="/heroes/andromeda/ability_03/effects/orbit.mdf"
+				anim="idle"
+				scale="1.2"
+				roll="90"
+				yaw="-180"
+				position="0 0 -30"
+				lockup="1"
+			>
+				<model
+					bone="_bone_fx"
+					model="/shared/models/invis.mdf"
+					anim="idle"
+					scale=".85"
+					color="0 .5 1"
+					alpha=".5"
+					roll="90"
+					position="0 0 0"
+				/>
+			
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="10"
+					particlelife="650"
+					texpostime="650"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/soul_projectile3.material"
+				>
+					<particle
+						color="0 .5 1"
+						endcolor="0 0 0"
+						startsize="50"
+						endsize="0"
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="10"
+					particlelife="500"
+					texpostime="500"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/arrow_trail.material"
+				>
+					<particle
+						color="0 .2 .5"
+						endcolor="0 0 0"
+						startsize="7"
+						endsize="0"
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					bone="_bone_fx"
+					spawnrate="10"
+					particlelife="250"
+					texpostime="250"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/arrow_trail.material"
+				>
+					<particle
+						color="0 .25 1"
+						endcolor="0 0 0"
+						startsize="20"
+						endsize="0"
+					/>
+				</trailemitter>
+				
+				<billboard
+					bone="_bone_fx"
+					material="/shared/effects/materials/star_04.material"
+					color="0 .5 1"
+					scale="2"
+					depthbias="-25"
+				/>
+			</model>
+		</particlesystem>
+
+		<particlesystem name="system1" space="world" scale=".2" >
+
+					<model
+				bone="_bone_lefthand"
+				life="150"
+				position="0 0 0"
+				model="/heroes/riftmage/ability_04/effects/sphere/model.mdf"
+				material="/heroes/sapphire/ability_02/effects/sphere/material2.material"
+				anim="idle"
+				startscale="1"
+				endscale="0"
+				startalpha=".5"
+				endalpha="0"
+				color="0 0 1"
+			>
+			</model>
+			<billboard
+				bone="_bone_lefthand"
+				life="150"
+				material="/shared/effects/materials/corona_01.material"
+				startsize="40"
+				endsize="140"
+				startcolor="0 .6 1"
+				endcolor="0"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".65"
+				position="0 0 -10"
+			/>
+			
+			
+			
+			<billboard
+				delay="140"
+				bone="_bone_lefthand"
+				expirelife="150"
+				material="/shared/effects/materials/corona_01.material"
+				size="136"
+				startcolor="0 .6 1"
+				endcolor="0"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".65"
+				position="0 0 90"
+			/>
+			<model
+				delay="140"
+				bone="_bone_lefthand"
+				expirelife="150"
+				position="0 0 90"
+				model="/heroes/riftmage/ability_04/effects/sphere/model.mdf"
+				material="/heroes/sapphire/ability_02/effects/sphere/material2.material"
+				anim="idle"
+				startscale="1"
+				endscale=".5"
+				startalpha=".7"
+				endalpha="0"
+				color="0 0 1"
+			>
+			</model>
+      </particlesystem>
+	<particlesystem name="system3" space="entity" scale=".9">
+	
+					
+			<template name="ball_of_fire">
+				<trailemitter
+					bone="_bone_lefthand"
+					spawnrate="10"
+					particlelife="400"
+					texpostime="500"
+					texposscale="0.0"
+					texstretchscale=".4"
+					material="/shared/effects/materials/light_trail.material"
+					life="1600"
+				>
+					<particle
+						startcolor=".4 .1 1"
+						midcolor="1 0 .1"
+						endcolor="0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".075"
+						startsize="5"
+						midsize="15"
+						endsize="5"
+						midsizepos="0.2"
+				 />
+				</trailemitter>
+			
+				<trailemitter
+					bone="_bone_lefthand"
+					spawnrate="15"
+					particlelife="500"
+					texpostime="750"
+					texposscale="0.0"
+					texstretchscale=".4"
+					material="/shared/effects/materials/light_trail.material"
+					direction="0 0 1"
+					speed="50"
+					angle="0"
+					drag="0.02"
+					life="1600"
+				>
+					<particle
+						startcolor="0"
+						midcolor="0 .5 1"
+						endcolor="0 0 0"
+						midcolorpos=".05"
+						startsize="5"
+						midsize="10"
+						endsize="10"
+						midsizepos=".1"
+				 />
+				</trailemitter>
+			</template>
+			
+			<trackeremitter	
+				bone="_bone_lefthand"
+				position="0 0 20"
+				targetbone="_bone_lefthand"
+				targetposition="0 0 20"
+				inheritvelocity="0.25"
+				tracktype="distance"
+				trackspeed="3" 
+				spawnrate="100"
+				particlelife="500"
+				offsetsphere="50"
+				speed="150"
+				direction="0 0 1"
+				yawspeed="500"
+			>
+				<particle 
+					startsize="4"
+					endsize="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".1"
+					maxangle="360"
+					minscale=".1"
+					maxscale=".6"
+					color=".2 .5 1"					
+				>
+					<instance name="ball_of_fire"/>
+				</particle>
+			</trackeremitter>
+			
+			<trackeremitter	
+				bone="_bone_lefthand"
+				position="0 0 50"
+				targetposition="0 0 50"
+				inheritvelocity="0.25"
+				tracktype="distance"
+				trackspeed="3" 
+				spawnrate="50"
+				particlelife="200"
+				offsetsphere="50"
+				speed="150"
+				direction="0 0 1"
+				material="/shared/effects/materials/whitedot.material"
+				rollspeed="200"
+				distancelife="1"
+			>
+				<particle 
+					startsize="20"
+					endsize="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".1"
+					maxangle="360"
+					minscale=".1"
+					maxscale=".6"
+					color=".5 .7 1"					
+				>
+				</particle>
+			</trackeremitter>
+			
+			<simpleemitter
+				bone="_bone_lefthand"
+				spawnrate="20"
+				minparticlelife="30"
+				maxparticlelife="50"
+				position="0 0 50"
+				material="/shared/effects/materials/lightning_11.material"
+				offsetsphere="20"
+			>
+				<particle
+					flare="1"
+					minscale="10"
+					maxscale="19"
+					color=".4 .4 1"
+					maxangle="360"
+					lockup="true"
+					anchor="1"
+					maxpitch="360"
+				/>
+			</simpleemitter>
+	</particlesystem>
+
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<spawnparticlesystem instance="instance3" particlesystem="system3" />
+      	<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<waitfordeath instance="instance3" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
+

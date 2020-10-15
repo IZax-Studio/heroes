@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale="1">
+		
+
+			<simpleemitter
+				count="30"
+				spawnrate="300"
+				particlelife="250"
+				minangle="0"
+				maxangle="27.5"
+				speed="5300"
+				direction="0 1 0"
+			>
+				<particle>
+					<simpleemitter
+						position="0 0 100"
+						minspawnrate="65"
+						maxspawnrate="75"
+						direction="0 0 1"
+						offsetsphere="25"
+						speed="10"
+						angle="30"
+						gravity="0"
+						minparticlelife="450"
+						maxparticlelife="600"
+						material="/shared/effects/materials/ember_reveal.material"
+						depthbias="-10"
+					>
+						<particle
+							minangle="0"
+							maxangle="360"
+							startframe="0"
+							endframe="1"
+							minstartsize="30"
+							maxstartsize="50"
+							minendsize="70"
+							maxendsize="100"
+							startcolor="0 0 0"
+							midcolor=".2 .125 .05"
+							endcolor=".2 .125 .05"
+							midcolorpos=".25"
+						/>
+					</simpleemitter>
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				count="30"
+				spawnrate="300"
+				particlelife="250"
+				minangle="-30"
+				maxangle="30"
+				speed="5000"
+				direction="0 1 0"
+			>
+				<particle>
+					<simpleemitter
+						position="0 50 100"
+						spawnrate="150"
+						direction="0 0 1"
+						offsetsphere="70 70 0"
+						speed="10"
+						angle="30"
+						gravity="0"
+						minparticlelife="250"
+						maxparticlelife="250"
+						material="/shared/effects/materials/flare_02.material"
+					>
+						<particle
+							minsize="25"
+							maxsize="100"
+							startcolor="0 0 0"
+							midcolor=".25 .125 0"
+							endcolor="0"
+							midcolorpos=".25"
+						/>
+					</simpleemitter>
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				count="1"
+				spawnrate="10"
+				particlelife="1600"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+				speed="2000"
+				offsetsphere="0 0 0"
+			>
+				<particle
+					turn="true"
+				>
+					<billboard
+						life="250"
+						position="0 0 0"
+						material="/shared/effects/materials/refract_swell_directional.material"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						param=".025"
+						startsize="255"
+						endsize="1000"
+						directionalspace="local"
+					/>
+				</particle>
+			</simpleemitter>
+			
+			
+
+			<simpleemitter
+				count="1"
+				spawnrate="10"
+				particlelife="1600"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+				speed="5300"
+				offsetsphere="0 0 0"
+			>
+				<particle
+					turn="true"
+				>
+					<light
+						position="0 0 100"
+						life="250"
+						startcolor="5 1 0"
+						endcolor="0"
+						falloffstart="0"
+						falloffend="700"
+					/>
+				
+					<billboard
+						bone="_bone_fx_center"
+						life="250"
+						position="0 100 100"
+						material="/shared/effects/materials/flare_03.material" 
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						startsize="750"
+						midsize="750"
+						endsize="750"
+						height="500"
+						directionalspace="local"
+						startcolor="1 .5 0"
+						midcolor="1 .5 0"
+						endcolor="0 0 0"
+						depthbias="-75"
+					/>
+
+					<billboard
+						bone="_bone_fx_center"
+						life="250"
+						position="0 100 100"
+						material="/shared/effects/materials/whitedot.material" 
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						size="240"
+						directionalspace="local"
+						startcolor="1 1 1"
+						endcolor="0 0 0"
+						depthbias="-75"
+					/>
+
+					<simpleemitter
+						position="0 0 100"
+						life="250"
+						spawnrate="1000"
+						minparticlelife="250"
+						maxparticlelife="500"
+						material="/shared/effects/materials/flare2.material"
+						minspeed="0"
+						maxspeed="0"
+					>
+						<particle
+							startcolor=".125 .05 0"
+							endcolor="0 0 0"
+							midcolorpos="0.5"
+							startalpha="1"
+							endalpha="0"
+							minangle="0"
+							maxangle="360"
+							minanglespeed="0"
+							maxanglespeed="0"
+							minwidth="10"
+							maxwidth="20"
+							minheight="150"
+							maxheight="200"
+							flare="true"
+							turn="true"
+						/>
+					</simpleemitter>
+
+				</particle>
+			</simpleemitter>
+			
+			
+			
+
+			<simpleemitter
+				count="25"
+				spawnrate="100"
+				particlelife="1600"
+				minangle="-30"
+				maxangle="30"
+				direction="0 1 0"
+				speed="5300"
+				offsetsphere="0 0 0"
+			>
+				<particle
+					turn="true"
+				>
+
+					<billboard
+						bone="_bone_fx_center"
+						life="250"
+						position="0 0 100"
+						material="/shared/effects/materials/flare_03.material" 
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						size="100"
+						height="500"
+						directionalspace="local"
+						startcolor=".7 .35 0"
+						endcolor="0 0 0"
+						depthbias="-75"
+					/>
+
+					<simpleemitter
+						position="0 0 100"
+						life="200"
+						spawnrate="100"
+						minparticlelife="500"
+						maxparticlelife="550"
+						material="/shared/effects/materials/flame.material"
+						speed="150"
+						offsetsphere="50 50 50"
+					>
+						<particle
+							startcolor="1 .5 0"
+							midcolor="1 .5 0"
+							endcolor="0 0 0"
+							midcolorpos="0.5"
+							minsize="200"
+							maxsize="900"
+						/>
+					</simpleemitter>
+
+				</particle>
+			</simpleemitter>
+
+
+
+
+
+
+	<template name="ice_shards">
+				<controller
+					life="2000"
+					yaw="{angle}"
+				>
+					<simpleemitter
+						count="1"
+						spawnrate="10"
+						particlelife="2000"
+						minangle="0"
+						maxangle="0"
+						direction="0 1 0"
+						speed="5000"
+					>
+						<particle
+							turn="1"
+						>
+							<terrainemitter
+								life="250"
+								startrange="5"
+								endrange="300"
+								minstartspawnrate="10"
+								maxstartspawnrate="20"
+								minendspawnrate="100"
+								maxendspawnrate="120"
+								particlelife="2000"
+								particledirectionalspace="local"
+							>
+								<particle
+									minscale="1"
+									maxscale="4"
+								>
+									<model
+										position="0 0 -10"
+										minyaw="-30"
+										maxyaw="30"
+										minpitch="-60"
+										maxpitch="-30"
+										minlife="1000"
+										maxlife="1500"
+										model="\heroes\solstice\alt5\ability_04\effects/shard/model.mdf"
+										anim="idle"
+										color="1 .3 0"
+										startalpha="0"
+										midalpha="1"
+										endalpha="0"
+										midalphapos=".2"
+										directionalspace="local"
+									/>
+									<billboard
+										minlife="1250"
+										maxlife="2000"
+										material="/shared/effects/materials/ice_cracks_ground_white.material"
+color=".75 .3 0"
+
+										startalpha="0"
+										midalpha=".9"
+										endalpha="0"
+										midalphapos=".1"
+										maxangle="360"
+										scale="1.2"
+										lockup="true"
+										lockright="true"
+										pitch="-90"
+										maxroll="360"
+									/>
+									<!--
+									<template name="shard">
+										<model
+											maxyaw="360"
+											minroll="-30"
+											maxroll="30"
+											minpitch="-30"
+											maxpitch="30"
+											minlife="1000"
+											maxlife="5000"
+											model="{model}"
+											anim="idle"
+											startalpha="0"
+											midalpha="2"
+											endalpha="0"
+											midcolorpos=".2"
+										/>
+									</template>
+									<instance name="shard" model="ice_spike1/model.mdf" />
+									<instance name="shard" model="ice_spike2/model.mdf" />
+									<instance name="shard" model="ice_spike3/model.mdf" />
+									-->
+								</particle>
+							</terrainemitter>
+						</particle>
+					</simpleemitter>
+				</controller>
+			</template>
+			
+			<instance name="ice_shards" angle="-24" />
+			<instance name="ice_shards" angle="0" />
+			<instance name="ice_shards" angle="24" />
+		</particlesystem>
+
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+

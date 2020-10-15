@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Jereziah4"
+
+	statuseffecttooltip="State_Jereziah_Ability4"
+
+	icon="4.png"
+	
+	anim="ability_4"
+	casttime="700"
+	castactiontime="300"
+	casteffect=""
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="self_position"
+	targetradius="600"
+	targetscheme="ally_units"
+	casteffecttype="Magic"
+	frontqueue="true"
+	novoiceresponse="true"
+	
+	manacost="150,200,250"
+	cooldowntime="150000"
+>
+	<onimpact>
+		<spawnaffector name="Affector_Jereziah_Ability4" target="source_entity" />
+
+		<!-- Alt avatar art -->
+		<hasavatarkey name="Hero_Jereziah.Alt">
+			<playeffect effect="/heroes/jereziah/hd_alt/ability_04/effects/cast.effect" source="source_entity" />
+			<playeffect effect="/heroes/jereziah/hd_alt/ability_04/effects/area.effect" source="source_entity" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Jereziah.Alt2" >
+				<hasmodifier name="Alt2_Sin_Set_Bonus" >
+					<playeffect effect="/heroes/jereziah/alt2/sin_set_bonus/ability_04/effects/cast.effect" source="source_entity" />
+					<playeffect effect="/heroes/jereziah/alt2/sin_set_bonus/ability_04/effects/area.effect" source="source_entity" />
+				</hasmodifier>
+				<else>
+					<playeffect effect="/heroes/jereziah/alt2/ability_04/effects/cast.effect" source="source_entity" />
+					<playeffect effect="/heroes/jereziah/alt2/ability_04/effects/area.effect" source="source_entity" />
+				</else>
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Jereziah.Alt3" >
+					<playeffect effect="/heroes/jereziah/alt3/ability_04/effects/cast.effect" source="source_entity" />
+					<playeffect effect="/heroes/jereziah/alt3/ability_04/effects/area.effect" source="source_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Jereziah.Alt4" >
+						<playeffect effect="/heroes/jereziah/alt4/ability_04/effects/cast.effect" source="source_entity" />
+						<playeffect effect="/heroes/jereziah/alt4/ability_04/effects/area.effect" source="source_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Jereziah.Alt5" >
+							<playeffect effect="/heroes/jereziah/alt5/ability_04/effects/cast.effect" source="source_entity" />
+							<playeffect effect="/heroes/jereziah/alt5/ability_04/effects/area.effect" source="source_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Jereziah.Alt6" >
+								<playeffect effect="/heroes/jereziah/alt6/ability_04/effects/cast.effect" source="source_entity" />
+								<playeffect effect="/heroes/jereziah/alt6/ability_04/effects/area.effect" source="source_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Jereziah.Alt10" >
+									<playeffect effect="/heroes/jereziah/alt10/ability_04/effects/cast.effect" source="source_entity" />
+									<playeffect effect="/heroes/jereziah/alt10/ability_04/effects/area.effect" source="source_entity" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Jereziah.Alt8" >
+										<playeffect effect="/heroes/jereziah/alt8/ability_04/effects/cast.effect" source="source_entity" />
+										<playeffect effect="/heroes/jereziah/alt8/ability_04/effects/area.effect" source="source_entity" />
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_Jereziah.Alt9" >
+											<playeffect effect="effects/cast.effect" source="source_entity" />
+											<playeffect effect="/heroes/jereziah/alt9/ability_04/effects/area.effect" source="source_entity" />
+										</hasavatarkey>
+										<else>
+											<playeffect effect="effects/cast.effect" source="source_entity" />
+											<playeffect effect="effects/area.effect" source="source_entity" />
+										</else>
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+		
+		<!-- end of Alt avatar art -->
+	</onimpact>
+	
+	<modifier key="ult_boost" modpriority="1"
+		targetradius="2000"
+	>
+		<onimpact>
+			<spawnaffector name="Affector_Jereziah_Ability4" target="source_entity" />
+			<areaofeffect
+				radius="99999"
+				targetselection="all"
+				targetscheme="ally_buildings"
+				effecttype=""
+				ignoreinvulnerable="true"
+			>
+				<targettype type="building">
+					<applystate name="State_Jereziah_Ability4_Building" duration="5000,6000,7000" proxy="source_entity" />
+				</targettype>
+				<else>
+					<applystate name="State_Jereziah_Ability4" duration="5000,6000,7000" proxy="source_entity" />
+				</else>
+			</areaofeffect>
+			
+			<!-- Alt avatar art -->
+			<hasavatarkey name="Hero_Jereziah.Alt">
+				<playeffect effect="/heroes/jereziah/hd_alt/ability_04/effects/cast.effect" source="source_entity" />
+				<playeffect effect="/heroes/jereziah/hd_alt/ability_04/effects/area.effect" source="source_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Jereziah.Alt2" >
+					<hasmodifier name="Alt2_Sin_Set_Bonus" >
+						<playeffect effect="/heroes/jereziah/alt2/sin_set_bonus/ability_04/effects/cast.effect" source="source_entity" />
+						<playeffect effect="/heroes/jereziah/alt2/sin_set_bonus/ability_04/effects/area.effect" source="source_entity" />
+					</hasmodifier>
+					<else>
+						<playeffect effect="/heroes/jereziah/alt2/ability_04/effects/cast.effect" source="source_entity" />
+						<playeffect effect="/heroes/jereziah/alt2/ability_04/effects/area.effect" source="source_entity" />
+					</else>
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Jereziah.Alt3" >
+						<playeffect effect="/heroes/jereziah/alt3/ability_04/effects/cast.effect" source="source_entity" />
+						<playeffect effect="/heroes/jereziah/alt3/ability_04/effects/area.effect" source="source_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Jereziah.Alt4" >
+							<playeffect effect="/heroes/jereziah/alt4/ability_04/effects/cast.effect" source="source_entity" />
+							<playeffect effect="/heroes/jereziah/alt4/ability_04/effects/area.effect" source="source_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Jereziah.Alt5" >
+								<playeffect effect="/heroes/jereziah/alt5/ability_04/effects/cast.effect" source="source_entity" />
+								<playeffect effect="/heroes/jereziah/alt5/ability_04/effects/area.effect" source="source_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Jereziah.Alt6" >
+									<playeffect effect="/heroes/jereziah/alt6/ability_04/effects/cast.effect" source="source_entity" />
+									<playeffect effect="/heroes/jereziah/alt6/ability_04/effects/area.effect" source="source_entity" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Jereziah.Alt10" >
+										<playeffect effect="/heroes/jereziah/alt10/ability_04/effects/cast.effect" source="source_entity" />
+										<playeffect effect="/heroes/jereziah/alt10/ability_04/effects/area.effect" source="source_entity" />
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_Jereziah.Alt8" >
+											<playeffect effect="/heroes/jereziah/alt8/ability_04/effects/cast.effect" source="source_entity" />
+											<playeffect effect="/heroes/jereziah/alt8/ability_04/effects/area.effect" source="source_entity" />
+										</hasavatarkey>
+										<else>
+											<hasavatarkey name="Hero_Jereziah.Alt9" >
+												<playeffect effect="effects/cast.effect" source="source_entity" />
+												<playeffect effect="/heroes/jereziah/alt9/ability_04/effects/area.effect" source="source_entity" />
+											</hasavatarkey>
+											<else>
+												<playeffect effect="effects/cast.effect" source="source_entity" />
+												<playeffect effect="effects/area.effect" source="source_entity" />
+											</else>
+										</else>
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+			
+			<!-- end of Alt avatar art -->
+		</onimpact>
+	</modifier>
+	
+    <altavatar key="Hero_Jereziah.Alt9"
+		icon="../alt9/ability_04/icon.tga"
+	/>
+	
+</ability>

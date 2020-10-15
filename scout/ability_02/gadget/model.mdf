@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="/heroes/shadowblade/ability_02/effects/sword/high.model" type="K2">
+
+	<anim name="idle" clip="/heroes/shadowblade/ability_02/effects/sword/default_1.clip" fps="30"  startframe="0" numframes="30" loop="true">
+		<startevent cmd="starteffect elec_eye.effect 0"/>
+	</anim>
+
+	<anim name="death_1" clip="/heroes/shadowblade/ability_02/effects/sword/default_1.clip" fps="10" startframe="30" numframes="70" loopbackframe="70" loop="true">
+		<startevent cmd="starteffect elec_eye_death.effect"/>	
+		<startevent cmd="stopeffect 0"/>			
+	</anim>
+</model>
+

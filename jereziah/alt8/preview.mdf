@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="Kim22.max" file="../Jeanne D'Arc/Jeanne D'Arc.model" type="K2"  >
+	
+	<anim name="idle" clip="../Jeanne D'Arc/Stand.clip" fps="500" loop="true"/>
+	
+		
+</model>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_MonkeyKing_Ability2_Secondary"
+
+	icon="../icon/ico_1472-2.png"	
+	ishidden="true"
+	
+	unitwalking="true"
+	buildingwalking="true"
+	cliffwalking="true"
+	disarmed="true"
+	
+	passiveeffect=""
+	effecttype=""
+	modifierkey="Speeding"
+>
+	<altavatar key="Hero_MonkeyKing.Alt15"
+		icon="../alt15/ability_02/icon.tga"
+	/>
+	
+</state>

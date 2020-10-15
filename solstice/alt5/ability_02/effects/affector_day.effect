@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<modifier
+			expirelife="500"
+			startcolor="1 .9 .7"
+			endcolor="0 0 0"
+			startalpha=".35"
+			endalpha="0"
+		/>
+
+		<particlesystem name="system0" space="world" scale=".675">
+		
+			<sound
+				volume="1"
+				sample="/heroes/solstice/ability_02/sounds/cast.wav"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="1300"
+			/>
+			
+			<sound
+			    soundloop="true"
+				fadein="1000"
+				fadeout="1000"
+				volume=".5"
+				sample="/heroes/solstice/ability_02/sounds/state.wav"
+				linearfalloff="true"
+				falloffstart="700"
+				falloffend="2000"
+			/>
+
+			<groundsprite
+			delay="300"
+				expirelife="150"
+				material="/shared/effects/materials/ground_smash_overlay.material"
+				size="200"
+				color="1 1 1"
+				startalpha="1"
+				endalpha="0"
+				yaw="-35"
+
+			/>
+
+			<light
+				position="0 0 100"
+				expirelife="250"
+				startcolor="3 .75 0"
+				endcolor="0"
+				falloffstart="0"
+				falloffend="800"
+			/>
+			
+	
+			
+
+			<model
+				position="0 0 50"
+				expirelife="1500"
+				anim="idle"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				startscale="32"
+				endscale="0"
+				midcolorpos=".75"
+				midalphapos=".4"
+				yawspeed="360"
+			>
+				<template name="trails">
+					<twopointtrailemitter
+						position="0 0 0"
+						bone_a="{bone01}"
+						bone_b="{bone02}"
+						spawnrate="50"
+						particlelife="1250"
+						texpostime="1250"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/arrow_trail.material"
+					>
+						<particle
+							startcolor="0 0 0"
+							midcolor=".025 .0125 .005"
+							endcolor="0 0 0"
+						/>
+					</twopointtrailemitter>
+				</template>
+				
+				<instance name="trails" bone01="_bone_fx_01"  bone02="_bone_fx_02"/>
+			</model>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<billboard 
+				position="0 0 75"
+				material="/shared/effects/materials/flare2.material" 
+				width="55"
+				height="1800"
+				life="4000"
+				startcolor="0 0 0"
+				midcolor=".2 .125 0"
+				endcolor="0 0 0"
+				lockup="true"
+				loop="true"
+				roll="90"
+				yawspeed="0"
+				depthbias="-50"
+			/>
+			
+			<billboard 
+				position="0 0 75"
+				material="/shared/effects/materials/flare2.material" 
+				width="25"
+				height="2200"
+				life="4000"
+				startcolor=".175 .1 0"
+				midcolor="-1"
+				endcolor=".175 .1 0"
+				lockup="true"
+				loop="true"
+				roll="90"
+				yawspeed="0"
+				depthbias="-50"
+			/>
+			
+			<billboard 
+				position="0 0 75"
+				material="/shared/effects/materials/flare2.material" 
+				width="55"
+				height="2000"
+				life="4000"
+				startcolor="0 0 0"
+				midcolor=".2 .125 0"
+				endcolor="0 0 0"
+				lockup="true"
+				loop="true"
+				roll="90"
+				yawspeed="10"
+				depthbias="-50"
+			/>
+			
+			
+			<billboard 
+				position="0 0 75"
+				material="/shared/effects/materials/flare2.material" 
+				width="55"
+				height="2000"
+				life="4000"
+				startcolor="0 0 0"
+				midcolor=".2 .125 0"
+				endcolor="0 0 0"
+				lockup="true"
+				loop="true"
+				roll="90"
+				yaw="90"
+				pitch="90"
+				yawspeed="-10"
+				depthbias="-50"
+			/>
+			
+			<billboard 
+				position="0 0 75"
+				material="/shared/effects/materials/flare2.material" 
+				width="55"
+				height="2000"
+				life="4000"
+				startcolor="0 0 0"
+				midcolor=".2 .125 0"
+				endcolor="0 0 0"
+				lockup="true"
+				loop="true"
+				roll="90"
+				yaw="90"
+				pitch="-90"
+				yawspeed="-10"
+				depthbias="-50"
+			/>
+			
+			<billboard 
+				position="0 0 75"
+				material="/shared/effects/materials/flare2.material" 
+				width="55"
+				height="2000"
+				life="4000"
+				startcolor="0 0 0"
+				midcolor=".2 .125 0"
+				endcolor="0 0 0"
+				lockup="true"
+				loop="true"
+				roll="90"
+				yaw="90"
+				pitch="180"
+				yawspeed="10"
+				depthbias="-50"
+			/>
+<!--
+			<billboard 
+				material="/shared/effects/materials/flare2.material" 
+				width="50"
+				startheight="0"
+				endheight="2500"
+				life="500"
+				startcolor=".3 0 .5"
+				endcolor="0 0 0"
+				lockup="true"
+				roll="45"
+				yawspeed="-180"
+			/>
+
+			<billboard 
+				position="0 0 50"
+				material="/shared/effects/materials/flare2.material" 
+				width="50"
+				startheight="0"
+				endheight="2500"
+				life="500"
+				startcolor=".3 0 .5"
+				endcolor="0 0 0"
+				lockup="true"
+				roll="45"
+				pitch="90"
+			/>
+
+			<billboard 
+				material="/shared/effects/materials/flare2.material" 
+				width="35"
+				startheight="1500"
+				endheight="100"
+				life="800"
+				startcolor=".6 .5 .75"
+				endcolor="0 0 0"
+				lockup="true"
+			/>
+-->
+			
+			
+			
+			
+			
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Rhapsody_Ability2_Ally"
+
+	icon="../alt10/ability_02/icon.tga"
+	passiveeffect=""
+>
+	<onframe>
+		<evaluate a="15,30,45,60" b="0.75" op="mult" />
+		<heal a="result" b="frametime" op="mult" />
+	</onframe>
+	
+	<modifier key="rhapsody_danceeffectally" modpriority="100" condition="hero"
+		passiveeffect="effects/state_ally.effect"
+	>
+		<onframe>
+			<heal a="15,30,45,60" b="frametime" op="mult" />
+		</onframe>
+		
+		<aura
+			gadget="Gadget_Rhapsody_Ability2_ally_squares"
+			radius="0"
+			targetscheme="self"
+			proxy="proxy_entity_position"
+			gadgetowner="proxy_entity_position"
+		/>
+	</modifier>
+	
+	<altavatar key="Hero_Rhapsody.Alt" modpriority="100" 
+		passiveeffect="../alt/ability_02/effects/state_ally.effect"
+	/>
+	
+	<altavatar key="Hero_Rhapsody.Alt7" modpriority="100" 
+		passiveeffect="../alt7/ability_02/effects/state_ally.effect"
+	>
+		<modifier key="rhapsody_danceeffectally" modpriority="100" condition="hero"
+			passiveeffect="../alt7/ability_02/effects/state_ally.effect"
+		/>
+		
+		<modifier key="alt_AlacrityBand" modpriority="101"
+			passiveeffect="../alt7/ability_02/effects/state_ally_upgrade.effect"
+		/>
+		<modifier key="Alt7_Ability2_Upgrade" modpriority="101"
+			passiveeffect="../alt7/ability_02/effects/state_ally_upgrade.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Rhapsody.Alt8" modpriority="100" 
+		passiveeffect=""
+	/>
+	
+	<altavatar key="Hero_Rhapsody.Alt9" modpriority="100" 
+		passiveeffect="../alt9/ability_02/effects/state_ally.effect"
+	/>
+	
+	<altavatar key="Hero_Rhapsody.Alt10" modpriority="100" 
+	    icon="../alt10/ability_02/icon.tga"
+	>
+		<modifier key="rhapsody_danceeffectally" modpriority="100" condition="hero"
+			passiveeffect="../alt10/ability_02/effects/state_ally.effect"
+		/>
+	</altavatar>
+</state>

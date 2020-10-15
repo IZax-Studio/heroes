@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_SirBenzington3"
+
+	icon="33.png"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="passive"
+	
+	attackrange="50,100,150,200"
+>
+	<onattackingdamageevent>
+		<setaccumulator value="0" />
+		
+		<cantarget targetscheme="enemy_units">
+			<cantarget targetscheme="boss" />
+			<else>
+				<!-- Autoattack -->
+				<compare a="source_entity" b="inflictor_entity" op="eq">
+					<setaccumulator value="1" />
+				</compare>
+				
+				<!-- Q -->
+				<entitytype type="Projectile_SirBenzington_Ability1" target="inflictor_entity">
+					<setaccumulator value="1" />
+				</entitytype>
+				
+				<!-- R -->
+				<entitytype type="Affector_SirBenzington_Ability4_Outer" target="inflictor_entity">
+					<setaccumulator value="1" />
+				</entitytype>
+				
+				<!-- If any of the above passes true, apply the Magic Armor penetration -->
+				<compare a="accumulator" b="1" op="eq">
+					<setvalue name="damage_magicarmorpierce" a="damage_magicarmorpierce" b="1,2,3,4" op="add" />
+				</compare>
+			</else>
+		</cantarget>
+	</onattackingdamageevent>
+	
+	<altavatar key="Hero_SirBenzington.Alt8"
+		icon="../alt8/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_SirBenzington.Alt9"
+		icon="../alt8/ability_02/icon.tga"
+	/>
+</ability>

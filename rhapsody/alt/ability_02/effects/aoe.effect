@@ -1,0 +1,1079 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  deferred="1" disable2dworld="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="26">
+	
+			<sound
+			    delay="500"
+			    channelid="rhap_2"
+			    soundloop="true"
+				fadein="1000"
+				fadeout="2000"
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".8"
+
+
+				sample="/heroes/rhapsody/alt/ability_02/sounds/s_%.mp3"
+			/>
+			<sound
+			 	falloffstart="1000"
+				falloffend="2500"
+				volume=".5"
+				sample="/heroes/rhapsody/alt/ability_02/sounds/ab2_start.mp3"
+			/>
+			
+			<sound
+			    dampen="0.7"
+			 	falloffstart="1000"
+				falloffend="2500"
+				volume=".5"
+				sample="/heroes/rhapsody/alt/ability_02/sounds/ab2_start.mp3"
+			/>
+			
+
+			<billboard
+				position="0 0 1"
+				life="500"
+				material="/shared/effects/materials/music_rings_overlay.material"
+				startsize="50"
+				endsize="25"
+				color="1 1 1"
+				startalpha=".5"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+			
+			<billboard
+				delay="400"
+				position="0 0 1"
+				life="1000"
+				material="/shared/effects/materials/music_rings_overlay.material"
+				startsize="0"
+				endsize="40"
+				color="0 0 0"
+				startalpha=".75"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				loop="1"
+			/>
+			
+			<billboard
+				delay="525"
+				position="0 0 1"
+				life="1000"
+				material="/shared/effects/materials/music_rings_overlay.material"
+				startsize="0"
+				endsize="40"
+				color="1 1 1"
+				startalpha=".75"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				loop="1"
+			/>
+			
+			<billboard
+				delay="725"
+				position="0 0 1"
+				life="1000"
+				material="/shared/effects/materials/music_rings_overlay.material"
+				startsize="0"
+				endsize="40"
+				color="0 0 0"
+				startalpha=".75"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				loop="1"
+			/>
+			
+			<billboard
+				delay="925"
+				position="0 0 1"
+				life="1000"
+				material="/shared/effects/materials/music_rings_overlay.material"
+				startsize="0"
+				endsize="40"
+				color="1 1 1"
+				startalpha=".75"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				loop="1"
+			/>
+<!--
+			<groundsprite
+				expirelife="500"
+				material="/shared/effects/materials/music_rings_overlay.material"
+				size="7"
+				color="1 1 1"
+				startalpha=".1"
+				endalpha="0"
+
+			/>
+
+			<groundsprite
+				expirelife="500"
+				yawspeed="-20"
+				material="/shared/effects/materials/music_rings_overlay.material"
+				size="11"
+				color="0 0 0"
+				pitch="180"
+				startalpha=".1"
+				endalpha="0"
+			/>
+			
+			<groundsprite
+				expirelife="500"
+				material="/shared/effects/materials/music_rings_overlay.material"
+				size="17"
+				color="1 1 1"
+				startalpha=".1"
+				endalpha="0"
+
+			/>
+	-->		
+			<groundsprite
+				expirelife="500"
+				material="/shared/effects/materials/whitedot_ground.material"
+				size="17"
+				startcolor="0 .1 .1"
+				endcolor="0"
+				startalpha=".1"
+				endalpha="0"
+
+			/>
+			
+			<groundsprite
+				expirelife="500"
+				material="/shared/effects/materials/fresnel_ground.material"
+				size="19"
+				startcolor=".3 .3 .3"
+				endcolor="0"
+				startalpha=".1"
+				endalpha="0"
+
+			/>
+<!--
+			<billboard
+				position="0 0 2"
+				expirelife="500"
+				material="/shared/effects/materials/musical_ring.material"
+				color="0 0 0"
+				startalpha=".5"
+				endalpha="0"
+				size="15"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				rollspeed="90"
+				roll="0"
+				loop="true"
+				depthbias="-25"
+			/>
+			
+			<billboard
+				position="0 0 2"
+				expirelife="500"
+				material="/shared/effects/materials/musical_ring.material"
+				color="0 0 0"
+				startalpha=".5"
+				endalpha="0"
+				size="15"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				rollspeed="90"
+				roll="-1"
+				loop="true"
+				depthbias="-25"
+			/>
+
+			
+		
+			<billboard
+				position="0 0 2"
+				expirelife="500"
+				material="/shared/effects/materials/musical_ring.material"
+				color="0 0 0"
+				startalpha=".5"
+				endalpha="0"
+				size="30"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				rollspeed="-90"
+				roll="-1"
+				loop="true"
+				depthbias="-25"
+			/>
+
+			<billboard
+				position="0 0 2"
+				expirelife="500"
+				material="/shared/effects/materials/musical_ring.material"
+				color="0 0 0"
+				startalpha=".25"
+				endalpha="0"
+				size="30"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				rollspeed="-90"
+				roll="0"
+				loop="true"
+				depthbias="-25"
+			/>
+-->	
+<!--
+			<template name="squares">
+				<billboard
+					life="{life}"
+					position="{position}"
+					material="/shared/effects/materials/whitesquare.material"
+					startcolor="0 0 0"
+					midcolor="{midcolor}"
+					endcolor="0 0 0"
+					midcolorpos=".2"
+					size="4"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					depthbias="-25"
+					loop="true"
+				/>
+
+			</template>
+			
+			<instance name="squares" position="0 0 1" life="7000" midcolor="0 0 0"/>
+
+			<instance name="squares" position="0 4 1" life="1000" midcolor="1 1 1"/>
+			<instance name="squares" position="0 8 1" life="7000" midcolor="0 0 0"/>
+			<instance name="squares" position="0 12 1" life="3500" midcolor="1 1 1"/>
+
+			<instance name="squares" position="0 -4 1" life="1000" midcolor="1 1 1"/>
+			<instance name="squares" position="0 -8 1" life="7000" midcolor="0 0 0"/>
+			<instance name="squares" position="0 -12 1" life="3500" midcolor="1 1 1"/>
+
+			<instance name="squares" position="-6 -4 1" life="3500" midcolor="1 1 1"/>
+			<instance name="squares" position="-6 -8 1" life="1000" midcolor="0 0 0"/>
+
+			<instance name="squares" position="-6 0 1" life="3500" midcolor="0 0 0"/>
+			<instance name="squares" position="-6 4 1" life="3500" midcolor="1 1 1"/>
+			<instance name="squares" position="-6 8 1" life="1000" midcolor="0 0 0"/>
+			
+			<instance name="squares" position="6 -4 1" life="1000" midcolor="1 1 1"/>
+			<instance name="squares" position="6 -8 1" life="3500" midcolor="0 0 0"/>
+
+			<instance name="squares" position="6 0 1" life="3500" midcolor="1 1 1"/>
+			<instance name="squares" position="6 4 1" life="1000" midcolor="0 0 0"/>
+			<instance name="squares" position="6 8 1" life="7000" midcolor="1 1 1"/>
+			
+			<instance name="squares" position="12 -4 1" life="1000" midcolor="1 1 1"/>
+
+			<instance name="squares" position="12 0 1" life="3500" midcolor="0 0 0"/>
+			<instance name="squares" position="12 4 1" life="7000" midcolor="0 0 0"/>
+			
+			<instance name="squares" position="-12 -4 1" life="3500" midcolor="0 0 0"/>
+
+			<instance name="squares" position="-12 0 1" life="3500" midcolor="0 0 0"/>
+			<instance name="squares" position="-12 4 1" life="7000" midcolor="0 0 0"/>
+-->
+<!--			
+			<simpleemitter
+				spawnrate="15"
+				minparticlelife="600"
+				maxparticlelife="1200"
+				minspeed="0"
+				maxspeed="1"
+				drag="0.01"
+				inheritvelocity=".25"
+				offsetsphere="15 15 15"
+				gravity="-2"
+				material="/shared/effects/materials/note_1.material"
+			>
+				<particle
+					color="1 0 0"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					minstartsize="2"
+					maxstartsize="5"
+					endsize="0"
+					depthbias="-160"
+				/>
+				
+				<particle
+					color="0 0 0"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					minstartsize="2"
+					maxstartsize="5"
+					endsize="0"
+					depthbias="-160"
+				/>
+				
+				<particle
+					color="1 1 1"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					minstartsize="2"
+					maxstartsize="5"
+					endsize="0"
+					depthbias="-160"
+				/>
+				
+				<particle
+					color="0 0 0"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					minstartsize="2"
+					maxstartsize="5"
+					endsize="0"
+					depthbias="-160"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="15"
+				minparticlelife="600"
+				maxparticlelife="1200"
+				minspeed="0"
+				maxspeed="1"
+				drag="0.01"
+				inheritvelocity=".25"
+				offsetsphere="15 15 15"
+				gravity="-2"
+				material="/shared/effects/materials/note_2.material"
+			>
+				<particle
+					color="0 0 0"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					minstartsize="2"
+					maxstartsize="5"
+					endsize="0"
+					depthbias="-160"
+				/>
+				
+				<particle
+					color="1 1 1"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					minstartsize="2"
+					maxstartsize="5"
+					endsize="0"
+					depthbias="-160"
+				/>
+				
+				<particle
+					color="0 0 0"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					minstartsize="2"
+					maxstartsize="5"
+					endsize="0"
+					depthbias="-160"
+				/>
+				
+				<particle
+					color="0 1 0"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					minstartsize="2"
+					maxstartsize="5"
+					endsize="0"
+					depthbias="-160"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="15"
+				minparticlelife="600"
+				maxparticlelife="1200"
+				minspeed="0"
+				maxspeed="1"
+				drag="0.01"
+				inheritvelocity=".25"
+				offsetsphere="15 15 15"
+				gravity="-2"
+				material="/shared/effects/materials/note_3.material"
+			>
+				<particle
+					color="1 0 0"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					minstartsize="2"
+					maxstartsize="5"
+					endsize="0"
+					depthbias="-160"
+				/>
+				
+				<particle
+					color="1 .5 0"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					minstartsize="2"
+					maxstartsize="5"
+					endsize="0"
+					depthbias="-160"
+				/>
+				
+				<particle
+					color="0 .5 1"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					minstartsize="2"
+					maxstartsize="5"
+					endsize="0"
+					depthbias="-160"
+				/>
+				
+				<particle
+					color="0 1 0"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					minstartsize="2"
+					maxstartsize="5"
+					endsize="0"
+					depthbias="-160"
+				/>
+			</simpleemitter>
+-->
+
+			<simpleemitter
+				spawnrate="15"
+				particlelife="1200"
+				minspeed="0"
+				maxspeed="1"
+				drag="0.01"
+				inheritvelocity=".25"
+				offsetsphere="15 15 15"
+				gravity="-2"
+			>
+				<particle
+				>
+					<model
+						model="/heroes/rhapsody/alt7/ability_01/effects/note/model.mdf"
+						color="0 0 0"
+						startalpha="0"
+						midalphapos=".25"
+						midalpha=".7"
+						endalpha="0"
+						maxyaw="359"
+						minroll="-15"
+						maxroll="15"
+						minpitch="-15"
+						maxpitch="15"
+						minlife="600"
+						maxlife="1200"
+						scale=".1"
+					/>
+				</particle>
+				<particle
+				>
+					<model
+						model="/heroes/rhapsody/alt7/ability_01/effects/note/model.mdf"
+						color="0 0 0"
+						startalpha="0"
+						midalpha=".7"
+						midalphapos=".25"
+						endalpha="0"
+						maxyaw="359"
+						minroll="-15"
+						maxroll="15"
+						minpitch="-15"
+						maxpitch="15"
+						minlife="600"
+						maxlife="1200"
+						scale=".1"
+					/>
+				</particle>
+			</simpleemitter>
+			
+
+			
+
+			
+			<template name="waves">
+			<model
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				scale=".48"
+				yawspeed="-20"
+				alpha="0"
+				yaw="{yaw}"
+				anim="idle"
+				expirelife="150"
+				directionalspace="global"
+			>
+				<billboard
+					lockup="1"
+					lockright="1"
+					yaw="87"
+					startframe="1"
+					endframe="19"
+					framespeed=".75"
+					startcolor="1 1 1"
+					endcolor="0"
+					directionalspace="local"
+					position="-5 10 0"
+					bone="_bone_fx_01"
+					expirelife="100"
+					size="10"
+					width="8.5"
+					turn="1"
+					material="/shared/effects/materials/sound_wave.material"
+				/>
+				
+				<billboard
+					lockup="1"
+					lockright="1"
+					yaw="87"
+					startframe="10"
+					endframe="19"
+					framespeed="1.5"
+					startcolor="1 1 1"
+					endcolor="0 0 0"
+					directionalspace="local"
+					position="-5 10 0"
+					bone="_bone_fx_01"
+					expirelife="100"
+					size="4"
+					width="8.5"
+					turn="1"
+					material="/shared/effects/materials/sound_wave.material"
+				/>
+			</model>
+		</template>
+		
+			<instance name="waves" yaw="0"/>
+			<instance name="waves" yaw="15"/>
+			<instance name="waves" yaw="30"/>
+			<instance name="waves" yaw="45"/>
+			<instance name="waves" yaw="60"/>
+			<instance name="waves" yaw="75"/>
+			<instance name="waves" yaw="90"/>
+			<instance name="waves" yaw="105"/>
+			<instance name="waves" yaw="120"/>
+			<instance name="waves" yaw="135"/>
+			<instance name="waves" yaw="150"/>
+			<instance name="waves" yaw="165"/>
+			<instance name="waves" yaw="180"/>
+			<instance name="waves" yaw="195"/>
+			<instance name="waves" yaw="210"/>
+			<instance name="waves" yaw="225"/>
+			<instance name="waves" yaw="240"/>
+			<instance name="waves" yaw="255"/>
+			<instance name="waves" yaw="270"/>
+			<instance name="waves" yaw="285"/>
+			<instance name="waves" yaw="300"/>
+			<instance name="waves" yaw="315"/>
+			<instance name="waves" yaw="330"/>
+			<instance name="waves" yaw="345"/>
+			<instance name="waves" yaw="360"/>
+
+		</particlesystem>
+<particlesystem name="system1" scale="5.5">
+			
+
+
+				</particlesystem>
+<particlesystem name="system2" space="world" scale="26">
+<billboard
+				life="500"
+				material="/shared/effects/materials/miku_ring2_add.material"
+				size="31"
+				startcolor="1 1 1"
+				endcolor="0"
+				startalpha=".1"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				position="0 0 .1"
+				rollspeed="100"
+			/>
+			<billboard
+				expirelife="500"
+				material="/shared/effects/materials/whitedot_blend.material"
+				size="50"
+				startcolor="0 0 0"
+				endcolor="0"
+				startalpha=".5"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				position="0 0 .1"
+				rollspeed="100"
+			/>
+			<billboard
+				expirelife="500"
+				material="/shared/effects/materials/miku_ring2_add.material"
+				size="17"
+				startcolor=".5 .5 .5"
+				endcolor="0"
+				startalpha=".1"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				position="0 0 .1"
+				rollspeed="-100"
+			/>
+			<billboard
+				expirelife="500"
+				material="/shared/effects/materials/circle_add.material"
+				size="18.5"
+				startcolor=".5 .5 .5"
+				endcolor="0"
+				startalpha=".1"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				position="0 0 .1"
+				rollspeed="100"
+			/>
+			
+		<!-- 	<controller scale=".13">
+			<billboard
+				expirelife="250"
+				color="0 .75 1"
+				size="120"
+				depthbias="-25"
+				material="/shared/effects/materials/miku_music01.material"
+				position="0 60 .1"
+				framespeed="2"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				width="250"
+				directionalspace="local"
+			/>
+			<billboard
+				expirelife="250"
+				color="0 .75 1"
+				size="120"
+				depthbias="-25"
+				material="/shared/effects/materials/miku_music01.material"
+				position="0 -60 .1"
+				framespeed="2"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				roll="180"
+				width="250"
+				directionalspace="local"
+			/>
+			</controller> -->
+			<controller scale=".12" yaw="45">
+			<billboard
+				life="250"
+				loop="true"
+				expirelife="250"
+				color=".5 .5 .5"
+				size="120"
+				depthbias="-25"
+				material="/shared/effects/materials/miku_music01.material"
+				position="0 60 .1"
+				framespeed="2"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				width="250"
+				directionalspace="local"
+				startalpha="1"
+				endalpha="0"
+				
+			/>
+			<billboard
+				life="250"
+				loop="true"
+				expirelife="250"
+				color=".5 .5 .5"
+				size="120"
+				depthbias="-25"
+				material="/shared/effects/materials/miku_music01.material"
+				position="0 -60 .1"
+				framespeed="2"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				roll="180"
+				width="250"
+				directionalspace="local"
+				startalpha="1"
+				endalpha="0"
+
+			/>
+			</controller>
+			<!-- <billboard
+				expirelife="500"
+				material="/shared/effects/materials/circle_add.material"
+				size="20"
+				startcolor="1 1 1"
+				endcolor="0"
+				startalpha=".1"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				position="0 0 .5"
+				rollspeed="-100"
+			/> -->
+			<billboard
+				expirelife="500"
+				material="/shared/effects/materials/miku_ring2_add.material"
+				size="31"
+				startcolor="1 1 1"
+				endcolor="0"
+				startalpha=".1"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				position="0 0 .5"
+				rollspeed="50"
+			/>
+			
+<!-- 			<billboard
+				expirelife="500"
+				material="/shared/effects/materials/music_rings_add.material"
+				size="30"
+				startcolor="1 1 1"
+				endcolor="0"
+				startalpha=".1"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				position="0 0 .5"
+			/> -->
+<!-- 			<billboard
+				expirelife="500"
+				material="/shared/effects/materials/miku_ring_add.material"
+				size="30"
+				startcolor="1 1 1"
+				endcolor="0"
+				startalpha=".1"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				position="0 0 .5"
+				rollspeed="-100"
+			/> -->
+
+			<controller scale=".16">
+				<template name="position">
+				<billboard
+					material="/shared/effects/materials/volume.material"
+					position="{position}"
+					size="20"
+					roll="{roll}"
+					height="30"
+					color="0 0 0"
+					alpha=".5"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					framespeed="1.5"
+					turn="1"
+					directionalspace="local"
+				/>
+				</template>
+				<instance name="position" position="80 0 0.5" roll="-90"/>
+				<instance name="position" position="0 80 0.5" roll="180"/>
+				<instance name="position" position="-57 -57 0.5" roll="45"/>
+				<instance name="position" position="57 57 0.5" roll="225"/>
+				<template name="position">
+				<billboard
+					material="/shared/effects/materials/volume.material"
+					position="{position}"
+					size="20"
+					roll="{roll}"
+					height="30"
+					color="0 0 0"
+					alpha=".5"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					framespeed="2"
+					turn="1"
+					directionalspace="local"
+				/>
+				</template>
+				<instance name="position" position="-80 0 0.5" roll="90"/>
+				<instance name="position" position="0 -80 0.5" roll="0"/>
+				<instance name="position" position="57 -57 0.5" roll="-45"/>
+				<instance name="position" position="-57 57 0.5" roll="-225"/>
+			</controller>
+<model
+				expirelife="5000"
+				position="0 0 0"
+				scale=".5"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				yawspeed="200"
+				anim="idle"
+				directionalspace="global"
+			>
+				<template name="glows">
+					<controller scale=".1" bone="{bone}">
+						<trailemitter
+							expirelife="1000"
+							spawnrate="50"
+							particlelife="1500"
+							texpostime="500"
+							texposscale="0.0"
+							texstretchscale=".4"
+							material="/shared/effects/materials/whitesquare_02.material"
+							gravity="-2"
+							inheritvelocity=".1"
+							offsetsphere="0"
+						>
+							<particle
+								startcolor=".3"
+								midcolor="0 0 0"
+								endcolor="0"
+								midcolorpos=".05"
+								
+								startalpha="0"
+								midalpha="1"
+								endalpha="0"
+								midalphapos=".075"
+								startsize="40"
+								midsize="40"
+								endsize="60"
+								midsizepos="0.2"
+						 />
+						</trailemitter>
+						
+						<template name="staff_lines">
+							<trailemitter
+								expirelife="1000"
+								spawnrate="20"
+								particlelife="1200"
+								texpostime="500"
+								texposscale="0.0"
+								texstretchscale=".4"
+								material="/shared/effects/materials/whitesquare_02.material"
+								gravity="-2"
+								inheritvelocity=".1"
+								offsetsphere="0"
+								position="{position}"
+								depthbias="20"
+							>
+								<particle
+									startcolor=".3"
+									midcolor=".4 .4 .4"
+									endcolor="0"
+									midcolorpos=".05"
+									
+									startalpha="0"
+									midalpha="1"
+									endalpha="0"
+									midalphapos=".075"
+									startsize="2"
+									midsize="2"
+									endsize="5"
+									midsizepos="0.2"
+							 />
+							</trailemitter>
+						</template>
+						
+						<instance name="staff_lines" position="17 0 0"/>
+						<instance name="staff_lines" position="-17 0 0"/>
+						<instance name="staff_lines" position="9 0 0"/>
+						<instance name="staff_lines" position="0 0 0"/>
+						<instance name="staff_lines" position="-9 0 0"/>
+						
+						<billboard
+							expirelife="1000"
+							material="/shared/effects/materials/whitedot.material"
+							color=".2"							
+							size="60"
+							depthbias="-20"
+							position="0 0 0"
+						/>
+						
+						<simpleemitter
+							expirelife="1000"
+							spawnrate="50"
+							position="0 0 0"
+							particlelife="1000"
+							gravity="-10"
+							speed="100"
+							drag=".1"
+							direction="0 0 1"
+							material="/shared/effects/materials/sparks_reveal.material"
+							offsetsphere="10"
+							inheritvelocity=".5"
+						>
+							<particle
+								color="1"
+								startalpha="0"
+								midalpha="1"
+								endalpha="0"
+								midalphapos=".5"
+								maxangle="90"
+								startsize="50"
+								minendsize="30"
+								maxendsize="35"
+								lockup="1"
+								lockright="1"
+								pitch="90"
+								startframe=".3"
+								endframe="1"
+							/>
+						</simpleemitter>
+						
+						<simpleemitter
+							expirelife="1000"
+							spawnrate="50"
+							position="0 0 0"
+							particlelife="500"
+							gravity="-10"
+							speed="100"
+							drag=".1"
+							direction="0 0 1"
+							material="/shared/effects/materials/glow_04.material"
+							offsetsphere="10"
+							inheritvelocity=".5"
+						>
+							<particle
+								
+								startcolor=".2"
+								midcolor=".4 .4 .4"
+								endcolor="0"
+								
+								startalpha="0"
+								midalpha=".5"
+								endalpha="0"
+								midalphapos=".5"
+								maxangle="90"
+								startsize="50"
+								minendsize="20"
+								maxendsize="15"
+								lockup="1"
+								lockright="1"
+								pitch="90"
+								startframe=".3"
+								endframe="1"
+							/>
+						</simpleemitter>
+					</controller>
+				</template>
+				
+				<instance name="glows" bone="_bone_fx_01"/>
+				<instance name="glows" bone="_bone_fx_07"/>
+
+			</model>
+			
+			</particlesystem>
+                  <particlesystem name="system3" space="world" scale="3" >
+
+                  <groundsprite
+			 
+			
+			                 			material="123.material"
+						
+			
+			position="0 0 0"
+			size="80"
+              
+			color="1 1 1"
+			midcolorpos="-1"
+
+			startalpha="1"
+			midalpha="1"
+			endalpha="1"
+			midalphapos="5"
+
+			
+     
+		
+		/>
+		</particlesystem>
+
+		
+					
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<spawnparticlesystem instance="instance1" particlesystem="system2" />
+		<spawnparticlesystem instance="instance3" particlesystem="system3" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1"/>
+		<waitfordeath instance="instance2" />
+		<waitfordeath instance="instance3" />
+	</thread>
+</effect>

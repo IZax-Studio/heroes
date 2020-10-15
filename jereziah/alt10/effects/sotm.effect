@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="ability_02" deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1" >
+		
+			<billboard
+				bone="_bone_head"
+				expirelife="500"
+				lockup="1"
+				pitch="90"
+				position="0 0 20"
+				size="20"
+				startcolor=".5"
+				endcolor="0"
+				material="/shared/effects/materials/corona_01.material"
+			/>
+			
+			<simpleemitter
+				bone="_bone_head"
+				spawnrate="300"
+				position="0 0 20"
+				offsetradial="8 8 0"
+				minparticlelife="300"
+				maxparticlelife="500"
+				material="/shared/effects/materials/mana.material"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-200"
+					maxanglespeed="200"
+					startcolor=".8 .5 .4"
+					endcolor="0"
+					startsize="0"
+					endsize="10"
+					anchor="1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_head"
+				spawnrate="200"
+				position="0 0 20"
+				direction="0 0 1"
+				directionalspace="global"
+				minangle="90"
+				maxangle="90"
+				speed="17"
+				particlelife="500"
+				material="/shared/effects/materials/flare_03.material"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-200"
+					maxanglespeed="200"
+					startcolor="0"
+					endcolor="1"
+					startsize="0"
+					endsize="1.5"
+					anchor="1"
+				/>
+			</simpleemitter>
+			
+			
+			<billboard
+				bone="_bone_weaponattach"
+				lockup="1"
+				lockright="1"
+				size="185"
+				width="40"
+				directionalspace="local"
+				roll="0"
+				expirelife="500"
+				startcolor="2 1 .5"
+				endcolor="0"
+				material="/shared/effects/materials/light_rays2.material"
+			/>
+			
+
+		
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

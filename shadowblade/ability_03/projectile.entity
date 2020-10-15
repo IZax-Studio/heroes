@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_ShadowBlade_Ability3"
+
+	speed="1200"
+	gravity="0"
+	canturn="false"
+
+	modelscale="1.35"
+	model="/shared/models/invis.mdf"
+	
+	impacteffect="effects/impact.effect"
+	traileffect="effects/trail.effect"
+>
+
+	<altavatar key="Hero_ShadowBlade.Alt3" modpriority="90"
+		impacteffect="../alt3/ability_03/effects/shadowe/effects/impact.effect"
+		traileffect="../alt3/ability_03/effects/shadowe/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_ShadowBlade.Alt4" modpriority="90"
+		impacteffect="../alt4/ability_03/effects/impact.effect"
+		traileffect="../alt4/ability_03/effects/trail.effect"
+	/>
+
+	<altavatar key="Hero_ShadowBlade.Alt6" modpriority="90"
+		impacteffect="../alt6/ability_03/effects/impact.effect"
+		traileffect="../alt6/ability_03/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_ShadowBlade.Alt7" modpriority="90"
+		impacteffect="../alt7/ability_03/effects/impact.effect"
+		traileffect="../alt7/ability_03/effects/trail.effect"
+	/>
+
+</projectile>
+

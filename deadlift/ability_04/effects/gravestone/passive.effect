@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1">
+
+          <groundsprite
+                position="0 0 0"
+                material="/shared/effects/materials/ground_cracks_overlay.material"
+                width="60"
+                height="90"
+            />
+        <simpleemitter
+					spawnrate="100"
+					gravity="-3"
+					minparticlelife="575"
+					maxparticlelife="1150"
+					material="/shared/effects/materials/smoke_add.material"
+					position="0 0 90"
+					offsetsphere="10"
+					speed="5"
+					inheritvelocity="0.03"
+					drag="0.0"
+					depthbias="0"
+				>
+					<particle
+						startcolor="0 .1 .6"
+						endcolor="0 0 0"
+						minangle="0"
+						maxangle="360"
+						minanglespeed="-50"
+						maxanglespeed="50"
+						minstartsize="20"
+						maxstartsize="30"
+						endsize="20"
+						startalpha=".4"
+						midalpha=".75"
+						endalpha="-.1"
+						midalphapos=".1"
+						stickiness="0.00"
+					/>
+				</simpleemitter>
+				<simpleemitter
+					spawnrate="10"
+					gravity="-150"
+					minparticlelife="325"
+					maxparticlelife="755"
+					material="/shared/effects/materials/fire.material"
+					position="0 0 90"
+					offsetsphere="12"
+					speed="95"
+					inheritvelocity="0.3"
+					drag="0.03"
+				>
+					<particle
+						color=".2 .1 5"
+						minangle="0"
+						maxangle="360"
+						minanglespeed="-50"
+						maxanglespeed="50"
+						minsize="15"
+						maxsize="25"
+						startalpha="0"
+						midalpha=".8"
+						endalpha="0"
+						midalphapos=".35"
+						stickiness=".35"
+					/>
+				</simpleemitter>
+				<simpleemitter
+					spawnrate="40"
+					gravity="-40"
+					minparticlelife="375"
+					maxparticlelife="625"
+					material="/shared/effects/materials/spark_10.material"
+					position="0 0 90"
+					offsetsphere="25"
+					speed="60"
+					inheritvelocity="0.3"
+					drag="0.02"
+				>
+					<particle
+						startcolor=".0 .3 .5"
+						endcolor=".1 .1 .1"
+						minangle="0"
+						maxangle="360"
+						minsize="5"
+						maxsize="10"
+						startalpha="0"
+						midalpha=".8"
+						endalpha="0"
+						midalphapos=".4"
+						stickiness=".10"
+					/>
+				</simpleemitter>
+				<simpleemitter
+					spawnrate="70"
+					gravity="-90"
+					minparticlelife="150"
+					maxparticlelife="260"
+					material="/heroes/flint_beastwood/alt4/effects/flame.material"
+					position="0 0 90"
+					offsetsphere="5"
+					speed="45"
+					inheritvelocity="0.3"
+					drag="0.03"
+				>
+					<particle
+						startcolor="0 .5 1"
+						endcolor="0 .5 1"
+						minangle="0"
+						maxangle="360"
+						size="14"
+						startalpha="0"
+						midalpha=".8"
+						endalpha="0"
+						midalphapos=".1"
+						stickiness=".35"
+					/>
+				</simpleemitter>
+				<simpleemitter
+					spawnrate="6"
+					gravity="-15"
+					minparticlelife="425"
+					maxparticlelife="655"
+					material="/shared/effects/materials/refract_wave.material"
+					
+					position="0 0 90"
+					offsetsphere="15"
+					speed="25"
+					inheritvelocity="0.3"
+					drag="0.03"
+				>
+					<particle
+						color="0 .2 1"
+						minangle="0"
+						maxangle="360"
+						minanglespeed="-50"
+						maxanglespeed="50"
+						startsize="5"
+						endsize="60"
+						startparam="0"
+						midparam=".35"
+						endparam="0"
+						startalpha="0"
+						midalpha=".5"
+						endalpha="0"
+						midalphapos=".35"
+						anchor=".45"
+					/>
+				</simpleemitter>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

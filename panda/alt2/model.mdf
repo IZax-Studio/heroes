@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model file="model.model" type="K2">
+	
+	<anim name="idle" clip="clips/default_1.clip" fps="30" loop="true"/>
+	
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="30" loop="false"/>
+	
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="19" loop="false">
+		<frameevent frame="8" cmd="PlaySoundLinear sounds/raz/attack_grunt_%.wav 400 1300 1"/>
+		<frameevent frame="6" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 2000 .45"/>
+	</anim>
+	
+	<anim name="walk_1" clip="clips/walk_1.clip" fps="20" loop="true" loopbackframe="1">
+		<frameevent frame="6" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="11" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="17" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="21" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		
+		<frameevent frame="6" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="17" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	</anim>
+	
+	<anim name="death_1" clip="clips/death_1.clip" fps="30" loop="true" loopbackframe="-1">
+	    <frameevent frame="6" cmd="PlaySoundLinear sounds/raz/death_grunt_%.wav 400 1300 1"/>
+	</anim>
+	
+	<anim name="ability_1" clip="clips/attack_2.clip" fps="25" loop="false">
+		<frameevent frame="1" cmd="StartEffect ability_01/effects/cast1.effect"/>
+		<frameevent frame="6" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 2000 .45"/>
+		<frameevent frame="8" cmd="PlaySoundLinear sounds/raz/attack_grunt_%.wav 400 2000 .7"/>
+	</anim>
+	
+	<anim name="attackability1_1" clip="clips/attack_2.clip" fps="25" loop="false">
+		<frameevent frame="1" cmd="StartEffect ability_01/effects/cast1.effect"/>
+		<frameevent frame="6" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 2000 .45"/>
+		<frameevent frame="8" cmd="PlaySoundLinear sounds/raz/attack_grunt_%.wav 400 2000 .7"/>
+	</anim>
+
+	<anim name="attackability1_2" clip="clips/ability_1_1.clip" fps="25" loop="false">
+		<frameevent frame="1" cmd="StartEffect ability_01/effects/cast2.effect"/>
+		<frameevent frame="6" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 2000 .45"/>
+		<frameevent frame="8" cmd="PlaySoundLinear sounds/raz/attack_grunt_%.wav 400 2000 .7"/>
+	</anim>
+	
+	<anim name="attackability1_3" clip="clips/attack_2.clip" fps="25" loop="false">
+		<frameevent frame="1" cmd="StartEffect ability_01/effects/cast1.effect"/>
+		<frameevent frame="6" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 2000 .45"/>
+		<frameevent frame="8" cmd="PlaySoundLinear sounds/raz/attack_grunt_%.wav 400 2000 .7"/>
+	</anim>
+	
+	<anim name="attackability1_4" clip="clips/ability_1_2.clip" fps="25" loop="false">
+		<frameevent frame="1" cmd="StartEffect ability_01/effects/cast4.effect"/>
+		<frameevent frame="6" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 2000 .45"/>
+		<frameevent frame="8" cmd="PlaySoundLinear sounds/raz/attack_grunt_%.wav 400 2000 .7"/>
+	</anim>
+	
+	<anim name="ability_2" clip="clips/ability_2.clip" fps="15" loop="false">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/raz/ab2_vox_%.wav 400 2000 1"/>
+	</anim>
+	
+	<anim name="ability_2_leap" clip="clips/ability_2_leap.clip" fps="20" loop="true" loopbackframe="-1"/>
+	
+	<anim name="ability_3" clip="clips/ability_3.clip" fps="34" loop="false">
+		<frameevent frame="1" cmd="PlaySoundLinear ability_03/sounds/cast.wav 400 2000 .8"/>
+		<frameevent frame="6" cmd="PlaySoundLinear sounds/raz/attack_grunt_4.wav 400 2000 .7"/>
+		<frameevent frame="11" cmd="PlaySoundLinear sounds/raz/ab3_vox.wav 400 2000 1"/>
+		<frameevent frame="11" cmd="PlaySoundLinear sounds/raz/ab3_vox.wav 400 2000 .5"/>
+	</anim>
+	
+	<anim name="ability_3_stuck" clip="clips/default_1.clip" fps="15" loop="false">
+	<frameevent frame="1" cmd="StartEffect ability_03/effects/launch.effect"/>
+	</anim>
+	
+	<anim name="ability_4" clip="clips/ability_4.clip" fps="32.5" loop="false">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/raz/ab4_vox.wav 400 1300 1"/>
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/raz/ab4_vox 400 1300 .5"/>
+		<frameevent frame="8" cmd="PlaySoundLinear sounds/raz/attack_grunt_%.wav 400 2000 .5"/>
+		<frameevent frame="15" cmd="PlaySoundLinear sounds/raz/ab4_imp_%.wav 1000 2500 1"/>
+		<frameevent frame="10" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 2000 .45"/>
+		<frameevent frame="15" cmd="PlaySoundLinear alt2/ability_04/sounds/startimpact.wav 400 2000 .50"/>
+		<frameevent frame="37" cmd="PlaySoundLinear sounds/raz/attack_grunt_%.wav 400 2000 .5"/>
+		<frameevent frame="39" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 2000 .45"/>
+		<frameevent frame="48" cmd="PlaySoundLinear sounds/raz/ab4_imp_%.wav 1000 2500 1"/>
+		<frameevent frame="69" cmd="PlaySoundLinear sounds/raz/attack_grunt_%.wav 400 2000 .5"/>
+		<frameevent frame="71" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 2000 .45"/>
+		<frameevent frame="80" cmd="PlaySoundLinear sounds/raz/ab4_imp_%.wav 1000 2500 1"/>
+		<frameevent frame="103" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 2000 .45"/>
+		<frameevent frame="101" cmd="PlaySoundLinear sounds/raz/attack_grunt_%.wav 400 2000 .5"/>
+		<frameevent frame="105" cmd="PlaySoundLinear sounds/raz/attack_grunt_%.wav 400 2000 .5"/>
+		<frameevent frame="112" cmd="PlaySoundLinear sounds/raz/ab4_imp_%.wav 1000 2500 1"/>
+		<frameevent frame="132" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 2000 .45"/>
+		<frameevent frame="144" cmd="PlaySoundLinear sounds/raz/ab4_imp_%.wav 1000 2500 1"/>
+	</anim>
+
+	<anim name="bored_1" clip="clips/default_1.clip" fps="30" loop="false"/>
+	<anim name="item_1" clip="clips/attack_2.clip" fps="30" loop="false"/>
+	<anim name="knock_1" clip="clips/default_1.clip" fps="30" loop="false"/>
+	<anim name="taunt_1" clip="clips/ability_1_2.clip" fps="12" loop="false"/>
+	<anim name="portrait" clip="clips/default_1.clip" fps="30" loop="true"/>
+	
+</model>

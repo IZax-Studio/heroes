@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1" >
+	<definitions>
+	
+		<modifier
+			startcolor="1"
+			midcolor=".2"
+			endcolor="1"
+			life="1200"
+			loop="true"
+		/>
+		
+		<particlesystem name="system0" space="world" scale="1">
+			<sound
+				norestart="true"
+				channel="50022"
+				life="15000"
+				linearfalloff="true" 
+				falloffstart="128"
+				falloffend="700"
+				volume=".8"
+				sample="../sounds/start.wav"
+			/>	
+
+			<sound
+				soundloop="true"
+				fadein="250"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="128"
+				falloffend="700"
+				volume=".25"
+				sample="../sounds/state.wav"
+			/>				
+
+			<controller
+				name="targette"
+				owner="source"
+				bone="_bone_centerofchest"
+			/>
+			
+			<controller
+				owner="target"
+				name="shield"
+				timenudge="1"
+				position="0 0 100"
+				lookat="true"
+				lookatowner="source"
+				lookatposition="0 0 100"
+			>
+				<model
+					timenudge="1"
+					expirelife="250"
+					position="0 80 0"
+					model="shield/model.mdf"
+					scale="2.0"
+					anim="idle"
+					material="shield/rim_gradient_scroll.material"
+					alpha="0.75"
+					startcolor="1"
+					endcolor="0"
+				/>
+				<model
+					timenudge="1"
+					expirelife="250"
+					position="0 80 0"
+					model="shield/model.mdf"
+					scale="2.0"
+					alpha="0.1"
+					anim="idle"
+					material="shield/rim_gradient.material"
+					startcolor="1"
+					endcolor="0"
+				/>
+
+				<simpleemitter
+					position="0 80 0"
+					timenudge="1000"
+					spawnrate="3"
+					particlelife="1000"
+					offsetsphere="5 20 40"
+					particledirectionalspace="local"
+				>
+					<particle>
+						<controller
+							life="2000"
+							maxroll="360"
+							minrollspeed="-600"
+							maxrollspeed="600"
+							maxpitch="360"
+							minpitchspeed="-600"
+							maxpitchspeed="600"
+							maxyaw="360"
+						>
+							<model
+								scale="2"
+								position="40 0 0"
+								model="/shared/effects/models/circle_of_bones/model.mdf"
+								anim="idle"
+								yaw="90"
+							>
+								<trailemitter
+									life="1000"
+									spawnrate="30"
+									particlelife="500"
+									material="/shared/effects/materials/fire_scrolling_trail.material"
+									texposscale="0"
+									texstretchscale="1.25"
+									startparticlealpha="0"
+									midparticlealpha=".5"
+									endparticlealpha="0"
+								>
+									<particle
+										startsize="0"
+										endsize="20"
+										color=".75 0 0"
+									/>
+								</trailemitter>
+							</model>
+						</controller>
+					</particle>
+				</simpleemitter>
+			</controller>
+			
+			<beam
+				owner_a="shield"
+				position_a="18 80 -5"
+				owner_b="targette"
+				material="/shared/effects/materials/taper_01.material"
+				size="20"
+				color="1"
+				tile="1.5"
+				distancetile="0.003"
+			/>
+			<beam
+				owner_a="shield"
+				position_a="-18 80 -5"
+				owner_b="targette"
+				material="/shared/effects/materials/taper_01.material"
+				size="20"
+				color="1"
+				tile="1.5"
+				distancetile="0.003"
+			/>
+			
+			<template name="eye_pew_pew">
+				<tracer
+					life="2000"
+					delay="{delay}"
+					owner_a="shield"
+					position_a="{pos}"
+					owner_b="targette"
+					material="/shared/effects/materials/beam_02.material"
+					speed="75"
+					acceleration="75"
+					startlength="0"
+					midlength="30"
+					endlength="0"
+					midlengthpos=".1"
+					startwidth="0"
+					midwidth="10"
+					endwidth="0"
+					midwidthpos=".25"
+					loop="true"
+					subframepos="true"
+				/>
+			</template>
+			
+			<billboard
+				owner="shield"
+				position="17 88 -5"
+				material="/shared/effects/materials/whitedot.material"
+				color=".5 .1 .1"
+				size="30"
+			/>
+			<billboard
+				owner="shield"
+				position="-17 88 -5"
+				material="/shared/effects/materials/whitedot.material"
+				color=".5 .1 .1"
+				size="30"
+			/>
+			<billboard
+				owner="shield"
+				position="17 88 -5"
+				material="/shared/effects/materials/whitedot.material"
+				color=".4"
+				size="6"
+			/>
+			<billboard
+				owner="shield"
+				position="-17 88 -5"
+				material="/shared/effects/materials/whitedot.material"
+				color=".4"
+				size="6"
+			/>
+<!--			
+			<instance name="eye_pew_pew" delay="0" pos="20 80 -5" />
+			<instance name="eye_pew_pew" delay="0" pos="-20 80 -5" />
+			<instance name="eye_pew_pew" delay="-500" pos="20 80 -5" />
+			<instance name="eye_pew_pew" delay="-500" pos="-20 80 -5" />
+			<instance name="eye_pew_pew" delay="-1000" pos="20 80 -5" />
+			<instance name="eye_pew_pew" delay="-1000" pos="-20 80 -5" />
+			<instance name="eye_pew_pew" delay="-1500" pos="20 80 -5" />
+			<instance name="eye_pew_pew" delay="-1500" pos="-20 80 -5" />
+-->	
+			<model
+				bone="_bone_overhead"
+				model="../../ability_03/effects/overhead/model.mdf"
+				anim="idle"
+				scale=".5"
+				position="0 0 50"
+				directionalspace="global"
+				alpha="0"
+			>
+				<controller bone="_bone_side" scale="2">
+					<trailemitter
+						bone="_bone_side"
+						spawnrate="60"
+						particlelife="100"
+						direction="0 0 0"
+						angle="0"
+						speed="400"
+						texposscale="0"
+						texstretchscale="1.9"
+						gravity="-600"
+						material="fire_scrolling_trail.material"
+						inheritvelocity="0"
+						limitinheritvelocity="500"
+					>
+						<particle
+							startsize="10"
+							midsize="6"
+							endsize="30"
+							midsizepos=".5"
+							startcolor="1 0 0"
+							midcolor="1 0 0"
+							endcolor="1 0 1"
+							midcolorpos=".2"
+						/>
+					</trailemitter>
+				</controller>
+				
+				<controller bone="_bone_side2" scale="2">
+					<trailemitter
+						bone="_bone_side2"
+						spawnrate="60"
+						particlelife="100"
+						direction="0 0 0"
+						angle="0"
+						speed="400"
+						texposscale="0"
+						texstretchscale="1.9"
+						gravity="-600"
+						material="fire_scrolling_trail.material"
+						inheritvelocity="0"
+						limitinheritvelocity="500"
+					>
+						<particle
+							startsize="10"
+							midsize="6"
+							endsize="30"
+							midsizepos=".5"
+							startcolor="1 0 0"
+							midcolor="1 0 0"
+							endcolor="1 0 1"
+							midcolorpos=".2"
+						/>
+					</trailemitter>
+				</controller>
+				
+				<billboard
+					bone="_bone_center"
+					material="/shared/effects/materials/kane_eye.material"
+					color="1"
+					life="500"
+					loop="true"
+					size="150"
+					depthbias="-20"
+					position="0 0 0"
+					
+					alpha=".7"
+					
+					startcolor="5"
+					midcolor="1"
+					endcolor="5"
+				/>
+				
+				<billboard
+					bone="_bone_side"
+					material="/shared/effects/materials/whitedot.material"
+					life="500"
+					loop="true"
+					size="150"
+					depthbias="-20"
+					position="0 0 20"
+					
+					alpha=".8"
+					
+					color=".5 .1 .1"
+				/>
+				
+				<billboard
+					bone="_bone_side2"
+					material="/shared/effects/materials/whitedot.material"
+					life="500"
+					loop="true"
+					size="150"
+					depthbias="-20"
+					position="0 0 20"
+					
+					alpha=".8"
+					
+					color=".5 .1 .1"
+				/>
+			</model>
+
+		</particlesystem>
+		
+		<particlesystem name="system1" space="entity" scale="1">
+			<simpleemitter
+				spawnrate="3"
+				bone="_bone_origin"
+				gravity="-20"
+				particlelife="1500"
+				minyaw="-180"
+				maxyaw="180"
+			>
+				<particle
+					turn="true"
+				>
+					<model
+						life="1500"
+						bone="_bone_origin"
+						model="../../ability_03/effects/overhead/model.mdf"
+						anim="idle"
+						startscale="1.5"
+						endscale=".1"
+						directionalspace="global"
+						alpha="0"
+						position="0 0 0"
+						minyawspeed="150"
+						maxyawspeed="300"
+						minyaw="-180"
+						maxyaw="180"
+					>
+						<controller bone="_bone_side" scale="1">
+<!--
+							<trailemitter
+								bone="_bone_side"
+								spawnrate="60"
+								particlelife="100"
+								direction="0 0 0"
+								angle="0"
+								speed="400"
+								texposscale="0"
+								texstretchscale="1.9"
+								gravity="-600"
+								material="fire_scrolling_trail.material"
+								inheritvelocity="0"
+								limitinheritvelocity="500"
+							>
+								<particle
+									startsize="10"
+									midsize="6"
+									endsize="30"
+									midsizepos=".5"
+									startcolor="1 0 0"
+									midcolor="1 0 0"
+									endcolor="1 0 1"
+									midcolorpos=".2"
+								/>
+							</trailemitter>
+-->							
+							<trailemitter
+								life="1500"
+								spawnrate="30"
+								particlelife="500"
+								material="/shared/effects/materials/fire_scrolling_trail.material"
+								texposscale="0"
+								texstretchscale="1.25"
+								startparticlealpha="0"
+								midparticlealpha=".8"
+								endparticlealpha="0"
+							>
+								<particle
+									startsize="10"
+									endsize="30"
+									color=".75 0 0"
+								/>
+							</trailemitter>
+						</controller>
+						
+						<controller bone="_bone_side2" scale="1">
+<!--
+							<trailemitter
+								spawnrate="60"
+								particlelife="100"
+								direction="0 0 0"
+								angle="0"
+								speed="400"
+								texposscale="0"
+								texstretchscale="1.9"
+								gravity="-600"
+								material="fire_scrolling_trail.material"
+								inheritvelocity="0"
+								limitinheritvelocity="500"
+							>
+								<particle
+									startsize="10"
+									midsize="6"
+									endsize="30"
+									midsizepos=".5"
+									startcolor="1 0 0"
+									midcolor="1 0 0"
+									endcolor="1 0 1"
+									midcolorpos=".2"
+								/>
+							</trailemitter>
+-->							
+							<trailemitter
+								life="1500"
+								spawnrate="30"
+								particlelife="500"
+								material="/shared/effects/materials/fire_scrolling_trail.material"
+								texposscale="0"
+								texstretchscale="1.25"
+								startparticlealpha="0"
+								midparticlealpha=".8"
+								endparticlealpha="0"
+							>
+								<particle
+									startsize="10"
+									endsize="30"
+									color=".75 0 0"
+								/>
+							</trailemitter>
+						</controller>
+					</model>
+				</particle>
+			</simpleemitter>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance2" particlesystem="system1" />
+		<spawnmodifier instance="instance1"/>
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<waitfordeath instance="instance2" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_MonkeyKing_Ability2_Enemy"
+
+	icon="../icon/ico_1472-2.png"	
+
+	immobilized2="true"
+	disarmed="true"
+	
+	passiveeffect=""
+	effecttype=""
+>
+	<altavatar key="Hero_MonkeyKing.Alt15"
+		icon="../alt15/ability_02/icon.tga"
+	/>
+	
+</state>

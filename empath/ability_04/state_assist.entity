@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Empath_Ability4_Assist"
+
+	icon="1.jpg,2.jpg,3.jpg,4.jpg"
+	passiveeffect=""
+	
+	serverentity="true"
+	
+	effecttype="StatusDebuff"
+>
+	<altavatar key="Hero_Empath.Alt7"
+		icon="../alt7/ability_04/icon.tga"
+	>
+		<modifier key="Alt7_Ability4_Upgrade"
+			icon="../alt7/ability_04/icon_upgrade.tga"
+		/>
+	</altavatar>
+	
+</state>

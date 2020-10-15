@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Legionnaire_Ability2_Terrify"
+
+	icon="2.jpg"
+	passiveeffect="effects/state.effect"
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	totaldamagemultiplier="-0.5"
+	attackspeedmultiplier="0.5"
+>
+
+	<altavatar key="Hero_Legionnaire.Alt6" modpriority="1"
+		icon="/heroes/legionnaire/alt6/ability_02/icon.tga"
+		passiveeffect="../alt6/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Legionnaire.Alt7" modpriority="90"
+		passiveeffect="../alt7/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Legionnaire.Alt8" modpriority="90"
+		passiveeffect="../alt8/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Legionnaire.Alt13" modpriority="90"
+		passiveeffect="../alt13/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Legionnaire.Alt15" modpriority="90"
+		passiveeffect="../alt15/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Legionnaire.Alt16" modpriority="90"
+		passiveeffect="../alt16/ability_02/effects/state.effect"
+	/>
+</state>

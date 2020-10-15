@@ -1,0 +1,995 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_PuppetMaster"
+	
+	team="Hellbourne"
+	icon="icon1.jpg"
+	portrait="icon1.jpg"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sa_select_%.wav"
+	selectedflavorsound=""
+	confirmmovesound="sa_move_%.wav"
+	confirmattacksound=""
+	nomanasound=""
+	cooldownsound=""
+	announcersound="sounds/voice/hero_select.wav"
+	tauntedsound=""
+	tauntkillsound=""
+	
+	preglobalscale="1.67"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="48"
+	targetoffset="0 0 64"
+
+	category="cc physical"
+	difficulty="3"
+
+	solorating="0"
+	junglerating="0"
+	carryrating="4"
+	supportrating="2"
+	initiatorrating="0"
+	gankerrating="0"
+	pusherrating="0"
+	rangedrating="5"
+	meleerating="0"
+	
+	movespeed="305"
+	turnrate="540"
+	turnsmoothing="0.05"
+
+	maxhealth="150"
+	healthregen="0.25"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="0"
+	magicarmor="6"
+
+	inventory0="Ability_PuppetMaster1"
+	inventory1="Ability_PuppetMaster2"
+	inventory2="Ability_PuppetMaster3"
+	inventory3="Ability_PuppetMaster4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="1370"
+	attackactiontime="400"
+	attackcooldown="1700"
+	attackdamagemin="28"
+	attackdamagemax="36"
+	attacknumanims="2"
+	attackoffset="-12 80 100"
+	attackprojectile="Projectile_PuppetMasterAttack"
+	attackrange="600"
+	attackstarteffect="projectile/effects/cast.effect"
+	attackactioneffect=""
+	attackimpacteffect=""
+	attacktype="ranged"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="800"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	primaryattribute="Intelligence"
+	strength="18"
+	strengthperlevel="1.9"
+	agility="18"
+	agilityperlevel="2"
+	intelligence="20"
+	intelligenceperlevel="3.1"
+	
+	previewmodel="model.mdf"
+	previewpos="0 0 -60"
+	previewangles="0 0 0"
+	previewscale="1.6"
+	
+	storemodel="model.mdf"
+	storepos="0 0 -20"
+	storeangles="0 0 0"
+	storescale="1.6"
+	
+	corpsetime="1000"
+	corpsefadetime="5000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+>
+
+    <onspawn>
+	<setactivemodifierkey name="Puppetmaster_Sound" />
+	</onspawn>
+	
+	<onrespawn>
+	<setactivemodifierkey name="Puppetmaster_Sound" />
+	</onrespawn>
+	
+	<recommendeditem name="Item_ManaPotion" />
+	<recommendeditem name="Item_MinorTotem" />
+	<recommendeditem name="Item_RunesOfTheBlight" />
+	<recommendeditem name="Item_HealthPotion" />
+	<recommendeditem name="Item_HomecomingStone" />
+	
+	<recommendeditem name="Item_Intelligence5" />
+	<recommendeditem name="Item_Strength5" />
+	<recommendeditem name="Item_EnhancedMarchers" />
+	<recommendeditem name="Item_Steamboots" />
+	<recommendeditem name="Item_Gloves3" />
+	<recommendeditem name="Item_Stealth" />
+	<recommendeditem name="Item_Summon" />
+	<recommendeditem name="Item_HarkonsBlade" />
+	<recommendeditem name="Item_ArclightCrown" />
+	<recommendeditem name="Item_Morph" />
+
+
+	<modifier key="iamsheeped" modpriority="201"
+		passiveeffect=""
+	/>
+	
+	<modifier key="soccer" modpriority="190" primaryattribute="" 
+		turnrate="650" magicarmor="0" healthregen="2.5" armor="0" manaregen="0"
+		maxmana="100"
+		attackrange="425"
+		movespeed="315"
+		maxhealth="450"
+		attackdamagemin="45"
+		attackdamagemax="45"
+		intelligence="0"
+		strength="0"
+		agility="0"
+		inventory0="Ability_Soccer_SlideKick"
+		inventory1="Ability_Soccer_Sprint"
+		inventory2="Ability_PuppetMaster1"
+		inventory3="Ability_PuppetMaster2"
+		inventory4="Ability_PuppetMaster3"
+		cancarryitems="false" inventory8="" inventory12=""
+	/>
+	
+	<altavatar key="Hero_PuppetMaster.Classic"
+		icon="icon.tga"
+		icon2="icon.tga"
+		portrait="icon.tga"
+		model="model.mdf"
+		skin=""
+		
+		passiveeffect=""
+		respawneffect="/shared/effects/respawn.effect"
+		selectedsound="sounds/voice/select_%.wav"
+		selectedflavorsound="sounds/voice/select_flavour_%.wav"
+		confirmmovesound="sounds/voice/move_%.wav"
+		confirmattacksound="sounds/voice/attack_%.wav"
+		nomanasound="sounds/voice/no_mana.wav"
+		cooldownsound="sounds/voice/cooldown.wav"
+		announcersound="sounds/voice/hero_select.wav"
+		tauntedsound="sounds/voice/taunt_prior.wav"
+		tauntkillsound="sounds/voice/taunt_after.wav"
+		
+		preglobalscale="1.485"
+		modelscale="1.0"
+		effectscale="0.9"
+		boundsheight="112"
+		boundsradius="24"
+		selectionradius="48"
+		targetoffset="0 0 64"
+		
+	
+		previewmodel="preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.25"
+		
+		storemodel="preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.35"
+		
+		corpsetime="1000"
+		corpsefadetime="5000"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	/>
+	
+	<altavatar key="Hero_PuppetMaster.Alt"
+		icon="icon.tga"
+		icon2="alt/icon.tga"
+		portrait="alt/icon.tga"
+		model="alt/model.mdf"
+		
+		preglobalscale="2.5"
+		
+		attackstarteffect=""
+		
+		passiveeffect="alt/effects/body.effect"
+		storepassiveeffect="alt/effects/store_body.effect"
+
+		previewmodel="alt/preview.mdf"
+		previewpos="-20 0 -70"
+		previewangles=" 0 35"
+		previewscale="2"
+		
+		storemodel="alt/store_model.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.95"
+		
+		infoheight="220"
+		
+		selectedsound="alt/sounds/voice/select_%.wav"
+		selectedflavorsound="alt/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt/sounds/voice/move_%.wav"
+		confirmattacksound="alt/sounds/voice/attack_%.wav"
+		nomanasound="alt/sounds/voice/no_mana.wav"
+		cooldownsound="alt/sounds/voice/cooldown.wav"
+		tauntedsound="alt/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt/sounds/voice/taunt_after.wav"
+	>
+	<onspawn>
+	<setactivemodifierkey name="Puppetmaster_Alt_Sound" />
+	</onspawn>
+	
+	<onrespawn>
+	<setactivemodifierkey name="Puppetmaster_Alt_Sound" />
+	</onrespawn>
+	</altavatar>
+	
+	<altavatar key="Hero_PuppetMaster.Alt2"
+		icon="icon.tga"
+		icon2="alt2/icon.tga"
+		portrait="alt2/icon.tga"
+		model="alt2/model.mdf"
+		
+		preglobalscale="1.3"
+		attackprojectile="Projectile_PuppetMasterAttack_Alt2"
+		
+		attackstarteffect=""
+		attackoffset="40 60 75"
+		
+		passiveeffect="alt2/effects/body.effect"
+
+		previewmodel="alt2/preview.mdf"
+		previewpos="-20 0 -70"
+		previewangles=" 0 35"
+		previewscale="2"
+		
+		storemodel="alt2/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.2"
+		
+		infoheight="220"
+		
+		selectedsound="alt2/sounds/voice/select_%.wav"
+		selectedflavorsound="alt2/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt2/sounds/voice/move_%.wav"
+		confirmattacksound="alt2/sounds/voice/attack_%.wav"
+		nomanasound="alt2/sounds/voice/no_mana.wav"
+		cooldownsound="alt2/sounds/voice/cooldown.wav"
+		tauntedsound="alt2/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt2/sounds/voice/taunt_after.wav"
+	>
+	<onspawn>
+	<setactivemodifierkey name="Puppetmaster_Alt2_Sound" />
+	</onspawn>
+	
+	<onrespawn>
+	<setactivemodifierkey name="Puppetmaster_Alt2_Sound" />
+	</onrespawn>
+	</altavatar>
+	
+	<altavatar key="Hero_PuppetMaster.Alt3"
+		icon="icon.tga"
+		icon2="alt3/icon.tga"
+		portrait="alt3/icon.tga"
+		model="alt3/model.mdf"
+		
+		preglobalscale="1.1"
+		attackprojectile="Projectile_PuppetMasterAttack_Alt3"
+		
+		attackstarteffect=""
+		attackoffset="-12 125 120"
+		
+		passiveeffect="alt3/effects/body.effect"
+
+		previewmodel="alt3/preview.mdf"
+		previewpos="-20 0 -70"
+		previewangles=" 0 35"
+		previewscale="2"
+		
+		storemodel="alt3/preview.mdf"
+		storepos="0 0 -27"
+		storeangles="0 0 0"
+		storescale=".76"
+		
+		infoheight="225"
+		
+		selectedsound="alt3/sounds/voice/select_%.wav"
+		selectedflavorsound="alt3/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt3/sounds/voice/move_%.wav"
+		confirmattacksound="alt3/sounds/voice/attack_%.wav"
+		nomanasound="alt3/sounds/voice/no_mana.wav"
+		cooldownsound="alt3/sounds/voice/cooldown.wav"
+		tauntedsound="alt3/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt3/sounds/voice/taunt_after.wav"
+		
+		corpsetime="2500"
+	>
+	<onspawn>
+	<setactivemodifierkey name="Puppetmaster_Alt3_Sound" />
+	</onspawn>
+	
+	<onrespawn>
+	<setactivemodifierkey name="Puppetmaster_Alt3_Sound" />
+	</onrespawn>
+	</altavatar>
+	
+	<altavatar key="Hero_PuppetMaster.Alt4"
+		icon="icon.tga"
+		icon2="alt4/icon.tga"
+		portrait="alt4/icon.tga"
+		model="alt4/model.mdf"
+		
+		preglobalscale="2"
+		attackprojectile="Projectile_PuppetMasterAttack_Alt4"
+		
+		attackstarteffect=""
+		attackoffset="-12 125 120"
+				
+		selectedsound="alt4/sounds/voice/select_%.wav"
+		selectedflavorsound="alt4/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt4/sounds/voice/move_%.wav"
+		confirmattacksound="alt4/sounds/voice/attack_%.wav"
+		nomanasound="alt4/sounds/voice/no_mana.wav"
+		cooldownsound="alt4/sounds/voice/cooldown.wav"
+		tauntedsound="alt4/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt4/sounds/voice/taunt_after.wav"
+		
+		passiveeffect="alt4/effects/body.effect"
+
+		previewmodel="alt4/preview.mdf"
+		previewpos="-20 0 -70"
+		previewangles=" 0 35"
+		previewscale="2"
+		
+		storemodel="alt4/preview.mdf"
+		storepos="0 0 -27"
+		storeangles="0 0 0"
+		storescale="1.8"
+		
+		infoheight="225"
+		
+		corpsetime="2500"
+	>
+	
+		<onspawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Javaras.Alt4 aa.Hero_Circe.Alt3 aa.Hero_PuppetMaster.Alt4 aa.Hero_Fade.Alt3 aa.Hero_ShadowBlade.Alt3" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey name="Shroud_Set_Bonus" />
+			</compare>
+			<setactivemodifierkey name="Puppetmaster_Alt4_Sound" />
+		</onspawn>
+		
+		<onrespawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Javaras.Alt4 aa.Hero_Circe.Alt3 aa.Hero_PuppetMaster.Alt4 aa.Hero_Fade.Alt3 aa.Hero_ShadowBlade.Alt3" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey name="Shroud_Set_Bonus" />
+			</compare>
+			<setactivemodifierkey name="Puppetmaster_Alt4_Sound" />
+		</onrespawn>
+		
+		<modifier key="Shroud_Set_Bonus" modpriority="200"
+			passiveeffect="alt4/effects/body_shroud.effect"
+		/>
+	
+	</altavatar>
+	
+	<altavatar key="Hero_PuppetMaster.Alt5"
+		icon="icon.tga"
+		icon2="alt5/icon.tga"
+		portrait="alt5/icon.tga"
+		model="alt5/model.mdf"
+		
+		preglobalscale="2"
+		passiveeffect=""
+		
+		attackstarteffect=""
+		attackoffset="-12 125 120"
+
+		previewmodel="alt5/preview.mdf"
+		previewpos="-20 0 -70"
+		previewangles=" 0 35"
+		previewscale="2"
+		
+		storemodel="alt5/preview.mdf"
+		storepos="0 0 -27"
+		storeangles="0 0 0"
+		storescale="1.8"
+		
+		infoheight="225"
+
+		selectedsound="alt5/sounds/voice/select_%.wav"
+		selectedflavorsound="alt5/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt5/sounds/voice/move_%.wav"
+		confirmattacksound="alt5/sounds/voice/attack_%.wav"
+		nomanasound="alt5/sounds/voice/no_mana.wav"
+		cooldownsound="alt5/sounds/voice/cooldown.wav"
+		tauntedsound="alt5/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt5/sounds/voice/taunt_after.wav"
+	>
+	
+		<onspawn>
+			<applystate name="State_PuppetMaster_Alt5_Dragon_Effects" target="this_entity" continuous="true" />
+			<ownsproduct target="this_entity" product="aa.Hero_Accursed.Alt4 aa.Hero_Javaras.Alt5" />
+			<compare a="result" b="1" op="eq">
+				<applystate name="State_PuppetMaster_Alt5_Dragon_Effects" target="this_entity" continuous="true" />
+			</compare>
+			<setactivemodifierkey name="Puppetmaster_Alt5_Sound" />
+		</onspawn>
+		
+		<onrespawn>
+			<applystate name="State_PuppetMaster_Alt5_Dragon_Effects" target="this_entity" continuous="true" />
+		<ownsproduct target="this_entity" product="aa.Hero_Accursed.Alt4 aa.Hero_Javaras.Alt5" />
+			<compare a="result" b="1" op="eq">
+				<applystate name="State_PuppetMaster_Alt5_Dragon_Effects" target="this_entity" continuous="true" />
+			</compare>
+			<setactivemodifierkey name="Puppetmaster_Alt5_Sound" />
+		</onrespawn>
+	
+	</altavatar>
+	
+	<altavatar key="Hero_PuppetMaster.Alt6"
+		icon="icon.tga"
+		icon2="alt6/icon.tga"
+		portrait="alt6/icon.tga"
+		model="alt6/model.mdf"
+		
+		preglobalscale="2"
+		passiveeffect=""
+		
+		attackstarteffect=""
+		attackoffset="-12 125 120"
+		
+		portraitcampos="10 -10 25"
+
+		previewmodel="alt6/preview.mdf"
+		previewpos="-20 0 -70"
+		previewangles=" 0 35"
+		previewscale="2"
+		
+		storemodel="alt6/preview.mdf"
+		storepos="0 0 -27"
+		storeangles="0 0 0"
+		storescale="1.8"
+		
+		selectedsound="alt6/sounds/voice/select_%.wav"
+		selectedflavorsound="alt6/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt6/sounds/voice/move_%.wav"
+		confirmattacksound="alt6/sounds/voice/attack_%.wav"
+		nomanasound="alt6/sounds/voice/no_mana.wav"
+		cooldownsound="alt6/sounds/voice/cooldown.wav"
+		tauntedsound="alt6/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt6/sounds/voice/taunt_after.wav"
+		
+		infoheight="225"
+	/>
+	
+	<altavatar key="Hero_PuppetMaster.Alt7"
+		icon="icon.tga"
+		icon2="alt7/icon.tga"
+		portrait="alt7/icon.tga"
+		model="alt7/model.mdf"
+		
+		preglobalscale="1.65"
+		passiveeffect=""
+		
+		portraitcampos="15 0 23"
+		
+		attackstarteffect=""
+		attackoffset="0 50 70"
+
+		previewmodel="alt7/preview.mdf"
+		previewpos="-20 0 -70"
+		previewangles=" 0 35"
+		previewscale="2"
+		
+		storemodel="alt7/preview.mdf"
+		storepos="0 0 -27"
+		storeangles="0 0 0"
+		storescale="1.5"
+		
+		selectedsound="alt7/sounds/voice/select_%.wav"
+		selectedflavorsound="alt7/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt7/sounds/voice/move_%.wav"
+		confirmattacksound="alt7/sounds/voice/attack_%.wav"
+		nomanasound="alt7/sounds/voice/no_mana.wav"
+		cooldownsound="alt7/sounds/voice/cooldown.wav"
+		tauntedsound="alt7/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt7/sounds/voice/taunt_after.wav"
+		
+		infoheight="150"
+	/>
+	
+	<altavatar key="Hero_PuppetMaster.Alt8"
+		icon="icon.tga"
+		icon2="alt8/icon.tga"
+		portrait="alt8/icon.tga"
+		model="alt8/model.mdf"
+		
+		preglobalscale="1.85"
+		passiveeffect=""
+		
+		portraitcampos="20 0 20"
+		
+		attackstarteffect=""
+		attackoffset="0 50 70"
+
+		previewmodel="alt8/preview.mdf"
+		previewpos="-20 0 -70"
+		previewangles=" 0 35"
+		previewscale="2.0"
+		
+		storemodel="alt8/preview.mdf"
+		storepos="0 0 -27"
+		storeangles="0 0 0"
+		storescale="1.75"
+		
+		selectedsound="alt8/sounds/voice/select_%.wav"
+		selectedflavorsound="alt8/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt8/sounds/voice/move_%.wav"
+		confirmattacksound="alt8/sounds/voice/attack_%.wav"
+		nomanasound="alt8/sounds/voice/no_mana.wav"
+		cooldownsound="alt8/sounds/voice/cooldown.wav"
+		tauntedsound="alt8/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt8/sounds/voice/taunt_after.wav"
+		
+		infoheight="150"
+	/>
+	
+	<altavatar key="Hero_PuppetMaster.Alt9"
+		icon="icon.tga"
+		icon2="alt9/icon.tga"
+		portrait="alt9/icon.tga"
+		model="alt9/model.mdf"
+		
+		preglobalscale="2.05"
+		passiveeffect=""
+		
+		portraitcampos="5 0 14"
+		
+		attackstarteffect=""
+		attackactioneffect="alt9/projectile/effects/attack_action_sound.effect"
+		attackoffset="0 50 70"
+
+		previewpassiveeffect="alt9/effects/body_store.effect"
+		previewmodel="alt9/preview.mdf"
+		previewpos="-20 0 -70"
+		previewangles=" 0 35"
+		previewscale="2.0"
+		
+		storepassiveeffect="alt9/effects/body_store.effect"
+		storemodel="alt9/preview.mdf"
+		storepos="0 0 -27"
+		storeangles="0 0 0"
+		storescale="1.75"
+		
+		selectedsound="alt9/sounds/voice/select_%.wav"
+		selectedflavorsound="alt9/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt9/sounds/voice/move_%.wav"
+		confirmattacksound="alt9/sounds/voice/attack_%.wav"
+		nomanasound="alt9/sounds/voice/no_mana.wav"
+		cooldownsound="alt9/sounds/voice/cooldown.wav"
+		tauntedsound="alt9/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt9/sounds/voice/taunt_after.wav"
+	/>
+
+	<altavatar key="Hero_PuppetMaster.Alt10"
+		icon="icon.tga"
+		icon2="alt10/icon.tga"
+		model="alt10/model.mdf"
+		passiveeffect="alt10/effects/body.effect"
+
+		attackoffset="0 85 60"
+		attackstarteffect="projectile/effects/cast.effect"
+
+		preglobalscale="1.485"
+		modelscale="1.0"
+		effectscale="0.9"
+		
+		portraitcampos="0 3 12"
+
+		previewmodel="alt10/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.25"
+		
+		storemodel="alt10/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.65"
+		
+		corpsetime="1000"
+		corpsefadetime="5000"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		
+		selectedsound="alt10/sounds/voice/select_%.wav"
+		selectedflavorsound="alt10/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt10/sounds/voice/move_%.wav"
+		confirmattacksound="alt10/sounds/voice/attack_%.wav"
+		nomanasound="alt10/sounds/voice/no_mana.wav"
+		cooldownsound="alt10/sounds/voice/cooldown.wav"
+		tauntedsound="alt10/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt10/sounds/voice/taunt_after.wav"
+	>
+		<onspawn propagatetoillusions="true" >
+			<applystate name="State_Topaz_Paragon_Sound_Initiator" target="source_entity" duration="2000" />
+			<activatemodifierkey name="Paragon_Sound_Topaz" />
+			<ownsproduct target="this_entity" product="en.paragon_trail" />
+			<compare a="result" b="0" op="ne">
+				<applystate name="State_Paragon_Trail" target="this_entity" continuous="true" />
+			</compare>
+
+			<upgradeselected target="this_entity" upgrade="sc.paragon_circle_upgrade">
+				<activatemodifierkey name="Alt10_Paragon_Circle" />
+			</upgradeselected>
+			
+			<ownsproduct target="this_entity" product="en.puppet_master_ability01_upgrade" />
+			<compare a="result" b="0" op="ne">
+				<activatemodifierkey name="Alt10_Ability1_Upgrade" />
+			</compare>
+			
+			<ownsproduct target="this_entity" product="en.puppet_master_ability02_upgrade" />
+			<compare a="result" b="0" op="ne">
+				<activatemodifierkey name="Alt10_Ability2_Upgrade" />
+			</compare>
+			
+			<ownsproduct target="this_entity" product="en.puppet_master_ability03_upgrade" />
+			<compare a="result" b="0" op="ne">
+				<activatemodifierkey name="Alt10_Ability3_Upgrade" />
+			</compare>
+			
+			<ownsproduct target="this_entity" product="en.puppet_master_ability04_upgrade" />
+			<compare a="result" b="0" op="ne">
+				<activatemodifierkey name="Alt10_Ability4_Upgrade" />
+			</compare>
+
+            <ownsproduct target="this_entity" product="en.paragon_pet" />
+            <compare a="result" b="0" op="ne">
+                <spawnunit name="Pet_Paragon" target="this_entity" source="target_entity" offset="0 -100" facing="source_entity" pushentity="true" />
+                <activatemodifierkey name="Pet_Paragon_Topaz" entity="stack_entity" />
+            </compare>
+		</onspawn>
+
+        <onrespawn>
+			<ownsproduct target="this_entity" product="en.paragon_trail" />
+			<compare a="result" b="0" op="ne">
+				<applystate name="State_Paragon_Trail" target="this_entity" continuous="true" />
+			</compare>
+			
+            <ownsproduct target="this_entity" product="en.paragon_pet" />
+            <compare a="result" b="0" op="ne">
+                <spawnunit name="Pet_Paragon" target="this_entity" source="target_entity" offset="0 -100" facing="source_entity" pushentity="true" />
+                <activatemodifierkey name="Pet_Paragon_Topaz" entity="stack_entity" />
+            </compare>
+			
+			<ownsproduct target="this_entity" product="en.puppet_master_stat_track" />
+            <compare a="result" b="0" op="ne">
+                <!-- <playeffect effect="/shared/effects/paragon_stats.effect" source="this_entity" target="this_entity" /> -->
+				<applystate name="State_Paragon_Stats_VFX" source="this_entity" target="this_entity" duration="4000" />
+			</compare>
+        </onrespawn>
+		
+		<onchannelingstart>
+			<ownsproduct target="this_entity" product="en.puppet_master_stat_track" />
+            <compare a="result" b="0" op="ne">
+				<entitytype type="Ability_Taunt" target="inflictor_entity">
+                    <!-- <playeffect effect="/shared/effects/paragon_stats.effect" source="this_entity" target="this_entity" /> -->
+					<applystate name="State_Paragon_Stats_VFX" source="this_entity" target="this_entity" duration="4000" />
+				</entitytype>
+			</compare>
+		</onchannelingstart>
+		
+		<onkill>
+			<ownsproduct target="this_entity" product="en.puppet_master_stat_track" />
+            <compare a="result" b="0" op="ne">
+                <cantarget targetscheme="enemy_heroes" >
+                    <!-- <playeffect effect="/shared/effects/paragon_stats.effect" source="this_entity" target="this_entity" /> -->
+					<applystate name="State_Paragon_Stats_VFX" source="this_entity" target="this_entity" duration="4000" />
+                </cantarget>
+			</compare>
+        </onkill>
+	
+		<onassist>
+			<ownsproduct target="this_entity" product="en.puppet_master_stat_track" />
+            <compare a="result" b="0" op="ne">
+                <!-- <playeffect effect="/shared/effects/paragon_stats.effect" source="this_entity" target="this_entity" /> -->
+				<applystate name="State_Paragon_Stats_VFX" source="this_entity" target="this_entity" duration="4000" />
+			</compare>
+        </onassist>
+			
+		<modifier key="Alt10_Paragon_Circle" modpriority="2"
+            localselectionringmaterial="/shared/materials/selection_indicator_paragon.material"
+        />
+	</altavatar>
+	
+	<altavatar key="Hero_PuppetMaster.Alt11"
+		icon="icon.tga"
+		icon2="alt11/icon.tga"
+		portrait="alt11/icon.tga"
+		model="alt11/model.mdf"
+		modelscale="1"
+		
+		preglobalscale="1.9"
+		passiveeffect="alt11/effects/body.effect"
+		
+		attackstarteffect=""
+		attackoffset="-12 125 120"
+		
+		portraitcampos="48 -40 18"
+
+		previewmodel="alt11/preview.mdf"
+		previewpos="-20 0 -70"
+		previewangles="0 0 0"
+		previewscale="2"
+		
+		storemodel="alt11/preview.mdf"
+		storepos="0 0 -27"
+		storeangles="0 0 0"
+		storescale="1.8"
+		
+		selectedsound="alt11/sounds/voice/select_%.wav"
+		selectedflavorsound="alt11/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt11/sounds/voice/move_%.wav"
+		confirmattacksound="alt11/sounds/voice/attack_%.wav"
+		nomanasound="alt11/sounds/voice/no_mana.wav"
+		cooldownsound="alt11/sounds/voice/cooldown.wav"
+		tauntedsound="alt11/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt11/sounds/voice/taunt_after.wav"
+		
+		infoheight="200"
+	>
+		<onspawn propagatetoillusions="false">
+			<ownsproduct target="this_entity" product="aa.Hero_Defiler.Alt6 aa.Hero_PuppetMaster.Alt11 aa.Hero_Empath.Alt9 aa.Hero_Deadwood.Alt7 aa.Hero_Hunter.Alt10">
+				<activatemodifierkey name="Thai_Ghost_Set" />
+			</ownsproduct>
+		</onspawn>
+
+		<onrespawn propagatetoillusions="false">
+			<ownsproduct target="this_entity" product="aa.Hero_Defiler.Alt6 aa.Hero_PuppetMaster.Alt11 aa.Hero_Empath.Alt9 aa.Hero_Deadwood.Alt7 aa.Hero_Hunter.Alt10">
+				<activatemodifierkey name="Thai_Ghost_Set" />
+			</ownsproduct>
+		</onrespawn>
+
+		<onkilled>
+			<ownsproduct target="this_entity" product="aa.Hero_Defiler.Alt6 aa.Hero_PuppetMaster.Alt11 aa.Hero_Empath.Alt9 aa.Hero_Deadwood.Alt7 aa.Hero_Hunter.Alt10">
+				<deactivatemodifierkey name="Thai_Ghost_Set" />
+			</ownsproduct>
+		</onkilled>
+
+		<modifier key="iamsheeped" modpriority="100"
+			passiveeffect=""
+		>
+			<deactivatemodifierkey name="Thai_Ghost_Set" />
+		</modifier>
+
+		<modifier key="Thai_Ghost_Set" modpriority="1000"
+			tooleffectpath37="/heroes/defiler/alt6/thaighost_set/thaighost_set.effect"
+		/>
+		
+	</altavatar>
+	
+	<altavatar key="Hero_PuppetMaster.pog_skin"
+		icon="icon.tga"
+		icon2="icon.tga"
+		portrait="icon.tga"
+		model="pog_skin/model.mdf"
+		
+		previewmodel="pog_skin/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.15"
+
+		storemodel="pog_skin/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.3"
+	/>
+	
+	
+	<altavatar key="Hero_PuppetMaster.Alt12"
+		icon="icon.tga"
+		icon2="alt12/icon.tga"
+		portrait="alt12/icon.tga"
+		model="alt12/model.mdf"
+		modelscale="1"
+		preglobalscale="1.9"
+		passiveeffect="alt12/effects/body.effect"
+
+		portraitcampos="31 -50 27"
+
+		previewpassiveeffect="alt12/effects/body_02.effect"
+		previewmodel="alt12/preview.mdf"
+		previewpos="-20 0 -70"
+		previewangles="0 0 0"
+		previewscale="2"
+		
+		storepassiveeffect="alt12/effects/body_02.effect"
+		storemodel="alt12/preview.mdf"
+		storepos="0 0 -27"
+		storeangles="0 0 0"
+		storescale="1.8"
+		
+		selectedsound="alt12/sounds/voice/select_%.wav"
+		selectedflavorsound="alt12/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt12/sounds/voice/move_%.wav"
+		confirmattacksound="alt12/sounds/voice/attack_%.wav"
+		nomanasound="alt12/sounds/voice/no_mana_%.wav"
+		cooldownsound="alt12/sounds/voice/cooldown_%.wav"
+		tauntedsound="alt12/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt12/sounds/voice/taunt_after.wav"
+		
+		attackstarteffect=""
+		
+		infoheight="200"
+		
+		tooleffectkeyname0="Item_Immunity"
+		tooleffectpath0="alt12/shrunken_heads/body.effect"
+		tooleffectgroup0="shrunken"
+		
+		tooleffectkeyname1="Item_ElderParasite"
+		tooleffectpath1="alt12/upgraded_head/body.effect"
+		tooleffectgroup1="head"
+		
+		tooleffectkeyname2="Item_WhisperingHelm"
+		tooleffectpath2="alt12/upgraded_head/body.effect"
+		tooleffectgroup2="head"
+		
+		tooleffectkeyname3="Item_LifeSteal4"
+		tooleffectpath3="alt12/upgraded_head/body.effect"
+		tooleffectgroup3="head"
+		
+		tooleffectkeyname4=""
+		tooleffectpath4="alt12/base_head/body.effect"
+		tooleffectgroup4="head"
+		
+		tooleffectkeyname5="Item_Sasuke"
+		tooleffectpath5="alt12/genjuro/body.effect"
+		tooleffectgroup5="cape"
+		
+		tooleffectkeyname6="Item_Stealth"
+		tooleffectpath6="alt12/assassins_shroud/body.effect"
+		tooleffectgroup6="cape"
+		
+		tooleffectkeyname7="Item_HarkonsBlade"
+		tooleffectpath7="alt12/harkons_blade/body.effect"
+		tooleffectgroup7="weapon"
+		
+		tooleffectkeyname8="effect_SavageMace"
+		tooleffectpath8="alt12/harkons_blade/body.effect"
+		tooleffectgroup8="weapon"
+		
+		tooleffectkeyname9="Item_Gloves3"
+		tooleffectpath9="alt12/upgraded_arms/body.effect"
+		tooleffectgroup9="arms"
+		
+		tooleffectkeyname10=""
+		tooleffectpath10="alt12/base_arms/body.effect"
+		tooleffectgroup10="arms"
+		
+		tooleffectkeyname11="effect_Boots"
+		tooleffectpath11="alt12/upgraded_legs/body.effect"
+		tooleffectgroup11="legs"
+		
+		tooleffectkeyname12=""
+		tooleffectpath12="alt12/base_legs/body.effect"
+		tooleffectgroup12="legs"
+		
+		tooleffectkeyname13="Item_Morph"
+		tooleffectpath13="alt12/kuldras_sheepstick/body.effect"
+		tooleffectgroup13="kuldra"
+		
+		tooleffectkeyname14="Item_ArclightCrown"
+		tooleffectpath14="alt12/arclight_crown/body.effect"
+		tooleffectgroup14="lighten"
+		
+		tooleffectkeyname15="Item_Lightning1"
+		tooleffectpath15="alt12/thunderclaw/body.effect"
+		tooleffectgroup15="lighten"
+		
+		tooleffectkeyname16="Item_Silence"
+		tooleffectpath16="alt12/hellflower/body.effect"
+		tooleffectgroup16="shoulder"
+		
+		tooleffectkeyname17="Item_GrimoireOfPower"
+		tooleffectpath17="alt12/hellflower/body.effect"
+		tooleffectgroup17="shoulder"
+	>
+	    <onspawn>
+		<pausevoiceovers duration="8000" />
+		<playeffect effect="alt12/sounds/interactions/spawn.effect" target="source_entity" />
+		</onspawn>
+		
+		<onkill>
+		<!-- Interaction -->
+			<targettype type="illusion" />
+			<else>
+			<cantarget targetscheme="enemy_heroes" >
+			<pushentityproxy entity="this_proxy_entity" />
+		    <chance threshold="0.30">  
+				<compare a="stack_entity" b="inflictor_entity" op="ne"> <!--To prevent interaction to play if you have taunted them-->
+                <playeffect effect="alt12/sounds/interactions/kill_audio.effect" source="this_entity" target="this_entity" />
+				<pausevoiceovers duration="3000" /> 
+				<delayannouncer duration="3000" source="target_entity" sourceonly="true"/>
+				<delayannouncer duration="3000" source="this_entity" sourceonly="true"/>			
+				</compare>
+			</chance>
+			</cantarget>
+			</else>
+        </onkill>
+		
+		<onassist>
+		<!-- Interaction -->
+		    <chance threshold="0.30">  
+				<pausevoiceovers duration="4000" />
+				<delayannouncer duration="4000" source="target_entity" sourceonly="true"/>
+				<delayannouncer duration="4000" source="this_entity" sourceonly="true"/>
+                <playeffect effect="alt12/sounds/interactions/assists_audio.effect" source="this_entity" target="this_entity" />
+			</chance>		
+        </onassist>
+		
+		<onlevelup>
+			<targettype type="illusion" />
+			<else>
+				<compare a="level" b="16" op="eq">
+						<pausevoiceovers duration="4000" /> 
+						<delayannouncer duration="4000" source="source_entity" sourceonly="true"/>
+					    <play2dsound sample="/heroes/puppetmaster/alt12/sounds/interactions/level_16" channel="68" volume="1.0" dampen="0.5" sourceonly="true" targetonly="true" />
+				</compare>
+				<else>
+					<compare a="level" b="11" op="eq">
+						<pausevoiceovers duration="4000" /> 
+						<delayannouncer duration="4000" source="source_entity" sourceonly="true"/>
+						<play2dsound sample="/heroes/puppetmaster/alt12/sounds/interactions/level_11" channel="68" volume="1.0" dampen="0.5" sourceonly="true" targetonly="true" />
+					</compare>
+					<else>
+						<compare a="level" b="6" op="eq">
+							<pausevoiceovers duration="3000" /> 
+							<delayannouncer duration="3000" source="source_entity" sourceonly="true"/>
+							<play2dsound sample="/heroes/puppetmaster/alt12/sounds/interactions/level_6" channel="68" volume="1.0" dampen="0.5" sourceonly="true" targetonly="true" />
+						</compare>
+						<else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</onlevelup>
+		
+		<ondeath>
+			<targettype type="illusion" />
+			<else>
+				<chance threshold="0.30"> 
+					<delayannouncer duration="8000" source="source_entity" sourceonly="true"/>
+					<play2dsound sample="/heroes/puppetmaster/alt12/sounds/interactions/death_%" channel="68" volume="1.0" dampen="0.5" sourceonly="true" targetonly="true" />
+				</chance> 
+			</else>
+		</ondeath>
+		<!-- Head:Elder Parasite,Whispering Helm,Symbol Of Rage
+		Arms:Alchemist's Bones
+		Legs:He gets his leg armor from all upgraded boots
+		-->
+	</altavatar>
+	
+</hero>

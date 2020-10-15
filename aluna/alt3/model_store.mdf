@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="Kim22.max" file="sinon.model" type="K2" high="/heroes/aluna/Sinon/sinon.model" med="/heroes/aluna/Sinon/sinon.model" low="/heroes/aluna/Sinon/sinon.model" >
+
+	<anim name="idle" clip="/heroes/aluna/C/Stand.clip" loop="true" fps="550"/>
+			
+	<anim name="portrait" clip="/heroes/aluna/C/Stand.clip" loop="true" fps="550"/>
+	
+	<anim name="walk_1" clip="/heroes/aluna/C/Walk alternate.clip" loop="true"  fps="550" >
+		<frameevent frame="200" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="300" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="150" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="400" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="500" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="500" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="500" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="500" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+
+		<frameevent frame="5" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="18" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+
+		<frameevent frame="32" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="44" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	</anim>
+	
+	<anim name="frozen_run" clip="/heroes/aluna/C/Walk alternate.clip" loop="true"  fps="550">
+	</anim>
+
+	<anim name="bored_1" clip="/heroes/aluna/C/Birth.clip" fps="550"/>
+	
+	<anim name="taunt_1" clip="/heroes/aluna/C/Spell slam one.clip" fps="550"/>
+	
+	<anim name="item_1" clip="/heroes/aluna/C/Spell three.clip" fps="550"/>
+	
+	<anim name="death_1" clip="/heroes/aluna/C/Death.clip" loop="true" loopbackframe="-1" fps="550">
+	
+		<frameevent frame="1" cmd="StartEffect /heroes/aluna/effects/death.effect 1"/>
+	</anim>
+	
+	<anim name="attack_1" clip="/heroes/aluna/C/Attack 1.clip" fps="550">
+		<frameevent frame="1" cmd="StartEffect /heroes/aluna/projectile/cast.effect"/>
+		<frameevent frame="10" cmd="PlaySoundLinear /heroes/aluna/sounds/attack_%.wav 400 1800 .75"/>
+		<frameevent frame="10" cmd="PlaySoundLinear /shared/sounds/attacks/attack_light_%.wav 400 1800 .25"/>
+	</anim>
+	
+	<anim name="attack_2" clip="/heroes/aluna/C/Attack 2.clip" fps="550">
+		<frameevent frame="1" cmd="StartEffect /heroes/aluna/projectile/cast.effect"/>
+		<frameevent frame="12" cmd="PlaySoundLinear /heroes/aluna/sounds/attack_%.wav 400 1800 .75"/>
+		<frameevent frame="10" cmd="PlaySoundLinear /shared/sounds/attacks/attack_light_%.wav 400 1800 .25"/>
+	</anim>
+	
+	<anim name="attack_3" clip="C/Attack 1.clip" fps="550">
+		<frameevent frame="1" cmd="StartEffect /heroes/aluna/projectile/cast.effect"/>
+		<frameevent frame="12" cmd="PlaySoundLinear /heroes/aluna/sounds/attack_%.wav 400 1800 .75"/>
+		<frameevent frame="10" cmd="PlaySoundLinear /shared/sounds/attacks/attack_light_%.wav 400 1800 .25"/>
+	</anim>
+	
+	<anim name="ability_1" clip="/heroes/aluna/C/Spell two.clip" fps="550" startframe="400" numframes="1000" blendtime="0"  >
+		<frameevent frame="5" cmd="StartEffect /heroes/aluna/projectile/cast.effect"/>
+	</anim>
+	
+	<anim name="ability_2" clip="/heroes/aluna/C/Spell two.clip" fps="550" loop="false">
+		<frameevent frame="500" cmd="PlaySoundLinear /heroes/aluna/ability_02/sounds/cast_grunt.wav 400 1800 .85"/>
+		<frameevent frame="500" cmd="PlaySoundLinear /heroes/aluna/ability_02/sounds/throw.wav 400 1800 .85"/>
+	</anim>
+	
+	<anim name="ability_3" clip="/heroes/aluna/C/Spell three.clip" fps="550" loop="false"/>
+
+	<anim name="ability_3_walk" clip="/heroes/aluna/C/Walk alternate.clip" fps="550" loop="false"/>
+
+	<anim name="ability_4" clip="/heroes/aluna/C/Spell one.clip" fps="550"/>
+
+	<anim name="knock_1" clip="/heroes/aluna/C/Death.clip" fps="550" loop="true" loopbackframe="-1"/>
+			
+</model>

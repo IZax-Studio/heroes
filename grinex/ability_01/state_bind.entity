@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Grinex_Ability1_Bind"
+	
+	icon="1.png"
+	ishidden="true"
+	
+	stunned="true"
+	stunneddurationunmodifiable="true"
+	
+	passiveeffect="effects/charge_trail_enemy.effect"
+	
+	effecttype=""
+>
+	
+	<altavatar key="Hero_Grinex.Alt" modpriority="100"
+		passiveeffect="../alt/ability_01/effects/charge_trail_enemy.effect"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt2" modpriority="100"
+		passiveeffect="../alt2/ability_01/effects/charge_trail_enemy.effect"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt3" modpriority="100"
+		passiveeffect="../alt3/ability_01/effects/charge_trail_enemy.effect"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt4" modpriority="100"
+		passiveeffect="../alt4/ability_01/effects/charge_trail_enemy.effect"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt5" modpriority="100"
+		passiveeffect="../alt5/ability_01/effects/charge_trail_enemy.effect"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt6"
+		passiveeffect="/heroes/grinex/alt6/ability_01/effects/charge_trail_enemy.effect"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt7"
+		passiveeffect="/heroes/grinex/alt6/ability_01/effects/charge_trail_enemy.effect"
+	/>
+</state>

@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" persistent="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".3">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume="1"
+				sample="../sounds/explosion.wav"
+			/>
+
+			<model
+				life="7500"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".01"
+				model="/heroes/nomad/ability_2/effects/explosion_model/model.mdf"
+				anim="idle"
+				color="1 1 1"
+				scale=".4"
+			>
+
+				<template name="fire">
+					<simpleemitter
+					delay="250"
+						bone="{bone}"
+						minlife="1200"
+						maxlife="1600"
+						minparticlelife="400"				
+						maxparticlelife="600"				
+						spawnrate="50"
+						minspeed="35"
+						maxspeed="75"
+						gravity="-1"
+						minangle="0"
+						maxangle="30"
+						material="/shared/effects/materials/soul_projectile2.material"
+						offsetsphere="10 10 10"
+						position="0 0 0"
+					>
+						<particle 
+							minanglespeed="-100"
+							maxanglespeed="100"
+							minangle="-360"
+							maxangle="360"
+							startcolor="0 0 0"
+							midcolor=".255 .300 200"
+							endcolor="0 0 0"
+							startsize="50"			
+							endsize="75"
+						/>
+						
+						<particle 
+							minanglespeed="-100"
+							maxanglespeed="100"
+							minangle="-360"
+							maxangle="360"
+							startcolor="0 0 0"
+							midcolor=".255 .300 200"
+							endcolor="0 0 0"
+							startsize="50"			
+							endsize="75"
+						/>
+					</simpleemitter>
+	
+				</template>
+				
+				<instance name="fire" bone="_bone_debris024"/>
+				<instance name="fire" bone="_bone_debris012"/>
+				<instance name="fire" bone="_bone_debris022"/>
+				<instance name="fire" bone="_bone_debris019"/>
+				<instance name="fire" bone="_bone_debris033"/>
+				<instance name="fire" bone="_bone_debris006"/>
+				<instance name="fire" bone="_bone_debris028"/>
+				<instance name="fire" bone="_bone_debris017"/>
+				<instance name="fire" bone="_bone_debris014"/>
+				<instance name="fire" bone="_bone_debris027"/>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+				<template name="trails">
+					<simpleemitter
+						bone="{bone}"
+						spawnrate="50"
+						life="750"
+						minparticlelife="500"
+						maxparticlelife="1000"
+						depthbias="-20"
+						material="/shared/effects/materials/spark_10.material"
+						offsetsphere="25 25 25"
+						gravity="0"
+					>
+						<particle 
+							startcolor=".255 .300 200"
+							endcolor="0 0 1"
+							size="15"
+							minscale="1"
+							maxscale="2"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+						/>
+					</simpleemitter>
+					
+					<simpleemitter
+						bone="{bone}"
+						spawnrate="5"
+						life="500"
+						minparticlelife="250"
+						maxparticlelife="500"
+						material="/shared/effects/materials/soul_projectile2.material"
+						offsetsphere="35 35 35"
+						gravity="0"
+					>
+						<particle 
+							minangle="0"
+							maxangle="360"
+							startcolor=".255 .300 200"
+							endcolor="0"
+							minsize="25"
+							maxsize="50"
+							startscale="1"
+							endscale="2"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							startanchor="1"
+							endanchor="1"
+						/>
+					</simpleemitter>
+					
+					<simpleemitter
+					delay="850"
+						bone="{bone}"
+						spawnrate="5"
+						life="500"
+						minparticlelife="250"
+						maxparticlelife="500"
+						material="/shared/effects/materials/soul_projectile2.material"
+						offsetsphere="35 35 35"
+						gravity="-25"
+					>
+						<particle 
+							minangle="0"
+							maxangle="360"
+							startcolor=".255 .300 200"
+							endcolor="0"
+							minsize="25"
+							maxsize="50"
+							startscale="1"
+							endscale="3"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							startanchor="1"
+							endanchor="1"
+						/>
+					</simpleemitter>
+
+					<billboard
+						bone="{bone}"
+						minlife="1500"
+						maxlife="3000"
+						startcolor="0 0 1"
+						endcolor="0"
+						size="100"
+						material="/shared/effects/materials/whitedot.material"
+					/>
+				</template>
+
+				<instance name="trails" bone="_bone_debris026"/>
+				<instance name="trails" bone="_bone_debris018"/>
+				<instance name="trails" bone="_bone_debris020"/>
+				<instance name="trails" bone="_bone_debris028"/>
+				<instance name="trails" bone="_bone_debris024"/>
+				<instance name="trails" bone="_bone_debris011"/>
+				<instance name="trails" bone="_bone_debris029"/>
+				<instance name="trails" bone="_bone_debris019"/>
+				<instance name="trails" bone="_bone_debris013"/>
+			</model>
+<!--
+			<groundsprite
+				material="/shared/effects/materials/ground_crater.material"
+				size="125"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				life="5000"
+				maxyaw="360"
+			/>
+-->
+			
+
+			<billboard
+				life="250"
+				position="0 0 50"
+				startcolor="0"
+				midcolor=".255 .300 200"
+				endcolor="0"
+				startsize="200"
+				endsize="500"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				material="/shared/effects/materials/explosion.material"
+			/>
+			
+			<billboard
+				life="500"
+				position="0 0 50"
+				startcolor="0 0 .4"
+				midcolor="255 .300 200"
+				endcolor="0"
+				startsize="200"
+				endsize="750"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				material="/shared/effects/materials/starlight.material"
+			/>
+
+			<simpleemitter
+				count="15"
+				spawnrate="100"
+				particlelife="250"
+				material="/shared/effects/materials/rad_add.material"
+				offsetsphere="5 5 25"
+				position="0 0 150"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-25"
+					maxanglespeed="25"
+					startcolor="1"
+					midcolor=".255 .300 2008"
+					endcolor="0"
+					midcolorpos="1"
+					width="50"
+					startsize="100"
+					endsize="1000"
+					lockup="1"
+					lockright="1"
+					pitch="-90"
+					startanchor="1"
+					endanchor=".7"
+				/>
+			</simpleemitter>
+
+			
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

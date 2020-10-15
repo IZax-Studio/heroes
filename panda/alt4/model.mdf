@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="Enzyu_Face.model" type="K2" high="Enzyu_Face.model" med="Enzyu_Face.model" low="Enzyu_Face.model" >
+	
+	<anim name="idle" clip="Stand R.clip" fps="550" loop="true"/>
+	
+	<anim name="surprise" clip="Stand R.clip" fps="550" />
+	
+	<anim name="attack_1" clip="Attack.clip" fps="550" loop="false">
+		<frameevent frame="10" cmd="PlaySoundLinear ../sounds/whoosh_%.wav 400 2000 .65"/>
+	</anim>
+	
+	<anim name="attack_2" clip="Attack 2.clip" fps="550" loop="false">
+		<frameevent frame="10" cmd="PlaySoundLinear ../sounds/whoosh_%.wav 400 2000 .65"/>
+			</anim>
+	
+	<anim name="walk_1" clip="Walk.clip" fps="550" loop="true">
+		<frameevent frame="6" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="11" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="17" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="21" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		
+		<frameevent frame="6" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="17" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	</anim>
+	
+	<anim name="death_1" clip="Death.clip" fps="550" loop="true" loopbackframe="-1">
+	</anim>
+	
+	<anim name="ability_1" clip="Spell F.clip" fps="400" loop="false">
+		<frameevent frame="10" cmd="PlaySoundLinear ../sounds/whoosh_%.wav 400 2000 .65"/>
+	</anim>
+	
+	<anim name="attackability1_1" clip="Spell Throw.clip" fps="550" loop="false">
+		<frameevent frame="10" cmd="PlaySoundLinear ../sounds/whoosh_%.wav 400 2000 .65"/>
+	
+	</anim>
+
+	<anim name="attackability1_2" clip="Spell Two.clip" fps="550" loop="false">
+		<frameevent frame="1" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 2000 .65"/>
+	</anim>
+	
+	<anim name="attackability1_3" clip="Spell F.clip" fps="550" loop="false">
+	
+		<frameevent frame="7" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 2000 .65"/>
+	</anim>
+	
+	<anim name="attackability1_4" clip="Attack Slam.clip" fps="550" loop="false">
+		<frameevent frame="10" cmd="PlaySoundLinear ../sounds/attack_%.wav 400 2000 .65"/>
+	</anim>
+	
+	<anim name="ability_2" clip="Spell Throw.clip" fps="500" loop="false" startframe="100" numframes="1000" blendtime="0" >
+	 <frameevent frame="0" cmd="PlaySoundLinear \heroes\panda\ability_03/sounds/cast.wav 400 2000 .65"/>
+	</anim>
+	
+	<anim name="ability_2_leap" clip="ability_02.clip" fps="550" loop="false" blendtime="100">
+		<frameevent frame="150" cmd="PlaySoundLinear 1.wav 400 2000 .65"/>
+	</anim>
+	
+	<anim name="ability_3" clip="Spell Channel.clip" fps="550" loop="false">
+
+		<frameevent frame="1" cmd="PlaySoundLinear ../ability_03/sounds/cast.wav 400 2000 .8"/>
+	</anim>
+	
+	<anim name="ability_3_stuck" clip="Spell Channel.clip" fps="550" loop="false">
+		<frameevent frame="1" cmd="PlaySoundLinear ../ability_03/sounds/stuck.wav 400 2000 1"/>
+	</anim>	
+	
+	<anim name="ability_4" clip="ability_04.clip" fps="550" loop="false">
+		<frameevent frame="300" cmd="PlaySoundLinear attack.wav 400 2000 1"/>
+		<frameevent frame="2000" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_1.wav 400 2000 .65"/>
+
+		<frameevent frame="100" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_1.wav 400 2000 .65"/>
+		<frameevent frame="1000" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_1.wav 400 2000 .65"/>
+		<frameevent frame="3000" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_1.wav 400 2000 .65"/>
+		<frameevent frame="4000" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_1.wav 400 2000 .65"/>
+		
+	</anim>
+
+	<anim name="bored_1" clip="Stand.clip" fps="550" loop="true"/>
+	<anim name="item_1" clip="Attack Slam.clip" fps="550" loop="false"/>
+	<anim name="knock_1" clip="Death.clip" loop="true" loopbackframe="-1" fps="550"/>
+	<anim name="taunt_1" clip="Stand 02.clip" fps="550" loop="false"/>
+	<anim name="portrait" clip="Stand R.clip" fps="330" loop="true"/>
+	
+</model>

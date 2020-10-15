@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" >
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+
+			<model
+				name="herp"
+				bone="_bone_righthand"
+			/>
+
+			<twopointemitter
+				bone_a="_bone_righthand"
+				owner_b="_bone_lefthand"
+				position_b="20 0 0"
+				offsetsphere="10"
+				spawnrate="30"
+				material="/shared/effects/materials/fireball_03_reveal_add.material"
+				minparticlelife="350"
+				maxparticlelife="450"
+				gravity="-15"
+				maxspeed="30"
+				direction="0 0 1"
+				angle="30"
+				depthbias="-10"
+				inheritvelocity="0.2"
+				limitinheritvelocity="100"
+				drag="0.02"
+			>
+				<particle
+					minsize="30"
+					maxsize="40"
+					startscale=".5"
+					endscale="1"
+					startcolor=".5 .3 0"
+					midcolor=".25 0 0"
+					endcolor="0"
+					maxangle="360"
+					minanglespeed="-60"
+					maxanglespeed="60"
+					startframe="1"
+					midframe="0"
+					endframe="1"
+					midframepos=".25"
+					param=".1"
+				/>
+			</twopointemitter>
+
+			<twopointemitter
+				timenudge="1000"
+				bone_a="_bone_righthand"
+				owner_b="_bone_lefthand"
+				position_b="20 0 0"
+				offsetsphere="10"
+				spawnrate="10"
+				material="/shared/effects/materials/whitedot.material"
+				minparticlelife="750"
+				maxparticlelife="1000"
+				angle="30"
+				depthbias="-30"
+			>
+				<particle
+					anchor="1"
+					minsize="40"
+					maxsize="60"
+					startcolor="0"
+					midcolor=".25 0 0"
+					endcolor="0"
+				/>
+			</twopointemitter>
+<!-- 
+			<skeletonemitter
+				timenudge="1000"
+				position_b="20 0 0"
+				offsetsphere="10"
+				spawnrate="100"
+				material="/shared/effects/materials/whitedot.material"
+				minparticlelife="300"
+				maxparticlelife="400"
+				angle="30"
+				depthbias="-30"
+			>
+				<particle
+					anchor="1"
+					minsize="60"
+					maxsize="80"
+					startcolor="0"
+					midcolor=".15 0 0"
+					endcolor="0"
+				/>
+			</skeletonemitter> -->
+
+			<skeletonemitter
+				offsetsphere="10"
+				spawnrate="100"
+				material="/shared/effects/materials/fireball_03_reveal_add.material"
+				minparticlelife="350"
+				maxparticlelife="450"
+				gravity="-15"
+				maxspeed="30"
+				direction="0 0 1"
+				angle="30"
+				depthbias="-10"
+				inheritvelocity="0.2"
+				limitinheritvelocity="100"
+				drag="0.02"
+			>
+				<particle
+					minsize="40"
+					maxsize="60"
+					startscale=".5"
+					endscale="1"
+					startcolor=".25 .1 0"
+					midcolor=".25 0 0"
+					endcolor="0"
+					maxangle="360"
+					minanglespeed="-60"
+					maxanglespeed="60"
+					startframe="1"
+					midframe="0"
+					endframe="1"
+					midframepos=".25"
+					param=".1"
+				/>
+			</skeletonemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+</effect>

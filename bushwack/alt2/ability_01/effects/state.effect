@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="purgeEffect" deferred="true"  useentityeffectsscale="true">
+	<definitions>
+		<particlesystem name="system1" space="world" scale="1.0">
+
+			<sound
+				soundloop="true"
+				linearfalloff="true"
+				falloffstart="700"
+				falloffend="1300"
+				volume="1"
+				fadein="100"
+				fadeout="300"
+				sample="/heroes/bushwack/ability_01/sounds/state.wav"
+			/>
+			
+						<sound
+				forcestereo="true"
+				linearfalloff="true"
+				falloffstart="700"
+				falloffend="1300"
+				volume=".5"
+				sample="/heroes/bushwack/ability_01/sounds/impact.wav"
+			/>
+
+			<model
+				bone="_bone_centerofchest"
+				model="/heroes/moraxus/ability_04/effects/magic_sphere/shield.mdf"
+				anim="idle"
+				yawspeed="330"
+				scale=".8"
+				startcolor=".75 .75 .25"
+				endcolor="0 0 0"
+				expirelife="400"
+			/>
+			<model
+				bone="_bone_centerofchest"
+				model="/heroes/moraxus/ability_04/effects/magic_sphere/shield.mdf"
+				anim="idle"
+				pitchspeed="330"
+				scale=".6"
+				startcolor=".75 .75 .25"
+				endcolor="0 0 0"
+				expirelife="400"
+			/>
+				
+		
+			<!--blueSmoke-->
+			<simpleemitter
+				timenudge="1000"
+				bone="_bone_centerofchest"			
+				spawnrate="15"				
+				minparticlelife="1500"
+				maxparticlelife="3000"
+				gravity="0"
+				drag="0"
+				position="0 0 0"
+				offsetsphere="20 20 0"
+				material="/shared/effects/materials/phantom_smoke_17.material"
+			>
+  				<particle 
+					maxangle="360"			
+					minanglespeed="-6"
+					maxanglespeed="6"
+					startcolor="0 0 0"
+					color=".75 .75 .25"
+					endcolor="0 0 0"
+					startalpha="1 1 1"
+					endalpha="0 0 0"
+					startsize="0"
+					endsize="175"
+					endanchor="0"
+					stickiness="1"
+				/>
+			</simpleemitter>
+
+			
+			<billboard
+				material="/shared/effects/materials/fresnel_blend.material"
+				bone="_bone_centerofchest"
+				color=".01 .2 .01"
+				loop="1"
+				life="1000"
+				startalpha=".2"
+				midalpha=".2"
+				endalpha=".2"
+				position="0 0 0"
+				size="55"
+				depthbias="-150"			
+			/>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				offsetsphere="20 20 50"
+				spawnrate="10"
+				minparticlelife="300"
+				maxparticlelife="500"
+				drag="0.01"
+				minspeed="10"
+				maxspeed="20"
+				material="/shared/effects/materials/refract_ring.material"
+			>
+				<particle
+					maxangle="360"
+					minstartsize="60"
+					maxstartsize="100"
+					minendsize="40"
+					maxendsize="120"
+					color="1"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					param="0.1"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />	
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>
+
+
+
+
+
+
+

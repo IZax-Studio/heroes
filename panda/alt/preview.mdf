@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="\heroes\panda/black.model" med="\heroes\panda/black.model" low="\heroes\panda/black.model" >
+	
+	<anim name="idle" clip="\heroes\panda/idle.clip" fps="550" loop="true"/>
+	
+		
+</model>
+ 

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+
+			<model
+				expirelife="150"
+				position="0 0 0"
+				model="/heroes/aluna/alt5/Fia.mdf"
+				material="/shared/effects/materials/shell2.material"
+				anim="frozen_run"
+				param="1"
+				startcolor="0 .75 3"
+				endcolor="0 0 0"
+				scale="1.25"
+			/>
+
+			<model
+				expirelife="150"
+				loop="true"
+				position="0 0 0"
+				model="/heroes/aluna/alt5/Fia.mdf"
+				anim="frozen_run"
+				startalpha=".75"
+				endalpha="0"
+				param="1"
+				startcolor="1.5"
+				endcolor="1 1 1"
+				scale="1.25"
+			>
+			
+				<template name="trail">
+					<twopointtrailemitter
+						bone_a="{bone_a}"
+						bone_b="{bone_b}"
+						spawnrate="44"
+						particlelife="750"
+						texpostime="750"
+						texposscale="0.0"
+						texstretchscale="1.0"
+						material="/shared/effects/materials/swoosh_add.material"
+						subframepos="true"
+					>
+						<particle
+							startcolor="0 .75 3"
+							endcolor="0 0 0" 
+						/>
+					</twopointtrailemitter>
+				</template>
+				
+				<instance name="trail" bone_a="_bone_rightfoot" bone_b="_bone_centerofchest"/>
+				<instance name="trail" bone_a="_bone_leftfoot" bone_b="_bone_centerofchest"/>
+				<instance name="trail" bone_a="_bone_righthand" bone_b="_bone_centerofchest"/>
+				<instance name="trail" bone_a="_bone_lefthand" bone_b="_bone_centerofchest"/>
+				<instance name="trail" bone_a="_bone_head" bone_b="_bone_centerofchest"/>
+
+				<simpleemitter
+					spawnrate="4"
+					particlelife="5500"
+					position="0 10 0"
+					minangle="0"
+					maxangle="0"
+					direction="0 1 0"
+					offsetsphere="10 10 0"
+				>
+					<particle
+					turn="true"
+					>
+
+						
+					</particle>
+				</simpleemitter>
+				
+			</model>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>
+
+

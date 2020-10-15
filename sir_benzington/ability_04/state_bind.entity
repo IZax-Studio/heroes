@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_SirBenzington_Ability4_Selfbind"
+	
+	icon="4.png"
+	ishidden="true"
+	passiveeffect=""
+	
+	invulnerable="true"
+	stunned="true"
+	
+	effecttype=""
+	modifierkey="no_mount"
+	
+>
+	
+</state>

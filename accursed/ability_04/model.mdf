@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="ability4_wing.max" file="model2.model" type="K2" >
+	<anim name="idle" fps="30" clip="wings.clip" loopbackframe="32" loop="true"/>	
+	
+</model>

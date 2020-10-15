@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<sound
+				forcestereo="true"
+				linearfalloff="true" 
+				falloffstart="500"
+				falloffend="1500"
+				volume=".8"
+				sample="/heroes/grinex/ability_03/sounds/core_impact.wav"
+			/>
+			
+				
+		
+			<model
+				owner="source"
+				parentmodel="1"
+				parentskeleton="1"
+				material="/shared/effects/materials/shell2.material"
+				life="500"
+				startcolor="3 0 0"
+				endcolor="0"
+			/>
+			
+			<skeletonemitter
+				owner="source"
+				minparticlelife="400"
+				maxparticlelife="600"
+				count="150"
+				material="/shared/effects/materials/refract_gush.material"
+			>
+				<particle
+					startsize="0"
+					endsize="70"
+					startalpha="1"
+					endalpha="0"
+					param=".005"
+					maxangle="360"
+					anchor="1"
+					startcolor=".5 0 0"
+					endcolor="1"
+				>
+					<billboard
+						life="400"
+						startcolor=".5 0 0"
+						endcolor="0"
+						startsize="0"
+						endsize="100"
+						material="/shared/effects/materials/whitedot.material"
+					/>
+				</particle>
+			</skeletonemitter>
+			
+			<skeletonemitter
+				owner="source"
+				minparticlelife="400"
+				maxparticlelife="600"
+				minspeed="0"
+				maxspeed="50"
+				drag=".02"
+				gravity="-10"
+				count="50"
+				material="/shared/effects/materials/flare_05.material"
+			>
+				<particle
+					size="2"
+					startcolor="2"
+					endcolor="0"
+					maxangle="360"
+				/>
+			</skeletonemitter>
+
+		</particlesystem>
+		
+		
+		<particlesystem name="system1" space="world" scale="1">
+		
+			<model
+				owner="target"
+				parentmodel="1"
+				parentskeleton="1"
+				material="/shared/effects/materials/shell2.material"
+				life="500"
+				startcolor="3 0 0"
+				endcolor="0"
+			/>
+			
+			<skeletonemitter
+				owner="target"
+				minparticlelife="400"
+				maxparticlelife="600"
+				count="150"
+				material="/shared/effects/materials/refract_gush.material"
+			>
+				<particle
+					startsize="0"
+					endsize="70"
+					startalpha="1"
+					endalpha="0"
+					param=".005"
+					maxangle="360"
+					anchor="1"
+					startcolor=".5 0 0"
+					endcolor="1"
+				>
+					<billboard
+						life="400"
+						startcolor=".75 0 0"
+						endcolor="0"
+						startsize="0"
+						endsize="100"
+						material="/shared/effects/materials/whitedot.material"
+					/>
+				</particle>
+			</skeletonemitter>
+			
+			<skeletonemitter
+				owner="target"
+				minparticlelife="300"
+				maxparticlelife="900"
+				minspeed="100"
+				maxspeed="500"
+				drag=".075"
+				gravity="-30"
+				count="50"
+				material="/shared/effects/materials/flare_05.material"
+			>
+				<particle
+					size="4"
+					startcolor="1 0 0"
+					endcolor="0"
+					maxangle="360"
+				/>
+			</skeletonemitter>
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<wait duration="220" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

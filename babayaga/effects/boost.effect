@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale=".8" >
+
+		<template name="glow">
+				<model 
+					bone="_bone_weapon3"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+					yawspeed="-50"
+					anim="idle_slow"
+					color="0"
+					scale=".5"
+					expirelife="500"
+			
+				>	
+					<billboard
+						expirelife="500"
+						bone="{bone1}"
+						material="/shared/effects/materials/flare_01.material"
+						size="15"
+						startcolor="{startcolor}"
+						endcolor="0"
+					/>
+					<trailemitter
+						bone="{bone1}"
+						spawnrate="44"
+						particlelife="200"
+						texpostime="500"
+						texposscale="0.0"
+						texstretchscale=".4"
+						material="/shared/effects/materials/light_trail.material"
+						subframepos="true"
+					>
+						<particle
+							size="10"
+							startcolor="{startcolor}"
+							endcolor="0 0 0" 
+						/>
+					</trailemitter>
+				</model>	
+			</template>
+
+			<instance name="glow" bone1="_bone_fx_01" startcolor="1 0 1"/>
+			<instance name="glow" bone1="_bone_fx_04" startcolor=".5 0 .5"/>	
+			<instance name="glow" bone1="_bone_fx_07" startcolor="1 0 1"/>
+			<instance name="glow" bone1="_bone_fx_10" startcolor=".5 .0 .5"/>
+	
+			<beam
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+				material="/shared/effects/materials/whitedot_blend.material"
+				size="15"
+				color="1 .5 1"
+				depthbias="-10"
+			/>
+			
+			<billboard
+				bone="_bone_weapon3"
+				material="/shared/effects/materials/whitedot.material"
+				size="20"
+				color=".75 .1 .75"
+				depthbias="-25"
+			/>
+			<simpleemitter
+				bone="_bone_weapon3"
+				particlelife="2000"
+				spawnrate="2"
+			>
+				<particle
+					maxangle="360"
+					maxpitch="360"
+					maxyaw="360"
+					anglespeed="200"
+					anchor="1"
+				>
+					<model
+						model="/shared/effects/models/circle_of_bones/model.mdf"
+						anim="idle"
+						scale=".5"
+						life="2000"
+					>
+						<simpleemitter
+							life="1800"
+							bone="_bone_fx_01"
+							startspawnrate="50"
+							midspawnrate="50"
+							endspawnrate="0"
+							particlelife="300"
+							material="/shared/effects/materials/flare_02.material"
+						>
+							<particle
+								startcolor=".5 .1 .5"
+								endcolor="0"
+								size="10"
+							/>
+						</simpleemitter>
+						
+						<simpleemitter
+							life="1500"
+							bone="_bone_fx_01"
+							startspawnrate="70"
+							midspawnrate="70"
+							endspawnrate="0"
+							particlelife="500"
+							offsetsphere="3.5"
+							startparticlealpha="1"
+							midparticlealpha="1"
+							endparticlealpha="0"
+							inheritvelocity=".1"
+							material="/shared/effects/materials/flare_03.material"
+						>
+							<particle
+					maxangle="359"
+					maxanglespeed="30"
+					minanglespeed="-30"
+					minscale="1"
+					maxscale="5"
+					startcolor="1 .5 1"
+					midcolor=".5 0 .5"
+					endcolor="0"
+				/>
+						</simpleemitter>
+						
+					
+					</model>
+				</particle>
+			</simpleemitter>
+		</particlesystem>
+	</definitions>
+	 
+  <thread>
+    <spawnparticlesystem instance="instance0" particlesystem="system0" />
+    <waitfordeath instance="instance0" />
+    <!-- <die /> -->
+  </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

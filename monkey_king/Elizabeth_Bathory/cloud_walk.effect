@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale=".8">
+			
+			
+			
+		</particlesystem>
+		
+		<particlesystem name="system2" space="world" scale=".4">
+			<simpleemitter
+				bone="_bone_rightfoot"
+				minangle="-90"
+				maxangle="-90"
+				spawnrate="40"
+				minparticlelife="250"
+				maxparticlelife="1000"
+				speed="1000"
+				drag="0.1"
+				gravity="-1"
+				offsetsphere="15"
+				material="/shared/effects/materials/smoke_particle.material"
+			>
+				<particle
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					turn="1"
+					color=".3 .1 .3"
+					startsize="40"
+					minendscale="6"
+					maxendscale="10"
+					startalpha=".3"
+					midalpha=".3"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				bone="_bone_leftfoot"
+				minangle="-90"
+				maxangle="-90"
+				spawnrate="40"
+				minparticlelife="250"
+				maxparticlelife="1000"
+				speed="1000"
+				drag="0.1"
+				gravity="-1"
+				offsetsphere="15"
+				material="/shared/effects/materials/smoke_add.material"
+			>
+				<particle
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					turn="1"
+					color=".3 .15 .3"
+					startsize="40"
+					minendscale="8"
+					maxendscale="13"
+					startalpha=".3"
+					midalpha=".3"
+					endalpha="0"
+				/>
+			
+			</simpleemitter>
+			<trailemitter
+				bone="_bone_head"
+				spawnrate="50"
+				particlelife="500"
+				texpostime="500"
+			 	texposscale="0.0"
+			 	texstretchscale=".4"
+				position="0 0 0"
+				material="/shared/effects/materials/arrow_trail.material"
+			>
+				<particle
+					 startcolor=".1 .05 .1"
+					 midcolor=".15 .05 .15"
+					 endcolor="0 0 0"
+					 startsize="10"
+					 midsize="40"
+					 endsize="15"
+					 midsizepos="0.2"
+			 />
+			</trailemitter>
+			<template name="trail">
+				<twopointtrailemitter
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					spawnrate="44"
+					particlelife="220"
+					texpostime="600"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/swoosh_add.material"
+					subframepos="true"
+					startparticlecolor="1 1 1"
+					endparticlecolor="1 1 1"
+				>
+					<particle
+						startcolor="{color=.25 .075 0}" endcolor="0 0 0" 
+					/>
+				</twopointtrailemitter>
+			</template>
+			<instance name="trail" bone_a="Bip01 L Clavicle" bone_b="Bip01 L Hand" color=".5 .075 0"/>
+			<instance name="trail" bone_a="Bip01 R Clavicle" bone_b="Bip01 R Hand" color=".5 .075 0"/>
+			<instance name="trail" bone_a="Bip01 R Foot" bone_b="Bip01 R Thigh" color=".25"/>
+			<instance name="trail" bone_a="Bip01 L Foot" bone_b="Bip01 L Thigh" color=".25"/>
+			<instance name="trail" bone_a="Bip01 Pelvis" bone_b="Bip01 Head" color=".25 .075 0"/>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance2" particlesystem="system2" />
+		<waitfordeath  instance="instance0"/>
+		<waitfordeath  instance="instance2"/>
+	</thread>
+</effect>

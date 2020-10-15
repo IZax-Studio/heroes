@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Dreadknight2"
+	
+	statuseffectheader="true"
+	icon="2.jpg"
+	statuseffecttooltip="State_Dreadknight_Ability2"
+	
+	anim="ability_2"
+	casttime="0"
+	castactiontime="0"
+
+	casteffect=""
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="no_target"
+	frontqueue="true"
+	inheritmovement="true"
+	nonaggressive="true"
+	casteffecttype="Magic"
+	targetscheme="enemy_units"
+
+	manacost="60"
+	cooldowntime="8000,7000,6000,5000"
+	novoiceresponse="true"
+	targetradius="275"
+>
+	<onimpact>
+		<resetattackcooldown />
+		<applystate name="State_Dreadknight_Ability2" target="source_entity" duration="5000" />
+		<hasavatarkey name="Hero_Dreadknight.Alt5">
+			<hasmodifier name="Stage3">
+				<playeffect effect="../alt5/ability_02/effects/stage3/stomp.effect" target="source_position" source="source_position" occlude="true" />
+			</hasmodifier>
+			<else>
+				<hasmodifier name="Stage2">
+					<playeffect effect="../alt5/ability_02/effects/stage2/stomp.effect" target="source_position" source="source_position" occlude="true" />
+				</hasmodifier>
+				<else>
+					<playeffect effect="../alt5/ability_02/effects/stage1/stomp.effect" target="source_position" source="source_position" occlude="true" />
+				</else>
+			</else>
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Dreadknight.Alt7">
+				<playeffect effect="../alt7/ability_02/effects/stomp.effect" target="source_position" source="source_position" occlude="true" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Dreadknight.Alt8">
+					<playeffect effect="../alt8/ability_02/effects/stomp.effect" target="source_position" source="source_position" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Dreadknight.Alt9">
+						<playeffect effect="../alt9/ability_02/effects/stomp.effect" target="source_position" source="source_position" occlude="true" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Dreadknight.Alt10">
+							<playeffect effect="../alt9/ability_02/effects/stomp.effect" target="source_position" source="source_position" occlude="true" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Dreadknight.Alt11">
+								<playeffect effect="../alt11/ability_02/effects/stomp.effect" target="source_position" source="source_position" occlude="true" />
+							</hasavatarkey>
+							<else>
+								<playeffect effect="effects/stomp.effect" target="source_position" source="source_position" occlude="true" />
+							</else>
+						</else>	
+					</else>	
+				</else>	
+			</else>
+		</else>		
+				
+		<areaofeffect
+			radius="275"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+		>
+			<applystate name="State_Dreadknight_Ability2_Slow" duration="2000" />
+		</areaofeffect>
+	</onimpact>
+	
+	<altavatar key="Hero_Dreadknight.Alt11" modpriority="1"
+		icon="/heroes/dreadknight/alt11/ability_02/icon.tga"
+	/>
+	
+</ability>

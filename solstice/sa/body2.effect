@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".5">
+	
+
+
+
+
+
+	<template name="bg_glow" >
+				<simpleemitter
+					timenudge="2000"
+					bone="{bone}"
+					spawnrate="4"
+					minparticlelife="1200"
+					maxparticlelife="2000"
+					depthbias="8"
+					material="/shared/effects/materials/light_rays.material"
+				>
+					<particle
+						minangle="0"
+						maxangle="360"
+						flare="1"
+						minstartsize="10"
+						maxstartsize="20"
+						minendsize="30"
+						maxendsize="50"
+						startcolor="0"
+						midcolor=".125 .075 .01"
+						endcolor="0"
+						minanglespeed="-50"
+						maxanglespeed="50"
+						anchor="1"
+					/>
+				</simpleemitter>
+			</template>
+			
+
+			<instance name="bg_glow" bone="_bone_weaponattach" />
+<instance name="bg_glow" bone="_bone_weapon1" />
+<instance name="bg_glow" bone="_bone_weapon2" />
+<instance name="bg_glow" bone="_bone_weapon3" />
+
+		
+
+
+
+				
+		
+
+
+
+
+
+<beam
+
+		
+				startcolor="1"
+				midcolor="1 1 .75"
+				endcolor="0"
+				midcolorpos=".25"
+				timenudge="10"
+				gravity="50"
+				color="1 1 .75"
+				owner_a="source"
+				
+				position_a="0 0 50"
+				position_b="0 0 1100"
+				startsize="500"
+                     midsize="100"
+				endsize="00"
+			/>
+
+
+
+
+
+
+
+
+
+
+
+
+<twopointtrailemitter
+				
+				spawnrate="200"
+				particlelife="300"
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+				material="/shared/effects/materials/refract_gush_trail.material"
+				texposscale="1"
+				texstretchscale="0"
+				subframepos="1"
+			>
+				<particle
+					startparam="0"
+					midparam="0.1"
+					endparam="0"
+					midparampos=".1"
+				/>
+			</twopointtrailemitter>
+						<twopointemitter
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+
+					spawnrate="25"
+					particlelife="400"
+					depthbias="50"		
+					acceleration="5"
+					material="/shared/effects/materials/flame.material"
+					offsetsphere="20 20 20"
+					gravity="-15"
+					position="0 0 -40"
+				>
+					<particle 
+						minangle="-90"
+						maxangle="90"
+						minanglespeed="100"
+						color=".6 .9 1"
+				
+						midcolorpos=".2"
+						maxanglespeed="0"
+						startframe="0"
+						endframe="1"				
+						minsize="5"		
+						maxsize="10"
+						midsizepos=".2"		
+						anchor="1"
+					/>
+</twopointemitter>
+
+
+
+
+
+				
+						
+		
+
+			
+
+
+
+
+			
+
+
+
+
+
+
+<twopointemitter
+				bone_a="_bone_head"
+				bone_b="_bone_head8"
+
+					spawnrate="70"
+					minparticlelife="1000"
+				maxparticlelife="1000"
+
+directionalspace="global"
+				direction="-.5 0 -1"
+
+
+drag="0.01"
+					depthbias="5"		
+					acceleration="1"
+				maxspeed="1"	material="/shared/effects/materials/whitedot_ground.material"
+
+					offsetsphere="30 35 45"
+					gravity="3.5"
+					angle="900"
+
+				>
+					<particle 
+					maxangle="360"
+
+minanglespeed="-100"
+					maxanglespeed="100"
+
+					minsize="3"		
+						maxsize="2.8"
+
+					
+					color="5 .4 0"
+					
+					midcolorpos="10"
+					startanchor=".8"
+					endanchor=".7"
+					/>
+</twopointemitter>
+
+					
+			<twopointemitter
+			bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+
+				spawnrate="20"
+				expirelife="200"
+				minparticlelife="350"
+				maxparticlelife="600"
+				gravity="-30"
+				material="/shared/effects/materials/flame.material"
+			>
+				<particle
+					startcolor=".25 .15 0"
+					endcolor="0 0 0"
+					maxangle="360"
+					startsize="50"
+					endsize="70"
+					anchor="1"
+				/>
+			</twopointemitter>
+			
+			<twopointemitter
+			bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+
+				spawnrate="50"
+				expirelife="200"
+				minparticlelife="350"
+				maxparticlelife="600"
+				gravity="-10"
+				material="/shared/effects/materials/flame.material"
+			>
+				<particle
+					
+					color=".6 .9 1"
+					maxangle="360"
+					startsize="20"
+					endsize="20"
+					anchor="1"
+				/>
+			</twopointemitter>
+
+
+
+
+<twopointemitter
+			bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+
+				spawnrate="30"
+				expirelife="200"
+				minparticlelife="350"
+				maxparticlelife="600"
+				gravity="-1"
+				material="/shared/effects/materials/flame.material"
+			>
+				<particle
+					
+					color="4 .9 1"
+					maxangle="360"
+					startsize="20"
+					endsize="20"
+					anchor="1"
+				/>
+			</twopointemitter>
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+			<model
+				parentskeleton="true"
+				model="head.mdf"
+				material="/shared/effects/materials/shell2.material"
+				color=".8 .3 0"
+				alpha=".25"
+			>
+			</model>
+
+
+
+
+<model
+				parentskeleton="true"
+				model="eye.mdf"
+				material="/shared/effects/materials/shell3.material"
+				color="5 0 0"
+				alpha=".2"
+
+			>
+			</model>
+
+<model
+				parentskeleton="true"
+				model="eye.mdf"
+				
+				color="3.5"
+			
+
+			>
+			</model>
+
+
+
+<model
+	life="1000"
+				parentskeleton="true"
+				model="sword.mdf"
+				startcolor="5 0 0"
+				midcolor="3.5 .4 0"
+				endcolor="5 0 0"
+				midcolorpos=".25"
+				startscale="1"
+				midscale="1"
+				endscale="1"
+				midscalepos=".4"
+			alpha=".15"	material="/shared/effects/materials/shell6.material"
+				loop="true"
+
+			>
+			</model>
+
+	
+		</particlesystem>
+		
+		
+</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnparticlesystem instance="instance2" particlesystem="system2" />
+	<spawnmodifier instance="instance1" modifier="modifier0"/> 
+	<waitfordeath instance="instance0" />
+	<waitfordeath instance="instance2" />
+</thread>
+</effect>

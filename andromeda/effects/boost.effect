@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale=".5">		
+			<template name="wing">
+			<twopointemitter
+				bone_a="{bone_a}"
+				bone_b="{bone_b}"
+
+					spawnrate="10"
+					minparticlelife="1000"
+				maxparticlelife="1000"
+
+directionalspace="global"
+				direction="-.5 0 -1"
+
+
+drag="0.01"
+					depthbias="5"		
+					acceleration="1"
+				maxspeed="1"	material="/shared/effects/materials/flare_03.material"
+
+					offsetsphere="30 35 0"
+					gravity="3.5"
+					angle="900"
+
+				>
+					<particle 
+					maxangle="360"
+
+minanglespeed="-100"
+					maxanglespeed="100"
+
+					minsize="3"		
+						maxsize="2.8"
+
+					
+					color=".5 .5 .5"
+					
+					midcolorpos="10"
+					
+					/>
+</twopointemitter>
+<twopointemitter
+				bone_a="{bone_a}"
+				bone_b="{bone_b}"
+
+					spawnrate="10"
+					minparticlelife="1000"
+				maxparticlelife="1000"
+
+directionalspace="global"
+				direction="-.5 0 -1"
+
+
+drag="0.01"
+					depthbias="5"		
+					acceleration="1"
+				maxspeed="1"	material="/shared/effects/materials/flare_03.material"
+
+					offsetsphere="30 35 0"
+					gravity="3.5"
+					angle="900"
+
+				>
+					<particle 
+					maxangle="360"
+
+minanglespeed="-100"
+					maxanglespeed="100"
+
+					minsize="3"		
+						maxsize="2.8"
+
+					
+					color=".8 0 .5"
+					
+					midcolorpos="10"
+					
+					/>
+</twopointemitter>
+</template>
+
+			<instance name="wing" bone_a="Bone043" bone_b="Bone042" />
+			<instance name="wing" bone_a="Bone041" bone_b="Bone040" />
+			<groundsprite
+				material="/shared/effects/materials/whirl_ground.material"
+				color="1"
+				size="100"
+				alpha="1"
+				yawspeed="-80"
+			/>
+			<billboard
+				material="/shared/effects/materials/whirl_ground.material"
+				color="0 0 0"
+				size="282"
+				alpha="1"
+				rollspeed="-100"
+				pitch="-90"
+				depthbias="-10"
+				lockup="1"
+				lockright="1"
+			/>		
+			<billboard
+				material="/shared/effects/materials/whirl_ground.material"
+				color=".65 .2 .65"
+				size="222"
+				alpha="1"
+				rollspeed="-20"
+				pitch="-90"
+				depthbias="-20"
+				lockup="1"
+				lockright="1"
+			/>
+			
+			
+			
+		</particlesystem>
+		
+		<particlesystem name="system1" space="world" scale="1">
+		<template name="effect">
+		<simpleemitter
+				bone="{bone}"
+				spawnrate="5"
+				minparticlelife="250"
+				maxparticlelife="550"
+				speed="20"
+				direction="0 0 -1"
+				drag="0.10"
+				gravity="10"
+				material="/shared/effects/materials/whitedot_blend.material"
+				offsetsphere="0"
+				position="0 0 0"
+				depthbias="10"
+				acceleration="-50"
+			>
+				<particle
+					turn="1"
+					startsize="15"
+					endsize="0"
+					color=".175 .175 .175"
+					startalpha=".5"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="{bone}"
+				spawnrate="20"
+				minparticlelife="250"
+				maxparticlelife="750"
+				speed="0"
+				gravity="10"
+				material="/shared/effects/materials/flare_03.material"
+				offsetsphere="3"
+				position="0 0 0"
+				depthbias="10"
+				
+
+			>
+				<particle
+					turn="1"
+					startsize="8"
+					endsize="0"
+					startcolor=".5"
+					midcolor=".25 0 1"
+					endcolor="0 0 0"
+					
+				/>
+				<particle
+					turn="1"
+					startsize="8"
+					endsize="0"
+					startcolor=".5"
+					midcolor="1 .5 0"
+					endcolor="0 0 0"
+				/>
+			</simpleemitter>
+			
+			
+			
+			
+			
+			
+			
+			</template>
+  
+			<instance name="effect" bone="Bip01 L Finger12"/>
+			<instance name="effect" bone="Bip01 R Finger12"/> 
+			
+			
+			
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				particlelife="2000"
+				spawnrate="3"
+			>
+				<particle
+					maxangle="360"
+					maxpitch="360"
+					maxyaw="360"
+					anglespeed="200"
+					anchor="1"
+				>
+					<model
+						model="/shared/effects/models/circle_of_bones/model.mdf"
+						anim="idle"
+						scale="2"
+						life="2000"
+					>
+						<simpleemitter
+							life="1800"
+							bone="_bone_fx_01"
+							startspawnrate="30"
+							midspawnrate="30"
+							endspawnrate="0"
+							particlelife="300"
+							material="/shared/effects/materials/flare_02.material"
+						>
+							<particle
+								startcolor=".3 0 .3"
+								endcolor="0"
+								size="10"
+							/>
+						</simpleemitter>
+						
+					</model>
+				</particle>
+			</simpleemitter>
+			</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

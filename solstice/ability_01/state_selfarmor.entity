@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Solstice_Ability1_Armor"
+	
+	icon="Cha110_Skill_E.png"
+	passiveeffect="effects/state_armor.effect"
+	
+	armor="2,4,6,8"
+	magicarmor="1,2,3,4"
+	allowtransfer="true"
+	effecttype="StatusBuff"
+	impactinterval="1000"
+	
+>
+	<onimpact>
+		<hasmodifier name="SolsticeAbility1Charging" entity="source_entity" >
+			<changeduration b="3000" op="max" />
+		</hasmodifier>
+	</onimpact>
+	
+	<altavatar key="Hero_Solstice.Alt"
+		passiveeffect="/heroes/solstice/alt/ability_01/effects/state_armor.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt2"
+		passiveeffect="/heroes/solstice/alt2/ability_01/effects/state_armor.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt3"
+		passiveeffect="/heroes/solstice/alt3/ability_01/effects/state_armor.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt4"
+		passiveeffect="/heroes/solstice/alt4/ability_01/effects/state_armor.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt5"
+		passiveeffect="/heroes/solstice/alt5/ability_01/effects/state_armor.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt6"
+		passiveeffect="/heroes/solstice/alt6/ability_01/effects/state_armor.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt7"
+		passiveeffect="/heroes/solstice/alt7/ability_01/effects/state_armor.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt8"
+		passiveeffect="/heroes/solstice/alt8/ability_01/effects/state_armor.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt9"
+		passiveeffect="/heroes/solstice/alt9/ability_01/effects/state_armor.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt10"
+		passiveeffect="/heroes/solstice/alt10/ability_01/effects/state_armor.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt11"
+		passiveeffect="/heroes/solstice/alt11/ability_01/effects/state_armor.effect"
+	/>
+</state>

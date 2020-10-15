@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Magmar_Ability4_SelfCast"
+
+	
+	
+	icon="1.jpg"
+	passiveeffect=""
+	effecttype=""
+	ishidden="true"
+	
+	
+>
+	<oninflict>
+		<hasavatarkey name="Hero_Magmar.Alt2" >
+			<playeffect effect="/heroes/magmar/alt2/ability_04/effects/cast.effect" target="source_entity" />
+		</hasavatarkey>
+		
+		<hasavatarkey name="Hero_Magmar.set_ascension" >
+			<playeffect effect="/heroes/magmar/set_ascension/ability_04/effects/cast.effect" target="source_entity" />
+		</hasavatarkey>
+		
+		<else>
+			<hasavatarkey name="Hero_Magmar.Alt4" >
+				<playeffect effect="../alt4/ability_04/effects/cast.effect" target="source_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Magmar.Alt5" >
+					<playeffect effect="../alt5/ability_04/effects/cast.effect" target="source_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Magmar.Alt6" >
+						<playeffect effect="../alt6/ability_04/effects/cast.effect" target="source_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Magmar.Alt7" >
+							<playeffect effect="../alt7/ability_04/effects/cast.effect" target="source_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Magmar.Alt9" >
+								<playeffect effect="../alt9/ability_04/effects/cast.effect" target="source_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Magmar.Alt11" >
+									<playeffect effect="../alt11/ability_04/effects/cast.effect" target="source_entity" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Magmar.Alt12" >
+										<playeffect effect="../alt12/ability_04/effects/cast.effect" target="source_entity" />
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_Magmar.Alt13" >
+											<playeffect effect="../alt13/ability_04/effects/cast.effect" target="source_entity" />
+										</hasavatarkey>
+										<else>
+											<playeffect effect="effects/cast.effect" target="source_entity" />
+										</else>
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+	</oninflict>
+	
+	<altavatar key="Hero_Magmar.Alt4" modpriority="1"
+		icon="../alt4/ability_04/icon.tga"
+	/>
+	
+</state>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			<sound
+				life="5000"
+				linearfalloff="true" 
+				falloffstart="500"
+				falloffend="1300"
+				volume=".7"
+				sample="../../omen/sounds/ab1_cast_%.wav"
+			/>
+			
+			<billboard
+				delay="100"
+				life="300"
+				position="0 120 1"
+				lockup="true"
+				lockright="true"
+				pitch="-90"
+				material="../../omen/custom/ef_tex_506dkfz03_solid_6597a19b.material"
+				directionalspace="local"
+				height="240"
+				width="115"
+				startcolor="1"
+				midcolor="1"
+				endcolor="0 0 0"
+				midcolorpos=".75"
+			/>
+				
+			<billboard
+				delay="100"
+				life="300"
+				position="0 10 1"
+				lockup="true"
+				lockright="true"
+				pitch="-90"
+				material="/shared/effects/materials/beam_03.material"
+				flare="1"
+				directionalspace="local"
+				height="240"
+				width="180"
+				startframe="0.05"
+				endframe="1"
+				startcolor=".7 .3 1.25"
+				midcolor=".1 0 .2"
+				endcolor="0 0 0"
+				midcolorpos=".75"
+			/>
+				
+			<twopointtrailemitter
+				life="200"
+				spawnrate="200"
+				particlelife="200"
+				bone_a="_bone_weapon2"
+				bone_b="_bone_weapon3"
+				material="../../omen/custom/ef_gq_jzy_t00012.material"
+				texposscale="0"
+				texstretchscale="1"
+				subframepos="1"
+			>
+				<particle
+					startcolor="0 0 0"
+					midcolor=".5 .25 1"
+					endcolor=".5 .25 1"
+					midcolorpos=".4"
+					startalpha="0"
+					midalpha="1"
+					endalpha="1"
+					midalphapos=".1"
+				/>
+			</twopointtrailemitter>
+			
+			<twopointtrailemitter
+				life="350"
+				spawnrate="200"
+				particlelife="200"
+				bone_a="_bone_weapon2"
+				bone_b="_bone_weapon3"
+				material="/shared/effects/materials/refract_gush_trail.material"
+				texposscale="0"
+				texstretchscale="1.0"
+				subframepos="1"
+			>
+				<particle
+					startparam="0"
+					midparam="0.15"
+					endparam="0.15"
+					midparampos=".1"
+				/>
+			</twopointtrailemitter>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".75">
+		
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume=".5"
+				sample="/heroes/shadowblade/sounds/attackint_%.wav"
+			/>
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				count="15"
+				spawnrate="100"
+				particlelife="250"
+				material="/shared/effects/materials/rad_add.material"
+				offsetsphere="5 5 25"
+				position="0 0 0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-25"
+					maxanglespeed="25"
+					startcolor="0"
+					midcolor=".25 0 1"
+					endcolor="0"
+					midcolorpos=".25"
+					width="50"
+					startsize="85"
+					endsize="425"
+					lockup="1"
+					lockright="1"
+					pitch="-90"
+					startanchor="1"
+					endanchor=".7"
+				/>
+				
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-25"
+					maxanglespeed="25"
+					startcolor="0"
+					midcolor=".25 0 .35"
+					endcolor="0"
+					midcolorpos=".25"
+					width="50"
+					startsize="85"
+					endsize="425"
+					lockup="1"
+					lockright="1"
+					pitch="-90"
+					startanchor="1"
+					endanchor=".7"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="250"
+				bone="_bone_centerofchest"
+				spawnrate="50"
+				minparticlelife="200"
+				maxparticlelife="400"
+				gravity="-5"
+				position="0 0 0"
+				offsetsphere="50 50 50"
+				material="/shared/effects/materials/soul_projectile.material"
+				depthbias="-25"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-6"
+					maxanglespeed="6"
+					startcolor="1 1 1"
+					midcolor="1 0 1"
+					endcolor="0 0 0"
+					startsize="0"
+					endsize="100"
+					startanchor="1"
+					endanchor="0"
+					startalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<billboard
+				bone="_bone_centerofchest"
+				life="1000"
+				startcolor="1 1 1"
+				midcolor=".5 0 .5"
+				midcolorpos="0.25"
+				endcolor="0 0 0"
+				startsize="150"
+				endsize="0"
+				depthbias="-25"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="750"
+				param="0.1"	
+				startsize="50"
+				endsize="350"
+				startalpha="0"
+				midalpha=".5"
+				endalpha="0"
+				midalphapos=".25"
+				depthbias="-25"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="500"
+				startcolor="0 0 .5"
+				endcolor="0 0 0"
+				size="500"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				directionalspace="local"
+				depthbias="-100"
+				minroll="-180"
+				maxroll="180"
+				rollspeed="-360"
+
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="500"
+				startcolor=".25 0 .5"
+				endcolor="0 0 0"
+				size="200"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				directionalspace="local"
+				depthbias="-100"
+				minroll="-180"
+				maxroll="180"
+				rollspeed="-360"
+
+			/>
+
+			<billboard
+				bone="_bone_centerofchest"
+				life="500"
+				startcolor=".5 .5 .5"
+				endcolor="0 0 0"
+				size="50"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				directionalspace="local"
+				depthbias="-100"
+				minroll="-180"
+				maxroll="180"
+				rollspeed="-360"
+
+			/>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				life="700"
+				count="50"
+				position="0 0 0"
+				spawnrate="10000"
+				minparticlelife="500"
+				maxparticlelife="750"
+				minspeed="250"
+				maxspeed="250"
+				drag=".01"
+				inheritvelocity=".25"
+				offsetsphere="10 10 10"
+				gravity="0"
+				material="/shared/effects/materials/flare_03.material"
+				depthbias="-25"
+			>
+				<particle
+					startcolor=".25"
+					midcolor=".25"
+					endcolor=".5 0 1"
+					midcolorpos=".2"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					startsize="50"
+					endsize="0"
+					depthbias="-160"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<spawnmodifier instance="instance1" modifier="modifier0"/> 
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

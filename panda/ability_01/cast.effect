@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+
+<!--
+			      <billboard
+        	
+        bone="_bone_centerofchest"
+        material="/shared/effects/materials/whitedot.material"
+        position="0 0 0"
+        color=".3 0 .6"
+        size="380"
+        endsize="0"
+        midsizepos=".3"
+        depthbias="-100"
+		alpha=".7"
+      />
+      
+			<simpleemitter 
+				bone="_bone_centerofchest"
+				count="10"
+        spawnrate="222"				
+				minparticlelife="800"
+        maxparticlelife="1000"
+        gravity="0"
+        drag="0"
+				speed="50"
+				position="0 0 0"
+				offsetsphere="20 20 20"
+        material="/shared/effects/materials/neb_blend.material"
+				inheritvelocity="0.25"
+      >
+				<particle 
+					maxangle="360"			
+					minanglespeed="-44"
+					maxanglespeed="44"
+					scale="6"					
+					color=".1 0 .2"
+					startalpha="0"
+					midalpha=".7"
+					endalpha="0"
+					startsize="75"
+					midsize="11"
+					endsize="44"
+				/>
+      </simpleemitter>
+-->
+      <template name="foot_trail">
+       <trailemitter
+				
+				life="800"
+				 bone="{bone}"
+				spawnrate="50"
+				particlelife="0"
+				texposscale="0"
+				texstretchscale="1"
+				material="\heroes\panda\ability_03\effects/trail_01.material"
+			>
+				<particle
+					startsize="150"
+					endsize="0"
+					startcolor=".5 .5 .5"
+					midcolor=".4 .4 .4"
+					endcolor="0"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".2"
+				/>
+			</trailemitter>
+			
+			<trailemitter
+				delay="0"
+				life="800"
+				bone="{bone}"
+				spawnrate="20"
+				particlelife="300"
+				texposscale="0"
+				texstretchscale="1"
+				material="\heroes\panda\ability_03\effects/trail_01.material"
+			>
+				<particle
+					startsize="150"
+					endsize="0"
+					startcolor=".5 .5 .5"
+					midcolor=".4 .4 .4"
+					endcolor="0"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".2"
+				/>
+			</trailemitter>
+      </template>
+      
+      <instance name="foot_trail" bone="_bone_leftfoot" color=".7 .5 .2" />
+      <instance name="foot_trail" bone="_bone_rightfoot" color=".7 .5 .2" />
+
+    </particlesystem>
+  </definitions>
+  
+  <thread>
+    <spawnparticlesystem instance="instance0" particlesystem="system0" />
+    <waitfordeath instance="instance0" />
+    <!-- <die /> -->
+  </thread>
+  
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

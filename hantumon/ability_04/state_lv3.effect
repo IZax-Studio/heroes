@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world">
+
+			<sound
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="2500" 
+				volume=".75" 
+				sample="/heroes/hantumon/sounds/quillen/ab4_vox_%.wav"
+			/>
+			
+			<sound
+				delay="1000"
+				linearfalloff="true"
+				falloffstart="500"
+				falloffend="2000" 
+				volume=".3" 
+				sample="/heroes/hantumon/sounds/quillen/ab4_start.wav"
+			/>
+			
+			<sound
+				delay="2000"
+				linearfalloff="true"
+				falloffstart="500"
+				falloffend="2000" 
+				volume=".3" 
+				sample="/heroes/hantumon/sounds/quillen/ab4_start2_%.wav"
+			/>
+			
+			<sound
+				randomloop="true"
+				soundloop="true"
+				fadein="2500"
+				fadeout="500"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="1300" 
+				volume=".3" 
+				sample="/heroes/hantumon/sounds/quillen/ab4_loop.wav"
+			/>
+			
+			<model
+				life="2500"
+				parentmodel="true"
+				parentskeleton="true"
+				material="material.material"
+				color=".35 .85 1"
+				startalpha="0"
+				endalpha=".35"
+			/>
+
+			<model
+				delay="2500"
+				expirelife="1000"
+				parentmodel="true"
+				parentskeleton="true"
+				material="material.material"
+				color=".35 .85 1"
+				startalpha=".35"
+				endalpha="0"
+			/>
+
+			<model
+				life="2500"
+				parentmodel="true"
+				parentskeleton="true"
+				material="/shared/effects/materials/shell_rim_white.material"
+				color=".35 .85 1"
+				startalpha="0"
+				endalpha=".35"
+			/>
+
+			<model
+				delay="2500"
+				expirelife="1000"
+				parentmodel="true"
+				parentskeleton="true"
+				material="/shared/effects/materials/shell_rim_white.material"
+				color=".35 .85 1"
+				startalpha=".35"
+				endalpha="0"
+			/>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		  <spawnparticlesystem instance="instance0" particlesystem="system0"/>
+  		  <waitfordeath instance="instance0" />
+	</thread>
+</effect>

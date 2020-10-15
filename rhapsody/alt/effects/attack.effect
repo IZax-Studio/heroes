@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect entityeffectscale="true" deferred="true">
+
+	<definitions>
+		
+		<particlesystem name="system1" space="world" scale=".2">
+			<simpleemitter
+				bone="_bone_righthand"
+				spawnrate="100"
+				position="0 0 0"
+				particlelife="1000"
+				gravity="-10"
+				speed="100"
+				drag=".1"
+				direction="0 0 1"
+				material="/shared/effects/materials/sparks_reveal.material"
+				offsetsphere="10"
+				inheritvelocity=".5"
+			>
+				<particle
+					color="1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					maxangle="90"
+					startsize="50"
+					minendsize="30"
+					maxendsize="35"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					startframe=".3"
+					endframe="1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_righthand"
+				spawnrate="50"
+				position="0 0 0"
+				particlelife="500"
+				gravity="-10"
+				speed="100"
+				drag=".1"
+				direction="0 0 1"
+				material="/shared/effects/materials/debris03_add.material"
+				offsetsphere="10"
+				inheritvelocity=".5"
+			>
+				<particle
+						color="0 0 0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						minangle="0"
+						maxangle="360"
+						minanglespeed="-80"
+						maxanglespeed="80"
+						startsize="50"
+						endsize="0"
+						minscale=".8"
+						maxscale="1.4"
+					/>
+					<particle
+						color="1 1 1"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						minangle="0"
+						maxangle="360"
+						minanglespeed="-80"
+						maxanglespeed="80"
+						startsize="50"
+						endsize="0"
+						minscale=".8"
+						maxscale="1.4"
+					/>
+					<particle
+						color="1 1 1"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						minangle="0"
+						maxangle="360"
+						minanglespeed="-80"
+						maxanglespeed="80"
+						startsize="50"
+						endsize="0"
+						minscale=".8"
+						maxscale="1.4"
+					/>
+			</simpleemitter>
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

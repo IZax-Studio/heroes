@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1.5">
+
+		
+			
+			
+			<simpleemitter
+				life="500"
+				bone="Bip01 R Finger1"
+				spawnrate="75"
+				minparticlelife="250"
+				maxparticlelife="550"
+				speed="20"
+				direction="0 0 -1"
+				drag="0.10"
+				gravity="10"
+				material="/shared/effects/materials/whitedot_blend.material"
+				offsetsphere="0"
+				position="0 0 0"
+				depthbias="10"
+				acceleration="-50"
+			>
+				<particle
+					turn="1"
+					startsize="15"
+					endsize="0"
+					color="0 .175 .275"
+					startalpha=".5"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="500"
+				bone="Bip01 R Finger1"
+				spawnrate="100"
+				minparticlelife="250"
+				maxparticlelife="750"
+				speed="0"
+				gravity="10"
+				material="/shared/effects/materials/flare_03.material"
+				offsetsphere="5"
+				position="0 0 0"
+				depthbias="10"
+			>
+				<particle
+					turn="1"
+					startsize="8"
+					endsize="0"
+					startcolor=".5"
+					midcolor="0 .25 1"
+					endcolor="0 0 0"
+				/>
+				<particle
+					turn="1"
+					startsize="8"
+					endsize="0"
+					startcolor=".5"
+					midcolor="0 .5 1"
+					endcolor="0 0 0"
+				/>
+			</simpleemitter>
+<!--
+			<billboard
+				bone="_bone_centerofchest"
+				expirelife="500"
+				startcolor=".125 .025 0"
+				endcolor="0 0 0"
+				size="50"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				directionalspace="local"
+				depthbias="-100"
+				minroll="-180"
+				maxroll="180"
+				rollspeed="-360"
+				loop="true"
+			/>
+-->
+			
+			
+			
+			
+			<simpleemitter
+				life="500"
+				bone="Bip01 R Finger1"
+				spawnrate="50"
+				minparticlelife="250"
+				maxparticlelife="500"
+				minspeed="25"
+				maxspeed="100"
+				drag="0.10"
+				material="/shared/effects/materials/whitedot.material"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+				depthbias="0"
+			>
+				<particle
+					turn="1"
+					heightdistort=".1"
+					width="1.65"
+					startscale=".25"
+					minendscale="0"
+					maxendscale="1"
+					startcolor="0 .5 1"
+					midcolor="0 .75 1"
+					endcolor="0 0 0"
+					midcolorpos=".75"
+					anchor="1"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+			
+		
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance2" particlesystem="system2" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<waitfordeath instance="instance2" />
+	</thread>
+
+</effect>

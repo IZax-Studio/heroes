@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+			
+			<sound
+				maxdelay="100"
+				volume=".40"
+				sample="../../sounds/blue_impact_%.wav"
+				linearfalloff="true"
+				falloffstart="400" 
+				falloffend="1200" 
+			/>
+			<sound
+				maxdelay="100"
+				volume=".30"
+				sample="/heroes/doctor_repulsor/sounds/impact1_%.wav"
+				linearfalloff="true"
+				falloffstart="0" 
+				falloffend="1200" 
+			/>
+			
+			<groundsprite
+				size="200"
+				
+				startcolor=".2 .2 .5"
+				endcolor="0 0 0"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot_ground.material"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+		
+				startcolor="0 .5 1"
+				midcolor="0 0 .5"
+				midcolorpos="0.3"
+				endcolor="0"
+				startsize="0"
+				endsize="250"
+				depthbias="0"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+		
+			<billboard
+				bone="_bone_centerofchest"
+		
+				startcolor="1 1 1"
+				midcolor=".2 .2 .5"
+				endcolor="0"
+				startsize="50"
+				endsize="300"
+				depthbias="0"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				
+				param="0.1"	
+				startsize="30"
+				endsize="200"
+				startalpha="1"
+				midalpha=".8"
+				endalpha="0"				
+				depthbias="0"
+				material="/shared/effects/materials/refract_bubble.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+			
+			<template name="ball_of_fire">
+				<trailemitter
+					spawnrate="15"
+					particlelife="500"
+					texpostime="750"
+					texposscale="0.0"
+					texstretchscale=".4"
+					material="/shared/effects/materials/light_trail.material"
+					direction="0 0 1"
+					speed="50"
+					angle="0"
+					drag="0.02"
+					life="800"
+				>
+					<particle
+						startcolor="0"
+						midcolor=".500 .20 1"
+						endcolor="0 0 0"
+						midcolorpos=".05"
+						startsize="100"
+						midsize="200"
+						endsize="200"
+						midsizepos=".1"
+				 />
+				</trailemitter>
+			</template>
+			
+			<trackeremitter	
+		
+				bone="_bone_centerofchest"
+				position="0 0 0"
+				targetbone="_bone_centerofchest"
+				targetposition="0 10 0"
+				inheritvelocity="0.25"
+				tracktype="distance"
+				trackspeed="2" 
+				count="40"
+				spawnrate="500"
+				particlelife="500"
+				offsetsphere="80"
+				speed="150"
+				direction="0 0 1"
+				yawspeed="500"
+			>
+				<particle 
+					startsize="40"
+					endsize="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".1"
+					maxangle="360"
+					minscale=".1"
+					maxscale=".6"
+					color=".2 .5 1"					
+				>
+					<instance name="ball_of_fire"/>
+				</particle>
+			</trackeremitter>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+		
+				spawnrate="50"
+				minparticlelife="30"
+				maxparticlelife="50"
+				position="0 10 0"
+				material="/shared/effects/materials/lightning_11.material"
+				offsetsphere="30"
+			>
+				<particle
+					flare="1"
+					minscale="30"
+					maxscale="70"
+					color=".500 .20 1"
+					maxangle="360"
+					lockup="true"
+					anchor="1"
+					maxpitch="360"
+				/>
+			</simpleemitter>
+ 
+                <simpleemitter
+				bone="_bone_centerofchest"
+		
+				spawnrate="50"
+				minparticlelife="30"
+				maxparticlelife="50"
+				position="0 10 0"
+				material="/shared/effects/materials/black_energy.material"
+
+				offsetsphere="30"
+			>
+				<particle
+					flare="1"
+					minscale="30"
+					maxscale="70"
+					color=".1 .1 0"
+					maxangle="360"
+					lockup="true"
+					anchor="1"
+					maxpitch="360"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->

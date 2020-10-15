@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="model.model" type="K2">
+	
+	<anim name="idle" clip="clips/bat_idle.clip" loop="true" loopbackframe="1"/>
+	
+	<anim name="portrait" clip="clips/bat_idle.clip" fps="15" loop="true" loopbackframe="1"/>
+	
+	<anim name="attack_1" clip="clips/single_attack_1.clip" fps="28">
+		<frameevent frame="12" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 400 2000 .65"/>
+		<frameevent frame="12" cmd="PlaySoundLinear /heroes/hiro/sounds/attack_%.wav 400 2000 .15"/>
+	</anim>
+	
+	<anim name="attack_2" clip="clips/single_attack_2.clip" fps="28"> 
+		<frameevent frame="10" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 400 2000 .65"/>
+		<frameevent frame="10" cmd="PlaySoundLinear /heroes/hiro/sounds/attack_%.wav 400 2000 .15"/>
+		<frameevent frame="12" cmd="PlaySoundLinear /heroes/legionnaire/sounds/attack_grunt_%.wav 400 2000 .75"/>
+	</anim>
+	
+	<anim name="walk_1" clip="clips/bat_run.clip"  fps="35" loop="true" loopbackframe="1">
+		<frameevent frame="3" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="8" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="15" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="20" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="27" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="32" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="38" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="43" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		
+		<frameevent frame="3" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="3" cmd="PlaySoundLinear /shared/sounds/footsteps/heavy_%.mp3 0 2400 .25"/>
+		<frameevent frame="15" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="15" cmd="PlaySoundLinear /shared/sounds/footsteps/heavy_%.mp3 0 2400 .25"/>
+		<frameevent frame="27" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="27" cmd="PlaySoundLinear /shared/sounds/footsteps/heavy_%.mp3 0 2400 .25"/>
+		<frameevent frame="38" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="38" cmd="PlaySoundLinear /shared/sounds/footsteps/heavy_%.mp3 0 2400 .25"/>
+	</anim>
+	
+	<anim name="death_1" clip="clips/dead.clip" loop="true" loopbackframe="-1">
+		<frameevent frame="3" cmd="PlaySoundLinear /heroes/legionnaire/sounds/death.wav 400 2000 1"/>
+	</anim>
+	
+	<anim name="ability_1" clip="clips/single_skill_03.clip">
+		<frameevent frame="1" cmd="PlaySoundLinear /heroes/legionnaire/ability_01/sounds/grunt.wav 400 2000 .75"/>
+	</anim>
+	
+	<anim name="ability_2_start" clip="clips/ability_2_start.clip">
+		<frameevent frame="1" cmd="PlaySoundLinear /heroes/legionnaire/ability_02/sounds/attack_grunt.wav 400 2000 1"/>
+	</anim>
+
+	<anim name="ability_2_sprint" clip="clips/single_run.clip" loop="true" loopbackframe="1" >
+		<frameevent frame="7" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="7" cmd="PlaySoundLinear /shared/sounds/footsteps/giant_%.wav 0 2400 .2"/>
+		<frameevent frame="17" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="17" cmd="PlaySoundLinear /shared/sounds/footsteps/giant_%.wav 0 2400 .2"/>
+		<frameevent frame="5"  cmd="PlaySoundLinear /heroes/legionnaire/ability_02/sounds/drag_%.wav 200 1400 .2"/>
+		<frameevent frame="5"  cmd="PlaySoundLinear /heroes/bephelgor/sounds/move_%.wav 200 1400 .35"/>
+	</anim>
+
+	<anim name="ability_2_attack" clip="clips/single_skill_05.clip">
+		<frameevent frame="2" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 400 2000 .65"/>
+		<frameevent frame="2" cmd="PlaySoundLinear /heroes/hiro/sounds/attack_%.wav 400 2000 .15"/>
+		<frameevent frame="2" cmd="PlaySoundLinear /heroes/legionnaire/sounds/attack_grunt_%.wav 400 2000 .75"/>
+		<frameevent frame="1" cmd="StartEffect /heroes/legionnaire/ability_02/effects/swoosh.effect"/>
+	</anim>
+	
+	<anim name="ability_3" clip="clips/single_skill_01.clip" fps="50"/>
+	
+	<anim name="ability_4" clip="clips/single_skill_01.clip" fps="45" startframe="7" numframes="100">
+		<frameevent frame="1" cmd="PlaySoundLinear /heroes/legionnaire/ability_04/sounds/cast.wav 400 2000 .75"/>
+		<frameevent frame="11" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 400 2000 .65"/>
+		<frameevent frame="15" cmd="PlaySoundLinear /heroes/legionnaire/ability_04/sounds/grunt.wav 400 2000 1"/>
+	</anim>
+
+	<anim name="bored_1" clip="clips/dance.clip"/>
+
+	<anim name="knock_1" clip="clips/dead.clip" loop="true" loopbackframe="-1"/>
+
+	<anim name="taunt_1" clip="clips/bat_specialidle.clip"/>
+
+	<anim name="item_1" clip="clips/single_touzhi.clip"/>
+	
+	<anim name="attack_order" clip="clips/single_attack_3.clip" fps="90">
+		<frameevent frame="12" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 400 2000 .65"/>
+		<frameevent frame="12" cmd="PlaySoundLinear /heroes/hiro/sounds/attack_%.wav 400 2000 .15"/>
+	</anim>
+	
+</model>

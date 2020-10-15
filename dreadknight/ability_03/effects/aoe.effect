@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="3.5">
+					
+			<sound
+				soundloop="true"
+				fadein="150"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1000"
+				volume=".40"
+				sample="../../sounds/ab3.wav"
+				/>
+			
+			<sound
+     			linearfalloff="true" 
+				falloffstart="0"
+				falloffend="800"
+				volume=".70"
+				sample="../../sounds/ab3_cast.wav"
+			/>
+			
+		
+			<model
+				position="0 0 0"
+				expirelife="1500"
+				name="emitter0" 
+				anim="idle"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				startscale="3.5"
+				endscale="0"
+				startcolor="0 0 0"
+				midcolor="0 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".75"
+				startalpha="0"
+				midalpha="0"
+				endalpha="0"
+				midalphapos=".4"
+				minyaw="-5"
+				maxyaw="5"
+				yawspeed="270"
+				rollspeed="180"
+			>
+			
+				<template name="trails">
+					<twopointtrailemitter
+						name="trail01"
+						position="0 0 0"
+						bone_a="{bone01}"
+						bone_b="{bone02}"
+						spawnrate="25"
+						particlelife="1500"
+						subframepose="1"
+						direction="0 -1 0"
+						minangle="0"
+						maxangle="0"
+						texpostime="750"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/soul_projectile_blue.material"
+					>
+						<particle
+							startcolor="0 0 0"
+							endcolor="0 0 0"
+							startalpha="0"
+							midalpha="0"
+							endalpha="0"
+						/>
+					</twopointtrailemitter>
+					<trailemitter
+						name="trail01"
+						position="0 0 0"
+						bone="{bone01}"
+						spawnrate="25"
+						particlelife="1500"
+						subframepose="1"
+						direction="0 -1 0"
+						minangle="0"
+						maxangle="0"
+						texpostime="1750"
+						texposscale="0"
+						texstretchscale="3"
+						material="/shared/effects/materials/dreadknight_tex.material"
+					>
+						<particle
+							startcolor="1 1 1"
+							endcolor="0 0 0"
+							startalpha=".1"
+							midalpha=".05"
+							endalpha="0"
+						/>
+					</trailemitter>
+				</template>
+				
+				<instance name="trails" bone01="_bone_fx_01"  bone02="_bone_fx_02"/>
+				<instance name="trails" bone01="_bone_fx_03"  bone02="_bone_fx_04"/>
+				<instance name="trails" bone01="_bone_fx_05"  bone02="_bone_fx_06"/>
+				<instance name="trails" bone01="_bone_fx_07"  bone02="_bone_fx_08"/>
+			</model>
+		</particlesystem>
+
+		<particlesystem name="system2" space="world" scale="3.5">
+					
+			<sound
+				soundloop="true"
+				fadein="150"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="800"
+				volume=".20"
+				sample="/heroes/revenant/sounds/whisperdrone.wav"
+			/>
+			
+			<sound
+     			linearfalloff="true" 
+				falloffstart="0"
+				falloffend="800"
+				volume=".80"
+				sample="../sounds/skill.mp3"
+			/>
+			
+			<trackeremitter
+				tracktype="lerp"
+				trackspeed="1"
+				spawnrate="3"
+				particlelife="2500"
+				acceleration="0.0"
+				speed="100"
+				minangle="0"
+				maxangle="0"
+				direction="0 0 1"
+				offsetradial="75 75 25"
+			>
+				<particle
+					turn="1"
+				>
+					<model
+						position="0 0 0"
+						minlife="500"
+						maxlife="650"
+						anim="idle"
+						model="single_bug/model.mdf"
+						scale=".3"
+						color="0 0 0"
+						startalpha="0"
+						midalpha="0"
+						endalpha="0"
+						midalphapos=".85"
+						lockup="1"
+						lockright="1"
+						pitch="0"
+						yaw="180"
+						directionalspace="local"
+					>
+					
+						<simpleemitter
+							count="50"
+							spawnrate="75"
+							minparticlelife="500"
+							maxparticlelife="1000"
+							gravity="-50"
+							speed="10"
+							drag="0.07"
+							acceleration="0.0"
+							mintimenudge="0"
+							maxtimenudge="1000"
+							position="0 0 0"
+														offsetsphere="50 50 25"
+							inheritvelocity=".5"
+						>
+							<particle
+								minangle="0"
+								maxangle="360"
+								minanglespeed="-30"
+								color="1 1 1"
+								maxanglespeed="30"
+								startsize="75"
+								endsize="150"
+								startalpha="0"
+								midalpha=".35"
+								endalpha="0"
+								midalphapos=".2"
+							 />
+						</simpleemitter>
+						
+						<simpleemitter
+							count="5"
+							spawnrate="10"
+							minparticlelife="500"
+							maxparticlelife="1000"
+							gravity="-50"
+							speed="10"
+							drag="0.07"
+							acceleration="0.0"
+							mintimenudge="0"
+							maxtimenudge="1000"
+							position="0 0 0"
+							material="/shared/effects/materials/heathaze.material"
+							offsetsphere="50 50 25"
+							inheritvelocity=".5"
+						>
+							<particle
+							param=".5"
+								minangle="0"
+								maxangle="360"
+								minanglespeed="-30"
+								color="1 1 1"
+								maxanglespeed="30"
+								startsize="75"
+								endsize="250"
+								startalpha="0"
+								midalpha=".25"
+								endalpha="0"
+								midalphapos=".2"
+							 />
+						</simpleemitter>
+
+						<simpleemitter
+							count="1"
+							position="0 0 0"
+							spawnrate="1000"
+							particlelife="2000"
+						>
+							<particle>
+
+								<groundsprite
+									life="750"
+									material="/shared/effects/materials/whitedot_ground.material"
+									size="50"
+									startcolor="1 1 1"
+									midcolor="0 0 0"
+									endcolor="0 0 0"
+									startalpha="1"
+									midalpha=".5"
+									endalpha="0"
+									midalphapos=".85"
+								/>
+<!--
+								<billboard
+									minlife="500"
+									maxlife="750"
+									material="/shared/effects/materials/whitedot.material"
+									size="150"
+									position="0 0 75"
+									midsizepos=".1"
+									color=".2 .35 0"
+									startalpha="1"
+									midalpha="1"
+									endalpha="0"
+									midalphapos=".75"
+									lockup="1"
+									lockright="1"
+									pitch="90"
+									depthbias="0"
+								/>
+-->
+
+								
+								<model
+									delay="0"
+									minlife="500"
+									maxlife="1000"
+									color="3 3 1"
+									model=""
+									anim="idle"
+									minyaw="-110"
+									maxyaw="0"
+									minyawspeed="-180"
+									maxyawspeed="-90"
+									startscale="2"
+									midscale="2.75"
+									endscale="0"
+									midscalepos=".75"
+									startalpha="1"
+									midalpha=".5"
+									endalpha="0"
+									midalphapos=".5"
+									position="0 0 50"
+									directionalspace="global"
+								/>
+								
+								<billboard
+									material="/shared/effects/materials/light_rays.material"
+									scale="1"
+									width="250"
+									minheight="750"
+									maxheight="1000"
+									startcolor=".05 .125 0"
+									endcolor="0 0 0"
+									position="0 0 200"						
+									lockup="1"
+									life="500"
+									depthbias="-25"
+								/>
+
+							</particle>
+						</simpleemitter>
+
+					</model>
+				</particle>
+			</trackeremitter>
+
+			<model
+				position="0 0 0"
+				expirelife="1500"
+				name="emitter0" 
+				anim="idle"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				startscale="3.5"
+				endscale="0"
+				startcolor="0 0 0"
+				midcolor="0 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".75"
+				startalpha="0"
+				midalpha="0"
+				endalpha="0"
+				midalphapos=".4"
+				minyaw="-5"
+				maxyaw="5"
+				yawspeed="270"
+				rollspeed="180"
+			>
+			
+				<template name="trails">
+					<twopointtrailemitter
+						name="trail01"
+						position="0 0 0"
+						bone_a="{bone01}"
+						bone_b="{bone02}"
+						spawnrate="75"
+						particlelife="1400"
+						subframepose="1"
+						direction="0 -1 0"
+						minangle="0"
+						maxangle="0"
+						texpostime="400"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/flare_01.material"
+
+					>
+						<particle
+							startcolor="1.5"
+                                     endcolor="1"
+							startalpha=".1"
+							midalpha=".1"
+							endalpha="0"
+
+						/>
+					</twopointtrailemitter>
+				</template>
+				
+				<instance name="trails" bone01="_bone_fx_01"  bone02="_bone_fx_02"/>
+				<instance name="trails" bone01="_bone_fx_03"  bone02="_bone_fx_04"/>
+				<instance name="trails" bone01="_bone_fx_05"  bone02="_bone_fx_06"/>
+
+				<instance name="trails" bone01="_bone_fx_07"  bone02="_bone_fx_08"/>
+<!--
+				<instance name="trails" bone01="_bone_fx_09"  bone02="_bone_fx_10"/>
+				<instance name="trails" bone01="_bone_fx_11"  bone02="_bone_fx_12"/>
+-->
+			</model>
+
+		</particlesystem>
+
+
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<spawnparticlesystem instance="instance1" particlesystem="system2" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<waitfordeath instance="instance2" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
+

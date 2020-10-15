@@ -1,0 +1,823 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+			    forcestereo="true"
+				life="10000"
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="2000" 
+				volume="1" 
+				sample="/heroes/rhapsody/alt2/sounds/vox_4.wav"
+			/>
+
+			<sound
+				sound2d="true"
+				dampen="0.5"
+			    channelid="rhap_4"
+			    soundloop="true"
+				fadein="0"
+				fadeout="3000"
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="2000" 
+				volume="1"
+				sample="../sounds/ab4_%.mp3"
+			/>
+			
+			<light
+				position="0 0 10"
+				loop="true"
+				life="470"
+				falloffstart="300"
+				falloffend="650"
+				startcolor="-.25 1.75 -.25"
+				midcolor="1.5 -.25 1.5" 
+				endcolor="-.25 1.75 -.25"
+			/>
+
+			<template name="notes">
+				<simpleemitter
+					delay="500"
+					bone="_bone_fx_01"
+					spawnrate="5"
+					particlelife="850"
+					offsetsphere="5"
+					minspeed="250"
+					maxspeed="500"
+					position="{pos}"
+					minangle="0"
+					maxangle="15"
+					direction="0 -1 0"
+				>
+					<particle
+						turn="true"
+					>
+						<billboard
+							spawnrate="500"
+							count="1"
+							minlife="250"
+							maxlife="1000"
+							position="0 0 0"
+							material="{mat}"
+							directionalspace="local"
+							lockup="true"
+							lockright="true"
+							pitch="90"
+							color="{color}"
+							startalpha=".65"
+							midalpha=".65"
+							endalpha="0"
+							minsize="20"
+							maxsize="60"
+							minrollspeed="-360"
+							maxrollspeed="360"
+						>
+						</billboard>
+					</particle>
+				</simpleemitter>
+			</template>
+
+			<instance name="notes" pos="30 0 0" mat="/shared/effects/materials/note_1.material" color="1 0 0"/>
+			<instance name="notes" pos="30 0 0" mat="/shared/effects/materials/note_3.material" color="0 1 0"/>
+			<instance name="notes" pos="30 0 0" mat="/shared/effects/materials/note_3.material" color="0 .5 1"/>
+			
+			<instance name="notes" pos="-30 0 0" mat="/shared/effects/materials/note_1.material" color="1 0 0"/>
+			<instance name="notes" pos="-30 0 0" mat="/shared/effects/materials/note_3.material" color="0 1 0"/>
+			<instance name="notes" pos="-30 0 0" mat="/shared/effects/materials/note_3.material" color="0 .5 1"/>
+
+			<template name="vinyl_lights">
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="40"
+					particlelife="850"
+					offsetsphere="0 0 0"
+					minspeed="150"
+					maxspeed="300"
+					position="0 0 0"
+					minangle="60"
+					maxangle="80"
+					direction="0 0 1"
+					speed="150"
+				>
+					<particle
+						turn="true"
+					>
+						<billboard
+							spawnrate="500"
+							count="1"
+							minlife="250"
+							maxlife="350"
+							position="0 0 0"
+							material="/shared/effects/materials/whitedot.material"
+							directionalspace="local"
+							yaw="180"
+							roll="180"
+							lockup="true"
+							lockright="true"
+							pitch="90"
+							startcolor="{color}"
+							endcolor="0 0 0"
+							minheight="{minheight}"
+							maxheight="{maxheight}"
+							minwidth="15"
+							maxwidth="30"
+						>
+						</billboard>
+					</particle>
+				</simpleemitter>
+			</template>
+
+			<instance name="vinyl_lights" bone="Box004" color="0 0 1" minheight="30" maxheight="80" />
+			<instance name="vinyl_lights" bone="Box005" color="0 0 1" minheight="30" maxheight="80" />
+			<instance name="vinyl_lights" bone="Box004" color="1 0 0" minheight="55" maxheight="130" />
+			<instance name="vinyl_lights" bone="Box005" color="1 0 0" minheight="55" maxheight="130" />
+			<instance name="vinyl_lights" bone="Box004" color="0 1 0" minheight="25" maxheight="75" />
+			<instance name="vinyl_lights" bone="Box005" color="0 1 0" minheight="25" maxheight="75" />
+
+			
+			<!-- scattered notes -->
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="35"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				minspeed="10"
+				maxspeed="250"
+				drag="0.01"
+				inheritvelocity=".25"
+				offsetsphere="10 10 10"
+				gravity="2"
+				material="/shared/effects/materials/note_1.material"
+			>
+				<particle
+					color="1 0 0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					startsize="50"
+					endsize="0"
+				/>
+				<particle
+					color="1 .5 0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					startsize="50"
+					endsize="0"
+				/>
+				<particle
+					color="0 .5 1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					startsize="50"
+					endsize="0"
+				/>
+				<particle
+					color="0 1 0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					startsize="50"
+					endsize="0"
+				/>
+				<particle
+					color="0 0 0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					startsize="50"
+					endsize="0"
+				/>
+			</simpleemitter>
+
+			<!-- notes initial burst -->
+			<simpleemitter
+				count="50"
+				bone="_bone_centerofchest"
+				spawnrate="1000"
+				minparticlelife="500"
+				maxparticlelife="750"
+				minspeed="1500"
+				maxspeed="2500"
+				drag="0.01"
+				inheritvelocity=".25"
+				offsetsphere="0 0 0"
+				gravity="2"
+				material="/shared/effects/materials/note_1.material"
+			>
+				<particle
+					color="1 0 0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					minstartsize="50"
+					maxstartsize="80"
+					endsize="0"
+				/>
+				<particle
+					color="1 .5 0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					minstartsize="50"
+					maxstartsize="100"
+					endsize="0"
+				/>
+				<particle
+					color="0 .5 1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					minstartsize="50"
+					maxstartsize="80"
+					endsize="0"
+				/>
+				<particle
+					color="0 1 0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					minstartsize="50"
+					maxstartsize="80"
+					endsize="0"
+				/>
+				<particle
+					color="0 0 0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					minstartsize="50"
+					maxstartsize="80"
+					endsize="0"
+				/>
+			</simpleemitter>
+			
+			
+			
+			
+
+			<billboard
+				bone="Box004"
+				expirelife="250"
+				startcolor=".5 .25 .125"
+				endcolor="0 0 0"
+				midcolorpos=".25"
+				startsize="50"
+				endsize="0"
+				material="/shared/effects/materials/whitedot.material"
+				loop="true"
+				depthbias="-15"
+			/>
+			<billboard
+				bone="Box005"
+				expirelife="250"
+				startcolor=".5 .25 .125"
+				endcolor="0 0 0"
+				midcolorpos=".25"
+				startsize="50"
+				endsize="0"
+				material="/shared/effects/materials/whitedot.material"
+				loop="true"
+				depthbias="-15"
+			/>
+			
+			
+			
+			
+			
+			
+			
+			<billboard
+				bone="Bip01 R Hand"
+				expirelife="250"
+				startcolor=".5 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".25"
+				startsize="60"
+				endsize="0"
+				depthbias="-20"
+				material="/shared/effects/materials/whitedot.material"
+				loop="true"
+			/>
+			<billboard
+				bone="Bip01 R Hand"
+				expirelife="250"
+				startcolor=".3 .3 .3"
+				endcolor="0 0 0"
+				midcolorpos=".35"
+				startsize="30"
+				endsize="0"
+				depthbias="-20"
+				material="/shared/effects/materials/whitedot.material"
+				loop="true"
+			/>
+			
+			<billboard
+				bone="Bip01 L Hand"
+				expirelife="250"
+				startcolor=".5 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".25"
+				startsize="60"
+				endsize="0"
+				depthbias="-20"
+				material="/shared/effects/materials/whitedot.material"
+				loop="true"
+			/>
+			<billboard
+				bone="Bip01 L Hand"
+				expirelife="250"
+				startcolor=".3 .3 .3"
+				endcolor="0 0 0"
+				midcolorpos=".35"
+				startsize="30"
+				endsize="0"
+				depthbias="-20"
+				material="/shared/effects/materials/whitedot.material"
+				loop="true"
+			/>
+
+			<template name="trails">
+				<trailemitter
+					bone="{bone}"
+					spawnrate="100"
+					particlelife="350"
+					texpostime="350"
+					texposscale="0"
+					texstretchscale="1"
+					material="/shared/effects/materials/swoosh_add.material"
+					subframepose="true"
+				>
+					<particle
+						startcolor="1 0 0"
+						midcolor="1 .2 .2"
+						endcolor="0 0 0"
+						startalpha="1"
+						endalpha="0"
+						midcolorpos=".5"
+						startsize="8"
+						endsize="0"
+					/>
+				</trailemitter>
+			</template>
+			
+			<instance name="trails" bone="Bip01 R Hand"/>
+			<instance name="trails" bone="Bip01 L Hand"/>
+			
+			<!-- lasers -->
+			<simpleemitter
+				position="0 0 50"
+				spawnrate="50"
+				minparticlelife="50"
+				maxparticlelife="500"
+				direction="0 0 1"
+				minangle="0"
+				maxangle="90"
+				speed="0.1"
+				material="/shared/effects/materials/whitesquare.material"
+			>
+				<template name="laser_light" >
+					<particle
+						flare="1"
+						turn="1"
+						minwidth="4"
+						maxwidth="10"
+						minheight="500"
+						maxheight="750"
+						color="{color}"
+						lockup="true"
+						lockright="true"
+						minpitch="-70"
+						maxpitch="70"
+						minpitchspeed="-90"
+						maxpitchspeed="90"
+						minyawspeed="-90"
+						maxyawspeed="0"
+					/>
+				</template>
+				
+				<instance name="laser_light" color=".2 0 0" />
+				<instance name="laser_light" color="0 0 .2" />
+				<instance name="laser_light" color="0 .2 0" />
+				<instance name="laser_light" color=".1 0 .1" />
+				<instance name="laser_light" color=".1 .1 0" />
+				<instance name="laser_light" color="0 .1 .1" />
+			</simpleemitter>
+	
+		
+			<template name="thruster" >
+				<controller
+					bone="{bone}"
+					scale="{scale}"
+				>
+					<simpleemitter
+						spawnrate="2"
+						minparticlelife="450"
+						maxparticlelife="500"
+						direction="0 1 0"
+						speed="250"
+						angle="0"
+						drag="0.02"
+						gravity="0"
+						material="/shared/effects/materials/corona_06.material"
+						particledirectionalspace="local"
+					>
+						<template name="pulse">
+							<particle
+								startcolor="{color}"
+								endcolor="0"
+								startalpha="1"
+								midalpha="1"
+								endalpha="0"
+								startsize="10"
+								midsize="30"
+								endsize="70"
+								lockup="true"
+								lockright="true"
+							/>
+						</template>
+						<instance name="pulse" color=".125 .125 1" />
+						<instance name="pulse" color=".125 1 .125" />
+						<instance name="pulse" color=".125 1 1" />
+						<instance name="pulse" color="1 .125 .125" />
+						<instance name="pulse" color="1 .125 1" />
+						<instance name="pulse" color="1 1 .125" />
+						<instance name="pulse" color="1 1 1" />
+					</simpleemitter>
+					<simpleemitter
+						spawnrate="2"
+						minparticlelife="450"
+						maxparticlelife="500"
+						direction="0 1 0"
+						speed="250"
+						angle="0"
+						drag="0.02"
+						gravity="0"
+						material="/shared/effects/materials/corona_07_blend.material"
+						particledirectionalspace="local"
+					>
+						<template name="pulse">
+							<particle
+								startcolor="{color}"
+								endcolor="0"
+								startalpha="1"
+								midalpha="1"
+								endalpha="0"
+								startsize="10"
+								midsize="30"
+								endsize="70"
+								lockup="true"
+								lockright="true"
+							/>
+						</template>
+						<instance name="pulse" color=".125 .125 1" />
+						<instance name="pulse" color=".125 1 .125" />
+						<instance name="pulse" color=".125 1 1" />
+						<instance name="pulse" color="1 .125 .125" />
+						<instance name="pulse" color="1 .125 1" />
+						<instance name="pulse" color="1 1 .125" />
+						<instance name="pulse" color="1 1 1" />
+					</simpleemitter>
+					<!--
+					<simpleemitter
+						spawnrate="2"
+						minparticlelife="450"
+						maxparticlelife="500"
+						direction="0 1 0"
+						speed="250"
+						angle="0"
+						drag="0.02"
+						gravity="0"
+						material="/shared/effects/materials/whitedot_blend.material"
+						particledirectionalspace="local"
+					>
+						<template name="pulse">
+							<particle
+								startcolor="{color}"
+								endcolor="0"
+								startalpha=".5"
+								midalpha=".5"
+								endalpha="0"
+								startsize="15"
+								midsize="30"
+								endsize="45"
+							/>
+						</template>
+						<instance name="pulse" color=".125 .125 1" />
+						<instance name="pulse" color=".125 1 .125" />
+						<instance name="pulse" color=".125 1 1" />
+						<instance name="pulse" color="1 .125 .125" />
+						<instance name="pulse" color="1 .125 1" />
+						<instance name="pulse" color="1 1 .125" />
+						<instance name="pulse" color="1 1 1" />
+					</simpleemitter>
+					-->
+				</controller>
+			</template>
+			
+			<instance name="thruster" bone="_bone_fx_06" scale="1.1"/>
+			<instance name="thruster" bone="_bone_fx_07" scale="0.5" />
+			<instance name="thruster" bone="_bone_fx_08" scale="0.8"/>
+			<instance name="thruster" bone="_bone_fx_09" scale="1.1"/>
+			<instance name="thruster" bone="_bone_fx_10" scale="0.5"/>
+			<instance name="thruster" bone="_bone_fx_11" scale="0.8"/>
+		</particlesystem>
+	
+	
+	
+	
+	
+		<particlesystem name="system1" space="entity" scale="2.25">
+
+			<simpleemitter
+			count="1"
+				particlelife="5000"
+				spawnrate="1000"
+			>
+				<particle>
+
+					<billboard
+						position="0 0 50"
+						material="/shared/effects/materials/corona_07.material"
+						startcolor="1 0 0"
+						endcolor="0"
+						startsize="100"
+						endsize="500"
+						life="500"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+					/>
+					
+					<billboard
+						position="0 0 50"
+						material="/shared/effects/materials/corona_07.material"
+						startcolor=".65 .25 0"
+						endcolor="0"
+						startsize="120"
+						endsize="520"
+						life="500"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+					/>
+					
+					<billboard
+						position="0 0 50"
+						material="/shared/effects/materials/corona_07.material"
+						startcolor=".5 .5 0"
+						endcolor="0"
+						startsize="140"
+						endsize="540"
+						life="500"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+					/>
+					
+					<billboard
+						position="0 0 50"
+						material="/shared/effects/materials/corona_07.material"
+						startcolor="0 .5 0"
+						endcolor="0"
+						startsize="150"
+						endsize="550"
+						life="500"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+					/>
+					
+					<billboard
+						position="0 0 50"
+						material="/shared/effects/materials/corona_07.material"
+						startcolor="0 .15 .5"
+						endcolor="0"
+						startsize="170"
+						endsize="570"
+						life="500"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+					/>
+					
+					<billboard
+						position="0 0 50"
+						material="/shared/effects/materials/corona_07.material"
+						startcolor=".35 0 .5"
+						endcolor="0"
+						startsize="190"
+						endsize="590"
+						life="500"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+					/>
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				particlelife="5000"
+				spawnrate="2"
+			>
+				<particle>
+					<billboard
+						position="0 0 50"
+						material="/shared/effects/materials/corona_07.material"
+						startcolor=".25 0 0"
+						endcolor="0"
+						startsize="100"
+						endsize="500"
+						life="500"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+					/>
+					
+					<billboard
+						position="0 0 50"
+						material="/shared/effects/materials/corona_07.material"
+						startcolor=".16 .075 0"
+						endcolor="0"
+						startsize="120"
+						endsize="520"
+						life="500"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+					/>
+					
+					<billboard
+						position="0 0 50"
+						material="/shared/effects/materials/corona_07.material"
+						startcolor=".125 .125 0"
+						endcolor="0"
+						startsize="140"
+						endsize="540"
+						life="500"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+					/>
+					
+					<billboard
+						position="0 0 50"
+						material="/shared/effects/materials/corona_07.material"
+						startcolor="0 .125 0"
+						endcolor="0"
+						startsize="150"
+						endsize="550"
+						life="500"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+					/>
+					
+					<billboard
+						position="0 0 50"
+						material="/shared/effects/materials/corona_07.material"
+						startcolor="0 .035 .125"
+						endcolor="0"
+						startsize="170"
+						endsize="570"
+						life="500"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+					/>
+					
+					<billboard
+						position="0 0 50"
+						material="/shared/effects/materials/corona_07.material"
+						startcolor=".08 0 .125"
+						endcolor="0"
+						startsize="190"
+						endsize="590"
+						life="500"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+					/>
+				</particle>
+			</simpleemitter>
+
+			<billboard
+				life="300"
+				color="1 1 1"
+				startalpha=".5"
+				midalpha=".5"
+				endalpha="00"
+				midalphapos=".75"
+				startparam=".8"
+				endparam=".2"
+				startsize="250"
+				endsize="500"
+				depthbias="0"
+				position="0 0 50"
+				material="/shared/effects/materials/refract_ring.material"
+				lockup="true"
+				pitch="90"
+			/>	
+			
+			
+			<template name="darkness" >
+				<billboard
+					life="500"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					size="500"
+					position="{pos}"
+					color="0"
+					startalpha="0"
+					endalpha=".15"
+					material="/shared/effects/materials/whitedot_blend.material"
+					maxroll="360"
+				/>
+				<billboard
+					delay="500"
+					expirelife="400"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					size="500"
+					position="{pos}"
+					color="0"
+					startalpha=".15"
+					endalpha="0"
+					material="/shared/effects/materials/whitedot_blend.material"
+					maxroll="360"
+				/>
+			</template>
+			<instance name="darkness" pos="0 0 20" />
+			<instance name="darkness" pos="0 0 40" />
+			<instance name="darkness" pos="0 0 60" />
+			<instance name="darkness" pos="0 0 80" />
+			<instance name="darkness" pos="0 0 100" />
+
+		</particlesystem>
+	
+	
+	
+	
+</definitions>
+
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnparticlesystem instance="instance1" particlesystem="system1" /> 
+	<waitfordeath instance="instance0" />
+	<waitfordeath instance="instance1" />
+</thread>
+
+</effect>
+
+
+
+
+
+
+

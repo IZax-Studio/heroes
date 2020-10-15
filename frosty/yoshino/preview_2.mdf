@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="model_high.max" file="model.model" type="K2">
+
+	<anim name="idle" clip="clips/bat_idle.clip" loop="true" fps="20" />
+	<anim name="idle2" clip="clips/skill_04.clip" fps="18" />
+	
+</model> 

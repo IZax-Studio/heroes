@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  useentityeffectscale="1" deferred="true" >
+	<definitions >
+		
+		<particlesystem name="system0" space="world" scale="1">
+			
+			<sound
+			        delay="700"
+				    dampen="0.5"
+				    channelid="storeaud"
+					sound2d="true"
+					volume="1"
+					sample="../sounds/death_foley.wav"
+			/>
+			
+			<sound
+				    dampen="0.5"
+				    channelid="storeaudv"
+					sound2d="true"
+					volume=".5"
+					sample="../sounds/ab1_5.wav"
+			/>
+			
+			
+			<billboard
+				delay="1550"
+				life="300"
+				material="/shared/effects/materials/heart_outline_add.material"
+				startcolor="1 0 1"
+				midcolor="0 1 1"
+				endcolor="0"
+				startsize="20"
+				midsize="30"
+				endsize="130"
+				position="0 0 65"
+				depthbias="-30"
+			/>
+			<simpleemitter
+				delay="1600"
+				count="30"
+				position="0 0 0"
+				minparticlelife="300"
+				maxparticlelife="500"
+				gravity="0"
+				minspeed="300"
+				maxspeed="2500"
+				drag=".05"
+				direction="0 0 1"
+				material="/shared/effects/materials/heart_outline_add.material"
+				offsetsphere="0"
+				inheritvelocity=".5"
+				maxangle="90"
+			>
+				<particle
+					startcolor="0 1 1"
+					endcolor="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					maxangle="90"
+					startsize="50"
+					minendsize="30"
+					maxendsize="35"
+					startframe=".3"
+					endframe="1"
+					minscale=".1"
+					maxscale=".35"
+				/>
+				<particle
+					startcolor="0 1 1"
+					endcolor="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					maxangle="90"
+					startsize="50"
+					minendsize="30"
+					maxendsize="35"
+					startframe=".3"
+					endframe="1"
+					minscale=".1"
+					maxscale=".35"
+				/>
+				<particle
+					startcolor="0 1 1"
+					endcolor="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					maxangle="90"
+					startsize="50"
+					minendsize="30"
+					maxendsize="35"
+					startframe=".3"
+					endframe="1"
+					minscale=".1"
+					maxscale=".35"
+				/>
+				<particle
+					startcolor=".6 .3 1"
+					endcolor="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					maxangle="90"
+					startsize="50"
+					minendsize="30"
+					maxendsize="35"
+					startframe=".3"
+					endframe="1"
+					minscale=".1"
+					maxscale=".25"
+				/>
+			</simpleemitter>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+<!-- 		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<spawnparticlesystem instance="instance2" particlesystem="system2" />
+ -->		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<waitfordeath instance="instance2" />
+		
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Klanx_Ability4_Tower2"
+	
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="/heroes/klanx/sa2/model.mdf"
+	mapicon=""
+	mapiconsize="0.03"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect=""
+	destroyedsound=""
+	lowhealtheffect=""
+	lowhealthsound=""
+	selectsound=""
+	
+	preglobalscale="1.35"
+	modelscale="1.2"
+	effectscale="1.2"
+	boundsheight="0"
+	boundsradius="0"
+	selectionradius="0"
+	targetoffset="0 0 0"
+
+	invulnerable="true"
+	iscontrollable="false"
+	isselectable="false"
+
+	movespeed="300"
+	ismobile="true"
+	drawonmap="false"
+
+	unitwalking="true"
+
+	flying="true"
+	flyheight="0"
+
+	canattack="false"
+	canrotate="true"
+	turnrate="9999"
+	turnsmoothing="0.04"
+	
+	inventory0=""
+	inventory1=""
+	inventory2=""
+	
+	attackduration="50"
+	attackactiontime="50"
+	attackcooldown="1700"
+	attackdamagemin="0"
+	attackdamagemax="0"
+	attacknumanims="1"
+	attackoffset="0 64 40"
+	attackprojectile="Projectile_Klanx_Ability4_TowerAttack2"
+	attackrange="950"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect=""
+	attacktype="ranged"
+	combattype="Ranged"
+	immunity="DisableImmunity"
+
+	aggrorange="0"
+	sightrangeday="1900"
+	sightrangenight="800"
+	
+	unittype="KlanxTurret"
+	
+	deathtime="0"
+	corpsetime="2000"
+	corpsefadetime="5000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	lifetime="15000"
+>
+	<onspawn>
+		<hasavatarkey name="Hero_Klanx.Alt">
+			<playeffect effect="/heroes/klanx/alt/ability_04/tower_pet2/effects/sound_spawn.effect" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Klanx.Alt2">
+				<playeffect effect="/heroes/klanx/alt2/ability_04/tower_pet2/effects/sound_spawn.effect" />
+				<applystate name="State_Klanx_Alt2_Ultimate_Effects" continuous="true"/>
+			</hasavatarkey>
+			<else>
+					<hasavatarkey name="Hero_Klanx.Alt3">
+			<playeffect effect="/heroes/klanx/alt3/ability_04/tower_pet2/effects/sound_spawn.effect" />
+		</hasavatarkey>
+		<else>
+							<hasavatarkey name="Hero_Klanx.Alt4">
+			<playeffect effect="/heroes/klanx/alt4/ability_04/tower_pet2/effects/sound_spawn.effect" />
+		</hasavatarkey>
+		<else>
+		<hasavatarkey name="Hero_Klanx.Alt5">
+			<playeffect effect="/heroes/klanx/alt5/ability_04/tower_pet2/effects/sound_spawn.effect" />
+		</hasavatarkey>
+		<else>
+				<playeffect effect="effects/sound_spawn.effect" />
+			</else>
+			</else>
+			</else>
+			</else>
+		</else>
+		<order command="follow" source="this_entity" target="source_entity" />
+	</onspawn>
+
+	<onattackimpact>
+		<cantarget targetscheme="enemy_units">
+			<applystate name="State_Klanx_Ability4_Slow" duration="2000" />	
+			<damage effecttype="Magic" amount="15" />
+		</cantarget>
+		<else>
+			<damage effecttype="Magic" amount="15" />
+		</else>
+		<order command="follow" source="this_entity" target="source_owner_entity" />
+	</onattackimpact>
+	
+	<modifier key="KlanxTurret_canattack" modpriority="100"
+		canattack="true"
+	/>
+	
+	<altavatar key="Hero_Klanx.Alt"
+		model="../../alt/ability_04/tower_pet2/model.mdf"
+		modelscale="0.8"
+	/>
+	
+	<altavatar key="Hero_Klanx.Alt2"
+		model="../../alt2/ability_04/tower_pet2/model.mdf"
+		modelscale="0.8"
+		passiveeffect="../../alt2/ability_04/tower_pet2/effects/body.effect"
+	>
+		<modifier key="Upgraded" modpriority="1"
+			passiveeffect="../../alt2/ability_04/tower_pet2/effects/body_upgraded.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Klanx.Alt3"
+		model="../../alt3/ability_04/tower_pet2/model.mdf"
+		modelscale="1"
+		attackoffset="0 64 100"
+	/>
+	
+	<altavatar key="Hero_Klanx.Alt4"
+		model="../../alt4/ability_04/tower_pet2/model.mdf"
+		modelscale="1"
+		attackoffset="0 80 50"
+		passiveeffect="../../alt4/ability_04/body.effect"
+	/>
+	
+	<altavatar key="Hero_Klanx.Alt5"
+		model="../../alt5/ability_04/tower_pet2/model.mdf"
+		modelscale="1"
+		attackoffset="0 80 50"
+		passiveeffect=""
+	/>
+		
+</gadget>

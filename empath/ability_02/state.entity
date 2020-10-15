@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Empath_Ability2_Effects"
+
+	icon="1.jpg,2.jpg,3.jpg,4.jpg"
+	effecttype="StatusDebuff"
+	passiveeffect="effects/state1.effect,effects/state2.effect,effects/state3.effect,effects/state4.effect"
+>
+	<oninflict>
+		<playeffect effect="" source="target_entity" target="target_entity" />
+	</oninflict>
+	
+	<onframe>
+		<damage source="source_owner_entity" effecttype="Magic DOT" amount="30,45,60,75" b="frametime" op="mult" />
+	</onframe>
+	
+	<modifier key="Alt2_Sin_Set_Bonus" modpriority="100"
+		passiveeffect="../alt2/sin_set_bonus/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.Alt5"
+		passiveeffect="../alt5/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.Alt7"
+		passiveeffect="../alt7/ability_02/effects/state.effect"
+		icon="../alt7/ability_02/icon.tga"
+	>
+		<modifier key="Alt7_Ability2_Upgrade"
+			icon="../alt7/ability_02/icon_upgrade.tga"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Empath.Alt9"
+		passiveeffect="../alt9/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.Alt10"
+		passiveeffect="../alt10/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.trophy_skin01"
+		passiveeffect="../trophy_skin/model_01/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.trophy_skin02"
+		passiveeffect="../trophy_skin/model_02/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.trophy_skin03"
+		passiveeffect="../trophy_skin/model_03/ability_02/effects/state.effect"
+	/>
+	
+</state>

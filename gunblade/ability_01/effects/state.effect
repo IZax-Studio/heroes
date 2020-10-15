@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true" deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="2">
+
+			<simpleemitter
+				particlelife="3000"
+				spawnrate="3"
+				speed="0"
+				gravity="0"
+				direction="0 0 0"
+				offsetsphere="35 35 0"
+				position="0 0 0"
+			>
+				<particle> 
+
+					<groundsprite
+						minlife="1000"
+						maxlife="3000"
+						material="/shared/effects/materials/goop_overlay.material"
+						minyaw="-360"
+						maxyaw="360"
+						position="0 0 0"
+						color=".25 0 0"
+						startalpha="0"
+						midalpha=".75"
+						endalpha="0"
+						midalphapos=".1"
+						minstartscale=".3"
+						maxstartscale=".4"
+						minendscale=".5"
+						maxendscale=".55"
+					/>
+
+					
+					<groundsprite
+						minlife="1000"
+						maxlife="3000"
+						material="/shared/effects/materials/goop_blend_ground.material"
+						minyaw="-360"
+						maxyaw="360"
+						position="0 0 0"
+						color=".45 0 0"
+						startalpha="1"
+						endalpha="0"
+						midalphapos=".35"
+						minstartscale=".4"
+						maxstartscale=".6"
+						minendscale=".75"
+						maxendscale="1.1"
+					/>
+
+					<simpleemitter
+						count="15"
+						minparticlelife="450"
+						maxparticlelife="750"
+						spawnrate="50"
+						minspeed="145"
+						maxspeed="180"
+						gravity="20"
+						direction="0 0 1"
+						minangle="-15"
+						maxangle="15"
+						particledirectionalspace="local"
+						material="/shared/effects/materials/blood1.material"
+						offsetsphere="20 20 0"
+						position="0 0 5"
+						depthbias="-35"
+					>
+						<particle 
+							minangle="-360"
+							maxangle="360"
+							minspeed="-45"
+							maxspeed="45"
+							color=".2 0 0"
+							startsize="0"
+							minendsize="25"
+							maxendsize="50"
+							startalpha="1"
+							midalpha=".25"
+							endalpha="0"
+						/>
+					
+						<particle 
+							minangle="-360"
+							maxangle="360"
+							minspeed="-45"
+							maxspeed="45"
+							color=".2 0 0"
+							startsize="0"
+							minendsize="50"
+							maxendsize="75"
+							startalpha="1"
+							midalpha=".85"
+							endalpha="0"
+						/>
+					</simpleemitter>
+
+				</particle>
+			</simpleemitter>
+			
+			
+			
+			
+			
+			
+			
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

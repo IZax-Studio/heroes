@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+		
+			
+                   <sound
+                        life="1200"
+				soundloop="true"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="1000"
+				fadein="100"
+				fadeout="500" 
+				volume=".7" 
+				sample="impact.ogg"
+			/>	
+	
+                   <sound
+                        life="1200"
+				  forcestereo="true"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2000" 
+				volume=".5" 
+				sample="impact_3.ogg"
+			/>		
+   <sound
+                        life="1200"
+				soundloop="true"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="1000"
+				fadein="100"
+				fadeout="500" 
+				volume=".7" 
+				sample="land.ogg"
+			/>	
+                  
+               <sound
+                        life="1200"
+				soundloop="true"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="1000"
+				fadein="100"
+				fadeout="500" 
+				volume=".7" 
+				sample="cast.ogg"
+			/>	
+                     <sound
+                        life="1200"
+				soundloop="true"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="1000"
+				fadein="100"
+				fadeout="500" 
+				volume="1" 
+				sample="cast1.ogg"
+			/>	
+
+
+                  <billboard
+						
+						life="800"
+						material="/shared/effects/materials/corona_01.material"
+						startcolor=".8"
+                                    position="0 0 170"
+						midcolor="0 .2 .5"
+						endcolor="0"
+						midcolorpos=".3"
+						startsize="100"
+						midsize="600"
+						endsize="950"
+						midsizepos=".3"
+						depthbias="-30"
+						
+						startalpha="1"
+						endalpha="0"
+                                   />
+
+                               <billboard
+						life="550"
+						material="/shared/effects/materials/corona_01.material"
+						startcolor=".8"
+                                    position="0 0 170"
+						midcolor=".4 0 0"
+						endcolor="0"
+						midcolorpos=".3"
+						startsize="100"
+						midsize="400"
+						endsize="700"
+						midsizepos=".3"
+						depthbias="-30"
+						startalpha="1"
+						endalpha="0"
+                                   />
+
+
+			<billboard
+				delay="{delay}"
+					life="600"
+					startcolor="0.2 0.2 0.4"
+					endcolor="0"
+					startsize="50"
+					endsize="1850"
+					midsizepos=".4"				
+					position="0 0 20"
+					material="/shared/effects/materials/corona_06.material"
+					lockup="true"
+					pitch="90"
+
+			/>
+			<billboard
+				delay="200"
+				life="400"
+				startcolor=".075 0 .03"
+				endcolor="0 0 0"
+				size="300"
+				position="0 0 10"
+				material="/shared/effects/materials/flux_ring.material"
+				depthbias="-10"
+				lockup="true"
+				pitch="90"
+				maxroll="360"
+			/>
+			-->
+			
+			<groundsprite
+				life="1500"
+				material="/shared/effects/materials/ground_crater.material"
+				scale="7"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".05"
+			/>
+			
+			<groundsprite
+				life="1500"
+				material="/shared/effects/materials/earth_cracks_overlay.material"
+				scale="5"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".05"
+				maxyaw="360"
+			/>
+			<groundsprite
+				life="1500"
+				material="/shared/effects/materials/earth_cracks_reveal.material"
+				minscale="10"
+				maxscale="8"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".05"
+				maxyaw="360"
+				color="1 0 .25"
+			/>
+			
+			<simpleemitter
+				count="6"
+				particlelife="2000"
+				offsetsphere="200 200 0"
+			>
+				<particle>
+					<terrainemitter
+						count="1"
+						particlelife="2000"
+					>
+						<particle>
+							<debris
+								position="0 0 10"
+								minscale=".4"
+								maxscale="2"
+								life="1500"
+								model="/shared/effects/models/debris/debris.mdf"
+								minspeed="100.0"
+								maxspeed="600.0"
+								minrotationspeed="500.0"
+								maxrotationspeed="600.0"
+								gravity="35.0"
+								minangle="0"
+								maxangle="40"
+								color=".7 .6 .6"
+								collide="true"
+								startalpha="1.0"
+								midalpha="1.0"
+								endalpha="0.0"
+								midalphapos="0.9"
+								bounce="0.7"
+								reflect="0.6"
+							/>
+						</particle>
+					</terrainemitter>
+				</particle>
+			</simpleemitter>
+			
+			
+
+			<billboard
+				life="400"
+				startsize="900"
+				endsize="0"
+				position="0 0 10"
+				material="/shared/effects/materials/refract_ring.material"
+				depthbias="-10"
+				lockup="true"
+				pitch="90"
+				param=".1"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".1"
+			/>
+			
+
+		</particlesystem>
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

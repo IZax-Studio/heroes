@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			<sound
+		        life="4000"
+				linearfalloff="true" 
+				falloffstart="128"
+				falloffend="1300"
+				volume=".4"
+				sample="impact.wav"
+			/>
+			<sound
+		        life="4000"
+				linearfalloff="true" 
+				falloffstart="128"
+				falloffend="1300"
+				volume=".8"
+				sample="/heroes/parallax/sounds/imp_%.wav"
+			/>
+			<template name="imploder">
+			<!--
+				<billboard
+					life="500"
+					bone="{bone}"
+					timenudge="1"
+					material="/shared/effects/materials/refract_hexgrid2_reveal.material"
+					size="200"
+					startframe="1"
+					midframe=".25"
+					endframe="0"
+					param=".05"
+					startalpha="1"
+					midalpha=".75"
+					endalpha="0"
+				/>
+			-->
+
+				<billboard
+					life="{life}"
+					bone="{bone}"
+					timenudge="1"
+					material="/shared/effects/materials/corona_06.material"
+					color="0 .04 .04"
+					size="200"
+					startscale="1"
+					midscale="{midscale}"
+					endscale="0"
+				/>
+
+				<billboard
+					life="{life}"
+					bone="{bone}"
+					timenudge="1"
+					material="/shared/effects/materials/corona_01.material"
+					color="0 .015 .0625"
+					size="140"
+					startscale="1"
+					midscale="{midscale}"
+					endscale="0"
+				/>
+
+				<billboard
+					life="{life}"
+					bone="{bone}"
+					timenudge="1"
+					material="/shared/effects/materials/corona_06.material"
+					color="0 .15 .25"
+					size="120"
+					startscale="1"
+					midscale="{midscale}"
+					endscale="0"
+				/>
+
+				<billboard
+					life="{life}"
+					bone="{bone}"
+					timenudge="1"
+					material="/shared/effects/materials/corona_01.material"
+					color="0 .175 .5"
+					size="80"
+					startscale="1"
+					midscale="{midscale}"
+					endscale="0"
+				/>
+
+				<billboard
+					life="{life}"
+					bone="{bone}"
+					timenudge="1"
+					material="/shared/effects/materials/whitedot.material"
+					color="0 .8 1"
+					size="75"
+					startscale="1"
+					midscale="{midscale}"
+					endscale="0"
+				/>
+
+				<billboard
+					life="{life}"
+					bone="{bone}"
+					timenudge="1"
+					material="/shared/effects/materials/black_spot2.material"
+					size="20"
+					startscale="1"
+					midscale="{midscale}"
+					endscale="0"
+					depthbias="-100"
+				/>
+			</template>
+			<instance name="imploder" bone="_bone_centerofchest" life="300" midscale=".65" />
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

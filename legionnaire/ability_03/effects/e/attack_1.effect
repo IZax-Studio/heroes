@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+		<particlesystem name="system0" space="world">
+		
+			<twopointtrailemitter
+				bone_a="_bone_weapon2"
+				bone_b="_bone_weapon3"
+				life="500"
+				spawnrate="1500"
+				particlelife="1500"
+				texpostime="2000"
+				texposscale="0.1"
+				texstretchscale="1.0"
+				material="material.material"
+			>
+				<particle
+					startcolor="1"
+					midcolor=".5"
+					midcolorpos="1"
+					endcolor="0"
+				/>
+			</twopointtrailemitter>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+

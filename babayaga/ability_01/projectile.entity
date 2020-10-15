@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_BabaYaga_Ability1"
+
+	speed="1000"
+	gravity="1000"
+
+	modelscale="1.7"
+	model="/shared/models/invis.mdf"
+	
+	traileffect="effects/trail.effect"
+
+	effectscale="2.0" 
+	impacteffect=""
+>
+	<altavatar key="Hero_BabaYaga.Alt2" modpriority="1"
+		modelscale="4"
+		gravity="3000"
+		model="/heroes/babayaga/alt2/projectile/effects/model.mdf"
+		traileffect="/heroes/babayaga/alt2/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_BabaYaga.Alt3" modpriority="1"
+		modelscale="2"
+		gravity="3000"
+		model="/heroes/babayaga/alt3/ability_01/effects/monkey.mdf"
+		traileffect="/heroes/babayaga/alt3/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_BabaYaga.Alt4" modpriority="1"
+		modelscale="4"
+		gravity="3000"
+		model="/heroes/babayaga/alt4/ability_01/effects/chicken.mdf"
+		traileffect="/heroes/babayaga/alt4/ability_01/effects/trail.effect"
+	/>
+
+	<altavatar key="Hero_BabaYaga.Alt5" modpriority="1"
+		model="/heroes/babayaga/alt5/ability_01/effects/bat2.mdf"
+		traileffect="/heroes/babayaga/alt5/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_BabaYaga.Alt6" modpriority="1"
+		model="/shared/models/invis.mdf"
+		traileffect="/heroes/babayaga/alt6/ability_01/effects/trail.effect"
+	/>
+
+	<altavatar key="Hero_BabaYaga.Alt7" modpriority="1"
+		model="/shared/models/invis.mdf"
+		traileffect="/heroes/babayaga/alt6/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_BabaYaga.Alt8" modpriority="1"
+		model="../alt8/projectile/effects/bat.mdf"
+		modelscale="2"
+		traileffect="/heroes/babayaga/alt8/ability_01/effects/trail_base.effect"
+	>
+		<modifier key="Alt8_Ability1_Upgrade"
+			traileffect="/heroes/babayaga/alt8/ability_01/effects/trail_upgrade.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_BabaYaga.Alt10" modpriority="1"
+		model="/shared/models/invis.mdf"
+		traileffect="/heroes/babayaga/alt10/ability_01/effects/trail.effect"
+	/>
+
+</projectile>

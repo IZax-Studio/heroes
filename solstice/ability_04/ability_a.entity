@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Solstice4a"
+	
+	icon="Cha075_Skill_R.png"
+	
+	castactiontime="0"
+	casttime="0"
+	
+	actiontype="no_target"
+	
+	manacost="0"
+	cooldowntime="0"
+	
+	baselevel="0"
+	maxlevel="3"
+	disabled="true"
+	
+	noninterrupting="true"
+	noresponse="true"
+	frontqueue="true"
+	inheritmovement="true"
+	nonaggressive="true"
+
+>
+	<onimpact>
+		<breakchannel entity="source_entity" />
+	</onimpact>
+
+	<modifier key="Solstice_Charging" modpriority="90"
+		disabled="false"
+		baselevel="1"
+		keyslot="3"
+	/>
+	
+	<modifier key="Night_Solstice" modpriority="100"
+		modifierkey=""
+	>
+		<onimpact>
+			<breakchannel entity="source_entity" />
+		</onimpact>
+	</modifier>
+</ability>

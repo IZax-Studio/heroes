@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="savage_quick_attack_1">
+	<definitions>
+		<particlesystem name="system0" space="entity">
+			<simpleemitter
+				count="8"
+				spawnrate="99"
+				maxparticlelife="400"
+				speed="250" direction="0 1 0" drag=".5"
+				particledirectionspace="local"
+				startminparticlelife="600" startmaxparticlelife="600"
+				endminparticlelife="1" endmaxparticlelife="1"
+				minangle="0" maxangle="0"
+			>
+				<particle>
+					<model
+						life="320"
+						model="../model_trail.mdf"
+						material="/shared/effects/materials/shell3.material"
+						anim="attack_2_trail"
+						color=".4 .1 0"
+						scale="1.1"
+						startalpha=".4" midalpha=".4" endalpha="0"
+					/>
+				</particle>
+			</simpleemitter>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

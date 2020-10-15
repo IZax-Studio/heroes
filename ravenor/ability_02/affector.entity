@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Ravenor_Ability2"
+	
+	radius="300"
+	
+	impactdelay="100"
+	maximpactsperinterval="1"
+	maximpactspertarget="1"
+	targetscheme="visible_enemy_units"
+	targetselection="closest"
+	effecttype="Magic"
+	persist="true"
+	
+	impacteffect="effects/lightning.effect"
+	linkeffect="effects/link.effect"
+>
+	<onimpact>
+		<chain count="2,3,4,5" />
+		<damage effecttype="Magic" amount="50,75,100,125" />
+	</onimpact>
+	
+	<altavatar key="Hero_Ravenor.Alt5" 
+	impacteffect="../alt5/ability_02/effects/lightning_collection.effect"
+	
+	>
+		<modifier key="Alt5_Collection" modpriority="1"
+			impacteffect="../alt5/ability_02/effects/lightning_collection.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Ravenor.Alt6" 
+		impacteffect="../alt6/ability_02/effects/lightning.effect"
+	/>
+	
+	<altavatar key="Hero_Ravenor.Alt7" 
+		impacteffect="../alt7/ability_02/effects/lightning.effect"
+	/>
+	
+	<altavatar key="Hero_Ravenor.Alt8" 
+		impacteffect="../alt8/ability_02/effects/lightning.effect"
+	/>
+	
+	<altavatar key="Hero_Ravenor.Alt9" 
+		impacteffect="../alt9/ability_02/effects/lightning.effect"
+	/>
+</affector>

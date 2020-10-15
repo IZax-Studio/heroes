@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true" deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+						
+			<simpleemitter
+				bone="_bone_centerofchest"
+				count="20"
+				minspeed="400"
+				maxspeed="600"
+				drag=".05"
+				minparticlelife="500"
+				maxparticlelife="800"
+				material="/shared/effects/materials/phantom_white.material"
+			>
+				<particle
+					maxangle="360"
+					startsize="100"
+					endsize="100"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					color=".500 .20 1"
+					startalpha="0"
+					midalpha=".25"
+					midalphapos=".1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+					</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<modifier 
+			name="modifier0"
+			startcolor="3 1 1"
+			endcolor="1 1 1"
+			life="650"
+			delay="1300"
+		/>
+
+		<particlesystem name="system0" space="world">
+
+			<sound
+			    forcestereo="true"
+				delay="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume="1"
+				sample=""
+			/>
+		
+
+                 <trackeremitter
+                        life="600"
+				bone="_bone_lefthand"
+				targetbone="_bone_lefthand"
+				tracktype="lerp"
+				trackspeed="1" 
+				spawnrate="100"
+				particlelife="800"
+				offsetsphere="10"
+				minspeed="75"
+				maxspeed="300"
+				material="/shared/effects/materials/lightning_02.material"
+				
+				direction="0 0 1"
+				directionalspace="local"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startcolor=".1 .5 .5"
+					endcolor=".1 .5 .5"
+					startalpha="1"
+					midalpha="1"
+					endalpha="1"
+					midcolorpos="1"
+					startsize="10"
+					midsize="30"
+					endsize="15"
+					
+
+				/>
+			</trackeremitter>
+			
+
+                  <beam
+                        
+				life="600"
+				bone_b="_bone_lefthand"
+				position_a="0 35 0"
+				size="50"
+				color=".5 1 1"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				framespeed="2.5"
+
+			/>
+
+                   <beam
+				life="600"
+				bone_b="_bone_lefthand"
+				position_a="0 25 0"
+				size="20"
+				color=".5 1 1"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				framespeed="2.7"
+
+			/>
+                    <beam
+				life="600"
+				bone_b="_bone_lefthand"
+				position_a="45 45 0"
+				size="20"
+				color=".5 1 1"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				framespeed="2.7"
+
+			/>
+
+                   <beam
+				life="600"
+				bone_b="_bone_lefthand"
+				position_a="-45 45 0"
+				size="20"
+				color=".5 1 1"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				framespeed="2.7"
+
+			/>
+
+                  <beam
+				life="600"
+				bone_b="_bone_lefthand"
+				position_a="-35 0 0"
+				size="20"
+				color=".5 1 1"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				framespeed="2.7"
+
+			/>
+
+
+			<billboard						
+		
+				material="/shared/effects/materials/femme_lightning_10.material"
+				position="0 0 5"
+				size="40"	
+				startcolor=".5 .2 .0"
+				midcolor=".5 .2 .0"					
+				endcolor="0"
+				depthbias="-45"
+				life="650"
+			/>
+		
+			<twopointtrailemitter
+		
+				spawnrate="200"
+				particlelife="500"
+				texpostime="500"
+				texposscale="0.0"
+				texstretchscale="1.0"
+				material="/shared/effects/materials/swoosh_add.material"
+				subframepos="true"
+				life="500"
+			>
+	         		<particle
+					startcolor=".6 .0 .0"
+					midcolor=".5 .2 0"
+					endcolor="0 0 0" 
+				/>
+			</twopointtrailemitter>
+
+			<twopointtrailemitter
+			 	
+				
+				spawnrate="200"
+				particlelife="500"
+				texpostime="500"
+				texposscale="0.0"
+				texstretchscale="1.0"
+				material="/shared/effects/materials/swoosh_add.material"
+				subframepos="true"
+				life="500"
+			>
+	         		<particle
+					startcolor=".5 .2 "
+					midcolor=".6 .0 .0"
+					endcolor="0 0 0" 
+				/>
+			</twopointtrailemitter>
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+      		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

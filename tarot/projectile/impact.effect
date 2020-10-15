@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="2">
+
+			<sound 
+			    life="5000"
+				linearfalloff="true" 
+				falloffstart="500"
+				falloffend="1300"
+				volume=".3" 
+				sample="../sounds/imp_%.wav"
+			/>
+
+			<billboard			
+				life="400"
+				bone="_bone_centerofchest"
+				startsize="45"
+				endsize="100"
+				material="/shared/effects/materials/blood1.material"
+				startalpha="1"
+				endalpha="0"
+				depthbias="-30"
+				maxroll="360"
+				color=".3 .05 0"
+				position="0 0 5"
+			/>
+	
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="2000"
+				count="15"
+				minparticlelife="400"
+				maxparticlelife="1200"
+				gravity="13"
+				minspeed="150"
+				maxspeed="550"
+				drag=".15"
+				offsetsphere="15"
+				material="/shared/effects/materials/blood1.material"
+         		>
+  				<particle 
+					minangle="0"
+					maxangle="360"			
+					color=".5 .2 0"
+					maxanglespeed="20"
+					minanglespeed="-120"
+					startsize="10"
+					minendsize="35"
+					maxendsize="45"			
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					endstickiness=".3"
+				/>
+  				<particle 
+					minangle="0"
+					maxangle="360"			
+					color=".3"
+					maxanglespeed="55"
+					minanglespeed="-55"
+					startsize="10"
+					minendsize="55"
+					maxendsize="85"			
+					startalpha="1"
+					midalpha=".8"
+					endalpha="0"
+				/>
+  				<particle 
+					minangle="0"
+					maxangle="360"			
+					color=".2"
+					maxanglespeed="10"
+					minanglespeed="-10"
+					startsize="30"
+					minendsize="5"
+					maxendsize="10"			
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="2000"
+				count="25"
+				minparticlelife="400"
+				maxparticlelife="1400"
+				gravity="10"
+				minspeed="50"
+				maxspeed="550"
+				drag=".05"
+				offsetsphere="10"
+				material="/shared/effects/materials/blood1.material"
+         		>
+  				<particle 
+					minangle="0"
+					maxangle="360"			
+					color=".5 .2 0"
+					maxanglespeed="10"
+					minanglespeed="-10"
+					size="2"
+					minscale="1"
+					maxscale="2"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="500"
+				bone="_bone_head"
+				spawnrate="5"
+				offsetsphere="30 30 30"
+				particlelife="3000"
+				depthbias="-50"
+			>
+				<particle>
+					<groundsprite						
+						material="/shared/effects/materials/blood_ground.material"						
+						life="2000"
+						size="5"			
+						minscale="1"
+						maxscale="6"
+						minyaw="-360"
+						maxyaw="360"
+						startcolor=".35 .2 .2"
+						endcolor=".2 .1 .1"
+						startalpha=".8"
+						midalpha=".8"
+						endalpha="0"
+					/>				
+				</particle>
+			</simpleemitter>
+
+		</particlesystem>
+		<particlesystem name="system1" space="world" scale="1">	
+		
+			<controller bone="_bone_centerofchest" scale="5" life="500">
+				<controller position="0 0 0" life="500">
+							
+					<billboard
+						life="100"
+						material="/shared/effects/materials/card_soccer.material"
+						size="8"
+						lockup="true"
+						lockright="true"
+						directionalspace="local"
+						roll="90"
+					/>
+					
+					<simpleemitter
+						count="1"
+						particlelife="200"
+						material="/shared/effects/materials/heart_04.material"
+					>
+						<particle
+							color="1 .5 .5"
+							startsize="0"
+							endsize="40"
+							midsizepos=".25"
+							startframe="0"
+							endframe="1"
+						>
+							<billboard
+								life="150"
+								material="/shared/effects/materials/glow_01.material"
+								startcolor="2 1 1"
+								endcolor="0"
+								startsize="0"
+								endsize="30"
+								midsizepos=".25"
+							/>
+							
+							<billboard
+								life="150"
+								material="/shared/effects/materials/glow_01.material"
+								startcolor="1"
+								endcolor="0"
+								startsize="0"
+								endsize="10"
+								midsizepos=".25"
+							/>
+						</particle>
+					</simpleemitter>
+					
+					<simpleemitter
+						life="100"
+						spawnrate="150"
+						particlelife="500"
+						material="/shared/effects/materials/sparks_reveal_blue.material"
+						maxspeed="20"
+						inheritvelocity="0.1"
+						limitinheritvelocity="20"
+						drag="0.02"
+						gravity="-1"
+					>
+						<particle
+							maxangle="360"
+							startcolor="0"
+							midcolor="1"
+							endcolor="0 1 1"
+							midcolorpos=".25"
+							minsize="20"
+							maxsize="25"
+							startframe=".3"
+							endframe="1"
+						/>
+					</simpleemitter>
+					
+				</controller>
+			</controller>
+			
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

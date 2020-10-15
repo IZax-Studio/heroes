@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true" deferred="true">
+	<definitions>
+	
+			
+		<modifier
+			name="modifier0"
+			
+			startcolor="0 .4 1"
+			midcolor="0 .4 1"
+			endcolor="2 2 2"
+			midcolorpos="0.889"
+			alpha=".5"
+		/>
+		
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume="1"
+				sample="375749570.wav"
+			/>
+			<sound
+				
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume="1"
+				sample="340775202.wav"
+			/>
+			<model
+				
+				parentskeleton="true"
+				parentmodel="true"
+				startcolor="0 .75 3"
+				midcolor="0 .75 3"
+				endcolor="0 .75 3"
+				midcolorpos=".45"
+				startscale="1"
+				midscale="1"
+				endscale="1"
+				midscalepos=".35"
+				material="/shared/effects/materials/shell_flat_outline.material"
+			/>
+							
+		
+					
+			
+			
+			
+			
+			<simpleemitter
+				count="1"
+				life="7000"
+				particlelife="5000"
+			>
+				<particle>				
+					<groundsprite
+						life="4100"						
+						material="/shared/effects/materials/ice_reveal.material"
+						
+						startcolor="0 0 0"					
+						midcolor=".6 .8 1"
+						endcolor="0 0 0"
+						midcolorpos=".1"
+						
+						startframe=".81"
+						midframe=".0"
+						endframe=".81"
+						midframepos=".1"
+						
+						startsize="150"					
+						endsize="150"
+					/>			
+				</particle>
+			</simpleemitter>
+			
+		
+
+			
+
+			
+			<simpleemitter
+			
+				bone="_bone_centerofchest"
+				count="4"										
+				particlelife="2600"	
+				material="/shared/effects/materials/smoke_01.material"
+				offsetsphere="20 20 50"
+				minangle="0"
+				maxangle="360"
+				gravity=".2"
+				speed="10"
+				direction="0 0 0"					
+			>
+
+				<particle 
+					minangle="0"
+					maxangle="0"
+					minanglespeed="100"
+					
+					color=".4 .6 .7"
+					
+					midcolorpos=".7"
+					maxanglespeed="0"
+					startframe="0"
+					endframe="1"
+					startsize="50"						
+					endsize="180"					
+				
+					startalpha="0"
+					midalpha=".2"
+					endalpha="0"
+					midalphpos=".1"
+					
+
+					
+				/>
+			</simpleemitter> 				
+			
+		
+		</particlesystem>
+		<particlesystem name="system2" space="world" scale=".8">
+
+		<sound
+                soundloop="true"
+				randomloop="true"
+				fadein="100"
+				fadeout="200"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="800"
+				volume=".4"
+				sample="/heroes/chronos/ability_03/sounds/ability_03.wav"
+			/>
+		
+
+		<orbiteremitter
+				bone="_bone_centerofchest"
+				life="200"
+				position="0 0 0"
+				count="300"
+				minparticlelife="600"
+				maxparticlelife="1300"
+				origin="0 0 0" 
+				orbit="7 0 500" 
+				direction="0 0 1" 
+				offset="35 100 90"
+				material="/shared/effects/materials/star_03.material"
+				depthbias="-75"
+				friction="1200"
+			>
+				<particle 
+					startcolor="0 .5 1"
+					midcolor="0 .5 1"
+					endcolor="0"
+					midcolorpos=".7"
+					
+					startsize="10"
+					midsize="30"
+					endsize="0"
+					
+					minanglespeed="150"
+					maxanglespeed="250"
+					
+				/>
+			</orbiteremitter>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/corona_08.material"
+				
+				startsize="10"
+				midsize="400"
+				endsize="400"
+				midsizepos=".4"
+				
+				life="300"
+				depthbias="-20"
+				position="0 0 0"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+				
+				startscolor="1"
+				midcolor="0 .75 3"
+				endcolor="0"
+				midcolorpos=".4"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/whitedot.material"
+				
+				height="300"
+				width="150"
+				
+				life="1200"
+				depthbias="-20"
+				position="0 0 0"
+				
+				startscolor="1"
+				midcolor=".8 .8 1"
+				endcolor="0"
+				midcolorpos=".5"
+			/>
+			
+		
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance2" particlesystem="system2" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<waitfordeath instance="instance2" /> 
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
+

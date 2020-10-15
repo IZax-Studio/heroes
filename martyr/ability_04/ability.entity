@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Martyr4"
+	
+	icon="../sheep/ab4.tga"
+	
+	anim="ability_4"
+	casttime="700"
+	castactiontime="300"
+	casteffect=""
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_entity"
+	casteffecttype="SuperiorMagic"
+	targetscheme="all_other_heroes"
+	
+	ischanneling="true"
+	channeltime="1500"
+	
+	manacost="150,175,200"
+	cooldowntime="100000,80000,60000"
+	
+	range="600"
+	channelrange="99999"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+>
+	<onchannelstart>
+		<cantarget targetscheme="ally_units">
+			<setvar0 a="source_health" b="source_maxhealth" op="div" />
+			<setvar1 a="target_health" b="target_maxhealth" op="div" />
+			<compare a="var0" b="var1" op="ge"> <!-- Source health % higher than target health % -->
+				<setvar2 a="target_maxhealth" b="var0" op="mult" />
+				<setvar3 a="var2" b="target_health" op="sub" />
+				<applystate name="State_Martyr_Self_Ability4" target="source_entity" ischannel="true" />
+				<applystate name="State_Martyr_Ability4" target="target_entity" ischannel="true" pushentity="true" />				
+				<setaccumulator value="var3" entity="stack_entity" />
+				<heal a="0.0001" />
+			</compare>
+			<else>
+				<setvar2 a="source_maxhealth" b="var1" op="mult" />
+				<setvar3 a="var2" b="source_health" op="sub" />
+				<applystate name="State_Martyr_Self_Ability4" target="source_entity" ischannel="true" />
+				<applystate name="State_Martyr_Ability4" target="source_entity" ischannel="true" pushentity="true" />
+				<setaccumulator value="var3" entity="stack_entity" />
+			</else>
+			<hasavatarkey name="Hero_Martyr.Alt4">
+				<playeffect effect="/heroes/martyr/alt4/ability_04/effects/impact_ally.effect" source="target_entity" target="target_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Martyr.Alt6">
+					<playeffect effect="/heroes/martyr/alt6/ability_04/effects/impact_ally.effect" source="target_entity" target="target_entity" />
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/impact_ally.effect" source="target_entity" target="target_entity" />
+				</else>
+			</else>
+			<heal a="0.0001" />
+		</cantarget>
+
+		<cantarget targetscheme="enemy_units">
+			<setvar0 a="source_health" b="source_maxhealth" op="div" />
+			<setvar1 a="target_health" b="target_maxhealth" op="div" />
+			<compare a="var0" b="var1" op="le"> <!-- Source health % lower than target health % -->
+				<compare a="var0" b="0.40,0.30,0.20" op="lt">
+					<setvar0 a="0.40,0.30,0.20" />
+					<setvar2 a="target_maxhealth" b="var0" op="mult" />
+					<setvar3 a="var2" b="target_health" op="sub" />
+					<applystate name="State_Martyr_Self_Ability4" target="source_entity" ischannel="true" />
+					<applystate name="State_Martyr_Ability4" target="target_entity" ischannel="true" pushentity="true" />
+					<setaccumulator value="var3" entity="stack_entity" />
+				</compare>
+				<else>
+					<setvar2 a="target_maxhealth" b="var0" op="mult" />
+					<setvar3 a="var2" b="target_health" op="sub" />
+					<applystate name="State_Martyr_Self_Ability4" target="source_entity" ischannel="true" />
+					<applystate name="State_Martyr_Ability4" target="target_entity" ischannel="true" pushentity="true" />
+					<setaccumulator value="var3" entity="stack_entity" />
+				</else>
+			</compare>
+			<else>
+				<compare a="var0" b="0.40,0.30,0.20" op="lt">
+					<setvar1 a="0.40,0.30,0.20" />
+					<setvar2 a="source_maxhealth" b="var1" op="mult" />
+					<setvar3 a="var2" b="source_health" op="sub" />
+					<applystate name="State_Martyr_Self_Ability4" target="source_entity" ischannel="true" />
+					<applystate name="State_Martyr_Ability4" target="source_entity" ischannel="true" pushentity="true" />
+					<setaccumulator value="var3" entity="stack_entity" />
+				</compare>
+				<else>
+					<setvar2 a="source_maxhealth" b="var1" op="mult" />
+					<setvar3 a="var2" b="source_health" op="sub" />
+					<applystate name="State_Martyr_Self_Ability4" target="source_entity" ischannel="true" />
+					<applystate name="State_Martyr_Ability4" target="source_entity" ischannel="true" pushentity="true" />
+					<setaccumulator value="var3" entity="stack_entity" />
+				</else>
+			</else>
+			<hasavatarkey name="Hero_Martyr.Alt6">
+				<playeffect effect="/heroes/martyr/alt6/ability_04/effects/impact_enemy.effect" source="target_entity" target="target_entity" />
+			</hasavatarkey>
+			<else>
+				<playeffect effect="effects/impact_enemy.effect" source="target_entity" target="target_entity" />
+			</else>
+		</cantarget>
+		
+		<playeffect effect="effects/cast.effect" source="source_entity" target="source_entity" />
+	</onchannelstart>
+	
+	<onimpact />
+	
+	<altavatar key="Hero_Martyr.Alt4" modpriority="1"
+		novoiceresponse="true"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Martyr.Alt5" modpriority="1"
+		novoiceresponse="true"
+	>
+	</altavatar>
+
+	<modifier key="ult_boost" modpriority="90"
+	>
+		<onchannelstart>
+			<cantarget targetscheme="ally_units">
+				<setvar0 a="source_maxhealth" b="source_health" op="sub" />
+				<applystate name="State_Martyr_Self_Ability4" target="source_entity" ischannel="true" />
+				<applystate name="State_Martyr_Ability4" target="source_entity" ischannel="true" pushentity="true" />
+				<setaccumulator value="var0" entity="stack_entity" />
+				
+				<setvar1 a="target_maxhealth" b="target_health" op="sub" />
+				<applystate name="State_Martyr_Self_Ability4" target="source_entity" ischannel="true" />
+				<applystate name="State_Martyr_Ability4" target="target_entity" ischannel="true" pushentity="true" />
+				<setaccumulator value="var1" entity="stack_entity" />
+				<hasavatarkey name="Hero_Martyr.Alt6">
+					<playeffect effect="/heroes/martyr/alt6/ability_04/effects/impact_ally.effect" source="target_entity" target="target_entity" />
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/impact_ally.effect" source="target_entity" target="target_entity" />
+				</else>
+				<heal a="0.0001" />
+			</cantarget>
+
+			<cantarget targetscheme="enemy_units">
+				<applystate name="State_Martyr_Ability4_Root" target="target_entity" ischannel="true" pushentity="true" />
+				<setvar0 a="source_health" b="source_maxhealth" op="div" />
+				<setvar1 a="target_health" b="target_maxhealth" op="div" />
+				<compare a="var0" b="var1" op="le"> <!-- Source health % lower than target health % -->
+					<setvar2 a="target_maxhealth" b="var0" op="mult" />
+					<setvar3 a="var2" b="target_health" op="sub" />
+					<applystate name="State_Martyr_Self_Ability4" target="source_entity" ischannel="true" />
+					<applystate name="State_Martyr_Ability4" target="target_entity" ischannel="true" pushentity="true" />
+					<setaccumulator value="var3" entity="stack_entity" />
+				</compare>
+				<else>
+					<setvar2 a="source_maxhealth" b="var1" op="mult" />
+					<setvar3 a="var2" b="source_health" op="sub" />
+					<applystate name="State_Martyr_Self_Ability4" target="source_entity" ischannel="true" />
+					<applystate name="State_Martyr_Ability4" target="source_entity" ischannel="true" pushentity="true" />
+					<setaccumulator value="var3" entity="stack_entity" />
+				</else>
+				
+				<hasavatarkey name="Hero_Martyr.Alt6">
+					<playeffect effect="/heroes/martyr/alt6/ability_04/effects/impact_enemy.effect" source="target_entity" target="target_entity" />
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/impact_enemy.effect" source="target_entity" target="target_entity" />
+				</else>				
+			</cantarget>
+			
+			<playeffect effect="effects/cast.effect" source="source_entity" target="source_entity" />
+		</onchannelstart>
+		
+		<onimpact />
+	</modifier>
+
+</ability>

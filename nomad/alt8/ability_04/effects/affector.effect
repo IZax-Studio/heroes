@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="	" deferred="1">
+	<definitions>
+
+	
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				life="5500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".75"
+				sample="../sounds/cast.wav"
+			/>
+
+<beam
+
+				life="700"
+				startcolor="0"
+				midcolor="1 .3 .75"
+				endcolor="1 .15 .75"
+				midcolorpos=".25"
+				timenudge="1"
+			material="/shared/effects/materials/beam_01.material"
+
+				color="1 .2 .5"
+				owner_a="source"
+				
+				position_a="0 0 50"
+				position_b="0 0 1100"
+				startsize="0"
+                     midsize="500"
+				endsize="300"
+			/>
+
+
+
+			<simpleemitter
+				delay="0"
+				offsetsphere="100 100 0"
+				spawnrate="500"
+				count="15"
+				particlelife="1900"
+				gravity="-.5"
+				acceleration="0"
+				speed="10"
+				position="0 0 50"
+				material="/shared/effects/materials/dust_smoke_10.material"
+				inheritvelocity="0"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					color=".255 .300 200"
+					minstartsize="75"
+					maxstartsize="150"
+					minendsize="200"
+					maxendsize="300"
+					minanglespeed="-30"
+					maxanglespeed="33"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+					frame="1"
+					framespeed="1"
+					startanchor="0"
+					endanchor=".4"
+					lockup="0"
+					lockright="false"
+					turn="false"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				delay="0"
+				offsetsphere="100 100 0"
+				spawnrate="50"
+				count="15"
+				particlelife="1900"
+				gravity="-.5"
+				acceleration="0"
+				speed="10"
+				position="0 0 50"
+				material="/shared/effects/materials/pyroclast_03.material"
+				inheritvelocity="0"
+				depthbias="-75"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					minstartsize="10"
+					maxstartsize="50"
+					minendsize="100"
+					maxendsize="200"
+					minanglespeed="-30"
+					maxanglespeed="33"
+					startcolor=".255 .300 200"
+					endcolor=".255 .300 200"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+					frame="1"
+					framespeed="1"
+					startanchor="0"
+					endanchor=".15"
+					lockup="0"
+					lockright="false"
+					turn="false"
+				/>
+
+			</simpleemitter>
+
+			
+				<simpleemitter
+				count="5"
+				minparticlelife="850"
+				maxparticlelife="1200"
+				spawnrate="50"
+				minspeed="250"
+				maxspeed="350"
+				gravity="20"
+				direction="0 0 1"
+				minangle="0"
+				maxangle="1"
+				drag="0.01"
+				material="/shared/effects/materials/light_rays2.material"
+				offsetsphere="25 25 10"
+				position="0 0 0"
+			>
+				<particle>
+
+					<model
+						position="0 0 0"
+						life="2500"
+						name="emitter0"
+						anim="idle"
+						model="/heroes/rampage/ability_01/effects/rocks/model.mdf"
+						minscale="1"
+						maxscale="2"
+						color="1 1 1"
+						startalpha="1"
+						endalpha="0"
+						minyaw="0"
+						maxyaw="360"
+						minroll="-15"
+						maxroll="15"
+					>
+					</model>
+					
+					<model
+						position="0 0 0"
+						minlife="1350"
+						maxlife="1600"
+						model="/heroes/tremble/ability_02/effects/rocks/model.mdf"
+						anim="idle_slower"
+						color="1 1 1"
+						expirelife="500"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".9"
+						minscale=".135"
+						maxscale="1"
+						minyaw="0"
+						maxyaw="180"
+						directionalspace="local"
+					>
+					</model>
+					
+				</particle>
+			</simpleemitter>
+			
+
+			<simpleemitter
+				delay="50"
+				count="35"
+				spawnrate="250"
+				particlelife="1500"
+				gravity="0"
+				speed="0"
+				drag="0"
+				acceleration="0"
+				position="0 0 0"
+				offsetsphere="50 50 0"
+			>
+				<particle>
+					<groundsprite
+						life="2500"
+						material="/shared/effects/materials/ground_smash_overlay.material"
+						minsize="70"
+						maxsize="200"
+						color="1"
+						startalpha="0"
+						midalpha=".75"
+						endalpha="0"
+						midalphapos=".02"
+						position="0 0 0"
+					/>
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				spawnrate="150"
+				particlelife="500"
+				particledirectionalspace="local"
+				material="/shared/effects/materials/shout_blend.material"
+				inheritvelocity="0.1"
+				speed="0"
+				direction="0 1 0"
+				minangle="0"
+				maxangle="1"
+				position="0 0 50"
+				
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					size="75"
+					startscale="1.75"
+					endscale="3.75"
+					startcolor="1"
+					endcolor="1"
+					turn="0"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+					midalphapos=".5"
+					lockup="1"
+					lockright="1"
+					pitch="90" 
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="10"
+				particlelife="1000"
+				particledirectionalspace="local"
+				material="/shared/effects/materials/whitedot.material"
+				inheritvelocity="0.1"
+				speed="0"
+				direction="0 1 0"
+				minangle="0"
+				maxangle="1"
+				position="0 0 50"
+				
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					size="100"
+					startscale="1.75"
+					endscale="3.75"
+					startcolor=".255 .300 200"
+					endcolor=".255 .300 200"
+					turn="0"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+					midalphapos=".5"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+
+		<particlesystem name="system1" space="world" scale="1.75">
+
+		
+
+		
+			
+			<simpleemitter
+				count="40"
+				minparticlelife="850"
+				maxparticlelife="1500"
+				spawnrate="50"
+				minspeed="250"
+				maxspeed="350"
+				gravity="20"
+				direction="0 0 1"
+				minangle="0"
+				maxangle="1"
+				drag="0.01"
+				material="/shared/effects/materials/light_rays2.material"
+				offsetsphere="25 25 10"
+				position="0 0 0"
+			>
+				<particle
+					depthbias="0"
+					startcolor="1"
+					midcolor="255 .300 200"
+					endcolor="0"
+					height="300"
+					startwidth="25"
+					endwidth="100"
+					startscale="1"
+					endscale="2"
+					startalpha=".3"
+					endalpha="0"
+					lockup="1"
+					lockright="1"
+					minyaw="0"
+					maxyaw="360"
+					yawspeed="-35"
+				/>
+			</simpleemitter>
+			
+	
+			
+			
+			
+			
+			<simpleemitter
+				
+				minparticlelife="200"
+				maxparticlelife="1500"
+				spawnrate="100"
+				minspeed="30"
+				maxspeed="80"
+				gravity="2"
+				direction="0 0 0"
+				material="/shared/effects/materials/lightning_02.material"
+				offsetsphere="100"
+				position="0 0 50"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					depthbias="-25"
+					startcolor="255 .300 200"
+					endcolor="0"
+					size="100"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				life="2000"
+				minparticlelife="200"
+				maxparticlelife="500"
+				spawnrate="100"
+				minspeed="30"
+				maxspeed="80"
+				gravity="2"
+				direction="0 0 0"
+				material="/shared/effects/materials/lightning_10.material"
+				offsetsphere="100"
+				position="0 0 50"
+			>
+				<particle
+				size="100"
+					minangle="-360"
+					maxangle="360"
+					depthbias="-500"
+					startcolor="255 .300 200"
+					endcolor="0"
+					
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+
+		</particlesystem>
+
+	</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnparticlesystem instance="instance2" particlesystem="system1" />
+	<waitfordeath instance="instance0" />
+	<waitfordeath instance="instance2" />
+	<spawnmodifier instance="instance1" modifier="modifier0"/>
+	<wait duration="20000"/>
+	<!-- <die /> -->
+</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->

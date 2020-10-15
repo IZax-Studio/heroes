@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world">
+
+			<sound
+				volume="1"
+				sample="/heroes/chronos/alt10/sounds/flash/ab1_imp_%.wav"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="1800"
+			/>
+
+			<model
+				life="1000"
+				parentmodel="true"
+				parentskeleton="true"
+				material="/shared/effects/materials/shell3.material"
+				startalpha=".5"
+				midalpha=".5"
+				endalpha="0"
+				midalphapos=".8"
+				color="1 .4 0"
+			/>
+			
+			<billboard
+				expirelife="150"
+				bone="_bone_centerofchest"
+				material="lightning_logo.material"
+				startcolor="2 .4 0"
+				endcolor="0 0 0"
+				startalpha="1"
+				endalpha="0"
+				startsize="100"
+				endsize="300"
+				directionalspace="local"
+				pitch="90"
+				yaw="45"
+				lockup="1"
+				lockright="1"
+			/>
+			
+			<groundsprite
+				life="300"
+				material="../../ability_04/effects/logo.material"
+				startcolor="2 .4 0"
+				endcolor="0 0 0"
+				startalpha="1"
+				endalpha="0"
+				startsize="25"
+				endsize="100"
+				directionalspace="local"
+			/>
+			
+			<model
+				bone="_bone_centerofchest"
+				model="/shared/effects/models/sphere/model.mdf"	
+				material="/shared/effects/materials/shell3.material"
+				yawspeed="400"
+				pitchspeed="400"
+				anim="idle"
+				startcolor="1 .4 0"
+				endcolor="0"
+				expirelife="150"
+				startscale=".5"
+				endscale="0"
+			/>
+				
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="150"
+				minparticlelife="300"
+				maxparticlelife="400"
+				minspeed="100"
+				maxspeed="200"
+				maxangle="360"
+				direction="0 -1 0"
+				offsetsphere="30 30 50"
+				material="/shared/effects/materials/lightning_11.material"
+				framespeed="2"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="300"
+					maxanglespeed="500"
+					startcolor="2 .8 .4"
+					endcolor="0"
+					minsize="5"
+					maxsize="30"
+				/>
+			</simpleemitter>
+			
+		</particlesystem>
+	
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

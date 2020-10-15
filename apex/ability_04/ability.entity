@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Apex4"
+
+	icon="1.jpg"
+	
+	casttime="700"
+	castactiontime="400"
+	anim="ability_4"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="self_position"
+	targetscheme="enemy_units"
+	casteffecttype="Magic"
+
+	manacost="125,175,225"
+	cooldowntime="120000"
+
+	targetradius="1200"
+>
+	<onimpact>
+		<spawnaffector name="Affector_Apex_Ability4" target="this_owner_position" />
+	</onimpact>
+	
+	<altavatar key="Hero_Apex.Alt" modpriority="100"
+	    icon="../alt/ability_04/icon.tga"
+	/>
+</ability>

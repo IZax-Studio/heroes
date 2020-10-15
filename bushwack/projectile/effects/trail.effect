@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			
+			<!-- blast -->
+			<template name="shockwave">
+				<simpleemitter
+					count="1"
+					particlelife="{life}"
+					speed=".1"
+					direction="0 1 0"
+					angle="0"
+					material="/shared/effects/materials/ring_reveal_gradient_02_add.material"
+					particledirectionalspace="local"
+					position="{position}"
+				>
+					<particle
+						turn="1"
+						size="{size}"
+						startframe="0"
+						midframe=".5"
+						endframe=".7"
+						midframepos=".45"
+						startparam=".75"
+						endparam=".2"
+						startcolor="0 .75 .75"
+						endcolor=".5 0 0"
+						startalpha="{alpha}"
+						endalpha="0"
+						lockup="true"
+						lockright="true"
+					/>
+				</simpleemitter>
+
+				<simpleemitter
+					count="1"
+					particlelife="500"
+					speed=".1"
+					direction="0 1 0"
+					angle="0"
+					particledirectionalspace="local"
+					position="{position}"
+				>
+					<particle>
+						<model
+							life="{life}"
+							model="/heroes/nitro/ability_01/effects/shockwave_ring/model.mdf"
+							anim="{anim}"
+							startcolor="0 .5 1"
+							endcolor="0 0 1"
+							scale="{scale}"
+							startalpha="{alpha}"
+							midalpha="{alpha}"
+							endalpha="0"
+							midalphapos=".75"
+						/>
+					</particle>
+				</simpleemitter>
+
+				<simpleemitter
+					count="1"
+					particlelife="{life}"
+					speed=".1"
+					direction="0 1 0"
+					angle="0"
+					material="/shared/effects/materials/refract_ring.material"
+					particledirectionalspace="local"
+					position="{position}"
+				>
+					<particle
+						turn="1"
+						startsize="0"
+						endsize="{size}"
+						startcolor="0.75 .75"
+						endcolor="0 0 .5"
+						startalpha="{alpha}"
+						endalpha="0"
+						lockup="true"
+						lockright="true"
+						param="0.5"
+					/>
+				</simpleemitter>
+			</template>
+
+			<instance name="shockwave" life="300" anim="idle_90" scale="4" size="250" alpha="1" position="0 40 0" />
+			<instance name="shockwave" life="200" anim="idle_120" scale="2.5" size="140" alpha=".75" position="0 0 0" /> 
+
+			<simpleemitter
+				count="1"
+				minparticlelife="100"
+				maxparticlelife="150"
+				speed=".1"
+				direction="0 1 0"
+				angle="0"
+				material="/shared/effects/materials/flash.material"
+			>
+				<particle
+					turn="1"
+					startsize="100"
+					minendwidth="250"
+					maxendwidth="350"
+					minendheight="150"
+					maxendheight="200"
+					startframe="0"
+					midframe=".5"
+					endframe=".8"
+					midframepos=".45"
+					startparam=".75"
+					endparam="0"
+					startcolor=".5 .75 1"
+					midcolor="0 .25 .5"
+					endcolor="0"
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+					angle="180"
+					offcenter="true"
+					center=".5 1"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				mincount="10"
+				maxcount="20"
+				minparticlelife="100"
+				maxparticlelife="150"
+				speed=".1"
+				direction="0 -1 0"
+				angle="80"
+				material="/shared/effects/materials/light_rays.material"
+			>
+				<particle
+					turn="1"
+					minstartwidth="10"
+					maxstartwidth="20"
+					minendwidth="20"
+					maxendwidth="80"
+					startheight="50"
+					minendheight="100"
+					maxendheight="250"
+					startframe="0"
+					midframe=".5"
+					endframe=".8"
+					midframepos=".45"
+					startparam=".75"
+					endparam="0"
+					startcolor="0 .5 1"
+					midcolor="0 .2 .75"
+					endcolor="0"
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+					angle="180"
+					offcenter="true"
+					center=".5 0"
+				/>
+			</simpleemitter>
+<!-- 
+			<groundsprite
+				timenudge="1"
+				size="100"
+				life="500"
+				startcolor=".5 .2 0"
+				endcolor="0 0 0"
+				material="/shared/effects/materials/whitedot_ground.material"
+			/> -->
+			
+			<light
+				timenudge="1"
+				life="500"
+				falloffend="200"
+				startcolor="20 10 0"
+				midcolor="0 .5 1"
+				endcolor="0"
+				midcolorpos=".2"
+			/>
+		
+
+			<!-- trail -->
+			<trailemitter
+				spawnrate="60"
+				particlelife="160"
+			 	texstretchscale="1.5"
+				texposscale="0"
+				material="/heroes/nitro/ability_01/effects/fire_scrolling_trail.material"
+				position="0 40 0"
+				attachtoemitter="true"
+			>
+				<particle
+					startsize="0"
+					midsize="16"
+					endsize="32"
+					midsizepos=".075"
+					color=".25 .75 1"
+				/>
+			</trailemitter>
+			<trailemitter
+				spawnrate="60"
+				particlelife="160"
+			 	texstretchscale="2.0"
+				texposscale="0"
+				material="/heroes/nitro/ability_01/effects/fire_scrolling_trail.material"
+				position="0 50 0"
+				attachtoemitter="true"
+			>
+				<particle
+					startsize="0"
+					midsize="22"
+					endsize="50"
+					midsizepos=".075"
+					color="0 0 .5"
+				/>
+			</trailemitter>
+		
+			<trailemitter
+				spawnrate="100"
+				particlelife="750"
+				material="/core/materials/effect_solid_add.material"
+				texposscale="1"
+				texstretchscale="0"
+			>
+				<particle
+					startsize="16"
+					midsize="4"
+					endsize="0"
+					color="0 .025 .125"
+				/>
+			</trailemitter>
+			
+			<simpleemitter
+				life="300"
+				startspawnrate="150"
+				midspawnrate="50"
+				endspawnrate="0"
+				minparticlelife="400"
+				maxparticlelife="800"
+				drag="0.01"
+				minangle="0"
+				maxangle="44"
+				maxspeed="200"
+				material="/shared/effects/materials/sparks_reveal.material"
+				inheritvelocity="0.05"
+				gravity="-4"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					startsize="40"
+					minendsize="120"
+					maxendsize="160"
+					startframe=".4"
+					endframe="1"
+					startcolor="0"
+					midcolor="1"
+					endcolor="0 .5 1"
+					midcolorpos=".1"
+				/>
+			</simpleemitter>
+				
+		</particlesystem>
+		<particlesystem name="system1" space="local" scale="1.5">
+<!--
+			<simpleemitter
+				minparticlelife="1000"
+				maxparticlelife="1750"
+				spawnrate="1500"
+				count="5"
+				gravity="-25"
+				minspeed="0"
+				maxspeed="35"
+				minangle="0"
+				maxangle="20"
+				drag="0.2"
+				offsetsphere="30 30 0"
+				material="/shared/effects/materials/dust_smoke_10.material"
+			>
+				<particle
+					startcolor="1 1 1"
+					midcolor=".6 .6 .6"
+					endcolor="0 0 0"
+					startscale="0.2"
+					endscale="2"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".25"
+					size="100"
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-50"
+					maxanglespeed="50"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				count="5"
+				gravity="-5"
+				spawnrate="250"
+				minparticlelife="700"
+				maxparticlelife="1000"
+				material="/shared/effects/materials/whitewater_02.material"
+				offsetsphere="0"
+				minangle="-90"
+				maxangle="-90"
+				direction="0 0 -1"
+				offsetradial="10"
+				position="0 0 0"
+				depthbias="-150"
+			>
+				<particle
+					startcolor=".5 .5 .5"
+					endcolor="0"
+					midcolorpos="0"
+					startsize="0"
+					maxangle="400"
+					maxendsize="200"
+				/>
+			</simpleemitter>
+-->
+
+				<simpleemitter
+					count="1"
+					spawnrate="2000"
+					minparticlelife="2000"
+					maxparticlelife="4000"
+					gravity="40"
+					speed="500"
+					drag="0"
+					acceleration="0"
+					position="0 0 0"
+					material="/shared/effects/materials/bullet.material"
+					offsetsphere="10"
+					direction="0 0 1"
+					minangle="0"
+					maxangle="10"
+					offsetdirection="0 0 0"
+					offsetradial="0 0 0"
+					collide="true"
+					directionalspace="local"
+				>
+					<particle
+						minanglespeed="100"
+						maxanglespeed="250"
+						startcolor="0 .75 2"
+						midcolor="0 .8 2"
+						endcolor="0 0 0"
+						startframe="0"
+						endframe="1"
+						startsize="20"
+						midsize="40"
+						endsize="20"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".45"
+					/>
+				</simpleemitter>
+
+			
+<!--
+			<simpleemitter
+				minparticlelife="1000"
+				maxparticlelife="1750"
+				spawnrate="1500"
+				count="5"
+				gravity="-25"
+				minspeed="0"
+				maxspeed="35"
+				minangle="0"
+				maxangle="20"
+				drag="0.2"
+				offsetsphere="30 30 0"
+				material="/shared/effects/materials/dust_smoke_10.material"
+			>
+				<particle
+					startcolor="1 1 1"
+					midcolor=".6 .6 .6"
+					endcolor="0 0 0"
+					startscale="0.2"
+					endscale="1"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".25"
+					size="100"
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-50"
+					maxanglespeed="50"
+				/>
+			</simpleemitter>
+-->
+
+			<simpleemitter
+				position="0 0 0"
+				count="5"
+				spawnrate="250"
+				particlelife="1600"
+				gravity="1.0"
+				speed="10.0"
+				drag="0.0"
+				acceleration="0.0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+				offsetdirection="0 0 0"
+				offsetradial="0 0 0"
+				particledirectionalspace="local"
+				inheritvelocity="0"
+				offsetsphere="0 10 0"
+			>
+				<particle
+				>
+					<billboard
+						life="150"
+						material="/shared/effects/materials/flash_01.material"
+						minsize="50"
+						maxsize="100"
+						startcolor="0 .4 1"
+						endcolor="0"
+						depthbias="-25"
+					/>
+				</particle>
+			</simpleemitter>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<simpleemitter
+				count="1"
+				spawnrate="1000"
+				particlelife="250"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+			>
+				<particle
+					startcolor="0 .25 1"
+					endcolor="0 0 0"
+					startsize="200"
+					endsize="400"
+					param="0.5"
+					startalpha=".3"
+					midalpha=".15"
+					endalpha="0"
+					midalphapos=".75"
+					lockup="true"
+					lockright="1"
+					pitch="0"
+					flare="0"
+					yaw="00"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				count="1"
+				spawnrate="1000"
+				particlelife="250"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+			>
+				<particle
+					startcolor=".5"
+					endcolor="0 0 0"
+					startsize="100"
+					endsize="200"
+					param="0.5"
+					startalpha=".3"
+					midalpha=".15"
+					endalpha="0"
+					midalphapos=".75"
+					lockup="true"
+					lockright="1"
+					pitch="0"
+					flare="0"
+					yaw="00"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				count="1"
+				spawnrate="1000"
+				particlelife="250"
+				position="0 0 0"
+				material="/shared/effects/materials/refract_swell.material"
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+			>
+				<particle
+					startsize="150"
+					endsize="450"
+					param="0.5"
+					startalpha=".25"
+					midalpha=".125"
+					endalpha="0"
+					midalphapos=".75"
+					lockup="true"
+					lockright="1"
+					pitch="0"
+					flare="0"
+					yaw="00"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+
+				count="50"
+				spawnrate="2000"
+				minparticlelife="250"
+				maxparticlelife="1500"
+				offsetsphere="40 40 8"
+				minspeed="50"
+				maxspeed="500"
+				direction="0 0 -1"
+				minangle="0"
+				maxangle="10"
+				material="/shared/effects/materials/spark_10.material"
+			>
+				<particle
+					maxangle="359"
+					maxanglespeed="30"
+					minanglespeed="-30"
+					minstartscale="5"
+					maxstartscale="20"
+					minendscale="5"
+					maxendscale="10"
+					startcolor="0 .5 3"
+					midcolor="0 0 1"
+					endcolor="0 0 0"
+					midcolorpos=".85"
+				/>
+			</simpleemitter>
+			
+			
+			
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

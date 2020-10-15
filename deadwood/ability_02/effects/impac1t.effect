@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".65"
+				sample="../sounds/impact_throw.wav"
+			/>
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".75"
+				sample="../sounds/impact_%.wav"
+			/>
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".5"
+				sample="/heroes/treant/sounds/move_%.wav"
+			/>	
+	
+
+
+			<simpleemitter
+				minangle="-90"
+				maxangle="-90"
+				position="0 0 50"
+				life="400"
+				spawnrate="650"
+				count="20"
+				minparticlelife="250"
+				maxparticlelife="750"
+				speed="1000"
+				drag="0.1"
+				gravity="-10"
+				offsetsphere="50 50 0"
+				material="/shared/effects/materials/dust_smoke_03.material"
+			>
+				<particle
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-20"
+					maxanglespeed="30"
+					turn="0"
+					color="0.325 0.325 .325"
+					startsize="20"
+					minendscale="6"
+					maxendscale="10"
+					startalpha=".25"
+					midalpha=".25"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				minangle="-90"
+				maxangle="-90"
+				position="0 0 50"
+				life="400"
+				spawnrate="650"
+				count="20"
+				minparticlelife="250"
+				maxparticlelife="750"
+				speed="1000"
+				drag="0.1"
+				gravity="-10"
+				offsetsphere="50 50 30"
+				material="/shared/effects/materials/dust_smoke_02.material"
+			>
+				<particle
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-30"
+					maxanglespeed="0"
+					turn="0"
+					color="0.35 0.325 .275"
+					startsize="50"
+					minendscale="6"
+					maxendscale="10"
+					startalpha=".25"
+					midalpha=".25"
+					endalpha="0"
+				/>
+			</simpleemitter>		
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<camerashake2 scale="5" radius="1200" duration="400" frequency="22" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+	
+		<particlesystem name="system0" space="world">
+
+		
+			
+			
+	
+			
+				<template name="glowy_eye">
+				<controller bone="{bone}" >
+					<billboard
+						material="/shared/effects/materials/whitedot.material"
+						color="1"
+						size="1"
+						depthbias="-2"
+					/>
+					
+					<billboard
+						material="/shared/effects/materials/whitedot.material"
+						directionalspace="local"
+						lockup="true"
+						lockright="true"
+						roll="{roll}"
+						yaw="{yaw}"
+						height="10"
+						width="4"
+						color=".5 0 0"
+						depthbias="-50"
+						scale=".5"
+					/>
+					<billboard
+						material="/shared/effects/materials/whitedot.material"
+						directionalspace="local"
+						lockup="true"
+						lockright="true"
+						roll="{roll}"
+						yaw="{yaw}"
+						height="10"
+						width="2"
+						color="1"
+						depthbias="-5"
+						scale=".2"
+					/>
+				</controller>
+			</template>
+			<instance name="glowy_eye" bone="_bone_righteye" roll="90" yaw="45"/>
+			<instance name="glowy_eye" bone="_bone_lefteye" roll="90" yaw="45"/>
+
+			<template name="glowChest">
+
+				
+				
+				<billboard
+					expirelife="500"
+					bone="{bone}"
+					delay="200"
+					position="0 0 0"
+					startcolor="1 .2 .2"
+					endcolor="0 0 0"
+					size="15"
+					depthbias="-1"
+					material="/shared/effects/materials/flare_01.material"
+				/>
+
+				<billboard
+					expirelife="500"
+					bone="{bone}"
+					delay="200"
+					position="0 0 0"
+					startcolor="1 0 0"
+					endcolor="0 0 0"
+					size=".5"
+					depthbias="-1"
+					material="/shared/effects/materials/whitedot.material"
+				/>			
+				
+			</template>
+
+			<instance name="glowChest" bone="_bone_lefteye" />
+			<instance name="glowChest" bone="_bone_righteye" />
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+      		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model file="flandre/model.model" type="K2" >
+	<anim name="idle" clip="flandre/clips/relive.clip" fps="15" loop="true" loopbackframe="10" />
+</model> 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+		
+		<!-- rings -->
+            <simpleemitter
+                position="0 0 30"
+                spawnrate="10"
+                midspawnratepos=".1"
+                material="/shared/effects/materials/shadow_cut_02_reveal_add2.material"
+                minparticlelife="400"
+                maxparticlelife="600"
+            >
+                <particle
+                    maxangle="360"
+                    startsize="0"
+                    midsize="190"
+                    minendsize="250"
+                    maxendsize="350"
+                    startcolor="1 0 1"
+                    midcolor=".5 0 .2"
+                    endcolor=".1 0 0"
+                    startframe="0"
+                    midframe=".3"
+                    endframe="1"
+                    midframepos=".8"
+                    lockup="true"
+                    lockright="true"
+                    pitch="90"
+                    minscale=".9"
+                    maxscale="1.1"
+                />
+            </simpleemitter>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

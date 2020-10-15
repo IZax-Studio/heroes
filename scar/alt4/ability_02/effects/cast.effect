@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+
+	<definitions>
+		<modifier
+		
+			life="1500"
+			name="modifier0"
+			startalpha="0"
+			midalpha="0"
+			endalpha="1"
+			midalphapos=".8"
+		/>
+		<particlesystem name="system1" space="world" scale="2">
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="500"
+				falloffend="2500"
+				volume=".5"
+				sample="/heroes/scar/alt4/HeroesXAlter/sounds/102_9_W_Fire.wav"
+			/>		
+			<!--<simpleemitter
+				count="10"
+				spawnrate="10"
+		
+				
+				acceleration="1"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="1"
+				>
+						<billboard
+							position="0 0 105"
+							life="100"
+							startcolor=".8 .2 .075"
+							endcolor="0 0 0"
+							size="200"
+							rollspeed="750"
+							depthbias="50"
+							material="/heroes/drunkenmaster/effects/material.material"
+							lockright="true"
+							lockup="true"
+							pitch="-90"
+							directionalspace="local"
+						/>
+						
+				</particle>
+			</simpleemitter>-->
+			<skeletonemitter
+				inheritvelocity=".2"
+				position="0 0 0"
+				spawnrate="200"
+				particlelife="600"
+				gravity="0"
+				drag=".01"
+				speed="20"
+				direction="0 0 1"
+				directionalspace="entity"
+				minangle="-265"
+				maxangle="265"
+				limitinheritvelocity="400"
+				offsetsphere="0 0 30"
+				material="/shared/effects/materials/light_blue_glow_01.material"
+				depthbias="-100"
+			>
+				<particle
+					turn="true"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-10"
+					maxanglespeed="10"
+					startsize="20"
+					endsize="0"
+					startalpha="0.0"
+					midalpha=".7"
+					endalpha="0"
+					midalphapos=".1"
+					startcolor=".5"
+					endcolor="0"
+				/>
+			</skeletonemitter>
+			
+			<skeletonemitter
+				inheritvelocity=".2"
+				position="0 0 0"
+				spawnrate="200"
+				particlelife="600"
+				gravity="0"
+				drag=".01"
+				speed="20"
+				direction="0 0 1"
+				directionalspace="entity"
+				minangle="-265"
+				maxangle="265"
+				limitinheritvelocity="400"
+				offsetsphere="0 0 30"
+				material="/shared/effects/materials/dust.material"
+				depthbias="-100"
+			>
+				<particle
+					turn="true"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-10"
+					maxanglespeed="10"
+					startsize="20"
+					endsize="0"
+					startalpha="0.0"
+					midalpha=".7"
+					endalpha="0"
+					midalphapos=".1"
+					startcolor=".5"
+					endcolor="0"
+				/>
+			</skeletonemitter>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				size="100"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				color=".3 0 0"
+				alpha="1"
+			/>
+			
+			<model
+				parentskeleton="1"
+				parentmodel="true"
+				scale="1.01"
+				material="/shared/effects/materials/shell3.material"
+				color="1 0 0"
+			>
+			</model>
+			
+			<simpleemitter
+				spawnrate="65"
+				particlelife="550"
+				offsetsphere="35 65 0"
+				position="0 0 50"
+				material="/shared/effects/materials/dust_smoke_10.material"
+				inheritvelocity=".1"
+			>
+				<particle 
+					minangle="-180"
+					maxangle="180"
+					startcolor=".9 .75 .66"
+					endcolor="0 0 0"
+					minsize="100"
+					maxsize="140"
+					endsize="200"
+					startalpha="0"
+					midalpha=".3"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			
+			<template name="ectoplasm">
+				<twopointtrailemitter
+					bone_a="{a}"
+					bone_b="{b}"
+					spawnrate="25"
+					particlelife="{life}"
+					gravity="5"
+					subframepose="1"
+					drag="0.01"
+					speed="100"
+					direction="0 -1 0"
+					minangle="0"
+					maxangle="0"
+					texpostime="200"
+					texposscale="0"
+					offsetsphere="10"
+					texstretchscale="1"
+					material="/heroes/scar/alt4/ability_01/effects/light_blue_glow_01.material"
+					startparticlealpha="1"
+					endparticlealpha="0"
+					depthbias="50"
+				>
+					<particle
+						color="1"
+						startalpha=".5"
+						endalpha="0"
+						size="250"
+					/>
+				</twopointtrailemitter>
+			</template>
+			
+			<instance name="ectoplasm" a="Bip01 Neck" b="Bip01 Spine" life="250"/>
+			<instance name="ectoplasm" a="Bone011" b="Bone012" life="100"/>
+			<instance name="ectoplasm" a="Bone009" b="Bone010" life="100"/>
+			<instance name="ectoplasm" a="Bone015" b="Bone016" life="100"/>
+			<instance name="ectoplasm" a="Bone014" b="Bone016" life="100"/>
+			<instance name="ectoplasm" a="Bip01 R Thigh" b="Bip01 R Foot" life="100"/>
+			<instance name="ectoplasm" a="Bip01 L Thigh" b="Bip01 L Foot" life="100"/>
+			
+			<simpleemitter
+				bone="_bone_rightfoot"
+				spawnrate="50"
+				particlelife="1000"
+				gravity="0"
+				speed="0"
+				drag="0"
+				acceleration="0"
+				position="0 0 0"
+				timenudge="-100"
+			>
+				<particle>
+					<groundsprite
+						life="1250"
+						material="/shared/effects/materials/ground_smash_line_overlay.material"
+						size="12"
+						color="1 .8 .2"
+						startalpha=".6"
+						midalpha=".6"
+						endalpha="0"
+						position="0 0 0"
+					/>
+					
+				</particle>
+			</simpleemitter>
+<!--			
+			<template name="trail">
+				<twopointtrailemitter
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					spawnrate="100"
+					particlelife="300"
+					texpostime="300"
+					texposscale="0.3"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/swoosh_add.material"
+					subframepos="true"
+				>
+					<particle
+						startcolor="1 0 0"
+						midcolor=".6 0 0"
+						endcolor="0 0 0" 
+					/>
+				</twopointtrailemitter>
+			</template>
+
+				<instance name="trail"
+					bone_a="Bip01 Pelvis"
+					bone_b="Bip01 Head"
+				/>
+-->
+
+			<simpleemitter
+         		bone="_bone_centerofchest"
+         		spawnrate="150"
+				minparticlelife="400"
+          		maxparticlelife="1200"
+          		gravity="13"
+				minspeed="150"
+         		maxspeed="550"
+          		drag=".15"
+				offsetsphere="15"
+          		material="/shared/effects/materials/blood1.material"
+         		>
+  				<particle 
+					minangle="0"
+					maxangle="360"			
+					color=".5 .2 0"
+					maxanglespeed="20"
+					minanglespeed="-120"
+					startsize="10"
+					minendsize="35"
+					maxendsize="45"			
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					endstickiness=".3"
+				/>
+  				<particle 
+					minangle="0"
+					maxangle="360"			
+					color=".3"
+					maxanglespeed="55"
+					minanglespeed="-55"
+					startsize="10"
+					minendsize="55"
+					maxendsize="85"			
+					startalpha="1"
+					midalpha=".8"
+					endalpha="0"
+				/>
+  				<particle 
+					minangle="0"
+					maxangle="360"			
+					color=".2"
+					maxanglespeed="10"
+					minanglespeed="-10"
+					startsize="30"
+					minendsize="5"
+					maxendsize="10"			
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+         		bone="_bone_centerofchest"
+         		spawnrate="150"
+				minparticlelife="400"
+          		maxparticlelife="1400"
+          		gravity="10"
+				minspeed="50"
+         		maxspeed="550"
+          		drag=".05"
+				offsetsphere="10"
+          		material="/shared/effects/materials/blood1.material"
+         		>
+  				<particle 
+					minangle="0"
+					maxangle="360"			
+					color=".5 .2 0"
+					maxanglespeed="10"
+					minanglespeed="-10"
+					size="2"
+					minscale="1"
+					maxscale="2"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="500"
+				bone="_bone_head"
+				spawnrate="75"
+				offsetsphere="30 30 30"
+				particlelife="3000"
+				depthbias="-50"
+			>
+				<particle>
+					<groundsprite						
+						material="/shared/effects/materials/blood_ground.material"						
+						life="2000"
+						size="5"			
+						minscale="1"
+						maxscale="6"
+						minyaw="-360"
+						maxyaw="360"
+						startcolor=".35 .2 .2"
+						endcolor=".2 .1 .1"
+						startalpha=".8"
+						midalpha=".8"
+						endalpha="0"
+					/>				
+				</particle>
+			</simpleemitter>
+		</particlesystem>
+		
+		<particlesystem name="system2" space="world" scale=".3">
+			<template name="ball_of_fire">
+				<trailemitter
+					spawnrate="50"
+					particlelife="400"
+					texpostime="500"
+					texposscale="0.0"
+					texstretchscale=".4"
+					material="/shared/effects/materials/light_trail.material"
+					life="1500"
+				>
+					<particle
+						startcolor="1 .4 .2"
+						midcolor="1 .1 0"
+						endcolor="0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".075"
+						startsize="5"
+						midsize="15"
+						endsize="5"
+						midsizepos="0.2"
+				 />
+				</trailemitter>
+				
+				<trailemitter
+					spawnrate="40"
+					particlelife="500"
+					texpostime="750"
+					texposscale="0.0"
+					texstretchscale=".4"
+					material="/shared/effects/materials/light_trail.material"
+					direction="0 0 1"
+					speed="50"
+					angle="0"
+					drag="0.02"
+					life="1500"
+				>
+					<particle
+						startcolor="0"
+						midcolor="1 .5 0"
+						endcolor="0 0 0"
+						midcolorpos=".05"
+						startsize="10"
+						midsize="30"
+						endsize="5"
+						midsizepos=".1"
+				 />
+				</trailemitter>
+
+				<billboard
+					expirelife="500"
+					startcolor=".8 .3 0"
+					endcolor="0 0 0"
+					size="40"
+					material="/shared/effects/materials/whitedot.material"
+					depthbias="50"
+					life="800"
+				/>
+				
+				<billboard
+					expirelife="500"
+					startcolor=".5 0 0"
+					endcolor="0"
+					size="10"
+					material="/shared/effects/materials/glow_01.material"
+					depthbias="-50"
+					life="800"
+				/>
+
+				<billboard
+					expirelife="500"
+					startcolor=".2 0 0"
+					endcolor="0 0 0"
+					size="12"
+					material="/shared/effects/materials/glow_01.material"
+					depthbias="-50"
+					life="800"
+				/>
+
+				<billboard
+					expirelife="500"
+					startcolor=".4 .2 .2"
+					endcolor="0 0 0"
+					midcolorpos=".8"
+					startsize="150"
+					endsize="25"
+					material="/shared/effects/materials/glow_01.material"
+					depthbias="-50"
+					life="800"
+				/>
+
+				<billboard
+					expirelife="500"
+					startcolor=".25 .1 .1"
+					endcolor="0 0 0"
+					size="15"
+					material="/shared/effects/materials/whitedot.material"
+					depthbias="-25"
+					life="800"
+				/>
+
+			</template>
+			
+			<simpleemitter
+				life="2500"
+				bone="_bone_centerofchest"
+				position="0 0 -20"	
+				gravity="-5"
+				speed="350"
+				drag="0.03"
+				depthbias="0"
+				spawnrate="30"
+				particlelife="1000"
+				offsetsphere="40"
+				angle="40"
+				inheritvelocity=".2"
+			>
+				<particle
+				>
+					<instance name="ball_of_fire"/>
+				</particle>
+			</simpleemitter>
+			
+			
+			
+		</particlesystem>
+
+
+		<particlesystem name="system4" space="entity" scale="1.9">
+			
+			<sound
+			    life="400"
+			    soundloop="true"
+                fadein="400"
+                fadeout="500"				
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume="1"
+				sample="/heroes/aluna/alt/sounds/loopthrow.wav"
+			/>
+			<model
+						position="0 0 100"
+						scale="1.15"
+					
+						model="/heroes/aluna/alt/ability_02/effects/staff.mdf"
+				
+						anim="idle"
+						color="1 1 1"
+					
+						startalpha="0"
+						endalpha="0"
+						midalphapos=".35"
+					>
+				<twopointtrailemitter
+				bone_a="_bone_weapon2"
+				bone_b="_bone_weapon1"
+				spawnrate="300"
+				particlelife="50"
+				texpostime="200"
+			 	texposscale="0.0"
+			 	texstretchscale="1"
+				material="/core/materials/ruler.material"
+			>
+				<particle
+					color="1 0 0"
+					startalpha=".75"
+					endalpha=".25"
+			 />
+			</twopointtrailemitter>
+			
+			<twopointtrailemitter
+				bone_a="_bone_weaponattach"
+				bone_b="_bone_weapon3"
+				spawnrate="300"
+				particlelife="50"
+				texpostime="200"
+			 	texposscale="0.0"
+			 	texstretchscale="1"
+				material="/core/materials/ruler.material"
+			>
+				<particle
+					color="1 0 0"
+					startalpha=".75"
+					endalpha=".25"
+				/>
+			</twopointtrailemitter>
+			
+			<trailemitter
+				
+				bone="_bone_weapon3"
+				spawnrate="300"
+				particlelife="100"
+				texpostime="800"
+				texposscale="0"
+				texstretchscale=".8"
+				timenudge="0"
+				material="/shared/effects/materials/whitedot.material"
+				subframepose="true"
+			>
+				<particle
+					startsize="30"
+					midsize="15"
+					endsize="1"
+					midsizepos=".3"
+
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+
+					startcolor="0 0 0"
+					midcolor=".5 .0 0"
+					endcolor="0 0 0"
+				/>
+			</trailemitter>
+
+			<trailemitter
+				
+				bone="_bone_weapon3"
+				spawnrate="300"
+				particlelife="80"
+				texpostime="800"
+				texposscale="0"
+				texstretchscale=".8"
+				timenudge="0"
+				material="/shared/effects/materials/shock_01.material"
+				subframepose="true"
+			>
+				<particle
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					size="15"
+					startcolor="0 0 0"
+					midcolor="1 .0 0"
+					endcolor="0 0 0"
+				/>
+			</trailemitter>
+			
+			<trailemitter
+				
+				bone="_bone_weapon1"
+				spawnrate="300"
+				particlelife="100"
+				texpostime="800"
+				texposscale="0"
+				texstretchscale=".8"
+				timenudge="0"
+				material="/shared/effects/materials/whitedot.material"
+				subframepose="true"
+			>
+				<particle
+					startsize="30"
+					midsize="15"
+					endsize="1"
+					midsizepos=".3"
+
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+
+					startcolor="0 0 0"
+					midcolor=".5 .0 .0"
+					endcolor="0 0 0"
+				/>
+			</trailemitter>
+
+			<trailemitter
+			
+				bone="_bone_weapon1"
+				spawnrate="300"
+				particlelife="80"
+				texpostime="800"
+				texposscale="0"
+				texstretchscale=".8"
+				timenudge="0"
+				material="/shared/effects/materials/shock_01.material"
+				subframepose="true"
+			>
+				<particle
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					size="15"
+					startcolor="0 0 0"
+					midcolor="1 .0 0"
+					endcolor="0 0 0"
+				/>
+			</trailemitter>
+</model>	
+		</particlesystem>
+		
+		
+		
+	</definitions>
+
+	<thread>
+		
+		<spawnparticlesystem instance="instance1" particlesystem="system1"/>
+		<spawnparticlesystem instance="instance2" particlesystem="system2"/>
+		<spawnparticlesystem instance="instance4" particlesystem="system4"/>
+		<spawnmodifier instance="instance3" modifier="modifier0"/>
+		<waitfordeath instance="instance1" />
+		<waitfordeath instance="instance2" />
+		<waitfordeath instance="instance3" />
+		<waitfordeath instance="instance4" />
+	</thread>
+
+</effect>

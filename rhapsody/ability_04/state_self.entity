@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Rhapsody_Ability4_Self"
+	
+	icon="../alt10/ability_04/icon.tga"
+	ishidden="true"
+	passiveeffect="effects/state_self.effect"
+
+>	
+	<aura state="State_Rhapsody_Ability4_Buff" radius="500" targetscheme="other_ally_units" ischannel="true" />
+	
+	<onexpired>
+		<setchannelvolume channel="rhap_2" volume="1.0" fade="2500" />
+		<setchannelvolume channel="rhap_4" volume="0" fade="2500" />
+		<playeffect effect="../alt9/ability_04/effects/sound_expired.effect" source="source_entity" target="source_entity" />
+	</onexpired>
+
+	<modifier key="ult_boost" modpriority="90"
+		ishidden="false"
+		modifierkey="Rhapsody_Staff_Ult_Channel"
+	>
+		<onframe>
+			<targettype type="stunned">
+				<setchannelvolume channel="rhap_2" volume="1.0" fade="2500" />
+				<setchannelvolume channel="rhap_4" volume="0" fade="2500" />
+				<expire />
+			</targettype>
+			<targettype type="silenced">
+				<setchannelvolume channel="rhap_2" volume="1.0" fade="2500" />
+				<setchannelvolume channel="rhap_4" volume="0" fade="2500" />
+				<expire />
+			</targettype>
+		</onframe>
+
+		<onactivatepreimpact ignoreresponsetype="Staccato Item_NonInterrupting"> <!-- Because it is not technically considered a channel, still responds to all items. -->
+			<entitytype type="Ability_Rhapsody4" source="inflictor_entity" target="inflictor_entity"/>
+			<else>
+				<!-- Item_NonInterrupting responsetype on flagged items prevent them from breaking the channel -->
+		        <setchannelvolume channel="rhap_2" volume="1.0" fade="2500" />
+	            <setchannelvolume channel="rhap_4" volume="0" fade="2500" />
+				<expire />
+			</else>
+		</onactivatepreimpact>
+
+		<onattack>
+			<setchannelvolume channel="rhap_2" volume="1.0" fade="2500" />
+			<setchannelvolume channel="rhap_4" volume="0" fade="2500" />
+			<expire />
+		</onattack>
+
+		<onexpired>
+			<hidechannelbar toolname="Ability_Rhapsody4" />
+			<playanim name="idle" />
+			<setchannelvolume channel="rhap_2" volume="1.0" fade="2500" />
+			<setchannelvolume channel="rhap_4" volume="0" fade="2500" />
+			<hasavatarkey name="Hero_Rhapsody.Alt10">
+				<playeffect effect="../alt10/ability_04/effects/sound_expired.effect" source="source_entity" target="source_entity" />
+			</hasavatarkey>
+		</onexpired>
+		
+					
+		<onchannelend>
+			<hasavatarkey name="Hero_Rhapsody.Alt10">
+				<setchannelvolume channel="rhap_2" volume="1.0" fade="2500" />
+				<setchannelvolume channel="rhap_4" volume="0" fade="2500" />
+				<playeffect effect="../alt10/ability_04/effects/sound_expired.effect" source="source_entity" target="source_entity" />
+			</hasavatarkey>
+		</onchannelend>
+	</modifier>
+	
+	<altavatar key="Hero_Rhapsody.Alt" modpriority="1"
+		passiveeffect="/heroes/rhapsody/alt/ability_04/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Rhapsody.Alt2" modpriority="1"
+		passiveeffect="/heroes/rhapsody/alt2/ability_04/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Rhapsody.Alt3" modpriority="1"
+		passiveeffect="/heroes/rhapsody/alt3/ability_04/effects/state_self.effect"
+	>
+		<modifier key="Pirate_Set_Bonus" modpriority="89"
+			passiveeffect="/heroes/rhapsody/alt3/ability_04/effects/state_self_boost.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Rhapsody.Alt4" modpriority="1"
+		passiveeffect="/heroes/rhapsody/alt4/ability_04/effects/state_self.effect"
+	>
+		<modifier key="ult_boost" modpriority="91"
+			ishidden="false"
+			modifierkey="Rhapsody_Staff_Ult_Channel"
+			passiveeffect="/heroes/rhapsody/alt4/ability_04/effects/state_self_boost.effect"
+		>
+			<onframe>
+				<targettype type="stunned">
+					<expire />
+				</targettype>
+				<targettype type="silenced">
+					<expire />
+				</targettype>
+			</onframe>
+
+			<onactivatepreimpact ignoreresponsetype="Staccato Item_NonInterrupting"> <!-- Because it is not technically considered a channel, still responds to all items. -->
+				<entitytype type="Ability_Rhapsody4" source="inflictor_entity" target="inflictor_entity"/>
+				<else>
+					<!-- Item_NonInterrupting responsetype on flagged items prevent them from breaking the channel -->
+					<expire />
+				</else>
+			</onactivatepreimpact>
+
+			<onattack>
+				<expire />
+			</onattack>
+
+			<onexpired>
+			    <setchannelvolume channel="12" volume="1.0" />
+				<setchannelvolume channel="13" volume="0" />
+				<hidechannelbar toolname="Ability_Rhapsody4" />
+				<playanim name="idle" />
+			</onexpired>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Rhapsody.Alt5" modpriority="1"
+		passiveeffect="/heroes/rhapsody/alt5/ability_04/effects/state_self.effect"
+	>
+		<modifier key="ult_boost" modpriority="91"
+			ishidden="false"
+			modifierkey="Rhapsody_Staff_Ult_Channel"
+			passiveeffect="/heroes/rhapsody/alt5/ability_04/effects/state_self_boost.effect"
+		>
+			<onframe>
+				<targettype type="stunned">
+					<expire />
+				</targettype>
+				<targettype type="silenced">
+					<expire />
+				</targettype>
+			</onframe>
+
+			<onactivatepreimpact ignoreresponsetype="Staccato Item_NonInterrupting"> <!-- Because it is not technically considered a channel, still responds to all items. -->
+				<entitytype type="Ability_Rhapsody4" source="inflictor_entity" target="inflictor_entity"/>
+				<else>
+					<!-- Item_NonInterrupting responsetype on flagged items prevent them from breaking the channel -->
+					<expire />
+				</else>
+			</onactivatepreimpact>
+
+			<onattack>
+				<expire />
+			</onattack>
+
+			<onexpired>
+			    <setchannelvolume channel="12" volume="1.0" />
+				<setchannelvolume channel="13" volume="0" />
+				<hidechannelbar toolname="Ability_Rhapsody4" />
+				<playanim name="idle" />
+			</onexpired>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Rhapsody.Alt6" modpriority="1"
+		passiveeffect="/heroes/rhapsody/alt6/ability_04/effects/state_self.effect"
+	>
+		<modifier key="ult_boost" modpriority="91"
+			ishidden="false"
+			modifierkey="Rhapsody_Staff_Ult_Channel"
+			passiveeffect="/heroes/rhapsody/alt6/ability_04/effects/state_self.effect"
+		>
+			<onframe>
+				<targettype type="stunned">
+					<expire />
+				</targettype>
+				<targettype type="silenced">
+					<expire />
+				</targettype>
+			</onframe>
+
+			<onactivatepreimpact ignoreresponsetype="Staccato Item_NonInterrupting"> <!-- Because it is not technically considered a channel, still responds to all items. -->
+				<entitytype type="Ability_Rhapsody4" source="inflictor_entity" target="inflictor_entity"/>
+				<else>
+					<!-- Item_NonInterrupting responsetype on flagged items prevent them from breaking the channel -->
+					<expire />
+				</else>
+			</onactivatepreimpact>
+
+			<onattack>
+				<expire />
+			</onattack>
+
+			<onexpired>
+			    <setchannelvolume channel="12" volume="1.0" />
+				<setchannelvolume channel="13" volume="0" />
+				<hidechannelbar toolname="Ability_Rhapsody4" />
+				<playanim name="idle" />
+			</onexpired>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Rhapsody.Alt7" modpriority="1"
+		passiveeffect="/heroes/rhapsody/alt7/ability_04/effects/state_self.effect"
+	>
+		<onexpired>
+			<setchannelvolume channel="rhap_2" volume="1" fade="2500" />
+			<setchannelvolume channel="rhap_4" volume="0" fade="2500" />
+			<hasmodifier name="ult_boost" entity="source_entity">
+				<hidechannelbar toolname="Ability_Rhapsody4" />
+				<playanim name="idle" />
+			</hasmodifier>
+		</onexpired>
+	
+		<modifier key="alt_AlacrityBand" modpriority="94"
+			passiveeffect="../alt7/ability_04/effects/state_self_upgrade.effect"
+		/>
+		
+		<modifier key="Alt7_Ability4_Upgrade" modpriority="95"
+			passiveeffect="../alt7/ability_04/effects/state_self_upgrade.effect"
+		/>
+		
+		<modifier key="ult_boost" modpriority="91"
+			ishidden="false"
+			modifierkey="Rhapsody_Staff_Ult_Channel"
+			passiveeffect="/heroes/rhapsody/alt7/ability_04/effects/state_self.effect"
+		>
+			<onframe>
+				<targettype type="stunned">
+					<expire />
+				</targettype>
+				<targettype type="silenced">
+					<expire />
+				</targettype>
+			</onframe>
+
+			<onactivatepreimpact ignoreresponsetype="Staccato Item_NonInterrupting"> <!-- Because it is not technically considered a channel, still responds to all items. -->
+				<entitytype type="Ability_Rhapsody4" source="inflictor_entity" target="inflictor_entity"/>
+				<else>
+					<!-- Item_NonInterrupting responsetype on flagged items prevent them from breaking the channel -->
+					<expire />
+				</else>
+			</onactivatepreimpact>
+
+			<onattack>
+				<expire />
+			</onattack>		
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Rhapsody.Alt8" modpriority="1"
+		passiveeffect="/heroes/rhapsody/alt8/ability_04/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Rhapsody.Alt9" modpriority="1"
+		passiveeffect="/heroes/rhapsody/alt9/ability_04/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Rhapsody.Alt10" modpriority="1"
+	    icon="../alt10/ability_04/icon.tga"
+		passiveeffect="/heroes/rhapsody/alt10/ability_04/effects/state_self.effect"
+	>
+		<onexpired>
+			<setchannelvolume channel="rhap_2" volume="1.0" fade="2500" />
+			<setchannelvolume channel="rhap_4" volume="0" fade="2500" />
+			<playeffect effect="../alt10/ability_04/effects/sound_expired.effect" source="source_entity" target="source_entity" />
+		</onexpired>
+	</altavatar>
+	
+</state>

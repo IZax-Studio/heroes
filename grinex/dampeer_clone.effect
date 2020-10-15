@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="body" deferred="true">
+	<definitions>
+
+		<particlesystem name="countdampeer" space="entity" scale="1">
+			<model
+				position="60 -10 -20"
+				model="/heroes/dampeer/model1.mdf"
+				anim="idle"
+				color="1 1 1"
+				expirelife="500"
+				startalpha="1"
+				endalpha="0"
+				scale="1.45"
+				yaw="135"
+			>			
+			</model>
+
+		</particlesystem>
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="countdampeer" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

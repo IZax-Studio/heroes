@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Frosty_Ability4_Self"
+
+	
+	ishidden="true"
+	icon="4.jpg"
+>
+	<aura state="State_Frosty_Ability4" radius="700" targetscheme="enemy_units" duration="1000" />
+	
+	<altavatar key="Hero_Frosty.Alt4"
+		icon="../alt4/ability_04/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Frosty.Alt9"
+		passiveeffect="../alt9/ability_04/effects/state_self.effect"
+	/>
+	
+	<modifier key="Combo_efx_frosty" modpriority="90"
+		passiveeffect="../alt9/ability_04/effects/state_self_combo.effect"
+	/>
+</state>

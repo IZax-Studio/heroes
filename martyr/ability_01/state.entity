@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Martyr_Ability1"
+
+	icon="../sheep/ab1.tga"
+	passiveeffect="effects/state.effect"
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	maxcharges="35"
+	movespeedslow=".15"
+	movespeedslowpercharge=".01"
+
+	negativeeffect="slowed"
+
+>
+
+	<altavatar key="Hero_Martyr.Alt4" modpriority="1"
+	
+	/>
+	
+	<altavatar key="Hero_Martyr.Alt5" modpriority="1"
+
+	/>
+	
+	<altavatar key="Hero_Martyr.Alt6" modpriority="1"
+		
+	/>
+
+</state>

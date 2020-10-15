@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Solstice_Ability1_Projectile_State"
+	
+	icon="Cha110_Skill_E.png"
+	passiveeffect=""
+	serverentity="true"
+	
+	stunned="true"
+	
+	effecttype=""
+>
+</state>

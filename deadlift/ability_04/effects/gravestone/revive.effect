@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+<sound
+                forcestereo="true"
+				linearfalloff="true" 
+				falloffstart="1300"
+				falloffend="1300"
+				volume="1"
+				sample="/heroes/deadlift/ability_04/sounds/ab4_vox.wav"
+			/>          
+
+		  <billboard
+                life="1000"
+                flare="1"
+                material="/shared/effects/materials/light_rays.material"
+                startheight="100"
+                endheight="2000"
+                startwidth="400"
+                endwidth="20"
+                lockup="true"
+                startcolor=".5 .25 0"
+                midcolor=".25 0 0"
+                endcolor="0"
+            />
+
+            <simpleemitter
+                timenudge="1"
+                count="40"
+                particlelife="2000"
+                particledirectionalspace="local"
+            >
+                <particle
+                    minyaw="0"
+                    maxyaw="360"
+                    startscale="1"
+                    endscale="2"
+                >
+                    <billboard
+                       timenudge="1"
+                        minlife="500"
+                        maxlife="1000"
+                        position="0 30 0"
+                        lockup="true"
+                        lockright="true"
+                        pitch="-30"
+                        material="/shared/effects/materials/light_rays2.material"
+                        startcolor=".4 .3 .1"
+                        midcolor=".2 0 0"
+                        endcolor="0"
+                        directionalspace="local"
+                        startheight="40"
+                        minendheight="400"
+                        maxendheight="800"
+                        startwidth="10"
+                        minendwidth="10"
+                        maxendwidth="80"
+                    />
+                </particle>
+            </simpleemitter>
+
+            <!--
+            <simpleemitter
+                life="500"
+                position="0 12 0"
+                startspawnrate="20"
+                endspawnrate="0"
+                minparticlelife="1750"
+                maxparticlelife="2000"
+                material="/shared/effects/materials/edge_cracks_overlay_reveal.material"
+            >
+                <particle
+                    flare="1"
+                    maxangle="360"
+                    startframe="1"
+                    midframe="0"
+                    endframe="0"
+                    midframepos=".25"
+                    startalpha="1"
+                    midalpha="1"
+                    endalpha="0"
+                    midalphapos=".8"
+                    minwidth="80"
+                    maxwidth="140"
+                    minheight="120"
+                    maxheight="200"
+                    lockup="true"
+                    lockright="true"
+                    pitch="-90"
+                />
+            </simpleemitter>
+        -->
+
+            <terrainemitter
+                count="15"
+                range="50"
+                material="/shared/effects/materials/phantom_white_reveal_add.material"
+                minparticlelife="150"
+                maxparticlelife="600"
+            >
+                <template name="fire_pillar">
+                    <particle
+                        flare="1"
+                        minstartwidth="15"
+                        maxstartwidth="30"
+                        minendwidth="40"
+                        maxendwidth="80"
+                        minendheight="400"
+                        maxendheight="800"
+                        startcolor="{sc}"
+                        midcolor="{mc}"
+                        endcolor="{ec}"
+                        startframe="1"
+                        midframe="0"
+                        endframe="1"
+                        midframepos=".25"
+                        lockup="true"
+                    />
+                </template>
+                <instance name="fire_pillar" sc="1 .5 .25" mc=".5   0 0" ec=".5 0 0" />
+                <instance name="fire_pillar" sc="1 .5 .25" mc=".5 .25 0" ec=".5 0 0" />
+            </terrainemitter>
+
+
+            <groundsprite
+                maxyaw="360"
+                minlife="1250"
+                maxlife="1750"
+                material="/shared/effects/materials/whitedot_ground.material"
+                startcolor="1 .5 0"
+                midcolor=".5 0 0"
+                endcolor="0"
+                size="120"
+            />
+            <groundsprite
+                life="4000"
+                material="/shared/effects/materials/ground_smash_overlay_darker.material"
+                color="1"
+                size="80"
+                startalpha="1"
+                midalpha="1"
+                endalpha="0"
+                midalphapos=".65"
+            />
+            <groundsprite
+                maxyaw="360"
+                minlife="2000"
+                maxlife="2500"
+                material="/shared/effects/materials/coals_add.material"
+                startcolor="1 .75 0"
+                midcolor=".6 .4 0"
+                endcolor="0"
+                minsize="40"
+                maxsize="55"
+            />
+
+            <terrainemitter
+                count="60"
+                range="60"
+                particlelife="1500"
+                direction="0 0 1"
+                angle="10"
+                minspeed="80"
+                maxspeed="240"
+                drag="0.02"
+                gravity="-6"
+                inheritvelocity=".4"
+                limitinheritvelocity="150"
+            >
+                <template name="ember_particle" >
+                    <particle
+                        maxyaw="360"
+                        maxpitch="360"
+                        maxroll="360"
+                        minyawspeed="-650"
+                        maxyawspeed="650"
+                        minpitchspeed="-650"
+                        maxpitchspeed="650"
+                        minrollspeed="-650"
+                        maxrollspeed="650"
+                        startscale="0"
+                        minendscale=".5"
+                        maxendscale="1"
+                    >
+                        <billboard
+                            life="{life}"
+                            maxroll="360"
+                            minrollspeed="-400"
+                            maxrollspeed="400"
+                            position="30 0 0"
+                            material="/shared/effects/materials/abstract_reveal.material"
+                            minsize="8"
+                            maxsize="12"
+                            startframe="0"
+                            endframe="1"
+                            midframepos=".8"
+                            startcolor="{sc}"
+                            midcolor="{mc}"
+                            endcolor="{ec}"
+                            midcolorpos="{mcpos}"
+                        />
+                        <billboard
+                            life="{life}"
+                            position="30 0 0"
+                            material="/shared/effects/materials/whitedot.material"
+                            size="60"
+                            startcolor="1 1 0"
+                            midcolor=".5 0 0"
+                            endcolor="0"
+                            midcolorpos="{mcpos}"
+                        />
+                    </particle>
+                </template>
+                <instance name="ember_particle" sc="1" mc="1 1 .25" ec="1 .25 0" mcpos=".6" life="1600" />
+                <instance name="ember_particle" sc="1" mc="1" ec="1 .5 .25" mcpos=".8" life="1500" />
+                <instance name="ember_particle" sc="1" mc="1 1 .25" ec="1 .25 0" mcpos=".6" life="1400" />
+                <instance name="ember_particle" sc="1" mc="1" ec="1 .5 .25" mcpos=".8" life="1300" />
+                <instance name="ember_particle" sc="1" mc="1 1 .25" ec="1 .25 0" mcpos=".6" life="1200" />
+                <instance name="ember_particle" sc="1" mc="1" ec="1 .5 .25" mcpos=".8" life="1100" />
+                <instance name="ember_particle" sc="1" mc="1 1 .25" ec="1 .25 0" mcpos=".6" life="1000" />
+                <instance name="ember_particle" sc="1" mc="1" ec="1 .5 .25" mcpos=".8" life="900" />
+                <instance name="ember_particle" sc="1" mc="1 1 .25" ec="1 .25 0" mcpos=".6" life="800" />
+                <instance name="ember_particle" sc="1" mc="1" ec="1 .5 .25" mcpos=".8" life="700" />
+                <instance name="ember_particle" sc="1" mc="1 1 .25" ec="1 .25 0" mcpos=".6" life="600" />
+                <instance name="ember_particle" sc="1" mc="1" ec="1 .5 .25" mcpos=".8" life="500" />
+            </terrainemitter>
+
+            <terrainemitter
+                count="50"
+                range="60"
+                particlelife="3000"
+                direction="0 0 1"
+                angle="10"
+                minspeed="80"
+                maxspeed="600"
+                drag="0.02"
+                gravity="-3"
+            >
+                <template name="ash_particle" >
+                    <particle
+                        maxyaw="360"
+                        maxpitch="360"
+                        maxroll="360"
+                        minyawspeed="-150"
+                        maxyawspeed="150"
+                        minpitchspeed="-150"
+                        maxpitchspeed="150"
+                        minrollspeed="-150"
+                        maxrollspeed="150"
+                        startscale="0"
+                        minendscale=".5"
+                        maxendscale="1"
+                    >
+                        <billboard
+                            maxangle="360"
+                            minrollspeed="-400"
+                            maxrollspeed="400"
+                            minlife="1200"
+                            maxlife="2600"
+                            position="20 0 0"
+                            material="/shared/effects/materials/abstract_reveal.material"
+                            minsize="30"
+                            maxsize="50"
+                            startcolor="{sc}"
+                            midcolor="{mc}"
+                            endcolor="{ec}"
+                            midcolorpos="{mcpos}"
+                            startframe="0"
+                            endframe="1"
+                        />
+                    </particle>
+                </template>
+                <instance name="ash_particle" sc=".4 .1 0" mc=".1" ec="0" mcpos=".5" />
+                <instance name="ash_particle" sc="1 .5 0" mc="0" ec="0" mcpos=".6" />
+            </terrainemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model file="/heroes/mimix/flandre/alt2_material/model.model" type="K2" >
+	<anim name="idle" clip="/heroes/mimix/flandre/clips/relive.clip" fps="20" loop="true" loopbackframe="10" />
+</model>

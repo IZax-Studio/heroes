@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" >
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+		
+		<sound
+		        life="3000"
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="1300"
+				volume="1"
+				sample="../sounds/cast.wav"
+			/>
+			
+			<sound
+			    forcestereo="true"
+		        life="3000"
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="1300"
+				volume="1"
+				sample="/heroes/bushwack/alt2/ability_02/sounds/core_cast.wav"
+			/>
+			
+			<simpleemitter
+				count="1"
+				spawnrate="1000"
+				particlelife="3000"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="true"
+				>
+					<model
+						position="0 0 0"
+						scale="1"
+						life="750"
+						model="/heroes/bushwack/alt2/model.mdf"
+						material=""
+						anim="ability_2_image_0"
+						color=".75 .75 .25"
+						startalpha=".4"
+						midalpha=".3"
+						endalpha="0"
+					/>
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				count="1"
+				spawnrate="11"
+				particlelife="3000"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="true"
+				>
+					<model
+						position="0 0 0"
+						scale="1"
+						life="750"
+						model="/heroes/bushwack/alt2/model.mdf"
+						material=""
+						anim="ability_2_image_1"
+						color=".75 .75 .25"
+						startalpha=".4"
+						midalpha=".3"
+						endalpha="0"
+					/>
+				</particle>
+			</simpleemitter>
+		
+			<simpleemitter
+				count="1"
+				spawnrate="6"
+				particlelife="3000"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="true"
+				>
+					<model
+						position="0 0 0"
+						scale="1"
+						life="750"
+						model="/heroes/bushwack/alt2/model.mdf"
+						material=""
+						anim="ability_2_image_2"
+						color=".75 .75 .25"
+						startalpha=".4"
+						midalpha=".3"
+						endalpha="0"
+					/>
+				</particle>
+			</simpleemitter>
+		
+			<simpleemitter
+				count="1"
+				spawnrate="3.5"
+				particlelife="3000"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="true"
+				>
+					<model
+						position="0 0 0"
+						scale="1"
+						life="750"
+						model="/heroes/bushwack/alt2/model.mdf"
+						material=""
+						anim="ability_2_image_3"
+						color=".75 .75 .25"
+						startalpha=".4"
+						midalpha=".3"
+						endalpha="0"
+					/>
+				</particle>
+			</simpleemitter>
+
+
+			
+			
+			<twopointtrailemitter
+				bone_a="Bip01 R Forearm"
+				bone_b="Bip01 L Forearm"
+				spawnrate="50"
+				particlelife="350"
+				texpostime="350"
+				texposscale=".5"
+				texstretchscale="1"
+				material="/shared/effects/materials/swoosh_add.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".125 .3 .0625"
+					endcolor="0 0 0"
+					midcolorpos=".1"
+				/>
+			</twopointtrailemitter>
+			
+			<twopointtrailemitter
+				name="trail01"
+				bone_a="Bip01 L Clavicle"
+				bone_b="Bip01 R Clavicle"
+				spawnrate="50"
+				particlelife="400"
+				texpostime="400"
+				texposscale=".5"
+				texstretchscale="1"
+				material="/shared/effects/materials/swoosh_add.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".125 .3 .0625"
+					endcolor="0 0 0"
+					midcolorpos=".1"
+				/>
+			</twopointtrailemitter>
+
+			<twopointtrailemitter
+				name="trail01"
+				bone_a="Bip01 R Clavicle"
+				bone_b="Bip01 R Hand"
+				spawnrate="50"
+				particlelife="500"
+				texpostime="500"
+				texposscale=".5"
+				texstretchscale="1"
+				material="/shared/effects/materials/swoosh_add.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".125 .3 .0625"
+					endcolor="0 0 0"
+					midcolorpos=".1"
+				/>
+			</twopointtrailemitter>
+			
+			<twopointtrailemitter
+				name="trail01"
+				bone_a="Bip01 L Clavicle"
+				bone_b="Bip01 L Hand"
+				spawnrate="50"
+				particlelife="500"
+				texpostime="500"
+				texposscale=".5"
+				texstretchscale="1"
+				material="/shared/effects/materials/swoosh_add.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".125 .3 .0625"
+					endcolor="0 0 0"
+					midcolorpos=".1"
+				/>
+			</twopointtrailemitter>
+			
+		</particlesystem>
+	</definitions>
+	
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
+

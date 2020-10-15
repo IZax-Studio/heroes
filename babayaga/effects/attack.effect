@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="ability_02">
+	<definitions>
+	
+	
+
+		<particlesystem name="system0" space="world">
+
+		
+		<billboard
+			delay="6"		
+			life="500"
+			bone="_bone_weapon3"
+			
+			
+			material="/shared/effects/materials/whitedot.material"
+			position="0 0 0"
+			color=".4 .1 .3"							
+			startsize="0"
+			midsize="40"
+			endsize="0"
+			midsizepos=".8"
+			depthbias="-0"
+		/>		
+
+		<billboard
+			delay="6"		
+			life="500"
+			bone="_bone_weapon3"
+			
+			
+			material="/shared/effects/materials/whitedot.material"
+			position="0 0 0"
+			color=".4 .1 .3"							
+			startsize="0"
+			midsize="40"
+			endsize="0"
+			midsizepos=".8"
+			depthbias="-0"
+		/>	
+
+		
+<!--
+-->
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+	  <spawnmodifier instance="instance1" modifier="modifier0"/> 
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

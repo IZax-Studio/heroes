@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world" >
+			
+			<!-- expanding auras -->
+			<!--
+			<simpleemitter
+				spawnrate="10"
+				particlelife="1000"
+				inheritvelocity=".75"
+				drag="0.02"
+			>
+				<template name="aura_ring" >
+					<particle
+						scale="{scale}"
+					>
+						<model
+							maxdelay="50"
+							maxyaw="360"
+							minyawspeed="-100"
+							maxyawspeed="-200"
+							minlife="300"
+							maxlife="500"
+							model="/shared/effects/models/expanding_cone/model.mdf"
+							material="/shared/effects/models/expanding_cone/material2.material"
+							anim="{anim}"
+							startalpha="0"
+							midalpha=".4"
+							endalpha="0"
+							midalphapos=".2"
+							minstartscale="2"
+							maxstartscale="4"
+							minendscale="8"
+							maxendscale="10"
+							color="1.5 1.25 .25"
+						/>
+					</particle>
+				</template>
+				<instance name="aura_ring" scale="1.5" anim="idle_fast" />
+				<instance name="aura_ring" scale="1" anim="idle_wide_fast" />
+			</simpleemitter>
+			-->
+			<!--
+			<model
+				maxyaw="360"
+				model="/shared/effects/models/expanding_cone/model.mdf"
+				material="/shared/effects/models/expanding_cone/material2.material"
+				anim="idle_fast"
+				scale="4.5"
+				color=".75 .6 .25"
+			/>
+			-->
+			
+			<!-- dust -->
+			<!--
+			<simpleemitter
+				spawnrate="4"
+				particlelife="1000"
+				inheritvelocity=".75"
+				drag="0.02"
+			>
+				<particle>
+					<billboard
+						maxdelay="50"
+						minlife="400"
+						maxlife="500"
+						material="/shared/effects/materials/twirl_03.material"
+						lockup="true"
+						lockright="true"
+						pitch="-90"
+						maxroll="360"
+						position="0 0 50"
+						size="60"
+						startscale="5"
+						minendscale="15"
+						maxendscale="20"
+						startcolor="0"
+						midcolor=".3 .25 .2"
+						endcolor="0"
+						depthbias="-50"
+					/>
+				</particle>
+			</simpleemitter>
+			-->
+			<simpleemitter
+				spawnrate="4"
+				particlelife="1000"
+				inheritvelocity=".75"
+				drag="0.02"
+			>
+				<particle>
+					<simpleemitter
+						count="20"
+						minparticlelife="200"
+						maxparticlelife="400"
+						direction="0 0 1"
+						minangle="80"
+						maxangle="85"
+						minspeed="1000"
+						maxspeed="2000"
+						drag="0.01"
+						material="/shared/effects/materials/wave.material"
+					>
+						<particle
+							lockup="true"
+							lockright="true"
+							pitch="-90"
+							turn="1"
+							angle="-90"
+							startalpha="0"
+							midalpha="0.25"
+							endalpha="0"
+							startcolor="0"
+							midcolor=".03 .02 .04"
+							endcolor="0"
+							minsize="200"
+							maxsize="400"
+							minstartscale=".5"
+							maxstartscale="1"
+							minendscale="1.5"
+							maxendscale="2"
+							depthbias="-150"
+						/>
+					</simpleemitter>
+				</particle>
+			</simpleemitter>
+			
+			<!-- refract rings -->
+			<!--
+			<simpleemitter
+				spawnrate="3"
+				particlelife="1000"
+				inheritvelocity=".75"
+				drag="0.02"
+			>
+				<particle>
+					<billboard
+						maxdelay="200"
+						minlife="200"
+						maxlife="300"
+						material="/shared/effects/materials/refract_swell.material"
+						lockup="true"
+						lockright="true"
+						pitch="-90"
+						maxroll="360"
+						position="0 0 50"
+						size="60"
+						startscale="5"
+						minendscale="10"
+						maxendscale="15"
+						startparam="0"
+						midparam="0.01"
+						endparam="0"
+						depthbias="-50"
+					/>
+				</particle>
+			</simpleemitter>
+			-->
+			
+			<!-- main aura -->
+			<model
+				model="\heroes\kane\ability_04\effects/aura_hero/model.mdf"
+				material="\heroes\kane\ability_04\effects/aura_hero/material.material"
+				scale="2.5"
+				color=".45 .15 .6"
+				directionalspace="global"
+			/>
+			<model
+				model="\heroes\kane\ability_04\effects/aura_hero/model.mdf"
+				material="\heroes\kane\ability_04\effects/aura_hero/material.material"
+				scale="2.2"
+				color=".45 .15 .6"
+				yaw="180"
+				directionalspace="global"
+			/>
+			
+			<!-- swirlies -->
+			<!--
+			<trackeremitter
+				position="0 0 100"
+				targetposition="0 0 100"
+				tracktype="angular"
+				trackspeed="20"
+				minspeed="2800"
+				maxspeed="4000"
+				offsetradial="150"
+				offsetdirection="0 0 1"
+				minoffsetradialangle="90"
+				maxoffsetradialangle="180"
+				spawnrate="10"
+				particlelife="1000"
+			>
+				<particle>
+					<trailemitter
+						life="1000"
+						spawnrate="60"
+						particlelife="150"
+						material="/shared/effects/materials/fire_scrolling_trail.material"
+						texposscale="0"
+						mintexstretchscale="1.0"
+						maxtexstretchscale="1.75"
+						minparticlescale=".25"
+						maxparticlescale="1.75"
+					>
+						<particle
+							startsize="0"
+							midsize="20"
+							endsize="25"
+							color=".4 .3 .2"
+						/>
+					</trailemitter>
+				</particle>
+			</trackeremitter>
+			-->
+			
+			<!-- motion trails -->
+			<simpleemitter
+				spawnrate="16"
+				position="0 0 100"
+				offsetsphere="50 50 100"
+				direction="0 -1 0"
+				minspeed="2500"
+				maxspeed="3000"
+				acceleration="-20000"
+				particlelife="500"
+				angle="0"
+				material="/shared/effects/materials/whitedot.material"
+			>
+				<template name="swoosh_trail">
+					<particle
+						minscale=".5"
+						maxscale="2"
+						color="0"
+					>
+						<trailemitter
+							minlife="125"
+							maxlife="200"
+							spawnrate="100"
+							particlelife="250"
+							texposscale="0"
+							texpostime="150"
+							texstretchscale="1.5"
+							material="/shared/effects/materials/fire_scrolling_trail.material"
+							startparticlealpha="2"
+							midparticlealpha="2"
+							endparticlealpha="0"
+						>
+							<particle
+								color="{color}"
+								startsize="0"
+								midsize="15"
+								endsize="0"
+								midsizepos=".2"
+								angle="180"
+							/>
+						</trailemitter>
+					</particle>
+				</template>
+				<instance name="swoosh_trail" color=".1" />
+				<instance name="swoosh_trail" color=".05" />
+			</simpleemitter>
+			
+		</particlesystem>
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread> 
+</effect>

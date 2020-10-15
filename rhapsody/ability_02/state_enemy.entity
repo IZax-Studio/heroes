@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Rhapsody_Ability2_Enemy"
+
+	icon="../alt10/ability_02/icon.tga"
+	passiveeffect=""
+>	
+	<onframe>
+		<damage effecttype="Magic DOT" amount="15,30,45,60" b="frametime" op="mult"/>
+	</onframe>
+	
+	<altavatar key="Hero_Rhapsody.Alt" modpriority="100" 
+		passiveeffect="../alt/ability_02/effects/state_enemy.effect"
+	/>
+	
+	<modifier key="rhapsody_danceeffectenemy" modpriority="100" condition="hero"
+		passiveeffect="effects/state_enemy.effect"
+	>
+		<onframe>
+			<damage effecttype="Magic DOT" amount="20,40,60,80" b="frametime" op="mult"/>
+		</onframe>
+		
+		<aura
+			gadget="Gadget_Rhapsody_Ability2_enemy"
+			radius="0"
+			targetscheme="self"
+			proxy="proxy_entity_position"
+			gadgetowner="proxy_entity_position"
+		/>
+	</modifier>
+	
+	<altavatar key="Hero_Rhapsody.Alt" modpriority="100" 
+		passiveeffect="../alt/ability_02/effects/state_enemy.effect"
+	/>
+	
+	<altavatar key="Hero_Rhapsody.Alt7" modpriority="100" 
+		passiveeffect="../alt7/ability_02/effects/state_enemy.effect"
+	>
+		<modifier key="rhapsody_danceeffectenemy" modpriority="100" condition="hero"
+			passiveeffect="../alt7/ability_02/effects/state_enemy.effect"
+		/>
+		
+		<modifier key="alt_AlacrityBand" modpriority="101"
+			passiveeffect="../alt7/ability_02/effects/state_enemy_upgrade.effect"
+		/>
+		<modifier key="Alt7_Ability2_Upgrade" modpriority="101"
+			passiveeffect="../alt7/ability_02/effects/state_enemy_upgrade.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Rhapsody.Alt8" modpriority="100" 
+		passiveeffect=""
+	/>
+	
+	<altavatar key="Hero_Rhapsody.Alt9" modpriority="100" 
+		passiveeffect="../alt9/ability_02/effects/state_enemy.effect"
+	/>
+	
+	<altavatar key="Hero_Rhapsody.Alt10" modpriority="100" 
+	    icon="../alt10/ability_02/icon.tga"
+	>
+		<modifier key="rhapsody_danceeffectenemy" modpriority="100" condition="hero"
+			passiveeffect="../alt10/ability_02/effects/state_enemy.effect"
+		/>
+	</altavatar>
+</state>

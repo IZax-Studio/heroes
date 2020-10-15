@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true">
+
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			
+			<simpleemitter
+				count="1"
+				bone="_bone_all_guns_03"
+				position="0 10 0"
+			>
+				<particle
+				
+				>
+					<billboard
+						material="/shared/effects/materials/refract_bubble.material"
+						color="1"							
+						startsize="20"
+						endsize="70"
+						depthbias="-20"
+						life="300"
+						param=".1"
+						startalpha=".8"
+						endalpha="0"
+					/>
+				</particle>
+			</simpleemitter>
+		</particlesystem>
+
+   </definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

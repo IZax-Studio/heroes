@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="0">
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale=".5713" >
+		
+			<sound
+			    life="5000"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="1500"
+				volume="1"
+				sample="../sounds/cast_red.wav"
+			/>
+		
+			<model 
+				expirelife="100"
+				bone="_bone_gun_dummy"
+				startalpha="1"
+				endalpha="0"
+				model="red_gun/model.mdf"
+				material="blue_gun/material_purple.material"
+				inheritparentmodifiers="true"
+				anim="idle"
+				startcolor="1"
+				endcolor="1"
+				scale="1.75"
+				position="0 0 0"
+				directionalspace="local"
+				yaw="180"
+			/>
+			
+			<model 
+				expirelife="100"
+				bone="_bone_red_gun"
+				startalpha="1"
+				endalpha="0"
+				model="blue_gun/model.mdf"
+				material="blue_gun/material_purple.material"
+				inheritparentmodifiers="true"
+				anim="idle"
+				startcolor="1 1 1"
+				endcolor="1 1 1"
+				scale="1.75"
+				position="0 0 0"
+				directionalspace="local"
+				yaw="180"
+			/>
+			
+			<billboard
+				bone="_bone_weapon2"
+				color=".1 .1 .1"
+				size="50"
+				material="/shared/effects/materials/glow_01.material"
+				loop="true"
+				depthbias="-25"
+				position="0 0 0"
+			/>
+			
+			<billboard
+				expirelife="250"
+				bone="_bone_weapon2"
+				startcolor=".5 .5 .5"
+				endcolor="0 0 0"
+				size="30"
+				position="0 0 0"
+				material="/heroes/drunkenmaster/effects/material.material"
+				lockup="1"
+				lockright="1"
+				rollspeed="720"
+				pitch="90"
+				yawspeed="0"
+				directionalspace="local"
+			/>
+
+			<billboard
+				bone="Bip01 R Hand"
+				color=".2 .2 .2"
+				size="85"
+				material="/shared/effects/materials/glow_01.material"
+				loop="true"
+				depthbias="-25"
+				position="0 0 0"
+			/>
+			
+			<billboard
+				bone="_bone_lefthand"
+				color=".2 .2 .2"
+				size="85"
+				material="/shared/effects/materials/glow_01.material"
+				loop="true"
+				depthbias="-25"
+				position="0 0 0"
+			/>
+
+		</particlesystem>
+
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1"/>
+		<waitfordeath instance="instance0" />
+	
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

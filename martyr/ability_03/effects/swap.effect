@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="1" deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+			<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume="1"
+				sample="illuminate%.wav"
+			/>
+			<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume="1"
+				sample="illuminate.wav"
+			/>
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1200"
+				volume="1" 
+				soundloop="true"
+				sample="Untitled.wav"
+			/>
+			
+			<sound
+			    soundloop="true"
+				fadein="100"
+				fadeout="1000"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume="1"
+				sample="/heroes/martyr/ability_03/sounds/ab3_state.wav"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="2000"
+				startcolor=".25 .1 .01"
+				midcolor="0 0 0"
+				endcolor=".25 .1 .01"
+				rollspeed="360"
+				loop="true"
+				scale="2.5"
+				material="/shared/effects/materials/flux_ring.material"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="2000"
+				startcolor="0 0 0"
+				midcolor=".25 .2 .01"
+				endcolor="0 0 0"
+				rollspeed="360"
+				loop="true"
+				scale="2.5"
+				material="/shared/effects/materials/flux_ring.material"
+				roll="180"
+			/>
+			<!--
+			<billboard
+				delay="100"
+				bone="_bone_centerofchest"
+				life="2000"
+				startcolor=".2 .75 .2"
+				midcolor=".2 .2 .75"
+				endcolor=".2 .75.2"
+				rollspeed="360"
+				loop="true"
+				scale="1.75"
+				material="/shared/effects/materials/fresnel.material"
+			/>
+-->
+			<model
+				loop="true"
+				life="1000"
+				model="/shared/models/invis.mdf"
+				bone="_bone_centerofchest"
+				startscale="1"
+				midscale="0"
+				endscale="0"
+				midscalepos=".25"
+			>
+				<simpleemitter
+					spawnrate="450"
+					speed="300"
+					particlelife="1000"
+					drag=".05"
+					material="/shared/effects/materials/light_rays.material"
+					directionalspace="local"
+					angle="180"
+					offsetsphere="0 0 0"
+					direction="0 -1 0"
+				>
+					<particle
+						startsize="10"
+						midsize="7"
+						endsize="10"
+						height="60"
+						startcolor=".5 .35 .15"
+						midcolor=".5 .35 .15"
+						endcolor="0"
+						midcolorpos=".15"
+						turn="1"
+						flare="1"
+						anchor="1"
+					/>
+				</simpleemitter>
+			</model>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

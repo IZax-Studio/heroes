@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_SirBenzington_Ability1_Bind"
+	
+	icon="1.png"
+	passiveeffect="effects/trail.effect"
+
+	unitwalking="true"
+	stunned="true"
+	
+	effecttype=""
+	ishidden="true"
+	
+	modifierkey="benzington_ability1_Bind"
+>
+	<onexpired>
+		<targettype type="alive" target="this_owner_entity">
+			<playanim name="idle" target="this_owner_entity" />
+		</targettype>
+	</onexpired>
+	
+	<altavatar key="Hero_SirBenzington.Alt" modpriority="1"
+		passiveeffect="../alt/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_SirBenzington.Alt2" modpriority="1"
+		passiveeffect="../alt2/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_SirBenzington.Alt3" modpriority="1"
+		passiveeffect="../alt3/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_SirBenzington.Alt4" modpriority="1"
+		passiveeffect="../alt4/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_SirBenzington.Alt5" modpriority="1"
+		passiveeffect="../alt5/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_SirBenzington.Alt6" modpriority="1"
+		passiveeffect="../alt6/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_SirBenzington.Alt8" modpriority="1"
+		passiveeffect="../alt8/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_SirBenzington.Alt9" modpriority="1"
+		passiveeffect="../alt8/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_SirBenzington.Alt10" modpriority="1"
+		passiveeffect="../alt10/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_SirBenzington.Alt11" modpriority="1"
+		passiveeffect="../alt11/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_SirBenzington.Alt12" modpriority="1"
+		passiveeffect="../alt12/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_SirBenzington.Alt13" modpriority="1"
+		passiveeffect="../alt12/ability_01/effects/trail.effect"
+	/>
+</state>

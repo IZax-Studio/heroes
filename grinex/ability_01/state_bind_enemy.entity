@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Grinex_Ability1_Bind_Enemy"
+	
+	icon="1.png"
+	
+	ishidden="true"
+	stunned="true"
+	stunneddurationunmodifiable="true"
+	
+	passiveeffect=""
+	
+	effecttype=""
+>
+	<onexpired>
+		<order command="attack" source="source_entity" target="this_owner_entity" />
+	</onexpired>
+</state>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="model.model" type="K2" >
+	
+	<anim name="idle" clip="clips/Stand.clip" fps="20" loop="true" blendtime="150"/>
+	
+	<anim name="attack_1" clip="clips/Attack 01.clip" fps="10" loop="false" blendtime="200">
+		<frameevent frame="6" cmd="PlaySoundLinear /heroes/hiro/sounds/attack_%.wav 0 1300 .35"/>
+		<frameevent frame="5" cmd="StartEffect effects/attack1.effect"/>
+	</anim>
+	
+	<anim name="attack_2" clip="clips/Attack 02.clip" fps="10" loop="false" blendtime="200"> 
+		<frameevent frame="6" cmd="PlaySoundLinear /heroes/hiro/sounds/attack_%.wav 0 1300 .35"/>
+		
+		<frameevent frame="1" cmd="StartEffect effects/attack.effect"/>
+	</anim>
+	
+	<anim name="walk_1" clip="clips/Walk.clip" fps="15" loop="true" blendtime="200">
+		<frameevent frame="5" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="15" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="27" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="37" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+			
+		<frameevent frame="15" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="37" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="5" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="27" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	</anim>
+	
+	<anim name="death_1" clip="clips/Death.clip" fps="10" loop="true" loopbackframe="-1">
+			<frameevent frame="1" cmd="PlaySoundLinear ../SS/D%.wav 400 1300 1"/>
+	</anim>
+	
+	<anim name="ability_4" clip="clips/spell one.clip" fps="30" loop="false">
+	    	<frameevent frame="1" cmd="PlaySoundLinear /heroes/shadowblade/sounds/laughter.wav 400 1300 1"/>
+			<frameevent frame="1" cmd="PlaySoundLinear /heroes/shadowblade/ability_04/sounds/cast.wav 400 1300 1"/>
+	</anim>
+
+	<anim name="bored_1" clip="clips/spell seven.clip" fps="20" loop="false"/>
+
+	<anim name="item_1" clip="clips/Attack 02.clip" fps="20" loop="false" blendtime="200"/>
+
+	<anim name="knock_1" clip="clips/Death.clip" fps="10" loop="true" loopbackframe="-1"/>
+
+	<anim name="taunt_1" clip="clips/spell eight.clip" fps="15" loop="false"/>
+
+	<anim name="portrait" clip="clips/Stand.clip" fps="20" loop="true" blendtime="150"/>
+	
+</model>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect >
+	<definitions>
+		<modifier name="god_skin"
+			material="god_skin.material"
+		/>
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance2" particlesystem="system2" />
+				<spawnmodifier instance="instance1" modifier="god_skin" />
+
+		<waitfordeath instance="instance0" /> 
+		<waitfordeath instance="instance1" />
+		<waitfordeath instance="instance2" />
+	</thread>
+</effect>

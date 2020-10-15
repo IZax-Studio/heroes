@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="body_01">
+	<definitions>
+		<particlesystem name="system0" space="world">
+
+			<billboard			
+				delay="0"
+				life="200"
+				bone="_bone_fx_01"
+				startsize="45"
+				minendsize="180"
+				maxendsize="230"
+				material="/shared/effects/materials/blink.material"
+				startcolor=".5 0 .0"
+				endcolor="0"
+				depthbias="-20"
+				
+			/>
+			<trailemitter
+				
+				life="200"
+				position="-0 -0 -0"
+				bone="_bone_fx_02"
+				spawnrate="300"
+				particlelife="125"
+				texpostime="800"
+				texposscale="0"
+				texstretchscale=".8"
+				timenudge="0"
+				material="/shared/effects/materials/shock_01.material"
+				subframepose="true"
+			>
+				<particle
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					startsize="20"
+					endsize="0"
+					startcolor="0 0 0"
+					midcolor=".5 0 0"
+					endcolor="0 0 0"
+				/>
+			</trailemitter>
+			
+			<trailemitter
+				
+				life="200"
+				bone="_bone_fx_02"
+				spawnrate="200"
+				particlelife="80"
+				texpostime="300"
+				texposscale="0.0"
+				texstretchscale="1.0"
+				material="/shared/effects/materials/swoosh_add.material"
+				subframepos="true"
+				position="0 0 0"
+			>
+				<particle
+					startcolor=".5 .0 .0"
+					endcolor="0"
+					startsize="15"
+					endsize="0"
+				/>
+			</trailemitter>	
+				<trailemitter
+				
+				life="200"
+				position="-0 -0 -0"
+				bone="_bone_fx_03"
+				spawnrate="300"
+				particlelife="125"
+				texpostime="800"
+				texposscale="0"
+				texstretchscale=".8"
+				timenudge="0"
+				material="/shared/effects/materials/shock_01.material"
+				subframepose="true"
+			>
+				<particle
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					startsize="20"
+					endsize="0"
+					startcolor="0 0 0"
+					midcolor=".5 0 .0"
+					endcolor="0 0 0"
+				/>
+			</trailemitter>
+			
+			<trailemitter
+				
+				life="200"
+				bone="_bone_fx_03"
+				spawnrate="200"
+				particlelife="80"
+				texpostime="300"
+				texposscale="0.0"
+				texstretchscale="1.0"
+				material="/shared/effects/materials/swoosh_add.material"
+				subframepos="true"
+				position="0 0 0"
+			>
+				<particle
+					startcolor=".5 .0 ."
+					endcolor="0"
+					startsize="15"
+					endsize="0"
+				/>
+			</trailemitter>	
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

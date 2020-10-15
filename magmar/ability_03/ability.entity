@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Magmar3"
+	
+	icon="1.jpg"
+	statuseffecttooltip="State_Magmar_Ability3"
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="no_target"
+	frontqueue="true"
+	inheritmovement="true"
+	nonaggressive="true"
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="1000"
+	cooldowntype="magmusexplodyattack"
+	noresponse="true"
+	
+	targetradius="400"
+>
+	<onlearn>
+		<setactivemodifierkey name="magmusexplodingattack_on" />
+	</onlearn>	
+
+	<modifier key="magmusexplodingattack_off" modpriority="100"
+		icon="/shared/icons/off.tga"
+		displayname="true"
+	>
+		<onimpact>
+			<setactivemodifierkey name="magmusexplodingattack_on" />
+		</onimpact>
+		
+		<onattackimpact />
+	</modifier>
+	
+	<modifier key="magmusexplodingattack_on" modpriority="100"
+		displayname="true"
+	>
+		<onimpact>
+			<setactivemodifierkey name="magmusexplodingattack_off" />
+		</onimpact>
+		
+		<onattackimpact>
+			<cantarget targetscheme="enemy_units" effecttype="Magic">
+				<applystate name="State_Magmar_Ability3" inflictor="source_entity" duration="250" />
+			</cantarget>
+		</onattackimpact>
+	</modifier>
+
+	<!-- Make the aura only heroes, not toggleable, and not work on illusions for krosmode -->
+	<modifier key="krosmode" modpriority="101"
+		actiontype="passive"
+	>
+		<onimpact />
+
+		<onattackimpact>
+			<cantarget targetscheme="enemy_units" effecttype="Magic">
+				<applystate name="State_Magmar_Ability3" inflictor="source_entity" duration="200" stack="true" />
+			</cantarget>
+		</onattackimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Magmar.Alt4" modpriority="1"
+		icon="../alt4/ability_03/icon.tga"
+	/>
+
+	<altavatar key="Hero_Magmar.Alt9" modpriority="1"
+		icon="../alt9/ability_03/icon.tga"
+	>
+		<modifier key="Alt9_Ability3_Upgrade"
+			icon="../alt9/ability_03/icon_upgrade.tga"
+		/>
+	</altavatar>
+	
+</ability>

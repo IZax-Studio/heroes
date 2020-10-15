@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="ability_02" deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.3" >
+			<simpleemitter
+				
+				
+				spawnrate="10"
+				minparticlelife="1000"
+				maxparticlelife="4500"
+				material="sakura.material"
+				offsetsphere="50 50 30"
+				inheritvelocity=".45"
+				gravity="1"
+				drag="0.01"
+				depthbias="-30"
+				offsetradial="30"
+				
+				direction="-.5 0 -1"
+				minangle="0"
+				maxangle="45"
+				minspeed="1"
+				maxspeed="1"
+				alpha=".1"
+			>
+				<particle
+					 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					color=".5 .5 .5"
+					minsize="4"
+					maxsize="5"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".2"
+				/>
+				
+			</simpleemitter>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_SuccubisAttack_Alt2"
+
+	speed="900"
+	gravity="2000"
+
+	model="\heroes\succubis\projectile/model.mdf"
+	modelscale="1.2"
+
+	impacteffect="\heroes\succubis\projectile/impact.effect"
+	traileffect="\heroes\succubis\projectile/trail.effect"
+>
+</projectile>

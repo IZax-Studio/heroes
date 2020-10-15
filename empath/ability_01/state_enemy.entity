@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state 
+    name="State_Empath_Ability1_Enemy" 
+
+    icon="1.jpg,2.jpg,3.jpg,4.jpg" 
+    passiveeffect="effects/link_1.effect,effects/link_2.effect,effects/link_3.effect,effects/link_4.effect" 
+    effecttype="StatusDebuff" 
+    alwaystransmitdata="true" 
+> 
+	<onspawn>
+		<!-- changes effect when cast from inside another hero -->
+		<hasmodifier entity="this_proxy_entity" name="Alt2_Sin_Set_Bonus">
+			<activatemodifierkey entity="this_entity" name="Alt2_Sin_Set_Bonus" />
+		</hasmodifier>
+	</onspawn>
+	
+	<oninflict>
+		<pushability name="Ability_Empath1" source="this_proxy_entity" />
+		<getrange entity="stack_entity" />
+		<setaccumulator value="result" valueb="100" valueop="add" />
+	</oninflict>
+	
+	<onframe>
+		<damage effecttype="DOT" source="proxy_entity" amount="20,30,40,50" b="frametime" op="mult" />
+
+		<distance target="target_entity" source="this_inflictor_entity" />
+		<compare a="result" b="accumulator" op="gt">
+			<cantarget effecttype="Magic">
+				<applystate name="State_Stunned" duration="1000,1500,2000,2500" target="this_owner_entity" />
+			</cantarget>
+			<hasavatarkey name="Hero_Empath.Alt7">
+				<playeffect effect="../alt7/ability_01/effects/affector.effect" source="this_owner_entity" /> 
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Empath.Alt8">
+					<playeffect effect="../alt8/ability_01/effects/affector.effect" source="this_owner_entity" /> 
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Empath.trophy_skin01">
+						<playeffect effect="../trophy_skin/model_01/ability_01/effects/affector.effect" source="this_owner_entity" /> 
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Empath.trophy_skin02">
+							<playeffect effect="../trophy_skin/model_02/ability_01/effects/affector.effect" source="this_owner_entity" /> 
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Empath.trophy_skin03">
+								<playeffect effect="../trophy_skin/model_03/ability_01/effects/affector.effect" source="this_owner_entity" /> 
+							</hasavatarkey>
+							<else>
+								<playeffect effect="effects/affector 1.effect,effects/affector 2.effect,effects/affector 3.effect,effects/affector 4.effect" source="this_owner_entity" /> 
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+			
+			<expirestate name="State_Empath_Ability1_Self" target="this_inflictor_entity" /> 
+			<expire /> 
+		</compare>
+		
+		<!-- Update terrain type -->
+		<!--
+		<hasavatarkey name="Hero_Empath.Alt4">
+			<hasmodifier name="Grass" entity="source_entity" >
+				<activatemodifierkey name="Grass" entity="this_entity" />
+			</hasmodifier>
+			<else>
+				<deactivatemodifierkey name="Grass" entity="this_entity" />
+			</else>
+			<hasmodifier name="Water" entity="source_entity" >
+				<activatemodifierkey name="Water" entity="this_entity" />
+			</hasmodifier>
+			<else>
+				<deactivatemodifierkey name="Water" entity="this_entity" />
+			</else>
+			<hasmodifier name="Fire" entity="source_entity" >
+				<activatemodifierkey name="Fire" entity="this_entity" />
+			</hasmodifier>
+			<else>
+				<deactivatemodifierkey name="Fire" entity="this_entity" />
+			</else>
+			<hasmodifier name="Rock" entity="source_entity" >
+				<activatemodifierkey name="Rock" entity="this_entity" />
+			</hasmodifier>
+			<else>
+				<deactivatemodifierkey name="Rock" entity="this_entity" />
+			</else>
+		</hasavatarkey>
+		-->
+	</onframe> 
+
+	<onexpired> 
+		<expirestate name="State_Empath_Ability1_Self" target="this_inflictor_entity" /> 
+	</onexpired> 
+
+	<modifier key="Alt2_Sin_Set_Bonus" modpriority="100"
+		passiveeffect="/heroes/empath/alt2/sin_set_bonus/ability_01/effects/link.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.Alt4">
+		<modifier key="Grass"
+			passiveeffect="effects/link.effect,../alt4/ability_01/effects/link_grass_2.effect,../alt4/ability_01/effects/link_grass_2.effect,../alt4/ability_01/effects/link_grass_4.effect"
+		/>
+		<modifier key="Fire"
+			passiveeffect="effects/link.effect,../alt4/ability_01/effects/link_fire_2.effect,../alt4/ability_01/effects/link_fire_2.effect,../alt4/ability_01/effects/link_fire_4.effect"
+		/>
+		<modifier key="Rock"
+			passiveeffect="effects/link.effect,../alt4/ability_01/effects/link_rock_2.effect,../alt4/ability_01/effects/link_rock_2.effect,../alt4/ability_01/effects/link_rock_4.effect"
+		/>
+		<modifier key="Water"
+			passiveeffect="effects/link.effect,../alt4/ability_01/effects/link_water_2.effect,../alt4/ability_01/effects/link_water_2.effect,../alt4/ability_01/effects/link_water_4.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Empath.Alt5"
+		passiveeffect="/heroes/empath/alt5/ability_01/effects/link.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.Alt7"
+		passiveeffect="/heroes/empath/alt7/ability_01/effects/link.effect"
+		icon="../alt7/ability_01/icon.tga"
+	>
+		<modifier key="Alt7_Ability1_Upgrade"
+			passiveeffect="/heroes/empath/alt7/ability_01/effects/link_upgrade.effect"
+			icon="../alt7/ability_01/icon_upgrade.tga"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Empath.Alt8"
+		passiveeffect="/heroes/empath/alt8/ability_01/effects/link.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.Alt9"
+		passiveeffect="/heroes/empath/alt9/ability_01/effects/link.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.Alt10"
+		passiveeffect="/heroes/empath/alt10/ability_01/effects/link.effect"
+	/>
+	
+	<modifier key="Combo_efx_empath" modpriority="101"
+		passiveeffect="/heroes/empath/alt10/ability_01/effects/link_combo.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.trophy_skin01"
+		passiveeffect="/heroes/empath/trophy_skin/model_01/ability_01/effects/link.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.trophy_skin02"
+		passiveeffect="/heroes/empath/trophy_skin/model_02/ability_01/effects/link.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.trophy_skin03"
+		passiveeffect="/heroes/empath/trophy_skin/model_03/ability_01/effects/link.effect"
+	/>
+	
+</state>

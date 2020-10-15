@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Dampeer_Ability2_Self"
+	
+	icon="../icon/2.png"
+	
+	passiveeffect=""
+	stunned="true"
+	stunneddurationunmodifiable="true"
+>
+</state>

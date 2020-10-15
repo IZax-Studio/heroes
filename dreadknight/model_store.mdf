@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="black.model" type="K2" >
+
+	<anim name="idle" clip="idle.clip" fps="550" loop="true">
+	<startevent cmd="StopEffect 1"/>
+	</anim>
+</model>

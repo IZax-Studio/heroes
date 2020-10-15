@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect entityeffectscale="true" deferred="true">
+
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale="2">
+
+
+		
+			<groundsprite 
+				scale="3.5"
+				life="8000"
+				startcolor="0 .1 0"
+				midcolor="0 .1 0"
+				endcolor=" 0 0 0"
+				material="/shared/effects/materials/whitedot_ground.material"
+			/>
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier1"/> 
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

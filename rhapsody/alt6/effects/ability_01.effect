@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect entityeffectscale="true" deferred="true">
+
+	<definitions>
+		
+		<particlesystem name="system1" space="world" scale=".2">
+			<billboard
+				bone="_bone_righthand"
+				material="/shared/effects/materials/whitedot.material"
+				color="1"							
+				size="60"
+				depthbias="-20"
+				position="0 0 0"
+			/>
+			
+			<simpleemitter
+				bone="_bone_righthand"
+				spawnrate="100"
+				position="0 0 0"
+				particlelife="1000"
+				gravity="-10"
+				speed="100"
+				drag=".1"
+				direction="0 0 1"
+				material="/shared/effects/materials/sparks_reveal.material"
+				offsetsphere="10"
+				inheritvelocity=".5"
+			>
+				<particle
+					color="1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					maxangle="90"
+					startsize="50"
+					minendsize="30"
+					maxendsize="35"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					startframe=".3"
+					endframe="1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_righthand"
+				spawnrate="50"
+				position="0 0 0"
+				particlelife="500"
+				gravity="-10"
+				speed="100"
+				drag=".1"
+				direction="0 0 1"
+				material="/shared/effects/materials/glow_04.material"
+				offsetsphere="10"
+				inheritvelocity=".5"
+			>
+				<particle
+					
+					startcolor=".2"
+					midcolor=".3 0 0"
+					endcolor="0"
+					
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					maxangle="90"
+					startsize="80"
+					minendsize="30"
+					maxendsize="35"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					startframe=".3"
+					endframe="1"
+				/>
+			</simpleemitter>
+			
+			<trailemitter
+				bone="_bone_righthand"
+				spawnrate="50"
+				particlelife="500"
+				texpostime="500"
+				texposscale="0.0"
+				texstretchscale=".4"
+				material="/shared/effects/materials/refract_bubble.material"
+				life="800"
+				gravity="-10"
+				inheritvelocity=".1"
+				offsetsphere="5"
+			>
+				<particle
+					color="1"
+					param=".011"
+					
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".075"
+					startsize="40"
+					midsize="40"
+					endsize="60"
+					midsizepos="0.2"
+			 />
+			</trailemitter>
+			
+			<billboard
+				life="500"
+				delay="200"
+				bone="_bone_weapon2"
+				material="/shared/effects/materials/whitedot.material"								
+				size="300"
+				depthbias="-20"
+				position="0 0 0"
+				
+				startcolor="0"
+				midcolor="1 0 .1"
+				endcolor="0"
+				midcolorpos=".3"
+			/>
+			
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

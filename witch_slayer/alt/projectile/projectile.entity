@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_WitchSlayer_AttackAlt"
+
+	speed="900"
+	gravity="1000"
+
+	model="\heroes\witch_slayer\projectile\effects/model.mdf"
+	modelscale="1.75"
+	scale="1"
+	impacteffect="\heroes\witch_slayer\projectile\effects/impact2.effect"
+	traileffect="\heroes\witch_slayer\projectile\effects/trail2.effect"
+>
+</projectile>
