@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_DoctorRepulsor1"
+
+	icon="icon1.tga"
+	
+	anim="ability_1"
+	casttime="300"
+	castactiontime="0"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="self_position"
+	hoverareacastrange="235"
+	targetscheme="enemy_units"
+	casteffecttype="Magic"
+	
+	frontqueue="true"
+	inheritmovement="true"
+	nonaggressive="true"
+	
+	manacost="70,80,90,100"
+	cooldowntime="10000,8000,6000,4000"
+	targetradius="235"
+>
+	<onimpact>
+		<spawnunit name="Gadget_DoctorRepulsor_Ability1" count="1" target="target_position" pushentity="true" />
+		<applystate name="State_DoctorRepulsor_Ability1" duration="1000" target="stack_entity" proxy="stack_entity" />
+	</onimpact>
+
+	<altavatar key="Hero_DoctorRepulsor.Alt6"
+		icon="../alt6/ability_01/icon.tga"
+	>
+		<modifier key="Alt6_Ability1_Upgrade"
+			icon="../alt6/ability_01/icon_upgrade.tga"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_DoctorRepulsor.Alt10"
+		icon="../alt10/ability_01/icon.tga"
+	>
+		<modifier key="doctorRepulsorAlt10_Ability1_Upgrade"
+			icon="../alt10/ability_01/icon_upgrade.tga"
+		/>
+	</altavatar>
+
+
+</ability>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_DoctorRepulsor_Ability2_Self"
+	
+	icon="icon2.tga"
+	passiveeffect=""
+	
+	effecttype="StatusDebuff"
+
+	movespeedslow="0.5"
+>
+	<altavatar key="Hero_DoctorRepulsor.Alt10"
+		icon="../alt10/ability_02/icon.tga"
+	>
+		<modifier key="doctorRepulsorAlt10_Ability2_Upgrade"
+			icon="../alt10/ability_02/icon_upgrade.tga"
+		/>
+	</altavatar>
+</state>

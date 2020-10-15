@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_DoctorRepulsor_Ability3_Slow"
+	
+	icon="icon3.tga"
+	passiveeffect=""
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	movespeedslow="0.8"
+	attackspeed="-0.5"
+
+	negativeeffect="slowed"
+>
+	<altavatar key="Hero_DoctorRepulsor.Alt10"
+		icon="../alt10/ability_03/icon.tga"
+	>
+		<modifier key="doctorRepulsorAlt10_Ability3_Upgrade"
+			icon="../alt10/ability_03/icon_upgrade.tga"
+		/>
+	</altavatar>
+</state>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_DoctorRepulsor4"
+
+	icon="icon4.tga"
+	
+	anim="ability_4"
+	casttime="800"
+	castactiontime="300"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	activatescheme="movement"
+	
+	actiontype="target_position"
+	targetscheme="enemy_units"
+	casteffecttype="Magic"
+	
+	novoiceresponse="true"
+	
+	cooldowntime="400"
+	
+	range="99999"
+	dontshowhovercast="true"
+	targetradius="200"
+	
+	manaregen="2,4,6"
+	manaregenmultiplier="0,0.5,1.0"
+	
+	showlinecast="true"
+	linecastrange="-1"
+	maxlinecastrange="99999"
+	linecastwidth="200"
+	
+	showrangeandradiusintooltip="true"
+	
+>
+	<checkcost>
+		<evaluate a="source_maxmana" b="0.08" op="mult" />
+		<evaluate a="20" b="result" op="add" />
+		<compare a="source_mana" b="result" op="lt">
+			<invalidate />
+		</compare>
+	</checkcost>
+
+	<activatecost>
+		<evaluate a="source_maxmana" b="0.08" op="mult" />
+		<evaluate a="20" b="result" op="add" />
+		<takemana amount="1" b="result" op="mult" triggeractionscript="true" />
+	</activatecost>
+
+	<onimpact>
+		<unbind target="source_entity" />
+		<disjoint target="source_entity" />
+		<spawnunit name="Gadget_DoctorRepulsor_Ability4" count="1" target="source_position" pushentity="true" />
+		<spawnprojectile
+			name="Projectile_DoctorRepulsor_Ability4"
+			source="source_entity"
+			target="target_position"
+			bind="source_entity"
+			bindturn="true"
+			proxy="stack_entity"
+			pushentity="true"
+			noresponse="true"
+		/>
+		<spawnaffector name="Affector_DoctorRepulsor_Ability4" target="stack_entity" />
+		<applystate name="State_DoctorRepulsor_Ability4" target="source_entity" duration="-1" pushentity="true" proxy="stack_entity" />
+	</onimpact>
+	
+	<modifier key="ult_boost" modpriority="100"
+		cooldowntime="0"
+	>
+		<checkcost>
+			<evaluate a="source_maxmana" b="0.06" op="mult" />
+			<evaluate a="20" b="result" op="add" />
+			<compare a="source_mana" b="result" op="lt">
+				<invalidate />
+			</compare>
+		</checkcost>
+		
+		<activatecost>
+			<evaluate a="source_maxmana" b="0.06" op="mult" />
+			<evaluate a="20" b="result" op="add" />
+			<takemana amount="1" b="result" op="mult" triggeractionscript="true" />
+		</activatecost>
+	</modifier>
+
+	<altavatar key="Hero_DoctorRepulsor.Alt6"
+		icon="../alt6/ability_04/icon.tga"
+	>
+		<modifier key="Alt6_Ability4_Upgrade"
+			icon="../alt6/ability_04/icon_upgrade.tga"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_DoctorRepulsor.Alt10"
+		icon="../alt10/ability_04/icon.tga"
+	>
+		<modifier key="doctorRepulsorAlt10_Ability4_Upgrade"
+			icon="../alt10/ability_04/icon_upgrade.tga"
+		/>
+	</altavatar>
+
+</ability>

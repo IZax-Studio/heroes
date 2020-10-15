@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_DoctorRepulsor_Ability1"
+	
+	icon=""
+	portrait=""
+	modelscale="1.5"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect="effects/passive.effect"
+	spawneffect=""
+	respawneffect=""
+	isselectable="false"
+	iscontrollable="false"
+	invulnerable="true"
+	selectsound=""
+	orderconfirmedsound=""
+	unitwalking="true"
+	
+	preglobalscale="1.0"
+	effectscale="1.0"
+	boundsheight="38"
+	boundsradius="24"
+	selectionradius="0"
+	targetoffset="0 0 0"
+
+	canrotate="false"
+	ismobile="false"
+	isflying="false"
+	clearvision="true"
+	drawonmap="false"
+	
+	sightrangeday="400"
+	sightrangenight="400"
+
+	attacktype="none"
+	
+	lifetime="16000"
+	corpsetime="0"
+	deathtime="0"
+	corpsefadetime="250"
+	
+	blocking="false"
+>
+
+	<altavatar key="Hero_DoctorRepulsor.Alt2" modpriority="1"
+		model="/heroes/doctor_repulsor/alt2/ability_01/model.mdf"
+		passiveeffect="/heroes/doctor_repulsor/alt2/ability_01/effects/passive.effect"
+	>	
+	</altavatar>
+	
+	<altavatar key="Hero_DoctorRepulsor.Alt4" modpriority="1"
+		model="/heroes/doctor_repulsor/alt4/ability_01/model.mdf"
+		modelscale="6"
+		passiveeffect="/heroes/doctor_repulsor/alt4/ability_01/effects/passive.effect"
+	>	
+	</altavatar>
+	
+	<altavatar key="Hero_DoctorRepulsor.Alt5" modpriority="1"
+		model="/heroes/doctor_repulsor/alt5/ability_01/effects/mine/model.mdf"
+		modelscale="4.5"
+		passiveeffect="/heroes/doctor_repulsor/alt5/ability_01/effects/passive.effect"
+	>
+		<modifier key="Level_6" modpriority="6"
+			model="/heroes/doctor_repulsor/alt5/6-10/ability_01/effects/mine/model.mdf"
+			modelscale="4.5"
+			passiveeffect="/heroes/doctor_repulsor/alt5/6-10/ability_01/effects/passive.effect"
+		/>
+		
+		<modifier key="Level_11" modpriority="11"
+			model="/heroes/doctor_repulsor/alt5/11-15/ability_01/effects/mine/model.mdf"
+			modelscale="4.5"
+			passiveeffect="/heroes/doctor_repulsor/alt5/11-15/ability_01/effects/passive.effect"
+		/>
+		
+		<modifier key="Level_16" modpriority="16"
+			model="/heroes/doctor_repulsor/alt5/16-20/ability_01/effects/mine/model.mdf"
+			modelscale="4.5"
+			passiveeffect="/heroes/doctor_repulsor/alt5/16-20/ability_01/effects/passive.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_DoctorRepulsor.Alt6" modpriority="1"
+		model="/heroes/doctor_repulsor/alt6/ability_01/effects/bomb/model.mdf"
+		modelscale="2.5"
+		passiveeffect="/heroes/doctor_repulsor/alt6/ability_01/effects/passive.effect"
+	>
+		<modifier key="Alt6_Ability1_Upgrade" modpriority="101" 
+			passiveeffect="/heroes/doctor_repulsor/alt6/ability_01/effects/passive_upgrade.effect" 
+			model="/heroes/doctor_repulsor/alt6/ability_01/effects/bomb/model_upgrade.mdf"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_DoctorRepulsor.set_ascent" modpriority="1"
+		model="/heroes/doctor_repulsor/set_ascension/ability_01/ball/model.mdf"
+		modelscale="7"
+		passiveeffect="/heroes/doctor_repulsor/set_ascension/ability_01/ball/passive.effect"
+	>	
+	</altavatar>
+	
+	<altavatar key="Hero_DoctorRepulsor.Alt9" modpriority="1"
+		model="../alt9/ability_01/effects/model.mdf"
+		modelscale="4"
+		passiveeffect="/heroes/doctor_repulsor/alt9/ability_01/effects/passive.effect"
+	/>
+	
+	<altavatar key="Hero_DoctorRepulsor.Alt10" modpriority="1"
+		model="../alt10/ability_01/effects/model.mdf"
+		modelscale="2.4"
+		passiveeffect="/heroes/doctor_repulsor/alt10/ability_01/effects/passive.effect"
+	>
+		<modifier key="doctorRepulsorAlt10_Ability1_Upgrade"
+			passiveeffect="/heroes/doctor_repulsor/alt10/ability_01/effects/passive_upgrade.effect"
+		/>
+	</altavatar>
+
+</gadget>

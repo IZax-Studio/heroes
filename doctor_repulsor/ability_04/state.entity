@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_DoctorRepulsor_Ability4"
+	
+	icon="icon4.tga"
+	passiveeffect="effects/state.effect"
+	
+	effecttype=""
+	
+	invulnerable="true"
+	immobilized="true"
+	perplexed="true"
+	
+	modifierkey="DoctorRepulsor_R"
+	dynamicprecache="effects/state_end.effect"
+>
+	<oninflict>
+		<setscriptvalue name="land_effect" value="effects/state_end.effect" entity="this_entity" />
+	</oninflict>
+	
+	<onframe>
+		<setvar0 a="source_maxmana" b="0.009" op="mult" />
+		<setvar0 a="var0" b="10" op="add" />
+		
+		<!-- Amount of mana reduced per 0.05 seconds = var0 * Projectile_Speed * 0.05 / 100 -->
+		<takemana target="source_entity" amount="0.75,1.25,1.75" b="var0" op="mult" triggeractionscript="true" costovertime="true" />
+		<compare a="source_mana" b="0" op="eq">
+			<expire />
+			<unbind target="source_entity" />
+		</compare>
+	</onframe>
+	
+	<onexpired>
+		<applystate name="State_DoctorRepulsor_Ability4_Perplex" duration="800" target="source_entity" />
+		<kill target="this_proxy_entity" source="" />
+		
+		<!-- Start cooldown of Doctor Repulsor's ultimate unless he has Staff of the Master -->
+		<hasmodifier name="ult_boost" entity="source_entity" />
+		<else>
+			<pushability name="Ability_DoctorRepulsor4" />
+			<startcooldown entity="stack_entity" />
+		</else>
+		
+		<!-- Dynamic VFX -->
+		<getscriptvalue name="land_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" source="source_entity" target="" occlude="true" />
+		<playanim name="idle" target="source_entity" />
+	</onexpired>
+	
+	<modifier key="ult_boost" modpriority="100">
+		<onframe>
+			<setvar0 a="source_maxmana" b="0.0075" op="mult" />
+			<setvar0 a="var0" b="10" op="add" />
+			
+			<!-- Amount of mana reduced per 0.05 seconds = var0 * Projectile_Speed * 0.05 / 100 -->
+			<takemana target="source_entity" amount="0.75,1.25,1.75" b="var0" op="mult" triggeractionscript="true" costovertime="true" />
+			<compare a="source_mana" b="0" op="eq">
+				<expire />
+				<unbind target="source_entity" />
+			</compare>
+		</onframe>
+	</modifier>
+	
+	<altavatar key="Hero_DoctorRepulsor.Alt" modpriority="1"
+		passiveeffect="/heroes/doctor_repulsor/alt/ability_04/effects/state.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_DoctorRepulsor.Alt2" modpriority="1"
+		passiveeffect="/heroes/doctor_repulsor/alt2/ability_04/effects/state.effect"
+		dynamicprecache="/heroes/doctor_repulsor/alt2/ability_04/effects/state_end.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="land_effect" value="/heroes/doctor_repulsor/alt2/ability_04/effects/state_end.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_DoctorRepulsor.Alt3" modpriority="1"
+		passiveeffect="/heroes/doctor_repulsor/alt3/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_DoctorRepulsor.Alt4" modpriority="1"
+		passiveeffect="/heroes/doctor_repulsor/alt4/ability_04/effects/state.effect"
+		dynamicprecache="/heroes/doctor_repulsor/alt4/ability_04/effects/state_end.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="land_effect" value="/heroes/doctor_repulsor/alt4/ability_04/effects/state_end.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_DoctorRepulsor.Alt5" modpriority="1"
+		passiveeffect="/heroes/doctor_repulsor/alt5/ability_04/effects/state.effect"
+		dynamicprecache="/heroes/doctor_repulsor/alt5/6-10/ability_04/effects/state_end.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="land_effect" value="/heroes/doctor_repulsor/alt5/6-10/ability_04/effects/state_end.effect" entity="this_entity" />
+		</oninflict>
+		
+		<modifier key="Level_6" modpriority="6"
+			passiveeffect="/heroes/doctor_repulsor/alt5/6-10/ability_04/effects/state.effect"
+		/>
+		
+		<modifier key="Level_11" modpriority="11"
+			passiveeffect="/heroes/doctor_repulsor/alt5/11-15/ability_04/effects/state.effect"
+		/>
+		
+		<modifier key="Level_16" modpriority="16"
+			passiveeffect="/heroes/doctor_repulsor/alt5/16-20/ability_04/effects/state.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_DoctorRepulsor.Alt6" modpriority="1"
+		passiveeffect="/heroes/doctor_repulsor/alt6/ability_04/effects/state.effect"
+	>
+		<modifier key="Alt6_Ability4_Upgrade" modpriority="11"
+			passiveeffect="/heroes/doctor_repulsor/alt6/ability_04/effects/state_upgrade.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_DoctorRepulsor.set_ascent" modpriority="1"
+		passiveeffect="../set_ascension/ability_04/effects/state.effect"
+		dynamicprecache="/heroes/doctor_repulsor/set_ascension/ability_04/effects/state_end.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="land_effect" value="/heroes/doctor_repulsor/set_ascension/ability_04/effects/state_end.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_DoctorRepulsor.Alt9" modpriority="1"
+		passiveeffect="../alt9/ability_04/effects/state.effect"
+		dynamicprecache="/heroes/doctor_repulsor/alt9/ability_04/effects/state_end.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="land_effect" value="/heroes/doctor_repulsor/alt9/ability_04/effects/state_end.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_DoctorRepulsor.Alt10" modpriority="1"
+		icon="../alt10/ability_04/icon.tga"
+		passiveeffect="../alt10/ability_04/effects/state.effect"
+		dynamicprecache="/heroes/doctor_repulsor/alt10/ability_04/effects/state_end.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="land_effect" value="/heroes/doctor_repulsor/alt10/ability_04/effects/state_end.effect" entity="this_entity" />
+		</oninflict>
+		
+		<modifier key="doctorRepulsorAlt10_Ability4_Upgrade"
+			icon="../alt10/ability_04/icon_upgrade.tga"
+			passiveeffect="../alt10/ability_04/effects/state_upgrade.effect"
+		/>
+	</altavatar>
+</state>

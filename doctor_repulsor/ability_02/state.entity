@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_DoctorRepulsor_Ability2"
+	
+	icon="icon2.tga"
+	passiveeffect="effects/link.effect"
+
+	effecttype="StatusDebuff"
+	
+	stunned="true"
+	stunneddurationunmodifiable="true"
+
+	modifierkey="channeled_stun_ability"
+
+	negativeeffect="stunned"
+>
+	<onframe />
+
+	<onexpired>
+		<delete target="this_proxy_entity" source="" />
+	</onexpired>
+	
+	<altavatar key="Hero_DoctorRepulsor.Alt5" modpriority="1"
+		passiveeffect="/heroes/doctor_repulsor/alt5/ability_02/effects/link.effect"
+	>
+		<modifier key="Level_6" modpriority="6"
+			passiveeffect="/heroes/doctor_repulsor/alt5/6-10/ability_02/effects/link.effect"
+		/>
+		<modifier key="Level_11" modpriority="11"
+			passiveeffect="/heroes/doctor_repulsor/alt5/11-15/ability_02/effects/link.effect"
+		/>
+		<modifier key="Level_16" modpriority="16"
+			passiveeffect="/heroes/doctor_repulsor/alt5/16-20/ability_02/effects/link.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_DoctorRepulsor.Alt6" modpriority="1"
+		passiveeffect="/heroes/doctor_repulsor/alt6/ability_02/effects/link.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_DoctorRepulsor.Alt9" modpriority="1"
+		passiveeffect="/heroes/doctor_repulsor/alt9/ability_02/effects/link.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_DoctorRepulsor.Alt10" modpriority="1"
+		icon="../alt10/ability_02/icon.tga"
+		passiveeffect="/heroes/doctor_repulsor/alt10/ability_02/effects/link.effect"
+	>
+		<modifier key="doctorRepulsorAlt10_Ability2_Upgrade"
+			icon="../alt10/ability_02/icon_upgrade.tga"
+			passiveeffect="/heroes/doctor_repulsor/alt10/ability_02/effects/link_upgrade.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_DoctorRepulsor.set_ascent" modpriority="1"
+		passiveeffect="/heroes/doctor_repulsor/set_ascension/ability_02/effects/link.effect"
+	>
+	</altavatar>
+</state>

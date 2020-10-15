@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_DoctorRepulsor"
+
+	team="Hellbourne"
+	icon="Storm_Spirit.tga"
+	portrait="Storm_Spirit.tga"
+	model="model.mdf"
+	skin=""
+
+	passiveeffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana_%.wav"
+	cooldownsound="sounds/voice/cooldown_%.wav"
+	announcersound="sounds/voice/hero_select.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+	
+	preglobalscale="1.1"
+	infoheight="180"
+	modelscale="1.0"
+	effectscale="1.0"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="44"
+	targetoffset="0 0 64"
+	portraitcampos="0 0 55"
+
+	category="magic"
+	difficulty="3.5"
+	solorating="5"
+	junglerating="0"
+	carryrating="2"
+	supportrating="0"
+	initiatorrating="1"
+	gankerrating="2"
+	pusherrating="0"
+	rangedrating="5"
+	meleerating="0"
+
+	movespeed="295"
+	turnrate="540"
+	turnsmoothing="0.05"
+
+	maxhealth="150"
+	healthregen="0.25"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="0.02"
+	magicarmor="5"
+
+	inventory0="Ability_DoctorRepulsor1"
+	inventory1="Ability_DoctorRepulsor2"
+	inventory2="Ability_DoctorRepulsor3"
+	inventory3="Ability_DoctorRepulsor4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="800"
+	attackactiontime="500"
+	attackcooldown="1700"
+	attackdamagemin="22"
+	attackdamagemax="32"
+	attacknumanims="2"
+	attackoffset="0 100 70"
+	attackprojectile="Projectile_DoctorRepulsorAttack"
+	attackrange="500"
+	attackstarteffect=""
+	attackactioneffect="projectile/effects/onattackaction.effect"
+	attackimpacteffect=""
+	attacktype="ranged"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+	
+	aggrorange="800"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	primaryattribute="Intelligence"
+	strength="17"
+	strengthperlevel="1.5"
+	agility="22"
+	agilityperlevel="1.5"
+	intelligence="25"
+	intelligenceperlevel="3.0"
+
+	corpsetime="900"
+	corpsefadetime="6000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	previewmodel="model.mdf"
+	previewpos="0 0 -60"
+	previewangles="0 0 0"
+	previewscale="1.2"
+	
+	storemodel="model.mdf"
+	storepos="0 0 -25"
+	storeangles="0 0 0"
+	storescale=".9"
+	
+>
+	<recommendeditem name="Item_ManaPotion" />
+	<recommendeditem name="Item_MinorTotem" />
+	<recommendeditem name="Item_RunesOfTheBlight" />
+	<recommendeditem name="Item_HealthPotion" />
+	<recommendeditem name="Item_HomecomingStone" />
+	<recommendeditem name="Item_Intelligence5" />
+	<recommendeditem name="Item_Strength5" />
+	<recommendeditem name="Item_Steamboots" />
+	<recommendeditem name="Item_Intelligence6" />
+	<recommendeditem name="Item_Protect" />
+	<recommendeditem name="Item_Silence" />
+	<recommendeditem name="Item_SacrificialStone" />
+	<recommendeditem name="Item_HarkonsBlade" />
+	<recommendeditem name="Item_UltorsHeavyPlate" />
+	<recommendeditem name="Item_Morph" />
+
+	<modifier key="iamsheeped" modpriority="1000" passiveeffect="" />
+	
+	<modifier key="DoctorRepulsor_R" modpriority="100"
+		attackactiontime="0"
+		turnrate="9000"
+	>	
+	</modifier>
+	
+	<!-- <modifier key="gated" modpriority="200"
+		magicarmor="5"
+		armor="2.87"
+		
+		attackdamagemin="21"
+		attackdamagemax="31"
+		
+		primaryattribute="Intelligence"
+		strength="17"
+		strengthperlevel="1.5"
+		agility="20"
+		agilityperlevel="1.8"
+		intelligence="25"
+		intelligenceperlevel="3.0"
+	>
+	</modifier> -->
+
+	<altavatar key="Hero_DoctorRepulsor.Alt" modpriority="1"
+		altavatar="true"
+		preglobalscale=".8"
+		effectscale=".9"
+		icon2="alt/icon.tga"
+		portrait="alt/icon.tga"
+		model="alt/model.mdf"
+
+		infoheight="185"
+		previewmodel="alt/preview.mdf"
+		previewpos="0 0 -90"
+		previewangles="0 0 0"
+		previewscale="0.6"
+
+		selectedsound="alt/sounds/voice/select_%.wav"
+		selectedflavorsound="alt/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt/sounds/voice/move_%.wav"
+		confirmattacksound="alt/sounds/voice/attack_%.wav"
+		nomanasound="alt/sounds/voice/no_mana.wav"
+		cooldownsound="alt/sounds/voice/cooldown.wav"
+		tauntedsound="alt/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt/sounds/voice/taunt_after.wav"
+
+		storemodel="alt/preview.mdf"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="0.67"
+	>
+	</altavatar>
+
+	<altavatar key="Hero_DoctorRepulsor.Alt2" modpriority="1"
+		altavatar="true"
+		preglobalscale="2"
+		effectscale=".9"
+		icon2="alt2/icon.tga"
+		portrait="alt2/icon.tga"
+		model="alt2/model.mdf"
+
+		infoheight="185"
+		previewmodel="alt2/preview.mdf"
+		previewpos="0 0 -90"
+		previewangles="0 0 0"
+		previewscale="0.6"
+		selectionradius="60"
+		attackoffset="0 50 125"
+		attackactioneffect="alt2/effects/onattackaction.effect"
+
+		selectedsound="alt2/sounds/voice/select_%.wav"
+		selectedflavorsound="alt2/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt2/sounds/voice/move_%.wav"
+		confirmattacksound="alt2/sounds/voice/attack_%.wav"
+		nomanasound="alt2/sounds/voice/no_mana.wav"
+		cooldownsound="alt2/sounds/voice/cooldown.wav"
+		tauntedsound="alt2/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt2/sounds/voice/taunt_after.wav"
+
+		storemodel="alt2/preview.mdf"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="1.6"
+	>
+	</altavatar>
+
+	<altavatar key="Hero_DoctorRepulsor.Alt3" modpriority="1"
+		altavatar="true"
+		preglobalscale="1.1"
+		effectscale=".9"
+		icon2="alt3/icon.tga"
+		portrait="alt3/icon.tga"
+		model="alt3/model.mdf"
+
+		infoheight="185"
+		previewmodel="alt3/preview.mdf"
+		previewpos="0 0 -90"
+		previewangles="0 0 0"
+		previewscale="0.6"
+		selectionradius="60"
+
+		attackoffset="0 50 125"
+	    attackactioneffect="projectile/effects/onattackaction.effect"
+		selectedsound="alt3/sounds/voice/select_%.wav"
+		selectedflavorsound="alt3/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt3/sounds/voice/move_%.wav"
+		confirmattacksound="alt3/sounds/voice/attack_%.wav"
+		nomanasound="alt3/sounds/voice/no_mana.wav"
+		cooldownsound="alt3/sounds/voice/cooldown.wav"
+		tauntedsound="alt3/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt3/sounds/voice/taunt_after.wav"
+
+		storemodel="alt3/preview.mdf"
+		storepos="0 0 -30"
+		storeangles="0 0 0"
+		storescale="1.05"
+	>
+	</altavatar>
+
+	<altavatar key="Hero_DoctorRepulsor.Alt4" modpriority="1"
+		altavatar="true"
+		preglobalscale="1.4"
+		effectscale=".9"
+		icon2="alt4/icon.tga"
+		portrait="alt4/icon.tga"
+		model="alt4/model.mdf"
+
+		infoheight="185"
+		previewmodel="alt4/preview.mdf"
+		previewpos="0 0 -90"
+		previewangles="0 0 0"
+		previewscale="0.6"
+		passiveeffect="alt4/effects/preview.effect"
+		selectionradius="60"
+
+		attackoffset="0 50 125"
+	    attackactioneffect="alt4/projectile/effects/onattackaction.effect"
+		selectedsound="alt4/sounds/voice/select_%.wav"
+		selectedflavorsound="alt4/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt4/sounds/voice/move_%.wav"
+		confirmattacksound="alt4/sounds/voice/attack_%.wav"
+		nomanasound="alt4/sounds/voice/no_mana.wav"
+		cooldownsound="alt4/sounds/voice/cooldown.wav"
+		tauntedsound="alt4/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt4/sounds/voice/taunt_after.wav"
+
+		storemodel="alt4/preview.mdf"
+		storepos="0 0 -30"
+		storeangles="0 0 0"
+		storescale="1.05"
+	>
+	</altavatar>
+
+	<altavatar key="Hero_DoctorRepulsor.Alt5" modpriority="1"
+		altavatar="true"
+		preglobalscale="1.4"
+		effectscale="1"
+		icon2="alt5/icon.tga"
+		portrait="alt5/icon.tga"
+		model="alt5/model.mdf"
+
+		infoheight="185"
+		previewmodel="alt5/preview.mdf"
+		previewpos="0 0 -90"
+		previewangles="0 0 0"
+		previewscale="0.6"
+		passiveeffect="alt5/effects/body.effect"
+		selectionradius="60"
+		attackoffset="0 50 125"
+
+		attackactioneffect="alt5/effects/onattackaction.effect"
+		selectedsound="alt5/sounds/voice/young/select_%.wav"
+		selectedflavorsound="alt5/sounds/voice/young/select_flavour_%.wav"
+		confirmmovesound="alt5/sounds/voice/young/move_%.wav"
+		confirmattacksound="alt5/sounds/voice/young/attack_%.wav"
+		nomanasound="alt5/sounds/voice/young/no_mana.wav"
+		cooldownsound="alt5/sounds/voice/young/cooldown.wav"
+		tauntedsound="alt5/sounds/voice/young/taunt_prior.wav"
+		tauntkillsound="alt5/sounds/voice/young/taunt_after.wav"
+		storepassiveeffect="alt5/effects/store_body.effect"
+
+		storemodel="alt5/preview.mdf"
+		storepos="0 0 -30"
+		storeangles="0 0 -55"
+		storescale="1.25"
+
+		corpsetime="2500"
+		corpsefadetime="6000"
+
+		portraitcampos="-5 0 -15"
+		portraitangles="0 0 -30"
+	>
+		<onspawn>
+			<playeffect effect="alt5/sounds/audio_effects/level_1.effect" target="source_entity" ignoreculling="false" />
+		</onspawn>
+
+		<onlevelup>
+			<compare a="level" b="16" op="ge">
+				<setactivemodifierkey name="Level_16" />
+				<playeffect effect="alt5/sounds/audio_effects/level_4.effect" target="source_entity" ignoreculling="false" />
+			</compare>
+			<else>
+				<compare a="level" b="11" op="ge">
+					<setactivemodifierkey name="Level_11" />
+					<playeffect effect="alt5/sounds/audio_effects/level_3.effect" target="source_entity" ignoreculling="false" />
+				</compare>
+				<else>
+					<compare a="level" b="6" op="ge">
+						<setactivemodifierkey name="Level_6" />
+						<playeffect effect="alt5/sounds/audio_effects/level_2.effect" target="source_entity" ignoreculling="false" />
+					</compare>
+					<else>
+						<setactivemodifierkey name="" />
+					</else>
+				</else>
+			</else>
+		</onlevelup>
+
+		<modifier key="Level_6" modpriority="6"
+			preglobalscale="1.4"
+			model="alt5/6-10/model.mdf"
+			passiveeffect="alt5/6-10/effects/body.effect"
+			portraitcampos="-5 -30 -10"
+			selectedsound="alt5/sounds/voice/slightlyyoung/select_%.wav"
+		    selectedflavorsound="alt5/sounds/voice/slightlyyoung/select_flavour_%.wav"
+		    confirmmovesound="alt5/sounds/voice/slightlyyoung/move_%.wav"
+		    confirmattacksound="alt5/sounds/voice/slightlyyoung/attack_%.wav"
+		    nomanasound="alt5/sounds/voice/slightlyyoung/no_mana.wav"
+		    cooldownsound="alt5/sounds/voice/slightlyyoung/cooldown.wav"
+		    tauntedsound="alt5/sounds/voice/slightlyyoung/taunt_prior.wav"
+		    tauntkillsound="alt5/sounds/voice/slightlyyoung/taunt_after.wav"
+		/>
+
+		<modifier key="Level_11" modpriority="11"
+			preglobalscale="1.4"
+			model="alt5/11-15/model.mdf"
+			passiveeffect="alt5/11-15/effects/body.effect"
+			attackactioneffect="alt5/11-15/effects/onattackaction.effect"
+			portraitcampos="0 0 -10"
+			portraitangles="0 0 -30"
+			selectedsound="alt5/sounds/voice/slightlyold/select_%.wav"
+		    selectedflavorsound="alt5/sounds/voice/slightlyold/select_flavour_%.wav"
+		    confirmmovesound="alt5/sounds/voice/slightlyold/move_%.wav"
+		    confirmattacksound="alt5/sounds/voice/slightlyold/attack_%.wav"
+		    nomanasound="alt5/sounds/voice/slightlyold/no_mana.wav"
+		    cooldownsound="alt5/sounds/voice/slightlyold/cooldown.wav"
+		    tauntedsound="alt5/sounds/voice/slightlyold/taunt_prior.wav"
+		    tauntkillsound="alt5/sounds/voice/slightlyold/taunt_after.wav"
+		/>
+
+		<modifier key="Level_16" modpriority="16"
+			preglobalscale="1.4"
+			model="alt5/16-20/model.mdf"
+			passiveeffect="alt5/16-20/effects/body.effect"
+			attackactioneffect="alt5/11-15/effects/onattackaction.effect"
+			portraitcampos="5 0 -10"
+			portraitangles="0 0 -30"
+			selectedsound="alt5/sounds/voice/old/select_%.wav"
+		    selectedflavorsound="alt5/sounds/voice/old/select_flavour_%.wav"
+		    confirmmovesound="alt5/sounds/voice/old/move_%.wav"
+		    confirmattacksound="alt5/sounds/voice/old/attack_%.wav"
+		    nomanasound="alt5/sounds/voice/old/no_mana.wav"
+		    cooldownsound="alt5/sounds/voice/old/cooldown.wav"
+		    tauntedsound="alt5/sounds/voice/old/taunt_prior.wav"
+		    tauntkillsound="alt5/sounds/voice/old/taunt_after.wav"
+		/>
+		
+		<onkill propagatetoillusions="true" >
+			<setaccumulator value="0" />
+			<ownsproduct target="this_entity" product="aa.Hero_MasterOfArms.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Berzerker.Alt12">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Adrenaline.Alt5">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Bombardier.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Blitz.Alt6">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_ShadowBlade.Alt7">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			
+			<targettype type="hero">
+				<targettype type="illusion" />
+				<else>               
+					<targettype type="mimic" />
+					<else> 
+						<targettype type="self" />
+						<else>
+							<targettype type="heropet" />
+							<else>
+								<compare a="accumulator" b="4" op="ge">
+									<spawnunit name="Gadget_8bit_Death" count="1" target="target_position" pushentity="true" maxactive="3" />	
+								</compare>
+							</else>
+						</else>
+					</else>
+				</else>
+			</targettype>
+			
+			<compare a="accumulator" b="2" op="ge">
+				<cantarget targetscheme="enemy_heroes">				
+					<applystate name="State_Set_8bit_VFX" source="this_entity" target="this_entity" duration="2500" />
+				</cantarget>
+			</compare>
+		</onkill>
+		
+		<onchannelingstart>
+			<setaccumulator value="0" />
+			<ownsproduct target="this_entity" product="aa.Hero_MasterOfArms.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Berzerker.Alt12">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Adrenaline.Alt5">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Bombardier.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Blitz.Alt6">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_ShadowBlade.Alt7">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+		
+			<compare a="accumulator" b="2" op="ge">	
+				<entitytype type="Ability_Taunt" target="inflictor_entity">
+					<condition test="hasstate State_Set_8bit_VFX" target="this_entity">
+					</condition>
+					<else>
+						<applystate name="State_Set_8bit_VFX" source="this_entity" target="this_entity" duration="2500" />
+					</else>
+				</entitytype>
+			</compare>
+		</onchannelingstart>
+	
+		<onassist>
+			<setaccumulator value="0" />
+			<ownsproduct target="this_entity" product="aa.Hero_MasterOfArms.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Berzerker.Alt12">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Adrenaline.Alt5">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Bombardier.Alt11">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_Blitz.Alt6">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="aa.Hero_ShadowBlade.Alt7">
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			
+			
+			<compare a="accumulator" b="2" op="ge">			
+					<applystate name="State_Set_8bit_VFX" source="this_entity" target="this_entity" duration="2500" />
+			</compare>
+		</onassist>
+	
+	</altavatar>
+
+	<altavatar key="Hero_DoctorRepulsor.Alt6" modpriority="1"
+		altavatar="true"
+		preglobalscale="1.4"
+
+		effectscale=".9"
+		icon2="alt6/icon.tga"
+		portrait="icon.tga"
+		model="alt6/model.mdf"
+
+		infoheight="185"
+		passiveeffect="alt6/effects/body.effect"
+		attackactioneffect="alt6/projectile/effects/onattackaction.effect"
+
+		selectedsound="alt6/sounds/voice/select_%.wav"
+		selectedflavorsound="alt6/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt6/sounds/voice/move_%.wav"
+		confirmattacksound="alt6/sounds/voice/attack_%.wav"
+		nomanasound="alt6/sounds/voice/no_mana.wav"
+		cooldownsound="alt6/sounds/voice/cooldown.wav"
+		tauntedsound="alt6/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt6/sounds/voice/taunt_after.wav"
+
+		previewmodel="alt6/preview.mdf"
+		previewpos="0 0 -90"
+		previewangles="0 0 0"
+		previewscale="0.6"
+
+		storemodel="alt6/preview.mdf"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="1.40"
+	>
+		<onspawn propagatetoillusions="true" >
+		    <activatemodifierkey name="Paragon_Sound_Garnet" />
+			<applystate name="State_Garnet_Paragon_Sound_Initiator" target="source_entity" duration="2000" />
+			<ownsproduct target="this_entity" product="en.paragon_trail">
+				<applystate name="State_Paragon_Trail" target="this_entity" continuous="true" />
+			</ownsproduct>
+			<upgradeselected target="this_entity" upgrade="sc.paragon_circle_upgrade">
+				<activatemodifierkey name="Alt10_Paragon_Circle" />
+			</upgradeselected>
+			<ownsproduct target="this_entity" product="en.repulsor_ability01_upgrade">
+				<activatemodifierkey name="Alt6_Ability1_Upgrade" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="en.repulsor_ability02_upgrade">
+				<activatemodifierkey name="Alt6_Ability2_Upgrade" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="en.repulsor_ability03_upgrade">
+				<activatemodifierkey name="Alt6_Ability3_Upgrade" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="en.repulsor_ability04_upgrade">
+				<activatemodifierkey name="Alt6_Ability4_Upgrade" />
+			</ownsproduct>
+            <ownsproduct target="this_entity" product="en.paragon_pet">
+                <spawnunit name="Pet_Paragon" target="this_entity" source="target_entity" offset="0 -100" facing="source_entity" pushentity="true" />
+                <activatemodifierkey name="Pet_Paragon_Garnet" entity="stack_entity" />
+            </ownsproduct>
+		</onspawn>
+
+        <onrespawn>
+			<ownsproduct target="this_entity" product="en.paragon_trail">
+				<applystate name="State_Paragon_Trail" target="this_entity" continuous="true" />
+			</ownsproduct>
+			<upgradeselected target="this_entity" upgrade="sc.paragon_circle_upgrade">
+				<activatemodifierkey name="Alt10_Paragon_Circle" />
+			</upgradeselected>
+			<ownsproduct target="this_entity" product="en.repulsor_ability01_upgrade">
+				<activatemodifierkey name="Alt10_Ability1_Upgrade" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="en.repulsor_ability02_upgrade">
+				<activatemodifierkey name="Alt10_Ability2_Upgrade" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="en.repulsor_ability03_upgrade">
+				<activatemodifierkey name="Alt10_Ability3_Upgrade" />
+			</ownsproduct>
+			<ownsproduct target="this_entity" product="en.repulsor_ability04_upgrade">
+				<activatemodifierkey name="Alt10_Ability4_Upgrade" />
+			</ownsproduct>
+            <ownsproduct target="this_entity" product="en.paragon_pet">
+                <spawnunit name="Pet_Paragon" target="this_entity" source="target_entity" offset="0 -100" facing="source_entity" pushentity="true" />
+                <activatemodifierkey name="Pet_Paragon_Garnet" entity="stack_entity" />
+            </ownsproduct>
+        </onrespawn>
+
+		<onchannelingstart>
+			<ownsproduct target="this_entity" product="en.doctor_repulsor_stat_track">
+				<entitytype type="Ability_Taunt" target="inflictor_entity">
+                    <!-- <playeffect effect="/shared/effects/paragon_stats.effect" source="this_entity" target="this_entity" /> -->
+					<applystate name="State_Paragon_Stats_VFX" source="this_entity" target="this_entity" duration="4000" />
+				</entitytype>
+			</ownsproduct>
+		</onchannelingstart>
+
+		<onkill>
+			<ownsproduct target="this_entity" product="en.doctor_repulsor_stat_track">
+                <cantarget targetscheme="enemy_heroes" >
+                    <!-- <playeffect effect="/shared/effects/paragon_stats.effect" source="this_entity" target="this_entity" /> -->
+					<applystate name="State_Paragon_Stats_VFX" source="this_entity" target="this_entity" duration="4000" />
+                </cantarget>
+			</ownsproduct>
+        </onkill>
+
+		<onassist>
+			<ownsproduct target="this_entity" product="en.doctor_repulsor_stat_track">
+                <!-- <playeffect effect="/shared/effects/paragon_stats.effect" source="this_entity" target="this_entity" /> -->
+				<applystate name="State_Paragon_Stats_VFX" source="this_entity" target="this_entity" duration="4000" />
+			</ownsproduct>
+        </onassist>
+
+		<modifier key="Alt10_Paragon_Circle" modpriority="2"
+            localselectionringmaterial="/shared/materials/selection_indicator_paragon.material"
+        />
+
+		<modifier key="Alt6_Ability1_Upgrade" modpriority="101" />
+		<modifier key="Alt6_Ability2_Upgrade" modpriority="101" />
+		<modifier key="Alt6_Ability3_Upgrade" modpriority="101" />
+		<modifier key="Alt6_Ability4_Upgrade" modpriority="101" />
+	</altavatar>
+
+	<altavatar key="Hero_DoctorRepulsor.pog_skin" modpriority="1"
+		altavatar="true"
+		preglobalscale="1.4"
+		effectscale=".9"
+
+		icon2="icon.tga"
+		portrait="icon.tga"
+		model="pog_skin/model.mdf"
+
+		infoheight="185"
+		previewmodel="pog_skin/preview.mdf"
+		previewpos="0 0 -90"
+		previewangles="0 0 0"
+		previewscale="0.6"
+
+		storemodel="pog_skin/preview.mdf"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="1.40"
+	>
+	</altavatar>
+
+	<altavatar key="Hero_DoctorRepulsor.set_ascent" modpriority="1"
+		altavatar="true"
+		preglobalscale="2"
+		effectscale=".9"
+
+		icon2="set_ascension/icon.tga"
+		portrait="set_ascension/icon.tga"
+		model="set_ascension/model.mdf"
+		modelscale=".6"
+		infoheight="185"
+
+		previewmodel="set_ascension/preview.mdf"
+		previewpos="0 0 -90"
+		previewangles="0 0 0"
+		previewscale="0.6"
+		passiveeffect="set_ascension/effects/body.effect"
+
+		selectionradius="60"
+		attackanim="attack_%"
+		attackoffset="0 170 125"
+		attackactioneffect=""
+
+		selectedsound="set_ascension/sounds/voice/select_%.wav"
+		selectedflavorsound="set_ascension/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="set_ascension/sounds/voice/move_%.wav"
+		confirmattacksound="set_ascension/sounds/voice/attack_%.wav"
+		nomanasound="set_ascension/sounds/voice/no_mana.wav"
+		cooldownsound="set_ascension/sounds/voice/cooldown.wav"
+		tauntedsound="set_ascension/sounds/voice/taunt_prior.wav"
+		tauntkillsound="set_ascension/sounds/voice/taunt_after.wav"
+
+		storemodel="set_ascension/preview.mdf"
+		storepassiveeffect="set_ascension/effects/body_store.effect"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="1"
+
+		corpsetime="900"
+		corpsefadetime="100"
+		corpsefadeeffect=""
+	>
+		<modifier key="doctorRepulsorAbility3_active" modpriority="99"
+			idleanim="idle_ability3"
+			walkanim="walk_1_ability3"
+			attackanim="attack_ability3"
+			attackoffset="0 100 125"
+		/>
+	</altavatar>
+
+	<altavatar key="Hero_DoctorRepulsor.Alt9" modpriority="1"
+	    icon2="alt9/icon.tga"
+		altavatar="true"
+		preglobalscale="1.05"
+		effectscale=".9"
+		passiveeffect="alt9/effects/body.effect"
+		attackactioneffect="alt9/projectile/effects/onattackaction.effect"
+		model="alt9/model.mdf"
+		
+		corpsetime="200"
+		corpsefadetime="0"
+
+		storemodel="alt9/preview.mdf"
+		
+		portraitcampos="0 50 50"
+		portraitangles="0 0 20"
+		
+		previewmodel="alt9/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1"
+		storescale="0.95"
+		
+		selectedsound="alt9/sounds/voice/select_%.wav"
+		selectedflavorsound="alt9/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt9/sounds/voice/move_%.wav"
+		confirmattacksound="alt9/sounds/voice/attack_%.wav"
+		nomanasound="alt9/sounds/voice/no_mana.wav"
+		cooldownsound="alt9/sounds/voice/cooldown.wav"
+		tauntedsound="alt9/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt9/sounds/voice/taunt_after.wav"
+	>
+		<onspawn propagatetoillusions="false">
+			<ownsproduct target="this_entity" product="aa.Hero_CorruptedDisciple.Alt7 aa.Hero_DoctorRepulsor.Alt9 aa.Hero_Artesia.Alt6 aa.Hero_Armadon.Alt9">
+				<activatemodifierkey name="Spring_Festival_Set" />
+			</ownsproduct>
+		</onspawn>
+
+		<onrespawn propagatetoillusions="false">
+			<ownsproduct target="this_entity" product="aa.Hero_CorruptedDisciple.Alt7 aa.Hero_DoctorRepulsor.Alt9 aa.Hero_Artesia.Alt6 aa.Hero_Armadon.Alt9">
+				<activatemodifierkey name="Spring_Festival_Set" />
+			</ownsproduct>
+		</onrespawn>
+
+		<onkilled>
+			<ownsproduct target="this_entity" product="aa.Hero_CorruptedDisciple.Alt7 aa.Hero_DoctorRepulsor.Alt9 aa.Hero_Artesia.Alt6 aa.Hero_Armadon.Alt9">
+				<deactivatemodifierkey name="Spring_Festival_Set" />
+			</ownsproduct>
+		</onkilled>
+
+		<modifier key="iamsheeped" modpriority="1000"
+			passiveeffect=""
+		>
+		</modifier>
+
+		<modifier key="Spring_Festival_Set" modpriority="100">
+			<aura state="State_DoctorRepulsor_SpringFestival_Set" radius="0" targetscheme="self"/>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_DoctorRepulsor.Alt10" modpriority="1"
+	    icon2="alt10/icon.tga"
+		altavatar="true"
+		preglobalscale="0.9"
+		effectscale=".9"
+		passiveeffect="alt10/effects/body.effect"
+		attackactioneffect="alt10/projectile/effects/onattackaction.effect"
+		model="alt10/model.mdf"
+		
+	    corpsetime="1000"
+		corpsefadetime="2500"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		
+		storemodel="alt10/preview.mdf"
+		storepassiveeffect="alt10/effects/body.effect"
+		storepos="0 50 -30"
+		storeangles="0 0 0"
+		storescale="0.8"
+		
+		portraitcampos="-10 50 80"
+		portraitangles="0 0 20"
+		
+		previewmodel="alt10/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1"
+		
+		selectedsound="alt10/sounds/voice/select_%.wav"
+		selectedflavorsound="alt10/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt10/sounds/voice/move_%.wav"
+		confirmattacksound="alt10/sounds/voice/attack_%.wav"
+		nomanasound="alt10/sounds/voice/no_mana.wav"
+		cooldownsound="alt10/sounds/voice/cooldown.wav"
+		tauntedsound="alt10/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt10/sounds/voice/taunt_after.wav"
+		
+	>
+		<onspawn>
+			<setaccumulator value="0" />
+			<ownsproduct target="this_entity" product="en.repulsor_alt10_ability01_upgrade">
+				<activatemodifierkey name="doctorRepulsorAlt10_Ability1_Upgrade" />
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+
+			<ownsproduct target="this_entity" product="en.repulsor_alt10_ability02_upgrade">
+				<activatemodifierkey name="doctorRepulsorAlt10_Ability2_Upgrade" />
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+
+			<ownsproduct target="this_entity" product="en.repulsor_alt10_ability03_upgrade">
+				<activatemodifierkey name="doctorRepulsorAlt10_Ability3_Upgrade" />
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+
+			<ownsproduct target="this_entity" product="en.repulsor_alt10_ability04_upgrade">
+				<activatemodifierkey name="doctorRepulsorAlt10_Ability4_Upgrade" />
+				<setaccumulator value="accumulator" valueb="1" valueop="add" />
+			</ownsproduct>
+			
+			<upgradeselected target="this_entity" upgrade="sc.punk_circle_upgrade">
+				<activatemodifierkey name="Graffiti_Punk_Circle" />
+			</upgradeselected>
+		</onspawn>
+		
+		<modifier key="Graffiti_Punk_Circle" modpriority="2"
+			localselectionringmaterial="/shared/materials/selection_indicator_graffiti.material"
+		/>
+
+		<onkill propagatetoillusions="false" >
+			<targettype type="hero">
+				<targettype type="illusion" />
+				<else>               
+					<targettype type="mimic" />
+					<else> 
+						<targettype type="self" />
+						<else>
+							<targettype type="heropet" />
+							<else>
+								<spawnunit name="Gadget_DoctorRepulsor_Alt10" count="1" target="target_position" pushentity="true" maxactive="5" />
+								<compare a="accumulator" b="0" op="eq">
+									<setlevel entity="stack_entity" value="1" />
+								</compare>
+								<compare a="accumulator" b="1" op="eq">
+									<setlevel entity="stack_entity" value="2" />
+								</compare>
+								<compare a="accumulator" b="2" op="eq">
+									<setlevel entity="stack_entity" value="3" />
+								</compare>
+								<compare a="accumulator" b="3" op="eq">
+									<setlevel entity="stack_entity" value="4" />
+								</compare>
+								<compare a="accumulator" b="4" op="eq">
+									<setlevel entity="stack_entity" value="5" />
+								</compare>																											
+							</else>
+						</else>
+					</else>
+				</else>
+			</targettype>
+		</onkill>		
+	</altavatar>
+	
+</hero>
