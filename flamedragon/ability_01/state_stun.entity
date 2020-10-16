@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Stun_FlameDragon_Ability1"
+
+	icon="icon1.tga"
+	passiveeffect=""
+	
+	stunned="true"
+	stunneddurationunmodifiable="true"
+	
+	negativeeffect="stunned"
+	
+>
+	<onexpired>
+		<applystate name="State_FlameDragon_Ability1" duration="2000" source="target_entity" />
+	</onexpired>
+</state>

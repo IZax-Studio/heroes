@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+	<definitions>
+
+	<particlesystem name="system0" space="world" scale="1">
+		
+		<template name="flames" >
+			
+			<twopointemitter
+				bone_a="{bonea}"
+				bone_b="{boneb}"
+				spawnrate="100"
+				gravity="-0"
+				minparticlelife="500"
+				maxparticlelife="750"
+				position_a="0 0 {height1}"
+				position_b="0 0 {height2}"
+				material="/shared/effects/materials/flames_03.material"
+			>
+				<particle
+					startsize="60"
+					endsize="20"
+					startcolor=".33 0 0"
+					endcolor="0"
+					startalpha=".5"
+					midalpha=".5"
+					endalpha="0"
+					anchor="1"
+					maxangle="360"
+					scale="{scale}"
+				/>
+			</twopointemitter>
+			
+			<twopointemitter
+				bone_a="{bonea}"
+				bone_b="{boneb}"
+				spawnrate="150"
+				gravity="-15"
+				minparticlelife="500"
+				maxparticlelife="750"
+				position_a="0 0 {height1}"
+				position_b="0 0 {height2}"
+				material="/shared/effects/materials/soul_projectile2.material"
+			>
+				<particle
+					startsize="30"
+					endsize="7"
+					startcolor="0"
+					midcolor="1 .5 .25"
+					midcolorpos=".25"
+					endcolor="-.5"
+					anchor="1"
+					maxangle="360"
+					scale="{scale}"
+				/>
+			</twopointemitter>
+			
+			
+		</template>
+		
+		<instance name="flames" scale=".5" height1="5" height2="10" bonea="_bone_fire1" boneb="_bone_fire2"  />
+		<instance name="flames" scale=".5" height1="5" height2="10" bonea="_bone_fire2" boneb="_bone_fire3"  />
+		<instance name="flames" scale=".5" height1="5" height2="10" bonea="_bone_fire3" boneb="_bone_fire4"  />
+		<instance name="flames" scale=".5" height1="5" height2="10" bonea="_bone_fire4" boneb="_bone_fire5"  />
+		<instance name="flames" scale=".5" height1="5" height2="10" bonea="_bone_fire5" boneb="_bone_fire6"  />
+		<instance name="flames" scale=".5" height1="5" height2="10" bonea="_bone_fire6" boneb="_bone_fire7"  />		
+		<instance name="flames" scale=".5" height1="5" height2="10" bonea="_bone_fire2" boneb="_bone_wing1"  />
+		<instance name="flames" scale=".5" height1="5" height2="10" bonea="_bone_wing1" boneb="_bone_wing2"  />
+		<instance name="flames" scale=".5" height1="5" height2="10" bonea="_bone_wing2" boneb="_bone_wing3"  />
+
+		<template name="flames" >
+			
+			<twopointemitter
+				bone_a="{bonea}"
+				bone_b="{boneb}"
+				spawnrate="20"
+				gravity="-0"
+				minparticlelife="500"
+				maxparticlelife="750"
+				position_a="0 0 {height1}"
+				position_b="0 0 {height2}"
+				material="/shared/effects/materials/frost_burst.material"
+			>
+				<particle
+					startsize="60"
+					endsize="20"
+					startcolor="0 .5 1"
+					endcolor="0"
+					startalpha=".5"
+					midalpha=".5"
+					endalpha="0"
+					anchor="1"
+					maxangle="360"
+					scale="{scale}"
+				/>
+			</twopointemitter>
+
+
+			
+			<twopointemitter
+				bone_a="{bonea}"
+				bone_b="{boneb}"
+				spawnrate="150"
+				gravity="-15"
+				minparticlelife="500"
+				maxparticlelife="750"
+				position_a="0 0 {height1}"
+				position_b="0 0 {height2}"
+				material="/shared/effects/materials/ice_blast_add.material"
+			>
+				<particle
+					startsize="30"
+					endsize="7"
+					startcolor="0"
+					midcolor="0 .5 1"
+					midcolorpos=".25"
+					endcolor="-.5"
+					anchor="1"
+					maxangle="360"
+					scale="{scale}"
+				/>
+			</twopointemitter>
+			
+			
+		</template>
+		
+		<instance name="flames" scale=".5" height1="5" height2="10" bonea="_bone_ice1" boneb="_bone_ice2"/>
+		<instance name="flames" scale=".5" height1="5" height2="10" bonea="_bone_ice2" boneb="_bone_ice3"  />
+		<instance name="flames" scale=".5" height1="5" height2="10" bonea="_bone_ice3" boneb="_bone_ice4"  />
+		<instance name="flames" scale=".5" height1="5" height2="10" bonea="_bone_ice4" boneb="_bone_ice5"  />
+		<instance name="flames" scale=".5" height1="5" height2="10" bonea="_bone_ice5" boneb="_bone_ice6"  />
+		<instance name="flames" scale=".5" height1="5" height2="10" bonea="_bone_ice6" boneb="_bone_ice7"  />
+		<instance name="flames" scale=".5" height1="5" height2="10" bonea="_bone_ice2" boneb="_bone_wing4"  />
+		<instance name="flames" scale=".5" height1="5" height2="10" bonea="_bone_wing4" boneb="_bone_wing5"  />
+		<instance name="flames" scale=".5" height1="5" height2="10" bonea="_bone_wing5" boneb="_bone_wing6"  />		
+
+
+			<billboard
+				bone="_bone_lefteye1"	
+				material="/shared/effects/materials/whitedot.material"
+				color="1 .5 0"
+				size="10"
+				depthbias="-10"
+			/>
+			
+			<simpleemitter
+				bone="_bone_lefteye1"	
+				material="/shared/effects/materials/poison_04.material"
+				gravity="-10"
+				speed="50"
+				direction="0 0 1"
+				angle="30"
+				spawnrate="40"
+				minparticlelife="250"
+				maxparticlelife="400"
+				depthbias="-10"
+			>
+				<particle
+					maxangle="360"
+					startcolor="1 .5 0"
+					endcolor="0"
+					startsize="10"
+					endsize="15"
+				/>
+			</simpleemitter>
+			
+			<billboard
+				bone="_bone_righteye1"	
+				material="/shared/effects/materials/whitedot.material"
+				color="1 .5 0"
+				size="10"
+				depthbias="-10"
+			/>
+			
+			<simpleemitter
+				bone="_bone_righteye1"	
+				material="/shared/effects/materials/poison_04.material"
+				gravity="-10"
+				speed="50"
+				direction="0 0 1"
+				angle="30"
+				spawnrate="40"
+				minparticlelife="250"
+				maxparticlelife="400"
+				depthbias="-10"
+			>
+				<particle
+					maxangle="360"
+					startcolor="1 .5 0"
+					endcolor="0"
+					startsize="10"
+					endsize="15"
+				/>
+			</simpleemitter>
+		
+
+			<billboard
+				bone="_bone_lefteye2"	
+				material="/shared/effects/materials/whitedot.material"
+				color="0 .5 1"
+				size="10"
+				depthbias="-10"
+			/>
+			
+			<simpleemitter
+				bone="_bone_lefteye2"	
+				material="/shared/effects/materials/poison_04.material"
+				gravity="-10"
+				speed="50"
+				direction="0 0 1"
+				angle="30"
+				spawnrate="40"
+				minparticlelife="250"
+				maxparticlelife="400"
+				depthbias="-10"
+			>
+				<particle
+					maxangle="360"
+					startcolor="0 .5 1"
+					endcolor="0"
+					startsize="10"
+					endsize="15"
+				/>
+			</simpleemitter>
+			
+			<billboard
+				bone="_bone_righteye2"	
+				material="/shared/effects/materials/whitedot.material"
+				color="0 .5 1"
+				size="10"
+				depthbias="-10"
+			/>
+			
+			<simpleemitter
+				bone="_bone_righteye2"	
+				material="/shared/effects/materials/poison_04.material"
+				gravity="-10"
+				speed="50"
+				direction="0 0 1"
+				angle="30"
+				spawnrate="40"
+				minparticlelife="250"
+				maxparticlelife="400"
+				depthbias="-10"
+			>
+				<particle
+					maxangle="360"
+					startcolor="0 .5 1"
+					endcolor="0"
+					startsize="10"
+					endsize="15"
+				/>
+			</simpleemitter>		
+
+		<template name="trail">	
+			<controller bone="{bone}" >
+				<trailemitter
+					directionalspace="local"
+					position="{position}"
+					spawnrate="44"
+					particlelife="400"
+					texpostime="700"
+					texposscale="0.0"
+					texstretchscale=".9"
+					material="/shared/effects/materials/soul_projectile2.material"
+					subframepos="true"
+				>
+					<particle
+						startcolor=".6 .3 0"
+						midcolor=".3 0 0"
+						endcolor="0 0 0" 
+						size="40"
+					/>
+				</trailemitter>
+			</controller>
+		</template>
+		
+		<instance name="trail" bone="_bone_wing3" position="0 0 0"/>
+
+		<template name="trail">	
+			<controller bone="{bone}" >
+				<trailemitter
+					directionalspace="local"
+					position="{position}"
+					spawnrate="44"
+					particlelife="400"
+					texpostime="700"
+					texposscale="0.0"
+					texstretchscale=".9"
+					material="/shared/effects/materials/soul_projectile2.material"
+					subframepos="true"
+				>
+					<particle
+						startcolor="0 .2 1"
+						midcolor="0 .2 1"
+						endcolor="0 0 0" 
+						size="40"
+					/>
+				</trailemitter>
+			</controller>
+		</template>
+		
+		<instance name="trail" bone="_bone_wing6" position="0 0 0"/>
+		
+	</particlesystem>
+</definitions>
+
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnmodifier instance="instance1" modifier="modifier0"/>  
+	<waitfordeath instance="instance0" />
+</thread>
+</effect>

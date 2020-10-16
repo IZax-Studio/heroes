@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="cyclone" deferred="false" useentityeffectscale="false" ignorebasescale="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.5">	
+<sound
+                soundloop="true"
+				randomloop="true"
+				fadein="500"
+				fadeout="250"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="800"
+				volume=".6"
+				sample="/heroes/flamedragon/ability_04/sounds/state.wav"
+			/>
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume="1"
+				sample="/heroes/flamedragon/ability_02/sounds/land.wav"
+			/>
+		<!--	
+			<template name="lava">
+
+
+				<billboard
+					life="500"
+					position="{position2}"
+					material="/shared/effects/materials/whitedot.material"
+					startcolor="0"
+					endcolor=".3 .05 0"
+					size="{size3}"
+					depthbias="-100"
+					lockup="1"
+					pitch="90"
+				/>
+
+				<billboard
+					delay="500"
+					expirelife="1000"
+					position="{position2}"
+					material="/shared/effects/materials/whitedot.material"
+					startcolor=".3 .05 0"
+					endcolor="0"
+					size="{size3}"
+					depthbias="-100"
+					lockup="1"
+					pitch="90"
+				/>
+
+
+			</template>
+
+			<instance name="lava" width="45" size1="115" size2="55" size3="300" yaw1="125" yaw2="90" position2="0 0 0" />
+-->
+			<simpleemitter	
+				spawnrate="75"
+				particlelife="1400"				
+				speed="40"
+				position="0 0 80"
+				offsetsphere="200 200 100"
+				acceleration="0"
+				gravity="2"
+				material="/shared/effects/materials/ember_reveal.material"
+				timenudge="2000"
+				inheritvelocity="0"
+			>
+
+				<particle
+					maxangle="360"
+					minsize="3"
+					maxsize="6"
+					startframe="1"
+					midframe="0"
+					endframe="1"
+					midframepos=".25"
+					anchor="1"
+					startcolor="1 .5 0"
+					endcolor="1 0 0"			
+				/>
+			</simpleemitter> 
+
+			<simpleemitter	
+				spawnrate="75"
+				particlelife="1400"				
+				speed="40"
+				position="0 0 80"
+				offsetsphere="200 200 100"
+				acceleration="0"
+				gravity="2"
+				material="/shared/effects/materials/whitedot.material"
+				timenudge="2000"
+				inheritvelocity="0"
+			>
+
+				<particle
+					maxangle="360"
+					minsize="3"
+					maxsize="6"
+					startframe="1"
+					midframe="0"
+					endframe="1"
+					midframepos=".25"
+					anchor="1"
+					color=".5 .7 1"
+				/>
+			</simpleemitter> 			
+			
+			<simpleemitter	
+				spawnrate="75"
+				particlelife="1400"				
+				speed="40"
+				position="0 0 80"
+				offsetsphere="200 200 100"
+				acceleration="0"
+				gravity="2"
+				material="/shared/effects/materials/whitedot.material"
+				timenudge="2000"
+				inheritvelocity="0"
+			>
+
+				<particle
+					maxangle="360"
+					minsize="3"
+					maxsize="6"
+					startframe="1"
+					midframe="0"
+					endframe="1"
+					midframepos=".25"
+					anchor="1"
+					color="1 .5 0"
+				/>
+			</simpleemitter> 
+
+			<simpleemitter	
+				spawnrate="75"
+				particlelife="1400"				
+				speed="40"
+				position="0 0 80"
+				offsetsphere="200 200 100"
+				acceleration="0"
+				gravity="2"
+				material="/shared/effects/materials/snowflake.material"
+				timenudge="2000"
+				inheritvelocity="0"
+			>
+
+				<particle
+					maxangle="360"
+					minsize="3"
+					maxsize="6"
+					startframe="1"
+					midframe="0"
+					endframe="1"
+					midframepos=".25"
+					anchor="1"
+				/>
+			</simpleemitter> 
+			
+			<simpleemitter	
+				spawnrate="75"
+				particlelife="1400"		
+				
+				speed="40"
+				position="0 0 80"
+				offsetsphere="200 200 100"
+				acceleration="0"
+				gravity="2"
+				material="/shared/effects/materials/black_trail.material"
+				timenudge="2000"
+				inheritvelocity="0"
+			>
+
+				<particle
+					minangle="-360"
+					maxangle="360"					
+					color=" 1 1 1"					
+					minsize="1"
+					maxsize="5"				
+					startalpha="0"
+					midalpha="0.8"
+					endalpha="0"
+					midalphapos="0.9"
+					anchor="0"
+					depthbias="0"
+					
+				/>
+			</simpleemitter> 
+			
+			<model
+				model="/heroes/kane/ability_04/effects/sphere/model.mdf"
+				material="material.material"
+				directionalspace="global"
+				position="0 0 100"
+				startalpha="1"
+				endalpha="0"
+				expirelife="300"
+				startcolor="1"
+				endcolor="0"
+				scale=".85"
+				yawspeed="60"
+			/>
+
+			<billboard	
+				expirelife="300"	
+				material="/shared/effects/materials/twirl_03.material"
+				position="0 0 100"
+				startsize="300"
+				midsize="100"
+				endsize="400"
+				roll="105"
+				rollspeed="360"
+				startcolor=".65 .1 0"
+				endcolor="0"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+				scale=".85"
+			/>	
+			<billboard	
+				expirelife="300"	
+				material="/shared/effects/materials/twirl_03.material"
+				position="0 0 100"
+				startsize="300"
+				midsize="200"
+				endsize="400"
+				roll="105"
+				rollspeed="360"
+				startcolor="0 .5 1"
+				endcolor="0"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+				scale=".85"
+			/>	
+
+			<billboard	
+				life="4000"					
+				material="/shared/effects/materials/twirl_03.material"
+				bone="_bone_origin"
+				position="0 25 30"
+				startsize="400"
+				midsize="300"
+				endsize="400"
+				roll="105"
+				rollspeed="360"
+				startcolor="0"
+				midcolor=".65 .3 0"
+				endcolor="0"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+				scale=".85"
+			/>	
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

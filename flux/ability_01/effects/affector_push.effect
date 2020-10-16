@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume="1"
+				sample="../sounds/cast_push.wav"
+			/>
+	
+			<groundsprite	
+				startsize="0"
+				midsize="400"
+				endsize="400"
+				midsizepos=".2"
+				life="600"
+				material="/shared/effects/materials/ground_grad_in.material"
+			
+				position="-15 5 0"
+				startcolor=".4 .1 .4"
+				endcolor="0 0 0"
+				alpha="1"	
+				yawspeed="50"				
+			/>
+			<groundsprite			
+				life="600"
+				material="/shared/effects/materials/ground_grad_in.material"
+				startsize="0"
+				midsize="400"
+				endsize="400"
+				midsizepos=".2"
+				position="-15 5 0"
+				startcolor=".4 .1 .4"
+				endcolor="0 0 0"
+				alpha="1"	
+				yawspeed="-50"				
+			/>	
+			<!--
+			<billboard
+				life="300"
+				position="0 0 50"
+				midalpha="1"			
+				startalpha="1"
+				endalpha="1"
+				startsize="300"
+				endsize="1000"
+				depthbias="-110"
+				startparam="0.25"
+				endparam="0"
+				lockup="1"
+				pitch="90"
+				material="/shared/effects/materials/refract_ring.material"
+			/>
+				-->
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

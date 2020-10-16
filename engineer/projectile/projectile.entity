@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Engineer_Attack"
+
+	speed="5000"
+	gravity="100"
+
+	modelscale="1.2"
+	model="/heroes/bomb/projectile/model.mdf"
+
+	traileffect="/heroes/bomb/projectile/effects/trail.effect"
+	impacteffect="effects/impact.effect"
+>
+
+	<altavatar key="Hero_Engineer.Alt5" modpriority="1"
+		traileffect="/heroes/engineer/alt5/projectile/effects/trail.effect"
+		impacteffect="/heroes/engineer/alt5/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Engineer.Alt6" modpriority="1"
+		traileffect="/heroes/engineer/alt6/effects/trail.effect"
+		impacteffect="/heroes/engineer/alt6/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Engineer.Alt7" modpriority="1"
+		traileffect="/heroes/engineer/alt6/effects/trail.effect"
+		impacteffect="/heroes/engineer/alt6/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Engineer.Alt8" modpriority="1"
+		traileffect="/heroes/engineer/alt8/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Engineer.Alt9" modpriority="1"
+		traileffect="/heroes/engineer/alt9/projectile/effects/trail.effect"
+		impacteffect="/heroes/engineer/alt9/effects/impact.effect"
+	/>
+	
+</projectile>

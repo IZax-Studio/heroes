@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_FlameDragon2"
+
+	icon="icon2.tga"
+	
+	anim="ability_2"
+	casttime="200"
+	castactiontime="200"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	activatescheme="movement"
+
+	actiontype="target_position"
+	casteffecttype=""
+	targetscheme="ally_buildings_and_Draconis_W_Marker"
+	casteffect="effects/cast.effect"
+	
+	ischanneling="true"
+	channeltime="2000"
+	
+	manacost="80"
+	cooldowntime="60000,55000,50000,45000"
+
+	range="99999"
+	doubleactivate="true"
+	
+	dontshowhovercast="true"
+	
+	passiveeffect=""
+	ignoreinvulnerable="true"
+	
+	noshuffle="true"
+>
+	
+	<onimpact />
+	
+	<ondamaged>
+		<compare a="source_damage" b="0" op="gt">
+			<targettype type="player_controlled">
+				<targettype type="self" />
+				<else>
+					<startcooldown duration="3000" />
+				</else>
+			</targettype>
+		</compare>
+	</ondamaged>
+	
+	<onchannelstart>
+		<setaccumulator value="0" />
+		<areaofeffect
+			center="target_position"
+			radius="99999"
+			targetselection="closest"
+			targetscheme="ally_buildings_and_Draconis_W_Marker"
+			ignoreinvulnerable="true"
+		>
+			<compare a="accumulator" b="0" op="eq">
+				<hasmodifier entity="target_entity" name="draconis_ability2_MarkerDisabled" />
+				<else>
+					<setaccumulator value="1" />
+					<setproxy entity="this_entity" target="target_entity" />
+				</else>
+			</compare>
+		</areaofeffect>
+		
+		<entitytype type="Gadget_FlameDragon_Ability4_Volcano" target="this_proxy_entity">
+			<breakchannel entity="source_entity" />
+			
+			<!-- 400 radius variance for the landing position -->
+			<setpos0 position="this_proxy_position" positionmodifier="minonline" positionend="target_position" positionvalue="400" />
+			<spawnprojectile name="Projectile_FlameDragon_Ability2" target="pos0" proxy="this_proxy_entity" bind="source_entity" bindstate="State_FlameDragon_Ability2_Bind" />
+			
+			<!-- Art for when Draconis is in flight -->
+			<spawnunit name="Gadget_FlameDragon_Ability2_Shadow" target="source_position" pushentity="true" />
+			<playeffect effect="/heroes/flamedragon/ability_02/effects/flight_sound.effect" target="source_position"/>
+			<spawnprojectile name="Projectile_FlameDragon_Ability2_Art" target="this_proxy_entity" proxy="stack_entity" bind="stack_entity" />
+		</entitytype>
+		
+		<setaccumulator value="0" />
+		<setproxy entity="this_entity" target="" />
+	</onchannelstart>
+	
+	<onchannelend ignoreinvulnerable="true">
+		<!-- Targeting logic -->
+		<setaccumulator value="0" />
+		<areaofeffect
+			center="target_position"
+			radius="99999"
+			targetselection="closest"
+			targetscheme="ally_buildings_and_Draconis_W_Marker"
+			ignoreinvulnerable="true"
+		>
+			<compare a="accumulator" b="0" op="eq">
+				<hasmodifier entity="target_entity" name="draconis_ability2_MarkerDisabled" />
+				<else>
+					<setaccumulator value="1" />
+					<setproxy entity="this_entity" target="target_entity" />
+				</else>
+			</compare>
+		</areaofeffect>
+		
+		<unbind target="source_entity" />
+		<disjoint target="source_entity" />
+
+		<!-- Copy this block to remove things when you go un-targetable -->
+		<expirestate name="State_Circe_Ability4_Enemy" target="source_entity" /> <!-- Circe's state she puts on the target when she is channeling on them to copy them -->
+		<expirestate name="State_Enemy_Ravenor_Ability1" target="source_entity" />
+		<expirestate name="CTF_State_FlagHolder_Hellbourne" target="source_entity" />
+		<expirestate name="CTF_State_FlagHolder_Legion" target="source_entity" />
+		
+		<!-- Smaller distance buffer constraint if targeting ally well -->
+		<targettype type="Well" target="this_proxy_entity">
+			<setpos0 position="this_proxy_position" positionmodifier="minonline" positionend="target_position" positionvalue="90" />
+			<spawnprojectile name="Projectile_FlameDragon_Ability2" target="pos0" proxy="this_proxy_entity" bind="source_entity" bindstate="State_FlameDragon_Ability2_Bind" />
+		</targettype>
+		<else>
+			<!-- 400 radius variance for the landing position -->
+			<setpos0 position="this_proxy_position" positionmodifier="minonline" positionend="target_position" positionvalue="400" />
+			<spawnprojectile name="Projectile_FlameDragon_Ability2" target="pos0" proxy="this_proxy_entity" bind="source_entity" bindstate="State_FlameDragon_Ability2_Bind" />
+		</else>
+		
+		<!-- Art for when Draconis is in flight -->
+		<spawnunit name="Gadget_FlameDragon_Ability2_Shadow" target="source_position" pushentity="true" />
+		<playeffect effect="/heroes/flamedragon/ability_02/effects/flight_sound.effect" target="source_position"/>
+		<spawnprojectile name="Projectile_FlameDragon_Ability2_Art" target="this_proxy_entity" proxy="stack_entity" bind="stack_entity" />	
+	</onchannelend>
+	
+	<modifier key="ult_boost" modpriority="100"
+	>
+		<!-- Aura that makes Volcanos have a model when SotM is obtained -->
+		<aura name="Draconis_W_Aura_SotM" state="State_FlameDragon_Ability2_Marker_SotM" radius="99999" targetscheme="ally_buildings_and_Draconis_W_Marker" ignoreinvulnerable="true" propagatecondition="not_illusion" duration="0" notooltip="true" />
+		
+		<onimpact />
+		
+		<onchannelstart>
+			<setaccumulator value="0" />
+			<areaofeffect
+				center="target_position"
+				radius="99999"
+				targetselection="closest"
+				targetscheme="ally_buildings_and_Draconis_W_Marker"
+				ignoreinvulnerable="true"
+			>
+				<compare a="accumulator" b="0" op="eq">
+					<!-- Allow targeting of markers located on enemy towers -->
+					<setaccumulator value="1" />
+					<setproxy entity="this_entity" target="target_entity" />
+				</compare>
+			</areaofeffect>
+			<entitytype type="Gadget_FlameDragon_Ability4_Volcano" target="this_proxy_entity">
+				<breakchannel entity="source_entity" />
+				
+				<!-- 400 radius variance for the landing position -->
+				<setpos0 position="this_proxy_position" positionmodifier="minonline" positionend="target_position" positionvalue="400" />
+				<spawnprojectile name="Projectile_FlameDragon_Ability2" target="pos0" proxy="this_proxy_entity" bind="source_entity" bindstate="State_FlameDragon_Ability2_Bind" />
+				
+				<!-- Art for when Draconis is in flight -->
+				<spawnunit name="Gadget_FlameDragon_Ability2_Shadow" target="source_position" pushentity="true" />
+				<playeffect effect="/heroes/flamedragon/ability_02/effects/flight_sound.effect" target="source_position"/>
+				<spawnprojectile name="Projectile_FlameDragon_Ability2_Art" target="this_proxy_entity" proxy="stack_entity" bind="stack_entity" />	
+			</entitytype>
+		</onchannelstart>
+		
+		<onchannelend ignoreinvulnerable="true">
+			<!-- Targeting logic -->
+			<setaccumulator value="0" />
+			<areaofeffect
+				center="target_position"
+				radius="99999"
+				targetselection="closest"
+				targetscheme="ally_buildings_and_Draconis_W_Marker"
+				ignoreinvulnerable="true"
+			>
+				<compare a="accumulator" b="0" op="eq">
+					<!-- Allow targeting of markers located on enemy towers -->
+					<setaccumulator value="1" />
+					<setproxy entity="this_entity" target="target_entity" />
+				</compare>
+			</areaofeffect>
+			
+			<unbind target="source_entity" />
+			<disjoint target="source_entity" />
+
+			<!-- Copy this block to remove things when you go un-targetable -->
+			<expirestate name="State_Circe_Ability4_Enemy" target="source_entity" /> <!-- Circe's state she puts on the target when she is channeling on them to copy them -->
+			<expirestate name="State_Enemy_Ravenor_Ability1" target="source_entity" />
+			<expirestate name="CTF_State_FlagHolder_Hellbourne" target="source_entity" />
+			<expirestate name="CTF_State_FlagHolder_Legion" target="source_entity" />
+			
+			<!-- Smaller distance buffer constraint if targeting ally well -->
+			<targettype type="Well" target="this_proxy_entity">
+				<setpos0 position="this_proxy_position" positionmodifier="minonline" positionend="target_position" positionvalue="90" />
+				<spawnprojectile name="Projectile_FlameDragon_Ability2" target="pos0" proxy="this_proxy_entity" bind="source_entity" bindstate="State_FlameDragon_Ability2_Bind" />
+			</targettype>
+			<else>
+				<!-- 400 radius variance for the landing position -->
+				<setpos0 position="this_proxy_position" positionmodifier="minonline" positionend="target_position" positionvalue="400" />
+				<spawnprojectile name="Projectile_FlameDragon_Ability2" target="pos0" proxy="this_proxy_entity" bind="source_entity" bindstate="State_FlameDragon_Ability2_Bind" />
+			</else>
+			
+			<!-- Art for when Draconis is in flight -->
+			<spawnunit name="Gadget_FlameDragon_Ability2_Shadow" target="source_position" pushentity="true" />
+			<playeffect effect="/heroes/flamedragon/ability_02/effects/flight_sound.effect" target="source_position"/>
+			<spawnprojectile name="Projectile_FlameDragon_Ability2_Art" target="this_proxy_entity" proxy="stack_entity" bind="stack_entity" />	
+		</onchannelend>
+	</modifier>
+	
+	<modifier key="Draconis_Mimic" modpriority="160" condition="mimic"
+	>
+		<!-- Disable this aura on a mimic -->
+		<aura name="Draconis_W_Aura_SotM" state="State_FlameDragon_Ability2_Marker_SotM" radius="0" targetscheme="nothing" propagatecondition="not_illusion" duration="0" notooltip="true" />
+	</modifier>
+	
+	<altavatar key="Hero_FlameDragon.Alt9" modpriority="1"
+		novoiceresponse="true"
+	/>
+	
+	<altavatar key="Hero_FlameDragon.Alt10" modpriority="1"
+		novoiceresponse="true"
+	/>
+</ability>

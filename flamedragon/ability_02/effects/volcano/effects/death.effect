@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="2.0">		
+<sound
+                forcestereo="true"
+				volume="1"
+				sample="/heroes/flamedragon/ability_04/sounds/expire.wav"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2000"
+			/>
+			
+            <template name="scrape" >
+                <controller
+                    life="10000"
+                    position="{position}"
+                    delay="{delay}"
+                    directionalspace="local"
+                    scale="{scale}"
+                >
+                    <!-- dust -->
+                    <terrainemitter
+                        life="400"
+                        spawnrate="10"
+                        particlelife="1000"
+                        range="20"
+                    >
+                        <particle>
+                            <debris
+                                position="0 0 10"
+                                life="1000"
+                                startalpha="0"
+                                midalpha="1"
+                                endalpha="0"
+                                color=".6 .8 1"
+                                model="/shared/effects/models/debris/debris.mdf"
+                                material="/shared/effects/models/debris/debris_noshadow.material"
+                                minscale=".125"
+                                maxscale=".25"
+                                offsetsphere="100 100 0"
+                                gravity="100"
+                                reflect=".65"
+                                bounce=".2"
+                                minrotationspeed="-1000"
+                                maxrotationspeed="1000"
+                                minspeed="250"
+                                maxspeed="400"
+                                direction="0 0 1"
+                                directionalspace="global"
+                                angle="60"
+                                collide="1"
+                            />
+                        </particle>
+                    </terrainemitter>
+
+                    <terrainemitter
+                        life="400"
+                        startspawnrate="10"
+                        endspawnrate="40"
+                        minparticlelife="1200"
+                        maxparticlelife="1600"
+                        material="/shared/effects/materials/dust.material"
+                        startparticlealpha=".5"
+                        endparticlealpha="1"
+                        maxspeed="200"
+                        direction="0 0 1"
+                        angle="30"
+                        collide="1"
+                        drag="0.025"
+                        gravity="-1"
+                        startparticlescale=".5"
+                        endparticlescale="1"
+                        range="20"
+                    >
+                        <template name="dust_particle" >
+                            <particle
+                                maxangle="360"
+                                minanglespeed="-30"
+                                maxanglespeed="30"
+                                minsize="40"
+                                maxsize="60"
+                                minstartscale=".5"
+                                maxstartscale="1"
+                                minendscale="1.5"
+                                maxendscale="2"
+                                startalpha="1"
+                                endalpha="0"
+                                color="{color}"
+                            />
+                        </template>
+                        <instance name="dust_particle" color=".2 .3 .4" />
+                        <instance name="dust_particle" color=".15 .225 .3" />
+                        <instance name="dust_particle" color=".1 .15 .2" />
+                    </terrainemitter>
+
+                    <!-- cracks -->
+                    <terrainemitter
+                        life="400"
+                        spawnrate="10"
+                        particlelife="3000"
+                        range="40"
+                    >
+                        <particle>
+                            <groundsprite
+                                minlife="2000"
+                                maxlife="3000"
+                                material="/shared/effects/materials/earth_cracks_overlay_reveal.material"
+                                maxyaw="360"
+                                minsize="30"
+                                maxsize="40"
+                                startframe="1"
+                                midframe=".1"
+                                endframe=".1"
+                                midframepos=".25"
+                                startalpha=".5"
+                                midalpha=".5"
+                                endalpha="0"
+                            />
+                        </particle>
+                    </terrainemitter>
+                </controller>
+            </template>
+
+            <instance name="scrape" position="-50 0 0" delay="0" scale="1" />
+            <instance name="scrape" position="50 0 0" delay="200" scale="1" />
+            <instance name="scrape" position="-50 0 0" delay="500" scale=".75" />
+
+            <instance name="scrape" position="0 -20 0" delay="200" scale="1.5" />
+            <instance name="scrape" position="0 0 0" delay="800" scale="1.5" />
+			
+	</particlesystem>
+		
+	<particlesystem name="system1" space="world" scale=".5">		
+			 <simpleemitter
+                position="0 0 20"
+                count="6"
+                range="100"
+                material="/shared/effects/materials/shadow_cut_02_reveal_add.material"
+                minparticlelife="400"
+                maxparticlelife="600"
+            >
+                <particle
+                    maxangle="360"
+                    startsize="0"
+                    midsize="300"
+                    endsize="400"
+                    startcolor="1"
+                    midcolor="1 .25 0"
+                    endcolor="1 0 0"
+                    startframe="0"
+                    endframe="1"
+                    midframepos=".6"
+                    lockup="true"
+                    lockright="true"
+                    pitch="90"
+                    minscale=".9"
+                    maxscale="1.1"
+                />
+            </simpleemitter>
+
+            <terrainemitter
+                count="30"
+                range="80"
+                material="/shared/effects/materials/phantom_white_reveal_02_add.material"
+                minparticlelife="150"
+                maxparticlelife="800"
+            >
+                <template name="fire_pillar">
+                    <particle
+                        yaw="{angle}"
+                        flare="1"
+                        minstartwidth="15"
+                        maxstartwidth="30"
+                        minendwidth="40"
+                        maxendwidth="80"
+                        minendheight="400"
+                        maxendheight="800"
+                        startcolor="{sc}"
+                        midcolor="{mc}"
+                        endcolor="{ec}"
+                        startframe="1"
+                        midframe="0"
+                        endframe="1"
+                        midframepos=".25"
+                        lockup="true"
+                    />
+                </template>
+                <instance name="fire_pillar" sc="1 .5 .25" mc=".5   0 0" ec=".5 0 0" angle="0" />
+                <instance name="fire_pillar" sc="1 .5 .25" mc=".5 .25 0" ec=".5 0 0" angle="0" />
+                <instance name="fire_pillar" sc="1 .5 .25" mc=".5   0 0" ec=".5 0 0" angle="180" />
+                <instance name="fire_pillar" sc="1 .5 .25" mc=".5 .25 0" ec=".5 0 0" angle="180" />
+            </terrainemitter>
+
+            <simpleemitter
+                mincount="2"
+                maxcount="3"
+                particlelife="3000"
+                offsetsphere="30"
+            >
+                <template name="ground_goo">
+                    <particle
+                        minscale="1.5"
+                        maxscale="2"
+                    >
+                        <groundsprite
+                            maxyaw="360"
+                            minlife="750"
+                            maxlife="1000"
+                            material="/shared/effects/materials/water_spray_02_reveal_blend.material"
+                            startsize="0"
+                            midsize="60"
+                            endsize="100"
+                            midsizepos=".2"
+                            startframe="1"
+                            midframe="0"
+                            endframe="1"
+                            midframepos=".1"
+                            startcolor="{sc}"
+                            midcolor="{mc}"
+                            endcolor="{ec}"
+                        />
+                    </particle>
+                </template>
+                <instance name="ground_goo" sc="1 1 0" mc="1 .2 0" ec=".5 0 0" />
+                <instance name="ground_goo" sc="1 1 0" mc=".5 .1 0" ec="0 0 0" />
+            </simpleemitter>
+
+            <!--
+            <model
+                maxyaw="360"
+                life="1000"
+                model="/heroes/magmar/ability_01/effects/model.mdf"
+                scale="1.5"
+                anim="idle_fast"
+                startalpha=".9"
+                midalpha=".9"
+                endalpha="0"
+                startcolor="1 1 .5"
+                endcolor=".5 0 -.25"
+            />
+        -->
+
+            <terrainemitter
+                spawnrate="50"
+                mincount="6"
+                maxcount="10"
+                range="50"
+                particlelife="2000"
+            >
+                <particle
+                    minscale=".6"
+                    maxscale="1.2"
+                >
+                    <model
+                        maxyaw="360"
+                        minlife="1000"
+                        maxlife="1500"
+                        model="/heroes/magmar/ability_01/effects/model.mdf"
+                        anim="idle"
+                        startalpha="1"
+                        midalpha="1"
+                        endalpha="0"
+                        startcolor="1 1 0"
+                        endcolor=".5 0 0"
+                    />
+                </particle>
+            </terrainemitter>
+			
+			
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+        <camerashake2 duration="1500" scale="2" frequency="20" radius="1000" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

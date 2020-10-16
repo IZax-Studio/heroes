@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_FlameDragon_Ability2_Bind"
+	
+	ishidden="true"
+	icon="icon2.tga"
+	passiveeffect=""
+	
+	invulnerable="true"
+	immobilized="true"
+	stunned="true"
+	silenced="true"
+	effecttype=""
+	
+	buildingwalking="true"
+	
+	immunitytype="PushImmunity"
+>
+
+</state>

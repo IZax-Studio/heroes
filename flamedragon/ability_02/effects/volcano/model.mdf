@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="/heroes/flamedragon/ability_04/volcano/high.model" type="K2" >
+
+	<anim name="idle" clip="/heroes/flamedragon/ability_04/volcano/default_1.clip" loop="true">
+		<startevent cmd="StartEffect effects/body.effect 1" />
+		<endevent cmd="StopEffect 1" />
+	</anim>	
+
+</model>

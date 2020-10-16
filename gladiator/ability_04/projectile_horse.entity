@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Gladiator_Ability4_Horse"
+
+	speed="600"
+	gravity="0"
+
+	modelscale="1.4"
+	model=""
+	traileffect="effects/horse_trail.effect"
+	canturn="true"
+	flying="true"
+	flyheight="0"
+	deatheffect=""
+>
+	<onimpact>
+		<kill target="this_proxy_entity" source="" />
+	</onimpact>
+
+	<altavatar key="Hero_Gladiator.Alt3"
+		modelscale="1.525"
+		model="/heroes/gladiator/alt3/ability_04/chariot/horse/horse.mdf"
+		traileffect="/heroes/gladiator/alt3/ability_04/effects/horse_trail.effect"
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt5"
+		modelscale="1.4"
+		model="/shared/models/invis.mdf"
+		traileffect="/heroes/gladiator/alt5/ability_04/effects/horse_trail.effect"
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt6"
+		modelscale="1.25"
+		model="/heroes/gladiator/alt6/ability_04/chariot/horse/horse.mdf"
+		traileffect="/heroes/gladiator/alt6/ability_04/effects/horse_trail.effect"
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt7"
+		modelscale="1.25"
+		model=""
+		traileffect=""
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt8"
+		modelscale="1.525"
+		model="/shared/models/invis.mdf"
+		traileffect="/heroes/gladiator/alt8/ability_04/effects/horse_trail.effect"
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt9"
+		modelscale="1.525"
+		model="/shared/models/invis.mdf"
+		traileffect="/heroes/gladiator/alt9/ability_04/effects/horse_trail.effect"
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt11"
+		modelscale="1.525"
+		model="/heroes/gladiator/alt11/ability_04/chariot/model2.mdf"
+		traileffect="/heroes/gladiator/alt11/ability_04/effects/trail2.effect"
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt12"
+		modelscale="1.525"
+		model=""
+		traileffect=""
+	/>
+</projectile>

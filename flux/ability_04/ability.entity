@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Flux4"
+	
+	icon="icon4.tga"
+	
+	anim="ability_4b"
+	casttime="500"
+	castactiontime="300"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="self_position"
+	targetscheme="enemy_heroes"
+	targetradius="2000"
+	casteffecttype="Push"
+	
+	manacost="125"
+	cooldowntime="100000,80000,60000"
+>
+	<onaction>
+		<!-- VFX -->
+		<hasavatarkey name="Hero_Flux.Alt4">
+			<playeffect effect="../alt4/ability_04/effects/pull_cast.effect" source="source_position" target="source_position" occlude="true" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Flux.Alt5">
+				<playeffect effect="../alt5/ability_04/effects/pull_cast.effect" source="source_position" target="source_position" occlude="true" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Flux.Alt6">
+					<playeffect effect="../alt6/ability_04/effects/pull_cast.effect" source="source_position" target="source_position" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/pull_cast.effect" source="source_position" target="source_position" occlude="true" />
+				</else>
+			</else>	
+		</else>
+	</onaction>
+
+	<onimpact effectdescription="true">
+		<!-- Push -->
+		<hasmodifier name="Fluxpush" entity="source_entity">
+			<areaofeffect
+				center="this_owner_entity"
+				radius="2000"
+				targetselection="all"
+				targetscheme="enemy_heroes"
+				effecttype="Push"
+			>
+				<unbind />
+				<spawnunit name="Gadget_FluxDummyReveal" target="target_entity" mount="target_entity" />
+				
+				<setpos0 position="this_owner_entity" positionend="target_entity" positionmodifier="pointpastline" positionvalue="400,600,800" />
+				<spawnprojectile name="Projectile_Flux_Ability4" source="target_entity" target="pos0" bind="target_entity" bindstate="State_Flux_Ability4Push" />
+			</areaofeffect>
+		</hasmodifier>
+		
+		<!-- Pull -->
+		<else>
+			<areaofeffect
+				center="this_owner_entity"
+				radius="2000"
+				targetselection="all"
+				targetscheme="enemy_heroes"
+				effecttype="Push"
+			>
+				<unbind />
+				<spawnunit name="Gadget_FluxDummyReveal" target="target_entity" mount="target_entity" />
+				
+				<distance />
+				<setvar0 a="result" />
+				<compare a="var0" b="455,655,855" op="le">
+					<setpos0 position="this_owner_entity" positionend="target_entity" positionmodifier="pointonline" positionvalue="55" />
+					<spawnprojectile name="Projectile_Flux_Ability4" source="target_entity" target="pos0" bind="target_entity" bindstate="State_Flux_Ability4" />
+				</compare>
+				<else>
+					<setpos0 position="target_entity" positionend="this_owner_entity" positionmodifier="pointonline" positionvalue="400,600,800" />
+					<spawnprojectile name="Projectile_Flux_Ability4" source="target_entity" target="pos0" bind="target_entity" bindstate="State_Flux_Ability4" />
+				</else>
+			</areaofeffect>
+		</else>
+	</onimpact>
+	
+	<modifier key="Fluxpush" modpriority="100"
+		displayname="true"
+		anim="ability_4"
+		icon="icon.tga"
+	>
+		<onaction>
+			<!-- VFX -->
+			<hasavatarkey name="Hero_Flux.Alt4">
+				<playeffect effect="../alt4/ability_04/effects/push_cast.effect" source="source_position" target="source_position" occlude="true" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Flux.Alt5">
+					<playeffect effect="../alt5/ability_04/effects/push_cast.effect" source="source_position" target="source_position" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Flux.Alt6">
+						<playeffect effect="../alt6/ability_04/effects/push_cast.effect" source="source_position" target="source_position" occlude="true" />
+					</hasavatarkey>
+					<else>
+						<playeffect effect="effects/push_cast.effect" source="source_position" target="source_position" occlude="true" />
+					</else>
+				</else>
+			</else>
+		</onaction>
+	</modifier>
+	
+	<modifier key="ult_boost" modpriority="99"
+		targetradius="99999"
+		dontshowhovercast="true"
+		showareacast="false"
+	>
+		<onimpact effectdescription="true">
+			<!-- Push -->
+			<hasmodifier name="Fluxpush" entity="source_entity">
+				<printvalue value="1" />
+				<areaofeffect
+					center="this_owner_entity"
+					radius="99999"
+					targetselection="all"
+					targetscheme="enemy_heroes"
+					effecttype="Push"
+				>
+					<unbind />
+					<spawnunit name="Gadget_FluxDummyReveal" target="target_entity" mount="target_entity" />
+					
+					<setpos0 position="this_owner_entity" positionend="target_entity" positionmodifier="pointpastline" positionvalue="500,700,900" />
+					<spawnprojectile name="Projectile_Flux_Ability4" source="target_entity" target="pos0" bind="target_entity" bindstate="State_Flux_Ability4Push" />
+				</areaofeffect>
+			</hasmodifier>
+			
+			<!-- Pull -->
+			<else>
+				<areaofeffect
+					center="this_owner_entity"
+					radius="99999"
+					targetselection="all"
+					targetscheme="enemy_heroes"
+					effecttype="Push"
+				>
+					<unbind />
+					<spawnunit name="Gadget_FluxDummyReveal" target="target_entity" mount="target_entity" />
+					
+					<distance />
+					<setvar0 a="result" />
+					<compare a="var0" b="555,755,955" op="le">
+						<setpos0 position="this_owner_entity" positionend="target_entity" positionmodifier="pointonline" positionvalue="55" />
+						<spawnprojectile name="Projectile_Flux_Ability4" source="target_entity" target="pos0" bind="target_entity" bindstate="State_Flux_Ability4" />
+					</compare>
+					<else>
+						<setpos0 position="target_entity" positionend="this_owner_entity" positionmodifier="pointonline" positionvalue="500,700,900" />
+						<spawnprojectile name="Projectile_Flux_Ability4" source="target_entity" target="pos0" bind="target_entity" bindstate="State_Flux_Ability4" />
+					</else>
+				</areaofeffect>
+			</else>
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Flux.Alt6"
+	    icon="../alt6/ability_04/icon_b.tga" 
+	>
+		<modifier key="Fluxpush" modpriority="100"
+			displayname="true"
+			anim="ability_4"
+			  icon="../alt6/ability_04/icon.tga" 
+		>
+			<onaction>
+				<!-- VFX -->
+				<hasavatarkey name="Hero_Flux.Alt4">
+					<playeffect effect="../alt4/ability_04/effects/push_cast.effect" source="source_position" target="source_position" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Flux.Alt5">
+						<playeffect effect="../alt5/ability_04/effects/push_cast.effect" source="source_position" target="source_position" occlude="true" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Flux.Alt6">
+							<playeffect effect="../alt6/ability_04/effects/push_cast.effect" source="source_position" target="source_position" occlude="true" />
+						</hasavatarkey>
+						<else>
+							<playeffect effect="effects/push_cast.effect" source="source_position" target="source_position" occlude="true" />
+						</else>
+					</else>	
+				</else>
+			</onaction>
+		</modifier>
+ 	</altavatar>
+	
+</ability>

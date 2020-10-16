@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1.54">
+		
+			 <simpleemitter
+				spawnrate="5"
+				bone="_bone_center"
+				range="80"
+				material="/shared/effects/materials/flame.material"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				direction="0 0 1"
+				angle="0"
+				speed="80"
+				offsetsphere="10"
+				particlescale="1.4"
+				particledirectionalspace="global"
+			>
+				<template name="fire_pillar">
+					<particle
+						flare="1"
+						scale="10"
+						startcolor="{sc}"
+						midcolor="{mc}"
+						endcolor="{ec}"
+						lockup="true"
+						lockright="true"
+						turn="true"
+						alpha=".25"
+						anchor="1"
+					/>
+				</template>
+
+				<instance name="fire_pillar" sc="1 .5 .25" mc=".5 0 0" ec="0 0 0" />
+				<instance name="fire_pillar" sc="1 .5 .25" mc=".5 .25 0" ec="0 0 0" />
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="10"
+				bone="_bone_center"
+				range="80"
+				material="/shared/effects/materials/soul_projectile2.material"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				direction="0 0 1"
+				angle="0"
+				speed="80"
+				offsetsphere="10"
+				particlescale="1.4"
+				particledirectionalspace="global"
+			>
+				<template name="fire_pillar">
+					<particle
+						flare="0"
+						scale="5"
+						startcolor="{sc}"
+						midcolor="{mc}"
+						endcolor="{ec}"
+						lockup="true"
+						lockright="true"
+						anglespeed="360"
+						turn="true"
+						alpha=".25"
+						anchor="1"
+					/>
+				</template>
+
+				<instance name="fire_pillar" sc="1 .5 .25" mc=".5 0 0" ec="0 0 0" />
+				<instance name="fire_pillar" sc="1 .5 .25" mc=".5 .25 0" ec="0 0 0" />
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_center"
+				spawnrate="20"
+				range="80"
+				particlelife="400"
+				direction="0 0 1"
+				angle="10"
+				minspeed="80"
+				maxspeed="200"
+				drag="0.02"
+				gravity="-6"
+				offsetsphere="10"
+				inheritvelocity=".4"
+				limitinheritvelocity="150"
+			>
+				<template name="ember_particle" >
+					<particle
+						maxyaw="360"
+						maxpitch="360"
+						maxroll="360"
+						minyawspeed="-650"
+						maxyawspeed="650"
+						minpitchspeed="-650"
+						maxpitchspeed="650"
+						minrollspeed="-650"
+						maxrollspeed="650"
+						startscale="0"
+						minendscale=".25"
+						maxendscale=".5"
+					>
+						<billboard
+							life="400"
+							maxroll="360"
+							minrollspeed="-400"
+							maxrollspeed="400"
+							position="30 0 0"
+							material="/shared/effects/materials/abstract_reveal.material"
+							minsize="6"
+							maxsize="10"
+							startframe="0"
+							endframe="1"
+							midframepos=".8"
+							startcolor="{sc}"
+							midcolor="{mc}"
+							endcolor="{ec}"
+							midcolorpos="{mcpos}"
+						/>
+						<billboard
+							life="400"
+							position="30 0 0"
+							material="/shared/effects/materials/whitedot.material"
+							startsize="30"
+							endsize="20"
+							startcolor="1 1 0"
+							midcolor=".5 0 0"
+							endcolor="0"
+							midcolorpos=".75"
+						/>
+					</particle>
+				</template>
+				<instance name="ember_particle" sc="1" mc="1 1 .25" ec="1 .25 0" mcpos=".6" />
+				<instance name="ember_particle" sc="1" mc="1" ec="1 .5 .25" mcpos=".8" />
+			</simpleemitter>
+
+			<!-- flickering glow -->
+			<billboard
+				life="20"
+				loop="true"
+				bone="_bone_centerofchest"
+				startsize="35"
+				midsize="25"
+				endsize="35"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor=".6 .2 0"
+				midcolor=".4 .1 0"
+				endcolor=".6 .2 0"
+				depthbias="-10"
+				scale=".4"
+			/>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+   	</thread>
+
+</effect>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Gladiator_Ability2"
+	
+	icon="icon2.tga"
+	passiveeffect="effects/state.effect"
+
+	effecttype=""
+	
+>
+	<onframe />
+
+	<onexpired>
+		<expirestate target="this_inflictor_entity" name="State_Gladiator_Ability2_Return" />
+		<cantarget effecttype="Magic Push" ignoreinvulnerable="false">
+			<unbind target="target_entity" />
+			<disjoint target="target_entity" />
+			<teleport source="target_entity" target="this_proxy_position" interpolate="false" />
+			<order command="stop" source="target_entity" target="target_entity" />
+		</cantarget>
+		<kill target="this_proxy_entity" source="" />
+	</onexpired>
+	
+	<altavatar key="Hero_Gladiator.Alt3" modpriority="1"
+		passiveeffect="../alt3/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt5" modpriority="1"
+		passiveeffect="../alt5/ability_02/effects/state.effect"
+	>
+		<onexpired>
+			<expirestate target="this_inflictor_entity" name="State_Gladiator_Ability2_Return" />
+			<cantarget effecttype="Magic" ignoreinvulnerable="false">
+				<unbind target="target_entity" />
+				<disjoint target="target_entity" />
+				<teleport source="target_entity" target="this_proxy_position" interpolate="false" />
+				<order command="stop" source="target_entity" target="target_entity" />
+			</cantarget>
+			<kill target="this_proxy_entity" source="" />
+			<playeffect effect="../alt5/ability_02/effects/sound.effect" target="" source="target_position" />	
+		</onexpired>
+	</altavatar>
+		
+	<altavatar key="Hero_Gladiator.Alt5" modpriority="1"
+		passiveeffect="../alt5/ability_02/effects/state.effect"
+	/>
+
+	<altavatar key="Hero_Gladiator.Alt6" modpriority="1"
+		passiveeffect="../alt6/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt7" modpriority="1"
+		passiveeffect="../alt7/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt8" modpriority="1"
+		passiveeffect="../alt8/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt9" modpriority="1"
+		passiveeffect="../alt9/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt11" modpriority="1"
+		passiveeffect="../alt11/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt12" modpriority="1"
+		passiveeffect="../alt12/ability_02/effects/state.effect"
+	/>
+	
+	<modifier key="soccer" modpriority="150">
+		<onexpired>
+			<expirestate target="this_inflictor_entity" name="State_Gladiator_Ability2_Return" />
+			<cantarget effecttype="Magic Push" ignoreinvulnerable="false">
+				<unbind target="target_entity" />
+				<disjoint target="target_entity" />
+				<teleport source="target_entity" target="this_proxy_position" interpolate="false" />
+				<order command="stop" source="target_entity" target="target_entity" />
+				
+				<entitytype type="Hero_Snailman" target="target_entity">
+					<expirestate name="State_Snailman_Ability2_Gather" target="target_entity" />
+					<order command="stop" force="true" source="target_entity" target="target_entity" />
+				</entitytype>
+			</cantarget>
+			<kill target="this_proxy_entity" source="" />
+		</onexpired>	
+	</modifier>
+	
+</state>

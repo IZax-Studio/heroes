@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Fairy_Attack"
+
+	speed="900"
+
+	modelscale=".7"
+	model="/shared/models/invis.mdf"
+
+	impacteffect=""
+	traileffect="/heroes/hellbringer/alt6/projectile/effects/trail.effect"
+>
+
+	<altavatar key="Hero_Fairy.Alt4" modpriority="100"
+		passiveeffect="alt4/projectile/effects/glow.effect"
+	/>
+	
+	<altavatar key="Hero_Fairy.trophy_skin02" modpriority="100"
+		impacteffect="trophy_skin/projectile/impact.effect"
+		traileffect="trophy_skin/projectile/trail01.effect"
+	/>
+	
+	<altavatar key="Hero_Fairy.trophy_skin03" modpriority="100"
+		impacteffect="trophy_skin/projectile/impact.effect"
+		traileffect="trophy_skin/projectile/trail02.effect"
+	/>
+	
+	<altavatar key="Hero_Fairy.Alt7" modpriority="100"
+		modelscale="1.4"
+		model="alt7/ability_01/effects/bird/model.mdf"
+		traileffect="alt7/projectile/trail.effect"
+	/>
+	
+</projectile>

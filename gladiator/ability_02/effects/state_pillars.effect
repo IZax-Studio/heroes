@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+		
+
+			
+			<groundsprite
+				life="1500"
+				material="/heroes/gladiator/effects/materials/c_cross.material"
+				startsize="50"
+				midsize="55"
+				endsize="50"
+				startcolor="0.8"
+				midcolor="1"
+				endcolor="0.8"
+				depthbias="-200"
+				startalpha="0.8"
+				midalpha="1"
+				endalpha="0.8"
+				loop="true"
+				
+			/>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

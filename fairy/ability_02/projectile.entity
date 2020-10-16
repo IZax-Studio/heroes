@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Fairy_Ability2"
+
+	speed="1100"
+	gravity="0"
+
+	modelscale="2"
+	model="effects/model.mdf"
+
+	effectscale="1.0"
+	impacteffect="effects/impact.effect"
+	traileffect="effects/glow.effect"
+	
+	canturn="true"
+	flying="true"
+	flyheight="100"
+	
+	maxtouches="0"
+	maxtouchespertarget="1"
+	touchradius="120"
+	touchtargetscheme="enemy_units"
+	toucheffecttype="Magic"
+>
+	<onimpact>
+		<resettouches source="this_entity" />
+		<condition test="redirect" />
+		<else>
+			<distance source="this_entity" target="this_owner_entity" />
+			<compare a="result" b="3000" op="le">
+				<retarget target="this_owner_entity" />
+			</compare>
+		</else>
+	</onimpact>
+	
+	<ontouch>
+		<applystate name="State_Stunned" duration="1000,1100,1200,1300" />
+		<damage effecttype="Magic" amount="50,80,105,130" />
+	</ontouch>
+	
+	<!-- Staff of the Master effects -->
+	<modifier key="Fairy_R_SotM" modpriority="100">
+		<ontouch>
+			<applystate name="State_Stunned" duration="1000,1100,1200,1300" />
+		</ontouch>
+	</modifier>
+	
+	<altavatar key="Hero_Fairy.Alt3"
+		traileffect="../alt3/ability_03/glow.effect"
+	/>
+	
+	<altavatar key="Hero_Fairy.Alt4"
+		traileffect="../alt4/ability_03/effects/glow.effect"
+	/>
+	
+	<altavatar key="Hero_Fairy.Alt6"
+		modelscale="1.8"
+		model="../alt6/ability_03/effects/model.mdf"
+		traileffect="../alt6/ability_03/effects/glow.effect"
+	>
+		<modifier key="Combo_efx_fairy" modpriority="101"
+			modelscale="1.8"
+			model="../alt6/ability_03/effects/model_buff.mdf"
+			traileffect="../alt6/ability_03/effects/glow_combo.effect"
+		>
+			<ontouch>
+				<hasmodifier name="Fairy_R_SotM">
+					<applystate name="State_Stunned" duration="1000,1100,1200,1300" />
+				</hasmodifier>
+				<else>
+					<applystate name="State_Stunned" duration="1000,1100,1200,1300" />
+					<damage effecttype="Magic" amount="50,80,105,130" />
+				</else>
+			</ontouch>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Fairy.trophy_skin02"
+		model="effects/model.mdf"
+		modelscale="2"
+		traileffect="../trophy_skin/ability_03/glow01.effect"
+	/>
+	
+	<altavatar key="Hero_Fairy.trophy_skin03"
+		model="../trophy_skin/ability_03/model.mdf"
+		modelscale="2"
+		traileffect="../trophy_skin/ability_03/glow.effect"
+	/>
+	
+	<altavatar key="Hero_Fairy.Alt7"
+		modelscale="2.1"
+		model="../alt7/ability_01/effects/bird/model.mdf"
+		traileffect="../alt7/ability_03/effects/glow.effect"
+	/>
+	
+</projectile>

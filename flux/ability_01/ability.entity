@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Flux1"
+
+	icon="icon1.tga"
+	statuseffecttooltip=""
+	
+	anim="ability_1"
+	casttime="500"
+	castactiontime="300"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="self_position"
+	targetscheme="enemy_units"
+	targetradius="400"
+	casteffecttype="Magic"
+	
+	manacost="85,100,115,130"
+	cooldowntime="11000"
+>
+	<onimpact >
+		<spawnaffector name="Affector_Flux_Ability1_Pull" target="source_entity"/>
+		<hasavatarkey name="Hero_Flux.Alt4">
+			<playeffect effect="../alt4/ability_01/effects/affector_pull.effect" source="source_position" target="" occlude="true" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Flux.Alt6">
+				<playeffect effect="../alt6/ability_01/effects/affector_pull.effect" source="source_position" target="" occlude="true" />
+			</hasavatarkey>
+			<else>
+				<playeffect effect="effects/affector_pull.effect" source="source_position" target="" occlude="true" />
+			</else>
+		</else>
+	</onimpact>
+	
+
+	
+	<modifier key="Fluxpush" modpriority="90"
+		icon="icon.tga"
+	>
+		<onimpact >
+			<spawnaffector name="Affector_Flux_Ability1_Push" target="source_entity"/>
+			<hasavatarkey name="Hero_Flux.Alt4">
+				<playeffect effect="../alt4/ability_01/effects/affector_push.effect" source="source_position" target="" occlude="true" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Flux.Alt6">
+					<playeffect effect="../alt6/ability_01/effects/affector_push.effect" source="source_position" target="" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/affector_push.effect" source="source_position" target="" occlude="true" />
+				</else>
+			</else>
+		</onimpact>
+	</modifier>
+</ability>

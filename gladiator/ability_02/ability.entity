@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Gladiator2"
+	
+	statuseffecttooltip="State_Gladiator_Ability2"
+	icon="icon2.tga"
+	
+	anim="ability_3"
+	casttime="400"
+	castactiontime="400"
+	casteffect=""
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_entity"
+	targetscheme="enemy_and_willing_heroes"
+	
+	casteffecttype="Magic"
+	
+	manacost="60"
+	cooldowntime="20000,18000,16000,14000"
+	
+	range="400,600,800,1000"
+	
+	doubleactivate="true"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+
+	targetpriorities="enemy_heroes,ally_heroes"
+>
+	<onimpact>
+		<spawnunit name="Gadget_Gladiator_Ability2" count="1" target="target_position" pushentity="true" />
+		<applystate name="State_Gladiator_Ability2" duration="4000" target="target_entity" proxy="stack_entity" />
+		<applystate name="State_Gladiator_Ability2_Return" duration="4000" target="source_entity" proxy="target_entity" />
+		<spawnunit name="Gadget_Gladiator_Ability2_Vision" count="1" target="target_position" />
+		<setproxy entity="this_entity" target="target_entity" />
+		<starttimer duration="4000" />
+		<hidechannelbar />
+		<showchannelbar duration="4000" />
+	</onimpact>
+	
+	<modifier key="gladiator_return" modpriority="100"
+		ignorecooldown="true"
+		statuseffecttooltip=""
+		anim="ability_3"
+		icon="../ability_02/icon_b.tga"
+		casttime="0"
+		castactiontime="0"
+		manacost="0"
+		actiontype="no_target"
+		cooldowntime="0"
+		frontqueue="true"
+		inheritmovement="true"
+		noninterrupting="true"
+		nonaggressive="true"
+	>
+		<onimpact>
+			<expirestate target="this_proxy_entity" name="State_Gladiator_Ability2" />
+			<expirestate target="source_entity" name="State_Gladiator_Ability2_Return" />
+			<resettimer />
+			<hidechannelbar />
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Gladiator.Alt3" modpriority="1"
+		anim="ability_3"
+	/>
+
+	<modifier key="soccer" modpriority="90" 
+		baselevel="0"
+		maxlevel="1"
+		manacost="30"
+		cooldowntime="12000"
+		casteffecttype=""
+	>
+		<onimpact>
+			<spawnunit name="Gadget_Gladiator_Ability2" count="1" target="target_position" pushentity="true" />
+			<applystate name="State_Gladiator_Ability2" duration="2000,3000,4000,5000" target="target_entity" proxy="stack_entity" />
+			<applystate name="State_Gladiator_Ability2_Return" duration="2000,3000,4000,5000" target="source_entity" proxy="target_entity" />
+			<spawnunit name="Gadget_Gladiator_Ability2_Vision" count="1" target="target_position" />
+			<setproxy entity="this_entity" target="target_entity" />
+			<starttimer duration="2000,3000,4000,5000" />
+			<hidechannelbar />
+			<showchannelbar duration="2000,3000,4000,5000" />
+		</onimpact>	
+	</modifier>
+	
+</ability>

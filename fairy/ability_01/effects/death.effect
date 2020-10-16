@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true" persistent="true">
+	<definitions>
+				
+		<particlesystem name="system0" space="world" scale="2.0">
+
+			<!-- Ending effect -->
+			<billboard
+				position="0 0 50"
+				life="150"
+				color="1 1 1"
+				startalpha="1.0"
+				midalpha="1.0"
+				endalpha="1.0"
+				startparam="0.5"
+				endparam="0.0"
+				midalphapos="0.25"
+				startsize="128"
+				endsize="500"
+				material="/shared/effects/materials/refract_pinch.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+			
+			<sound
+				volume=".65"
+				sample="../sounds/cast.wav"
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="2200"
+			/>	
+			
+			<simpleemitter
+				position="0 0 50"
+				delay="00"
+				spawnrate="200"
+				count="20"
+				particlelife="400"
+				minspeed="250"
+				maxspeed="800"
+				gravity="-10"
+				drag="0"
+				offsetsphere="25 25 25"
+			>
+				<particle turn="true">
+					<model
+						life="350"
+						model="/heroes/fairy/ability_03/effects/butterfly.mdf"
+						anim="idle"
+						minscale="1.5"
+						maxscale="2"
+						startcolor="3 3 1"
+						midcolor="3 3 1"
+						endcolor="1 1 1"
+						midcolorpos=".5"
+						minyaw="0"
+						maxyaw="0"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+					>
+						<simpleemitter
+							position="0 0 10"
+							offsetsphere="3"
+							spawnrate="17"
+							minparticlelife="200" maxparticlelife="300"
+							direction="0 0 1"
+							minspeed="80" maxspeed="120" drag="0.005"
+							material="/shared/effects/materials/spark_12.material"
+							particlealpha=".65"
+							depthbias="-90"
+						>
+							<particle
+									minangle="0" maxangle="360"
+									minpitchspeed="-180" maxpitchspeed="180"
+									startalpha="1" midalpha=".75" endalpha="0"
+									startcolor="1" midcolor="1" endcolor="1"
+									minstartsize="3" maxstartsize="4" endsize="0"
+									minscale="1" maxscale="2"
+								>
+									<controller life="300" startscale=".8" midscale=".5" endscale="0">
+										<billboard
+											life="200" loop="true"
+											minstartsize="10" maxstartsize="12" midsize="0" minendsize="10" maxendsize="13"
+											color="1 .8 .3"
+											material="/shared/effects/materials/star_03.material"
+										/>
+									</controller>
+								</particle>
+						</simpleemitter>
+					</model>
+				</particle>
+			</simpleemitter>
+			
+			<orbiteremitter
+				position="0 0 10"
+				offsetsphere="0 0 10"
+				count="50"
+				minparticlelife="300" maxparticlelife="500"
+				direction="0 0 1"
+				origin="0 0 30"
+				offset="3.14 0 0"
+				orbit="0 0 4"
+				angle="0"
+				minspeed="150" maxspeed="670" drag=".05"
+				material="/shared/effects/materials/sparks_reveal.material"
+				cylindrical="true"
+				particlealpha=".65"
+				depthbias="-90"
+			>
+				<particle
+					startcolor="0"
+					midcolor="1"
+					endcolor="1"				
+					maxangle="90"
+					startsize="70"
+					minendsize="55"
+					maxendsize="60"
+					scale="1.5"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					startframe=".05"
+					endframe="1"
+				/>
+			</orbiteremitter>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+      	<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

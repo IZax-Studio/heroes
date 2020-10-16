@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Flux_Ability4"
+
+	icon="icon4.tga"
+	passiveeffect="effects/pull.effect"
+	ishidden="true"
+
+	effecttype="StatusDisable"
+	
+	movespeed="-522"
+>		
+	<onframe>
+		<killtrees radius="100" />
+	</onframe>
+	
+	<altavatar key="Hero_Flux.Alt4" modpriority="90"
+		passiveeffect="../alt4/ability_04/effects/pull.effect"
+	/>
+</state>

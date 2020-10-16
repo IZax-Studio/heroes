@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Flux_Ability3_Push"
+
+	icon="icon.tga"
+	passiveeffect="../effects/body_push.effect"
+	ishidden="true"
+	
+	deathpersist="true"
+
+	effecttype=""
+	
+	modifierkey="Fluxpush"
+>
+	<modifier key="krosmode" modpriority="100"
+		passiveeffect=""
+		deathpersist="false"
+	>
+	</modifier>
+	
+	<modifier key="iamsheeped" modpriority="1000"
+		passiveeffect=""
+	/>
+	
+	<altavatar key="Hero_Flux.Alt" modpriority="1"
+		passiveeffect="/heroes/flux/alt/effects/body_push.effect"
+	/>
+	
+	<altavatar key="Hero_Flux.Alt2" modpriority="1"
+		passiveeffect="/heroes/flux/alt2/effects/body_push.effect"
+	/>
+
+	<altavatar key="Hero_Flux.Alt3" modpriority="1"
+		passiveeffect="/heroes/flux/alt3/effects/body_push.effect"
+	/>
+	
+	<altavatar key="Hero_Flux.Alt4" modpriority="1"
+		passiveeffect=""
+	/>
+	
+	<altavatar key="Hero_Flux.Alt5" modpriority="1"
+		passiveeffect=""
+	/>
+	
+	<altavatar key="Hero_Flux.Alt6" modpriority="1"
+		passiveeffect=""
+	/>
+</state>

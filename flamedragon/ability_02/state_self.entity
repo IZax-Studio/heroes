@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_FlameDragon_Ability2_Self"
+	
+	icon="icon2.tga"
+	passiveeffect="effects/state.effect"
+	
+	effecttype=""
+>
+	
+	<ondamaged priority="5">
+		<scaledamage scale="0.85,0.70,0.55,0.40" />
+	</ondamaged>
+	
+	<onframe />
+	
+	<altavatar key="Hero_FlameDragon.Alt" modpriority="1"
+		passiveeffect="../alt/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_FlameDragon.Alt3" modpriority="1"
+		passiveeffect="../alt3/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_FlameDragon.Alt4" modpriority="1"
+		passiveeffect="../alt4/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_FlameDragon.Alt5" modpriority="1"
+		passiveeffect="../alt5/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_FlameDragon.Alt7" modpriority="1"
+		passiveeffect="../alt7/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_FlameDragon.Alt8" modpriority="1"
+		passiveeffect="../alt8/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_FlameDragon.Alt9" modpriority="1"
+		passiveeffect="../alt9/ability_02/effects/state.effect"
+	/>
+
+	<altavatar key="Hero_FlameDragon.Alt10" modpriority="1"
+		passiveeffect="../alt10/ability_02/effects/state.effect"
+	/>
+</state>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="diablo.model" type="K2" >
+
+	<anim name="idle" clip="diablo.clip" fps="960" loop="true" />
+			
+</model>

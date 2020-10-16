@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="0.8">
+
+		
+	
+			<simpleemitter
+			
+				spawnrate="1111"	
+				count="1"
+				particlelife="300"								
+				position="0 0 0"
+				material="/shared/effects/materials/shieldstarfish.material"				
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+			>
+
+				<particle>
+		
+
+					<billboard
+						life="200"
+						position="0 70 0"
+						material="/shared/effects/materials/shieldstarfish.material"	
+						directionalspace="local"
+						startcolor=".4 1 1"
+						endcolor="0 0 0"						
+						startsize="60"				
+						endsize="220"	
+						lockup="true"
+						lockright="1"
+						pitch="0"
+						yaw="0"
+						flare="0"
+					/>	
+
+					<model
+						life="300"
+						model="dome.mdf"	
+						directionalspace="local"
+						startcolor=".6 .8 1"
+						endcolor="0 0 0"						
+						startscale="1"	
+						endscale="3"	
+						lockup="true"
+						lockright="1"
+						pitch="0"
+						yaw="180"
+						flare="0"
+						position="0 170 0"
+					/>	
+
+					<groundsprite
+						directionalspace="local"
+						size="180"
+						life="300"
+						startcolor="0 0 0"
+						midcolor=".1 .3 .3"
+						endcolor="0 0 0"		
+						position="0 50 0"						
+						material="/shared/effects/materials/ground_arc.material"
+					/>					
+				</particle>
+			</simpleemitter>	
+			
+			
+			<simpleemitter
+			
+				spawnrate="16"				
+				particlelife="300"								
+				position="0 0 0"
+				material="/shared/effects/materials/shieldstarfish.material"				
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+			>
+
+				<particle>
+		
+
+					<billboard
+						life="200"
+						position="0 70 0"
+						material="/shared/effects/materials/shieldstarfish.material"	
+						directionalspace="local"
+						startcolor=".4 1 1"
+						endcolor="0 0 0"						
+						startsize="60"				
+						endsize="220"	
+						lockup="true"
+						lockright="1"
+						pitch="0"
+						yaw="0"
+						flare="0"
+					/>	
+
+					<model
+						life="200"
+						model="dome.mdf"	
+						directionalspace="local"
+						startcolor=".4 .5 1"
+						endcolor="0 0 0"						
+						startscale="1"	
+						endscale="2"	
+						lockup="true"
+						lockright="1"
+						pitch="0"
+						yaw="0"
+						flare="0"
+					/>	
+
+					<groundsprite
+						directionalspace="local"
+						size="80"
+						life="300"
+						startcolor="0 0 0"
+						midcolor=".1 .3 .3"
+						endcolor="0 0 0"		
+						position="0 50 0"						
+						material="/shared/effects/materials/ground_arc.material"
+					/>					
+				</particle>
+			</simpleemitter>
+			
+	
+			<trailemitter
+				life="1400"
+				spawnrate="144"
+				startminparticlelife="400"
+				startmaxparticlelife="400"
+				endminparticlelife="1"
+				endmaxparticlelife="1" 
+				texpostime="400"
+				texposscale="0"
+				texstretchscale="1"
+				position="0 0 0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+			>
+				<particle
+					startcolor="1 .5 1"
+					midcolor="0 .5 1"
+					endcolor="0 0 0"
+					midcolorpos=".1"
+					startsize="0"
+					midsize="100"
+					endsize="75"
+					midsizepos=".1"
+					framespeed="5"
+				/>
+			</trailemitter>
+			
+
+
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+

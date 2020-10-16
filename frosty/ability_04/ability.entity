@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Frosty4"
+
+	icon="icon4.tga"
+	statuseffecttooltip="State_Frosty_Ability4"
+	
+	anim="ability_4"
+	casttime="0"
+	castactiontime="0"
+	channeltime="5000"
+	casteffect=""
+	casteffecttype="SuperiorMagic"
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="self_position"
+	targetscheme="enemy_units"
+	ischanneling="true"
+	targetradius="700"
+	targetmaterial="/shared/materials/area_cast_indicator_simple.material"
+	
+	manacost="200,300,400"
+	cooldowntime="120000,105000,90000"
+>
+	<onchannelstart>
+		<applystate name="State_Frosty_Ability4_Self" target="source_entity" ischannel="true" />
+		<spawnaffector name="Affector_Frosty_Ability4_1" target="source_entity" ischannel="true" />
+		<spawnaffector name="Affector_Frosty_Ability4_2" target="source_entity" ischannel="true" />
+		<spawnaffector name="Affector_Frosty_Ability4_3" target="source_entity" ischannel="true" />
+		<spawnaffector name="Affector_Frosty_Ability4_4" target="source_entity" ischannel="true" />
+	</onchannelstart>
+	
+	<onimpact/>
+
+	<onchannelend>
+		<hasavatarkey name="Hero_Frosty.Alt6">
+			<setchannelvolume channelid="parafrost" volume="0.0" fade="2500" />
+		</hasavatarkey>
+	</onchannelend>
+
+	<onchannelbreak>
+	    <hasavatarkey name="Hero_Frosty.Alt6">
+			<setchannelvolume channelid="parafrost" volume="0.0" fade="500" />
+		</hasavatarkey>
+	</onchannelbreak>
+
+	<modifier key="ult_boost" modpriority="100">
+		<onimpact />
+		
+		<onchannelstart>
+			<!-- Effects of Ability1 -->
+			<hasavatarkey name="Hero_Frosty.Alt4">
+				<playeffect effect="../alt4/ability_01/effects/impact.effect" source="target_position" target="" occlude="true"/>
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Frosty.Alt5">
+					<playeffect effect="../alt5/ability_01/effects/impact.effect" source="target_position" target="" occlude="true"/>
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Frosty.Alt6">
+						<hasmodifier name="Alt6_Ability1_Upgrade" >
+							<playeffect effect="../alt6/ability_01/effects/impact_upgrade.effect" source="target_position" target="" occlude="true"/>
+						</hasmodifier>
+						<else>
+							<playeffect effect="../alt6/ability_01/effects/impact.effect" source="target_position" target="" occlude="true"/>
+						</else>
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Frosty.Alt7">
+							<playeffect effect="../alt7/ability_01/effects/impact.effect" source="target_position" target="" occlude="true"/>
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Frosty.Alt8">
+								<playeffect effect="../alt8/ability_01/effects/impact.effect" source="target_position" target="" occlude="true"/>
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Frosty.Alt9">
+									<playeffect effect="../alt9/ability_01/effects/impact.effect" source="target_position" target="" occlude="true"/>
+								</hasavatarkey>
+								<else>
+									<playeffect effect="../ability_01/effects/impact.effect" source="target_position" target="" occlude="true"/>
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+			
+			<areaofeffect
+				radius="700"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Magic"
+			>
+				<applystate name="State_Frosty_Ability4" duration="frametime" pushentity="true" />
+				<setcharges a="0" entity="stack_entity" />
+			</areaofeffect>
+			
+			 <!-- VO for ability 4 for special avatars -->
+			<hasavatarkey name="Hero_Frosty.Alt2" >
+			    <playeffect effect="../alt2/ability_04/effects/vo_sotm.effect" target="source_entity" occlude="true" />
+			</hasavatarkey>
+	        <else>
+				<hasavatarkey name="Hero_Frosty.Alt3" >
+					<playeffect effect="../alt3/ability_04/effects/vo_sotm.effect" target="source_entity" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Frosty.Female" >
+						<playeffect effect="../alt/ability_04/effects/vo_sotm.effect" target="source_entity" occlude="true" />
+					</hasavatarkey>
+				</else>	
+            </else>			
+			
+			<applystate name="State_Frosty_Ability4_Self" target="source_entity" ischannel="true" />
+			<spawnaffector name="Affector_Frosty_Ability4_1" target="source_entity" ischannel="true" />
+			<spawnaffector name="Affector_Frosty_Ability4_2" target="source_entity" ischannel="true" />
+			<spawnaffector name="Affector_Frosty_Ability4_3" target="source_entity" ischannel="true" />
+			<spawnaffector name="Affector_Frosty_Ability4_4" target="source_entity" ischannel="true" />
+			<applystate name="State_Frosty_Ability4_Sotm" target="source_entity" ischannel="true" />
+		</onchannelstart>
+	</modifier>
+	
+	<altavatar key="Hero_Frosty.Alt4"
+		icon="../alt4/ability_04/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Frosty.Alt6"
+		casteffect="../alt6/ability_04/effects/cast_sound.effect"
+		icon="../alt6/ability_04/icon.tga"
+	>
+		<modifier key="Alt6_Ability4_Upgrade"
+			icon="../alt6/ability_04/icon_upgrade.tga"
+		/>
+	</altavatar>
+</ability>

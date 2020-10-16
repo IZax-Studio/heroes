@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_FlameDragon_Ability2_Marker_SotM"
+
+	icon="icon2.tga"
+	passiveeffect=""
+	ishidden="true"
+	serverentity="true"
+	
+	effecttype=""
+	modifierkey="Draconis_W_SotM_Visual"
+>
+
+</state>
+
+<!-- This state contains a modifierkey that makes Volcanos have a model when Draconis has SotM -->

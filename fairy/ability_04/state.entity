@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Fairy_Ability4"
+
+	icon="icon4.tga"
+	passiveeffect="state.effect"
+>
+
+	<altavatar key="Hero_Fairy.Alt3"
+		passiveeffect="../alt3/ability_04/state.effect"
+	/>
+	
+	<altavatar key="Hero_Fairy.Alt4"
+		passiveeffect="../alt4/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Fairy.Alt6"
+		passiveeffect="../alt6/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Fairy.trophy_skin02"
+		passiveeffect="../trophy_skin/ability_04/state01.effect"
+	/>
+	
+	<altavatar key="Hero_Fairy.trophy_skin03"
+		passiveeffect="../trophy_skin/ability_04/state.effect"
+	/>
+	
+	<altavatar key="Hero_Fairy.Alt7"
+		passiveeffect="../alt7/ability_04/effects/state.effect"
+	/>
+	
+</state>

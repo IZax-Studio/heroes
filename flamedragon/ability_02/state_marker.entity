@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_FlameDragon_Ability2_Marker"
+
+	icon="icon2.tga"
+	passiveeffect=""
+	ishidden="true"
+	serverentity="true"
+	
+	effecttype=""
+>
+	<ondeath>
+		<targettype type="enemy" source="this_inflictor_entity" target="this_owner_entity">
+			<!-- Spawns the marker gadget for towers that are strictly less than level 3 for enemy units -->
+			<evaluate a="source_level" source="this_owner_entity" />
+			<compare a="result" b="3" op="lt">
+				<spawnunit name="Gadget_FlameDragon_Ability2_Marker" count="1" source="this_inflictor_entity" target="this_owner_entity" pushentity="true" />
+				
+				<!-- Hide the enemy towers until you get a SoTM -->
+				<hasmodifier entity="this_inflictor_entity" name="ult_boost" />
+				<else>
+					<setactivemodifierkey entity="stack_entity" name="draconis_ability2_MarkerDisabled" />
+				</else>
+			</compare>
+		</targettype>
+		<else>
+			<spawnunit name="Gadget_FlameDragon_Ability2_Marker_Ally" count="1" source="this_inflictor_entity" target="this_owner_entity" />
+		</else>
+	</ondeath>	
+</state>

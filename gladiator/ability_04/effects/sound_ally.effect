@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".2" useentityscale="true">
+			
+			<sound
+				delay="0"
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="3600"
+				volume="1.0" 
+				life="2000"
+				sample="/heroes/gladiator/ability_04/sounds/cast.wav"
+			/>
+			
+			<sound
+				delay="0"
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="3600"
+				volume="1.0" 
+				life="4000"
+				sample="/heroes/gladiator/ability_04/sounds/cast2.wav"
+			/>
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<spawnmodifier instance="instance1" modifier="modifier0"/> 
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Fairy2"
+	
+	icon="icon.tga"
+	
+	anim="ability_3"
+	casttime="800"
+	castactiontime="400"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_position"
+	casteffecttype="Magic"
+	targetscheme="enemy_units"
+	
+	manacost="120,135,150,165"
+	cooldowntime="15000"
+	
+	range="900"
+	forcerange="900"
+	allowoutofboundscast="true"
+	targetradius="120"
+	
+	showlinecast="true"
+	linecastrange="1020"
+	linecastwidth="120"
+	
+	showrangeandradiusintooltip="true"
+>
+	<onimpact>
+		<setpos0 position="target_position" />
+		<distance target="pos0" />
+		<compare a="result" b="1500" op="lt">
+			<spawnprojectile name="Projectile_Fairy_Ability2" target="target_position" offset="0 96 0" />
+		</compare>
+	</onimpact>
+</ability>

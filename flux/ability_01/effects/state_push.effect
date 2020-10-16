@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+
+		<particlesystem name="system0" space="entity" scale="0.68">
+			
+		<template name="rings">
+			<billboard
+				expirelife="500"
+				bone="_bone_centerofchest"			
+				color=".5 .2 .4"				
+				size="200"
+				position="{position}"
+					
+				material="/shared/effects/materials/flux_ring.material"
+				lockup="true"
+				roll="{roll}"
+				pitch="120"
+				lockright="1"
+				rollspeed="550"				
+			/>	
+			<billboard
+				expirelife="500"
+				bone="_bone_centerofchest"			
+				color=".5 .2 .4"				
+				size="143"
+				startparam=".15"				
+					position="{position}"		
+				material="/shared/effects/materials/flux_ring.material"
+				lockup="true"
+					lockright="1"
+				roll="270"
+				pitch="30"
+				
+				rollspeed="250"				
+			/>	
+			<billboard
+				expirelife="500"
+				bone="_bone_centerofchest"			
+				color=".5 .2 .4"				
+				size="83"
+				startparam=".15"				
+					position="{position}"			
+				material="/shared/effects/materials/flux_ring.material"
+				lockup="true"
+				roll="{roll}"
+				pitch="90"
+					lockright="1"
+				rollspeed="250"				
+			/>
+		</template>
+		
+		<instance name="rings" 	position="-20 20 0"/>
+		<instance name="rings" 	position="-20 -20 0"/>
+		<instance name="rings" 	position="20 -20 0"/>
+			
+		</particlesystem>
+		
+		<particlesystem name="system1" space="world" scale=".5">
+	
+
+		</particlesystem>		
+		
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->

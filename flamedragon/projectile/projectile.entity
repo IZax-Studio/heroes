@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_FlameDragon_Attack"
+
+	speed="1000"
+	gravity="0"
+
+	modelscale="1"
+	model="/shared/models/invis.mdf"
+	impacteffect="effects/impact.effect"
+	traileffect="effects/trail.effect"
+>
+	<modifier key="FlameDragon_W_Building" modpriority="100"
+		gravity="600"
+		speed="900"
+		modelscale="1.5"
+	>
+	
+	</modifier>
+	
+	<modifier key="FlameDragon_R_Building" modpriority="100"
+		gravity="600"
+		speed="900"
+		modelscale="1.5"
+	>
+	
+	</modifier>
+	
+	<altavatar key="Hero_FlameDragon.Alt8" modpriority="1"
+		impacteffect="../alt8/effects/impact.effect"
+		traileffect="../alt8/effects/trail.effect"
+	>
+	
+	<onframe>
+		<hasmodifier entity="this_owner_entity" name="Projectile_ElderParasite">
+			<activatemodifierkey name="Projectile_ElderParasite"/>
+		</hasmodifier>
+	</onframe>
+	
+		<modifier key="Projectile_ElderParasite" modpriority="101"
+			impacteffect="../alt8/effects/impact_elder.effect"
+			traileffect="../alt8/effects/trail_elder.effect"
+		/>
+	
+	</altavatar>
+	
+	<altavatar key="Hero_FlameDragon.Alt9" modpriority="1"
+		impacteffect="../alt9/projectile/effects/impact.effect"
+		traileffect="../alt9/projectile/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_FlameDragon.Alt10" modpriority="1"
+		impacteffect=""
+		traileffect="../alt10/projectile/effects/trail.effect"
+	/>
+	
+</projectile>

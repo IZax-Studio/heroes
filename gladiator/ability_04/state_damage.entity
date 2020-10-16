@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Gladiator_Ability4_Damage"
+	
+	icon="icon4.tga"
+	passiveeffect=""
+
+	effecttype=""
+>
+	<onframe>
+		<changehealth a="accumulator" />
+	</onframe>
+	
+	<altavatar key="Hero_Gladiator.Alt2" modpriority="1"
+		icon="../alt2/ability_04/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt3" modpriority="1"
+		icon="../alt3/ability_04/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt4" modpriority="1"
+		icon="../alt4/ability_04/icon.tga"
+	/>
+</state>

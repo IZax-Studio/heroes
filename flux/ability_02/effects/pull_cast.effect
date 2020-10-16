@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1.0">
+
+			<sound
+				delay="500"
+				linearfalloff="true"
+				falloffstart="400"
+				falloffend="2000"
+				volume="1"
+				sample="../sounds/fire_pull.wav"
+			/>
+
+			<simpleemitter
+				bone="_bone_leftArmSpinner"
+				spawnrate="515"
+				particlelife="110"
+				life="1000"
+				gravity="-2"
+				speed="1000"
+				position="0 0 0"
+				depthbias="0"
+				material="/shared/effects/materials/whitedot.material"
+				offsetsphere="0 0 0"
+				minangle="5"
+				maxangle="5"
+				direction="1 0 0"
+				
+			>
+				<particle 
+					startstickiness="0"
+					endstickiness="0"
+					startcolor=".2 .5 1"
+					midcolor=".2 .5 .5"
+					endcolor="0 0 0"
+					startsize="5"
+					endsize="0"	
+					turn="1"
+					heightdistort="0.02"				
+				
+				/>
+			</simpleemitter>
+
+
+			<simpleemitter
+				bone="_bone_leftArmSpinner03"
+				spawnrate="322"
+				life="500"
+				particlelife="310"
+				gravity="0"
+				speed="220"
+				position="0 0 0"
+				
+				material="/shared/effects/materials/whitedot.material"
+				offsetsphere="0 0 0"
+				drag="0.1"
+				direction="1 0 0"
+				
+			>
+				<particle 
+					startstickiness="0"
+					endstickiness="0"
+					startcolor="1 1 1"
+					midcolor=".2 .8 1"
+					endcolor="0 0 0"
+					startsize="2hh"
+					endsize="0"	
+					turn="1"
+					heightdistort="0.02"					
+				
+				/>
+			</simpleemitter>
+			
+			<billboard
+				
+				life="500"
+				
+				bone="_bone_leftArmSpinner03"	
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="0 .6 1"
+				
+				endcolor="0 0 0"
+				startsize="50"
+				endsize="500"
+				depthbias="-35"
+				position="0 0 0"
+			/>
+
+			
+			
+		<simpleemitter
+			delay="300"
+			bone="_bone_leftArmSpinner03"
+			life="300"
+			spawnrate="15"
+			particlelife="400"
+			gravity="-6"
+			speed="0.0"
+			acceleration="0.0"
+			timenudge="0"
+			position="0 0 0"
+			material="/shared/effects/materials/flare_01.material"
+		>
+			<particle
+				startcolor="1 1 1"
+				endcolor="0.0 0.0 0.0"
+
+
+				startalpha=".02"
+				endalpha="0"
+
+				minangle="0"
+				maxangle="360"
+				minanglespeed="0"
+				maxanglespeed="0"
+
+				startsize="150"
+				midsize="120"
+				endsize="50"
+
+				lockup="true"
+				pitch="90"
+
+			/>
+		</simpleemitter>
+
+		
+		
+		<simpleemitter
+			delay="400"
+			bone="_bone_leftArmSpinner03"
+			count="1"
+			particlelife="200"
+			gravity="-6"
+			speed="0.0"
+			acceleration="0.0"
+			timenudge="0"
+			position="0 0 0"
+			
+			material="/shared/effects/materials/blink.material"
+		>
+			<particle
+				anglespeed="20"
+				startcolor="0 0 0"
+				midcolor="1 1 1"
+				endcolor="0.0 0.0 0.0"
+				midcolorpos=".1"
+
+
+				startsize="280"
+				midsize="220"
+				endsize="0"
+
+
+			/>
+		</simpleemitter>		
+
+
+		<billboard
+			delay="500"
+			bone="_bone_leftArmSpinner03"
+			position="0 0 0"
+			life="200"
+			color="1 1 1"
+			startalpha="1.0"				
+			endalpha="1"
+			startparam="0.05"
+			endparam="0.0"				
+			startsize="128"
+			endsize="324"
+			material="/shared/effects/materials/refract_ring.material"
+			lockup="1"
+			pitch="90"
+		/>
+			
+
+			
+
+
+
+
+			
+			
+		</particlesystem>
+		
+		
+		
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+

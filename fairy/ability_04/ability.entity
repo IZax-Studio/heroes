@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Fairy4"
+
+	statuseffecttooltip=""
+	
+	icon="icon4.tga"
+	
+	anim="ability_4"
+	casttime="0"
+	castactiontime="0"
+	channeltime="5000"
+	ischanneling="true"
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	
+	actiontype="target_position"
+	targetradius="250"
+	casteffecttype="SuperiorMagic Push"
+	targetscheme="nonillusion_other_willing_ally_heroes"
+	casteffect="channel.effect"
+	
+	manacost="120,180,240"
+	cooldowntime="100000,85000,70000"
+	
+	notargetradius="3700"
+	notargetmaterial="/shared/materials/area_cast_indicator_simple_red.material"
+	notargetscheme="Nymphora_NoPortGadget"
+	notargetignoreinvulnerable="true"
+	
+	range="999999"
+	hoverareacastrange="250"
+	
+	showrangeandradiusintooltip="true"
+>
+	<onimpact />
+	
+	<onchannelstart>
+		<spawnunit name="Gadget_Fairy_Ability4" target="target_position" pushentity="true" ischannel="true" />
+		<spawnaffector name="Affector_Fairy_Ability4" target="source_entity" proxy="stack_entity" ischannel="true" />
+		
+		<!-- Art/Sound -->
+		<hasavatarkey name="Hero_Fairy.Alt6">
+			<playeffect effect="/heroes/fairy/alt6/ability_04/effects/sound_start.effect" source="source_entity" target="" occlude="true" />
+		</hasavatarkey>
+	</onchannelstart>
+	
+	<onchannelend>
+		<unbind target="source_entity" />
+		<teleport source="source_entity" target="target_position" interpolate="false" />
+		<disjoint target="source_entity" />
+	</onchannelend>
+	
+	<modifier key="ult_boost" modpriority="100"
+		displayname="true"
+		channeltime="3500"
+		casteffect="channel_sotm.effect"
+		targetradius="600"
+		targetmaterial="/shared/materials/area_cast_indicator_pointed.material"
+		hoverareacastrange="600"
+	>
+		<onimpact />
+		
+		<onchannelend>
+			<!-- Copy of above -->
+			<unbind target="source_entity" />
+			<teleport source="source_entity" target="target_position" interpolate="false" />
+			<disjoint target="source_entity" />
+			
+			<!-- SotM specific -->
+			<!-- Volatile Pod (Q) -->
+			<spawnunit name="Gadget_Fairy_Ability1" target="target_position" />
+			
+			<!-- Nymphora's Zeal (W) -->
+			<setpos0 position="target_position" offset="0 950 0" offsetspace="source_entity" />
+			<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+			<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+			<setpos0 position="target_position" offset="0 -950 0" offsetspace="source_entity" />
+			<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+			<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+			<setpos0 position="target_position" offset="950 0 0" offsetspace="source_entity" />
+			<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+			<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+			<setpos0 position="target_position" offset="-950 0 0" offsetspace="source_entity" />
+			<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+			<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+			
+			<!-- Grace of the Nymph (E) -->
+			<spawnaffector name="Affector_Fairy_Ability3_SotM" target="target_position" />
+		</onchannelend>
+	</modifier>
+	
+	<altavatar key="Hero_Fairy.Alt3"
+		casteffect="../alt3/ability_04/channel.effect"
+	>
+		<modifier key="ult_boost" modpriority="100"
+			displayname="true"
+			channeltime="3500"
+			casteffect="../alt3/ability_04/channel_sotm.effect"
+			targetradius="600"
+			targetmaterial="/shared/materials/area_cast_indicator_pointed.material"
+			hoverareacastrange="600"
+		>
+			<onimpact />
+			
+			<onchannelend>
+				<!-- Copy of above -->
+				<unbind target="source_entity" />
+				<teleport source="source_entity" target="target_position" interpolate="false" />
+				<disjoint target="source_entity" />
+				
+				<!-- SotM specific -->
+				<!-- Volatile Pod (Q) -->
+				<spawnunit name="Gadget_Fairy_Ability1" target="target_position" />
+				
+				<!-- Nymphora's Zeal (W) -->
+				<setpos0 position="target_position" offset="0 950 0" offsetspace="source_entity" />
+				<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+				<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+				<setpos0 position="target_position" offset="0 -950 0" offsetspace="source_entity" />
+				<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+				<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+				<setpos0 position="target_position" offset="950 0 0" offsetspace="source_entity" />
+				<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+				<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+				<setpos0 position="target_position" offset="-950 0 0" offsetspace="source_entity" />
+				<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+				<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+				
+				<!-- Grace of the Nymph (E) -->
+				<spawnaffector name="Affector_Fairy_Ability3_SotM" target="target_position" />
+			</onchannelend>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Fairy.Alt4"
+		casteffect="../alt4/ability_04/effects/channel.effect"
+	>
+		<modifier key="ult_boost" modpriority="100"
+			displayname="true"
+			channeltime="3500"
+			casteffect="../alt4/ability_04/effects/channel_sotm.effect"
+			targetradius="600"
+			targetmaterial="/shared/materials/area_cast_indicator_pointed.material"
+			hoverareacastrange="600"
+		>
+			<onimpact />
+			
+			<onchannelend>
+				<!-- Copy of above -->
+				<unbind target="source_entity" />
+				<teleport source="source_entity" target="target_position" interpolate="false" />
+				<disjoint target="source_entity" />
+				
+				<!-- SotM specific -->
+				<!-- Volatile Pod (Q) -->
+				<spawnunit name="Gadget_Fairy_Ability1" target="target_position" />
+				
+				<!-- Nymphora's Zeal (W) -->
+				<setpos0 position="target_position" offset="0 950 0" offsetspace="source_entity" />
+				<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+				<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+				<setpos0 position="target_position" offset="0 -950 0" offsetspace="source_entity" />
+				<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+				<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+				<setpos0 position="target_position" offset="950 0 0" offsetspace="source_entity" />
+				<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+				<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+				<setpos0 position="target_position" offset="-950 0 0" offsetspace="source_entity" />
+				<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+				<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+				
+				<!-- Grace of the Nymph (E) -->
+				<spawnaffector name="Affector_Fairy_Ability3_SotM" target="target_position" />
+			</onchannelend>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Fairy.Alt6"
+		casteffect="../alt6/ability_04/effects/channel.effect"
+	>
+		<onimpact>
+			<applystate name="State_Fairy_Ability4_self" target="source_entity" continuous="false" ischannel="true" />
+		</onimpact>
+		
+		<onchannelend>
+			<unbind target="source_entity" />
+			<teleport source="source_entity" target="target_position" interpolate="false" />
+			<disjoint target="source_entity" />
+			<playeffect effect="/heroes/fairy/alt6/ability_04/effects/sound_end.effect" source="source_entity" target="target_position" occlude="true" />
+		</onchannelend>
+
+		<modifier key="ult_boost" modpriority="100"
+			displayname="true"
+			channeltime="3500"
+			casteffect="../alt6/ability_04/effects/channel_sotm.effect"
+			targetradius="600"
+			targetmaterial="/shared/materials/area_cast_indicator_pointed.material"
+			hoverareacastrange="600"
+		>
+		
+			<onchannelstart>
+				<spawnunit name="Gadget_Fairy_Ability4" target="target_position" pushentity="true" ischannel="true" />
+				<spawnaffector name="Affector_Fairy_Ability4" target="source_entity" proxy="stack_entity" ischannel="true" />
+				<playeffect effect="/heroes/fairy/alt6/ability_04/effects/sound_startult.effect" source="source_entity" target="" occlude="true" />
+			</onchannelstart>
+			
+			<onimpact>
+				<applystate name="State_Fairy_Ability4_self" target="source_entity" continuous="false" ischannel="true" />
+			</onimpact>
+			
+			<onchannelend>
+				<!-- Copy of above -->
+				<unbind target="source_entity" />
+				<teleport source="source_entity" target="target_position" interpolate="false" />
+				<disjoint target="source_entity" />
+				
+				<!-- SotM specific -->
+				<!-- Volatile Pod (Q) -->
+				<spawnunit name="Gadget_Fairy_Ability1" target="target_position" />
+				
+				<!-- Nymphora's Zeal (W) -->
+				<setpos0 position="target_position" offset="0 950 0" offsetspace="source_entity" />
+				<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+				<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+				<setpos0 position="target_position" offset="0 -950 0" offsetspace="source_entity" />
+				<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+				<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+				<setpos0 position="target_position" offset="950 0 0" offsetspace="source_entity" />
+				<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+				<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+				<setpos0 position="target_position" offset="-950 0 0" offsetspace="source_entity" />
+				<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+				<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+				
+				<!-- Grace of the Nymph (E) -->
+				<spawnaffector name="Affector_Fairy_Ability3_SotM" target="target_position" />
+				
+				<!-- Art/Sound -->
+				<playeffect effect="/heroes/fairy/alt6/ability_04/effects/sound_end.effect" source="source_entity" target="target_position" occlude="true" />
+			</onchannelend>
+		</modifier>
+	</altavatar>
+
+	<modifier key="Combo_efx_fairy" modpriority="101"
+		casteffect="../alt6/ability_04/effects/channel_combo.effect"
+	/>
+	
+	<modifier key="Combo_ult_fairy" modpriority="103"
+		displayname="true"
+		channeltime="3500"
+		casteffect="../alt6/ability_04/effects/channel_sotm_combo.effect"
+		targetradius="600"
+		targetmaterial="/shared/materials/area_cast_indicator_pointed.material"
+		hoverareacastrange="600"
+	>
+		<onimpact />
+		
+		<onchannelstart>
+			<playeffect effect="/heroes/fairy/alt6/ability_04/effects/sound_startult.effect" source="source_entity" target="" occlude="true" />
+			<spawnunit name="Gadget_Fairy_Ability4" target="target_position" pushentity="true" ischannel="true" />
+			<spawnaffector name="Affector_Fairy_Ability4" target="source_entity" proxy="stack_entity" ischannel="true" />
+		</onchannelstart>
+
+		<onchannelend>
+			<!-- Copy of above -->
+			<unbind target="source_entity" />
+			<teleport source="source_entity" target="target_position" interpolate="false" />
+			<disjoint target="source_entity" />
+			
+			<!-- SotM specific -->
+			<!-- Volatile Pod (Q) -->
+			<spawnunit name="Gadget_Fairy_Ability1" target="target_position" />
+			
+			<!-- Nymphora's Zeal (W) -->
+			<setpos0 position="target_position" offset="0 950 0" offsetspace="source_entity" />
+			<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+			<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+			<setpos0 position="target_position" offset="0 -950 0" offsetspace="source_entity" />
+			<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+			<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+			<setpos0 position="target_position" offset="950 0 0" offsetspace="source_entity" />
+			<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+			<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+			<setpos0 position="target_position" offset="-950 0 0" offsetspace="source_entity" />
+			<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+			<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+			
+			<!-- Grace of the Nymph (E) -->
+			<spawnaffector name="Affector_Fairy_Ability3_SotM" target="target_position" />
+		
+			<!-- Art/Sound -->
+			<playeffect effect="/heroes/fairy/alt6/ability_04/effects/sound_end.effect" source="target_position" target="" occlude="true" />
+		</onchannelend>
+	</modifier>
+	
+	<altavatar key="Hero_Fairy.trophy_skin02"
+		casteffect="../trophy_skin/ability_04/channel01.effect"
+	>
+		<modifier key="ult_boost" modpriority="100"
+			displayname="true"
+			channeltime="3500"
+			casteffect="../trophy_skin/ability_04/channel_sotm01.effect"
+			targetradius="600"
+			targetmaterial="/shared/materials/area_cast_indicator_pointed.material"
+			hoverareacastrange="600"
+		>
+			<onimpact />
+			
+			<onchannelend>
+				<!-- Copy of above -->
+				<unbind target="source_entity" />
+				<teleport source="source_entity" target="target_position" interpolate="false" />
+				<disjoint target="source_entity" />
+				
+				<!-- SotM specific -->
+				<!-- Volatile Pod (Q) -->
+				<spawnunit name="Gadget_Fairy_Ability1" target="target_position" />
+				
+				<!-- Nymphora's Zeal (W) -->
+				<setpos0 position="target_position" offset="0 950 0" offsetspace="source_entity" />
+				<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+				<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+				<setpos0 position="target_position" offset="0 -950 0" offsetspace="source_entity" />
+				<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+				<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+				<setpos0 position="target_position" offset="950 0 0" offsetspace="source_entity" />
+				<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+				<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+				<setpos0 position="target_position" offset="-950 0 0" offsetspace="source_entity" />
+				<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+				<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+				
+				<!-- Grace of the Nymph (E) -->
+				<spawnaffector name="Affector_Fairy_Ability3_SotM" target="target_position" />
+			</onchannelend>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Fairy.trophy_skin03"
+		casteffect="../trophy_skin/ability_04/channel.effect"
+	>
+		<modifier key="ult_boost" modpriority="100"
+			displayname="true"
+			channeltime="3500"
+			casteffect="../trophy_skin/ability_04/channel_sotm.effect"
+			targetradius="600"
+			targetmaterial="/shared/materials/area_cast_indicator_pointed.material"
+			hoverareacastrange="600"
+		>
+			<onimpact />
+			
+			<onchannelend>
+				<!-- Copy of above -->
+				<unbind target="source_entity" />
+				<teleport source="source_entity" target="target_position" interpolate="false" />
+				<disjoint target="source_entity" />
+				
+				<!-- SotM specific -->
+				<!-- Volatile Pod (Q) -->
+				<spawnunit name="Gadget_Fairy_Ability1" target="target_position" />
+				
+				<!-- Nymphora's Zeal (W) -->
+				<setpos0 position="target_position" offset="0 950 0" offsetspace="source_entity" />
+				<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+				<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+				<setpos0 position="target_position" offset="0 -950 0" offsetspace="source_entity" />
+				<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+				<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+				<setpos0 position="target_position" offset="950 0 0" offsetspace="source_entity" />
+				<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+				<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+				<setpos0 position="target_position" offset="-950 0 0" offsetspace="source_entity" />
+				<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+				<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+				
+				<!-- Grace of the Nymph (E) -->
+				<spawnaffector name="Affector_Fairy_Ability3_SotM" target="target_position" />
+			</onchannelend>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Fairy.Alt7"
+		casteffect="../alt7/ability_04/effects/channel.effect"
+	>
+		<modifier key="ult_boost" modpriority="100"
+			displayname="true"
+			channeltime="3500"
+			casteffect="../alt7/ability_04/effects/channel_sotm.effect"
+			targetradius="600"
+			targetmaterial="/shared/materials/area_cast_indicator_pointed.material"
+			hoverareacastrange="600"
+		>
+			<onimpact />
+			
+			<onchannelend>
+				<!-- Copy of above -->
+				<unbind target="source_entity" />
+				<teleport source="source_entity" target="target_position" interpolate="false" />
+				<disjoint target="source_entity" />
+				
+				<!-- SotM specific -->
+				<!-- Volatile Pod (Q) -->
+				<spawnunit name="Gadget_Fairy_Ability1" target="target_position" />
+				
+				<!-- Nymphora's Zeal (W) -->
+				<setpos0 position="target_position" offset="0 950 0" offsetspace="source_entity" />
+				<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+				<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+				<setpos0 position="target_position" offset="0 -950 0" offsetspace="source_entity" />
+				<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+				<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+				<setpos0 position="target_position" offset="950 0 0" offsetspace="source_entity" />
+				<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+				<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+				<setpos0 position="target_position" offset="-950 0 0" offsetspace="source_entity" />
+				<spawnprojectile name="Projectile_Fairy_Ability2" source="source_entity" target="pos0" pushentity="true" level="4" />
+				<setactivemodifierkey name="Fairy_R_SotM" entity="stack_entity" />
+				
+				<!-- Grace of the Nymph (E) -->
+				<spawnaffector name="Affector_Fairy_Ability3_SotM" target="target_position" />
+			</onchannelend>
+		</modifier>
+	</altavatar>
+
+</ability>

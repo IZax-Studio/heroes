@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="4">
+			<billboard
+				loop="true"
+				bone="_bone_overhead"
+				position="0 0 30"
+				delay="0"
+				param="0.1"	
+				startsize="30"
+				midsize="40"
+				endsize="30"
+				startalpha="1"
+				midalpha="1"
+				endalpha="1"
+				color=".8"
+				material="/shared/effects/materials/bonebreak.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				roll="180"
+			/>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<waitfordeath instance="instance0"/>
+		<waitfordeath instance="instance1"/>
+	</thread>
+
+</effect>

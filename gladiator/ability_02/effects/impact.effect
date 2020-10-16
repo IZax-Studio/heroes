@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  persistent="1">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+
+		<sound
+			delay="0"
+			linearfalloff="true" 
+			falloffstart="500"
+			falloffend="2500"
+			volume="1.0" 
+			sample="/heroes/gladiator/ability_02/sounds/cast.wav"
+		/>
+
+		<sound
+			delay="0"
+			linearfalloff="true" 
+			falloffstart="2000"
+			falloffend="3600"
+			volume="1.0" 
+			sample="/heroes/gladiator/ability_02/sounds/impact.wav"
+		/>
+		
+			<simpleemitter
+				life="400"
+	         	
+			
+				position="0 0 55"				
+				spawnrate="5000"
+				depthbias="-100"
+				maxparticlelife="500"
+				offsetsphere="0"
+				count="30"
+				direction="0 0 1"	
+          			material="/shared/effects/materials/smash_add.material"
+         	>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startcolor="0"
+					midcolor="0 0.4 1"
+					endcolor="0"
+					midcolorpos="0.25"
+					startsize="90"
+					endsize="135"
+					startanchor="1.0"
+					midanchor="0.9"
+					endanchor="0.8"
+					flare="1"
+					startheight="50"
+					endheight="100"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="300"
+			
+				spawnrate="1000"
+				count="3"
+				particlelife="200"
+				offsetsphere="15"
+				material="/shared/effects/materials/refract_pinch.material"
+			>
+				<particle
+					startalpha=".5"
+					endalpha="0.0"
+					maxangle="360"
+					startsize="50"
+					endsize="270"
+					param=".1"
+					depthbias="-130"
+				/>
+			</simpleemitter>
+
+			<billboard
+				bone="_bone_centerofchest"
+				life="400"
+				startalpha="0"
+				midalpha=".5"
+				endalpha="0.0"
+				startparam=".5"
+				endparam="0.0"
+				startsize="128"
+				endsize="500"
+				depthbias="-100"
+				material="/shared/effects/materials/refract_ripple.material"
+			/>		
+		
+		
+		<light
+			life="250"			
+			startcolor="10"			
+			endcolor="0 0 0"
+			midcolorpos=".2"
+			falloffstart="00"
+			falloffend="255"
+			position="0 0 20"	
+		/>
+	
+		
+		<simpleemitter
+			life="300"
+			spawnrate="1225"
+			count="5"
+			particlelife="400"
+			gravity="-6"
+			speed="0.0"
+			acceleration="0.0"
+			timenudge="0"
+			position="0 0 0"
+			material="/shared/effects/materials/flare_01.material"
+		>
+			<particle
+				startcolor="1 .2 1"
+				endcolor="0.0 0.0 0.0"
+
+
+				startalpha=".02"
+				endalpha="0"
+
+				minangle="0"
+				maxangle="360"
+				minanglespeed="0"
+				maxanglespeed="0"
+
+				startsize="150"
+				midsize="220"
+				endsize="50"
+
+				lockup="true"
+				pitch="90"
+
+			/>
+		</simpleemitter>
+
+		
+		
+		<simpleemitter
+			
+			count="2"
+			particlelife="200"
+			gravity="-6"
+			speed="0.0"
+			acceleration="0.0"
+			timenudge="0"
+			position="0 0 40"
+			
+			material="/shared/effects/materials/blink.material"
+		>
+			<particle
+				anglespeed="20"
+				startcolor="0 0 0"
+				midcolor=".6 .1 .4"
+				endcolor="0.0 0.0 0.0"
+				midcolorpos=".1"
+								minangle="0"
+				maxangle="360"
+
+				startsize="280"
+				midsize="220"
+				endsize="0"
+
+
+			/>
+		</simpleemitter>		
+
+
+			<billboard
+				position="0 0 20"
+				life="300"
+				startparam="0.05"
+				endparam="0.0"				
+				startsize="128"
+				endsize="524"
+				material="/shared/effects/materials/refract_pinch.material"
+
+			/>
+			
+			
+			<billboard
+			
+				life="500"
+				color="1.0 1.0 1.0"
+				midalphapos="0.25"
+				param="0.1555"	
+				startsize="0"
+				endsize="200"
+				startalpha="0"
+				midalpha=".9"
+				endalpha="0"				
+				depthbias="-49"
+			
+				position="0 0 45"
+				material="/shared/effects/materials/refract_ring.material"
+				lockup="0"
+				pitch="0"
+				
+			/>	
+	
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+	  
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
+

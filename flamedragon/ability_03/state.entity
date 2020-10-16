@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_FlameDragon_Ability3"
+
+	icon="icon3.tga"
+	passiveeffect="effects/state.effect"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	deniable="true"
+	
+	impactinterval="2000"
+	maxcharges="8"
+	
+	dynamicprecache="effects/aoe.effect"
+>
+	<oninflict>
+		<addcharges count="1" />
+		<setscriptvalue name="aoe_effect" value="effects/aoe.effect" entity="this_entity" />
+	</oninflict>
+	
+	<onframe>		
+		<!-- Damage per 4 seconds -->
+		<evaluate a="source_attackdamage" b="0.25" op="mult" />
+		<evaluate a="result" b="6,12,18,24" op="add" />
+		<evaluate a="result" b="frametime" op="mult" />		
+		<setvar0 a="result" b="4" op="div" />
+		
+		<!-- Damage modifier for unit types -->
+		<targettype type="hero">
+			<damage effecttype="Physical DOT" amount="0.5,0.8,1.1,1.4" b="var0" op="mult" />
+		</targettype>
+		<else>
+			<setvar0 a="var0" b="charges" op="mult" />
+			<damage effecttype="Physical DOT" amount="1" b="var0" op="mult" />
+		</else>
+	</onframe>
+	
+	<onimpact>
+		<compare a="accumulator" b="0" op="gt">
+			<!-- Timer mechanic for spreading the DoT state -->
+			<areaofeffect
+				radius="200"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Physical"
+				ignore="target_entity"
+			>
+				<applystate name="State_FlameDragon_Ability3" duration="4000" pushentity="true" />
+				<addcharges count="1" entity="stack_entity" />
+			</areaofeffect>
+			
+			<changeaccumulator b="1" op="sub" />
+			
+			<!-- Dynamic visual effects -->
+			<getscriptvalue name="aoe_effect" destvar="str0" entity="this_entity" />
+			<playeffectdynamic effect="str0" target="target_position" source="target_entity" occlude="true" />
+		</compare>
+		<else>
+			<setaccumulator value="0" />
+		</else>
+	</onimpact>
+	
+	<altavatar key="Hero_FlameDragon.Alt7" modpriority="1"
+		passiveeffect="../alt7/ability_03/effects/state.effect"
+		dynamicprecache="../alt7/ability_03/effects/aoe.effect"
+	>
+		<oninflict>
+			<addcharges count="1" />
+			<setscriptvalue name="aoe_effect" value="../alt7/ability_03/effects/aoe.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_FlameDragon.Alt8" modpriority="1"
+		passiveeffect="../alt8/ability_03/effects/state.effect"
+		dynamicprecache="../alt8/ability_03/effects/aoe.effect"
+	>
+		<oninflict>
+			<addcharges count="1" />
+			<setscriptvalue name="aoe_effect" value="../alt8/ability_03/effects/aoe.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_FlameDragon.Alt9" modpriority="1"
+		passiveeffect="../alt9/ability_03/effects/state.effect"
+		dynamicprecache="../alt9/ability_03/effects/aoe.effect"
+	>
+		<oninflict>
+			<addcharges count="1" />
+			<setscriptvalue name="aoe_effect" value="../alt9/ability_03/effects/aoe.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_FlameDragon.Alt10" modpriority="1"
+		passiveeffect="../alt10/ability_03/effects/state.effect"
+		dynamicprecache="../alt10/ability_03/effects/aoe.effect"
+	>
+		<oninflict>
+			<addcharges count="1" />
+			<setscriptvalue name="aoe_effect" value="../alt10/ability_03/effects/aoe.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+</state>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="export.max" file="ghostship.model" type="K2">
+
+	<anim name="idle" clip="default_1.clip" loop="true" fps="60" loopbackframe="-1"/>
+	
+	<spawnevent cmd="StartEffect /heroes/gladiator/ability_04/effects/trail.effect 1" />
+
+</model>

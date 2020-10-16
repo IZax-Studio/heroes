@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Flux_Ability1_Push"
+
+	icon="icon1.tga"
+	passiveeffect="effects/state_push.effect"
+
+    movespeedslow="0.45"
+	
+    effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	negativeeffect="slowed"
+>
+	<onframe />
+	
+	<onattackingdamageevent>
+		<setvalue name="damage_attempted" a="damage_attempted" b="0.9" op="mult" />
+	</onattackingdamageevent>
+
+</state>

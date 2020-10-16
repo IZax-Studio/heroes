@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Gladiator_Ability1"
+
+	icon="icon1.tga"
+	passiveeffect=""
+	
+	movespeedslow="0.3"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	negativeeffect="slowed"
+>
+</state>

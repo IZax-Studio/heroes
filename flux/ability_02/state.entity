@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Flux_Ability2"
+
+	icon="icon2.tga"
+	passiveeffect=""
+
+	unitwalking="true"
+	effecttype=""
+	ishidden="true"
+	
+	movespeed="-522"
+>		
+
+
+</state>

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" persistent="false" deferred="false">
+	<definitions>
+	
+		<modifier
+			name="modifier0"
+			life="500"
+			startcolor="1 4 4"
+			endcolor="1.0 1.0 1.0"
+		/>
+		
+		<particlesystem name="system0" space="world" scale="0.3">
+
+			<sound
+				linearfalloff="true"
+				falloffstart="400"
+				falloffend="2000"
+				volume="1"
+				sample="../sounds/pull.wav"
+			/>
+
+			<billboard
+				
+				bone="_bone_centerofchest"
+				position="0 0 20"
+				life="200"
+				color="1 1 1"
+				startalpha="1.0"				
+				endalpha="1"
+				startparam="0.05"
+				endparam="0.0"				
+				startsize="128"
+				endsize="524"
+				material="/shared/effects/materials/refract_pinch.material"
+				lockup="1"
+				pitch="90"
+			/>
+			
+				<billboard
+				position="0 0 20"
+				delay="350"
+				life="300"
+				color="1 1 1"
+				startalpha="1.0"
+				
+				endalpha="1.0"
+				startparam="0.05"
+				endparam="0.0"
+				
+				startsize="324"
+				endsize="128"
+				lockup="1"
+				pitch="90"
+
+				material="/shared/effects/materials/refract_pinch.material"
+			/>
+				
+			
+			<beam
+				life="50"				
+				owner_b="target"
+				owner_a="source"
+				bone_b="_bone_leftArmSpinner03"
+				bone_a="_bone_lefthand"
+				size="75"
+				color=".2 .5 .5"
+				
+				alpha="1.0"
+				material="/shared/effects/materials/flux_ray.material"
+				startframe=".6"
+				framespeed="5"
+			/>
+			
+			<beam
+				life="50"				
+				owner_b="target"
+				owner_a="source"
+				bone_b="_bone_leftArmSpinner03"
+				bone_a="_bone_lefthand"
+				size="25"
+				color="1 1 1"
+				
+				alpha="1.0"
+				material="/shared/effects/materials/flux_ray.material"
+				startframe=".6"
+				framespeed="5"
+			/>			
+			
+			<template name="trail">	
+				<twopointtrailemitter
+					life="600"
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					spawnrate="44"
+					particlelife="600"
+					texpostime="600"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/swoosh_add.material"
+					subframepos="true"
+				>
+					<particle
+						startcolor=".1 .2 .4"
+						endcolor="0 0 0" 
+					/>
+				</twopointtrailemitter>
+			</template>
+		
+			<instance name="trail"
+			 	bone_a="Bip01 L Clavicle"
+				bone_b="Bip01 L Hand"
+			/>
+				
+				<instance name="trail"
+				bone_a="Bip01 R Clavicle"
+				bone_b="Bip01 R Hand"
+				/>
+					
+				<instance name="trail"
+				bone_a="Bip01 R Foot"
+				bone_b="Bip01 R Thigh"
+				/>
+
+				<instance name="trail"
+				bone_a="Bip01 L Foot"
+				bone_b="Bip01 L Thigh"
+			/>
+						
+			<instance name="trail"
+				bone_a="Bip01 Pelvis"
+				bone_b="Bip01 Head"
+			/>
+			
+					
+			
+			
+			
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="21"	
+				count="3"				
+				particlelife="800"								
+				position="0 0 0"
+				material="/shared/effects/materials/refract_swell.material"				
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+				param=".4"
+			>
+
+				<particle 		
+					startsize="520"				
+					endsize="800"				
+					param="0.5"
+					startalpha=".3"
+					midalpha=".3"
+					endalpha="0"
+					midalphapos=".5"					
+					
+					lockup="true"
+					lockright="1"
+					pitch="0"
+					flare="0"
+					yaw="00"
+				
+				/>
+			</simpleemitter>				
+			
+			
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="21"	
+				count="4"
+				particlelife="300"								
+				position="0 0 0"
+				material="/shared/effects/materials/shieldstarfish.material"		
+				
+				offsetdirection="0 0 0"
+				offsetradial="0"
+				inheritvelocity=".1"
+			>
+
+				<particle
+					inheritvelocity=".001"
+					turn="true"
+				>
+					
+
+					<billboard
+						life="200"
+						position="0 70 0"
+						material="/shared/effects/materials/shieldstarfish.material"	
+						directionalspace="local"
+						startcolor=".2 .8 1"
+						endcolor="0 0 0"						
+						startsize="60"				
+						endsize="220"	
+						lockup="true"
+						lockright="1"
+						pitch="180"
+						yaw="0"
+						flare="0"
+					/>	
+
+					<model
+						life="300"
+						model="/heroes/flux/projectile/effects/dome.mdf"	
+						directionalspace="local"
+						startcolor=".2 .8 1"
+						endcolor="0 0 0"						
+						startscale="1"	
+						endscale="3"	
+						lockup="true"
+						lockright="1"
+						pitch="0"
+						yaw="00"
+						flare="0"
+						position="0 170 0"
+					/>	
+				
+					<groundsprite
+						directionalspace="local"
+						size="180"
+						life="300"
+						startcolor="0 0 0"
+						midcolor=".1 .5 .5"
+						endcolor="0 0 0"		
+						position="0 50 0"						
+						material="/shared/effects/materials/ground_arc.material"
+					/>	
+								
+				</particle>
+			</simpleemitter>				
+			
+			
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+     	<spawnmodifier instance="instance1" modifier="modifier0"/>  
+	  	<waitfordeath instance="instance0" />
+	  	<waitfordeath instance="instance1" />	  
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

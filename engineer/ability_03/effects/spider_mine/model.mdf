@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="model.max" file="model.model" type="K2"  >
+
+	<anim name="portrait" clip="portrait.clip" fps="20" loop="true"/>
+
+	<anim name="idle" clip="default_1.clip" loop="1" loopbackframe="34" startframe="14" numframes="45">
+		<frameevent frame="13" cmd="PlaySoundLinear ../../sounds/mine_deploy.wav 400 1800 .3"/>
+		<frameevent frame="1" cmd="PlaySoundLinear ../../sounds/cast_%.wav 400 1800 1"/>
+	</anim>
+
+	<anim name="walk_1" clip="walk_1.clip" fps="35" loop="true" loopbackframe="6" numframes="38">
+		<frameevent frame="1" cmd="PlaySoundLinear ../../sounds/mine_arm.wav 400 1800 .3"/>
+		<frameevent frame="2" cmd="PlaySoundLinear ../../sounds/mine_walk_%.wav 400 1800 .1"/>
+		<frameevent frame="7" cmd="PlaySoundLinear ../../sounds/mine_walk_%.wav 400 1800 .1"/>
+		<frameevent frame="18" cmd="PlaySoundLinear ../../sounds/mine_walk_%.wav 400 1800 .1"/>
+		<frameevent frame="30" cmd="PlaySoundLinear ../../sounds/mine_walk_%.wav 400 1800 .1"/>
+	</anim>
+	
+	<anim name="walk_2" clip="walk_1.clip" fps="35" loop="false" numframes="30">
+		<frameevent frame="1" cmd="PlaySoundLinear ../../sounds/mine_arm.wav 400 1800 .3"/>
+		<frameevent frame="2" cmd="PlaySoundLinear ../../sounds/mine_walk_%.wav 400 1800 .1"/>
+		<frameevent frame="7" cmd="PlaySoundLinear ../../sounds/mine_walk_%.wav 400 1800 .1"/>
+		<frameevent frame="18" cmd="PlaySoundLinear ../../sounds/mine_walk_%.wav 400 1800 .1"/>
+		<frameevent frame="30" cmd="PlaySoundLinear ../../sounds/mine_walk_%.wav 400 1800 .1"/>
+	</anim>
+	
+	<anim name="death" clip="death_1.clip" />
+
+</model>

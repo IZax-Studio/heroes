@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="2">
+
+			
+			<groundsprite
+				life="2000"
+				material="/shared/effects/materials/whitedot_blend.material"
+				size="150"
+				color="0 0 0"
+				startalpha=".65"
+				midalpha=".65"
+				endalpha="0"
+				midalphapos="0.05"
+			/>
+			
+			<groundsprite
+				life="2000"
+				material="/shared/effects/materials/ground_smash_overlay.material"
+				size="250"
+				color="1.0 1.0 1.0"
+				startalpha=".5"
+				midalpha=".5"
+				endalpha="0"
+				midalphapos="0.05"
+			/>
+			
+
+			
+			
+			
+			
+	
+			
+			
+			
+
+
+			<simpleemitter
+				depthbias="-30"
+				position="0 0 35"
+				life="300"
+				speed="50"
+				count="7"
+				drag=".01"
+				spawnrate="220"			
+				minparticlelife="750"
+				maxparticlelife="1500"
+				material="/shared/effects/materials/pyroclast_03.material"
+				offsetsphere="50 50 25"
+				angle="90"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-60"
+					color="1 0 0"
+					maxanglespeed="60"
+					startsize="150"
+					endsize="300"
+					startalpha="0"
+					midalpha=".15"
+					endalpha="0"
+					midalphapos=".25"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				position="0 0 40"	
+				count="14"
+				gravity="-5"
+				life="300"
+				speed="100"
+				drag="0.01"
+				depthbias="-40"
+				spawnrate="1800"			
+				minparticlelife="700"
+				maxparticlelife="1250"
+				material="/shared/effects/materials/pyroclast_03.material"
+				offsetsphere="25 25 25"
+				angle="40"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-50"
+					color="1 0 0"
+					maxanglespeed="50"
+					startsize="50"
+					minendsize="100"
+					maxendsize="200"
+					startalpha=".1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<billboard
+				life="200"
+				startcolor=".2 .1 0"
+				endcolor="0"
+				position="0 0 40"
+				startsize="250"
+				endsize="400"
+				startalpha="1"
+				maxroll="360"
+				endalpha="0"				
+				depthbias="-95"
+				lockup="true"
+				pitch="90"
+				material="/shared/effects/materials/starlight.material"
+			/>
+
+			<billboard
+				life="300"
+				startcolor=".125 .075 .025"
+				endcolor="0 0 0"
+				startsize="25"
+				endsize="350"				
+				depthbias="-19"
+				material="/shared/effects/materials/corona_06.material"
+				lockup="1"
+				pitch="90"
+				scale="1.5"
+				maxangle="360"
+			/>
+
+			
+
+
+			<billboard
+				life="1000"
+				startcolor=".175 .075 0"
+				midcolor=".175 .075 0"
+				midcolorpos="0.3"
+				endcolor="0"
+				startsize="250"
+				endsize="0"
+				depthbias="0"
+				material="/shared/effects/materials/whitedot.material"
+				position="0 0 50"
+			/>
+
+
+		</particlesystem>
+
+		
+		
+		
+		<particlesystem name="system3" space="world" scale="3">
+				
+				
+				
+				
+				
+		
+		
+		
+		
+				<simpleemitter
+		
+							life="300"
+							count="20"
+							particlelife="800"
+							
+							
+							gravity="15"
+							minspeed="0"
+							maxspeed="300"
+							drag="0" 
+							acceleration="0.0"
+							minangle="0" 
+							maxangle="15" 
+							position="0 0 0"
+							material="/shared/effects/materials/blood1.material"
+							delay="0"
+							startanchor="0"
+							endanchor="0"
+							inheritvelocity="0"	
+						>
+							<particle
+								startcolor=".5 .15 0"
+								endcolor=".2 .05 0"
+								startalpha="1"
+								endalpha="0.0"
+								angle="15"
+								anglespeed="20"
+								
+								
+								startscale="12"
+								endscale="17"
+								heightdistort="0.01" 
+								turn="true"
+								flare="false"
+							/>	
+						</simpleemitter>	
+		
+		
+		
+		<simpleemitter
+				
+				life="150"
+				count="4"
+				particlelife="3200"
+				spawnrate="100"
+				speed="0"
+				gravity="0"
+				direction="0 0 1"
+				particledirectionalspace="local"
+				minangle="0"
+				maxangle="30"
+				offsetsphere="30 30 0"
+				position="0 0 0"	
+			>
+				<particle> 
+					<groundsprite
+						life="2000"
+						material="/shared/effects/materials/splatter_blend.material"
+						scale=".2"
+						minyaw="-360"	
+						maxyaw="360"
+						minsize="400"
+						maxsize="750"
+						position="0 0 0"
+						color=".25 0 0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".1"
+					/>		
+				</particle>
+			</simpleemitter>
+		
+		<simpleemitter
+			
+				life="350"
+				count="20"
+				particlelife="1200"
+				spawnrate="100"
+				speed="0"
+				gravity="0"
+				direction="0 0 1"
+				particledirectionalspace="local"
+				minangle="0"
+				maxangle="30"
+				offsetsphere="50 25 0"
+				position="0 0 0"	
+			>
+				<particle> 
+					<groundsprite
+						life="2000"
+						material="/shared/effects/materials/splatter_blend.material"
+						scale=".1"
+						minyaw="-360"
+						maxyaw="360"
+						minsize="450"
+						maxsize="700"
+						position="0 0 0"
+						color=".3 0 0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".1"
+					/>
+				</particle>
+			</simpleemitter>
+			
+		<simpleemitter
+				life="1000"
+				particlelife="550"				
+				spawnrate="20"
+				speed="180"
+				gravity="22"
+				minangle="0"
+				maxangle="30"
+				material="/shared/effects/materials/blood1.material"
+				offsetsphere="20 20 0"
+				position="0 0 0"	
+			>
+				<particle 
+					minanglespeed="-100"
+					maxanglespeed="100"
+					minangle="-60"
+					maxangle="60"
+					color=".4 0 0"
+					startsize="20"			
+					endsize="60"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				life="500"
+				particlelife="500"				
+				spawnrate="25"
+				speed="75"
+				gravity="-1"
+				minangle="0"
+				maxangle="30"
+				material="/shared/effects/materials/blood1.material"
+				offsetsphere="10 10 0"
+				position="0 0 50"
+			>
+				<particle 
+					minanglespeed="-100"
+					maxanglespeed="100"
+					minangle="-60"
+					maxangle="60"
+					color=".3 0 0"
+					startsize="25"			
+					endsize="75"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			
+			<simpleemitter
+				
+				life="150"
+				count="4"
+				particlelife="2200"
+				spawnrate="50"
+				speed="0"
+				gravity="0"
+				direction="0 0 1"
+				particledirectionalspace="local"
+				minangle="0"
+				maxangle="30"
+				offsetsphere="30 30 0"
+				position="0 0 0"	
+			>
+				<particle> 
+					<groundsprite
+						life="4000"
+						material="/shared/effects/materials/splatter_blend.material"
+						scale=".2"
+						minyaw="-360"	
+						maxyaw="360"
+						minsize="100"
+						maxsize="150"
+						position="0 0 0"
+						color=".25 0 0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".1"
+					/>		
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+		
+		
+				life="150"
+				count="4"
+				particlelife="2200"
+				spawnrate="44"
+				speed="0"
+				gravity="0"
+				direction="0 0 1"
+				particledirectionalspace="local"
+				minangle="0"
+				maxangle="30"
+				offsetsphere="25 25 0"
+				position="50 -50 0"
+			>
+				<particle> 
+					<groundsprite
+						life="4000"
+						material="/shared/effects/materials/splatter_blend.material"
+						scale=".1"
+						minyaw="-360"
+						maxyaw="360"
+						minsize="150"
+						maxsize="200"
+						position="0 0 0"
+						color=".3 0 0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".1"
+					/>
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				life="1000"
+				particlelife="550"				
+				spawnrate="10"
+				speed="180"
+				gravity="22"
+				minangle="0"
+				maxangle="30"
+				material="/shared/effects/materials/blood1.material"
+				offsetsphere="15 15 0"
+				position="75 -50 0"
+			>
+				<particle 
+					minanglespeed="-100"
+					maxanglespeed="100"
+					minangle="-60"
+					maxangle="60"
+					color=".4 0 0"
+					startsize="40"			
+					endsize="50"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				life="1000"
+				particlelife="550"				
+				spawnrate="20"
+				speed="180"
+				gravity="22"
+				minangle="0"
+				maxangle="30"
+				material="/shared/effects/materials/blood1.material"
+				offsetsphere="20 20 0"
+				position="0 -100 0"
+			>
+				<particle 
+					minanglespeed="-100"
+					maxanglespeed="100"
+					minangle="-60"
+					maxangle="60"
+					color=".4 0 0"
+					startsize="20"			
+					endsize="60"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+		
+			<simpleemitter
+				
+				life="150"
+				count="4"
+				particlelife="1200"
+				spawnrate="100"
+				speed="0"
+				gravity="0"
+				direction="0 0 1"
+				particledirectionalspace="local"
+				minangle="0"
+				maxangle="30"
+				offsetsphere="15 15 0"
+				position="-80 50 0"	
+			>
+				<particle> 
+					<groundsprite
+						life="2000"
+						material="/shared/effects/materials/splatter_blend.material"
+						scale=".2"
+						minyaw="-360"	
+						maxyaw="360"
+						minsize="70"
+						maxsize="120"
+						position="0 0 0"
+						color=".25 0 0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".1"
+					/>		
+				</particle>
+			</simpleemitter>
+ 
+			<simpleemitter
+			
+				life="150"
+				count="4"
+				particlelife="3200"
+				spawnrate="100"
+				speed="0"
+				gravity="0"
+				direction="0 0 1"
+				particledirectionalspace="local"
+				minangle="0"
+				maxangle="30"
+				offsetsphere="25 25 0"
+				position="-80 50 0"
+			>
+				<particle> 
+					<groundsprite
+						life="2000"
+						material="/shared/effects/materials/splatter_blend.material"
+						scale=".1"
+						minyaw="-360"
+						maxyaw="360"
+						minsize="75"
+						maxsize="125"
+						position="0 0 0"
+						color=".3 0 0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".1"
+					/>
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+			
+				life="1000"
+				particlelife="750"				
+				spawnrate="20"
+				speed="180"
+				gravity="22"
+				minangle="0"
+				maxangle="30"
+				material="/shared/effects/materials/blood1.material"
+				offsetsphere="15 15 0"
+				position="-80 50 0"
+			>
+				<particle 
+					minanglespeed="-100"
+					maxanglespeed="100"
+					minangle="-60"
+					maxangle="60"
+					color=".4 0 0"
+					startsize="20"			
+					endsize="45"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			
+			<simpleemitter
+			
+				life="150"
+				count="7"
+				particlelife="3200"
+				spawnrate="100"
+				speed="0"
+				gravity="0"
+				direction="0 0 1"
+				particledirectionalspace="local"
+				minangle="0"
+				maxangle="30"
+				offsetsphere="25 25 0"
+				position="0 -25 0"
+			>
+				<particle> 
+					<groundsprite
+						life="2000"
+						material="/shared/effects/materials/splatter_blend.material"
+						scale=".1"
+						minyaw="-360"
+						maxyaw="360"
+						minsize="200"
+						maxsize="300"
+						position="0 0 0"
+						color=".3 0 0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".1"
+					/>
+				</particle>
+			</simpleemitter>
+			
+			
+	
+		
+			</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance3" particlesystem="system3" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+	</thread>
+
+</effect>

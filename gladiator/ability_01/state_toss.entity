@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Gladiator_Ability1_Toss"
+	
+	icon="icon1.tga"
+	ishidden="true"
+	
+	stunned="true"
+
+	modifierkey="channeled_stun_ability"
+>
+	<onframe>
+		<damage target="this_owner_entity" effecttype="Magic DOT" amount="25,50,75,100" b="frametime" op="mult" />
+	</onframe>
+
+	<onexpired>
+		<applystate name="State_Gladiator_Ability1" duration="1000,2000,3000,4000" />
+	</onexpired>
+</state>

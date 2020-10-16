@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_FlameDragon_Ability1"
+
+	radius="890"
+	arc="90"
+	
+	lifetime="600"
+	
+	maximpactspertarget="1"
+	targetselection="closest"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	persist="true"
+	
+	effect="effects/breath.effect"
+	impacteffect="/heroes/gemini/ability_01/effects/impact.effect"
+>
+	<onimpact>
+		<applystate name="State_Stun_FlameDragon_Ability1" duration="200" target="target_entity" />
+		<damage effecttype="Magic" amount="85,150,215,280" />
+	</onimpact>
+	
+	
+	<altavatar key="Hero_FlameDragon.Alt" modpriority="1"
+		effect="effects/breath_alt1.effect"
+		impacteffect="effects/impact_alt1.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_FlameDragon.Alt3" modpriority="1"
+		effect="../alt3/ability_01/effects/breath.effect"
+	>	
+	</altavatar>
+	
+	<altavatar key="Hero_FlameDragon.Alt5" modpriority="1"
+		effect="effects/breath_alt5.effect"
+		impacteffect="effects/impact_alt5.effect"
+	>	
+	</altavatar>
+	
+	<altavatar key="Hero_FlameDragon.Alt7" modpriority="1"
+		effect="../alt7/ability_01/effects/breath.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_FlameDragon.Alt8" modpriority="1"
+		effect="../alt8/ability_01/effects/breath.effect"
+		impacteffect="../alt8/ability_01/effects/impact.effect"
+	>	
+	</altavatar>
+	
+	<altavatar key="Hero_FlameDragon.Alt9" modpriority="1"
+		effect="../alt9/ability_01/effects/breath.effect"
+		impacteffect="../alt9/ability_01/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_FlameDragon.Alt10" modpriority="1"
+		effect="../alt10/ability_01/effects/breath.effect"
+		impacteffect="../alt10/ability_01/effects/impact.effect"
+	/>
+	
+</affector>

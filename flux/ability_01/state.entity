@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Flux_Ability1"
+
+	icon="icon1.tga"
+	passiveeffect="effects/state_pull.effect"
+
+    movespeedslow="0.45"
+	incomingdamagemultiplier="0.1"
+	
+    effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	negativeeffect="slowed"
+>		
+
+
+</state>

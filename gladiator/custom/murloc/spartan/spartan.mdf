@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="spartan.model" type="K2" >
+
+	<anim name="idle" clip="spartan.clip" fps="960" loop="true" />
+	
+	
+		
+</model>

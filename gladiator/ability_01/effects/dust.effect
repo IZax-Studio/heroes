@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="0.9">
+		
+			<sound
+				delay="0"
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="3600"
+				volume="1.0" 
+				life="3000"
+				sample="/heroes/gladiator/ability_01/sounds/cast.wav"
+			/>
+	
+			<simpleemitter	
+					
+				position="0 0 0"
+				spawnrate="425"
+				particlelife="1000"					
+				minspeed="10.0"
+				maxspeed="110"
+				inheritvelocity=".25"
+				offsetsphere="190 190 50"
+				depthbias="-50"
+				material="/shared/effects/materials/bub.material"
+			>
+				<particle	
+					color=".3 .5 1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					startsize="40"
+					endsize="0"					
+					depthbias="-160"
+				/>
+			</simpleemitter>
+				
+		<simpleemitter		
+				position="0 0 0"
+				spawnrate="225"
+				particlelife="1000"					
+				minspeed="30.0"
+				maxspeed="50"
+				inheritvelocity=".25"
+				offsetsphere="190 190 20"
+				depthbias="-50"
+				material="/shared/effects/materials/bub.material"
+			>
+				<particle	
+					color=".3 1 1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					startsize="10"
+					endsize="0"					
+					depthbias="-160"
+					minscale="1"
+					maxscale="3"
+				/>
+			</simpleemitter>	
+			<simpleemitter		
+				position="0 0 0"
+				spawnrate="225"
+				particlelife="1000"					
+				minspeed="30.0"
+				maxspeed="50"
+				inheritvelocity=".25"
+				offsetsphere="190 190 20"
+				depthbias="-50"
+				material="/shared/effects/materials/bub.material"
+			>
+				<particle	
+					color=".3 1 1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					startsize="10"
+					endsize="0"					
+					depthbias="-160"
+					minscale="1"
+					maxscale="3"
+				/>
+			</simpleemitter>
+				
+
+
+					<simpleemitter
+						life="1100"
+						spawnrate="150"
+						minparticlelife="1350"
+						maxparticlelife="1500"
+						gravity="-5"
+						minspeed="5"
+						maxspeed="15"
+						depthbias="-50"
+						drag=".003"
+						material="/shared/effects/materials/bub.material"
+						offsetsphere="210 210 0"
+						angle="90"
+					>
+						<particle 
+							minangle="-305"
+							maxangle="350"
+							color=".3 .5 1"
+							
+							startsize="0"
+							midsize="22"
+							endsize="5"
+							minscale="1"
+							maxscale="3"
+							startalpha="1"
+							endalpha="0"
+						/>
+						<particle 
+							minangle="-350"
+							maxangle="350"
+							color=".3 .7 1"
+					
+							startsize="0"
+							midsize="22"
+							endsize="5"
+							minscale="1"
+							maxscale="3"
+							startalpha="1"
+							endalpha="0"
+						/>
+									<particle 
+							minangle="-350"
+							maxangle="350"
+							color=".2 .5 .6"
+						
+							startsize="0"
+							midsize="22"
+							endsize="5"
+							minscale="1"
+							maxscale="3"
+							startalpha="1"
+							endalpha="0"
+						/>
+		
+					</simpleemitter>
+
+					
+		<billboard
+				expirelife="250"
+				material="/shared/effects/materials/whitedot.material"
+				size="650"
+				color="0 0 .2"
+				startalpha="0"
+				midalpha="0"
+				endalpha="0"
+				position="0 0 5"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+			/>
+					
+					
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

@@ -1,0 +1,1113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" persistent="true" disable2dworld="true">
+
+	<definitions>
+
+		<particlesystem name="centerFire" space="entity" scale="1">
+
+			<sound
+			    delay="200"
+				volume=".7"
+				sample="/heroes/flamedragon/ability_01/sounds/knight_%.wav"
+				linearfalloff="true"
+				falloffstart="0" 
+				falloffend="1300" 
+			/>
+
+			<simpleemitter
+				count="1"
+				spawnrate="5000"
+				particlelife="5000"
+				acceleration="0.0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="1"
+				>
+					<model
+						life="2000"
+						position="0 100 37"
+						expirelife="1000"
+						name="emitter0" 
+						anim="idle"
+						model="fire_rig/model.mdf"
+						scale="1"
+						startcolor="1 1 1"
+						midcolor="1 1 1"
+						endcolor="1 1 1"
+						midcolorpos=".75"
+						startalpha="1"
+						endalpha="0"
+					>
+						<model
+							position="0 0 -32"
+							life="2500"
+							name="emitter0" 
+							anim="gib"
+							model="../../alt4/ability_01/knight_pieces/model.mdf"
+							scale="3.5"
+							startcolor="2 1.5 1"
+							midcolor=".5 .4 .3"
+							endcolor=".5 .4 .3"
+							midcolorpos=".5"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							midalphapos=".9"
+							yaw="180"
+						>
+						
+							<template name="beam">
+								<beam
+									life="1000"
+									bone_a="{a}"
+									bone_b="{b}"
+									color="{colorz}"
+									size="{sizez}"
+									startalpha="1"
+									midalpha="1"
+									endalpha="0"
+									position="0 0 0"
+									position_b="0 0 0"
+									material="/shared/effects/materials/goo.material"
+								/>
+								
+								<groundsprite
+									delay="0"
+									position="0 0 0"
+									bone="{a}"
+									life="2000"
+									material="/shared/effects/materials/ground_scorch.material"
+									size="{sizez}"
+									startalpha="0"
+									midalpha=".75"
+									endalpha="0"
+									yaw="-35"
+									midalphapos=".65"
+									maxyaw="360"
+								/>
+								
+								<billboard
+									position="0 0 0"
+									bone="{a}"
+									life="1500"
+									material="/shared/effects/materials/whitedot.material"
+									size="{sizez}"
+									startcolor=".5 0 0"
+									midcolor=".5 0 0"
+									endcolor="0 0 0"
+									midcolorpos=".25"
+									depthbias="-10"
+								/>
+
+								<simpleemitter
+								delay="250"
+									bone="{a}"
+									count="35"
+									spawnrate="150"
+									minparticlelife="200"
+									maxparticlelife="400"
+									gravity="-10"
+									minspeed="10"
+									maxspeed="25"
+									position="0 0 0"
+									direction="0 1 0"
+									offsetsphere="5 5 0"
+									particledirectionalspace="local"
+									material="/shared/effects/materials/soul_projectile2.material"
+									depthbias="-15"
+								>
+									<particle
+										minangle="0"
+										maxangle="360"
+										startcolor=".75 .35 .1"
+										midcolor=".75 .35 .1"
+										endcolor="0 0 0"
+										midcolorpos=".25"
+										minstartscale="2"
+										maxstartscale="5"
+										endscale="2"
+										turn="true"
+										anchor="1"
+									/>
+								</simpleemitter>
+								
+							</template>
+							
+							<instance name="beam" a="rightLeg_007" b="rightLeg_01" colorz="0 0 0" sizez="20"/>
+							<instance name="beam" a="leftLeg_02" b="rightLeg_007" colorz="0 0 0" sizez="25"/>
+							<instance name="beam" a="rightLeg_02" b="rightLeg_005" colorz="0 0 0" sizez="20"/>
+						</model>
+							
+
+						<model
+							position="0 0 -40"
+							life="2500"
+							name="emitter0" 
+							anim="gib"
+							model="../../alt4/ability_01/more_knight_pieces/model.mdf"
+							scale="1.5"
+							startcolor="2 1.5 1"
+							midcolor=".5 .4 .3"
+							endcolor=".25"
+							midcolorpos=".5"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							midalphapos=".9"
+						>
+							<template name="beam">
+								<beam
+									life="1000"
+									bone_a="{a}"
+									bone_b="{b}"
+									color="{colorz}"
+									size="{sizez}"
+									startalpha="1"
+									midalpha="1"
+									endalpha="0"
+									position="0 0 0"
+									position_b="0 0 0"
+									material="/shared/effects/materials/goo.material"
+								/>
+								
+								<groundsprite
+									delay="650"
+									position="0 0 0"
+									bone="{a}"
+									life="2000"
+									material="/shared/effects/materials/ground_scorch.material"
+									size="50"
+									startalpha="0"
+									midalpha=".75"
+									endalpha="0"
+									yaw="-35"
+									midalphapos=".65"
+									maxyaw="360"
+								/>
+
+								<simpleemitter
+								life="1250"
+									minangle="-90"
+									maxangle="-90"
+									bone="{a}"
+									spawnrate="50"
+									minparticlelife="500"
+									maxparticlelife="1000"
+									speed="1000"
+									drag="0.1"
+									gravity="-10"
+									offsetsphere="0 0 0"
+									material="/shared/effects/materials/dust_smoke_02.material"
+								>
+									<particle
+										minangle="-180"
+										maxangle="180"
+										minanglespeed="-45"
+										maxanglespeed="45"
+										turn="1"
+										color="0 0 0"
+										minstartsize="15"
+										maxstartsize="30"
+										minendscale="4"
+										maxendscale="8"
+										startalpha="0"
+										midalpha=".25"
+										endalpha="0"
+									/>
+								</simpleemitter>
+								
+								<billboard
+									position="0 0 0"
+									bone="{a}"
+									life="1500"
+									material="/shared/effects/materials/whitedot.material"
+									size="85"
+									startcolor=".5 0 0"
+									midcolor=".5 0 0"
+									endcolor="0 0 0"
+									midcolorpos=".25"
+									depthbias="-10"
+								/>
+								
+								<simpleemitter
+								delay="500"
+									bone="{a}"
+									count="35"
+									spawnrate="75"
+									minparticlelife="200"
+									maxparticlelife="400"
+									gravity="-10"
+									minspeed="10"
+									maxspeed="25"
+									position="0 0 3"
+									direction="0 1 0"
+									offsetsphere="12 12 0"
+									particledirectionalspace="local"
+									material="/shared/effects/materials/soul_projectile2.material"
+									depthbias="-15"
+								>
+									<particle
+										minangle="0"
+										maxangle="360"
+										startcolor=".75 .35 .1"
+										midcolor=".75 .35 .1"
+										endcolor="0 0 0"
+										midcolorpos=".25"
+										minstartscale="5"
+										maxstartscale="10"
+										endscale="2"
+										turn="true"
+										anchor="1"
+									/>
+								</simpleemitter>
+
+							</template>
+							
+							<instance name="beam" a="Box07" b="Box11" colorz="0 0 0" sizez="50"/>
+							<instance name="beam" a="Box01" b="Box07" colorz="0 0 0" sizez="50"/>
+							<instance name="beam" a="Box09" b="Box11" colorz="0 0 0" sizez="50"/>
+							<instance name="beam" a="Box02" b="Box10" colorz="0 0 0" sizez="50"/>
+							<instance name="beam" a="Box10" b="Box02" colorz="0 0 0" sizez="50"/>
+						</model>
+
+						<simpleemitter
+							bone="_bone_fx_center"
+							count="3"
+							spawnrate="8"
+							particlelife="1600"
+							gravity="1.0"
+							speed="900"
+							minangle="0"
+							maxangle="0"
+							direction="0 -1 0"
+							particledirectionalspace="local"
+						>
+							<particle
+							>
+								<billboard
+									life="500"
+									position="0 -35 50"
+									material="/shared/effects/materials/heathaze.material"
+									lockup="1"
+									lockright="1"
+									pitch="90"
+									param=".25"
+									startsize="150"
+									endsize="150"
+									directionalspace="local"
+									roll="180"
+									startalpha="0"
+									midalpha=".25"
+									endalpha="0"
+									midalphapos=".2"
+
+								/>
+							</particle>
+						</simpleemitter>
+
+						<simpleemitter
+							bone="_bone_fx_center"
+							delay="0"
+							count="150"
+							spawnrate="500"
+							minparticlelife="300"
+							maxparticlelife="400"
+							gravity="-40"
+							minspeed="600"
+							maxspeed="1200"
+							position="0 0 25"
+							minangle="0"
+							maxangle="10"
+							direction="0 -1 0"
+							offsetsphere="50 50 0"
+							particledirectionalspace="local"
+							material="/shared/effects/materials/dust_smoke_02.material"
+
+						>
+							<particle
+								minangle="0"
+								maxangle="360"
+								color="0 0 0"
+								minscale="20"
+								maxscale="40"
+								turn="true"
+								minanglespeed="-360"
+								maxanglespeed="360"
+								startalpha=".25"
+								endalpha="0"
+							/>
+						</simpleemitter>
+						
+						<simpleemitter
+							bone="_bone_fx_center"
+							delay="0"
+							count="50"
+							spawnrate="200"
+							minparticlelife="300"
+							maxparticlelife="400"
+							gravity="1.0"
+							minspeed="600"
+							maxspeed="1200"
+							position="0 0 25"
+							minangle="0"
+							maxangle="10"
+							direction="0 -1 0"
+							offsetsphere="0 0 0"
+							particledirectionalspace="local"
+							material="/shared/effects/materials/whitedot.material"
+
+						>
+							<particle
+								minangle="0"
+								maxangle="360"
+								startcolor=".35 0 0"
+								endcolor="0 0 0"
+								midcolorpos=".25"
+								minscale="8"
+								maxscale="50"
+								turn="true"
+								minanglespeed="-360"
+								maxanglespeed="360"
+							/>
+						</simpleemitter>
+
+						<simpleemitter
+							bone="_bone_fx_center"
+							delay="0"
+							count="200"
+							spawnrate="700"
+							minparticlelife="300"
+							maxparticlelife="400"
+							gravity="1.0"
+							minspeed="600"
+							maxspeed="1200"
+							position="0 0 25"
+							minangle="0"
+							maxangle="10"
+							direction="0 -1 0"
+							offsetsphere="0 0 0"
+							particledirectionalspace="local"
+							material="/shared/effects/materials/soul_projectile2.material"
+
+						>
+							<particle
+								minangle="0"
+								maxangle="360"
+								startcolor=".75 .35 .1"
+								midcolor=".75 .35 .1"
+								endcolor="0 0 0"
+								midcolorpos=".25"
+								minscale="5"
+								maxscale="15"
+								turn="true"
+								minanglespeed="-360"
+								maxanglespeed="360"
+							/>
+						</simpleemitter>
+						
+						<simpleemitter
+							bone="_bone_fx_center"
+							delay="0"
+							count="50"
+							spawnrate="200"
+							minparticlelife="300"
+							maxparticlelife="400"
+							gravity="1.0"
+							minspeed="600"
+							maxspeed="1200"
+							position="25 -50 25"
+							minangle="0"
+							maxangle="10"
+							direction="0 -1 0"
+							offsetsphere="0 0 0"
+							particledirectionalspace="local"
+							material="/shared/effects/materials/whitedot.material"
+
+						>
+							<particle
+								minangle="0"
+								maxangle="360"
+								startcolor=".35 0 0"
+								endcolor="0 0 0"
+								midcolorpos=".25"
+								minscale="15"
+								maxscale="65"
+								turn="true"
+								minanglespeed="-360"
+								maxanglespeed="360"
+							/>
+						</simpleemitter>
+
+						<simpleemitter
+							bone="_bone_fx_center"
+							delay="0"
+							count="65"
+							spawnrate="375"
+							minparticlelife="250"
+							maxparticlelife="550"
+							gravity="-10"
+							minspeed="500"
+							maxspeed="850"
+							position="25 -50 25"
+							minangle="0"
+							maxangle="5"
+							direction="0 -1 0"
+							offsetsphere="0 0 0"
+							particledirectionalspace="local"
+							material="/shared/effects/materials/soul_projectile2.material"
+
+						>
+							<particle
+								minangle="0"
+								maxangle="360"
+								startcolor=".75 .35 .1"
+								midcolor=".75 .35 .1"
+								endcolor="0 0 0"
+								midcolorpos=".25"
+								minstartscale="15"
+								maxstartscale="30"
+								endscale="15"
+								turn="true"
+								minanglespeed="-360"
+								maxanglespeed="360"
+							/>
+						</simpleemitter>
+						
+						<simpleemitter
+							bone="_bone_fx_center"
+							delay="0"
+							count="25"
+							spawnrate="200"
+							minparticlelife="300"
+							maxparticlelife="400"
+							gravity="1.0"
+							minspeed="600"
+							maxspeed="1200"
+							position="-25 -50 25"
+							minangle="0"
+							maxangle="10"
+							direction="0 -1 0"
+							offsetsphere="0 0 0"
+							particledirectionalspace="local"
+							material="/shared/effects/materials/whitedot.material"
+
+						>
+							<particle
+								minangle="0"
+								maxangle="360"
+								startcolor=".35 0 0"
+								endcolor="0 0 0"
+								midcolorpos=".25"
+								minscale="15"
+								maxscale="65"
+								turn="true"
+								minanglespeed="-360"
+								maxanglespeed="360"
+							/>
+						</simpleemitter>
+
+						<simpleemitter
+							bone="_bone_fx_center"
+							delay="0"
+							count="30"
+							spawnrate="375"
+							minparticlelife="250"
+							maxparticlelife="550"
+							gravity="-10"
+							minspeed="500"
+							maxspeed="850"
+							position="-25 -50 25"
+							minangle="0"
+							maxangle="5"
+							direction="0 -1 0"
+							offsetsphere="0 0 0"
+							particledirectionalspace="local"
+							material="/shared/effects/materials/soul_projectile2.material"
+
+						>
+							<particle
+								minangle="0"
+								maxangle="360"
+								startcolor=".75 .35 .1"
+								midcolor=".75 .35 .1"
+								endcolor="0 0 0"
+								midcolorpos=".25"
+								minstartscale="15"
+								maxstartscale="30"
+								endscale="15"
+								turn="true"
+								minanglespeed="-360"
+								maxanglespeed="360"
+							/>
+						</simpleemitter>
+						
+						
+						
+						<simpleemitter
+							bone="_bone_fx_center"
+							delay="150"
+							count="20"
+							spawnrate="1500"
+							minparticlelife="250"
+							maxparticlelife="400"
+							gravity="1"
+							minspeed="150"
+							maxspeed="300"
+							position="0 75 25"
+							direction="0 1 0"
+							offsetsphere="50 50 25"
+							particledirectionalspace="local"
+							material="/shared/effects/materials/soul_projectile2.material"
+							depthbias="0"
+						>
+							<particle
+								minangle="0"
+								maxangle="360"
+								startcolor="0 0 0"
+								midcolor=".75 .35 .1"
+								endcolor="0 0 0"
+								midcolorpos=".15"
+								minscale="30"
+								maxscale="60"
+								minanglespeed="-360"
+								maxanglespeed="360"
+							/>
+						</simpleemitter>
+-->
+					</model>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<model
+						life="2000"
+						delay="250"
+						position="0 350 75"
+						expirelife="1000"
+						name="emitter0" 
+						anim="idle"
+						model="fire_rig/model.mdf"
+						scale=".85"
+						startcolor="1 1 1"
+						midcolor="1 1 1"
+						endcolor="1 1 1"
+						midcolorpos=".75"
+						startalpha="1"
+						endalpha="0"
+					>
+						<simpleemitter
+							bone="_bone_fx_center"
+							count="4"
+							spawnrate="8"
+							particlelife="1600"
+							gravity="1.0"
+							speed="900"
+							minangle="0"
+							maxangle="0"
+							direction="0 -1 0"
+							particledirectionalspace="local"
+						>
+							<particle
+							>
+								<billboard
+									life="500"
+									position="0 50 50"
+									material="/shared/effects/materials/heathaze.material"
+									lockup="1"
+									lockright="1"
+									pitch="90"
+									param=".25"
+									startsize="300"
+									endsize="300"
+									directionalspace="local"
+									roll="180"
+									startalpha="0"
+									midalpha=".25"
+									endalpha="0"
+									midalphapos=".2"
+									depthbias="-25"
+									minyaw="0"
+									maxyaw="360"
+								/>
+							</particle>
+						</simpleemitter>
+						
+						<simpleemitter
+							bone="_bone_fx_center"
+							delay="0"
+							count="75"
+							spawnrate="500"
+							minparticlelife="300"
+							maxparticlelife="400"
+							gravity="1.0"
+							minspeed="600"
+							maxspeed="1200"
+							position="0 100 25"
+							minangle="0"
+							maxangle="10"
+							direction="0 -1 0"
+							offsetsphere="0 100 0"
+							particledirectionalspace="local"
+							material="/shared/effects/materials/dust_smoke_02.material"
+							depthbias="-25"
+						>
+							<particle
+								minangle="0"
+								maxangle="360"
+								color="0 0 0"
+								minscale="25"
+								maxscale="50"
+								turn="true"
+								minanglespeed="-360"
+								maxanglespeed="360"
+								startalpha=".35"
+								endalpha="0"
+							/>
+						</simpleemitter>
+						
+						<simpleemitter
+							bone="_bone_fx_center"
+							delay="0"
+							count="35"
+							spawnrate="500"
+							minparticlelife="300"
+							maxparticlelife="400"
+							gravity="1.0"
+							minspeed="600"
+							maxspeed="1200"
+							position="0 100 25"
+							minangle="0"
+							maxangle="10"
+							direction="0 -1 0"
+							offsetsphere="0 100 0"
+							particledirectionalspace="local"
+							material="/shared/effects/materials/whitedot.material"
+							depthbias="-25"
+						>
+							<particle
+								minangle="0"
+								maxangle="360"
+								startcolor=".35 0 0"
+								endcolor="0 0 0"
+								midcolorpos=".25"
+								minscale="8"
+								maxscale="50"
+								turn="true"
+								minanglespeed="-360"
+								maxanglespeed="360"
+							/>
+						</simpleemitter>
+
+						<simpleemitter
+							bone="_bone_fx_center"
+							delay="0"
+							count="200"
+							spawnrate="800"
+							minparticlelife="300"
+							maxparticlelife="400"
+							gravity="1.0"
+							minspeed="600"
+							maxspeed="1200"
+							position="0 100 25"
+							minangle="0"
+							maxangle="10"
+							direction="0 -1 0"
+							offsetsphere="0 100 0"
+							particledirectionalspace="local"
+							material="/shared/effects/materials/soul_projectile2.material"
+							depthbias="-25"
+						>
+							<particle
+								minangle="0"
+								maxangle="360"
+								startcolor=".75 .35 .1"
+								midcolor=".75 .35 .1"
+								endcolor="0 0 0"
+								midcolorpos=".25"
+								minscale="8"
+								maxscale="16"
+								turn="true"
+								minanglespeed="-360"
+								maxanglespeed="360"
+							/>
+						</simpleemitter>
+						
+						<!--first round flame burst-->
+						<simpleemitter
+							bone="_bone_fx_center"
+							delay="10"
+							count="20"
+							spawnrate="70"
+							minparticlelife="200"
+							maxparticlelife="400"
+							gravity="1"
+							minspeed="100"
+							maxspeed="250"
+							position="0 100 25"
+							direction="0 1 0"
+							offsetsphere="100"
+							particledirectionalspace="local"
+							material="/shared/effects/materials/dust_smoke_02.material"
+							depthbias="-25"
+						>
+							<particle
+								minangle="0"
+								maxangle="360"
+								color="0 0 0"
+								minscale="25"
+								maxscale="75"
+								turn="true"
+								startalpha=".35"
+								endalpha="0"
+							/>
+						</simpleemitter>
+
+						<simpleemitter
+							bone="_bone_fx_center"
+							delay="10"
+							count="100"
+							spawnrate="800"
+							minparticlelife="200"
+							maxparticlelife="400"
+							gravity="1"
+							minspeed="100"
+							maxspeed="250"
+							position="0 100 25"
+							direction="0 1 0"
+							offsetsphere="12 12 12"
+							particledirectionalspace="local"
+							material="/shared/effects/materials/soul_projectile2.material"
+							depthbias="-25"
+						>
+							<particle
+								minangle="0"
+								maxangle="360"
+								startcolor=".75 .35 .1"
+								midcolor=".75 .35 .1"
+								endcolor="0 0 0"
+								midcolorpos=".25"
+								minscale="10"
+								maxscale="20"
+								turn="true"
+							/>
+						</simpleemitter>
+
+						<simpleemitter
+							bone="_bone_fx_center"
+							delay="10"
+							count="3"
+							spawnrate="15"
+							minparticlelife="200"
+							maxparticlelife="400"
+							gravity="1"
+							minspeed="100"
+							maxspeed="250"
+							position="0 100 25"
+							direction="0 1 0"
+							offsetsphere="50 50 50"
+							particledirectionalspace="local"
+							material="/shared/effects/materials/whitedot.material"
+							depthbias="-25"
+						>
+							<particle
+								minangle="0"
+								maxangle="360"
+								startcolor=".5 0 0"
+								endcolor="0 0 0"
+								midcolorpos=".25"
+								minscale="100"
+								maxscale="200"
+								turn="true"
+							/>
+						</simpleemitter>
+						
+						<simpleemitter
+							bone="_bone_fx_center"
+							delay="10"
+							count="100"
+							spawnrate="800"
+							minparticlelife="200"
+							maxparticlelife="400"
+							gravity="1"
+							minspeed="100"
+							maxspeed="250"
+							position="0 100 25"
+							direction="0 1 0"
+							offsetsphere="12 12 12"
+							particledirectionalspace="local"
+							material="/shared/effects/materials/soul_projectile2.material"
+							depthbias="-25"
+						>
+							<particle
+								minangle="0"
+								maxangle="360"
+								startcolor=".75 .35 .1"
+								midcolor=".75 .35 .1"
+								endcolor="0 0 0"
+								midcolorpos=".25"
+								minscale="10"
+								maxscale="20"
+								turn="true"
+							/>
+						</simpleemitter>
+
+						<simpleemitter
+							bone="_bone_fx_center"
+							delay="10"
+							count="100"
+							spawnrate="800"
+							minparticlelife="200"
+							maxparticlelife="400"
+							gravity="1"
+							minspeed="100"
+							maxspeed="250"
+							position="0 100 25"
+							direction="0 1 0"
+							offsetsphere="20"
+							particledirectionalspace="local"
+							material="/shared/effects/materials/heathaze.material"
+							depthbias="-25"
+						>
+							<particle
+								startalpha=".25"
+								endalpha="0"
+								param=".1"
+								minangle="0"
+								maxangle="360"
+								startcolor="1 .85 .7"
+								midcolor="1 1 1"
+								endcolor="1 1 1"
+								minscale="20"
+								maxscale="40"
+								turn="true"
+							/>
+						</simpleemitter>
+
+						<!--second round flame burst-->
+						<simpleemitter
+							bone="_bone_fx_center"
+							delay="150"
+							count="50"
+							spawnrate="1800"
+							minparticlelife="250"
+							maxparticlelife="400"
+							gravity="-50"
+							minspeed="150"
+							maxspeed="300"
+							position="0 325 25"
+							direction="0 1 0"
+							offsetsphere="150 150 50"
+							particledirectionalspace="local"
+							material="/shared/effects/materials/dust_smoke_02.material"
+							depthbias="0"
+						>
+							<particle
+								minangle="0"
+								maxangle="360"
+								color="0 0 0"
+								minscale="25"
+								maxscale="100"
+								startalpha=".35"
+								endalpha="0"
+							/>
+						</simpleemitter>
+
+						<simpleemitter
+							bone="_bone_fx_center"
+							delay="150"
+							count="2"
+							spawnrate="1800"
+							minparticlelife="250"
+							maxparticlelife="400"
+							gravity="1"
+							minspeed="150"
+							maxspeed="300"
+							position="0 325 25"
+							direction="0 1 0"
+							offsetsphere="100 100 25"
+							particledirectionalspace="local"
+							material="/shared/effects/materials/whitedot.material"
+							depthbias="0"
+						>
+							<particle
+								minangle="0"
+								maxangle="360"
+								startcolor=".25 0 0"
+								midcolor=".25 0 0"
+								endcolor="0 0 0"
+								midcolorpos=".15"
+								minscale="250"
+								maxscale="300"
+								turn="true"
+							/>
+						</simpleemitter>
+
+						<simpleemitter
+							bone="_bone_fx_center"
+							delay="150"
+							count="50"
+							spawnrate="1500"
+							minparticlelife="250"
+							maxparticlelife="400"
+							gravity="1"
+							minspeed="150"
+							maxspeed="300"
+							position="0 325 25"
+							direction="0 1 0"
+							offsetsphere="110 110 25"
+							particledirectionalspace="local"
+							material="/shared/effects/materials/soul_projectile2.material"
+							depthbias="0"
+						>
+							<particle
+								minangle="0"
+								maxangle="360"
+								startcolor="0 0 0"
+								midcolor=".75 .35 .1"
+								endcolor="0 0 0"
+								midcolorpos=".15"
+								minscale="15"
+								maxscale="50"
+								minanglespeed="-360"
+								maxanglespeed="360"
+							/>
+						</simpleemitter>
+
+						<simpleemitter
+							bone="_bone_fx_center"
+							delay="150"
+							count="50"
+							spawnrate="1000"
+							minparticlelife="250"
+							maxparticlelife="500"
+							gravity="-50"
+							minspeed="100"
+							maxspeed="250"
+							position="0 325 25"
+							direction="0 1 0"
+							offsetsphere="25 25 25"
+							particledirectionalspace="local"
+							material="/shared/effects/materials/heathaze.material"
+							depthbias="0"
+						>
+							<particle
+								startalpha=".5"
+								endalpha="0"
+								param=".1"
+								minangle="0"
+								maxangle="360"
+								color="1 1 1"
+								minscale="35"
+								maxscale="100"
+								turn="true"
+							/>
+						</simpleemitter>
+					</model>
+
+				</particle>
+			</simpleemitter>
+
+		</particlesystem>
+		
+		<particlesystem space="world" name="coins">
+
+			<simpleemitter
+				position="0 60 80"
+				count="1"
+				spawnrate="5000"
+				particlelife="5000"
+				acceleration="0.0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="1"
+				>
+					<simpleemitter
+						life="500"
+						startspawnrate=".1"
+						endspawnrate="2000"
+						minparticlelife="1000"
+						maxparticlelife="1500"
+						count="100"
+						angle="50"
+						direction="0 1 0"
+						minspeed="250"
+						maxspeed="2500"
+						gravity="30"
+						drag="0.01"
+						material="/shared/effects/materials/gear_1.material"
+						collide="1"
+						depthbias="-10"
+					>
+						<template name="coin">
+							<particle
+								color="{color}"
+								startalpha="1"
+								midalpha="1"
+								endalpha="0"
+								midalphapos=".8"
+								minscale="7"
+								maxscale="12"
+								minyawspeed="-200"
+								maxyawspeed="200"
+								minpitchspeed="-200"
+								maxpitchspeed="200"
+								minrollspeed="-200"
+								maxrollspeed="200"
+							/>
+						</template>
+						
+						<instance name="coin" color="1 .75 .5" />
+						<instance name="coin" color="1 .9 .5" />
+					</simpleemitter>
+				</particle>
+			</simpleemitter>
+		</particlesystem>
+		
+	</definitions>
+	<thread>
+
+		<spawnparticlesystem instance="instance0" particlesystem="centerFire"/>
+		<spawnparticlesystem instance="instance1" particlesystem="coins"/>
+		<waitfordeath instance="instance0"/>
+		<waitfordeath instance="instance1"/>
+	
+	</thread>
+
+</effect>

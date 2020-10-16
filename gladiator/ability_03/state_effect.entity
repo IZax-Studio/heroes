@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Gladiator_Ability3_Effect"
+	
+	icon="icon3.tga"
+	passiveeffect="effects/state_self.effect"
+	
+	effecttype=""
+	
+	ishidden="true"
+	
+	modifierkey="ability3"
+>
+	<modifier key="iamsheeped" modpriority="1001"
+		passiveeffect=""
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt2" modpriority="1"
+		passiveeffect="../alt2/ability_03/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt3" modpriority="1"
+		passiveeffect="../alt3/ability_03/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt4" modpriority="1"
+		passiveeffect="../alt4/ability_03/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt5" modpriority="1"
+		passiveeffect="../alt5/ability_03/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt6" modpriority="1"
+		passiveeffect="../alt6/ability_03/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt7" modpriority="1"
+		passiveeffect="../alt7/ability_03/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt8" modpriority="1"
+		passiveeffect="../alt8/ability_03/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt9" modpriority="1"
+		passiveeffect="../alt9/ability_03/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt11" modpriority="1"
+		passiveeffect="../alt11/ability_03/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt12" modpriority="1"
+		passiveeffect="../alt12/ability_03/effects/state_self.effect"
+	/>
+	
+</state>

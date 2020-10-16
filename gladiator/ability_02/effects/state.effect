@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+
+		
+		
+		<groundsprite
+				life="1500"
+				material="/heroes/gladiator/effects/materials/c_cross.material"
+				startsize="80"
+				midsize="85"
+				endsize="80"
+				startcolor="0.8"
+				midcolor="1"
+				endcolor="0.8"
+				depthbias="-200"
+				startalpha="0.8"
+				midalpha="1"
+				endalpha="0.8"
+				loop="true"
+				
+			/>
+		
+			<simpleemitter
+					spawnrate="4"
+					particlelife="2000"
+					offsetsphere="0 0 0"
+					material="/shared/effects/materials/whitedot.material"
+					direction="0 0 0"
+					speed="0"
+					angle="0"
+					position="0 0 3"
+					
+				>
+					<particle
+						startcolor="1 0 0"
+						endcolor="0"
+						
+						startalpha=".6"
+						midalpha=".4"
+						endalpha="0"
+						size="80"
+				
+					
+						depthbias="-300"
+						
+						pitch="90"
+					
+						lockup="1"
+						lockright="1"
+					/>
+				</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

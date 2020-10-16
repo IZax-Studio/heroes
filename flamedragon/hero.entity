@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_FlameDragon"
+
+	team="Hellbourne"
+	icon="Jakiro.tga"
+	portrait="Jakiro.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana_%.wav"
+	cooldownsound="sounds/voice/cooldown_%.wav"
+	announcersound="sounds/voice/hero_select.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+	
+	infoheight="200"
+	preglobalscale="1.2"
+	modelscale="0.9"
+	effectscale="0.9"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="48"
+	targetoffset="0 0 64"
+
+	category="physical magic"
+	difficulty="2"
+
+	solorating="0"
+	junglerating="0"
+	carryrating="5"
+	supportrating="0"
+	initiatorrating="0"
+	gankerrating="0"
+	pusherrating="0"
+	rangedrating="5"
+	meleerating="0"
+	
+	movespeed="300"
+	turnrate="540"
+	turnsmoothing="0.1"
+
+	maxhealth="150"
+	healthregen="0.25"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="0"
+	magicarmor="5"
+
+	inventory0="Ability_FlameDragon1"
+	inventory1="Ability_FlameDragon2"
+	inventory2="Ability_FlameDragon3"
+	inventory3="Ability_FlameDragon4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="1000"
+	attackactiontime="350"
+	attackcooldown="1700"
+	attackdamagemin="31"
+	attackdamagemax="36"
+	attacknumanims="2"
+	attackoffset="5 65 105"
+	attackprojectile="Projectile_FlameDragon_Attack"
+	attackrange="475"
+	attackstarteffect=""
+	attackactioneffect="effects/attackaction.effect"
+	attackimpacteffect=""
+	attacktype="ranged"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="800"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+	
+	corpsetime="2000"
+	corpsefadetime="2500"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+
+	primaryattribute="Strength"
+	strength="17"
+	strengthperlevel="2.4"
+	agility="16"
+	agilityperlevel="1.5"
+	intelligence="17"
+	intelligenceperlevel="1.9"
+	
+	previewmodel="model.mdf"
+	previewpos="0 0 -30"
+	previewangles="0 0 0"
+	previewscale="1.0"
+	
+	storemodel="model.mdf"
+	storepos="0 0 -75"
+	storeangles="0 0 30"
+	storescale=".75"
+	
+	portraitcampos="-40 200 -50"
+	
+	tooleffectkeyname38="Item_Intelligence7"
+	tooleffectpath38="effects/boost.effect"
+>
+	<!-- Aura so that Volcanos spawn -->
+	<aura name="Draconis_W_Aura" state="State_FlameDragon_Ability2_Marker" radius="99999" targetscheme="ally_and_enemy_Towers" ignoreinvulnerable="true" propagatecondition="not_illusion" duration="300000" notooltip="true" />
+	
+	<onattackstart />
+
+	<recommendeditem name="Item_MinorTotem" />
+	<recommendeditem name="Item_RunesOfTheBlight" />
+	<recommendeditem name="Item_HealthPotion" />
+	<recommendeditem name="Item_HomecomingStone" />
+	
+	<recommendeditem name="Item_FlamingEye" />
+	<recommendeditem name="Item_Strength5" />
+	<recommendeditem name="Item_Intelligence5" />
+	<recommendeditem name="Item_Astrolabe" />
+	<recommendeditem name="Item_PlatedGreaves" />
+	<recommendeditem name="Item_SacrificialStone" />
+	<recommendeditem name="Item_Intelligence7" />
+	<recommendeditem name="Item_BarrierIdol" />
+	<recommendeditem name="Item_Morph" />
+	
+	<modifier key="frost" modpriority="90"
+		attackprojectile="Projectile_Frost"	
+	>
+		<onattackstart>
+		</onattackstart>
+	</modifier>
+	
+	<modifier key="flamedragon_fly" modpriority="100"
+		walkanim="ability_2_fly"
+	/>
+	
+	<modifier key="iamsheeped" modpriority="100"
+		passiveeffect=""
+	/>
+	
+	<modifier key="frost_parasite" modpriority="150" />
+	
+	<modifier key="Draconis_Mimic" modpriority="160" condition="mimic"
+	>
+		<!-- Aura so that Volcanos spawn -->
+		<aura name="Draconis_W_Aura" state="State_FlameDragon_Ability2_Marker" radius="0" targetscheme="nothing" propagatecondition="not_illusion" duration="0" notooltip="true" />
+	</modifier>
+	
+	<!-- <modifier key="gated" modpriority="200"
+		magicarmor="5"
+		
+		attackdamagemin="35.25"
+		attackdamagemax="40.25"
+	>
+	</modifier> -->
+	
+	<altavatar key="Hero_FlameDragon.Alt"
+		preglobalscale="1.3"
+		
+		attackactioneffect="alt/effects/attackaction.effect"
+
+		icon2="alt/icon.tga"
+		portrait="icon.tga"
+		model="alt/model.mdf"
+
+		previewmodel="alt/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.0"
+	
+		storemodel="alt/model_store.mdf"
+		storepos="0 0 -40"
+		storeangles="0 0 25"
+		storescale="1.25"
+
+		portraitcampos="-20 170 40"
+		
+		attackprojectile="Projectile_FlameDragon_Attack"
+		attacknumanims="1"	
+		
+		tooleffectpath38="alt/effects/boost.effect"
+	>
+		<onattackstart>
+			<random min="1" max="3" />
+			<setvar0 a="result" />
+			<compare a="var0" b="2" op="eq">
+				<playanim name="attack_blue" speed="source_attackspeed" target="source_entity" />
+				<setattackprojectile name="Projectile_FlameDragon_Attack_blue" />
+			</compare>
+			<compare a="var0" b="3" op="eq">
+				<playanim name="attack_green" speed="source_attackspeed" target="source_entity" />
+				<setattackprojectile name="Projectile_FlameDragon_Attack_green" />
+			</compare>
+		</onattackstart>
+	</altavatar>
+	
+	<altavatar key="Hero_FlameDragon.Alt2"
+		preglobalscale="1.3"
+		
+		attackactioneffect="alt2/effects/attackaction.effect"
+
+		icon2="alt2/icon.tga"
+		portrait="alt2/icon.tga"
+		model="alt2/model.mdf"
+		
+		selectedsound="alt2/sounds/voice/vox_%.wav"
+		selectedflavorsound="alt2/sounds/voice/vox_%.wav"
+		confirmmovesound="alt2/sounds/voice/vox_%.wav"
+		confirmattacksound="alt2/sounds/voice/vox_%.wav"
+		nomanasound="alt2/sounds/voice/no_mana.wav"
+		cooldownsound="alt2/sounds/voice/cooldown.wav"
+		tauntedsound="alt2/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt2/sounds/voice/taunt_after.wav"
+
+		previewmodel="alt2/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.0"
+	
+		storemodel="alt2/model_store.mdf"
+		storepos="0 0 -40"
+		storeangles="0 0 25"
+		storescale="1.0"
+
+		portraitcampos="-45 260 20"
+		
+		attackprojectile="Projectile_FlameDragon_Attack"
+		attacknumanims="3"	
+		
+		tooleffectpath38="alt2/effects/boost.effect"
+	/>
+	
+	<altavatar key="Hero_FlameDragon.Alt3"
+		preglobalscale="1.4"
+		
+		attackactioneffect="alt3/effects/attackaction.effect"
+		attackoffset="0 200 150"
+
+		icon2="alt3/icon.tga"
+		portrait="alt3/icon.tga"
+		model="alt3/model.mdf"
+		
+		selectedsound="alt3/sounds/voice/select_%.wav"
+		selectedflavorsound="alt3/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt3/sounds/voice/move_%.wav"
+		confirmattacksound="alt3/sounds/voice/attack_%.wav"
+		nomanasound="alt3/sounds/voice/no_mana.wav"
+		cooldownsound="alt3/sounds/voice/cooldown.wav"
+		tauntedsound="alt3/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt3/sounds/voice/taunt_after.wav"
+
+		previewmodel="alt3/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.0"
+	
+		storemodel="alt3/model_store.mdf"
+		storepos="0 0 -40"
+		storeangles="0 0 25"
+		storescale="1.0"
+
+		portraitcampos="-52 250 52"
+
+		
+		attackprojectile="Projectile_FlameDragon_Attack"
+		attacknumanims="2"
+		
+		tooleffectpath38="alt3/effects/boost.effect"
+	/>
+	
+	<altavatar key="Hero_FlameDragon.main_reskin"
+		preglobalscale="1.2"
+		
+		passiveeffect="reskin/effects/body.effect"
+		
+		icon2="reskin/icon.tga"
+		portrait="reskin/icon.tga"
+		model="reskin/model.mdf"
+
+		previewmodel="reskin/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.0"
+		
+		storemodel="reskin/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 25"
+		storescale="1.0"
+
+		portraitcampos="-8 120 -45"
+				
+		storepassiveeffect="reskin/effects/body_preview.effect"
+		
+		attackprojectile="Projectile_FlameDragon_Attack"
+		attacknumanims="2"
+		attackoffset="0 150 140"
+		
+		tooleffectpath38="effects/boost.effect"
+	/>
+	
+	<altavatar key="Hero_FlameDragon.Alt4"
+		preglobalscale="1"
+		
+		attackactioneffect="alt4/effects/attackaction.effect"
+
+		icon2="alt4/icon.tga"
+		portrait="alt4/icon.tga"
+		model="alt4/model.mdf"
+		
+		selectedsound="alt4/sounds/voice/select_%.wav"
+		selectedflavorsound="alt4/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt4/sounds/voice/move_%.wav"
+		confirmattacksound="alt4/sounds/voice/attack_%.wav"
+		nomanasound="alt4/sounds/voice/no_mana.wav"
+		cooldownsound="alt4/sounds/voice/cooldown.wav"
+		tauntedsound="alt4/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt4/sounds/voice/taunt_after.wav"
+
+		previewmodel="alt4/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.0"
+	
+		storemodel="alt4/model_store.mdf"
+		storepos="0 0 -30"
+		storeangles="0 0 25"
+		storescale=".8"
+
+		portraitcampos="-28 190 75"
+		
+		attackprojectile="Projectile_FlameDragon_Attack"
+		attacknumanims="2"
+		attackoffset="0 150 140"
+		
+		tooleffectpath38="alt4/effects/boost.effect"
+	>
+		<onframe> 
+			<hasmodifier name="Deadlift_Ghost">
+				<deactivatemodifierkey name="Iron_Legion" />
+			</hasmodifier>
+		</onframe>
+	
+		<onspawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Engineer.Alt4 aa.Hero_Nomad.Alt6 aa.Hero_FlameDragon.Alt4 aa.Hero_MasterOfArms.Alt4 aa.Hero_Armadon.Alt4 aa.Hero_Andromeda.Alt3">
+				<activatemodifierkey name="Iron_Legion" />
+			</ownsproduct>
+		</onspawn>
+		
+		<onrespawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Engineer.Alt4 aa.Hero_Nomad.Alt6 aa.Hero_FlameDragon.Alt4 aa.Hero_MasterOfArms.Alt4 aa.Hero_Armadon.Alt4 aa.Hero_Andromeda.Alt3">
+				<activatemodifierkey name="Iron_Legion" />
+			</ownsproduct>
+		</onrespawn>
+		
+		<onkilled>
+			<ownsproduct target="this_entity" product="aa.Hero_Engineer.Alt4 aa.Hero_Nomad.Alt6 aa.Hero_FlameDragon.Alt4 aa.Hero_MasterOfArms.Alt4 aa.Hero_Armadon.Alt4 aa.Hero_Andromeda.Alt3">
+				<deactivatemodifierkey name="Iron_Legion" />
+			</ownsproduct>
+		</onkilled>
+		
+		<modifier key="Iron_Legion" modpriority="1000"
+			passiveeffect="alt4/effects/Iron_Legion.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_FlameDragon.Alt5"
+		preglobalscale="1.35"
+		
+		attackactioneffect="alt5/effects/attackaction.effect"
+		attackoffset="0 50 130"
+
+		icon2="alt5/icon.tga"
+		portrait="alt5/icon.tga"
+		model="alt5/model.mdf"
+		
+		selectedsound="alt5/sounds/voice/select_%.wav"
+		selectedflavorsound="alt5/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt5/sounds/voice/move_%.wav"
+		confirmattacksound="alt5/sounds/voice/attack_%.wav"
+		nomanasound="alt5/sounds/voice/no_mana.wav"
+		cooldownsound="alt5/sounds/voice/cooldown.wav"
+		tauntedsound="alt5/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt4/sounds/voice/taunt_after.wav"
+
+		previewmodel="alt5/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.0"
+	
+		storemodel="alt5/store_model.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 25"
+		storescale=".9"
+
+		portraitcampos="-12 120 55"
+		
+		attackprojectile="Projectile_FlameDragon_Attack_blue"
+		attacknumanims="2"
+		
+		tooleffectpath38="alt5/effects/boost.effect"
+	>
+
+	</altavatar>
+	
+	<altavatar key="Hero_FlameDragon.Alt6"
+		preglobalscale="1.35"
+		portraitcampos="-10 100 70"
+		
+		attackactioneffect="alt6/effects/attackaction.effect"
+		attackoffset="0 100 50"
+
+		icon2="alt6/icon.tga"
+		portrait="alt6/icon.tga"
+		model="alt6/model.mdf"
+		
+		selectedsound="alt6/sounds/voice/select_%.wav"
+		selectedflavorsound="alt6/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt6/sounds/voice/move_%.wav"
+		confirmattacksound="alt6/sounds/voice/attack_%.wav"
+		nomanasound="alt6/sounds/voice/no_mana.wav"
+		cooldownsound="alt6/sounds/voice/cooldown.wav"
+		tauntedsound="alt6/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt6/sounds/voice/taunt_after.wav"
+
+		previewmodel="alt6/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.0"
+	
+		storemodel="alt6/store_model.mdf"
+		storepos="0 0 -30"
+		storeangles="0 0 25"
+		storescale="1.0"
+		
+		tooleffectpath38="alt6/effects/boost.effect"
+	/>
+	
+	<altavatar key="Hero_FlameDragon.Alt7"
+		preglobalscale="1.35"
+		portraitcampos="10 65 20"
+		
+		attackactioneffect="alt7/effects/attackaction.effect"
+		attackoffset="0 100 50"
+
+		icon2="alt7/icon.tga"
+		portrait="alt7/icon.tga"
+		model="alt7/model.mdf"
+		
+		selectedsound="alt7/sounds/voice/select_%.wav"
+		selectedflavorsound="alt7/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt7/sounds/voice/move_%.wav"
+		confirmattacksound="alt7/sounds/voice/attack_%.wav"
+		nomanasound="alt7/sounds/voice/no_mana.wav"
+		cooldownsound="alt7/sounds/voice/cooldown.wav"
+		tauntedsound="alt7/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt7/sounds/voice/taunt_after.wav"
+
+		previewmodel="alt7/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.0"
+	
+		storemodel="alt7/store_model.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 25"
+		
+		tooleffectpath38="alt7/effects/boost.effect"
+	/>
+	
+	<altavatar key="Hero_FlameDragon.Alt8"
+		preglobalscale="1.15"
+		portraitcampos="-10 120 50"
+		
+		attackactioneffect="alt8/effects/attackaction.effect"
+		attackoffset="0 100 150"
+
+		icon2="alt8/icon.tga"
+		portrait="alt8/icon.tga"
+		model="alt8/model.mdf"
+		
+		selectedsound="alt8/sounds/voice/hatchling/select_%.wav"
+		confirmmovesound="alt8/sounds/voice/hatchling/move_%.wav"
+		confirmattacksound="alt8/sounds/voice/hatchling/attack_%.wav"
+		nomanasound="alt8/sounds/voice/hatchling/no_mana.wav"
+		cooldownsound="alt8/sounds/voice/hatchling/cooldown.wav"
+		tauntedsound="alt8/sounds/voice/hatchling/taunt_prior.wav"
+		tauntkillsound="alt8/sounds/voice/hatchling/taunt_after.wav"
+
+		previewmodel="alt8/store_model.mdf"
+		previewpassiveeffect="alt8/effects/body_store.effect"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.0"
+	
+		storemodel="alt8/store_model.mdf"
+		storepassiveeffect="alt8/effects/body_store.effect"
+		storepos="0 0 -60"
+		storeangles="0 0 25"
+		storescale="1.0"
+		
+		tooleffectkeyname0="effect_Boots"
+		tooleffectpath0="alt8/effects/boots.effect"
+		tooleffectgroup0="boots"
+		
+		tooleffectkeyname1="effect_IceBrand"
+		tooleffectpath1="alt8/effects/body_ice.effect"
+		tooleffectgroup1="weapon"
+		
+		tooleffectkeyname2="Item_Soultrap"
+		tooleffectpath2="alt8/effects/body_soul.effect"
+		tooleffectgroup2="soul"
+		
+		tooleffectkeyname3="Item_BloodborneMaul"
+		tooleffectpath3="alt8/effects/body_maul.effect"
+		tooleffectgroup3="heart"
+		
+		tooleffectkeyname4="Item_Pierce"
+		tooleffectpath4="alt8/effects/body_maul.effect"
+		tooleffectgroup4="heart"
+		
+		tooleffectkeyname5="Item_UltorsHeavyPlate"
+		tooleffectpath5="alt8/effects/body_ultor.effect"
+		tooleffectgroup5="gloves"
+		
+		tooleffectpath38="alt8/effects/boost.effect"
+	>
+	
+		<onframe>
+			<hasmodifier entity="this_entity" name="alt_ElderParasite">
+				<activatemodifierkey name="Projectile_ElderParasite" />
+				<playeffect effect="/heroes/flamedragon/alt8/effects/sound_elder.effect" target="source_position"/>
+			</hasmodifier>
+
+			<setaccumulator value="0" />
+			<foreachitem source="this_entity">
+				<compare a="accumulator" b="0" op="eq">
+					<entitytype type="Item_Insanitarius" source="this_entity">
+						<setaccumulator value="1" />
+					</entitytype>
+					<else>
+						<entitytype type="Item_BehemothsHeart" source="this_entity">
+							<setaccumulator value="2" />
+						</entitytype>
+					</else>
+				</compare>
+			</foreachitem>
+			
+			<compare a="accumulator" b="1" op="eq"> 
+				<!-- has insanitarius -->
+				<hasmodifier entity="this_entity" name="alt_Heart">
+					<!-- has both -->
+					<playeffect effect="/heroes/flamedragon/alt8/effects/sound_plate.effect" target="source_position"/>
+					<activatemodifierkey name="Skin_Insanitarius_Behe_Heart" />
+					<deactivatemodifierkey name="Skin_Insanitarius" />
+					<deactivatemodifierkey name="Skin_Behe_Heart" />
+				</hasmodifier>
+				<else>
+				    <playeffect effect="/heroes/flamedragon/alt8/effects/sound_plate.effect" target="source_position"/>
+					<activatemodifierkey name="Skin_Insanitarius" />
+					<deactivatemodifierkey name="Skin_Insanitarius_Behe_Heart" />
+					<deactivatemodifierkey name="Skin_Behe_Heart" />
+				</else>
+			</compare>
+			<else>
+				<compare a="accumulator" b="2" op="eq">
+					<!-- has behemoth's heart -->
+					<setaccumulator value="0" />
+					<foreachitem source="this_entity">
+						<compare a="accumulator" b="0" op="eq">
+							<entitytype type="Item_Insanitarius" source="this_entity">
+								<!-- has both -->
+								<setaccumulator value="1" />
+								<playeffect effect="/heroes/flamedragon/alt8/effects/sound_behemoth_heart.effect" target="source_position"/>
+								<activatemodifierkey name="Skin_Insanitarius_Behe_Heart" />
+								<deactivatemodifierkey name="Skin_Behe_Heart" />
+								<deactivatemodifierkey name="Skin_Insanitarius" />
+							</entitytype>
+							<else>
+							    <playeffect effect="/heroes/flamedragon/alt8/effects/sound_behemoth_heart.effect" target="source_position"/>
+								<activatemodifierkey name="Skin_Behe_Heart" />
+								<deactivatemodifierkey name="Skin_Insanitarius_Behe_Heart" />
+								<deactivatemodifierkey name="Skin_Insanitarius" />
+							</else>
+						</compare>
+					</foreachitem>
+				</compare>
+				<else>
+					<!-- has neither -->
+					<deactivatemodifierkey name="Skin_Insanitarius" />
+					<deactivatemodifierkey name="Skin_Behe_Heart" />
+				</else>
+			</else>
+		</onframe>
+	
+		<onlevelup>
+			<compare a="level" b="16" op="ge">
+			<playeffect effect="/heroes/flamedragon/alt8/effects/sound_stage4.effect" target="source_position"/>
+				<activatemodifierkey name="Stage4" />
+				<deactivatemodifierkey name="Stage3" />
+				<deactivatemodifierkey name="Stage2" />
+			</compare>
+			<else>
+				<compare a="level" b="11" op="ge">
+				    <playeffect effect="/heroes/flamedragon/alt8/effects/sound_stage3.effect" target="source_position"/>
+					<activatemodifierkey name="Stage3" />
+					<deactivatemodifierkey name="Stage2" />
+				</compare>
+				<else>
+					<compare a="level" b="6" op="ge">
+					   <playeffect effect="/heroes/flamedragon/alt8/effects/sound_stage2.effect" target="source_position"/>
+					   <activatemodifierkey name="Stage2" />
+					</compare>
+				</else>
+			</else>
+		</onlevelup>
+	
+		<modifier key="frost" modpriority="90"
+		/>
+		
+		<modifier key="Skin_Insanitarius" modpriority="101"
+			skin="insanitarius"
+		/>
+		
+		<modifier key="Skin_Behe_Heart" modpriority="101"
+			skin="behe_heart"
+		/>
+		
+		<modifier key="Skin_Insanitarius_Behe_Heart" modpriority="105"
+			skin="insanitarius_behe_heart"
+		/>
+		
+		<modifier key="Stage2" modpriority="101"
+			model="alt8/model_lvl_2.mdf"
+			preglobalscale="1.3"
+			attackoffset="0 100 160"
+			selectedsound="alt8/sounds/voice/adult/select_%.wav"
+		    selectedflavorsound="alt8/sounds/voice/adult/select_flavour_%.wav"
+		    confirmmovesound="alt8/sounds/voice/adult/move_%.wav"
+		    confirmattacksound="alt8/sounds/voice/adult/attack_%.wav"
+		    nomanasound="alt8/sounds/voice/adult/no_mana.wav"
+		    cooldownsound="alt8/sounds/voice/adult/cooldown.wav"
+		    tauntedsound="alt8/sounds/voice/adult/taunt_prior.wav"
+		    tauntkillsound="alt8/sounds/voice/adult/taunt_after.wav"
+		/>
+		
+		<modifier key="Stage3" modpriority="101"
+			model="alt8/model_lvl_3.mdf"
+			preglobalscale="1.35"
+			attackoffset="0 100 160"
+			selectedsound="alt8/sounds/voice/adult/select_%.wav"
+		    selectedflavorsound="alt8/sounds/voice/adult/select_flavour_%.wav"
+		    confirmmovesound="alt8/sounds/voice/adult/move_%.wav"
+		    confirmattacksound="alt8/sounds/voice/adult/attack_%.wav"
+		    nomanasound="alt8/sounds/voice/adult/no_mana.wav"
+		    cooldownsound="alt8/sounds/voice/adult/cooldown.wav"
+		    tauntedsound="alt8/sounds/voice/adult/taunt_prior.wav"
+		    tauntkillsound="alt8/sounds/voice/adult/taunt_after.wav"
+		/>
+		
+		<modifier key="Stage4" modpriority="101"
+			model="alt8/model_lvl_4.mdf"
+			preglobalscale="1.4"
+			attackoffset="0 100 160"
+			portraitcampos="-10 150 50"
+			selectedsound="alt8/sounds/voice/old/select_%.wav"
+		    selectedflavorsound="alt8/sounds/voice/old/select_flavour_%.wav"
+		    confirmmovesound="alt8/sounds/voice/old/move_%.wav"
+		    confirmattacksound="alt8/sounds/voice/old/attack_%.wav"
+		    nomanasound="alt8/sounds/voice/old/no_mana.wav"
+		    cooldownsound="alt8/sounds/voice/old/cooldown.wav"
+		    tauntedsound="alt8/sounds/voice/old/taunt_prior.wav"
+		    tauntkillsound="alt8/sounds/voice/old/taunt_after.wav"
+		/>	
+	</altavatar>
+
+	<altavatar key="Hero_FlameDragon.trophy_skin"
+
+		icon2="trophy_skin/icon.tga"
+		portrait="trophy_skin/icon.tga"
+	
+		model="trophy_skin/model.mdf"
+		passiveeffect="trophy_skin/effects/body.effect"
+
+		infoheight="200"
+		preglobalscale="1.2"
+		modelscale="0.9"
+		effectscale="0.9"
+
+		attackoffset="5 65 105"
+	
+		corpsetime="2000"
+		corpsefadetime="2500"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+		previewmodel="trophy_skin/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.0"
+		
+		storemodel="trophy_skin/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 -25"
+		storescale="1.1"
+	
+		portraitcampos="0 140 60"
+	/>
+	
+	<altavatar key="Hero_FlameDragon.Alt9"
+		icon2="alt9/icon.tga"
+		portrait="alt9/icon.tga"
+	
+		preglobalscale="1.35"
+		
+		model="alt9/model.mdf"
+		passiveeffect="alt9/effects/body.effect"
+		attackactioneffect="alt9/effects/attackaction.effect"
+		attackoffset="0 180 80"
+		
+		portraitcampos="0 20 33"
+		tooleffectpath38="alt9/effects/boost.effect"
+		
+		previewmodel="alt9/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.0"
+	
+		storemodel="alt9/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 25"
+		
+		selectedsound="alt9/sounds/voice/select_% .wav"
+		selectedflavorsound="alt9/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt9/sounds/voice/move_%.wav"
+		confirmattacksound="alt9/sounds/voice/attack_%.wav"
+		nomanasound="alt9/sounds/voice/no_mana.wav"
+		cooldownsound="alt9/sounds/voice/cooldown.wav"
+		tauntedsound="alt9/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt9/sounds/voice/taunt_after.wav"
+	/>
+	
+	<altavatar key="Hero_FlameDragon.Alt10"
+		icon2="alt10/icon.tga"
+	
+		preglobalscale="2"
+		
+		model="alt10/model.mdf"
+		passiveeffect=""
+		
+		attackactioneffect="alt10/effects/attackaction.effect"
+		attackoffset="0 75 175"
+		
+		previewmodel="alt10/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.0"
+	
+		storemodel="alt10/preview.mdf"
+		storepos="0 0 -100"
+		storeangles="0 0 20"
+		storescale="2.0"
+		
+		selectedsound="alt10/sounds/voice/select_% .wav"
+		selectedflavorsound="alt10/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt10/sounds/voice/move_%.wav"
+		confirmattacksound="alt10/sounds/voice/attack_%.wav"
+		nomanasound="alt10/sounds/voice/no_mana.wav"
+		cooldownsound="alt10/sounds/voice/cooldown.wav"
+		tauntedsound="alt10/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt10/sounds/voice/taunt_after.wav"
+		
+		portraitcampos="15 0 37"
+		
+		tooleffectpath38="alt10/effects/boost.effect"
+	>
+		<onattackimpact>
+			<playeffect effect="alt10/projectile/effects/impact.effect" target="this_entity" source="target_entity" occlude="true"/>
+		</onattackimpact>
+	</altavatar>
+</hero>
