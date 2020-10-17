@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="bolt_lightning_02" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.5">
+			
+
+			<sound
+				sample="/heroes/kunas/sounds/custom/ab1_impact_%.wav"
+				volume="0.2"
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="1800"
+			/>			
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				offsetsphere="25 25 0"
+				spawnrate="222"
+				count="5"
+				particlelife="1000"
+				gravity="-.5"
+				acceleration="0"
+				speed="20"
+				position="0 0 20"
+				material="/shared/effects/materials/pyroclast_01.material"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					color=".25 1 .9"
+					startsize="10"
+					endsize="100"
+					minanglespeed="-30"
+					maxanglespeed="33"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+					frame="1"
+					framespeed="1"
+					anchor="1"
+					lockup="0"
+					lockright="false"
+					turn="false"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				offsetsphere="25 25 0"
+				spawnrate="222"
+				count="5"
+				particlelife="1000"
+				gravity="-.5"
+				acceleration="0"
+				speed="20"
+				position="0 0 20"
+				material="/shared/effects/materials/pyroclast_01.material"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					color=".9 .5 .25"
+					startsize="10"
+					endsize="100"
+					minanglespeed="-30"
+					maxanglespeed="33"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+					frame="1"
+					framespeed="1"
+					anchor="1"
+					lockup="0"
+					lockright="false"
+					turn="false"
+				/>
+			</simpleemitter>
+			
+			<light
+				life="2150"			
+				startcolor="0 1.8 3"			
+				endcolor="0"
+				midcolorpos=".5"
+				falloffstart="100"
+				falloffend="1600"
+				position="0 0 700"	
+			/>
+			
+			<beam
+				life="290"
+				delay="100"
+				bone_a="_bone_head"
+				bone_b="_bone_head"
+				position_a="0 0 750"
+				size="200"
+				startcolor="1 .5 0"
+				endcolor="1 .5 0"
+				startalpha="1"
+				midalpha=".5"
+				endalpha="0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				framespeed="10.75"
+			/>
+
+			<beam
+				life="270"
+				delay="150"
+				bone_a="_bone_head"
+				bone_b="_bone_head"
+				position_a="0 0 750"
+				size="150"
+				startcolor="1 .5 0"
+				endcolor="0 .5 1"
+				startalpha="1"
+				midalpha=".5"
+				endalpha="0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				framespeed="9.75"
+			/>
+
+			<beam
+				life="250"
+				delay="200"
+				bone_a="_bone_head"
+				bone_b="_bone_head"
+				position_a="0 0 750"
+				size="100"
+				startcolor="1 .5 0"
+				endcolor=".5 1 1"
+				startalpha="1"
+				midalpha=".5"
+				endalpha="0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				framespeed="8.75"
+			/>
+
+			
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				life="1500"
+				delay="250"
+				spawnrate="2800"
+				count="25"
+				particlelife="250"
+				gravity="0"
+				speed="40"
+				drag="0"
+				acceleration="0"
+				position="0 0 0"
+				material="/shared/effects/materials/lightning_01.material"
+				offsetsphere="50 50 10"
+				minangle="360"
+				maxangle="180"
+				direction="1 0 0"
+				offsetdirection="0 0 0"
+				offsetradial="0 0 0"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="50"
+					maxanglespeed="190"
+					color=".2 .5 1"
+					midcolorpos=".8"
+					startframe="0"
+					endframe="1"
+					startsize="20"
+					midsize="10"
+					endsize="20"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					startstickiness=".2"
+					endstickiness=".2"
+				/>
+			</simpleemitter>
+			
+			<model
+				delay="200"
+				life="350"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="2.5 1 .5"
+				endcolor="0 0 0"
+				startscale="1"
+				midscale=".50"
+				endscale=".0"
+				midscalepos=".5"
+				material="/shared/effects/materials/shell4.material"
+				startalpha="0"
+				endalpha="10"
+			/>
+    
+	        <template name="skeleton" >
+			<billboard
+				delay="{delay}"
+				life="125"
+				material="/shared/effects/materials/skel_blend.material"
+				bone="Bip01 Head"
+				color="1 1 1"			
+				startalpha="1"
+				endalpha="0"
+				pitch="0"
+				size="20"
+				yaw="0"
+				roll="0"
+				directionalspace=""
+				position="0 -10 18"
+				depthbias="-80"			
+			/>	
+			<billboard
+				delay="{delay}"
+				life="125"
+				material="/shared/effects/materials/hand_blend.material"
+				bone="_bone_lefthand"
+				color="1 1 1"			
+				startalpha="1"
+				endalpha="0"
+				pitch="0"
+				size="20"
+				yaw="180"
+				roll="90"
+				directionalspace=""
+				position="0 0 0"
+				depthbias="-80"			
+			/>	
+			<billboard
+				delay="{delay}"
+				life="125"
+				material="/shared/effects/materials/hand_blend.material"
+				bone="_bone_righthand"
+				color="1 1 1"			
+				startalpha="1"
+				endalpha="0"
+				pitch="0"
+				size="20"
+				yaw="180"
+				roll="0"
+				directionalspace=""
+				position="0 0 0"
+				depthbias="-80"			
+			/>				
+			<billboard
+				delay="{delay}"
+				life="125"
+				material="/shared/effects/materials/cage_blend.material"				
+				bone="Bip01 Pelvis"
+				color="1 1 1"			
+				lockup="1"
+				pitch="45"
+				size="35"
+				yaw="90"
+				roll="45"
+				lockright="1"
+				startalpha="1"
+				endalpha="0"
+				directionalspace="local"
+				position="0 0 10"
+				depthbias="-90"			
+			/>		
+
+			<controller bone="Bip01 L UpperArm" >
+			<billboard
+				delay="{delay}"
+				life="125"
+				material="/shared/effects/materials/femur_blend.material"
+				color="1 1 1"			
+				startalpha="1"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				size="8"
+				width="20"
+				yaw="0"
+				roll="0"
+				pitch="0"
+				directionalspace="local"
+				position="10 0 0"
+				depthbias="-150"			
+			/>
+			</controller>
+			<controller bone="Bip01 R UpperArm" >
+			<billboard
+				delay="{delay}"
+				life="125"
+				material="/shared/effects/materials/femur_blend.material"
+				color="1 1 1"			
+				startalpha="1"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				size="8"
+				width="20"
+				yaw="0"
+				roll="0"
+				pitch="0"
+				directionalspace="local"
+				position="10 0 0"
+				depthbias="-150"			
+			/>
+			</controller>
+			<controller bone="Bip01 L Forearm" >
+			<billboard
+				delay="{delay}"
+				life="125"
+				material="/shared/effects/materials/femur_blend.material"
+				color="1 1 1"			
+				startalpha="1"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				size="8"
+				width="20"
+				yaw="0"
+				roll="0"
+				pitch="0"
+				directionalspace="local"
+				position="10 0 0"
+				depthbias="-150"			
+			/>
+			</controller>
+			<controller bone="Bip01 R Forearm" >
+			<billboard
+				delay="{delay}"
+				life="125"
+				material="/shared/effects/materials/femur_blend.material"
+				color="1 1 1"			
+				startalpha="1"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				size="8"
+				width="20"
+				yaw="0"
+				roll="0"
+				pitch="0"
+				directionalspace="local"
+				position="10 0 0"
+				depthbias="-150"			
+			/>
+			</controller>
+			<controller bone="Bip01 L Thigh" >
+			<billboard
+				delay="{delay}"
+				life="125"
+				material="/shared/effects/materials/femur_blend.material"
+				color="1 1 1"			
+				startalpha="1"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				size="5"
+				width="12"
+				yaw="0"
+				roll="0"
+				pitch="0"
+				directionalspace="local"
+				position="10 0 0"
+				depthbias="-150"			
+			/>
+			</controller>
+			<controller bone="Bip01 R Thigh" >
+			<billboard
+				delay="{delay}"
+				life="125"
+				material="/shared/effects/materials/femur_blend.material"
+				color="1 1 1"			
+				startalpha="1"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				size="5"
+				width="12"
+				yaw="0"
+				roll="0"
+				pitch="0"
+				directionalspace="local"
+				position="10 0 0"
+				depthbias="-150"			
+			/>
+			</controller>
+			<controller bone="Bip01 L Calf" >
+			<billboard
+				delay="{delay}"
+				life="125"
+				material="/shared/effects/materials/femur_blend.material"
+				color="1 1 1"			
+				startalpha="1"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				size="5"
+				width="12"
+				yaw="0"
+				roll="0"
+				pitch="0"
+				directionalspace="local"
+				position="10 0 0"
+				depthbias="-150"			
+			/>
+			</controller>
+			<controller bone="Bip01 R Calf" >
+			<billboard
+				delay="{delay}"
+				life="125"
+				material="/shared/effects/materials/femur_blend.material"
+				color="1 1 1"			
+				startalpha="1"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				size="5"
+				width="12"
+				yaw="0"
+				roll="0"
+				pitch="0"
+				directionalspace="local"
+				position="10 0 0"
+				depthbias="-150"			
+			/>
+			</controller>
+		</template>
+			
+			<instance name="skeleton" delay="50" />
+			<instance name="skeleton" delay="150" />
+			<instance name="skeleton" delay="266" />
+			<instance name="skeleton" delay="400" />
+			<instance name="skeleton" delay="533" />
+			<instance name="skeleton" delay="666" />
+			<instance name="skeleton" delay="816" />
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" /> 
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

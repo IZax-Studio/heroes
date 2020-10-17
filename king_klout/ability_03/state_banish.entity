@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_KingKlout_Ability3_Banish"
+
+	icon="icon3.tga"
+	passiveeffect="effects/curse.effect"
+
+	disarmed="true"
+	silenced="true"
+	perplexed="true"
+	restrained="true" 
+	movespeedslow="0.3"
+
+	morphmodel="minion/morph.mdf"
+	morphpriority="101"
+	morphpreglobalscale="1.0"
+	morphmodelscale="1.0"
+	morpheffectscale="1.0"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	maxcharges="5"
+	
+	magicarmorpercharge="-0.40,-0.60,-0.80,-1.00"
+
+	modifierkey="iamsheeped"
+	modifierkey2="KingKlout_nomorph"
+>
+
+	<oninflict>
+		<breakchannel entity="this_owner_entity" />
+		<hasmodifier name="soccer">
+			<damage effecttype="Magic DOT" amount="25" target="this_owner_entity" />
+		</hasmodifier>
+		<else>
+			<damage effecttype="Magic DOT" amount="20,40,60,80" target="this_owner_entity" />
+		</else>
+	</oninflict>
+	
+	<altavatar key="Hero_KingKlout.Alt"
+		morphmodel="../alt/ability_03/minion/morph.mdf"
+		morphpreglobalscale="1.0"
+		morphmodelscale="1.0"
+		morpheffectscale="1.0"
+	/>
+
+	<altavatar key="Hero_KingKlout.Alt2"
+		morphmodel="../alt2/ability_03/minion/morph.mdf"
+		morphpreglobalscale="1.0"
+		morphmodelscale="1.0"
+		morpheffectscale="1.0"
+	/>
+	
+	<altavatar key="Hero_KingKlout.Alt3"
+		morphmodel="../alt3/ability_03/minion/morph.mdf"
+		morphpreglobalscale="1.0"
+		morphmodelscale="1.0"
+		morpheffectscale="1.0"
+	/>
+</state>

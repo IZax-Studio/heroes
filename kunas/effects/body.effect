@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+
+
+		
+			<template name="glow">
+				<billboard
+					bone="{bone}"
+					position="0 0 -5"
+					expirelife="250"
+					startcolor="0 .2 .5"
+					endcolor="0 0 0"
+					size="50"
+					depthbias="-10"
+					material="/shared/effects/materials/flare_02.material"
+				/>				
+				
+				<billboard
+					bone="{bone}"
+					position="0 0 -5"
+					expirelife="250"
+					startcolor="0 .2 .5"
+					endcolor="0 0 0"
+					size="50"
+					depthbias="-10"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+				
+				<billboard
+					bone="{bone}"
+					position="0 0 -5"
+					expirelife="250"
+					startcolor=".4 .4 .5"
+					endcolor="0 0 0"
+					size="25"
+					depthbias="-10"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+
+				
+
+			</template>
+			
+			<instance name="glow" bone="_bone_lefthand"/>
+			<instance name="glow" bone="_bone_righthand"/>
+		
+			<simpleemitter
+				bone="_bone_righthand"
+				spawnrate="25"
+				particlelife="200"
+				gravity="0"
+				speed="2.0"
+				drag="0.0"
+				acceleration="0.0"
+				material="/shared/effects/materials/femme_lightning_06.material"
+				offsetsphere="5 5 5"
+				position="0 0 -5"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-22"
+					maxanglespeed="22"
+					startcolor="0 .5 1"
+					endcolor=".2 1 1"
+					width="20"
+					height="20"
+					anchor="1"
+					turn="true"
+					framespeed="1.75"
+				/>
+			</simpleemitter>			
+			
+			<simpleemitter
+				bone="_bone_lefthand"
+				spawnrate="25"
+				particlelife="200"
+				gravity="0"
+				speed="2.0"
+				drag="0.0"
+				acceleration="0.0"
+				material="/shared/effects/materials/femme_lightning_06.material"
+				offsetsphere="5 5 5"
+				position="0 0 -5"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-22"
+					maxanglespeed="22"
+					startcolor="0 .5 1"
+					endcolor=".2 1 1"
+					width="20"
+					height="20"
+					anchor="1"
+					turn="true"
+					framespeed="1.75"
+				/>
+			</simpleemitter>
+		
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

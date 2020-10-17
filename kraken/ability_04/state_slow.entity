@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Kraken_Ability4_Slow"
+
+	icon="icon4.tga"
+	
+	passiveeffect=""
+	effecttype="Push"
+	movespeedslow="0.5"
+	
+	unitwalking="true"
+
+	negativeeffect="slowed"
+	
+	modifierkey="kraken_Whirlpool"
+>
+	<onframe>
+		<damage effecttype="Magic DOT" amount="50,60,70" b="frametime" op="mult"/>
+		<condition test="not_hasstate State_Kraken_Ability4_Stun">
+			<push force="-100,-125,-150" frame="true" source="source_entity" />
+		</condition>
+	</onframe>
+	
+	<modifier key="soccer" modpriority="150">
+		<onframe>
+			<push force="-75" frame="true" source="source_entity" />
+		</onframe>
+	</modifier>
+	
+</state>

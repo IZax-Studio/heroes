@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ichor_Ability1"
+	
+	icon="icon1.tga"
+	passiveeffect="effects/state.effect"
+	movespeedslow="0.3"
+
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	dynamicprecache="effects/impact2.effect"
+>
+	<oninflict>
+		<setscriptvalue name="impact2_effect" value="effects/impact2.effect" entity="this_entity" />
+	</oninflict>
+
+	<onframe />
+	
+	<ondamaged>
+		<cantarget targetscheme="enemy_heroes">
+			<damageeffecttype effecttype="DOT"/>
+			<else>
+				<setvar0 source="target_entity" a="source_missinghealth"  />
+				<evaluate a="var0" b=".02" op="mult"/>
+				<heal a="15,25,35,45" b="result" op="add"/>
+				
+				<!-- Dynamic visual effects -->
+				<getscriptvalue name="impact2_effect" destvar="str0" entity="this_entity" />
+				<playeffectdynamic effect="str0" source="target_entity" target="target_entity" occlude="true" />
+				<playeffect effect="effects/heal.effect" source="target_entity" target="" />
+			</else>
+		</cantarget>
+	</ondamaged>
+	
+	<altavatar key="Hero_Ichor.Alt"
+		passiveeffect="../alt/ability_01/effects/state.effect"
+		dynamicprecache="../alt/ability_01/effects/impact2.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="impact2_effect" value="../alt/ability_01/effects/impact2.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_Ichor.Alt2"
+		passiveeffect="../alt2/ability_01/effects/state.effect"
+		dynamicprecache="../alt2/ability_01/effects/impact2.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="impact2_effect" value="../alt2/ability_01/effects/impact2.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+</state>

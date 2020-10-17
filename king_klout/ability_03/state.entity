@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_KingKlout_Ability3"
+
+	icon="icon3.tga"
+	passiveeffect="effects/state_1.effect"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	magicarmorpercharge="-0.40,-0.60,-0.80,-1.00"
+
+	maxcharges="5"
+>
+	<onframe />
+
+	<oninflict>
+		<addcharges count="1" />
+		<entitytype type="Pet_PuppetMaster_Ability4">
+			<activatemodifierkey name="voodoo_puppet" />
+		</entitytype>
+	</oninflict>
+	
+	<onrefresh>
+		<addcharges count="1" />
+		<compare a="charges" b="5" op="ge">
+			<compare a="accumulator" b="0" op="gt">
+				<applystate name="State_KingKlout_Ability1_BigSpawn" spawner="this_inflictor_entity" inflictor="this_inflictor_entity" source="this_inflictor_entity" target="this_inflictor_entity" duration="1000" />
+			</compare>
+			<playeffect effect="effects/explosion.effect" source="this_owner_entity" target="" />
+			<applystate name="State_KingKlout_Ability3_NoMorph" duration="5000" target="this_owner_entity" />
+			<applystate name="State_KingKlout_Ability3_Banish" duration="1500,2000,2500,3000" target="this_owner_entity" level="level" charges="5" />
+			<startcooldown entity="this_proxy_entity" />
+			<expire />
+		</compare>
+		<else>
+			<compare a="charges" b="4" op="ge">
+				<setactivemodifierkey name="charges_4" />
+			</compare>
+			<else>
+				<compare a="charges" b="3" op="ge">
+					<setactivemodifierkey name="charges_3" />
+				</compare>
+				<else>
+					<compare a="charges" b="2" op="ge">
+						<setactivemodifierkey name="charges_2" />
+					</compare>
+					<else>
+						<setactivemodifierkey name="charges_1" />
+					</else>
+				</else>
+			</else>
+		</else>
+	</onrefresh>
+	
+	<modifier key="voodoo_puppet" modpriority="100">
+		<onframe>
+			<!-- Duration increased by 1 frame to compensate for the state transfer time -->
+			<changeduration b="50" op="add" />
+			<compare a="charges" b="5" op="ge">
+				<compare a="accumulator" b="0" op="gt">
+					<applystate name="State_KingKlout_Ability1_BigSpawn" spawner="this_inflictor_entity" inflictor="this_inflictor_entity" source="this_inflictor_entity" target="this_inflictor_entity" duration="1000" />
+				</compare>
+				<playeffect effect="effects/explosion.effect" source="this_owner_entity" target="" />
+				<applystate name="State_KingKlout_Ability3_Banish" duration="3000" target="this_owner_entity" level="level" charges="charges" />
+				<applystate name="State_KingKlout_Ability3_NoMorph" duration="5000" target="this_owner_entity" />
+				<startcooldown entity="this_proxy_entity" />
+				<expire />
+			</compare>
+			<deactivatemodifierkey name="voodoo_puppet" />
+		</onframe>
+	</modifier>
+
+	<modifier key="charges_1" modpriority="1"
+		passiveeffect="effects/state_1.effect"
+	/>
+
+	<modifier key="charges_2" modpriority="2"
+		passiveeffect="effects/state_2.effect"
+	/>
+
+	<modifier key="charges_3" modpriority="3"
+		passiveeffect="effects/state_3.effect"
+	/>
+
+	<modifier key="charges_4" modpriority="4"
+		passiveeffect="effects/state_4.effect"
+	/>
+
+	<altavatar key="Hero_KingKlout.Alt"
+		passiveeffect="../alt/ability_03/effects/state_1.effect"
+	>
+		<modifier key="charges_1" modpriority="1"
+			passiveeffect="../alt/ability_03/effects/state_1.effect"
+		/>
+
+		<modifier key="charges_2" modpriority="2"
+			passiveeffect="../alt/ability_03/effects/state_2.effect"
+		/>
+
+		<modifier key="charges_3" modpriority="3"
+			passiveeffect="../alt/ability_03/effects/state_3.effect"
+		/>
+
+		<modifier key="charges_4" modpriority="4"
+			passiveeffect="../alt/ability_03/effects/state_4.effect"
+		/>
+	</altavatar>
+
+	<altavatar key="Hero_KingKlout.Alt2"
+		passiveeffect="../alt2/ability_03/effects/state_1.effect"
+	>
+		<modifier key="charges_1" modpriority="1"
+			passiveeffect="../alt2/ability_03/effects/state_1.effect"
+		/>
+
+		<modifier key="charges_2" modpriority="2"
+			passiveeffect="../alt2/ability_03/effects/state_2.effect"
+		/>
+
+		<modifier key="charges_3" modpriority="3"
+			passiveeffect="../alt2/ability_03/effects/state_3.effect"
+		/>
+
+		<modifier key="charges_4" modpriority="4"
+			passiveeffect="../alt2/ability_03/effects/state_4.effect"
+		/>
+	</altavatar>
+	
+	<modifier key="soccer" modpriority="50" magicarmorpercharge="" incomingdamagemultiplierpercharge="0.02,0.04,0.06,0.08,0.10" />
+	
+	<altavatar key="Hero_KingKlout.Alt3"
+		passiveeffect="../alt3/ability_03/effects/state_1.effect"
+	>
+		<modifier key="charges_1" modpriority="1"
+			passiveeffect="../alt3/ability_03/effects/state_1.effect"
+		/>
+
+		<modifier key="charges_2" modpriority="2"
+			passiveeffect="../alt3/ability_03/effects/state_2.effect"
+		/>
+
+		<modifier key="charges_3" modpriority="3"
+			passiveeffect="../alt3/ability_03/effects/state_3.effect"
+		/>
+
+		<modifier key="charges_4" modpriority="4"
+			passiveeffect="../alt3/ability_03/effects/state_4.effect"
+		/>
+	</altavatar>
+</state>

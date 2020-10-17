@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="LC.model" type="K2" high="LC.model" med="LC.model" low="LC.model" >
+	
+	<!-- Offense anims -->
+	<anim name="idle" clip="clips_offense/default_1.clip" fps="30" loop="true"/>
+	
+	<anim name="walk_1" clip="clips_offense/walk_1.clip" fps="31" loop="true">
+	</anim>
+	
+	<anim name="portrait" clip="clips_offense/default_1.clip" loop="true"/>
+	
+	<anim name="bored_1" clip="clips_offense/bored_1.clip"/>
+	
+	<anim name="item_1" clip="clips_offense/item_1.clip"/>
+	
+	<anim name="taunt_1" clip="clips_offense/taunt_1.clip"/>
+	
+	<anim name="attack_1" clip="clips_offense/attack_1.clip" fps="30" loop="false">
+		<frameevent frame="13" cmd="PlaySoundLinear ../sounds/foley/whoosh_%.wav 128 1300 .85"/>
+		<frameevent frame="13" cmd="StartEffect effects/attack_trail.effect"/>
+	</anim>
+	
+	<anim name="attack_2" clip="clips_offense/attack_2.clip" fps="30" loop="false">
+		<frameevent frame="14" cmd="PlaySoundLinear ../sounds/foley/whoosh_%.wav 128 1300 .85"/>
+		<frameevent frame="14" cmd="StartEffect effects/attack_trail.effect"/>
+	</anim>
+	
+	<anim name="attack_3" clip="clips_offense/attack_3.clip" fps="30" loop="false">
+		<frameevent frame="14" cmd="PlaySoundLinear ../sounds/foley/whoosh_%.wav 128 1300 .85"/>
+		<frameevent frame="14" cmd="StartEffect effects/attack_trail.effect"/>
+	</anim>
+
+	<anim name="ability_1" clip="clips_offense/ability_1.clip" fps="50" blendtime="50" >
+		<frameevent frame="2" cmd="StartEffect ability_01/effects/cast.effect 1" />
+		<frameevent frame="14" cmd="StartEffect ability_01/effects/pull.effect" />
+		<endevent cmd="StopEffect 1" />
+	</anim>
+	
+	<anim name="ability_1_boost" clip="clips_offense/ability_1_boost.clip" fps="50" blendtime="50" >
+		<frameevent frame="2" cmd="StartEffect ability_01/effects/cast.effect 1" />
+		<frameevent frame="14" cmd="StartEffect ability_01/effects/pull.effect" />
+		<endevent cmd="StopEffect 1" />
+	</anim>
+	
+	<anim name="ability_2" clip="clips_offense/ability_2.clip">
+		<startevent cmd="PlaySoundLinear ../ability_02/sounds/cast.wav 800 1500 0.85"/>
+	</anim>
+	
+	<anim name="ability_3" clip="clips_offense/ability_3.clip" fps="50">
+		<frameevent frame="62" cmd="starteffect ability_03/effects/cast.effect"/>
+	</anim>
+	
+	<anim name="ability_4" clip="clips_offense/ability_4.clip">
+     <frameevent frame="1" cmd="StartEffect ability_04/effects/start_vox.effect"/>
+	</anim>
+	
+	<anim name="death_1" clip="clips_offense/death_1.clip" fps="30" loop="true" loopbackframe="100">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/death_grunt.wav 1300 1300 1"/>
+		<frameevent frame="70" cmd="PlaySoundLinear ../sounds/foley/death_foley.wav 1300 1300 1"/>
+		<frameevent frame="0" cmd="StartEffect alt3/ability_03/effects/stop_sound_res.effect"/>
+	</anim>
+	
+	<anim name="knock_1" clip="clips_offense/knock_1.clip" loop="true" loopbackframe="-1"/>
+	
+	
+	<!-- Defense anims -->
+	<anim name="idle_defense" clip="clips_defense/default_1.clip" fps="30" loop="true"/>
+	
+	<anim name="portrait_defense" clip="clips_defense/default_1.clip" loop="true"/>
+	
+	<anim name="bored_defense_1" clip="clips_defense/bored_1.clip"/>
+	
+	<anim name="item_defense_1" clip="clips_defense/item_1.clip"/>
+	
+	<anim name="taunt_defense_1" clip="clips_defense/taunt_1.clip"/>
+	
+	<anim name="attack_defense_1" clip="clips_defense/attack_1.clip" fps="30" loop="false">
+	   <frameevent frame="13" cmd="PlaySoundLinear ../sounds/foley/whoosh_%.wav 128 1300 .85"/>
+		<frameevent frame="13" cmd="StartEffect effects/attack_trail.effect"/>
+	</anim>
+	
+	<anim name="attack_defense_2" clip="clips_defense/attack_2.clip" fps="30" loop="false">
+		<frameevent frame="13" cmd="PlaySoundLinear ../sounds/foley/whoosh_%.wav 128 1300 .85"/>
+		<frameevent frame="13" cmd="StartEffect effects/attack_trail.effect"/>
+	</anim>
+	
+	<anim name="walk_defense_1" clip="clips_defense/walk_1.clip" fps="31" loop="true">
+		<frameevent frame="2" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="7" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="14" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="19" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		
+		<frameevent frame="2" cmd="PlaySoundLinear /shared/sounds/footsteps/giant_%.wav 0 2500 0.2"/>
+		<frameevent frame="2" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="14" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+	</anim>
+
+	<anim name="ability_defense_1" clip="clips_defense/ability_1.clip" fps="50" blendtime="50">
+		<frameevent frame="2" cmd="StartEffect ability_01/effects/cast.effect 1" />
+		<frameevent frame="14" cmd="StartEffect ability_01/effects/pull.effect" />
+		<endevent cmd="StopEffect 1" />
+	</anim>
+	
+	<anim name="ability_defense_2" clip="clips_defense/ability_2.clip">
+		<startevent cmd="PlaySoundLinear ../ability_02/sounds/cast.wav 800 1500 0.85"/>
+	</anim>
+	
+	<anim name="ability_3_defense" clip="clips_defense/ability_3.clip" fps="50">
+		<frameevent frame="62" cmd="starteffect ability_03/effects/cast.effect"/>
+	</anim>
+	
+	<anim name="ability_4_defense" clip="clips_defense/ability_4.clip">
+     <frameevent frame="1" cmd="StartEffect ability_04/effects/start_vox.effect"/>
+	</anim>
+	
+	<anim name="death_defense_1" clip="clips_defense/death_1.clip" fps="30" loop="true" loopbackframe="100">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/death_grunt.wav 1300 1300 1"/>
+		<frameevent frame="40" cmd="PlaySoundLinear ../sounds/foley/whoosh_%.wav 1300 1300 1"/>
+		<frameevent frame="55" cmd="PlaySoundLinear ../sounds/foley/imp_1.wav 1300 1300 1"/>
+	</anim>
+	
+	<anim name="knock_defense_1" clip="clips_offense/knock_1.clip" loop="true" loopbackframe="-1"/>
+		
+</model>

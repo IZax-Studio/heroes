@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="ability_02" deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1" >
+		
+			<billboard
+				bone="head"
+				expirelife="500"
+				lockup="1"
+				pitch="90"
+				position="0 0 20"
+				size="20"
+				startcolor=".5"
+				endcolor="0"
+				material="/shared/effects/materials/corona_01.material"
+			/>
+			
+			<simpleemitter
+				bone="head"
+				spawnrate="300"
+				position="0 0 20"
+				offsetradial="8 8 0"
+				minparticlelife="300"
+				maxparticlelife="500"
+				material="/shared/effects/materials/mana.material"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-200"
+					maxanglespeed="200"
+					startcolor=".8 .5 .4"
+					endcolor="0"
+					startsize="0"
+					endsize="10"
+					anchor="1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="head"
+				spawnrate="200"
+				position="0 0 20"
+				direction="0 0 1"
+				directionalspace="global"
+				minangle="90"
+				maxangle="90"
+				speed="17"
+				particlelife="500"
+				material="/shared/effects/materials/flare_03.material"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-200"
+					maxanglespeed="200"
+					startcolor="0"
+					endcolor="1"
+					startsize="0"
+					endsize="1.5"
+					anchor="1"
+				/>
+			</simpleemitter>
+			
+		<twopointemitter
+				spawnrate="50"
+				minparticlelife="500"
+				maxparticlelife="700"
+				bone_a="_bone_weapon2"
+				bone_b="_bone_weapon1"
+				offsetsphere="1"
+				maxspeed="50"
+				direction="0 0 1"
+				angle="90"
+				gravity="0"
+				material="/shared/effects/materials/smoke_17.material"
+				depthbias="-10"
+			>
+				<particle
+					maxangle="360"
+					minstartscale="5"
+					maxstartscale="8"
+					minendscale="6"
+					maxendscale="7"
+					color="1 .5 0"
+					startalpha="0"
+					midalpha=".75"
+					endalpha="0"
+					midalphapos=".1"
+					startanchor=".5"
+					endanchor=".3"
+				/>
+			</twopointemitter>
+
+			<twopointemitter
+				bone_a="_bone_weapon2"
+				bone_b="_bone_weapon1"
+				position="0 0 10"
+				spawnrate="75"
+				minparticlelife="200"
+				maxparticlelife="500"
+				material="/shared/effects/materials/sparks_reveal.material"
+				directionalspace="local"
+				gravity="-10"
+				direction="0 0 1"
+				angle="90"
+				drag="0.02"
+				depthbias="-40"
+			>
+				<particle
+					maxangle="360"
+					startcolor="0"
+					midcolor="1 .8 .8"
+					endcolor="1 .8 .8"
+					minscale="10"
+					maxscale="15"
+					startframe="0"
+					endframe="1"
+				/>
+			</twopointemitter>		
+			
+
+			<twopointemitter
+				spawnrate="50"
+				minparticlelife="600"
+				maxparticlelife="1200"
+				bone_a="_bone_weapon2"
+				bone_b="_bone_weapon1"
+				offsetsphere="5"
+				maxspeed="50"
+				direction="0 0 0"
+				angle="90"
+				gravity="0"
+				material="/shared/effects/materials/fairy_glow.material"
+			>
+				<particle
+					maxangle="360"
+					minstartscale="5"
+					maxstartscale="10"
+					minendscale="5"
+					maxendscale="7"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					startcolor="0"
+					midcolor="1 .5 0"
+					endcolor="0"
+					midcolorpos=".1"
+					startanchor=".8"
+					endanchor=".6"
+				/>
+			</twopointemitter>				
+		
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="300"
+				minparticlelife="250"
+				maxparticlelife="500"
+				speed="5"
+				offsetsphere="30 30 30"
+				drag="0"
+				inheritvelocity=".1"
+				direction="0 0 0"
+				material="/shared/effects/materials/star_04.material"
+			>
+				<particle 
+					startcolor="1 .5 0"
+					endcolor=".5 .5 0"
+					startalpha=".6"
+					midalpha=".6"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					startsize="0"
+					midsize="4"
+					endsize="8"
+				/>
+			</simpleemitter>		
+		
+
+
+ 
+
+			<billboard
+				life="500"
+				startsize="300"
+				endsize="700"
+				position="0 0 70"
+				material="/shared/effects/materials/flare_01.material"
+				startcolor=".5 .2 0"
+				endcolor="0 0 0"
+			/>
+
+			<billboard
+				expirelife="300"
+				size="300"
+				position="0 0 70"
+				material="/shared/effects/materials/flare_01.material"
+				startcolor=".5 .2 0"
+				endcolor="0 0 0"
+			/>				
+		
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

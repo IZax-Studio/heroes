@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="impact" useentityeffectscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" useentityeffectscale="true" scale="1">
+			<sound
+     			linearfalloff="true" 
+				falloffstart="800"
+				falloffend="1300"
+				volume="1"
+				sample="/heroes/ichor/ability_02/sounds/dmg_soak_%.wav"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				startsize="0"
+				endsize="300"
+				life="750"
+				startalpha="1"
+				endalpha="0"
+				material="/shared/effects/materials/outsplash_blend.material"
+			/>
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->

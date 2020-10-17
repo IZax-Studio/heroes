@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Kane_Ability1_Initial"
+
+	icon="icon1.tga"
+	ishidden="true"
+	passiveeffect=""
+	
+	frozen="true"
+	stunned="true"
+	stunneddurationunmodifiable="true"
+	
+	effecttype=""
+	
+	deathpersist="true"
+	
+	alwaystransmitdata="true"
+>
+	<onexpired>
+		<cantarget effecttype="Push">
+			<setpos0 entity="source_entity" offset="0 100 0" offsetspace="source_entity" />
+			<distance source="pos0" target="target_position" />
+			<compare a="result" b="1000" op="lt">
+				<spawnprojectile
+					name="Projectile_Kane_Ability1"
+					source="target_position"
+					target="pos0"
+					bind="target_entity"
+					bindstate="State_Kane_Ability1_Bound"
+					unbindondeath="true"
+					pushentity="true"
+				/>
+			</compare>
+			<targettype type="alive">
+				<playanim name="idle" /> <!-- unfreeze. Should probably automatically resume the previous animation in code? -->
+			</targettype>
+		</cantarget>
+	</onexpired>
+</state>

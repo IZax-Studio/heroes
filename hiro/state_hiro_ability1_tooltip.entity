@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Hiro_Ability1_Tooltip"
+
+	icon="icon1.tga"
+	passiveeffect=""
+
+	effecttype="StatusDebuff"
+>
+    
+	<onframe />
+	<altavatar key="Hero_Hiro.Alt12" modpriority="1"
+		icon="alt12/ability_01/ability_1.tga"
+	>
+		<modifier key="hiroAlt12_Ability1_Upgrade"
+				  icon="alt12/ability_01/ability_1_u.tga"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Hiro.Alt14" modpriority="90"
+		icon="alt14/ability_01/icon.tga"
+	/>
+</state>

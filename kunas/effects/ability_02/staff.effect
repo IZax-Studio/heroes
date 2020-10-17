@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1.2">
+
+			<twopointemitter
+				bone_a="_bone_lefthand"
+				bone_b="_bone_righthand"
+				spawnrate="355"
+				minparticlelife="100"
+				maxparticlelife="300"
+				angle="180"
+				maxspeed="30"
+				gravity="-5"
+				offsetsphere="10"
+				material="/shared/effects/materials/femme_01.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".2 .7 1"
+					endcolor="0"
+					midcolorpos="0.5"
+					minangle="0"
+					maxangle="350"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					startsize="7"
+					maxendsize="15"
+					flare="1"
+					anchor="0"
+					height="6"
+				/>
+			</twopointemitter>
+			
+			<twopointemitter
+				bone_a="_bone_lefthand"
+				bone_b="_bone_righthand"
+				spawnrate="130"
+				particlelife="300"
+				offsetsphere="2"
+				material="/shared/effects/materials/whitedot.material"
+			>
+				<particle
+					color="1 1 1"
+					midcolorpos="0.5"
+					startalpha="1.0"
+					endalpha="1.0"
+					maxangle="360"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					minendsize="5"
+					startsize="5"
+					endsize="9"
+					flare="0"
+					anchor="1"
+					height="10"
+				/>
+			</twopointemitter>
+
+			<beam
+				bone_a="_bone_lefthand"
+				bone_b="_bone_righthand"
+				size="20"
+				startcolor=".6 .8 1"
+				endcolor="0"
+				material="/shared/effects/materials/femme_lightning_01.material"
+				framespeed="1"
+				depthbias="-20"
+				anchor="1"
+			/>
+
+			<billboard
+				bone="_bone_righthand"	
+				material="/shared/effects/materials/flare_01.material"
+				startcolor=".3 .5 .5"
+				endcolor="0"
+				size="30"
+			/>
+			
+			
+		<template name="static" >
+		<controller bone="{bone}" >
+		<simpleemitter
+			spawnrate="100"
+			expirelife="500"
+			offsetsphere="0 0 0"
+			position="{position}"
+			minparticlelife="50"
+			maxparticlelife="150"
+			material="/shared/effects/materials/femme_lightning_06.material"
+		>
+			<particle
+				minangle="0"
+				maxangle="359"
+				size="5"
+				minscale="2"
+				maxscale="4.5"
+				color="0 .65 3"
+				anchor="0"
+				minstartframe="0"
+				maxstartframe="1"
+				lockup="1"
+				lockright="1"
+				minyaw="0"
+				maxyaw="359"
+				minroll="0"
+				maxroll="359"
+				minpitch="0"
+				maxpitch="359"
+			/>
+		</simpleemitter>
+		
+		<simpleemitter
+			spawnrate="10"
+			expirelife="500"
+			offsetsphere="0 0 0"
+			position="{position}"
+			minparticlelife="50"
+			maxparticlelife="150"
+			material="/shared/effects/materials/femme_lightning_07.material"
+		>
+			<particle
+				minangle="0"
+				maxangle="359"
+				size="5"
+				minscale="1"
+				maxscale="5.5"
+				color="0 .65 6"
+				anchor="0"
+				minstartframe="0"
+				maxstartframe="1"
+				lockup="1"
+				lockright="1"
+				minyaw="0"
+				maxyaw="359"
+				minroll="0"
+				maxroll="359"
+				minpitch="0"
+				maxpitch="359"
+			/>
+		</simpleemitter>
+			
+		</controller>
+		</template>
+		
+		<instance name="static" bone="_bone_righthand" position="0 0 0" />
+		
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

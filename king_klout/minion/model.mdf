@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="stone1.model" med="stone1.model" low="stone1.model" >
+
+	<anim name="idle" clip="clips/default_1.clip" fps="30" loop="true" minstartframe="0" maxstartframe="-1" loopbackframe="1" />
+	
+	<anim name="bored_1" clip="clips/bored_1.clip" fps="30" loop="true" minstartframe="0" maxstartframe="-1" loopbackframe="1" />
+	
+	<anim name="bored_2" clip="clips/bored_2.clip" fps="30" loop="true" minstartframe="0" maxstartframe="-1" loopbackframe="1" />
+
+	<anim name="walk_1" clip="clips/walk_1.clip" fps="10" loop="true" minstartframe="0" maxstartframe="-1" loopbackframe="1" >
+		<frameevent frame="6" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="11" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="17" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="21" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+
+		<frameevent frame="6" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="17" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	</anim>
+
+	<anim name="walk_fast" clip="clips/walk_1.clip" fps="30" loop="true" minstartframe="0" maxstartframe="-1" loopbackframe="1" >
+		<frameevent frame="6" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="11" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="17" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="21" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+
+		<frameevent frame="6" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="17" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	</anim>
+
+	<anim name="flying_1" clip="clips/flying_1.clip" fps="30" loop="true" loopbackframe="1" blendtime="0" />
+
+	<anim name="flying_2" clip="clips/flying_2.clip" fps="30" loop="true" loopbackframe="1" blendtime="0" />
+
+	<anim name="flying_3" clip="clips/flying_3.clip" fps="30" loop="true" loopbackframe="1" blendtime="0" />
+	
+	<anim name="death_1" clip="clips/death_1.clip" fps="30" loop="true" loopbackframe="-1" blendtime="0" />
+
+	<anim name="death_2" clip="clips/death_2.clip" fps="30" loop="true" loopbackframe="-1" blendtime="0" />
+
+	<anim name="death_3" clip="clips/death_3.clip" fps="30" loop="true" loopbackframe="-1" blendtime="0" />
+		
+</model>

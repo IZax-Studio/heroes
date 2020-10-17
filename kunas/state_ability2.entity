@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Kunas_Ability2"
+
+	icon="icon2.tga"
+
+	passiveeffect="alt7/ability_02/effects/state.effect"
+
+	effecttype="StatusBuff"
+	allowtransfer="true"
+
+	movespeed="60,75,90,105"
+>
+	<altavatar key="Hero_Kunas.Alt10" modpriority="90"
+		passiveeffect="alt10/ability_01/effects/state.effect"
+	/>
+	<altavatar key="Hero_Kunas.Alt11" modpriority="90"
+		passiveeffect="alt11/ability_01/effects/state.effect"
+	/>
+</state>

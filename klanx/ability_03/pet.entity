@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pet
+	name="Pet_Klanx_Ability3"
+	
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="../minion/model.mdf"
+	passiveeffect=""
+	skin=""
+	
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	preglobalscale="0.4"
+	modelscale="1.0"
+	effectscale="1.0"
+	boundsheight="64"
+	boundsradius="16"
+	selectionradius="32"
+	targetoffset="0 0 0"
+	iscontrollable="false"
+	invulnerable="true"
+	isselectable="false"
+	nothreat="true"
+
+	movespeed="150"
+	maxmovespeed="1000"
+	turnrate="4500"
+	turnsmoothing="0.1"
+
+	maxmana="0"
+	manaregen="0"
+
+	armor="0"
+	magicarmor="0"
+	immunity="GadgetImmunity"
+
+	cancarryitems="false"
+	inventory0=""
+	inventory1=""
+	inventory2=""
+	inventory3=""
+	
+	canattack="false"
+	attacktargetscheme="nothing"
+	attacktype="none"
+	combattype="Melee"
+
+	aggrorange="0"
+	sightrangeday="0"
+	sightrangenight="0"
+	
+	unitwalking="true"
+	flying="false"
+	flyheight="120"
+	wanderrange="150"
+	clearvision="true"
+	diewithowner="true"
+	unittype="PseudoPet AntiTP KlanxLackey no_Overhead_Visuals"
+	
+	corpsetime="0"
+	corpsefadetime="0"
+	
+	inheritvisibilityfromowner="true"
+>
+	<onspawn>
+		<applystate name="State_Klanx_Ability3_Pet_Speed" continuous="true"/>
+		<playeffect effect="effects/sound_spawn.effect" />
+		<setproxy entity="this_entity" target="this_owner_entity" />
+	</onspawn>
+	
+	<onrelease>
+		<!-- force play walk animation to clear attack animation's override. Code will change it to idle if not moving. -->
+		<hasmodifier name="Klanx_Flying">
+			<playanim name="walk_flying" target="this_entity" />
+		</hasmodifier>
+		<else>
+			<playanim name="walk_1" target="this_entity" />
+		</else>
+	</onrelease>
+	
+	<onframe>
+		<hasmodifier name="Deadlift_Ghost" entity="this_proxy_entity">
+			<delete />
+		</hasmodifier>
+		<compare a="this_proxy_entity" b="0" op="eq">
+			<delete />
+		</compare>
+		<else>
+			<distance source="this_entity" target="this_owner_entity" />
+			<compare a="result" b="400" op="gt">
+				<teleport source="this_entity" target="this_owner_entity" interpolate="false" />
+				<order command="wander" source="this_entity" target="source_owner_entity" />
+			</compare>
+		</else>
+	</onframe>
+	
+	<modifier key="Klanx_Flying" modpriority="1"
+		idleanim="idle_flying"
+		walkanim="walk_flying"
+		flying="true"
+		flyheight="150"
+		passiveeffect="../minion/effects/body_air.effect"
+	/>
+	
+	<altavatar key="Hero_Klanx.Alt" modpriority="1"
+		model="../alt/minions/model.mdf"
+		skin="red"
+		passiveeffect=""
+	>
+		<onspawn>
+			<applystate name="State_Klanx_Ability3_Pet_Speed" continuous="true"/>
+			<playeffect effect="../alt/ability_03/effects/sound_spawn.effect" />
+			<setproxy entity="this_entity" target="this_owner_entity" />
+		</onspawn>
+	
+		<modifier key="Klanx_Flying" modpriority="1"
+			idleanim="idle_flying"
+			walkanim="walk_flying"
+			flying="true"
+			flyheight="150"
+			passiveeffect="../minion/effects/body_air.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Klanx.Alt2" modpriority="1"
+		model="../alt2/minion/model.mdf"
+		passiveeffect=""
+	>
+		<onspawn>
+			<applystate name="State_Klanx_Ability3_Pet_Speed" continuous="true"/>
+			<applystate name="State_Klanx_Alt2_Minion_Effects" continuous="true"/>
+			<playeffect effect="../alt2/ability_03/effects/sound_spawn.effect" />
+			<setproxy entity="this_entity" target="this_owner_entity" />
+		</onspawn>
+	
+		<modifier key="Klanx_Flying" modpriority="1"
+			idleanim="idle_flying"
+			walkanim="walk_flying"
+			flying="true"
+			flyheight="150"
+			passiveeffect="../alt2/minion/effects/body_air.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Klanx.Alt3" modpriority="1"
+		model="../alt3/minion/model.mdf"
+		passiveeffect=""
+	>
+		<onspawn>
+			<applystate name="State_Klanx_Ability3_Pet_Speed" continuous="true"/>
+			<playeffect effect="../alt3/ability_03/effects/sound_spawn.effect" /> 
+			<setproxy entity="this_entity" target="this_owner_entity" />
+		</onspawn>
+	
+		<modifier key="Klanx_Flying" modpriority="1"
+			idleanim="idle_flying"
+			walkanim="walk_flying"
+			flying="true"
+			flyheight="150"
+			passiveeffect=""
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Klanx.Alt4" modpriority="1"
+		model="../alt4/minion/model.mdf"
+		passiveeffect=""
+	>
+		<onspawn>
+			<applystate name="State_Klanx_Ability3_Pet_Speed" continuous="true"/>
+			<playeffect effect="../alt4/ability_03/effects/sound_spawn.effect" /> 
+			<setproxy entity="this_entity" target="this_owner_entity" />
+		</onspawn>
+	
+		<modifier key="Klanx_Flying" modpriority="1"
+			idleanim="idle_flying"
+			walkanim="walk_flying"
+			flying="true"
+			flyheight="150"
+			passiveeffect="../alt4/minion/body.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Klanx.Alt5" modpriority="1"
+		model="../alt5/minion/model.mdf"
+		passiveeffect=""
+		preglobalscale="2.25"
+	>
+		<onspawn>
+			<applystate name="State_Klanx_Ability3_Pet_Speed" continuous="true"/>
+			<playeffect effect="../alt5/ability_03/effects/sound_spawn.effect" />
+			<setproxy entity="this_entity" target="this_owner_entity" />			
+		</onspawn>
+	
+		<modifier key="Klanx_Flying" modpriority="1"
+			idleanim="idle_flying"
+			walkanim="walk_flying"
+			flying="true"
+			flyheight="150"
+			passiveeffect="../alt5/minion/effects/body_air.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Klanx.Alt7" modpriority="1"
+		model="../alt7/minion/model.mdf"
+		passiveeffect=""
+		modelscale="1.2"
+		preglobalscale="2.75"
+	>
+		<onspawn>
+			<applystate name="State_Klanx_Ability3_Pet_Speed" continuous="true"/>
+			<playeffect effect="../alt7/ability_03/effects/sound_spawn.effect" />
+			<setproxy entity="this_entity" target="this_owner_entity" />			
+		</onspawn>
+	
+		<modifier key="Klanx_Flying" modpriority="1"
+			model="../alt7/minion/model_fly.mdf"
+			flying="true"
+			flyheight="150"
+			modelscale="1.2"
+			passiveeffect="../alt7/minion/effects/body_air.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Klanx.Alt8" modpriority="1"
+		model="../alt8/minion/model.mdf"
+		passiveeffect=""
+		modelscale=".8"
+		preglobalscale="2.75"
+	>
+		<onspawn>
+			<applystate name="State_Klanx_Ability3_Pet_Speed" continuous="true"/>
+			<playeffect effect="../alt8/ability_03/effects/sound_spawn.effect" />
+			<setproxy entity="this_entity" target="this_owner_entity" />			
+		</onspawn>
+	
+		<modifier key="Klanx_Flying" modpriority="1"
+			model="../alt8/minion/model_fly.mdf"
+			flying="true"
+			flyheight="150"
+			modelscale=".8"
+			passiveeffect="../alt8/minion/effects/body_air.effect"
+		/>
+	</altavatar>
+</pet>

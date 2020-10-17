@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Klanx_Ability4_TowerAttack"
+
+	speed="1600"
+	gravity="100"
+
+	modelscale=".5"
+	model="/shared/models/invis.mdf"
+	
+	effectscale="1.0"
+	traileffect="effects/trail.effect"
+	impacteffect="effects/impact.effect"
+>	
+
+	<altavatar key="Hero_Klanx.Alt5"
+		traileffect="../../alt5/ability_04/tower_pet/effects/trail.effect"
+		impacteffect="../../alt5/ability_04/tower_pet/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Klanx.Alt7"
+		traileffect="../../alt7/ability_04/tower_pet/effects/trail.effect"
+		impacteffect="../../alt7/ability_04/tower_pet/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Klanx.Alt8"
+		traileffect="../../alt8/ability_04/tower_pet/effects/trail.effect"
+		impacteffect="../../alt8/ability_04/tower_pet/effects/impact.effect"
+	/>
+
+</projectile>

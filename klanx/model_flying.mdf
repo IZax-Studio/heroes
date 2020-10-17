@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="batrider.model" type="K2" high="batrider.model" med="batrider.model" low="batrider.model" >
+
+	<anim name="idle" clip="clips/default_flying.clip" fps="30" loop="true" loopbackframe="1">
+
+	</anim>
+	
+	<anim name="portrait" clip="clips/portrait_1.clip" fps="15" loop="true" loopbackframe="1"/>
+	
+	<anim name="walk_1" clip="clips/walk_flying.clip" fps="20" loop="true" loopbackframe="1">
+	</anim>
+
+	<anim name="death_1" clip="clips/death_1.clip" fps="30" loop="true" loopbackframe="-1">
+	<frameevent frame="10" cmd="PlaySoundLinear sounds/death_grunt.wav 400 1800 1"/>
+	</anim>
+	
+	<anim name="attack_1" clip="clips/attack_flying.clip" fps="26">
+		<frameevent frame="9" cmd="PlaySoundLinear sounds/attack_%.wav 550 1300 .9"/>
+	</anim>
+	
+	<anim name="attack_2" clip="clips/attack_flying.clip" fps="26">
+		<frameevent frame="9" cmd="PlaySoundLinear sounds/attack_%.wav 550 1300 .9"/>
+	</anim>
+
+	<anim name="item_1" clip="clips/ability_flying.clip" fps="30"/>
+
+	<anim name="ability_1" clip="clips/ability_flying.clip" fps="30"/>
+
+	<anim name="ability_4" clip="clips/ability_flying.clip" fps="30"/>
+	
+	<!--<anim name="bored_1" clip="clips/bored_1.clip" fps="30"/>-->
+
+	<anim name="taunt_1" clip="clips/ability_flying.clip" fps="30"/>
+		
+	<anim name="knock_1" clip="clips/knock_1.clip" loop="true" loopbackframe="-1"/>
+	
+</model>

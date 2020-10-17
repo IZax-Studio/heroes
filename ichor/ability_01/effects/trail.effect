@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="cyclone" deferred="true" useentityeffectscale="0">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			<model
+				startalpha="2" 
+				midalpha="1.5" 
+				endalpha="0"
+				model="/heroes/artesia/alt4/ability_02/effects/skulls/skull.mdf"
+				material="/shared/effects/materials/whitedot.material"
+				anim="idle"
+				scale="2"
+				color=".5 .5 .5"
+				pitch="30"
+				pitchspeed="-30"
+				alpha="1.85"
+			>
+				<simpleemitter
+					bone="Box02"
+					spawnrate="120"
+					minparticlelife="200" 
+					maxparticlelife="1000"
+					minspeed="30" 
+					maxspeed="30"
+					drag=".1"
+					material="/shared/effects/materials/star_04.material"
+					offsetsphere="3"
+					minangle="0" 
+					maxangle="60"
+					direction="-1 -1 1"
+					directionalspace="global"
+					depthbias="-35"
+				>
+					<particle
+						minangle="0" 
+						maxangle="360"
+						color=".5 .5 1"
+						startalpha="0"
+						midalpha=".8" 
+						endalpha="0" 
+						midalphapos=".3"
+						minstartsize="5" 
+						maxstartsize="10" 
+						minendsize="10" 
+						maxendsize="15" 
+						scale="1.5"
+					/>
+				</simpleemitter>
+				<template name="trails">
+					<twopointtrailemitter
+						bone_a="{bone01}" 
+						bone_b="{bone02}"
+						timenudge="150" 
+						spawnrate="50"
+						minparticlelife="500" 
+						maxparticlelife="850"
+						gravity="5"
+						subframepose="1"
+						drag="0.03"
+						minspeed="30" 
+						maxspeed="220"
+						direction="0 -1 0"
+						texpostime="120" 
+						texposscale="0"
+						mintexstretchscale=".3" 
+						maxtexstretchscale="1"
+						material="/shared/effects/materials/light_trail.material"
+						startparticlealpha="1" 
+						endparticlealpha="0"
+						depthbias="-15"
+					>
+						<particle
+							color=".5 .5 1"
+							startalpha=".75" 
+							midalpha=".6" 
+							endalpha="0" 
+							midalphapos=".3" 
+							scale=".2"
+						/>
+					</twopointtrailemitter>
+				</template>
+				<instance name="trails" bone01="Box02" bone02="Box03"/>
+				<instance name="trails" bone01="Box02" bone02="Box01"/>
+				<instance name="trails" bone01="Box01" bone02="Box03"/>
+				
+				<simpleemitter
+					bone="Box02"
+					spawnrate="50"
+					particlelife="500"
+					gravity="-.3"
+					minspeed="85" 
+					maxspeed="120"
+					drag=".02"
+					depthbias="-28"
+					material="/shared/effects/materials/sparks_reveal_gradient_02.material"
+					offsetsphere="3"
+					minangle="0" maxangle="135"
+					direction="0 0 1"
+				>
+					<particle
+						minangle="0" 
+						maxangle="0"
+						minanglespeed="0" 
+						maxanglespeed="0"
+						startcolor=".1 .1 .4" 
+						midcolor=".1 .1 .4" 
+						endcolor="0 0 0"
+						startframe="0" 
+						endframe="1"
+						minscale=".5" 
+						maxscale=".75"
+						minstartsize="6" 
+						maxstartsize="24" 
+						endsize="2"
+						startalpha=".2" 
+						midalpha="1" 
+						endalpha="0" 
+						midalphapos=".2"
+						startstickiness=".3" 
+						endstickiness="0"
+						turn="true"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					bone="Box02"
+					spawnrate="120"
+					position="0 30 0"
+					minparticlelife="500" 
+					maxparticlelife="800"
+					gravity="1"
+					minspeed="60" 
+					maxspeed="300"
+					collide="1"
+					drag=".1"
+					offsetsphere="8"
+					material="/shared/effects/materials/flare_02.material"
+					minangle="0" 
+					maxangle="360"
+					depthbias="-5"
+				>
+					<particle
+						minangle="-360" 
+						maxangle="360"
+						minanglespeed="-100" 
+						maxanglespeed="100"
+						startcolor=".5 .5 .5" 
+						endcolor=".5 .5 1"
+						startsize="35" 
+						endsize="120" 
+						scale=".1"
+						startalpha=".5" 
+						midalpha="1" 
+						endalpha=".15" 
+						midalphapos=".2"
+					/>
+				</simpleemitter>
+			</model>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

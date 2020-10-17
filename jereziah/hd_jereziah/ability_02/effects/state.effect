@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+	
+		<particlesystem name="system0" space="entity" scale="1.4">
+
+			<sound
+				soundloop="true"
+				fadein="200"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".45"
+				sample="/heroes/jereziah/ability_02/sounds/state.wav"
+			/>
+		
+			<model
+				bone="_bone_centerofchest"
+				life="150"
+				position="0 0 -30"
+				model="/heroes/riftmage/ability_04/effects/sphere/model.mdf"
+				material=""
+				anim="idle"
+				startscale="0"
+				endscale=".6"
+				startalpha=".5"
+				endalpha="0"
+				color="0 0 1"
+			>
+			</model>
+			<billboard
+				bone="_bone_centerofchest"
+				life="150"
+				material="/shared/effects/materials/corona_01.material"
+				startsize="40"
+				endsize="140"
+				startcolor="0 .6 1"
+				endcolor="0"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".65"
+				position="0 0 -30"
+			/>
+			
+			
+			
+			<billboard
+				delay="140"
+				bone="_bone_centerofchest"
+				expirelife="150"
+				material="/shared/effects/materials/corona_01.material"
+				size="136"
+				startcolor="0 .6 1"
+				endcolor="0"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".65"
+				position="0 0 -30"
+			/>
+			<model
+				delay="140"
+				bone="_bone_centerofchest"
+				expirelife="150"
+				position="0 0 -30"
+				model="/heroes/riftmage/ability_04/effects/sphere/model.mdf"
+				material=""
+				anim="idle"
+				startscale=".6"
+				endscale="0"
+				startalpha=".7"
+				endalpha="0"
+				color="0 0 1"
+			>
+			</model>
+
+			<model
+				position="0 0 0"
+				expirelife="1500"
+				name="emitter0" 
+				anim="idle"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				startscale="3.5"
+				endscale="0"
+				startcolor="0 .2 1"
+				midcolor="0 .2 1"
+				endcolor="0 .2 1"
+				midcolorpos=".75"
+				startalpha="0"
+				midalpha="0"
+				endalpha="0"
+				midalphapos=".4"
+				minyaw="-5"
+				maxyaw="5"
+				yawspeed="270"
+				rollspeed="180"
+			>
+			
+				<template name="trails">
+					<twopointtrailemitter
+						name="trail01"
+						position="0 0 0"
+						bone_a="{bone01}"
+						bone_b="{bone02}"
+						spawnrate="75"
+						particlelife="1500"
+						subframepose="1"
+						direction="0 0 0"
+						minangle="0"
+						maxangle="0"
+						texpostime="750"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/soul_projectile2.material"
+					>
+						<particle
+							startcolor="0 .2 1"
+							endcolor="0 .2 1"
+							startalpha="0"
+							midalpha="0"
+							endalpha="0"
+						/>
+					</twopointtrailemitter>
+				</template>
+				
+				<instance name="trails" bone01="_bone_fx_01"  bone02="_bone_fx_02"/>
+				<instance name="trails" bone01="_bone_fx_03"  bone02="_bone_fx_04"/>
+				<instance name="trails" bone01="_bone_fx_05"  bone02="_bone_fx_06"/>
+
+				<instance name="trails" bone01="_bone_fx_07"  bone02="_bone_fx_08"/>
+<!--
+				<instance name="trails" bone01="_bone_fx_09"  bone02="_bone_fx_10"/>
+				<instance name="trails" bone01="_bone_fx_11"  bone02="_bone_fx_12"/>
+-->
+			</model>			
+			
+	</particlesystem>
+</definitions>
+
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnmodifier instance="instance1" modifier="modifier0"/>  
+	<waitfordeath instance="instance0" />
+</thread>
+
+</effect>
+
+
+
+
+
+
+

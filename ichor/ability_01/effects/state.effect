@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+
+		<particlesystem name="system0" scale="1" space="world">
+			<sound
+		        soundloop="true"
+				fadein="250"
+				fadeout="250"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="800"
+				volume=".5"
+				sample="/heroes/ichor/alt/sounds/ab1_state.wav"
+			/>
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="60"
+				life="5000"
+				minspeed="10" maxspeed="20"
+				minparticlelife="200" maxparticlelife="400"
+				drag=".5"
+				gravity="-1"
+				offsetsphere="30"
+				material="/shared/effects/materials/flare_02.material"
+			>
+				<particle
+					color=".5 .5 1"
+					startalpha=".75" midalpha=".6" endalpha="0" midalphapos=".3"
+					startsize="5" endsize="20"
+					minscale=".8" maxscale="2"
+					maxangle="360" minanglespeed="-300" maxanglespeed="300"
+				/>
+			</simpleemitter>
+			
+			<beam
+				bone_a="_bone_leftfoot"
+				bone_b="_bone_rightfoot"
+				size="15"
+				expirelife="300"
+				startalpha="1"
+				endalpha="0"
+				material="/shared/effects/materials/bow_glow_03.material"
+			/>
+			
+			<beam
+				bone_a="_bone_leftfoot"
+				bone_b="_bone_lefthand"
+				size="15"
+				expirelife="300"
+				startalpha="1"
+				endalpha="0"
+				material="/shared/effects/materials/bow_glow_03.material"
+			/>
+			
+			<beam
+				bone_a="_bone_rightfoot"
+				bone_b="_bone_righthand"
+				size="15"
+				expirelife="300"
+				startalpha="1"
+				endalpha="0"
+				material="/shared/effects/materials/bow_glow_03.material"
+			/>
+			
+			<beam
+				bone_a="_bone_head"
+				bone_b="_bone_lefthand"
+				size="10"
+				expirelife="300"
+				startalpha="1"
+				endalpha="0"
+				material="/shared/effects/materials/bow_glow_03.material"
+			/>
+			
+			<beam
+				bone_a="_bone_head"
+				bone_b="_bone_righthand"
+				size="10"
+				expirelife="300"
+				startalpha="1"
+				endalpha="0"
+				material="/shared/effects/materials/bow_glow_03.material"
+			/>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnmodifier instance="instance1" />
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>

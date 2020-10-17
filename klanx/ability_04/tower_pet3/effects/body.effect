@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale=".75">
+		
+			<template name="cannon_bubbles">
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="10"
+					minparticlelife="250"
+					maxparticlelife="1000"
+					gravity="-5"
+					maxspeed="30"
+					direction="0 1 0"
+					angle="10"
+					material="/shared/effects/materials/bubble_add.material"
+				>
+					<particle
+						minscale="1"
+						maxscale="5"
+						color=".35 .45 .6"
+					/>
+				</simpleemitter>
+			</template>
+			
+			<instance name="cannon_bubbles" bone="Box011"/>
+			<instance name="cannon_bubbles" bone="Box012"/>
+			<instance name="cannon_bubbles" bone="Box013"/>
+			<instance name="cannon_bubbles" bone="Box014"/>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->

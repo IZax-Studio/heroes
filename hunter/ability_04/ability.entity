@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Hunter4"
+
+	icon="icon4.tga"
+	
+	anim="ability_4"
+	casttime="1000"
+	castactiontime="300"
+	statuseffecttooltip="State_Hunter_Ability4"
+	casteffect=""
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_entity"
+	targetscheme="enemy_units"
+	casteffecttype="SuperiorMagic"
+	
+	manacost="150,200,250"
+	cooldowntime="80000,70000,60000"
+	
+	range="1000"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+
+	targetpriorities="enemy_heroes"
+>
+	<onimpact>
+		<play2dsound sample="/heroes/hunter/ability_04/sounds/indication.ogg" channel="76" volume="1" dampen="0.2" sourceonly="false" targetonly="true" />
+		<pausevoiceovers duration="3000" />
+		<delayannouncer duration="3000" source="target_entity" sourceonly="true"/>
+		<spawnunit name="Gadget_Hunter_Ability4" count="1" target="target_position" pushentity="true" />
+		<applystate name="State_Hunter_Ability4" duration="5000,7000,9000" proxy="stack_entity" />
+		<damage effecttype="SuperiorMagic" amount="200,300,400" />
+	</onimpact>
+
+	<modifier key="ult_boost" modpriority="100"
+		displayname="true"
+		targetradius="250"
+		targetmaterial="/shared/materials/area_cast_indicator_pointed.material"
+	>
+		<onimpact>
+			<areaofeffect
+				targetscheme="enemy_units"
+				effecttype="SuperiorMagic"
+				targetselection="all"
+				radius="250"
+				maxtotalimpacts=""
+				maximpactspertarget="1"
+			>
+				<spawnunit name="Gadget_Hunter_Ability4" count="1" target="target_position" pushentity="true" />
+				<applystate name="State_Hunter_Ability4" duration="5000,7000,9000" proxy="stack_entity" />
+				<damage effecttype="SuperiorMagic" amount="200,300,400" />
+			</areaofeffect>
+		</onimpact>
+	</modifier>
+	
+	
+	<altavatar key="Hero_Hunter.Alt" modpriority="1"
+		casteffect="/heroes/hunter/alt/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Hunter.Alt5" modpriority="1"
+		casteffect="/heroes/hunter/alt5/ability_04/effects/cast.effect"
+		novoiceresponse="true"
+	/>
+	
+	<altavatar key="Hero_Hunter.Alt6" modpriority="1"
+		casteffect="/heroes/hunter/alt6/ability_04/effects/cast.effect"
+		novoiceresponse="true"
+	/>
+	
+	<altavatar key="Hero_Hunter.Alt8" modpriority="1"
+		casteffect="/heroes/hunter/alt8/ability_04/effects/cast.effect"
+		novoiceresponse="true"
+	/>
+	
+	<altavatar key="Hero_Hunter.Alt9" modpriority="1"
+		casteffect="/heroes/hunter/alt9/ability_04/effects/cast.effect"
+		novoiceresponse="true"
+	/>
+	
+	<altavatar key="Hero_Hunter.Alt10" modpriority="1"
+		casteffect="/heroes/hunter/alt10/ability_04/effects/cast.effect"
+		novoiceresponse="true"
+	/>
+	
+	<altavatar key="Hero_Hunter.Alt11" modpriority="1"
+		casteffect="/heroes/hunter/alt11/ability_04/effects/cast.effect"
+		novoiceresponse="true"
+	/>
+	
+	<altavatar key="Hero_Hunter.Alt12" modpriority="1"
+		casteffect="/heroes/hunter/alt12/ability_04/effects/cast.effect"
+		novoiceresponse="true"
+	/>
+</ability>

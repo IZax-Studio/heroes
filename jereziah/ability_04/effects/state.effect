@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale=".9">
+
+			<model
+				life="3000"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="0"
+				midcolor="0 .3 .5"
+				endcolor="0"
+				material="/shared/effects/materials/shell.material"
+				startscale="1"
+				midscale="1.15"
+				endscale="1"
+				loop="true"
+			/>
+
+			<model
+				life="3000"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="0 .3 .5"
+				midcolor="0"
+				endcolor="0 .3 .5"
+				material="/shared/effects/materials/shell.material"
+				startscale="1.15"
+				midscale="1"
+				endscale="1.15"
+				loop="true"
+			/>
+
+			
+			<template name="wing_tentacle">
+				<controller
+					bone="_bone_centerofchest"
+					yaw="{yaw}"
+					pitch="{pitch}"
+				>
+					<controller position="0 -10 7" >
+						<trailemitter
+							spawnrate="80"
+							particlelife="{length}"
+							direction="0 1 0"
+							angle="0"
+							speed="1500"
+							gravity="{gravity}"
+							texposscale="0"
+							texstretchscale="1.4"
+							material="/heroes/maliken/alt5/effects/wings.material"
+						>
+							<particle
+								scale="{width}"
+								startcolor="0"
+								midcolor=".6 .6 1"
+								endcolor="0"
+								midcolorpos=".2"
+								startsize="0"
+								midsize="6"
+								endsize="12"
+								midsizepos=".25"
+							/>
+						</trailemitter>
+						<trailemitter
+							spawnrate="100"
+							particlelife="{length}"
+							direction="0 1 0"
+							angle="0"
+							speed="1500"
+							gravity="{gravity}"
+							texposscale="0"
+							texstretchscale="0.75"
+							material="/shared/effects/materials/whitedot.material"
+						>
+							<particle
+								scale="{width}"
+								startcolor="0"
+								midcolor=".75 .75 2"
+								endcolor="0"
+								midcolorpos=".25"
+								startsize="0"
+								midsize="30"
+								endsize="34"
+								midsizepos=".25"
+							/>
+						</trailemitter>
+						<trailemitter
+							spawnrate="80"
+							particlelife="{length}"
+							direction="0 1 0"
+							angle="0"
+							speed="1500"
+							gravity="{gravity}"
+							texposscale="0"
+							texstretchscale="0.25"
+							material="/shared/effects/materials/refract_scroll.material"
+						>
+							<particle
+								scale="{width}"
+								startcolor="1"
+								midcolor="1"
+								endcolor="1"
+								midcolorpos=".25"
+								startsize="0"
+								midsize="5"
+								endsize="20"
+								midsizepos=".25"
+								startparam="0"
+								midparam=".2"
+								endparam="0"
+								midparampos=".25"
+								startalpha="0"
+								midalpha=".8"
+								endalpha="0"
+								midalphapos=".5"
+							/>
+						</trailemitter>
+					</controller>
+				</controller>
+			</template>
+			
+			<instance name="wing_tentacle" length="60" width=".6" yaw="-60" pitch="-20" gravity="-500" />
+			<instance name="wing_tentacle" length="60" width=".6" yaw="60" pitch="-20" gravity="-500" />
+			<!--
+			<instance name="wing_tentacle" length="50" width=".6" yaw="-60" pitch="-35" gravity="-300" />
+			<instance name="wing_tentacle" length="50" width=".6" yaw="60" pitch="-35" gravity="-300" />
+			-->
+			<instance name="wing_tentacle" length="80" width="1.75" yaw="-45" pitch="-40" gravity="-1600" />
+			<instance name="wing_tentacle" length="80" width="1.75" yaw="45" pitch="-40" gravity="-1600" />
+			<!--
+			<instance name="wing_tentacle" length="75" width="1.25" yaw="-35" pitch="-60" gravity="-300" />
+			<instance name="wing_tentacle" length="75" width="1.25" yaw="35" pitch="-60" gravity="-300" />
+			-->
+			<instance name="wing_tentacle" length="55" width="1.0" yaw="-25" pitch="0" gravity="-800" />
+			<instance name="wing_tentacle" length="55" width="1.0" yaw="25" pitch="0" gravity="-800" />
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->

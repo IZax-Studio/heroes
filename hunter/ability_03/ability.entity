@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Hunter3"
+	
+	statuseffecttooltip="State_Hunter_Ability3_Self"
+	icon="icon3.tga"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="passive"
+>
+	<aura
+		gadget="Gadget_Hunter_Ability3"
+		radius="1500,3000,4500,99999"
+		targetscheme="enemy_heroes"
+		condition="target_health_percent lt 0.25,target_health_percent lt 0.3,target_health_percent lt 0.35,target_health_percent lt 0.40"
+		state="State_Hunter_Ability3"
+		reflexivestate="State_Hunter_Ability3_Self"
+	/>
+	
+	<aura
+		gadget="Gadget_Hunter_Ability3"
+		radius="1500,3000,4500,99999"
+		targetscheme="other_ally_heroes"
+		condition="target_health_percent lt 0.25,target_health_percent lt 0.3,target_health_percent lt 0.35,target_health_percent lt 0.40"
+		reflexivestate="State_Hunter_Ability3_Self"
+	/>
+	
+	<onattack>
+		<hasmodifier name="Hunter_E_Marked" entity="target_entity">
+			<cantarget targetscheme="enemy_units">
+				<addattackpreimpactactions>
+					<evaluate a="target_basedamage" b="0.1,0.2,0.3,0.4" op="mult" />
+					<bonusdamageadd source="target_entity" target="" a="result" />
+				</addattackpreimpactactions>
+			</cantarget>
+		</hasmodifier>
+	</onattack>
+</ability>

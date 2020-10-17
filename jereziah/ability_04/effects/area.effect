@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="chainsofdoom" deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".65"
+				sample="/heroes/jereziah/ability_04/sounds/cast.wav"
+			/>
+			
+			<simpleemitter
+				bone="_bone_overhead"
+				spawnrate="1000"
+				count="1"
+				particlelife="4000"
+				position="0 0 0"
+				angle="0"
+			>
+				<particle
+					turn="true"
+				>
+					<model
+						delay="200"
+						model=""
+						color="0 .3 .5"
+						anim="idle"
+						scale=".65"
+						position="0 0 100"
+						directionalspace="global"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".9"
+						yaw="180"
+						life="1100"
+					>
+						<trailemitter
+							bone="Box12"
+							spawnrate="150"
+							particlelife="500"
+							life="500"
+							texpostime="500"
+							texposscale="0.0"
+							texstretchscale="1.0"
+							subframepose="1"
+							speed="0"
+							offsetdirection="-1"
+							material="/shared/effects/materials/phantom_smoke_13.material"
+						>
+							<particle
+								startalpha="0.0"
+								midalpha="0.8"
+								endalpha="0.0"
+								color="0 .3 .5"
+								startsize="30"
+								endsize="30"
+							/>
+						</trailemitter>
+						
+						<trailemitter
+							bone="Box26"
+							spawnrate="150"
+							particlelife="500"
+							life="500"
+							texpostime="500"
+							texposscale="0.0"
+							texstretchscale="1.0"
+							subframepose="1"
+							speed="0"
+							offsetdirection="1"
+							material="/shared/effects/materials/phantom_smoke_13.material"
+						>
+							<particle
+								startalpha="0.0"
+								midalpha="1.0"
+								endalpha="0.0"
+								color="0 .3 .5"
+								startsize="30"
+								endsize="30"
+							/>
+						</trailemitter>
+						
+						<billboard
+							delay="1000"
+							startcolor="0 .3 .5"
+							midcolor="0 .3 .5"
+							endcolor="0 .3 .5"
+							position="0 0 300"
+							material="/shared/effects/materials/glow_01.material"
+							startsize="10"
+							endsize="570"
+							depthbias="-60"
+							lockup="1"
+							lockright="1"
+							pitch="90"
+							life="200"
+						/>
+
+
+						<billboard
+							delay="1100"
+							color="0 .3 .5"
+							position="0 0 300"
+							material="/shared/effects/materials/flare_02.material"
+							startsize="10"
+							endsize="320"
+							depthbias="-60"
+							lockup="1"
+							lockright="1"
+							pitch="90"
+							life="250"
+						/>
+						<billboard
+							bone="_bone_centerofchest"
+							delay="1100"
+							color="0 .3 .5"
+							position="0 0 0"
+							material="/shared/effects/materials/frost_flash_02.material"
+							startsize="10"
+							endsize="320"
+							depthbias="-60"
+							lockup="1"
+							lockright="1"
+							pitch="90"
+							life="300"
+						/>
+						<simpleemitter
+							delay="1000"
+							spawnrate="280"
+							particlelife="550"
+							count="160"
+							gravity="0"
+							speed="150"
+							drag="0"
+							acceleration="0.30"		
+							expirelife="300"
+							material="/shared/effects/materials/mysticenergy2.material"
+							offsetsphere="240 240 0"
+							direction="0 0 -2"
+							position="0 0 300"
+							yawspeed="-360"
+						>
+							<particle 
+								minangle="0"
+								maxangle="360"
+								minanglespeed="20"
+								maxanglespeed="150"
+								startcolor="0 .3 .5"
+								midcolor="0 .3 .5"
+								endcolor="0 .3 .5"
+								midcolorpos=".4"
+								startframe="0"
+								endframe="1"
+								startsize="10"
+								midsize="20"
+								endsize="0"
+								midsizepos=".3"	
+								startalpha="0"
+								midalpha=".45"
+								endalpha="0"
+								midalphapos=".01"
+								startstickiness=".95"
+								endstickiness=".5"
+							/>
+							<particle 
+								minangle="0"
+								maxangle="360"
+								minanglespeed="20"
+								maxanglespeed="150"
+								startcolor="0 .3 .5"
+								midcolor="0 .3 .5"
+								endcolor="0 .3 .5"
+								midcolorpos=".4"
+								startframe="0"
+								endframe="1"
+								startsize="10"
+								midsize="30"
+								endsize="0"
+								midsizepos=".3"	
+								startalpha="0"
+								midalpha=".45"
+								endalpha="0"
+								midalphapos=".01"
+								startstickiness=".95"
+								endstickiness=".5"
+							/>
+						</simpleemitter>
+					</model>
+				
+					<billboard
+						delay="200"
+						bone="_bone_centerofchest"
+						startcolor="0 .3 .5"
+						midcolor="0 .3 .5"
+						endcolor="0 .3 .5"
+						position="0 0 50"
+						material="/shared/effects/materials/glow_01.material"
+						startsize="10"
+						endsize="270"
+						depthbias="-60"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						life="200"
+					/>
+					
+					<billboard
+						delay="200"
+						bone="_bone_centerofchest"
+						life="200"
+						color="1 1 1"
+						startalpha="1.0"
+						midalpha="1.0"
+						endalpha="1.0"
+						startparam="0.05"
+						endparam="0.0"
+						midalphapos="0.25"
+						startsize="128"
+						endsize="1024"
+						material="/shared/effects/materials/refract_ring.material"
+					/>
+					
+					<billboard
+						delay="200"
+						bone="_bone_centerofchest"
+						life="800"
+						startparam="0.04"
+						endparam="0.0"
+						depthbias="-200"
+						lockup="true"
+						pitch="90"
+						startsize="128"
+						endsize="1000"
+						material="/shared/effects/materials/heathaze.material"
+					/>
+				
+					<billboard
+						delay="200"
+						bone="_bone_centerofchest"
+						startcolor="0"
+						midcolor="0 .3 .5"
+						endcolor="0"
+						material="/shared/effects/materials/flare1.material"
+						startsize="10"
+						endsize="1200"
+						depthbias="-260"
+						lockright="1"
+						life="1000"
+					/>
+					
+				</particle>
+			</simpleemitter>
+					
+			<simpleemitter
+				spawnrate="1000"
+				minparticlelife="1000"
+				maxparticlelife="1500"
+				count="60"
+				direction="0 0 1"
+				angle="10"
+				maxspeed="100"
+				minoffsetradial="0"
+				maxoffsetradial="100"
+				offsetradialangle="90"
+				material="/shared/effects/materials/light_rays.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor="0 .3 .5"
+					endcolor="0"
+					midcolorpos=".1"
+					lockup="true"
+					lockright="true"
+					minanglespeed="0"
+					maxanglespeed="0"
+					minwidth="30"
+					maxwidth="50"
+					startheight="250"
+					minendheight="650"
+					maxendheight="1250"
+					startstickiness="1"
+				/>
+				<particle
+					startcolor="0"
+					midcolor=".5 .5 .5"
+					endcolor="0"
+					midcolorpos=".1"
+					lockup="true"
+					lockright="true"
+					minanglespeed="0"
+					maxanglespeed="0"
+					minwidth="30"
+					maxwidth="50"
+					startheight="250"
+					minendheight="650"
+					maxendheight="1250"
+					startstickiness="1"
+				/>
+			</simpleemitter>
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<camerashake2 scale="3" radius="1200" duration="500" frequency="0" />
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

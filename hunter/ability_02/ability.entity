@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Hunter2"
+
+	icon="icon2.tga"
+
+	casttime="300"
+	castactiontime="300"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	
+	anim="ability_2"
+	
+	actiontype="target_entity"
+	targetscheme="enemy_nonboss_nonhero_units"
+	casteffecttype="Transfigure,Transfigure,Transfigure,Transmute"
+	
+	manacost="80"
+	cooldowntime="60000,50000,40000,30000"
+	
+	range="200"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+>
+	<onimpact>
+		<playeffect effect="effects/impact.effect" target="target_position"  />
+		<playeffect effect="effects/state.effect" source="source_entity" target="target_position"  />
+		<kill />
+		<setdeathanim target="target_entity" noanim="true" nocorpse="true" />
+	</onimpact>
+	
+	<onattackingpostimpact>
+		<cantarget targetscheme="enemy_heroes">
+			<applystate name="State_Hunter_Ability2" duration="1000" />
+		</cantarget>
+	</onattackingpostimpact>
+
+	<onkill>
+		<targettype type="building" />
+		<else>
+			<targettype type="gadget" />
+			<else>
+				<targettype type="illusion" />
+				<else>
+					<targettype type="hero">
+						<targettype type="heropet" >
+							<evaluate a="target_maxhealth" />
+							<heal a="0.10,0.15,0.20,0.25" b="result" op="mult" target="source_entity"/>
+						</targettype>
+						<else>
+							<condition test="not_hasstate State_Hunter_Ability2">
+								<evaluate a="target_maxhealth" />
+								<heal a="0.15,0.3,0.45,0.6" b="result" op="mult" target="source_entity"/>
+							</condition>
+						</else>
+					</targettype>
+					<else>
+						<evaluate a="target_maxhealth" />
+						<heal a="0.10,0.15,0.20,0.25" b="result" op="mult" target="source_entity"/>
+					</else>
+					<hasavatarkey name="Hero_Hunter.Alt2" >
+						<playeffect effect="/heroes/hunter/alt2/ability_02/bath.effect" source="source_entity" target="" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Hunter.Alt3" >
+							<playeffect effect="/heroes/hunter/alt3/ability_02/bath.effect" source="source_entity" target="" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Hunter.Alt5" >
+								<playeffect effect="/heroes/hunter/alt5/ability_02/bath.effect" source="source_entity" target="" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Hunter.Alt6" >
+									<playeffect effect="/heroes/hunter/alt6/ability_02/bath.effect" source="source_entity" target="" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Hunter.Alt7" >
+										<playeffect effect="/heroes/hunter/alt7/ability_02/bath.effect" source="source_entity" target="" />
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_Hunter.Alt8" >
+											<playeffect effect="/heroes/hunter/alt8/ability_02/effects/bath.effect" source="source_entity" target="" />
+										</hasavatarkey>
+										<else>
+											<hasavatarkey name="Hero_Hunter.Alt9" >
+												<playeffect effect="/heroes/hunter/alt9/ability_02/effects/bath.effect" source="source_entity" target="" />
+											</hasavatarkey>
+											<else>
+												<hasavatarkey name="Hero_Hunter.Alt10" >
+													<playeffect effect="/heroes/hunter/alt10/ability_02/effects/bath.effect" source="source_entity" target="" />
+												</hasavatarkey>
+												<else>
+													<hasavatarkey name="Hero_Hunter.Alt11" >
+														<playeffect effect="/heroes/hunter/alt11/ability_02/effects/bath.effect" source="source_entity" target="" />
+													</hasavatarkey>
+													<else>
+														<hasavatarkey name="Hero_Hunter.Alt12" >
+															<playeffect effect="/heroes/hunter/alt12/ability_02/effects/bath.effect" source="source_entity" target="" />
+														</hasavatarkey>
+														<else>
+															<playeffect effect="bath.effect" source="source_entity" target="" />
+														</else>
+													</else>	
+												</else>
+											</else>
+										</else>
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+	</onkill>
+	
+	<altavatar key="Hero_Hunter.Alt5"
+	>
+	
+		<onimpact>
+			<playeffect effect="../alt5/ability_02/effects/impact.effect" target="target_position"  />
+			<playeffect effect="../alt5/ability_02/effects/state.effect" source="source_entity" target="target_position"  />
+			<kill />
+			<setdeathanim target="target_entity" noanim="true" nocorpse="true" />
+		</onimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Hunter.Alt6"
+	>
+	
+		<onimpact>
+			<playeffect effect="../alt6/ability_02/effects/impact.effect" target="target_position"  />
+			<playeffect effect="../alt6/ability_02/effects/state.effect" source="source_entity" target="target_position"  />
+			<kill />
+			<setdeathanim target="target_entity" noanim="true" nocorpse="true" />
+		</onimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Hunter.Alt8"
+	>
+	
+		<onimpact>
+			<playeffect effect="../alt8/ability_02/effects/impact.effect" target="target_position"  />
+			<playeffect effect="../alt8/ability_02/effects/state.effect" source="source_entity" target="target_position"  />
+			<kill />
+			<setdeathanim target="target_entity" noanim="true" nocorpse="true" />
+		</onimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Hunter.Alt9"
+	>
+		<onimpact>
+			<playeffect effect="../alt9/ability_02/effects/impact.effect" target="target_entity"  />
+			<playeffect effect="../alt9/ability_02/effects/state.effect" source="source_entity" target="target_position"  />
+			<kill />
+			<setdeathanim target="target_entity" noanim="true" nocorpse="true" />
+		</onimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Hunter.Alt11"
+	>
+		<onimpact>
+			<playeffect effect="../alt11/ability_02/effects/impact.effect" target="target_entity"  />
+			<playeffect effect="../alt11/ability_02/effects/state.effect" source="source_entity" target="target_position"  />
+			<kill />
+			<setdeathanim target="target_entity" noanim="true" nocorpse="true" />
+		</onimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Hunter.Alt12"
+	>
+		<onimpact>
+			<playeffect effect="../alt12/ability_02/effects/impact.effect" target="target_entity"  />
+			<playeffect effect="../alt12/ability_02/effects/state.effect" source="source_entity" target="target_position"  />
+			<kill />
+			<setdeathanim target="target_entity" noanim="true" nocorpse="true" />
+		</onimpact>
+	</altavatar>
+	
+
+</ability>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Klanx_Ability4_TowerAttack2"
+
+	speed="1600"
+	gravity="0"
+	canturn="false"
+	modelscale=".5"
+	model="/heroes/chipper/ability_02/effects/tar_projectile/model.mdf"
+	
+	effectscale="1.0"
+	traileffect="effects/trail.effect"
+	impacteffect="effects/impact.effect"
+>	
+
+	<altavatar key="Hero_Klanx.Alt5" modpriority="90"
+		traileffect="../../alt5/ability_04/tower_pet2/effects/trail.effect"
+		impacteffect="../../alt5/ability_04/tower_pet2/effects/impact.effect"
+		model="../../alt5/ability_04/tower_pet2/effects/model.mdf"
+		modelscale=".5"
+	/>
+	
+	<altavatar key="Hero_Klanx.Alt7" modpriority="90"
+		traileffect="../../alt7/ability_04/tower_pet2/effects/trail.effect"
+		impacteffect="../../alt7/ability_04/tower_pet2/effects/impact.effect"
+		model="/shared/models/invis.mdf"
+		modelscale=".5"
+	/>
+	
+	<altavatar key="Hero_Klanx.Alt8" modpriority="90"
+		traileffect="../../alt8/ability_04/tower_pet2/effects/trail.effect"
+		impacteffect="../../alt8/ability_04/tower_pet2/effects/impact.effect"
+		model="/shared/models/invis.mdf"
+		modelscale=".5"
+	/>
+
+</projectile>

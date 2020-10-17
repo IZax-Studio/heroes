@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_KunasAttack"
+
+	speed="1100"
+	gravity="2200"
+
+	modelscale="2.0"
+	model="model.mdf"
+
+	impacteffect="effects/projectile_impact.effect"
+>
+
+	<altavatar key="Hero_Kunas.Alt7" modpriority="90"
+		modelscale="1"
+		model="../alt7/projectile/effects/carrot/model.mdf"
+		traileffect="../alt7/projectile/effects/trail.effect"
+		impacteffect="../alt7/projectile/effects/impact.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Kunas.Alt8" modpriority="90"
+		traileffect="../alt8/center/projectile/effects/trail.effect"
+		impacteffect="../alt8/center/projectile/effects/impact.effect"
+		model="/shared/models/invis.mdf"
+	>
+		<modifier key="East" modpriority="100"
+			traileffect="../alt8/east/projectile/effects/trail.effect"
+			impacteffect="../alt8/east/projectile/effects/impact.effect"
+			model="/shared/models/invis.mdf"
+		/>
+		
+		<modifier key="North" modpriority="100"
+			traileffect="../alt8/north/projectile/effects/trail.effect"
+			impacteffect="../alt8/north/projectile/effects/impact.effect"
+			model="/shared/models/invis.mdf"
+		/>
+		
+		<modifier key="South" modpriority="100"
+			traileffect="../alt8/south/projectile/effects/trail.effect"
+			impacteffect="../alt8/south/projectile/effects/impact.effect"
+			model="/shared/models/invis.mdf"
+		/>
+		
+		<modifier key="West" modpriority="100"
+			traileffect="../alt8/west/projectile/effects/trail.effect"
+			impacteffect="../alt8/west/projectile/effects/impact.effect"
+			model="/shared/models/invis.mdf"
+		/>
+		
+		<modifier key="Center" modpriority="100"
+			traileffect="../alt8/center/projectile/effects/trail.effect"
+			impacteffect="../alt8/center/projectile/effects/impact.effect"
+			model="/shared/models/invis.mdf"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Kunas.Alt9" modpriority="90"
+	
+		modelscale="2.0"
+		model="/heroes/kunas/alt9/projectile/model.mdf"
+		traileffect="../alt9/projectile/effects/trail.effect"
+		impacteffect="../alt9/projectile/effects/impact.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Kunas.Alt11" modpriority="90"
+		modelscale="2.0"
+		model="/heroes/kunas/alt11/projectile/model.mdf"
+		traileffect="../alt11/projectile/effects/trail.effect"
+		impacteffect="../alt11/projectile/effects/impact.effect"
+	/>
+
+</projectile>

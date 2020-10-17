@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="purgeEffect" deferred="false" useentityeffectscale="true">
+	<definitions>
+
+		<particlesystem name="system0" space="entity" scale="3">
+
+			<groundsprite
+				life="2850"
+				material="/shared/effects/materials/manaeye.material"
+				size="25"
+				startcolor="0 0 0"
+				midcolor=".5 .5 1"
+				endcolor="0 0 0"
+				yawspeed="0"
+				loop="true"
+			/>
+			
+
+		</particlesystem>
+
+		<particlesystem name="system1" space="world" scale="2">
+		
+		<sound
+		        randomloop="true"
+		        soundloop="true"
+				fadein="500"
+				fadeout="1000"
+				linearfalloff="true" 
+				falloffstart="800"
+				falloffend="1300"
+				volume=".5"
+				sample="/heroes/ichor/ability_02/sounds/state_ally.wav"
+			/>
+			
+
+			<model
+				life="5700"
+				model="/shared/models/invis.mdf"
+				scale=".9"
+				pitchspeed="-30"
+				yawspeed="60"
+				position="0 0 50"
+				color="0 .5 1"
+				alpha=".4"
+				directionalspace="global"
+			>
+				<simpleemitter
+					timenudge="500" spawnrate="35"
+					offsetradial="25 25 25"
+					minparticlelife="1000" 
+					maxparticlelife="2000"
+					gravity="1"
+					minspeed="30" maxspeed="60"
+					direction="0 0 -1"
+					collide="1"
+					drag=".08"
+					material="/shared/effects/materials/star_04.material"
+					angle="150"
+					depthbias="-35"
+					friction=".2"
+				>
+					<particle
+						minagle="-360" 
+						maxangle="360"
+						minanglespeed="-10" 
+						maxanglespeed="20"
+						color=".5 .5 .5"
+						startsize="25"
+						minendsize="50" 
+						maxendsize="75" 
+						scale=".65"
+						startalpha="0" 
+						midalpha=".15" 
+						endalpha="0" 
+						midalphapos="0.3"
+						startanchor="1.0" 
+						endanchor="1.0"
+					/>
+				</simpleemitter>
+			</model>
+			
+		
+		</particlesystem>
+
+
+		<particlesystem name="system2" space="world" scale=".25">
+
+		
+			<template name="link">
+				<beam
+					life="5700"
+					expirelife="0"
+					owner_a="source"
+					owner_b="target"
+					bone_a="{bone1}"
+					bone_b="{bone2}"
+					size="75"
+					color=".75"
+					startalpha=".9"
+					midalpha=".9"
+					midalphapos=".9"
+					endalpha="0"
+					framespeed="1.2667"
+					distancetile=".0005"
+					material="/heroes/witch_slayer/alt6/ability_03/effects/link_main.material"
+				>
+				</beam>
+				
+				<billboard
+					bone="{bone2}"
+					material="/shared/effects/materials/whitedot.material"
+					size="500"
+					startcolor=".25 0 0"
+					endcolor="0"
+					expirelife="200"
+					depthbias="-40"
+				/>
+			</template>
+			
+			<instance name="link" bone1="_bone_centerofchest" bone2="_bone_centerofchest" />
+		<!--	<instance name="link" bone1="_bone_centerofchest" bone2="_bone_centerofchest" size="32" startframe=".5" framespeed="4.5"/> -->
+			
+			<trackeremitter
+				life="4500"
+				spawnrate="40"
+				bone="_bone_centerofchest"
+				owner="source"
+				targetbone="_bone_centerofchest"
+				targetowner="target"
+				tracktype="lerp"
+				trackspeed="1"
+				drag="0"
+				particlelife="1500"
+				gravity="0"
+				speed="2500"
+				acceleration="0"
+			>
+				<particle
+					turn="1"
+					lockup="1"
+					lockright="1"
+					minscale="1"
+					maxscale="1.5"
+				>
+					<model
+						model="/shared/effects/models/circle_of_bones/model.mdf"
+						anim="idle"
+						startscale="4"
+						midscale="8"
+						endscale="4"
+						minrollspeed="-500"
+						maxrollspeed="500"
+						maxroll="360"
+						life="1500"
+					>
+						<billboard
+							bone="_bone_fx_08"
+							minlife="1000"
+							maxlife="1500"
+							startcolor=".7 .8 .8"
+							size="50"
+							maxangle="360"
+							minscale=".25"
+							maxscale=".5"
+							material="/shared/effects/materials/star_04.material"
+						/>						
+						
+						<billboard
+							bone="_bone_fx_08"
+							minlife="1000"
+							maxlife="1500"
+							startcolor=".7 .8 .8"
+							size="25"
+							maxangle="720"
+							minscale=".25"
+							maxscale=".5"
+							material="/shared/effects/materials/blink.material"
+						/>
+					</model>
+				</particle>
+			</trackeremitter>
+			
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<spawnparticlesystem instance="instance2" particlesystem="system2" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<waitfordeath instance="instance2" />
+	</thread>
+</effect>
+
+
+
+
+
+
+

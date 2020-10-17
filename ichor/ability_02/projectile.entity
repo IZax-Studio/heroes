@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Ichor_Ability2"
+
+	speed="2500"
+	gravity=""
+	
+	effectscale="1.0"
+	model="/shared/models/invis.mdf"
+	canturn="true"
+	flying="true"
+	traileffect="effects/trail.effect"
+	
+	dynamicprecache="effects/impact.effect"
+>
+	<onspawn>
+		<playanim name="ability_2" target="source_entity" />
+		<setscriptvalue name="impact_effect" value="effects/impact.effect" entity="this_entity" />
+	</onspawn>
+
+	<onimpact>
+		<evaluate a="source_accumulator" source="proxy_entity" />
+		<setvar0 a="result" />
+		
+		<targettype type="ally">
+			<applystate name="State_Ichor_Ability2_Ally" target="target_entity" duration="var0" pushentity="true" />
+			<applystate name="State_Ichor_Ability2_Self" target="source_entity" duration="var0" proxy="stack_entity" />
+			<copystates source="target_entity" target="source_entity" effecttype="StatusDebuff" transfer="true" />
+			<copystates source="target_entity" target="source_entity" effecttype="StatusDisable" transfer="true" />
+			<copystates source="target_entity" target="source_entity" effecttype="ForceTransferrable" transfer="true" />
+		</targettype>
+		<else>
+			<applystate name="State_Ichor_Ability2_Enemy" target="target_entity" duration="var0" pushentity="true" />
+			<applystate name="State_Ichor_Ability2_Self" target="source_entity" duration="var0" />
+			<copystates source="source_entity" target="target_entity" effecttype="StatusDebuff" inflictor="source_entity" transfer="true" />
+			<copystates source="source_entity" target="target_entity" effecttype="StatusDisable" inflictor="source_entity" transfer="true" />
+			<copystates source="source_entity" target="target_entity" effecttype="ForceTransferrable" inflictor="source_entity" transfer="true" />
+		</else>
+		
+		<setproxy entiy="this_entity" target="target_entity" />
+		<areaofeffect
+			radius="400"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+			center="target_entity"
+		>
+			<damage effecttype="Magic" amount="90,140,190,240" />
+		</areaofeffect>
+		
+		<!-- Dynamic VFX -->
+		<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" source="target_entity" target="" occlude="true" />
+
+		<targettype type="alive" target="source_entity">
+			<playanim name="idle" target="source_entity" />
+		</targettype>
+	</onimpact>
+	
+	<altavatar key="Hero_Ichor.Alt"		
+		traileffect="/heroes/ichor/alt/ability_02/effects/trail.effect"
+		dynamicprecache="/heroes/ichor/alt/ability_02/effects/impact.effect"
+	>
+		<onspawn>
+			<playanim name="ability_2" target="source_entity" />
+			<setscriptvalue name="impact_effect" value="/heroes/ichor/alt/ability_02/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Ichor.Alt2"		
+		traileffect="/heroes/ichor/alt2/ability_02/effects/trail.effect"
+		dynamicprecache="/heroes/ichor/alt2/ability_02/effects/impact.effect"
+	>
+		<onspawn>
+			<playanim name="ability_2" target="source_entity" />
+			<setscriptvalue name="impact_effect" value="/heroes/ichor/alt2/ability_02/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+</projectile>

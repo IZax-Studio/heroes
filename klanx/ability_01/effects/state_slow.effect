@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true" deferred="true">
+	<definitions>
+	
+		<modifier
+			life="3000"
+			name="modifier0"
+			startcolor="2 1.8 1"
+			endcolor="1"
+		/>
+
+		<particlesystem name="system0" space="entity" scale="1">
+					
+				
+				<sound
+				norestart="true"
+				channel="67493"
+				life="5000"
+				forcestereo="true"
+				linearfalloff="true" 
+				falloffstart="350"
+				falloffend="1300"
+				volume="1"
+				sample="/heroes/klanx/ability_01/sounds/flashed.wav"
+			/>
+			
+			<groundsprite
+				life="750"
+				material="/shared/effects/materials/corona_08_ground.material"
+				startsize="100"
+				midsize="200"
+				endsize="225"
+				startcolor=".4 .36 .24"
+				endcolor="0"
+			/>
+		
+			<groundsprite
+				life="750"
+				material="/shared/effects/materials/corona_08_ground.material"
+				startsize="90"
+				midsize="100"
+				endsize="80"
+				startcolor=".8 .72 .48"
+				midcolor="1 .9 .6"
+				endcolor=".6 .54 .36"
+			/>
+			<groundsprite
+				delay="750"
+				life="750"
+				material="/shared/effects/materials/corona_08_ground.material"
+				startsize="80"
+				midsize="90"
+				endsize="70"
+				startcolor=".6 .54 .36"
+				midcolor=".8 .72 .48"
+				endcolor=".4 .36 .24"
+			/>
+			<groundsprite
+				delay="1500"
+				life="750"
+				material="/shared/effects/materials/corona_08_ground.material"
+				startsize="70"
+				midsize="80"
+				endsize="60"
+				startcolor=".4 .36 .24"
+				midcolor=".6 .54 .36"
+				endcolor=".2 .18 .12"
+			/>
+			<groundsprite
+				delay="2250"
+				life="750"
+				material="/shared/effects/materials/corona_08_ground.material"
+				startsize="60"
+				midsize="70"
+				endsize="50"
+				startcolor=".2 .18 .12"
+				midcolor=".4 .36 .24"
+				endcolor="0"
+			/>
+			
+			<controller
+				life="150"
+				loop="true"
+				startscale="1"
+				midscale="1.05"
+				endscale="1"
+			>
+				<simpleemitter
+					life="3000"
+					spawnrate="25"
+					particlelife="300"
+					speed="700"
+					direction="0 0 1"
+					angle="0"
+					material="/shared/effects/materials/corona_08_ground.material"
+					startparticlecolor="1"
+					endparticlecolor="0"
+					depthbias="-10"
+				>
+					<particle
+						startsize="150"
+						endsize="100"
+						startcolor="0"
+						midcolor=".2 .18 .12"
+						endcolor="0"
+						midcolorpos=".1"
+						lockup="true"
+						lockright="true"
+						pitch="90"
+					/>
+				</simpleemitter>
+			</controller>
+			
+		</particlesystem>
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+	</thread>
+</effect>

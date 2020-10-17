@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+		<modifier
+			color=".75 1.15 .175"
+		/>
+	</definitions>
+	<thread>
+		<spawnmodifier instance="instance0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

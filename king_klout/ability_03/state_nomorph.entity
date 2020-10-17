@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_KingKlout_Ability3_NoMorph"
+
+	icon="icon3.tga"
+	passiveeffect=""
+	
+	effecttype=""
+	allowtransfer="false"
+	
+	modifierkey="KingKlout_nomorph"
+>
+	<onframe />
+</state>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale=".45">
+			
+			<sound
+     			linearfalloff="true" 
+				falloffstart="0"
+				falloffend="800"
+				volume=".5"
+				sample="/heroes/ichor/sounds/splash_%.wav"
+			/>
+			
+			<sound
+			    soundloop="true"
+				randomloop="true"
+				fadein="500"
+				fadeout="500"
+     			linearfalloff="true" 
+				falloffstart="0"
+				falloffend="800"
+				volume=".5"
+				sample="/heroes/ichor/sounds/move_loop.wav"
+			/>
+			
+		<!-- 3D puddle -->
+			<controller bone="_bone_head" expirelife="1150">
+				<terrainemitter
+					bone="_bone_head"
+					spawnrate="13"
+					particlelife="1150"
+					range="10"
+					directionalspace="local"
+					position="0 -15 0"
+				>
+					<particle
+						scale="1.75"
+					>
+						<model
+							model="blob/model.mdf" anim="walk"
+							life="1150"  loop="0"
+							
+							directionalspace="global"
+							maxyaw="360"
+							
+							startscale="1" midscale="3" endscale="4" midscalepos=".15"
+							startalpha="1" midalpha="1" endalpha="0" midalphapose=".15"
+							
+							startanchor="1"
+							midanchor=".75"
+							endanchor="0"
+						/>
+					</particle>
+				</terrainemitter>
+			</controller>
+			
+			<simpleemitter
+				bone="_bone_head"
+				count="50"
+				minspeed="500"
+				maxspeed="700"
+				minparticlelife="700"
+				maxparticlelife="1300"
+				direction="0 0 1"
+				minangle="0"
+				maxangle="45"
+				gravity="20"
+				material="/shared/effects/materials/blood_drop_red.material"
+			>
+				<particle
+					startcolor="1"
+					endcolor=".5"
+					startsize="20"
+					endsize="0"
+					minscale=".5"
+					maxscale="1.5"
+					maxangle="360"
+					minanglespeed="-300"
+					maxanglespeed="300"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_head"
+				count="90"
+				particlelife="2000"
+				gravity="60"
+				minspeed="0"
+				maxspeed="1000"
+				direction="0 0 1"
+				directionalspace="global"
+				minangle="0"
+				maxangle="45"
+				material="/shared/effects/materials/blood_wave.material"
+			>
+				<particle
+					color=".85"
+					startsize="90"
+					endsize="90"
+					startwidth="50"
+					endwidth="75"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					minscale=".5"
+					maxscale="1.5"
+					startframe="0"
+					endframe=".1"
+					framespeed="1.5"
+					turn="1"
+					lockup="1"
+					pitch="-90"
+					scale="20"
+				/>
+			</simpleemitter>
+			
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" /> 
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

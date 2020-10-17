@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Klanx_Attack"
+
+	speed="1800"
+	gravity="100"
+
+	modelscale="1.45"
+	model="/heroes/bomb/projectile/model.mdf"
+
+	traileffect="effects/trail1.effect"
+	impacteffect="effects/impact1.effect"
+>
+
+	<altavatar key="Hero_Klanx.Alt3" modpriority="90"
+		traileffect="effects/trail_alt3.effect"
+	/>
+	
+	<altavatar key="Hero_Klanx.Alt5" modpriority="90"
+		traileffect="../alt5/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Klanx.Alt7" modpriority="90"
+		model="/shared/models/invis.mdf"
+		traileffect="../alt7/effects/trail.effect"
+		impacteffect="../alt7/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Klanx.Alt8" modpriority="90"
+		model="../alt8/effects/bullet.mdf"
+		modelscale=".8"
+		traileffect="../alt8/effects/trail.effect"
+		impacteffect="../alt8/effects/impact.effect"
+	/>
+
+</projectile>

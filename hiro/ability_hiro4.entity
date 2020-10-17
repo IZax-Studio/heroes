@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Hiro4"
+
+	statuseffecttooltip="State_Hiro_Ability4"
+	icon="icon4.tga"
+	
+	casttime="1700,2500,3700"
+	castactiontime="300"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_entity"
+	targetscheme="enemy_units"
+	casteffecttype="Physical"
+	activatescheme="movement"
+	
+	manacost="200,275,350"
+	cooldowntime="130000,120000,110000"
+
+	range="400"
+	targetradius="400"
+	targetmaterial="/shared/materials/area_cast_indicator_simple.material"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	showrangeandradiusintooltip="true"
+
+	targetpriorities="enemy_heroes"
+>
+	<onimpact>
+		<applystate name="State_Stunned" duration="100" target="target_entity" />
+		<applystate name="State_Hiro_Ability4" duration="800,1600,2800" target="source_entity" />
+		<teleport interpolate="true" facetarget="true" />
+		<damage effecttype="Physical" min="200" max="200" />
+		<targettype type="alive" target="source_entity">
+			<playanim name="ability_4_attack" variations="4" length="400" target="source_entity" />
+		</targettype>
+		<resetattackcooldown />
+		<order command="attack" />
+	</onimpact>
+	
+	<modifier key="ult_boost" modpriority="100"
+		displayname="true"
+		cooldowntime="110000,100000,90000"
+	>
+		<onimpact>
+			<applystate name="State_Stunned" duration="100"  target="target_entity" />
+			<applystate name="State_Hiro_Ability4" duration="1600,2400,3600" target="source_entity" />
+			<teleport interpolate="true" facetarget="true" />
+			<damage effecttype="Physical" min="200" max="200" />
+			<targettype type="alive" target="source_entity">
+				<playanim name="ability_4_attack" variations="4" length="400" target="source_entity" />
+			</targettype>
+			<resetattackcooldown />
+			<order command="attack" />
+		</onimpact>
+	</modifier>
+		
+	<altavatar key="Hero_Hiro.Alt6" modpriority="90"
+		novoiceresponse="true"
+		casteffect="alt6/ability_04/effects/castsound.effect"
+	/>
+	
+	<altavatar key="Hero_Hiro.Alt7" modpriority="90"
+		novoiceresponse="true"
+		casteffect="alt7/ability_04/effects/castsound.effect"
+	/>
+	
+	<altavatar key="Hero_Hiro.Alt8" modpriority="90"
+		novoiceresponse="true"
+		casteffect="alt8/ability_04/effects/castsound.effect"
+	/>
+	
+	<altavatar key="Hero_Hiro.Alt10" modpriority="90"
+		novoiceresponse="true"
+		casteffect="alt10/ability_04/effects/castsound.effect"
+	/>
+	
+	<altavatar key="Hero_Hiro.Alt12" modpriority="90"
+		novoiceresponse="true"
+		casteffect="alt12/ability_04/castsound.effect"
+	
+        icon="/heroes/hiro/alt12/ability_04/ability_4.tga" 
+    >
+        <modifier key="hiroAlt12_Ability4_Upgrade"
+	        icon="/heroes/hiro/alt12/ability_04/ability_4_u.tga"
+	    />
+
+ 	</altavatar>
+	
+	<altavatar key="Hero_Hiro.Alt13" modpriority="90"
+		novoiceresponse="true"
+		casteffect="alt13/ability_04/effects/castsound.effect"
+	/>
+	
+	<altavatar key="Hero_Hiro.Alt14" modpriority="90"
+		icon="/heroes/hiro/alt14/ability_04/icon.tga" 
+	/>
+</ability>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Kane_Ability4_Me"
+
+	icon="icon4.tga"
+	passiveeffect="effects/state_self.effect"
+	movespeedmultiplier="100"
+	slowresistance="1.0"
+	
+	unitwalking="true"
+	cliffwalking="true"
+	sighted="true"
+	revealed="true"
+	attackspeed=".25,.50,.75"
+>
+	<oninflict>
+		<aggression />
+		<order command="attack" force="true" forceduration="3500,4250,5000" forceusetools="true" source="source_entity" target="this_proxy_entity" />
+	</oninflict>
+	
+	<onrefresh>
+		<aggression />
+		<order command="attack" force="true" forceduration="3500,4250,5000" forceusetools="true" source="source_entity" target="this_proxy_entity" />
+	</onrefresh>
+	
+	<onattackimpact>
+		<activatemodifierkey name="arena_active" />
+		<applystate name="State_Kane_Ability4_Enemy" target="this_proxy_entity" pushentity="true" />
+		<activatemodifierkey name="arena_active" entity="stack_entity" />
+		<distance a="source_entity" b="this_proxy_entity" />
+		<setvar0 a="result" b="0.5" op="mult" />
+		<setpos0 position="source_position" positionend="this_proxy_entity" positionmodifier="pointonline" positionvalue="var0" />
+		<spawnunit name="Gadget_Kane_Ability4_Arena" target="pos0" proxy="this_entity" fixedposition="true" />
+		
+		<!-- True duration of the force-attack states occur after Kane attacks his target; only loop once in case targets exit arena -->
+		<compare a="accumulator" b="0" op="eq">
+			<changeduration b="3500,4250,5000" op="max" entity="this_entity" />
+			<changeduration b="3500,4250,5000" op="max" entity="stack_entity" />
+			<setaccumulator value="1" />
+		</compare>
+	</onattackimpact>
+	
+	<onframe>
+		<order command="attack" force="true" forceduration="3500,4250,5000" forceusetools="true" source="source_entity" target="this_proxy_entity" />
+		<compare a="this_proxy_entity" b="0" op="eq">
+			<expire />
+		</compare>
+		<targettype type="dead" target="this_proxy_entity">
+			<expire />
+		</targettype>
+		
+		<!-- If Kane is Disarmed, then start the true duration of the force-attack states early -->
+		<targettype type="disarmed" target="source_entity">
+			<distance target="this_proxy_entity" />
+			<compare a="result" b="200" op="le">
+				<compare a="accumulator" b="0" op="eq">
+					<applystate name="State_Kane_Ability4_Enemy" target="this_proxy_entity" pushentity="true" />
+					<changeduration b="3500,4250,5000" op="max" entity="this_entity" />
+					<changeduration b="3500,4250,5000" op="max" entity="stack_entity" />
+					<setaccumulator value="1" />
+				</compare>
+			</compare>
+		</targettype>
+	</onframe>
+
+	<onexpired>
+		<order command="stop" force="true" source="this_owner_entity" target="this_owner_entity" />
+		<expirestate name="State_Kane_Ability4_Enemy" target="this_proxy_entity" />
+	</onexpired>
+	
+	<modifier key="arena_active" modpriority="1"
+		passiveeffect=""
+	>
+		<onattackimpact/>
+	</modifier>
+	
+	<modifier key="exited_arena" modpriority="2"
+		passiveeffect="effects/state_self.effect"
+	>
+		<onattackimpact/>
+	</modifier>
+	
+	<altavatar key="Hero_Kane.Alt"
+		passiveeffect="../alt/ability_04/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Kane.Alt2"
+		passiveeffect="../alt2/ability_04/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Kane.Alt3"
+		passiveeffect="../alt3/ability_04/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Kane.Alt4"
+		passiveeffect="../alt4/ability_04/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Kane.Alt5"
+		passiveeffect="../alt5/ability_04/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Kane.Alt6"
+		passiveeffect="../alt6/ability_04/effects/state_self.effect"
+	>
+		<modifier key="arena_active" modpriority="1"
+			passiveeffect="../alt6/ability_04/effects/arena_self.effect"
+		>
+			<onattackimpact/>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Kane.Alt9"
+		passiveeffect="../alt9/ability_04/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Kane.Alt10"
+		passiveeffect="../alt10/ability_04/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Kane.Alt11"
+		passiveeffect="../alt11/ability_04/effects/state_self.effect"
+	>
+		<modifier key="arena_active" modpriority="1"
+			passiveeffect="../alt11/ability_04/effects/arena_self.effect"
+		>
+			<onattackimpact/>
+		</modifier>
+	</altavatar>	
+	
+	<altavatar key="Hero_Kane.Alt12"
+		passiveeffect="../alt12/ability_04/effects/state_self.effect"
+	/>
+	
+</state>

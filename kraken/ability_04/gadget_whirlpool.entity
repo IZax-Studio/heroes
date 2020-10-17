@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Kraken_Ability4_Whirlpool"
+	
+	icon="icon4.tga"
+	portrait="icon4.tga"
+	model="effects/tentacles/model.mdf"
+	skin=""
+	unitwalking="true"
+	
+	passiveeffect="effects/ability_self.effect"
+	spawneffect="effects/spawn.effect"
+	respawneffect=""
+	selectsound=""
+	isselectable="false"
+	iscontrollable="false"
+	drawonmap="false"
+	orderconfirmedsound=""
+	
+	preglobalscale="1.0"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="64"
+	boundsradius="16"
+	selectionradius="36"
+	targetoffset="0 0 0"
+
+	movespeed="0"
+	turnrate="0"
+	ismobile="false"
+	canrotate="false"
+
+	maxhealth="0"
+	healthregen="0"
+	maxmana="0"
+	manaregen="0"
+
+	invulnerable="true"
+	canattack="false"
+	
+	clearvision="true"
+	sightrangeday="800"
+	sightrangenight="800"
+	corpsetime="0"
+	deathtime="0"
+	
+	lifetime="3000,4000,5000"
+>
+	<aura state="State_Kraken_Ability4_Slow" radius="300" targetscheme="enemy_nonboss_units" effecttype="Push" disablenegativeeffectpopuponrefresh="true" />
+	<aura state="State_Kraken_Ability4_Stun" radius="40" targetscheme="enemy_nonboss_units" effecttype="Magic" />
+
+	<onexpired>
+		<playeffect effect="effects/death.effect" source="source_position" target="" occlude="true" />
+	</onexpired>
+
+	<altavatar key="Hero_Kraken.Alt2" modpriority="1"
+		model="/heroes/kraken/alt2/ability_04/effects/tentacles/model.mdf"
+		passiveeffect="/heroes/kraken/alt2/ability_04/effects/ability_self.effect"
+	/>
+	
+	<altavatar key="Hero_Kraken.Alt4" modpriority="1"
+		passiveeffect="/heroes/kraken/alt4/ability_04/effects/ability_self.effect"
+	/>
+	
+	<altavatar key="Hero_Kraken.Alt6" modpriority="1"
+		passiveeffect="/heroes/kraken/alt6/ability_04/effects/ability_self_1.effect"
+	/>
+</gadget>

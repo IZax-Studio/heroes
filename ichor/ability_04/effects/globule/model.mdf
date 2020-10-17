@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="model.model" type="K2" >
+	
+	<anim name="idle" clip="default_1.clip" fps="30" loop="true"/>
+	
+	<anim name="idle_slower" clip="default_2.clip" fps="45" loop="true" loopbackframe="-1"/>
+	
+	<anim name="drop" clip="default_1.clip" fps="10"  minstartframe="2" maxstartframe="1" numframes="50" loop="true" loopbackframe="-1" />
+
+</model>

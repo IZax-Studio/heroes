@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ichor_Ability4_Enemy"
+
+	icon="icon4.tga"
+	ishidden="false"
+	passiveeffect="effects/debuff.effect"
+
+	effecttype="StatusDebuff"
+	allowtransfer="false"
+
+	attackspeed="-0.2,-0.4,-0.6"
+>
+	<altavatar key="Hero_Ichor.Alt" 		
+		passiveeffect="../alt/ability_04/effects/debuff.effect"
+		icon="../alt/ability_04/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Ichor.Alt2" 		
+		passiveeffect="../alt2/ability_04/effects/debuff.effect"
+		icon="../alt2/ability_04/icon.tga"
+	/>
+</state>

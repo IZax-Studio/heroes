@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ichor_Ability4"
+
+	icon="icon4.tga"
+	ishidden="false"
+	passiveeffect="effects/buff.effect"
+
+	effecttype="StatusBuff"
+	allowtransfer="false"
+
+	attackspeed="0.4"
+	attackspeedpercharge="0.1,0.15,0.2"
+>
+	<altavatar key="Hero_Ichor.Alt" 		
+		passiveeffect="../alt/ability_04/effects/buff.effect"
+		icon="../alt/ability_04/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Ichor.Alt2" 		
+		passiveeffect="../alt2/ability_04/effects/buff.effect"
+		icon="../alt2/ability_04/icon.tga"
+	/>
+</state>

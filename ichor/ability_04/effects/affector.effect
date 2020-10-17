@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="false" disable2dworld="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="2">
+
+
+
+			
+			<groundsprite
+				startcolor=".5 .5 1"
+				midcolor=".5 .5 1"
+				endcolor="0"
+				midcolorpos=".9"
+				startsize="0"
+				midsizepos=".020"
+				midsize="335"
+				endsize="335"
+				life="20100"
+				loop="true"
+				material="/shared/effects/materials/fresnel_ground.material"
+			/>
+			
+			<groundsprite
+				startcolor="0 0 .1"
+				midcolor="0 0 .1"
+				endcolor="0"
+				midcolorpos=".9"
+				startsize="0"
+				midsizepos=".035"
+				midsize="250"
+				endsize="250"
+				life="20100"
+				loop="true"
+				material="/shared/effects/materials/whitedot_ground.material"
+			/>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/> 
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+	</thread>
+</effect>

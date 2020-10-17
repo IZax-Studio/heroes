@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Jereziah_Ability2_Aura"
+
+	passiveeffect="../ability_03/effects/state_enemy.effect"
+	
+	icon="icons2.tga"
+	
+	movespeedslow="0.06,0.12,0.18,0.24"
+
+	negativeeffect="slowed"
+>	
+	<altavatar key="Hero_Jereziah.Alt9"
+		icon="../alt9/ability_02/icon.tga"
+	/>
+	
+</state>

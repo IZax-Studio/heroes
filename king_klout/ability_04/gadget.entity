@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_KingKlout_Ability4"
+	
+	icon="icon4.tga"
+	portrait=""
+	model="/shared/models/invis.mdf"
+	
+	passiveeffect=""
+
+	preglobalscale="1"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="0"
+	boundsradius="0"
+	isselectable="false"
+	iscontrollable="false"
+	selectionradius="0"
+	targetoffset="0 0 0"
+
+	canrotate="false"
+	ismobile="false"
+
+	attacktype="none"
+	combattype="Ranged"
+	canattack="false"
+	
+	sightrangeday="500"
+	sightrangenight="500"
+
+	deathtime="0"
+	corpsetime="0"
+	
+	invulnerable="true"
+	flying="false"
+	clearvision="true"
+	drawonmap="true"
+
+	lifetime="25000"
+>
+	<onframe>
+	</onframe>
+	
+	<modifier key="soccer" modpriority="90" >
+		<onframe>
+			<comparetiledefinition name="KloutFatalError" position="this_entity">
+				<pushability source="this_owner_entity" name="Ability_KingKlout4" />
+				<activatemodifierkey entity="stack_entity" name="soccerdisabled" />
+			</comparetiledefinition>
+			<else>
+				<comparetiledefinition name="outside" position="this_entity">
+					<pushability source="this_owner_entity" name="Ability_KingKlout4" />	
+					<activatemodifierkey entity="stack_entity" name="soccerdisabled" />
+				</comparetiledefinition>
+				<else>
+					<comparetiledefinition name="inside" position="this_entity">
+						<pushability source="this_owner_entity" name="Ability_KingKlout4" />	
+						<activatemodifierkey entity="stack_entity" name="soccerdisabled" />
+					</comparetiledefinition>
+				</else>
+			</else>
+		</onframe>
+		
+		<ondeath>
+			<pushability source="this_owner_entity" name="Ability_KingKlout4" />
+			<deactivatemodifierkey entity="stack_entity" name="soccerdisabled" />			
+		</ondeath>
+		
+		<onexpired>
+			<pushability source="this_owner_entity" name="Ability_KingKlout4" />
+			<deactivatemodifierkey entity="stack_entity" name="soccerdisabled" />			
+		</onexpired>
+		
+		<onkilled>
+			<pushability source="this_owner_entity" name="Ability_KingKlout4" />
+			<deactivatemodifierkey entity="stack_entity" name="soccerdisabled" />			
+		</onkilled>
+	</modifier>
+</gadget>

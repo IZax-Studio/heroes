@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_KingKlout_Ability4"
+	
+	icon="icon4.tga"
+	passiveeffect="effects/state.effect"
+	displaylevel="true"
+
+	silenced="true"
+	perplexed="true"
+	disarmed="true"
+	unitwalking="true"
+	movespeedslow="0.7"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+>
+	<oninflict>
+		<setproxy entity="this_entity" target="target_entity" />
+		<entitytype type="Pet_PuppetMaster_Ability4">
+			<!-- Puppet master doll transfers states the frame after states are applied, for proper duration we need to add a frame. -->
+			<changeduration entity="this_entity" b="50" op="add" />
+		</entitytype>
+		<else>
+			<setpos0 position="source_position" positionend="this_owner_position" positionmodifier="pointpastline" positionvalue="150" />
+			<order command="move" force="true" directpathing="true" forceduration="150" source="target_entity" target="pos0" />
+		</else>
+	</oninflict>
+	
+	<onframe>
+		<!-- State transfer detection, basically a copy of oninflict -->
+		<compare a="this_proxy_entity" b="target_entity" op="ne">
+			<entitytype type="Pet_PuppetMaster_Ability4">
+				<!-- Puppet master doll transfers states the frame after states are applied, for proper duration we need to add a frame. -->
+				<changeduration entity="this_entity" b="50" op="add" />
+			</entitytype>
+			<setproxy entity="this_entity" target="target_entity" />
+		</compare>
+		<setpos0 position="source_position" positionend="this_owner_position" positionmodifier="pointpastline" positionvalue="150" />
+		<order command="move" force="true" directpathing="true" forceduration="150" source="target_entity" target="pos0" />
+	</onframe>
+	
+	<onexpired>
+		<order command="stop" force="true" target="target_entity" source="target_entity" />
+	</onexpired>
+</state>

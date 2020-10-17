@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Ichor_Ability2_2"
+
+	speed="2500"
+	gravity=""
+	
+	effectscale="1.0"
+	model="/shared/models/invis.mdf"
+	canturn="true"
+	flying="true"
+	traileffect="effects/trail.effect"
+>
+	<onspawn>
+		<playanim name="walk_1" target="source_entity" />
+	</onspawn>
+
+	<onimpact>
+		<getcooldown target="source_entity" ability="2" />
+		<compare a="result" b="3" op="gt" />
+		<else>
+			<evaluate a="source_accumulator" source="proxy_entity" />
+			<setvar0 a="result" />
+			
+			<targettype type="ally">
+				<applystate name="State_Ichor_Ability2_Ally" target="target_entity" duration="var0" pushentity="true" />
+				<applystate name="State_Ichor_Ability2_Self" target="source_entity" duration="var0" proxy="stack_entity" />
+				<copystates source="target_entity" target="source_entity" effecttype="StatusDebuff" transfer="true" />
+				<copystates source="target_entity" target="source_entity" effecttype="StatusDisable" transfer="true" />
+				<copystates source="target_entity" target="source_entity" effecttype="ForceTransferrable" transfer="true" />
+			</targettype>
+			<else>
+				<applystate name="State_Ichor_Ability2_Enemy" target="target_entity" duration="var0" pushentity="true" />
+				<applystate name="State_Ichor_Ability2_Self" target="source_entity" duration="var0" />
+				<copystates source="source_entity" target="target_entity" effecttype="StatusDebuff" inflictor="source_entity" transfer="true" />
+				<copystates source="source_entity" target="target_entity" effecttype="StatusDisable" inflictor="source_entity" transfer="true" />
+				<copystates source="source_entity" target="target_entity" effecttype="ForceTransferrable" inflictor="source_entity" transfer="true" />
+			</else>
+
+			<targettype type="alive" target="source_entity">
+				<playanim name="idle" target="source_entity"/>
+			</targettype>
+		</else>
+	</onimpact>
+	
+	<altavatar key="Hero_Ichor.Alt" 		
+		traileffect="../alt/ability_02/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Ichor.Alt2" 		
+		traileffect="../alt2/ability_02/effects/trail.effect"
+	/>	
+</projectile>

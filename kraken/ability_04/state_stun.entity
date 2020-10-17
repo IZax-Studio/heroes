@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Kraken_Ability4_Stun"
+
+	icon="icon4.tga"
+	
+	passiveeffect=""
+	effecttype=""
+>
+</state>

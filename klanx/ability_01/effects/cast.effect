@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<sound
+		        forcestereo="true"
+				volume=".8"
+				sample="/heroes/pearl/ability_01/sounds/core_cast.wav"
+				linearfalloff="true"
+				falloffstart="700"		
+				falloffend="1300" 
+			/>
+			
+			  <sound
+			    delay="200"
+				volume="1"
+				sample="../sounds/cast.wav"
+				linearfalloff="true"
+				falloffstart="700"		
+				falloffend="1300" 
+			/>
+
+			<billboard
+				bone="_bone_fx_01"
+				life="1000"
+				startcolor=".2 0 .4"
+				endcolor="0"
+				startsize="250"
+				endsize="0"
+				depthbias="-25"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+
+			<billboard
+				bone="_bone_fx_01"
+				life="1000"
+				startcolor=".5 .25 .75"
+				endcolor="0"
+				startsize="75"
+				endsize="0"
+				depthbias="-50"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+
+			<billboard
+				bone="_bone_fx_01"
+				life="250"
+				param="0.1"
+				startsize="200"
+				endsize="100"
+				startalpha="0"
+				midalpha=".5"
+				endalpha="0"
+				depthbias="0"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+			
+			<simpleemitter
+				bone="_bone_fx_01"
+				count="25"
+				spawnrate="2000"
+				minparticlelife="250"
+				maxparticlelife="500"
+				offsetsphere="40 40 8"
+				minspeed="50"
+				maxspeed="300"
+				direction="0 0 1"
+				material="/shared/effects/materials/bub.material"
+			>
+				<particle
+					maxangle="359"
+					maxanglespeed="30"
+					minanglespeed="-30"
+					minstartscale="5"
+					maxstartscale="20"
+					minendscale="5"
+					maxendscale="10"
+					startcolor="1 1 1"
+					midcolor=".5 .1 1"
+					endcolor="0 0 0"
+					midcolorpos=".85"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

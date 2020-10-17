@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" >
+
+			
+			<light
+				position="0 0 100"
+				life="200"
+				startcolor="8 6 4"
+				endcolor="0"
+				falloffend="600"
+			/>
+			
+			<model
+				life="400"
+				model="/shared/effects/models/sphere/model.mdf"
+				material="rim_gradient.material"
+				startscale="0"
+				endscale="8"
+				midscalepos=".3"
+				startcolor="1 .9 .8"
+				endcolor="0"
+				midcolorpos=".3"
+			/>
+			
+			<billboard
+				life="500"
+				position="0 0 50"
+				depthbias="-100"
+				material="/shared/effects/materials/refract_ring.material"
+				startsize="0"
+				endsize="2000"
+				midsizepos=".3"
+				startparam="0.1"
+				endparam="0"
+				lockup="true"
+				lockright="true"
+				pitch="-90"
+			/>
+			
+			
+			<simpleemitter
+				count="20"
+				minparticlelife="400"
+				maxparticlelife="600"
+				direction="0 0 1"
+				minangle="80"
+				maxangle="85"
+				minspeed="2000"
+				maxspeed="8000"
+				drag="0.01"
+				material="/shared/effects/materials/wave.material"
+			>
+				<particle
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+					turn="1"
+					angle="-90"
+					startalpha="0"
+					midalpha="0.25"
+					endalpha="0"
+					startcolor="0"
+					midcolor=".06 .05 .04"
+					endcolor="0"
+					minsize="200"
+					maxsize="400"
+					minstartscale=".5"
+					maxstartscale="1"
+					minendscale="1.5"
+					maxendscale="2"
+					depthbias="-150"
+				/>
+			</simpleemitter>
+			
+		</particlesystem>
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread> 
+</effect>

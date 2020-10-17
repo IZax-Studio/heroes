@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="tentacle.model" type="K2" high="tentacle.model" >
+
+	<anim name="idle" clip="clips/default_new.clip" fps="10" loop="true" />
+	
+	<anim name="start" clip="clips/tentacles_start.clip" fps="30" loop="false" />
+
+	<anim name="end" clip="clips/tentacles_end.clip" fps="30" loop="false" />
+		
+		
+</model>

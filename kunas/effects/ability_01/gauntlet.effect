@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="purgeEffect" deferred="true" useentityeffectsscale="true">
+	<definitions>
+		<particlesystem name="system1" space="world" scale="1">
+
+		<template name="static" >
+		<controller bone="{bone}" >
+		<simpleemitter
+			spawnrate="100"
+			expirelife="500"
+			offsetsphere="0 15 7.5"
+			position="{position}"
+			minparticlelife="50"
+			maxparticlelife="150"
+			material="/shared/effects/materials/femme_lightning_06.material"
+		>
+			<particle
+				minangle="0"
+				maxangle="359"
+				size="15"
+				minscale="1"
+				maxscale="2.25"
+				color="0 .65 3"
+				anchor="1"
+				minstartframe="0"
+				maxstartframe="1"
+				lockup="1"
+				lockright="1"
+				minyaw="0"
+				maxyaw="359"
+				minroll="0"
+				maxroll="359"
+				minpitch="0"
+				maxpitch="359"
+			/>
+		</simpleemitter>
+		
+		<simpleemitter
+			spawnrate="10"
+			expirelife="500"
+			offsetsphere="0 10 5"
+			position="{position}"
+			minparticlelife="50"
+			maxparticlelife="150"
+			material="/shared/effects/materials/femme_lightning_07.material"
+		>
+			<particle
+				minangle="0"
+				maxangle="359"
+				size="15"
+				minscale="1"
+				maxscale="2.25"
+				color="0 .65 6"
+				anchor="1"
+				minstartframe="0"
+				maxstartframe="1"
+				lockup="1"
+				lockright="1"
+				minyaw="0"
+				maxyaw="359"
+				minroll="0"
+				maxroll="359"
+				minpitch="0"
+				maxpitch="359"
+			/>
+		</simpleemitter>
+			
+		</controller>
+		</template>
+		
+		<instance name="static" bone="_bone_lefthand" position="0 0 0" />
+		
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system1" />	
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+
+
+
+
+
+

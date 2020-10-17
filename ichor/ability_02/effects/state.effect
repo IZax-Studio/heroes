@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="3">
+
+	
+
+			<groundsprite
+				life="2875"
+				material="/shared/effects/materials/manaeye.material"
+				size="25"
+				startcolor="0 0 0"
+				midcolor=".5 .5 1"
+				endcolor="0 0 0"
+				yawspeed="0"
+				loop="true"
+			/>
+			
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+

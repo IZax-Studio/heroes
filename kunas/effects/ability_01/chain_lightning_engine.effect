@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="chain_lightning">
+	<definitions>
+		<particlesystem name="system0" space="world">
+
+			<sound
+				sample="/heroes/kunas/sounds/custom/ab1_cast.wav"
+				
+				volume="0.5"
+				linearfalloff="true"
+				falloffstart="1500"
+				falloffend="2500"
+
+			/>
+			
+			<beam
+				life="320"
+
+				owner_a="source"
+				owner_b="target"
+
+				bone_a="_bone_lefthand"
+				bone_b="_bone_centerofchest"
+
+				size="140"
+				color=".2 .5 2"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+
+				framespeed="15.75"
+			/>
+		
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

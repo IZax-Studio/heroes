@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Ichor3"
+	
+	icon="icon3.tga"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	anim="ability_3"
+	actiontype="passive"
+	
+	casteffect="effects/cast.effect"	
+	dynamicprecache="effects/impact.effect"
+	
+	maxcharges="4,4,4,5"
+>
+	<onlearn>
+		<setscriptvalue name="impact_effect" value="effects/impact.effect" entity="this_entity" />
+	</onlearn>
+
+	<ondamaged />
+	
+	<onframe>
+		<setvar0 a="0" />
+		<foreachstate effecttype="StatusDebuff" />
+		<setvar0 a="result" />
+		<foreachstate effecttype="StatusDisable" />
+		<setvar0 a="var0" b="result" op="add" />
+		<compare a="var0" b="0" op="gt">
+			<setactivemodifierkey name="Ichor_passive3enhanced" />
+		</compare>
+		<setaccumulator value="var0" />
+		<setcharges a="var0" entity="this_entity" />
+	</onframe>
+
+	<ontimer/>
+
+	<onattackeddamageevent propagatetoillusions="false">
+		<damageeffecttype effecttype="Magic">
+			<setvar1 a="source_health" b="0.15" op="mult" />
+			<evaluate a="damage_attempted" b="1" op="mult" />
+			<compare a="result" b="var1" op="gt">
+				<setvar0 a="0.10,0.15,0.20,0.25" b="damage_attempted" op="mult" />
+				<setvalue name="damage_attempted" a="damage_attempted" b="var0" op="sub" />
+				
+				<!-- Dynamic visual effects -->
+				<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+				<playeffectdynamic effect="str0" target="source_entity" source="source_entity" occlude="true" />
+			</compare>
+		</damageeffecttype>
+		<else>
+			<damageeffecttype effecttype="Physical">
+				<setvar1 a="source_health" b="0.15" op="mult" />
+				<evaluate a="damage_attempted" b="1" op="mult" />
+				<compare a="result" b="var1" op="gt">
+					<setvar0 a="0.10,0.15,0.20,0.25" b="damage_attempted" op="mult" />
+					<setvalue name="damage_attempted" a="damage_attempted" b="var0" op="sub" />
+					
+					<!-- Dynamic visual effects -->
+					<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+					<playeffectdynamic effect="str0" target="source_entity" source="source_entity" occlude="true" />
+				</compare>
+			</damageeffecttype>
+			<else>
+				<damageeffecttype effecttype="SuperiorMagic">
+					<setvar1 a="source_health" b="0.15" op="mult" />
+					<evaluate a="damage_attempted" b="1" op="mult" />
+					<compare a="result" b="var1" op="gt">
+						<setvar0 a="0.10,0.15,0.20,0.25" b="damage_attempted" op="mult" />
+						<setvalue name="damage_attempted" a="damage_attempted" b="var0" op="sub" />
+						
+						<!-- Dynamic visual effects -->
+						<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+						<playeffectdynamic effect="str0" target="source_entity" source="source_entity" occlude="true" />
+					</compare>
+				</damageeffecttype>
+				<else>
+					<damageeffecttype effecttype="SuperiorPhysical">
+						<setvar1 a="source_health" b="0.15" op="mult" />
+						<evaluate a="damage_attempted" b="1" op="mult" />
+						<compare a="result" b="var1" op="gt">
+							<setvar0 a="0.10,0.15,0.20,0.25" b="damage_attempted" op="mult" />
+							<setvalue name="damage_attempted" a="damage_attempted" b="var0" op="sub" />
+							
+							<!-- Dynamic visual effects -->
+							<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+							<playeffectdynamic effect="str0" target="source_entity" source="source_entity" occlude="true" />
+						</compare>
+					</damageeffecttype>
+				</else>
+			</else>
+		</else>
+	</onattackeddamageevent>
+
+	<modifier key="Ichor_passive3enhanced" modpriority="100"
+		icon="icon.tga"
+		passiveeffect="effects/buff.effect"
+	>
+		<onframe>
+			<foreachstate effecttype="StatusDebuff" />
+			<setvar0 a="result" />
+			<foreachstate effecttype="StatusDisable" />
+			<setvar0 a="var0" b="result" op="add" />
+			<compare a="var0" b="0" op="gt">
+				<setaccumulator value="var0" />
+			</compare>
+			<else>
+				<setactivemodifierkey name="" />
+			</else>
+			
+			<setcharges a="var0" entity="this_entity" />
+		</onframe>
+
+		<onattackeddamageevent propagatetoillusions="false">
+			<damageeffecttype effecttype="Magic">
+				<setvar1 a="source_health" b="0.15" op="mult" />
+				<evaluate a="damage_attempted" b="1" op="mult" />
+				<compare a="result" b="var1" op="gt">
+					<setvar3 a="accumulator" b="0.08" op="mult"  />
+					<setvar2 a=".10,.15,.20,.25" b="var3" op="add"  />
+					<setvar2 a="var2" b="0.40,0.45,0.50,0.60" op="min" /> <!-- Max Damage Reduction -->
+					<setvar0 a="var2" b="damage_attempted" op="mult" />
+					<setvalue name="damage_attempted" a="damage_attempted" b="var0" op="sub" />
+					
+					<!-- Dynamic visual effects -->
+					<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+					<playeffectdynamic effect="str0" target="source_entity" source="source_entity" occlude="true" />
+				</compare>
+			</damageeffecttype>
+			<else>
+				<damageeffecttype effecttype="Physical">
+					<setvar1 a="source_health" b="0.15" op="mult" />
+					<evaluate a="damage_attempted" b="1" op="mult" />
+					<compare a="result" b="var1" op="gt">
+						<setvar3 a="accumulator" b="0.08" op="mult"  />
+						<setvar2 a=".10,.15,.20,.25" b="var3" op="add"  />
+						<setvar2 a="var2" b="0.40,0.45,0.50,0.60" op="min" /> <!-- Max Damage Reduction -->
+						<setvar0 a="var2" b="damage_attempted" op="mult" />
+						<setvalue name="damage_attempted" a="damage_attempted" b="var0" op="sub" />
+						
+						<!-- Dynamic visual effects -->
+						<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+						<playeffectdynamic effect="str0" target="source_entity" source="source_entity" occlude="true" />
+					</compare>
+				</damageeffecttype>
+				<else>
+					<damageeffecttype effecttype="SuperiorMagic">
+						<setvar1 a="source_health" b="0.15" op="mult" />
+						<evaluate a="damage_attempted" b="1" op="mult" />
+						<compare a="result" b="var1" op="gt">
+							<setvar3 a="accumulator" b="0.08" op="mult"  />
+							<setvar2 a=".10,.15,.20,.25" b="var3" op="add"  />
+							<setvar2 a="var2" b="0.40,0.45,0.50,0.60" op="min" /> <!-- Max Damage Reduction -->
+							<setvar0 a="var2" b="damage_attempted" op="mult" />
+							<setvalue name="damage_attempted" a="damage_attempted" b="var0" op="sub" />
+							
+							<!-- Dynamic visual effects -->
+							<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+							<playeffectdynamic effect="str0" target="source_entity" source="source_entity" occlude="true" />
+						</compare>
+					</damageeffecttype>
+					<else>
+						<damageeffecttype effecttype="SuperiorPhysical">
+							<setvar1 a="source_health" b="0.15" op="mult" />
+							<evaluate a="damage_attempted" b="1" op="mult" />
+							<compare a="result" b="var1" op="gt">
+								<setvar3 a="accumulator" b="0.08" op="mult"  />
+								<setvar2 a=".10,.15,.20,.25" b="var3" op="add"  />
+								<setvar2 a="var2" b="0.40,0.45,0.50,0.60" op="min" /> <!-- Max Damage Reduction -->
+								<setvar0 a="var2" b="damage_attempted" op="mult" />
+								<setvalue name="damage_attempted" a="damage_attempted" b="var0" op="sub" />
+								
+								<!-- Dynamic visual effects -->
+								<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+								<playeffectdynamic effect="str0" target="source_entity" source="source_entity" occlude="true" />
+							</compare>
+						</damageeffecttype>
+					</else>
+				</else>
+			</else>
+		</onattackeddamageevent>
+	</modifier>
+	
+	<altavatar key="Hero_Ichor.Alt"	
+        icon="../alt/ability_03/icon.tga" 
+		casteffect="/heroes/ichor/alt/ability_03/effects/cast.effect"
+		
+		dynamicprecache="/heroes/ichor/alt/ability_03/effects/impact.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="impact_effect" value="/heroes/ichor/alt/ability_03/effects/impact.effect" entity="this_entity" />
+		</onlearn>
+		
+		<modifier key="Ichor_passive3enhanced" modpriority="100"
+			passiveeffect="/heroes/ichor/alt/ability_03/effects/buff.effect"
+		>
+			<onframe>
+				<foreachstate effecttype="StatusDebuff" />
+				<setvar0 a="result" />
+				<foreachstate effecttype="StatusDisable" />
+				<setvar0 a="var0" b="result" op="add" />
+				<compare a="var0" b="0" op="gt">
+					<setaccumulator value="var0" />
+				</compare>
+				<else>
+					<setactivemodifierkey name="" />
+				</else>
+				
+				<setcharges a="var0" entity="this_entity" />
+			</onframe>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Ichor.Alt2"
+        icon="../alt2/ability_03/icon.tga" 	
+		casteffect="/heroes/ichor/alt2/ability_03/effects/cast.effect"
+		
+		dynamicprecache="/heroes/ichor/alt2/ability_03/effects/impact.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="impact_effect" value="/heroes/ichor/alt2/ability_03/effects/impact.effect" entity="this_entity" />
+		</onlearn>
+
+		<modifier key="Ichor_passive3enhanced" modpriority="100"
+			passiveeffect="/heroes/ichor/alt2/ability_03/effects/buff.effect"
+		>
+			<onframe>
+				<foreachstate effecttype="StatusDebuff" />
+				<setvar0 a="result" />
+				<foreachstate effecttype="StatusDisable" />
+				<setvar0 a="var0" b="result" op="add" />
+				<compare a="var0" b="0" op="gt">
+					<setaccumulator value="var0" />
+				</compare>
+				<else>
+					<setactivemodifierkey name="" />
+				</else>
+				
+				<setcharges a="var0" entity="this_entity" />
+			</onframe>
+		</modifier>
+	</altavatar>
+
+</ability>

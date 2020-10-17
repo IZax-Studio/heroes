@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="moon_beam">
+	<definitions>
+		
+	
+		<particlesystem name="system0" space="entity" scale="1.5">
+
+		<billboard
+				bone="_bone_righthand"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor=".0 .1 0.2"
+				endcolor="0"
+				expirelife="1300"
+				size="20"
+				yaw="180"
+				depthbias="-30"
+				
+				position="0 0 0"
+				
+			/>
+		<billboard
+				bone="_bone_righthand"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor=".0 .1 0.2"
+				endcolor="0"
+				expirelife="1300"
+				size="20"
+				depthbias="-30"
+				
+				position="0 0 0"
+			/>
+			
+			<billboard
+				bone="_bone_overhead"
+				material="/shared/effects/materials/moon_01.material"
+				startcolor=".0 .2 0.3"
+				endcolor="0"
+				expirelife="1300"
+				size="20"
+				depthbias="-30"
+				
+				position="0 0 20"
+				yawspeed="100"
+			/>
+		
+
+			<template name="bg_glow" >
+				<simpleemitter
+					timenudge="2000"
+					bone="{bone}"
+					spawnrate="4"
+					minparticlelife="1200"
+					maxparticlelife="2000"
+					depthbias="8"
+					material="/shared/effects/materials/light_rays.material"
+				>
+					<particle
+						minangle="0"
+						maxangle="360"
+						flare="1"
+						minstartsize="15"
+						maxstartsize="30"
+						minendsize="20"
+						maxendsize="40"
+						startcolor="0"
+						midcolor=".0 .1 0.2"
+						endcolor="0"
+						minanglespeed="-50"
+						maxanglespeed="50"
+					/>
+				</simpleemitter>
+			</template>
+			
+			<instance name="bg_glow" bone="_bone_weaponattach" />
+			<instance name="bg_glow" bone="_bone_head" />
+			<instance name="bg_glow" bone="_bone_back" />
+			<instance name="bg_glow" bone="_bone_center" />
+			<instance name="bg_glow" bone="_bone_lefthand" />
+			<instance name="bg_glow" bone="_bone_righthand" />
+			<instance name="bg_glow" bone="_bone_leftfoot" />
+			<instance name="bg_glow" bone="_bone_rightfoot" />
+
+			
+			<skeletonemitter
+				timenudge="2000"
+				spawnrate="40"
+				offsetsphere="20"
+				minparticlelife="1000"
+				maxparticlelife="1600"
+				material="/shared/effects/materials/flare_02.material"
+				gravity="-1"
+				direction="0 0 1"
+				angle="0"
+				maxspeed="20"
+			>
+				<template name="sparks">
+					<particle
+						minangle="0"
+						maxangle="360"
+						minsize="3"
+						maxsize="5"
+						color="{color}"
+						startframe="1"
+						midframe=".5"
+						endframe="1"
+						midframepos=".25"
+					/>
+				</template>
+				
+				<instance name="sparks" color=".0 .1 0.2" />
+				<instance name="sparks" color="0 .5 1" />
+			</skeletonemitter>			
+			
+			<skeletonemitter
+				spawnrate="40"
+				offsetsphere="20"
+				minparticlelife="1000"
+				maxparticlelife="1600"
+				material="/shared/effects/materials/star_03.material"
+				gravity="-1"
+				direction="0 0 1"
+				angle="0"
+				maxspeed="20"
+			>
+				<template name="sparks">
+					<particle
+						minangle="0"
+						maxangle="360"
+						minsize="3"
+						maxsize="5"
+						color="{color}"
+					/>
+				</template>
+				
+				<instance name="sparks" color=".0 .1 0.2" />
+				<instance name="sparks" color="0 .5 1" />
+			</skeletonemitter>
+		
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+	  
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Klanx_Ability4_Slow"
+	
+	icon="../icon.tga"
+	passiveeffect="state.effect"
+	displaylevel="true"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	movespeedslow="0.2"
+	
+>
+</state>

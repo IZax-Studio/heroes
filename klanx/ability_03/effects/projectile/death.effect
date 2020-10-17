@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale=".5">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1300"
+				falloffend="1300"
+				volume="0.5" 
+				sample="../../sounds/bullet_death_%.wav"
+			/>
+
+			<simpleemitter
+				life="700"
+				count="25"
+				spawnrate="130"
+				depthbias="-30"
+				minparticlelife="250"
+				maxparticlelife="400"
+				speed="500"
+				drag="0.02"
+				offsetsphere="10 10 0"
+				angle="90"
+				material="/shared/effects/materials/water_spray_add.material"
+			>
+				<particle 
+					minanglespeed="-60"
+					maxanglespeed="0"
+					minangle="-360"
+					maxangle="0"
+					startcolor=".1 .2 .4"
+					endcolor="0"
+					startsize="50"
+					endsize="100"
+				/>
+				<particle 
+					minanglespeed="-60"
+					maxanglespeed="0"
+					minangle="-360"
+					maxangle="0"
+					startcolor=".2 .3 .4"
+					endcolor="0"
+					startsize="50"
+					endsize="100"
+				/>
+
+			</simpleemitter>
+
+			<simpleemitter
+				life="300"
+				count="15"
+				spawnrate="2000"
+				depthbias="-40"
+				minparticlelife="300"
+				maxparticlelife="500"
+				minspeed="0"
+				maxspeed="850"
+				drag="0.04"
+				offsetsphere="15 15 0"
+				material="/shared/effects/materials/wave2.material"
+				expirelife="500"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					startcolor=".09 .12 .15"
+					endcolor="0 0 0"
+					midcolorpos=".5"
+					startsize="50"
+					endsize="200"
+					minanglespeed="-180"
+					maxanglespeed="180"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="500"
+				spawnrate="3300"
+				count="35"
+				minparticlelife="400"
+				maxparticlelife="700"
+				gravity="25"
+				minspeed="100"
+				maxspeed="550"
+				drag=".01"
+				material="/shared/effects/materials/spark_10.material"
+				offsetsphere="5"
+				minangle="0"
+				maxangle="90"
+				direction="0 0 1"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startcolor="1"
+					midcolor="1"
+					endcolor="0 0 0"
+					midcolorpos=".2"
+					minstartsize="5"
+					maxstartsize="25"
+					midsize="12"
+					endsize="6"
+					startalpha="0"
+					midalpha=".7"
+					endalpha="0"
+					midalphapos=".5"
+				/>
+			</simpleemitter>
+
+			<billboard
+				life="400"
+				startcolor=".05 .25 .65"
+				endcolor="0"
+				midalphapos="0.75"
+				startsize="200"
+				endsize="600"
+				startalpha="1"
+				depthbias="-30"
+				endalpha="0"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

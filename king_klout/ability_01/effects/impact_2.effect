@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect ignorebasescale="true" useentityeffectscale="false" >
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+
+		<sound
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="800"
+				volume="1" 
+				sample="/heroes/king_klout/ability_01/sounds/red_imp_%.wav"
+			/>
+			
+			<simpleemitter
+				position="0 0 15"
+				offsetsphere="5"
+				count="80"
+				minparticlelife="250"
+				maxparticlelife="800"
+				material="/shared/effects/materials/cartoon_dust.material"
+				direction="0 0 1"
+				minangle="90"
+				maxangle="90"
+				minspeed="500"
+				maxspeed="3000"
+				drag="0.03"
+				gravity="-10"
+				depthbias="-20"
+			>
+				<particle
+					startcolor="1 .5 .025"
+					endcolor="1 0 0"
+					minstartsize="30"
+					maxstartsize="50"
+					midsizepos=".25"
+					minendsize="40"
+					maxendsize="80"
+					maxangle="360"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					startscale="1"
+					midscale=".75"
+					endscale="0"
+				/>
+			</simpleemitter>
+
+			<billboard
+				maxroll="360"
+				position="0 0 10"
+				life="300"
+				startsize="0"
+				midsize="400"
+				endsize="500"
+				midsizepos=".35"
+				startparam=".25"
+				endparam="0"
+				depthbias="-75"
+				material="/shared/effects/materials/refract_ring.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+
+			<simpleemitter
+				count="1"
+				particlelife="1000"
+				direction="0 0 1"
+				angle="0"
+				speed="100"
+				drag="0.05"
+				material="/shared/effects/materials/corona_07_blend.material"
+				depthbias="-75"
+			>
+				<particle
+					size="450"
+					startalpha=".75"
+					midalpha=".2"
+					endalpha="0"
+					midalphapos=".2"
+					startcolor=".4 .2 .025"
+					midcolor=".04 .02 0"
+					endcolor="0"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+				/>
+			</simpleemitter>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<camerashake2 scale="2" falloffstart="200" falloffend="1000" duration="120" frequency="22" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+
+
+
+
+
+

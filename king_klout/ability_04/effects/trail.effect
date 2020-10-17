@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1.0">
+			
+			
+			<template name="wake" >
+				<simpleemitter
+					spawnrate="100"
+					minparticlelife="300"
+					maxparticlelife="400"
+					position="{pos}"
+					material="/shared/effects/materials/wave2.material"
+					minspeed="5000"
+					maxspeed="10000"
+					drag="0.0225"
+					direction="{dir}"
+					angle="10"
+					depthbias="-50"
+				>
+					<particle
+						turn="1"
+						startcolor="0"
+						midcolor="0 .1 0"
+						endcolor="0"
+						minstartsize="80"
+						maxstartsize="120"
+						minendsize="160"
+						maxendsize="200"
+						minscale="1"
+						maxscale="1.5"
+					/>
+				</simpleemitter>
+			</template>
+			<instance name="wake" dir="1 .25 0" pos="0 270 0" />
+			<instance name="wake" dir="-1 .25 0" pos="0 270 0" />
+
+			<twopointtrailemitter
+				position_a="-220 -50 0"
+				position_b="220 -50 0"
+				spawnrate="30"
+				particlelife="600"
+				texposscale="0"
+				texstretchscale="1"
+				material="/shared/effects/materials/swoosh_add_02.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor="0 .5 0"
+					endcolor="0"
+					midcolorpos=".25"
+				/>
+			</twopointtrailemitter>
+		</particlesystem>
+
+		<particlesystem name="system1" space="entity" scale="1.0">
+		
+			<sound
+			    soundloop="true"
+				fadein="1000"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="800"
+				volume="1"
+				sample="/heroes/king_klout/ability_04/sounds/loop_move.wav"
+			/>
+
+			<template name="wake_streaks" >
+				<trackeremitter
+					spawnrate="20"
+					particlelife="500"
+					position="{pos}"
+					minspeed="2000"
+					maxspeed="3000"
+					drag="0.0"
+					direction="{dir}"
+					angle="10"
+					targetposition="{targetpos}"
+					tracktype="angular"
+					trackspeed="10"
+					depthbias="-50"
+					offsetsphere="20"
+				>
+					<particle>
+						<trailemitter
+							minlife="150"
+							maxlife="250"
+							spawnrate="100"
+							particlelife="100"
+							material="/shared/effects/materials/trail_03.material"
+							texposscale="0"
+							texstretchscale="1"
+							attachtoemitter="1"
+							startparticlecolor="0"
+							midparticlecolor="0 .5 0"
+							endparticlecolor="0"
+						>
+							<particle
+								startsize="0"
+								midsize="40"
+								endsize="0"
+								startcolor="0 .5 0"
+								midcolor=".15"
+								endcolor="0"
+								midcolorpos=".25"
+							/>
+						</trailemitter>
+					</particle>
+				</trackeremitter>
+			</template>
+			<instance name="wake_streaks" dir="1 0 0" pos="20 210 0" targetpos="200 -1000 0" />
+			<instance name="wake_streaks" dir="-1 0 0" pos="-20 210 0" targetpos="-200 -1000 0" />
+
+			<!-- ghost king -->
+			<model
+				model="../../model.mdf"
+				anim="ability_4_ghost"
+				material="spoopy_self.material"
+				scale="1.75"
+				alpha=".99"
+				color="0 1 .5"
+			/>
+
+			<!-- ghost sphere -->
+			<model
+				life="200"
+				model="/shared/effects/models/sphere/model.mdf"
+				material="spoopy_sphere.material"
+				startscale="0"
+				endscale="3.6"
+				color="0 .5 0"
+			/>
+			<model
+				delay="200"
+				model="/shared/effects/models/sphere/model.mdf"
+				material="spoopy_sphere.material"
+				scale="3.45"
+				color="0 .5 0"
+			/>
+
+			<billboard
+				life="200"
+				material="/shared/effects/materials/ring_01.material"
+				startsize="0"
+				endsize="550"
+				depthbias="-150"
+				color="0 .1 0"
+			/>
+
+			<billboard
+				delay="200"
+				material="/shared/effects/materials/ring_01.material"
+				size="550"
+				depthbias="-150"
+				color="0 .1 0"
+			/>
+
+			<!-- swirling energies -->
+			<!-- <orbiteremitter
+				timenudge="500"
+				count="50"
+				startparticlescale="1"
+				endparticlescale="0"
+				orbit="-3.14 3.14 0"
+				minspeed=".4"
+				maxspeed=".8"
+				origin="0 0 200"
+				offset="3.14 3.14 80"
+				direction="0 0 1"
+			>
+				<particle
+					startcolor="0"
+					midcolor="0 .1 0"
+					endcolor="0"
+					minsize="40"
+					maxsize="60"
+					param=".05"
+					maxangle="360"
+					minanglespeed="-100"
+					maxanglespeed="100"
+				>
+					<trailemitter
+						spawnrate="20"
+						particlelife="300"
+						material="/shared/effects/materials/light_trail.material"
+						texposscale="0"
+						texstretchscale="1"
+						attachtoemitter="1"
+					>
+						<particle
+							startsize="40"
+							endsize="20"
+							startcolor="0"
+							midcolor="0 .1 0"
+							endcolor="0"
+						/>
+					</trailemitter>
+				</particle>
+			</orbiteremitter> -->
+
+			<orbiteremitter
+				timenudge="500"
+				spawnrate="16"
+				particlelife="400"
+				startparticlescale="1"
+				endparticlescale="0"
+				orbit="-3.14 3.14 0"
+				minspeed="2"
+				maxspeed="5"
+				origin="0 0 200"
+				offset="3.14 3.14 80"
+				direction="0 0 1"
+			>
+				<particle
+					startcolor="0"
+					midcolor="0 .1 0"
+					endcolor="0"
+					minsize="40"
+					maxsize="60"
+					param=".05"
+					maxangle="360"
+					minanglespeed="-100"
+					maxanglespeed="100"
+				>
+					<trailemitter
+						minlife="150"
+						maxlife="300"
+						spawnrate="100"
+						particlelife="100"
+						material="/shared/effects/materials/trail_03.material"
+						texposscale="0"
+						texstretchscale="1"
+						attachtoemitter="1"
+					>
+						<particle
+							startsize="0"
+							midsize="40"
+							endsize="0"
+							color="0 .3 0"
+						/>
+					</trailemitter>
+				</particle>
+			</orbiteremitter>
+
+			<simpleemitter
+				timenudge="1000"
+				spawnrate="12"
+				minparticlelife="100"
+				maxparticlelife="150"
+				material="/shared/effects/materials/shadow_cut_02_reveal.material"
+				depthbias="-100"
+			>
+				<particle
+					startframe="1"
+					midframe=".99"
+					endframe="1"
+					color="0 .5 0"
+					minsize="300"
+					maxsize="600"
+					maxangle="360"
+					minanglespeed="-200"
+					maxanglespeed="200"
+					anchor="1"
+				/>
+			</simpleemitter>
+
+			<light
+				color="0 .5 0"
+				falloffend="700"
+			/>
+		</particlesystem>
+
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+      	<waitfordeath instance="instance0" />
+      	<waitfordeath instance="instance1" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

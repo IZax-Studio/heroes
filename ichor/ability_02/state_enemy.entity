@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ichor_Ability2_Enemy"
+
+	icon="icon2.tga"
+	passiveeffect="effects/state_ally.effect"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="false"
+>
+
+	<onframe>
+		<distance source="this_owner_entity" target="this_inflictor_entity" />
+		<compare a="result" b="1200" op="gt">
+			<expire />
+		</compare>
+		<targettype type="dead" target="this_inflictor_entity">
+			<expire />
+		</targettype>
+		
+		<copystates source="source_entity" target="target_entity" effecttype="StatusDebuff" inflictor="source_entity" transfer="true" />
+		<copystates source="source_entity" target="target_entity" effecttype="StatusDisable" inflictor="source_entity" transfer="true" />
+		<copystates source="source_entity" target="target_entity" effecttype="ForceTransferrable" inflictor="source_entity" transfer="true" />
+	</onframe>
+	
+	<altavatar key="Hero_Ichor.Alt"
+		passiveeffect="../alt/ability_02/effects/state_ally.effect"
+		icon="../alt/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Ichor.Alt2" 		
+		passiveeffect="../alt2/ability_02/effects/state_ally.effect"
+		icon="../alt2/ability_02/icon.tga"
+	/>
+</state>

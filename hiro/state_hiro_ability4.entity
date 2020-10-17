@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Hiro_Ability4"
+	
+	icon="icon4.tga"
+	passiveeffect="effects/ability_04/slash.effect"
+	
+	invulnerable="true"
+	silenced="true"
+	unitwalking="true"
+	
+	effecttype=""
+	modifierkey="Hiro_Ability4"
+	deathpersist="true"
+	
+	impactinterval="400"
+>
+
+	<onimpact>
+		<areaofeffect
+			radius="400"
+			targetselection="all"
+			targetscheme="visible_enemy_units"
+			effecttype="Physical Splash"
+		/>
+		
+		<compare a="result" b="0" op="ne">
+			<spawnaffector name="Affector_Hiro_Ability4" target="source_position" />
+		</compare>
+		<else>
+			<expire />
+		</else>
+	</onimpact>
+	
+	<altavatar key="Hero_Hiro.Alt6" modpriority="90"
+		passiveeffect="alt6/ability_04/effects/slash.effect"
+	/>
+	
+	<altavatar key="Hero_Hiro.Alt7" modpriority="90"
+		passiveeffect="alt7/ability_04/effects/slash.effect"
+	/>
+	
+	<altavatar key="Hero_Hiro.Alt8" modpriority="90"
+		passiveeffect="alt8/ability_04/effects/slash.effect"
+	/>
+	
+	<altavatar key="Hero_Hiro.Alt9" modpriority="90"
+		passiveeffect="alt9/ability_04/effects/slash.effect"
+	/>
+	
+	<altavatar key="Hero_Hiro.Alt10" modpriority="90"
+		passiveeffect="alt10/ability_04/effects/slash.effect"
+	/>
+
+	<altavatar key="Hero_Hiro.Alt12" modpriority="90"
+		passiveeffect="alt12/ability_04/slash.effect"
+		icon="alt12/ability_04/ability_4.tga"
+	>
+		<modifier key="hiroAlt12_Ability4_Upgrade"
+			passiveeffect="alt12/ability_04/slash_upgrade.effect"
+			icon="alt12/ability_04/ability_4_u.tga"
+		/>
+		
+		<onexpired>
+		<playeffect effect="alt12/ability_04/sound_end.effect" source="source_entity" target="source_entity" occlude="true" />
+		</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_Hiro.Alt13" modpriority="90"
+		passiveeffect="alt13/ability_04/effects/slash.effect"
+	/>
+	
+	<altavatar key="Hero_Hiro.Alt14" modpriority="90"
+		icon="alt14/ability_04/icon.tga"
+		passiveeffect="alt14/ability_04/effects/slash.effect"
+	/>
+	
+</state>

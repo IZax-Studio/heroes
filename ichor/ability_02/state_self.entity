@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ichor_Ability2_Self"
+	
+	icon="icon2.tga"
+	
+	passiveeffect="effects/state.effect"
+	
+	effecttype="StatusBuff"
+	allowtransfer="false"
+
+>
+
+	<onframe>
+		<compare source="this_owner_entity" a="source_health" b="10" op="le">
+			<pushability name="Ability_Ichor2" source="source_entity" />
+			<setaccumulator value="0" entity="stack_entity" />
+			<expire />
+		</compare>
+	</onframe>
+
+	<onexpired>
+		<expire entity="this_proxy_entity" />
+	</onexpired>
+	
+	<altavatar key="Hero_Ichor.Alt"		
+		passiveeffect="/heroes/ichor/alt/ability_02/effects/state.effect"
+		icon="../alt/ability_02/icon.tga"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Ichor.Alt2"		
+		passiveeffect="/heroes/ichor/alt2/ability_02/effects/state.effect"
+		icon="../alt2/ability_02/icon.tga"
+	>
+	</altavatar>
+</state>

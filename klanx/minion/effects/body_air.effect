@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+		
+			<model
+				directionalspace="global"
+				model="tentacles_spin.mdf"
+				material="../material.material"
+				bone="Bip01 Pelvis"
+				yawspeed="720"
+			/>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

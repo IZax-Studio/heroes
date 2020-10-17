@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Klout_Sound_Initiator"
+
+	icon=""
+	passiveeffect=""
+	propagatetoillusions="false"
+	effecttype=""
+	ishidden="true"
+>
+ <onexpired>
+			<areaofeffect
+				global="true"
+				targetscheme="all_heroes"
+				targetselection="all"
+				ignoreinvulnerable="true"
+			>
+				<hasmodifier entity="target_entity" name="Kane_Sound" propagatetoillusions="false">
+					<compare a="source_team" b="target_team" op="ne">
+						<applystate name="State_Klout_Enemy_Spot" target="source_entity" duration="150000"/>
+					</compare>
+				</hasmodifier>
+					<else>
+				</else>
+			</areaofeffect>
+   </onexpired>
+
+</state>

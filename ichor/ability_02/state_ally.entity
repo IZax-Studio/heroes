@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ichor_Ability2_Ally"
+
+	icon="icon2.tga"
+	passiveeffect="effects/state_ally.effect"
+	
+	effecttype="StatusBuff"
+	allowtransfer="false"
+>
+
+	<onframe>
+		<distance source="this_owner_entity" target="this_inflictor_entity" />
+		<compare a="result" b="1200" op="gt">
+			<pushability name="Ability_Ichor2" source="this_inflictor_entity" />
+			<setaccumulator value="0" entity="stack_entity" />
+			<expire />
+		</compare>
+		<targettype type="dead" target="this_inflictor_entity">
+			<pushability name="Ability_Ichor2" source="this_inflictor_entity" />
+			<setaccumulator value="0" entity="stack_entity" />
+			<expire />
+		</targettype>
+	</onframe>
+
+	<onattackeddamageevent>
+		<damageeffecttype effecttype="Returned" /> <!-- Returned damage, do not transfer -->
+		<else>
+			<damageeffecttype effecttype="Magic"> <!-- Magic damage, return magic -->
+				<evaluate a="damage_attempted" b="0.5,0.6,0.7,0.8" op="mult" />
+				<damage effecttype="Returned Magic DOT" source="target_entity" target="this_inflictor_entity" amount="1" b="result" op="mult" nonlethal="true" />
+
+				<setvalue name="damage_attempted" a="damage_attempted" b="0.5,0.4,0.3,0.2" op="mult" />
+			</damageeffecttype>
+			<else>
+				<damageeffecttype effecttype="Physical"> <!-- Physical damage, return Physical -->
+					<evaluate a="damage_attempted" b="0.5,0.6,0.7,0.8" op="mult" />
+					<damage effecttype="Returned Physical DOT" source="target_entity" target="this_inflictor_entity" amount="1" b="result" op="mult" nonlethal="true" />
+
+					<setvalue name="damage_attempted" a="damage_attempted" b="0.5,0.4,0.3,0.2" op="mult" />
+				</damageeffecttype>
+				<else>
+					<damageeffecttype effecttype="SuperiorMagic"> <!-- SuperiorMagic damage, return SuperiorMagic -->
+						<evaluate a="damage_attempted" b="0.5,0.6,0.7,0.8" op="mult" />
+						<damage effecttype="Returned SuperiorMagic DOT" source="target_entity" target="this_inflictor_entity" amount="1" b="result" op="mult" nonlethal="true" />
+
+						<setvalue name="damage_attempted" a="damage_attempted" b="0.5,0.4,0.3,0.2" op="mult" />
+					</damageeffecttype>
+					<else>
+						<damageeffecttype effecttype="SuperiorPhysical"> <!-- SuperiorPhysical damage, return SuperiorPhysical -->
+							<evaluate a="damage_attempted" b="0.5,0.6,0.7,0.8" op="mult" />
+							<damage effecttype="Returned SuperiorPhysical DOT" source="target_entity" target="this_inflictor_entity" amount="1" b="result" op="mult" nonlethal="true" />
+
+							<setvalue name="damage_attempted" a="damage_attempted" b="0.5,0.4,0.3,0.2" op="mult" />
+						</damageeffecttype>
+						<else> <!-- Neither Magic nor Physical nor Returned damage, return True to ichor -->
+							<evaluate a="damage_attempted" b="0.5,0.6,0.7,0.8" op="mult" />
+							<damage effecttype="Returned DOT" source="target_entity" target="this_inflictor_entity" amount="1" b="result" op="mult" nonlethal="true" />
+
+							<setvalue name="damage_attempted" a="damage_attempted" b="0.5,0.4,0.3,0.2" op="mult" />
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+	</onattackeddamageevent>
+
+	<onkilled>
+		<pushability name="Ability_Ichor2" source="this_inflictor_entity" />
+		<setaccumulator value="0" entity="stack_entity" />
+	</onkilled>
+
+	<onexpired>
+		<expirestate name="State_Ichor_Ability2_Self" target="this_inflictor_entity" />
+		<playeffect effect="effects/state_end_sound.effect" target="target_entity" />
+	</onexpired>
+	
+	<altavatar key="Hero_Ichor.Alt"
+		passiveeffect="../alt/ability_02/effects/state_ally.effect"
+		icon="../alt/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Ichor.Alt2" 		
+		passiveeffect="../alt2/ability_02/effects/state_ally.effect"
+		icon="../alt2/ability_02/icon.tga"
+	/>
+</state>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Hiro_CounterAttack"
+
+	speed="1500"
+	gravity="0"
+	canturn="false"
+	modelscale="1.00"
+
+	model="/shared/models/invis.mdf"
+	traileffect="effects/ability_02/trail.effect"
+	impacteffect="effects/ability_02/impact.effect"
+>
+	<onimpact>
+		<damage effecttype="Physical" amount="1" b="source_attackdamage" op="mult" />
+	</onimpact>
+	
+	<altavatar key="Hero_Hiro.Alt6" modpriority="90"
+		traileffect="effects/ability_02/alt6_trail.effect"
+		impacteffect="alt6/ability_02/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Hiro.Alt7" modpriority="90"
+		traileffect="alt7/ability_02/effects/trail.effect"
+		impacteffect="alt7/ability_02/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Hiro.Alt8" modpriority="90"
+		traileffect="alt8/ability_02/effects/trail.effect"
+		impacteffect="alt8/ability_02/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Hiro.Alt9" modpriority="90"
+		traileffect="alt9/ability_02/effects/trail.effect"
+		impacteffect="alt9/ability_02/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Hiro.Alt10" modpriority="90"
+		traileffect="alt10/ability_02/effects/trail.effect"
+		impacteffect="alt10/ability_02/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Hiro.Alt12" modpriority="90"
+		traileffect="alt12/ability_02/trail.effect"
+		impacteffect="alt12/ability_02/impact.effect"
+	>
+		<modifier key="hiroAlt12_Ability2_Upgrade"
+			traileffect="alt12/ability_02/trail_upgrade.effect"
+			impacteffect="alt12/ability_02/impact_upgrade.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Hiro.Alt13" modpriority="90"
+		traileffect="alt13/ability_02/effects/trail.effect"
+		impacteffect="alt13/ability_02/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Hiro.Alt14" modpriority="90"
+		traileffect="alt14/ability_02/effects/trail.effect"
+		impacteffect="alt14/ability_02/effects/impact.effect"
+	/>
+
+</projectile>

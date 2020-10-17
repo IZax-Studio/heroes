@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="false">
+	<definitions>
+		<particlesystem name="system0" space="world" scale=".45">
+		
+		<!-- 3D puddle -->
+			<controller bone="_bone_head" >
+				<terrainemitter
+					spawnrate="13"
+					life="1150"
+					particlelife="1150"
+					range="40"
+				>
+					<particle
+						>
+							<model
+								model="blob/model.mdf" anim="walk"
+								life="1150"  loop="0"
+								
+								directionalspace="global"
+								maxyaw="360"
+								
+								startscale="2" midscale="3" endscale="4.5" midscalepos=".75"
+								startalpha="0" midalpha="1" endalpha="0" midalphapose=".15"
+							/>
+						</particle>
+				</terrainemitter>
+				<terrainemitter
+					spawnrate="8"
+					life="1150"
+					particlelife="1150"
+					range="130"
+				>
+					<particle
+						>
+							<model
+								model="blob/model.mdf" anim="walk"
+								life="1150"  loop="0"
+								
+								directionalspace="global"
+								maxyaw="360"
+								
+								startscale=".1" midscale=".5" endscale=".75" midscalepos=".75"
+								startalpha="0" midalpha="1" endalpha="0" midalphapose=".15"
+							/>
+						</particle>
+				</terrainemitter>
+			</controller>
+			
+			
+			<!-- <controller
+				bone="_bone_centerofchest" position="20 0 0"
+				startscale="1.5"
+				midscale="1.5"
+				midscalepos=".3"
+				endscale="0"
+				expirelife="200"
+			>
+				<simpleemitter
+					life="5500"
+					spawnrate="2"
+					offsetsphere="15" 
+					particlelife="5500" count="1" 
+				>
+					<particle
+						anchor="1"
+					>
+						<terrainemitter
+							spawnrate="5"
+							particlelife="5500"
+							range="70"
+						>
+							<particle
+							>
+								<model
+									minyaw="0"
+									maxyaw="360"
+									minlife="4250"
+									maxlife="5500"
+									model="blob/model.mdf"
+									anim="walk"
+									startscale="2"
+									endscale="3.5"
+									startalpha="0"
+									midalpha="1"
+									endalpha="0"
+									midalphapos=".25"
+								/>
+								<model
+									minyaw="0"
+									maxyaw="360"
+									minlife="4250"
+									maxlife="5500"
+									model="blob/model.mdf"
+									anim="walk"
+									minstartscale="1"
+									maxstartscale="1.5"
+									minendscale="2"
+									maxendscale="2.5"
+									startalpha="0"
+									midalpha="1"
+									endalpha="0"
+									midalphapos=".25"
+								/>
+							</particle>
+						</terrainemitter>		
+					</particle>
+				</simpleemitter>
+			</controller>	 -->
+			
+		<!-- 2D puddle -->
+		<!-- 	<controller 
+				delay="150" 
+				life="5250" 
+				expirelife="150"
+				bone="_bone_centerofchest"
+				startscale="1"
+				midscale="1"
+				midscalepos=".1"
+				endscale="0"
+			>
+			<simpleemitter
+				life="9250"
+				expirelife="0"
+				spawnrate="5"
+				particlelife="1500"
+				offsetsphere="10"
+				position="20 0 0"
+			>
+				<particle
+				>
+					<groundsprite
+						minlife="1250"
+						maxlife="1500"
+						startsize="0"
+						midsize="75"
+						endsize="130"
+						startalpha=".5"
+						midalpha=".75"
+						endalpha="0"
+						startcolor=".5"
+						endcolor=".5"
+						minyaw="0"
+						maxyaw="360"
+						startframe="0"
+						endframe=".75"
+						expirelife="250"
+						material="/shared/effects/materials/blood_puddle.material"
+					/>
+				</particle>
+			</simpleemitter>
+		</controller>
+			
+			<simpleemitter
+				bone="_bone_head"
+				delay="750"
+				life="5250"
+				expirelife="0"
+				spawnrate="7"
+				startparticlescale="1"
+				midparticlescale="1"
+				midparticlescalepos=".75"
+				endscale="0"
+				particlelife="150"
+				offsetsphere="10"
+			>
+				<particle
+				>
+					<groundsprite
+						minlife="1250"
+						maxlife="1500"
+						startsize="50"
+						endsize="120"
+						startalpha="0"
+						midalpha=".75"
+						endalpha="0"
+						startcolor=".5"
+						endcolor=".5"
+						startframe="0"
+						endframe="1"
+						minyaw="0"
+						maxyaw="360"
+						material="/shared/effects/materials/blood_puddle.material"
+						
+					/>
+				</particle>
+			</simpleemitter>
+ -->
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" /> 
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

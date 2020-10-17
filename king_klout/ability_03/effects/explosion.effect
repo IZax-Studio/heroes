@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+
+			<simpleemitter
+				position="0 0 75"
+				offsetsphere="25 25 70"
+				count="80"
+				minparticlelife="250"
+				maxparticlelife="1000"
+				material="/shared/effects/materials/cartoon_dust.material"
+				depthbias="-20"
+				maxspeed="100"
+				drag="0.02"
+				gravity="-10"
+			>
+				<particle
+					color=".5"
+					minstartsize="120"
+					maxstartsize="200"
+					midsizepos=".25"
+					minendsize="40"
+					maxendsize="80"
+					maxangle="360"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					startscale="1"
+					midscale=".75"
+					endscale="0"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

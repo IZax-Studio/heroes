@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1">
+
+			<template name="gobbo_head" >
+				<model
+					model="/shared/models/invis.mdf"
+					bone="_bone_head"
+					minpitch="-50"
+					maxpitch="50"
+					minroll="-50"
+					maxroll="50"
+					directionalspace="global"
+				>
+					<model
+						model="/shared/models/invis.mdf"
+						yawspeed="-270"
+					>
+						<model
+							model="/heroes/king_klout/minion/model.mdf"
+							position="{position}"
+							yaw="{yaw}"
+							scale="1.5"
+							expirelife="150"
+							startalpha="1"
+							endalpha="0"
+						>
+							<billboard
+								material="/shared/effects/materials/whitedot_blend.material"
+								height="25"
+								width="25"
+								color="0"
+								startalpha=".75"
+								endalpha="0"
+								expirelife="100"
+							/>
+							<trailemitter
+								spawnrate="16"
+								particlelife="250"
+								attachtoemitter="true"
+								material="/core/materials/effect_solid.material"
+								texposscale="0"
+								texstretchscale="1"
+							>
+								<particle
+									startsize="1"
+									midsize=".8"
+									endsize="0"
+									color=".5 .5 .5"
+								/>
+							</trailemitter>
+						</model>
+					</model>
+				</model>
+			</template>
+			<instance name="gobbo_head" position="-40 0 0" yaw="0" />
+			<instance name="gobbo_head" position="0 -40 0" yaw="90" />
+			<instance name="gobbo_head" position="40 0 0" yaw="180" />
+			<instance name="gobbo_head" position="0 40 0" yaw="240" />
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+</effect>

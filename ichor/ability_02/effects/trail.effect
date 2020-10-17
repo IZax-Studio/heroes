@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			<sound
+			    fadein="0"
+				fadeout="3000"
+			    forcestereo="true"
+     			linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume="1"
+				sample="/heroes/ichor/ability_02/sounds/cast.wav"
+			/>
+			
+			<simpleemitter
+				position="0 25 10"
+				spawnrate="50"
+				particlelife="300"
+				direction="0 1 0"
+				angle="0"
+				speed="1"
+				material="/shared/effects/materials/star_04.material"
+			>
+				<particle
+					startparam="0"
+					endparam=".2"
+					startalpha="1"
+					midalpha=".25"
+					midalphapos=".85"
+					endalpha="0"
+					color=".5 .5 1"
+					startsize="50"
+					endsize="200"
+					turn="1"
+					lockright="1"
+					lockup="1"
+					pitch="-90"
+					scale=".7"
+				>
+					<groundsprite
+						minlife="200"
+						maxlife="300"
+						startsize="50"
+						endsize="100"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						startcolor="1"
+						endcolor=".5"
+						minyaw="0"
+						maxyaw="360"
+						startframe="0"
+						midframe="0"
+						midframepos=".35"
+						endframe="1"
+						material="/shared/effects/materials/star_04.material"
+					/>
+				</particle>
+			</simpleemitter>
+			<controller directionalspace="local" >
+				<simpleemitter
+					position="40 20 0"
+					direction="0 -1 0"
+					minangle="45"
+					maxangle="45"
+					spawnrate="200"
+					speed="50"
+					particlelife="100"
+					material="/shared/effects/materials/star_04.material"
+				>
+					<particle
+						startsize="50"
+						endsize="150"
+						color=".5 .5 1"
+						turn="1"
+						lockup="1"
+						pitch="-45"
+						yaw="45"
+						minangle="0"
+						maxangle="360"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+					/>
+				</simpleemitter>
+			</controller>
+			<controller directionalspace="local" >
+				<simpleemitter
+					position="-40 20 0"
+					direction="0 -1 0"
+					minangle="-45"
+					maxangle="-45"
+					spawnrate="200"
+					speed="50"
+					particlelife="100"
+					material="/shared/effects/materials/star_04.material"
+				>
+					<particle
+						startsize="50"
+						endsize="150"
+						color=".5 .5 1"
+						turn="1"
+						lockup="1"
+						pitch="-45"
+						yaw="-45"
+						minangle="0"
+						maxangle="360"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+					/>
+				</simpleemitter>
+			</controller>
+			<simpleemitter
+				spawnrate="500"
+				maxspeed="300"
+				direction="0 -1 0"
+				minangle="-60"
+				maxangle="60"
+				minparticlelife="100"
+				maxparticlelife="700"
+				gravity="20"
+				offsetsphere="100"
+				directionalspace="local"
+				material="/shared/effects/materials/star_04.material"
+			>
+				<particle
+					startsize="8.5"
+					endsize="0"
+					color="1"
+					minscale=".5"
+					maxscale="1.5"
+					maxangle="360"
+					depthbias="-100"
+				/>
+			</simpleemitter>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

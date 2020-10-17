@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world">
+	
+			<sound
+			    oneshot="true"
+			    norestart="true"
+			    channelid="levelup"
+			    voiceresponseoff="true"
+			    forcestereo="true"
+			    dampen="0.7"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="800"
+				volume=".5"
+				sample="/heroes/king_klout/sounds/interactions/levelup.wav"
+			/>
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

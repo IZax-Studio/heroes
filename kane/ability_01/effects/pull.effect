@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1" >
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.5">
+		
+			<simpleemitter
+				count="12"
+				position="15 450 50"
+				offsetsphere="60 150 30"
+				direction="0 -1 0"
+				minspeed="2500"
+				maxspeed="3000"
+				acceleration="-20000"
+				particlelife="500"
+				angle="0"
+				material="/shared/effects/materials/whitedot.material"
+			>
+				<template name="swoosh_trail">
+					<particle
+						minscale=".5"
+						maxscale="2"
+						color="0"
+					>
+						<trailemitter
+							minlife="125"
+							maxlife="200"
+							spawnrate="100"
+							particlelife="250"
+							texposscale="0"
+							texpostime="150"
+							texstretchscale="1"
+							material="/shared/effects/materials/fire_scrolling_trail_blend.material"
+							startparticlealpha="2"
+							midparticlealpha="2"
+							endparticlealpha="0"
+						>
+							<particle
+								color="{color}"
+								startsize="0"
+								midsize="15"
+								endsize="0"
+								midsizepos=".2"
+							/>
+						</trailemitter>
+					</particle>
+				</template>
+				<instance name="swoosh_trail" color="0" />
+				<instance name="swoosh_trail" color="0 .5 0" />
+				<instance name="swoosh_trail" color="0 1 0" />
+			</simpleemitter>
+		<!--
+			<simpleemitter
+				count="1"
+				position="15 450 50"
+				direction="0 -1 0"
+				speed="3000"
+				acceleration="-20000"
+				particlelife="500"
+				angle="0"
+			>
+					<particle
+						minscale=".5"
+						maxscale="2"
+					>
+						<trailemitter
+							life="250"
+							spawnrate="100"
+							particlelife="150"
+							texposscale="0"
+							texpostime="150"
+							texstretchscale="1"
+							material="/shared/effects/materials/refract_gush_trail.material"
+							startparticlealpha="2"
+							midparticlealpha="2"
+							endparticlealpha="0"
+						>
+							<particle
+								startparam="0"
+								midparam="0.05"
+								endparam="0.05"
+								size="120"
+								color="1"
+							/>
+						</trailemitter>
+					</particle>
+			</simpleemitter>
+		-->
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

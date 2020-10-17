@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" >
+			
+
+			
+			
+			<light
+				position="0 0 100"
+				expirelife="200"
+				startcolor="2.5 .5 0"
+				endcolor="0"
+				falloffend="350"
+			/>
+			
+			<template name="darkness">
+				<billboard
+					expirelife="500"
+					material="/shared/effects/materials/whitedot_blend.material"
+					color="0 0 0"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					size="2000"
+					startalpha=".16"
+					endalpha="0"
+					depthbias="{depthbias}"
+				/>
+			</template>
+			<instance name="darkness" depthbias="-5" />
+			<instance name="darkness" depthbias="-50" />
+			<instance name="darkness" depthbias="-100" />
+			
+			<simpleemitter
+				spawnrate="4"
+				particlelife="1000"
+				inheritvelocity=".75"
+				drag="0.02"
+			>
+				<particle>
+					<simpleemitter
+						count="20"
+						minparticlelife="400"
+						maxparticlelife="600"
+						direction="0 0 1"
+						minangle="80"
+						maxangle="85"
+						minspeed="2000"
+						maxspeed="8000"
+						drag="0.01"
+						material="/shared/effects/materials/wave.material"
+					>
+						<particle
+							lockup="true"
+							lockright="true"
+							pitch="-90"
+							turn="1"
+							angle="-90"
+							startalpha="0"
+							midalpha="0.25"
+							endalpha="0"
+							startcolor="0"
+							midcolor=".06 .05 .04"
+							endcolor="0"
+							minsize="200"
+							maxsize="400"
+							minstartscale=".5"
+							maxstartscale="1"
+							minendscale="1.5"
+							maxendscale="2"
+							depthbias="-150"
+						/>
+					</simpleemitter>
+				</particle>
+			</simpleemitter>
+
+			<billboard
+				lockup="true"
+				lockright="true"
+				position="0 0 350"
+				material="/shared/effects/materials/vs_blend.material"
+				color="1 0 0"
+				size="75"
+			/>
+			<billboard
+				lockup="true"
+				lockright="true"
+				position="0 0 350"
+				material="/shared/effects/materials/vs.material"
+				color="1 0 0"
+				size="75"
+			/>
+
+			
+			<simpleemitter
+				spawnrate="4"
+				particlelife="1000"
+				inheritvelocity=".75"
+				drag="0.02"
+			>
+				<particle>
+					<billboard
+						maxdelay="50"
+						minlife="400"
+						maxlife="500"
+						material="/shared/effects/materials/twirl_03.material"
+						lockup="true"
+						lockright="true"
+						pitch="-90"
+						maxroll="360"
+						position="0 0 50"
+						size="60"
+						startscale="5"
+						minendscale="15"
+						maxendscale="20"
+						startcolor="0"
+						midcolor=".3 .25 .2"
+						endcolor="0"
+						depthbias="-50"
+					/>
+				</particle>
+			</simpleemitter>
+
+
+
+			<model
+				delay="250"
+				life="175"
+				loop="true"
+				model="aura_arena/model.mdf"
+				scale="4.15"
+				color=".05 0 0"
+			/>
+
+			<model
+				delay="250"
+				life="175"
+				loop="true"
+				model="aura_arena/model.mdf"
+				yaw="180"
+				scale="4.15"
+				color=".05 0 0"
+			/>
+
+			<trackeremitter
+				targetposition="0 0 100"
+				tracktype="cgravity"
+				trackspeed="40000"
+				offsetsphere="0"
+				minspeed="16000"
+				maxspeed="20000"
+				drag="0.006"
+				minoffsetradial="50"
+				maxoffsetradial="350"
+				offsetdirection="0 0 1"
+				minoffsetangle="90"
+				maxoffsetangle="90"
+				direction="0 0 1"
+				angle="30"
+				spawnrate="10"
+				particlelife="1000"
+				distancelife="false"
+			>
+				<template name="lightning_trail">
+					<particle>
+						<trailemitter
+							mincount="2"
+							maxcount="8"
+							minlife="150"
+							maxlife="250"
+							spawnrate="80"
+							particlelife="400"
+							material="/shared/effects/materials/beam_02.material"
+							texposscale="1"
+							texpostime="100"
+							texstretchscale="0.0"
+							minparticlescale=".5"
+							maxparticlescale="1.75"
+							offsetsphere="30"
+							startparticlecolor="1"
+							midparticlecolor="1"
+							endparticlecolor="0"
+						>
+							<particle
+								size="40"
+								color="{color}"
+							/>
+						</trailemitter>
+					</particle>
+				</template>
+				<instance name="lightning_trail" color=".5 .9 0" />
+				<instance name="lightning_trail" color=".5 .9 0" />
+			</trackeremitter>
+
+			<model
+				maxyaw="360"
+			>
+				<groundsprite
+					life="300"
+					startframe="1"
+					endframe="0"
+					material="/shared/effects/materials/earth_cracks_reveal_add.material"
+					size="225"
+					directionalspace="local"
+					startalpha="1"
+					endalpha=".5"
+				/>
+				<groundsprite
+					delay="300"
+					expirelife="3000"
+					startalpha=".5"
+					endalpha="0"
+					material="/shared/effects/materials/earth_cracks_reveal_add.material"
+					size="225"
+					directionalspace="local"
+				/>
+			</model>
+
+			<groundsprite
+				expirelife="1000"
+				material="/shared/effects/materials/earth_cracks_reveal_add.material"
+				size="300"
+				startalpha=".75"
+				endalpha="0"
+			/>
+
+			<simpleemitter
+				spawnrate="50"
+				offsetradial="200 0 50"
+				direction="0 0 1"
+			>
+				<particle
+					minscale=".4"
+					maxscale="2"
+				>
+					<template name="eye_glow">
+						<billboard
+							life="{life}"
+							timenudge="1"
+							position="{position}"
+							material="/shared/effects/materials/whitedot.material"
+							startcolor="0"
+							midcolor="1 .5 0"
+							endcolor="0"
+							size="30"
+							depthbias="-15"
+						/>
+						<trailemitter
+							life="{life}"
+							position="{position}"
+							spawnrate="60"
+							particlelife="100"
+							direction="0 1 .5"
+							angle="0"
+							speed="400"
+							texposscale="0"
+							texstretchscale="1.25"
+							gravity="-600"
+							material="/heroes/kane/ability_02/effects/fire_scrolling_trail.material"
+							inheritvelocity="0"
+							limitinheritvelocity="500"
+						>
+							<particle
+								startsize="10"
+								midsize="6"
+								endsize="30"
+								midsizepos=".5"
+								startcolor="0"
+								midcolor="1 .2 0"
+								endcolor="0"
+							/>
+						</trailemitter>
+					</template>
+					
+					<instance name="eye_glow" position="0 0 0" life="1000"/>
+				</particle>
+			</simpleemitter>
+		</particlesystem>
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<camerashake2 scale="8" frequency="22" radius="1200" duration="400" />
+		<waitfordeath instance="instance0" />
+	</thread> 
+</effect>

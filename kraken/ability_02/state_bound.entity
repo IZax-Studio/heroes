@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Kraken_Ability2_Bound"
+	
+	icon="icon2.tga"
+	ishidden="true"
+	stunned="true"
+	stunneddurationunmodifiable="true"
+>
+	<onframe>
+		<hasmodifier entity="this_proxy_entity" name="kraken_ability2_Charging" />
+		<else>
+			<expire />
+		</else>
+		<hasmodifier entity="this_proxy_entity" name="kraken_ability2_Hit">
+			<playanim name="knock_1" target="this_owner_entity" />
+			<applystate name="State_Stunned_Knockdown" duration="1000,1330,1660,2000" target="this_owner_entity" />
+			<damage effecttype="Magic" amount="50,100,150,200" target="this_owner_entity" />
+			<hasavatarkey entity="this_proxy_entity" name="Hero_Kraken.Alt4" >
+				<playeffect effect="../alt4/ability_02/effects/charge_impact.effect" target="this_owner_entity" />
+			</hasavatarkey>
+			<else>
+				<playeffect effect="effects/charge_impact.effect" target="this_owner_entity" />
+			</else>
+			<expire />
+		</hasmodifier>
+	</onframe>
+</state>

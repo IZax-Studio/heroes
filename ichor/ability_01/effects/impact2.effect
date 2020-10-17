@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="cyclone" deferred="true" useentityeffectscale="1">
+	<definitions>
+		
+		
+		
+		<particlesystem name="system0" space="world" scale="1">
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				count="100"
+				minspeed="100"
+				maxspeed="300"
+				minparticlelife="250"
+				maxparticlelife="500"
+				drag=".01"
+				material="/shared/effects/materials/star_04.material"
+			>
+				<particle
+					color="0 .5 1"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					startsize="50"
+					endsize="100"
+					minscale=".25"
+					maxscale=".5"
+					maxangle="360"
+					minanglespeed="-300"
+					maxanglespeed="300"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				count="100"
+				minspeed="100"
+				maxspeed="300"
+				minparticlelife="250"
+				maxparticlelife="500"
+				drag=".01"
+				gravity="20"
+				material="/shared/effects/materials/star_04.material"
+			>
+				<particle
+					startcolor="0 .5 1"
+					endcolor="1"
+					startsize="20"
+					endsize="0"
+					minscale=".25"
+					maxscale=".5"
+					maxangle="360"
+					minanglespeed="-300"
+					maxanglespeed="300"
+				/>
+			</simpleemitter>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="250"
+				startsize="200"
+				endsize="0"
+				startcolor="0"
+				midcolor=".2 .2 1"
+				endcolor=".2 .2 .2"
+				material="/shared/effects/materials/corona_01.material"
+			/>
+		
+		</particlesystem>
+		
+		
+
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		
+      		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ichor_Ability2_Bind"
+	
+	icon="icon2.tga"
+	passiveeffect=""
+	serverentity="true"
+
+	stunned="true"
+	stunneddurationunmodifiable="true"
+>
+</state>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_KingKlout_Ability1_DOT"
+
+	icon="pet_big/icon1.tga"
+	passiveeffect="effects/state_2.effect"
+
+	deniable="true"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	movespeedslowstart="0.10,0.15,0.20,0.25"
+	movespeedslowmid="0.10"
+	movespeedslowend="0.0"
+>
+	<onframe>
+		<!-- 55 70 85 100 DOT damage -->
+		<damage effecttype="Magic DOT" amount="18,23,28,33" b="frametime" op="mult"/>
+	</onframe>
+	
+	<modifier key="soccer" modpriority="150" 
+		movespeedslowstart="0.1"
+		movespeedslowmid="0.1"
+		movespeedslowend="0.0"
+	>
+		<onframe>
+			<damage effecttype="Magic DOT" amount="9" b="frametime" op="mult"/>
+		</onframe>
+	</modifier>	
+</state>

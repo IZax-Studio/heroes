@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_IchorAttack"
+
+	speed="900"
+	gravity="2000"
+	canturn="true"
+	modelscale=".5"
+
+	model="/shared/models/invis.mdf"
+	traileffect="/heroes/aluna/alt5/projectile/trail.effect"
+	impacteffect="effects/projectile_impact.effect"
+>
+	
+	<altavatar key="Hero_Ichor.Alt"		
+		model="/shared/models/invis.mdf"
+		traileffect="/heroes/ichor/alt/effects/trail.effect"
+		impacteffect="/heroes/ichor/alt/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Ichor.Alt2"		
+		model="/shared/models/invis.mdf"
+		traileffect="/heroes/ichor/alt2/effects/trail.effect"
+		impacteffect="/heroes/ichor/alt2/effects/impact.effect"
+	/>
+	
+</projectile>

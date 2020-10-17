@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="false">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.5">
+
+		
+				<template name="glow">
+				<billboard
+					bone="{bone}"
+					position="0 0 0"
+					startcolor=".1 .1 5"
+					endcolor="0 0 0"
+					size="200"
+					material="/shared/effects/materials/whitedot_blend.material"
+				/>
+
+
+				<billboard
+					bone="{bone}"
+					position="0 0 0"
+					expirelife="250"
+					color=".5"
+					size="100"
+					depthbias="-10"
+					startalpha="0"
+					midalpha=".05"
+					endalpha="0"
+					material="/shared/effects/materials/flare1.material"
+				/>
+				
+
+				<billboard
+					bone="{bone}"
+					position="0 0 0"
+					expirelife="250"
+					color=".5"
+					size="120"
+					depthbias="-10"
+					startalpha="0"
+					midalpha=".05"
+					endalpha="0"
+					rollspeed="50"
+					material="/shared/effects/materials/blink.material"
+				/>				
+				
+			</template>
+			
+			<instance name="glow" bone="_bone_centerofchest"/>		
+
+
+			
+			<template name="orbs">
+				<controller
+					bone="_bone_center"
+					position="0 0 15"
+					maxpitch="360"
+					maxroll="360"
+					maxyaw="360"
+					minpitchspeed="50"
+					maxpitchspeed="150"
+					minrollspeed="50"
+					maxrollspeed="150"
+					minyawspeed="50"
+					maxyawspeed="150"
+				>
+					<billboard
+						expirelife="500"
+						position="0 35 0"
+						material="/shared/effects/materials/whitedot.material"
+						size="20"
+						startcolor="{startcolor}"
+						endcolor="0"
+					/>
+					<trailemitter
+						position="0 35 0"
+						spawnrate="44"
+						particlelife="500"
+						texpostime="500"
+						texposscale="0.0"
+						texstretchscale="1.0"
+						material="/shared/effects/materials/light_trail.material"
+						subframepos="true"
+					>
+						<particle
+							size="5"
+							startcolor="{startcolor}"
+							endcolor="0 0 0" 
+						/>
+					</trailemitter>
+				</controller>
+			</template>
+			
+			<instance name="orbs" startcolor=".5 .5 .5"/>
+			<instance name="orbs" startcolor=".5 .5 .5"/>
+			<instance name="orbs" startcolor=".5 .5 .5"/>
+			<instance name="orbs" startcolor=".5 .5 .5"/>
+			<instance name="orbs" startcolor=".5 .5 .5"/>
+			<instance name="orbs" startcolor=".5 .5 .5"/>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="150"
+				minparticlelife="250"
+				maxparticlelife="500"
+				gravity="0"
+				speed="0"
+				drag=".01"
+				depthbias="-25"
+				material="/shared/effects/materials/star_04.material"
+				offsetsphere="40 40 40"
+				direction="0 0 0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-360"
+					maxanglespeed="360"
+					startcolor="1 1 1"
+					midcolor="0 .5 1"
+					endcolor="0 0 1"
+					minstartsize="5"
+					maxstartsize="10"
+					minendsize="15"
+					maxendsize="20"
+					param=".0175"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					anchor="1"
+				/>
+			</simpleemitter>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		 <spawnparticlesystem instance="instance0" particlesystem="system0" /> 
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ichor_Ability4_Self"
+
+	icon="icon4.tga"
+	passiveeffect=""
+	
+	effecttype=""
+	allowtransfer="false"
+	
+	modifierkey="Ichor_Ult_Active"
+	
+	dynamicprecache="effects/state_end_sound.effect"
+>
+	<aura 
+		gadget="Gadget_Ichor_Ability4"
+		radius="0"
+		targetscheme="self"
+	/>
+	
+	<oninflict>
+		<setscriptvalue name="state_end_sound_effect" value="effects/state_end_sound.effect" entity="this_entity" />
+	</oninflict>
+	
+	<onframe>
+		<areaofeffect
+			radius="600"
+			targetselection="all"
+			targetscheme="other_ally_nonillusion_nonmimic_nonpet_heroes"
+			effecttype="SuperiorMagic"
+			center="source_entity"
+			maximpactspertarget="1"
+			maxtotalimpacts="4"
+		>
+		</areaofeffect>
+		<setvar0 a="result" />
+
+		<areaofeffect
+			radius="600"
+			targetselection="all"
+			targetscheme="ally_heroes"
+			effecttype="SuperiorMagic"
+			center="source_entity"
+		>
+			<applystate name="State_Ichor_Ability4" target="target_entity" continuous="true" timeout="frametime" pushentity="true" />
+			<setcharges entity="stack_entity" a="var0" />
+		</areaofeffect>
+
+		<areaofeffect
+			radius="600"
+			targetselection="all"
+			targetscheme="enemy_heroes"
+			effecttype="SuperiorMagic"
+			center="source_entity"
+		>
+			<applystate name="State_Ichor_Ability4_Enemy" continuous="true" timeout="frametime" />
+		</areaofeffect>
+	</onframe>
+	
+	<onexpired>
+		<getscriptvalue name="state_end_sound_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" target="source_entity" occlude="true" />
+	</onexpired>
+	
+	<altavatar key="Hero_Ichor.Alt"
+		dynamicprecache="../alt/ability_04/effects/state_end_sound.effect"
+		icon="../alt/ability_04/icon.tga"
+	>
+		<oninflict>
+			<setscriptvalue name="state_end_sound_effect" value="../alt/ability_04/effects/state_end_sound.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_Ichor.Alt2"
+		icon="../alt2/ability_04/icon.tga"
+	>
+	</altavatar>
+	
+</state>

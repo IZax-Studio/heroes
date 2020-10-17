@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Klanx_Ability4_Tower1"
+
+	ishidden="true"
+	
+	maxcharges="5"
+>	
+
+<!-- This state counts the stacking magic damage effect -->
+</state>
