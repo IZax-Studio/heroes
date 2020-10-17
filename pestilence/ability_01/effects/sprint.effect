@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="1" deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="2">
+		
+		
+
+			<sound
+				volume=".4" 
+	
+				sample="../../ability_01/sounds/cast.wav"
+				linearfalloff="true"
+				falloffstart="500"
+				falloffend="2000"
+	
+			/>
+
+					
+				<billboard
+						delay="150"
+						life="450"
+						position="0 0 3"
+						material="/shared/effects/materials/stomp_02.material"
+						startsize="250"
+						endsize="0"
+						color="0 .5 1"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".85"
+						lockup="true"
+						lockright="true"
+						pitch="90"
+					
+					/>
+					
+					<billboard
+						delay="150"
+						life="450"
+						position="0 0 3"
+						material="/shared/effects/materials/stomp_02.material"
+						startsize="250"
+						endsize="0"
+						color="0 .5 1"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".85"
+						lockup="true"
+						lockright="true"
+						pitch="90"
+					
+					/>
+					
+					<billboard
+						delay="150"
+						life="500"
+						position="0 0 3"
+						material="/shared/effects/materials/fuzzy_01.material"
+						startsize="300"
+						endsize="0"
+						color="0 .4 1"
+						startalpha="1"
+						midalpha="0"
+						endalpha="0"
+						midalphapos=".85"
+						lockup="true"
+						lockright="true"
+						pitch="90"
+						rollspeed="100"
+					
+					/>
+					
+					<billboard
+						delay="150"
+						life="450"
+						position="0 0 3"
+						material="/shared/effects/materials/frost_burst.material"
+						startsize="300"
+						endsize="0"
+						color="0 .3 .7"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".85"
+						lockup="true"
+						lockright="true"
+						pitch="90"
+						rollspeed="500"
+					
+					/>
+
+					
+					
+					
+					
+		
+		
+
+					<billboard
+			
+						life="700"
+					
+						color="1.0 1.0 1.0"
+						startalpha=".5"
+						midalpha=".25"
+						endalpha="0.0"
+						midalphapos="0.75"
+						startparam="0.1"
+						endparam="1.0"
+						startsize="275"
+						endsize="100"
+			
+						depthbias="-100"
+						position="0 0 25"
+						material="/shared/effects/materials/refract_ring.material"
+						lockup="true"
+						lockright="true"
+						pitch="90"
+					/>
+
+		
+					
+					<billboard
+						material="/shared/effects/materials/corona_07.material"
+					
+						startcolor=".0 .4 .75"
+						endcolor="0 0 0"
+						life="500"
+						position="0 0 30"
+						startsize="165"
+						endsize="70"
+						depthbias="-150"
+					/>
+					
+					<billboard
+						delay="150"
+						material="/shared/effects/materials/corona_07.material"
+			
+						startcolor=".0 .4 .75"
+						endcolor="0 0 0"
+						life="500"
+						position="0 0 30"
+						startsize="165"
+						endsize="70"
+						depthbias="-150"
+					/>
+					
+					<billboard
+						delay="200"
+						material="/shared/effects/materials/corona_07.material"
+					
+						startcolor=".0 .4 .75"
+						endcolor="0 0 0"
+						life="400"
+						drag="1"
+						position="0 0 30"
+						startsize="165"
+						endsize="70"
+						depthbias="-150"
+					/>
+	
+			
+		
+			<model
+				life="600"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor=".1 .5 1"
+				endcolor="0"
+				alpha="5"
+				material="/shared/effects/materials/shell4.material"
+			/>
+			
+			<light
+				life="600"
+				bone="_bone_center"
+				startcolor="0 4.5 9"
+				endcolor="0"
+				falloffstart="0"
+				falloffend="150"
+			/>
+
+
+
+				<model
+				model="/heroes/zephyr/ability_03/effects/orb2.mdf"
+				startscale="1"
+				endscale="0"
+				position="0 0 30"
+				life="500"
+				startcolor="0 .5 1"
+				endcolor="0"
+			/>
+				
+				
+
+
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			
+		
+
+			
+		
+		
+		
+		
+		
+	
+		
+		
+			
+		<template name="trail">	
+			<twopointtrailemitter
+				expirelife="1200"
+			 	bone_a="{bone_a}"
+				bone_b="{bone_b}"
+				spawnrate="44"
+				particlelife="800"
+				texpostime="800"
+				texposscale="0.0"
+				texstretchscale="1.0"
+				material="/shared/effects/materials/c_swoosh.material"
+				subframepos="true"
+			>
+	         	<particle
+					startcolor="0 .5 1"
+					endcolor="0 0 0" 
+				/>
+			</twopointtrailemitter>
+		</template>
+		
+			<instance name="trail"
+			 	bone_a="Mesh18"
+				bone_b="Bone_Tail_02"
+			/>
+				
+
+			
+				
+				
+				
+
+	
+		</particlesystem>
+	
+			<particlesystem name="system1" space="world" scale="2">
+
+			
+			
+			
+			
+			
+			
+			
+
+	
+	
+	
+				
+				<simpleemitter
+			
+					startspawnrate="80"
+					endspawnrate="0"
+					particlelife="300"
+					offsetsphere="25 5 0"
+					material="/shared/effects/materials/dust_smoke_03.material"
+					direction="0 -1 0"
+						position="0 0 0"
+					speed="0"
+					
+					angle="0"
+					inheritvelocity="0.15"
+				>
+					<particle
+						startcolor=".2 .6 .6"
+						endcolor=".2 .6 1"
+						startalpha="0"
+						midalpha=".4"
+						endalpha="0"
+						startsize="50"
+						endsize="20"
+						maxangle="360"
+						depthbias="-30"
+						minanglespeed="-35"
+						maxanglespeed="35"
+						pitch="90"
+						roll="90"
+						lockup="1"
+						lockright="1"
+					/>
+				</simpleemitter>
+
+
+
+				<simpleemitter
+			
+					spawnrate="25"
+					particlelife="250"
+					offsetsphere="10 5 15"
+					position="0 0 0"
+					material="/shared/effects/materials/water_spray_blend.material"
+					direction="0 -1 0"
+					speed="0"
+					angle="20"
+					
+					inheritvelocity="0.25"
+				>
+					<particle
+						startcolor=".2"
+						endcolor=".2"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						startsize="50"
+						endsize="45"
+						maxangle="360"
+						depthbias="-10"
+						minanglespeed="-65"
+						maxanglespeed="65"
+					 />
+				</simpleemitter>
+				
+				
+
+				
+			
+				<simpleemitter
+				
+					spawnrate="22"
+					minparticlelife="200"
+					maxparticlelife="350"
+					offsetsphere="20 5 15"
+					position="0 0 0"
+					angle="10"
+					material="/shared/effects/materials/whitewater_02.material"
+					inheritvelocity="0.25"
+				>
+					<particle
+						startcolor=".2 .2 .2"
+						midcolor=".2"
+						endcolor="0"
+						size="25"
+						maxangle="360"
+						depthbias="-130"
+						minendscale="1"
+						maxendscale="3"
+					/>
+				</simpleemitter>	
+
+
+	
+
+			
+			
+			<simpleemitter	
+				delay="100"
+			
+				startspawnrate="24"
+				endspawnrate="0"
+				particlelife="750"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+				direction="-.4 0 1"
+				gravity="41"
+				minspeed="285"
+				
+				maxspeed="300"
+				angle="0"
+				inheritvelocity="0.0"
+			>
+				<particle
+					turn="1"
+				
+			 	>
+								
+	
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				delay="100"
+		
+				startspawnrate="24"
+				endspawnrate="0"
+				particlelife="750"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+				direction="0.4 0 1"
+				gravity="41"
+				minspeed="285"
+				maxspeed="300"
+				angle="0"
+				inheritvelocity="0.0"
+			>
+				<particle
+					turn="1"				
+			 	>
+
+				</particle>
+			</simpleemitter>
+		
+		
+
+		
+			
+			
+			<simpleemitter
+		
+				spawnrate="40"
+				particlelife="550"
+				offsetsphere="10 5 15"
+				material="/shared/effects/materials/water_spray_blend.material"
+				direction="0 -1 0"
+				speed="111"
+				angle="20"
+				position="0 0 0"
+				inheritvelocity="0.55"
+			>
+				<particle
+					startcolor=".6"
+					endcolor=".6"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					startsize="50"
+					endsize="85"
+					maxangle="360"
+					depthbias="-10"
+					minanglespeed="-65"
+					maxanglespeed="65"
+				 />
+			</simpleemitter>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Pestilence_Ability1"
+
+	icon="../custom/icon1.tga"
+	passiveeffect="effects/sprint.effect"
+	
+	movespeedmultiplier="0.15,0.3,0.45,0.6"
+	incomingdamagemultiplier="0.08"
+	unitwalking="true"
+	
+	modifierkey="sprint"
+	modifierkey2="pestilence_ability1_Flying"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	
+	dynamicprecache=""
+>
+	<oninflict>
+		<setcharges entity="this_proxy_entity" a="1" />
+		<setactivemodifierkey name="" />
+	</oninflict>
+	
+	<onrefresh>
+		<setcharges entity="this_proxy_entity" a="1" />
+		<setactivemodifierkey name="" />
+	</onrefresh>
+	
+	<onexpired>
+		<setcharges entity="this_proxy_entity" a="0" />
+		<startcooldown duration="10000,9000,8000,7000" entity="this_proxy_entity" />
+		<setactivemodifierkey entity="this_proxy_entity" name="" />
+		
+		<!-- Dynamic VFX -->
+		<getscriptvalue name="transform_effect" destvar="str0" entity="this_entity" />
+		<setstr1 a="" />
+		<comparestrings a="str0" b="str1" op="ne">
+			<playeffectdynamic effect="str0" source="target_position" target="" />
+		</comparestrings>
+	</onexpired>
+	
+	<modifier key="pestilence_ability1_Disabled" modpriority="200"
+		movespeedmultiplier="0.075,0.15,0.225,0.3"
+		modifierkey2=""
+	>
+	</modifier>
+	
+	<altavatar key="Hero_Pestilence.Alt5" modpriority="90"
+		passiveeffect="/heroes/pestilence/alt5/ability_01/effects/sprint_1.effect,/heroes/pestilence/alt5/ability_01/effects/sprint_2.effect,/heroes/pestilence/alt5/ability_01/effects/sprint_3.effect,/heroes/pestilence/alt5/ability_01/effects/sprint_4.effect"
+		modifierkey="sprint_alt5"
+		dynamicprecache="/heroes/pestilence/alt5/ability_01/effects/transform.effect"
+	>
+		<oninflict>
+			<setcharges entity="this_proxy_entity" a="1" />
+			<setscriptvalue name="transform_effect" value="/heroes/pestilence/alt5/ability_01/effects/transform.effect" entity="this_entity" />
+			<playeffect effect="/heroes/pestilence/alt5/ability_01/effects/transform.effect" source="target_position" target="" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_Pestilence.Alt6" modpriority="90"
+		passiveeffect="/heroes/pestilence/alt6/ability_01/effects/sprint.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Pestilence.Alt7" modpriority="90"
+		passiveeffect="/heroes/pestilence/alt7/ability_01/effects/sprint.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Pestilence.Alt8" modpriority="90"
+		passiveeffect="/heroes/pestilence/alt8/ability_01/effects/sprint.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Pestilence.Alt9" modpriority="90"
+	    icon="/heroes/pestilence/alt9/ability_01/icon.tga"
+		passiveeffect="/heroes/pestilence/alt9/ability_01/effects/sprint.effect"
+	>
+		<modifier key="Night_Set_PestilenceAlt9"
+			icon="/heroes/pestilence/alt10/ability_01/icon.tga"
+			passiveeffect="/heroes/pestilence/alt10/ability_01/effects/sprint.effect"
+			modpriority="91"
+		>
+			<oninflict>
+				<setcharges entity="this_proxy_entity" a="1" />
+				<playeffect effect="/heroes/pestilence/alt10/ability_01/effects/cast_sound.effect" source="target_position" target="" />
+			</oninflict>
+		</modifier>
+		
+		<oninflict>
+			<setcharges entity="this_proxy_entity" a="1" />
+			<playeffect effect="/heroes/pestilence/alt9/ability_01/effects/cast_sound.effect" source="target_position" target="" />
+		</oninflict>
+		
+	</altavatar>
+	
+	<altavatar key="Hero_Pestilence.Alt10" modpriority="90"
+	    icon="/heroes/Pestilence/alt10/ability_01/icon.tga"
+		passiveeffect="/heroes/pestilence/alt10/ability_01/effects/sprint.effect"
+	>
+		<modifier key="Night_Set_PestilenceAlt10"
+			icon="/heroes/Pestilence/alt9/ability_01/icon.tga"
+			passiveeffect="/heroes/pestilence/alt9/ability_01/effects/sprint.effect"
+			modpriority="91"
+		>
+			<oninflict>
+				<setcharges entity="this_proxy_entity" a="1" />
+				<playeffect effect="/heroes/pestilence/alt9/ability_01/effects/cast_sound.effect" source="target_position" target="" />
+			</oninflict>
+		</modifier>
+		
+		<oninflict>
+			<setcharges entity="this_proxy_entity" a="1" />
+			<playeffect effect="/heroes/pestilence/alt10/ability_01/effects/cast_sound.effect" source="target_position" target="" />
+		</oninflict>
+	</altavatar>
+</state>

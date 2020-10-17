@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Pestilence_Ability2"
+
+	icon="../custom/icon2.tga"
+	passiveeffect=""
+	
+	movespeedslow="0.2"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+>
+
+	<altavatar key="Hero_Pestilence.Alt9"
+		icon="/heroes/Pestilence/alt9/ability_02/icon.tga"
+	>
+		<modifier key="Night_Set_PestilenceAlt9"
+			icon="/heroes/Pestilence/alt10/ability_02/icon.tga"
+		/>
+	</altavatar>
+		
+	<altavatar key="Hero_Pestilence.Alt10"
+		icon="/heroes/Pestilence/alt10/ability_02/icon.tga"
+	>
+		<modifier key="Night_Set_PestilenceAlt10"
+			icon="/heroes/Pestilence/alt9/ability_02/icon.tga"
+		/> 
+	</altavatar>
+		
+</state>

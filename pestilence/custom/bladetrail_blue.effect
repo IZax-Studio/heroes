@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale=".5">
+		
+	
+			<twopointtrailemitter
+				life="450"
+				bone_a="Bone13"
+				bone_b="Bone08"
+				spawnrate="100"
+				particlelife="450"
+				loop="false"
+				texpostime="500"
+			 	texposscale="0.0"
+			 	texstretchscale=".30"
+				material="/shared/effects/materials/c_swoosh.material"
+			
+			>
+				<particle
+					 startcolor=".75"
+					 midcolor="0"
+					 endcolor="0"
+					 startsize="40"
+					 endsize="30"
+			 />
+			</twopointtrailemitter>
+		
+			<twopointtrailemitter
+				life="850"
+				bone_a="Bone13"
+				bone_b="Bone08"
+				loop="false"
+				spawnrate="100"
+				particlelife="750"
+				texpostime="800"
+			 	texposscale="0.0"
+			 	texstretchscale=".4"
+				material="/shared/effects/materials/c_swoosh.material"
+				subframepos="true"
+				
+			>
+				<particle
+					 startcolor=".5"
+					 midcolor="0"
+					 endcolor="0 0 0"
+					 midcolorpos=".35"
+					 startsize="140"
+					 endsize="130"
+			 />
+				</twopointtrailemitter>
+
+	 
+
+	
+	
+			<twopointtrailemitter
+				life="450"
+				bone_a="Bone13"
+				bone_b="Bone08"
+				spawnrate="100"
+				particlelife="450"
+				loop="false"
+				texpostime="500"
+			 	texposscale="0.0"
+			 	texstretchscale=".30"
+				material="/shared/effects/materials/dragon_01.material"
+			
+			>
+				<particle
+					 startcolor=".75"
+					 midcolor="0"
+					 endcolor="0"
+					 startsize="40"
+					 endsize="30"
+			 />
+			</twopointtrailemitter>
+		
+			<twopointtrailemitter
+				life="850"
+				bone_a="Bone13"
+				bone_b="Bone08"
+				loop="false"
+				spawnrate="100"
+				particlelife="750"
+				texpostime="800"
+			 	texposscale="0.0"
+			 	texstretchscale=".4"
+				material="/shared/effects/materials/dragon_01.material"
+				subframepos="true"
+				
+			>
+				<particle
+					 startcolor=".5"
+					 midcolor="0"
+					 endcolor="0 0 0"
+					 midcolorpos=".35"
+					 startsize="140"
+					 endsize="130"
+			 />
+				</twopointtrailemitter>
+
+
+		
+
+
+			
+			
+			
+			
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+	</thread>
+</effect>

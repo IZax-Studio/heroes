@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Pestilence_Ability4"
+	
+	icon="../custom/icons4.tga"
+	passiveeffect="effects/state.effect"
+	revealed="true"
+	sighted="true"
+	
+	armor="-7,-14,-21"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+>
+	<onattackedpreimpact>
+		<hasavatarkey name="Hero_Pestilence.Alt5">
+			<playeffect effect="../alt5/ability_04/effects/anger.effect" source="source_entity" target="source_entity"/>
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Pestilence.Alt8">
+				<playeffect effect="../alt8/ability_04/effects/anger.effect" source="source_entity" target="source_entity"/>
+			</hasavatarkey>
+		<else>
+				<hasavatarkey name="Hero_Pestilence.Alt9">					
+					<hasmodifier name="Night_Set_PestilenceAlt9" >
+						<playeffect effect="../alt10/ability_04/effects/anger.effect" source="source_entity" target="source_entity"/>
+					</hasmodifier>
+					<else>
+						<playeffect effect="../alt9/ability_04/effects/anger.effect" source="source_entity" target="source_entity"/>
+					</else>
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Pestilence.Alt10">						
+						<hasmodifier name="Night_Set_PestilenceAlt10" >
+							<playeffect effect="../alt9/ability_04/effects/anger.effect" source="source_entity" target="source_entity"/>
+						</hasmodifier>
+						<else>							
+							<playeffect effect="../alt10/ability_04/effects/anger.effect" source="source_entity" target="source_entity"/>
+						</else>
+					</hasavatarkey>
+					<else>
+			<playeffect effect="effects/anger.effect" source="source_entity" target="source_entity"/>
+		</else>
+				</else>
+			</else>
+		</else>
+	</onattackedpreimpact>
+	
+	<aura
+		gadget="Gadget_Pestilence_Ability4"
+		radius="0"
+		targetscheme="self"
+	/>
+
+	<modifier key="pestilence_nobossarmor" modpriority="100" condition="boss" notooltooltip="true"
+		armor="0"
+	/>
+	
+	<altavatar key="Hero_Pestilence.Alt" modpriority="1"
+		passiveeffect="../alt/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Pestilence.Alt3" modpriority="1"
+		passiveeffect="../alt3/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Pestilence.Alt4" modpriority="1"
+		passiveeffect="../alt4/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Pestilence.Alt5" modpriority="1"
+		passiveeffect="../alt5/ability_04/effects/state_1.effect,../alt5/ability_04/effects/state_2.effect,../alt5/ability_04/effects/state_3.effect"
+	/>
+
+	<altavatar key="Hero_Pestilence.Alt6" modpriority="1"
+		passiveeffect="../alt6/ability_04/effects/state.effect"
+	/>
+	<altavatar key="Hero_Pestilence.Alt7" modpriority="1"
+		passiveeffect="../alt7/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Pestilence.Alt8" modpriority="1"
+		passiveeffect="../alt8/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Pestilence.Alt9" modpriority="1"
+	    icon="/heroes/Pestilence/alt9/ability_04/icon.tga"
+		passiveeffect="../alt9/ability_04/effects/state.effect"
+	>
+		<modifier key="Night_Set_PestilenceAlt9"
+			icon="/heroes/Pestilence/alt10/ability_04/icon.tga"
+			passiveeffect="../alt10/ability_04/effects/state.effect"
+			modpriority="2"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Pestilence.Alt10" modpriority="1"
+	    icon="/heroes/Pestilence/alt10/ability_04/icon.tga"
+		passiveeffect="../alt10/ability_04/effects/state.effect"
+	>
+		<modifier key="Night_Set_PestilenceAlt10"
+			icon="/heroes/Pestilence/alt9/ability_04/icon.tga"
+			passiveeffect="../alt9/ability_04/effects/state.effect"
+			modpriority="2"
+		/>
+	</altavatar>
+</state>

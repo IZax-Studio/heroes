@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" name="ability_02" useentityeffectscale="1" disable2dworld="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.5">
+		
+		<template name="trail" >	
+			<trailemitter
+					life="400"
+					spawnrate="80"
+					startparticlecolor="1"
+					midparticlecolor="1"
+					endparticlecolor="0" 
+					midparticlecolorpos=".85"
+					particlelife="500"
+					texpostime="500"
+					texposscale="0"
+					texstretchscale="1"
+					directionalspace="local"
+					depthbias="-200"
+					position="{position}"
+					material="/shared/effects/materials/soul_trail.material"
+				>
+					<particle
+						startcolor=".5 .25 0"
+						midcolor="0 .4 1"
+						midcolorpos=".5"
+						endcolor="0 0 0"
+						startsize="2"
+						midsize="5"
+						midsizepos=".1"
+						endsize="0"
+						scale="1"
+					/>
+				</trailemitter>
+			</template>
+			
+			
+			
+		<controller startscale="1" midscale="3" midscalepos=".5" endscale="3" life="4000" position="0 0 70" >
+			
+			<trailemitter
+					life="2200"
+					spawnrate="30"
+					startparticlealpha="1"
+					midparticlealpha="1"
+					endparticlealpha="0" 
+					midparticlealphapos=".9"
+					particlelife="1500"
+					texpostime="1500"
+					texposscale="0"
+					texstretchscale="1"
+					directionalspace="local"
+					position="0 50 -20"
+					depthbias="-200"
+					material="/shared/effects/materials/wave_trail.material"
+				>
+					<particle
+						startcolor="0 .5 1"
+						midcolor="0"
+						endcolor="0 0 0"
+						startalpha="0"
+						midalphapos=".4"
+						midalpha=".55"
+						endalpha="0"
+						startsize="100"
+						endsize="50"
+					/>
+				</trailemitter>
+			
+			<simpleemitter
+				offsetsphere="65 65 0"
+				life="2200"
+				startparticlescale="1"
+				endparticlescale=".33"
+				particlelife="500"
+				startspawnrate="300"
+				endspawnrate="4000"
+				directionalspace="local"
+				direction="0 1 0"
+				minangle="0"
+				maxangle="20"
+				minspeed="0"
+				maxspeed="100"
+				startparticlealpha="1"
+				midparticlealpha="1"
+				endparticlealpha="0"
+				midparticlealphapos=".9"
+				depthbias="-100"
+				material="/shared/effects/materials/bub.material"
+			>
+				<particle
+					startsize="0"
+					endsize="25"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					turn="1"
+					framespeed="2"
+					minanchor="0"
+					maxanchor="1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				offsetsphere="65 65 0"
+				life="2200"
+				startparticlescale="1"
+				endparticlescale=".33"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				startspawnrate="150"
+				endspawnrate="2000"
+				directionalspace="local"
+				direction="0 1 0"
+				minangle="0"
+				maxangle="20"
+				minspeed="-30"
+				maxspeed="100"
+				startparticlecolor="1"
+				midparticlecolor="1"
+				endparticlecolor="0"
+				midparticlecolorpos=".9"
+				depthbias="-100"
+				material="/shared/effects/materials/spark_10.material"
+			>
+				<particle
+					startsize="0"
+					endsize="15"
+					startcolor="0"
+					midcolor="0 .5 1"
+					endcolor="0"
+					maxangle="360"
+					minscale=".5"
+					maxscale="1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				offsetsphere="65 65 0"
+				life="1500"
+				startparticlescale="1"
+				endparticlescale=".33"
+				particlelife="500"
+				startspawnrate="15"
+				endspawnrate="200"
+				directionalspace="local"
+				direction="0 1 0"
+				minangle="0"
+				maxangle="20"
+				minspeed="0"
+				maxspeed="100"
+				startparticlealpha="1"
+				midparticlealpha="1"
+				endparticlealpha="0"
+				midparticlealphapos=".9"
+				depthbias="-100"
+				material="/shared/effects/materials/bub.material"
+			>
+				<particle
+					startsize="0"
+					endsize="25"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					turn="1"
+					framespeed="2"
+					minanchor="0"
+					maxanchor="1"
+				>
+					<instance name="trail" position="0 0 0" />
+				</particle>
+			</simpleemitter>
+			
+				<billboard
+					size="200"
+					life="2000"
+					startcolor="0 .05 .125"
+					midcolor="0 .05 .125"
+					endcolor="0"
+					midcolorpos=".9"
+					depthbias="-200"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+		</controller>
+	</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

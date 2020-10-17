@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale=".5">
+		
+
+	 
+
+	<twopointtrailemitter
+				life="450"
+				bone_a="Bone13"
+				bone_b="Bone12"
+				spawnrate="100"
+				particlelife="450"
+				loop="false"
+				texpostime="500"
+			 	texposscale="0.0"
+			 	texstretchscale=".30"
+				material="/shared/effects/materials/c_flameswoosh.material"
+			
+			>
+				<particle
+					 startcolor=".75"
+					 midcolor="0"
+					 endcolor="0"
+					 startsize="40"
+					 endsize="30"
+			 />
+			</twopointtrailemitter>
+	
+	<twopointtrailemitter
+				life="450"
+				bone_a="Bone13"
+				bone_b="Bone12"
+				spawnrate="100"
+				particlelife="450"
+				loop="false"
+				texpostime="500"
+			 	texposscale="0.0"
+			 	texstretchscale=".30"
+				material="/shared/effects/materials/c_flameswoosh.material"
+			
+			>
+				<particle
+					 startcolor=".75"
+					 midcolor="0"
+					 endcolor="0"
+					 startsize="40"
+					 endsize="30"
+			 />
+			</twopointtrailemitter>
+	
+			<twopointtrailemitter
+				life="450"
+				bone_a="Bone13"
+				bone_b="Bone12"
+				spawnrate="100"
+				particlelife="450"
+				loop="false"
+				texpostime="500"
+			 	texposscale="0.0"
+			 	texstretchscale=".30"
+				material="/shared/effects/materials/dragon.material"
+			
+			>
+				<particle
+					 startcolor=".75"
+					 midcolor="0"
+					 endcolor="0"
+					 startsize="40"
+					 endsize="30"
+			 />
+			</twopointtrailemitter>
+		
+			<twopointtrailemitter
+				life="850"
+				bone_a="Bone13"
+				bone_b="Bone12"
+				loop="false"
+				spawnrate="100"
+				particlelife="750"
+				texpostime="800"
+			 	texposscale="0.0"
+			 	texstretchscale=".4"
+				material="/shared/effects/materials/dragon.material"
+				subframepos="true"
+				
+			>
+				<particle
+					 startcolor=".5"
+					 midcolor="0"
+					 endcolor="0 0 0"
+					 midcolorpos=".35"
+					 startsize="140"
+					 endsize="130"
+			 />
+				</twopointtrailemitter>
+
+			<twopointemitter
+				life="250"
+				bone_a="Bone13"
+				bone_b="Bone12"
+				spawnrate="25"
+				loop="false"
+				particlelife="700"
+				angle="0.0"
+				offsetsphere="0"
+				depthbias="-100"
+				material="/shared/effects/materials/c_fire1.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".5"
+					endcolor="0"
+					midcolorpos="0.5"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".50"
+
+					startsize="40"
+					endsize="0"
+					flare="0"
+					startanchor="1"
+					endanchor="1"
+					
+				/>
+			</twopointemitter>
+
+			<twopointemitter
+				life="250"
+				bone_a="Bone13"
+				bone_b="Bone12"
+				spawnrate="25"
+				loop="false"
+				particlelife="600"
+				angle="0.0"
+				offsetsphere="0"
+				depthbias="-100"
+				material="/shared/effects/materials/c_fire2.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".5"
+					endcolor="0"
+					midcolorpos="0.5"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".50"
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-180"
+					maxanglespeed="180"
+					startsize="30"
+					endsize="5"
+					flare="true"
+					startanchor="1"
+					endanchor="1"
+					
+				/>
+			</twopointemitter>
+			
+
+			<twopointemitter
+				life="250"
+				bone_a="Bone13"
+				bone_b="Bone12"
+				spawnrate="140"
+				loop="false"
+				particlelife="200"
+				offsetsphere="30"
+				material="/shared/effects/materials/spark.material"
+			>
+				<particle
+					color="1 .2 0"
+					midcolorpos="0.5"
+					startalpha="1.0"
+					endalpha="1.0"
+					maxangle="360"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					minendsize="5"
+					startsize="5"
+					maxendsize="15"
+					flare="true"
+					anchor="1"
+				/>
+			</twopointemitter>
+		
+			<twopointemitter
+				life="250"
+				bone_a="Bone13"
+				bone_b="Bone12"
+				spawnrate="140"
+				particlelife="500"
+				offsetsphere="15"
+				loop="false"
+
+				material="/shared/effects/materials/c_realfire.material"
+			>
+				<particle
+					color="1 1 1"
+					midcolorpos="0.5"
+					startalpha="1.0"
+					endalpha="1.0"
+					maxangle="360"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					minendsize="5"
+					startsize="5"
+					maxendsize="15"
+					flare="true"
+					anchor="1"
+				/>
+			</twopointemitter>
+		
+			<beam
+				life="250"
+				bone_a="Bone13"
+				bone_b="Bone12"
+				startsize="100"
+				midsize="200"
+				endsize="100"
+				loop="false"
+				
+				startcolor=".6 .2 .0"
+				midcolor="1 .2 0"
+				endcolor=".6 .2 .0"
+				midcolorpos=".5"
+				material="/shared/effects/materials/bow_glow_03.material"
+				framespeed="5"
+				depthbias="-100"
+				anchor="1"
+			/>
+ 
+
+			
+			
+			
+			
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+	</thread>
+</effect>

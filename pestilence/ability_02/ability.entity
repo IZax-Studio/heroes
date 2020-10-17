@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Pestilence2"
+
+	icon="../custom/icon2.tga"
+
+	anim="ability_2"
+	casttime="500"
+	castactiontime="250"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="self_position"
+	targetscheme="enemy_units"
+	targetradius="350"
+	casteffecttype="Magic"
+
+	manacost="85,95,105,115"
+	cooldowntime="8000"
+>
+	<onimpact >
+		<spawnaffector name="Affector_Pestilence_Ability2_Stun" target="source_entity" />
+		<spawnaffector name="Affector_Pestilence_Ability2_Slow" target="source_entity" />
+
+		<hasavatarkey name="Hero_Pestilence.Alt3" >
+			<playeffect effect="../alt3/ability_02/effects/area.effect" target="target_position" source="target_position" occlude="true" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Pestilence.Alt5" >
+				<playeffect effect="../alt5/ability_02/effects/area_1.effect,../alt5/ability_02/effects/area_2.effect,../alt5/ability_02/effects/area_3.effect,../alt5/ability_02/effects/area_4.effect" target="target_position" source="target_position" occlude="true" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Pestilence.Alt6" >
+					<playeffect effect="../alt6/ability_02/effects/area.effect" target="target_position" source="target_position" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Pestilence.Alt7" >
+						<playeffect effect="../alt7/ability_02/effects/area.effect" target="target_position" source="target_position" occlude="true" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Pestilence.Alt8" >
+							<playeffect effect="../alt8/ability_02/effects/area.effect" target="target_position" source="target_position" occlude="true" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Pestilence.Alt9" >
+								<hasmodifier name="Night_Set_PestilenceAlt9" >
+									<playeffect effect="../alt10/ability_02/effects/area.effect" target="target_position" source="target_position" occlude="true" />
+								</hasmodifier>
+								<else>
+									<playeffect effect="../alt9/ability_02/effects/area.effect" target="target_position" source="target_position" occlude="true" />
+								</else>
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Pestilence.Alt10" >
+									<hasmodifier name="Night_Set_PestilenceAlt10" >
+										<playeffect effect="../alt9/ability_02/effects/area.effect" target="target_position" source="target_position" occlude="true" />
+									</hasmodifier>
+									<else>
+										<playeffect effect="../alt10/ability_02/effects/area.effect" target="target_position" source="target_position" occlude="true" />
+									</else>
+								</hasavatarkey>
+								<else>
+									<playeffect effect="effects/area.effect" target="target_position" source="target_position" occlude="true" />
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+	</onimpact>
+
+	<altavatar key="Hero_Pestilence.Alt9"
+		icon="/heroes/Pestilence/alt9/ability_02/icon.tga"
+	>
+		<modifier key="Night_Set_PestilenceAlt9"
+			icon="/heroes/Pestilence/alt10/ability_02/icon.tga"
+		/>
+	</altavatar>
+		
+	<altavatar key="Hero_Pestilence.Alt10"
+		icon="/heroes/Pestilence/alt10/ability_02/icon.tga"
+	>
+		<modifier key="Night_Set_PestilenceAlt10"
+			icon="/heroes/Pestilence/alt9/ability_02/icon.tga"
+		/> 
+	</altavatar>
+
+
+</ability>

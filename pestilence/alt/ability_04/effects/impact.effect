@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useenityeffectscale="1" name="poslego" deferred="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="0.4">
+ 
+	
+		<billboard
+				bone="_bone_centerofchest"
+				delay="60"
+				position="0 0 0"
+				life="250"
+				color="0 1 1"
+				endcolor="0"
+				startsize="125"
+				endsize="800"
+				material="/shared/effects/materials/stomp_01.material"
+				lockup="1"
+				pitch="90"
+			/>	
+
+		<billboard
+				bone="_bone_centerofchest"
+				delay="60"
+				position="0 0 0"
+				life="250"
+				color="0 1 1"
+				startalpha="1"
+				endalpha="0"
+				startsize="125"
+				endsize="400"
+				material="/shared/effects/materials/splatter_blend.material"
+				lockup="1"
+				pitch="90"
+				
+			/>	
+
+		<simpleemitter
+				bone="_bone_centerofchest"
+				life="1300"
+				position="0 0 0"			
+				spawnrate="5000"
+				depthbias="-100"
+				particlelife="200"
+				count="5"
+				direction="0 0 1"
+				offsetsphere="10"	
+          		material="/shared/effects/materials/smash_add.material"
+         	>
+			<particle 
+					minanglespeed="-180"
+					maxanglespeed="180"
+					minangle="0"
+					maxangle="360"
+					startcolor="0"
+					midcolor="0 0.4 1"
+					endcolor="0"
+					midcolorpos="0.25"
+					startsize="140"
+					endsize="400"				
+				
+				/>
+			</simpleemitter>
+
+		<billboard
+				bone="_bone_centerofchest"
+				delay="0"
+				position="0 0 0"
+				life="200"
+				startalpha="1.0"				
+				endalpha="0"
+				startparam="0.15"
+				endparam="0.0"				
+				startsize="150"
+				endsize="550"
+				material="/shared/effects/materials/refract_bubble.material"
+			/>
+			
+			
+		<simpleemitter	
+				bone="_bone_centerofchest"
+				life="300"			
+				position="0 0 0"
+				spawnrate="1225"
+				particlelife="1000"					
+				minspeed="10.0"
+				maxspeed="410"
+				drag=".01"
+				inheritvelocity=".25"
+				offsetsphere="10 10 10"
+				gravity="2"
+				material="/shared/effects/materials/bub.material"
+			>
+				<particle	
+					color=".3 1 1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					startsize="50"
+					endsize="0"					
+					depthbias="-160"
+				/>
+			</simpleemitter>
+
+			
+		
+		<simpleemitter
+				bone="_bone_centerofchest"
+				count="44"
+				particlelife="300"				
+				spawnrate="1130"
+				minspeed="480"
+				maxspeed="730"
+
+				minangle="90"
+				maxangle="100"
+				direction="0 0 -1"
+				particledirectionalspace="local"
+				material="/shared/effects/materials/refract_bubble.material"
+				offsetsphere="20 20 20"
+				position="0 0 0"
+		
+			>
+
+				<particle 
+					color="1 1 1 "
+					startsize="100"
+					minendsize="50"				
+					maxendsize="180"
+					startalpha="0"
+					midalpha=".4"
+					endalpha="0"
+					turn="true"
+					param="0.02"
+				/>
+			</simpleemitter>			
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
