@@ -2,7 +2,7 @@
 <state
 	name="State_Panda_Ability1"
 	
-	icon="icon_1.tga"
+	icon="icon.tga"
 	passiveeffect="/heroes/panda/ability_01/effects/swoosh.effect"
 	basedamagemultiplier="0.15,0.25,0.35,0.45"
 
@@ -13,6 +13,8 @@
 
 	unitwalking="true"
 	effecttype=""
+	
+	modifierkey="panda_Q_flurry"
 >
 
 	<altavatar key="Hero_Panda.Alt10" modpriority="1"

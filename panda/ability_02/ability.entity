@@ -19,9 +19,9 @@
 	casteffecttype="Physical Push"
 	activatescheme="movement"
 	
-	manacost="50"
+	manacost="60"
 	cooldowntime="16000,15000,14000,13000"
-	range="400"
+	range="350"
 	novoiceresponse="true"
 	
 	showareacast="true"

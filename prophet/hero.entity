@@ -54,8 +54,8 @@
 	maxmana="0"
 	manaregen="0.01"
 
-	armor="1"
-	magicarmor="7"
+	armor="1.12"
+	magicarmor="5.0"
 
 	inventory0="Ability_Prophet1"
 	inventory1="Ability_Prophet2"
