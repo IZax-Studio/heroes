@@ -29,4 +29,25 @@
 	<altavatar key="Hero_Pestilence.Alt8" modpriority="90"
 		traileffect="../alt8/ability_04/effects/projectile.effect"
 	/>
+	<altavatar key="Hero_Pestilence.Alt9" modpriority="90"
+	    icon="/heroes/Pestilence/alt9/ability_04/icon.tga"
+		traileffect="../alt9/ability_04/effects/projectile.effect"
+	>
+		<modifier key="Night_Set_PestilenceAlt9"
+			icon="/heroes/Pestilence/alt10/ability_04/icon.tga"
+			traileffect="../alt10/ability_04/effects/projectile.effect"
+			modpriority="91"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Pestilence.Alt10" modpriority="90"
+	    icon="/heroes/Pestilence/alt10/ability_04/icon.tga"
+		traileffect="../alt10/ability_04/effects/projectile.effect"
+	>
+		<modifier key="Night_Set_PestilenceAlt10"
+			icon="/heroes/Pestilence/alt9/ability_04/icon.tga"
+			traileffect="../alt9/ability_04/effects/projectile.effect"
+			modpriority="91"
+		/>
+	</altavatar>
 </projectile>

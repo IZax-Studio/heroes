@@ -3,7 +3,7 @@
 	name="Ability_Pestilence2"
 
 	icon="../custom/icon2.tga"
-
+	
 	anim="ability_2"
 	casttime="500"
 	castactiontime="250"
@@ -15,7 +15,7 @@
 	targetscheme="enemy_units"
 	targetradius="350"
 	casteffecttype="Magic"
-
+	
 	manacost="85,95,105,115"
 	cooldowntime="8000"
 >

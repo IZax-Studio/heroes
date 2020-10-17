@@ -5,53 +5,16 @@
 
 		<particlesystem name="system0" space="world" scale="2">
 
-			<sound
-				linearfalloff="true" 
-				falloffstart="0"
-				falloffend="2500"
-				volume=".4"
-				sample="/heroes/hunter/sounds/impact_%.wav"
-			/>
+
 
 			<sound
 				linearfalloff="true" 
 				falloffstart="0"
 				falloffend="2500"
 				volume="1"
-				sample="/shared/sounds/impacts/flesh_%.wav"
+				sample="/heroes/pestilence/sounds/impact_%.wav"
 			/>
 
-			<sound
-				linearfalloff="true" 
-				falloffstart="0"
-				falloffend="2000"
-				volume=".2"
-				sample="/heroes/devourer/sounds/move_%.wav"
-			/>
-
-			<sound
-				linearfalloff="true" 
-				falloffstart="0"
-				falloffend="2000"
-				volume=".2"
-				sample="../custom/heavybash_%.wav"
-			/>
-
-			<sound
-				linearfalloff="true" 
-				falloffstart="0"
-				falloffend="2000"
-				volume=".43"
-				sample="../custom/mediumbash_%.wav"
-			/>
-
-			<sound
-				linearfalloff="true" 
-				falloffstart="0"
-				falloffend="2000"
-				volume=".4"
-				sample="../custom/chop_%.wav"
-			/>
 
 			
 				<billboard			

@@ -93,7 +93,104 @@
 				</particle>
 			</simpleemitter>
 								
-					
+			<twopointemitter
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+				position="0 0 10"
+				spawnrate="100"
+				minparticlelife="500"
+				maxparticlelife="750"
+				material="/shared/effects/materials/sparks_reveal.material"
+				directionalspace="local"
+				gravity="-10"
+				direction="0 0 1"
+				angle="90"
+				drag="0.02"
+				depthbias="-40"
+			>
+				<particle
+					maxangle="360"
+					startcolor="0"
+					midcolor="0 .5 1"
+					endcolor="0 0 0"
+					minscale="20"
+					maxscale="30"
+					startframe="0"
+					endframe="1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</twopointemitter>	
+
+			<twopointemitter
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+				position="0 0 10"
+				spawnrate="100"
+				minparticlelife="500"
+				maxparticlelife="750"
+				material="/shared/effects/materials/bub.material"
+				directionalspace="local"
+				offsetsphere="15 15 15"
+				gravity="-5"
+				direction="0 0 -1"
+				angle="90"
+				drag="0.02"
+				depthbias="-40"
+			>
+				<particle
+					maxangle="360"
+					minscale="1.5"
+					maxscale="2"
+					startframe="0"
+					endframe="1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</twopointemitter>			
+			
+			<twopointemitter
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+				position="0 0 10"
+				spawnrate="50"
+				minparticlelife="500"
+				maxparticlelife="750"
+				material="/shared/effects/materials/star_03.material"
+				directionalspace="local"
+				offsetsphere="15 15 15"
+				gravity="-5"
+				direction="0 0 -1"
+				angle="90"
+				drag="0.02"
+				depthbias="-40"
+			>
+				<particle
+					maxangle="360"
+					minscale="1.5"
+					maxscale="2"
+					startcolor="0"
+					midcolor="0 .5 1"
+					endcolor="0 0 0"
+					startframe="0"
+					endframe="1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</twopointemitter>	
+
+
+			<beam
+			 	bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"				
+				size="120"
+				color="0 .5 1"
+				alpha=".0001"
+				material="/shared/effects/materials/bow_glow_03.material"				
+			/>					
 		
 		</particlesystem>
 	</definitions>
