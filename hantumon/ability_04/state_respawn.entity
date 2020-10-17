@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Hantumon_Ability4_Respawn"
+
+	icon="icon4.tga"
+	
+	ishidden="true"
+	serverentity="true"
+	
+	passiveeffect=""
+	
+	stealthtype="hero"
+	fadetime="0"
+>
+	<oninflict>
+		<startfade />
+	</oninflict>
+	
+	<onframe>
+		<targettype type="silenced" target="source_entity">
+			<expire />
+		</targettype>
+	</onframe>
+	
+	<onattack>
+		<expire />
+	</onattack>
+	
+	<onactivatepreimpact>
+		<isitem entity="inflictor_entity" />
+		<else>
+			<expire />
+		</else>
+	</onactivatepreimpact>
+</state>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Hammerstorm3"
+
+	icon="icon3.tga"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="no_target"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nonaggressive="true"
+	
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="1000"
+	cooldowntype="hammerstormcleave"
+	noresponse="true"
+	
+	targetradius="450"
+>
+	<onlearn>
+		<setactivemodifierkey name="on" />
+	</onlearn>
+	
+	<onimpact />
+	
+	<onattackimpact />
+	
+	<modifier key="off" modpriority="100"
+		icon="/shared/icons/off.tga"
+		displayname="true"
+	>
+		<onimpact>
+			<setactivemodifierkey name="on" />
+		</onimpact>
+		
+		<onattackimpact />
+		
+		<onframe />
+	</modifier>
+	
+	<modifier key="on" modpriority="100"
+		displayname="true"
+	>
+		<onimpact>
+			<setactivemodifierkey name="off" />
+		</onimpact>
+		
+		<onattackimpact>
+			<hasavatarkey name="Hero_Hammerstorm.Alt2" >
+				<playeffect effect="../alt2/ability_03/effects/impact.effect" source="target_entity" target="source_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Hammerstorm.Alt7" >
+					<playeffect effect="../alt7/ability_03/effects/impact.effect" source="target_entity" target="source_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Hammerstorm.Alt8" >
+						<playeffect effect="../alt8/ability_03/effects/impact.effect" source="target_entity" target="source_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Hammerstorm.Alt9" >
+							<playeffect effect="../alt9/ability_03/effects/impact.effect" source="target_entity" target="source_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Hammerstorm.Alt10" >
+								<playeffect effect="../alt10/ability_03/effects/impact.effect" source="target_entity" target="source_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Hammerstorm.Alt11" >
+									<playeffect effect="../alt11/ability_03/effects/impact.effect" source="target_entity" target="source_entity" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Hammerstorm.Alt12" >
+										<hasmodifier name="Combo_efx_hammerstorm">
+											<playeffect effect="../alt12/ability_03/effects/impact_combo.effect" source="target_entity" target="source_entity" />
+										</hasmodifier>
+										<else>
+											<playeffect effect="../alt12/ability_03/effects/impact.effect" source="target_entity" target="source_entity" />
+										</else>
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_Hammerstorm.Alt13" >
+											<playeffect effect="../alt13/ability_03/effects/impact.effect" source="target_entity" target="source_entity" />
+										</hasavatarkey>
+										<else>
+											<playeffect effect="effects/impact.effect" source="target_entity" target="source_entity" />
+										</else>	
+									</else>	
+								</else>	
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+			<cantarget targetscheme="enemy_units">
+				<splashdamage a="total_adjusted_damage" b="0.3,0.4,0.5,0.6" op="mult" radius="450" effecttype="Physical Splash Cleave" targetscheme="enemy_units" centerontarget="true" />
+				<pushentity entity="target_entity" />
+				
+				<!-- Art for cleave -->
+				<setpos0 position="source_entity" positionend="stack_position" positionmodifier="pointonline" positionvalue="350" />
+				<areaofeffect
+					targetselection="all"
+					targetscheme="enemy_units"
+					center="target_entity"
+					radius="450"
+					effecttype="Physical Splash Cleave"
+					ignore="stack_entity"
+				>
+					<!-- playeffect doesn't work if the modifier has no name. -->
+					<hasavatarkey name="Hero_Hammerstorm.Alt2" >
+						<playeffect effect="../alt2/ability_03/effects/splash_damage.effect" source="target_entity" target="stack_entity"/>
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Hammerstorm.Alt7" >
+							<playeffect effect="../alt7/ability_03/effects/splash_damage.effect" source="target_entity" target="stack_entity"/>
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Hammerstorm.Alt8" >
+								<playeffect effect="../alt8/ability_03/effects/splash_damage.effect" source="target_entity" target="stack_entity"/>
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Hammerstorm.Alt9" >
+									<playeffect effect="../alt9/ability_03/effects/splash_damage.effect" source="target_entity" target="stack_entity"/>
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Hammerstorm.Alt10" >
+										<playeffect effect="../alt7/ability_03/effects/splash_damage.effect" source="target_entity" target="stack_entity"/>
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_Hammerstorm.Alt12" >
+											<playeffect effect="../alt12/ability_03/effects/splash_damage.effect" source="target_entity" target="stack_entity"/>
+										</hasavatarkey>
+										<else>
+											<hasavatarkey name="Hero_Hammerstorm.Alt13" >
+												<playeffect effect="../alt13/ability_03/effects/splash_damage.effect" source="target_entity" target="stack_entity"/>
+											</hasavatarkey>
+											<else>
+												<playeffect effect="effects/splash_damage.effect" source="target_entity" target="stack_entity"/>
+											</else>
+										</else>
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+				</areaofeffect>
+			</cantarget>
+		</onattackimpact>
+		
+		<onframe />
+	</modifier>
+	
+	<altavatar key="Hero_Hammerstorm.Alt11"
+		icon="/heroes/Hammerstorm/alt11/ability_03/icon.tga"
+	>
+	</altavatar>
+	
+	
+</ability>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Hantumon4"
+	
+	icon="icon4.tga"
+
+	maxlevel="3"
+	requiredlevel="1,6,11"
+	
+	actiontype="no_target"
+	noresponse="true"
+	
+	casttime="0"
+	castactiontime="0"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"	
+	nonaggressive="true"
+	
+	manacost="0"
+	cooldowntime="0"
+	
+	agility="3,9,15"	
+>
+	
+	<onimpact>
+		<setactivemodifierkey name="hantumon_invisoff" />
+		<expirestate name="State_Hantumon_Ability4" />
+		<expirestate name="State_Hantumon_Ability4_Respawn" />
+	</onimpact>
+	
+	<onrespawn>
+		<applystate name="State_Hantumon_Ability4_Respawn" duration="4500,3500,2500" />
+	</onrespawn>
+		
+	<onframe>
+		<targettype type="alive">
+			<targettype type="silenced">
+				<expirestate name="State_Hantumon_Ability4" />
+			</targettype>
+			<else>
+				<applystate name="State_Hantumon_Ability4" continuous="true" pushentity="true" proxy="this_entity" />
+			</else>
+		</targettype>
+		<else>
+			<expirestate name="State_Hantumon_Ability4" />
+		</else>
+	</onframe>
+	
+	<ondeath>
+		<setactivemodifierkey name="" />
+	</ondeath>
+	
+	<modifier key="hantumon_invisoff" condition="toggle_active" modpriority="100"
+		icon="/shared/icons/off.tga"
+	>	
+		<onimpact>
+			<setactivemodifierkey name="" />
+			<applystate name="State_Hantumon_Ability4" continuous="true" pushentity="true" proxy="this_entity" />
+		</onimpact>
+		
+		<onframe>
+			<expirestate name="State_Hantumon_Ability4" />			
+		</onframe>		
+	</modifier>
+	
+	<altavatar key="Hero_Hantumon.Alt11" 
+	    icon="/heroes/hantumon/alt11/ability_04/icon.tga" 
+	>	
+	    <modifier key ="Night_Set_Hantumon"
+		    icon="/heroes/hantumon/alt12/ability_04/icon.tga"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Hantumon.Alt12" 
+	    icon="/heroes/hantumon/alt12/ability_04/icon.tga" 
+	>
+	    <modifier key ="Night_Set_Hantumon"
+		    icon="/heroes/hantumon/alt11/ability_04/icon.tga"
+		/>
+	</altavatar>
+</ability>

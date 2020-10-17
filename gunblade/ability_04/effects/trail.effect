@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+	
+		<modifier
+			color="1 1 1"
+			alpha="0"
+		/>
+	
+		<particlesystem name="system0" space="world" scale="1">
+		
+<!--
+				<simpleemitter
+					spawnrate="25"
+					minparticlelife="250"
+					maxparticlelife="500"
+					gravity="-5"
+					position="0 0 0"
+					offsetsphere="0 0 0"
+					material="/shared/effects/materials/dust_smoke_02.material"
+					depthbias="25"
+				>
+					<particle 
+						minangle="0"
+						maxangle="360"
+						minanglespeed="-6"
+						maxanglespeed="6"
+						color="0 0 0"
+						startsize="25"
+						endsize="50"
+						startalpha=".65"
+						midalpha=".65"
+						endalpha="0"
+					/>
+				</simpleemitter>
+
+
+				<simpleemitter
+					spawnrate="25"
+					minparticlelife="250"
+					maxparticlelife="500"
+					gravity="-5"
+					position="0 0 0"
+					offsetsphere="0 0 0"
+					material="/shared/effects/materials/whitedot.material"
+					depthbias="25"
+				>
+					<particle 
+						minangle="0"
+						maxangle="360"
+						minanglespeed="-6"
+						maxanglespeed="6"
+						startcolor=".5 0 .5"
+						endcolor="0 0 0"
+						startsize="25"
+						endsize="75"
+						startanchor="0"
+						endanchor="0"
+					/>
+				</simpleemitter>
+-->
+
+			<model
+				scale=".5"
+				model="blade/model.mdf"
+				anim="idle"
+				expirelife="100"
+				startalpha="1"
+				endalpha="0"
+			/>
+
+				<simpleemitter
+					spawnrate="75"
+					minparticlelife="150"
+					maxparticlelife="300"
+					gravity="-5"
+					position="0 0 0"
+					offsetsphere="0 0 0"
+					material="/shared/effects/materials/soul_projectile_blue.material"
+					depthbias="25"
+				>
+					<particle 
+						minangle="0"
+						maxangle="360"
+						minanglespeed="-6"
+						maxanglespeed="6"
+						startcolor=".025 .15 .15"
+						midcolor=".025 .15 .15"
+						endcolor="0 0 0"
+						midcolorpos=".25"
+						minstartsize="0"
+						maxstartsize="40"
+						endsize="20"
+						startanchor="0"
+						endanchor="0"
+					/>
+				</simpleemitter>
+
+				<simpleemitter
+					count="50"
+					spawnrate="100"
+					minparticlelife="150"
+					maxparticlelife="300"
+					gravity="-5"
+					position="0 0 0"
+					offsetsphere="0 0 0"
+					material="/shared/effects/materials/soul_projectile_blue.material"
+					depthbias="25"
+				>
+					<particle 
+						minangle="0"
+						maxangle="360"
+						minanglespeed="-6"
+						maxanglespeed="6"
+						startcolor=".025 .15 .15"
+						midcolor=".025 .15 .15"
+						endcolor="0 0 0"
+						midcolorpos=".25"
+						minstartsize="0"
+						maxstartsize="40"
+						endsize="20"
+						startanchor=".5"
+						endanchor="0"
+					/>
+				</simpleemitter>
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+			<twopointtrailemitter
+					bone_a="_bone_fx_01"
+					bone_b="_bone_fx_02"
+					spawnrate="80"
+					particlelife="1000"
+					position="0 0 0"
+					texpostime="1000"
+					texposscale="0"
+					texstretchscale="1.5"
+					subframepose="1"
+					material="/shared/effects/materials/chainlinkconnect.material"
+				>
+					<particle
+						startcolor="1 1 1"
+						endcolor="1 1 1"
+						alpha="1"
+						endalpha="0"
+					/>
+			</twopointtrailemitter>
+			
+			<twopointtrailemitter
+					bone_a="_bone_fx_01"
+					bone_b="_bone_fx_02"
+					spawnrate="80"
+					particlelife="1000"
+					position="0 0 0"
+					texpostime="1000"
+					texposscale="0"
+					texstretchscale="1.5"
+					subframepose="1"
+					material="/shared/effects/materials/chainlinkconnect_add.material"
+				>
+					<particle
+						startcolor="0 .5 .5"
+						midcolor="0 .5 .5"
+						endcolor="0 0 0"
+						alpha="1"
+						endalpha="0"
+					/>
+			</twopointtrailemitter>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+
+
+			
+			
+
+		</particlesystem>
+	</definitions>
+<thread>
+		<spawnparticlesystem instance="instance1" particlesystem="system0" />
+		<spawnmodifier instance="instance0"/>
+		<waitfordeath  instance="instance0"/>
+		<waitfordeath  instance="instance1"/>
+</thread>
+</effect>

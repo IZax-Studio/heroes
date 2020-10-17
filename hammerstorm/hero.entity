@@ -1,0 +1,837 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_Hammerstorm"
+
+	team="Legion"
+	icon="Sven.tga"
+	portrait="Sven.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana_%.wav"
+	cooldownsound="sounds/voice/cooldown_%.wav"
+	announcersound="sounds/voice/hero_select.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+	
+	preglobalscale="0.8"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="55"
+	targetoffset="0 0 92"
+	portraitcampos="-55 5 65"
+	portraitangles="0 0 20"
+
+	category="cc physical"
+	difficulty="2.5"
+
+	solorating="0"
+	junglerating="0"
+	carryrating="3"
+	supportrating="0"
+	initiatorrating="2"
+	gankerrating="1"
+	pusherrating="1"
+	rangedrating="0"
+	meleerating="5"
+
+	movespeed="290"
+	turnrate="540"
+	turnsmoothing="0.08"
+
+	maxhealth="150"
+	healthregen="1.0"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="0.7"
+	magicarmor="5"
+
+	inventory0="Ability_Hammerstorm1"
+	inventory1="Ability_Hammerstorm2"
+	inventory2="Ability_Hammerstorm3"
+	inventory3="Ability_Hammerstorm4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="1000"
+	attackactiontime="400"
+	attackcooldown="1700"
+	attackdamagemin="37"
+	attackdamagemax="40"
+	attacknumanims="2"
+	attackoffset="0 30 100"
+	attackprojectile=""
+	attackrange="150"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="effects/attack_impact.effect"
+	attacktype="melee"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="600"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	primaryattribute="Strength"
+	strength="22"
+	strengthperlevel="2.8"
+	agility="20"
+	agilityperlevel="2.0"
+	intelligence="15"
+	intelligenceperlevel="1.5"
+	
+	previewmodel="model.mdf"
+	previewpos="0 0 -50"
+	previewangles="0 0 0"
+	previewscale="1.8"
+	
+	storemodel="model.mdf"
+	storepos="0 0 -15"
+	storeangles="0 0 0"
+	storescale=".75"
+	
+	corpsetime="2500"
+	corpsefadetime="3500"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+>
+	<recommendeditem name="Item_ManaPotion" />
+	<recommendeditem name="Item_MinorTotem" />
+	<recommendeditem name="Item_RunesOfTheBlight" />
+	<recommendeditem name="Item_HealthPotion" />
+	<recommendeditem name="Item_HomecomingStone" />
+
+	<recommendeditem name="Item_Strength5" />
+	<recommendeditem name="Item_PowerSupply" />
+	<recommendeditem name="Item_Bottle" />
+	<recommendeditem name="Item_Steamboots" />
+	<recommendeditem name="Item_ElderParasite" />
+	<recommendeditem name="Item_Insanitarius" />
+	<recommendeditem name="Item_Immunity" />
+	<recommendeditem name="Item_BehemothsHeart" />
+
+	<modifier key="iamsheeped" modpriority="100"
+		passiveeffect=""
+	/>
+	
+	<modifier key="ult_boost" modpriority="100">
+		<aura state="Ult_Boost_Hammerstorm" radius="0" targetscheme="self" continuous="false"/>
+	</modifier>
+	
+	<modifier key="ability4" modpriority="100"
+		attackanim="str_attack_%"
+		attacknumanims="2"
+		attackactioneffect="ability_04/effects/ground_impact.effect"
+		attackimpacteffect="effects/attack_ultimate_impact.effect"
+		model="/heroes/hammerstorm/RedSven/model.mdf"
+		idleanim="ULTidle"
+		walkanim="ULTwalk_1"
+	/>
+
+	<altavatar key="Hero_Hammerstorm.Alt" modpriority="1"
+		altavatar="true"
+
+		icon2="alt/icon.tga"
+		portrait="alt/icon.tga"
+		model="model.mdf"
+		preglobalscale="0.8"
+
+		previewmodel="alt/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="2.25"
+
+		storemodel="alt/preview.mdf"
+		storepos="0 0 -17"
+		storeangles="0 0 0"
+		storescale="1.9"
+
+		selectedsound="alt/sounds/voice/select_%.wav"
+		selectedflavorsound="alt/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt/sounds/voice/move_%.wav"
+		confirmattacksound="alt/sounds/voice/attack_%.wav"
+		nomanasound="alt/sounds/voice/no_mana.wav"
+		cooldownsound="alt/sounds/voice/cooldown.wav"
+		announcersound="alt/sounds/voice/hero_select.wav"
+		tauntedsound="alt/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt/sounds/voice/taunt_after.wav"
+	/>
+
+	<altavatar key="Hero_Hammerstorm.Alt2" modpriority="1"
+		altavatar="true"
+
+		icon2="alt2/icon.tga"
+		portrait="alt2/icon.tga"
+		model="model.mdf"
+		preglobalscale="0.8"
+		infoheight="200"
+
+		previewmodel="alt2/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.45"
+
+		attackimpacteffect="alt2/effects/attack_impact.effect"
+
+		selectedsound="alt2/sounds/voice/select_%.wav"
+		selectedflavorsound="alt2/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt2/sounds/voice/move_%.wav"
+		confirmattacksound="alt2/sounds/voice/attack_%.wav"
+		nomanasound="alt2/sounds/voice/no_mana.wav"
+		cooldownsound="alt2/sounds/voice/cooldown.wav"
+		announcersound="alt/sounds/voice/hero_select.wav"
+		tauntedsound="alt2/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt2/sounds/voice/taunt_after.wav"
+
+		storemodel="alt2/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.36"
+	>
+		<onspawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Parasite.Alt2 aa.Hero_Armadon.Alt2 aa.Hero_Jereziah.Alt2 aa.Hero_Empath.Alt2 aa.Hero_Hammerstorm.Alt2 aa.Hero_Soulstealer.Alt2 aa.Hero_Devourer.Alt4">
+				<activatemodifierkey name="Alt2_Sin_Set_Bonus" />
+			</ownsproduct>
+		</onspawn>
+
+		<modifier key="Alt2_Sin_Set_Bonus" modpriority="11"
+
+			icon2="alt2/icon.tga"
+			portrait="alt2/icon.tga"
+			model="alt2/sin_set_bonus/model.mdf"
+			preglobalscale="1.7"
+			infoheight="200"
+
+			passiveeffect="alt2/sin_set_bonus/effects/body_sin.effect"
+
+			previewmodel="alt2/preview.mdf"
+			previewpos="0 0 -50"
+			previewangles="0 0 0"
+			previewscale="1.45"
+
+			attackimpacteffect="alt2/sin_set_bonus/effects/attack_impact.effect"
+
+			selectedsound="alt2/sounds/voice/select_%.wav"
+			selectedflavorsound="alt2/sounds/voice/select_flavour_%.wav"
+			confirmmovesound="alt2/sounds/voice/move_%.wav"
+			confirmattacksound="alt2/sounds/voice/attack_%.wav"
+			nomanasound="alt2/sounds/voice/no_mana.wav"
+			cooldownsound="alt2/sounds/voice/cooldown.wav"
+			announcersound="alt/sounds/voice/hero_select.wav"
+			tauntedsound="alt2/sounds/voice/taunt_prior.wav"
+			tauntkillsound="alt2/sounds/voice/taunt_after.wav"
+
+			storemodel="alt2/preview.mdf"
+			storepos="0 0 -20"
+			storeangles="0 0 0"
+			storescale="1.36"
+
+		>
+		</modifier>
+	</altavatar>
+
+	<altavatar key="Hero_Hammerstorm.Alt3" modpriority="1"
+		altavatar="true"
+
+		icon2="alt3/icon.tga"
+		portrait="alt3/icon.tga"
+		model="alt3/model.mdf"
+		preglobalscale="2.0"
+
+		previewmodel="alt3/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="2.25"
+
+		storemodel="alt3/preview.mdf"
+		storepos="0 0 -17"
+		storeangles="0 0 0"
+		storescale="1.7"
+		attackimpacteffect="alt3/effects/attack_impact.effect"
+
+		selectedsound="alt3/sounds/voice/select_%.wav"
+		selectedflavorsound="alt3/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt3/sounds/voice/move_%.wav"
+		confirmattacksound="alt3/sounds/voice/attack_%.wav"
+		nomanasound="alt3/sounds/voice/no_mana.wav"
+		cooldownsound="alt3/sounds/voice/cooldown.wav"
+		tauntedsound="alt3/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt3/sounds/voice/taunt_after.wav"
+
+	>
+		<modifier key="ability4_alt3" modpriority="100"
+			attackanim="str_attack_%"
+			attacknumanims="2"
+			attackactioneffect="ability_04/effects/ground_impact.effect"
+			attackimpacteffect="alt3/effects/attack_ultimate_impact.effect"
+
+			idleanim="ULTidle"
+			walkanim="ULTwalk_1"
+		/>
+	</altavatar>
+
+	<altavatar key="Hero_Hammerstorm.Alt4" modpriority="1"
+		altavatar="true"
+
+		selectedsound="alt4/sounds/voice/select_%.wav"
+		selectedflavorsound="alt4/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt4/sounds/voice/move_%.wav"
+		confirmattacksound="alt4/sounds/voice/attack_%.wav"
+		nomanasound="alt4/sounds/voice/no_mana.wav"
+		cooldownsound="alt4/sounds/voice/cooldown.wav"
+		tauntedsound="alt4/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt4/sounds/voice/taunt_after.wav"
+
+		icon2="alt4/icon.tga"
+		portrait="alt4/icon.tga"
+		model="model.mdf"
+		preglobalscale="0.8"
+
+		previewmodel="alt4/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="2.25"
+
+		storemodel="alt4/preview.mdf"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="1.2"
+	/>
+
+	<altavatar key="Hero_Hammerstorm.Alt5" modpriority="1"
+		altavatar="true"
+
+		passiveeffect="alt5/effects/body.effect"
+
+		selectedsound="alt5/sounds/voice/select_%.wav"
+		selectedflavorsound="alt5/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt5/sounds/voice/move_%.wav"
+		confirmattacksound="alt5/sounds/voice/attack_%.wav"
+		nomanasound="alt5/sounds/voice/no_mana.wav"
+		cooldownsound="alt5/sounds/voice/cooldown.wav"
+		tauntedsound="alt5/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt5/sounds/voice/taunt_after.wav"
+
+		icon2="alt5/icon.tga"
+		portrait="alt5/icon.tga"
+		model="alt5/model.mdf"
+		preglobalscale="2.4"
+
+		corpsetime="2000"
+		corpsefadetime="4000"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+
+		previewmodel="alt5/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="2.25"
+
+		storemodel="alt5/preview.mdf"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="1.8"
+	>
+		<modifier key="ability4_alt5" modpriority="100"
+			passiveeffect="alt5/effects/body_ult.effect"
+			attackanim="str_attack_%"
+			attacknumanims="2"
+			attackactioneffect="ability_04/effects/ground_impact.effect"
+			attackimpacteffect="alt3/effects/attack_ultimate_impact.effect"
+
+			idleanim="ULTidle"
+			walkanim="ULTwalk_1"
+		/>
+
+		<onspawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Fade.Alt2 aa.Hero_Pearl.Alt4 aa.Hero_Hammerstorm.Alt5 aa.Hero_Deadwood.Alt4 aa.Hero_Hantumon.Alt4 aa.Hero_BabaYaga.Alt3">
+				<applystate name="State_Flying_Monkey" target="this_entity" continuous="true" />
+			</ownsproduct>
+		</onspawn>
+
+		<onrespawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Fade.Alt2 aa.Hero_Pearl.Alt4 aa.Hero_Hammerstorm.Alt5 aa.Hero_Deadwood.Alt4 aa.Hero_Hantumon.Alt4 aa.Hero_BabaYaga.Alt3">
+				<applystate name="State_Flying_Monkey" target="this_entity" continuous="true" />
+			</ownsproduct>
+		</onrespawn>
+	</altavatar>
+
+	<altavatar key="Hero_Hammerstorm.Alt6" modpriority="1"
+		altavatar="true"
+
+		selectedsound="alt6/sounds/voice/select_%.wav"
+		selectedflavorsound="alt6/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt6/sounds/voice/move_%.wav"
+		confirmattacksound="alt6/sounds/voice/attack_%.wav"
+		nomanasound="alt6/sounds/voice/no_mana.wav"
+		cooldownsound="alt6/sounds/voice/cooldown.wav"
+		tauntedsound="alt6/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt6/sounds/voice/taunt_after.wav"
+
+		icon2="alt6/icon.tga"
+		portrait="alt6/icon.tga"
+		model="alt6/model.mdf"
+		preglobalscale="2.2"
+
+		previewmodel="alt6/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="2.25"
+
+		storemodel="alt6/preview.mdf"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="2.2"
+
+		attackimpacteffect="alt6/effects/attack_impact.effect"
+	>
+		<modifier key="ability4_alt6" modpriority="100"
+			passiveeffect=""
+			attackanim="str_attack_%"
+			attacknumanims="2"
+			attackactioneffect="alt6/effects/ability_04/ground_impact.effect"
+			attackimpacteffect="alt6/effects/attack_ultimate_impact.effect"
+
+			idleanim="ULTidle"
+			walkanim="ULTwalk_1"
+		/>
+	</altavatar>
+
+	<altavatar key="Hero_Hammerstorm.Alt7" modpriority="1"
+		altavatar="true"
+
+		passiveeffect="alt7/effects/body.effect"
+
+		selectedsound="alt7/sounds/voice/select_%.wav"
+		selectedflavorsound="alt7/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt7/sounds/voice/move_%.wav"
+		confirmattacksound="alt7/sounds/voice/attack_%.wav"
+		nomanasound="alt7/sounds/voice/no_mana.wav"
+		cooldownsound="alt7/sounds/voice/cooldown.wav"
+		tauntedsound="alt7/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt7/sounds/voice/taunt_after.wav"
+
+		icon2="alt7/icon.tga"
+		portrait="alt7/icon.tga"
+		model="alt7/model.mdf"
+		preglobalscale="2"
+		portraitcampos="19 -30 0"
+
+		previewmodel="alt7/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="2.25"
+
+		storemodel="alt7/preview.mdf"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="1.75"
+
+		attackstarteffect="alt7/effects/attack.effect"
+		attackimpacteffect="alt7/effects/attack_impact.effect"
+	>
+		<onspawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_EmeraldWarden.Alt7 aa.Hero_Hammerstorm.Alt7 aa.Hero_Legionnaire.Alt8 aa.Hero_Predator.Alt9 aa.Hero_Rally.Alt7 aa.Hero_Rocky.Alt5 aa.Hero_Solstice.Alt6 aa.Hero_Dampeer.Alt5 aa.Hero_Kane.Alt3 aa.Hero_Pestilence.Alt5 aa.Hero_Ravenor.Alt6">
+				<activatemodifierkey name="ARMS_Set" />
+			</ownsproduct>
+		</onspawn>
+
+		<onrespawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_EmeraldWarden.Alt7 aa.Hero_Hammerstorm.Alt7 aa.Hero_Legionnaire.Alt8 aa.Hero_Predator.Alt9 aa.Hero_Rally.Alt7 aa.Hero_Rocky.Alt5 aa.Hero_Solstice.Alt6 aa.Hero_Dampeer.Alt5 aa.Hero_Kane.Alt3 aa.Hero_Pestilence.Alt5 aa.Hero_Ravenor.Alt6">
+				<activatemodifierkey name="ARMS_Set" />
+			</ownsproduct>
+		</onrespawn>
+
+		<modifier key="ability4_alt7" modpriority="100"
+			passiveeffect=""
+			attackanim="str_attack_%"
+			attacknumanims="2"
+			attackactioneffect="alt7/ability_04/effects/ground_impact.effect"
+			attackimpacteffect="alt7/ability_04/effects/attack_ultimate_impact.effect"
+
+			idleanim="ULTidle"
+			walkanim="ULTwalk_1"
+		/>
+
+		<modifier key="ARMS_Set" modpriority="1"
+			tooleffectkeyname0=""
+			tooleffectpath0="/shared/effects/set_arms_blue.effect"
+		/>
+	</altavatar>
+
+	<altavatar key="Hero_Hammerstorm.Alt8" modpriority="1"
+		altavatar="true"
+
+		passiveeffect="alt8/effects/body.effect"
+
+		selectedsound="alt8/sounds/voice/select_%.wav"
+		selectedflavorsound="alt8/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt8/sounds/voice/move_%.wav"
+		confirmattacksound="alt8/sounds/voice/attack_%.wav"
+		nomanasound="alt8/sounds/voice/no_mana.wav"
+		cooldownsound="alt8/sounds/voice/cooldown.wav"
+		tauntedsound="alt8/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt8/sounds/voice/taunt_after.wav"
+
+		icon2="alt8/icon.tga"
+		portrait="alt8/icon.tga"
+		model="alt8/model.mdf"
+		preglobalscale="2.2"
+		portraitcampos="-12 0 10"
+
+		previewmodel="alt8/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="2.25"
+
+		storemodel="alt8/preview.mdf"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="1.95"
+
+		attackimpacteffect="alt8/effects/attack_impact.effect"
+	>
+		<modifier key="ability4_alt8" modpriority="100"
+			passiveeffect=""
+			attackanim="str_attack_%"
+			attacknumanims="2"
+			attackactioneffect="ability_04/effects/ground_impact.effect"
+			attackimpacteffect="alt8/ability_04/effects/attack_ultimate_impact.effect"
+		/>
+	</altavatar>
+
+	<altavatar key="Hero_Hammerstorm.Alt9" modpriority="1"
+		altavatar="true"
+
+		passiveeffect="alt9/effects/body.effect"
+
+		selectedsound="alt9/sounds/voice/select_%.wav"
+		selectedflavorsound="alt9/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt9/sounds/voice/move_%.wav"
+		confirmattacksound="alt9/sounds/voice/attack_%.wav"
+		nomanasound="alt9/sounds/voice/no_mana.wav"
+		cooldownsound="alt9/sounds/voice/cooldown.wav"
+		tauntedsound="alt9/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt9/sounds/voice/taunt_after.wav"
+
+		icon2="alt9/icon.tga"
+		portrait="alt9/icon.tga"
+		model="alt9/model.mdf"
+		preglobalscale="1.8"
+		portraitcampos="-15 5 20"
+
+		previewmodel="alt9/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="2.25"
+
+		storemodel="alt9/preview.mdf"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="1.6"
+
+		attackimpacteffect="alt9/effects/attack_impact.effect"
+
+		overheadoffset="-60"
+	>
+		<modifier key="ability4_alt9" modpriority="100"
+			passiveeffect=""
+			attackanim="str_attack_%"
+			skin="ability_04"
+			attacknumanims="2"
+			attackstarteffect=""
+			attackactioneffect="ability_04/effects/ground_impact.effect"
+			attackimpacteffect="effects/attack_ultimate_impact.effect"
+		/>
+	</altavatar>
+
+	<altavatar key="Hero_Hammerstorm.Alt10" modpriority="1"
+		altavatar="true"
+
+		passiveeffect="alt10/effects/body.effect"
+
+		selectedsound="alt10/sounds/voice/select_%.wav"
+		selectedflavorsound="alt10/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt10/sounds/voice/move_%.wav"
+		confirmattacksound="alt10/sounds/voice/attack_%.wav"
+		nomanasound="alt10/sounds/voice/no_mana.wav"
+		cooldownsound="alt10/sounds/voice/cooldown.wav"
+		tauntedsound="alt10/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt10/sounds/voice/taunt_after.wav"
+
+		icon2="alt10/icon.tga"
+		portrait="alt10/icon.tga"
+		model="alt10/model.mdf"
+		modelscale="1.1"
+		preglobalscale="1.8"
+		portraitcampos="5 8 13"
+
+		previewmodel="alt10/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="2.25"
+
+		storemodel="alt10/preview.mdf"
+		storepassiveeffect="alt10/effects/body_store.effect"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="1.95"
+
+		attackimpacteffect="alt10/effects/attack_impact.effect"
+
+		overheadoffset="-60"
+	>
+		<modifier key="ability4_alt10" modpriority="100"
+			passiveeffect="alt10/effects/body_ult.effect"
+			attackanim="str_attack_%"
+			skin="ability_04"
+			attacknumanims="2"
+			attackstarteffect=""
+			attackactioneffect="ability_04/effects/ground_impact.effect"
+			attackimpacteffect="alt10/ability_04/effects/attack_ultimate_impact.effect"
+		/>
+	</altavatar>
+
+
+	<altavatar key="Hero_Hammerstorm.Alt11" modpriority="1"
+		altavatar="true"
+
+		icon2="alt11/icon.tga"
+		portrait="alt11/icon.tga"
+		model="alt11/model.mdf"
+		modelscale="1.1"
+		preglobalscale="2"
+		portraitcampos="-2 -15 17"
+
+		previewmodel="alt11/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="2.25"
+
+		storemodel="alt11/preview.mdf"
+		storepassiveeffect="alt11/effects/body.effect"
+		storepos="10 0 -28"
+		storeangles="0 0 -10"
+		storescale="1.85"
+
+		attackimpacteffect="alt11/effects/attack_impact.effect"
+
+		selectedsound="alt11/sounds/voice/select_%.wav"
+		selectedflavorsound="alt11/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt11/sounds/voice/move_%.wav"
+		confirmattacksound="alt11/sounds/voice/attack_%.wav"
+		nomanasound="alt11/sounds/voice/no_mana.wav"
+		cooldownsound="alt11/sounds/voice/cooldown.wav"
+		tauntedsound="alt11/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt11/sounds/voice/taunt_after.wav"
+	>
+		<onspawn>
+			<upgradeselected target="this_entity" upgrade="sc.punk_circle_upgrade">
+				<activatemodifierkey name="Graffiti_Punk_Circle" />
+			</upgradeselected>
+		</onspawn>
+
+		<modifier key="Graffiti_Punk_Circle" modpriority="2"
+			localselectionringmaterial="/shared/materials/selection_indicator_graffiti.material"
+		/>
+
+		<modifier key="ability4_alt11" modpriority="100"
+			attackanim="str_attack_%"
+			skin="ability_04"
+			attacknumanims="2"
+			attackstarteffect=""
+			attackactioneffect="ability_04/effects/ground_impact.effect"
+			attackimpacteffect="alt11/ability_04/effects/attack_ultimate_impact.effect"
+			walkanim="ULTwalk_1"
+		/>
+
+		<onkill propagatetoillusions="false" >
+			<targettype type="hero">
+				<targettype type="illusion" />
+				<else>
+					<targettype type="mimic" />
+					<else>
+						<targettype type="self" />
+						<else>
+							<targettype type="heropet" />
+							<else>
+								<spawnunit name="Gadget_Hammerstorm_Alt9" count="1" target="target_position" pushentity="true" maxactive="5" />
+							</else>
+						</else>
+					</else>
+				</else>
+			</targettype>
+		</onkill>
+	</altavatar>
+
+	<altavatar key="Hero_Hammerstorm.pog_skin" modpriority="1"
+		altavatar="true"
+
+		icon2="pog_skin/icon.tga"
+		portrait="pog_skin/icon.tga"
+		model="model.mdf"
+		preglobalscale="0.8"
+
+		previewmodel="pog_skin/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="2.25"
+
+		storemodel="pog_skin/preview.mdf"
+		storepos="0 0 -17"
+		storeangles="0 0 0"
+		storescale="1.9"
+
+		respawneffect="/shared/effects/respawn.effect"
+		selectedsound="sounds/voice/select_%.wav"
+		selectedflavorsound="sounds/voice/select_flavour_%.wav"
+		confirmmovesound="sounds/voice/move_%.wav"
+		confirmattacksound="sounds/voice/attack_%.wav"
+		nomanasound="sounds/voice/no_mana.wav"
+		cooldownsound="sounds/voice/cooldown.wav"
+		announcersound="sounds/voice/hero_select.wav"
+		tauntedsound="sounds/voice/taunt_prior.wav"
+		tauntkillsound="sounds/voice/taunt_after.wav"
+	/>
+	
+	<altavatar key="Hero_Hammerstorm.Alt12" modpriority="1"
+		altavatar="true"
+
+		icon2="alt12/icon.tga"
+		portrait="alt10/icon.tga"
+		model="alt12/model.mdf"
+		modelscale="1.1"
+		preglobalscale="1.5"
+		portraitcampos="-22 0 14"
+		
+		previewmodel="alt12/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="2.25"
+		
+		selectedsound="alt12/sounds/voice/select_%.wav"
+		selectedflavorsound="alt12/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt12/sounds/voice/move_%.wav"
+		confirmattacksound="alt12/sounds/voice/attack_%.wav"
+		nomanasound="alt12/sounds/voice/no_mana.wav"
+		cooldownsound="alt12/sounds/voice/cooldown.wav"
+		announcersound="alt12/sounds/voice/hero_select.wav"
+		tauntedsound="alt12/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt12/sounds/voice/taunt_after.wav"
+
+		storemodel="alt12/preview.mdf"
+		storepassiveeffect="alt12/effects/body.effect"
+		storepos="10 0 -28"
+		storeangles="0 0 -10"
+		storescale="1.85"
+
+
+		attackimpacteffect="alt12/effects/attack_impact.effect"
+	>
+		<modifier key="ability4_alt12" modpriority="100"
+			passiveeffect="alt12/effects/body_ult.effect"
+			attackanim="str_attack_%"
+			skin="ability_04"
+			attacknumanims="2"
+			attackstarteffect=""
+			attackactioneffect="ability_04/effects/ground_impact.effect"
+			attackimpacteffect="alt12/effects/attack_ultimate_impact.effect"
+		/>
+		<modifier key="ability4_alt12_combo" modpriority="100"
+			model="alt12/model2.mdf"
+			passiveeffect="alt12/effects/body_ult.effect"
+			attackanim="str_attack_%"
+			skin="ability_04"
+			attacknumanims="2"
+			attackstarteffect=""
+			attackactioneffect="ability_04/effects/ground_impact.effect"
+			attackimpacteffect="alt12/effects/attack_ultimate_impact_combo.effect"
+		/>
+		<onframe>
+			<setactivemodifierkey name="Hero_Hammerstorm_alt12" />
+			<areaofeffect
+				global="true"
+				targetscheme="all_heroes"
+				targetselection="all"
+				ignoreinvulnerable="true"
+			>
+				<hasmodifier entity="target_entity" name="Hero_Frosty_Alt9" propagatetoillusions="false">
+					<compare a="source_team" b="target_team" op="eq">
+						<activatemodifierkey name="Combo_efx_hammerstorm" entity="source_entity"/>
+					</compare>
+				</hasmodifier>
+			</areaofeffect>
+		</onframe>
+	</altavatar>
+
+	<altavatar key="Hero_Hammerstorm.Alt13" modpriority="1"
+		altavatar="true"
+
+		icon2="alt13/icon.tga"
+		portrait="alt13/icon.tga"
+		model="alt13/model.mdf"
+		modelscale="0.9"
+		preglobalscale="2.2"
+		portraitcampos="35 0 20"
+
+		selectedsound="alt13/sounds/voice/select_%.wav"
+		selectedflavorsound="alt13/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt13/sounds/voice/move_%.wav"
+		confirmattacksound="alt13/sounds/voice/attack_%.wav"
+		nomanasound="alt13/sounds/voice/no_mana.wav"
+		cooldownsound="alt13/sounds/voice/cooldown.wav"
+		tauntedsound="alt13/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt13/sounds/voice/taunt_after.wav"
+
+		previewmodel="alt13/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.85"
+
+		storemodel="alt13/preview.mdf"
+		storepassiveeffect="alt13/effects/body.effect"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="1.85"
+
+		attackimpacteffect="alt13/effects/attack_impact.effect"
+
+		overheadoffset="-60"
+	>
+		<modifier key="ability4_alt13" modpriority="100"
+			model="alt13/ability_04/model.mdf"
+			passiveeffect="alt13/effects/body_ult.effect"
+			attackanim="str_attack_%"
+			skin="ability_04"
+			attacknumanims="2"
+			attackstarteffect=""
+			attackactioneffect="ability_04/effects/ground_impact.effect"
+			attackimpacteffect="alt13/effects/attack_ultimate_impact.effect"
+			idleanim="ULTidle"
+			walkanim="ULTwalk_1"
+		/>
+		
+		<onspawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Silhouette.Alt13 aa.Hero_Bushwack.Alt8 aa.Hero_Legionnaire.Alt16 aa.Hero_FlintBeastwood.Alt14 aa.Hero_Behemoth.Alt16 aa.Hero_Hammerstorm.Alt13" >
+				<applystate name="Flex_set_Hammerstorm" continuous="true"/>
+			</ownsproduct>
+		</onspawn>
+		
+	</altavatar>
+</hero>

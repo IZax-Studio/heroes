@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale=".85">
+		
+			<sound
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="2000"
+				volume=".5"
+				sample="/heroes/gunblade/ability_01/sounds/gun_%.wav"
+			/>
+
+			<simpleemitter
+				bone="_bone_alt_weaponattach"
+				minparticlelife="1000"
+				maxparticlelife="1750"
+				spawnrate="1500"
+				count="5"
+				gravity="-25"
+				minspeed="0"
+				maxspeed="35"
+				minangle="0"
+				maxangle="20"
+				drag="0.2"
+				offsetsphere="30 30 0"
+				material="/shared/effects/materials/star_03.material"
+			>
+				<particle
+					startcolor="1 0 1"
+					midcolor=".6 0 .6"
+					endcolor="0 0 0"
+					startscale="0.1"
+					endscale="0.1"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".25"
+					size="100"
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-50"
+					maxanglespeed="50"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_alt_weaponattach"
+				count="5"
+				gravity="-5"
+				spawnrate="250"
+				minparticlelife="700"
+				maxparticlelife="1000"
+				material="/shared/effects/materials/star_03.material"
+				offsetsphere="0"
+				minangle="-90"
+				maxangle="-90"
+				direction="0 0 -1"
+				offsetradial="10"
+				position="0 0 0"
+				depthbias="-150"
+			>
+				<particle
+					startcolor=".5 .5 .5"
+					endcolor="0"
+					midcolorpos="0"
+					startsize="0"
+					maxangle="400"
+					maxendsize="200"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_alt_weaponattach"
+				minparticlelife="1000"
+				maxparticlelife="1750"
+				spawnrate="1000"
+				count="5"
+				gravity="-25"
+				minspeed="0"
+				maxspeed="35"
+				minangle="0"
+				maxangle="20"
+				drag="0.2"
+				offsetsphere="30 30 0"
+				material="/shared/effects/materials/star_03.material"
+			>
+				<particle
+					startcolor="1 0 1"
+					midcolor=".6 0 .6"
+					endcolor="0 0 0"
+					startscale="0.2"
+					endscale="0.3"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".25"
+					size="100"
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-50"
+					maxanglespeed="50"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_alt_weaponattach"
+				position="0 0 25"
+				count="2"
+				spawnrate="50"
+				particlelife="1600"
+				gravity="1.0"
+				speed="10.0"
+				drag="0.0"
+				acceleration="0.0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+				offsetdirection="0 0 0"
+				offsetradial="0 0 0"
+				particledirectionalspace="local"
+				inheritvelocity="0"
+				offsetsphere="15 15 0"
+			>
+				<particle
+				>
+					<billboard
+						life="100"
+						material="/shared/effects/materials/star_03.material"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						param=".012"
+						minsize="75"
+						maxsize="165"
+						directionalspace="local"
+						color=".5 0 .5"
+					/>
+				</particle>
+			</simpleemitter>
+			
+			<billboard
+				bone="_bone_alt_weaponattach"
+				life="100"
+				material="/shared/effects/materials/whitedot.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				param=".012"
+				size="150"
+				directionalspace="local"
+				startcolor="1 0 0"
+				endcolor="0 0 0"
+			/>
+			
+			<simpleemitter
+				life="1800"
+				spawnrate="400"
+				bone="_bone_alt_weaponattach"
+				count="25"
+				minparticlelife="1"
+				maxparticlelife="1200"			
+				gravity="24"
+				minspeed="350"
+				maxspeed="1600"
+				drag=".01"
+				material="/shared/effects/materials/star_03.material"
+				offsetsphere="2"
+				minangle="-10"
+				maxangle="40"
+				direction="0 0 1"
+				directionalspace="global"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startcolor="1"
+					midcolor="1 0 1"
+					endcolor="0 0 0"
+					midcolorpos=".35"
+					minstartsize="18"
+					maxstartsize="26"
+					midsize="12"
+					endsize="6"
+					startalpha="0"
+					midalpha=".7"
+					endalpha="0"
+					midalphapos=".5"
+					turn="true"
+				/>
+			</simpleemitter>
+	
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+

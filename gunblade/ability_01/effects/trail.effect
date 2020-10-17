@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			<sound
+			    forcestereo="true"
+			    life="5000"
+			    norestart="true"
+				channel="55654"
+				linearfalloff="true" 
+				falloffstart="500"
+				falloffend="1300"
+			/>
+			
+			<model
+				position="0 0 0"
+				scale=".9"
+				parentmodel="true"
+				material="/shared/effects/materials/shell2.material"
+				color="1 0 1"
+				parentskeleton="true"
+			>
+			</model>
+			
+			<billboard
+				bone="_bone_center"
+				material="/shared/effects/materials/whitedot_blend.material"
+				color="1 0 1"
+				alpha=".8"
+				depthbias="40"
+				size="30"
+				directionalspace="local"
+			/>
+		
+			<simpleemitter
+				bone="_bone_center"
+				spawnrate="4"
+				particlelife="500"
+				material="/shared/effects/materials/blink.material"
+				depthbias="40"
+			>
+				<particle
+					bone="_bone_center"
+					maxangle="360"
+					minanglspeed="-100"
+					maxanglespeed="100"
+					startcolor="0"
+					midcolor="1 0 1"
+					endcolor="0"
+					minsize="5"
+					maxsize="10"
+					anchor="1"
+				/>
+			</simpleemitter>
+		
+			<trailemitter
+				bone="_bone_center"
+				spawnrate="60"
+				particlelife="450"
+				offsetsphere="5"
+				maxspeed="20"
+				material="/shared/effects/materials/arrow_trail_blend.material"
+				texposscale="1"
+				texpostime="25"
+				texstretchscale="0"
+				gravity="-5"
+			>
+				<particle
+					size="1"
+					startcolor="1"
+					midcolor="1 0 1"
+					endcolor="1 0 1"
+					midcolorpos=".25"
+					startalpha=".75"
+					endalpha="0"
+				/>
+			</trailemitter>
+			
+			<template name="trails">
+				<trailemitter
+					bone="{bone}"
+					spawnrate="50"
+					particlelife="500"
+					texpostime="750"
+					texposscale="0.0"
+					texstretchscale=".4"
+					material="/shared/effects/materials/flux_trail.material"
+					subframepos="true"
+					position="0 0 0"
+				>
+					<particle
+						startcolor="1 0 1"
+						midcolor="1 0 1"
+						endcolor="0 0 0"
+						startsize="{startsize}"
+						midsize="{midsize}"
+						endsize="{endsize}"
+						midsizepos="0.25"
+					/>
+				</trailemitter>
+			</template>
+			
+			<instance name="trails" bone="_bone_center" startsize="2" midsize="6" endsize="2"/>
+			<instance name="trails" bone="_bone_lefttip" startsize=".5" midsize="1" endsize=".5"/>
+			<instance name="trails" bone="_bone_righttip" startsize=".5" midsize="1" endsize=".5"/>
+		
+			<simpleemitter
+				material="/shared/effects/materials/energy_reveal.material"
+				spawnrate="60"
+				minparticlelife="200"
+				maxparticlelife="350"
+				offsetsphere="10"
+				drag="0.01"
+				maxspeed="50"
+				gravity="-5"
+				depthbias="-5"
+			>
+				<particle
+					maxangle="360"
+					minstartscale="5"
+					maxstartscale="10"
+					minendscale="10"
+					maxendscale="15"
+					color="1 0 1"
+					startalpha="0"
+					minmidalpha=".55"
+					maxmidalpha=".8"
+					endalpha=".15"
+					startframe="0"
+					endframe="1"
+				/>
+			</simpleemitter>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

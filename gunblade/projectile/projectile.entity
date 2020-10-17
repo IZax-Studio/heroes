@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_StrafeAttack"
+
+	speed="1200"
+	gravity="0"
+	canturn="false"
+	modelscale="3"
+
+	model="effects/shards/shard_idle.mdf"
+	traileffect="/heroes/gunblade/projectile/effects/trail.effect"
+	impacteffect="/heroes/gunblade/projectile/effects/impact.effect"
+>
+
+	<altavatar key="Hero_Gunblade.Alt6"
+		model="effects/shards/shard_idle.mdf"
+		traileffect="effects/trail.effect"
+		impacteffect="effects/impact.effect"	/>
+	
+	<altavatar key="Hero_Gunblade.Alt7"
+		impacteffect="../alt7/effects/impact.effect"
+		traileffect="effects/trail.effect"
+		model="effects/shards/shard_idle.mdf"
+	/>
+	
+	<altavatar key="Hero_Gunblade.Alt8"
+		traileffect="effects/trail.effect"
+		model="effects/shards/shard_idle.mdf"
+		impacteffect="../alt8/effects/impact.effect"
+	/>
+		
+	<altavatar key="Hero_Gunblade.Alt9"
+		model="effects/shards/shard_idle.mdf"
+		traileffect="effects/trail.effect"
+		impacteffect=""
+	/>
+</projectile>
