@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Parallax_Ability2_Bind"
+	
+	icon="icon2.tga"
+	passiveeffect=""
+	ishidden="true"
+	
+	effecttype=""
+
+	stunned="true"
+>
+	<onframe>
+		<distance source="this_owner_entity" target="this_proxy_entity" />
+		<compare a="result" b="100" op="ge">
+			<kill source="" target="this_proxy_entity" />
+			<expire />
+		</compare>
+	</onframe>
+</state>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Voodoo_Ability2_Debuff"
+
+	icon="icon2.tga"
+	passiveeffect="state_enemy.effect"
+	deniable="true"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="false"
+>
+	
+	<onframe>
+		<damage effecttype="Magic DOT" amount="15,25,35,45" b="frametime" op="mult" />
+	</onframe>
+	
+		<altavatar key="Hero_Voodoo.Alt4" modpriority="90"
+		passiveeffect="../alt4/ability_02/effects/state_enemy.effect"
+	/>
+	
+	<altavatar key="Hero_Voodoo.Alt5" modpriority="90"
+		passiveeffect="../alt5/ability_02/effects/state_enemy.effect"
+	/>
+	
+	<altavatar key="Hero_Voodoo.Alt8" modpriority="90"
+		passiveeffect="../alt8/ability_02/state_enemy.effect"
+	/>
+	
+</state>

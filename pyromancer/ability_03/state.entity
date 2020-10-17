@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Pyromancer_Ability3"
+
+	icon="icon3.tga"
+	passiveeffect="effects/state.effect"
+	
+	movespeedmultiplierpercharge="0.02,0.03,0.04,0.05"
+	attackspeedpercharge="0.15,0.30,0.45,0.60"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	
+	maxcharges="3"
+>
+	<oninflict>
+		<addcharges count="1" />
+	</oninflict>
+	
+	<onrefresh>
+		<addcharges count="1" />
+	</onrefresh>
+
+	<modifier key="ult_boost" modpriority="100"
+		passiveeffect="effects/state.effect"
+	>
+	</modifier>
+
+	<altavatar key="Hero_Pyromancer.Alt2" modpriority="1"
+		passiveeffect="/heroes/pyromancer/alt2/ability_03/effects/state.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Pyromancer.Alt4" modpriority="1"
+	>
+		<modifier key="Alt4_Flamethrower" modpriority="101"
+			passiveeffect="/heroes/pyromancer/alt4/ability_03/effects/state_flamethrower.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Pyromancer.Alt5" modpriority="1"
+		passiveeffect="/heroes/pyromancer/alt5/ability_03/effects/state.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Pyromancer.Alt7" modpriority="1"
+		passiveeffect="/heroes/pyromancer/alt7/ability_03/effects/state.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Pyromancer.Alt8" modpriority="1"
+		passiveeffect="/heroes/pyromancer/alt8/ability_03/effects/state.effect"
+		icon="/heroes/Pyromancer/alt8/ability_03/icon.tga"
+	>
+		<modifier key="pyromancerAlt8_Ability3_Upgrade"
+		    passiveeffect="/heroes/pyromancer/alt8/ability_03/effects/state_upgrade.effect"
+			icon="/heroes/Pyromancer/alt8/ability_03/icon_u.tga"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Pyromancer.Alt9" modpriority="1"
+		passiveeffect="/heroes/pyromancer/alt9/ability_03/effects/state.effect"
+	>
+		<modifier key="ult_boost" modpriority="100"
+			passiveeffect="/heroes/pyromancer/alt9/ability_03/effects/state.effect"
+		>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Pyromancer.Alt10" modpriority="1"
+		passiveeffect="/heroes/pyromancer/alt10/ability_03/effects/state.effect"
+	>
+		<modifier key="ult_boost" modpriority="100"
+			passiveeffect="/heroes/pyromancer/alt10/ability_03/effects/state.effect"
+		/>
+	</altavatar>
+	
+</state>

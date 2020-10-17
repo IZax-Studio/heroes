@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+    name="State_Panda_Ability2_Animation"
+
+    
+    
+    icon="icon_2.tga"
+    ishidden="true"
+    effecttype=""
+    disarmed="true"
+    stunned="true"
+    impactinterval="400"
+    stunneddurationunmodifiable="true"
+>
+    <onimpact>
+        <spawnprojectile name="Projectile_Panda_Ability2_Combat" source="proxy_entity" proxy="proxy_entity" target="proxy_entity" offsetspace="proxy_entity" noresponse="true" />
+    </onimpact>
+
+    <altavatar key="Hero_Panda.Alt10" modpriority="1"
+	    icon="/heroes/panda/alt10/ability_02/icon.tga"
+	/> 
+	
+	<altavatar key="Hero_Panda.Alt11" modpriority="1"
+	    icon="/heroes/panda/alt11/ability_02/icon.tga"
+	/> 
+	
+</state>

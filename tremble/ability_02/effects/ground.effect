@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+	
+		<modifier
+			expirelife="500"
+			color="1 1 1"
+			startalpha="0"
+			endalpha="1"
+		/>
+
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2000"
+				volume=".6"
+				sample="../sounds/cast4.wav"
+			/>
+			
+			<groundsprite
+				expirelife="1200"
+				material="/shared/effects/materials/web_ground.material"
+				size="275"
+				midsizepos=".1"
+				color=".45 .4 .45"
+				startalpha="1"
+				endalpha="0"
+				position="0 0 0 "
+			/>			
+			
+
+<!--
+			<template name="zTemplate">
+				<simpleemitter
+					count="1"
+					expirelife="250"
+					spawnrate="2000"
+					offsetradial="0"
+					minangle="0"
+					maxangle="0"
+					direction="0 0 1"
+					position="{pos}"
+				>
+					<particle
+						turn="1"
+					>
+
+						<groundsprite
+							position="0 0 0"
+							expirelife="1200"
+							material="/shared/effects/materials/web.material"
+							size="{smashSize}"
+							midsizepos=".1"
+							color="1.0 1.0 1.0"
+							startalpha=".7"
+							endalpha="0"
+						/>
+
+
+							<simpleemitter
+								spawnrate="10"
+								minparticlelife="1500"
+								maxparticlelife="2000"
+								gravity="-10"
+								speed="10"
+								drag="0.07"
+								acceleration="0.0"
+								mintimenudge="0"
+								maxtimenudge="1000"
+								position="0 0 30"
+								material="/shared/effects/materials/web.material"
+								offsetsphere="75 75 15"
+								inheritvelocity=".5"
+
+							>
+								<particle
+
+									minangle="0"
+									maxangle="360"
+									minanglespeed="-30"
+									color=".36 .33 .2"
+									maxanglespeed="30"
+									startsize="65"
+									endsize="95"
+									startalpha="0"
+									midalpha=".45"
+									endalpha="0"
+									midalphapos=".2"
+								 />
+							</simpleemitter>
+							
+							<simpleemitter
+								spawnrate="20"
+								minparticlelife="1500"
+								maxparticlelife="3000"
+								gravity="-5"
+								minspeed="10"
+								maxspeed="70"
+								drag="0"
+								acceleration="10"
+								position="0 0 30"
+								material="/shared/effects/materials/web.material"
+								offsetsphere="50 50 50"
+								inheritvelocity=".5"
+								direction="0 0 1"
+								depthbias="-25"
+							>
+								<particle 
+									minangle="0"
+									maxangle="360"
+									minanglespeed="-30"
+									startcolor=".35 .25 .1"
+									endcolor="0 0 0"
+									maxanglespeed="30"
+									startsize="75"
+									endsize="125"
+									startalpha="0"
+									midalpha=".75"
+									endalpha="0"
+									midalphapos=".2"
+									startanchor="0"
+									endanchor="0"					
+								 />				 
+							</simpleemitter>
+
+						</model>
+
+					</particle>
+				</simpleemitter>
+			</template>
+
+			<instance name="zTemplate" pos="75 110 0" modelScale=".35" smashSize="28" scorchSize="95"/>
+			<instance name="zTemplate" pos="-165 -100 0"  modelScale=".5" smashSize="35" scorchSize="75"/>
+			<instance name="zTemplate" pos="-110 85 0"  modelScale=".35" smashSize="26" scorchSize="42"/>
+			<instance name="zTemplate" pos="50 -80 0"  modelScale=".25" smashSize="21" scorchSize="85"/>
+-->
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1"/>
+		<waitfordeath  instance="instance0"/>
+		<waitfordeath instance="instance1" />
+		
+	</thread>
+
+</effect>

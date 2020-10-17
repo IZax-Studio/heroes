@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1" >
+
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".2"
+				sample="../sounds/impact.wav"
+			/>
+			
+		<template name="fire">
+		
+		
+		
+		<simpleemitter
+					bone="{bone}"
+					spawnrate="40"
+					
+					minparticlelife="300"
+					maxparticlelife="300"
+					minspeed="50"
+					maxspeed="90"
+					drag=".08"
+					offsetsphere="10"
+					
+					material="/shared/effects/materials/phantom_smoke_06.material"
+					depthbias="10"
+					
+				>
+					<particle
+					
+					
+						endalpha="0"
+						startcolor="1"
+						midcolor="1"
+						endcolor="0"
+						minstartsize="50"
+						maxstartsize="80"
+						endsize="20"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="4"
+					minparticlelife="200"
+					maxparticlelife="300"
+					
+					drag=".08"
+					offsetsphere="15"
+					
+					material="/shared/effects/materials/flare_02.material"
+					depthbias="-10"
+				
+				>
+					<particle
+						minangle="-360"
+						maxangle="360"
+						minanglespeed="-200"
+						maxanglespeed="100"
+						startcolor="1"
+						midcolor="1"
+						endcolor="0 0 0"
+						size="40"
+					/>
+				</simpleemitter>
+
+	
+				
+		<simpleemitter
+					bone="{bone}"
+					spawnrate="10"
+					minparticlelife="100"
+					maxparticlelife="500"
+					minspeed="200"
+					maxspeed="500"
+					drag=".08"
+					offsetsphere="10"
+					angle="15"
+					material="/shared/effects/materials/flare_02.material"
+					depthbias="-10"
+					direction="0 -1 0"
+				>
+					<particle
+						minangle="-360"
+						maxangle="360"
+						minanglespeed="-150"
+						maxanglespeed="150"
+						startcolor="1"
+						midcolor="0 .2 1"
+						endcolor="0 0 0"
+						minstartsize="10"
+						maxstartsize="10"
+						endsize="20"
+					/>
+				</simpleemitter>
+				
+				
+			
+			<simpleemitter
+					bone="{bone}"
+					spawnrate="10"
+					minparticlelife="100"
+					maxparticlelife="200"
+					
+					drag="0.07"
+					angle="130"
+					offsetsphere="10"
+					material="/shared/effects/materials/flare_02.material"
+					depthbias="-10"
+					direction="0 -1 0"
+				>
+					<particle
+						minangle="-180"
+						maxangle="360"
+						minanglespeed="-360"
+						maxanglespeed="360"
+						startcolor="1 1 1"
+						midcolor="0 .4 1"
+						endcolor="0"
+						startsize="10"
+						minendscale="5"
+						maxendscale="8"
+						endalpha="0"
+					/>
+				</simpleemitter>
+			
+			
+			
+		
+			</template>
+
+			<instance name="fire" bone="_bone_centerofchest" />
+			<instance name="fire" bone="_bone_leftfoot" />
+			<instance name="fire" bone="_bone_rightfoot" />
+			<instance name="fire" bone="_bone_lefthand" />
+			<instance name="fire" bone="_bone_righthand" />
+			<instance name="fire" bone="_bone_weapon2" />
+			<instance name="fire" bone="_bone_weapon3" />
+		
+
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		  <spawnparticlesystem instance="instance0" particlesystem="system0"/>
+  		  <spawnmodifier instance="instance1" modifier="modifier0"/> 
+  		  <waitfordeath instance="instance0" />
+
+	</thread>
+
+</effect>

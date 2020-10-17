@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1" disable2dworld="true">
+	<definitions>
+
+
+
+		<particlesystem name="system0" space="world" scale="1.0">
+		
+				
+			<sound
+				delay="300"
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".6"
+				sample="../sounds/cast.wav"
+			/>
+	
+
+			<billboard			
+				life="500"
+				bone="_bone_lefthand"
+				startsize="5"
+				midsize="50"
+				endsize="100"
+				material="/shared/effects/materials/whitedot.material"
+				startalpha="1"
+				endalpha="0"
+				startcolor="0 .5 1"
+				endcolor=".8 .8 .8"
+				depthbias="-10"
+			/>			
+			
+				
+						
+			
+			<beam
+				life="500"
+				bone_a="_bone_lefthand"
+				bone_b="_bone_lefthand"
+				startcolor="0 .5 1"
+				endcolor="0 .5 1"
+				material="/shared/effects/materials/whitedot.material"
+				size="80"
+			/>
+			
+			
+			
+			
+			
+		
+		</particlesystem>
+	</definitions>
+	<thread>
+		 
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

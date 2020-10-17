@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				volume="0.25"
+				sample="../../custom/sounds/spells/wild_axes.wav"
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="2200"
+				
+			/>
+			
+			<sound
+				volume="0.35"
+				sample="../../custom/sounds/spells/whirlloop.wav"
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="2200"
+				
+			/>
+			
+			<sound
+				volume="0.08"
+				sample="../../custom/sounds/spells/focus_fire.wav"
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="2200"
+				
+				
+			/>
+		
+		
+			<model				
+				
+				model="../../custom/materials/axes/model.mdf"
+				anim="idle"	
+				scale="3.5"
+				yaw="6000"
+				position="0 0 -120"
+			>
+		
+			<model				
+				bone="_bone_weapon3"
+				model=""
+				anim="idle"	
+				scale="3"
+			>	
+			
+				<twopointtrailemitter
+					
+					bone_a="_bone_weapon3"
+					bone_b="_bone_weapon1"
+					spawnrate="100"
+					particlelife="400"
+					texpostime="400"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/swoosh_add.material"
+					subframepos="true"
+
+					
+				>
+					<particle
+						startcolor=".90 .2 .1"
+						endcolor="0 0 0" 
+						
+					/>
+				</twopointtrailemitter>
+				
+				
+				<trailemitter
+					rollspeed="300"
+					bone="_bone_weapon1"
+				
+					spawnrate="100"
+					particlelife="400"
+					texpostime="400"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/swoosh_add.material"
+					subframepos="true"
+				>
+					<particle
+						startcolor=".90 .2 .1"
+						endcolor="0 0 0" 
+					/>
+				</trailemitter>				
+				
+				<trailemitter
+					rollspeed="300"
+					bone="_bone_weapon2"
+				
+					spawnrate="100"
+					particlelife="400"
+					texpostime="400"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/swoosh_add.material"
+					subframepos="true"
+				>
+					<particle
+						startcolor=".90 .2 .1"
+						endcolor="0 0 0" 
+					/>
+				</trailemitter>
+				
+			<trailemitter
+					rollspeed="300"
+					bone="_bone_weapon3"
+				
+					spawnrate="100"
+					particlelife="400"
+					texpostime="400"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/swoosh_add.material"
+					subframepos="true"
+				>
+					<particle
+						startcolor=".90 .2 .1"
+						endcolor="0 0 0" 
+					/>
+				</trailemitter>
+				
+				/>
+			</model>
+		</model>
+			
+
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

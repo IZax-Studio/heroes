@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Mumra4_Ally"
+
+	icon="icon4.tga"
+
+	anim="ability_4_eyes"
+	casttime="100"
+	castactiontime="100"
+	
+	baselevel="0"
+	maxlevel="3"
+	disabled="true"
+
+	actiontype="target_position"
+	casteffecttype="SuperiorMagic"
+	targetscheme="nonneutral_enemy_units_and_other_ally_heroes"
+	manacost="150"
+	cooldowntime="20000"
+	cooldowntype="Mumra_Ult"
+	casteffect="effects/cast.effect"
+	
+	range="2000,2500,3000"
+	forcerange="2000,2500,3000"
+	targetradius="96"
+	allowoutofboundscast="true"
+	
+	showlinecast="true"
+	linecastrange="2000,2500,3000"
+	linecastwidth="96"
+	
+	showrangeandradiusintooltip="true"
+>
+	<onimpact>
+		<spawnunit name="Gadget_Mumra_Ability4_Marker" count="1" target="source_position" pushentity="true" facing="target_position" />
+		<spawnprojectile name="Projectile_Mumra_Ability4_Boost" source="source_entity" target="target_position" offset="0 96 0" offsetspace="stack_entity" />
+	</onimpact>
+	
+	<modifier key="zing_1" modpriority="90"
+		baselevel="1"
+	/>
+	
+	<modifier key="zing_2" modpriority="90"
+		baselevel="2"
+	/>
+	
+	<modifier key="zing_3" modpriority="90"
+		baselevel="3"
+	/>
+	
+	<modifier key="ult_boost" modpriority="100"
+		disabled="false"
+	/>
+	
+	<altavatar key="Hero_Mumra.Alt6" modpriority="90"
+		icon="../alt6/ability_04/icon.tga"	
+		casteffect="../alt6/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Mumra.Alt7" modpriority="90"
+		casteffect="../alt7/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Mumra.Alt8" modpriority="90"
+		casteffect="../alt7/ability_04/effects/cast.effect"
+	/>
+	
+</ability>

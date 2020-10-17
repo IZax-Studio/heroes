@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Treant_Ability3"
+
+	icon="icon3.tga"
+	
+	passiveeffect=""
+	
+	ishidden="true"
+	deathpersist="true"
+	
+	impactinterval="1000"
+>
+	<onimpact>
+		<addcharges entity="this_proxy_entity" count="0" />
+		<compare a="charges" b="2" op="ge">
+			<compare a="charges" b="3" op="ge">
+				<compare a="charges" b="4" op="ge">
+					<compare a="charges" b="5" op="eq">
+						<setactivemodifierkey name="Treant_Ability3_5" />
+					</compare>
+					<else>
+						<setactivemodifierkey name="Treant_Ability3_4" />
+					</else>
+				</compare>
+				<else>
+					<setactivemodifierkey name="Treant_Ability3_3" />
+				</else>
+			</compare>
+			<else>
+				<setactivemodifierkey name="Treant_Ability3_2" />
+			</else>
+		</compare>
+	</onimpact>
+	
+	<modifier key="Treant_Ability3_2" modpriority="60"
+		passiveeffect=""
+	/>
+	
+	<modifier key="Treant_Ability3_3" modpriority="60"
+		passiveeffect=""
+	/>
+	
+	<modifier key="Treant_Ability3_4" modpriority="60"
+		passiveeffect=""
+	/>
+	
+	<modifier key="Treant_Ability3_5" modpriority="60"
+		passiveeffect=""
+	/>
+</state>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Monarch_Ability1"
+
+	speed="1000"
+	gravity="2500"
+	
+	canturn="false"
+
+	modelscale=".9"
+	model="/shared/models/invis.mdf"
+	traileffect="effects/trail.effect"
+	effectscale="1.0"
+	impacteffect="effects/impact.effect"
+>
+
+	<altavatar key="Hero_Monarch.Alt4"
+		traileffect="/heroes/monarch/alt4/ability_01/effects/trail.effect"
+		impacteffect="/heroes/monarch/alt4/ability_01/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Monarch.Alt5"
+		traileffect="/heroes/monarch/alt5/ability_01/effects/trail.effect"
+		impacteffect="/heroes/monarch/alt5/ability_01/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Monarch.Alt6"
+		traileffect="/heroes/monarch/alt6/ability_01/effects/trail.effect"
+		impacteffect="/heroes/monarch/alt6/ability_01/effects/impact.effect"
+	/>
+
+	<altavatar key="Hero_Monarch.Alt7"
+		traileffect="/heroes/monarch/alt7/ability_01/effects/trail.effect"
+		impacteffect="/heroes/monarch/alt7/ability_01/effects/impact.effect"
+	/>
+
+</projectile>

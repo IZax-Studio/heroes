@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Nomad_Ability1_Enemies"
+
+	passiveeffect=""
+	movespeedslow=".15,.2,.25,.3"
+	icon="icon1.tga"
+
+	negativeeffect="slowed"
+	
+>
+
+	<altavatar key="Hero_Nomad.Alt7"
+		icon="../alt7/ability_1/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Nomad.Alt11"
+		icon="../alt11/ability_01/icon.tga"
+	/>
+
+	<altavatar key="Hero_Nomad.Alt12"
+        icon="../alt12/ability_01/icon.tga"
+	>
+		<modifier key="nomadAlt12_Ability1_Upgrade"
+			icon="../alt12/ability_01/icon_u.tga"
+		/>
+	</altavatar>
+	
+</state>

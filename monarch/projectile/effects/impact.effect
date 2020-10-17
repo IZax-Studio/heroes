@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="entity" scale="1">
+			 		
+					
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1500"
+				volume="1"
+				sample="/heroes/monarch/sounds/impact_%.wav"
+			/>
+
+			<simpleemitter
+				life="700"
+				count="50"
+				position="0 0 100"
+				spawnrate="14125"
+				particlelife="500"
+				minspeed="0"
+				maxspeed="250"
+				drag=".01"
+				inheritvelocity=".25"
+				offsetsphere="10 10 10"
+				gravity="2"
+				material="/shared/effects/materials/flare_03.material"
+			>
+				<particle
+					color="1 1 1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					startsize="25"
+					endsize="0"
+					depthbias="-160"
+				/>
+			</simpleemitter>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor=".5"
+				endcolor="0 0 0"
+				life="300"
+				startsize="50"
+				endsize="300"
+				depthbias="-50"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/corona_06.material"
+				startcolor=".3"
+				endcolor="0 0 0"
+				life="400"
+				startsize="0"
+				endsize="200"
+				lockup="1"
+				pitch="90"
+			/>
+	
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

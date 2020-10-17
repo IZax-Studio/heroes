@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" >
+	<definitions>
+		<particlesystem name="system0" space="world" scale="2" >
+			
+			<simpleemitter
+				spawnrate="10"
+				count="6"
+				particlelife="5500"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="true"
+				>
+					<model
+						position="0 0 0"
+						scale=".4"
+						minlife="300"
+						maxlife="300"
+						model="../../hd_monkey_king/model.mdf"
+						anim="ability_4_attack2"
+						color="5 2.5 1"
+						startalpha=".5"
+						endalpha="0"
+					>
+					</model>
+					
+					<model
+						position="0 0 0"
+						scale=".4"
+						minlife="300"
+						maxlife="300"
+						model="../../hd_monkey_king/model.mdf"
+						anim="ability_4_attack2"
+						material="/shared/effects/materials/shell2.material"
+						color="0 0 2"
+						startalpha=".5"
+						endalpha="0"
+					>
+					</model>
+					
+				</particle>
+			</simpleemitter>
+			
+			
+			<simpleemitter
+				spawnrate="10"
+				count="1"
+				particlelife="5500"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="true"
+				>
+					<model
+						position="0 0 0"
+						scale=".4"
+						life="500"
+						model="../../hd_monkey_king/model.mdf"
+						anim="ablity_1_clone1"
+						color="1 1 1"
+						startalpha=".75"
+						midalpha=".75"
+						endalpha="0"
+						midalphapos=".5"
+					>
+					</model>
+					
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="6"
+				count="1"
+				particlelife="5500"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="true"
+				>
+					<model
+						position="0 0 0"
+						scale=".4"
+						life="600"
+						model="../../hd_monkey_king/model.mdf"
+						anim="ablity_1_clone3"
+						color="1 1 1"
+						startalpha=".75"
+						midalpha=".75"
+						endalpha="0"
+						midalphapos=".5"
+					>
+					</model>
+					
+				</particle>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

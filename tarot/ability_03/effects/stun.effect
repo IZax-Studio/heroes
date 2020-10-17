@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			
+			<sound 
+			    forcestereo="true"
+			    norestart="true"
+			    channel="54432"
+			    life="5000"
+				linearfalloff="true" 
+				falloffstart="600"
+				falloffend="1300"
+				volume="1" 
+				sample="../sounds/stretch_impact.wav"
+			/>
+				
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+
+
+
+	<particlesystem name="system0" space="world" scale="1">
+		
+
+
+					<model
+						life="45000"
+						anim="idle"
+						model="/heroes/pollywogpriest/ability_04/wards/top.mdf"
+						material="/shared/effects/materials/shell2.material"
+						color="2 1 0"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".6"
+					/>
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />		
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

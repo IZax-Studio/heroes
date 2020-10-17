@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0" >
+			<sound
+			    soundloop="true"
+				randomloop="true"
+				fadein="500"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume="1"
+				sample="/heroes/parallax/ability_04/sounds/loop.wav"
+			/>
+			
+			<!--
+			<groundsprite
+				timenudge="1"
+				owner="source"
+				size="120"
+				material="/shared/effects/materials/fire_ground.material"
+				color="1 .5 0"
+			/>
+
+			<groundsprite
+				timenudge="1"
+				owner="target"
+				size="120"
+				material="/shared/effects/materials/fire_ground.material"
+				color="1 .5 0"
+			/>
+		-->
+
+			<!-- Setting up some controlling positions to use as reference points in emitters -->
+			<controller
+				timenudge="1"
+				name="herp1"
+				owner="target"
+				lookat="true"
+				lookatowner="source"
+				position=".1 0 0"
+			/>
+			<controller
+				timenudge="1"
+				name="herp2"
+				owner="herp1"
+				position="100 0 0"
+			/>
+			<controller
+				timenudge="1"
+				name="herp3"
+				owner="herp1"
+				position="-100 0 0"
+			/>
+
+			<controller
+				timenudge="1"
+				name="derp1"
+				owner="source"
+				lookat="true"
+				lookatowner="target"
+				position=".1 0 0"
+			/>
+			<controller
+				timenudge="1"
+				name="derp2"
+				owner="derp1"
+				position="-100 0 0"
+			/>
+			<controller
+				timenudge="1"
+				name="derp3"
+				owner="derp1"
+				position="100 0 0"
+			/>
+
+			<controller
+				timenudge="1"
+				name="herp"
+				owner="herp2"
+				lookat="true"
+				lookatowner="derp2"
+			/>
+			<controller
+				timenudge="1"
+				name="derp"
+				owner="herp3"
+				lookat="true"
+				lookatowner="derp3"
+			/>
+
+			
+
+			<!-- ======================================== Inner area ============================================== -->
+			<template name="inner_area_particle" >
+				<particle
+					maxangle="360"
+					startanchor="1"
+					endanchor="0"
+					startcolor="0"
+					midcolor="1 .5 0"
+					endcolor="0"
+					midcolorpos=".25"
+					minsize="5"
+					maxsize="10"
+					startscale="1"
+					endscale="2"
+				/>
+			</template>
+			<twopointemitter
+				owner_a="herp1"
+				owner_b="derp1"
+				spawnrate="20"
+				minparticlelife="600"
+				maxparticlelife="1000"
+				offsetsphere="60 60 0"
+				direction="0 0 1"
+				angle="60"
+				maxspeed="20"
+				gravity="-10"
+				material="/shared/effects/materials/flame.material"
+			>
+				<instance name="inner_area_particle" />
+			</twopointemitter>
+			<simpleemitter
+				owner="herp1"
+				spawnrate="15"
+				minparticlelife="600"
+				maxparticlelife="1000"
+				offsetsphere="120 120 0"
+				direction="0 0 1"
+				angle="60"
+				maxspeed="20"
+				gravity="-10"
+				color="1 .5 0"
+				material="/shared/effects/materials/phantom_smoke_18.material"
+			>
+				<instance name="inner_area_particle" />
+			</simpleemitter>
+
+			<template name="inner_area_groundsprite" >
+				<particle>
+					<terrainemitter
+						count="1"
+						minparticlelife="400"
+						maxparticlelife="500"
+						material="/shared/effects/materials/circuits_reveal.material"
+					>
+						<particle
+							maxangle="360"
+							startframe="1"
+							minendframe="0.25"
+							maxendframe="0.5"
+							minsize="40"
+							maxsize="100"
+							startcolor="1 .5 0"
+							midcolor="1 .5 0"
+							endcolor="0"
+							lockup="true"
+							lockright="true"
+							pitch="-90"
+						/>
+					</terrainemitter>
+				</particle>
+			</template>
+			<twopointemitter
+				owner_a="herp1"
+				owner_b="derp1"
+				spawnrate="30"
+				particlelife="500"
+				offsetsphere="50 50 0"
+				color="1 .5 0"
+			>
+				<instance name="inner_area_groundsprite" />
+			</twopointemitter>
+			<simpleemitter
+				owner="herp1"
+				spawnrate="15"
+				particlelife="500"
+				offsetsphere="80 80 0"
+			>
+				<instance name="inner_area_groundsprite" />
+			</simpleemitter>
+
+
+			<!-- ================================= Walls to define the area connecting parallax and the helix ================================= -->
+			<template name="wall">
+			<!--
+				<beam
+					owner_a="{o_a}"
+					owner_b="{o_b}"
+					position_a="0 0 5"
+					position_b="0 0 5"
+					material="/shared/effects/materials/beam_01.material"
+					size="10"
+					color="1 .5 0"
+				/>
+			-->
+
+			<!--
+				<twopointemitter
+					timenudge="1500"
+					owner_a="{o_a}"
+					owner_b="{o_b}"
+					spawnrate="40"
+					particlelife="600"
+					material="/shared/effects/materials/fire_reveal.material"
+					direction="{dir}"
+					angle="0"
+					speed="200"
+					drag="0.02"
+					gravity="-5"
+					texposscale="0"
+					texstretchscale="1"
+				>
+					<particle
+						startcolor="0"
+						endcolor="1 .5 0"
+						maxangle="360"
+						minsize="10"
+						maxsize="50"
+						startframe="1"
+						midframe="0"
+						endframe="1"
+						midframepos=".2"
+						startanchor=".75"
+						endanchor="0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="1"
+					/>
+				</twopointemitter>
+			-->
+
+				<twopointemitter
+					timenudge="1500"
+					owner_a="{o_a}"
+					owner_b="{o_b}"
+					position_a="0 0 50"
+					position_b="0 0 50"
+					spawnrate="30"
+					minparticlelife="300"
+					maxparticlelife="600"
+					material="/shared/effects/materials/flare_02.material"
+					direction="{dir}"
+					angle="0"
+					minspeed="150"
+					maxspeed="200"
+					gravity="-10"
+					texposscale="0"
+					texstretchscale="1"
+				>
+					<particle
+						startframe="0"
+						midframe=".35"
+						endframe="0"
+						midframepos=".25"
+						maxangle="360"
+						minscale="8"
+						maxscale="16"
+						startanchor="1"
+						endanchor=".5"
+						param=".6"
+						color="1 .5 0"
+					/>
+				</twopointemitter>
+
+				<twopointtrailemitter
+					owner_a="{o_a}"
+					owner_b="{o_b}"
+					spawnrate="30"
+					particlelife="160"
+					material="smoke_scrolling_trail.material"
+					direction="{dir}"
+					angle="0"
+					speed="800"
+					texposscale="0"
+					texstretchscale="1.0"
+					attachtoemitter="true"
+				>
+					<particle
+						startcolor="1 .5 0"
+						midcolor="1 .5 0"
+						endcolor="1 .5 0"
+						midcolorpos=".6"
+						startalpha="0"
+						midalpha="1"
+						endalpha="1"
+						midalphapos=".15"
+					/>
+				</twopointtrailemitter>
+
+			<!--
+				<twopointtrailemitter
+					owner_a="{o_a}"
+					owner_b="{o_b}"
+					spawnrate="45"
+					particlelife="240"
+					material="/shared/effects/materials/refract_hexgrid.material"
+					direction="0 0 1"
+					angle="0"
+					speed="750"
+					texposscale="-1"
+					texpostime="4000"
+					texstretchscale=".5"
+					attachtoemitter="true"
+				>
+					<particle
+						startcolor="1 .5 0"
+						endcolor="1"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".1"
+						startparam="0.04"
+						endparam="0"
+					/>
+				</twopointtrailemitter>
+			-->
+
+				<twopointtrailemitter
+					owner_a="{o_a}"
+					owner_b="{o_b}"
+					spawnrate="45"
+					particlelife="240"
+					material="/core/materials/effect_solid_add.material"
+					direction="0 0 1"
+					angle="0"
+					speed="500"
+					texposscale="-1"
+					texpostime="4000"
+					texstretchscale=".5"
+					attachtoemitter="true"
+				>
+					<particle
+						startcolor="0"
+						midcolor="0 .05 .1"
+						endcolor="0"
+						midcolorpos=".25"
+					/>
+				</twopointtrailemitter>
+			</template>
+			<instance name="wall" o_a="herp" o_b="derp2" dir="0 1 1" />
+			<instance name="wall" o_a="derp" o_b="derp3" dir="0 -1 1" />
+
+
+			<template name="side_emitter">
+				<twopointemitter
+					position="0 0 20"
+					offsetsphere="0 0 20"
+					owner_a="{o_a}"
+					owner_b="{o_b}"
+					spawnrate="100"
+					minparticlelife="300"
+					maxparticlelife="400"
+					direction="{direction}"
+					angle="0"
+					minspeed="{minspeed}"
+					maxspeed="{maxspeed}"
+					material="/shared/effects/materials/flame.material"
+					particlealpha=".65"
+					particlescale="{scale}"
+				>
+					<particle
+						turn="1"
+						minheight="40"
+						maxheight="60"
+						minwidth="60"
+						maxwidth="120"
+						minanglespeed="-50"
+						maxanglespeed="50"
+						startcolor="1 .5 0"
+						endcolor="1 .5 0"
+						startframe="1"
+						midframe=".25"
+						endframe="1"
+						midframepos=".2"
+						lockup="true"
+						lockright="true"
+						pitch="-90"
+						startalpha="1"
+						endalpha="0"
+					/>
+					<particle
+						turn="1"
+						minheight="40"
+						maxheight="60"
+						minwidth="60"
+						maxwidth="120"
+						minanglespeed="-50"
+						maxanglespeed="50"
+						startcolor="1 .5 0"
+						endcolor="1 .5 0"
+						startframe="1"
+						midframe=".25"
+						endframe="1"
+						midframepos=".2"
+						lockup="true"
+						lockright="true"
+						pitch="-90"
+						startalpha="1"
+						endalpha="0"
+					/>
+					<particle
+						turn="1"
+						minwidth="40"
+						maxwidth="60"
+						minheight="50"
+						maxheight="100"
+						angle="90"
+						minanglespeed="-50"
+						maxanglespeed="50"
+						startcolor="1 .5 0"
+						endcolor="1 .5 0"
+						startframe="1"
+						midframe=".25"
+						endframe="1"
+						midframepos=".2"
+						lockup="true"
+						lockright="true"
+						pitch="-90"
+						startalpha="1"
+						endalpha="0"
+					/>
+					<particle
+						turn="1"
+						minwidth="40"
+						maxwidth="60"
+						minheight="50"
+						maxheight="100"
+						angle="-90"
+						minanglespeed="-50"
+						maxanglespeed="50"
+						startcolor="1 .5 0"
+						endcolor="1 .5 0"
+						startframe="1"
+						midframe=".25"
+						endframe="1"
+						midframepos=".2"
+						lockup="true"
+						lockright="true"
+						pitch="-90"
+						startalpha="1"
+						endalpha="0"
+					/>
+				</twopointemitter>
+			</template>
+			<instance name="side_emitter" direction="-1 0 0" o_a="herp" o_b="derp2" minspeed="50" maxspeed="80" scale="1.0" />
+			<instance name="side_emitter" direction="1 0 0" o_a="herp" o_b="derp2" minspeed="20" maxspeed="40" scale="1" />
+			<instance name="side_emitter" direction="-1 0 0" o_a="derp" o_b="derp3" minspeed="20" maxspeed="40" scale="1" />
+			<instance name="side_emitter" direction="1 0 0" o_a="derp" o_b="derp3" minspeed="50" maxspeed="80" scale="1.0" />
+
+
+
+			<!-- =========================== Semi-circle to define the affector radius around the helix ============================ -->
+			<!-- smoke -->
+			<model
+				model="arcmesh.mdf"
+				owner="herp1"
+				name="burp"
+				anim="idle"
+				scale="1.45"
+				color="1 .5 0"
+			/>
+
+			<!-- refraction -->
+		<!--
+			<model
+				timenudge="1"
+				model="arc_refract.mdf"
+				owner="herp1"
+				name="burp"
+				anim="idle"
+				scale="1.45"
+				color="1 .5 0"
+				param0=".04"
+			/>
+		-->
+
+			<!-- color -->
+			<!--
+			<model
+				timenudge="1"
+				model="arc_refract.mdf"
+				material="unlit.material"
+				owner="herp1"
+				name="burp"
+				anim="idle"
+				scale="1.45"
+				color="1 .5 0"
+			/>
+		-->
+
+
+			<!-- Orbiters are kind of confusing... -->
+			<!-- X is yaw measured in radians, Y is height and Z is radius measured in world units -->
+			<!-- if we disabled cylindrical, Y would be pitch and would be measured in radians -->
+		<!--
+			<orbiteremitter
+				owner="herp1"
+				spawnrate="40"
+				direction="0 0 1"
+				origin="-1.7 0 100"
+				offset="1.57 0 0"
+				orbit=".01 1 0"
+				particlelife="600"
+				material="/shared/effects/materials/phantom_white_reveal.material"
+				angle="0"
+				speed="200"
+				drag="0.02"
+				cylindrical="true"
+			>
+				<particle
+					startcolor="1 .5 0"
+					midcolor="0"
+					endcolor="0"
+					maxangle="360"
+					minsize="10"
+					maxsize="50"
+					startframe="1"
+					midframe="0"
+					endframe="1"
+					midframepos=".2"
+					startanchor=".75"
+					endanchor="0"
+					startalpha="0"
+					endalpha="1"
+				/>
+			</orbiteremitter>
+		-->
+
+			<orbiteremitter
+				owner="herp1"
+				spawnrate="100"
+				minparticlelife="400"
+				maxparticlelife="800"
+				material="/shared/effects/materials/sparks_reveal_gradient_01.material"
+				direction="0 0 1"
+				position="0 0 25"
+				origin="-1.5 0 100"
+				offset="1.57 0 0"
+				orbit=".0075 1 0"
+				angle="0"
+				speed="150"
+				cylindrical="true"
+			>
+				<particle
+					midcolorpos=".4"
+					startframe="0"
+					midframe=".35"
+					endframe="0"
+					midframepos=".25"
+					maxangle="360"
+					minscale="10"
+					maxscale="20"
+					width="1"
+					height="2"
+					startanchor="1"
+					endanchor=".5"
+					param=".5"
+					color="1 .5 0"
+				/>
+			</orbiteremitter>
+
+			<template name="arc_flames">
+				<orbiteremitter
+					position="0 0 20"
+					offsetsphere="0 0 20"
+					owner="herp1"
+					spawnrate="50"
+					minparticlelife="300"
+					maxparticlelife="400"
+					direction="0 0 1"
+					origin="-1.7 0 100"
+					offset="1.57 0 0"
+					orbit="{orbit}"
+					angle="0"
+					minspeed="{minspeed}"
+					maxspeed="{maxspeed}"
+					material="/shared/effects/materials/flame.material"
+					cylindrical="true"
+					particlealpha=".65"
+				>
+					<particle
+						minsize="50"
+						maxsize="70"
+						maxangle="360"
+						minanglespeed="-50"
+						maxanglespeed="50"
+						startcolor="0"
+						endcolor="1 .5 0"
+						startframe="1"
+						midframe=".25"
+						endframe="1"
+						midframepos=".2"
+						lockup="true"
+						lockright="true"
+						pitch="-90"
+						startalpha="1"
+						endalpha="0"
+					/>
+				</orbiteremitter>
+			</template>
+			<instance name="arc_flames" orbit="0 0 -1" minspeed="50" maxspeed="60" />
+			<instance name="arc_flames" orbit="0 0 1" minspeed="50" maxspeed="60" />
+
+			<!-- lightning -->
+			<!-- <billboard
+				owner="target"
+				position="0 0 110"
+				material="/shared/effects/materials/whitedot.material"
+				height="40"
+				width="20"
+				color="1 .5 0"
+			/> -->
+			<simpleemitter
+				owner="target"
+				position="0 0 110"
+				offsetsphere="0 0 10"
+				spawnrate="5"
+				particlelife="1500"
+			>
+				<template name="lightning_particle">
+					<particle anchor="1">
+						<billboard
+							minlife="400"
+							maxlife="1000"
+							maxdelay="500"
+							material="/shared/effects/materials/flame.material"
+							flare="1"
+							minwidth="40"
+							maxwidth="80"
+							minheight="20"
+							maxheight="125"
+							maxroll="360"
+							yaw="{yaw}"
+							startcolor="1 .5 0"
+							midcolor=".125"
+							endcolor="0"
+							midcolorpos=".15"
+							minscale=".25"
+							maxscale="1"
+						/>
+					</particle>
+				</template>
+				<instance name="lightning_particle" yaw="0" />
+				<instance name="lightning_particle" yaw="180" />
+			</simpleemitter>
+
+		<!--
+			<model
+				scale="0.75"
+				owner="target"
+				position="0 0 110"
+				timenudge="1"
+				model="/shared/effects/models/sphere3/model.mdf"
+				material="../../ability_04/effects/unlit.material"
+				color="1 .5 0"
+				expirelife="100"
+				directionalspace="global"
+			/>
+		-->
+			<model
+				scale="0.5"
+				owner="target"
+				position="0 0 100"
+				timenudge="1"
+				model="/shared/effects/models/sphere3/model.mdf"
+				material="../../ability_04/effects/arc_refract.material"
+				color="1 .5 0"
+				expirelife="100"
+				startalpha="1"
+				endalpha="0"
+				directionalspace="global"
+				param0=".025"
+			/>
+
+
+			<![CDATA[
+			<!-- swirly chains -->
+			<model
+				owner="herp1"
+				timenudge="1"
+				position="0 0 15"
+				model="/shared/models/invis.mdf"
+				yawspeed="500"
+			>
+				<template name="swirlyTrail">
+					<!-- glow underneath -->
+					<groundsprite
+						position="{position}"
+						material="/shared/effects/materials/whitedot_blend.material"
+						color="1 .5 0"
+						size="10"
+					/>
+					<groundsprite
+						position="{position}"
+						material="/shared/effects/materials/whitecircle_blend.material"
+						color="1 .5 0"
+						size="3"
+					/>
+					<groundsprite
+						position="{position}"
+						material="/shared/effects/materials/black_spot2.material"
+						color="1 .5 0"
+						size="2"
+					/>
+
+					<trailemitter
+						position="{position}"
+						spawnrate="20"
+						particlelife="500"
+						direction="{dir}"
+						speed="400"
+						angle="0"
+						texposscale="0"
+						texstretchscale="2"
+						material="/shared/effects/materials/smoke_scrolling_trail.material"
+						attachtoemitter="true"
+					>
+						<particle
+							startsize="5"
+							endsize="15"
+							color="1 .5 0"
+							startalpha=".75"
+							endalpha="0"
+						/>
+					</trailemitter>
+
+					<trailemitter
+						position="{position}"
+						spawnrate="20"
+						particlelife="400"
+						direction="{dir}"
+						speed="400"
+						angle="0"
+						drag="0.0"
+						texposscale="2"
+						texpostime="150"
+						texstretchscale="-0.5"
+						material="/shared/effects/materials/metal_trail.material"
+						attachtoemitter="true"
+					>
+						<particle
+							size="12"
+							color="1 .5 0"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							midalphapos=".75"
+						/>
+					</trailemitter>
+				</template>
+				<instance name="swirlyTrail" position="40 0 0" dir="0 0 1" />
+				<instance name="swirlyTrail" position="-40 0 0" dir="0 0 1" />
+			</model>
+			]]>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

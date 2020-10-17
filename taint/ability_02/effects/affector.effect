@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" disable2dworld="true">
+	<definitions>
+	
+		<particlesystem name="system0" space="entity" scale="2.5">
+
+			<sound
+				sample="/heroes/taint/ability_02/sounds/cast.wav"
+				volume="1"
+				linearfalloff="true"
+				falloffstart="100"
+				falloffend="2000"
+			/>
+			
+			<sound
+				sample="/heroes/taint/sounds/custom/ab2.wav"
+				volume=".3"
+				linearfalloff="true"
+				falloffstart="100"
+				falloffend="2000"
+			/>
+			
+			<simpleemitter
+				count="1"
+				spawnrate="1000"
+				particlelife="5000"
+				position="0 0 0"
+				direction="0 1 0"
+			>
+				<particle
+				>
+					<model
+						position="0 0 -7"
+						life="1500"
+						anim="idle"
+						model=""
+						scale=".8"
+						color="1 1 1"
+						startalpha=".5"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".85"
+						minyaw="0"
+						maxyaw="360"
+					>
+
+						<groundsprite
+							bone="_bone_fx_05"
+							life="1400"
+							material="/shared/effects/materials/dirtpile_groundsprite.material"
+							size="70"
+							color=".75"
+							startalpha=".75"
+							midalpha=".75"
+							endalpha="0"
+							midalphapos=".85"
+							minyaw="0"
+							maxyaw="360"
+							position="0 0 0"
+						/>
+
+						<groundsprite
+							bone="_bone_fx_05"
+							life="1400"
+							material="/shared/effects/materials/ground_smash_overlay.material"
+							size="20"
+							color="1 1 1"
+							startalpha=".85"
+							midalpha=".85"
+							endalpha="0"
+							midalphapos=".95"
+							width="60"
+						/>
+
+						<groundsprite
+							bone="_bone_fx_05"
+							life="1400"
+							material="/shared/effects/materials/ground_scorch.material"
+							startsize="60"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							midalphapos=".95"
+							maxyaw="360"
+						/>
+						
+						<template name="dirt">
+							<groundsprite
+								bone="{bone}"
+								life="1400"
+								material="/shared/effects/materials/dirtpile_groundsprite.material"
+								minsize="50"
+								maxsize="55"
+								color=".75"
+								startalpha=".5"
+								midalpha=".5"
+								endalpha="0"
+								midalphapos=".85"
+								position="0 0 0"
+								directionalspace="local"
+							/>
+							
+							<simpleemitter
+								bone="{bone}"
+								spawnrate="20"
+								minparticlelife="200"
+								maxparticlelife="500"
+								gravity="50"
+								minspeed="1000"
+								maxspeed="1500"
+								drag=".075"
+								offsetsphere="0 0 3"
+								material="/shared/effects/materials/flare1_add.material"
+								position="0 0 50"
+								expirelife="200"
+								life="1000"
+								direction="0 0 1"
+								minangle="0"
+								maxangle="10"
+							>
+								<particle 
+									startcolor=".8 .8 1"
+									endcolor="0 0 0"
+									startsize="10"
+									minendsize="50"
+									maxendsize="70"
+									startalpha="1"
+									midalpha="1"
+									endalpha="0"
+								/>
+								<particle 
+									startcolor="1 1 1"
+									endcolor="0 0 0"
+									startsize="20"
+									minendsize="40"
+									maxendsize="80"
+									startalpha="1"
+									midalpha="1"
+									endalpha="0"
+								/>
+							</simpleemitter>
+							
+							<simpleemitter
+								bone="{bone}"
+								spawnrate="1000"
+								minparticlelife="200"
+								maxparticlelife="500"
+								gravity="50"
+								minspeed="1000"
+								maxspeed="2000"
+								drag=".05"
+								material="/shared/effects/materials/electric_impact_add.material"
+								position="0 0 10"
+								expirelife="200"
+								life="1000"
+								direction="0 0 1"
+								minangle="0"
+								maxangle="20"
+							>
+								<particle 
+									startcolor=".15 .8 1"
+									endcolor="0 0 0"
+									minstartsize="3"
+									maxstartsize="10"
+									endsize="0"
+									startalpha="1"
+									midalpha="1"
+									endalpha="0"
+								/>
+							</simpleemitter>
+
+							<groundsprite
+								bone="{bone}"
+								life="1400"
+								material="/shared/effects/materials/ground_smash_overlay.material"
+								minsize="10"
+								maxsize="25"
+								color="1 1 1"
+								startalpha=".65"
+								midalpha=".65"
+								endalpha="0"
+								midalphapos=".95"
+								minwidth="20"
+								directionalspace="local"
+							/>
+
+							<groundsprite
+								bone="{bone}"
+								life="1400"
+								material="/shared/effects/materials/ground_scorch.material"
+								minsize="22"
+								maxsize="30"
+								startalpha=".75"
+								midalpha=".75"
+								endalpha="0"
+								midalphapos=".95"
+								directionalspace="local"
+							/>
+
+							<simpleemitter
+								bone="{bone}"
+								count="25"
+								particlelife="1250"
+								spawnrate="650"
+								minspeed="100"
+								maxspeed="750"
+								gravity="10"
+								direction="0 0 1"
+								minangle="0"
+								maxangle="25"
+								drag="0.01"
+								material="/shared/effects/materials/sand_blend.material"
+								offsetsphere="25 25 10"
+								position="0 0 10"
+							>
+								<particle 
+									minangle="0"
+									maxangle="360"
+									minanglespeed="-60"
+									maxanglespeed="60"
+									startsize="20"
+									endsize="50"
+									color=".5 .4 .25"
+									startalpha=".25"
+									midalpha=".25"
+									endalpha="0"
+									startstickiness="0"
+									endstickiness=".4"
+								/>
+							</simpleemitter>
+
+							<simpleemitter
+								bone="{bone}"
+								count="10"
+								minparticlelife="500"
+								maxparticlelife="1000"
+								spawnrate="35"
+								minspeed="250"
+								maxspeed="350"
+								gravity="20"
+								direction="0 0 1"
+								minangle="0"
+								maxangle="1"
+								drag="0.01"
+								material="/shared/effects/materials/pyroclast_03.material"
+								offsetsphere="15 15 10"
+								position="0 0 0"
+							>
+								<particle
+									depthbias="-100"
+									color=".5 .45 .35"
+									minheight="100"
+									maxheight="200"
+									startwidth="25"
+									endwidth="100"
+									startscale="1"
+									endscale="2"
+									startalpha=".5"
+									endalpha="0"
+									lockup="1"
+									lockright="1"
+									minyaw="0"
+									maxyaw="360"
+									yawspeed="-35"
+								/>
+							</simpleemitter>
+
+							<simpleemitter
+								bone="{bone}"
+								count="1"
+								spawnrate="50"
+								particlelife="3000"
+								gravity="0"
+								speed="0"
+								drag="0"
+								acceleration="0"
+								position="0 0 0"
+								offsetsphere="0 0 0"
+							>
+								<particle>
+									<model
+										bone="{bone}"
+										position="0 0 -3"
+										life="1500"
+										name="emitter0"
+										anim="idle"
+										model="/heroes/midas/ability_01/effects/gold_pieces/model.mdf"
+										material="/heroes/sand_wraith/ability_01/effects/material.material"
+										scale=".125"
+										startcolor=".5"
+										endcolor=".5"
+										startalpha="1"
+										endalpha="0"
+										minyaw="0"
+										maxyaw="45"
+									>
+									</model>
+									
+									<model
+										bone="{bone}"
+										position="0 0 0"
+										life="1500"
+										name="emitter0"
+										anim="idle"
+										model="/heroes/moraxus/ability_01/effects/rocks/model.mdf"
+										material="/heroes/sand_wraith/ability_01/effects/material.material"
+										scale=".1"
+										startcolor=".5"
+										endcolor=".5"
+										startalpha="1"
+										endalpha="0"
+										minyaw="65"
+										maxyaw="110"
+									>
+									</model>
+								</particle>
+								
+							</simpleemitter>
+
+						</template>	
+						
+						<instance name="dirt" bone="_bone_fx_01"/>
+						<instance name="dirt" bone="_bone_fx_02"/>
+						<instance name="dirt" bone="_bone_fx_03"/>
+						<instance name="dirt" bone="_bone_fx_04"/>
+						<instance name="dirt" bone="_bone_fx_05"/>
+
+						<simpleemitter
+							bone="_bone_fx_05"
+							count="2"
+							spawnrate="50"
+							particlelife="3000"
+							gravity="0"
+							speed="0"
+							drag="0"
+							acceleration="0"
+							position="0 0 0"
+							offsetsphere="0 0 0"
+						>
+							<particle>
+								<model
+									bone="_bone_fx_05"
+									position="0 0 -3"
+									life="1500"
+									name="emitter0"
+									anim="idle"
+									model="/heroes/midas/ability_01/effects/gold_pieces/model.mdf"
+									material="/heroes/sand_wraith/ability_01/effects/material.material"
+									scale=".25"
+									startcolor=".5"
+									endcolor=".5"
+									startalpha="1"
+									endalpha="0"
+									minyaw="0"
+									maxyaw="45"
+								>
+								</model>
+								
+								<model
+									bone="_bone_fx_05"
+									position="0 0 0"
+									life="1500"
+									name="emitter0"
+									anim="idle"
+									model="/heroes/moraxus/ability_01/effects/rocks/model.mdf"
+									material="/heroes/sand_wraith/ability_01/effects/material.material"
+									scale=".175"
+									startcolor=".5"
+									endcolor=".5"
+									startalpha="1"
+									endalpha="0"
+									minyaw="65"
+									maxyaw="110"
+								>
+								</model>
+							</particle>
+						</simpleemitter>
+
+						<orbiteremitter
+							life="1000"
+							position="0 0 0"
+							spawnrate="500"
+							minparticlelife="750"
+							maxparticlelife="1000"
+							origin="0 0 -150" 
+							orbit="0 0 250" 
+							direction="0 0 1" 
+							offset="35 0 0"
+							cylindrical="true" 
+							material="/shared/effects/materials/pyroclast_02.material"
+							depthbias="-75"
+						>
+							<particle 
+								minangle="0"
+								maxangle="0"
+								minanglespeed="-180"
+								maxanglespeed="180"
+								color=".5 .45 .4"
+								startframe="0"
+								endframe="1"
+								minsize="75"
+								maxsize="125"
+								startalpha="0"
+								midalpha=".075"
+								endalpha="0"
+								midalphapos=".25"
+							/>
+						</orbiteremitter>
+
+						<orbiteremitter
+							life="800"
+							position="0 0 0"
+							spawnrate="100"
+							minparticlelife="750"
+							maxparticlelife="1000"
+							origin="0 0 -130" 
+							orbit="0 0 0" 
+							direction="0 0 1" 
+							offset="35 0 0"
+							cylindrical="true" 
+							material="/shared/effects/materials/flare_03.material"
+							depthbias="-25"
+						>
+							<particle 
+								minangle="0"
+								maxangle="0"
+								minanglespeed="0"
+								maxanglespeed="0"
+								startcolor=".1 .5 .5"
+								endcolor="0 0 0"
+								startframe="0"
+								endframe="1"
+								minsize="75"
+								maxsize="125"
+								startalpha="0"
+								midalpha=".1"
+								endalpha="0"
+								midalphapos=".25"
+								minheight="500"
+								maxheight="600"
+								width="25"
+								lockup="1"
+								lockright="1"
+							/>
+						</orbiteremitter>
+						
+						<orbiteremitter
+							life="800"
+							position="0 0 0"
+							spawnrate="50"
+							minparticlelife="750"
+							maxparticlelife="1000"
+							origin="0 0 -25" 
+							orbit="0 0 0" 
+							direction="0 0 1" 
+							offset="35 0 0"
+							cylindrical="true" 
+							material="/shared/effects/materials/flare_03.material"
+							depthbias="-50"
+						>
+							<particle 
+								minangle="0"
+								maxangle="0"
+								minanglespeed="0"
+								maxanglespeed="0"
+								startcolor=".1 .5 .5"
+								endcolor="0 0 0"
+								startframe="0"
+								endframe="1"
+								minsize="75"
+								maxsize="125"
+								startalpha="0"
+								midalpha=".15"
+								endalpha="0"
+								midalphapos=".25"
+								minheight="500"
+								maxheight="850"
+								width="25"
+								lockup="1"
+								lockright="1"
+							/>
+						</orbiteremitter>
+
+					</model>
+				</particle>
+			</simpleemitter>
+
+			<groundsprite
+				life="1000"
+				delay="0"
+				timenudge="0"
+				material="/shared/effects/materials/circle_02.material"
+				size="115"
+				startcolor=".1 .3 .5"
+				midcolor=".1 .3 .5"
+				endcolor="0 0 0"
+				midcolorpos=".85"
+				yawspeed="0"
+			/>
+			
+			<groundsprite
+				life="500"
+				delay="250"
+				timenudge="0"
+				material="/shared/effects/materials/circle_02.material"
+				size="115"
+				startcolor="0 0 0"
+				midcolor=".25 .3 .5"
+				endcolor="0 0 0"
+				midcolorpos=".5"
+				yawspeed="0"
+			/>
+
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+	   <spawnmodifier instance="instance1" modifier="modifier0"/>  
+	    <camerashake2 scale="5.0" radius="600" duration="200" frequency="22" />
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

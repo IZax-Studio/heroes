@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+	
+		<modifier
+			alpha="0"
+		/>
+	
+		<particlesystem name="system0" space="entity" scale="1.0">
+			
+			<model
+				life="4750"
+				model="death_model/model.mdf"
+				anim="idle"
+				startcolor="1 1 1"
+				midcolor=".5 .5 .5"
+				endcolor=".25 0 0"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".9"
+				scale="1.2"
+			>
+			</model>
+			
+
+
+
+
+			<simpleemitter
+				offsetsphere="35 35 0"
+				spawnrate="222"
+				count="15"
+				particlelife="1300"
+				gravity="0"
+				acceleration="0"
+				speed="10"
+				position="0 0 50"
+				material="/shared/effects/materials/pyroclast_01.material"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					color=".5 0 0"
+					startsize="50"
+					endsize="125"
+					minanglespeed="-25"
+					maxanglespeed="25"
+					startalpha="0"
+					midalpha=".2"
+					endalpha="0"
+					anchor="1"
+					lockup="0"
+					lockright="false"
+					turn="false"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				offsetsphere="75 75 0"
+				spawnrate="222"
+				count="15"
+				particlelife="1300"
+				gravity="0"
+				acceleration="0"
+				speed="10"
+				position="0 0 50"
+				material="/shared/effects/materials/pyroclast_01.material"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					color=".2 0 0"
+					startsize="100"
+					endsize="150"
+					minanglespeed="-25"
+					maxanglespeed="25"
+					startalpha="0"
+					midalpha=".2"
+					endalpha="0"
+					anchor="1"
+					lockup="0"
+					lockright="false"
+					turn="false"
+				/>
+			</simpleemitter>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+				<simpleemitter
+					life="1250"
+					particlelife="3000"
+					spawnrate="5"
+					speed="0"
+					gravity="0"
+					direction="0 0 0"
+					offsetsphere="25 25 0"
+					position="0 0 0"
+				>
+					<particle> 
+						<groundsprite
+							minlife="1000"
+							maxlife="3000"
+							material="/shared/effects/materials/goop_overlay.material"
+							minyaw="-360"
+							maxyaw="360"
+							position="0 0 0"
+							color=".2 0 0"
+							startalpha="0"
+							midalpha=".3"
+							endalpha="0"
+							startscale=".5"
+							endscale="1.25"
+						/>
+					</particle>
+				</simpleemitter>
+			
+
+				<simpleemitter
+					life="1250"
+					particlelife="3000"
+					spawnrate="5"
+					speed="0"
+					gravity="0"
+					direction="0 0 0"
+					offsetsphere="25 25 0"
+					position="0 0 0"
+				>
+					<particle> 
+						<groundsprite
+							minlife="1000"
+							maxlife="3000"
+							material="/shared/effects/materials/goop_blend_ground.material"
+							minyaw="-360"
+							maxyaw="360"
+							position="0 0 0"
+							color=".5 0 0"
+							startalpha="0"
+							midalpha=".45"
+							endalpha="0"
+							startscale=".8"
+							endscale="1.5"
+						/>
+					</particle>
+				</simpleemitter>
+
+				<simpleemitter
+					life="1500"
+					particlelife="3000"
+					spawnrate="5"
+					speed="0"
+					gravity="0"
+					direction="0 0 0"
+					offsetsphere="35"
+					position="0 0 0"
+				>
+					<particle> 
+						<simpleemitter
+							bone="Bip01 Head"
+							count="15"
+							minparticlelife="450"
+							maxparticlelife="750"
+							spawnrate="50"
+							minspeed="50"
+							maxspeed="200"
+							gravity="20"
+							direction="0 0 1"
+							minangle="-15"
+							maxangle="15"
+							particledirectionalspace="local"
+							material="/shared/effects/materials/blood1.material"
+							offsetsphere="25 25 0"
+							position="0 0 5"
+							depthbias="-25"
+						>
+							<particle 
+								minangle="-360"
+								maxangle="360"
+								minspeed="-45"
+								maxspeed="45"
+								color=".35 0 0"
+								startsize="0"
+								minendsize="75"
+								maxendsize="150"
+								startalpha="1"
+								endalpha="0"
+							/>
+						</simpleemitter>
+
+					</particle>
+				</simpleemitter>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<simpleemitter
+				position="0 0 75"
+				life="500"
+				spawnrate="75"
+				particlelife="2500"
+				gravity=".5"
+				speed="150"
+				drag="0.1"
+				acceleration="0.0"
+				material="/shared/effects/materials/feather.material"
+				offsetsphere="35 35 50"
+				direction="0 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				collide="true"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					anglespeed="20"
+					minsize="8"
+					maxsize="15"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					color=".35 .35 .55"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".75"
+				/>
+				
+				<particle
+					minangle="0"
+					maxangle="360"
+					anglespeed="20"
+					minsize="8"
+					maxsize="15"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					color=".3 .3 .55"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".75"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				position="0 0 75"
+				life="500"
+				spawnrate="20"
+				particlelife="2500"
+				gravity=".5"
+				speed="0"
+				drag="0.1"
+				acceleration="0.0"
+				material="/shared/effects/materials/feather.material"
+				offsetsphere="20"
+				direction="0 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				collide="true"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					anglespeed="20"
+					minsize="8"
+					maxsize="15"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					color=".25 .1 .55"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".75"
+				/>
+				
+				<particle
+					minangle="0"
+					maxangle="360"
+					anglespeed="20"
+					minsize="8"
+					maxsize="15"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					color=".3 .3 .55"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".75"
+				/>
+			</simpleemitter>
+			
+			
+			
+			
+
+		</particlesystem>
+		
+		
+		
+
+</definitions>
+<thread>
+		<spawnparticlesystem instance="instance1" particlesystem="system0" />
+		<spawnmodifier instance="instance0"/>
+		<waitfordeath  instance="instance0"/>
+		<waitfordeath  instance="instance1"/>
+</thread>
+</effect>
+
+
+
+
+

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Tarot_Attack_Bounce"
+
+	speed="2200"
+	gravity="0"
+	modelscale="1"
+	model="/shared/models/invis.mdf"
+
+	impacteffect=""
+	traileffect="/heroes/tarot/projectile/trail.effect"
+>
+	<onimpact>
+		<!--Sound for when the bounce happens-->
+		<hasavatarkey name="Hero_Tarot.Alt">
+			<playeffect effect="/heroes/tarot/alt/ability_02/effects/bounce_sound.effect" source="this_owner_entity" target="target_entity" occlude="true" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Tarot.Alt3">
+				<playeffect effect="/heroes/tarot/alt3/ability_02/effects/bounce_sound.effect" source="this_owner_entity" target="target_entity" occlude="true" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Tarot.Alt4">
+					<playeffect effect="/heroes/tarot/alt4/ability_02/effects/bounce_sound.effect" source="this_owner_entity" target="target_entity" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Tarot.Alt5">
+						<playeffect effect="/heroes/tarot/alt5/ability_02/effects/bounce_sound.effect" source="this_owner_entity" target="target_entity" occlude="true" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Tarot.Alt6">
+							<playeffect effect="/heroes/tarot/alt6/ability_02/effects/bounce_sound.effect" source="this_owner_entity" target="target_entity" occlude="true" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Tarot.Alt7">
+								<playeffect effect="/heroes/tarot/alt7/ability_02/effects/bounce_sound.effect" source="this_owner_entity" target="target_entity" occlude="true" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Tarot.Alt8">
+									<playeffect effect="/heroes/tarot/alt8/ability_02/effects/bounce_sound.effect" source="this_owner_entity" target="target_entity" occlude="true" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Tarot.Alt9">
+										<playeffect effect="/heroes/tarot/alt9/ability_02/effects/bounce_sound.effect" source="this_owner_entity" target="target_entity" occlude="true" />
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_Tarot.Alt10">
+											<playeffect effect="/heroes/tarot/alt10/ability_02/effects/bounce_sound.effect" source="this_owner_entity" target="target_entity" occlude="true" />
+										</hasavatarkey>
+										<else>
+											<playeffect effect="/heroes/tarot/ability_02/effects/bounce_sound.effect" source="this_owner_entity" target="target_entity" occlude="true" />
+										</else>
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else> 				
+        </else>			
+
+		<compare a="param" b="1" op="eq">		    
+			<setactivemodifierkey entity="proxy_entity" name="Tarot_nextattackneedstobeinvis" />
+			<attack source="this_owner_entity" target="target_entity" startcooldown="false" />
+		</compare>
+	</onimpact>
+	
+	<altavatar key="Hero_Tarot.Alt"
+		traileffect="../alt/projectile/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt2"
+		traileffect="../alt2/projectile/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt3"
+		traileffect="../alt3/projectile/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt4"
+		traileffect="../alt4/projectile/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt5"
+		traileffect="../alt5/projectile/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt6"
+		traileffect="../alt6/projectile/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt7"
+		traileffect="../alt7/projectile/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt8"
+		traileffect="../alt8/projectile/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt9"
+		traileffect="../alt9/projectile/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt10"
+		traileffect="../alt10/projectile/trail.effect"
+	/>
+	
+</projectile>

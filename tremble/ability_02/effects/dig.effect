@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  deferred="1" persistent="1" >
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+	
+			<simpleemitter
+				count="1"
+				spawnrate="1000"
+				particlelife="6100"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 0 0"
+			>
+				<particle
+				>
+					<groundsprite
+						life="7000"
+						material="/shared/effects/materials/web_ground.material"
+						size="65"
+						color="1 1 1"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+					/>
+				</particle>
+			</simpleemitter>
+-->
+			<simpleemitter
+				life="2500"
+				timenudge="1000"
+				delay="1000"
+				offsetsphere="50 50 50"
+				spawnrate="25"
+				minparticlelife="750"
+				maxparticlelife="1000"
+				gravity="-8"
+				acceleration="0"
+				speed="25"
+				position="0 0 10"
+				material="/shared/effects/materials/web_ground.material"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					color=".36 .33 .2"
+					startsize="40"
+					endsize="65"
+					minanglespeed="-30"
+					maxanglespeed="73"
+					startalpha="0"
+					midalpha=".8"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="1300"
+				timenudge="1000"
+				delay="250"
+				offsetsphere="50 50 50"
+				spawnrate="25"
+				minparticlelife="750"
+				maxparticlelife="1000"
+				gravity="-5"
+				acceleration="0"
+				speed="25"
+				position="0 35 10"
+				material="/shared/effects/materials/pyroclast_01.material"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					color=".36 .33 .2"
+					startsize="40"
+					endsize="65"
+					minanglespeed="-30"
+					maxanglespeed="73"
+					startalpha="0"
+					midalpha=".8"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				count="25"
+				timenudge="1000"
+				delay="1000"
+				offsetsphere="20 20 20"
+				spawnrate="1000"
+				minparticlelife="1000"
+				maxparticlelife="2000"
+				gravity="-7"
+				acceleration="0"
+				speed="25"
+				position="0 55 10"
+				material="/shared/effects/materials/pyroclast_01.material"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					color=".36 .33 .2"
+					startsize="20"
+					endsize="45"
+					minanglespeed="-30"
+					maxanglespeed="73"
+					startalpha="0"
+					midalpha=".8"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				count="25"
+				timenudge="1000"
+				delay="3000"
+				offsetsphere="20 20 20"
+				spawnrate="1000"
+				minparticlelife="1000"
+				maxparticlelife="2000"
+				gravity="-7"
+				acceleration="0"
+				speed="25"
+				position="0 55 10"
+				material="/shared/effects/materials/pyroclast_01.material"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					color=".36 .33 .2"
+					startsize="20"
+					endsize="45"
+					minanglespeed="-30"
+					maxanglespeed="73"
+					startalpha="0"
+					midalpha=".65"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				life="3000"
+				delay="1000"
+				spawnrate="10"
+				particlelife="2000"
+				gravity="-5"
+				speed="10"
+				drag="0.07"
+				acceleration="0.0"		
+				mintimenudge="0"
+				maxtimenudge="1000"
+				position="0 0 30"
+				material="/shared/effects/materials/smoke_particle.material"
+				offsetsphere="25 25 35"
+				inheritvelocity=".5"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-30"
+					color="0 0 0"
+					maxanglespeed="30"
+					startsize="75"
+					endsize="125"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".2"
+					startanchor="0"
+					endanchor="0"					
+				 />	
+			
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-30"
+					color="0 0 0"
+					maxanglespeed="30"
+					startsize="75"
+					endsize="125"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".2"
+					startanchor="0"
+					endanchor="0"					
+				 />				 
+			</simpleemitter>
+
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+	  
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
+

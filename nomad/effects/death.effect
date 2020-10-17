@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<modifier
+			life="20000"
+			name="modifier0"
+			color="1 1 1"
+			startalpha="1"
+			midalpha="0"
+			endalpha="0"
+			midalphapos=".05"
+		/>
+
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<model
+				life="2500"
+				parentmodel="true"
+				parentskeleton="true"
+				material="death.material"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".15"
+				startscale="1"
+				midscale="1"
+				endscale="1.75"
+				color=".65 .65 .75"
+				scale="1"
+			/>
+
+			<meshemitter
+				mesh="model"
+				delay="500"
+				position="0 0 0"
+				life="1000"
+				spawnrate="75"
+				drag=".001"
+				minparticlelife="750"
+				maxparticlelife="1500"
+				gravity="8"
+				direction="0 0 0"
+				offsetsphere="0 0 0"
+				material="/shared/effects/materials/water_spray_blend.material"
+				inheritvelocity="0"
+				directionalspace="local"
+				depthbias="-35"
+				collide="1"
+			>
+				<particle
+					color=".325 .24 .12"
+					startalpha="0"
+					midalpha=".65"
+					endalpha="0"
+					startscale="7"
+					midscale="9"
+					endscale="15"
+					midscalepos=".75"
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="90"
+					maxanglespeed="-90"
+				/>
+			</meshemitter>
+			
+			<meshemitter
+				mesh="model"
+				delay="500"
+				position="0 0 0"
+				life="1000"
+				spawnrate="100"
+				drag=".001"
+				minparticlelife="750"
+				maxparticlelife="1500"
+				gravity="8"
+				direction="0 0 0"
+				offsetsphere="0 0 0"
+				material="/shared/effects/materials/water_spray_add.material"
+				inheritvelocity="0"
+				directionalspace="local"
+				collide="1"
+				depthbias="-35"
+			>
+				<particle
+				startcolor="0 0 0"
+				midcolor=".325 .24 .12"
+				endcolor="0 0 0"
+					startalpha="0"
+					midalpha=".65"
+					endalpha="0"
+					startscale="4"
+					midscale="8"
+					endscale="8"
+					midscalepos=".75"
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="90"
+					maxanglespeed="-90"
+				/>
+			</meshemitter>
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				delay="800"
+				position="0 0 0"
+				life="1000"
+				spawnrate="75"
+				drag=".001"
+				minparticlelife="750"
+				maxparticlelife="1500"
+				gravity="0"
+				minspeed="25"
+				maxspeed="75"
+				direction="0 0 -1"
+				offsetsphere="25 25 25"
+				minangle="-40"
+				maxangle="40"
+				material="/shared/effects/materials/water_spray_blend.material"
+				inheritvelocity="0"
+				directionalspace="local"
+			>
+				<particle
+					color=".325 .3 .16"
+					startalpha="0"
+					midalpha=".65"
+					endalpha="0"
+					minscale="10"
+					maxscale="15"
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="90"
+					maxanglespeed="-90"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				delay="800"
+				position="0 0 0"
+				life="1000"
+				spawnrate="25"
+				drag=".001"
+				minparticlelife="750"
+				maxparticlelife="1500"
+				gravity="0"
+				minspeed="25"
+				maxspeed="75"
+				direction="0 0 -1"
+				offsetsphere="25 25 25"
+				minangle="-40"
+				maxangle="40"
+				material="/shared/effects/materials/water_spray_add.material"
+				inheritvelocity="0"
+				directionalspace="local"
+			>
+				<particle
+					startcolor="0 0 0"
+					midcolor=".325 .24 .12"
+					endcolor="0 0 0"
+					minscale="10"
+					maxscale="15"
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="90"
+					maxanglespeed="-90"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				delay="800"
+				position="0 0 0"
+				life="1000"
+				spawnrate="25"
+				drag=".001"
+				minparticlelife="1000"
+				maxparticlelife="2000"
+				gravity="0"
+				minspeed="25"
+				maxspeed="75"
+				direction="0 0 -1"
+				offsetsphere="25 25 25"
+				minangle="-40"
+				maxangle="40"
+				material="/shared/effects/materials/water_05.material"
+				inheritvelocity="0"
+				directionalspace="local"
+				depthbias="-35"
+			>
+				<particle
+					startcolor=".325 .24 .12"
+					midcolor=".325 .24 .12"
+					endcolor=".325 .24 .12"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minscale="10"
+					maxscale="15"
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="90"
+					maxanglespeed="-90"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_weapon2"
+				delay="800"
+				position="0 0 0"
+				life="1000"
+				spawnrate="50"
+				drag=".001"
+				minparticlelife="750"
+				maxparticlelife="1500"
+				gravity="0"
+				minspeed="25"
+				maxspeed="75"
+				direction="0 -1 0"
+				offsetsphere="0 0 0"
+				minangle="0"
+				maxangle="10"
+				material="/shared/effects/materials/water_spray_blend.material"
+				inheritvelocity="0"
+				directionalspace="local"
+			>
+				<particle
+					color=".325 .24 .12"
+					startalpha="0"
+					midalpha=".65"
+					endalpha="0"
+					minscale="5"
+					maxscale="10"
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="90"
+					maxanglespeed="-90"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_leftfoot"
+				delay="800"
+				position="0 0 0"
+				life="1000"
+				spawnrate="50"
+				drag=".001"
+				minparticlelife="750"
+				maxparticlelife="1500"
+				gravity="0"
+				minspeed="25"
+				maxspeed="75"
+				direction="0 1 0"
+				offsetsphere="0 0 0"
+				minangle="-40"
+				maxangle="40"
+				material="/shared/effects/materials/water_spray_blend.material"
+				inheritvelocity="0"
+				directionalspace="local"
+			>
+				<particle
+					color=".325 .24 .12"
+					startalpha="0"
+					midalpha=".65"
+					endalpha="0"
+					minscale="5"
+					maxscale="10"
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="90"
+					maxanglespeed="-90"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_origin"
+				count="1"
+				position="0 0 0"
+				spawnrate="100"
+				gravity="0"
+				particlelife="1000"
+				offsetsphere="0 0 0"
+				direction="0 -1 0"
+				minangle="0"
+				maxangle="10"
+				directionalspace="local"
+			>
+				<particle
+					turn="true"
+				>
+					<groundsprite
+						position="0 -10 0"
+						delay="500"
+						material="/shared/effects/materials/sand_groun.material"
+						startscale=".4"
+						endscale=".75"
+						life="2500"
+						color=".5 .47 .4"
+						minyaw="-360"
+						maxyaw="360"
+						startalpha="0"
+						midalpha=".65"
+						endalpha="0"
+						midalphapos=".35"
+					/>
+					
+					<groundsprite
+						position="0 -35 0"
+						delay="900"
+						material="/shared/effects/materials/sand_groun.material"
+						startscale=".5"
+						endscale=".8"
+						life="2500"
+						color=".5 .47 .4"
+						minyaw="-360"
+						maxyaw="360"
+						startalpha="0"
+						midalpha=".65"
+						endalpha="0"
+						midalphapos=".35"
+					/>
+					
+					<groundsprite
+						position="0 -75 0"
+						delay="1250"
+						material="/shared/effects/materials/sand_groun.material"
+						startscale=".65"
+						endscale="1"
+						life="2500"
+						color=".5 .47 .4"
+						minyaw="-360"
+						maxyaw="360"
+						startalpha="0"
+						midalpha=".65"
+						endalpha="0"
+						midalphapos=".35"
+					/>
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				count="8"
+				bone="_bone_centerofchest"
+				delay="800"
+				position="0 0 0"
+				life="1000"
+				spawnrate="250"
+				drag=".001"
+				minparticlelife="350"
+				maxparticlelife="600"
+				gravity="0"
+				minspeed="5"
+				maxspeed="50"
+				direction="0 0 0"
+				offsetsphere="15 15 40"
+				minangle="-40"
+				maxangle="40"
+				material="/shared/effects/materials/smash_add.material"
+				inheritvelocity="0"
+				directionalspace="local"
+			>
+				<particle
+					startcolor="0 0 0"
+					midcolor=".325 .27 .16"
+					endcolor="0 0 0"
+					startalpha="0"
+					midalpha=".65"
+					endalpha="0"
+					startscale="15"
+					endscale="35"
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="90"
+					maxanglespeed="-90"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0"  particlesystem="system0" />	
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Panda_Ability4_Self"
+
+	icon="icon_4.tga"
+	passiveeffect="effects/sword.effect"
+	ishidden="false"
+	impactinterval="1000"
+	basedamagemultiplier="0.30,0.75,1.2"
+	truestrike="true"
+	incomingdamagemultiplier="-0.5"
+	
+>
+	<oninflict>
+		<spawnaffector name="Affector_Panda_Ability4" target="proxy_entity" proxy="proxy_entity" />
+	</oninflict>
+	
+	<onimpact>
+		<spawnaffector name="Affector_Panda_Ability4" target="proxy_entity" proxy="proxy_entity" />
+	</onimpact>
+	
+	<altavatar key="Hero_Panda.Alt10"
+		icon="/heroes/panda/alt10/ability_04/icon.tga"
+	>
+	    <modifier key="Night_Set_PandaAlt10"
+			icon="/heroes/panda/alt11/ability_04/icon.tga"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Panda.Alt11"
+		icon="/heroes/panda/alt11/ability_04/icon.tga"
+	>
+	    <modifier key="Night_Set_PandaAlt11"
+			icon="/heroes/panda/alt10/ability_04/icon.tga"
+		/>
+	</altavatar>
+	
+</state>

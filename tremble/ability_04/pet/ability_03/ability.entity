@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_TremblePet3"
+	
+	icon="/heroes/tremble/ability_03/icon.tga"
+	statuseffecttooltip="State_Tremble_Ability3"
+	
+	baselevel="0"
+	maxlevel="4"
+	
+	actiontype="passive"
+
+	passiveeffect=""
+>
+	<onattackimpact />
+	
+	<onattackpreimpact>
+		<cantarget targetscheme="enemy_units" effecttype="Physical">
+			<applystate name="State_Tremble_Ability3" duration="2500" pushentity="true" />
+			<addcharges entity="stack_entity" count="1" />
+			<setvar1 a="result" />	
+			<setvar0 a="var1" b="10" op="mult" />
+			<bonusdamageadd a="var0" target="" />
+		</cantarget>
+	</onattackpreimpact>
+</ability>

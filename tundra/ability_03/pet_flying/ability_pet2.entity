@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Tundra3_Pet2"
+	
+	icon="/heroes/yogi/summon/icons/ability_1.tga"
+	
+	anim=""
+	casttime="0"
+	castactiontime="0"
+
+	actiontype="no_target"
+	
+	manacost="0"
+	cooldowntime="60000"
+>
+	<ondamaged>
+		<startcooldown duration="3000" />
+	</ondamaged>
+	
+	<onimpact>
+		<teleport source="source_entity" target="source_owner_entity" />
+		
+		<!-- VFX -->
+		<playeffect effect="/heroes/yogi/summon/effects/return/return.effect" source="target_position" target="" occlude="true" />
+	</onimpact>
+
+</ability>

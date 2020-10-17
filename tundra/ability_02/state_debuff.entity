@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Tundra_Ability2_Debuff"
+	
+	icon="icon2.tga"
+	
+	passiveeffect=""
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+>
+	<onframe />
+
+	<onattackedpreimpact>
+		<combateffecttype effecttype="AbilityBasedProjectile BindingProjectile" />
+		<else>
+			<cantarget source="this_inflictor_entity" targetscheme="ally_units" effecttype="Buff">
+				<applystate name="State_Tundra_Ability2_Buff" duration="2000" />
+			</cantarget>
+		</else>
+	</onattackedpreimpact>
+</state>

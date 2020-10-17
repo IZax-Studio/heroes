@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Tundra_Ability4"
+	icon="icon4.tga"
+	
+	passiveeffect=""
+	ishidden="true"
+	effecttype="StatusDisable"
+	frozen="true"
+>
+	<onexpired>
+		<playanim name="idle" />
+	</onexpired>
+</state>

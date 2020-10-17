@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Monarch_Ability4"
+
+	icon="icon4.tga"
+	passiveeffect="effects/state_buff.effect"
+
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	movespeed="100,150,200"
+>	
+
+	<altavatar key="Hero_Monarch.Alt2" modpriority="1"
+		passiveeffect="/heroes/monarch/alt2/ability_04/effects/state_buff.effect"
+		icon="/heroes/monarch/alt2/ability_04/icon.tga"
+	/>
+
+	<altavatar key="Hero_Monarch.Alt3" modpriority="1"
+		passiveeffect="/heroes/monarch/alt2/ability_04/effects/state_buff.effect"
+		icon="/heroes/monarch/alt2/ability_04/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Monarch.Alt4" modpriority="1"
+		passiveeffect="/heroes/monarch/alt4/ability_04/effects/state_buff.effect"
+	/>
+	
+	<altavatar key="Hero_Monarch.Alt5" modpriority="1"
+		passiveeffect="/heroes/monarch/alt5/ability_04/effects/state_buff.effect"
+	/>
+	
+	<altavatar key="Hero_Monarch.Alt6" modpriority="1"
+		passiveeffect="/heroes/monarch/alt6/ability_04/effects/state_buff.effect"
+	/>	
+	
+	<altavatar key="Hero_Monarch.Alt7" modpriority="1"
+		passiveeffect="/heroes/monarch/alt7/ability_04/effects/state_buff.effect"
+	/>
+
+</state>

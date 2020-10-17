@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume=".85"
+				sample="../sounds/state.wav"
+			/>	
+
+		<simpleemitter
+				position="0 0 20"
+				spawnrate="30"											
+				particlelife="1500"	
+				material="/shared/effects/materials/spark_10.material"
+				offsetsphere="100"
+				
+				gravity="-5"
+				collide="1"
+				depthbias="50"
+		
+				minangle="-90"
+				maxangle="90"
+				speed="10"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					startcolor="0 .1 .5"
+					endcolor="0"
+					startsize="500"
+					endsize="400"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					
+				/>
+			</simpleemitter>
+
+			
+			<simpleemitter
+				
+				spawnrate="50"											
+				particlelife="1500"	
+				material="/shared/effects/materials/star_03.material"
+				offsetsphere="100"
+				
+				gravity="-2"
+				
+				depthbias="-20"
+			
+				minangle="-90"
+				maxangle="90"
+				speed="20"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-200"
+					maxanglespeed="300"
+					startcolor="0"
+					midcolor="1"
+					endcolor="0 "
+					minsize="1"
+					maxsize="5"
+					alpha=".2"
+					
+					
+				/>
+			</simpleemitter>
+				
+				<simpleemitter
+				position="0 0 20"
+				spawnrate="5"											
+				particlelife="300"	
+				material="/shared/effects/materials/flare_02.material"
+				offsetsphere="100"
+			
+				depthbias="-100"
+				
+				minangle="-360"
+				maxangle="360"
+			
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					
+					startcolor="1"
+					midcolor="1"
+					endcolor="0 "
+					startsize="5"
+					endsize="10"
+					alpha=".2"
+					
+					
+				/>
+			</simpleemitter>
+			
+				<simpleemitter
+				position="0"
+				spawnrate="6"											
+				particlelife="300"	
+				material="/shared/effects/materials/star_03.material"
+				offsetsphere="60"
+			
+				depthbias="-100"
+				
+				minangle="-360"
+				maxangle="360"
+			
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					
+					startcolor="1"
+					midcolor="1"
+					endcolor="0 "
+					startsize="5"
+					endsize="10"
+					alpha=".2"
+					
+					
+				/>
+			</simpleemitter>
+			<simpleemitter
+				position="0"
+				spawnrate="7"											
+				particlelife="300"	
+				material="/shared/effects/materials/flare_02.material"
+				offsetsphere="20"
+			
+				depthbias="-100"
+				
+				minangle="-360"
+				maxangle="360"
+			
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					
+					startcolor="1"
+					midcolor="1"
+					endcolor="0 "
+					startsize="5"
+					endsize="10"
+					alpha=".2"
+					
+					
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				position="0 0 50"
+				offsetsphere="50 50 0"
+				spawnrate="5"
+				particlelife="1500"
+			>
+				<particle
+					minscale=".7"
+					maxscale="1.1"
+				>
+					<controller
+						maxyaw="360"
+						minyawspeed="400"
+						maxyawspeed="600"
+					>
+						<trailemitter
+							minlife="500"
+							maxlife="1000"
+							position="0 100 0"
+							texposscale="0"
+							texstretchscale="1"
+							spawnrate="25"
+							particlelife="500"
+							material="/shared/effects/materials/light_trail.material"
+							startparticlecolor="0"
+							midparticlecolor="1"
+							endparticlecolor="0"
+						>
+							<particle
+								startsize="0"
+								midsize="60"
+								endsize="0"
+								startcolor="0"
+								midcolor=".4 .4 .4"
+								endcolor="0"
+							/>
+						</trailemitter>
+					</controller>
+				</particle>
+				<particle
+					minscale=".7"
+					maxscale="1.1"
+				>
+					<controller
+						maxyaw="360"
+						minyawspeed="400"
+						maxyawspeed="600"
+					>
+						<trailemitter
+							minlife="500"
+							maxlife="1000"
+							position="0 100 0"
+							texposscale="0"
+							texstretchscale="1"
+							spawnrate="25"
+							particlelife="500"
+							material="/shared/effects/materials/light_trail.material"
+							startparticlecolor="0"
+							midparticlecolor="1"
+							endparticlecolor="0"
+						>
+							<particle
+								startsize="0"
+								midsize="60"
+								endsize="0"
+								startcolor="0"
+								midcolor=".4 .4 .4"
+								endcolor="0"
+							/>
+						</trailemitter>
+					</controller>
+				</particle>
+			</simpleemitter>
+
+
+			<model
+				delay="150"
+				life="750"
+				model="/heroes/zephyr/ability_02/effects/cyclone_bones.mdf"
+				anim="idle"
+				startscale="1"
+				endscale=".5"
+				position="0 0 -85"
+			>
+				<template name="wind">
+
+					<billboard
+						minlife="450"
+						maxlife="750"
+						bone="{bone}"
+						material="/shared/effects/materials/twirl_05_blend.material"
+						position="0 0 0"
+						size="{size}"
+						roll="105"
+						rollspeed="{speed}"
+						startcolor="0 0 0"
+						midcolor="0"
+						endcolor="0 0 0"
+						midcolorpos=".5"
+						lockup="true"
+						lockright="true"
+						pitch="90"
+						yaw="0"
+						startalpha="0"
+						midalpha=".5"
+						endalpha="0"
+					/>
+
+				</template>
+
+				<instance name="wind" size="30" roll="90" speed="1600" origin="25" bone="_bone_cyclone03"/>
+				<instance name="wind" size="130" roll="180" speed="1600" origin="40" bone="_bone_cyclone04"/>
+				<instance name="wind" size="160" roll="220" speed="400" origin="55" bone="_bone_cyclone05"/>
+				<instance name="wind" size="210" roll="300" speed="400" origin="70" bone="_bone_cyclone06"/>
+				<instance name="wind" size="250" roll="360" speed="400" origin="80" bone="_bone_cyclone07"/>
+
+			</model>
+
+			<simpleemitter
+				spawnrate="3"
+				minparticlelife="1000"
+				maxparticlelife="1500"
+				offsetsphere="130 130 0"
+				direction="0 0 0"
+			>
+				<particle
+				>
+					<model
+						life="750"
+						model="/heroes/zephyr/ability_02/effects/cyclone_bones.mdf"
+						anim="idle"
+						minstartscale=".25"
+						maxstartscale=".35"
+						minendscale=".2"
+						maxendscale=".2"
+						position="0 0 0"
+					>
+						<template name="wind">
+							<billboard
+								minlife="500"
+								maxlife="750"
+								bone="{bone}"
+								material="/shared/effects/materials/twirl_05_blend.material"
+								position="0 0 0"
+								size="{size}"
+								roll="90"
+								rollspeed="{speed}"
+								startcolor="0 0 0"
+								midcolor="0"
+								endcolor="0 0 0"
+								lockup="true"
+								lockright="true"
+								pitch="90"
+								yaw="0"
+								startalpha="0"
+								midalpha=".5"
+								endalpha="0"
+							/>
+						</template>
+
+						<instance name="wind" size="30" size2="60" speed="1600" bone="_bone_cyclone03"/>
+						<instance name="wind"  size="130" size2="80" speed="1600" bone="_bone_cyclone04"/>
+						<instance name="wind"  size="160" size2="90" speed="400" bone="_bone_cyclone05"/>
+						<instance name="wind" size="210" size2="100" speed="400" bone="_bone_cyclone06"/>
+						<instance name="wind"  size="250" size2="140" speed="400" bone="_bone_cyclone07"/>
+					</model>
+				</particle>
+
+		</simpleemitter>
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		  <spawnparticlesystem instance="instance0" particlesystem="system0"/>
+  		  <spawnmodifier instance="instance1" modifier="modifier0"/> 
+  		  <waitfordeath instance="instance0" />
+
+	</thread>
+
+</effect>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pet
+	name="Pet_WolfMan_Ability1"
+	
+	icon="/heroes/wolfman/ability_01/icon1.tga"
+	portrait="/heroes/wolfman/ability_01/icon1.tga"
+	model="/heroes/wolfman/ability_01/pet/model.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	preglobalscale=".7"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="64"
+	boundsradius="16"
+	selectionradius="48"
+	targetoffset="0 0 0"
+	portraitcampos="-20 150 20"
+
+	movespeed="325,350,375,400"
+	turnrate="450"
+	turnsmoothing="0.05"
+
+	maxhealth="400,425,450,475"
+	healthregen="0.25"
+	maxmana="0"
+	manaregen="0"
+
+	armor="3"
+	magicarmor="0"
+
+	cancarryitems="false"
+	inventory0="Ability_WolfMan_Ability1_Pet_Ability1"
+	inventory1=",,,Ability_WolfMan_Ability1_Pet_Ability2"
+	inventory2=""
+	inventory3=""
+
+	attackduration="1000"
+	attackactiontime="750,700,650,600"
+	attackcooldown="1250"
+	attackdamagemin="30,38,46,54"
+	attackdamagemax="30,38,46,54"
+	attacknumanims="2"
+	attackoffset="0 60 100"
+	attackprojectile=""
+	attackrange="100"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="effects/impact.effect"
+	attacktype="melee"
+	combattype="Melee"
+
+	aggrorange="600"
+	sightrangeday="1200"
+	sightrangenight="800"
+	
+	goldbountymin="31,36,41,46"
+	goldbountymax="31,36,41,46"
+	experiencebounty="20"
+	
+	deniablepercent="0.5"
+	
+	unittype="summoned"
+
+	corpsetime="4000"
+	corpsefadetime="4500"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+>
+
+	<modifier key="iamsheeped" modpriority="100"
+		passiveeffect=""
+	/>
+
+	<onspawn>
+		<hasavatarkey name="Hero_WolfMan.Alt" > <!-- Artsy Stuff -->
+			<playeffect effect="/heroes/wolfman/alt/ability_01/pet/effects/spawn.effect" source="this_position" target="" occlude="true" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_WolfMan.Alt2" >
+				<playeffect effect="/heroes/wolfman/alt2/ability_01/pet/effects/spawn.effect" source="this_position" target="" occlude="true" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_WolfMan.Alt3" >
+					<playeffect effect="/heroes/wolfman/alt3/ability_01/pet/effects/spawn.effect" source="this_position" target="" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_WolfMan.Alt4">	
+						<hasmodifier name="WolfMan_Alt4_Red" entity="this_owner_entity">
+							<activatemodifierkey name="WolfMan_Alt4_Red" />
+							<playeffect effect="/heroes/wolfman/alt4/ability_01/pet/02/spawn.effect" source="this_position" target="" occlude="true" />
+						</hasmodifier>
+						<else>
+							<playeffect effect="/heroes/wolfman/alt4/ability_01/pet/effects/spawn.effect" source="this_position" target="" occlude="true" />
+						</else>
+					</hasavatarkey>
+					<else>
+						<playeffect effect="effects/spawn.effect" source="this_position" target="" occlude="true" />
+					</else>
+				</else>
+			</else>
+		</else><!-- End of Artsy Stuff -->
+
+		<condition target="this_owner_entity" test="hasstate State_WolfMan_Ability2" >
+			<applystate name="State_WolfMan_Ability2" target="this_owner_entity" duration="0" pushentity="true" />
+			<changeduration entity="stack_entity" b="0" op="add" />
+			<applystate name="State_WolfMan_Ability2_Units" target="this_entity" duration="result" />
+		</condition>
+	</onspawn>
+
+	<onframe>
+		<targettype type="alive" target="source_owner_entity" >
+			<distance source="source_entity" target="source_owner_entity" />
+			<compare a="result" b="925" op="ge">
+				<setactivemodifierkey name="wolfman_pet_notowers" />
+			</compare>
+		</targettype>
+		<else>
+			<setactivemodifierkey name="wolfman_pet_notowers" />
+		</else>
+	</onframe>
+
+	<modifier key="wolfman_pet_notowers" modpriority="100"
+		attacktargetscheme="everything_but_towers"
+	>
+		<onframe>
+			<distance source="source_entity" target="source_owner_entity" />
+			<compare a="result" b="925" op="lt">
+				<targettype type="alive" target="source_owner_entity" >
+					<setactivemodifierkey name="" />
+				</targettype>
+			</compare>
+		</onframe>
+	</modifier>
+
+	<altavatar key="Hero_WolfMan.Classic"
+		model="model.mdf"
+	>
+	</altavatar>
+
+	<altavatar key="Hero_WolfMan.Alt"
+		icon="/heroes/wolfman/alt/ability_01/icon.tga"
+		model="/heroes/wolfman/alt/ability_01/pet/model.mdf"
+		passiveeffect="/heroes/wolfman/alt/ability_01/pet/effects/body.effect"
+		preglobalscale="2.95"
+		effectscale="0.85"
+	>
+	</altavatar>
+
+	<altavatar key="Hero_WolfMan.Alt2"
+		icon="/heroes/wolfman/alt2/ability_01/icon.tga"
+		portrait="/heroes/wolfman/alt2/ability_01/icon.tga"
+		model="/heroes/wolfman/alt2/ability_01/pet/model.mdf"
+		preglobalscale="1.5"
+		effectscale="0.85"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_WolfMan.Alt3"
+		icon="/heroes/wolfman/alt/ability_01/icon.tga"
+		portrait="/heroes/wolfman/alt3/ability_01/icon.tga"
+		model="/heroes/wolfman/alt3/ability_01/pet/model.mdf"
+		preglobalscale="3"
+		effectscale="1"
+		passiveeffect="/heroes/wolfman/alt3/ability_01/pet/effects/body.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_WolfMan.Alt4"
+		portrait="/heroes/wolfman/alt4/ability_01/icon.tga"
+		model="/heroes/wolfman/alt4/ability_01/pet/model.mdf"
+		preglobalscale="3"
+		passiveeffect="/heroes/wolfman/alt4/ability_01/pet/effects/body.effect"
+		
+		portraitcampos="0 0 0"
+	>
+	
+		<modifier key="WolfMan_Alt4_Red"
+			icon="/heroes/wolfman/alt4/ability_01/icon.tga"
+			model="/heroes/wolfman/alt4/ability_01/pet/02/model.mdf"
+			passiveeffect="/heroes/wolfman/alt4/ability_01/pet/02/body.effect"
+		/>
+		
+	</altavatar>
+	
+	<altavatar key="Hero_WolfMan.Alt5"
+		model="/heroes/wolfman/alt5/ability_01/pet/model.mdf"
+	/>
+	
+</pet>

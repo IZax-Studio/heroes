@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		
+		<particlesystem name="system0" space="world" scale="2">
+			<sound
+		        life="2000"
+				linearfalloff="true" 
+				falloffstart="200"
+				falloffend="1300"
+				volume=".6"
+				sample="/heroes/taint/alt4/sounds/throw.wav"
+			/>
+			
+			<template name="coal">
+				<simpleemitter
+					spawnrate="80"
+					offsetsphere="15"
+					minparticlelife="650"
+					maxparticlelife="1200"
+					material="/shared/effects/materials/smoke_particle.material"
+					depthbias="15"
+					minspeed="0"
+					maxspeed="80"
+					drag=".025"
+				>
+					<particle
+						startsize="50"
+						minendsize="55"
+						maxendsize="75"
+						startcolor="0 .5 1"
+						endcolor="0 .5 1"
+						startalpha="0"
+						midalpha=".35"
+						endalpha="0"
+						midalphapos=".1"
+					/>
+				</simpleemitter>
+				
+				<trailemitter
+					spawnrate="100"
+					particlelife="{particlelife}"
+					texpostime="500"
+					texposscale="0.0"
+					texstretchscale=".4"
+					material="/shared/effects/materials/light_trail.material"
+				>
+					<particle
+						startcolor="0 .5 1"
+						midcolor="0 .5 1"
+						endcolor="0 .5 1"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".075"
+						startsize="5"
+						midsize="15"
+						endsize="5"
+						midsizepos="0.2"
+				 />
+				</trailemitter>
+				
+				<trailemitter
+					spawnrate="50"
+					particlelife="200"
+					texpostime="750"
+					texposscale="0.0"
+					texstretchscale=".4"
+					material="/shared/effects/materials/light_trail.material"
+					direction="0 0 1"
+					speed="50"
+					angle="0"
+					drag="0.02"
+				>
+					<particle
+						startcolor="0"
+						midcolor="0 .5 1"
+						endcolor="0 .5 1"
+						midcolorpos=".05"
+						startsize="10"
+						midsize="30"
+						endsize="5"
+						midsizepos=".1"
+				 />
+				</trailemitter>
+
+				<simpleemitter
+					spawnrate="300"
+					particlelife="375"
+					speed="12"
+					material="/shared/effects/materials/fire_add.material"
+					offsetsphere="10 0 0"
+					position="0 0 0"
+					yawspeed="-360"
+					depthbias="-100"
+					inheritvelocity=".025"
+				>
+					<particle
+						scale="5"
+						minangle="-360"
+						maxangle="360"
+						minanglespeed="20"
+						maxanglespeed="150"
+						startcolor="0 .5 1"
+						midcolor="0 .5 1"
+						endcolor="0 0 0"
+						midcolorpos=".5"
+						startsize="2"
+						endsize="0"	
+						midsizepos=".25"
+					/>
+				</simpleemitter>
+
+				<simpleemitter
+					position="0 0 -5"
+					spawnrate="300"
+					minparticlelife="100"
+					maxparticlelife="350"
+					offsetsphere="8 8 8"
+					minspeed="10.0"
+					maxspeed="30"
+					direction="0 0 1"
+					material="/shared/effects/materials/flare_03.material"
+				>
+					<particle
+					
+						startsize="2"
+						midsize="1"
+						endsize="0"
+					
+						maxangle="359"
+						maxanglespeed="30"
+						minanglespeed="-30"
+						minscale="2.5"
+						maxscale="4.5"
+						startcolor="0 .5 1"
+						midcolor="0 .5 1"
+						endcolor="0"
+						midcolorpos=".5"
+					/>
+				</simpleemitter>
+
+
+				<billboard
+					expirelife="100"
+					startcolor="0 .5 1"
+					endcolor="0 0 0"
+					size="12"
+					material="/shared/effects/materials/glow_01.material"
+					depthbias="-50"
+				/>
+
+				<billboard
+					expirelife="100"
+					startcolor="0 .5 1"
+					endcolor="0 0 0"
+					startsize="50"
+					endsize="10"
+					material="/shared/effects/materials/glow_01.material"
+					depthbias="-50"
+				/>	
+				
+				<simpleemitter
+					
+					spawnrate="800"	
+					particlelife="550"			
+					gravity="100"
+					speed="100"
+					acceleration="1"
+					position="0 0 0"
+					drag=".1"
+
+					material="/shared/effects/materials/spark_10.material"
+					offsetsphere="5"
+					minangle="0"
+					maxangle="180"
+					direction="1 0 0"
+					offsetdirection="0 0 0"
+					offsetradial="0 0 0"
+					inheritvelocity="0.25"
+				>
+					<particle 
+						minangle="0"
+						maxangle="0"
+						minanglespeed="0"
+						maxanglespeed="0"
+						startcolor="0 .5 1"
+						midcolor="0 .5 1"
+						endcolor="0 0 0"
+						midcolorpos=".2"
+
+						startframe="0"
+						endframe="1"
+
+						startsize="2"
+						midsize="7"
+						endsize="0"
+						midsizepos=".3"
+
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".3"
+						turn="true"
+					/>
+				</simpleemitter>
+			</template>
+			
+			<instance name="coal" particlelife="500"/>
+
+
+			<!-- coal spray -->
+			
+		</particlesystem>
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

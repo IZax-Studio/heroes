@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Tarot_Ability3_Slow"
+	
+	icon="icon3.tga"
+	passiveeffect="effects/state_slow.effect"
+
+	effecttype="StatusDebuff"
+	allowtransfer="false"
+	
+	movespeedslow="0.3"
+>
+	<altavatar key="Hero_Tarot.Alt9"
+		passiveeffect="../alt9/ability_03/effects/state_slow.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt10"
+		passiveeffect="../alt10/ability_03/effects/state_slow.effect"
+	/>
+</state>

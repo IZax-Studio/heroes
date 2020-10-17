@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Treant_Ability1_Root"
+
+	icon="icon1.tga"
+	
+	passiveeffect="../ability_04/effects/state.effect"
+	
+	immobilized2="true"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	negativeeffect="immobilized"
+>
+	<onframe />
+</state>

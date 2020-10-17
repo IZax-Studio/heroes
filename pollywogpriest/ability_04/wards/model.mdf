@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="totem_rig.max" file="snake.model" type="K2">
+
+	
+	<anim name="idle" clip="default_1.clip" loop="True"/>
+
+</model>

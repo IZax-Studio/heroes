@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Panda_Ability1_Bound"
+	
+	icon="icon_1.tga"
+	passiveeffect="/heroes/panda/ability_01/effects/impact.effect"
+
+
+	immobilized2="true"
+
+	ishidden="true"
+
+	unitwalking="true"
+	effecttype=""
+>
+	<onframe>
+		<condition test="not_hasstate State_Panda_Ability1" target="this_proxy_entity">
+			<expire />
+		</condition>
+	</onframe>
+	
+    <altavatar key="Hero_Panda.Alt10" modpriority="1"
+	    icon="/heroes/panda/alt10/ability_01/icon.tga"
+	/> 
+	
+	<altavatar key="Hero_Panda.Alt11" modpriority="1"
+	    icon="/heroes/panda/alt11/ability_01/icon.tga"
+	/> 
+	
+</state>

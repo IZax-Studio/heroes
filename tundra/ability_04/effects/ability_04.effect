@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="	" deferred="1">
+	<definitions>
+
+	
+		<particlesystem name="system0" space="world" scale="1">
+
+
+			<billboard
+			
+			life="600"								
+			color="1.0 1.0 1.0"				
+			position="0 -40 140"
+			startsize="200"
+			endsize="400"
+			material="/shared/effects/materials/refract_wave.material"
+			lockup="1"
+			lockright="1"
+			directionalspace="local"			
+			param=".02"	
+			roll="180"
+			yaw="0"
+			pitch="90"
+			
+		/>	
+		
+		<billboard
+			
+			life="600"								
+			color="1.0 1.0 1.0"				
+			position="0 0 00"
+			startsize="200"
+			endsize="600"
+			
+			material="/shared/effects/materials/refract_wave.material"
+			lockup="1"
+			lockright="1"
+			directionalspace="local"
+			startparam="0"
+			midparam="0.05"
+			endparam="0"
+			midparampos=".3"
+			roll="180"
+			yaw="0"
+			pitch="90"
+			
+			
+		/>	
+
+		
+			<simpleemitter
+				spawnrate="35"
+				particlelife="500"
+				particledirectionalspace="local"
+				material="/shared/effects/materials/whitedot.material"
+				inheritvelocity="0.1"
+				speed="0"
+				direction="0 1 0"
+				minangle="0"
+				maxangle="1"
+				position="0 0 0"
+				
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					size="200"
+					startscale="1.75"
+					endscale="3.75"
+					startcolor=".225 .125 .03"
+					endcolor="0 0 0"
+					turn="0"
+					startalpha="0"
+					midalpha=".15"
+					endalpha="0"
+					midalphapos=".5"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+				/>
+			</simpleemitter>
+
+
+
+
+		<simpleemitter
+			
+				minparticlelife="850"
+				maxparticlelife="1250"
+				spawnrate="205"
+				minspeed="250"
+				maxspeed="550"
+				gravity="20"
+				direction="1 0 0"
+				minangle="0"
+				maxangle="1"
+				drag="0.01"
+				depthbias="-100"
+				material="/shared/effects/materials/sand_blend.material"
+				offsetsphere="25 25 10"
+				position="0 0 -20"
+			>
+				<particle
+					depthbias="-100"
+					startcolor=".35 .30 .22"
+					endcolor=".35 .30 .22"
+					startsize="130"
+					endsize="220"
+			
+					startalpha="0.1"
+					endalpha="0"
+		
+			
+					yawspeed="-35"
+				/>
+			</simpleemitter>
+
+
+		<simpleemitter
+			
+				minparticlelife="850"
+				maxparticlelife="1250"
+				spawnrate="205"
+				minspeed="250"
+				maxspeed="550"
+				gravity="20"
+				direction="-1 0 0"
+				minangle="0"
+				maxangle="1"
+				drag="0.01"
+				depthbias="-100"
+				material="/shared/effects/materials/sand_blend.material"
+				offsetsphere="25 25 10"
+				position="0 0 -20"
+			>
+				<particle
+					depthbias="-100"
+					startcolor=".35 .30 .22"
+					endcolor=".35 .30 .22"
+					startsize="130"
+					endsize="220"
+			
+					startalpha="0.1"
+					endalpha="0"
+		
+			
+					yawspeed="-35"
+				/>
+			</simpleemitter>
+
+
+
+		<simpleemitter
+			
+				minparticlelife="850"
+				maxparticlelife="1250"
+				spawnrate="205"
+				minspeed="250"
+				maxspeed="550"
+				gravity="20"
+				direction="-1 0 0"
+				minangle="0"
+				maxangle="1"
+				drag="0.01"
+				depthbias="-100"
+				material="/shared/effects/materials/smoke_01.material"
+				offsetsphere="25 25 10"
+				position="0 0 -20"
+			>
+				<particle
+					depthbias="-100"
+					startcolor=".35 .30 .22"
+					endcolor=".35 .30 .22"
+					startsize="130"
+					endsize="220"
+			
+					startalpha="0.1"
+					endalpha="0"
+		
+			
+					yawspeed="-35"
+				/>
+			</simpleemitter>
+
+
+			<simpleemitter
+			
+				minparticlelife="850"
+				maxparticlelife="1250"
+				spawnrate="205"
+				minspeed="250"
+				maxspeed="550"
+				gravity="20"
+				direction="1 0 0"
+				minangle="0"
+				maxangle="1"
+				drag="0.01"
+				depthbias="-100"
+				material="/shared/effects/materials/smoke_01.material"
+				offsetsphere="25 25 10"
+				position="0 0 -20"
+			>
+				<particle
+					depthbias="-100"
+					startcolor=".35 .30 .22"
+					endcolor=".35 .30 .22"
+					startsize="130"
+					endsize="220"
+			
+					startalpha="0.1"
+					endalpha="0"
+		
+			
+					yawspeed="-35"
+				/>
+			</simpleemitter>
+			
+			<terrainemitter
+				
+				minparticlelife="500"
+				maxparticlelife="1000"
+				spawnrate="2535"
+				minspeed="25"
+				maxspeed="50"
+				gravity="2"
+				direction="0 0 0"
+				material="/shared/effects/materials/smoke_01.material"
+				offsetsphere="100 100 30"
+				position="0 0 50"
+				depthbias="-30"
+			
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					depthbias="-25"
+					color=".35 .30 .22"
+			
+					startscale="50"
+					endscale="50"
+					startalpha="0"
+					midalpha=".1"
+					endalpha="0"
+				/>
+			</terrainemitter>
+
+		</particlesystem>
+
+	</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+
+	<waitfordeath instance="instance0" />
+
+	<spawnmodifier instance="instance1" modifier="modifier0"/>
+	<wait duration="20000"/>
+	<!-- <die /> -->
+</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->

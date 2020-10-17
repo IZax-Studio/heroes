@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_ProphetAttack"
+
+	speed="1250"
+	gravity="0"
+
+	modelscale=".7"
+	model="/shared/models/invis.mdf"
+	
+	flying="true"
+	flyheight="80"
+
+	traileffect="/heroes/hellbringer/alt6/projectile/effects/trail.effect"
+	impacteffect="/heroes/hellbringer/alt6/projectile/effects/impact.effect"
+>
+	<altavatar key="Hero_Prophet.Alt4"
+		modelscale="1.6"
+		model="/heroes/prophet/alt4/projectile/effects/base/model.mdf"
+		traileffect="/heroes/prophet/alt4/projectile/effects/trail_base.effect"
+		impacteffect="/heroes/prophet/alt4/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Prophet.Alt5"
+		model="/shared/models/invis.mdf"
+		traileffect="/heroes/prophet/alt5/projectile/effects/trail.effect"
+		impacteffect="/heroes/prophet/alt5/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Prophet.Alt6"
+		model="/heroes/prophet/alt6/projectile/effects/staff/model.mdf"
+		traileffect="/heroes/prophet/alt6/projectile/effects/trail.effect"
+		impacteffect="/heroes/prophet/alt6/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Prophet.Alt7"
+		model="/heroes/prophet/alt7/projectile/effects/staff/model.mdf"
+		traileffect="/heroes/prophet/alt7/projectile/effects/trail.effect"
+		impacteffect="/heroes/prophet/alt7/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Prophet.Alt8"
+		model="/heroes/prophet/alt8/projectile/effects/staff/model.mdf"
+		traileffect="/heroes/prophet/alt8/projectile/effects/trail.effect"
+		impacteffect="/heroes/prophet/alt8/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Prophet.Alt9"
+		model="/heroes/prophet/alt9/projectile/effects/staff/model.mdf"
+		traileffect="/heroes/prophet/alt9/projectile/effects/trail.effect"
+		impacteffect="/heroes/prophet/alt9/projectile/effects/impact.effect"
+	/>
+</projectile>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Monarch_Ability2"
+	
+	icon="icon2.tga"
+	passiveeffect="effects/state.effect"
+	immobilized2="true"
+	disarmed="true"
+	frozen="true"
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	revealed="true"
+	
+	morphmodel="/heroes/monarch/ability_02/effects/cocoon/model.mdf"
+	morphpriority="1"
+	morphmodelscale="1"
+	morphpreglobalscale="1"
+
+	modifierkey="iamsheeped"
+	modifierkey2="monarch_ability2_Affected"
+>
+	<onframe>
+		<heal a="15,30,40,50" b="frametime" op="mult" />
+	</onframe>
+	
+	<oninflict>
+		<heal a="90" />
+	</oninflict>
+	
+	<onrefresh>
+		<heal a="90" />
+	</onrefresh>
+	
+	<ondamaged priority="5">		
+		<scaledamage scale="0.75,0.65,0.55,0.45" />
+	</ondamaged>
+	
+	<onexpired>
+		<playanim name="idle" />
+		<setactivemodifierkey entity="this_proxy_entity" name="" />
+
+		<hasavatarkey name="Hero_Monarch.Alt2" >
+			<playeffect effect="/heroes/monarch/alt2/ability_02/effects/death.effect" target="target_position" source="target_position" occlude="true" />
+			<playeffect effect="/heroes/monarch/alt2/ability_02/effects/fade_out.effect" target="target_entity" source="target_entity" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Monarch.Alt3" >
+				<playeffect effect="/heroes/monarch/alt2/ability_02/effects/death.effect" target="target_position" source="target_position" occlude="true" />
+				<playeffect effect="/heroes/monarch/alt2/ability_02/effects/fade_out.effect" target="target_entity" source="target_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Monarch.Alt4" >
+					<playeffect effect="/heroes/monarch/alt4/ability_02/effects/death.effect" target="target_position" source="target_position" occlude="true" />
+					<playeffect effect="/heroes/monarch/alt4/ability_02/effects/fade_out.effect" target="target_entity" source="target_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Monarch.Alt5" >
+						<playeffect effect="/heroes/monarch/alt5/ability_02/effects/death.effect" target="target_position" source="target_position" occlude="true" />
+						<playeffect effect="/heroes/monarch/alt5/ability_02/effects/fade_out.effect" target="target_entity" source="target_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Monarch.Alt6" >
+							<playeffect effect="/heroes/monarch/alt6/ability_02/effects/death.effect" target="target_position" source="target_position" occlude="true" />
+							<playeffect effect="/heroes/monarch/alt6/ability_02/effects/fade_out.effect" target="target_entity" source="target_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Monarch.Alt7" >
+								<playeffect effect="/heroes/monarch/alt7/ability_02/effects/death.effect" target="target_position" source="target_position" occlude="true" />
+								<playeffect effect="/heroes/monarch/alt7/ability_02/effects/fade_out.effect" target="target_entity" source="target_entity" />
+							</hasavatarkey>
+							<else>
+								<playeffect effect="effects/death.effect" target="target_position" source="target_position" occlude="true" />
+								<playeffect effect="effects/fade_out.effect" target="target_entity" source="target_entity" />
+							</else>							
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+	</onexpired>
+	
+	
+	<altavatar key="Hero_Monarch.Alt2" modpriority="1"
+		passiveeffect="/heroes/monarch/alt2/ability_02/effects/state.effect"
+		icon="/heroes/monarch/alt2/ability_02/icon.tga"
+	/>
+	
+	
+	<altavatar key="Hero_Monarch.Alt3" modpriority="1"
+		passiveeffect="/heroes/monarch/alt3/ability_02/effects/state.effect"
+		icon="/heroes/monarch/alt2/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Monarch.Alt4" modpriority="1"
+		passiveeffect="/heroes/monarch/alt4/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Monarch.Alt5" modpriority="1"
+		passiveeffect="/heroes/monarch/alt5/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Monarch.Alt6" modpriority="1"
+		passiveeffect="/heroes/monarch/alt6/ability_02/effects/state.effect"
+		morphmodel="/heroes/monarch/alt6/ability_02/effects/cocoon/model.mdf"
+	/>
+
+	<altavatar key="Hero_Monarch.Alt7" modpriority="1"
+		morphmodel="/heroes/monarch/alt7/ability_02/effects/cocoon.mdf"
+		passiveeffect="/heroes/monarch/alt7/ability_02/effects/state.effect"		
+	/>
+	
+</state>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_WitchSlayer_Ability4_Sound2"
+
+	icon="icon.tga"
+	passiveeffect=""
+	
+	ishidden="true"
+	deathpersist="true"
+>
+	<onexpired>
+		<targettype type="alive" />
+		<else>
+			<playeffect effect="effects/impact_kill.effect" target="source_entity" />
+		</else>
+	</onexpired>
+</state>

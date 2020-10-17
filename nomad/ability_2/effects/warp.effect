@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" persistent="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".75"
+				sample="/heroes/nomad/ability_2/sounds/cast.wav"
+			/>
+		
+			<simpleemitter
+				bone="_bone_centerofchest"
+				life="800"
+				gravity="-1"
+				spawnrate="15"
+				minparticlelife="250"
+				maxparticlelife="1000"
+				offsetsphere="25 25 25"
+				material="/shared/effects/materials/sand_blend.material"
+				inheritvelocity="-0.1"
+			>
+				<particle 
+					minangle="-180"
+					maxangle="180"
+					startcolor=".7 .6 .4"
+					endcolor=".5 .5 .3"	
+					size="10"
+					minstartscale="2"
+					maxstartscale="4"
+					minendscale="4"
+					maxendscale="6"
+					startalpha="0"
+					midalpha=".65"
+					endalpha="0"
+					midalphapos=".2"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				life="1000"
+				gravity="-1"
+				spawnrate="10"
+				minparticlelife="750"
+				maxparticlelife="1500"
+				offsetsphere="50 50 25"
+				material="/shared/effects/materials/pyroclast_03.material"
+				inheritvelocity="-0.1"
+			>
+				<particle 
+					minangle="-180"
+					maxangle="180"
+					startcolor=".7 .7 .4"
+					endcolor=".5 .5 .3"	
+					size="10"
+					minstartscale="5"
+					maxstartscale="10"
+					minendscale="15"
+					maxendscale="20"
+					startalpha="0"
+					midalpha=".65"
+					midalphapos="0.2"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			<template name="images">
+				<simpleemitter
+					count="4"
+					delay="{zdelay}"
+					spawnrate="10"
+					particlelife="3000"
+					offsetsphere="0 0 0"
+					position="0 0 0"
+					minangle="0"
+					maxangle="0"
+					direction="0 1 0"
+				>
+					<particle
+						turn="true"
+					>
+						<model
+							position="0 0 0"
+							scale="1.25"
+							life="500"
+							model="../../model.mdf"
+							material="/shared/effects/materials/shell2.material"
+							anim="walk_1"
+							startcolor="0 0 0"
+							midcolor=".7 .8 1"
+							endcolor="0 0 0"
+							midcolorpos=".2"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							midalphapos=".35"
+						/>
+					</particle>
+				</simpleemitter>
+			</template>
+			
+			<instance name="images" zdelay="0"/>
+			
+			<template name="trailz">
+				<controller
+					life="3000"
+					position="{pos}"
+				>
+					<trailemitter
+						life="750"
+						spawnrate="30"
+						particlelife="750"
+						material="/shared/effects/materials/light_scrolling_blue_trail.material"
+						texposscale="0"
+						texstretchscale="1.5"
+					>
+						<particle
+							startsize="1"
+							midsize="15"
+							endsize="20"
+							startcolor="0"
+							endcolor="1 .8 .6"
+						/>
+					</trailemitter>
+				</controller>
+			</template>
+			
+			<instance name="trailz" pos="0 0 75" />
+			<instance name="trailz" pos="30 10 60" />
+			<instance name="trailz" pos="-10 10 70" />
+			<instance name="trailz" pos="-30 20 45" />
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
+

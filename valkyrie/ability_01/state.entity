@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Valkyrie_Ability1"
+
+	icon="icon1.tga"
+	
+	impactinterval="500"
+	
+	ishidden="true"
+	
+	effecttype=""
+>
+	<onrefresh>
+		<changeduration b="450" op="add" />
+	</onrefresh>
+
+	<onimpact>
+		<damage effecttype="Magic" amount="75,150,225,300" />
+		
+		<!-- VFX -->
+		<hasavatarkey name="Hero_Valkyrie.Alt">
+			<playeffect effect="../alt/ability_01/effects/actual_impact.effect" target="target_entity" source="target_entity" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Valkyrie.Alt5">
+				<playeffect effect="../alt5/ability_01/effects/actual_impact.effect" target="target_entity" source="target_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Valkyrie.Alt6">
+					<playeffect effect="../alt6/ability_01/effects/actual_impact.effect" target="target_entity" source="target_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Valkyrie.Alt7">
+						<playeffect effect="../alt7/ability_01/effects/actual_impact.effect" target="target_entity" source="target_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Valkyrie.Alt8">
+							<playeffect effect="../alt8/ability_01/effects/actual_impact.effect" target="target_entity" source="target_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Valkyrie.Alt9">
+								<playeffect effect="../alt9/ability_01/effects/actual_impact.effect" target="target_entity" source="target_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Valkyrie.Alt10">
+									<playeffect effect="../alt10/ability_01/effects/actual_impact.effect" target="target_entity" source="target_entity" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Valkyrie.Alt12">
+										<playeffect effect="../alt12/ability_01/effects/actual_impact.effect" target="target_entity" source="target_entity" />
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_Valkyrie.Alt13">
+											<playeffect effect="../alt13/ability_01/effects/actual_impact.effect" target="target_entity" source="target_entity" />
+										</hasavatarkey>
+										<else>
+											<playeffect effect="effects/actual_impact.effect" target="target_entity" source="target_entity" />
+										</else>	
+									</else>	
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+	</onimpact>
+	
+	<altavatar key="Hero_Valkyrie.Alt12"
+		icon="/heroes/Valkyrie/alt12/ability_01/icon.tga"
+	>
+	<modifier key="valkyrieAlt12_Ability1_Upgrade"
+		icon="/heroes/Valkyrie/alt12/ability_01/icon_u.tga"
+	/>
+	</altavatar>
+</state>

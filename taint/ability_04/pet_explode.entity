@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pet
+	name="Pet_Taint_Ability4_Explode"	
+	
+	icon="pet_explode/icon.tga"
+	portrait=""
+	model="pet_explode/model.mdf"
+	skin=""
+	
+	passiveeffect="pet_explode/effects/body.effect"
+	spawneffect="pet_explode/effects/spawn.effect"
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	preglobalscale="2.35"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="64"
+	boundsradius="16"
+	selectionradius="32"
+	targetoffset="0 0 0"
+
+	movespeed="400"
+	turnrate="450"
+	turnsmoothing="0.05"
+	isselectable="true"
+	iscontrollable="false"
+
+	maxhealth="350,500,650"
+	healthregen="0.25"
+	maxmana="0"
+	manaregen="0"
+
+	armor="5.5"
+	magicarmor="3"
+
+	cancarryitems="false"
+	inventory0=""
+	inventory1=""
+	inventory2=""
+	inventory3=""
+
+	attackduration="1000"
+	attackactiontime="350"
+	attackcooldown="1250"
+	attackdamagemin="25,45,85"
+	attackdamagemax="30,50,90"
+	attacknumanims="2"
+	attackoffset="0 60 100"
+	attackprojectile=""
+	attackrange="100"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="/heroes/bephelgor/ability_04/pet/effects/impact.effect"
+	attacktype="melee"
+	combattype="Melee"
+
+	aggrorange="800"
+	sightrangeday="1200"
+	sightrangenight="800"
+	
+	goldbountymin="8"
+	goldbountymax="8"
+	experiencebounty="5"
+	
+	lifetime="5000"
+	
+	corpsetime="10000"
+	corpsefadetime="5000"
+	unittype="summoned Uninfestable"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+>
+
+	<onattackstart>
+		<kill target="this_entity" source="" />
+	</onattackstart>
+
+	<ondeath>
+	
+		<hasavatarkey name="Hero_Taint.Alt7" >
+			<playeffect effect="../alt7/ability_04/effects/death.effect" target="source_entity" source="source_entity" />
+		</hasavatarkey>
+			<else>
+			<hasavatarkey name="Hero_Taint.Alt6" >
+				<playeffect effect="../alt6/ability_04/effects/explosion.effect" target="source_entity" source="source_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Taint.Alt8" >
+					<playeffect effect="../alt8/ability_04/effects/explosion.effect" target="source_entity" source="source_entity" />
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/explosion.effect" target="source_entity" source="source_entity" />
+				</else>
+			</else>
+		</else>
+		<areaofeffect
+			radius="200"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+		>
+			<damage effecttype="Magic" amount="55,70,85" />
+		</areaofeffect>
+	</ondeath>
+	
+	<onexpired>
+	
+		<hasavatarkey name="Hero_Taint.Alt7" >
+			<playeffect effect="../alt7/ability_04/effects/death.effect" target="source_entity" source="source_entity" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Taint.Alt6" >
+				<playeffect effect="../alt6/ability_04/effects/explosion.effect" target="source_entity" source="source_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Taint.Alt8" >
+					<playeffect effect="../alt8/ability_04/effects/explosion.effect" target="source_entity" source="source_entity" />
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/explosion.effect" target="source_entity" source="source_entity" />
+				</else>
+			</else>
+		</else>
+		<areaofeffect
+			radius="200"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+		>
+			<damage effecttype="Magic" amount="55,70,85" />
+		</areaofeffect>
+	</onexpired>
+	
+	<altavatar key="Hero_Taint.Alt2"
+		model="../alt2/ability_04/pet_explode/model.mdf"
+	/>
+	
+	<altavatar key="Hero_Taint.Alt3"
+		passiveeffect="../alt3/ability_04/pet_explode/effects/body.effect"
+		spawneffect="../alt3/ability_04/pet_explode/effects/spawn.effect"
+		model="../alt3/ability_04/pet_explode/model.mdf"
+	>	
+		<ondeath>
+			<playeffect effect="../../alt3/ability_04/effects/explosion.effect" target="source_entity" source="source_entity" />
+			<areaofeffect
+				radius="200"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Magic"
+			>
+				<damage effecttype="Magic" amount="55,70,85" />
+			</areaofeffect>
+		</ondeath>
+		
+		<onexpired>
+			<playeffect effect="../../alt3/ability_04/effects/explosion.effect" target="source_entity" source="source_entity" />
+			<areaofeffect
+				radius="200"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Magic"
+			>
+				<damage effecttype="Magic" amount="55,70,85" />
+			</areaofeffect>
+		</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_Taint.Alt4"
+		preglobalscale="1"
+		attackimpacteffect="../alt4/ability_04/pet_explode/effects/impact.effect"
+		material="/shared/effects/materials/shell.material"
+		passiveeffect="../alt4/ability_04/pet_explode/effects/body.effect"
+		spawneffect="../alt4/ability_04/pet_explode/effects/spawn.effect"
+		model="../alt4/ability_04/pet_explode/model.mdf"
+	>	
+		<ondeath>
+			<playeffect effect="../../alt4/ability_04/effects/explosion.effect" target="source_entity" source="source_entity" />
+			<areaofeffect
+				radius="200"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Magic"
+			>
+				<damage effecttype="Magic" amount="55,70,85" />
+			</areaofeffect>
+		</ondeath>
+		
+		<onexpired>
+			<playeffect effect="../../alt4/ability_04/effects/explosion.effect" target="source_entity" source="source_entity" />
+			<areaofeffect
+				radius="200"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Magic"
+			>
+				<damage effecttype="Magic" amount="55,70,85" />
+			</areaofeffect>
+		</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_Taint.Alt5"
+		preglobalscale="1"
+		attackimpacteffect="../alt5/ability_04/pet_explode/effects/impact.effect"
+		material="/shared/effects/materials/shell.material"
+		passiveeffect="../alt5/ability_04/pet_explode/effects/body.effect"
+		spawneffect="../alt5/ability_04/pet_explode/effects/spawn.effect"
+		model="../alt5/ability_04/pet_explode/model.mdf"
+	>	
+		<ondeath>
+			<playeffect effect="../../alt5/ability_04/effects/explosion.effect" target="source_entity" source="source_entity" />
+			<areaofeffect
+				radius="200"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Magic"
+			>
+				<damage effecttype="Magic" amount="55,70,85" />
+			</areaofeffect>
+		</ondeath>
+		
+		<onexpired>
+			<playeffect effect="../../alt5/ability_04/effects/explosion.effect" target="source_entity" source="source_entity" />
+			<areaofeffect
+				radius="200"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Magic"
+			>
+				<damage effecttype="Magic" amount="55,70,85" />
+			</areaofeffect>
+		</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_Taint.Alt6"
+		preglobalscale="0.75"
+		effectscale="0.1"
+		attackimpacteffect="../alt6/ability_04/pet_explode/effects/impact.effect"
+		material="/shared/effects/materials/shell.material"
+		spawneffect="../alt6/ability_04/pet_explode/effects/spawn.effect"
+		model="../alt6/ability_04/pet_explode/model.mdf"
+	/>
+	
+	<altavatar key="Hero_Taint.Alt7"
+		preglobalscale="1"
+		attackimpacteffect="../alt7/ability_04/pet_explode/effects/impact.effect"
+		material="/shared/effects/materials/shell.material"
+		spawneffect="../alt7/ability_04/pet_explode/effects/spawn.effect"
+		model="../alt7/ability_04/pet_explode/model.mdf"
+		passiveeffect="../alt7/ability_04/pet_explode/effects/body.effect"
+	/>
+	
+	<altavatar key="Hero_Taint.Alt8"
+		attackimpacteffect="../alt8/ability_04/effects/pet_explode/effects/impact.effect"
+		passiveeffect="../alt8/ability_04/effects/pet_explode/effects/body.effect"
+		spawneffect="../alt8/ability_04/effects/pet_explode/effects/spawn.effect"
+		model="../alt8/ability_04/effects/pet_explode/model.mdf"
+	>	
+	</altavatar>
+	
+</pet>

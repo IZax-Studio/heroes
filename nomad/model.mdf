@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="PA.model" med="PA.model" low="PA.model" >
+	
+	<anim name="idle" clip="clips/default_1.clip" fps="30" loop="true" numframes="100"/>
+	
+	<anim name="portrait" clip="clips/portrait.clip" loop="true" numframes="100"/>
+	
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="30">
+		<frameevent frame="1" cmd="PlaySoundLinear /heroes/nomad/sounds/attack.wav 0 1800 .5"/>
+	</anim>
+	
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="30">
+		<frameevent frame="1" cmd="PlaySoundLinear /heroes/nomad/sounds/attack.wav 0 1800 .5"/>
+	</anim>
+
+	<anim name="walk_1" clip="clips/walk_1.clip" fps="30" loop="true">
+	</anim>
+	
+	<anim name="death_1" clip="clips/death_1.clip" fps="30" loop="true" loopbackframe="120">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/death_%.wav 400 2200 .85"/>
+		<frameevent frame="1" cmd="starteffect 1"/>
+	</anim>
+	
+	<anim name="ability_1" clip="clips/ability_1.clip" fps="30" loop="false">
+	</anim>
+	
+	<anim name="ability_2" clip="clips/ability_2.clip" fps="30" loop="false">
+	</anim>
+	
+	<anim name="ability_2_attack" clip="clips/ability_1.clip" fps="30" loop="false">
+		<frameevent frame="5" cmd="StartEffect effects/ability_2_attack.effect"/>
+	</anim>
+
+	<anim name="ability_2point" clip="clips/ability_1.clip" fps="30" loop="false">
+	</anim>
+	
+	<anim name="ability_3" clip="clips/ability_3.clip" fps="30" loop="false">
+	</anim>
+	
+	<anim name="ability_3crescent" clip="clips/ability_3crescent.clip" fps="40"/>
+	
+	<anim name="ability_3sun" clip="clips/ability_3sun.clip"/>
+	
+	<anim name="ability_4" clip="clips/ability_4.clip" fps="30" loop="false">
+	</anim>
+
+	<anim name="taunt_1" clip="clips/taunt_1.clip" fps="30"/>
+
+	<anim name="bored_1" clip="clips/bored_1.clip"/>
+	
+	<anim name="knock_1" clip="clips/knock_1.clip" loop="true" loopbackframe="-1"/>
+	
+	<anim name="item_1" clip="clips/item_1.clip" fps="30"/>
+	
+</model>

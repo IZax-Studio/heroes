@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="">
+
+	<definitions>
+		<particlesystem name="system0" space="world" scale="2">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="2000"
+				volume=".70" 
+				sample="../sounds/land_%.wav" 
+			/>
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="2000"
+				volume=".35" 
+				sample="/heroes/behemoth/ability_02/sounds/impact.wav" 
+			/>
+
+			<groundsprite
+				life="1100"
+				delay="250"
+				material="/shared/effects/materials/lotus_symbol.material"
+				startsize="95" 
+				endsize="100" 
+				midsizepos=".25"
+				startcolor="0"
+				midcolor="3 .25 0"
+				endcolor=".1 .1 0"
+				midcolorpos=".25"	
+				startalpha="1"
+				midalpha=".5"
+				endalpha="0"
+				midalphapos=".25"
+				yawspeed="10"
+			/>
+			
+			
+			<simpleemitter
+				delay="100"
+				count="1"
+				spawnrate="5000"
+				particlelife="2500"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="1"
+				>
+					<model
+						position="0 27 0"
+						life="1200"
+						model="rocks/model.mdf"
+						anim="idle_slower"
+						material="/heroes/monkey_king/effects/material_gold.material"
+						startcolor="1 .5 0"
+						midcolor="1 1 1"
+						endcolor="1 1 1"
+						expirelife="500"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".5"
+						minscale=".13"
+						maxscale=".25"
+						directionalspace="local"
+						minyaw="0"
+						maxyaw="180"
+					>
+					</model>
+					
+					<model
+						position="0 -22 0"
+						life="1200"
+						model="rocks/model.mdf"
+						anim="idle_slower"
+						material="/heroes/monkey_king/effects/material_gold.material"
+						startcolor="1 .5 0"
+						midcolor="1 1 1"
+						endcolor="1 1 1"
+						expirelife="500"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".5"
+						minscale=".1"
+						maxscale=".2"
+						directionalspace="local"
+						minyaw="0"
+						maxyaw="180"
+					>
+					</model>
+				</particle>
+			</simpleemitter>
+
+<!--
+			<simpleemitter
+				delay="0"
+				count="1"
+				spawnrate="5000"
+				particlelife="2500"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="1"
+				>
+					<model
+						position="30 0 0"
+						life="1200"
+						model="rocks/model.mdf"
+						anim="idle_slower"
+						material="/heroes/monkey_king/effects/material_gold.material"
+						startcolor="1 .5 0"
+						midcolor="1 1 1"
+						endcolor="1 1 1"
+						expirelife="500"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".5"
+						minscale=".1"
+						maxscale=".15"
+						directionalspace="local"
+						minyaw="0"
+						maxyaw="180"
+					>
+					</model>
+					
+					<model
+						position="-35 0 0"
+						life="1700"
+						model="rocks/model.mdf"
+						anim="idle_slower"
+						material="/heroes/monkey_king/effects/material_gold.material"
+						startcolor="1 .5 0"
+						midcolor="1 1 1"
+						endcolor="1 1 1"
+						expirelife="500"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".5"
+						minscale=".1"
+						maxscale=".2"
+						directionalspace="local"
+						minyaw="0"
+						maxyaw="180"
+					>
+					</model>
+				</particle>
+			</simpleemitter>
+-->
+
+			<simpleemitter
+				delay="250"
+				count="1"
+				spawnrate="5000"
+				particlelife="1500"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="1"
+				>
+					<model
+						position="52 0 0"
+						life="1500"
+						model="rocks/model.mdf"
+						anim="idle"
+						material="/heroes/monkey_king/effects/material_gold.material"
+						startcolor="1 .5 0"
+						midcolor="1 1 1"
+						endcolor="1 1 1"
+						expirelife="500"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".5"
+						minscale=".125"
+						maxscale=".15"
+						directionalspace="local"
+						minyaw="0"
+						maxyaw="360"
+					>
+					</model>
+					
+					<model
+						position="-55 0 0"
+						life="1600"
+						model="rocks/model.mdf"
+						anim="idle"
+						material="/heroes/monkey_king/effects/material_gold.material"
+						startcolor="1 .5 0"
+						midcolor="1 1 1"
+						endcolor="1 1 1"
+						expirelife="500"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".5"
+						minscale=".125"
+						maxscale=".15"
+						directionalspace="local"
+						minyaw="0"
+						maxyaw="360"
+					>
+					</model>
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				delay="200"
+				count="1"
+				spawnrate="5000"
+				particlelife="2500"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="1"
+				>
+					<model
+						position="0 55 0"
+						life="1600"
+						model="rocks/model.mdf"
+						anim="idle"
+						material="/heroes/monkey_king/effects/material_gold.material"
+						startcolor="1 .5 0"
+						midcolor="1 1 1"
+						endcolor="1 1 1"
+						expirelife="500"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".5"
+						minscale=".075"
+						maxscale=".1"
+						directionalspace="local"
+						minyaw="0"
+						maxyaw="360"
+					>
+					</model>
+					
+					<model
+						position="0 -60 0"
+						life="1900"
+						model="rocks/model.mdf"
+						anim="idle"
+						material="/heroes/monkey_king/effects/material_gold.material"
+						startcolor="1 .5 0"
+						midcolor="1 1 1"
+						endcolor="1 1 1"
+						expirelife="500"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".5"
+						minscale=".075"
+						maxscale=".1"
+						directionalspace="local"
+						minyaw="0"
+						maxyaw="360"
+					>
+					</model>
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				count="1"
+				spawnrate="5000"
+				particlelife="750"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="1"
+				>
+					<groundsprite
+						delay="150"
+						life="2000"
+						material="/shared/effects/materials/earth_cracks_reveal_add.material"
+						minsize="50"
+						maxsize="75"
+						color="1 1 0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos="0.05"
+						minyaw="0"
+						maxyaw="360"
+					/>
+
+					<groundsprite
+						delay="300"
+						position="0 50 0"
+						life="2000"
+						material="/shared/effects/materials/earth_cracks_reveal_add.material"
+						size="80"
+						color="1 1 0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos="0.05"
+						directionalspace="local"
+					/>
+
+					<groundsprite
+						delay="450"
+						position="0 100 0"
+						life="2000"
+						material="/shared/effects/materials/earth_cracks_reveal_add.material"
+						size="55"
+						color="1 1 0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos="0.05"
+						directionalspace="local"
+					/>
+
+					<groundsprite
+						delay="300"
+						position="0 -50 0"
+						life="2000"
+						material="/shared/effects/materials/earth_cracks_reveal_add.material"
+						size="80"
+						color="1 1 0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos="0.05"
+						minyaw="0"
+						maxyaw="360"
+						directionalspace="local"
+					/>
+					
+					<groundsprite
+						delay="450"
+						position="0 -100 0"
+						life="2000"
+						material="/shared/effects/materials/earth_cracks_reveal_add.material"
+						size="55"
+						color="1 1 0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos="0.05"
+						minyaw="0"
+						maxyaw="360"
+						directionalspace="local"
+					/>
+					
+					<groundsprite
+						delay="300"
+						position="-50 0 0"
+						life="2000"
+						material="/shared/effects/materials/earth_cracks_reveal_add.material"
+						size="80"
+						color="1 1 0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos="0.05"
+						minyaw="0"
+						maxyaw="360"
+						directionalspace="local"
+					/>
+					
+					<groundsprite
+						delay="450"
+						position="-100 0 0"
+						life="2000"
+						material="/shared/effects/materials/earth_cracks_reveal_add.material"
+						size="55"
+						color="1 1 0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos="0.05"
+						minyaw="0"
+						maxyaw="360"
+						directionalspace="local"
+					/>
+
+					<groundsprite
+						delay="300"
+						position="50 0 0"
+						life="2000"
+						material="/shared/effects/materials/earth_cracks_reveal_add.material"
+						size="80"
+						color="1 1 0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos="0.05"
+						minyaw= "0"
+						maxyaw="360"
+						directionalspace="local"
+					/>
+					
+					<groundsprite
+						delay="450"
+						position="100 0 0"
+						life="2000"
+						material="/shared/effects/materials/earth_cracks_reveal_add.material"
+						size="55"
+						color="1 1 0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos="0.05"
+						minyaw="0"
+						maxyaw="360"
+						directionalspace="local"
+					/>
+				</particle>
+			</simpleemitter>
+		
+		
+			<groundsprite
+				delay="100"
+				life="2000"
+				material="/shared/effects/materials/fist_ground_smash_overlay.material"
+				startsize="75"			
+				endsize="85"			
+				color="1.0 1.0 1.0"
+				startalpha="1"
+				endalpha="0"
+			/>
+			
+		
+			<billboard
+				delay="0"
+				life="250"
+				position="0 0 0"
+				material="/shared/effects/materials/stomp_02.material"
+				startcolor=".5 .25 0"
+				endcolor="0 0 0"
+				startsize="0"
+				endsize="200"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+				rollspeed="360"
+			/>
+			
+			<billboard
+				delay="150"
+				life="250"
+				position="0 0 0"
+				material="/shared/effects/materials/stomp_02.material"
+				startcolor=".5 .25 0"
+				endcolor="0 0 0"
+				startsize="100"
+				endsize="350"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+				rollspeed="0"
+			/>
+			
+			<billboard
+				delay="150"
+				life="250"
+				position="0 0 0"
+				material="/heroes/drunkenmaster/effects/material.material"
+				startcolor=".65 0 0"
+				endcolor="0 0 0"
+				startsize="100"
+				endsize="400"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+				rollspeed="360"
+			/>
+		
+			<billboard
+				delay="0"
+				life="250"
+				position="0 0 0"
+				material="/shared/effects/materials/corona_07.material"
+				startcolor=".25 .125 0"
+				endcolor="0 0 0"
+				startsize="100"
+				endsize="350"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+			
+			<billboard
+				delay="150"
+				life="250"
+				position="0 0 0"
+				material="/shared/effects/materials/corona_07.material"
+				startcolor=".25 .125 0"
+				endcolor="0 0 0"
+				startsize="100"
+				endsize="350"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+			
+			<billboard
+				delay="300"
+				life="500"
+				position="0 0 0"
+				material="/shared/effects/materials/corona_07.material"
+				startcolor=".25 .125 0"
+				endcolor="0 0 0"
+				startsize="100"
+				endsize="350"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+			
+			<billboard
+				delay="450"
+				life="1000"
+				position="0 0 0"
+				material="/shared/effects/materials/corona_07.material"
+				startcolor=".125 .065 0"
+				midcolor="0 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".65"
+				startsize="100"
+				endsize="350"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+		
+			<billboard
+				delay="0"
+				life="1500"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor=".6 .15 0"
+				endcolor="0 0 0"
+				startsize="350"
+				endsize="350"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+			
+			<billboard
+				delay="0"
+				life="1000"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor=".5 .25 0"
+				endcolor="0 0 0"
+				startsize="100"
+				endsize="100"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+<!--
+			<simpleemitter
+				count="25"
+				spawnrate="250"
+				minparticlelife="100"
+				maxparticlelife="200"
+				speed="300"
+				drag="0.10"
+				material="/shared/effects/materials/whitedot.material"
+				offsetsphere="10 10 10"
+				position="0 0 35"
+				depthbias="0"
+			>
+				<particle
+					turn="1"
+					heightdistort=".1"
+					minstartwidth="1"
+					maxwidth="7"
+					minstartscale="5"
+					maxstartscale="10"
+					minendscale="0"
+					maxendscale="4"
+					startcolor=".25 .075 0"
+					endcolor="0 0 0"
+					midcolorpos=".25"
+				/>
+			</simpleemitter>
+-->
+			<billboard
+				delay="0"
+				life="250"
+				position="0 0 0"
+				material="/shared/effects/materials/refract_ripples.material"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				startsize="250"
+				endsize="350"
+				startparam=".1"
+				endparam="0"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+
+			<billboard
+				delay="0"
+				life="1000"
+				position="0 0 0"
+				material="/shared/effects/materials/refract_ripples.material"
+				startalpha="0"
+				midalpha=".5"
+				endalpha="0"
+				startsize="250"
+				endsize="350"
+				startparam=".1"
+				endparam="0"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+
+			<!--Taijitu/Trigram-->
+
+			<groundsprite
+					delay="150"
+					life="1000"
+					material="/heroes/monkey_king/effects/trigram.material"
+					size="175"
+					color="1 .5 0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos="0.05"
+					minyaw="0"
+					maxyaw="360"
+					directionalspace="local"
+				/>			
+			
+	</particlesystem>
+</definitions>
+
+<thread>
+	<camerashake2 scale="6" radius="1000" duration="500" frequency="22" />
+
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+
+
+
+
+
+

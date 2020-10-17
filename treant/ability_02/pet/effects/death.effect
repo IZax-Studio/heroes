@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+
+	<definitions>
+	
+		<modifier
+			life="10000"
+			color="1 1 1"
+			alpha="0"
+		/>
+
+		<particlesystem name="system0" space="world" scale=".85">
+		
+
+
+		
+			<simpleemitter
+				count="20"
+				minparticlelife="500"
+				maxparticlelife="850"
+				spawnrate="75"
+				minspeed="250"
+				maxspeed="350"
+				gravity="20"
+				direction="0 0 1"
+				minangle="0"
+				maxangle="1"
+				drag="0.01"
+				material="/shared/effects/materials/pyroclast_01.material"
+				offsetsphere="25 25 40"
+				position="0 0 25"
+			>
+				<particle
+					depthbias="-100"
+					color=".25 .2 .1"
+					height="250"
+					startwidth="25"
+					endwidth="100"
+					startscale="1"
+					endscale="2"
+					startalpha="1"
+					endalpha="0"
+					lockup="1"
+					lockright="1"
+					minyaw="0"
+					maxyaw="360"
+					yawspeed="-35"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				count="20"
+				minparticlelife="500"
+				maxparticlelife="850"
+				spawnrate="40"
+				minspeed="25"
+				maxspeed="50"
+				gravity="2"
+				direction="0 0 0"
+				material="/shared/effects/materials/pyroclast_01.material"
+				offsetsphere="75 75 10"
+				position="0 0 50"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					depthbias="-25"
+					color=".25 .2 .1"
+					startscale="50"
+					endscale="50"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="250"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				spawnrate="200"
+				gravity="-5"
+				speed="65"
+				drag="0"
+				position="0 0 50"
+				material="/shared/effects/materials/leaf_01.material"
+				offsetsphere="50 50 35"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					startcolor="1 .25 .1"
+					midcolor="1 .5 .1"
+					endcolor="0 0 0"
+					midcolorpos=".5"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".4"
+					startsize="35"
+					endsize="15"
+					mindsizepos=".1"
+				/>
+				<particle
+					minangle="0"
+					maxangle="360"
+					startcolor=".5 .5 0"
+					midcolor=".5 .5 0"
+					endcolor="0 0 0"
+					midcolorpos=".5"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".4"
+					startsize="35"
+					endsize="15"
+					mindsizepos=".1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				life="250"
+				minparticlelife="250"
+				maxparticlelife="1000"
+				spawnrate="100"
+				gravity="-5"
+				minspeed="250"
+				maxspeed="500"
+				drag="0"
+				position="0 0 50"
+				material="/shared/effects/materials/leaf_01.material"
+				offsetsphere="35 35 35"
+				minangle="0"
+				maxangle="10"
+				direction="0 0 1"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					startcolor="1 .25 .1"
+					midcolor="1 .5 .1"
+					endcolor="0 0 0"
+					midcolorpos=".5"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".4"
+					startsize="35"
+					endsize="15"
+					mindsizepos=".1"
+				/>
+				<particle
+					minangle="0"
+					maxangle="360"
+					startcolor=".5 .5 0"
+					midcolor=".5 .5 0"
+					endcolor="0 0 0"
+					midcolorpos=".5"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".4"
+					startsize="35"
+					endsize="15"
+					mindsizepos=".1"
+				/>
+			</simpleemitter>
+			
+			
+			<billboard
+				position="0 0 50"
+				life="1000"
+				startcolor="0 0 0"
+				midcolor=".05 .275 0"
+				endcolor="0 0 0"
+				midcolorpos=".35"
+				size="200"
+				depthbias="-25"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+<!--
+			<simpleemitter
+				delay="0"
+				spawnrate="15"
+				bone="Bip01 Spine2"
+				minparticlelife="650"
+				maxparticlelife="1000"
+				gravity="4"
+				speed="100"
+				drag=".01"
+				acceleration="0"
+				position="0 0 0"
+				material="/shared/effects/materials/leaf.material"
+				offsetsphere="50 50 0"
+				minangle="0"
+				maxangle="360"
+				direction="0 0 1"
+				offsetdirection="0 0 0"
+				offsetradial="10 10 10"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="-150"
+					startcolor="1 .5 0"
+					midcolor="1 .5 0"
+					endcolor="0 .5 0"
+					midcolorpos=".4"
+					startframe="0"
+					endframe="1"
+					startsize="10"
+					midsize="20"
+					endsize="10"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".25"
+					startstickiness=".4"
+					endstickiness="0"
+				/>
+			</simpleemitter>
+-->
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance1" particlesystem="system0" />
+		<spawnmodifier instance="instance0"/>
+		<waitfordeath  instance="instance0"/>
+		<waitfordeath  instance="instance1"/>
+	</thread> 
+</effect>

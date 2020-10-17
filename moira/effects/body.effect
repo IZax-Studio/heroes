@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			<!--
+			<billboard
+				size="150"
+				lockup="true"
+				pitch="90"
+				depthbias="-1"
+				position="0 100 0"
+				material="/shared/effects/materials/whitedot_ground.material"
+				color="1 .4 0"
+			/>
+		
+			<billboard
+				size="100"
+				lockup="true"
+				pitch="90"
+				depthbias="-1"
+				position="0 100 0"
+				material="/shared/effects/materials/whitedot_ground.material"
+				color=".5"
+			/>
+		
+			<billboard
+				size="70"
+				lockup="true"
+				pitch="90"
+				depthbias="-1"
+				position="0 100 0"
+				material="/shared/effects/materials/corona_06.material"
+				color=".2 .1 0"
+			/>
+			-->
+			
+			<!--
+			<billboard
+				flare="1"
+				position="-100 0 0"
+				material="/shared/effects/materials/energy_scrolling.material"
+				scale="2"
+			/>
+			-->
+			
+			<terrainemitter
+				range="80"
+				spawnrate="30"
+				particlelife="1000"
+			>
+				<template name="lightning_arc">
+					<particle>
+						<trackeremitter
+							mindelay="0"
+							maxdelay="400"
+							targetbone="{bone}"
+							count="1"
+							particlelife="100"
+							speed="4000"
+							direction="0 0 1"
+							angle="0"
+							tracktype="angular"
+							trackspeed="60"
+						>
+							<particle>
+								<trailemitter
+									spawnrate="600"
+									particlelife="450"
+									offsetsphere="10"
+									maxspeed="20"
+									material="/shared/effects/materials/arrow_trail_blend.material"
+									texposscale="1"
+									texpostime="25"
+									texstretchscale="0"
+									gravity="-5"
+								>
+									<particle
+										size="2"
+										startcolor="1"
+										midcolor="0 .5 1"
+										endcolor="0 .5 1"
+										midcolorpos=".25"
+										startalpha=".75"
+										endalpha="0"
+									/>
+								</trailemitter>
+							</particle>
+						</trackeremitter>
+					</particle>
+				</template>
+				
+				<!--
+				<instance name="lightning_arc" bone="_bone_centerofchest" />
+				<instance name="lightning_arc" bone="thigh_R" />
+				<instance name="lightning_arc" bone="thigh_L" />
+				<instance name="lightning_arc" bone="knee_R" />
+				<instance name="lightning_arc" bone="knee_L" />
+				-->
+				<instance name="lightning_arc" bone="_bone_leftfoot" />
+				<instance name="lightning_arc" bone="_bone_rightfoot" />
+			</terrainemitter>
+			
+			<!--
+			<trailemitter
+				spawnrate="1000"
+				direction="0 0 1"
+				position="100 0 0"
+				angle="0"
+				speed="1500"
+				particlelife="100"
+				texposscale="0"
+				texstretchscale="1"
+				material="/shared/effects/materials/energy_scrolling_trail.material"
+			>
+				<particle
+					startalpha="0"
+					midalpha="1"
+					endalpha="1"
+					midalphapos=".1"
+					startsize="100"
+					endsize="140"
+				/>
+			</trailemitter>
+			-->
+			
+			<template name="foot_energy">
+				<trackeremitter
+					bone="{bone}"
+					material="/shared/effects/materials/energy_reveal.material"
+					spawnrate="5"
+					minparticlelife="1000"
+					maxparticlelife="1250"
+					position="0 0 0"
+					offsetsphere="25 25 15"
+					drag="0.04"
+					angle="90"
+					direction="0 0 1"
+					gravity="-1"
+					depthbias="-5"
+					targetbone="{bone}"
+					tracktype="cgravity"
+					trackspeed="-50"
+				>
+					<particle
+						maxangle="360"
+						minstartscale="10"
+						maxstartscale="20"
+						minendscale="20"
+						maxendscale="50"
+						color="1"
+						startalpha="0"
+						minmidalpha="1"
+						maxmidalpha="1"
+						endalpha=".15"
+						startframe="0"
+						endframe="1"
+					/>
+				</trackeremitter>
+			</template>
+			<instance name="foot_energy" bone="_bone_leftfoot" />
+			<instance name="foot_energy" bone="_bone_rightfoot" />
+			
+			<simpleemitter
+				material="/shared/effects/materials/phantom_white_reveal.material"
+				spawnrate="30"
+				minparticlelife="500"
+				maxparticlelife="700"
+				position="0 0 0"
+				offsetsphere="25 25 15"
+				drag="0.04"
+				angle="90"
+				direction="0 0 1"
+				gravity="-5"
+				depthbias="-5"
+				inheritvelocity=".75"
+			>
+				<particle
+					maxangle="360"
+					minstartscale="10"
+					maxstartscale="20"
+					minendscale="20"
+					maxendscale="50"
+					color="0 .5 1"
+					startalpha="0"
+					minmidalpha=".2"
+					maxmidalpha=".25"
+					endalpha=".5"
+					startframe="0"
+					endframe="1"
+				/>
+			</simpleemitter>
+			
+			<template name="arm_energy">
+				<trackeremitter
+					bone="{bone}"
+					material="/shared/effects/materials/energy_reveal.material"
+					spawnrate="5"
+					minparticlelife="500"
+					maxparticlelife="1250"
+					position="0 0 0"
+					offsetsphere="10 10 20"
+					drag="0.04"
+					angle="90"
+					direction="0 0 1"
+					gravity="-1"
+					depthbias="-5"
+					targetbone="{bone}"
+					tracktype="cgravity"
+					trackspeed="-20"
+				>
+					<particle
+						maxangle="360"
+						minstartscale="5"
+						maxstartscale="10"
+						minendscale="10"
+						maxendscale="15"
+						color="1"
+						startalpha="0"
+						minmidalpha="1"
+						maxmidalpha="1"
+						endalpha=".15"
+						startframe="0"
+						endframe="1"
+					/>
+				</trackeremitter>
+			</template>
+			<instance name="arm_energy" bone="_bone_lefthand" />
+			<instance name="arm_energy" bone="_bone_righthand" />
+			
+			<!--
+			<skeletonemitter
+				material="/shared/effects/materials/energy_reveal.material"
+				spawnrate="50"
+				minparticlelife="500"
+				maxparticlelife="1250"
+				position="0 0 0"
+				offsetsphere="10 10 20"
+				drag="0.04"
+				angle="90"
+				direction="0 0 1"
+				gravity="-1"
+				depthbias="-5"
+			>
+				<particle
+					maxangle="360"
+					minstartscale="10"
+					maxstartscale="15"
+					minendscale="20"
+					maxendscale="40"
+					color="1"
+					startalpha="0"
+					minmidalpha="1"
+					maxmidalpha="1"
+					endalpha=".15"
+					startframe="0"
+					endframe="1"
+				/>
+			</skeletonemitter>
+			-->
+				
+			<!-- arm glows -->
+			<beam
+				bone_a="Index_0_R"
+				bone_b="wrist_R"
+				material="/shared/effects/materials/glow_02.material"
+				size="20"
+				color="0 .5 1"
+			/>
+			<beam
+				bone_a="Index_0_R"
+				bone_b="wrist_R"
+				material="/shared/effects/materials/glow_02.material"
+				size="10"
+				color="0 .5 1"
+			/>
+			<beam
+				bone_a="Index_0_L"
+				bone_b="wrist_L"
+				material="/shared/effects/materials/glow_02.material"
+				size="20"
+				color="0 .5 1"
+			/>
+			<beam
+				bone_a="Index_0_L"
+				bone_b="wrist_L"
+				material="/shared/effects/materials/glow_02.material"
+				size="10"
+				color="0 .5 1"
+			/>
+				
+			
+			
+			
+			<!-- smokey stuff -->
+			<template name="smokey_particle">
+				<particle
+					maxangle="360"
+					minscale="5"
+					maxscale="10"
+					color="{color}"
+					startalpha="0"
+					minmidalpha=".075"
+					maxmidalpha=".15"
+					endalpha="1"
+					startanchor="1"
+					endanchor=".9"
+					startframe="0"
+					endframe="1"
+				/>
+			</template>
+			<simpleemitter
+				bone="_bone_leftfoot"
+				material="/shared/effects/materials/phantom_white_reveal.material"
+				spawnrate="15"
+				minparticlelife="1000"
+				maxparticlelife="1500"
+				position="0 0 0"
+				offsetsphere="5 5 20"
+				maxspeed="10"
+				angle="30"
+				direction="0 1 0"
+				gravity="-0.5"
+				depthbias="-5"
+			>
+				<instance name="smokey_particle" color="0 .5 1" />
+				<instance name="smokey_particle" color="0 .5 1" />
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_rightfoot"
+				material="/shared/effects/materials/phantom_white_reveal.material"
+				spawnrate="15"
+				minparticlelife="1000"
+				maxparticlelife="1500"
+				position="0 0 0"
+				offsetsphere="5 5 20"
+				maxspeed="10"
+				angle="30"
+				direction="0 1 0"
+				gravity="-0.5"
+				depthbias="-5"
+			>
+				<instance name="smokey_particle" color="0 .5 1" />
+				<instance name="smokey_particle" color=".0 .5 1" />
+			</simpleemitter>
+			
+
+			<billboard			
+	
+				bone="_bone_lefteye"
+				color=".5 .5 1"
+				size="5"
+				material="/shared/effects/materials/wisp_02.material"
+				depthbias="-10"
+				position="-1 0 1"
+				width="15"
+				roll="30"
+			/>			
+			
+			<billboard			
+	
+				bone="_bone_righteye"
+				color=".5 .5 1"
+				size="5"
+				material="/shared/effects/materials/wisp_02.material"
+				depthbias="-10"
+				position="-1 0 1"
+				width="15"
+				roll="-20"
+			/>
+			
+			<!--
+			<template name="hand_stuff">
+				<simpleemitter
+					bone="{bone}"
+					material="/shared/effects/materials/lightning_10.material"
+					spawnrate="30"
+					offsetsphere="10"
+					minparticlelife="75"
+					maxparticlelife="100"
+				>
+					<particle
+						flare="1"
+						minscale="5"
+						maxscale="10"
+						maxangle="360"
+						startcolor="0"
+						midcolor="0 .5 1"
+						endcolor="0"
+					/>
+				</simpleemitter>
+			</template>
+			<instance name="hand_stuff" bone="_bone_lefthand" />
+			<instance name="hand_stuff" bone="_bone_righthand" />
+			-->
+			
+			<twopointemitter
+				bone_a="bicep_L"
+				bone_b="elbow_L"
+				spawnrate="355"
+				minparticlelife="500"
+				maxparticlelife="750"
+				angle="0"
+				offsetsphere="10"
+				material="/shared/effects/materials/lightning_03.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".2 .7 1"
+					endcolor="0"
+					midcolorpos="0.5"
+					minangle="0"
+					maxangle="350"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					startsize="10"
+					maxendsize="20"
+					flare="1"
+					anchor="1"
+				/>
+			</twopointemitter>
+			
+			<twopointemitter
+				bone_a="bicep_L"
+				bone_b="elbow_L"
+				spawnrate="130"
+				particlelife="1000"
+				offsetsphere="2"
+				material="/shared/effects/materials/whitedot.material"
+			>
+				<particle
+					color="1 1 1"
+					midcolorpos="0.5"
+					startalpha="1.0"
+					endalpha="1.0"
+					maxangle="360"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					minendsize="5"
+					startsize="5"
+					endsize="25"
+					flare="0"
+					anchor="1"
+					height="5"
+				/>
+			</twopointemitter>
+
+			<beam
+				bone_a="bicep_L"
+				bone_b="elbow_L"
+				size="60"
+				startcolor=".6 .8 1"
+				endcolor="0"
+				material="/shared/effects/materials/femme_lightning_01.material"
+				framespeed="1"
+				depthbias="-20"
+				anchor="1"
+			/>						
+			
+			<twopointemitter
+				bone_a="elbow_L"
+				bone_b="wrist_L"
+				spawnrate="355"
+				minparticlelife="500"
+				maxparticlelife="750"
+				angle="0"
+				offsetsphere="10"
+				material="/shared/effects/materials/lightning_03.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".2 .7 1"
+					endcolor="0"
+					midcolorpos="0.5"
+					minangle="0"
+					maxangle="350"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					startsize="10"
+					maxendsize="20"
+					flare="1"
+					anchor="1"
+				/>
+			</twopointemitter>
+			
+			<twopointemitter
+				bone_a="elbow_L"
+				bone_b="wrist_L"
+				spawnrate="130"
+				particlelife="300"
+				offsetsphere="2"
+				material="/shared/effects/materials/whitedot.material"
+			>
+				<particle
+					color="1 1 1"
+					midcolorpos="0.5"
+					startalpha="1.0"
+					endalpha="1.0"
+					maxangle="360"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					minendsize="5"
+					startsize="5"
+					endsize="25"
+					flare="0"
+					anchor="1"
+					height="5"
+				/>
+			</twopointemitter>
+
+			<beam
+				bone_a="elbow_L"
+				bone_b="wrist_L"
+				size="60"
+				startcolor=".6 .8 1"
+				endcolor="0"
+				material="/shared/effects/materials/femme_lightning_01.material"
+				framespeed="1"
+				depthbias="-20"
+				anchor="1"
+			/>			
+
+
+			<twopointemitter
+				bone_a="bicep_R"
+				bone_b="elbow_R"
+				spawnrate="355"
+				minparticlelife="500"
+				maxparticlelife="750"
+				angle="0"
+				offsetsphere="10"
+				material="/shared/effects/materials/lightning_03.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".2 .7 1"
+					endcolor="0"
+					midcolorpos="0.5"
+					minangle="0"
+					maxangle="350"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					startsize="10"
+					maxendsize="20"
+					flare="1"
+					anchor="1"
+				/>
+			</twopointemitter>
+			
+			<twopointemitter
+				bone_a="bicep_R"
+				bone_b="elbow_R"
+				spawnrate="130"
+				particlelife="1000"
+				offsetsphere="2"
+				material="/shared/effects/materials/whitedot.material"
+			>
+				<particle
+					color="1 1 1"
+					midcolorpos="0.5"
+					startalpha="1.0"
+					endalpha="1.0"
+					maxangle="360"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					minendsize="5"
+					startsize="5"
+					endsize="25"
+					flare="0"
+					anchor="1"
+					height="5"
+				/>
+			</twopointemitter>
+
+			<beam
+				bone_a="bicep_R"
+				bone_b="elbow_R"
+				size="60"
+				startcolor=".6 .8 1"
+				endcolor="0"
+				material="/shared/effects/materials/femme_lightning_01.material"
+				framespeed="1"
+				depthbias="-20"
+				anchor="1"
+			/>						
+			
+			<twopointemitter
+				bone_a="elbow_R"
+				bone_b="wrist_R"
+				spawnrate="355"
+				minparticlelife="500"
+				maxparticlelife="750"
+				angle="0"
+				offsetsphere="10"
+				material="/shared/effects/materials/lightning_03.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".2 .7 1"
+					endcolor="0"
+					midcolorpos="0.5"
+					minangle="0"
+					maxangle="350"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					startsize="10"
+					maxendsize="20"
+					flare="1"
+					anchor="1"
+				/>
+			</twopointemitter>
+			
+			<twopointemitter
+				bone_a="elbow_R"
+				bone_b="wrist_R"
+				spawnrate="130"
+				particlelife="300"
+				offsetsphere="2"
+				material="/shared/effects/materials/whitedot.material"
+			>
+				<particle
+					color="1 1 1"
+					midcolorpos="0.5"
+					startalpha="1.0"
+					endalpha="1.0"
+					maxangle="360"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					minendsize="5"
+					startsize="5"
+					endsize="25"
+					flare="0"
+					anchor="1"
+					height="5"
+				/>
+			</twopointemitter>
+
+			<beam
+				bone_a="elbow_R"
+				bone_b="wrist_R"
+				size="60"
+				startcolor=".6 .8 1"
+				endcolor="0"
+				material="/shared/effects/materials/femme_lightning_01.material"
+				framespeed="1"
+				depthbias="-20"
+				anchor="1"
+			/>						
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

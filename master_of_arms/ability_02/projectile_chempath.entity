@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_MasterOfArms_Ability2_Chem2"
+
+	speed="900"
+	gravity="0"
+	
+	modelscale="1.5"
+	model="/shared/models/invis.mdf"
+	traileffect="effects/chem_trail.effect"
+	canturn="0"
+	flying="true"
+	flyheight="0"
+>
+	<onspawn />
+	
+	<onimpact />
+	
+	<altavatar key="Hero_MasterOfArms.Alt4"
+		modelscale="1.75"
+		model="../alt4/ability_02/chem_projectile_ground/model.mdf"
+		traileffect="../alt4/ability_02/chem_trail.effect"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt5"
+		modelscale="3.4"
+		model="../alt5/ability_02/chem_projectile_ground/model.mdf"
+		traileffect="../alt5/ability_02/chem_trail.effect"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt6"
+		modelscale="1"
+		model="/shared/models/invis.mdf"
+		traileffect="../alt6/ability_02/effects/projectile_mag_ability.effect"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt7"
+		modelscale="1"
+		model="/shared/models/invis.mdf"
+		traileffect="../alt7/ability_02/effects/chem_trail.effect"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt8"
+		traileffect="../alt8/ability_02/effects/chem_trail.effect"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt9"
+		model="../alt9/ability_02/effects/chem_projectile_ground/model.mdf"
+		traileffect="../alt9/ability_02/effects/chem_trail.effect"
+		modelscale="1"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt10"
+		model="../alt10/ability_02/effects/chem_projectile_ground/model.mdf"
+		traileffect="../alt10/ability_02/effects/chem_trail.effect"
+		modelscale="2"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt11"
+		model="../alt11/ability_02/effects/chem_projectile_ground/model.mdf"
+		traileffect="../alt11/ability_02/effects/chem_trail.effect"
+		modelscale="1.25"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt12"
+		model="../alt12/ability_02/effects/chem_projectile_ground/model.mdf"
+		traileffect="../alt12/ability_02/effects/chem_trail.effect"
+		modelscale="1.25"
+	/>
+	
+</projectile>

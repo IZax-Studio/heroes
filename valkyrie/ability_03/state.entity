@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Valkyrie_Ability3"
+	
+	icon="icon3.tga"
+	passiveeffect="effects/trail.effect"
+
+	stunned="true"
+	stunneddurationunmodifiable="true"
+
+	ishidden="true"
+
+	unitwalking="true"
+	effecttype=""
+>
+    <altavatar key="Hero_Valkyrie.Alt12"
+		icon="/heroes/Valkyrie/alt12/ability_03/icon.tga"
+	>
+		<modifier key="valkyrieAlt12_Ability3_Upgrade"
+			icon="/heroes/Valkyrie/alt12/ability_03/icon_u.tga"
+		/>
+	</altavatar>
+</state>

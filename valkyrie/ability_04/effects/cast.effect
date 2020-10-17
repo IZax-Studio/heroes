@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="portee" persistent="1" deferred="1" useentityeffectscale="0">
+
+<definitions>
+	<particlesystem name="system0" space="world" scale="1">
+
+
+			<sound
+				delay="300"
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".9"
+				sample="/heroes/valkyrie/sounds/mir_ability_moon_%.wav"
+			/>		
+
+	<simpleemitter
+			life="400"
+			bone="_bone_lefthand"
+			spawnrate="135"
+			particlelife="600"
+			gravity="0"
+			speed="0.0"
+			acceleration="0.0"
+			timenudge="0"
+			position="0 5 0"
+			material="/shared/effects/materials/star_03.material"
+			offsetsphere="30"
+		>
+			<particle
+			color=".38 .09 1"
+			
+
+
+				startalpha=".02"
+				endalpha="0"
+
+				minangle="0"
+				maxangle="360"
+				minanglespeed="0"
+				maxanglespeed="0"
+
+				startsize="15"
+				
+				endsize="0"
+
+				lockup="true"
+				pitch="90"
+
+			/>
+		</simpleemitter>
+	
+			<trackeremitter
+				
+				life="500"
+				tracktype="angular"
+				trackspeed="20.0" 				
+				drag="0"
+				spawnrate="75"
+				particlelife="700"
+				gravity="0"
+				position="0 0 50"
+				offsetsphere="100"
+				minspeed="50.0"
+				maxspeed="60.0"
+				targetposition="0 0 50"
+				acceleration="30.0"
+				direction="0.0 0.0 1.0"
+				material="/shared/effects/materials/frost_flash_09.material"
+				
+				inheritvelocity="0.0"
+				distancelife="true"
+			>
+				<particle				
+				emitter0="trail_01"
+				size="50"
+			/>
+				
+		</trackeremitter>			
+		
+		
+
+					<trackeremitter
+				
+				life="500"
+				tracktype="angular"
+				trackspeed="20.0" 				
+				drag="0"
+				spawnrate="75"
+				particlelife="700"
+				gravity="0"
+				position="0 0 50"
+				offsetsphere="100"
+				minspeed="50.0"
+				maxspeed="60.0"
+				targetposition="0 0 50"
+				acceleration="30.0"
+				direction="0.0 0.0 1.0"
+				material="/shared/effects/materials/wisp_02.material"
+				
+				inheritvelocity="0.0"
+				distancelife="true"
+			>
+				<particle				
+				emitter0="trail_01"
+				color=".38 .09 1"
+				size="10"
+			/>
+				
+		</trackeremitter>		
+
+
+	</particlesystem>
+</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	
+	
+	
+	<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

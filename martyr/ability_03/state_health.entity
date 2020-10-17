@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Martyr_Ability3_Health"
+
+	icon="icon3.tga"
+	passiveeffect="effects/swap.effect"
+	
+	effecttype=""
+>
+	<onframe>
+		<evaluate a="accumulator" b="6,5,4,3" op="div" />
+		<evaluate a="result" b="frametime" op="mult" />
+		<changehealth target="this_owner_entity" a="1" b="result" op="mult" />
+	</onframe>
+</state>

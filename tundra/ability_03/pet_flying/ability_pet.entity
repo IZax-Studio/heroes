@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Tundra3_Pet"
+	
+	icon="icon_bird.tga"
+	
+	anim=""
+	casttime="0"
+	castactiontime="0"
+
+	actiontype="no_target"
+	
+	frontqueue="true"
+	inheritmovement="true"
+	nonaggressive="true"
+	noninterrupting="true"
+	
+	noresponse="true"
+	nostun="true"
+	nosilence="true"
+	
+	manacost="0"
+	cooldowntime="0"
+>
+	<onimpact>
+		<targettype type="alive" source="source_owner_entity" target="source_owner_entity">
+			<order command="follow" source="this_owner_entity" target="source_owner_entity" />
+		</targettype>
+	</onimpact>
+
+</ability>

@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Valkyrie_Ability2"
+
+	speed="857.14"
+	gravity="0"
+	lifetime="35000"
+
+	modelscale="1"
+	model="/heroes/valkyrie/hd_valkyrie2/projectile/effects/javelin.mdf"
+	traileffect="effects/trail.effect"
+	canturn="1"
+	flying="true"
+	flyheight="100"
+	deatheffect="effects/death.effect"
+	
+	touchradius="80"
+	touchradiusdiradjust="true"
+	maxtouches="1"
+	touchtargetscheme="enemy_units"
+	toucheffecttype=""
+	
+	dynamicprecache="effects/impact_add.effect,effects/impact.effect"
+	
+>
+	<onspawn>
+		<spawnunit name="Gadget_Valkyrie_Ability2" target="this_owner_entity" proxy="this_proxy_entity" pushentity="true" duration="-1" />
+		<setproxy entity="this_entity" target="stack_entity" />
+		
+		<setscriptvalue name="impactadd_effect" value="effects/impact_add.effect" entity="this_entity" />
+		<setscriptvalue name="impact_effect" value="effects/impact.effect" entity="this_entity" />
+	</onspawn>
+	
+	<ondeath>
+		<kill target="proxy_entity" source="" />
+		<spawnunit name="Gadget_Valkyrie_Ability2_Reveal_Linger" count="1" target="this_position" />
+	</ondeath>
+	
+	<ontouch>
+		<combatevent effecttype="AbilityBasedProjectile">
+			<onimpact>
+				<cantarget effecttype="Magic">
+					<cantarget targetscheme="enemy_heroes">
+						<hasmodifier entity="source_entity" name="track_abilities">
+							<setgameplaystat index="1" target="source_entity" a="target_gameplaystat1" b="1" op="add" /> <!-- Javelin hits! +1 -->
+							<evaluate target="source_entity" a="target_gameplaystat1" b="target_gameplaystat0" op="div" />
+							<evaluate a="result" b="100" op="mult" />
+							<chatmessage target="source_entity" entity="source_entity" important="false" message="track_abilities_valkarrow" paramvalue="result" paramvalueprecision="2" />
+						</hasmodifier>
+					</cantarget>
+
+					<!-- Staff of the Master -->
+					<hasmodifier name="ult_boost" entity="source_entity">
+						<pushability name="Ability_Valkyrie1" />
+						<getlevel entity="stack_entity" />
+						<setvar0 a="result" />
+						
+						<compare a="var0" b="0" op="gt">
+							<spawnaffector name="Affector_Valkyrie_Ability1_Normal" target="this_position" level="var0" />
+							<applystate name="State_Valkyrie_Ability1_Half" duration="1000" target="target_entity" statelevel="var0" />
+						</compare>
+					</hasmodifier>
+
+					<setparam a="0" />
+					
+					
+					<!-- Stun duration -->
+					<distance source="target_entity" target="this_proxy_entity" />
+					<setparam a="result" b="400,350,300,250" op="div" />
+					
+					<compare a="param" b="0.5" op="le">
+						<setparam a="0.5" />
+					</compare>
+					<compare a="param" b="5.0" op="ge">
+						<setparam a="5.0" />
+					</compare>					
+					
+					<setvar0 a="param" b="1000" op="mult" />					
+					<applystate name="State_Stunned" duration="result" />
+					
+					<setvar0 a="var0" b="1000" op="div" />
+					<popup name="seconds_decimal" a="var0" source="target_entity" target="source_entity" />
+					
+
+					<!-- Bonus Damage -->					
+					<compare a="param" b="5.0" op="eq">
+						<distance source="target_entity" target="this_proxy_entity" />
+						<!-- Subtract the equivalent distance required to get a 5-second stun -->
+						<setvar0 a="result" b="2000,1750,1500,1250" op="sub" />
+						
+						<!-- Set max damage at a certain distance -->
+						<setvar1 a="6000" b="2000,1750,1500,1250" op="sub" />
+						
+						<!-- Set distance difference, maximum of var1 -->
+						<setvar2 a="var0" b="var1" op="min" />
+						
+						<!-- Bonus distance travelled / (max distance - 5s distance) -->
+						<setvar0 a="var2" b="var1" op="div" />
+						
+						<!-- Bonus damage percentage -->						
+						<setvar0 a="var0" b="100,200,300,400" op="mult" />
+						<setvar0 a="var0" b="90,180,270,360" op="add" />
+						
+						<damage effecttype="Magic" amount="1" b="var0" op="mult" />
+						
+						<!-- Dynamic VFX -->
+						<getscriptvalue name="impactadd_effect" destvar="str0" entity="this_entity" />
+						<playeffectdynamic effect="str0" target="target_entity" source="target_entity" occlude="true" />
+					</compare>
+					<else>
+						<damage effecttype="Magic" amount="90,180,270,360" />
+						
+						<!-- Dynamic VFX -->
+						<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+						<playeffectdynamic effect="str0" target="target_entity" source="target_entity" occlude="true" />
+					</else>
+				</cantarget>
+			</onimpact>
+		</combatevent>
+
+		<kill target="this_entity" source="" />
+	</ontouch>
+
+	<altavatar key="Hero_Valkyrie.Classic" modpriority="90"
+		flyheight="40"
+	>
+	</altavatar>
+
+	<altavatar key="Hero_Valkyrie.Alt" modpriority="90"
+		modelscale="1.7"
+		model="/heroes/valkyrie/alt/projectile/effects/spear.mdf"
+		traileffect="/heroes/valkyrie/alt/ability_02/effects/trail.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Valkyrie.Alt2" modpriority="90"
+		modelscale="1.7"
+		model="/heroes/valkyrie/alt2/ability_02/effects/spear.mdf"
+	>
+	</altavatar>
+
+	<altavatar key="Hero_Valkyrie.Alt3" modpriority="90"
+		modelscale="1.7"
+		model="/heroes/valkyrie/alt3/ability_02/effects/spear.mdf"
+	>
+	</altavatar>
+
+	<altavatar key="Hero_Valkyrie.Alt4" modpriority="90"
+		modelscale="1.5"
+		model="/heroes/valkyrie/alt4/ability_02/effects/spear.mdf"
+		traileffect="/heroes/valkyrie/alt4/ability_02/effects/trail.effect"
+	>
+	</altavatar>
+
+	<altavatar key="Hero_Valkyrie.Alt5" modpriority="90"
+		modelscale="1.5"
+		model="/heroes/valkyrie/alt5/projectile/effects/spear.mdf"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Valkyrie.Alt6" modpriority="90"
+		modelscale="1.5"
+		model="/heroes/valkyrie/alt6/ability_02/effects/spear.mdf"
+		deatheffect="/heroes/valkyrie/alt6/ability_02/effects/death.effect"
+		traileffect="/heroes/valkyrie/alt6/ability_02/effects/trail.effect"
+		
+		dynamicprecache="../alt6/ability_02/effects/impact_add.effect,../alt6/ability_02/effects/impact.effect"
+	>
+		
+		<onspawn>
+			<spawnunit name="Gadget_Valkyrie_Ability2" target="this_owner_entity" proxy="this_proxy_entity" pushentity="true" duration="-1" />
+			<setproxy entity="this_entity" target="stack_entity" />
+			
+			<setscriptvalue name="impactadd_effect" value="../alt6/ability_02/effects/impact_add.effect" entity="this_entity" />
+			<setscriptvalue name="impact_effect" value="../alt6/ability_02/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+		
+		<modifier key="Rulian_Bonus_Skiver" modpriority="101"
+			model="/heroes/valkyrie/alt6/ability_02/effects/rulian_spear.mdf"
+			modelscale="1.5"
+			deatheffect="/heroes/valkyrie/alt6/ability_02/effects/death.effect"
+			traileffect="/heroes/valkyrie/alt6/ability_02/effects/trail.effect"
+		/>
+	
+	</altavatar>
+	
+	<altavatar key="Hero_Valkyrie.Alt7" modpriority="90"
+		modelscale="1.5"
+		model="/heroes/valkyrie/alt7/projectile/effects/spear.mdf"
+		traileffect="/heroes/valkyrie/alt7/ability_02/effects/trail.effect"
+	>
+		<onspawn>
+			<!-- Default <onspawn /> content -->
+			<spawnunit name="Gadget_Valkyrie_Ability2" target="this_owner_entity" proxy="this_proxy_entity" pushentity="true" duration="-1" />
+			<setproxy entity="this_entity" target="stack_entity" />
+			
+			<setscriptvalue name="impactadd_effect" value="effects/impact_add.effect" entity="this_entity" />
+			<setscriptvalue name="impact_effect" value="effects/impact.effect" entity="this_entity" />
+			
+			
+			<!-- Model select logic -->
+			<setparam a="0" />			
+			<foreachitem source="this_owner_entity">
+				<compare a="param" b="0" op="eq">
+					<entitytype type="Item_StrengthAgility" source="source_entity">
+						<setactivemodifierkey name="Frostburn" entity="this_entity" />
+						<setparam a="0" />						
+					</entitytype>
+					<else>
+						<entitytype type="Item_Energizer" source="source_entity">
+							<setactivemodifierkey name="Energizer" entity="this_entity" />
+							<setparam a="0" />
+						</entitytype>
+						<else>
+							<entitytype type="Item_ManaBurn1" source="source_entity">
+								<setactivemodifierkey name="Nullfire" entity="this_entity" />
+								<setparam a="0" />
+							</entitytype>
+							<else>
+								<entitytype type="Item_ArclightCrown" source="source_entity">
+									<setactivemodifierkey name="Charged" entity="this_entity" />
+									<setparam a="0" />
+								</entitytype>
+								<else>
+									<entitytype type="Item_ManaBurn2" source="source_entity">
+										<setactivemodifierkey name="Geometer" entity="this_entity" />
+										<setparam a="0" />
+									</entitytype>
+									<else>
+										<entitytype type="Item_Pierce" source="source_entity">
+											<setactivemodifierkey name="Shieldbreaker" entity="this_entity" />
+											<setparam a="0" />
+										</entitytype>
+										<else>
+											<entitytype type="Item_Evasion" source="source_entity">
+												<setactivemodifierkey name="Evasion" entity="this_entity" />
+												<setparam a="0" />
+											</entitytype>
+											<else>
+												<entitytype type="Item_Dawnbringer" source="source_entity">
+													<setactivemodifierkey name="Frostburn" entity="this_entity" />
+													<setparam a="0" />
+												</entitytype>
+											</else>
+										</else>
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+				</compare>
+			</foreachitem>
+		</onspawn>
+		
+		<modifier key="Charged" modpriority="100"
+			model="../alt7/projectile/charged/effects/spear.mdf"
+			traileffect="../alt7/ability_02/effects/trail.effect"
+		/>
+		
+		<modifier key="Energizer" modpriority="100"
+			model="../alt7/projectile/energizer/effects/spear.mdf"
+			traileffect="../alt7/ability_02/effects/trail.effect"
+		/>
+		
+		<modifier key="Evasion" modpriority="100"
+			model="../alt7/projectile/lightning/effects/spear.mdf"
+			traileffect="../alt7/ability_02/effects/trail.effect"
+		/>
+		
+		<modifier key="Frostburn" modpriority="100"
+			model="../alt7/projectile/frostburn/effects/spear.mdf"
+			traileffect="../alt7/ability_02/effects/trail.effect"
+		/>
+		
+		<modifier key="Geometer" modpriority="100"
+			model="../alt7/projectile/geometer/effects/spear.mdf"
+			traileffect="../alt7/ability_02/effects/trail.effect"
+		/>
+
+		<modifier key="Nullfire" modpriority="100"
+			model="../alt7/projectile/firebrand/effects/spear.mdf"
+			traileffect="../alt7/projectile/firebrand/effects/trail.effect"
+			impacteffect="../alt7/projectile/firebrand/effects/impact.effect"
+		/>
+		
+		<modifier key="Shieldbreaker" modpriority="100"
+			model="../alt7/projectile/shieldbreaker/effects/spear.mdf"
+			traileffect="../alt7/ability_02/effects/trail.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Valkyrie.Alt8" modpriority="90"
+		modelscale="1.7"
+		model="/heroes/valkyrie/alt8/projectile/model.mdf"
+		traileffect="/heroes/valkyrie/alt8/ability_02/effects/trail.effect"
+		deatheffect=""
+		
+		dynamicprecache="../alt8/ability_02/effects/impact_add.effect,../alt8/ability_02/effects/impact.effect"
+	>
+		<onspawn>
+			<spawnunit name="Gadget_Valkyrie_Ability2" target="this_owner_entity" proxy="this_proxy_entity" pushentity="true" duration="-1" />
+			<setproxy entity="this_entity" target="stack_entity" />
+			
+			<setscriptvalue name="impactadd_effect" value="../alt8/ability_02/effects/impact_add.effect" entity="this_entity" />
+			<setscriptvalue name="impact_effect" value="../alt8/ability_02/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Valkyrie.Alt9" modpriority="90"
+		modelscale="1.5"
+		model="/heroes/valkyrie/alt9/projectile/effects/spear.mdf"
+		traileffect="/heroes/valkyrie/alt9/ability_02/effects/trail.effect"
+		
+		dynamicprecache="../alt9/ability_02/effects/impact_add.effect,../alt9/ability_02/effects/death.effect"
+	>
+		<onspawn>
+			<spawnunit name="Gadget_Valkyrie_Ability2" target="this_owner_entity" proxy="this_proxy_entity" pushentity="true" duration="-1" />
+			<setproxy entity="this_entity" target="stack_entity" />
+			
+			<setscriptvalue name="impactadd_effect" value="../alt9/ability_02/effects/impact_add.effect" entity="this_entity" />
+			<setscriptvalue name="impact_effect" value="../alt9/ability_02/effects/death.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Valkyrie.Alt10" modpriority="90"
+		modelscale="2"
+		model="/heroes/valkyrie/alt10/ability_02/effects/spear.mdf"
+		traileffect="/heroes/valkyrie/alt10/ability_02/effects/trail.effect"
+		deatheffect="/heroes/valkyrie/alt10/ability_02/effects/death.effect"
+		
+		dynamicprecache="../alt10/ability_02/effects/impact_add.effect,../alt10/ability_02/effects/death.effect"
+	>
+		<onspawn>
+			<spawnunit name="Gadget_Valkyrie_Ability2" target="this_owner_entity" proxy="this_proxy_entity" pushentity="true" duration="-1" />
+			<setproxy entity="this_entity" target="stack_entity" />
+			
+			<setscriptvalue name="impactadd_effect" value="../alt10/ability_02/effects/impact_add.effect" entity="this_entity" />
+			<setscriptvalue name="impact_effect" value="../alt10/ability_02/effects/death.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Valkyrie.Alt11" modpriority="90"
+		modelscale="1"
+		model="/heroes/valkyrie/alt11/projectile/model.mdf"
+		traileffect="/heroes/valkyrie/alt11/ability_02/effects/trail.effect"
+		deatheffect="/heroes/valkyrie/alt11/ability_02/effects/death.effect"
+		
+		dynamicprecache="../alt11/ability_02/effects/impact_add.effect,effects/impact.effect"
+	>
+		<onspawn>
+			<spawnunit name="Gadget_Valkyrie_Ability2" target="this_owner_entity" proxy="this_proxy_entity" pushentity="true" duration="-1" />
+			<setproxy entity="this_entity" target="stack_entity" />
+			
+			<setscriptvalue name="impactadd_effect" value="../alt11/ability_02/effects/impact_add.effect" entity="this_entity" />
+			<setscriptvalue name="impact_effect" value="effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Valkyrie.Alt12" modpriority="90"
+		modelscale=".9"
+		model="/heroes/valkyrie/alt12/projectile/effects/spear.mdf"
+		traileffect="/heroes/valkyrie/alt12/ability_02/effects/trail.effect"
+		deatheffect=""
+		
+		dynamicprecache="../alt12/ability_02/effects/impact_add.effect,../alt12/ability_02/effects/impact.effect"
+	>
+		<onspawn>
+			<spawnunit name="Gadget_Valkyrie_Ability2" target="this_owner_entity" proxy="this_proxy_entity" pushentity="true" duration="-1" />
+			<setproxy entity="this_entity" target="stack_entity" />
+			
+			<setscriptvalue name="impactadd_effect" value="../alt12/ability_02/effects/impact_add.effect" entity="this_entity" />
+			<setscriptvalue name="impact_effect" value="../alt12/ability_02/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+		
+		<modifier key="valkyrieAlt12_Ability2_Upgrade"
+			icon="/heroes/Pyromancer/alt8/ability_01/icon.tga"
+			traileffect="/heroes/valkyrie/alt12/ability_02/effects/trail_upgrade.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Valkyrie.Alt13" modpriority="90"
+		modelscale="2"
+		model="/heroes/valkyrie/alt13/projectile/effects/spear2.mdf"
+		traileffect="/heroes/valkyrie/alt13/ability_02/effects/trail.effect"
+		deatheffect="/heroes/valkyrie/alt13/ability_02/effects/death.effect"
+		
+		dynamicprecache="effects/impact_add.effect,effects/impact.effect"
+	>
+		<onspawn>
+			<spawnunit name="Gadget_Valkyrie_Ability2" target="this_owner_entity" proxy="this_proxy_entity" pushentity="true" duration="-1" />
+			<setproxy entity="this_entity" target="stack_entity" />
+			
+			<setscriptvalue name="impactadd_effect" value="effects/impact_add.effect" entity="this_entity" />
+			<setscriptvalue name="impact_effect" value="effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+</projectile>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1.25">
+
+
+			<simpleemitter
+				life="100"
+				startspawnrate="50"
+				endspawnrate="0"
+				particlelife="600"
+				direction="0 0 1"
+				angle="0"
+				speed="100"
+				drag="0.02"
+				material="/shared/effects/materials/corona_07_blend.material"
+				depthbias="-100"
+			>
+				<particle
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+					size="400"
+					startcolor="0 .4 .3"
+					endcolor="0 .04 .03"
+					startalpha="0"
+					midalpha=".15"
+					endalpha="0"
+					midalphapos=".3"
+				/>
+			</simpleemitter>
+
+			<billboard
+				life="750"
+				lockup="true"
+				lockright="true"
+				pitch="-90"
+				startsize="0"
+				midsize="300"
+				endsize="400"
+				midsizepos=".4"
+				material="/shared/effects/materials/corona_01_blend.material"
+				startcolor="0 .25 .2"
+				endcolor="0 .125 .1"
+				startalpha=".5"
+				midalpha=".25"
+				endalpha="0"
+				midalphapos=".25"
+				depthbias="-100"
+			/>
+
+			<billboard
+				timenudge="1"
+				life="700"
+				lockup="true"
+				lockright="true"
+				pitch="-90"
+				size="450"
+				midsizepos=".4"
+				material="/shared/effects/materials/ring_reveal_gradient_01.material"
+				color="1 1 .85"
+				depthbias="-100"
+				maxroll="360"
+				startframe=".1"
+				midframe=".6"
+				endframe=".9"
+				startparam="1"
+				midparam=".4"
+				endparam="0"
+				startalpha=".65"
+				midalpha=".25"
+				endalpha="0"
+				midalphapos=".4"
+			/>
+
+			<billboard
+				life="750"
+				lockup="true"
+				lockright="true"
+				pitch="-90"
+				startsize="0"
+				midsize="400"
+				endsize="500"
+				midsizepos=".4"
+				material="/shared/effects/materials/refract_ring_depth.material"
+				startparam=".01"
+				midparam=".0025"
+				endparam="0"
+				depthbias="-25"
+			/>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pet
+	name="Pet_Tremble_Ability4"
+
+	icon="icon5.tga"
+	portrait="icon5.tga"
+	model="pet/model.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect="pet/effects/spawn.effect"
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	preglobalscale=".35"
+	modelscale="1.0"
+	effectscale="0.7"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="64"
+	targetoffset="0 0 0"
+	portraitcampos="-30 150 0"
+	
+	isselectable="false"
+	iscontrollable="false"
+	unitwalking="true"
+	invulnerable="true"
+	
+	movespeed="400"
+	maxmovespeed="2000"
+	turnrate="900"
+	turnsmoothing="0.05"
+	
+	maxhealth="0"
+	
+	healthregen="0"
+	manaregen="0"
+	
+	immunity="TransfigureImmunity"	
+	
+	armor="0"
+	magicarmor="0"
+	
+	cancarryitems="true"
+	inventory0=""
+	inventory1=""
+	inventory2=""
+	inventory3=""
+	inventory5=""
+	inventory6=""
+	
+	attackduration="500"
+	attackactiontime="300"
+	attackcooldown="1350"
+	attackdamagemin="60,90,120"
+	attackdamagemax="60,90,120"
+	attacknumanims="1"
+	attackoffset="0 60 100"
+	attackprojectile=""
+	attackrange="128"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="pet/effects/impact.effect"
+	
+	attacktype="melee"
+	combattype="Hero"
+	
+	aggrorange="500"
+	sightrangeday="0"
+	sightrangenight="0"
+	
+	goldbountymin="75,100,125"
+	goldbountymax="75,100,125"
+	experiencebounty="140"
+	
+	tiltfactor="1.0"
+	tiltspeed="90.0"
+	wanderrange="250"
+	
+	continuousmodifiers="true"
+	diewithowner="true"
+	
+	unittype="Shudder ElitePet"
+	
+	corpsetime="0"
+	deathtime="1500"
+	
+	nothreat="true"
+	
+	showlifetime="true"
+	lifetime="40000"
+	
+	inheritvisibilityfromowner="true"
+
+>
+	<onspawn>		
+		<order command="wander" source="this_entity" target="source_entity" />
+	</onspawn>
+	
+	<onframe>
+		<distance source="this_entity" target="this_owner_entity" />
+		<compare a="result" b="2000" op="gt">
+			<teleport source="this_entity" target="this_owner_entity" interpolate="false" />
+		</compare>
+		
+		<isstealthed entity="this_owner_entity">
+			<applystate name="State_Tremble_Ability4_Invis" continuous="true" target="this_entity" />
+		</isstealthed>
+		<else>
+			<expirestate name="State_Tremble_Ability4_Invis" target="this_entity" />
+		</else>
+	</onframe>
+	
+	<altavatar key="Hero_Tremble.Alt" modpriority="1"
+		model="pet/model.mdf"
+	/>
+	
+	<altavatar key="Hero_Tremble.Alt2" modpriority="1"
+		model="../alt2/minion/model.mdf"
+		preglobalscale="1.3"
+		passiveeffect="../alt2/minion/effects/body.effect"
+		spawneffect="../alt2/minion/effects/spawn.effect"
+		attackimpacteffect="../alt2/minion/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Tremble.Alt3" modpriority="1"
+		icon="../alt3/ability_04/icon.tga"
+		portrait="../alt3/ability_04/icon.tga"
+		model="../alt3/minion/model.mdf"
+		preglobalscale="1.7"
+		passiveeffect="../alt3/minion/effects/body.effect"
+		spawneffect="../alt3/minion/effects/spawn.effect"
+		attackimpacteffect="../alt3/minion/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Tremble.Alt4" modpriority="1"
+		model="../alt4/minion/model.mdf"
+		preglobalscale="2"
+		passiveeffect="../alt4/minion/effects/body.effect"
+		spawneffect="../alt4/minion/effects/spawn.effect"
+		portraitcampos="0 0 5"
+	/>
+	
+	<altavatar key="Hero_Tremble.main_reskin" modpriority="1"
+		model="../reskin/ability_04/pet/model.mdf"
+		preglobalscale="2"
+	/>
+	
+	<altavatar key="Hero_Tremble" modpriority="1"
+		model="../hd_tremble/ability_04/model.mdf"
+		preglobalscale="2"
+	/>
+</pet>

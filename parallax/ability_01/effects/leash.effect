@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="false">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">	
+					<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume=".5"
+				sample="/heroes/parallax/sounds/pick_up.wav"
+			/>
+			
+			<model
+				life="600"
+				model="helix/model.mdf"
+				anim="idle_away"
+				position="0 0 100"
+				startscale="3"
+				endscale="2"
+				startalpha="1"
+				endalpha="0"
+				yawspeed="-600"
+				startcolor="1"
+				endcolor="0 5 10"
+			>
+				<!-- crystal shine -->
+				<simpleemitter
+					count="10"
+					bone="Crystal_01"
+					particlelife="500"
+					material="/shared/effects/materials/blink.material"
+					maxspeed="4"
+					drag="0.02"
+					depthbias="5"
+					offsetsphere="0 0 5"
+				>
+					<particle
+						maxangle="360"
+						startcolor="0"
+						midcolor="0 .3 .225"
+						endcolor="0"
+						midcolorpos=".2"
+						minstartscale=".5"
+						maxstartscale="1"
+						minendscale="1"
+						maxendscale="2"
+						startwidth="20"
+						endwidth="5"
+						startheight="5"
+						endheight="100"
+						anchor="1"
+					/>
+				</simpleemitter>
+
+				<!-- center beam -->
+				<beam
+					life="500"
+					bone="Helix_02"
+					position_a="0 0 -40"
+					position_b="0 0 80"
+					material="/shared/effects/materials/beam_01.material"
+					startsize="8"
+					endsize="0"
+					color=".75 .75 .65"
+				/>
+
+				<simpleemitter
+					life="250"
+					bone="Helix_02"
+					position="0 0 20"
+					offsetsphere="2"
+					startspawnrate="120"
+					endspawnrate="0"
+					direction="0 0 1"
+					angle="0"
+					maxspeed="100"
+					minspeed="-100"
+					minparticlelife="250"
+					maxparticlelife="500"
+					material="/shared/effects/materials/whitedot.material"
+				>
+					<particle
+						startcolor="0"
+						midcolor="0 .5 .4"
+						endcolor="0"
+						minwidth="4"
+						maxwidth="6"
+						minheight="8"
+						maxheight="12"
+						anchor="1"
+						startscale="1"
+						endscale=".25"
+					/>
+				</simpleemitter>
+
+				<!-- artifact sparkles -->
+				<simpleemitter
+					life="250"
+					bone="Helix_02"
+					offsetsphere="14 14 40"
+					startspawnrate="150"
+					endspawnrate="0"
+					direction="0 0 1"
+					angle="0"
+					minspeed="20"
+					maxspeed="60"
+					minparticlelife="800"
+					maxparticlelife="1000"
+					material="/core/materials/effect_solid_add.material"
+				>
+					<particle
+						startcolor="0"
+						midcolor="0 .25 .175"
+						endcolor="0"
+						minstartsize="1"
+						maxstartsize="4"
+						minendsize="1"
+						maxendsize="4"
+						minscale=".5"
+						maxscale="1"
+						anchor="1"
+					>
+						<billboard
+							life="800"
+							material="/shared/effects/materials/blink.material"
+							startcolor="0"
+							midcolor="0 .5 .4"
+							endcolor="0"
+							height="16"
+							width="4"
+						/>
+					</particle>
+				</simpleemitter>
+
+				<!-- rings -->
+				<simpleemitter
+					count="12"
+					spawnrate="60"
+					bone="Helix_02"
+					offsetsphere="5 5 40"
+					minparticlelife="150"
+					maxparticlelife="400"
+					material="/shared/effects/materials/whitedot_reveal_gradient_01.material"
+				>
+					<particle
+						color="0 1 .75"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						startframe="0"
+						midframe=".65"
+						endframe=".8"
+						minparam=".1"
+						maxparam=".2"
+						lockup="true"
+						lockright="true"
+						pitch="-90"
+						size="60"
+						minscale=".5"
+						maxscale="1"
+						anchor="1"
+					/>
+				</simpleemitter>
+			</model>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+	</thread>
+</effect>

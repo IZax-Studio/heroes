@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true" useentityeffectscale="1">
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale="1.5">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".55"
+				sample="../sounds/cast.wav"
+			/>
+			
+					<model
+						bone="_bone_overhead"
+						life="3000"
+						model="/heroes/martyr/ability_04/effects/blessed_hands/model.mdf"
+						anim="idle"
+						color="1"
+						directionalspace="global"
+						expirelife="250"
+						loop="true"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".6"
+					>
+						<template name="lights">
+							<simpleemitter
+								count="5"
+								bone="{bone}"
+								spawnrate="100"
+								particlelife="850"
+								offsetsphere="20 20 50"
+								position="0 0 0"
+								minangle="0"
+								maxangle="1"
+								direction="0 0 1"
+								life="2000"
+							>
+								<particle
+								turn="true"
+								>
+									<billboard
+										spawnrate="500"
+										count="1"
+										life="500"
+										position="0 0 0"
+										material="/shared/effects/materials/phantom_smoke_10.material"
+										directionalspace="local"
+										yaw="180"
+										roll="180"
+										lockup="true"
+										lockright="true"
+										pitch="90"
+										startcolor="0 0 0"
+										midcolor=".125 .06 .025"
+										endcolor="0 0 0"
+										minheight="450"
+										maxheight="750"
+									>
+									</billboard>
+									
+									<billboard
+										spawnrate="500"
+										count="4"
+										life="500"
+										position="0 0 0"
+										offsetsphere="50 50 50"
+										material="/shared/effects/materials/phantom_smoke_10.material"
+										directionalspace="local"
+										yaw="180"
+										roll="180"
+										lockup="true"
+										lockright="true"
+										pitch="90"
+										startcolor="0 0 0"
+										midcolor=".125 .06 .025"
+										endcolor="0 0 0"
+										minheight="450"
+										maxheight="750"
+									>
+									</billboard>
+								</particle>
+							</simpleemitter>
+						</template>
+
+						<instance name="lights" bone="_bone_fx_02" />
+						<instance name="lights" bone="_bone_fx_03" />
+						<instance name="lights" bone="_bone_fx_04" />
+						<instance name="lights" bone="_bone_fx_05" />
+						<instance name="lights" bone="_bone_fx_06" />
+
+						<simpleemitter
+							bone="_bone_fx_04"
+							spawnrate="75"
+							count="1"
+							particlelife="1100"
+							gravity="-55"
+							speed="40"
+							drag=".08"
+							acceleration="0"
+							position="0 0 0"
+							material="/shared/effects/materials/phantom_smoke_10.material"
+							offsetsphere="0 0 0"
+							minangle="0"
+							maxangle="10"
+							direction="0 0 1"
+							life="1500"
+						>
+							<particle 
+								startcolor="0 0 0"
+								midcolor=".5 .25 .1"
+								endcolor="0 0 0"
+								midcolorpos=".25"
+								startframe="0"
+								endframe="1"
+								startwidth="20"
+								midwidth="15"
+								endwidth="6"
+								midwidthpos=".5"
+								startheight="1000"
+								endheight="1000"
+								lockup="true"
+							/>
+						</simpleemitter>
+						
+						<billboard
+							life="750"
+							bone="_bone_fx_01"
+							position="0 0 0"
+							startcolor=".5 .25 0"
+							midcolor=".5 .25 0"
+							endcolor="0 0 0"
+							size="25"
+							rollspeed="-1250"
+							depthbias="-10"
+							material="/shared/effects/materials/whitedot.material"
+							loop="true"
+						/>
+						
+						<billboard
+							life="750"
+							bone="_bone_fx_01"
+							material="/shared/effects/materials/blink.material"
+							startcolor=".25 .125 0"
+							midcolor=".25 .125 0"
+							endcolor="0"
+							maxroll="360"
+							size="200"
+							depthbias="-25"
+							directionalspace="local"
+							loop="true"
+						/>
+						
+						<billboard
+							bone="_bone_fx_01"
+							life="500"
+							position="0 0 0"
+							startalpha="0"
+							midalpha=".75"
+							endalpha="0"
+							midalphpos=".25"
+							startsize="75"
+							endsize="350"
+							depthbias="-25"
+							startparam=".25"
+							endparam="0"
+							lockup="1"
+							pitch="90"
+							material="/shared/effects/materials/refract_ring.material"
+							loop="true"
+						/>
+						
+					</model>
+				
+					<model
+						bone="_bone_overhead"
+						life="1500"
+						model="/heroes/martyr/ability_04/effects/blessed_hands/model.mdf"
+						material="/shared/effects/materials/shell2.material"
+						anim="idle"
+						startcolor="0 0 0"
+						midcolor="1 .5 .25"
+						endcolor="0 0 0"
+						midcolorpos=".25"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						directionalspace="global"
+						startscale="1.65"
+						endscale="1"
+						loop="true"
+					>
+					</model>
+			
+
+			
+	</particlesystem>
+</definitions>
+
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<waitfordeath instance="instance0" />
+</thread>
+
+</effect>
+
+
+
+
+
+
+

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+		
+		<particlesystem name="system0" space="world" scale=".75">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1200"
+				volume=".40"
+				sample="../sounds/cloudon.wav"
+			/>
+			
+			<model
+				position="0 0 0"
+				life="5000"
+				anim="idle"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				scale="1.725"
+				startcolor="0 0 0"
+				midcolor="0 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".75"
+				startalpha="0"
+				midalpha="0"
+				endalpha="0"
+				midalphapos=".4"
+				yawspeed="-180"
+				pitchspeed="0"
+			>
+				<billboard
+					life="500"
+					bone="Scene Root"
+					startcolor=".5"
+					endcolor="0 0 0"
+					size="70"
+					position="0 0 10"
+					material="/heroes/drunkenmaster/effects/material.material"
+					lockup="1"
+					lockright="1"
+					rollspeed="0"
+					pitch="90"
+					yawspeed="0"
+					directionalspace="local"
+				/>
+				
+				<billboard
+				delay="250"
+					life="500"
+					bone="Scene Root"
+					startcolor=".5"
+					endcolor="0 0 0"
+					size="70"
+					position="0 0 20"
+					material="/heroes/drunkenmaster/effects/material.material"
+					lockup="1"
+					lockright="1"
+					rollspeed="0"
+					pitch="90"
+					yawspeed="0"
+					directionalspace="local"
+				/>
+				
+				<billboard
+				delay="250"
+					life="250"
+					bone="Scene Root"
+					startcolor=".5"
+					endcolor="0 0 0"
+					size="70"
+					position="0 0 30"
+					material="/heroes/drunkenmaster/effects/material.material"
+					lockup="1"
+					lockright="1"
+					rollspeed="0"
+					pitch="90"
+					yawspeed="0"
+					directionalspace="local"
+				/>
+
+			</model>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_ValkyrieAttack"
+
+	speed="900"
+	gravity="0"
+	canturn="true"
+	modelscale="1.1"
+
+	model="/heroes/emerald_warden/ability_01/effects/arrows/arrow.mdf"
+	traileffect="../custom/arrow2/trail.effect"
+	impacteffect="effects/impact.effect"
+>
+	<altavatar key="Hero_Valkyrie.Alt6"
+		modelscale="1.2"
+		model="../alt6/projectile/effects/spear.mdf"
+		traileffect="../alt6/projectile/effects/trail.effect"
+		impacteffect="../alt6/projectile/effects/impact.effect"
+	/>
+
+	<altavatar key="Hero_Valkyrie.Alt7"
+		modelscale="1.2"
+		model="../alt7/projectile/effects/spear.mdf"
+		traileffect="../alt7/projectile/effects/trail.effect"
+		impacteffect="../alt7/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Valkyrie.Alt8"
+		modelscale="1.6"
+		model="../alt8/projectile/model.mdf"
+		traileffect="../alt8/projectile/effects/trail.effect"
+		impacteffect="../alt8/projectile/effects/impact.effect"
+	/>	
+	
+	<altavatar key="Hero_Valkyrie.Alt9"
+		modelscale="1.6"
+		model="../alt9/projectile/effects/spear.mdf"
+		traileffect="../alt9/projectile/effects/trail.effect"
+		impacteffect="../alt9/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Valkyrie.Alt10"
+		modelscale="1.6"
+		model="../alt10/projectile/effects/spear.mdf"
+		traileffect="../alt10/projectile/effects/trail.effect"
+		impacteffect="../alt10/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Valkyrie.Alt11"
+		modelscale=".8"
+		model="../alt11/projectile/model.mdf"
+		traileffect="../alt11/projectile/effects/trail.effect"
+		impacteffect="../alt11/projectile/effects/impact.effect"
+	/>
+	
+	
+</projectile>

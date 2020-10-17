@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_MasterOfArmsAttack_Magnetic"
+
+	speed="1500"
+	gravity="0"
+
+	modelscale="5"
+	model="/shared/models/invis.mdf"
+
+	traileffect="effects/projectile_magnetic.effect"
+	impacteffect="effects/projectile_magnetic_impact.effect"
+>
+<!--
+	<altavatar key="Hero_MasterOfArms.Alt4" modpriority="1"
+		traileffect="../alt4/projectile/effects/projectile_magnetic.effect"
+	/>
+-->
+
+	<modifier key="ult_boost" modpriority="101">
+		<aura state="Ult_Boost_MasterOfArms" radius="0" targetscheme="self" />
+	</modifier>
+   
+	<altavatar key="Hero_MasterOfArms.Alt5" modpriority="1"
+		model="../alt5/effects/balloon/model_red.mdf"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt6" modpriority="1"
+		model="/shared/models/invis.mdf"
+		traileffect="../alt6/projectile/effects/projectile_magnetic.effect"
+		impacteffect="../alt6/projectile/effects/projectile_magnetic_impact.effect"
+	/>
+		
+	<altavatar key="Hero_MasterOfArms.Alt7" modpriority="1"
+		traileffect="../alt7/projectile/effects/projectile_magnetic.effect"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt8" modpriority="1"
+		model="/shared/models/invis.mdf"
+		traileffect="../alt8/projectile/effects/projectile_magnetic.effect"
+		impacteffect="../alt8/projectile/effects/projectile_magnetic_impact.effect"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt9" modpriority="1"
+		model="/shared/models/invis.mdf"
+		traileffect="../alt9/projectile/effects/projectile_magnetic.effect"
+		impacteffect="../alt9/projectile/effects/projectile_magnetic_impact.effect"
+	/>
+
+	<altavatar key="Hero_MasterOfArms.Alt10" modpriority="1"
+		model="/shared/models/invis.mdf"
+		traileffect="../alt10/projectile/effects/projectile_magnetic.effect"
+		impacteffect="../alt10/projectile/effects/projectile_magnetic_impact.effect"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt11" modpriority="1"
+		model="/shared/models/invis.mdf"
+		traileffect="../alt11/projectile/effects/projectile_magnetic.effect"
+		impacteffect="../alt11/projectile/effects/projectile_magnetic_impact.effect"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt12" modpriority="1"
+		model="/shared/models/invis.mdf"
+		traileffect="../alt12/projectile/effects/projectile_magnetic.effect"
+		impacteffect="../alt12/projectile/effects/projectile_magnetic_impact.effect"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt13" modpriority="1"
+		model="/shared/models/invis.mdf"
+		traileffect="../alt13/projectile/effects/projectile_magnetic.effect"
+		impacteffect="../alt13/projectile/effects/projectile_magnetic_impact.effect"
+	/>
+</projectile>

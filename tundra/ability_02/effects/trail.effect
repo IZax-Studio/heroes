@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+	<definitions>
+	
+		
+
+		
+		<particlesystem name="system0" space="world" scale="2.5">
+		 
+
+				<simpleemitter
+				spawnrate="15"
+				particlelife="3850"
+
+				
+			>
+				<particle>
+
+									
+					<simpleemitter					
+						count="3"										
+						particlelife="2600"	
+						material="/shared/effects/materials/dust_smoke_10.material"
+						offsetsphere="50 50 0"
+						minangle="0"
+						maxangle="360"
+						gravity="-2"
+						speed="10"
+						depthbias="-60"	
+						collide="1"				
+					>
+
+						<particle 
+							minangle="0"
+							maxangle="0"
+							minanglespeed="-30"	
+							color="0.5 0.45 .36"						
+							startsize="30"						
+							endsize="60"								
+							startalpha=".2"
+							midalpha=".14"
+							endalpha="0"
+							midalphpos=".01"							
+
+							
+						/>
+					</simpleemitter>				
+					
+				</particle>
+			</simpleemitter>
+			
+			
+			<simpleemitter
+				
+				
+				spawnrate="50"
+				particlelife="1000"
+				gravity="0"
+				speed="0"
+				drag="0"
+				acceleration="0"
+				position="0 0 0"				
+			>
+				<particle>	
+					<groundsprite	
+						life="750"
+						material="/shared/effects/materials/ground_smash_overlay.material"
+						minsize="23"
+						maxsize="31"			
+						color="1"
+						startalpha=".2"
+						midalpha="0.4"
+						endalpha="0"
+						position="0 0 0"
+					/>	
+				</particle>
+				
+				
+			</simpleemitter>
+			
+			<terrainemitter
+				spawnrate="24"
+				particlelife="1500"
+				angle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="1"
+				>
+					<model
+			
+						position="0 0 0"
+						
+						life="1200"
+						model="/heroes/moraxus/ability_01/effects/rocks/model.mdf"
+						material="/heroes/sand_wraith/ability_01/effects/material.material"
+						anim="idle_slower"
+						color="1.5"
+						expirelife="500"
+						startalpha="1"
+				
+						endalpha="0"
+					
+						minscale=".3"
+						maxscale=".07"
+						directionalspace="local"
+						minyaw="0"
+						maxyaw="360"
+					>
+					</model>
+					
+					<model
+				
+						position="0 0 0"
+						life="1200"
+						model="/heroes/moraxus/ability_01/effects/rocks/model.mdf"
+						material="/heroes/sand_wraith/ability_01/effects/material.material"
+						depthbias="-100"
+						anim="idle"
+						color="1.5"
+						expirelife="500"
+						startalpha="1"
+				
+						endalpha="0"
+					
+						minscale=".5"
+						maxscale=".10"
+						directionalspace="local"
+						minyaw="0"
+						maxyaw="360"
+					>
+					</model>
+				</particle>	
+			</terrainemitter>
+			
+		<simpleemitter
+			
+				position="0 6 0"
+				
+				spawnrate="20"
+				minparticlelife="1000"
+				maxparticlelife="1500"				
+				gravity="0"
+				speed="5"
+				drag="0"
+				acceleration="0"
+				
+				material="/shared/effects/materials/dust_smoke_10.material"
+				minangle="0"
+				maxangle="20"
+				direction="0 0 0"
+				offsetsphere="15 15 15"
+				loop="true"
+			>
+				<particle 
+					minangle="0"
+					maxangle="0"
+					minanglespeed="50"
+					maxanglespeed="150"
+					color="0.7 0.65 .56"
+					startsize="110"
+					endsize="20"
+					startalpha=".5"
+					midalpha=".5"
+					endalpha="0"
+					startstickiness="0"
+					endstickiness="0"
+				/>
+			</simpleemitter>
+	
+			
+			<simpleemitter
+				position="0 6 0"
+				spawnrate="50"
+				minparticlelife="1000"
+				maxparticlelife="1500"				
+				gravity="0"
+				speed="5"
+				drag="0"
+				acceleration="0"
+				
+				material="/shared/effects/materials/dust_smoke_10.material"
+				minangle="0"
+				maxangle="20"
+				direction="0 0 0"
+				offsetsphere="15 15 15"
+				loop="true"
+			>
+				<particle 
+					minangle="0"
+					maxangle="0"
+					minanglespeed="50"
+					maxanglespeed="150"
+					color="0.8 0.75 .66"
+					startsize="95"
+					endsize="20"
+					startalpha=".5"
+					midalpha=".5"
+					endalpha="0"
+					startstickiness="0"
+					endstickiness="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				position="0 6 0"
+				minangle="-90"
+				maxangle="-90"
+			
+				
+				spawnrate="80"
+				minparticlelife="250"
+				maxparticlelife="1000"
+				speed="5"
+				drag="1"
+				gravity="0"
+				offsetsphere="15"
+				material="/shared/effects/materials/dust_smoke_10.material"
+				loop="true"
+			>
+				<particle
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					turn="1"
+					color="0.8 0.75 .66"
+					startsize="95"
+					endsize="20"
+					startalpha=".5"
+					midalpha=".5"
+					endalpha="0"
+					startstickiness="0"
+					endstickiness="0"
+				/>
+			</simpleemitter>
+		
+		
+		
+
+		
+		
+		
+		
+
+
+			<billboard
+		
+	
+		
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos="0.75"
+				startparam=".01"
+				endparam="0"
+				startsize="50"
+				endsize="500"
+				depthbias="-50"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="true"
+				pitch="90"				
+			/>	
+			
+			<billboard
+
+
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos="0.75"
+				startparam=".01"
+				endparam="0"
+				startsize="50"
+				endsize="500"
+				depthbias="-50"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="true"
+				pitch="90"				
+			/>
+
+<!--
+			<simpleemitter
+	
+				spawnrate="1500"			
+	
+				particlelife="2000"			
+				speed="25"
+				timenudge="-100"
+				material="/shared/effects/materials/smoke_particle.material"
+				offsetsphere="5 5 1"
+				minangle="0"
+				maxangle="360"
+				direction="0 0 1"
+				offsetdirection="0"
+				offsetradial="20 20 0"
+			>
+				<particle 
+					minanglespeed="50"
+					maxanglespeed="150"
+					color="0.8 0.75 .66"
+					startsize="44"
+					endsize="55"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".1"
+				/>
+			</simpleemitter>
+			
+			-->
+
+			
+		
+			<simpleemitter
+	
+				bone="_bone_centerofchest"
+				position="0 6 0"
+				spawnrate="25"
+
+				minparticlelife="750"
+				maxparticlelife="1000"
+				direction="0 0 1"
+				speed="50"				
+				offsetsphere="35 35 0"
+          		material="/shared/effects/materials/water_spray_add.material"
+         	>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startcolor="0"
+					midcolor="0.10 0.05 .03"
+					endcolor="0"
+					midcolorpos="0.25"
+					startsize="50"
+					endsize="50"
+					scale="1.25"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+		
+				position="0 6 0"
+				spawnrate="50"
+	
+				minparticlelife="700"
+				maxparticlelife="1000"
+				direction="0 0 1"
+				minspeed="50"				
+				maxspeed="100"				
+				offsetsphere="50 50 0"
+          		material="/shared/effects/materials/water_spray_add.material"
+         	>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startcolor="0"
+					midcolor="0.10 0.05 .03"
+					endcolor="0"
+					midcolorpos="0.25"
+					startsize="35"
+					endsize="45"
+					scale="1.25"
+				/>
+			</simpleemitter>
+
+		
+
+		
+		
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

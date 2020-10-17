@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Predator_Ability4_Buff_SOTM"
+
+	icon="icon4.tga"
+	passiveeffect="effects/state_level2.effect"
+
+	attackspeed="0.5,0.75,1"
+	movespeedmultiplier="0.15"
+
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+
+	<altavatar key="Hero_Predator.Alt6"
+		passiveeffect="../alt6/ability_04/effects/state_level2.effect"
+	/>
+	
+	<altavatar key="Hero_Predator.Alt7"
+		passiveeffect="../alt7/ability_04/effects/state_level2.effect"
+	/>
+	
+	<altavatar key="Hero_Predator.Alt8"
+		passiveeffect="../alt8/ability_04/effects/state_level2_stoneskin.effect"
+		
+		
+	>
+		<onframe>
+		
+			<hasmodifier name="pred_alt8" entity="this_owner_entity" >
+				<activatemodifierkey name="pred_alt8" />
+			</hasmodifier>
+			<else>
+				<deactivatemodifierkey name="pred_alt8" />
+			</else>
+		
+			<hasmodifier name="stoneskin_alt8" entity="this_owner_entity" >
+				<activatemodifierkey name="stoneskin_alt8" />
+			</hasmodifier>
+			<else>
+				<deactivatemodifierkey name="stoneskin_alt8" />
+			</else>
+			
+			<hasmodifier name="iamsheeped" entity="this_owner_entity" >
+				<activatemodifierkey name="iamsheeped" />
+			</hasmodifier>
+			<else>
+				<deactivatemodifierkey name="iamsheeped" />
+			</else>
+			
+		</onframe>
+		
+		<modifier key="pred_alt8" modpriority="99"
+			passiveeffect="../alt8/ability_04/effects/state_level2.effect"
+		/>
+		<modifier key="stoneskin_alt8" modpriority="99"
+			passiveeffect="../alt8/ability_04/effects/state_level2_stoneskin.effect"
+		/>
+		<modifier key="iamsheeped" modpriority="100"
+			passiveeffect=""
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Predator.Alt9"
+		passiveeffect="../alt9/ability_04/effects/state_level2.effect"
+	/>
+	
+	<altavatar key="Hero_Predator.Alt10"
+		passiveeffect="../alt10/ability_04/effects/state_level2.effect"
+	/>
+	
+	<altavatar key="Hero_Predator.Alt11"
+		passiveeffect="../alt11/ability_04/effects/state_level2.effect"
+	/>
+	
+	<altavatar key="Hero_Predator.Alt12"
+		passiveeffect="../alt12/ability_04/effects/state_level2.effect"
+		modifierkey="predator_ability_4"
+	/>
+	
+	<altavatar key="Hero_Predator.Alt14"
+		passiveeffect="../alt14/ability_04/effects/state_level2.effect"
+		modifierkey="predator_ability_4"
+	/>
+	
+</state>

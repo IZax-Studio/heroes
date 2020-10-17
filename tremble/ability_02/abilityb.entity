@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Tremble2b"
+
+	icon="icon3.tga"
+	anim=""
+	casttime="0"
+	castactiontime="0"
+	channeltime="3000"
+	ischanneling="true"
+	casteffect=""
+
+	maxlevel="4"
+
+	actiontype="target_position"
+	targetscheme="terrormound"
+	allowoutofrangecast="true"
+	range="99999"
+	
+	dontshowhovercast="true"
+
+	casteffecttype=""
+	
+	manacost="0"
+	cooldowntime="45000"
+
+	noshuffle="true"
+	
+>
+	<checkcost>
+		<hasmodifier entity="this_owner_entity" name="tremble_ability2_Teleport" />
+		<else>
+			<invalidate />
+		</else>
+	</checkcost>
+	
+	<onchannelstart>
+		<pushentity searchfortarget="true" searchorigin="target_position" radius="3700" targetscheme="Nymphora_NoPortGadget" ignoreinvulnerable="true" />
+		<compare a="result" b="0" op="eq">
+			<playanim name="ability_2_channel" target="source_entity" />
+			<playeffect effect="effects/dig.effect" source="source_entity" target="source_entity" occlude="true" />
+		</compare>
+		<else>
+			<resetcooldown />
+			<order command="stop" force="true" target="source_entity" />
+		</else>
+	</onchannelstart>
+	
+	<onchannelend>
+		<hasmodifier entity="this_owner_entity" name="tremble_ability2_Teleport">
+			<pushentity searchfortarget="true" searchorigin="target_position" radius="99999" targetscheme="terrormound" ignoreinvulnerable="true" />
+			<compare a="stack_entity" b="0" op="ne">
+				<pushentity searchfortarget="true" searchorigin="stack_position" radius="3700" targetscheme="Nymphora_NoPortGadget" ignoreinvulnerable="true" />
+				<compare a="result" b="0" op="eq">
+					<disjoint target="source_entity" />
+					<teleport source="source_entity" target="stack_position" interpolate="false" />
+					<pushentityproxy entity="stack_entity" />
+					
+					<!-- Reduce cooldown to 10 seconds if Terror Mound is the one at your Ally Well -->
+					<entitytype type="Gadget_Tremble_Ability2_Well" target="stack_entity">
+						<getremainingcooldown target="this_entity" />
+						<evaluate a="result" b="10" op="sub" />
+						<evaluate a="result" b="1000" op="mult" />
+						<reducecooldown duration="result" entity="this_entity" />
+					</entitytype>
+					
+					<!-- Art -->
+					<hasavatarkey name="Hero_Tremble.Alt3">
+						<playanim name="ability_2_emerge" target="source_entity" />
+						<playeffect effect="../alt3/ability_02/effects/appear.effect" source="source_entity" target="source_entity" occlude="true" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Tremble.Alt4">
+							<playanim name="ability_2_emerge" target="source_entity" />
+							<playeffect effect="../alt4/ability_02/effects/appear.effect" source="source_entity" target="source_entity" occlude="true" />
+						</hasavatarkey>
+						<else>
+							<playanim name="ability_2_emerge" target="source_entity" />
+							<playeffect effect="effects/appear.effect" source="source_entity" target="source_entity" occlude="true" />
+						</else>
+					</else>
+				</compare>
+				<else>
+					<resetcooldown />
+				</else>
+			</compare>
+		</hasmodifier>
+	</onchannelend>
+
+	<onimpact />
+	
+	<modifier key="Tremble1" modpriority="90"
+		baselevel="1"
+		keyslot="2"
+	/>
+	
+	<modifier key="Tremble2" modpriority="90"
+		baselevel="2"
+		keyslot="2"
+	/>
+	
+	<modifier key="Tremble3" modpriority="90"
+		baselevel="3"
+		keyslot="2"
+	/>
+	
+	<modifier key="Tremble4" modpriority="90"
+		baselevel="4"
+		keyslot="2"
+	/>
+	
+</ability>

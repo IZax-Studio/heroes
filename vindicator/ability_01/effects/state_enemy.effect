@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			
+			<billboard
+				life="700"
+				startalpha="1"			
+				midalpha=".4"
+				endalpha="1"
+				loop="1"
+				position="0 0 140"
+				size="60"
+				bone="_bone_overhead"
+				material="/shared/effects/materials/disarm.material"
+				roll="120"
+			/>
+			
+			<billboard
+				position="0 0 10"
+				bone="_bone_overhead"
+				life="1500"
+				material="/shared/effects/materials/blink.material"
+				startsize="25"
+				midsize="50"
+				endsize="25"
+				startcolor="0 0 .5"
+				midcolor="0.25 1"
+				endcolor="0 0 .5"
+				midcolorpos=".1"
+				loop="true"
+				expirelife="300"
+			/>
+			
+			<billboard
+				delay="100"
+				position="0 0 10"
+				bone="_bone_overhead"
+				life="1500"
+				material="/shared/effects/materials/blink.material"
+				startsize="25"
+				midsize="70"
+				endsize="25"
+				yawspeed="45"
+				pitchspeed="45"
+				startcolor="0 0 .5"
+				midcolor="0 .25 1"
+				endcolor="0 0 .5"
+				midcolorpos=".1"
+				loop="true"
+				expirelife="300"
+			/>
+			
+			<controller
+				bone="_bone_head"
+			>
+				<trackeremitter
+					spawnrate="50"
+					particlelife="2000"
+					distancelife="true"
+					direction="0 0 -1"
+					minangle="10"
+					maxangle="20"
+					acceleration="80"
+					tracktype="distance"
+					trackspeed="4"
+					targetposition="0 0 10"
+					targetbone="_bone_overhead"
+					targetowner="source"
+					minspeed="20"
+					maxspeed="40"
+					material="/shared/effects/materials/wisp_02.material"
+					minoffsetradial="15"
+					maxoffsetradial="25"
+					offsetdirection="0 0 1"
+				>
+					<particle
+						minstartscale="2"
+						maxstartscale="3"
+						midscale="5"
+						endscale="1"
+						midscalepos=".8"
+						anchor="1"
+						startcolor="0 0 0"
+						midcolor=".1 .5 1"
+						endcolor=".2 .5 1"
+					/>
+				</trackeremitter>
+			</controller>
+		</particlesystem>
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

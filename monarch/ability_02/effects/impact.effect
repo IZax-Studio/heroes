@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="1" useentityeffectscale="true">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="4">
+ 
+			<sound
+				linearfalloff="true" 
+				falloffstart="200"
+				falloffend="1800"
+				volume=".95"
+				sample="/heroes/monarch/sounds/ab2_cast.wav"
+			/>
+<!--
+			<simpleemitter
+				count="25"
+				minparticlelife="450"
+				maxparticlelife="750"
+				spawnrate="50"
+				minspeed="145"
+				maxspeed="180"
+				gravity="20"
+				direction="0 0 1"
+				minangle="-15"
+				maxangle="15"
+				particledirectionalspace="local"
+				material="/shared/effects/materials/goop_blend.material"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+			>
+				
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minspeed="-45"
+					maxspeed="45"
+					color="0 .75 0"
+					startsize="0"
+					minendsize="75"
+					maxendsize="100"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+					minscale=""
+				/>
+			
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minspeed="-45"
+					maxspeed="45"
+					color="1 1 1"
+					startsize="0"
+					minendsize="75"
+					maxendsize="100"
+					startalpha="0"
+					midalpha=".85"
+					endalpha="0"
+					minscale=""
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				count="10"
+				minparticlelife="450"
+				maxparticlelife="750"
+				spawnrate="30"
+				minspeed="145"
+				maxspeed="180"
+				gravity="20"
+				direction="0 0 1"
+				minangle="-15"
+				maxangle="15"
+				particledirectionalspace="local"
+				material="/shared/effects/materials/whitedot.material"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minspeed="-45"
+					maxspeed="45"
+					startcolor="0 0 0"
+					midcolor=".05 .1 0"
+					endcolor="0 0 0"
+					midcolopos=".2"
+					startsize="0"
+					minendsize="75"
+					maxendsize="100"
+					startalpha="0"
+					midalpha=".85"
+					endalpha="0"
+					minscale=""
+				/>
+			</simpleemitter>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="2000"
+				startcolor="0 0 0"
+				midcolor=".25 .5 0"
+				midcolorpos="0.3"
+				endcolor="0"
+				startsize="100"
+				endsize="0"
+				depthbias="0"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+
+			
+			<simpleemitter
+				count="15"
+				minparticlelife="450"
+				maxparticlelife="750"
+				spawnrate="30"
+				minspeed="145"
+				maxspeed="180"
+				gravity="20"
+				direction="0 0 1"
+				minangle="-15"
+				maxangle="15"
+				particledirectionalspace="local"
+				material="/shared/effects/materials/bubble_add.material"
+				offsetsphere="25 25 0"
+				position="0 0 0"
+			>
+				<particle
+					startcolor=".35 .5 0"
+					endcolor="0"
+					midcolorpos="0.8"
+					minangle="0"
+					maxangle="360"
+					size="7"
+					param=".1"
+					depthbias="-30"
+					minendscale="2"
+					maxendscale="4"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+-->
+
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Tremble_Ability4_Invis"
+
+	icon="icon5.tga"
+	ishidden="true"
+	
+	passiveeffect=""
+
+	stealthtype="hero"
+>
+	<oninflict>
+		<startfade />
+	</oninflict>
+	
+</state>

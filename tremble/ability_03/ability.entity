@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Tremble3"
+	
+	icon="icon4.tga"
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	statuseffecttooltip=""
+
+	actiontype="passive"
+
+	passiveeffect=""
+	modifierkey="tremble_ability3_Level1,tremble_ability3_Level2,tremble_ability3_Level3,tremble_ability3_Level4"
+	
+>
+	<onattackimpact />
+	
+	<onattackpreimpact>
+		<cantarget targetscheme="enemy_objects" effecttype="Physical">
+			<applystate name="State_Tremble_Ability3" duration="3000" />
+		</cantarget>
+	</onattackpreimpact>
+
+</ability>

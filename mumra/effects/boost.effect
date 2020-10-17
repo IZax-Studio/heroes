@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<billboard			
+	
+				bone="_bone_lefteye"
+				color=".4 .4 0"
+				size="5"
+				material="/shared/effects/materials/glow_01.material"
+				loop="true"
+				depthbias="-10"
+				position="0 0 0"
+			/>		
+			
+			<billboard			
+	
+				bone="_bone_righteye"
+				color=".4 .4 0"
+				size="5"
+				material="/shared/effects/materials/glow_01.material"
+				loop="true"
+				depthbias="-10"
+				position="0 0 0"
+			/>
+			
+			<billboard			
+	
+				bone="_bone_righteye"
+				color=".8 .8 .3"
+				size="15"
+				material="/shared/effects/materials/star_03.material"
+				loop="true"
+				depthbias="-10"
+				position="0 0 0"
+			/>
+			
+			<billboard			
+	
+				bone="_bone_lefteye"
+				color=".8 .8 .3"
+				size="15"
+				material="/shared/effects/materials/star_03.material"
+				loop="true"
+				depthbias="-10"
+				position="0 0 0"
+			/>
+			
+		</particlesystem>
+		
+		<particlesystem name="system1" space="global" scale="1">
+
+			<template name="flames">
+				
+				<controller bone="{bone}">
+					<billboard
+						startcolor=".1 .1 0"
+						endcolor="0"
+						size="70"
+						depthbias="-25"
+						expirelife="500"
+						material="/shared/effects/materials/whitedot.material"
+					/>				
+					
+					<simpleemitter
+						spawnrate="5"
+						particlelife="600"
+						minspeed="0"
+						maxspeed="30"
+						drag="0.07"
+						offsetsphere="5"
+						material="/shared/effects/materials/refract_outsplash.material"
+					>
+						<particle
+							startalpha=".9"
+							endalpha="0.0"
+							minangle="0"
+							maxangle="360"
+							startsize="5"
+							endsize="60"
+							param=".1"
+							anchor="1"
+						/>
+					</simpleemitter>
+
+					<simpleemitter		
+						spawnrate="5"			
+						particlelife="500"			
+						gravity="-2"
+						speed="20"
+						drag=".01"
+						depthbias="-200"
+						material="/shared/effects/materials/refract_wellwave.material"
+						offsetsphere="20"
+						minangle="-265"
+						maxangle="265"
+						direction="0 0 -1"
+					>
+						<particle 
+							minangle="0"
+							maxangle="360"
+							minanglespeed="-10"
+							maxanglespeed="10"
+							startsize="50"
+							endsize="55"
+							param=".1"
+							startalpha="0.0"
+							midalpha=".3"
+							endalpha="0"
+						/>
+					</simpleemitter>
+				</controller>
+			</template>
+		
+			<instance name="flames" bone="_bone_weapon3" direction="-.5 -1 0" offsetsphere="10"/>
+			<instance name="flames" bone="_bone_weapon2" direction="-.5 -1 0" offsetsphere="10"/>
+			
+			<controller bone="_bone_weapon2">
+<!--
+				<billboard
+					material="/shared/effects/materials/whitedot.material"
+					color=".1 .1 .05"								
+					size="60"
+					depthbias="-20"
+					position="0 0 20"
+				/>
+-->				
+				<billboard
+					material="/shared/effects/materials/starlight.material"
+					color=".2 .2 .1"								
+					size="60"
+					depthbias="-20"
+					position="0 0 20"
+				/>
+			</controller>
+<!--			
+			<simpleemitter
+				offsetsphere="20"
+				bone="_bone_weapon2"
+				spawnrate="5"
+				speed="20"
+			>
+				<particle
+					turn="true"
+					stickiness="1"
+				>
+					<billboard
+						life="800"
+						material="/shared/effects/materials/flare_03.material"
+						startcolor="0"
+						midcolor=".5"
+						endcolor="0"
+						depthbias="-20"
+						startsize="10"
+						midsize="70"
+						endsize="10"
+					/>
+				</particle>
+			</simpleemitter>
+-->			
+			<controller bone="_bone_weapon3">
+				<simpleemitter
+					spawnrate="45"
+					depthbias="-30"
+					particlelife="400"
+					speed="2"
+					material="/shared/effects/materials/phantom_smoke_10.material"
+					position="0 0 -10"
+				>
+					<particle
+						startcolor=".15 .15 .075"
+						midcolorpos="0.3"
+						endcolor="0"
+						startsize="0"
+						endsize="30"
+						minangle="-360"
+						maxangle="360"
+						minanglespeed="-30"
+						maxanglespeed="30"
+						minendscale="1"
+						maxendscale="4"
+						startalpha="1"
+						endalpha="0"
+						width="100"
+						height="10"
+						anchor="0.6"
+					/>
+				</simpleemitter>
+			</controller>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

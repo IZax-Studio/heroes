@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_WitchSlayer_Attack"
+
+	speed="900"
+	gravity="1000"
+
+	model="/shared/models/invis.mdf"
+	modelscale="3"
+	scale="1"
+	impacteffect="effects/impact.effect"
+	traileffect="effects/trail.effect"
+>
+	<altavatar key="Hero_WitchSlayer.Alt5"
+		modelscale="3"
+		scale="1"
+		model="../alt5/projectile/effects/model.mdf"
+		impacteffect="../alt5/projectile/effects/impact.effect"
+		traileffect="../alt5/projectile/effects/trail.effect"
+	/>
+
+	<altavatar key="Hero_WitchSlayer.Alt6"
+		model="../alt6/dagger_stage1/model.mdf"
+		traileffect="../alt6/projectile/effects/trail.effect"
+	>
+		<modifier key="Stage2" modpriority="100"
+			model="../alt6/dagger_stage2/model.mdf"
+		/>
+		<modifier key="Stage3" modpriority="100"
+			model="../alt6/dagger_stage3/model.mdf"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_WitchSlayer.Alt8"
+		model="../alt8/projectile/effects/model.mdf"
+		impacteffect="../alt8/projectile/effects/impact.effect"
+		traileffect="../alt8/projectile/effects/trail.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_WitchSlayer.Alt9"
+		model="../alt9/projectile/effects/model.mdf"
+		impacteffect="../alt9/projectile/effects/impact.effect"
+		traileffect="../alt9/projectile/effects/trail.effect"
+	>
+		<modifier key="Songkran17_Set"
+			impacteffect="../alt9/projectile/effects/impact_sonkran17_set.effect"
+	/>
+	</altavatar>
+	
+	<altavatar key="Hero_WitchSlayer.Alt10"
+		model="../alt9/projectile/effects/model.mdf"
+		impacteffect="../alt9/projectile/effects/impact.effect"
+		traileffect="../alt9/projectile/effects/trail.effect"
+	>
+		<modifier key="Songkran17_Set"
+			impacteffect="../alt9/projectile/effects/impact_sonkran17_set.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_WitchSlayer.Alt11"
+		model="../alt11/projectile/effects/model.mdf"
+		impacteffect="../alt11/projectile/effects/impact.effect"
+		traileffect="../alt11/projectile/effects/trail.effect"
+	>
+		<modifier key="Songkran17_Set"
+			impacteffect="../alt11/projectile/effects/impact_sonkran17_set.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_WitchSlayer.trophy_skin"
+		model="../trophy_skin/projectile/effects/model.mdf"
+	/>
+
+</projectile>

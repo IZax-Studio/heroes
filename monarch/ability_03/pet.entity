@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pet
+	name="Pet_Monarch_Ability3"
+	
+	movespeed="400"
+	maxmovespeed="2000"
+	
+	gravity="0"
+	flyheight="0"
+	flying="true"
+	unitwalking="true"
+	treewalking="true"
+	cliffwalking="true"
+	buildingwalking="true"
+	
+	effectscale="1"
+	modelscale="1.5"
+	pathing="false"
+	boundsheight="64"
+	boundsradius="16"
+	isselectable="true"
+	iscontrollable="false"
+	selectionradius="20"
+	targetoffset="0 0 64"
+	
+	turnrate="2500"
+	
+	icon="icon2.tga"
+	portrait="icon2.tga"
+	model="/items/basic/flaming_eye/glacius/model.mdf"
+	skin=""
+	passiveeffect="/items/basic/flaming_eye/glacius/body.effect"
+	
+	corpsetime="0"
+	corpsefadetime="1000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	maxhealth="1"
+	immunity="GadgetImmunity"
+	
+	attacktype="none"
+	combattype="Ranged"
+	
+	goldbountymin="50"
+	goldbountymax="50"
+	experiencebounty="0"
+	
+	nothreat="true"
+	
+	noblockneutralspawn="true"
+	unittype="PseudoPet"
+>
+
+	<onattackedpreimpact>
+		<setvalue name="combat_truestrike" a="1" />
+	</onattackedpreimpact>
+	
+	<onspawn>
+		<playeffect effect="effects/cast2.effect" source="this_position" occlude="true" />
+
+		<distance source="this_entity" target="this_proxy_entity" />
+		<compare a="result" b="80" op="le">
+			<expirestate name="State_Monarch_Ability3_Spawner" />
+		</compare>
+	</onspawn>
+
+	<onframe>
+		<distance source="this_entity" target="this_proxy_entity" />
+		<compare a="result" b="25" op="le">
+			<expirestate name="State_Monarch_Ability3_Spawner" />
+			<expirestate name="State_Monarch_Ability3_Spawner_Main" />
+		</compare>
+	</onframe>
+	
+	<ondeath>
+	</ondeath>
+	
+	<altavatar key="Hero_Monarch.Alt" modpriority="1"
+		model="/heroes/monarch/alt/ability_03/effects/bug/model.mdf"
+		flying="false"
+	/>
+	
+	<altavatar key="Hero_Monarch.Alt2" modpriority="1"
+		model="/heroes/monarch/alt2/ability_03/effects/bug/model.mdf"
+		flying="false"
+	/>
+	
+	<altavatar key="Hero_Monarch.Alt3" modpriority="1"
+		model="/heroes/monarch/alt3/ability_03/effects/bug/model.mdf"
+		flying="false"
+	/>
+	
+	<altavatar key="Hero_Monarch.Alt4" modpriority="1"
+		model="/heroes/monarch/alt4/ability_03/effects/angel/model.mdf"
+		modelscale="1"
+     >		
+		<onspawn>
+			<playeffect effect="/heroes/monarch/alt4/ability_03/effects/cast2.effect" source="this_position" occlude="true" />
+			
+			<distance source="this_entity" target="this_proxy_entity" />
+			<compare a="result" b="80" op="le">
+				<expirestate name="State_Monarch_Ability3_Spawner" />
+			</compare>
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Monarch.Alt5" modpriority="1"
+		model="/heroes/monarch/alt5/ability_04/effects/butterfly.mdf"
+		modelscale="5"
+		flyheight="100"
+	/>
+	
+	<altavatar key="Hero_Monarch.Alt6" modpriority="1"
+		model="/heroes/monarch/alt6/ability_03/effects/snowball/model.mdf"
+		modelscale="2.5"
+		flying="false"
+		passiveeffect="/heroes/monarch/alt6/ability_03/effects/snowball/body.effect"
+	>		
+		<onspawn>
+			<playeffect effect="/heroes/monarch/alt6/ability_03/effects/cast2.effect" source="this_position" occlude="true" />
+			
+			<distance source="this_entity" target="this_proxy_entity" />
+			<compare a="result" b="80" op="le">
+				<expirestate name="State_Monarch_Ability3_Spawner" />
+			</compare>
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Monarch.Alt7" modpriority="1"
+		model="../alt7/ability_03/effects/bug/model.mdf"
+		modelscale="3.8"
+	>
+	<onspawn>
+			<playeffect effect="/heroes/monarch/alt7/ability_03/effects/cast2.effect" source="this_position" occlude="true" />
+			
+			<distance source="this_entity" target="this_proxy_entity" />
+			<compare a="result" b="80" op="le">
+				<expirestate name="State_Monarch_Ability3_Spawner" />
+			</compare>
+		</onspawn>
+	</altavatar>
+
+</pet>

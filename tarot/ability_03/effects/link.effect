@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="bridge" space="world" scale=".75">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume=".2"
+				sample="/shared/sounds/footsteps/tarpit_%.wav"
+			/>
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume="1"
+				sample="/heroes/devourer/sounds/move_%.wav"
+			/>
+
+			<sound
+				soundloop="true"
+				fadein="100"
+				fadeout="300"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume=".25"
+				sample="../sounds/state.wav"
+			/>
+
+			<template name="beam">
+				<beam
+					owner_a="target"
+					owner_b="source"
+					bone_a="_bone_centerofchest"
+					bone_b="_bone_centerofchest"
+					position_a="{a}"
+					position_b="{b}"
+					size="15"
+					color=".5 0 0"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+				<beam
+					owner_a="target"
+					owner_b="source"
+					bone_a="_bone_centerofchest"
+					bone_b="_bone_centerofchest"
+					position_a="{a}"
+					position_b="{b}"
+					size="3"
+					color=".5 0 0"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+				<beam
+					owner_a="target"
+					owner_b="source"
+					bone_a="_bone_centerofchest"
+					bone_b="_bone_centerofchest"
+					position_a="{a}"
+					position_b="{b}"
+					size="60"
+					color=".5 0 0"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+			</template>
+			
+			<instance name="beam" a="16 -7 5" b="13 21 -16" />
+			<instance name="beam" a="6 31 -20" b="-33 -22 11" />
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="bridge" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

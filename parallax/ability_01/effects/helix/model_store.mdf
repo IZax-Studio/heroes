@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model type="K2" high="high.model">
+	<anim name="idle" clip="default_1.clip" fps="15" loop="true" loopbackframe="1" />
+</model>

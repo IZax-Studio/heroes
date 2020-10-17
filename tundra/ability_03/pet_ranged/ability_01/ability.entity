@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Tundra3_Pet_Coeurl_Ability1"
+
+	icon="icon1.tga"
+	
+	statuseffecttooltip="State_Tundra_Ability3_Pet_Snare"
+	actiontype="passive"
+>
+	<onattackimpact>
+		<targettype type="Tower" />
+		<else>
+			<applystate name="State_Tundra_Ability3_Pet_Snare" duration="3000" />
+		</else>
+	</onattackimpact>
+</ability>

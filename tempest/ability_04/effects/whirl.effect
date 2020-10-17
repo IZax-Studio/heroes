@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale=".5">
+
+			<sound
+				life="7200"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1800"
+				volume="0.5" 
+				sample="/heroes/tempest/ability_04/sounds/state.wav"
+			/>
+			
+			<light
+				position="0 0 100"
+				expirelife="150"
+				startcolor=".2 0 .6"
+				endcolor="0"
+				falloffstart="375"
+				falloffend="400"
+			/>
+			
+			<simpleemitter
+				spawnrate="5"
+				particlelife="1000"
+				material="/shared/effects/materials/corona_06.material"
+				depthbias="-5"
+				direction="0 0 1"
+				angle="0"
+				speed="250"
+			>
+				<particle
+					startscale="500"
+					endscale="0"
+					startcolor="0"
+					midcolor=".2 0 .6"
+					endcolor="0"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					maxangle="360"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="5"
+				particlelife="1000"
+				material="/shared/effects/materials/corona_06.material"
+				depthbias="-5"
+				direction="0 0 1"
+				angle="0"
+				speed="250"
+			>
+				<particle
+					startscale="250"
+					endscale="0"
+					startcolor="0"
+					midcolor="0 .2 1"
+					endcolor="0"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					maxangle="360"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				position="0 0 100"
+				spawnrate="3"
+				particlelife="600"
+				material="/shared/effects/materials/refract_twirl.material"
+				depthbias="-50"
+			>
+				<particle
+					anglespeed="600"
+					startscale="700"
+					endscale="0"
+					param=".2"
+					startalpha="0"
+					midalpha=".2"
+					endalpha="0"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					maxangle="360"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				owner="dish"
+				spawnrate="5"
+				particlelife="750"
+				material="/shared/effects/materials/corona_06.material"
+				speed="100"
+				drag="0.02"
+				angle="0"
+				direction="1 0 0"
+			>
+				<particle
+					startscale="0"
+					endscale="40"
+					startcolor="0"
+					midcolor="1"
+					endcolor="0"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					maxangle="360"
+				/>
+			</simpleemitter>
+			
+			<controller
+				name="dish"
+				owner="target"
+				bone="Bone003"
+			/>
+			<controller
+				name="left"
+				owner="target"
+				bone="Bone011"
+			/>
+			<controller
+				name="right"
+				owner="target"
+				bone="Bone008"
+			/>
+			
+			<template name="light_beam">
+				<billboard
+					material="/shared/effects/materials/whitedot.material"
+					owner="{owner}"
+					position="40 0 0"
+					scale=".5"
+					color=".5 .5 1"
+				/>
+				<beam
+					owner_a="source"
+					owner_b="{owner}"
+					position_a="0 0 100"
+					position_b="40 0 0"
+					material="/shared/effects/materials/whitedot.material"
+					size="{size1}"
+					color=".5 .5 1"
+				/>
+				<beam
+					owner_a="source"
+					owner_b="{owner}"
+					position_a="0 0 100"
+					position_b="40 0 0"
+					material="/shared/effects/materials/whitedot.material"
+					size="{size2}"
+					color=".5 .5 1"
+				/>
+			
+				<trackeremitter
+					timenudge="2000"
+					spawnrate="{spawnrate}"
+					particlelife="2000"
+					owner="{owner}"
+					targetowner="source"
+					position="20 0 0"
+					targetposition="0 0 100"
+					material="/shared/effects/materials/flare_01.material"
+					tracktype="distance"
+					trackspeed="1.5"
+					minspeed="100"
+					maxspeed="200"
+					direction="1 0 0"
+					maxangle="30"
+					offsetsphere="0 10 10"
+				>
+					<particle
+						turn="1"
+						minheight="4"
+						maxheight="20"
+						width="2"
+						startcolor="0"
+						midcolor=".5 .5 1"
+						endcolor="0"
+						midcolorpos=".1"
+						minscale="1"
+						maxscale="4"
+					/>
+				</trackeremitter>
+			</template>
+			
+			<instance name="light_beam" owner="dish" size1="25" size2="6" spawnrate="30"/>
+			<instance name="light_beam" owner="left" size1="15" size2="2" spawnrate="10"/>
+			<instance name="light_beam" owner="right" size1="15" size2="2" spawnrate="10"/>
+			
+			<trackeremitter
+				timenudge="2000"
+				spawnrate="6"
+				particlelife="500"
+				owner="dish"
+				targetowner="source"
+				position="20 0 0"
+				targetposition="0 0 100"
+				material="/shared/effects/materials/corona_06.material"
+				tracktype="distance"
+				particledirectionalspace="local"
+				trackspeed="10"
+				speed="150"
+				direction="1 0 0"
+				angle="0"
+			>
+				<particle
+					turn="1"
+					lockup="true"
+					lockright="true"
+					yaw="90"
+					startscale="0"
+					endscale="50"
+					startcolor="0"
+					midcolor=".6 .8 1"
+					endcolor="0"
+					midcolorpos=".1"
+				/>
+			</trackeremitter>
+
+			<orbiteremitter
+				spawnrate="500"
+				particlelife="1000"
+				origin="0 0 -310" 
+				orbit="-1 70 160"
+				speed="1"
+				direction="0 0 1" 
+				offset="70 70 70"
+				cylindrical="true" 
+				material="/shared/effects/materials/flare_01.material"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-1030"
+					maxanglespeed="1710"
+					startcolor="0"
+					midcolor=".5 .5 1"
+					endcolor="0"
+					minsize="8"
+					maxsize="20"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+				/>
+				<particle
+					maxangle="360"
+					minanglespeed="-1030"
+					maxanglespeed="1710"
+					startcolor="0"
+					midcolor=".5 .5 1"
+					endcolor="0"
+					minsize="8"
+					maxsize="20"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+				/>
+				<particle
+					maxangle="360"
+					minanglespeed="-1030"
+					maxanglespeed="1710"
+					startcolor="0"
+					midcolor=".5 .5 1"
+					endcolor="0"
+					minsize="8"
+					maxsize="20"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</orbiteremitter>
+			
+			<simpleemitter
+				spawnrate="7"
+				particlelife="600"
+				position="0 0 100"
+				depthbias="20"
+				material="/shared/effects/materials/black_spot.material"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="200"
+					maxanglespeed="300"
+					startscale="50"
+					endscale="75"
+				/>
+			</simpleemitter>
+				
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1" showoutlines="true">
+
+	<definitions>
+<!--
+		<modifier
+			name="modifier0"
+			material="material.material"
+			color="1 1 1"
+			expirelife="750"
+			startalpha="1"
+			endalpha="0"
+		/>
+-->
+		<particlesystem name="system0" space="entity" scale="1">
+
+			<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume="0.75"
+				sample="../sounds/cast.wav"
+			/>
+		
+			<model
+				model="/heroes/moraxus/model.mdf"
+				parentskeleton="true"
+				color=".25 2 50"
+				alpha=".3"
+				material="/shared/effects/materials/shell2.material"
+			/>
+
+
+
+		</particlesystem>
+		
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+		<spawnparticlesystem instance="instance2" particlesystem="system2" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+		<waitfordeath instance="instance2" /> 
+	</thread>
+
+</effect>

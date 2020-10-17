@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="entity" scale="1">
+									
+			<sound
+			    norestart="true"
+				channel="8965"
+			    soundloop="true"
+				fadein="600"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="1300"
+				volume=".8" 
+				sample="../../alt6/sounds/ab3_state.wav"
+			/>
+			
+			<groundsprite
+				size="70"
+				position="0 0 50"
+				life="8000"
+				loop="1"
+				material="/shared/effects/materials/empath_groundsprite.material"
+				startalpha=".6"
+				midalpha=".5"
+				endalpha=".6"
+				depthbias="30"
+				startcolor=".2 .5 .7"
+				midcolor=".1 .3 .35"
+				endcolor=".2 .5 .7"
+				yawspeed="90"
+			/>
+	
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Tremble_Ability4"
+	
+	icon="icon5.tga"
+	passiveeffect="pet/ability_01/effects/state.effect"
+	
+	immobilized2="true"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	negativeeffect="immobilized"
+>
+
+</state>

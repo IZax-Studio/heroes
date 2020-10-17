@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Martyr_Self_Ability4"
+
+	icon="icon4.tga"
+	passiveeffect="effects/impact_self.effect"
+	
+	effecttype=""
+	
+>	
+
+	<altavatar key="Hero_Martyr.Alt2" modpriority="1"
+		passiveeffect="/heroes/martyr/alt2/ability_04/effects/impact_self.effect"
+	/>
+	
+	<altavatar key="Hero_Martyr.Alt3" modpriority="1"
+		passiveeffect="/heroes/martyr/alt3/ability_04/effects/impact_self.effect"
+	/>
+	
+	<altavatar key="Hero_Martyr.Alt4" modpriority="1"
+		passiveeffect="/heroes/martyr/alt4/ability_04/effects/impact_self.effect"
+	/>
+	
+	<altavatar key="Hero_Martyr.Alt5" modpriority="1"
+		passiveeffect="/heroes/martyr/alt5/ability_04/impact_self.effect"
+	/>
+	
+	<altavatar key="Hero_Martyr.Alt6" modpriority="1"
+		passiveeffect="/heroes/martyr/alt6/ability_04/effects/impact_self.effect"
+	/>
+
+</state>

@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="">
+	<definitions>
+		<particlesystem name="system0" space="world">
+
+					<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume="1"
+				sample="/heroes/tundra/sounds/ab4.wav"
+			/>
+
+			
+			<sound
+				delay="400"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume=".8"
+				sample="../../custom/sounds/voice/beastmaster/cast/ult_%.wav"
+			/>
+
+			<twopointtrailemitter
+				count="100"
+			 	bone_a="Bone10"
+				bone_b="Bone15"
+				spawnrate="100"
+				particlelife="600"
+				texpostime="500"
+				texposscale="0.0"
+				texstretchscale="0.35"
+				material="/shared/effects/materials/swoosh_add.material"
+				subframepos="true"
+
+			>
+	         	<particle
+					startcolor=".425 .225 .13"
+					endcolor="0 0 0" 
+				/>
+			</twopointtrailemitter>
+	
+	
+	
+			
+
+			<twopointtrailemitter
+				count="100"
+			 	bone_a="Bone10"
+				bone_b="Bone15"
+				spawnrate="100"
+				particlelife="650"
+				texpostime="500"
+			 	texposscale="0.0"
+			 	texstretchscale=".30"
+				material="/shared/effects/materials/c_whitedragon.material"
+			
+			>
+				<particle
+					 startcolor=".425 .225 .13"
+					 midcolor="0"
+					 endcolor="0"
+					 startsize="40"
+					 endsize="30"
+			 />
+			</twopointtrailemitter>
+	
+			<twopointtrailemitter
+				count="100"
+			 	bone_a="Bone10"
+				bone_b="Bone15"
+				spawnrate="100"
+				particlelife="550"
+				texpostime="800"
+			 	texposscale="0.0"
+			 	texstretchscale=".4"
+				material="/shared/effects/materials/c_whitedragon.material"
+				subframepos="true"
+				
+			>
+				<particle
+					 startcolor=".425 .225 .13"
+					 midcolor="0"
+					 endcolor="0 0 0"
+					 midcolorpos=".35"
+					 startsize="410"
+					 endsize="310"
+			 />
+				</twopointtrailemitter>
+	
+
+			<twopointemitter
+				count="25"
+			 	bone_a="Bone10"
+				bone_b="Bone15"
+				spawnrate="25"
+				particlelife="700"
+				angle="0.0"
+				offsetsphere="0"
+				depthbias="-100"
+				material="/shared/effects/materials/mysticenergy2.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".425 .225 .13"
+					endcolor="0"
+					midcolorpos="0.5"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".50"
+
+					startsize="50"
+					endsize="0"
+					flare="0"
+					startanchor="1"
+					endanchor="1"
+					
+				/>
+			</twopointemitter>
+
+	
+
+
+		
+	
+		
+		
+			<twopointemitter
+				count="20"
+			 	bone_a="Bone10"
+				bone_b="Bone15"
+				spawnrate="20"
+				particlelife="800"
+				offsetsphere="5"
+				depthbias="-100"
+				material="/shared/effects/materials/whitedot.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".425 .225 .13"
+					endcolor="0"
+					midcolorpos="0.5"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".50"
+					maxangle="360"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					
+					startsize="10"
+					minendsize="5"
+					maxendsize="20"
+					flare="true"
+					anchor=""
+				/>
+			</twopointemitter>
+	
+			<twopointemitter
+				count="80"
+			 	bone_a="Bone10"
+				bone_b="Bone15"
+				spawnrate="80"
+				particlelife="700"
+				offsetsphere="20"
+				material="/shared/effects/materials/frost_flash_15.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".625 .425 .33"
+					endcolor="0"
+				
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					maxangle="360"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					minendsize="5"
+					startsize="8"
+					maxendsize="15"
+					flare="true"
+					anchor="1"
+				/>
+			</twopointemitter>
+			
+			<twopointemitter
+				count="140"
+			 	bone_a="Bone10"
+				bone_b="Bone15"
+				spawnrate="140"
+				particlelife="800"
+				offsetsphere="10"
+
+				material="/shared/effects/materials/star_04.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".625 .425 .33"
+					endcolor="0"
+					midcolorpos="0.5"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					maxangle="360"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					minendsize="5"
+					startsize="8"
+					maxendsize="15"
+					flare="true"
+					anchor="1"
+				/>
+			</twopointemitter>
+				
+			<beam
+				count="1"
+			 	bone_a="Bone10"
+				bone_b="Bone15"
+				startsize="50"
+				midsize="150"
+				endsize="50"
+				loop="false"
+				life="2050"
+				startcolor=".325 .225 .13"
+				midcolor=".625 .425 .33"
+				endcolor=".325 .225 .13"
+				midcolorpos=".5"
+				material="/shared/effects/materials/bow_glow_03.material"
+				framespeed="5"
+				depthbias="-100"
+				anchor="1"
+			/>
+ 
+		
+		
+
+			<twopointemitter
+				count="100"
+			 	bone_a="Bone10"
+				bone_b="Bone15"
+						
+				spawnrate="100"
+				minparticlelife="700"
+				maxparticlelife="900"
+				drag=".01"
+				offsetphere="0"
+				gravity="-3"
+				minspeed="5"
+				maxspeed="25"								
+				direction="0 0 1"
+				material="/shared/effects/materials/bubble_add.material"
+
+			>			
+				<particle
+					startcolor=".325 .225 .13"
+					endcolor="0 0 0"
+					startsize="3"
+					endsize="0"
+					minscale="1"
+					maxscale="3"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="110"
+					maxanglespeed="-110"
+			/>
+
+	
+			</twopointemitter>
+
+			
+
+			<twopointemitter
+				count="100"
+			 	bone_a="Bone10"
+				bone_b="Bone15"
+				spawnrate="100"
+				minparticlelife="700"
+				maxparticlelife="900"
+				drag=".01"
+				offsetphere="0"
+				gravity="-3"
+				minspeed="10"
+				maxspeed="50"								
+				direction="0 0 1"
+				material="/shared/effects/materials/whitedot.material"
+
+			>			
+
+
+				<particle
+					startcolor=".325 .225 .13"
+					endcolor="0 0 0"
+					startsize="7"
+					endsize="0"
+					minscale="1"
+					maxscale="3"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="110"
+					maxanglespeed="-110"
+				/>
+			</twopointemitter>
+
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+
+      <waitfordeath instance="instance0" />
+
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

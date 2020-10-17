@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Vindicator_Ability4"
+	
+	icon="icon4.tga"
+	passiveeffect="effects/state_slow.effect"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	silenced="true"
+	perplexed="false"
+	
+	movespeedslow="0.40"
+>
+	<onframe>
+		<compare a="lifetime_remaining" b="accumulator" op="le">
+			<setactivemodifierkey name="Vind_R_NoSlow" />
+		</compare>
+		<else>
+			<setactivemodifierkey name="" />
+		</else>
+	</onframe>
+	
+	<modifier key="Vind_R_NoSlow" modpriority="100"
+		movespeedslow="0.0"
+		passiveeffect="effects/state.effect"
+	>
+	</modifier>
+	
+	<altavatar key="Hero_Vindicator.Alt9" modpriority="90"
+		icon="../alt9/ability_04/icon.tga" 	
+	/>
+	
+	<altavatar key="Hero_Vindicator.Alt10" modpriority="90"
+		icon="../alt9/ability_04/icon.tga" 	
+	/>
+	
+	<altavatar key="Hero_Vindicator.Alt11" modpriority="90" 	
+		passiveeffect="../alt11/ability_04/effects/state_slow.effect"
+	/>
+</state>

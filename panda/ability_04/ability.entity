@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Panda4"
+
+	statuseffecttooltip="State_Panda_Ability4"
+	icon="icon_4.tga"
+	
+	anim="ability_4"
+	casttime="350"
+	castactiontime="350"
+	channeltime="4500"
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_entity"
+	ischanneling="true"
+	targetscheme="enemy_nonboss_units"
+	casteffecttype="Physical"
+	
+	manacost="100,150,200"
+	cooldowntime="120000,100000,80000"
+	
+	novoiceresponse="true"
+	
+	range="100"
+	channelrange="350"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+
+	targetpriorities="enemy_heroes"
+>
+	<onchannelstart>
+		<unbind target="target_entity" />
+		<applystate name="State_Panda_Ability4" target="target_entity" ischannel="true" />
+		<applystate name="State_Panda_Ability4_Self" target="source_entity" proxy="target_entity" ischannel="true" />
+	</onchannelstart>
+	
+	<onimpact>
+		<damage effecttype="" amount="0.000001" />
+	</onimpact>
+
+	<modifier key="krosmode" modpriority="100"
+	>
+		<onchannelstart>
+			<unbind target="target_entity" />
+			<applystate name="State_Panda_Ability4" target="target_entity" ischannel="true" stack="true" />
+			<applystate name="State_Panda_Ability4_Self" target="source_entity" proxy="target_entity" ischannel="true" />
+		</onchannelstart>
+	</modifier>
+	
+	<altavatar key="Hero_Panda.Alt10"
+		icon="/heroes/panda/alt10/ability_04/icon.tga"
+	>
+	    <modifier key="Night_Set_PandaAlt10"
+			icon="/heroes/panda/alt11/ability_04/icon.tga"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Panda.Alt11"
+		icon="/heroes/panda/alt11/ability_04/icon.tga"
+	>
+	    <modifier key="Night_Set_PandaAlt11"
+			icon="/heroes/panda/alt10/ability_04/icon.tga"
+		/>
+	</altavatar>
+	
+</ability>

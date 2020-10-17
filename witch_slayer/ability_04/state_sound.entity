@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_WitchSlayer_Ability4_Sound"
+
+	icon="icon4.tga"
+	passiveeffect=""
+	
+	ishidden="true"
+	deathpersist="true"
+	
+	dynamicprecache="effects/impact_kill.effect"
+>
+	<oninflict>
+		<setscriptvalue name="impact_kill_effect" value="effects/impact_kill.effect" entity="this_entity" />
+	</oninflict>
+	
+	<onexpired>
+		<targettype type="alive" />
+		<else>			
+			<!-- if we taunted them, don't play the sound -->
+			<compare a="this_proxy_entity" b="target_entity" op="ne">
+				<pausevoiceovers duration="4000" />
+				<delayannouncer duration="3500" />
+			</compare>
+			
+			<getscriptvalue name="impact_kill_effect" destvar="str0" entity="this_entity" />
+			<playeffectdynamic effect="str0" target="source_entity" occlude="true" />
+		</else>
+	</onexpired>
+	
+	<altavatar key="Hero_WitchSlayer.Pimp"
+		dynamicprecache="../alt/ability_04/effects/impact_kill.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="impact_kill_effect" value="../alt/ability_04/effects/impact_kill.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_WitchSlayer.Alt2"
+		dynamicprecache="../alt2/ability_04/effects/impact_kill.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="impact_kill_effect" value="../alt2/ability_04/effects/impact_kill.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_WitchSlayer.Alt3"
+		dynamicprecache="../alt3/ability_04/effects/impact_kill.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="impact_kill_effect" value="../alt3/ability_04/effects/impact_kill.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_WitchSlayer.Alt4"
+		dynamicprecache="../alt4/ability_04/effects/impact_kill.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="impact_kill_effect" value="../alt4/ability_04/effects/impact_kill.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_WitchSlayer.Alt5"
+		dynamicprecache="../alt5/ability_04/effects/impact_kill.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="impact_kill_effect" value="../alt5/ability_04/effects/impact_kill.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_WitchSlayer.Alt6"
+		dynamicprecache="../alt6/ability_04/effects/impact_kill.effect,../alt6/ability_04/effects/impact_kill_cor.effect"
+	>
+		<oninflict>
+			<hasmodifier name="Stage3">
+				<setscriptvalue name="impact_kill_effect" value="../alt6/ability_04/effects/impact_kill_cor.effect" entity="this_entity" />
+			</hasmodifier>
+			<else>
+				<setscriptvalue name="impact_kill_effect" value="../alt6/ability_04/effects/impact_kill.effect" entity="this_entity" />
+			</else>
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_WitchSlayer.Alt8"
+		dynamicprecache="../alt8/ability_04/effects/impact_kill.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="impact_kill_effect" value="../alt8/ability_04/effects/impact_kill.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_WitchSlayer.Alt9"
+		dynamicprecache="../alt9/ability_04/effects/impact_kill.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="impact_kill_effect" value="../alt9/ability_04/effects/impact_kill.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_WitchSlayer.Alt10"
+		dynamicprecache="../alt10/ability_04/effects/impact_kill.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="impact_kill_effect" value="../alt10/ability_04/effects/impact_kill.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_WitchSlayer.Alt11"
+		dynamicprecache="../alt11/ability_04/effects/impact_kill.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="impact_kill_effect" value="../alt11/ability_04/effects/impact_kill.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+</state>

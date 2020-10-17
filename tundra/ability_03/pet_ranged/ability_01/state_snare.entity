@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Tundra_Ability3_Pet_Snare"
+
+	icon="icon1.tga"
+	passiveeffect="effects/state.effect"
+	
+	movespeedslow="0.1,0.2,0.3,0.4"
+	attackspeed="-0.1,-0.2,-0.3,-0.4"
+	
+	effecttype=""
+
+	negativeeffect="slowed"
+>
+	<onframe />
+</state>

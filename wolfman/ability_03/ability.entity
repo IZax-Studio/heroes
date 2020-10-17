@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_WolfMan3"
+
+	icon="icon3.tga"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	dontshowhovercast="true"
+	actiontype="passive"
+>
+	<aura name="wolfmanaura" state="State_WolfMan_Ability3" radius="9999" targetscheme="my_units" />
+
+	<!-- Make the aura stack and not work with illusions -->
+	<modifier key="krosmode" modpriority="101">
+		<aura name="wolfmanaura" state="State_WolfMan_Ability3" radius="9999" targetscheme="my_units" propagatecondition="not_illusion" stack="true" />
+	</modifier>
+	
+	<altavatar key="Hero_WolfMan.Alt4"
+		icon="/heroes/wolfman/alt4/ability_03/icon.tga"
+	>
+		<modifier key="WolfMan_Alt4_Red"
+			icon="icon.tga"
+		/>
+	</altavatar>
+	
+</ability>

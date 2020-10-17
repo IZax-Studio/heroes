@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Martyr_Ability1"
+
+	icon="icon1.tga"
+	passiveeffect="effects/state.effect"
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	maxcharges="35"
+	movespeedslow=".15"
+	movespeedslowpercharge=".01"
+
+	negativeeffect="slowed"
+
+>
+
+	<altavatar key="Hero_Martyr.Alt4" modpriority="1"
+		passiveeffect="../alt4/ability_01/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Martyr.Alt5" modpriority="1"
+		passiveeffect="../alt5/ability_01/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Martyr.Alt6" modpriority="1"
+		passiveeffect="../alt6/ability_01/effects/state.effect"
+	/>
+
+</state>

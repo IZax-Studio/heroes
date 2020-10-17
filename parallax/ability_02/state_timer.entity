@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Parallax_Ability2_Timer"
+	
+	icon="icon2.tga"
+	ishidden="true"
+	serverentity="true"
+	passiveeffect=""
+
+	effecttype=""
+	allowtransfer="false"
+	
+	modifierkey="Parallax_W_Timer"
+>
+</state>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Treant_Ability4"
+	
+	icon="icon4.tga"
+	passiveeffect="effects/state.effect"
+	
+	disarmed="true"
+	immobilized2="true"
+	revealed="true"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	negativeeffect="immobilized"
+>
+	<onframe>
+		<damage effecttype="Magic DOT" amount="125" b="frametime" op="mult"/>
+	</onframe>
+	
+	<altavatar key="Hero_Treant.Alt5" modpriority="1"
+		passiveeffect="../alt5/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Treant.Alt6" modpriority="1"
+		passiveeffect="../alt6/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Treant.Alt7" modpriority="1"
+		passiveeffect="../alt7/ability_04/effects/state.effect"
+	/>
+</state>

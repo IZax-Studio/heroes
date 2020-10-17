@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Tremble_Ability1"
+	
+	icon="icon1.tga"
+	passiveeffect=""
+>
+	<aura state="State_Tremble_Ability1_Damage" radius="300" effecttype="Debuff" targetscheme="enemy_units_and_Towers" />
+
+	<ondamaged>
+		<hasmodifier name="Tremble_Q_Damage" entity="target_entity" />
+		<else>
+			<scaledamage scale="0.70,0.60,0.50,0.40" />
+		</else>
+	</ondamaged>
+	
+	<onframe />
+	
+</state>

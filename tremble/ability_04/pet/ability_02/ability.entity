@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_TremblePet2"
+
+	icon="/heroes/tremble/ability_02/icon.tga"
+	
+	radius="400"
+	targetradius="400"
+	
+	baselevel="0" 
+	maxlevel="0"
+
+	actiontype="self_position"
+	targetscheme="self"
+	
+	casteffecttype="Magic"
+	
+	manacost="50"
+	cooldowntime="20000"
+	
+	casteffect="effects/cast.effect"
+	disabled="true"
+>
+	<modifier key="Tremble1" modpriority="90"
+		disabled="true"
+		interface="double"
+		maxlevel="1"
+		baselevel="1"
+		manacost="50"
+		cooldowntime="20000"
+	/>
+	
+	<modifier key="Tremble2" modpriority="90"
+		disabled="true"
+		interface="double"
+		maxlevel="2"
+		baselevel="2"
+		manacost="50"
+		cooldowntime="20000"
+	/>
+	
+	<modifier key="Tremble3" modpriority="90"
+		disabled="true"
+		interface="double"
+		maxlevel="3"
+		baselevel="3"
+		manacost="50"
+		cooldowntime="20000"
+	/>
+	
+	<modifier key="Tremble4" modpriority="90"
+		disabled="true"
+		interface="double"
+		maxlevel="4"
+		baselevel="4"
+		manacost="50"
+		cooldowntime="20000"
+	/>
+	
+	<altavatar key="Hero_Tremble.Alt4" modpriority="1"
+		casteffect="/heroes/tremble/alt4/minion/ability_02/effects/cast.effect"
+	/>
+</ability>

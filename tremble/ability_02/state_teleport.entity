@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Tremble_Ability2_Teleport"
+
+	icon="icon3.tga"
+	passiveeffect=""
+	
+	modifierkey="tremble_ability2_Teleport"
+>
+</state>

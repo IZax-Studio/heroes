@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Taint_Ability1"
+
+	speed="1500"
+	gravity="0"
+
+	flying="true"
+	flyheight="80"
+	
+	modelscale="10"
+	model="effects/coal/model.mdf"
+
+	impacteffect="effects/impact.effect"
+	traileffect="effects/trail.effect"
+>	
+	<onimpact>
+		<combatevent effecttype="AbilityBasedProjectile">
+			<onimpact>
+				<cantarget effecttype="Magic">
+					<applystate name="State_Stunned" target="target_entity" duration="1000" />
+					<damage effecttype="Magic" amount="60,100,100,140" />
+					<spawnunit name="Pet_Taint_Ability3" target="target_entity" offsetspace="target_entity" offset="20 20" owner="" team="" count="1" />
+				</cantarget>
+			</onimpact>	
+		</combatevent>
+	</onimpact>
+
+	<altavatar key="Hero_Taint.Alt3"
+		modelscale="2.1"
+		model="/heroes/taint/alt3/ability_01/effects/snotter/model.mdf"
+		impacteffect="/heroes/taint/alt3/ability_01/effects/impact.effect"
+		traileffect="/heroes/taint/alt3/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Taint.Alt4"
+		modelscale="10"
+		model="/heroes/taint/alt4/ability_01/effects/coal/model.mdf"
+		impacteffect="/heroes/taint/alt4/ability_01/effects/impact.effect"
+		traileffect="/heroes/taint/alt4/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Taint.Alt5"
+		modelscale="1"
+		model="/heroes/taint/alt5/ability_01/effects/coral/coral.mdf"
+		impacteffect="/heroes/taint/alt5/ability_01/effects/impact.effect"
+		traileffect="/heroes/taint/alt5/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Taint.Alt6"
+		modelscale="1.25"
+		model="/heroes/taint/alt6/ability_01/effects/spirit/model.mdf"
+		impacteffect="/heroes/taint/alt6/ability_01/effects/impact.effect"
+		traileffect="/heroes/taint/alt6/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Taint.Alt7"
+		modelscale="4"
+		model="/heroes/taint/alt7/ability_01/effects/corpse/model.mdf"
+		impacteffect="/heroes/taint/alt7/ability_01/effects/impact.effect"
+		traileffect="/heroes/taint/alt7/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Taint.Alt8"
+		modelscale="4"
+		model="/heroes/taint/alt8/ability_01/effects/bucket/model.mdf"
+		impacteffect="/heroes/taint/alt8/ability_01/effects/impact.effect"
+		traileffect="/heroes/taint/alt8/ability_01/effects/trail.effect"
+	/>
+</projectile>

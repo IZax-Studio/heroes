@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="2.5">
+				
+	 			<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="1500"
+				volume="1"
+				sample="../../sounds/whoosh_%.wav"
+			/>
+		
+			<trailemitter
+				spawnrate="50"
+				particlelife="500"
+				texpostime="500"
+			 	texposscale="0.0"
+			 	texstretchscale=".4"
+				position="0 0 0"
+				material="/shared/effects/materials/arrow_trail.material"
+			>
+				<particle
+					startcolor=".5 .5 .5"
+					midcolor=".25 .25 .5"
+					endcolor="0 0 0"
+					startsize="13"
+					midsize="8"
+					endsize="5"
+					midsizepos="0.2"
+			 />
+			</trailemitter>
+			
+			<simpleemitter
+				spawnrate="100"
+				minparticlelife="150"
+				maxparticlelife="500"
+				offsetsphere="25 25 8"
+				minspeed="10.0"
+				maxspeed="30"
+				direction="0 0 1"
+				material="/shared/effects/materials/flare_03.material"
+			>
+				<particle
+					maxangle="359"
+					maxanglespeed="30"
+					minanglespeed="-30"
+					minscale="2.5"
+					maxscale="4.5"
+					startcolor=".25 .25 1"
+					midcolor=".25 .5 1"
+					endcolor="0"
+				/>
+				
+				<particle
+					maxangle="359"
+					maxanglespeed="30"
+					minanglespeed="-30"
+					minscale="2.5"
+					maxscale="4.5"
+					startcolor="1 1 1"
+					midcolor="1 1 1"
+					endcolor="0"
+					midcolorpos=".75"
+				/>
+			</simpleemitter> 
+			
+			<simpleemitter
+				spawnrate="250"
+				minparticlelife="150"
+				maxparticlelife="500"
+				offsetsphere="25 25 8"
+				minspeed="10.0"
+				maxspeed="30"
+				direction="0 0 1"
+				material="/shared/effects/materials/snowflake.material"
+			>
+				
+				<particle
+					maxangle="359"
+					maxanglespeed="30"
+					minanglespeed="-30"
+					minscale="2.5"
+					maxscale="7"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".25"
+					color="1"
+				/>
+			</simpleemitter> 
+			
+			<simpleemitter
+				spawnrate="20"
+				minparticlelife="500"
+				maxparticlelife="750"
+				offsetsphere="10"
+				minspeed="10.0"
+				maxspeed="30"
+				direction="0 0 1"
+				drag=".07"
+				material="/shared/effects/materials/phantom_white.material"
+			>
+				
+				<particle
+					maxangle="359"
+					maxanglespeed="100"
+					minanglespeed="-100"
+					minstartscale="30"
+					maxstartscale="70"
+					minendscale="70"
+					maxendscale="125"
+					startcolor="1"
+					midcolor=".5"
+					endcolor=".5"
+					midcolorpos=".25"
+					startalpha=".5"
+					endalpha="0"
+				/>
+			</simpleemitter> 
+			
+			<billboard
+				expirelife="100"
+				startcolor=".25 .25 .5"
+				endcolor="0 0 0"
+				size="50"
+				material="/shared/effects/materials/glow_01.material"
+				depthbias="-50"
+				position="0 -5 0"
+			/>
+
+			<billboard
+				expirelife="100"
+				startcolor="1 1 1"
+				endcolor="0 0 0"
+				size="25"
+				material="/shared/effects/materials/glow_01.material"
+				depthbias="-50"
+				position="0 -5 0"
+			/>
+			
+			<billboard
+				life="250"
+				startcolor=".3"
+				endcolor="0 0 0"
+				startsize="125"
+				endsize="25"
+				material="/shared/effects/materials/glow_01.material"
+				depthbias="-50"
+				position="0 -5 0"
+			/>
+
+			<billboard
+				expirelife="100"
+				startcolor=".5 .5 .8"
+				endcolor="0 0 0"
+				size="50"
+				position="0 0 0"
+				material="/heroes/drunkenmaster/effects/material.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				directionalspace="local"
+				depthbias="25"
+				rollspeed="360"
+			/>
+			
+			<billboard
+				expirelife="100"
+				startcolor=".1 .1 .5"
+				endcolor="0 0 0"
+				size="55"
+				position="0 0 0"
+				material="/heroes/drunkenmaster/effects/material.material"
+				lockup="1"
+				lockright="1"
+				pitch="0"
+				directionalspace="local"
+				depthbias="25"
+				rollspeed="360"
+			/>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+<!--
+		<modifier
+			expirelife="250"
+			color="1 1 1"
+			startalpha="1"
+			endalpha="1"
+		/>
+-->
+		<particlesystem name="system0" space="world" scale=".8">
+<!--
+			<model
+				expirelife="500"
+				model="/heroes/monkey_king/ability_04/effects/cloud/model.mdf"
+				anim="idle"
+				color="1 1 1"
+				startalpha="1"
+				endalpha="0"
+				position="0 0 50"
+				scale=".65"
+			>
+			</model>
+-->
+
+			
+			<groundsprite
+				position="0 0 0"
+				expirelife="250"
+				material="/shared/effects/materials/black_spot.material"
+				size="95"
+				color="1 1 1"
+				startalpha="1"
+				endalpha="0"
+			/>
+<!--
+			<simpleemitter
+				spawnrate="50"
+				minparticlelife="750"
+				maxparticlelife="1000"
+				gravity="2"
+				minspeed="25"
+				maxspeed="75"
+				drag="0.07"
+				mintimenudge="0"
+				maxtimenudge="1000"				
+				material="/shared/effects/materials/pyroclast_02.material"
+				offsetsphere="10 10 0"
+				position="0 0 27"
+				inheritvelocity=".5"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					startcolor="1 1 1"
+					endcolor="1 1 1"
+					startsize="60"
+					endsize="25"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".075"
+					startanchor="0"
+					endanchor="0"					
+				 />	
+			</simpleemitter>
+			-->
+			<simpleemitter
+				spawnrate="40"
+				minparticlelife="750"
+				maxparticlelife="1500"
+				gravity="-1"
+				minspeed="25"
+				maxspeed="75"
+				drag="0.07"
+				mintimenudge="0"
+				maxtimenudge="1000"
+				material="/shared/effects/materials/cloud2.material"
+				offsetsphere="20"
+				position="10 0 10"
+				inheritvelocity=".5"
+				depthbias="-30"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					color="1 1 1"
+					startsize="60"
+					endsize="25"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".25"
+					startanchor="0"
+					endanchor="0"					
+				 />	
+			</simpleemitter>
+			
+			<trailemitter
+				spawnrate="30"
+				particlelife="1000"
+				texposscale="0"
+				texstretchscale="1"
+				material="/shared/effects/materials/glow_02.material"
+				position="10 0 30"
+			>
+				<particle
+					startsize="100"
+					midsize="120"
+					endsize="50"
+					midsizepos=".35"
+					startcolor=".5 .5 .5"
+					midcolor=".5 .5 .5"
+					endcolor="0"
+					midcolorpos=".65"
+				/>
+			</trailemitter>
+			
+			<simpleemitter
+				spawnrate="20"
+				minparticlelife="750"
+				maxparticlelife="1500"
+				gravity="-1"
+				minspeed="25"
+				maxspeed="75"
+				drag="0.07"
+				mintimenudge="0"
+				maxtimenudge="1000"
+				material="/shared/effects/materials/cartoon_dust.material"
+				offsetsphere="20"
+				position="10 0 10"
+				inheritvelocity=".5"
+				depthbias="-30"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					color="1 1 1"
+					startsize="75"
+					endsize="80"
+					startalpha="0"
+					midalpha=".75"
+					endalpha="0"
+					midalphapos=".25"
+					startanchor="0"
+					endanchor="0"
+				 />
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					color="1 1 1"
+					startsize="75"
+					endsize="80"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".25"
+					startanchor="0"
+					endanchor="0"
+				 />
+			</simpleemitter>
+
+
+<!--
+			<simpleemitter
+				bone="_bone_origin"
+				spawnrate="15"
+				particlelife="1200"
+				gravity="2"
+				speed="300"
+				drag="0.07"
+				mintimenudge="0"
+				maxtimenudge="1000"				
+				material="/shared/effects/materials/pyroclast_02.material"
+				offsetsphere="50 50 25"
+				position="0 0 0"
+				inheritvelocity=".5"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					startcolor="1 1 1"
+					endcolor="1 1 1"
+					startsize="220"
+					endsize="80"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".15"
+					startanchor="0"
+					endanchor="0"					
+				 />	
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_origin"
+				spawnrate="50"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				speed="310"
+				drag="0.07"
+				material="/shared/effects/materials/phantom_smoke_04.material"
+				offsetsphere="50 50 10"
+				depthbias="-25"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-30"
+					startcolor="0 0 0"
+					midcolor="1 1 1"
+					endcolor="0 0 0"
+					midcolorpos=".15"
+					maxanglespeed="30"
+					startsize="25"
+					endsize="120"
+					midalphapos=".3"
+					startanchor="1"
+					endanchor="0"					
+				 />	
+			</simpleemitter>
+-->
+
+			<billboard
+				bone="_bone_origin"
+				material="/shared/effects/materials/cloud2.material"
+				startcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".8"
+				size="60"
+				lockup="1"
+				lockupright="1"
+				pitch="90"
+				depthbias="25"
+				alpha=".45"
+				position="0 10 -30"
+				rollspeed="85"
+			/>
+
+			<billboard
+				bone="_bone_origin"
+				material="/shared/effects/materials/cloud2.material"
+				startcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".8"
+				size="60"
+				lockup="1"
+				lockupright="1"
+				depthbias="25"
+				alpha=".75"
+				position="0 10 -30"
+				pitch="90"
+				rollspeed="85"
+			/>
+
+			
+			
+			
+
+			<billboard
+				bone="_bone_origin"
+				material="/shared/effects/materials/cloud2.material"
+				startcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".8"
+				size="75"
+				lockup="1"
+				lockupright="1"
+				pitch="90"
+				depthbias="25"
+				alpha=".65"
+				position="-6 15 -35"
+				rollspeed="-35"
+			/>
+
+			<billboard
+				bone="_bone_origin"
+				material="/shared/effects/materials/cloud2.material"
+				startcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".8"
+				size="75"
+				lockup="1"
+				lockupright="1"
+				depthbias="25"
+				alpha=".9"
+				position="-6 15 -35"
+				pitch="90"
+				rollspeed="-35"
+			/>
+
+
+
+
+
+
+
+			<billboard
+				bone="_bone_origin"
+				material="/shared/effects/materials/cloud2.material"
+				startcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".8"
+				size="100"
+				lockup="1"
+				lockupright="1"
+				pitch="90"
+				depthbias="5"
+				alpha=".5"
+				position="5 10 -55"
+				rollspeed="35"
+			/>
+
+			<billboard
+				bone="_bone_origin"
+				material="/shared/effects/materials/cloud2.material"
+				startcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".8"
+				size="100"
+				lockup="1"
+				lockupright="1"
+				depthbias="5"
+				alpha=".75"
+				position="5 10 -55"
+				pitch="90"
+				rollspeed="0"
+			/>
+
+			
+			
+			
+			
+			<!--
+			<billboard
+				bone="_bone_origin"
+				material="/shared/effects/materials/cloud2.material"
+				startcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".8"
+				size="100"
+				lockup="1"
+				lockupright="1"
+				pitch="90"
+				depthbias="25"
+				alpha=".35"
+				position="0 0 -45"
+				roll="-45"
+				rollspeed="-55"
+			/>
+
+			<billboard
+				bone="_bone_origin"
+				material="/shared/effects/materials/cloud2.material"
+				startcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".8"
+				size="80"
+				lockup="1"
+				lockupright="1"
+				pitch="90"
+				depthbias="-25"
+				alpha=".85"
+				position="0 0 -40"
+				roll="-45"
+				rollspeed="0"
+			/>
+			-->
+		
+
+
+
+
+		<!--
+			<billboard
+				bone="_bone_rightfoot"
+				material="/shared/effects/materials/cloud2.material"
+				startcolor="1 1 1"
+				endcolor="1 1 1"
+				size="90"
+				midcolorpos=".8"
+				lockup="1"
+				lockupright="1"
+				pitch="90"
+				depthbias="15"
+				alpha=".35"
+				position="0 0 -15" 
+				roll="-45"
+				rollspeed="0"
+			/>
+
+			<billboard
+				bone="_bone_rightfoot"
+				material="/shared/effects/materials/cloud2.material"
+				startcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".8"
+				size="90"
+				lockup="1"
+				lockupright="1"
+				pitch="90"
+				depthbias="15"
+				alpha=".75"
+				position="0 0 -15"
+				roll="-45"
+				rollspeed="0"
+			/>
+			
+
+			
+			<billboard
+				bone="_bone_leftfoot"
+				material="/shared/effects/materials/cloud2.material"
+				startcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".8"
+				size="150"
+				lockup="1"
+				lockupright="1"
+				pitch="90"
+				depthbias="25"
+				alpha=".35"
+				position="0 0 -35"
+				roll="-45"
+				rollspeed="0"
+			/>
+
+			<billboard
+				bone="_bone_leftfoot"
+				material="/shared/effects/materials/cloud2.material"
+				startcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".8"
+				size="150"
+				lockup="1"
+				lockupright="1"
+				pitch="90"
+				depthbias="25"
+				alpha=".9"
+				position="0 0 -35"
+				roll="-45"
+				rollspeed="0"
+			/>
+
+			<billboard
+				bone="_bone_rightfoot"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".8"
+				size="150"
+				lockup="1"
+				lockupright="1"
+				pitch="90"
+				depthbias="-25"
+				alpha=".75"
+				position="0 0 -15"
+				roll="-45"
+				rollspeed="0"
+			/>
+			
+			<billboard
+				bone="_bone_leftfoot"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".8"
+				size="150"
+				lockup="1"
+				lockupright="1"
+				pitch="90"
+				depthbias="-25"
+				alpha=".9"
+				position="0 0 -15"
+				roll="-45"
+				rollspeed="0"
+			/>
+		-->
+			
+<!--
+			<billboard
+				bone="_bone_origin"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".8"
+				size="150"
+				lockup="1"
+				lockupright="1"
+				pitch="90"
+				depthbias="-25"
+				alpha=".85"
+				position="0 0 0"
+				roll="-45"
+				rollspeed="0"
+			/>
+-->
+<!--
+			<model
+				model="/heroes/monkey_king/alt4/ability_04/effects/cloud/model.mdf"
+				color="1 1 1"
+				bone="_bone_origin"
+				position="5 -15 -40"
+				directionalspace="global"
+				yaw="80"
+			/>
+-->
+<!--
+			<model
+				model="/heroes/monkey_king/alt4/ability_04/effects/cloud/model.mdf"
+				color="1 1 1"
+				bone="_bone_leftfoot"
+				position="0 0 -15"
+				scale="1.5"
+				directionalspace="global"
+			/>
+
+			<model
+				model="/heroes/monkey_king/alt4/ability_04/effects/cloud/model.mdf"
+				color="1 1 1"
+				bone="_bone_leftfoot"
+				position="0 0 -15"
+				scale="1.5"
+				directionalspace="global"
+			/>
+			-->
+			
+			<template name="ball_of_fire">
+				<trailemitter
+					spawnrate="100"
+					particlelife="400"
+					texpostime="500"
+					texposscale="0.0"
+					texstretchscale=".4"
+					material="/shared/effects/materials/light_trail.material"
+					life="800"
+				>
+					<particle
+						startcolor="1 1 1"
+						midcolor="1 1 1"
+						endcolor="0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".075"
+						startsize="5"
+						midsize="15"
+						endsize="5"
+						midsizepos="0.2"
+				 />
+				</trailemitter>
+				
+				<trailemitter
+					spawnrate="100"
+					particlelife="500"
+					texpostime="750"
+					texposscale="0.0"
+					texstretchscale=".4"
+					material="/shared/effects/materials/light_trail.material"
+					direction="0 0 1"
+					speed="50"
+					angle="0"
+					drag="0.02"
+					life="800"
+				>
+					<particle
+						startcolor="0"
+						midcolor="1 1 1"
+						endcolor="0 0 0"
+						midcolorpos=".05"
+						startsize="10"
+						midsize="60"
+						endsize="5"
+						midsizepos=".1"
+				 />
+				</trailemitter>
+
+				<billboard
+					expirelife="500"
+					startcolor="1 1 1"
+					endcolor="0 0 0"
+					size="40"
+					material="/shared/effects/materials/whitedot.material"
+					depthbias="50"
+					life="800"
+				/>
+				
+				<billboard
+					expirelife="500"
+					startcolor="1 1 1"
+					endcolor="0"
+					size="45"
+					material="/shared/effects/materials/glow_01.material"
+					depthbias="-50"
+					life="800"
+				/>
+
+				<billboard
+					expirelife="500"
+					startcolor="1 1 1"
+					endcolor="0 0 0"
+					size="45"
+					material="/shared/effects/materials/glow_01.material"
+					depthbias="-50"
+					life="800"
+				/>
+				
+				<billboard
+					expirelife="500"
+					startcolor="1 1 1"
+					endcolor="0 0 0"
+					size="45"
+					material="/shared/effects/materials/whitedot.material"
+					depthbias="-25"
+					life="800"
+				/>
+			</template>
+			
+			<trackeremitter	
+				bone="_bone_leftfoot"
+				position="0 0 0"
+				targetbone="_bone_leftfoot"
+				inheritvelocity="0.25"
+				tracktype="distance"
+				trackspeed=".4" 
+				spawnrate="5"
+				particlelife="2000"
+				offsetsphere="65 65 5"
+				speed="150"
+				direction="0 0 1"
+				material="/shared/effects/materials/blink.material"
+			>
+				<particle 
+					startsize="0"
+					midsize="4"
+					endsize="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".1"
+					maxangle="360"
+					minscale=".1"
+					maxscale=".6"
+					color="1 1 1"					
+					
+				>
+					<instance name="ball_of_fire"/>
+				</particle>
+			</trackeremitter>
+			
+			<trackeremitter	
+				bone="_bone_leftfoot"
+				position="0 0 0"
+				targetbone="_bone_leftfoot"
+				inheritvelocity="0.25"
+				tracktype="distance"
+				trackspeed=".4" 
+				spawnrate="3"
+				particlelife="2000"
+				offsetsphere="65 65 5"
+				speed="20"
+				direction="0 0 1"
+				material="/shared/effects/materials/blink.material"
+			>
+				<particle 
+					startsize="0"
+					midsize="10"
+					endsize="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".1"
+					maxangle="360"
+					minscale=".1"
+					maxscale=".6"
+					color="1 1 1"					
+					
+				>
+					<instance name="ball_of_fire"/>
+				</particle>
+			</trackeremitter>
+
+				<simpleemitter
+					spawnrate="150"
+					minangle="0"
+					maxangle="45"
+					direction="0 0 1"
+					maxspeed="50"
+					minparticlelife="400"
+					maxparticlelife="1000"
+					offsetsphere="50 50 0"
+					material="/shared/effects/materials/spark_10.material"
+					roll="{roll=0}"
+				>
+					<particle
+						startsize="1"
+						midsize="30"
+						endsize="0"
+						startcolor="1 1 1"
+						endcolor="1 1 1"
+						minscale=".5"
+						maxscale="2"
+					/>
+				</simpleemitter>
+			
+		</particlesystem>
+		
+		<particlesystem name="system1" space="entity">
+			<model
+				scale="1.8"
+				model="/heroes/monkey_king/alt4/ability_04/effects/cloud/model.mdf"
+				bone="_bone_origin"
+				position="0 0 0"
+				directionalspace="global"
+				yaw="50"
+			/>
+			
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance1" particlesystem="system0" />
+		<spawnparticlesystem instance="instance2" particlesystem="system1" />
+		<spawnmodifier instance="instance0"/>
+		<waitfordeath  instance="instance0"/>
+		<waitfordeath  instance="instance1"/>
+		<waitfordeath  instance="instance2"/>
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

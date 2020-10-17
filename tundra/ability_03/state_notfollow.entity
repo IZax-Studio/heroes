@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Tundra_Ability3_NotFollow"
+	
+	icon="icon3.tga"
+	
+	ishidden="true"	
+	
+	modifierkey="tundra_E_notfollow"
+>
+	<onframe>
+		<!-- Teleport check logic -->
+		<hasmodifier entity="this_proxy_entity" name="tundra_ability3_Away" />
+		<else>
+			<distance source="source_entity" target="source_owner_entity" />
+			<compare a="result" b="600" op="le">
+				<expire />
+			</compare>
+		</else>
+	</onframe>
+</state>

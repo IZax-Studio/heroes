@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Tarot4"
+	
+	icon="icon4.tga"
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	
+	actiontype="passive"
+
+	modifierkey="Tarot_UltActive"
+>
+	
+	<onlearn>
+		<setaccumulator value="0.0557" />
+	</onlearn>
+	
+	<onattackimpact />
+	
+	<onattackstart>
+		<canactivate>
+			<cantarget targetscheme="enemy_units">
+				<!-- Marked target gives +10% Critical Chance if Far Scry is active -->
+				<hasmodifier entity="source_entity" name="Tarot_focusedontarget">
+					<pushability name="Ability_Tarot2" />
+					<compare a="stack_proxy_entity" b="target_entity" op="eq"> <!-- Attacking the marked target -->
+						<setvar0 a="accumulator" b="0.0557" op="add" /> <!-- Add extra instance of pseudo-RNG (adjusts it to the 30% Crit Chance value instead of 20% only for this attack instance -->
+						
+						<chance threshold="var0">
+							<addcritical chance="1.0" multiplier="2.0,2.8,3.6" />
+							<setaccumulator value="0.0557" />
+							<applystate name="State_Tarot_Ability4_Effect" target="target_entity" duration="1000" />
+						</chance>
+						<else>
+							<setaccumulator value="accumulator" valueb="0.0557" valueop="add" /> <!-- Subtract the bonus chance if Crit fails (to not carry the Crit chance over to other targets) -->
+						</else>
+					</compare>
+					<else> <!-- Not attacking the marked target -->
+						<chance threshold="accumulator">
+							<addcritical chance="1.0" multiplier="2.0,2.8,3.6" />
+							<setaccumulator value="0.0557" />
+							<applystate name="State_Tarot_Ability4_Effect" target="target_entity" duration="1000" />
+						</chance>
+						<else>
+							<setaccumulator value="accumulator" valueb="0.0557" valueop="add" />
+						</else>
+					</else>
+				</hasmodifier>
+				<else> <!-- Default -->
+					<chance threshold="accumulator">
+						<addcritical chance="1.0" multiplier="2.0,2.8,3.6" />
+						<setaccumulator value="0.0557" />
+						<applystate name="State_Tarot_Ability4_Effect" target="target_entity" duration="1000" />
+					</chance>
+					<else>
+						<setaccumulator value="accumulator" valueb="0.0557" valueop="add" />
+					</else>
+				</else>
+			</cantarget>
+		</canactivate>
+	</onattackstart>
+
+</ability>

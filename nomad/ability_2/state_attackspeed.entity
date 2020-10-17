@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Nomad_Ability2_AttackSpeed"
+
+	
+	
+	icon="iconaa.tga"
+	
+	attackspeed=".2,.4,.6,.8"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	
+	<altavatar key="Hero_Nomad.Alt12"
+		icon="../alt12/ability_02/icon.tga"
+	>
+		<modifier key="nomadAlt12_Ability2_Upgrade"
+			icon="../alt12/ability_02/icon_u.tga"
+		/>
+	</altavatar>
+
+</state>

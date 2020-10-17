@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Mumra4"
+
+	icon="icon4.tga"
+
+	anim="ability_4_eyes"
+	casttime="100"
+	castactiontime="100"
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_position"
+	casteffecttype="SuperiorMagic"
+	targetscheme="nonneutral_enemy_units"
+	manacost="150"
+	cooldowntime="80000,60000,40000"
+	cooldowntype="Mumra_Ult"
+	casteffect="effects/cast.effect"
+	
+	range="2000,2500,3000"
+	forcerange="2000,2500,3000"
+	targetradius="125"
+	allowoutofboundscast="true"
+	
+	showlinecast="true"
+	linecastrange="2000,2500,3000"
+	linecastwidth="125"
+	
+	showrangeandradiusintooltip="true"
+>
+	<onimpact>
+		<spawnunit name="Gadget_Mumra_Ability4_Marker" count="1" target="source_position" pushentity="true" facing="target_position" />
+		<spawnprojectile name="Projectile_Mumra_Ability4" source="source_entity" target="target_position" offset="0 96 0" offsetspace="stack_entity" />
+	</onimpact>
+	
+	<aura state="State_Mumra_Ability4_UltBoost" radius="0" targetscheme="self" notooltip="true" />
+	
+	<modifier key="ult_boost" modpriority="100"
+		cooldowntime="20000"
+		displayname="true"
+		interface="single_plus_one"
+	>
+	
+		
+	</modifier>
+	
+	<modifier key="krosmode" modpriority="101"
+		cooldowntype=""
+		interface="single"
+	>
+	</modifier>
+	
+	<altavatar key="Hero_Mumra.Alt4" modpriority="101"
+		casteffect="../alt4/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Mumra.Alt5" modpriority="101"
+		casteffect="../alt5/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Mumra.set_ascension" modpriority="101"
+		casteffect="../set_ascension/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Mumra.Alt6" modpriority="101"
+	    icon="../alt6/ability_04/icon.tga"	
+		casteffect="../alt6/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Mumra.Alt7" modpriority="101"
+		casteffect="../alt7/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Mumra.Alt8" modpriority="101"
+		casteffect="../alt7/ability_04/effects/cast.effect"
+	/>
+	
+</ability>

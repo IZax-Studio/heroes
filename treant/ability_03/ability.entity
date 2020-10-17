@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Treant3"
+
+	icon="icon3.tga"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="passive"
+	
+	attackspeedpercharge="0.05,0.1,0.15,0.2"
+	maxcharges="5"
+	
+	targetradius="900"
+>
+	<onlearn>
+		<applystate target="source_entity" name="State_Treant_Ability3" continuous="true" proxy="this_entity" />
+	</onlearn>
+
+	<onattackimpact>
+		<entitytype type="Hero_Fade" target="source_owner_entity" /> <!-- Exception for Fayde's Burning Shadows' (W) illusions -->
+		<else>
+			<cantarget targetscheme="enemy_stationary_heroes">
+				<setaccumulator value="1" /> <!-- Guaranteed if not moving -->
+			</cantarget>
+			<else>
+				<setaccumulator value="0.2" /> <!-- Base chance -->
+				<areaofeffect
+					radius="9999"
+					targetselection="all"
+					targetscheme="my_treants"
+					ignoreinvulnerable="true"
+				>
+					<entitytype type="Pet_Treant_Ability3" target="target_entity">
+						<changeaccumulator b="0.6" op="mult" /> <!-- Geometric series factor for diminishing returns on proc chance for each E treedog alive -->
+					</entitytype>
+				</areaofeffect>
+			</else>
+			
+			<targettype type="illusion" target="source_entity">
+				<changeaccumulator b="0.333" op="mult" /> <!-- 1/3 spawn chance if this is an illusion of Keeper of the Forest -->
+			</targettype>
+			
+			
+			<chance threshold="accumulator">
+				<!-- Get W level -->
+				<pushability name="Ability_Treant2" />
+				<evaluate a="source_level" b="1" op="max" source="stack_entity" />
+				<setvar0 a="result" /> <!-- We could skip the var0 assignment here but we're doing it this way in case we need another combat action prior to the spawning -->
+				<spawnaffector name="Affector_Treant_Ability3" proxy="target_entity" target="target_entity" level="var0" /> <!-- Spawn our affector. The affector is needed to get a random position so that the treant doesn't just spawn either inside the target or at a pre-defined angle every time. Also because spawnunit doesn't take levels as a parameter -->
+			</chance>
+		</else>
+	</onattackimpact>
+
+	<onframe>
+		<areaofeffect
+			radius="900"
+			targetselection="all"
+			targetscheme="my_treants"
+			ignoreinvulnerable="true"
+		/>
+		<setcharges a="result" />
+	</onframe>
+	
+	<onimpact />
+</ability>

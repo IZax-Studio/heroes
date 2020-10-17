@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Taint_Attack"
+
+	speed="900"
+	gravity="-500"
+
+	modelscale="2.5"
+	model="/shared/models/invis.mdf"
+
+	impacteffect="effects/impact.effect"
+	traileffect="effects/trail.effect"
+>
+
+	<altavatar key="Hero_Taint.Alt6" modpriority="1"
+		modelscale="1.75"
+		model="../alt6/effects/projectile/model.mdf"
+		impacteffect="../alt6/effects/impact.effect"
+		traileffect="../alt6/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Taint.Alt7" modpriority="1"
+		modelscale="1.2"
+		model="/shared/models/invis.mdf"
+		impacteffect="../alt7/effects/impact.effect"
+		traileffect="../alt7/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Taint.Alt8" modpriority="1"
+		modelscale="1.2"
+		model="/shared/models/invis.mdf"
+		impacteffect="../alt8/effects/impact.effect"
+		traileffect="../alt8/effects/trail.effect"
+	/>
+</projectile>
+ 

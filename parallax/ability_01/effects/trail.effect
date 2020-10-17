@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			<sound
+				life="5000"
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="1300"
+				volume="1"				
+				sample="/heroes/parallax/ability_01/sounds/cast_%.wav" 
+			/>		
+
+			<model
+				timenudge="1"
+				position="0 0 115"
+				model="/shared/models/invis.mdf"
+				rollspeed="2000"
+			>
+				<!-- artifact sparkles -->
+				<simpleemitter
+					offsetsphere="80"
+					spawnrate="100"
+					minparticlelife="400"
+					maxparticlelife="600"
+					material="/core/materials/effect_solid.material"
+				>
+					<particle
+						color="1 .5 0"
+						startalpha="0"
+						midalpha=".4"
+						endalpha="0"
+						midalphapos=".2"
+						minstartsize="1"
+						maxstartsize="4"
+						minendsize="1"
+						maxendsize="4"
+						minscale="2"
+						maxscale="3"
+					>
+						<billboard
+							life="400"
+							material="/shared/effects/materials/blink.material"
+							startcolor="0"
+							midcolor="1 .5 0"
+							endcolor="0"
+							midcolorpos=".2"
+							height="16"
+							width="4"
+						/>
+					</particle>
+				</simpleemitter>
+
+				<template name="swirlyTrail">
+					<trailemitter
+						position="{position}"
+						spawnrate="80"
+						particlelife="400"
+						direction="{position}"
+						speed="400"
+						angle="0"
+						drag="0.25"
+						texposscale="0"
+						texstretchscale="1.2"
+						material="/shared/effects/materials/fire_scrolling_trail.material"
+						attachtoemitter="true"
+					>
+						<particle
+							startsize="16"
+							endsize="24"
+							startcolor="1 .5 0"
+							endcolor="0"
+							startalpha=".75"
+							endalpha="0"
+						/>
+					</trailemitter>
+					<trailemitter
+						position="{position}"
+						spawnrate="80"
+						particlelife="200"
+						direction="{position}"
+						speed="400"
+						angle="0"
+						drag="0.25"
+						texposscale="10"
+						texpostime="750"
+						texstretchscale="0"
+						material="/shared/effects/materials/trail_03.material"
+						attachtoemitter="true"
+					>
+						<particle
+							size="150"
+							startcolor="0"
+							midcolor="1 .5 0"
+							endcolor="0"
+							midcolorpos=".2"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							midalphapos=".9"
+						/>
+					</trailemitter>
+					<trailemitter
+						position="{position}"
+						spawnrate="80"
+						particlelife="200"
+						direction="{position}"
+						speed="400"
+						angle="0"
+						drag="0.25"
+						texposscale="10"
+						texpostime="750"
+						texstretchscale="0"
+						material="/shared/effects/materials/calamity_fire_scrolling_trail.material"
+						attachtoemitter="true"
+					>
+						<particle
+							size="25"
+							color=".5 .2 0"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							midalphapos=".9"
+						/>
+					</trailemitter>
+				</template>
+				<instance name="swirlyTrail" position="0 0 15" />
+				<instance name="swirlyTrail" position="0 0 -15" />
+			</model>
+
+			<trailemitter
+				position="0 0 120"
+				spawnrate="40"
+				particlelife="200"
+				material="/shared/effects/materials/refract_hexgrid2.material"
+				texposscale="1"
+				texpostime="80"
+				texstretchscale="0"
+				attachtoemitter="true"
+			>
+				<particle
+					startparam="0"
+					midparam="0.015"
+					endparam="0"
+					midparampos=".2"
+					size="140"
+				/>
+			</trailemitter>
+
+			<model
+				scale="1.15"
+				position="0 0 120"
+				timenudge="1"
+				model="/shared/effects/models/sphere3/model.mdf"
+				material="../../ability_04/effects/arc_refract.material"
+				color="2 1 0"
+				expirelife="100"
+				startalpha="2"
+				endalpha="0"
+				directionalspace="global"
+				param0=".05"
+			/>
+
+			<model
+				scale="1.15"
+				position="0 0 120"
+				timenudge="1"
+				model="/shared/effects/models/sphere3/model.mdf"
+				material="../../ability_04/effects/unlit.material"
+				startcolor="0 .04 .03"
+				endcolor="0"
+				expirelife="100"
+				directionalspace="global"
+			/>
+
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

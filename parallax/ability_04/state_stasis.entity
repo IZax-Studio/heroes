@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Parallax_Ability4_Stasis"
+
+	icon="icon4.tga"
+	ishidden="true"
+	passiveeffect=""
+	movespeedmultiplier="0.05,0.1,0.15"
+>
+	<oninflict>
+		<spawncapsuleaffector name="Affector_Capsule_Parallax_Ability4" sourceunit="source_entity" targetunit="this_proxy_entity" target="this_proxy_entity" proxy="this_owner_entity" pushentity="true" />
+		<setproxy entity="this_entity" target="stack_entity" /> <!-- This should set the proxy of THIS entity to the affector in the future -->
+	</oninflict>
+
+	<onframe>
+		<!-- % of max mana being drained per second (3%/sec at all levels) -->
+		<hasmodifier name="ult_boost" entity="source_entity">
+			<setaccumulator value="source_maxmana" valueb="0.02" valueop="mult" />
+		</hasmodifier>
+		<else>
+			<setaccumulator value="source_maxmana" valueb="0.04" valueop="mult" />
+		</else>
+		
+		<!-- Drain the correct amount of mana per frame, so amount=".05" to represent the frame duration -->
+		<takemana target="source_entity" amount=".05" b="accumulator" op="mult" triggeractionscript="true" costovertime="true" />
+		<compare a="source_mana" b="0" op="eq">
+			<expire />
+		</compare>
+	</onframe>
+
+	<onexpired>
+		<toggleoff name="Ability_Parallax4" />
+		<delete target="this_proxy_entity" />
+	</onexpired>
+</state>

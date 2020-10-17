@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Tarot_Ability2_Assist"
+
+	icon="icon2.tga"
+	serverentity="true"
+	ishidden="true"
+	
+	passiveeffect=""
+
+	effecttype="StatusDebuff"
+	allowtransfer="false"
+>
+
+</state>

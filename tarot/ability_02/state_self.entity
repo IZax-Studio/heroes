@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Tarot_Ability2_Self"
+	
+	icon="icon2.tga"
+	passiveeffect=""
+	
+	effecttype=""
+
+	ishidden="true"
+
+	modifierkey="Tarot_focusedontarget"
+>
+	<onframe />
+
+	<oninflict>
+		<pushability name="Ability_Tarot2" />
+		<starttimer duration="8000,10000,12000,14000" entity="stack_entity" />
+	</oninflict>
+	
+	<onrefresh>
+		<pushability name="Ability_Tarot2" />
+		<starttimer duration="8000,10000,12000,14000" entity="stack_entity" />
+	</onrefresh>
+	
+	<onexpired>
+		<pushability name="Ability_Tarot2" />
+		<resettimer entity="stack_entity" />
+	</onexpired>
+	
+	<onattackimpact>
+		<!-- Counter to correct bounce logic -->
+		<setaccumulator value="0" />
+
+		<cantarget source="this_owner_entity" target="this_proxy_entity" targetscheme="enemy_heroes" ignoreinvulnerable="false">
+			<combatsupertype supertype="attack">
+				<combateffecttype effecttype="Attack">
+				
+					<!-- Only bounce if the inflictor isn't a spawned projectile (exception: the default attack -->
+					<cantarget targetscheme="projectiles" source="source_entity" target="inflictor_entity" ignoreinvulnerable="true">
+						<entitytype type="Projectile_Tarot_Attack" target="inflictor_entity" />
+						<else>
+							<setaccumulator value="1" />
+						</else>
+					</cantarget>					
+					
+					<targettype type="hero" target="inflictor_entity">
+						<setaccumulator value="1" />
+					</targettype>
+					
+					<!-- Only bounce if the spawned projectile isn't already a Bounce Projectile -->
+					<compare a="accumulator" b="1" op="ne">
+						<!-- Attack hits the non-marked target -->
+						<compare a="target_entity" b="this_proxy_entity" op="ne">
+							<compare a="target_entity" b="0" op="ne">
+								<distance source="target_entity" target="this_proxy_entity" />
+								<compare a="result" b="800" op="le">
+									<!-- Fake the bounce until we get retarget code to work -->
+									<hasmodifier name="frost" entity="source_entity" >
+										<spawnprojectile name="Projectile_Tarot_Attack_Frost" proxy="this_entity" source="target_entity" offset="0 0 70" target="this_proxy_entity" param="1" noresponse="true" />
+									</hasmodifier>
+									<else>
+										<hasmodifier name="Harkons_Active" entity="source_entity" >
+											<spawnprojectile name="Projectile_Tarot_Attack_Harkons" proxy="this_entity" source="target_entity" offset="0 0 70" target="this_proxy_entity" param="1" noresponse="true" />
+										</hasmodifier>
+										<else>
+											<spawnprojectile name="Projectile_Tarot_Attack_Bounce" proxy="this_entity" source="target_entity" offset="0 0 70" target="this_proxy_entity" param="1" noresponse="true" />
+										</else>
+									</else>
+								</compare>
+							</compare>
+						</compare>
+						
+						<!-- Attack hits the marked target -->
+						<else>
+							<areaofeffect
+								radius="800"
+								center="target_entity"
+								ignore="target_entity"
+								targetscheme="visible_enemy_heroes"
+								targetselection="closest"
+								maxtotalimpacts="1"
+								effecttype=""							
+							>
+								<!-- Fake the bounce until we get retarget code to work -->
+								<hasmodifier name="frost" entity="source_entity" >
+									<spawnprojectile name="Projectile_Tarot_Attack_Frost" proxy="this_entity" source="this_proxy_entity" offset="0 0 70" target="target_entity" param="1" noresponse="true" />
+								</hasmodifier>
+								<else>
+									<hasmodifier name="Harkons_Active" entity="source_entity" >
+										<spawnprojectile name="Projectile_Tarot_Attack_Harkons" proxy="this_entity" source="this_proxy_entity" offset="0 0 70" target="target_entity" param="1" noresponse="true" />
+									</hasmodifier>
+									<else>
+										<spawnprojectile name="Projectile_Tarot_Attack_Bounce" proxy="this_entity" source="this_proxy_entity" offset="0 0 70" target="target_entity" param="1" noresponse="true" />
+									</else>
+								</else>
+							</areaofeffect>
+						</else>
+					</compare>
+				</combateffecttype>
+			</combatsupertype>
+		</cantarget>
+	</onattackimpact>
+
+	<onattackstart>
+		<hasmodifier name="Tarot_nextattackneedstobeinvis">
+			<setattackprojectile name="" />
+			<setactivemodifierkey name="" />
+			<setvalue name="combat_attackability" a="1" />
+		</hasmodifier>
+	</onattackstart>
+
+	<onframe>
+		<compare a="this_proxy_entity" b="0" op="eq">
+			<expire />
+		</compare>
+	</onframe>
+
+	<onattack>
+		<combatsupertype supertype="attack">
+			<combateffecttype effecttype="Attack">
+				<compare a="target_entity" b="this_proxy_entity" op="eq">
+					<setvalue name="combat_truestrike" a="1" />
+				</compare>
+			</combateffecttype>
+		</combatsupertype>
+		<setattackprojectile name="Projectile_Tarot_Attack" />
+	</onattack>
+</state>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Nomad_Ability1"
+
+	icon="icon1.tga"
+	passiveeffect="effects/state_self.effect"
+
+	movespeedmultiplier=".08,.12,.16,.2"
+	unitwalking="true"
+
+	stealthtype="hero"
+	fadetime="500"
+	
+	effecttype="StatusStealth"
+>
+	<aura state="State_Nomad_Ability1_Allies" radius="300" duration="500" targetscheme="other_ally_heroes" />
+	<aura state="State_Nomad_Ability1_Enemies" radius="300" duration="500" effecttype="Magic" targetscheme="enemy_units" disablenegativeeffectpopuponrefresh="true" />
+	
+	<onframe />
+	
+	<oninflict>
+		<startfade />
+	</oninflict>
+
+	<onattack>
+		<startfade a="source_attackduration" />
+	</onattack>
+	
+	<onactivatepreimpact>
+		<startfade a="castduration" />
+	</onactivatepreimpact>
+	
+	<modifier key="nomadinvis1" modpriority="90" movespeedmultiplier=".17" />
+	<modifier key="nomadinvis2" modpriority="90" movespeedmultiplier=".19" />
+	<modifier key="nomadinvis3" modpriority="90" movespeedmultiplier=".21" />
+	<modifier key="nomadinvis4" modpriority="90" movespeedmultiplier=".23" />
+	
+	<altavatar key="Hero_Nomad.Alt7"
+		icon="../alt7/ability_1/icon.tga"
+		passiveeffect="../alt7/ability_1/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Nomad.Alt8"
+		passiveeffect="../alt8/ability_01/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Nomad.Alt9"
+		passiveeffect="../alt9/ability_01/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Nomad.Alt11"
+	    icon="../alt11/ability_01/icon.tga"
+		passiveeffect="../alt11/ability_01/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Nomad.Alt12"
+	    icon="../alt12/ability_01/icon.tga"
+		passiveeffect="../alt12/ability_01/effects/state_self.effect"
+	>
+		<modifier key="nomadAlt12_Ability1_Upgrade"
+			icon="../alt12/ability_01/icon_u.tga"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt13"
+		passiveeffect="../alt13/ability_01/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Nomad.Alt14"
+		passiveeffect="../alt14/ability_01/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Nomad.Alt15"
+		passiveeffect="../alt13/ability_01/effects/state_self.effect"
+	/>
+</state>

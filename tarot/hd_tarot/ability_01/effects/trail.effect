@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">	
+						<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="600"
+				volume=".5" 
+				soundloop="true"
+				fadein="500"
+				fadeout="500"
+				sample="/heroes/tarot/ability_01/sounds/loop_1.wav"
+			/>
+			
+			<sound
+			    forcestereo="true"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="600"
+				volume="1" 
+				soundloop="true"
+				fadein="500"
+				fadeout="500"
+				sample="/heroes/tarot/ability_01/sounds/loop_3.wav"
+			/>
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="600"
+				volume="1" 
+				soundloop="true"
+				fadein="500"
+				fadeout="500"
+				sample="/heroes/tarot/ability_01/sounds/loop_2.wav"
+			/>
+			
+			<controller scale="1.75" >
+				<billboard
+					material="/shared/effects/materials/black_spot.material"
+					size="20"
+					depthbias="20"
+					alpha=".25"
+				/>
+			
+				<light
+					color="1 0 0"
+					falloffend="20"
+				/>
+				
+				<!--
+				<simpleemitter
+					timenudge="1000"
+					spawnrate="2"
+					speed="10"
+					drag="0.01"
+					minparticlelife="1000"
+					maxparticlelife="1500"
+					material="/shared/effects/materials/phantom_white_reveal.material"
+				>
+					<particle
+						maxangle="360"
+						color=".5 0 0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="1"
+						midcolorpos=".25"
+						startsize="10"
+						minendsize="30"
+						maxendsize="40"
+						anchor="1"
+						startframe=".3"
+						endframe="1"
+					/>
+				</simpleemitter>
+				-->
+				
+				<simpleemitter
+					timenudge="1000"
+					spawnrate="3"
+					minparticlelife="750"
+					maxparticlelife="1250"
+					material="/shared/effects/materials/twirl_03.material"
+				>
+					<particle
+						maxangle="360"
+						startcolor="0"
+						midcolor=".5 0 0"
+						endcolor="0"
+						midcolorpos=".25"
+						startsize="10"
+						minendsize="30"
+						maxendsize="40"
+						anchor="1"
+						minanglespeed="200"
+						maxanglespeed="50"
+					/>
+				</simpleemitter>
+			
+				<!--
+				<simpleemitter
+					timenudge="1000"
+					spawnrate="1"
+					minspeed="10"
+					maxspeed="15"
+					drag="0.01"
+					particlelife="2000"
+				>
+					<particle
+						maxangle="360"
+						minyawspeed="-600"
+						maxyawspeed="600"
+						minpitchspeed="-200"
+						maxpitchspeed="200"
+					>
+						<trailemitter
+							life="1000"
+							particlelife="1000"
+							spawnrate="15"
+							direction="0 0 1"
+							speed="10"
+							angle="0"
+							drag="0.02"
+							material="/shared/effects/materials/arrow_trail_blend.material"
+							texposscale="0"
+							texstretchscale="1"
+						>
+							<particle
+								color=".5 0 0"
+								startalpha="0"
+								midalpha=".5"
+								endalpha="0"
+								startsize="0"
+								midsize="2"
+								endsize="0"
+							/>
+						</trailemitter>
+					</particle>
+				</simpleemitter>
+				-->
+				
+				<simpleemitter
+					spawnrate="10"
+					particlelife="1000"
+					material="/shared/effects/materials/sparks_reveal.material"
+				>
+					<particle
+						maxangle="360"
+						startcolor="0"
+						midcolor="1 0 0"
+						endcolor=".5 0 0"
+						midcolorpos=".25"
+						startsize="10"
+						minendsize="20"
+						maxendsize="30"
+						anchor="1"
+						startframe=".3"
+						endframe="1"
+					/>
+				</simpleemitter>
+				
+				<trailemitter
+					spawnrate="60"
+					particlelife="250"
+					material="/heroes/tarot/ability_01/effects/light_scrolling_blue_trail.material"
+					texposscale="0"
+					texstretchscale="1"
+					speed="5"
+				>
+					<particle
+						startsize="10"
+						endsize="5"
+						startcolor="1 0 0"
+						midcolor="1 0 0"
+						endcolor="1 0 0"
+						midcolorpos=".25"
+					/>
+				</trailemitter>
+				
+				
+				
+				<billboard
+					life="500"
+					material="/shared/effects/materials/glow_01.material"
+					startcolor="0"
+					endcolor=".5 0 0"
+					size="30"
+				/>
+				<billboard
+					delay="500"
+					material="/shared/effects/materials/glow_01.material"
+					color=".5 0 0"
+					size="30"
+				/>
+				
+				
+				
+				<!--
+				<trackertrailemitter
+					particlelife="1000"
+					spawnrate="15"
+					position="0 0 4"
+					direction="0 0 1"
+					speed="100"
+					angle="0"
+					drag="0.02"
+					material="/shared/effects/materials/glow_02.material"
+					texposscale="0"
+					texstretchscale="1"
+					tracktype="angular"
+					trackspeed="5"
+					targetbone="_bone_orb"
+				>
+					<particle
+						color=".5 0 0"
+						startalpha="0"
+						midalpha=".5"
+						endalpha="0"
+						startsize="0"
+						midsize="2"
+						endsize="0"
+					/>
+				</trackertrailemitter>
+				-->
+			
+				
+				<model
+					model="ball/model.mdf"
+
+					color="1 0 0"
+					scale="1"
+					directionalspace="global"
+					yawspeed="-1200"
+				/>
+				
+				
+			</controller>
+			
+		</particlesystem>
+		
+		<particlesystem name="system1" space="entity" scale="1">
+			<template name="streamer" >
+				<controller
+					position="0 0 5"
+					maxdelay="2000"
+					minlife="1000"
+					maxlife="2000"
+					loop="true"
+					maxyaw="360"
+					maxpitch="360"
+					maxroll="360"
+					minyawspeed="-200"
+					maxyawspeed="200"
+					minrollspeed="-200"
+					maxrollspeed="200"
+					minpitchspeed="-200"
+					maxpitchspeed="200"
+					startscale="0"
+					midscale="2"
+					endscale="0"
+				>
+					<trailemitter
+						directionalspace="local"
+						particledyrectionalspace="local"
+						position="10 0 0"
+						spawnrate="20"
+						particlelife="300"
+						material="/shared/effects/materials/glow_02.material"
+						texposscale="0"
+						texstretchscale="1"
+					>
+						<particle
+							startcolor="1 0 0"
+							midcolor="1 0 0"
+							endcolor="1 0 0"
+							startsize="0"
+							minmidsize="1"
+							maxmidsize="2"
+							endsize="0"
+						/>
+					</trailemitter>
+				</controller>
+			</template>
+			
+			<instance name="streamer" />
+			<instance name="streamer" />
+			<instance name="streamer" />
+			<instance name="streamer" />
+			<instance name="streamer" />
+			<instance name="streamer" />
+			<instance name="streamer" />
+			<instance name="streamer" />
+			
+			
+		</particlesystem>
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->

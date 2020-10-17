@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="true" >
+	<definitions>
+<!--
+		<modifier
+			expirelife="1000"
+			startcolor=".8 .77 .7"
+			endcolor="10 1 1"
+			material="dust_material.material"
+			startalpha=".9"
+			endalpha="1"
+		/>
+-->
+		<particlesystem name="system0"  space="world" scale="1.35">
+		
+			<model
+				expirelife="1000"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="1 1 1"
+				midcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".25"
+				startscale="1.05"
+				endscale="1"
+				startalpha=".5"
+				endalpha="0"
+				material="dust_material.material"
+			/>
+		
+			<simpleemitter
+				spawnrate="5"
+				minparticlelife="750"
+				maxparticlelife="1250"
+				gravity="-.2"
+				speed="10"
+				drag="0.07"
+				acceleration="0.0"
+				mintimenudge="0"
+				maxtimenudge="1000"
+				position="0 0 30"
+				material="/shared/effects/materials/smoke_particle.material"
+				offsetsphere="55 55 15"
+				inheritvelocity=".5"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-30"
+					color=".3 .2 .1"
+					maxanglespeed="30"
+					startsize="100"
+					endsize="150"
+					startalpha="0"
+					midalpha=".8"
+					endalpha="0"
+					midalphapos=".2"
+					startanchor="0"
+					endanchor="0"
+				 />
+			</simpleemitter>
+
+			<simpleemitter
+				spawnrate="5"
+				minparticlelife="750"
+				maxparticlelife="1250"
+				gravity="-.2"
+				speed="10"
+				drag="0.07"
+				acceleration="0.0"
+				mintimenudge="0"
+				maxtimenudge="1000"
+				position="0 0 30"
+				material="/shared/effects/materials/pyroclast_01.material"
+				offsetsphere="55 55 15"
+				inheritvelocity=".5"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-30"
+					color=".32 .3 .2"
+					maxanglespeed="30"
+					startsize="100"
+					endsize="150"
+					startalpha="0"
+					midalpha=".8"
+					endalpha="0"
+					midalphapos=".2"
+					startanchor="0"
+					endanchor="0"
+				 />
+			</simpleemitter>
+			
+		</particlesystem>
+	</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnmodifier instance="instance1"/>
+	<waitfordeath instance="instance0" />
+	<waitfordeath  instance="instance1"/>
+</thread>
+</effect>

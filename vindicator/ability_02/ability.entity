@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<abilityattribute
+	name="Ability_Vindicator2"
+
+	icon="icon2.tga"
+
+	casttime="851"
+	castactiontime="300"
+	
+	maxlevel="5"
+	requiredlevel="1,1,3,5,7"
+	baselevel="1"
+	disabled="true,false"
+	
+	cooldowntime="0"
+
+	range="600"
+	activatescheme="canattack"
+	actiontype="attack"
+	targetscheme="enemy_units"
+	casteffecttype="Attack"
+	projectile="Projectile_Vindicator_Ability2"
+	
+	manacost="10"
+	casteffect="effects/cast.effect"
+	novoiceresponse="true"
+	propagatetoillusions="false"
+	
+	doubleactivate="true"
+
+>	
+	<aura state="State_Vindicator_Ability2" radius="925" targetscheme="nonillusion_enemy_heroes" stack="true" notooltip="true" propagatecondition="not_illusion" />
+	
+	<onaction>
+		<hasavatarkey name="Hero_Vindicator.Alt2" >
+			<playeffect effect="/heroes/vindicator/alt2/ability_02/effects/cast_impact.effect" source="source_entity" target="" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Vindicator.Alt3" >
+				<playeffect effect="/heroes/vindicator/alt3/ability_02/effects/cast_impact.effect" source="source_entity" target="" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Vindicator.Alt4" >
+					<playeffect effect="/heroes/vindicator/alt4/ability_02/effects/cast_impact.effect" source="source_entity" target="" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Vindicator.Alt6" >
+						<playeffect effect="/heroes/vindicator/alt6/ability_02/effects/cast_impact.effect" source="source_entity" target="" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Vindicator.Alt11" >
+							<playeffect effect="/heroes/vindicator/alt11/ability_02/effects/cast_impact.effect" source="source_entity" target="" />
+						</hasavatarkey>
+						<else>
+							<playeffect effect="effects/cast_impact.effect" source="source_entity" target="" />
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+	</onaction>
+	
+	<onattack>
+		<!-- Required to allow the skill to stack with Attack Modifiers -->
+		<setvalue name="combat_attackability" a="0" />
+	</onattack>
+	
+	<onimpact>
+		<!-- True Damage bonus multiplier -->
+		<targettype type="silenced">
+			<setaccumulator value="1.5" />
+		</targettype>
+		<else>
+			<setaccumulator value="1" />
+		</else>
+		
+		<setvar0 a="0,0.22,0.33,0.44,0.55" b="source_intelligence" op="mult" />
+		<setvar0 a="var0" b="accumulator" op="mult" />
+		<setvar0 a="var0" op="ceil" />
+		<damage effecttype="" amount="1" b="var0" op="mult" />
+		<popup name="execution" a="var0" source="target_entity" target="source_entity" />
+	</onimpact>
+	
+	<onkill propagatetoillusions="false" >
+		<targettype type="hero">
+			<targettype type="illusion" />
+			<else> 
+				<targettype type="mimic" />
+				<else> 
+					<targettype type="self" />
+					<else>
+						<targettype type="heropet" />
+						<else>
+							<adjustintelligence value="1" />
+							<addcharges count="1" />
+						</else>
+					</else>
+				</else>
+			</else>
+		</targettype>
+	</onkill>
+
+	<modifier key="alt_Wingbow"
+		range="700"
+	/>
+	
+	<altavatar key="Hero_Vindicator.Alt4"
+		casteffect="../alt4/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Vindicator.Alt7"
+		casteffect="../alt7/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Vindicator.Alt9"
+		icon="../alt9/ability_02/icon.tga" 
+		casteffect="../alt9/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Vindicator.Alt10"
+		icon="../alt9/ability_02/icon.tga"
+		casteffect="../alt9/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Vindicator.Alt11"
+		casteffect="../alt11/ability_02/effects/cast.effect"
+	/>
+	
+	
+</abilityattribute>

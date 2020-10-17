@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Parallax_Ability2_Slow"
+	
+	icon="icon2.tga"
+	passiveeffect="effects/slow.effect"
+
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	movespeedslowstart="0.2,0.3,0.4,0.5"
+	movespeedslowmid="0.2,0.3,0.4,0.5"
+	movespeedslowend="0"
+	movespeedslowduration="2500"
+	movespeedslowmidpos="0.0"
+
+	negativeeffect="slowed"
+>
+	
+	<altavatar key="Hero_Parallax.Alt2"
+		passiveeffect="../alt2/ability_02/effects/slow.effect"
+	/>
+	
+</state>

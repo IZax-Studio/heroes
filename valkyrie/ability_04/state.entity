@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Valkyrie_Ability4"
+
+	icon="icon4.tga"
+	passiveeffect="effects/state_fade.effect,effects/state_fade2.effect,effects/state_fade3.effect"
+	
+	movespeedmultiplier="0.12"
+	
+	stealthtype="hero"
+	fadetime="2500,2000,1500"
+	
+	effecttype="StatusStealth"
+>
+	<onframe>
+		<changeaccumulator b="50" op="add" />
+		<compare a="accumulator" b="2500,2000,1500" op="ge">
+			<setactivemodifierkey name="Valk_R_Faded" />
+		</compare>
+	</onframe>
+	
+	<oninflict>
+		<setaccumulator value="0" />
+		<startfade />
+		<setactivemodifierkey name="" />
+	</oninflict>
+
+	<onattack>
+		<startfade a="source_attackduration" />
+		<setaccumulator value="0" />
+		<setactivemodifierkey name="" />
+	</onattack>
+	
+	<onattackingdamageevent>
+		<applystate name="State_Empath_Ability4_Assist" target="target_entity" duration="100" inflictor="this_proxy_entity" />
+	</onattackingdamageevent>
+	
+	<onactivatepreimpact>
+		<startfade a="castduration" />
+		<setaccumulator value="0" />
+		<setactivemodifierkey name="" />
+	</onactivatepreimpact>
+	
+	<modifier key="Valk_R_Faded" modpriority="100"
+		passiveeffect="effects/state.effect"
+	>	
+	</modifier>
+	
+	<altavatar key="Hero_Valkyrie.Alt12"
+		icon="/heroes/Valkyrie/alt12/ability_04/icon.tga"
+	>
+		<modifier key="valkyrieAlt12_Ability4_Upgrade"
+			icon="/heroes/Valkyrie/alt12/ability_04/icon_u.tga"
+		/>
+	</altavatar>
+</state>

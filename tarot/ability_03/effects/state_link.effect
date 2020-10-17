@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				soundloop="true"
+				fadein="100"
+				fadeout="300"
+				linearfalloff="true" 
+				falloffstart="600"
+				falloffend="1300"
+				volume=".8"
+				sample="../sounds/stretch_loop.wav"
+			/>
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="600"
+				falloffend="1300"
+				volume="1"
+				sample="../sounds/impact.wav"
+			/>
+
+			<template name="beam">
+				<beam
+					owner_a="target"
+					owner_b="source"
+					bone_a="_bone_centerofchest"
+					bone_b="_bone_centerofchest"
+					position_a="{pos_a}"
+					position_b="{pos_b}"
+					minsize="25"
+					maxsize="75"
+					startcolor=".09 1 .99"
+					endcolor="0 0 0"
+					framespeed="1.75"
+					material="/shared/effects/materials/femme_lightning_01_trail.material"
+				/>
+			</template>
+			
+			<instance name="beam" pos_a="16 -7 5" pos_b="13 21 -16" />
+			<instance name="beam" pos_a="6 31 -20" pos_b="-33 -22 11" />
+
+			<template name="beam2">
+				<beam
+					owner_a="target"
+					owner_b="source"
+					bone_a="{bone}"
+					bone_b="{bone}"
+					minsize="25"
+					maxsize="75"
+					startcolor=".09 1 .99"
+					endcolor="0 0 0"
+					framespeed="1.75"
+					material="/shared/effects/materials/femme_lightning_01_trail.material"
+				/>
+			</template>
+			
+			<instance name="beam2" bone="_bone_lefthand" />
+			<instance name="beam2" bone="_bone_righthand" />
+			<instance name="beam2" bone="_bone_leftfoot" />
+			<instance name="beam2" bone="_bone_rightfoot" />
+			<instance name="beam2" bone="_bone_weaponattach" />
+			<instance name="beam2" bone="_bone_altweaponattach" />
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

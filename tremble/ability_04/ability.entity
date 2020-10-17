@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Tremble4"
+
+	icon="icon5.tga"
+	
+	anim="ability_4"
+	casttime="0"
+	castactiontime="0"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_self"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+
+	manacost="50,75,100"
+	cooldowntime="60000"
+>
+	<onimpact>
+		<!-- Staff of the Master -->
+		<hasmodifier name="ult_boost" entity="source_entity">
+			<spawnunit name="Pet_Tremble_Ability4_Controllable" target="source_entity" offset="100 0" facing="source_entity" angle="180" maxactive="1" pushentity="true" />
+		</hasmodifier>
+		<else>
+			<spawnunit name="Pet_Tremble_Ability4" target="source_entity" offset="0 100" facing="source_entity" angle="180" maxactive="1" pushentity="true" />
+		</else>
+		
+		<applystate name="State_Tremble_Ability4_Modifier" target="source_entity" duration="40000" pushentity="true" />		
+		<resetcooldown />
+	</onimpact>
+	
+	<onorderdisjointed>
+		<areaofeffect
+			radius="9999"
+			center="source_position"
+			targetselection="all"
+			targetscheme="my_other_Shudder_units"
+			ignoreinvulnerable="true"
+		>
+			<entitytype type="Pet_Tremble_Ability4_Controllable" />
+			<else>
+				<order command="wander" source="target_entity" target="source_entity" />
+			</else>
+		</areaofeffect>		
+	</onorderdisjointed>
+	
+	<onattack propagatetoillusions="false">
+		<cantarget targetscheme="enemy_objects">
+			<setent0 entity="target_entity" />
+			<areaofeffect
+				radius="99999"
+				center="source_position"
+				targetselection="all"
+				targetscheme="my_other_Shudder_units"
+				ignoreinvulnerable="true"
+			>
+				<entitytype type="Pet_Tremble_Ability4_Controllable" />
+				<else>
+					<applystate name="State_Tremble_Ability4_AttackCommand" proxy="ent0" duration="1000" />
+				</else>
+			</areaofeffect>
+		</cantarget>
+	</onattack>
+	
+	<onupgrade>
+		<levelpets name="Pet_Tremble_Ability4" value="level" />
+	</onupgrade>
+	
+	<modifier key="tremble_ability4_Disabled" modpriority="90"
+		disabled="true"
+	>
+	</modifier>
+	
+	<modifier key="Tremble_R_Modifier" modpriority="100"
+		icon="icon5.tga"
+		
+		casttime="300"
+		castactiontime="300"
+		
+		actiontype="target_entity"
+		targetscheme="enemy_units"
+		
+		range="600"
+		showareacast="true"
+		
+		frontqueue="false"
+		inheritmovement="false"
+		noninterrupting="false"
+		
+		manacost="0"
+		cooldowntime="15000"
+	>
+		<onimpact>
+			<spawnprojectile name="Projectile_Tremble_Ability4" />
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Tremble.Alt3" modpriority="1"
+		icon="../alt3/ability_04/icon.tga"
+	/>
+
+</ability>

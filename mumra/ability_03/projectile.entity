@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Mumra_Ability_03_Soul"
+
+	speed="1200"
+	gravity="0"
+	flying="true"
+	flyheight="100"
+	pitch="90"
+	modelscale="2.2"
+	model="/heroes/mumra/alt5/ability_03/effects/missile/model.mdf"
+	anim="fly"
+	deatheffect="/heroes/mumra/alt5/ability_03/effects/explode.effect"
+	traileffect="/heroes/mumra/alt5/ability_03/effects/trail.effect"
+>
+	<onimpact>
+		<spawnunit name="Gadget_Mumra_Ability3_LocationReveal" count="1" target="target_position" />
+		<spawnaffector name="Affector_Mumra_Ability3_Explosion" target="target_position" />
+		<kill source="" target="proxy_entity" />
+	</onimpact>
+
+	<altavatar key="Hero_Mumra.Alt2"
+		model="/shared/models/invis.mdf"
+		traileffect="/heroes/mumra/alt2/ability_03/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Mumra.Alt4"
+		model="/shared/models/invis.mdf"
+		traileffect="../alt4/ability_03/effects/trail.effect"
+		deatheffect="../alt4/ability_03/effects/explode.effect"
+	/>
+	
+	<altavatar key="Hero_Mumra.Alt5"
+		model="/shared/models/invis.mdf"
+		traileffect="../alt5/ability_03/effects/trail.effect"
+		deatheffect="../alt5/ability_03/effects/explode.effect"
+	/>
+	
+	<altavatar key="Hero_Mumra.set_ascension"
+	    modelscale="1.8"
+		model="../set_ascension/ability_03/sphere/model.mdf"
+		traileffect="../set_ascension/ability_03/effects/trail.effect"
+		deatheffect="../set_ascension/ability_03/effects/explode.effect"
+	/>
+	
+	<altavatar key="Hero_Mumra.Alt6"
+		model="/shared/models/invis.mdf"
+		traileffect="../alt6/ability_03/effects/trail.effect"
+		deatheffect="../alt6/ability_03/effects/explode.effect"
+	/>
+	
+	<altavatar key="Hero_Mumra.Alt7"
+		model="../alt7/ability_03/effects/bucket.mdf"
+		modelscale="3.5"
+		traileffect="../alt7/ability_03/effects/trail.effect"
+		deatheffect="../alt7/ability_03/effects/explode.effect"
+	/>
+	
+	<altavatar key="Hero_Mumra.Alt8"
+		model="../alt7/ability_03/effects/bucket.mdf"
+		modelscale="3.5"
+		traileffect="../alt7/ability_03/effects/trail.effect"
+		deatheffect="../alt7/ability_03/effects/explode.effect"
+	/>
+	
+</projectile>

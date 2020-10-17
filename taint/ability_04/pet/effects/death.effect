@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" name="">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale=".75">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="300"
+				falloffend="1500"
+				volume=".7"
+				sample="../sounds/death.wav"
+			/>
+			
+			
+			
+			
+			<model
+				life="1000"
+				parentmodel="true"
+				parentskeleton="true"
+				color="1 1 1"
+				startscale="1"
+				endscale="0"
+				startalpha="1"
+				midalpha="0"
+				endalpha="0"
+			/>
+			
+			
+			
+			
+			
+			
+			
+			
+
+			<simpleemitter
+				life="150"
+				count="3"
+				particlelife="3200"
+				spawnrate="50"
+				speed="0"
+				gravity="0"
+				direction="0 0 1"
+				particledirectionalspace="local"
+				minangle="0"
+				maxangle="30"
+				offsetsphere="25 25 0"
+				position="0 0 0"	
+			>
+				<particle> 
+					<groundsprite
+						minlife="1000"
+						maxlife="3000"
+						material="/shared/effects/materials/purple_goop_overlay.material"
+						minyaw="-360"
+						maxyaw="360"
+						position="0 0 0"
+						color=".25 0 0"
+						startalpha="0"
+						midalpha=".75"
+						endalpha="0"
+						midalphapos=".1"
+						minstartscale=".1"
+						maxstartscale=".2"
+						minendscale=".4"
+						maxendscale=".45"
+					/>
+					
+					<groundsprite
+						minlife="1000"
+						maxlife="3000"
+						material="/shared/effects/materials/purple_goop_overlay.material"
+						minyaw="-360"
+						maxyaw="360"
+						position="0 0 0"
+						color=".25 0 0"
+						startalpha="0"
+						midalpha=".75"
+						endalpha="0"
+						midalphapos=".1"
+						minstartscale=".1"
+						maxstartscale=".2"
+						minendscale=".4"
+						maxendscale=".45"
+					/>
+				
+					<groundsprite
+						minlife="1000"
+						maxlife="3000"
+						material="/shared/effects/materials/purple_goop_blend_ground.material"
+						minyaw="-360"
+						maxyaw="360"
+						position="0 0 0"
+						color=".45 0 0"
+						startalpha="0"
+						midalpha=".85"
+						endalpha="0"
+						midalphapos=".35"
+						startscale=".35"
+						endscale=".5"
+					/>
+
+					<groundsprite
+						minlife="1000"
+						maxlife="3000"
+						material="/shared/effects/materials/purple_goop_blend_ground.material"
+						minyaw="-360"
+						maxyaw="360"
+						position="0 0 0"
+						color=".45 0 0"
+						startalpha="0"
+						midalpha=".85"
+						endalpha="0"
+						midalphapos=".35"
+						startscale=".35"
+						endscale=".5"
+					/>
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				count="35"
+				life="1000"
+				minparticlelife="250"				
+				maxparticlelife="850"				
+				spawnrate="100"
+				minspeed="25"
+				maxspeed="100"
+				gravity="22"
+				material="/shared/effects/materials/blood_white.material"
+				offsetsphere="20 20 0"
+				position="0 0 15"
+			>
+				<particle 
+					minanglespeed="-100"
+					maxanglespeed="100"
+					minangle="-60"
+					maxangle="60"
+					startcolor=".5 0 0"
+					midcolor=".5 0 0"
+					endcolor=".5 0 0"
+					startsize="20"			
+					endsize="60"
+					startalpha="0"
+					midalpha=".75"
+					endalpha="0"
+				/>
+				
+				<particle 
+					minanglespeed="-100"
+					maxanglespeed="100"
+					minangle="-60"
+					maxangle="60"
+					startcolor=".4 0 0"
+					midcolor=".4 0 0"
+					endcolor=".3 0 0"
+					startsize="20"			
+					endsize="60"
+					startalpha="0"
+					midalpha=".75"
+					endalpha="0"
+				/>
+				
+				<particle 
+					minanglespeed="-100"
+					maxanglespeed="100"
+					minangle="-60"
+					maxangle="60"
+					startcolor=".5 0 0"
+					midcolor=".5 0 0"
+					endcolor=".4 0 0"
+					startsize="20"			
+					endsize="60"
+					startalpha="0"
+					midalpha=".75"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				count="35"
+				life="1000"
+				minparticlelife="250"				
+				maxparticlelife="850"				
+				spawnrate="100"
+				minspeed="25"
+				maxspeed="100"
+				gravity="22"
+				depthbias="-25"
+				material="/shared/effects/materials/whitedot.material"
+				offsetsphere="20 20 0"
+				position="0 0 25"
+			>
+				<particle 
+					minanglespeed="-100"
+					maxanglespeed="100"
+					minangle="-60"
+					maxangle="60"
+					startcolor=".05 0 0"
+					endcolor="0 0 0"
+					startsize="20"			
+					endsize="60"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				count="1"
+				spawnrate="1000"
+				particlelife="2600"
+				position="0 0 0"
+				direction="0 1 0"
+			>
+				<particle
+				>
+					<model
+						position="0 0 0"
+						life="2000"
+						anim="gib"
+						model="/heroes/taint/ability_04/pet_explode/effects/bones/model.mdf"
+						scale=".35"
+						startcolor=".5"
+						endcolor=".4 .3 .2"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".85"
+						minyaw="0"
+						maxyaw="360"
+					>
+
+						<template name="beam">
+							<beam
+								expirelife="500"
+								minlife="2000"
+								maxlife="2500"
+								bone_a="{a}"
+								bone_b="{b}"
+								color="{colorz}"
+								size="{sizez}"
+								startalpha="1"
+								midalpha="1"
+								endalpha="0"
+								position="0 0 0"
+								position_b="0 0 0"
+								material="/shared/effects/materials/goo.material"
+							/>
+						</template>
+						
+						<instance name="beam" a="Box01" b="Box02" colorz=".3 0 0" sizez="20"/>
+						<instance name="beam" a="Box01" b="Box10" colorz=".3 0 0" sizez="20"/>
+						<instance name="beam" a="Box11" b="Box02" colorz=".2 0 0" sizez="10"/>
+						<instance name="beam" a="Box10" b="Box11" colorz=".2 0 0" sizez="20"/>
+						<instance name="beam" a="Box10" b="Box07" colorz=".3 0 0" sizez="15"/>
+						<instance name="beam" a="Box09" b="Box10" colorz=".2 0 0" sizez="20"/>
+
+					</model>
+				</particle>
+			</simpleemitter>
+
+		</particlesystem>
+		
+		<modifier
+			color="1 1 1"
+			alpha="0"
+
+		/>
+		
+	</definitions>
+<thread>
+	<spawnparticlesystem instance="instance1" particlesystem="system0" />
+	<spawnmodifier instance="instance0"/>
+	<waitfordeath  instance="instance0"/>
+	<waitfordeath  instance="instance1"/>
+</thread>
+</effect>

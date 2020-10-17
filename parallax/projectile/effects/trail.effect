@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1" >
+
+			<trailemitter
+				spawnrate="40"
+				particlelife="400"
+				material="/shared/effects/materials/refract_hexgrid2.material"
+				texposscale="1"
+				texpostime="35"
+				texstretchscale="0"
+				attachtoemitter="true"
+			>
+				<particle
+					startparam="0"
+					midparam="0.004"
+					endparam="0"
+					midparampos=".3"
+					size="100"
+				/>
+			</trailemitter>
+
+			<controller scale="1">
+				<billboard
+					timenudge="1"
+					material="/shared/effects/materials/corona_06.material"
+					color="0 .04 .03"
+					size="200"
+				/>
+
+				<billboard
+					timenudge="1"
+					material="/shared/effects/materials/corona_01.material"
+					color=".0625 .015 0"
+					size="140"
+				/>
+
+				<billboard
+					timenudge="1"
+					material="/shared/effects/materials/corona_06.material"
+					color="0 .2 .15"
+					size="120"
+				/>
+
+				<billboard
+					timenudge="1"
+					material="/shared/effects/materials/corona_01.material"
+					color=".5 .175 0"
+					size="80"
+				/>
+
+				<billboard
+					timenudge="1"
+					material="/shared/effects/materials/whitedot.material"
+					color="0 1 .8"
+					size="75"
+				/>
+
+				<billboard
+					timenudge="1"
+					material="/shared/effects/materials/whitecircle_blend.material"
+					size="30"
+				/>
+
+				<billboard
+					timenudge="1"
+					material="/shared/effects/materials/black_spot2.material"
+					size="20"
+				/>
+			</controller>
+			<template name="swirlyTrail">
+				<trailemitter
+					position="{position}"
+					spawnrate="50"
+					particlelife="300"
+					direction="{position}"
+					speed="400"
+					angle="0"
+					drag="0.25"
+					texposscale="0"
+					texstretchscale="1"
+					material="/shared/effects/materials/smoke_scrolling_trail.material"
+					attachtoemitter="true"
+				>
+					<particle
+						startsize="50"
+						endsize="80"
+						startcolor="0 0 0"
+						endcolor="0 .6 .5"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+					/>
+				</trailemitter>
+				<trailemitter
+					position="{position}"
+					spawnrate="50"
+					particlelife="200"
+					direction="{position}"
+					speed="400"
+					angle="0"
+					drag="0.25"
+					texposscale="1"
+					texpostime="50"
+					texstretchscale="-1"
+					material="/shared/effects/materials/whitedot_blend_repeat.material"
+					attachtoemitter="true"
+				>
+					<particle
+						startsize="50"
+						endsize="20"
+						color="0 1 .8"
+						startalpha="1"
+						endalpha="0"
+					/>
+				</trailemitter>
+				<trailemitter
+					position="{position}"
+					spawnrate="50"
+					particlelife="200"
+					direction="{position}"
+					speed="400"
+					angle="0"
+					drag="0.25"
+					texposscale="0"
+					texpostime="60"
+					texstretchscale="1"
+					material="/shared/effects/materials/trail_02.material"
+					attachtoemitter="true"
+				>
+					<particle
+						startsize="50"
+						midsize="40"
+						endsize="0"
+						startcolor="1 .8 0"
+						midcolor="1 .8 0"
+						endcolor="0"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+					/>
+				</trailemitter>
+			</template>
+			<instance name="swirlyTrail" position="0 0 15" />
+			<instance name="swirlyTrail" position="0 0 -15" />
+			<simpleemitter
+				delay="5"
+				count="1"
+				particledirectionalspace="local"
+				particlelife="400"
+			>
+				<particle
+					startscale="1"
+					endscale="5"
+					midscalepos=".25"
+				>
+					<billboard
+						life="400"
+						timenudge="1"
+						lockup="true"
+						lockright="true"
+						directionalspace="local"
+						material="/shared/effects/materials/whitedot.material"
+						startcolor="0 1 .8"
+						endcolor="0"
+						size="75"
+					/>
+
+					<billboard
+						life="300"
+						timenudge="1"
+						lockup="true"
+						lockright="true"
+						directionalspace="local"
+						material="/shared/effects/materials/whitecircle_blend.material"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						size="30"
+					/>
+
+					<billboard
+						life="400"
+						timenudge="1"
+						lockup="true"
+						lockright="true"
+						directionalspace="local"
+						material="/shared/effects/materials/black_spot2.material"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						size="18"
+					/>
+				</particle>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+      	<waitfordeath instance="instance0" />
+	</thread>
+</effect>

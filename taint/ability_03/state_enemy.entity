@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Taint_Ability3_Slow"
+
+	icon="icon3.tga"
+	
+	movespeedslow="0.25,0.30,0.35,0.40"
+	
+	passiveeffect=""
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	negativeeffect="slowed"
+>
+
+	<onframe />
+	
+</state>

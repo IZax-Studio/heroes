@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_WolfMan_Ability3"
+
+	icon="icon3.tga"
+	passiveeffect=""
+	
+	basedamagemultiplier="0.1,0.15,0.2,0.25"
+	healthregen="2,4,6,8"
+>
+	<altavatar key="Hero_WolfMan.Alt4">
+		<modifier key="WolfMan_Alt4_Blue"
+			icon="/heroes/wolfman/alt4/ability_03/icon.tga"
+		/>
+	</altavatar>
+</state>

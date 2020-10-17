@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="tower_projectile" deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="5.85">
+
+			<simpleemitter	
+				count="1"
+				particlelife="2000"
+				spawnrate="10000"
+				gravity="0"
+				speed="0"
+				acceleration="0"		
+				position="0 0 0"			
+			>
+				<particle>	
+					<model
+						expirelife="250"
+						model="bug_legs/leg.mdf"
+						anim="idle"
+						directionalspace="local"
+						startalpha=".5"
+						endalpha="0"
+						color="1 1 1"
+						startscale=".1"
+						endscale="0"
+						
+					>
+						<template name="beam">
+							<beam
+								expirelife="1000"
+								bone_a="{a}"
+								bone_b="{b}"
+								size="{size}"
+								startalpha="1"
+								midalpha=""
+								endalpha="0"
+								position="0 0 0"
+								position_b="0 0 0"
+								material="/shared/effects/materials/web.material"
+							/>
+						</template>
+
+						<instance name="beam" a="Bone03" b="Bone07" size="50"/>
+						<instance name="beam" a="Bone03" b="Bone23" size="50"/>
+						<instance name="beam" a="Bone23" b="Bone19" size="50"/>
+						<instance name="beam" a="Bone19" b="Bone15" size="50"/>
+						<instance name="beam" a="Bone15" b="Bone11" size="50"/>
+						<instance name="beam" a="Bone7" b="Bone11" size="50"/>
+					
+					</model>
+					
+					<model
+						position="0 0 0"
+						expirelife="250"
+						model="bug_legs/leg.mdf"
+						material="/shared/effects/materials/shell2.material"
+						anim="idle"
+						param="1"
+						startcolor=".5 0 1"
+						midcolor="2 0 4"
+						endcolor="0 0 0"
+						scale=".1"
+					/>
+				</particle>
+			</simpleemitter>
+
+					<model
+						position="0 0 5"
+						life="500"
+						bone="_bone_center"
+						model="cocoon/model.mdf"
+						anim="spawn_1"
+						scale="1"
+						alpha=".5"
+					/>
+					
+					<model
+						position="0 0 5"
+						bone="_bone_center"
+						expirelife="150"
+						model="cocoon/model.mdf"
+						material="/shared/effects/materials/shell2.material"
+						anim="walk_1"
+						param="1"
+						startcolor=".2 .35 .65"
+						endcolor="0 0 0"
+						scale="1"
+					/>
+					
+					<model
+						position="0 0 5"
+						bone="_bone_center"
+						life="500"
+						model="cocoon/model.mdf"
+						material="/shared/effects/materials/shell2.material"
+						anim="walk_1"
+						param="1"
+						startcolor="0 .5 1"
+						midcolor="0 .5 1"
+						endcolor="0 0 0"
+						scale="1"
+					/>
+
+					<model
+						position="0 0 5"
+						delay="500"
+						bone="_bone_center"
+						model="cocoon/model.mdf"
+						anim="idle"
+						expirelife="500"
+						yawspeed="0"
+						scale="1"
+						startalpha=".5"
+						endalpha="0"
+					/>
+
+			
+			
+
+			
+			<template name="beam">
+				<beam
+					expirelife="500"
+					bone_a="{a}"
+					bone_b="{b}"
+					size="{size}"
+					startalpha=".5"
+					endalpha="0"
+					position="0 0 0"
+					position_b="0 0 0"
+					material="/shared/effects/materials/web.material"
+				/>
+			</template>
+
+			<instance name="beam" a="_bone_righthand" b="_bone_lefthand" size="15" frame=".6"/>
+			<instance name="beam" a="_bone_righthand" b="_bone_rightfoot" size="15" frame="5"/>
+			<instance name="beam" a="_bone_lefthand" b="_bone_leftfoot" size="15" frame="5"/>
+			<instance name="beam" a="_bone_centerofchest" b="_bone_origin" position_b="20 22 0" size="14" frame="1"/>
+			<instance name="beam" a="_bone_head" b="_bone_origin" position_b="20 34 0" size="12" frame="1"/>
+			<instance name="beam" a="_bone_head" b="_bone_origin" position_a="12 44 0" size="12" frame="1"/>
+			<instance name="beam" a="_bone_lefthand" b="_bone_origin" position_b="-30 20 0" size="12" frame="5"/>
+			<instance name="beam" a="_bone_leftfoot" b="_bone_rightfoot" size="15" frame="5"/>
+			<instance name="beam" a="_bone_lefthand L ForeArm" b="Bip01 Spine" size="15" frame="5"/>
+			<instance name="beam" a="_bone_righthand" b="_bone_head" size="15" frame="5"/>
+			<instance name="beam" a="_bone_lefthand" b="_bone_head"  size="15" frame="5"/>
+			<instance bame="beam" a="_bone_leftfoot" b="_bone_origin" size="13" position_b="20 20 500"/>
+			<instance name="beam" a="" b="_bone_leftfoot" size="15" frame=".8"/>
+
+		</particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

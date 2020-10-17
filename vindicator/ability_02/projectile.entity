@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Vindicator_Ability2"
+
+	speed="1000"
+	gravity="0"
+	modelscale="0.6"
+	model="../projectile/effects/projectile_glave.mdf"
+
+	impacteffect="effects/impact.effect"
+	traileffect="effects/trail.effect"
+>
+	<altavatar key="Hero_Vindicator.Alt"
+		speed="1000"
+		gravity="0"
+
+		modelscale="1.15"
+		model="/heroes/vindicator/alt/projectile/effects/projectile_glave.mdf"
+
+		traileffect="/heroes/vindicator/alt/projectile/effects/trail_blue.effect"
+		impacteffect="/heroes/vindicator/alt/projectile/effects/impact_blue.effect"
+	/>
+
+	<altavatar key="Hero_Vindicator.Alt2"
+		speed="1000"
+		gravity="5"
+
+		modelscale=".75"
+		model="/shared/models/invis.mdf"
+
+		traileffect="/heroes/vindicator/alt/projectile/effects/trail_blue.effect"
+		impacteffect="/heroes/vindicator/alt/projectile/effects/impact_blue.effect"
+	/>
+
+	<altavatar key="Hero_Vindicator.Alt3"
+		speed="1000"
+		gravity="5"
+
+		modelscale=".75"
+		model="/shared/models/invis.mdf"
+
+		traileffect="/heroes/vindicator/alt3/ability_02/effects/trail_blue.effect"
+		impacteffect="/heroes/vindicator/alt3/ability_02/effects/impact_blue.effect"
+	/>
+	
+	<altavatar key="Hero_Vindicator.Alt4"
+		speed="1000"
+		gravity="5"
+
+		modelscale=".75"
+		model="/shared/models/invis.mdf"
+
+		traileffect="/heroes/vindicator/alt4/ability_02/effects/trail.effect"
+		impacteffect="/heroes/vindicator/alt4/ability_02/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Vindicator.Alt6"
+		speed="1000"
+		gravity="5"
+
+		modelscale=".75"
+		model="/shared/models/invis.mdf"
+
+		traileffect="/heroes/vindicator/alt6/ability_02/effects/trail.effect"
+		impacteffect="/heroes/vindicator/alt6/ability_02/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Vindicator.Alt7" modpriority="90"
+		modelscale="1"
+		model="../alt7/projectile/effects/model.mdf"
+		traileffect="../alt7/ability_02/effects/trail.effect"
+		impacteffect="../alt7/ability_02/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Vindicator.Alt9" modpriority="90"
+		modelscale=".95"
+		model="../alt7/projectile/effects/model.mdf"
+		traileffect="../alt9/ability_02/effects/trail.effect"
+		impacteffect="../alt9/ability_02/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Vindicator.Alt10" modpriority="90"
+		modelscale=".95"
+		model="../alt7/projectile/effects/model.mdf"
+		traileffect="../alt9/ability_02/effects/trail.effect"
+		impacteffect="../alt9/ability_02/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Vindicator.Alt11" modpriority="90"
+		modelscale=".95"
+		model="/shared/models/invis.mdf"
+		traileffect="../alt11/ability_02/effects/trail.effect"
+		impacteffect="../alt11/ability_02/effects/impact.effect"
+	/>
+</projectile>

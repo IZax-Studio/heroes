@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+			
+			<billboard
+				bone="_bone_glow"	
+				material="/shared/effects/materials/whitedot.material"
+				color=".9 .7 .6"
+				size="40"
+			/>
+			
+			<billboard
+				expirelife="300"
+				bone="_bone_glow"
+				delay="200"
+				startcolor="0 0 0"
+				midcolor=".3 .2 .1"
+				endcolor="0 0 0"
+				material="/shared/effects/materials/blink.material"
+				size="60"
+				depthbias="-60"
+				loop="true"
+				life="3000"
+			/>	
+			
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

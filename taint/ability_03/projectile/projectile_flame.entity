@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Taint_Ability3_Attack"
+
+	speed="900"
+	gravity="-500"
+	modelscale="1"
+	model="/shared/models/invis.mdf"
+
+	traileffect="effects/trail.effect"
+	impacteffect="effects/impact.effect"
+>
+	<altavatar key="Hero_Taint.Alt3"
+		modelscale="2"
+		model="/heroes/taint/alt3/ability_03/projectile/effects/snotter/model.mdf"		
+		traileffect="/heroes/taint/alt3/ability_03/projectile/effects/trail.effect"
+		impacteffect="/heroes/taint/alt3/ability_03/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Taint.Alt4"
+		modelscale="1.9"
+		model="/heroes/taint/alt4/ability_03/projectile/effects/skeleton_ring/model.mdf"		
+		traileffect="/heroes/taint/alt4/ability_03/projectile/effects/trail.effect"
+		impacteffect="/heroes/taint/alt4/ability_03/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Taint.Alt5"
+		modelscale="2"
+		model="/heroes/taint/alt5/ability_03/projectile/effects/statue/model.mdf"		
+		traileffect="/heroes/taint/alt5/ability_03/projectile/effects/trail.effect"
+		impacteffect="/heroes/taint/alt5/ability_03/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Taint.Alt6"
+		model="/heroes/taint/alt6/ability_03/effects/corpse/model.mdf"
+		traileffect="/heroes/taint/alt6/ability_03/effects/trail.effect"
+		impacteffect="/heroes/taint/alt6/ability_03/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Taint.Alt7"
+		model="/shared/models/invis.mdf"
+		traileffect="/heroes/taint/alt7/ability_03/effects/trail.effect"
+		impacteffect="/heroes/taint/alt7/ability_03/projectile/effects/impact.effect"
+		modelscale="1.9"
+	/>
+	
+	<altavatar key="Hero_Taint.Alt8"
+		traileffect="/heroes/taint/alt8/ability_03/effects/trail.effect"
+		impacteffect="/heroes/taint/alt8/ability_03/effects/impact.effect"
+		modelscale="3.7"
+	/>
+
+</projectile>

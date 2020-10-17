@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="Frost Sentinel_skin.max" file="spider.model" type="K2" high="spider.model" med="spider.model" low="spider.model" >
+
+
+	
+    <anim name="idle" clip="clips/walk_1.clip" loop="true" fps="30"/>
+	
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="30"/>
+
+	<anim name="walk_1" clip="clips/walk_1.clip" fps="40" loop="true"/>
+	
+	<anim name="death_1" clip="clips/death_1.clip" loop="true" loopbackframe="-1">
+		<frameevent frame="10" cmd="StartEffect effects/death.effect" />
+	</anim>
+
+	<anim name="burrow_down_1" clip="clips/burrow_down_1.clip"/>
+	
+	<anim name="burrow_up_1" clip="clips/burrow_up_1.clip"/>	
+
+	<anim name="knock_1" clip="clips/knock_1.clip" loop="true" loopbackframe="-1"/>
+	
+	<anim name="stun_1" clip="clips/stun_1.clip" loop="true" loopbackframe="-1"/>
+	
+	<anim name="default_store_l" clip="clips/default_store_l.clip" fps="30" loop="true" loopbackframe="71" />
+
+
+
+</model>

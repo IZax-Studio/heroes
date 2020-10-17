@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Treant_Ability4_SotM"
+	
+	icon="icon4.tga"
+	passiveeffect=""
+	
+	ishidden="true"
+	serverentity="true"
+	
+	effecttype=""
+	allowtransfer="false"
+>
+
+	<oninflict>
+		<spawnunit name="Pet_Treant_Ability4_SotM" count="1" offset="-50 -50 0" target="target_entity" source="source_entity" pushentity="true" />
+		<order command="attack" source="stack_entity" target="target_entity" />
+		<spawnunit name="Pet_Treant_Ability4_SotM" count="1" offset="-50 50 0" target="target_entity" source="source_entity" pushentity="true" />
+		<order command="attack" source="stack_entity" target="target_entity" />
+		<spawnunit name="Pet_Treant_Ability4_SotM" count="1" offset="0 50 0" target="target_entity" source="source_entity" pushentity="true" />
+		<order command="attack" source="stack_entity" target="target_entity" />
+	</oninflict>
+</state>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Vindicator_Attack"
+
+	speed="1000"
+	gravity="1000"
+
+	modelscale="0.5"
+	model="effects/projectile.mdf"
+
+	traileffect="effects/trail.effect"
+	impacteffect="effects/impact.effect"
+>
+
+	<altavatar key="Hero_Vindicator.Alt7" modpriority="90"
+		modelscale="1"
+		model="../alt7/projectile/effects/model.mdf"
+		traileffect="../alt7/projectile/effects/trail.effect"
+		impacteffect="../alt7/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Vindicator.Alt9" modpriority="90"
+		modelscale=".05"
+		model="/shared/models/invis.mdf"
+		traileffect="../alt9/projectile/effects/trail.effect"
+		impacteffect="../alt9/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Vindicator.Alt10" modpriority="90"
+		modelscale=".05"
+		model="/shared/models/invis.mdf"
+		traileffect="../alt9/projectile/effects/trail.effect"
+		impacteffect="../alt9/projectile/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Vindicator.Alt11" modpriority="90"
+		modelscale="0.5"
+		model="/shared/models/invis.mdf"
+		traileffect="../alt11/projectile/effects/trail.effect"
+		impacteffect="../alt11/projectile/effects/impact.effect"
+	/>
+</projectile>

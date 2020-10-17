@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="bridge" space="world" scale="1">
+			
+			<sound
+			    delay="450"
+			    norestart="true"
+			    channel="54432"
+				linearfalloff="true" 
+				falloffstart="600"
+				falloffend="1300"
+				volume="1"
+				sample="../sounds/expire.wav"
+			/>
+			
+						
+			<sound
+				linearfalloff="true" 
+				falloffstart="600"
+				falloffend="1300"
+				volume=".7"
+				sample="../sounds/pre_snapper.wav"
+			/>
+			
+			<simpleemitter
+				spawnrate="400"
+				life="150"
+				offsetsphere="20"
+				owner="source"
+				bone="_bone_centerofchest"
+				minparticlelife="800"
+				maxparticlelife="1000"
+				material="/shared/effects/materials/sparks_reveal_blue.material"
+				direction="0 0 1"
+				directionalspace="global"
+				maxspeed="500"
+				drag="0.01"
+				angle="60"
+				gravity="2"
+			>
+				<particle
+					maxangle="360"
+					minsize="60"
+					maxsize="100"
+					startscale=".75"
+					endscale="1.25"
+					color=".5 0 0"
+					startframe=".25"
+					endframe="1"
+				/>
+			</simpleemitter>
+			
+			<!--
+			<twopointemitter
+				spawnrate="1000"
+				mincount="40"
+				maxcount="50"
+				offsetsphere="20"
+				owner_a="source"
+				owner_b="target"
+				bone_a="_bone_centerofchest"
+				bone_b="_bone_centerofchest"
+				minparticlelife="800"
+				maxparticlelife="1000"
+				material="/shared/effects/materials/sparks_reveal_blue.material"
+				direction="0 0 1"
+				directionalspace="global"
+				maxspeed="500"
+				drag="0.01"
+				angle="60"
+				gravity="2"
+			>
+				<particle
+					maxangle="360"
+					minsize="60"
+					maxsize="100"
+					color=".5 0 0"
+					startframe=".25"
+					endframe="1"
+				/>
+			</twopointemitter>
+			-->
+
+			<template name="beam">
+				<beam
+					minlife="75"
+					maxlife="250"
+					starttile="1"
+					midtile="2"
+					endtile="5"
+					owner_a="target"
+					owner_b="source"
+					bone_a="_bone_centerofchest"
+					bone_b="_bone_centerofchest"
+					position_a="{pos_a}"
+					position_b="{pos_b}"
+					minsize="15"
+					maxsize="40"
+					startcolor=".09 1 .99"
+					midcolor=".09 1 .99"
+					endcolor=".09 1 .99"
+					material="/shared/effects/materials/femme_lightning_01_trail.material"
+				/>
+			</template>
+			
+			<instance name="beam" pos_a="16 -7 5" pos_b="13 21 -16" />
+			<instance name="beam" pos_a="6 31 -20" pos_b="-33 -22 11" />
+
+			<template name="beam2">
+				<beam
+					minlife="75"
+					maxlife="250"
+					starttile="1"
+					midtile="2"
+					endtile="5"
+					owner_a="target"
+					owner_b="source"
+					bone_a="{bone}"
+					bone_b="{bone}"
+					minsize="15"
+					maxsize="40"
+					startcolor=".09 1 .99"
+					midcolor=".09 1 .99"
+					endcolor=".09 1 .99"
+					material="/shared/effects/materials/femme_lightning_01_trail.material"
+				/>
+			</template>
+			
+			<instance name="beam2" bone="_bone_lefthand" />
+			<instance name="beam2" bone="_bone_righthand" />
+			<instance name="beam2" bone="_bone_leftfoot" />
+			<instance name="beam2" bone="_bone_rightfoot" />
+			<instance name="beam2" bone="_bone_weaponattach" />
+			<instance name="beam2" bone="_bone_altweaponattach" />
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="bridge" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Moraxus_Ability2_Buff"
+	
+	icon="icon2.tga"
+	passiveeffect="effects/statebuff.effect"
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	
+	movespeed="0,200"
+	slowresistance="0,0.4,0.6,0.8,1.0"
+	
+	modifierkey="ability2_blocked"
+>
+	<onframe />
+	
+	<onattackingdamageevent>
+		<setvalue name="damage_attempted" a="damage_attempted" b="1,1.15,1.2,1.25,1.3" op="mult" />
+	</onattackingdamageevent>
+
+	<altavatar key="Hero_Moraxus.Alt"
+		passiveeffect="/heroes/moraxus/alt/ability_02/effects/statebuff.effect"
+	/>
+
+	<altavatar key="Hero_Moraxus.Alt2"
+		passiveeffect="/heroes/moraxus/alt2/ability_02/effects/statebuff.effect"
+	/>
+
+	<altavatar key="Hero_Moraxus.Alt3"
+		passiveeffect="/heroes/moraxus/alt3/ability_02/effects/statebuff.effect"
+	/>
+	
+	<altavatar key="Hero_Moraxus.Alt4"
+		passiveeffect="/heroes/moraxus/alt4/ability_02/effects/statebuff.effect"
+	/>
+</state>

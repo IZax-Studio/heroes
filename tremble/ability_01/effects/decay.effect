@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="3">
+
+			<sound
+				linearfalloff="true"
+				falloffstart="500"
+				falloffend="2000"
+				volume=".8" 
+				sample="../sounds/cast.wav"
+			/>
+
+			<sound
+				soundloop="true"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="1000"
+				fadein="100"
+				fadeout="600" 
+				volume=".65" 
+				sample="../sounds/state.wav"
+			/>
+
+			<sound
+				soundloop="true"
+				linearfalloff="true"
+				falloffstart="500"
+				falloffend="2000"
+				volume=".6" 
+				sample="../sounds/wave.wav"
+				fadein="300"
+				fadeout="400"
+			/>
+
+			<simpleemitter
+				position="0 0 -25"
+				spawnrate="25"
+				gravity="10"
+				minparticlelife="600"
+				maxparticlelife="1000"
+				offsetsphere="15 15 15"
+				material="/shared/effects/materials/blood1.material"
+			>
+				<particle
+					startcolor=".35 0 0"
+					midcolor=".5 0 0"
+					endcolor=".5 0 0"
+					midcolorpos=".7"
+					startalpha="1"
+					midalpha="1"
+					endalpha="1"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-5"
+					maxanglespeed="5"
+					startscale="8"
+					endscale="2"
+				/>
+			</simpleemitter>
+
+			<trackeremitter
+				tracktype="lerp"
+				trackspeed="1"
+				spawnrate="10"
+				particlelife="2500"
+				acceleration="0.0"
+				minspeed="75"
+				maxspeed="150"
+				minangle="0"
+				maxangle="0"
+				direction="0 0 1"
+				offsetsphere="115 115 0"
+			>
+				<particle
+					turn="1"
+				>
+					<model
+						position="0 0 0"
+						minlife="500"
+						maxlife="650"
+						anim="idle"
+						model="/heroes/tremble/ability_04/pet/model.mdf"
+						scale=".085"
+						color="1 1 1"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".85"
+						lockup="1"
+						lockright="1"
+						pitch="0"
+						yaw="360"
+						directionalspace="local"
+					>
+					
+						<trackeremitter
+							position="0 0 25"
+							tracktype="lerp"
+							trackspeed="1"
+							spawnrate="15"
+							particlelife="750"
+							acceleration="0.0"
+							minspeed="200"
+							maxspeed="500"
+							minangle="0"
+							maxangle="0"
+							direction="0 0 1"
+							offsetsphere="50 50 0"
+							directionalspace="local"
+
+						>
+							<particle
+								turn="1"
+							>
+								<billboard
+									framespeed="8"
+									position="0 0 0"
+									minlife="500"
+									maxlife="750"
+									anim="idle"
+									material="/shared/effects/materials/black_bug.material"
+									minscale=".25"
+									maxscale=".6"
+									color=".5 .5 .5"
+									startalpha="1"
+									midalpha="1"
+									endalpha="0"
+									midalphapos=".85"
+									lockup="1"
+									lockright="1"
+									pitch="90"
+									roll="180"
+									directionalspace="local"
+								/>
+							</particle>
+						</trackeremitter>
+					
+						<simpleemitter
+							count="1"
+							position="0 0 0"
+							spawnrate="1000"
+							particlelife="2000"
+						>
+							<particle>
+								<groundsprite
+									minlife="750"
+									maxlife="1500"
+									material="/shared/effects/materials/blackhole_overlay.material"
+									size="50"
+									midsizepos=".1"
+									color="1 1 1"
+									startalpha="0"
+									midalpha="1"
+									endalpha="0"
+									midalphapos=".1"
+									
+								/>
+							</particle>
+						</simpleemitter>
+
+						<simpleemitter
+							count="25"
+							spawnrate="100"
+							minparticlelife="500"
+							maxparticlelife="1000"
+							gravity="-50"
+							speed="10"
+							drag="0.07"
+							acceleration="0.0"
+							mintimenudge="0"
+							maxtimenudge="1000"
+							position="0 0 0"
+							material="/shared/effects/materials/smoke_particle.material"
+							offsetsphere="50 50 25"
+							inheritvelocity=".5"
+						>
+							<particle
+								minangle="0"
+								maxangle="360"
+								minanglespeed="-30"
+								color=".3 .265 .15"
+								maxanglespeed="30"
+								startsize="75"
+								endsize="110"
+								startalpha="0"
+								midalpha=".75"
+								endalpha="0"
+								midalphapos=".2"
+							 />
+						</simpleemitter>
+
+					</model>
+				</particle>
+			</trackeremitter>
+
+			<simpleemitter
+				position="0 0 0"
+				spawnrate="22"
+				particlelife="2000"
+				offsetsphere="105 105 0"
+			>
+				<particle>
+
+					<groundsprite
+						minlife="750"
+						maxlife="1000"
+						material="/shared/effects/materials/blackhole_overlay.material"
+						size="10"
+						midsizepos=".1"
+						color="1 1 1"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".1"
+					/>
+					
+					<simpleemitter
+						spawnrate="5"
+						minparticlelife="500"
+						maxparticlelife="1000"
+						gravity="-5"
+						speed="10"
+						drag="0.07"
+						acceleration="0.0"
+						mintimenudge="0"
+						maxtimenudge="1000"
+						position="0 0 0"
+						material="/shared/effects/materials/smoke_particle.material"
+						offsetsphere="5 5 10"
+						inheritvelocity=".5"
+					>
+						<particle
+							minangle="0"
+							maxangle="360"
+							minanglespeed="-30"
+							color=".3 .265 .15"
+							maxanglespeed="30"
+							startsize="10"
+							endsize="25"
+							startalpha="0"
+							midalpha=".75"
+							endalpha="0"
+							midalphapos=".2"
+						 />
+					</simpleemitter>
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				spawnrate="10"
+				particlelife="2000"
+				gravity="-.2"
+				speed="10"
+				drag="0.07"
+				acceleration="0.0"		
+				mintimenudge="0"
+				maxtimenudge="1000"
+				position="0 0 30"
+				material="/shared/effects/materials/smoke_particle.material"
+				offsetsphere="20 20 20"
+				inheritvelocity=".5"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-30"
+					color="0 0 0"
+					maxanglespeed="30"
+					startsize="100"
+					endsize="150"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+					midalphapos=".2"
+					startanchor="0"
+					endanchor="0"					
+				 />	
+			
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-30"
+					color=".2 .1 .35"
+					maxanglespeed="30"
+					startsize="100"
+					endsize="150"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+					midalphapos=".2"
+					startanchor="0"
+					endanchor="0"					
+				 />				 
+			</simpleemitter>
+
+			<trackeremitter
+				position="0 0 25"
+				tracktype="lerp"
+				trackspeed="1"
+				spawnrate="25"
+				particlelife="750"
+				acceleration="0.0"
+				minspeed="50"
+				maxspeed="100"
+				minangle="0"
+				maxangle="0"
+				direction="0 0 1"
+				offsetsphere="50 50 0"
+				directionalspace="local"
+				material="/shared/effects/materials/black_bug.material"
+			>
+				<particle
+				turn="1"
+				>
+					<billboard
+						framespeed="8"
+						position="0 0 0"
+						minlife="500"
+						maxlife="1000"
+						anim="idle"
+						material="/shared/effects/materials/black_bug.material"
+						minscale=".075"
+						maxscale=".1"
+						color=".5 .5 .5"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".85"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						roll="180"
+						directionalspace="local"
+					/>
+				</particle>
+			</trackeremitter>
+
+			<simpleemitter
+				spawnrate="15"
+				particlelife="1000"
+				gravity="-.2"
+				speed="10"
+				drag="0.07"
+				acceleration="0.0"
+				mintimenudge="0"
+				maxtimenudge="1000"
+				position="0 0 25"
+				material="/shared/effects/materials/smoke_particle.material"
+				offsetsphere="80 80 15"
+				inheritvelocity=".5"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-30"
+					color=".3 .3 .1"
+					maxanglespeed="30"
+					startsize="50"
+					endsize="80"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".2"
+					startanchor="0"
+					endanchor="0"
+				 />
+				 
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-50"
+					color=".35 .25 .375"
+					maxanglespeed="50"
+					startsize="50"
+					endsize="80"
+					startalpha="0"
+					midalpha=".75"
+					endalpha="0"
+					midalphapos=".2"
+					startanchor="0"
+					endanchor="0"
+					
+				 />
+			</simpleemitter>
+			
+		</particlesystem>
+
+		<particlesystem name="system1" space="entity" scale="1">
+
+
+			<groundsprite
+				loop="true"
+				life="1050"
+				startcolor="0 0 0"
+				midcolor=".15 0 .25"
+				endcolor=".3 0 .5"
+				midcolorpos=".05"
+				startsize="350"
+				midsize="150"
+				endsize="0"
+				midsizepos=".5"
+				material="/shared/effects/materials/corona_ground.material"
+			/>
+
+			
+			<groundsprite
+				loop="true"
+				life="1050"
+				startcolor="0 0 0"
+				midcolor=".15 0 .25"
+				endcolor=".3 0 .5"
+				midcolorpos=".1"
+				startsize="200"
+				midsize="50"
+				endsize="0"
+				midsizepos=".75"
+				material="/shared/effects/materials/corona_ground.material"
+			/>
+			
+			<billboard
+				life="1050"
+				color="1 1 1"
+				startalpha="0"
+				midalpha=".4"
+				endalpha="0"
+				midalphapos=".5"
+				startparam=".065"
+				endparam="0"
+				startsize="1200"
+				endsize="100"
+				depthbias="-25"
+				position="0 0 25"
+				material="/shared/effects/materials/refract_ring.material"
+				lockright="true"
+				lockup="true"
+				pitch="90"
+				loop="1"
+			/>	
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

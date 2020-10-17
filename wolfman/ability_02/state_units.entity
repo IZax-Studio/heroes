@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_WolfMan_Ability2_Units"
+	
+	icon="icon2.tga"
+	passiveeffect="effects/state.effect"
+	
+	damage="6,8,10,12"
+	attackspeed="0.05,0.1,0.15,0.2"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<altavatar key="Hero_WolfMan.Alt"
+		icon="/heroes/wolfman/alt/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_WolfMan.Alt3"
+		icon="/heroes/wolfman/alt/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_WolfMan.Alt4"
+		passiveeffect="/heroes/wolfman/alt4/ability_02/effects/state.effect"
+	>
+		<modifier key="WolfMan_Alt4_Red" modpriority="1"
+			icon="/heroes/wolfman/alt4/ability_02/icon.tga"
+			passiveeffect="/heroes/wolfman/alt4/ability_02/effects/state_red.effect"
+		/>
+	</altavatar>
+</state>

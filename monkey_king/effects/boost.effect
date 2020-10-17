@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<model
+				parentmodel="true"
+				parentskeleton="true"
+				parentalpha="true"
+				material="/shared/effects/materials/shell2_outline.material"
+				color="1"
+			/>
+			
+			<model
+				parentmodel="true"
+				parentskeleton="true"
+				parentalpha="true"
+				material="/shared/effects/materials/shell4_outline.material"
+				color=".25 1.75 .25"
+			/>
+			
+			<template name="bg_glow" >
+				<simpleemitter
+					timenudge="2000"
+					bone="{bone}"
+					spawnrate="4"
+					minparticlelife="1200"
+					maxparticlelife="2000"
+					depthbias="8"
+					material="/shared/effects/materials/light_rays.material"
+				>
+					<particle
+						minangle="0"
+						maxangle="360"
+						flare="1"
+						minstartsize="15"
+						maxstartsize="30"
+						minendsize="40"
+						maxendsize="60"
+						startcolor="0"
+						midcolor="0 .3 0"
+						endcolor="0"
+						minanglespeed="-50"
+						maxanglespeed="50"
+						anchor="1"
+					/>
+				</simpleemitter>
+			</template>
+			
+			<instance name="bg_glow" bone="_bone_head" />
+			<instance name="bg_glow" bone="_bone_back" />
+			<instance name="bg_glow" bone="_bone_center" />
+			<instance name="bg_glow" bone="_bone_lefthand" />
+			<instance name="bg_glow" bone="_bone_righthand" />
+			<instance name="bg_glow" bone="Bip01 R Calf" />
+			<instance name="bg_glow" bone="Bip01 L Calf" />
+			<instance name="bg_glow" bone="Bip01 R Forearm" />
+			<instance name="bg_glow" bone="Bip01 L Forearm" />
+			
+			<skeletonemitter
+				timenudge="2000"
+				spawnrate="200"
+				offsetsphere="20"
+				minparticlelife="1000"
+				maxparticlelife="1600"
+				material="/shared/effects/materials/flare_02.material"
+				gravity="-1"
+				direction="0 0 1"
+				angle="0"
+				maxspeed="20"
+			>
+			
+				<template name="sparks">
+					<particle
+						minangle="0"
+						maxangle="360"
+						minsize="10"
+						maxsize="20"
+						color="{color}"
+						startframe="1"
+						midframe=".5"
+						endframe="1"
+						midframepos=".25"
+					/>
+					
+				</template>
+				
+				<instance name="sparks" color="0 .3 0" />
+				<instance name="sparks" color="0 .3 0" />
+			</skeletonemitter>
+			
+			<skeletonemitter
+				timenudge="2000"
+				spawnrate="150"
+				offsetsphere="20"
+				minparticlelife="1000"
+				maxparticlelife="1600"
+				material="/shared/effects/materials/star_04.material"
+				gravity="-1"
+				direction="0 0 1"
+				angle="0"
+				maxspeed="20"
+			>
+			
+				<template name="sparks">
+					<particle
+						minangle="0"
+						maxangle="360"
+						minsize="10"
+						maxsize="15"
+						color="{color}"
+						startframe="1"
+						midframe=".5"
+						endframe="1"
+						midframepos=".25"
+					/>
+					
+				</template>
+				
+				<instance name="sparks" color="0 .3 0" />
+				<instance name="sparks" color="0 .3 0" />
+			</skeletonemitter>
+
+
+			<twopointemitter
+				spawnrate="50"
+				minparticlelife="500"
+				maxparticlelife="700"
+				bone_a="_bone_weapon3"
+				bone_b="_bone_weapon2"
+				offsetsphere="1"
+				maxspeed="50"
+				direction="0 0 1"
+				angle="90"
+				gravity="0"
+				material="/shared/effects/materials/smoke_17.material"
+				depthbias="-10"
+			>
+				<particle
+					maxangle="360"
+					minstartscale="10"
+					maxstartscale="15"
+					minendscale="6"
+					maxendscale="7"
+					color="1 .5 0"
+					startalpha="0"
+					midalpha=".75"
+					endalpha="0"
+					midalphapos=".1"
+					startanchor=".5"
+					endanchor=".3"
+				/>
+			</twopointemitter>
+
+			<twopointemitter
+				bone_a="_bone_weapon3"
+				bone_b="_bone_weapon2"
+				position="0 0 10"
+				spawnrate="25"
+				minparticlelife="200"
+				maxparticlelife="500"
+				material="/shared/effects/materials/sparks_reveal.material"
+				directionalspace="local"
+				gravity="-10"
+				direction="0 0 1"
+				angle="90"
+				drag="0.02"
+				depthbias="-40"
+			>
+				<particle
+					maxangle="360"
+					startcolor="0"
+					midcolor="1 .8 .8"
+					endcolor="1 .8 .8"
+					minscale="10"
+					maxscale="15"
+					startframe="0"
+					endframe="1"
+				/>
+			</twopointemitter>		
+			
+
+			<twopointemitter
+				spawnrate="35"
+				minparticlelife="600"
+				maxparticlelife="1200"
+				bone_a="_bone_weapon3"
+				bone_b="_bone_weapon2"
+				offsetsphere="5"
+				maxspeed="50"
+				direction="0 0 0"
+				angle="90"
+				gravity="0"
+				material="/shared/effects/materials/flame.material"
+			>
+				<particle
+					maxangle="360"
+					minstartscale="10"
+					maxstartscale="15"
+					minendscale="7"
+					maxendscale="10"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					startcolor="0"
+					midcolor=".75 .55 .2"
+					endcolor="0"
+					midcolorpos=".1"
+					startanchor=".8"
+					endanchor=".6"
+				/>
+			</twopointemitter>				
+
+			<twopointemitter
+				spawnrate="100"
+				minparticlelife="500"
+				maxparticlelife="1200"
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon2"
+				maxspeed="50"
+				direction="0 0 1"
+				angle="90"
+				gravity="0"
+				material="/shared/effects/materials/flame_blue.material"
+			>
+				<particle
+					maxangle="360"
+					minscale="7"
+					maxscale="15"
+					minendscale="1"
+					maxendscale="3"
+					startcolor="0"
+					midcolor="0 .5 1"
+					endcolor="0"
+					midcolorpos=".1"
+					startalpha="0"
+					midalpha=".75"
+					endalpha="0"
+					startanchor=".8"
+					endanchor=".6"
+				/>
+			</twopointemitter>
+	
+	
+			<twopointemitter
+				spawnrate="150"
+				minparticlelife="500"
+				maxparticlelife="700"
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon2"
+				offsetsphere="1"
+				maxspeed="50"
+				direction="0 0 1"
+				angle="90"
+				gravity="-1"
+				material="/shared/effects/materials/smoke_17.material"
+				depthbias="-10"
+			>
+				<particle
+					maxangle="360"
+					minscale="1"
+					maxscale="5"
+					minendscale="1"
+					maxendscale="3"
+					color=".6 .8 1"
+					startalpha="0"
+					midalpha=".75"
+					endalpha="0"
+					midalphapos=".1"
+					startanchor=".5"
+					endanchor=".3"
+				/>
+			</twopointemitter>
+			
+
+			<twopointemitter
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon2"
+				position="0 0 10"
+				spawnrate="25"
+				minparticlelife="200"
+				maxparticlelife="500"
+				material="/shared/effects/materials/sparks_reveal.material"
+				directionalspace="local"
+				gravity="-10"
+				direction="0 0 1"
+				angle="90"
+				drag="0.02"
+				depthbias="-40"
+			>
+				<particle
+					maxangle="360"
+					startcolor="0"
+					midcolor=".1 .5 1"
+					endcolor="0 0 0"
+					minscale="10"
+					maxscale="15"
+					startframe="0"
+					endframe="1"
+				/>
+			</twopointemitter>	
+			
+			<twopointemitter
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon2"
+				position="0 0 10"
+				spawnrate="75"
+				minparticlelife="200"
+				maxparticlelife="500"
+				material="/shared/effects/materials/snowflake.material"
+				directionalspace="local"
+				gravity="-5"
+				direction="0 0 1"
+				angle="90"
+				drag="0.02"
+				depthbias="-40"
+				offsetsphere="5 5 5"
+			>
+				<particle
+					maxangle="360"
+					minscale="1"
+					maxscale="1.5"
+					startframe="0"
+					endframe="1"
+				/>
+			</twopointemitter>		
+
+			<twopointemitter
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon2"
+				position="0 0 10"
+				spawnrate="150"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				material="/shared/effects/materials/star_04.material"
+				directionalspace="local"
+				gravity="0"
+				direction="0 0 1"
+				angle="90"
+				drag="0.02"
+				depthbias="-40"
+				offsetsphere="10 10 10"
+			>
+				<particle
+					startcolor="0 .5 1"
+					endcolor=".5 .5 .5"
+					maxangle="360"
+					minscale="1"
+					maxscale="1.5"
+					startframe="0"
+					endframe="1"
+				/>
+			</twopointemitter>	
+
+			<twopointemitter
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+				spawnrate="355"
+				minparticlelife="100"
+				maxparticlelife="300"
+				angle="0"
+				offsetsphere="10"
+				material="/shared/effects/materials/lightning_02.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".2 .7 1"
+					endcolor="0"
+					midcolorpos="0.5"
+					minangle="0"
+					maxangle="350"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					startsize="15"
+					maxendsize="30"
+					flare="1"
+					anchor="1"
+					height="6"
+				/>
+			</twopointemitter>
+			
+			
+				<twopointemitter
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+				spawnrate="355"
+				minparticlelife="100"
+				maxparticlelife="300"
+				angle="0"
+				offsetsphere="10"
+				material="/shared/effects/materials/lightning_03.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".2 .7 1"
+					endcolor="0"
+					midcolorpos="0.5"
+					minangle="0"
+					maxangle="350"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					startsize="15"
+					maxendsize="30"
+					flare="1"
+					anchor="1"
+					height="6"
+				/>
+			</twopointemitter>		
+		
+
+		
+			<twopointemitter
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+				spawnrate="130"
+				particlelife="300"
+				offsetsphere="2"
+				material="/shared/effects/materials/whitedot.material"
+			>
+				<particle
+					color="1 1 1"
+					midcolorpos="0.5"
+					startalpha="1.0"
+					endalpha="1.0"
+					maxangle="360"
+					minanglespeed="-45"
+					maxanglespeed="45"
+					minendsize="5"
+					startsize="15"
+					maxendsize="30"
+					flare="0"
+					anchor="1"
+					height="5"
+				/>
+			</twopointemitter>
+
+
+		<controller bone="_bone_weapon1" >
+			<billboard
+				life="1000"
+				loop="1"
+				startsize="10"
+				midsize="20"
+				midsizepos=".5"
+				endsize="25"
+				scale="1.5"
+				startcolor=".05 .025 0"
+				midcolor=".25 .1 0"
+				endcolor=".05 .025 0"
+				depthbias="-50"
+				material="/shared/effects/materials/corona_01.material"
+			/>
+			
+			<simpleemitter
+				spawnrate="20"
+				expirelife="100"
+				particlelife="700"
+				speed="1"
+				material="/shared/effects/materials/light_rays2.material"
+			>
+				<particle
+					turn="1"
+					startsize="0"
+					midsize="50"
+					midsizepos=".75"
+					endsize="75"
+					startwidth="0"
+					midwidth="20"
+					endwidth="30"
+					startcolor="1 0 0"
+					midcolor="1 .5 0"
+					midcolorpos=".7"
+					endcolor="0"
+					lockup="1"
+					lockright="1"
+					maxyaw="360"
+					anchor="1"
+					minscale="1"
+					maxscale="1.7"
+				/>
+			</simpleemitter>
+		</controller>
+
+		<controller bone="_bone_weapon3" >
+			<billboard
+				life="1000"
+				loop="1"
+				startsize="10"
+				midsize="20"
+				midsizepos=".5"
+				endsize="25"
+				scale="1.5"
+				startcolor=".05 .025 0"
+				midcolor=".25 .1 0"
+				endcolor=".05 .025 0"
+				depthbias="-50"
+				material="/shared/effects/materials/corona_01.material"
+			/>
+			
+			<simpleemitter
+				spawnrate="20"
+				expirelife="100"
+				particlelife="700"
+				speed="1"
+				material="/shared/effects/materials/light_rays2.material"
+			>
+				<particle
+					turn="1"
+					startsize="0"
+					midsize="50"
+					midsizepos=".75"
+					endsize="75"
+					startwidth="0"
+					midwidth="20"
+					endwidth="30"
+					startcolor="1 0 0"
+					midcolor="1 .5 0"
+					midcolorpos=".7"
+					endcolor="0"
+					lockup="1"
+					lockright="1"
+					maxyaw="360"
+					anchor="1"
+					minscale="1"
+					maxscale="1.7"
+				/>
+			</simpleemitter>
+		</controller>
+			
+		</particlesystem>
+		
+		
+		<particlesystem name="system1" space="entity" scale="2">
+			<!-- Halo -->
+			<controller bone="_bone_head" yawspeed="-100" >
+				<controller position="0 0 20" scale=".75">
+					<billboard
+						roll="180"
+						rollspeed="-500"
+						material="/shared/effects/materials/flux_ring.material"
+						size="21"
+						lockup="true"
+						lockright="true"
+						pitch="-90"
+						directionalspace="local"
+					/>
+					<billboard
+						rollspeed="-500"
+						material="/shared/effects/materials/flux_ring.material"
+						size="22"
+						lockup="true"
+						lockright="true"
+						pitch="-90"
+						directionalspace="local"
+						color="0 1 0"
+					/>
+					<billboard
+						material="/shared/effects/materials/corona_07_blend.material"
+						size="19"
+						lockup="true"
+						lockright="true"
+						pitch="-90"
+						directionalspace="local"
+						color="1"
+						alpha="1"
+					/>
+					
+					<template name="lightscroller">
+						<controller
+							yaw="{yaw}"
+						>
+							<billboard
+								flare="1"
+								position="0 7.5 0"
+								material="/shared/effects/materials/light_scrolling.material"
+								scale=".15"
+								minheight="125"
+								maxheight="175"
+								lockup="true"
+								lockright="true"
+								directionalspace="local"
+								color=".15 1 .15"
+							/>
+						</controller>
+					</template>
+					
+					<instance name="lightscroller" yaw="0" />
+					<instance name="lightscroller" yaw="60" />
+					<instance name="lightscroller" yaw="120" />
+					<instance name="lightscroller" yaw="180" />
+					<instance name="lightscroller" yaw="240" />
+					<instance name="lightscroller" yaw="300" />
+					
+					<template name="lightscroller2">
+						<controller
+							yaw="{yaw}"
+							yawspeed="-100"
+							scale=".9"
+						>
+							<billboard
+								flare="1"
+								position="0 7.5 0"
+								material="/shared/effects/materials/light_scrolling.material"
+								scale=".15"
+								minheight="200"
+								maxheight="225"
+								lockup="true"
+								lockright="true"
+								directionalspace="local"
+								color=".2 .5 .75"
+							/>
+						</controller>
+					</template>
+					
+					<instance name="lightscroller2" yaw="0" />
+					<instance name="lightscroller2" yaw="60" />
+					<instance name="lightscroller2" yaw="120" />
+					<instance name="lightscroller2" yaw="180" />
+					<instance name="lightscroller2" yaw="240" />
+					<instance name="lightscroller2" yaw="300" />
+					
+					<simpleemitter
+						spawnrate="8"
+						particlelife="1000"
+						material="/shared/effects/materials/heathaze.material"
+						offsetradial="7"
+						offsetradialangle="90"
+						offsetdirection="0 0 1"
+						position="0 0 5"
+						offsetcube="0 0 10"
+						speed="10"
+						direction="0 0 1"
+						angle="0"
+						directionalspace="local"
+					>
+						<particle
+							maxangle="360"
+							startalpha="0"
+							midalpha="1"
+							endalpha="0"
+							minsize="10"
+							maxsize="20"
+							param="0.0025"
+							anchor="1"
+						/>
+					</simpleemitter>
+				</controller>
+			</controller>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->

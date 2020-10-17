@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Tremble1"
+
+	statuseffecttooltip="State_Fairy_Ability3"
+	
+	icon="icon1.tga"
+	
+	anim="ability_2"
+	casttime="0"
+	castactiontime="0"
+	inheritmovement="true"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_self"
+	frontqueue="true"
+	targetradius="300"
+	
+	casteffecttype="Magic"
+	targetscheme="enemy_units"
+	
+	manacost="90,100,110,120"
+	cooldowntime="12000"
+
+>
+	<onimpact>
+		<spawnaffector name="Affector_Tremble_Ability1" />
+		<applystate name="State_Tremble_Ability1" target="source_entity" duration="5000" />
+	</onimpact>
+	
+</ability>

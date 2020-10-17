@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world"  scale="1.1">
+		
+			<sound
+				forcestereo="true"
+				volume="0.4"
+				sample="../../../pearl/ability_04/sounds/core_start.wav"
+				linearfalloff="true"
+				falloffstart="700"		
+				falloffend="1300" 
+			/>
+			
+			<billboard
+				bone="_bone_center"
+				life="300"
+				color="1 0 0"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".75"
+				startparam=".8"
+				endparam=".2"
+				startsize="100"
+				endsize="650"
+				depthbias="0"
+				position="0 0 0"
+				material="/shared/effects/materials/refract_ring.material"
+				lockup="true"
+				pitch="90"
+			/>
+
+
+		</particlesystem>
+	</definitions>
+	
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+	 
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

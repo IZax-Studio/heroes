@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_PollywogPriestWard"
+
+	icon="icon4.tga"
+	portrait="icon4.tga"
+	model="/shared/models/invis.mdf"
+	skin=""
+	
+	passiveeffect="wards/effects/body.effect"
+	spawneffect="wards/effects/spawn.effect"
+	respawneffect=""
+	selectsound=""
+	isselectable="true"
+	orderconfirmedsound=""
+	expirenumanims="0"
+	
+	preglobalscale="2"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="64"
+	boundsradius="16"
+	selectionradius="26"
+	targetoffset="0 0 64"
+
+	blocking="true"
+
+	movespeed="0"
+	turnrate="540"
+	turnsmoothing="0.05"
+	ismobile="false"
+	canrotate="true"
+
+	maxhealth="2"
+	healthregen="0"
+	maxmana="0"
+	manaregen="0"
+
+	armor="0"
+	magicarmor="0"
+	immunity="GadgetImmunity"
+
+	canattack="true"
+	
+	attackduration="1500"
+	attackactiontime="550"
+	attackcooldown="1500"
+	attackdamagemin="40,65,90"
+	attackdamagemax="40,65,90"
+	attacknumanims="1"
+	attackoffset="0 0 135"
+	attackprojectile="Projectile_PollywogPriestWardAttack"
+	attackrange="600"
+	attackstarteffect="/heroes/pollywogpriest/ability_04/wards/effects/laser_start.effect"
+	attackactioneffect=""
+	attackimpacteffect=""
+	attackeffecttype=""
+	attacktype="ranged"
+	combattype="Ranged"
+
+	aggrorange="600"
+	sightrangeday="1200"
+	sightrangenight="800"
+
+	experiencebounty="15"
+	goldbountymin="23"
+	goldbountymax="38"
+	
+	lifetime="45000"
+	showlifetime="true"
+>
+	<ondamaged>
+		<damageeffecttype effecttype="Returned">
+			<changedamage b="0" op="min"/>
+		</damageeffecttype>
+		<else>
+			<changedamage b="1" op="min"/>
+		</else>
+	</ondamaged>
+
+	<onattackingdamageevent>
+		<cantarget targetscheme="enemy_buildings">
+			<setvar0 a="0.75" />
+			<setvalue name="damage_attempted" a="damage_attempted" b="var0" op="mult" />
+		</cantarget>
+	</onattackingdamageevent>
+	
+	<modifier key="ult_boost" modpriority="105"
+		passiveeffect="wards/base_boost.effect"
+		attackprojectile="Projectile_PollywogPriestWardAttack_Boost"
+	>
+	</modifier>
+	
+	<altavatar key="Hero_PollywogPriest.Alt2" modpriority="101"
+		modelscale=".75"
+		attackprojectile="Projectile_PollywogPriestWardAttack_Alt2"
+		attackstarteffect=""
+		model="/heroes/pollywogpriest/alt2/ability_04/model.mdf"
+		passiveeffect="/heroes/pollywogpriest/alt2/ability_04/effects/ward_body_01.effect"
+		spawneffect="/heroes/pollywogpriest/alt2/ability_04/effects/spawn.effect"
+	>
+		<modifier key="ult_boost" modpriority="107"
+			passiveeffect="../alt2/ability_04/effects/ward_body_01_boost.effect"
+			attackprojectile="Projectile_PollywogPriestWardAttack_Alt2_Boost"
+		>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_PollywogPriest.Alt3" modpriority="101"
+		preglobalscale="2.2"
+		model="/heroes/pollywogpriest/alt3/ability_04/wards/top.mdf"
+		passiveeffect="/heroes/pollywogpriest/alt3/ability_04/wards/base.effect"
+		spawneffect="wards/effects/spawn.effect"
+		attackoffset="0 0 150"
+	>
+		<modifier key="ult_boost" modpriority="107"
+			passiveeffect="../alt3/ability_04/wards/base_boost.effect"
+			attackprojectile="Projectile_PollywogPriestWardAttack_Boost"
+		>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_PollywogPriest.Alt4" modpriority="101"
+		preglobalscale="1.4"
+		model="/heroes/pollywogpriest/alt4/ability_04/wards/top/model.mdf"
+		passiveeffect="/heroes/pollywogpriest/alt4/ability_04/wards/base.effect"
+	>
+		<modifier key="ult_boost" modpriority="107"
+			passiveeffect="../alt4/ability_04/wards/base_boost.effect"
+			attackprojectile="Projectile_PollywogPriestWardAttack_Boost"
+		>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_PollywogPriest.Alt5" modpriority="101"
+		preglobalscale="1.5"
+		model="/heroes/pollywogpriest/alt5/ability_04/wards/top.mdf"
+		passiveeffect="/heroes/pollywogpriest/alt5/ability_04/wards/base.effect"
+		spawneffect="wards/effects/spawn.effect"
+		attackoffset="0 0 150"
+		attackstarteffect="/heroes/pollywogpriest/alt5/ability_04/wards/effects/laser_start.effect"
+		attackprojectile="Projectile_PollywogPriestWardAttack_Alt5"
+	>
+		<modifier key="ult_boost" modpriority="107"
+			passiveeffect="../alt5/ability_04/wards/base_boost.effect"
+			attackprojectile="Projectile_PollywogPriestWardAttack_Boost"
+		>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_PollywogPriest.Alt6" modpriority="101"
+		preglobalscale=".55"
+		model="/heroes/pollywogpriest/alt6/ability_04/wards/top.mdf"
+		passiveeffect="/heroes/pollywogpriest/alt6/ability_04/wards/base.effect"
+		attackstarteffect="/heroes/pollywogpriest/alt6/ability_04/wards/effects/laser_start.effect"
+		attackprojectile="Projectile_PollywogPriestWardAttack_Alt6"
+		spawneffect="/heroes/pollywogpriest/alt6/ability_04/wards/effects/spawn.effect"
+		attackoffset="0 0 150"
+	>
+		<modifier key="ult_boost" modpriority="107"
+			passiveeffect="../alt6/ability_04/wards/base_boost.effect"
+			attackprojectile="Projectile_PollywogPriestWardAttack_Boost"
+		>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_PollywogPriest.Alt7" modpriority="101"
+	    icon="../alt7/ability_04/icon.tga"
+		preglobalscale=".8"
+		model="/heroes/pollywogpriest/alt7/ability_04/wards/top.mdf"
+		passiveeffect="/heroes/pollywogpriest/alt7/ability_04/wards/base.effect"
+		attackstarteffect="/heroes/pollywogpriest/alt7/ability_04/wards/effects/laser_start.effect"
+		attackprojectile="Projectile_PollywogPriestWardAttack_Alt7"
+		spawneffect="/heroes/pollywogpriest/alt7/ability_04/wards/effects/spawn.effect"
+		attackoffset="0 0 150"
+	>
+		<modifier key="ult_boost" modpriority="107"
+		    icon="../alt7/ability_04/icon_u.tga"
+			passiveeffect="../alt7/ability_04/wards/base.effect"
+			attackprojectile="Projectile_PollywogPriestWardAttack_Boost"
+		>
+		</modifier>
+	</altavatar>
+</gadget>

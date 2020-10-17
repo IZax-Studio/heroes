@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_WitchSlayer4"
+
+	icon="icon4.tga"
+	
+	anim="ability_4"
+	casttime="850"
+	castactiontime="300"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_entity"
+	targetscheme="enemy_units"
+	casteffecttype="Magic"
+	
+	manacost="180,340,500"
+	cooldowntime="105000,80000,55000"
+	casteffect="effects/sound.effect"
+	range="700"
+	novoiceresponse="true"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+
+	targetpriorities="enemy_heroes"
+	
+	dynamicprecache="effects/cast.effect"
+>
+	<onlearn>
+		<setscriptvalue name="cast_effect" value="effects/cast.effect" entity="this_entity" />
+	</onlearn>
+	
+	<onimpact>
+		<spawnprojectile name="Projectile_WitchSlayer_Ability4" source="source_entity" target="target_entity" pushentity="true" noresponse="true" offset="-20 100 100" />
+		<setproxy entity="stack_entity" target="target_entity" />
+	</onimpact>
+
+	<onaction>
+		<getscriptvalue name="cast_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" target="source_entity" source="source_entity" occlude="true" />
+	</onaction>
+	
+	<modifier key="ult_boost" modpriority="100"
+		casteffecttype="SuperiorMagic"
+		displayname="true"
+	>
+		<onimpact>
+			<spawnprojectile name="Projectile_WitchSlayer_Ability4" source="source_entity" target="target_entity" pushentity="true" noresponse="true" offset="-20 100 100" />
+			<setproxy entity="stack_entity" target="target_entity" />
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_WitchSlayer.Alt2"
+		casteffect="/heroes/witch_slayer/alt2/ability_04/effects/sound.effect"
+		dynamicprecache="../alt2/ability_04/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt2/ability_04/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_WitchSlayer.Alt3"
+		casteffect="/heroes/witch_slayer/alt3/ability_04/effects/sound.effect"
+		dynamicprecache="../alt3/ability_04/effects/cast.effect"
+	>	
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt3/ability_04/effects/cast.effect" entity="this_entity" />
+		</onlearn>	
+	</altavatar>
+	
+	<altavatar key="Hero_WitchSlayer.Alt4"
+		dynamicprecache="../alt4/ability_04/effects/cast.effect"
+	>	
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt4/ability_04/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_WitchSlayer.Alt5"
+		casteffect="/heroes/witch_slayer/alt5/ability_04/effects/sound.effect"
+		dynamicprecache="../alt5/ability_04/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt5/ability_04/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_WitchSlayer.Alt6"
+		casteffect="/heroes/witch_slayer/alt6/ability_04/effects/sound.effect"
+		dynamicprecache="../alt6/ability_04/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt6/ability_04/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_WitchSlayer.Alt7"
+		casteffect="/heroes/witch_slayer/alt7/ability_04/effects/sound.effect"
+		dynamicprecache="../alt7/ability_04/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt7/ability_04/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_WitchSlayer.Alt8"
+		casteffect="/heroes/witch_slayer/alt8/ability_04/effects/sound.effect"
+		icon="../alt8/ability_04/icon.tga"
+		dynamicprecache="../alt8/ability_04/effects/cast_base.effect,../alt8/ability_04/effects/cast_upgrade.effect"
+	>
+		<onlearn>
+			<hasmodifier name="Alt8_Ability4_Upgrade">
+				<setscriptvalue name="cast_effect" value="../alt8/ability_04/effects/cast_upgrade.effect" entity="this_entity" />
+			</hasmodifier>
+			<else>
+				<setscriptvalue name="cast_effect" value="../alt8/ability_04/effects/cast_base.effect" entity="this_entity" />
+			</else>
+		</onlearn>
+		
+		<modifier key="Alt8_Ability4_Upgrade" modpriority="99"
+			icon="../alt8/ability_04/icon_upgrade.tga"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_WitchSlayer.Alt9"
+		casteffect="/heroes/witch_slayer/alt9/ability_04/effects/sound.effect"
+		dynamicprecache="../alt9/ability_04/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt9/ability_04/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_WitchSlayer.Alt10"
+		casteffect="/heroes/witch_slayer/alt9/ability_04/effects/sound.effect"
+		dynamicprecache="../alt9/ability_04/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt9/ability_04/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+
+	<altavatar key="Hero_WitchSlayer.Alt11"
+		casteffect="/heroes/witch_slayer/alt11/ability_04/effects/sound.effect"
+		dynamicprecache="/heroes/witch_slayer/alt11/ability_04/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="/heroes/witch_slayer/alt11/ability_04/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+
+	<modifier key="soccer" modpriority="150" 
+		baselevel="0"
+		maxlevel="1"
+		manacost="40"
+		cooldowntime="17000"
+		range="400"
+		displayname="true"
+	>
+		<onimpact>
+			<spawnprojectile name="Projectile_WitchSlayer_Ability4" source="source_entity" target="target_entity" pushentity="true" noresponse="true" offset="-20 100 100" />
+			<setproxy entity="stack_entity" target="target_entity" />
+		</onimpact>	
+	</modifier>	
+	
+</ability>

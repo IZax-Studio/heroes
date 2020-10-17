@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Treant_Ability1"
+
+	icon="icon1.tga"
+	
+	passiveeffect=""
+	
+	stealthtype="hero"
+	fadetime="1000"
+	
+	effecttype="StatusStealth"
+	allowtransfer="true"
+>	
+	<oninflict>
+		<forgetattacks />
+			<hasavatarkey name="Hero_Treant.Alt5">
+				<playeffect effect="../alt5/ability_01/effects/state.effect" source="target_entity" target="" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Treant.Alt7">
+					<playeffect effect="../alt7/ability_01/effects/state.effect" source="target_entity" target="" />
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/state.effect" source="target_entity" target="" />
+				</else>
+			</else>
+		<startfade />
+	</oninflict>
+	
+	<onattack>
+		<!-- Apply root state when attacking out of stealth -->
+		<targettype type="illusion" target="source_entity" />
+		<else>
+			<entitytype type="Hero_Treant" target="source_entity">
+				<cantarget targetscheme="enemy_units">
+					<applystate name="State_Treant_Ability1_Root" duration="500,800,1100,1400" />
+				</cantarget>
+			</entitytype>
+		</else>		
+		
+		<expire />
+	</onattack>
+	
+	<onactivatepreimpact>
+		<expire />
+	</onactivatepreimpact>
+
+	<onframe>
+		<areaofeffect
+			radius="400"
+			targetselection="all"
+			targetscheme="TreantTree_and_trees"
+			effecttype=""
+			includetrees="true"
+			ignore="this_owner_entity"
+		>
+		</areaofeffect>
+		<compare a="result" b="0" op="eq">
+			<changeduration b="800" op="min" />
+			<setactivemodifierkey name="treant_Q_linger" entity="this_entity" />
+		</compare>
+	</onframe>
+	
+	<modifier key="treant_Q_linger" modpriority="100">
+		<onframe />
+	</modifier>
+</state>

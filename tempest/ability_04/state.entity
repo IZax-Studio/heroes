@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Tempest_Ability4_Pull"
+
+	silenced="true"
+	disarmed="true"
+	perplexed="true"
+	stunned="true"
+	stunneddurationunmodifiable="true"
+	
+	icon="icons4.tga"
+	
+	passiveeffect=""
+	effecttype=""
+
+	modifierkey="channeled_stun_ability"
+
+	negativeeffect="suppressed"
+>
+	<onframe>
+		<cantarget effecttype="Push">
+			<push force="-75" frame="true" source="source_entity" />
+		</cantarget>
+		
+		<damage effecttype="Magic Splash DOT" source="source_owner_entity" amount="50,100,150" b="frametime" op="mult" />
+	</onframe>
+	
+	<modifier key="ult_boost" modpriority="100">
+		<onframe>
+			<cantarget effecttype="Push">
+				<push force="-75" frame="true" source="source_entity" />
+			</cantarget>
+			
+			<damage effecttype="Splash DOT" source="source_owner_entity" amount="50,100,150" b="frametime" op="mult" />
+		</onframe>
+	</modifier>
+</state>

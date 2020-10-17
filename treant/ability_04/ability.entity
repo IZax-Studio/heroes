@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Treant4"
+
+	icon="icon4.tga"
+	
+	anim="ability_4"
+	casttime="1000"
+	castactiontime="500"
+	casteffect=""
+	statuseffecttooltip="State_Treant_Ability4"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="self_position"
+	targetscheme="enemy_units"
+	targetradius="900"
+	casteffecttype="SuperiorMagic"
+	
+	manacost="150,175,200"
+	cooldowntime="120000"
+>
+	<onimpact>
+		<areaofeffect
+			global="true"
+			targetscheme="ally_units_and_structures"
+			targetselection="all"
+			ignoreinvulnerable="true"
+		>
+			<setaccumulator value="0" />
+			<compare a="source_entity" b="target_entity" op="eq">
+				<!-- Are you me? -->
+				<setaccumulator value="2" />
+			</compare>
+			<else>
+				<targettype type="TreantTree">
+					<!-- Are you a treant? -->
+					<setaccumulator value="1" />
+				</targettype>
+			</else>
+			
+			<compare a="accumulator" b="1" op="ge">
+				<!-- Our target is valid. -->
+				<spawnaffector name="Affector_Treant_Ability4" target="target_entity" />
+				
+				<compare a="accumulator" b="1" op="eq">
+				<hasavatarkey name="Hero_Treant.Alt7">
+					<playeffect effect="/heroes/treant/alt7/ability_04/effects/ring.effect" source="target_position" target="" occlude="true" />		
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/ring.effect" source="target_position" target="" occlude="true" />		
+				</else>					
+				</compare>
+				<compare a="accumulator" b="2" op="eq">
+					<!-- Art -->
+					<hasavatarkey name="Hero_Treant.Alt2">
+						<playeffect effect="/heroes/treant/alt2/ability_04/effects/affector.effect" source="target_position" target="" occlude="true" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Treant.Alt5">
+							<playeffect effect="/heroes/treant/alt5/ability_04/effects/affector.effect" source="target_position" target="" occlude="true" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Treant.Alt6">
+								<playeffect effect="/heroes/treant/alt6/ability_04/effects/affector.effect" source="target_position" target="" occlude="true" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Treant.Alt7">
+									<playeffect effect="/heroes/treant/alt7/ability_04/effects/affector.effect" source="target_position" target="" occlude="true" />
+								</hasavatarkey>
+								<else>
+								<playeffect effect="effects/affector.effect" source="target_position" target="" occlude="true" />
+							</else>
+						</else>
+					</else>
+					</else>
+				</compare>
+			</compare>
+		</areaofeffect>
+		
+		<applystate name="State_Treant_Ability4_Self" duration="2000,3000,4000" target="source_entity" />
+	</onimpact>
+	
+	<modifier key="ult_boost" modpriority="99">
+		<!-- Extra onimpact is needed for strings. Is an exact copy of the regular onimpact. -->
+		<onimpact>
+			<areaofeffect
+				global="true"
+				targetscheme="ally_units_and_structures"
+				targetselection="all"
+				ignoreinvulnerable="true"
+			>
+				<setaccumulator value="0" />
+				<compare a="source_entity" b="target_entity" op="eq">
+					<!-- Are you me? -->
+					<setaccumulator value="2" />
+				</compare>
+				<else>
+					<targettype type="TreantTree">
+						<!-- Are you a treant? -->
+						<setaccumulator value="1" />
+					</targettype>
+				</else>
+				
+				<compare a="accumulator" b="1" op="ge">
+					<!-- Our target is valid. -->
+					<spawnaffector name="Affector_Treant_Ability4" target="target_entity" />
+					
+					<compare a="accumulator" b="1" op="eq">
+						<!-- Art -->
+						<hasavatarkey name="Hero_Treant.Alt7">
+							<playeffect effect="/heroes/treant/alt7/ability_04/effects/ring.effect" source="target_position" target="" occlude="true" />
+						</hasavatarkey>
+						<else>
+						<playeffect effect="effects/ring.effect" source="target_position" target="" occlude="true" />
+						</else>
+					</compare>
+					<compare a="accumulator" b="2" op="eq">
+						<!-- Art -->
+						<hasavatarkey name="Hero_Treant.Alt2">
+							<playeffect effect="/heroes/treant/alt2/ability_04/effects/affector.effect" source="target_position" target="" occlude="true" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Treant.Alt5">
+								<playeffect effect="/heroes/treant/alt5/ability_04/effects/affector.effect" source="target_position" target="" occlude="true" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Treant.Alt6">
+									<playeffect effect="/heroes/treant/alt6/ability_04/effects/affector.effect" source="target_position" target="" occlude="true" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Treant.Alt7">
+										<playeffect effect="/heroes/treant/alt7/ability_04/effects/affector.effect" source="target_position" target="" occlude="true" />
+									</hasavatarkey>
+									<else>
+									<playeffect effect="effects/affector.effect" source="target_position" target="" occlude="true" />
+								</else>
+							</else>
+						</else>
+						</else>
+					</compare>
+				</compare>
+			</areaofeffect>
+			
+			<applystate name="State_Treant_Ability4_Self" duration="2000,3000,4000" target="source_entity" />
+		</onimpact>
+	</modifier>
+	
+</ability>

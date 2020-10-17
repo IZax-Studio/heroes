@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0" >
+
+			
+			<sound
+			    soundloop="true"
+				randomloop="true"
+				fadein="500"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume="1"
+				sample="/heroes/parallax/ability_04/sounds/loop.wav"
+			/>
+			
+			<!-- smoke -->
+			<model
+				owner="target"
+				model="/shared/effects/models/hollow_cylinder/model.mdf"
+				material="arcmesh.material"
+				anim="idle"
+				scale="3.5"
+				color="1 .5 0"
+			/>
+
+			<!-- refraction -->
+		<!--
+			<model
+				owner="target"
+				timenudge="1"
+				model="/shared/effects/models/hollow_cylinder/model.mdf"
+				material="arc_refract.material"
+				anim="idle"
+				scale="3.5"
+				color="1 .5 0"
+				param0=".04"
+			/>
+		-->
+			<!-- color -->
+		<!--
+			<model
+				owner="target"
+				timenudge="1"
+				model="/shared/effects/models/hollow_cylinder/model.mdf"
+				material="unlit.material"
+				anim="idle"
+				scale="3.5"
+				color="1 .5 0"
+			/>
+		-->
+
+
+			<!-- Orbiters are kind of confusing... -->
+			<!-- X is yaw measured in radians, Y is height and Z is radius measured in world units -->
+			<!-- if we disabled cylindrical, Y would be pitch and would be measured in radians -->
+		<!--
+			<orbiteremitter
+				owner="target"
+				spawnrate="40"
+				direction="0 0 1"
+				origin="-1.7 0 100"
+				offset="3.14 0 0"
+				orbit=".01 1 0"
+				particlelife="600"
+				material="/shared/effects/materials/ember_reveal.material"
+				angle="0"
+				speed="200"
+				drag="0.02"
+				cylindrical="true"
+			>
+				<particle
+					startcolor="1 .5 0"
+					midcolor="0"
+					endcolor="0"
+					maxangle="360"
+					minsize="10"
+					maxsize="50"
+					startframe="1"
+					midframe="0"
+					endframe="1"
+					midframepos=".2"
+					startanchor=".75"
+					endanchor="0"
+					startalpha="0"
+					endalpha="1"
+				/>
+			</orbiteremitter>
+		-->
+
+
+
+			<template name="arc_flames">
+				<orbiteremitter
+					owner="target"
+					position="0 0 10"
+					offsetsphere="0 0 10"
+					spawnrate="500"
+					minparticlelife="300"
+					maxparticlelife="400"
+					direction="0 0 1"
+					origin="0 0 100"
+					offset="3.14 0 0"
+					orbit="{orbit}"
+					angle="0"
+					minspeed="80"
+					maxspeed="100"
+					material="/shared/effects/materials/fire_reveal_white.material"
+					cylindrical="true"
+					particlealpha=".65"
+					depthbias="-90"
+				>
+					<particle
+						minsize="50"
+						maxsize="70"
+						maxangle="360"
+						minanglespeed="-50"
+						maxanglespeed="50"
+						startcolor="0"
+						endcolor="1 .5 0"
+						startframe="1"
+						midframe=".25"
+						endframe="1"
+						midframepos=".2"
+						lockup="true"
+						lockright="true"
+						pitch="-90"
+					/>
+				</orbiteremitter>
+			</template>
+			<instance name="arc_flames" orbit="0 0 1" />
+			<instance name="arc_flames" orbit="0 0 -1" />
+
+			<!-- ======================================== Inner area ============================================== -->
+			<template name="inner_area_particle" >
+				<particle
+					maxangle="360"
+					startanchor="1"
+					endanchor="0"
+					startcolor="0"
+					midcolor="1 .5 0"
+					endcolor="0"
+					midcolorpos=".25"
+					minsize="5"
+					maxsize="10"
+					startscale="1"
+					endscale="2"
+				/>
+			</template>
+			<simpleemitter
+				owner="target"
+				spawnrate="15"
+				minparticlelife="600"
+				maxparticlelife="1000"
+				offsetsphere="120 120 0"
+				direction="0 0 1"
+				angle="60"
+				maxspeed="20"
+				gravity="-10"
+				material="/shared/effects/materials/phantom_smoke_18.material"
+			>
+				<instance name="inner_area_particle" />
+			</simpleemitter>
+
+
+
+			<!-- lightning -->
+			<controller
+				bone="Bip01 Spine"
+				scale="2.5"
+			>
+				<billboard
+					position="0 -30 0"
+					material="/shared/effects/materials/whitedot.material"
+					size="50"
+					color="1 .5 0"
+					depthbias="-20"
+				/>
+				<billboard
+					position="0 -30 0"
+					material="/shared/effects/materials/whitedot.material"
+					size="50"
+					color="1 .5 0"
+					depthbias="-10"
+				/>
+				<billboard
+					position="0 -30 0"
+					material="/shared/effects/materials/whitedot.material"
+					size="50"
+					color="1 .5 0"
+					depthbias="0"
+				/>
+				<billboard
+					position="0 -30 0"
+					material="/shared/effects/materials/whitedot.material"
+					size="50"
+					color="1 .5 0"
+					depthbias="10"
+				/>
+
+				<simpleemitter
+					position="0 -30 0"
+					offsetsphere="0 0 10"
+					spawnrate="10"
+					particlelife="1500"
+				>
+					<template name="lightning_particle">
+						<particle anchor="1">
+							<billboard
+								minlife="250"
+								maxlife="500"
+								maxdelay="500"
+								material="/shared/effects/materials/fire_reveal.material"
+								flare="1"
+								minwidth="50"
+								maxwidth="70"
+								minheight="50"
+								maxheight="125"
+								maxroll="360"
+								yaw="{yaw}"
+								startalpha="1"
+								midalpha=".25"
+								endalpha="0"
+								midalphapos=".15"
+								minscale=".5"
+								maxscale="1"
+							/>
+						</particle>
+					</template>
+					<instance name="lightning_particle" yaw="0" />
+					<instance name="lightning_particle" yaw="180" />
+				</simpleemitter>
+			</controller>
+
+			<![CDATA[
+			<!-- swirly chains -->
+			<model
+				owner="target"
+				timenudge="1"
+				position="0 0 15"
+				model="/shared/models/invis.mdf"
+				yawspeed="500"
+			>
+				<template name="swirlyTrail">
+					<!-- glow underneath -->
+					<groundsprite
+						position="{position}"
+						material="/shared/effects/materials/whitedot_blend.material"
+						color="1 .5 0"
+						size="10"
+					/>
+					<groundsprite
+						position="{position}"
+						material="/shared/effects/materials/whitecircle_blend.material"
+						color="1 .5 0"
+						size="3"
+					/>
+					<groundsprite
+						position="{position}"
+						material="/shared/effects/materials/black_spot2.material"
+						color="1 .5 0"
+						size="2"
+					/>
+
+					<trailemitter
+						position="{position}"
+						spawnrate="20"
+						particlelife="500"
+						direction="{dir}"
+						speed="400"
+						angle="0"
+						texposscale="0"
+						texstretchscale="2"
+						material="/shared/effects/materials/smoke_scrolling_trail.material"
+						attachtoemitter="true"
+					>
+						<particle
+							startsize="5"
+							endsize="15"
+							color="1 .5 0"
+							startalpha=".75"
+							endalpha="0"
+						/>
+					</trailemitter>
+
+					<trailemitter
+						position="{position}"
+						spawnrate="20"
+						particlelife="400"
+						direction="{dir}"
+						speed="400"
+						angle="0"
+						drag="0.0"
+						texposscale="2"
+						texpostime="150"
+						texstretchscale="-0.5"
+						material="/shared/effects/materials/metal_trail.material"
+						attachtoemitter="true"
+					>
+						<particle
+							size="12"
+							color="1 .5 0"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							midalphapos=".75"
+						/>
+					</trailemitter>
+				</template>
+				<instance name="swirlyTrail" position="40 0 0" dir="0 0 1" />
+				<instance name="swirlyTrail" position="-40 0 0" dir="0 0 1" />
+			</model>
+			]]>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

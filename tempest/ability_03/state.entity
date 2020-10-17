@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Tempest_Ability3"
+
+	icon="icon3.tga"
+	passiveeffect=""
+
+	effecttype="StatusDebuff"
+>
+	<onframe>
+		<pushstack a="frametime" b="target_maxhealth" op="mult" />
+		<damage effecttype="DOT" source="source_entity" target="target_entity" amount="0.02,0.03,0.04,0.05" b="result" op="mult" />
+	</onframe>
+	
+	<altavatar key="Hero_Tempest.Alt6" modpriority="90"
+		passiveeffect="/heroes/tempest/alt6/ability_03/effects/state.effect"
+	/>
+</state>

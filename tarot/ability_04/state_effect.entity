@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Tarot_Ability4_Effect"
+	
+	ishidden="true"
+	icon="icon4.tga"
+	passiveeffect=""
+
+	effecttype=""
+	allowtransfer="false"
+>
+	<onattackedpreimpact>
+		<entitytype source="target_entity" target="this_inflictor_entity">
+			<!-- VFX -->
+			<hasavatarkey name="Hero_Tarot.Alt10" >				
+				<playeffect effect="../alt10/ability_04/effects/impact.effect" source="this_owner_entity" />
+			</hasavatarkey>
+			<else>		
+				<hasavatarkey name="Hero_Tarot.Alt9" >				
+					<playeffect effect="../alt9/ability_04/effects/impact.effect" source="this_owner_entity" />
+				</hasavatarkey>
+				<else>		
+					<hasavatarkey name="Hero_Tarot.Alt8" >				
+						<playeffect effect="../alt8/ability_04/effects/impact.effect" source="this_owner_entity" />
+					</hasavatarkey>
+					<else>		
+						<hasavatarkey name="Hero_Tarot.Alt7" >				
+							<playeffect effect="../alt7/ability_04/effects/impact.effect" source="this_owner_entity" />
+						</hasavatarkey>
+						<else>		
+							<hasavatarkey name="Hero_Tarot.Alt6" >				
+								<playeffect effect="../alt6/ability_04/effects/impact.effect" source="this_owner_entity" />
+							</hasavatarkey>
+							<else>		
+								<hasavatarkey name="Hero_Tarot.Alt5" >				
+									<playeffect effect="../alt5/ability_04/effects/impact.effect" source="this_owner_entity" />
+								</hasavatarkey>
+								<else>		
+									<hasavatarkey name="Hero_Tarot.Alt4" >				
+										<playeffect effect="../alt4/ability_04/effects/impact.effect" source="this_owner_entity" />
+									</hasavatarkey>
+									<else>		
+										<hasavatarkey name="Hero_Tarot.Alt3" >				
+											<playeffect effect="../alt3/ability_04/effects/impact.effect" source="this_owner_entity" />
+										</hasavatarkey>
+										<else>		
+											<hasavatarkey name="Hero_Tarot.Alt2" >				
+												<playeffect effect="../alt2/ability_04/effects/impact.effect" source="this_owner_entity" />
+											</hasavatarkey>
+											<else>		
+												<hasavatarkey name="Hero_Tarot.Alt" >				
+													<playeffect effect="../alt/ability_04/effects/impact.effect" source="this_owner_entity" />
+												</hasavatarkey>
+												<else>		
+													<playeffect effect="effects/impact.effect" source="this_owner_entity" />
+												</else>	
+											</else>	
+										</else>	
+									</else>	
+								</else>	
+							</else>	
+						</else>	
+					</else>	
+				</else>	
+			</else>
+			
+			<expire />
+		</entitytype>
+	</onattackedpreimpact>
+</state>

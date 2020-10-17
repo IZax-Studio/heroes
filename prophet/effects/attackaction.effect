@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="cyclone" deferred="true" useentityeffectscale="1">
+	<definitions>
+	
+		<particlesystem name="system0" space="entity" scale="1">
+<!--
+			<template name="sparks" >
+				<twopointemitter
+					count="100"
+					bone_a="{boneA}"
+					bone_b="{boneB}"
+					spawnrate="5000"
+					particlelife="100"
+					offsetsphere="0"
+					material="/shared/effects/materials/femme_lightning_01.material"
+				>
+					<particle
+						startcolor="0 0 0"
+						midcolor=".15 0 .5"
+						endcolor="0 "
+						midcolorpos="0.5"
+						startalpha="1.0"
+						endalpha="1.0"
+						maxangle="360"
+						minanglespeed="-45"
+						maxanglespeed="45"
+						size="30"
+						flare="true"
+						anchor="1"
+					/>
+				</twopointemitter>
+			</template>
+
+			<instance name="sparks" boneA="_bone_weapon2" boneB="_bone_weapon3"/>
+			
+			
+			
+			
+			
+			<billboard
+				bone="_bone_weapon3"
+				life="100"
+				startcolor=".5 0 1"
+				endcolor="0"
+				startsize="250"
+				endsize="0"
+				depthbias="-25"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+			<billboard
+				bone="_bone_weapon3"
+				life="100"
+				startcolor=".75"
+				endcolor="0"
+				startsize="75"
+				endsize="0"
+				depthbias="-50"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+-->
+
+		</particlesystem>
+
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		
+      		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

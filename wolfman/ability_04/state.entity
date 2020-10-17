@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_WolfMan_Ability4"
+	
+	icon="icon4.tga"
+	passiveeffect=""
+	
+	criticalchance="0.3"
+	criticalmultiplier="1.6,1.8,2"
+	maxhealth="100,200,300"
+
+	modifierkey="wolfmanult"
+	modifierkey2="wolfmanult_vision1,wolfmanult_vision2,wolfmanult_vision3"
+	
+	propagatetoillusions="true"
+>
+	<onframe />
+	
+	<aura state="State_WolfMan_Ability4_Aura" radius="9999" targetscheme="my_units" propagatecondition="not_illusion" />
+	
+	<onexpired>
+		<hasavatarkey name="Hero_WolfMan.Alt4">
+			<playeffect effect="../alt4/ability_04/effects/bridge.effect" source="target_position" target="target_position" occlude="true" />
+		</hasavatarkey>
+			<else>
+				<playeffect effect="effects/bridge.effect" source="target_position" target="target_position" occlude="true" />
+			</else>
+	</onexpired>
+	
+	<modifier key="ult_boost" modpriority="100"
+		criticalchance="0"
+		criticalmultiplier="0"
+		maxhealth="0"
+	>
+		<onframe />
+	</modifier>
+	
+	<altavatar key="Hero_WolfMan.Classic"
+		modifierkey="wolfmanult_Classic"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_WolfMan.Alt"
+		modifierkey="wolfmanult_Alt"
+		icon="/heroes/wolfman/alt/ability_04/icon.tga"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_WolfMan.Alt2"
+		modifierkey="wolfmanult_Alt2"
+		icon="/heroes/wolfman/alt2/ability_04/icon.tga"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_WolfMan.Alt3"
+		modifierkey="wolfmanult_Alt3"
+		icon="/heroes/wolfman/alt/ability_04/icon.tga"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_WolfMan.Alt4"
+		modifierkey="wolfmanult_Alt4"
+	>
+		<modifier key="WolfMan_Alt4_Red"
+			icon="/heroes/wolfman/alt4/ability_04/icon.tga"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_WolfMan.Alt5"
+		modifierkey="wolfmanult_Alt5"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_WolfMan.pog_skin"
+		modifierkey="wolfmanult_Alt"
+	>
+	</altavatar>	
+	
+</state>

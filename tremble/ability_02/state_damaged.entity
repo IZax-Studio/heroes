@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Tremble_Ability2_Damaged"
+
+	icon="icon2.tga"
+	ishidden="true"
+	healthregen="-100"
+	effecttype=""
+>
+</state>

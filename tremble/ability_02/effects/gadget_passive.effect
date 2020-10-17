@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+	
+		<modifier
+			expirelife="500"
+			color=".75 .72 .57"
+			startalpha="1"
+			endalpha="0"
+		/>
+
+		<particlesystem name="system0" space="world" scale="1">
+			
+			<groundsprite
+				position="0 0 0"
+				expirelife="1200"
+				material="/shared/effects/materials/web_ground.material"
+				size="75"
+				midsizepos=".1"
+				color="1.0 1.0 1.0"
+				startalpha=".75"
+				endalpha="0"
+			/>
+
+			<simpleemitter
+				spawnrate="10"
+				minparticlelife="1500"
+				maxparticlelife="2000"
+				gravity="-10"
+				speed="10"
+				drag="0.07"
+				acceleration="0.0"
+				mintimenudge="0"
+				maxtimenudge="1000"
+				position="0 0 30"
+				material="/shared/effects/materials/pyroclast_01.material"
+				offsetsphere="75 75 15"
+				inheritvelocity=".5"
+
+			>
+				<particle
+
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-30"
+					color=".36 .33 .2"
+					maxanglespeed="30"
+					startsize="65"
+					endsize="95"
+					startalpha="0"
+					midalpha=".45"
+					endalpha="0"
+					midalphapos=".2"
+				 />
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="20"
+				minparticlelife="1500"
+				maxparticlelife="3000"
+				gravity="-5"
+				minspeed="10"
+				maxspeed="70"
+				drag="0"
+				acceleration="10"
+				position="0 0 30"
+				material="/shared/effects/materials/smoke_particle.material"
+				offsetsphere="50 50 50"
+				inheritvelocity=".5"
+				direction="0 0 1"
+				depthbias="-25"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-30"
+					startcolor=".35 .25 .1"
+					endcolor="0 0 0"
+					maxanglespeed="30"
+					startsize="75"
+					endsize="125"
+					startalpha="0"
+					midalpha=".75"
+					endalpha="0"
+					midalphapos=".2"
+					startanchor="0"
+					endanchor="0"					
+				 />				 
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1"/>
+		<waitfordeath  instance="instance0"/>
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

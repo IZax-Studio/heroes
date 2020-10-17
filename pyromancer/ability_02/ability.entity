@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Pyromancer2"
+
+	icon="icon2.tga"
+	
+	anim="ability_2"
+	casttime="1000"
+	castactiontime="450"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_position"
+	targetradius="225"
+	targetmaterial="/shared/materials/area_cast_legion_indicator.material"
+	casteffecttype="Magic"
+	targetscheme="enemy_units_and_trees"
+
+	manacost="95,105,115,125"
+	cooldowntime="10000"
+	
+	range="625"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	showrangeandradiusintooltip="true"
+>
+	<onimpact>
+		<spawnaffector name="Affector_Pyromancer_Ability2" target="target_position" param="owner_counter" />
+	</onimpact>
+	
+	<modifier key="Alt4_Flamethrower" modpriority="1"
+		anim="ability_2_flamethrower"
+	/>
+
+	<modifier key="soccer" modpriority="150" 
+		baselevel="0"
+		maxlevel="1"
+		manacost="25"
+		cooldowntime="7000"
+		casttime="650"
+		castactiontime="380"
+		casteffecttype=""
+	>
+		<onimpact>
+			<spawnaffector name="Affector_Pyromancer_Ability2" target="target_position" param="owner_counter" />
+		</onimpact>	
+	</modifier>
+	
+	<altavatar key="Hero_Pyromancer.Alt8"
+		icon="/heroes/Pyromancer/alt8/ability_02/icon.tga"
+	>
+		<modifier key="pyromancerAlt8_Ability2_Upgrade"
+			icon="/heroes/Pyromancer/alt8/ability_02/icon_u.tga"
+			anim="ability_2_upgrade"
+		/>
+	</altavatar>
+	
+</ability>

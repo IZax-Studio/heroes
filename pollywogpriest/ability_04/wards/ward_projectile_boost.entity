@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_PollywogPriestWardAttack_Boost"
+
+	speed="3000"
+	gravity="0"
+	canturn="false"
+	rollspeed="360"
+	model="/shared/models/invis.mdf"
+
+
+	impacteffect="effects/impact.effect"
+	traileffect="effects/projectile_boost.effect"
+>
+	<altavatar key="Hero_PollywogPriest.Alt7" modpriority="1"
+		impacteffect="../../alt7/ability_04/wards/effects/impact.effect"
+		traileffect="../../alt7/ability_04/wards/effects/projectile.effect"
+	>
+		<modifier key="pollywogPriestAlt7_Ability4_Upgrade"
+			traileffect="../../alt7/ability_04/wards/effects/projectile_upgrade.effect"
+		/>
+	</altavatar>	
+	
+</projectile>

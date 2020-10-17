@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Mumra_Ability4_Drag"
+	
+	icon="icon4.tga"
+	
+	invulnerable="true"
+	silenced="true"
+	perplexed="true"
+	immobilized="true"
+	disarmed="true"
+	stunned="true"
+	stunneddurationunmodifiable="true"
+		
+	passiveeffect="effects/flying.effect"
+	
+	effecttype=""
+>
+	<onexpired>
+		<playanim name="ability_4_impact" source="this_owner_entity" target="this_owner_entity"/>
+	</onexpired>
+	
+	<modifier key="ult_boost" modpriority="100"
+		passiveeffect="effects/flying_boost.effect"
+	>
+	</modifier>
+	
+	<altavatar key="Hero_Mumra.Alt" modpriority="101"
+	>
+		<modifier key="ult_boost" modpriority="102"
+			passiveeffect="../alt/ability_04/effects/flying_boost.effect"
+		>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Mumra.Alt2" modpriority="101"
+	>
+		<modifier key="ult_boost" modpriority="102"
+			passiveeffect="../alt2/ability_04/effects/flying_boost.effect"
+		>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Mumra.Alt3" modpriority="101"
+	>
+		<modifier key="ult_boost" modpriority="102"
+			passiveeffect="../alt3/ability_04/effects/flying_boost.effect"
+		>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Mumra.Alt4" modpriority="101"
+	>
+		<modifier key="ult_boost" modpriority="102"
+			passiveeffect="../alt4/ability_04/effects/flying_boost.effect"
+		>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Mumra.Alt5" modpriority="101"
+	>
+		<modifier key="ult_boost" modpriority="102"
+			passiveeffect="../alt5/ability_04/effects/flying_boost.effect"
+		>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Mumra.set_ascension" modpriority="101"
+	  passiveeffect="../set_ascension/ability_04/effects/flying.effect"
+	>
+		<modifier key="ult_boost" modpriority="102"
+			passiveeffect="../set_ascension/ability_04/effects/flying_boost.effect"
+		>
+		</modifier>
+	</altavatar>
+	
+	
+	<altavatar key="Hero_Mumra.Alt6" modpriority="101"
+		icon="../alt6/ability_04/icon.tga"	
+		passiveeffect="../alt6/ability_04/effects/flying.effect"
+	>
+		<modifier key="ult_boost" modpriority="102"
+			passiveeffect="../alt6/ability_04/effects/flying_boost.effect"
+		>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Mumra.Alt7" modpriority="101"
+		passiveeffect="../alt7/ability_04/effects/flying.effect"
+	>
+		<modifier key="ult_boost" modpriority="102"
+			passiveeffect="../alt7/ability_04/effects/flying_boost.effect"
+		>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Mumra.Alt8" modpriority="101"
+		passiveeffect="../alt7/ability_04/effects/flying.effect"
+	>
+		<modifier key="ult_boost" modpriority="102"
+			passiveeffect="../alt7/ability_04/effects/flying_boost.effect"
+		>
+		</modifier>
+	</altavatar>
+	
+</state>

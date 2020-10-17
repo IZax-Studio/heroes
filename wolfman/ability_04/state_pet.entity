@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_WolfMan_Ability4_Aura"
+	
+	icon="icon4.tga"
+	passiveeffect=""
+	movespeedmultiplier="100"
+	slowresistance="1.0"
+	unitwalking="true"
+	
+	effecttype="StatusBuff"
+>
+
+	<altavatar key="Hero_WolfMan.Alt"
+		icon="/heroes/wolfman/alt/ability_04/icon.tga"
+	>
+	</altavatar>
+
+	<altavatar key="Hero_WolfMan.Alt2"
+		icon="/heroes/wolfman/alt2/ability_04/icon.tga"
+	>
+	</altavatar>
+
+	<altavatar key="Hero_WolfMan.Alt3"
+		icon="/heroes/wolfman/alt/ability_04/icon.tga"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_WolfMan.Alt4">
+		<modifier key="WolfMan_Alt4_Blue"
+			icon="/heroes/wolfman/alt4/ability_04/icon.tga"
+		/>
+	</altavatar>
+
+</state>

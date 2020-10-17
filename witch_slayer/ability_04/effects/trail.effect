@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+		
+			<light
+				bone="bullet"
+				life="1150"			
+				startcolor=".5 0 0"			
+				endcolor="0 0 0"
+				midcolorpos=".2"
+				falloffstart="00"
+				falloffend="1055"	
+			    position="0 0 100"
+			/>	
+			
+			<trailemitter
+				spawnrate="50"
+				particlelife="800"
+				texpostime="800"
+			 	texposscale="0.0"
+			 	texstretchscale=".4"
+				material="/shared/effects/materials/arrow_trail.material"
+			>
+				<particle
+					 startcolor=".5 0 0"
+					 midcolor=".5 0 0"
+					 endcolor="0 0 0"
+					 startsize="10"
+					 midsize="140"
+					 endsize="30"
+					 midsizepos="0.2"
+			 />
+
+			</trailemitter>		
+			
+		
+			
+			
+<!--
+			
+			<simpleemitter	
+				delay="264"
+				spawnrate="1325"				
+				particlelife="800"								
+				position="0 0 0"
+				drag="0.2"
+				speed="120"
+				count="122"
+				material="/shared/effects/materials/splatter_blend.material"				
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+				inheritvelocity="0.5"
+			>
+
+				<particle 
+					minanglespeed="-100"
+					maxanglespeed="100"
+					minangle="-360"
+					maxangle="360"
+					color=".5 0 0"
+					startsize="80"
+					minendsize="140"
+					maxendsize="220"
+					startalpha="0"
+				
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+	-->
+
+
+
+
+			
+			
+			
+			
+			
+			<simpleemitter			
+				spawnrate="15"				
+				particlelife="800"								
+				position="0 0 0"
+				material="/shared/effects/materials/shieldstarfish.material"				
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+			>
+
+				<particle 
+					minangle="-15"
+					maxangle="-15"
+					minanglespeed="0"
+					startcolor=".5 0 0"
+					endcolor="0 0 0"
+					maxanglespeed="00"
+					startframe="0"
+					endframe="1"
+									
+					startsize="20"				
+					endsize="500"				
+
+					startalpha=".3"
+					midalpha=".3"
+					endalpha="0"
+					midalphapos=".5"					
+					
+					lockup="true"
+					lockright="1"
+					pitch="0"
+					flare="0"
+					yaw="00"
+				
+				/>
+			</simpleemitter>
+				
+			
+			
+			<simpleemitter
+				spawnrate="15"				
+				particlelife="650"								
+				position="0 0 0"
+				material="/heroes/witch_slayer/alt8/effects/runecircle_components/base_1.material"				
+				particledirectionalspace="local"
+			>
+				<particle 		
+					startsize="0"				
+					endsize="500"				
+					startcolor="1 0 0"
+					endcolor="0"				
+					lockup="true"
+					lockright="1"
+					pitch="0"
+					yaw="00"
+					roll="360"
+					anglespeed="500"
+				/>
+			</simpleemitter>	
+
+			<simpleemitter
+				spawnrate="15"				
+				particlelife="650"								
+				position="0 0 0"
+				material="/heroes/witch_slayer/alt8/effects/runecircle_components/base_4.material"				
+				particledirectionalspace="local"
+			>
+				<particle 		
+					startsize="0"				
+					endsize="500"				
+					startcolor="1 0 0"
+					midcolor="1 0 0"
+					midcolorpos=".15"
+					endcolor="0"				
+					lockup="true"
+					lockright="1"
+					pitch="0"
+					yaw="00"
+					minroll="0"
+					maxroll="180"
+					anglespeed="-500"
+				/>
+			</simpleemitter>
+
+			<trailemitter
+				minexpirelife="400"
+				maxexpirelife="600"
+				spawnrate="120"
+				particlelife="1200"
+				material="/shared/effects/materials/trail_03.material"
+				texposscale="0"
+				texstretchscale="1"
+				startparticlecolor="1 0 0"
+				endparticlecolor="0"
+				offsetsphere="10"
+				maxspeed="5000"
+				drag="0.5"
+			>
+				<particle
+					size="120"
+					minscale=".25"
+					maxscale="1.25"
+				/>
+			</trailemitter>
+			
+			<simpleemitter			
+				spawnrate="100"
+				minparticlelife="100"
+				maxparticlelife="200"
+				gravity="1.0"
+				drag="0.0"
+				speed="1000"
+				minangle="25"
+				maxangle="180"
+				direction="0 1 0"
+				offsetsphere="8 8 8"
+				particledirectionalspace="local"				
+			>
+				<particle>	
+					<trailemitter
+						minexpirelife="400"
+						maxexpirelife="600"
+						spawnrate="90"
+						particlelife="1200"
+						material="/shared/effects/materials/trail_03.material"
+						texposscale="0"
+						texstretchscale="1"
+						startparticlecolor="1 0 0"
+						endparticlecolor="1 0 0"
+						offsetsphere="10"
+						maxspeed="5000"
+						drag="0.5"
+					>
+						<particle
+							size="20"
+							minscale=".25"
+							maxscale="1.25"
+						/>
+					</trailemitter>
+				</particle>
+			</simpleemitter>
+	
+			<!--	-->
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

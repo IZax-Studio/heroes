@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_TremblePet2b"
+
+	icon="/heroes/tremble/ability_02/icon3.tga"
+	anim=""
+	casttime="0"
+	castactiontime="0"
+	channeltime="3000"
+	ischanneling="true"
+	casteffect=""
+	
+	maxlevel="4"
+	baselevel="0" 
+
+	actiontype="target_position"
+	targetscheme="terrormound"
+	allowoutofrangecast="true"
+	range="99999"
+	
+	dontshowhovercast="true"
+
+	casteffecttype=""
+	
+	manacost="0"
+	cooldowntime="60000"
+>
+	<checkcost>
+		<condition target="source_entity" test="hasstate State_Tremble_Ability2_Teleport" />
+		<else>
+			<invalidate />
+		</else>
+	</checkcost>
+	
+	<onchannelstart>
+		<playanim name="ability_2_channel" target="source_entity" />
+		<playeffect effect="effects/dig.effect" source="source_entity" target="source_entity" occlude="true" />
+	</onchannelstart>
+	
+	<onchannelend>
+		<condition target="source_entity" test="hasstate State_Tremble_Ability2_Teleport">
+			<pushentity searchfortarget="true" searchorigin="target_position" radius="99999" targetscheme="terrormound" ignoreinvulnerable="true"/>
+			<compare a="stack_entity" b="0" op="ne">
+				<disjoint target="source_entity" />
+				<teleport source="source_entity" target="stack_position" interpolate="false" />
+				<pushentityproxy entity="stack_entity" />
+				<playanim name="ability_2_emerge" target="source_entity" />
+				<playeffect effect="effects/appear.effect" source="source_entity" target="source_entity" occlude="true" />
+			</compare>
+		</condition>
+	</onchannelend>
+	
+	<modifier key="Tremble1" modpriority="90"
+		baselevel="1"
+		maxlevel="1"
+		keyslot="2"
+		cooldowntime="60000"
+	>
+	</modifier>
+	
+	<modifier key="Tremble2" modpriority="90"
+		baselevel="2"
+		maxlevel="2"
+		keyslot="2"
+		cooldowntime="60000"
+	>
+	</modifier>
+	
+	<modifier key="Tremble3" modpriority="90"
+		baselevel="3"
+		maxlevel="3"
+		keyslot="2"
+		cooldowntime="60000"
+	>
+	</modifier>
+	
+	<modifier key="Tremble4" modpriority="90"
+		baselevel="4"
+		maxlevel="4"
+		keyslot="2"
+		cooldowntime="60000"
+	>
+	</modifier>
+</ability>

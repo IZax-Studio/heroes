@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+<!--
+			<simpleemitter
+				bone="Box005"
+				delay="0"
+				spawnrate="50"
+				particlelife="5000"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+				turn="true"
+				>
+					<model
+						bone="Box005"
+						model="staff/model.mdf"
+						yawspeed="0"
+						scale="1.5"
+						position="0 0 0"
+						color="5 2.5 1"
+						directionalspace="local"
+						anim="idle"
+						expirelife="500"
+						startalpha=".5"
+						endalpha="0"
+						pitch="0"
+					/>	
+				</particle>
+			</simpleemitter>
+		
+		
+
+
+			
+			
+
+			<model
+				name="emitter0" 
+				bone="_bone_back"
+				model="../flag/model.mdf"
+				yawspeed="0"
+				scale=".4"
+				position="0 -10 -30"
+				roll="40"
+				directionalspace="local"
+				anim="idle"
+				expirelife="500"
+				startalpha="1"
+				endalpha="0"
+				pitch="-30"
+			/>
+			
+			<model
+				name="emitter0" 
+				bone="_bone_back"
+				model="../flag/model.mdf"
+				yawspeed="0"
+				scale=".4"
+				position="0 -10 -30"
+				roll="-40"
+				directionalspace="local"
+				anim="idle"
+				expirelife="500"
+				startalpha="1"
+				endalpha="0"
+				pitch="-30"
+			/>
+-->
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+
+</effect>

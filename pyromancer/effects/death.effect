@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+
+		
+		<modifier
+			name="modifier1"
+			life="21000"
+			material="/heroes/ra/ability_02/effects/material.material"
+			startalpha="1"
+			midalpha="0"
+			endalpha="0"
+			midalphapos="0.6"
+		/>
+
+		<particlesystem name="system0" space="entity" scale=".5">
+
+		<simpleemitter
+				bone="_bone_centerofchest"
+				minparticlelife="500"
+				maxparticlelife="1400"
+				spawnrate="555"
+				count="8"
+				life="300"
+				gravity="5"
+				speed="250"
+				material="/shared/effects/materials/flame.material"
+				offsetsphere="100"
+				angle="10"
+				position="0 0 30"
+				direction="0 0 1"
+				drag="0.15"
+				depthbias="-60"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					color=".44 .42 .4"
+					maxstartsize="160"
+					minstartsize="120"
+					endsize="300"
+					startalpha=".5"
+					endalpha="0"
+				/>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-120"
+					maxanglespeed="120"
+					color=".74 .72 .7"
+					startsize="130"
+					endsize="300"
+					startalpha=".9"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				minparticlelife="800"
+				maxparticlelife="1400"
+				spawnrate="555"
+				count="6"
+				life="500"
+				gravity="10"
+				speed="150"
+				material="/shared/effects/materials/dust_explosion.material"
+				offsetsphere="155"
+				angle="90"
+				position="0 0 40"
+				direction="0 0 1"
+				drag="0.1"
+				depthbias="-30"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					color=".43 .4 .4"
+					startsize="245"
+					endsize="460"
+					startalpha=".3"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				offsetsphere="65"
+				spawnrate="45"			
+				particlelife="1300"			
+				life="500"					
+				speed="140"
+				angle="25"					
+				material="/shared/effects/materials/flame.material"	
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					startcolor=".5 .3 .1"
+					endcolor="0"
+					startsize="20"
+					endsize="200"
+					minanglespeed="-165"
+					maxanglespeed="165"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					turn="1"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="100"
+				bone="_bone_centerofchest"
+				spawnrate="500"
+				count="166"
+				particlelife="1600"			
+				gravity="24"
+				minspeed="500"
+				maxspeed="1500"
+				drag=".01"
+				material="/shared/effects/materials/fire_11.material"
+				offsetsphere="55 55 33"
+				minangle="-10"
+				maxangle="20"
+				directionalspace="global"
+			>
+				<particle 
+					color="1 .5 0"
+					startsize="30"
+					midsize="15"
+					endsize="6"
+					turn="true"
+				/>
+				<particle 
+					color="1 .4 0"
+					startsize="24"
+					midsize="12"
+					endsize="1"
+					turn="true"
+				/>
+				<particle 
+					color="1 .3 0"
+					startsize="1"
+					midsize="12"
+					endsize=".1"
+					turn="true"
+				/>
+			</simpleemitter>			
+									
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<wait durration="100"/>
+		<spawnmodifier instance="instance2" modifier="modifier1"/> 		
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance2" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

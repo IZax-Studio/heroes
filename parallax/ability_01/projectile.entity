@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Parallax_Ability1"
+
+	speed="2000"
+	gravity="0"
+
+	acceleration="250"
+	modelscale="1"
+	model="/shared/models/invis.mdf"
+	
+	traileffect="../ability_01/effects/trail.effect"
+	impacteffect=""
+
+	canturn="false"
+	flying="true"
+	flyheight="0"
+	
+	touchradius="125"
+	maxtouchespertarget="1"
+	touchtargetscheme="enemy_units"
+	toucheffecttype="Magic"
+	touchradiusdiradjust="true"	
+>
+	<onspawn>
+		<hasavatarkey name="Hero_Parallax.set_ascension">
+			<hasmodifier name="hellparallax">
+				<activatemodifierkey name="parallax_bound_fly_dark" entity="this_proxy_entity" />
+			</hasmodifier>
+			<else>
+				<activatemodifierkey name="parallax_bound_fly" entity="this_proxy_entity" />
+			</else>
+		</hasavatarkey>
+		<else>
+			<activatemodifierkey name="parallax_bound_fly" entity="this_proxy_entity" />
+		</else>
+	</onspawn>
+	<onimpact>
+		<deactivatemodifierkey name="parallax_bound_fly" entity="this_proxy_entity" />
+		<deactivatemodifierkey name="parallax_bound_fly_dark" entity="this_proxy_entity" />
+	</onimpact>
+	
+	<ontouch>
+		<evaluate a="source_maxmana" b="0.1" op="mult" />
+		<setvar1 a="result" b="0,30,50,50,70" op="add" />
+		<damage effecttype="Magic" amount="1" b="var1" op="mult" />
+		<hasavatarkey name="Hero_Parallax.Alt4" >
+			<playeffect effect="../alt4/ability_01/effects/impact.effect" source="target_entity" target="target_entity" />
+		</hasavatarkey>
+		<else>
+			<playeffect effect="effects/impact.effect" source="target_entity" target="target_entity" />
+		</else>
+	</ontouch>
+	
+	<altavatar key="Hero_Parallax.Alt"
+		traileffect="../alt/ability_01/effects/trail.effect"
+	/>
+
+	<altavatar key="Hero_Parallax.Alt2"
+		traileffect="../alt2/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Parallax.set_ascension"
+		traileffect="../set_ascension/ability_01/effects/trail.effect"
+	>	
+		<modifier key="hellparallax"
+			traileffect="../set_ascension/dark/ability_01/effects/trail.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Parallax.Alt4"
+		traileffect="../alt4/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Parallax.Alt6"
+		traileffect="../alt6/ability_01/effects/trail.effect"
+	/>
+	
+</projectile>

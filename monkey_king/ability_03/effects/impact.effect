@@ -1,0 +1,902 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+	
+		<modifier 
+			name="modifier0"
+			alpha="1"
+		/>
+
+		<particlesystem name="rocksMed" space="world" scale="1">
+
+			<model
+				delay="100"
+				position="0 0 0"
+				model="/heroes/monkey_king/alt9/ability_03/effects/crown/model.mdf"
+				material="/heroes/monkey_king/effects/material_gold.material"
+				scale="2.2"
+				life="1950"
+				startalpha="1"	
+				midalpha="1"				
+				endalpha="0"
+				midalphapos=".99"
+				minyaw="0"
+				maxyaw="360"
+			>
+			</model>
+		
+		
+			<template name="rocksMed"	>
+				<model
+					delay="250"
+					position="{position}"
+					model="/heroes/ellonia/alt7/ability_04/effects/flower/model.mdf"
+					material="/heroes/monkey_king/effects/material_gold.material"
+					color="1 1 0"
+					scale=".5"
+					life="2000"
+					startalpha="1"	
+					midalpha="1"				
+					endalpha="0"
+					midalphapos=".99"
+					yawspeed="0"
+				>
+				</model>
+				
+				<groundsprite
+					delay="250"
+					position="{position}"
+					life="2250"
+					material="/shared/effects/materials/black_spot.material"
+					size="65"				
+					color="1 1 1"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".9"
+				/>
+				
+				<groundsprite
+					delay="250"
+					position="{position}"
+					life="2050"
+					material="/shared/effects/materials/earth_cracks_reveal_add.material"
+					size="75"
+					color="1.0 1.0 1.0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos="0.05"
+					minyaw="0"
+					maxyaw="360"
+				/>
+				
+				<billboard
+					delay="0"
+					life="250"
+					position="{position}"
+					material="/shared/effects/materials/refract_ripples.material"
+					startalpha="0"
+					midalpha=".15"
+					endalpha="0"
+					startsize="150"
+					endsize="200"
+					startparam=".1"
+					endparam="0"
+					lockup="1"
+					lockright="1"
+					pitch="-90"
+					depthbias="-50"
+				/>
+
+				<billboard
+					delay="0"
+					life="1000"
+					position="{position}"
+					material="/shared/effects/materials/refract_ripples.material"
+					startalpha="0"
+					midalpha=".15"
+					endalpha="0"
+					startsize="150"
+					endsize="200"
+					startparam=".1"
+					endparam="0"
+					lockup="1"
+					lockright="1"
+					pitch="-90"
+					depthbias="-50"
+				/>		
+				
+				<simpleemitter
+					spawnrate="80" life="1200" expirelife="300"
+					position="{position}"
+					minangle="0"
+					maxangle="45"
+					direction="0 0 1"
+					maxspeed="500"
+					drag="0.08"
+					minparticlelife="400"
+					maxparticlelife="1000"
+					offsetsphere="50 50 0"
+					material="/shared/effects/materials/spark_10.material"
+				>
+					<particle
+						startsize="10"
+						midsize="10"
+						endsize="0"
+						startcolor="1 1 0"
+						endcolor="1 0 0"
+						minscale=".25"
+						maxscale="1"
+					/>
+				</simpleemitter>
+				
+			</template>
+			<instance name="rocksMed" position="0 100 0" />
+			<instance name="rocksMed" position="0 -100 0" />
+			<instance name="rocksMed" position="-80 0 0" />
+			<instance name="rocksMed" position="105 0 0" />
+			
+			
+			
+
+			<light
+				life="2500"			
+				startcolor="20 10 0"		
+				midcolor="20 0 0"		
+				endcolor="0 0 0"
+				midcolorpos=".2"
+				falloffstart="00"
+				falloffend="75"
+				position="0 0 35"	
+			/>
+			
+			<model
+				position="0 0 0"
+				model="/heroes/ellonia/alt7/ability_04/effects/flower/model.mdf"
+				material="/heroes/monkey_king/effects/material_gold.material"
+				scale="1.5"
+				life="2050" expirelife="150"
+				startalpha="1"	
+				midalpha="1"				
+				endalpha="0"
+				midalphapos=".99"
+				yawspeed="0"
+			/>
+			
+			<simpleemitter
+				spawnrate="10"
+				particlelife="500"
+				material="/shared/effects/materials/stomp_01.material"
+				life="2050" expirelife="150"
+				yawspeed="0"
+			>
+				<particle
+					startsize="0"
+					endsize="200"
+					startcolor="1 .75 0"
+					midcolor=".5 0 0"
+					endcolor="0"
+					lockup="1"
+					pitch="90"
+					maxangle="360"
+					rollspeed="-200"
+					anchor="1"
+				/>
+				
+				<particle
+					startsize="0"
+					endsize="400"
+					startcolor="1 .75 0"
+					midcolor=".5 .25 0"
+					endcolor="0"
+					lockup="1"
+					pitch="90"
+					maxangle="360"
+					rollspeed="-200"
+					anchor="1"
+				/>
+			</simpleemitter>
+			
+			<billboard
+				delay="0"
+				life="1500"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor=".5 0 0"
+				endcolor="0 0 0"
+				startsize="350"
+				endsize="350"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+			
+			<billboard
+				delay="0"
+				life="2000"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="1 .5 0"
+				midcolor="1 .25 0"
+				endcolor="0 0 0"
+				startsize="80"
+				endsize="40"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+			/>
+			
+			<simpleemitter
+				count="25"
+				spawnrate="250"
+				minparticlelife="100"
+				maxparticlelife="200"
+				speed="300"
+				drag="0.10"
+				material="/shared/effects/materials/whitedot.material"
+				offsetsphere="10 10 10"
+				position="0 0 75"
+				depthbias="-50"
+			>
+				<particle
+					turn="1"
+					heightdistort=".1"
+					minstartwidth="1"
+					maxwidth="3"
+					minstartscale="8"
+					maxstartscale="16"
+					minendscale="0"
+					maxendscale="8"
+					startcolor=".3 .15 0"
+					endcolor="0 0 0"
+					midcolorpos=".25"
+				/>
+			</simpleemitter>
+
+			<billboard
+				delay="0"
+				life="5000"
+				position="0 0 0"
+				material="/shared/effects/materials/refract_ripples.material"
+				startalpha="0"
+				midalpha=".35"
+				endalpha="0"
+				startsize="350"
+				endsize="450"
+				startparam=".1"
+				endparam="0"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+				depthbias="-50"
+			/>
+
+			<billboard
+				delay="0"
+				life="1000"
+				position="0 0 0"
+				material="/shared/effects/materials/refract_ripples.material"
+				startalpha="0"
+				midalpha=".5"
+				endalpha="0"
+				startsize="250"
+				endsize="350"
+				startparam=".1"
+				endparam="0"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+				depthbias="-50"
+			/>
+			
+			<groundsprite
+				delay="250"
+				life="2250"
+				material="/shared/effects/materials/black_spot.material"
+				size="80"				
+				color="1 1 1"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".9"
+			/>
+
+			<groundsprite
+				delay="250"
+				life="2250"
+				material="/shared/effects/materials/earth_cracks_02.material"
+				size="100"
+				color="1.0 1.0 1.0"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				midalphapos="0.05"
+				minyaw="0"
+				maxyaw="360"
+			/>
+			
+				<simpleemitter
+					spawnrate="180" life="1500" expirelife="300"
+					position="0 0 0"
+					minangle="0"
+					maxangle="45"
+					direction="0 0 1"
+					maxspeed="500"
+					drag="0.08"
+					minparticlelife="400"
+					maxparticlelife="1000"
+					offsetsphere="150 150 0"
+					material="/shared/effects/materials/spark_10.material"
+				>
+					<particle
+						startsize="10"
+						midsize="10"
+						endsize="0"
+						startcolor="1 1 0"
+						endcolor="1 0 0"
+						minscale=".5"
+						maxscale="2.5"
+					/>
+				</simpleemitter>
+
+			
+
+			<model
+			delay="500"
+				position="-80 0 0"
+				model="rocks_center/model.mdf"
+				material="/heroes/monkey_king/effects/material_gold.material"
+				anim="idle"
+				scale="1.2"
+				life="1550"
+				startalpha="1"	
+				midalpha="1"				
+				endalpha="0"
+				midalphapos=".99"
+				minyaw="0"
+				maxyaw="360"
+			>
+			</model>
+			
+			<groundsprite
+				delay="250"
+				position="-80 0 0"
+				life="2250"
+				material="/shared/effects/materials/black_spot.material"
+				size="65"				
+				color="1 1 0"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".9"
+			/>
+
+			<groundsprite
+				delay="250"
+				position="-80 0 0"
+				life="2250"
+				material="/shared/effects/materials/earth_cracks_reveal_add.material"
+				size="75"
+				color="1 1 0"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				midalphapos="0.05"
+				minyaw="0"
+				maxyaw="360"
+			/>
+
+			<billboard
+				delay="0"
+				life="250"
+				position="-80 0 0"
+				material="/shared/effects/materials/refract_ripples.material"
+				startalpha="0"
+				midalpha=".15"
+				endalpha="0"
+				startsize="125"
+				endsize="175"
+				startparam=".1"
+				endparam="0"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+				depthbias="-50"
+			/>
+
+			<billboard
+				delay="0"
+				life="1000"
+				position="-80 0 0"
+				material="/shared/effects/materials/refract_ripples.material"
+				startalpha="0"
+				midalpha=".15"
+				endalpha="0"
+				startsize="125"
+				endsize="175"
+				startparam=".1"
+				endparam="0"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+				depthbias="-50"
+			/>
+
+			
+			
+
+			
+
+			<model
+			delay="100"
+				position="105 0 0"
+				model="rocks_medium/model.mdf"
+				material="/heroes/monkey_king/effects/material_gold.material"
+				anim="idle"
+				scale=".85"
+				life="1950"
+				startalpha="1"	
+				midalpha="1"				
+				endalpha="0"
+				midalphapos=".99"
+				minyaw="0"
+				maxyaw="360"
+			>
+			</model>
+			
+			<groundsprite
+				delay="250"
+				position="105 0 0"
+				life="2250"
+				material="/shared/effects/materials/black_spot.material"
+				size="50"				
+				color="1 1 0"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".9"
+			/>
+
+			<groundsprite
+				delay="250"
+				position="105 0 0"
+				life="2250"
+				material="/shared/effects/materials/earth_cracks_reveal_add.material"
+				size="60"
+				color="1 1 0"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				midalphapos="0.05"
+				minyaw="0"
+				maxyaw="360"
+			/>
+
+			<billboard
+				delay="0"
+				life="250"
+				position="105 0 0"
+				material="/shared/effects/materials/refract_ripples.material"
+				startalpha="0"
+				midalpha=".15"
+				endalpha="0"
+				startsize="125"
+				endsize="175"
+				startparam=".1"
+				endparam="0"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+				depthbias="-50"
+			/>
+
+			<billboard
+				delay="0"
+				life="1000"
+				position="105 0 0"
+				material="/shared/effects/materials/refract_ripples.material"
+				startalpha="0"
+				midalpha=".15"
+				endalpha="0"
+				startsize="125"
+				endsize="175"
+				startparam=".1"
+				endparam="0"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+				depthbias="-50"
+			/>
+
+		</particlesystem>
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<particlesystem name="rocksCenter" space="world" scale="1">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1200"
+				volume=".4"
+				sample="/heroes/magmar/ability_01/sounds/impact_2.wav"
+			/>
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1200"
+				volume=".8"
+				sample="/heroes/behemoth/ability_03/sounds/impact.wav"
+			/>
+
+			<light
+				life="2500"			
+				startcolor="0 1 .5"		
+				midcolor="0 1 .5"		
+				endcolor="1 1 0"
+				midcolorpos=".2"
+				falloffstart="00"
+				falloffend="75"
+				position="0 0 35"	
+			/>
+
+			<model
+				model="rocks_center/model.mdf"
+				material="/heroes/monkey_king/effects/material_gold.material"
+				anim="idle"
+				scale="1.5"
+				life="2050"
+				startalpha="1"	
+				midalpha="1"				
+				endalpha="0"
+				midalphapos=".99"
+			>
+			</model>
+			
+			
+			
+			
+				<billboard
+					delay="0"
+					life="1500"
+					position="0 0 0"
+					material="/shared/effects/materials/whitedot.material"
+					startcolor=".5 .3 0"
+					endcolor=".5 .3 0"
+					startsize="350"
+					endsize="350"
+					depthbias="-50"
+					lockup="1"
+					lockright="1"
+					pitch="-90"
+				/>
+				
+				<billboard
+					delay="0"
+					life="2000"
+					position="0 0 0"
+					material="/shared/effects/materials/whitedot.material"
+					startcolor=".5 .3 0"
+					midcolor=".5 .3 0"
+					endcolor=".5 .3 0"
+					startsize="80"
+					endsize="40"
+					depthbias="-50"
+					lockup="1"
+					lockright="1"
+					pitch="-90"
+				/>
+				
+				<simpleemitter
+					count="25"
+					spawnrate="250"
+					minparticlelife="100"
+					maxparticlelife="200"
+					speed="300"
+					drag="0.10"
+					material="/shared/effects/materials/whitedot.material"
+					offsetsphere="10 10 10"
+					position="0 0 75"
+					depthbias="-50"
+				>
+					<particle
+						turn="1"
+						heightdistort=".1"
+						minstartwidth="1"
+						maxwidth="3"
+						minstartscale="8"
+						maxstartscale="16"
+						minendscale="0"
+						maxendscale="8"
+						startcolor=".5 .3 0"
+						endcolor=".5 .3 0"
+						midcolorpos=".25"
+					/>
+				</simpleemitter>
+
+				<billboard
+					delay="0"
+					life="5000"
+					position="0 0 0"
+					material="/shared/effects/materials/refract_ripples.material"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+					startsize="350"
+					endsize="450"
+					startparam=".1"
+					endparam="0"
+					lockup="1"
+					lockright="1"
+					pitch="-90"
+					depthbias="-50"
+				/>
+
+				<billboard
+					delay="0"
+					life="1000"
+					position="0 0 0"
+					material="/shared/effects/materials/refract_ripples.material"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					startsize="250"
+					endsize="350"
+					startparam=".1"
+					endparam="0"
+					lockup="1"
+					lockright="1"
+					pitch="-90"
+					depthbias="-50"
+				/>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<groundsprite
+				delay="250"
+				life="2250"
+				material="/shared/effects/materials/black_spot.material"
+				size="80"				
+				color="1 1 1"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".9"
+			/>
+
+			<groundsprite
+				delay="250"
+				life="2250"
+				material="/shared/effects/materials/earth_cracks_reveal_add.material"
+				size="100"
+				color="1.0 1.0 1.0"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				midalphapos="0.05"
+				minyaw="0"
+				maxyaw="360"
+			/>
+
+		</particlesystem>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<particlesystem name="dustCenter" space="world" scale=".3">
+
+			<simpleemitter	
+				spawnrate="11500"
+				life="1200"				
+				count="20"			
+				position="0 0 150"
+				minparticlelife="1000"			
+				maxparticlelife="1500"	
+				depthbias="-40"			
+				material="/shared/effects/materials/pyroclast_01.material"			
+				offsetsphere="125 125 100"
+				minspeed="0"
+				maxspeed="620"
+				angle="10"
+				direction="0 0 1"
+				drag=".01"
+				gravity="15"
+			>
+				<particle 
+					minangle="-25"
+					maxangle="25"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					startcolor="1 1 0"
+					endcolor="1 1 0"
+					startsize="100"
+					midsize="100"
+					endsize="200"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+				/>
+				<particle 
+					minangle="-25"
+					maxangle="25"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					startcolor=".45"
+					endcolor="0"
+					startsize="150"
+					midsize="150"
+					endsize="220"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter	
+				spawnrate="11500"
+				life="1200"				
+				count="30"			
+				position="0 0 150"
+				minparticlelife="1500"			
+				maxparticlelife="2550"	
+				depthbias="-10"			
+				material="/shared/effects/materials/smoke_particle.material"			
+				offsetsphere="155 155 50"
+				minspeed="0"
+				maxspeed="520"
+				minangle="0"
+				maxangle="12"
+				direction="0 0 1"
+				gravity="8"
+				drag=".005"
+			>
+				<particle 
+					minangle="-25"
+					maxangle="25"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					color=".45 .42 .35"
+					startsize="150"
+					endsize="400"
+					startalpha="0"
+					midalpha=".3"
+					endalpha="0"
+				/>
+				<particle 
+					minangle="-25"
+					maxangle="25"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					color=".45"
+					startsize="150"
+					endsize="400"
+					startalpha="0"
+					midalpha=".3"
+					endalpha="0"
+				/>
+				<particle 
+					minangle="-25"
+					maxangle="25"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					color=".2"
+					startsize="150"
+					midsize="150"
+					endsize="420"
+					startalpha="0"
+					midalpha=".3"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter	
+				spawnrate="11500"
+				life="1200"				
+				count="8"			
+				position="0 0 150"
+				minparticlelife="500"			
+				maxparticlelife="1150"	
+				depthbias="10"			
+				material="/shared/effects/materials/dust_puff.material"			
+				offsetsphere="55 55 60"
+				minspeed="0"
+				maxspeed="720"
+				minangle="0"
+				maxangle="12"
+				direction="0 0 1"
+				gravity="12"
+				drag=".005"
+			>
+				<particle 
+					minangle="-25"
+					maxangle="25"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					color=".15 .11 .10"
+					startsize="100"
+					endsize="150"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+		</particlesystem>
+
+		
+		
+
+	</definitions>
+
+	<thread>
+
+
+		<spawnparticlesystem instance="instance0" particlesystem="rocksCenter" />
+		<spawnmodifier instance="instance1" modifier="modifier0" />
+		<spawnparticlesystem instance="instance2" particlesystem="dustCenter" />
+		<spawnparticlesystem instance="instance3" particlesystem="rocksMed" />
+		<spawnparticlesystem instance="instance4" particlesystem="dustTop" />
+
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<waitfordeath instance="instance2" />
+		<waitfordeath instance="instance3" />
+		<waitfordeath instance="instance4" />
+	</thread>
+
+</effect>

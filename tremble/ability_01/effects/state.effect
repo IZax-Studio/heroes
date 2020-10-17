@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useenityeffectscale="1" deferred="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1.25">
+			<simpleemitter
+				spawnrate="10"
+				particlelife="2000"
+				gravity="-.2"
+				speed="10"
+				drag="0.07"
+				acceleration="0.0"		
+				mintimenudge="0"
+				maxtimenudge="1000"
+				position="0 0 30"
+				material="/shared/effects/materials/smoke_particle.material"
+				offsetsphere="20 20 20"
+				inheritvelocity=".5"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-30"
+					color="0 0 0"
+					maxanglespeed="30"
+					startsize="50"
+					endsize="70"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".2"
+					startanchor="0"
+					endanchor="0"					
+				 />	
+			
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-30"
+					color=".2 .1 .35"
+					maxanglespeed="30"
+					startsize="50"
+					endsize="70"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".2"
+					startanchor="0"
+					endanchor="0"					
+				 />				 
+			</simpleemitter>
+		
+			<template name="bugs">
+				<model
+					bone="{bone}"
+					position="0 0 -10"
+					expirelife="500"
+					anim="walk_1"
+					model="/heroes/tremble/ability_04/pet/model.mdf"
+					minscale=".185"
+					maxscale=".185"
+					color="{color}"
+					startalpha="1"
+					endalpha="0"
+					minyaw="0"
+					maxyaw="360"
+					minroll="0"
+					maxroll="360"
+					minpitch="0"
+					maxdpitch="360"
+				>
+					<simpleemitter
+						bone="Box039"
+						spawnrate="50"
+						minparticlelife="500"
+						maxparticlelife="750"
+						speed="200"
+						drag="0.05"
+						offsetsphere="50 50 0"
+						material="/shared/effects/materials/blood1.material"
+					>
+						<particle
+							minangle="-180"
+							maxangle="180"
+							minanglespeed="-150"
+							maxanglespeed="150"
+							turn="1"
+							startcolor=".5 0 0"
+							midcolor=".5 0 0"
+							endcolor="1 0 0"
+							midcolorpos=".5"
+							startsize="45"
+							endsize="90"
+							startalpha="0"
+							midalpha="1"
+							endalpha="0"
+						/>
+						
+						<particle
+							minangle="-180"
+							maxangle="180"
+							minanglespeed="-150"
+							maxanglespeed="150"
+							turn="1"
+							color=".4 0 0"
+							midcolorpos=".2"
+							startsize="50"
+							endsize="100"
+							startalpha="0"
+							midalpha="1"
+							endalpha="0"
+						/>
+					</simpleemitter>
+
+				</model>
+			</template>
+
+			<instance name="bugs" bone="_bone_centerofchest" color="1 1 1"/>
+
+			<model
+				life="1000"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor=".5 0 0"
+				midcolor="0 0 0"
+				endcolor="0 0 0"
+				material="/shared/effects/materials/shell.material"
+				scale="1"
+				loop="true"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="1000"
+				param="0.1"	
+				startsize="25"
+				endsize="75"
+				startcolor="0 0 0"
+				midcolor="1 0 0"
+				endcolor="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				loop="true"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="350"
+				param="0.1"	
+				startsize="25"
+				endsize="75"
+				startalpha="0"
+				midalpha=".4"
+				endalpha="0"				
+				depthbias="0"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				loop="true"
+			/>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="chainsofdoom" deferred="false" useentityeffectscale="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="1300"
+				volume="1" 
+				sample="../sounds/core_cast.wav"
+			/>
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="1300"
+				volume="1" 
+				sample="../sounds/cast.wav"
+			/>
+			
+			<sound
+			    soundloop="true"
+				fadein="1000"
+				fadeout="1000"
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="1300"
+				volume=".5" 
+				sample="../sounds/state.wav"
+			/>
+			<simpleemitter
+				bone="Bip01 Spine2"
+				position="0 0 -15"
+				spawnrate="300"
+				particlelife="400"
+				speed="200"
+				direction="0 0 1"
+				angle="60"
+				offsetsphere="0"
+				directionalspace="global"
+				material="/shared/effects/materials/light_rays.material"
+			>
+				<particle
+					turn="1"
+					startsize="0"
+					endsize="30"
+					startwidth="0"
+					endwidth="20"
+					startcolor=".5 0 0"
+					endcolor="0"
+					anchor="1"
+				/>
+				<particle
+					turn="1"
+					startsize="0"
+					endsize="30"
+					startwidth="0"
+					endwidth="20"
+					startcolor=".5 0 0"
+					endcolor="0"
+					anchor="1"
+				/>
+			</simpleemitter>
+
+				
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

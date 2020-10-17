@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Taint3"
+	
+	icon="icon3.tga"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	
+	impacteffect=""
+	casteffect="Magic"
+	passiveeffect=""
+	
+	maxcharges="1"
+	
+	actiontype="no_target"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="1000"
+	noresponse="true"
+>
+	<onimpact>
+		<setactivemodifierkey name="taint_aura_hero" />
+	</onimpact>
+
+	<aura name="taintcorpseaura" state="State_Taint_Ability3" radius="100" ignoreinvulnerable="true" targetscheme="all_nonhero_corpses" notooltip="true" />
+
+	<onattackstart propagatetoillusions="false">
+		<compare a="charges" b="1" op="ge" >
+			<cantarget targetscheme="enemy_objects" effecttype="Physical">
+				<setattackprojectile name="Projectile_Taint_Ability3_Attack" />
+			</cantarget>
+		</compare>
+	</onattackstart>
+	
+	<onattack>
+		<compare a="charges" b="1" op="ge" >
+			<cantarget targetscheme="enemy_objects" effecttype="Physical">
+				<addattackimpactactions>
+					<cantarget effecttype="Magic">
+						<cantarget targetscheme="all_buildings" />
+						<else>
+							<applystate name="State_Taint_Ability3_Slow" target="target_entity" duration="2000" />
+						</else>
+					</cantarget>
+					<spawnunit name="Pet_Taint_Ability3" target="target_entity" offsetspace="target_entity" offset="20 20" owner="" team="" count="1" />
+				</addattackimpactactions>
+				
+				<bonusdamageadd a="20,40,60,80" target="" />
+				<setcharges a="0" />
+			</cantarget>
+		</compare>
+	</onattack>
+	
+	<modifier key="taint_aura_hero" modpriority="100"
+		icon="iconb.tga"
+	>
+		<onimpact>
+			<setactivemodifierkey name="" />
+		</onimpact>
+	
+		<onattackstart propagatetoillusions="false">
+			<compare a="charges" b="1" op="ge" >
+				<cantarget targetscheme="enemy_heroes" effecttype="Physical">
+					<setattackprojectile name="Projectile_Taint_Ability3_Attack" />
+				</cantarget>
+			</compare>
+		</onattackstart>
+		
+		<onattack>
+			<compare a="charges" b="1" op="ge" >
+				<cantarget targetscheme="enemy_heroes" effecttype="Physical">
+					<addattackimpactactions>
+						<cantarget effecttype="Magic">
+							<cantarget targetscheme="all_buildings" />
+							<else>
+								<applystate name="State_Taint_Ability3_Slow" target="target_entity" duration="2000" />
+							</else>
+						</cantarget>
+						<spawnunit name="Pet_Taint_Ability3" target="target_entity" offsetspace="target_entity" offset="20 20" owner="" team="" count="1" />
+					</addattackimpactactions>
+					
+					<bonusdamageadd a="20,40,60,80" target="" />
+					<setcharges a="0" />
+				</cantarget>
+			</compare>
+		</onattack>
+	</modifier>
+	
+	<altavatar key="Hero_Taint.Alt3"
+		icon="../alt3/ability_03/icon.tga"
+	>
+		<!-- Unfortunately, we have to re-copy the entire modifier to get the proper icon -->
+		<modifier key="taint_aura_hero" modpriority="100"
+			icon="../alt3/ability_03/iconb.tga"
+		>
+			<onimpact>
+				<setactivemodifierkey name="" />
+			</onimpact>
+		
+			<onattackstart propagatetoillusions="false">
+				<compare a="charges" b="1" op="ge" >
+					<cantarget targetscheme="enemy_heroes" effecttype="Physical">
+						<setattackprojectile name="Projectile_Taint_Ability3_Attack" />
+					</cantarget>
+				</compare>
+			</onattackstart>
+			
+			<onattack>
+				<compare a="charges" b="1" op="ge" >
+					<cantarget targetscheme="enemy_heroes" effecttype="Physical">
+						<addattackimpactactions>
+							<cantarget effecttype="Magic">
+								<cantarget targetscheme="all_buildings" />
+								<else>
+									<applystate name="State_Taint_Ability3_Slow" target="target_entity" duration="2000" />
+								</else>
+							</cantarget>
+							<spawnunit name="Pet_Taint_Ability3" target="target_entity" offsetspace="target_entity" offset="20 20" owner="" team="" count="1" />
+						</addattackimpactactions>
+						
+						<bonusdamageadd a="20,40,60,80" target="" />
+						<setcharges a="0" />
+					</cantarget>
+				</compare>
+			</onattack>
+		</modifier>
+	</altavatar>
+
+</ability>

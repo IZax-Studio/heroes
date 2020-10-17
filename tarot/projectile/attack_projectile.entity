@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Tarot_Attack"
+
+	speed="2200"
+	gravity="0"
+	modelscale="1"
+	model="/shared/models/invis.mdf"
+
+	impacteffect=""
+	traileffect="/heroes/tarot/projectile/trail.effect"
+>
+	<onimpact>
+		<compare a="param" b="1" op="eq">
+			<setactivemodifierkey entity="proxy_entity" name="Tarot_nextattackneedstobeinvis" />
+			<attack source="this_owner_entity" target="target_entity" startcooldown="false" />
+		</compare>
+	</onimpact>
+	
+	<altavatar key="Hero_Tarot.Alt"
+		traileffect="../alt/projectile/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt2"
+		traileffect="../alt2/projectile/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt3"
+		traileffect="../alt3/projectile/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt4"
+		traileffect="../alt4/projectile/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt5"
+		traileffect="../alt5/projectile/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt6"
+		traileffect="../alt6/projectile/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt7"
+		traileffect="../alt7/projectile/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt8"
+		traileffect="../alt8/projectile/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt9"
+		traileffect="../alt9/projectile/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt10"
+		traileffect="../alt10/projectile/trail.effect"
+	/>
+	
+</projectile>

@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		
+		<particlesystem name="system0" space="world" scale="1">
+      
+      
+      <template name="color_picker" >
+ 
+		<sound
+			linearfalloff="true" 
+			falloffstart="0"
+			falloffend="100"
+			volume="1"
+			sample="/heroes/panda/sounds/preattack_%.wav"
+		/> 
+        
+        <model 
+          expirelife="500"
+          parentmodel="true"
+          parentskeleton="true"
+          material="/shared/effects/materials/shell3.material"
+          color="0 .5 1"
+          endcolor="0"
+        />
+        
+        <simpleemitter
+          particlelife="400"
+          spawnrate="7"
+          position="0 0 50"
+          speed="-250"
+          angle="0"
+          drag=".15"
+          direction="0 0 1"
+          directionalspace="global"
+          material="/shared/effects/materials/nova_08.material"
+        >
+          <particle
+            startcolor=".25"
+            endcolor="0 0 0"
+            startsize="150"
+            endsize="650"
+            midsizepos=".4"
+            depthbias="0"
+            position="0 0 20"
+            lockup="true"
+            pitch="90"
+          />
+        </simpleemitter>			
+
+					<template name="blueTrails">
+					<twopointtrailemitter
+						delay="100"
+						bone_a="{bone_a}"
+						bone_b="{bone_b}"
+						spawnrate="100"
+						particlelife="200"
+						texpostime="500"
+						texposscale="0.0"
+						texstretchscale="1.0"
+						material="/shared/effects/materials/swoosh_add.material"
+						subframepose="true"
+					>
+						<particle
+							startcolor="0 0 0"
+							midcolor=".5 .5 .5"
+							endcolor="0 0 0" 
+							pitch="90"
+						/>
+					</twopointtrailemitter>
+				</template>
+				
+			<instance name="blueTrails" bone_a="_bone_weapon1" bone_b="_bone_weapon3"/>
+
+  <!--			<simpleemitter
+          particlelife="650"
+          spawnrate="4"
+          position="0 0 30"
+          speed="-50"
+          angle="0"
+          drag=".01"
+          direction="0 0 1"
+          directionalspace="global"
+          material="/shared/effects/materials/refract_ring.material"
+        >
+          <particle
+            startalpha="1"
+            midalpha="1"
+            endalpha="0"
+            midalphapos=".75"
+            startparam=".05"
+            endparam="0"
+            startsize="100"
+            endsize="350"
+            depthbias="-100"
+            position="0 0 20"
+            lockup="true"
+            pitch="90"
+          />
+        </simpleemitter> -->
+        
+        <!-- hand + leg trails -->
+        
+  <!--
+        <template name="combo_trail">
+          <billboard
+            bone="{bone}"
+            material="/shared/effects/materials/whitedot.material"
+            color="{color}"
+            size="30"
+          />
+          <trailemitter
+            bone="{bone}"
+            spawnrate="150"
+            particlelife="200"
+            material="/shared/effects/materials/arrow_trail.material"
+          >
+            <particle
+              color="{color}"
+              startalpha="1"
+              endalpha="0"
+              startsize="20"
+              endsize="0"
+            />
+          </trailemitter>
+        </template>
+        
+        <instance name="combo_trail" color=".5 0 .8" bone="_bone_lefthand" />
+        <instance name="combo_trail" color=".5 0 .8" bone="_bone_righthand" />
+        <instance name="combo_trail" color=".5 0 1" bone="_bone_leftfoot" />
+        <instance name="combo_trail" color=".5 0 1" bone="_bone_rightfoot" />
+  -->
+
+        <billboard
+          bone="_bone_lefthand"
+          material="/shared/effects/materials/whitedot.material"
+          color="{color}"
+          size="30"
+        />
+        <trailemitter
+          bone="_bone_weapon1"
+          spawnrate="150"
+          particlelife="200"
+          texposscale="0"
+          texstretchscale="1"
+          material="/shared/effects/materials/arrow_trail_blend.material"
+        >
+          <particle
+            color="{color}"
+            startalpha="1"
+            endalpha="0"
+            startsize="20"
+            endsize="0"
+          />
+        </trailemitter>        
+		
+		<trailemitter
+          bone="_bone_weapon3"
+          spawnrate="150"
+          particlelife="200"
+          texposscale="0"
+          texstretchscale="1"
+          material="/shared/effects/materials/arrow_trail_blend.material"
+        >
+          <particle
+            color="{color}"
+            startalpha="1"
+            endalpha="0"
+            startsize="20"
+            endsize="0"
+          />
+        </trailemitter>
+        <billboard
+          bone="_bone_weapon3"
+          material="/shared/effects/materials/whitedot.material"
+          color="{color}"
+          size="30"
+        />
+        <trailemitter
+          bone="_bone_righthand"
+          spawnrate="150"
+          particlelife="200"
+          texposscale="0"
+          texstretchscale="1"
+          material="/shared/effects/materials/arrow_trail_blend.material"
+        >
+          <particle
+            color="{color}"
+            startalpha="1"
+            endalpha="0"
+            startsize="20"
+            endsize="0"
+          />
+        </trailemitter>
+        <billboard
+          bone="_bone_leftfoot"
+          material="/shared/effects/materials/whitedot.material"
+          color="{color}"
+          size="30"
+        />
+        <trailemitter
+          bone="_bone_leftfoot"
+          spawnrate="150"
+          particlelife="400"
+          texposscale="0"
+          texstretchscale="1"
+          material="/shared/effects/materials/arrow_trail_blend.material"
+        >
+          <particle
+            color="{color}"
+            startalpha="1"
+            endalpha="0"
+            startsize="20"
+            endsize="0"
+          />
+        </trailemitter>
+        <billboard
+          bone="_bone_rightfoot"
+          material="/shared/effects/materials/whitedot.material"
+          color="{color}"
+          size="30"
+        />
+        <trailemitter
+          bone="_bone_rightfoot"
+          spawnrate="150"
+          particlelife="400"
+          texposscale="0"
+          texstretchscale="1"
+          material="/shared/effects/materials/arrow_trail_blend.material"
+        >
+          <particle
+            color="{color}"
+            startalpha="1"
+            endalpha="0"
+            startsize="20"
+            endsize="0"
+          />
+        </trailemitter>
+        
+        
+        
+
+        
+        <simpleemitter
+          bone="_bone_lefthand"
+          position="0 5 0"
+          count="1"
+          delay="3500"
+          particlelife="850"
+          material="/shared/effects/materials/whitedot.material"
+        >
+          <particle
+            startsize="0"
+            midsize="140"
+            midsizepos=".95"
+            endsize="100"
+            startcolor="{color}"
+            midcolor="{color}"
+            endcolor="0"
+            anchor="1"
+          />
+        </simpleemitter>
+        
+    
+
+      </template>
+      
+      <instance name="color_picker" color=".3 .3 .3"/>
+      
+      </particlesystem>
+   </definitions>
+   
+   <thread>
+    <spawnparticlesystem instance="instance0" particlesystem="system0" />
+    <waitfordeath instance="instance0" />
+    <!-- <die /> -->
+   </thread>
+   
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+	<definitions>
+
+
+
+		<particlesystem name="system0" space="world" scale="1.0">
+		
+		
+				<template name="dust">
+				<simpleemitter
+					count="0"
+					bone="{bone}"
+					gravity="-1"
+					spawnrate="15"
+					minparticlelife="900"
+					maxparticlelife="1650"
+					offsetsphere="15 15 0"
+					material="/shared/effects/materials/smoke_particle.material"
+					depthbias="0"
+					inheritvelocity="-0.1"
+				>
+					<particle 
+						minangle="-360"
+						maxangle="360"		
+						startcolor=".8 .6 .65"
+						endcolor=".8 .6 .76"
+						size="10"
+						minstartscale="6"
+						maxstartscale="8"
+						maxendscale="20"
+						minendscale="12"
+						startalpha="0"
+						midalpha="0.07"
+						midalphapos="0.2"
+						endalpha="0"
+					/>
+				</simpleemitter>
+			</template>
+			<instance name="dust" bone="BONE_Foot01"/>
+			<instance name="dust" bone="BONE_Foot02"/>
+			<instance name="dust" bone="BONE_Foot03"/>
+			<instance name="dust" bone="BONE_Foot04"/>
+
+			
+			<template name="dust">
+				<simpleemitter
+					bone="{bone}"
+					gravity="-1"
+					spawnrate="15"
+					minparticlelife="950"
+					maxparticlelife="1450"
+					offsetsphere="20 20 0"
+					material="/shared/effects/materials/dust_smoke_10.material"
+					depthbias="0"
+					inheritvelocity="-0.1"
+				>
+					<particle 
+						minangle="-360"
+						maxangle="360"		
+						color="0.9 0.85 .76"
+						size="10"
+						minstartscale="5"
+						maxstartscale="10"
+						minendscale="15"
+						maxendscale="20"
+						startalpha="0"
+						midalpha=".1"
+						midalphapos="0.2"
+						endalpha="0"
+					/>
+				</simpleemitter>
+			</template>
+			
+			<instance name="dust" bone="BONE_Foot01"/>
+			<instance name="dust" bone="BONE_Foot02"/>
+			<instance name="dust" bone="BONE_Foot03"/>
+			<instance name="dust" bone="BONE_Foot04"/>
+			
+		
+		</particlesystem>
+	</definitions>
+	<thread>
+		 
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

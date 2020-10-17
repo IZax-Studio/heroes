@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Treant_Ability4_Self"
+
+	icon="icon4.tga"
+	passiveeffect=""
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+
+	unitwalking="true"
+>
+</state>

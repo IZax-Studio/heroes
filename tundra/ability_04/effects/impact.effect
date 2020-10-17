@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true" deferred="true">
+	<definitions>
+
+
+		
+		<particlesystem name="system0" space="world" scale="1.8">
+
+	
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume=".4"
+				sample="../../custom/sounds/spells/crumble_%.wav"
+			/>
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume=".4"
+				sample="../../custom/sounds/spells/quake_%.wav"
+			/>
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume=".4"
+				sample="../../custom/sounds/spells/storm_bolt_impact.wav"
+			/>
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume=".4"
+				sample="../../custom/sounds/spells/boulder_%.wav"
+			/>
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume=".4"
+				sample="../../custom/sounds/spells/omni_%.wav"
+			/>
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume=".4"
+				sample="../../custom/sounds/spells/crit_%.wav"
+				
+			/>
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume=".4"
+				sample="../../custom/sounds/spells/bash.wav"
+			/>
+			<model
+				life="4000"
+				parentmodel="true"
+				parentskeleton="true"
+				material="/heroes/predator/stone_material.material"
+				color="1"	
+				alpha="1"
+	
+			/>
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume=".2"
+				sample="../../custom/sounds/spells/riki_smokescreen.wav"
+			/>
+			
+			<model
+				life="4000"
+				parentmodel="true"
+				parentskeleton="true"
+				material="../../custom/materials/c_stone.material"
+				color="1"	
+				alpha="1"
+	
+			/>
+		
+			
+			
+		
+		
+			<simpleemitter
+				bone="_bone_centerofchest"
+				count="4"
+				particlelife="1500"
+				material="/shared/effects/materials/smoke_01.material"
+				offsetsphere="20 20 50"
+				minangle="0"
+				maxangle="360"
+				gravity=".2"
+				speed="10"
+				direction="0 0 0"
+			>
+				<particle
+					minangle="0"
+					maxangle="0"
+					minanglespeed="100"
+					color=".7 .5 .4"
+				
+					maxanglespeed="0"
+					startframe="0"
+					endframe="1"
+					startsize="180"
+					endsize="70"
+					startalpha="0"
+					midalpha=".2"
+					endalpha="0"
+					midalphpos=".1"
+				/>
+			</simpleemitter>
+			
+			
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="1000"
+				startcolor=".7 .5 .4"
+				midcolor=".7 .5 .4"
+				midcolorpos="0.3"
+				endcolor="0"
+				startsize="175"
+				endsize="0"
+				depthbias="0"
+				material="/shared/effects/materials/whitedot.material"
+				position="0 0 0"
+			/>
+			
+
+			
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			<simpleemitter
+				count="20"
+				position="0 0 20"
+				spawnrate="500"
+				speed="20"
+				drag="0.15"
+				direction="0 0 1"
+				minparticlelife="1000"
+				maxparticlelife="1500"
+				offsetsphere="75 75 0"
+				gravity="1"
+				material="/shared/effects/materials/dust_smoke_10.material"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					color=".65"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".2"
+					startsize="100"
+					endsize="150"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				delay="100"
+				
+				position="0 0 0"
+				life="400"
+				spawnrate="500"
+				speed="20"
+				drag="0.15"
+				direction="0 0 1"
+				minparticlelife="1000"
+				maxparticlelife="1500"
+				offsetsphere="30 30 0"
+				count="20"
+				depthbias="-100"
+				gravity="1"
+				material="/shared/effects/materials/dust_smoke_10.material"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					color=".65"
+					startalpha="0"
+					midalpha=".2"
+					endalpha="0"
+					midalphapos=".2"
+					startsize="50"
+					endsize="75"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+			
+				position="0 0 25"
+				life="400"
+				spawnrate="500"
+				speed="20"
+				drag="0.15"
+				direction="0 0 1"
+				minparticlelife="1000"
+				maxparticlelife="1500"
+				offsetsphere="30 30 30"
+				count="20"
+				depthbias="-100"
+				gravity="1"
+				material="/shared/effects/materials/dust_smoke_10.material"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					color=".65"
+					startalpha="0"
+					midalpha=".3"
+					endalpha="0"
+					midalphapos=".2"
+					startsize="75"
+					endsize="100"
+				/>
+			</simpleemitter>
+
+
+		
+		<simpleemitter
+			delay="000"
+			position="0 -50 0"
+			life="1000"
+			spawnrate="15"
+			speed="20"
+			drag="0.15"
+			direction="0 0 1"
+			minparticlelife="1000"
+			maxparticlelife="1500"
+			offsetsphere="35 35 30"
+			count="15"
+			depthbias="-100"
+			gravity="-15"
+			material="/shared/effects/materials/dust_smoke_10.material"
+		>
+			<particle
+				minangle="0"
+				maxangle="360"
+				color=".65"
+				startalpha="0"
+				midalpha=".2"
+				endalpha="0"
+				midalphapos=".2"
+				startsize="150"
+				endsize="250"
+			/>
+		</simpleemitter>
+		
+		<simpleemitter
+				count="1"
+				
+				spawnrate="222"			
+				
+				particlelife="5000"			
+				
+			>
+				<particle>	
+					
+					
+					<groundsprite
+						delay="100"
+						life="3000"
+						material="/shared/effects/materials/ground_smash_overlay.material"
+						size="30"			
+						color="1.0 1.0 1.0"
+						startalpha="1"
+						endalpha="0"
+					/>		
+									
+					
+					
+						
+					<debris
+					
+						position="0 0 10"
+						delay="0"
+						scale=".40"
+						life="3000"
+						model="/shared/effects/models/debris/debris.mdf"
+						anim="idle"	
+						minspeed="75.0"
+						maxspeed="250.0"
+						minrotationspeed="500.0"
+						maxrotationspeed="600.0"
+						gravity="20.0"
+						minangle="0"
+						color=".7 .7 .4"
+						maxangle="50"
+						collide="true"
+						startalpha="1.0"
+						midalpha="1.0"
+						endalpha="0.0"
+						midalphapos="0.9"
+						bounce="0.7"
+						reflect="0.6"
+						animpose="false"
+					/>	
+					
+					<debris
+						position="0 0 10"
+						delay="122"
+						scale=".40"
+						life="3000"
+						model="/shared/effects/models/debris/debris.mdf"
+						anim="idle"	
+						minspeed="75.0"
+						maxspeed="250.0"
+						minrotationspeed="500.0"
+						maxrotationspeed="600.0"
+						gravity="20.0"
+						minangle="0"
+						color=".7 .7 .4"
+						maxangle="40"
+						collide="true"
+						startalpha="1.0"
+						midalpha="1.0"
+						endalpha="0.0"
+						midalphapos="0.9"
+						bounce="0.7"
+						reflect="0.6"
+						animpose="false"
+					/>						
+					
+						<debris
+					
+						position="0 0 10"
+						delay="0"
+						scale=".40"
+						life="3000"
+						model="/shared/effects/models/debris/debris.mdf"
+						anim="idle"	
+						minspeed="75.0"
+						maxspeed="250.0"
+						minrotationspeed="500.0"
+						maxrotationspeed="600.0"
+						gravity="20.0"
+						minangle="0"
+						color=".7 .7 .4"
+						maxangle="50"
+						collide="true"
+						startalpha="1.0"
+						midalpha="1.0"
+						endalpha="0.0"
+						midalphapos="0.9"
+						bounce="0.7"
+						reflect="0.6"
+						animpose="false"
+					/>	
+					
+					<debris
+						position="0 0 10"
+						delay="122"
+						scale=".40"
+						life="3000"
+						model="/shared/effects/models/debris/debris.mdf"
+						anim="idle"	
+						minspeed="75.0"
+						maxspeed="250.0"
+						minrotationspeed="500.0"
+						maxrotationspeed="600.0"
+						gravity="20.0"
+						minangle="0"
+						color=".7 .7 .4"
+						maxangle="40"
+						collide="true"
+						startalpha="1.0"
+						midalpha="1.0"
+						endalpha="0.0"
+						midalphapos="0.9"
+						bounce="0.7"
+						reflect="0.6"
+						animpose="false"
+					/>						
+				
+									<debris
+					
+						position="0 0 10"
+						delay="0"
+						scale=".40"
+						life="3000"
+						model="/shared/effects/models/debris/debris.mdf"
+						anim="idle"	
+						minspeed="75.0"
+						maxspeed="250.0"
+						minrotationspeed="500.0"
+						maxrotationspeed="600.0"
+						gravity="20.0"
+						minangle="0"
+						color=".7 .7 .4"
+						maxangle="50"
+						collide="true"
+						startalpha="1.0"
+						midalpha="1.0"
+						endalpha="0.0"
+						midalphapos="0.9"
+						bounce="0.7"
+						reflect="0.6"
+						animpose="false"
+					/>	
+					
+					<debris
+						position="0 0 10"
+						delay="122"
+						scale=".40"
+						life="3000"
+						model="/shared/effects/models/debris/debris.mdf"
+						anim="idle"	
+						minspeed="75.0"
+						maxspeed="250.0"
+						minrotationspeed="500.0"
+						maxrotationspeed="600.0"
+						gravity="20.0"
+						minangle="0"
+						color=".7 .7 .4"
+						maxangle="40"
+						collide="true"
+						startalpha="1.0"
+						midalpha="1.0"
+						endalpha="0.0"
+						midalphapos="0.9"
+						bounce="0.7"
+						reflect="0.6"
+						animpose="false"
+					/>						
+				
+				</particle>
+
+			</simpleemitter>	
+
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+				<simpleemitter
+				count="1"
+				spawnrate="222"			
+				particlelife="5000"			
+			>
+				<particle>	
+					
+				
+					
+					<simpleemitter
+						bone="_bone_centerofchest"
+						offsetsphere="50 50 50"
+						spawnrate="222"			
+						count="21"
+						particlelife="1300"			
+						gravity="3"					
+						acceleration="0"
+						speed="80"
+						position="0 0 10"					
+						material="/shared/effects/materials/pyroclast_01.material"	
+					>
+						<particle
+								minangle="-360"
+								maxangle="360"
+								color=".2"
+								startsize="20"
+								endsize="70"
+								minanglespeed="-30"
+								maxanglespeed="73"
+								
+								startalpha="0"
+								midalpha=".5"
+								endalpha="0"
+					
+								frame="1"
+								framespeed="1"
+
+							
+								anchor="1"
+				
+								lockup="0"
+								lockright="false"
+
+								
+								turn="false"
+						/>
+					</simpleemitter>	
+										
+					<billboard
+						
+						life="1800"
+						startcolor="0.4 0.4 0.2"
+						endcolor="0 0 0"
+						startalpha="0.7"
+						midalpha="0.35"
+						endalpha="0.0"
+						midalphapos="0.75"
+						startparam="0.05"
+						endparam="0.0"
+						
+						
+						startsize="100"
+						midsize="220"
+						endsize="300"
+						midsizepos=".4"
+						
+						
+						depthbias="0"
+						position="0 0 50"
+						material="/shared/effects/materials/stomp_02.material"
+						lockup="true"
+						pitch="90"
+					/>
+				
+				
+						
+
+
+				
+					<debris
+						position="0 0 10"
+						delay="0"
+						scale=".6"
+						life="3000"
+						model="/shared/effects/models/debris/debris.mdf"
+						anim="idle"	
+						minspeed="100.0"
+						maxspeed="400.0"
+						minrotationspeed="500.0"
+						maxrotationspeed="600.0"
+						gravity="20.0"
+						minangle="0"
+						color=".7 .7 .4"
+						maxangle="50"
+						collide="true"
+						startalpha="1.0"
+						midalpha="1.0"
+						endalpha="0.0"
+						midalphapos="0.9"
+						bounce="0.7"
+						reflect="0.6"
+						animpose="false"
+					/>	
+					
+					<debris
+						position="0 0 10"
+						delay="122"
+						scale=".6"
+						life="3000"
+						model="/shared/effects/models/debris/debris.mdf"
+						anim="idle"	
+						minspeed="100.0"
+						maxspeed="400.0"
+						minrotationspeed="500.0"
+						maxrotationspeed="600.0"
+						gravity="20.0"
+						minangle="0"
+						color=".7 .7 .4"
+						maxangle="40"
+						collide="true"
+						startalpha="1.0"
+						midalpha="1.0"
+						endalpha="0.0"
+						midalphapos="0.9"
+						bounce="0.7"
+						reflect="0.6"
+						animpose="false"
+					/>						
+				
+				</particle>
+
+			</simpleemitter>	
+			
+			<simpleemitter
+				speed="100"
+				life="300"
+				spawnrate="100"
+				count="15"
+				position="0 0 0"
+				minparticlelife="1100"
+				maxparticlelife="1500"
+				material="/shared/effects/materials/pyroclast_01.material"
+				offsetsphere="55 55 100"
+				depthbias="-20"
+			>
+				<particle 
+					minanglespeed="-80"
+					maxanglespeed="80"
+					color=".36 .33 .2"
+			
+					size="40"
+					midsizepos=".65"
+					endsize="70"
+					startscale="1.5"
+					endscale="3"
+					endstickiness=".9"
+					startalpha=".5"
+					midalpha=".25"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="1000"
+				position="0 0 0"
+				startcolor=".3 .2 .1"
+				endcolor="0"
+				size="150"
+				depthbias="-30"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+						<simpleemitter
+							
+								speed="0"
+								life="1750"
+								spawnrate="10"
+								position="0 0 0"
+								minparticlelife="500"
+								maxparticlelife="1250"
+								material="/shared/effects/materials/pyroclast_03.material"
+								offsetsphere="5"
+								depthbias="-25"
+								inheritvelocity=".0"
+							>
+								<particle 
+									minanglespeed="-80"
+									maxanglespeed="80"
+									color=".5"
+									minsize="14"
+									maxsize="48"
+									startscale="2"
+									endscale="4"
+									startalpha=".5"
+									endalpha="0"
+								/>
+							</simpleemitter>
+			
+			
+			<simpleemitter
+				spawnrate="3000"
+				life="1100"
+				count="20"
+				position="0 0 0"
+				minparticlelife="1000"
+				maxparticlelife="1500"
+				depthbias="-40"
+				material="/shared/effects/materials/dust.material"
+				offsetsphere="75"
+				minspeed="0"
+				maxspeed="400"
+				angle="10"
+				direction="0 0 1"
+				drag=".01"
+				gravity="15"
+			>
+				<particle 
+					minangle="-25"
+					maxangle="25"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					color=".6"
+			
+					startsize="50"
+					midsize="80"
+					endsize="120"
+					startalpha="0"
+					midalpha=".7"
+					endalpha="0"
+				/>
+				<particle 
+					minangle="-25"
+					maxangle="25"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					color=".6"
+				
+					startsize="60"
+					midsize="90"
+					endsize="120"
+					startalpha="0"
+					midalpha=".7"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<camerashake2 scale="4" radius="1200" duration="400" frequency="22" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
+
+

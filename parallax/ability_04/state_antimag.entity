@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Parallax_Ability4_AntiMag"
+
+	icon="icon4.tga"
+
+	movespeedslow="0.1"
+	movespeedslowpercharge="0.004"
+	effecttype="StatusDebuff"
+	allowtransfer="false" 
+	maxcharges="50"
+	
+
+	impactinterval="1000"
+
+	negativeeffect="slowed"
+>
+	<onframe>
+		<addcharges entity="this_entity" count="1" />
+	</onframe>
+	
+	<onimpact>
+		<pushability name="Ability_Parallax3" source="source_entity" />
+		<compare source="stack_entity" a="source_accumulator" b="5" op="lt">
+			<addcharges count="1" entity="stack_entity" />
+			<setaccumulator source="stack_entity" value="source_accumulator" valueb="1" valueop="add" entity="stack_entity" />
+		</compare>
+	</onimpact>
+</state>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Tempest_Ability3_Selfbind"
+	
+	icon="icon3.tga"
+	ishidden="true"
+	passiveeffect=""
+	
+	invulnerable="true"
+	stunned="true"
+	
+	effecttype=""
+	
+>
+	
+</state>

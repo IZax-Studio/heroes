@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="" file="spin2.model" type="K2" >
+	<anim name="idle" clip="spin2.clip" fps="170" loop="1" />
+</model>

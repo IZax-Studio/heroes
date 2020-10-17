@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Nomad_Ability2_Death"
+	
+	icon="iconaa.tga"
+	passiveeffect=""
+	ishidden="true"
+	attackspeed=".2,.4,.6,.8"
+	disarmed="true"
+	
+>
+	<onexpired>
+		<kill />
+		<playeffect effect="effects/death.effect" source="target_position" target="target_position" occlude="true" />
+	</onexpired >
+
+	<altavatar key="Hero_Nomad.Alt7"
+	>
+	<onexpired>
+		<kill />
+		<playeffect effect="../alt7/ability_2/effects/death.effect" source="target_position" target="target_position" occlude="true" />
+	</onexpired >
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt8"
+	>
+	<onexpired>
+		<kill />
+		<playeffect effect="../alt8/ability_02/effects/death.effect" source="target_position" target="target_position" occlude="true" />
+	</onexpired >
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt9"
+	>
+	<onexpired>
+		<kill />
+		<playeffect effect="../alt9/ability_02/effects/death.effect" source="target_position" target="target_position" occlude="true" />
+	</onexpired >
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt11"
+	>
+	<onexpired>
+		<kill />
+		<playeffect effect="../alt11/ability_02/effects/death.effect" source="target_position" target="target_position" occlude="true" />
+	</onexpired >
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt12"
+		icon="../alt12/ability_02/icon.tga"
+	>
+		<modifier key="nomadAlt12_Ability2_Upgrade"
+			icon="../alt12/ability_02/icon_u.tga"
+		/>
+	<onexpired>
+		<kill />
+			<hasmodifier name="nomadAlt12_Ability2_Upgrade">
+				<playeffect effect="../alt12/ability_02/effects/death_upgrade.effect" source="target_position" target="target_position" occlude="true" />
+			</hasmodifier>
+			<else>
+				<playeffect effect="../alt12/ability_02/effects/death.effect" source="target_position" target="target_position" occlude="true" />
+			</else>
+	</onexpired >
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt13"
+	>
+	<onexpired>
+		<kill />
+		<playeffect effect="../alt13/ability_02/effects/death.effect" source="target_position" target="target_position" occlude="true" />
+	</onexpired >
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt14"
+	>
+	<onexpired>
+		<kill />
+		<playeffect effect="../alt14/ability_02/effects/death.effect" source="target_position" target="target_position" occlude="true" />
+	</onexpired >
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt15"
+	>
+	<onexpired>
+		<kill />
+		<playeffect effect="../alt13/ability_02/effects/death.effect" source="target_position" target="target_position" occlude="true" />
+	</onexpired >
+	</altavatar>
+</state>

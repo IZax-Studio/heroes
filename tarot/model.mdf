@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="grimstroke.model" type="K2" high="grimstroke.model" med="grimstroke.model" low="grimstroke.model">
+
+	<anim name="idle" clip="clips/default_1.clip" fps="30" loop="true"/>
+	
+	<anim name="portrait" clip="clips/portrait_1.clip" loop="true"/>
+	
+	<anim name="taunt_1" clip="clips/taunt_1.clip"/>
+
+	<anim name="item_1" clip="clips/item_1.clip"/>
+		
+	<anim name="ability_1" clip="clips/ability_1.clip" fps="30" loop="false">
+		<frameevent frame="9" cmd="PlaySoundLinear sounds/attack_%.wav 400 1800 .35"/>
+		<frameevent frame="7" cmd="PlaySoundLinear ../ability_01/sounds/cast.wav 400 2500 1"/>
+		<frameevent frame="23" cmd="PlaySoundLinear sounds/ab1.wav 400 2500 1"/>
+		<frameevent frame="18" cmd="PlaySoundLinear /heroes/witch_slayer/sounds/move_%.wav 0 700 .5"/>
+	</anim>
+
+	<anim name="ability_2" clip="clips/ability_2.clip" fps="30" loop="false" blendtime="150">
+		<frameevent frame="9" cmd="PlaySoundLinear sounds/attack2.wav 400 1800 1"/>
+		<frameevent frame="9" cmd="PlaySoundLinear ability_02/sounds/cast.wav 400 2500 .5"/>
+		<frameevent frame="18" cmd="PlaySoundLinear /heroes/witch_slayer/sounds/move_%.wav 0 700 .5"/>
+	</anim>
+	
+	<anim name="ability_3" clip="clips/ability_3.clip" fps="30" loop="false" blendtime="150">
+	</anim>
+	
+	<anim name="ability_4" clip="clips/ability_4.clip" fps="30" loop="false">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/charge.wav 400 2500 1"/>
+		<frameevent frame="12" cmd="PlaySoundLinear /heroes/witch_slayer/sounds/move_%.wav 0 700 .5"/>
+	</anim>
+	
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="30" loop="false" blendtime="150">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/attack_%.wav 500 1300 1"/>
+	</anim>
+	
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="30" loop="false" blendtime="150">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/attack_%.wav 500 1300 1"/>
+	</anim>
+	
+	<anim name="walk_1" clip="clips/walk_1.clip" fps="30" loop="true" loopbackframe="1">
+	</anim>
+
+	<anim name="bored_1" clip="clips/bored_1.clip" fps="24" loop="false" >
+		<startevent cmd="StartEffect effects/bored.effect 0" />
+		<endevent cmd="StopEffect 0" />
+	</anim>
+	
+	<anim name="death_1" clip="clips/death_1.clip" fps="30" loop="true" loopbackframe="-1" >
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/death_%.wav 1300 1300 1"/>
+	</anim>
+
+	<anim name="knock_1" clip="clips/knock_1.clip" loop="true" loopbackframe="-1"/>
+
+</model>

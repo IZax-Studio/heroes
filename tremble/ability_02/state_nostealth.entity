@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Tremble_Ability2_NoStealth"
+
+	icon="icon2.tga"
+	
+	modifierkey="Tremble_NoStealth"
+>
+</state>

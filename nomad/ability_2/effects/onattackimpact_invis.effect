@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1" >
+
+	<definitions>
+	
+	
+		<particlesystem name="system0" space="world" scale="1">
+<!--
+			<simpleemitter
+				count="1"
+				spawnrate="2500"
+				particlelife="1000"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+				turn="true"
+				>
+					<model
+						position="0 300 0"
+						startscale="2"
+						endscale="1.75"
+						life="500"
+						model="../../model.mdf"
+						material="/shared/effects/materials/shell2.material"
+						anim="attack_2_fast"
+						startcolor="0 0 0"
+						midcolor="1 .65 .3"
+						endcolor="0 0 0"
+						midcolorpos=".1"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".35"
+						directionalspace="local"
+						yaw="180"
+					/>
+					
+					<model
+						position="-65 145 0"
+						startscale="2"
+						endscale="1.75"
+						life="500"
+						model="../../model.mdf"
+						material="/shared/effects/materials/shell2.material"
+						anim="attack_1_fast"
+						startcolor="0 0 0"
+						midcolor="1 .65 .3"
+						endcolor="0 0 0"
+						midcolorpos=".1"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".35"
+						directionalspace="local"
+						yaw="270"
+					/>
+					<model
+						position="65 145 0"
+						startscale="2.25"
+						endscale="2"
+						life="500"
+						model="../../model.mdf"
+						material="/shared/effects/materials/shell2.material"
+						anim="ability_2_attack"
+						startcolor="0 0 0"
+						midcolor="1 .65 .3"
+						endcolor="0 0 0"
+						midcolorpos=".1"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".35"
+						directionalspace="local"
+						yaw="90"
+					/>
+				</particle>
+			</simpleemitter>
+-->
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		  <spawnparticlesystem instance="instance0" particlesystem="system0"/>
+  		  <spawnmodifier instance="instance1" modifier="modifier0"/> 
+  		  <waitfordeath instance="instance0" />
+
+	</thread>
+
+</effect>

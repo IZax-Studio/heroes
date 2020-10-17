@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Panda_Ability2_Restrain"
+
+	icon="icon_2.tga"
+	passiveeffect="effects/restrained.effect"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	restrained="true"
+	
+	negativeeffect="restrained"
+>
+	<onframe />
+	
+	<altavatar key="Hero_Panda.Alt2"
+		icon="/heroes/panda/alt2/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Panda.Alt10"
+		icon="/heroes/panda/alt10/ability_02/icon.tga"
+	>
+	    <modifier key="Night_Set_PandaAlt10"
+			icon="/heroes/panda/alt11/ability_02/icon.tga"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Panda.Alt11"
+		icon="/heroes/panda/alt11/ability_02/icon.tga"
+	>
+	    <modifier key="Night_Set_PandaAlt11"
+			icon="/heroes/panda/alt10/ability_02/icon.tga"
+		/>
+	</altavatar>
+	
+</state>

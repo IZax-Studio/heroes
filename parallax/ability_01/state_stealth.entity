@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Parallax_Ability1_Stealth"
+	icon="icon1.tga"	
+	passiveeffect=""
+	
+	stealthtype="hero"
+	fadetime="0"
+	
+	effecttype="StatusStealth"
+	allowtransfer="true"
+>
+</state>

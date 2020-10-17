@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+	
+		<particlesystem name="system0" space="entity" scale=".85">
+
+			<sound
+				sample="/heroes/dreadknight/ability_01/sounds/impact.ogg"
+				volume="0.95"
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="1100"
+			/>
+
+			<orbiteremitter
+				life="250"
+				position="0 0 25"
+				spawnrate="50"
+				minparticlelife="750"
+				maxparticlelife="1000"
+				origin="0 0 -25" 
+				orbit="0 0 0" 
+				direction="0 0 1" 
+				offset="25 0 0"
+				cylindrical="true" 
+				material="/shared/effects/materials/flare_03.material"
+				depthbias="-15"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-180"
+					maxanglespeed="180"
+					startcolor="0 1 1"
+					endcolor="0 1 1"
+					startframe="0"
+					endframe="1"
+					minsize="75"
+					maxsize="125"
+					startalpha="0"
+					midalpha=".15"
+					endalpha="0"
+					midalphapos=".25"
+					minheight="250"
+					maxheight="500"
+					width="25"
+					lockup="1"
+					lockright="1"
+				/>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-180"
+					maxanglespeed="180"
+					startcolor="0 1 1"
+					endcolor="0 0 0"
+					startframe="0"
+					endframe="1"
+					minsize="75"
+					maxsize="125"
+					startalpha="0"
+					midalpha=".15"
+					endalpha="0"
+					midalphapos=".25"
+					minheight="250"
+					maxheight="500"
+					width="25"
+					lockup="1"
+					lockright="1"
+				/>
+			</orbiteremitter>
+			
+			<orbiteremitter
+				life="250"
+				position="0 0 25"
+				spawnrate="50"
+				minparticlelife="750"
+				maxparticlelife="1000"
+				origin="0 0 -25" 
+				orbit="0 0 0" 
+				direction="0 0 1" 
+				offset="25 0 0"
+				cylindrical="true" 
+				material="/shared/effects/materials/flare_03.material"
+				depthbias="-15"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-180"
+					maxanglespeed="180"
+					startcolor="0 1 1"
+					endcolor="0 0 0"
+					startframe="0"
+					endframe="1"
+					minsize="75"
+					maxsize="125"
+					lockup="1"
+					lockright="1"
+				/>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-180"
+					maxanglespeed="180"
+					startcolor="0 1 1"
+					endcolor="0 0 0"
+					startframe="0"
+					endframe="1"
+					minsize="75"
+					maxsize="125"
+					lockup="1"
+					lockright="1"
+				/>
+			</orbiteremitter>
+			
+			<orbiteremitter
+				life="250"
+				position="0 0 50"
+				spawnrate="50"
+				minparticlelife="750"
+				maxparticlelife="1000"
+				origin="0 0 -10" 
+				orbit="0 0 0" 
+				direction="0 0 1" 
+				offset="35 0 0"
+				cylindrical="true" 
+				material="/shared/effects/materials/flare_03.material"
+				depthbias="-15"
+			>
+				<particle 
+					minangle="0"
+					maxangle="0"
+					minanglespeed="0"
+					maxanglespeed="0"
+					startcolor="0 1 1"
+					endcolor="0 0 0"
+					startframe="0"
+					endframe="1"
+					minsize="75"
+					maxsize="125"
+					startalpha="0"
+					midalpha=".15"
+					endalpha="0"
+					midalphapos=".25"
+					minheight="250"
+					maxheight="650"
+					width="25"
+					lockup="1"
+					lockright="1"
+				/>
+			</orbiteremitter>
+
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+	   <spawnmodifier instance="instance1" modifier="modifier0"/>  
+	    <camerashake2 scale="5.0" radius="600" duration="200" frequency="22" />
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

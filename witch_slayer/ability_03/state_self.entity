@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_WitchSlayer_Ability3_Self"
+	
+	icon=""
+	passiveeffect=""
+	ishidden="true"
+	
+	alwaystransmitdata="true"
+
+	effecttype=""
+>
+	<altavatar key="Hero_WitchSlayer.Alt8"
+		icon="../alt8/ability_03/icon.tga"
+	>
+		<modifier key="Alt8_Ability3_Upgrade" modpriority="99"
+			icon="../alt8/ability_03/icon_upgrade.tga"
+		/>
+	</altavatar>
+</state>

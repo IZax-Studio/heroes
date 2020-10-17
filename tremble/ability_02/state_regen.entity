@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Tremble_Ability2_Regen"
+
+	icon="icon2.tga"
+	passiveeffect=""
+	ishidden="false"
+	
+	movespeedmultiplier="0.1,0.15,0.2,0.25"
+	unitwalking="true"
+	healthregen="2,3,4,5"
+>
+
+</state>

@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1.2">
+ 
+ <sound
+				forcestereo="true"
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="2500"
+				volume="1"
+				sample="../../sounds/ab3_explode.wav"
+			/>
+			
+ 			<sound
+				soundloop="true"
+				fadein="200"
+				fadeout="500"
+				linearfalloff="true"
+				falloffstart="400"
+				falloffend="1800"
+				volume="1"
+				sample="/heroes/monarch/alt4/ability_03/sounds/loop_alt4.wav"
+			/>
+			
+			 <sound
+				linearfalloff="true"
+				falloffstart="400"
+				falloffend="1800"
+				volume=".96"
+				sample="/heroes/monarch/alt4/ability_03/sounds/cast.wav"
+			/>
+			
+			<simpleemitter
+				spawnrate="30"
+				minparticlelife="1250"
+				maxparticlelife="2000"
+				gravity="-.2"
+				speed="10"
+				drag="0.07"
+				acceleration="0.0"
+				mintimenudge="0"
+				maxtimenudge="1000"
+				position="0 0 30"
+				material="/shared/effects/materials/smoke_25.material"
+				depthbias="-50"
+				offsetsphere="150 150 0"
+				inheritvelocity=".5"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-30"
+					color="1"
+					maxanglespeed="30"
+					minsize="50"
+					maxsize="100"
+					startalpha="0"
+					midalpha=".4"
+					endalpha="0"
+					midalphapos=".25"
+					startanchor="0"
+					endanchor="0"
+				/>
+			</simpleemitter>
+
+			<model
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				anim="idle"
+				color="1 .5 .5"
+				startscale="1"
+				endscale="3"
+				life="5000"
+				position="0 0 0"
+			>
+			
+				<template name="smoke">
+
+
+				
+					<simpleemitter
+						life="1500"
+						bone="{bone}"
+						spawnrate="80"
+						particlelife="2000"
+						gravity="-.2"
+						speed="10"
+						drag="0.07"
+						acceleration="0.0"
+						mintimenudge="0"
+						maxtimenudge="1000"
+						position="0 0 30"
+						material="/shared/effects/materials/snowflake.material"
+						depthbias="-25"
+						offsetradial="100 100 0"
+						inheritvelocity="0"
+					>
+						<particle 
+							minangle="0"
+							maxangle="360"
+							minanglespeed="-30"
+							color="1"
+							maxanglespeed="30"
+							startsize="5"
+							endsize="20"
+							startalpha="0"
+							midalpha=".4"
+							endalpha="0"
+							midalphapos=".2"
+							startanchor="0"
+							endanchor="0"
+						 />
+					</simpleemitter>
+
+					<simpleemitter
+						delay="1250"
+						life="3000"
+						bone="{bone}"
+						spawnrate="50"
+						particlelife="2000"
+						gravity="-.2"
+						speed="10"
+						drag="0.07"
+						acceleration="0.0"
+						mintimenudge="0"
+						maxtimenudge="1000"
+						position="0 0 30"
+						material="/shared/effects/materials/phantom_white.material"
+						depthbias="-25"
+						offsetradial="50 50 0"
+						inheritvelocity="0"
+					>
+						<particle 
+							minangle="0"
+							maxangle="360"
+							minanglespeed="-30"
+							color="1"
+							maxanglespeed="30"
+							startsize="30"
+							endsize="90"
+							startalpha="0"
+							midalpha=".1"
+							endalpha="0"
+							midalphapos=".2"
+							startanchor="0"
+							endanchor="0"
+						 />
+					</simpleemitter>
+				</template>
+
+				<instance name="smoke" bone="Scene Root" />
+			</model>
+			
+			
+			
+			
+
+			<simpleemitter
+				spawnrate="20"
+				particlelife="2000"
+				gravity="-.2"
+				speed="10"
+				drag="0.07"
+				acceleration="0.0"
+				mintimenudge="0"
+				maxtimenudge="1000"
+				position="0 0 30"
+				material="/shared/effects/materials/smoke_25.material"
+				depthbias="-25"
+				offsetsphere="200 200 0"
+				inheritvelocity="0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-30"
+					color="1"
+					maxanglespeed="30"
+					minsize="50"
+					maxsize="100"
+					startalpha="0"
+					midalpha=".3"
+					endalpha="0"
+					midalphapos=".2"
+					startanchor="0"
+					endanchor="0"
+				 />
+			</simpleemitter>
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+				<simpleemitter
+					count="1"
+					particlelife="5000"
+					spawnrate="10000"
+					gravity="-0"
+					speed="0.0"
+					acceleration="0.0"
+					position="0 0 0"
+				>
+					<particle>
+					
+						<groundsprite
+							life="500"
+							material="/shared/effects/materials/ice_blob_overlay.material"
+							minstartsize="25"
+							maxstartsize="50"
+							endsize="60"
+							midsizepos=".25"
+							minyaw="-360"
+							maxyaw="360"
+							color=".2 .2 .3"
+							startalpha=".65"
+							endalpha="0"
+							midalphapos=".5"
+						/>
+
+						<simpleemitter
+							count="16"
+							particlelife="1300"
+							spawnrate="650"
+							minspeed="100"
+							maxspeed="400"
+							gravity="10"
+							direction="0 0 1"
+							minangle="0"
+							maxangle="25"
+							drag="0.01"
+							material="/shared/effects/materials/whitewater_02.material"
+							offsetsphere="25 25 10"
+							position="0 0 20"
+						>
+							<particle 
+								minangle="0"
+								maxangle="360"
+								minanglespeed="-60"
+								maxanglespeed="60"
+								startsize="20"
+								endsize="55"
+								startcolor=".25 .25 .35"
+								endcolor="0 0 0"
+								startstickiness="0"
+								endstickiness=".4"
+							/>
+						</simpleemitter>
+
+						<simpleemitter
+							life="200"
+							spawnrate="6600"
+							gravity="10"
+							count="6"
+							speed="350"
+							drag=".01"
+							minangle="0"
+							maxangle="10"
+							minparticlelife="300"
+							maxparticlelife="1600"
+							direction="0 0 1"
+							offsetsphere="35 35 65"
+							material="/shared/effects/materials/water_05.material"
+						>
+							<particle
+								minangle="0"
+								maxangle="360"
+								minanglespeed="-20"
+								maxanglespeed="20"
+								startsize="10"
+								endsize="50"
+								color="1 .5 .5"
+								startalpha=".5"
+								endalpha="0"
+							/>
+						</simpleemitter>
+
+						<simpleemitter
+							life="200"
+							spawnrate="2500"
+							count="10"
+							gravity="10"
+							minspeed="100"
+							maxspeed="400"
+							drag=".015"
+							minangle="0"
+							maxangle="20"
+							particlelife="1000"
+							direction="0 0 1"
+							offsetsphere="15 15 35"
+							material="/shared/effects/materials/wave.material"
+						>
+							<particle
+								startsize="30"
+								endsize="65"
+								startcolor="0"
+								midcolor=".125"
+								endcolor="0 0 0"
+								minangle="-180"
+								maxangle="180"
+							/>
+						</simpleemitter>
+
+						<simpleemitter
+							life="250"
+							spawnrate="15"
+							particlelife="1000"
+							gravity="2"
+							speed="250"
+							direction="0 0 1"
+							angle="20"
+							material="/shared/effects/materials/refract_longsplash.material"
+						>
+							<particle
+								startalpha="1"
+								endalpha="0"
+								minangle="0"
+								maxangle="360"
+								minanglespeed="-80"
+								maxanglespeed="80"
+								startsize="25"
+								endsize="55"
+								param=".2"
+								depthbias="-160"
+							/>
+						</simpleemitter>
+
+					</particle>
+				</simpleemitter>
+
+
+
+				<simpleemitter
+					spawnrate="25"
+					particlelife="2000"
+					gravity="-.2"
+					speed="10"
+					drag="0.07"
+					acceleration="0.0"
+					mintimenudge="0"
+					maxtimenudge="1000"
+					position="0 0 15"
+					material="/shared/effects/materials/smoke_18.material"
+					offsetsphere="50 50 0"
+					inheritvelocity=".5"
+				>
+					<particle 
+						minangle="0"
+						maxangle="360"
+						minanglespeed="-30"
+						color="0 0 0"
+						maxanglespeed="30"
+						startsize="25"
+						endsize="40"
+						startalpha="0"
+						midalpha=".4"
+						endalpha="0"
+						midalphapos=".2"
+						startanchor="0"
+						endanchor="0"
+					 />
+				</simpleemitter>
+
+				<simpleemitter
+					bone="_bone_fx_01"
+					spawnrate="15"
+					particlelife="1000"
+					gravity="0"
+					speed="0"
+					drag="0"
+					acceleration="0"
+					position="0 0 0"
+					minangle="0"
+					maxangle="0"
+					direction="0 1 0"
+				>
+					<particle
+						turn="false"
+					>	
+						<groundsprite
+							life="750"
+							material="/shared/effects/materials/ground_ice.material"
+							minscale="1.05"
+							maxscale="1.84"
+							startsize="30"						
+							endsize="30"
+							color="1 1 1"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							width="30"
+							directionalspace="local"
+						/>
+					</particle>
+				</simpleemitter>
+
+			
+			<!--light beam-->
+			
+			<simpleemitter
+				count="1"
+				spawnrate="1900"
+				expirelife="30"
+				particlelife="6000"
+			>
+				<particle>
+						<simpleemitter
+							spawnrate="50"
+							minparticlelife="1000"
+							maxparticlelife="2500"
+							count="20"
+							direction="0 0 -1"
+							angle="0"
+							minspeed="50"
+							maxspeed="100"
+							minoffsetradial="0"
+							maxoffsetradial="60"
+							offsetradialangle="90"
+							material="/shared/effects/materials/flare_03.material"
+						>
+							<particle
+								startcolor="0"
+								midcolor=".1"
+								endcolor="0"
+								midcolorpos=".1"
+								lockup="true"
+								lockright="true"
+								minanglespeed="0"
+								maxanglespeed="0"
+								minwidth="90"
+								maxwidth="150"
+								startheight="400"
+								minendheight="50"
+								maxendheight="200"
+								flare="true"
+							/>
+							<particle
+								startcolor="0"
+								midcolor=".1 .1 .15"
+								endcolor="0"
+								midcolorpos=".1"
+								lockup="true"
+								lockright="true"
+								minanglespeed="0"
+								maxanglespeed="0"
+								minwidth="60"
+								maxwidth="100"
+								startheight="400"
+								minendheight="50"
+								maxendheight="200"
+								flare="true"
+							/>
+						</simpleemitter>
+				</particle>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

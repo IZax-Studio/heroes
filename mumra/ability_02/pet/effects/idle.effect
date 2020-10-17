@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world">
+
+			<sound
+				soundloop="false"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1400"
+				volume=".3"
+				sample="/heroes/pharaoh/ability_02/sounds/idle.wav"
+			/>
+			
+			
+			<billboard
+				material="/shared/effects/materials/whitedot.material"
+				count="1"
+				loop="true"
+				bone="_bone_centerofchest"
+				position="0 0 0" scale=".5"
+				color=".2 .2 0"
+				depthbias="-1"
+			/>
+			
+			
+			<controller bone="_bone_centerofchest" position="-5 -5 0">
+				<simpleemitter
+					spawnrate="100"
+					offsetsphere="5 5 35"
+					offsetradial="3"
+					minparticlelife="100"
+					maxparticlelife="250"
+					material="/shared/effects/materials/lightning_02.material"
+					anchor="1"
+				>
+					<particle
+						minangle="-360"
+						maxangle="360"
+						startcolor="1 1 0"
+						endcolor="0"
+						minstartsize="1" maxstartsize="3"
+						midsize="4"
+						minendsize="1" maxendsize="3"
+						scale=".75"
+					/>
+					
+					<particle 
+						minangle="-360"
+						maxangle="360"
+						startcolor=".85 .85 0"
+						endcolor="0"
+						minstartsize="1" maxstartsize="3"
+						midsize="10"
+						minendsize="1" maxendsize="3"
+						scale=".75"
+					/>
+				</simpleemitter>
+			</controller>
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+     	 	<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

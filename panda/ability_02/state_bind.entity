@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Panda_Ability2_Bind"
+
+	icon="icon_2.tga"
+	
+	stunned="true"
+	stunneddurationunmodifiable="true"
+	
+	passiveeffect="effects/launch.effect"
+	effecttype=""
+>
+	<altavatar key="Hero_Panda.Alt2"
+		icon="/heroes/panda/alt2/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Panda.Alt6"
+		passiveeffect="/heroes/panda/alt6/ability_02/effects/launch.effect"
+	/>
+	
+	<altavatar key="Hero_Panda.Alt10"
+	    icon="/heroes/panda/alt10/ability_02/icon.tga" 
+		passiveeffect="/heroes/panda/alt10/ability_02/effects/launch.effect"
+	>
+		<modifier key="Night_Set_PandaAlt10"
+			passiveeffect="/heroes/panda/alt11/ability_02/effects/launch.effect"
+		    icon="/heroes/panda/alt11/ability_02/icon.tga"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Panda.Alt11"
+	    icon="/heroes/panda/alt11/ability_02/icon.tga"
+		passiveeffect="/heroes/panda/alt11/ability_02/effects/launch.effect"
+	>
+		<modifier key="Night_Set_PandaAlt11"
+			passiveeffect="/heroes/panda/alt10/ability_02/effects/launch.effect"
+		    icon="/heroes/panda/alt10/ability_02/icon.tga"
+		/>
+	</altavatar>
+</state>

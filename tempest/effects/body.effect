@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".35">
+
+			<simpleemitter
+				bone="base0_4"
+				spawnrate="100"
+				particlelife="1200"
+				gravity="5"
+				speed="310"
+				drag="1"
+				mintimenudge="0"
+				maxtimenudge="1000"				
+				material="/shared/effects/materials/smoke_particle.material"
+				position="0 0 5"
+				inheritvelocity=".5"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-30"
+					startcolor="0 0 0"
+					endcolor="0 0 0"
+					maxanglespeed="30"
+					startsize="320"
+					endsize="250"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".3"
+					anchor="1"
+				 />	
+				 
+				 
+			</simpleemitter>
+
+			<billboard
+				bone="_bone_lefteye"
+				expirelife="300"
+				loop="true"
+				width="100"
+				height="300"
+				material="/shared/effects/materials/light_rays2.material"
+				life="2112"
+				startcolor=".5 0 .5"
+				midcolor=".5 0 .5"
+				lockup="1"
+				lockright="1"
+				directionalspace="local"
+				endcolor=".5 0 .5"
+				size="30"
+				position="0 0 2"
+				pitch="105"
+			/>
+			<billboard
+				bone="_bone_righteye"
+				expirelife="300"
+				loop="true"
+				width="100"
+				height="200"
+				material="/shared/effects/materials/light_rays2.material"
+				life="2112"
+				startcolor=".5 0 .5"
+				midcolor=".5 0 .5"
+				lockup="1"
+				lockright="1"
+				directionalspace="local"
+				endcolor=".5 0 .5"
+				size="30"
+				position="-2 0 1.7"
+				pitch="105"
+			/>
+			
+			<simpleemitter
+				bone="_bone_origin"
+				spawnrate="10"
+				particlelife="1000"
+				material="/shared/effects/materials/corona_06.material"
+				depthbias="-5"
+				direction="0 0 1"
+				angle="0"
+				speed="275"
+			>
+				<particle
+					startscale="175"
+					endscale="0"
+					startcolor="0"
+					midcolor=".1 0 .5"
+					endcolor="0"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					maxangle="360"
+					anchor="1"
+				/>
+			</simpleemitter>			
+			
+	
+
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

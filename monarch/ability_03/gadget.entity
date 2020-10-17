@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Monarch_Ability3"
+	
+	icon="icon2.tga"
+	portrait="icon2.tga"
+	
+	model="/items/basic/flaming_eye/glacius/model.mdf"
+	passiveeffect="/items/basic/flaming_eye/glacius/body.effect"
+
+	preglobalscale="2"
+	modelscale="1.25"
+	effectscale="1"
+	boundsheight="64"
+	boundsradius="16"
+	isselectable="true"
+	iscontrollable="true"
+	selectionradius="20"
+	targetoffset="0 0 64"
+
+	canrotate="false"
+	ismobile="false"
+	unitwalking="true"
+
+	maxhealth="1"
+	inventory0=""
+	inventory1=""
+	inventory2="Ability_Gadget_Monarch3"
+
+	immunity="GadgetImmunity"
+	unittype="SightWard"
+
+	attacktype="none"
+	combattype="Ranged"
+	stealthtype="hero"
+	fadetime="500"
+	stealthproximity="250"
+
+	sightrangeday="1200"
+	sightrangenight="1200"
+	
+	goldbountymin="80"
+	goldbountymax="80"
+	experiencebounty="0"
+	
+	nothreat="true"
+	
+	corpsetime="50"
+	corpsefadetime="100"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	lifetime="360000"
+	showlifetime="true"
+
+	noblockneutralspawn="true"
+	
+>
+	<onframe>
+		<areaofeffect
+			radius="250"
+			targetselection="all"
+			targetscheme="visible_enemy_units"
+			effecttype=""
+			center="this_entity"
+		/>
+		<compare a="result" b="1" op="ge">
+			<kill target="this_entity" source="" />
+		</compare>
+	</onframe>
+
+	<onattackedpreimpact>
+		<setvalue name="combat_truestrike" a="1" />
+	</onattackedpreimpact>
+	
+	<onspawn>
+		<playeffect effect="effects/spawn.effect" source="this_position" occlude="true" />
+		<startfade />
+		<addcharges entity="this_proxy_entity" count="1"  />
+	</onspawn>
+	
+	<ondeath>
+		<playeffect effect="effects/death.effect" source="source_entity" target="" />
+		<addcharges entity="this_proxy_entity" count="-1" />
+		<spawnunit name="Gadget_Monarch_Cloud_Ability3" target="source_entity" pushentity="true" count="1" />
+		<spawnaffector name="Affector_Monarch_Ability3" target="stack_entity" source="this_owner_entity" owner="this_owner_entity" />
+	</ondeath>
+		
+	<onexpired>
+		<playeffect effect="effects/death.effect" source="source_entity" target="" />
+		<delete target="this_entity" />
+		<addcharges entity="this_proxy_entity" count="-1" />
+	</onexpired>
+	
+	<altavatar key="Hero_Monarch.Alt" modpriority="1"
+		model="/heroes/monarch/alt/ability_03/effects/ward/model.mdf"
+	/>
+	
+	<altavatar key="Hero_Monarch.Alt2" modpriority="1"
+		model="/heroes/monarch/alt2/ability_03/effects/ward/model.mdf"
+		portraitcampos="-30 60 90"
+	/>
+	
+	<altavatar key="Hero_Monarch.Alt4" modpriority="1"
+		model="/heroes/monarch/alt4/ability_03/effects/ward/model.mdf"
+	/>
+	
+	<altavatar key="Hero_Monarch.Alt5" modpriority="1"
+		model="/heroes/monarch/alt5/ability_03/effects/ward/model.mdf"
+	/>
+	
+	<altavatar key="Hero_Monarch.Alt6" modpriority="1"
+		model="/heroes/monarch/alt6/ability_03/effects/ward/model.mdf"
+		modelscale="1.25"
+		portraitcampos="-5 10 30"
+		portraitangles="0 0 180"
+	/>
+	
+	<altavatar key="Hero_Monarch.Alt7" modpriority="1"
+		model="/heroes/monarch/alt7/ability_03/effects/bug/model01.mdf"
+		modelscale=".9"
+		portraitcampos="-28 80 50"
+	>	
+		<onspawn>
+			<playeffect effect="/heroes/monarch/alt7/ability_03/effects/spawn.effect" source="this_position" occlude="true" />
+			<startfade />
+			<addcharges entity="this_proxy_entity" count="1"  />
+		</onspawn>
+	</altavatar>
+</gadget>

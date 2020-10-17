@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<modifier
+			life="250"
+			startcolor="1 0 0"
+			endcolor="1 0 0"
+		/>
+		<particlesystem name="system0" space="world" scale="1">
+					<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume="1" 
+				sample="../sounds/imp_%.wav"
+			/>
+			
+								<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume="1" 
+				sample="../sounds/core_imp_%.wav"
+			/>
+			
+								<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume=".2" 
+				sample="../sounds/core_impact.wav"
+			/>
+			
+			<controller
+				life="2000"
+				bone="_bone_centerofchest"
+			>
+				<simpleemitter
+					count="1"
+					particlelife="150"
+					material="/shared/effects/materials/ring_01_reveal.material"
+				>
+					<particle
+						color=".5 0 0"
+						startsize="0"
+						endsize="100"
+						midsizepos=".25"
+						startframe="0"
+						endframe="1"
+					>
+						<billboard
+							life="150"
+							material="/shared/effects/materials/glow_01.material"
+							startcolor=".5 0 0"
+							endcolor="0"
+							startsize="0"
+							endsize="75"
+							midsizepos=".25"
+						/>
+						
+						<billboard
+							life="150"
+							material="/shared/effects/materials/glow_01.material"
+							startcolor="1 0 0"
+							endcolor="0"
+							startsize="0"
+							endsize="50"
+							midsizepos=".25"
+						/>
+					</particle>
+				</simpleemitter>
+			
+				<simpleemitter
+					mincount="5"
+					maxcount="10"
+					minparticlelife="400"
+					maxparticlelife="600"
+					material="/shared/effects/materials/sparks_reveal_blue.material"
+				>
+					<particle
+						maxangle="360"
+						startcolor="0 00"
+						midcolor="1 0 0"
+						endcolor="0 0 0"
+						midcolorpos=".25"
+						startframe=".2"
+						endframe="1"
+						minsize="30"
+						maxsize="40"
+						startscale="1"
+						minendscale="2"
+						maxendscale="4"
+					/>
+				</simpleemitter>
+			</controller>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->

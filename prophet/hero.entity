@@ -1,0 +1,1137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_Prophet"
+
+	team="Hellbourne"
+	icon="Nature's_Prophet.tga"
+	portrait="Nature's_Prophet.tga"
+	model="model.mdf"
+	skin=""
+	
+	infoheight="170"
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound=""
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana_%.wav"
+	cooldownsound="sounds/voice/cooldown_%.wav"
+	announcersound="sounds/voice/hero_select.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+	
+	preglobalscale="1"
+	modelscale="0.8"
+	effectscale="0.9"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="52"
+	targetoffset="0 0 92"
+	portraitcampos="30 0 50"
+	
+	category="magic protective"
+	difficulty="3"
+
+	solorating="1"
+	junglerating="0"
+	carryrating="0"
+	supportrating="3"
+	initiatorrating="0"
+	gankerrating="2"
+	pusherrating="0"
+	rangedrating="5"
+	meleerating="0"
+
+	movespeed="300"
+	turnrate="450"
+	turnsmoothing="0.1"
+
+	maxhealth="150"
+	healthregen="1.00"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="1"
+	magicarmor="7"
+
+	inventory0="Ability_Prophet1"
+	inventory1="Ability_Prophet2"
+	inventory2="Ability_Prophet3"
+	inventory3="Ability_Prophet4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11=""
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="1000"
+	attackactiontime="350"
+	attackcooldown="1700"
+	attackdamagemin="22"
+	attackdamagemax="30"
+	attacknumanims="2"
+	attackoffset="-40 100 80"
+	attackprojectile="Projectile_ProphetAttack"
+	attackrange="600"
+	attackstarteffect=""
+	attackactioneffect="effects/attackaction.effect"
+	attackimpacteffect=""
+	attacktype="ranged"
+	combattype="Hero"
+
+	aggrorange="800"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	primaryattribute="Intelligence"
+	strength="20"
+	strengthperlevel="1.8"
+	agility="20"
+	agilityperlevel="2"
+	intelligence="27"
+	intelligenceperlevel="2.5"
+	
+	previewmodel="model.mdf"
+	previewpos="0 0 -60"
+	previewangles="0 0 0"
+	previewscale="1.4"
+	
+	storemodel="model.mdf"
+	storepos="0 0 -20"
+	storeangles="0 0 0"
+	storescale="0.7"
+	
+	corpsetime="1500"
+	corpsefadetime="2000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	toolchargeseffectkeyname0="Ability_Prophet4"
+	toolchargeseffectpath0=",ability_04/effects/state_self1.effect,ability_04/effects/state_self2.effect,ability_04/effects/state_self3.effect"
+>
+	<recommendeditem name="Item_ManaPotion" />
+	<recommendeditem name="Item_MinorTotem" />
+	<recommendeditem name="Item_RunesOfTheBlight" />
+	<recommendeditem name="Item_HealthPotion" />
+	<recommendeditem name="Item_HomecomingStone" />
+	
+	<recommendeditem name="Item_Intelligence5" />
+	<recommendeditem name="Item_Strength5" />
+	<recommendeditem name="Item_Bottle" />
+	<recommendeditem name="Item_PlatedGreaves" />
+	<recommendeditem name="Item_Astrolabe" />
+	<recommendeditem name="Item_NomesWisdom" />
+	<recommendeditem name="Item_Replenish" />
+	<recommendeditem name="Item_BarrierIdol" />
+	<recommendeditem name="Item_Damage10" />
+	<recommendeditem name="Item_BehemothsHeart" />
+	
+	<!-- <modifier key="gated" modpriority="200"
+		strength="22"
+		strengthperlevel="2"
+		agility="12"
+		agilityperlevel="1.2"
+		intelligence="27"
+		intelligenceperlevel="2.5"
+
+		magicarmor="5"
+		
+		inventory0="Reborn_Ability_Prophet1"
+		inventory1="Reborn_Ability_Prophet2"
+		inventory2="Reborn_Ability_Prophet3"
+		inventory3="Reborn_Ability_Prophet4"
+	>
+	</modifier> -->
+	
+	<modifier key="ProphetR_1" modpriority="101"
+		model="effects/bird/bird_fly/model.mdf"
+		modelscale="0.7"
+		flying="true"
+		flyheight="220"
+		portraitcampos="-15 70 -25"
+		attackoffset="0 40 20"
+		attacknumanims="1"
+		sightrangeday="2000"
+		sightrangenight="2000"
+	>
+	</modifier>
+	
+	<modifier key="ProphetR_2" modpriority="101"
+		model="effects/bird/bird_fly/model.mdf"
+		modelscale="0.7"
+		flying="true"
+		flyheight="220"
+		portraitcampos="-15 70 -25"
+		attackoffset="0 40 20"
+		attacknumanims="1"
+		sightrangeday="2100"
+		sightrangenight="2100"
+	>
+	</modifier>
+	
+	<modifier key="ProphetR_3" modpriority="101"
+		model="effects/bird/bird_fly/model.mdf"
+		modelscale="0.7"
+		flying="true"
+		flyheight="220"
+		portraitcampos="-15 70 -25"
+		attackoffset="0 40 20"
+		attacknumanims="1"
+		sightrangeday="2200"
+		sightrangenight="2200"
+	>
+	</modifier>
+	<altavatar key="Hero_Prophet.Alt" modpriority="1"
+		altavatar="true"
+		
+		preglobalscale="1.8"
+		infoheight="170"
+		
+		attackprojectile="Projectile_ProphetAttack_Alt2"
+
+		icon2="alt2/icon.tga"
+		portrait="icon.tga"
+		model="alt2/model.mdf"
+		
+		previewmodel="alt2/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.35"
+	
+		storemodel="alt2/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.75"
+		
+	    selectedsound="alt2/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt2/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt2/sounds/voice/move_%.wav"
+	    confirmattacksound="alt2/sounds/voice/attack_%.wav"
+	    nomanasound="alt2/sounds/voice/no_mana.wav"
+	    cooldownsound="alt2/sounds/voice/cooldown.wav"
+	    tauntedsound="alt2/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt2/sounds/voice/taunt_after.wav"
+		
+		corpsetime="750"
+		corpsefadetime="2000"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+		toolchargeseffectkeyname0="Ability_Prophet4"
+		toolchargeseffectpath0=",alt2/ability_04/effects/state_self1.effect,alt2/ability_04/effects/state_self2.effect,alt2/ability_04/effects/state_self3.effect"
+	>
+		<modifier key="ProphetR_1" modpriority="101"
+			model="alt2/effects/spirit/spirit_fly/model.mdf"
+			modelscale="1.75"
+			flying="true"
+			flyheight="230"
+			portraitcampos="-15 70 -25"
+			attackoffset="0 40 20"
+			attacknumanims="1"
+			sightrangeday="2000"
+			sightrangenight="2000"
+		/>
+		
+	</altavatar>
+	
+	<altavatar key="Hero_Prophet.Alt2" modpriority="1"
+		altavatar="true"
+		
+		preglobalscale="2.1"
+		infoheight="170"
+	
+		attackprojectile="Projectile_ProphetAttack_Alt"
+
+		icon2="alt/icon.tga"
+		portrait="icon.tga"
+		model="alt/model.mdf"
+		
+		previewmodel="alt/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.35"
+	
+		storemodel="alt/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.75"
+		
+	    selectedsound="alt/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt/sounds/voice/move_%.wav"
+	    confirmattacksound="alt/sounds/voice/attack_%.wav"
+	    nomanasound="alt/sounds/voice/no_mana.wav"
+	    cooldownsound="alt/sounds/voice/cooldown.wav"
+	    tauntedsound="alt/sounds/voice/taunt_prior.wav"
+	    tauntkillsound="alt/sounds/voice/taunt_after.wav"
+	
+		toolchargeseffectkeyname0="Ability_Prophet4"
+		toolchargeseffectpath0=",alt/ability_04/effects/state_self1.effect,alt/ability_04/effects/state_self2.effect,alt/ability_04/effects/state_self3.effect"
+	>
+		<modifier key="ProphetR_1" modpriority="101"
+			model="alt/effects/spirit/spirit_fly/model.mdf"
+			modelscale="1.75"
+			flying="true"
+			flyheight="220"
+			portraitcampos="-15 70 -25"
+			attackoffset="0 40 20"
+			attacknumanims="1"
+			sightrangeday="2000"
+			sightrangenight="2000"
+		/>
+		
+	</altavatar>
+	
+	<altavatar key="Hero_Prophet.Alt3" modpriority="1"
+		altavatar="true"
+		
+		preglobalscale="2.1"
+		infoheight="170"
+
+		icon2="alt3/icon.tga"
+		portrait="icon.tga"
+		model="alt3/model.mdf"
+		
+		attackprojectile="Projectile_ProphetAttack_Alt3"
+		
+		previewmodel="alt3/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.35"
+	
+		storemodel="alt3/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.75"
+		
+		selectedsound="alt3/sounds/voice/select_%.wav"
+		selectedflavorsound="alt3/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt3/sounds/voice/move_%.wav"
+		confirmattacksound="alt3/sounds/voice/attack_%.wav"
+		nomanasound="alt3/sounds/voice/no_mana.wav"
+		cooldownsound="alt3/sounds/voice/cooldown.wav"
+		tauntedsound="alt3/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt3/sounds/voice/taunt_after.wav"
+	/>
+	
+	<altavatar key="Hero_Prophet.Alt4"
+		preglobalscale="2.1"
+		infoheight="170"
+
+		icon2="alt4/icon.tga"
+		portrait="icon.tga"
+		model="alt4/model.mdf"
+		
+		overrideportraiteffects="true"
+		previewpassiveeffect="alt4/effects/body_store.effect"
+		previewmodel="alt4/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.35"
+	
+		storepassiveeffect="alt4/effects/body_store.effect"
+		storemodel="alt4/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.75"
+		
+		respawneffect="/shared/effects/respawn_prophet.effect"
+		selectedsound="alt4/sounds/voice/select_%.wav"
+		selectedflavorsound="alt4/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt4/sounds/voice/move_%.wav"
+		confirmattacksound="alt4/sounds/voice/attack_%.wav"
+		nomanasound="alt4/sounds/voice/no_mana.wav"
+		cooldownsound="alt4/sounds/voice/cooldown.wav"
+		tauntedsound="alt4/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt4/sounds/voice/taunt_after.wav"
+		
+		deathtime="1000"
+		corpsetime="2000"
+		corpsefadetime="0"
+	
+		toolchargeseffectkeyname0="Ability_Prophet4"
+		toolchargeseffectpath0=",alt4/ability_04/effects/state_self1.effect,alt4/ability_04/effects/state_self2.effect,alt4/ability_04/effects/state_self3.effect"
+		
+		tooleffectkeyname0="effect_Boots"
+		tooleffectpath0="alt4/upgraded_legs/body.effect"
+		tooleffectgroup0="legs"
+		
+		tooleffectkeyname1=""
+		tooleffectpath1="alt4/base_legs/body.effect"
+		tooleffectgroup1="legs"
+		
+		tooleffectkeyname2="effect_GraveLocket"
+		tooleffectpath2="alt4/upgraded_necklace/body.effect"
+		tooleffectgroup2="necklace"
+		
+		tooleffectkeyname3="Item_SacrificialStone"
+		tooleffectpath3="alt4/upgraded_necklace/body.effect"
+		tooleffectgroup3="necklace"
+		
+		tooleffectkeyname4="Item_PowerSupply"
+		tooleffectpath4="alt4/upgraded_necklace/body.effect"
+		tooleffectgroup4="necklace"
+		
+		tooleffectkeyname5="Item_BloodChalice"
+		tooleffectpath5="alt4/upgraded_necklace/body.effect"
+		tooleffectgroup5="necklace"
+		
+		tooleffectkeyname6="Item_PushStaff"
+		tooleffectpath6="alt4/upgraded_cloak/body.effect"
+		tooleffectgroup6="cloak"
+		
+		tooleffectkeyname7="Item_Astrolabe"
+		tooleffectpath7="alt4/upgraded_cloak/body.effect"
+		tooleffectgroup7="cloak"
+		
+		tooleffectkeyname8="Item_Stealth"
+		tooleffectpath8="alt4/upgraded_cloak/body.effect"
+		tooleffectgroup8="cloak"
+		
+		tooleffectkeyname9="Item_Sasuke"
+		tooleffectpath9="alt4/upgraded_cloak/body.effect"
+		tooleffectgroup9="cloak"
+		
+		tooleffectkeyname10="Item_MagicArmor2"
+		tooleffectpath10="alt4/upgraded_cloak/body.effect"
+		tooleffectgroup10="cloak"
+		
+		tooleffectkeyname11="Item_BarrierIdol"
+		tooleffectpath11="alt4/upgraded_cloak/body.effect"
+		tooleffectgroup11="cloak"
+		
+		tooleffectkeyname12=""
+		tooleffectpath12="alt4/base_cloak/body.effect"
+		tooleffectgroup12="cloak"
+		
+		tooleffectkeyname13="Item_Silence"
+		tooleffectpath13="alt4/upgraded_shoulders/body.effect"
+		tooleffectgroup13="shoulders"
+		
+		tooleffectkeyname14="Item_SpellShards"
+		tooleffectpath14="alt4/upgraded_shoulders/body.effect"
+		tooleffectgroup14="shoulders"
+		
+		tooleffectkeyname15="Item_Weapon1"
+		tooleffectpath15="alt4/base_shoulders/body.effect"
+		tooleffectgroup15="shoulders"
+		
+		tooleffectkeyname16="Item_Critical1"
+		tooleffectpath16="alt4/upgraded_arms/body.effect"
+		tooleffectgroup16="arms"
+		
+		tooleffectkeyname17="effect_RingOfSorcery"
+		tooleffectpath17="alt4/upgraded_arms/body.effect"
+		tooleffectgroup17="arms"
+		
+		tooleffectkeyname18="Item_NomesWisdom"
+		tooleffectpath18="alt4/upgraded_arms/body.effect"
+		tooleffectgroup18="arms"
+		
+		tooleffectkeyname19="Item_Energizer"
+		tooleffectpath19="alt4/upgraded_arms/body.effect"
+		tooleffectgroup19="arms"
+		
+		tooleffectkeyname20="Item_JadeSpire"
+		tooleffectpath20="alt4/upgraded_arms/body.effect"
+		tooleffectgroup20="arms"
+		
+		tooleffectkeyname21=""
+		tooleffectpath21="alt4/base_arms/body.effect"
+		tooleffectgroup21="arms"
+		
+		tooleffectkeyname22="effect_brand"
+		tooleffectpath22="alt4/upgraded_weapon/body.effect"
+		tooleffectgroup22="weapon"
+		
+		tooleffectkeyname23="Item_HarkonsBlade"
+		tooleffectpath23="alt4/upgraded_weapon/body.effect"
+		tooleffectgroup23="weapon"
+		
+		tooleffectkeyname24="Item_GrimoireOfPower"
+		tooleffectpath24="alt4/upgraded_weapon/body.effect"
+		tooleffectgroup24="weapon"
+		
+		tooleffectkeyname25="Item_Weapon3"
+		tooleffectpath25="alt4/upgraded_weapon/body.effect"
+		tooleffectgroup25="weapon"
+		
+		tooleffectkeyname26=""
+		tooleffectpath26="alt4/base_weapon/body.effect"
+		tooleffectgroup26="weapon"
+	>
+		<onspawn propagatetoillusions="false" >
+			<ownsproduct target="this_entity" product="aa.Hero_Kenisis.Alt3" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey entity="this_entity" name="Prophet_Alt4_Set_Eyes" />
+			</compare>
+			<ownsproduct target="this_entity" product="aa.Hero_Berzerker.Alt5" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey entity="this_entity" name="Prophet_Alt4_Set_Weapon" />
+			</compare>
+			<ownsproduct target="this_entity" product="aa.Hero_Silhouette.Alt4" />
+			<compare a="result" b="1" op="eq">
+				<applystate name="State_Prophet_Alt4_Set_Birds" continuous="true" />
+			</compare>
+			<ownsproduct target="this_entity" product="aa.Hero_Jereziah.Alt4" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey entity="this_entity" name="Prophet_Alt4_Set_Arms" />
+			</compare>
+			<ownsproduct target="this_entity" product="aa.Hero_CorruptedDisciple.Alt3" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey entity="this_entity" name="Prophet_Alt4_Set_Cloak" />
+			</compare>
+			<ownsproduct target="this_entity" product="aa.Hero_CorruptedDisciple.Alt3 aa.Hero_Jereziah.Alt4 aa.Hero_Silhouette.Alt4 aa.Hero_Berzerker.Alt5 aa.Hero_Kenisis.Alt3" />
+			<compare a="result" b="1" op="eq">
+				<applystate name="State_Blind_Prophet_Set" target="this_entity" continuous="true" />
+			</compare>
+		</onspawn>
+		<onrespawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Kenisis.Alt3" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey entity="this_entity" name="Prophet_Alt4_Set_Eyes" />
+			</compare>
+			<ownsproduct target="this_entity" product="aa.Hero_Berzerker.Alt5" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey entity="this_entity" name="Prophet_Alt4_Set_Weapon" />
+			</compare>
+			<ownsproduct target="this_entity" product="aa.Hero_Silhouette.Alt4" />
+			<compare a="result" b="1" op="eq">
+				<applystate name="State_Prophet_Alt4_Set_Birds" continuous="true" />
+			</compare>
+			<ownsproduct target="this_entity" product="aa.Hero_Jereziah.Alt4" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey entity="this_entity" name="Prophet_Alt4_Set_Arms" />
+			</compare>
+			<ownsproduct target="this_entity" product="aa.Hero_CorruptedDisciple.Alt3" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey entity="this_entity" name="Prophet_Alt4_Set_Cloak" />
+			</compare>
+			<ownsproduct target="this_entity" product="aa.Hero_CorruptedDisciple.Alt3 aa.Hero_Jereziah.Alt4 aa.Hero_Silhouette.Alt4 aa.Hero_Berzerker.Alt5 aa.Hero_Kenisis.Alt3" />
+			<compare a="result" b="1" op="eq">
+				<applystate name="State_Blind_Prophet_Set" target="this_entity" continuous="true" />
+			</compare>
+		</onrespawn>
+		
+		<onframe>
+			<hasmodifier entity="this_entity" name="Prophet_Alt4_Set_Weapon">
+				<hasmodifier entity="this_entity" name="alt_IceBrand">
+					<activatemodifierkey entity="this_entity" name="Prophet_Alt4_Upgraded_Set_Projectile" />
+					<deactivatemodifierkey entity="this_entity" name="Prophet_Alt4_Set_Projectile" />
+				</hasmodifier>
+				<else>
+					<hasmodifier entity="this_entity" name="alt_FireBrand">
+						<activatemodifierkey entity="this_entity" name="Prophet_Alt4_Upgraded_Set_Projectile" />
+						<deactivatemodifierkey entity="this_entity" name="Prophet_Alt4_Set_Projectile" />
+					</hasmodifier>
+					<else>
+						<hasmodifier entity="this_entity" name="alt_LightBrand">
+							<activatemodifierkey entity="this_entity" name="Prophet_Alt4_Upgraded_Set_Projectile" />
+							<deactivatemodifierkey entity="this_entity" name="Prophet_Alt4_Set_Projectile" />
+						</hasmodifier>
+						<else>
+							<hasmodifier entity="this_entity" name="alt_Dawnbringer">
+								<activatemodifierkey entity="this_entity" name="Prophet_Alt4_Upgraded_Set_Projectile" />
+								<deactivatemodifierkey entity="this_entity" name="Prophet_Alt4_Set_Projectile" />
+							</hasmodifier>
+							<else>
+								<hasmodifier entity="this_entity" name="alt_HarkonsBlade">
+									<activatemodifierkey entity="this_entity" name="Prophet_Alt4_Upgraded_Set_Projectile" />
+									<deactivatemodifierkey entity="this_entity" name="Prophet_Alt4_Set_Projectile" />
+								</hasmodifier>
+								<else>
+									<hasmodifier entity="this_entity" name="alt_GrimoireOfPower">
+										<activatemodifierkey entity="this_entity" name="Prophet_Alt4_Upgraded_Set_Projectile" />
+										<deactivatemodifierkey entity="this_entity" name="Prophet_Alt4_Set_Projectile" />
+									</hasmodifier>
+									<else>
+										<hasmodifier entity="this_entity" name="alt_SavageMace">
+											<activatemodifierkey entity="this_entity" name="Prophet_Alt4_Upgraded_Set_Projectile" />
+											<deactivatemodifierkey entity="this_entity" name="Prophet_Alt4_Set_Projectile" />
+										</hasmodifier>
+										<else>
+											<deactivatemodifierkey entity="this_entity" name="Prophet_Alt4_Upgraded_Set_Projectile" />
+											<activatemodifierkey entity="this_entity" name="Prophet_Alt4_Set_Projectile" />
+										</else>
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</hasmodifier>
+			<else>
+				<hasmodifier entity="this_entity" name="alt_IceBrand">
+					<activatemodifierkey entity="this_entity" name="Prophet_Alt4_Upgraded_Projectile" />
+				</hasmodifier>
+				<else>
+					<hasmodifier entity="this_entity" name="alt_FireBrand">
+						<activatemodifierkey entity="this_entity" name="Prophet_Alt4_Upgraded_Projectile" />
+					</hasmodifier>
+					<else>
+						<hasmodifier entity="this_entity" name="alt_LightBrand">
+							<activatemodifierkey entity="this_entity" name="Prophet_Alt4_Upgraded_Projectile" />
+						</hasmodifier>
+						<else>
+							<hasmodifier entity="this_entity" name="alt_DawnBringer">
+								<activatemodifierkey entity="this_entity" name="Prophet_Alt4_Upgraded_Projectile" />
+							</hasmodifier>
+							<else>
+								<hasmodifier entity="this_entity" name="alt_HarkonsBlade">
+									<activatemodifierkey entity="this_entity" name="Prophet_Alt4_Upgraded_Projectile" />
+								</hasmodifier>
+								<else>
+									<hasmodifier entity="this_entity" name="alt_GrimoireOfPower">
+										<activatemodifierkey entity="this_entity" name="Prophet_Alt4_Upgraded_Projectile" />
+									</hasmodifier>
+									<else>
+										<hasmodifier entity="this_entity" name="alt_SavageMace">
+											<activatemodifierkey entity="this_entity" name="Prophet_Alt4_Upgraded_Projectile" />
+										</hasmodifier>
+										<else>
+											<deactivatemodifierkey entity="this_entity" name="Prophet_Alt4_Upgraded_Projectile" />
+										</else>
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</onframe>
+
+		<modifier key="Prophet_Alt4_Birds" modpriority="1"
+			toolchargeseffectkeyname0="Ability_Prophet4"
+			toolchargeseffectpath0=",alt4/ability_04/effects/state_self1_upgraded.effect,alt4/ability_04/effects/state_self2_upgraded.effect,alt4/ability_04/effects/state_self3_upgraded.effect"
+		/>
+		
+		<modifier key="Prophet_Alt4_Set_Birds" modpriority="2"
+			toolchargeseffectkeyname0="Ability_Prophet4"
+			toolchargeseffectpath0=",alt4/ability_04/effects/state_self1_upgraded_set.effect,alt4/ability_04/effects/state_self2_upgraded_set.effect,alt4/ability_04/effects/state_self3_upgraded_set.effect"
+		/>
+		
+		<modifier key="Prophet_Alt4_Set_Eyes" modpriority="1"
+			tooleffectkeyname38=""
+			tooleffectpath38="alt4/set_eyes/body.effect"
+			tooleffectgroup38=""
+		/>
+		
+		<modifier key="Prophet_Alt4_Set_Weapon" modpriority="1"
+			tooleffectkeyname21="effect_brand"
+			tooleffectpath21="alt4/upgraded_weapon/body_set.effect"
+			tooleffectgroup21="weapon"
+			
+			tooleffectkeyname22="Item_HarkonsBlade"
+			tooleffectpath22="alt4/upgraded_weapon/body_set.effect"
+			tooleffectgroup22="weapon"
+			
+			tooleffectkeyname23="Item_GrimoireOfPower"
+			tooleffectpath23="alt4/upgraded_weapon/body_set.effect"
+			tooleffectgroup23="weapon"
+			
+			tooleffectkeyname24="Item_Weapon3"
+			tooleffectpath24="alt4/upgraded_weapon/body_set.effect"
+			tooleffectgroup24="weapon"
+			
+			tooleffectkeyname25=""
+			tooleffectpath25="alt4/base_weapon/body_set.effect"
+			tooleffectgroup25="weapon"
+		/>
+		
+		<modifier key="Prophet_Alt4_Set_Arms" modpriority="1"
+			tooleffectkeyname13="Item_Silence"
+			tooleffectpath13="alt4/upgraded_shoulders/body_set.effect"
+			tooleffectgroup13="shoulders"
+			
+			tooleffectkeyname14="Item_SpellShards"
+			tooleffectpath14="alt4/upgraded_shoulders/body_set.effect"
+			tooleffectgroup14="shoulders"
+			
+			tooleffectkeyname15="Item_Weapon1"
+			tooleffectpath15="alt4/base_shoulders/body_set.effect"
+			tooleffectgroup15="shoulders"
+			
+			tooleffectkeyname16="Item_Critical1"
+			tooleffectpath16="alt4/upgraded_arms/body_set.effect"
+			tooleffectgroup16="arms"
+			
+			tooleffectkeyname17="effect_RingOfSorcery"
+			tooleffectpath17="alt4/upgraded_arms/body_set.effect"
+			tooleffectgroup17="arms"
+			
+			tooleffectkeyname18="Item_NomesWisdom"
+			tooleffectpath18="alt4/upgraded_arms/body_set.effect"
+			tooleffectgroup18="arms"
+			
+			tooleffectkeyname19="Item_Energizer"
+			tooleffectpath19="alt4/upgraded_arms/body_set.effect"
+			tooleffectgroup19="arms"
+			
+			tooleffectkeyname20="Item_JadeSpire"
+			tooleffectpath20="alt4/upgraded_arms/body.effect"
+			tooleffectgroup20="arms"
+			
+			tooleffectkeyname21=""
+			tooleffectpath21="alt4/base_arms/body.effect"
+			tooleffectgroup21="arms"
+		/>
+		
+		<modifier key="Prophet_Alt4_Set_Cloak" modpriority="1"
+			tooleffectkeyname6="Item_PushStaff"
+			tooleffectpath6="alt4/upgraded_cloak/body_set.effect"
+			tooleffectgroup6="cloak"
+			
+			tooleffectkeyname7="Item_Astrolabe"
+			tooleffectpath7="alt4/upgraded_cloak/body_set.effect"
+			tooleffectgroup7="cloak"
+			
+			tooleffectkeyname8="Item_Stealth"
+			tooleffectpath8="alt4/upgraded_cloak/body_set.effect"
+			tooleffectgroup8="cloak"
+			
+			tooleffectkeyname9="Item_Sasuke"
+			tooleffectpath9="alt4/upgraded_cloak/body_set.effect"
+			tooleffectgroup9="cloak"
+			
+			tooleffectkeyname10="Item_MagicArmor2"
+			tooleffectpath10="alt4/upgraded_cloak/body_set.effect"
+			tooleffectgroup10="cloak"
+			
+			tooleffectkeyname11="Item_BarrierIdol"
+			tooleffectpath11="alt4/upgraded_cloak/body_set.effect"
+			tooleffectgroup11="cloak"
+			
+			tooleffectkeyname12=""
+			tooleffectpath12="alt4/base_cloak/body_set.effect"
+			tooleffectgroup12="cloak"
+		/>
+		
+		<modifier key="Prophet_Alt4_Upgraded_Projectile" modpriority="1"
+			attackprojectile="Projectile_ProphetAttack_Alt4_Upgraded"
+		/>
+		
+		<modifier key="Prophet_Alt4_Set_Projectile" modpriority="2"
+			attackprojectile="Projectile_ProphetAttack_Alt4_Set"
+		/>
+		
+		<modifier key="Prophet_Alt4_Upgraded_Set_Projectile" modpriority="3"
+			attackprojectile="Projectile_ProphetAttack_Alt4_Set_Upgraded"
+		/>
+		
+		<modifier key="ProphetR_1" modpriority="101"
+			model="alt4/ability_04/effects/base_bird/model.mdf"
+			modelscale=".4"
+			flying="true"
+			flyheight="220"
+			portraitcampos="-15 70 -25"
+			attackoffset="0 40 20"
+			attacknumanims="1"
+			sightrangeday="2000"
+			sightrangenight="2000"
+			
+			passiveeffect=""
+			
+			tooleffectkeyname0="effect_Boots"
+			tooleffectpath0=""
+			tooleffectgroup0="legs"
+			
+			tooleffectkeyname1=""
+			tooleffectpath1=""
+			tooleffectgroup1="legs"
+			
+			tooleffectkeyname2="effect_GraveLocket"
+			tooleffectpath2=""
+			tooleffectgroup2="necklace"
+			
+			tooleffectkeyname3="Item_SacrificialStone"
+			tooleffectpath3=""
+			tooleffectgroup3="necklace"
+			
+			tooleffectkeyname4="Item_PowerSupply"
+			tooleffectpath4=""
+			tooleffectgroup4="necklace"
+			
+			tooleffectkeyname5="Item_BloodChalice"
+			tooleffectpath5=""
+			tooleffectgroup5="necklace"
+			
+			tooleffectkeyname6="Item_PushStaff"
+			tooleffectpath6=""
+			tooleffectgroup6="cloak"
+			
+			tooleffectkeyname7="Item_Astrolabe"
+			tooleffectpath7=""
+			tooleffectgroup7="cloak"
+			
+			tooleffectkeyname8="Item_Stealth"
+			tooleffectpath8=""
+			tooleffectgroup8="cloak"
+			
+			tooleffectkeyname9="Item_Sasuke"
+			tooleffectpath9=""
+			tooleffectgroup9="cloak"
+			
+			tooleffectkeyname10="Item_MagicArmor2"
+			tooleffectpath10=""
+			tooleffectgroup10="cloak"
+			
+			tooleffectkeyname11="Item_BarrierIdol"
+			tooleffectpath11=""
+			tooleffectgroup11="cloak"
+			
+			tooleffectkeyname12=""
+			tooleffectpath12="t"
+			tooleffectgroup12="cloak"
+			
+			tooleffectkeyname13="Item_Silence"
+			tooleffectpath13=""
+			tooleffectgroup13="shoulders"
+			
+			tooleffectkeyname14="Item_SpellShards"
+			tooleffectpath14=""
+			tooleffectgroup14="shoulders"
+			
+			tooleffectkeyname15="Item_Weapon1"
+			tooleffectpath15=""
+			tooleffectgroup15="shoulders"
+			
+			tooleffectkeyname16="Item_Critical1"
+			tooleffectpath16=""
+			tooleffectgroup16="arms"
+			
+			tooleffectkeyname17="effect_RingOfSorcery"
+			tooleffectpath17=""
+			tooleffectgroup17="arms"
+			
+			tooleffectkeyname18="Item_NomesWisdom"
+			tooleffectpath18=""
+			tooleffectgroup18="arms"
+			
+			tooleffectkeyname19="Item_Energizer"
+			tooleffectpath19=""
+			tooleffectgroup19="arms"
+			
+			tooleffectkeyname20="Item_JadeSpire"
+			tooleffectpath20=""
+			tooleffectgroup20="arms"
+			
+			tooleffectkeyname21=""
+			tooleffectpath21=""
+			tooleffectgroup21="arms"
+			
+			tooleffectkeyname22="effect_brand"
+			tooleffectpath22=""
+			tooleffectgroup22="weapon"
+			
+			tooleffectkeyname23="Item_HarkonsBlade"
+			tooleffectpath23=""
+			tooleffectgroup23="weapon"
+			
+			tooleffectkeyname24="Item_GrimoireOfPower"
+			tooleffectpath24=""
+			tooleffectgroup24="weapon"
+			
+			tooleffectkeyname25="Item_Weapon3"
+			tooleffectpath25=""
+			tooleffectgroup25="weapon"
+			
+			tooleffectkeyname26=""
+			tooleffectpath26=""
+			tooleffectgroup26="weapon"
+		/>
+	
+	</altavatar>
+	
+	<altavatar key="Hero_Prophet.Alt5" modpriority="1"
+		altavatar="true"
+		
+		preglobalscale="2.1"
+		infoheight="170"
+		passiveeffect="alt5/effects/body.effect"
+
+		icon2="alt5/icon.tga"
+		portrait="icon.tga"
+		model="alt5/model.mdf"
+		
+		attackprojectile="Projectile_ProphetAttack"
+		
+		previewmodel="alt5/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.35"
+	
+		storemodel="alt5/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.75"
+		storepassiveeffect="alt5/effects/body_store.effect"
+
+		selectedsound="alt5/sounds/voice/select_%.wav"
+		selectedflavorsound="alt5/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt5/sounds/voice/move_%.wav"
+		confirmattacksound="alt5/sounds/voice/attack_%.wav"
+		nomanasound="alt5/sounds/voice/no_mana.wav"
+		cooldownsound="alt5/sounds/voice/cooldown.wav"
+		tauntedsound="alt5/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt5/sounds/voice/taunt_after.wav"
+		
+		toolchargeseffectkeyname0="Ability_Prophet4"
+		toolchargeseffectpath0=",alt5/ability_04/effects/state_self1.effect,alt5/ability_04/effects/state_self2.effect,alt5/ability_04/effects/state_self3.effect"
+	>
+	
+		<modifier key="ProphetR_1" modpriority="101"
+			model="/heroes/ra/alt2/model_prophet.mdf"
+			modelscale=".85"
+			flying="true"
+			flyheight="150"
+			portraitcampos="-15 70 -25"
+			attackoffset="0 40 20"
+			attacknumanims="1"
+			sightrangeday="2000"
+			sightrangenight="2000"
+			
+			passiveeffect=""
+		/>
+		
+	</altavatar>
+	
+	<altavatar key="Hero_Prophet.Alt6" modpriority="1"
+		altavatar="true"
+		
+		preglobalscale="2.1"
+		infoheight="170"
+		passiveeffect="alt6/effects/body.effect"
+
+		icon2="alt6/icon.tga"
+		portrait="alt6/icon.tga"
+		model="alt6/model.mdf"
+		
+		attackprojectile="Projectile_ProphetAttack"
+		
+		
+		previewmodel="alt6/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.35"
+		portraitcampos="15 -35 -25"
+	
+		storemodel="alt6/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.85"
+		storepassiveeffect="alt6/effects/body.effect"
+
+		selectedsound="alt6/sounds/voice/select_%.wav"
+		selectedflavorsound="alt6/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt6/sounds/voice/move_%.wav"
+		confirmattacksound="alt6/sounds/voice/attack_%.wav"
+		nomanasound="alt6/sounds/voice/no_mana.wav"
+		cooldownsound="alt6/sounds/voice/cooldown.wav"
+		tauntedsound="alt6/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt6/sounds/voice/taunt_after.wav"
+		
+		
+		toolchargeseffectkeyname0="Ability_Prophet4"
+		toolchargeseffectpath0=",alt6/ability_04/effects/state_self1.effect,alt6/ability_04/effects/state_self2.effect,alt6/ability_04/effects/state_self3.effect"
+	>
+		<onspawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Bushwack.Alt4 aa.Hero_Hantumon.Alt7 aa.Hero_Valkyrie.Alt10 aa.Hero_Hellbringer.Alt6" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey name="Scar_Set" />
+			</compare>
+		</onspawn>
+
+		<onrespawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Bushwack.Alt4 aa.Hero_Hantumon.Alt7 aa.Hero_Valkyrie.Alt10 aa.Hero_Hellbringer.Alt6" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey name="Scar_Set" />
+			</compare>
+		</onrespawn>
+
+		<onframe>
+			<condition target="this_entity" test="modifier Scar_Set and target_type moving">
+				<activatemodifierkey name="Scar_Trail" />
+			</condition>
+			<else>
+				<deactivatemodifierkey name="Scar_Trail" />
+			</else>
+		</onframe>
+
+		<ondeath>
+			<deactivatemodifierkey name="Scar_Trail" />
+		</ondeath>
+
+		<modifier key="Scar_Set" modpriority="1"
+			tooleffectkeyname0=""
+			tooleffectpath0="alt6/effects/scar.effect"
+		/>
+
+		<modifier key="Scar_Trail" modpriority="2"
+			tooleffectkeyname1=""
+			tooleffectpath1="alt6/effects/scar_trail.effect"
+		/>
+		
+		<modifier key="ProphetR_1" modpriority="101"
+			model="alt6/effects/bird/bird_fly/model.mdf"
+			modelscale=".75"
+			flying="true"
+			flyheight="150"
+			portraitcampos="-15 70 -25"
+			attackoffset="0 40 80"
+			attacknumanims="1"
+			sightrangeday="2000"
+			sightrangenight="2000"
+		/>
+		
+	</altavatar>
+	
+	<altavatar key="Hero_Prophet.Alt7" modpriority="1"
+		altavatar="true"
+		
+		icon2="alt7/icon.tga"
+		portrait="alt7/icon.tga"
+		
+		preglobalscale="2.1"
+		passiveeffect="alt7/effects/body.effect"
+		
+		model="alt7/model.mdf"
+		portraitcampos="-8 0 17"
+		
+		previewmodel="alt7/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.35"
+	
+		storemodel="alt7/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.85"
+		storepassiveeffect="alt7/effects/body_store.effect"
+
+		selectedsound="alt7/sounds/voice/select_%.wav"
+		selectedflavorsound="alt7/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt7/sounds/voice/move_%.wav"
+		confirmattacksound="alt7/sounds/voice/attack_%.wav"
+		nomanasound="alt7/sounds/voice/no_mana.wav"
+		cooldownsound="alt7/sounds/voice/cooldown.wav"
+		tauntedsound="alt7/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt7/sounds/voice/taunt_after.wav"
+	>
+		<modifier key="ProphetR_1" modpriority="101"
+			model="alt7/effects/model/bird_fly02/bird_fly/model.mdf"
+			modelscale=".65"
+			flying="true"
+			flyheight="180"
+			portraitcampos="-15 70 -25"
+			attackoffset="0 40 20"
+			attacknumanims="1"
+			sightrangeday="2000"
+			sightrangenight="2000"
+		/>
+		
+	</altavatar>
+	
+	<altavatar key="Hero_Prophet.Alt8" modpriority="1"
+		altavatar="true"
+		
+		icon2="alt8/icon.tga"
+		portrait="alt8/icon.tga"
+		
+		preglobalscale="2.2"
+		passiveeffect="alt8/effects/body.effect"
+		
+		model="alt8/model.mdf"
+		portraitcampos="20 0 22"
+	
+		previewmodel="alt8/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.35"
+	
+		storemodel="alt8/preview.mdf"
+		storepos="0 0 -25"
+		storeangles="0 0 0"
+		storescale="1.85"
+		storepassiveeffect="alt8/effects/body.effect"
+
+		selectedsound="alt8/sounds/voice/select_%.wav"
+		selectedflavorsound="alt8/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt8/sounds/voice/move_%.wav"
+		confirmattacksound="alt8/sounds/voice/attack_%.wav"
+		nomanasound="alt8/sounds/voice/no_mana.wav"
+		cooldownsound="alt8/sounds/voice/cooldown.wav"
+		tauntedsound="alt8/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt8/sounds/voice/taunt_after.wav"
+	>	
+		<modifier key="ProphetR_1" modpriority="101"
+			model="effects/bird/bird_fly/model.mdf"
+			passiveeffect="alt8/effects/bird_body.effect"
+			modelscale="0.55"
+			flying="true"
+			flyheight="220"
+			portraitcampos="-15 70 -25"
+			attackoffset="0 40 20"
+			attacknumanims="1"
+			sightrangeday="2000"
+			sightrangenight="2000"
+		/>
+		
+	</altavatar>
+	
+	<altavatar key="Hero_Prophet.Alt9" modpriority="1"
+		altavatar="true"
+		
+		icon2="alt9/icon.tga"
+		portrait="alt9/icon.tga"
+		
+		preglobalscale="2.2"
+		passiveeffect="alt9/effects/body.effect"
+		
+		model="alt9/model.mdf"
+		portraitcampos="5 -5 30"
+		
+		previewmodel="alt9/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.35"
+	
+		storemodel="alt9/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.85"
+		storepassiveeffect="alt9/effects/body.effect"
+
+		selectedsound="alt9/sounds/voice/select_%.wav"
+		selectedflavorsound="alt9/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt9/sounds/voice/move_%.wav"
+		confirmattacksound="alt9/sounds/voice/attack_%.wav"
+		nomanasound="alt9/sounds/voice/no_mana.wav"
+		cooldownsound="alt9/sounds/voice/cooldown.wav"
+		tauntedsound="alt9/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt9/sounds/voice/taunt_after.wav"
+	>
+		<onspawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Sapphire.Alt3 aa.Hero_Prophet.Alt9 aa.Hero_Vanya.Alt7 aa.Hero_Bubbles.Alt15" >
+				<applystate name="Set_FourSymbols_Bird" continuous="true"/>
+			</ownsproduct>
+		</onspawn>
+		
+		<modifier key="ProphetR_1" modpriority="101"
+			model="alt9/effects/bird/bird_fly/model.mdf"
+			modelscale="1.6"
+			flying="true"
+			flyheight="220"
+			portraitcampos="-15 70 -25"
+			attackoffset="0 40 20"
+			attacknumanims="1"
+			sightrangeday="2000"
+			sightrangenight="2000"
+		/>
+		
+	</altavatar>
+</hero>

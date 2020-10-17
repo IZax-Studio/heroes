@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+	
+
+		<particlesystem name="system0" space="world" scale=".8">
+		
+			<beam
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon2"
+				size="75"
+				startcolor="0 0 1"
+				midcolor="0 0 1"
+				endcolor="0 0 1"
+				midcolorpos=".8"
+				material="/shared/effects/materials/bow_glow_03.material"
+				anchor="1"
+			/>			
+			
+			<beam
+				bone_a="_bone_weapon3"
+				bone_b="_bone_weapon4"
+				size="75"
+				startcolor="0 0 1"
+				midcolor="0 0 1"
+				endcolor="0 0 1"
+				midcolorpos=".8"
+				material="/shared/effects/materials/bow_glow_03.material"
+				anchor="1"
+			/>					
+			
+			<beam
+				bone_a="_bone_weapon3"
+				bone_b="_bone_weapon4"
+				size="75"
+				startcolor="0 0 1"
+				midcolor="0 0 1"
+				endcolor="0 0 1"
+				midcolorpos=".8"
+				material="/shared/effects/materials/bow_glow_03.material"
+				anchor="1"
+			/>					
+			
+			<beam
+				bone_a="_bone_weapon4"
+				bone_b="_bone_weapon6"
+				size="75"
+				startcolor="0 0 1"
+				midcolor="0 0 1"
+				endcolor="0 0 1"
+				midcolorpos=".8"
+				material="/shared/effects/materials/bow_glow_03.material"
+				anchor="1"
+			/>			
+			
+			<beam
+				bone_a="_bone_weapon5"
+				bone_b="_bone_weapon6"
+				size="75"
+				startcolor="0 0 1"
+				midcolor="0 0 1"
+				endcolor="0 0 1"
+				midcolorpos=".8"
+				material="/shared/effects/materials/bow_glow_03.material"
+				anchor="1"
+			/>				
+			
+			<beam
+				bone_a="_bone_weapon6"
+				bone_b="_bone_weapon8"
+				size="150"
+				startcolor="0 0 1"
+				midcolor="0 0 1"
+				endcolor="0 0 1"
+				midcolorpos=".8"
+				material="/shared/effects/materials/bow_glow_03.material"
+				anchor="1"
+			/>			
+			
+			<beam
+				bone_a="_bone_weapon7"
+				bone_b="_bone_weapon8"
+				size="100"
+				startcolor="0 0 1"
+				midcolor="0 0 1"
+				endcolor="0 0 1"
+				midcolorpos=".8"
+				material="/shared/effects/materials/bow_glow_03.material"
+				anchor="1"
+			/>				
+			
+			<beam
+				bone_a="_bone_weapon8"
+				bone_b="_bone_weapon10"
+				size="150"
+				startcolor="0 0 1"
+				midcolor="0 0 1"
+				endcolor="0 0 1"
+				midcolorpos=".8"
+				material="/shared/effects/materials/bow_glow_03.material"
+				anchor="1"
+			/>			
+			
+			<beam
+				bone_a="_bone_weapon9"
+				bone_b="_bone_weapon10"
+				size="150"
+				startcolor="0 0 1"
+				midcolor="0 0 1"
+				endcolor="0 0 1"
+				midcolorpos=".8"
+				material="/shared/effects/materials/bow_glow_03.material"
+				anchor="1"
+			/>			
+			
+			<beam
+				bone_a="_bone_weapon10"
+				bone_b="_bone_weaponL"
+				size="150"
+				startcolor="0 0 1"
+				midcolor="0 0 1"
+				endcolor="0 0 1"
+				midcolorpos=".8"
+				material="/shared/effects/materials/bow_glow_03.material"
+				anchor="1"
+			/>
+		
+
+			<beam
+				bone_a="_bone_weapon11"
+				bone_b="_bone_weapon12"
+				size="100"
+				startcolor="0 0 1"
+				midcolor="0 0 1"
+				endcolor="0 0 1"
+				midcolorpos=".8"
+				material="/shared/effects/materials/bow_glow_03.material"
+				anchor="1"
+			/>			
+			
+			<beam
+				bone_a="_bone_weapon13"
+				bone_b="_bone_weapon14"
+				size="80"
+				startcolor="0 0 1"
+				midcolor="0 0 1"
+				endcolor="0 0 1"
+				midcolorpos=".8"
+				material="/shared/effects/materials/bow_glow_03.material"
+				anchor="1"
+			/>			
+			
+			<beam
+				bone_a="_bone_weapon14"
+				bone_b="_bone_weapon15"
+				size="80"
+				startcolor="0 0 1"
+				midcolor="0 0 1"
+				endcolor="0 0 1"
+				midcolorpos=".8"
+				material="/shared/effects/materials/bow_glow_03.material"
+				anchor="1"
+			/>			
+			
+			<beam
+				bone_a="_bone_weapon17"
+				bone_b="_bone_weapon18"
+				size="100"
+				startcolor="0 0 1"
+				midcolor="0 0 1"
+				endcolor="0 0 1"
+				midcolorpos=".8"
+				material="/shared/effects/materials/bow_glow_03.material"
+				anchor="1"
+			/>			
+			
+			<beam
+				bone_a="_bone_weapon21"
+				bone_b="_bone_weapon18"
+				size="80"
+				startcolor="0 0 1"
+				midcolor="0 0 1"
+				endcolor="0 0 1"
+				midcolorpos=".8"
+				material="/shared/effects/materials/bow_glow_03.material"
+				anchor="1"
+			/>				
+			
+			<beam
+				bone_a="_bone_weapon18"
+				bone_b="_bone_weapon20"
+				size="80"
+				startcolor="0 0 1"
+				midcolor="0 0 1"
+				endcolor="0 0 1"
+				midcolorpos=".8"
+				material="/shared/effects/materials/bow_glow_03.material"
+				anchor="1"
+			/>			
+			
+			<beam
+				bone_a="_bone_weapon19"
+				bone_b="_bone_weapon20"
+				size="80"
+				startcolor="0 0 1"
+				midcolor="0 0 1"
+				endcolor="0 0 1"
+				midcolorpos=".8"
+				material="/shared/effects/materials/bow_glow_03.material"
+				anchor="1"
+			/>			
+			
+			
+			<beam
+				bone_a="_bone_weapon20"
+				bone_b="_bone_weaponR"
+				size="100"
+				startcolor="0 0 1"
+				midcolor="0 0 1"
+				endcolor="0 0 1"
+				midcolorpos=".8"
+				material="/shared/effects/materials/bow_glow_03.material"
+				anchor="1"
+			/>
+
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+	</thread>
+</effect>

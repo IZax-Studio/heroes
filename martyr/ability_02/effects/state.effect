@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1200"
+				volume="0.2" 
+				soundloop="true"
+				fadein="700"
+				fadeout="700"
+				sample="../sounds/state.wav"
+			/>
+
+			<model
+				life="3000"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="0"
+				midcolor=".3 .2 .1"
+				endcolor="0"
+				material="/shared/effects/materials/shell.material"
+				startscale="1"
+				midscale="1.15"
+				endscale="1"
+				loop="true"
+			/>
+			
+			<model
+				life="3000"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor=".3 .2 .1"
+				midcolor="0"
+				endcolor=".3 .2 .1"
+				material="/shared/effects/materials/shell.material"
+				startscale="1.15"
+				midscale="1"
+				endscale="1.15"
+				loop="true"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="2000"
+				startcolor=".5 .5 0"
+				midcolor="0 0 0"
+				endcolor=".5 .5 0"
+				rollspeed="720"
+				loop="true"
+				scale="2.5"
+				material="/shared/effects/materials/flux_ring.material"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="2000"
+				startcolor="0 0 0"
+				midcolor="0 .5 1"
+				endcolor="0 0 0"
+				rollspeed="720"
+				loop="true"
+				scale="2.5"
+				material="/shared/effects/materials/flux_ring.material"
+				roll="180"
+			/>
+			<!--
+			<billboard
+				delay="100"
+				bone="_bone_centerofchest"
+				life="2000"
+				startcolor=".2 .75 .2"
+				midcolor=".2 .2 .75"
+				endcolor=".2 .75.2"
+				rollspeed="360"
+				loop="true"
+				scale="1.75"
+				material="/shared/effects/materials/fresnel.material"
+			/>
+-->
+			
+		</particlesystem>
+
+</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<waitfordeath instance="instance0" />
+</thread>
+</effect>

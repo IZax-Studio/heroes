@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+
+			<model
+				position="0 0 130"
+				timenudge="1"
+				model="/shared/models/invis.mdf"
+				rollspeed="2000"
+				scale=".6"
+			>
+				<template name="swirlyTrail">
+					<trailemitter
+						position="{position}"
+						spawnrate="50"
+						particlelife="300"
+						direction="{position}"
+						speed="400"
+						angle="0"
+						drag="0.25"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/calamity_fire_scrolling_trail.material"
+						attachtoemitter="true"
+					>
+						<particle
+							startsize="50"
+							endsize="80"
+							startcolor="1 .5 0"
+							endcolor="1 .5 0"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+						/>
+					</trailemitter>
+					<trailemitter
+						position="{position}"
+						spawnrate="50"
+						particlelife="200"
+						direction="{position}"
+						speed="400"
+						angle="0"
+						drag="0.25"
+						texposscale="1"
+						texpostime="50"
+						texstretchscale="-1"
+						material="/shared/effects/materials/whitedot_blend_repeat.material"
+						attachtoemitter="true"
+					>
+						<particle
+							startsize="50"
+							endsize="20"
+							color="1 .5 0"
+							startalpha="1"
+							endalpha="0"
+						/>
+					</trailemitter>
+					<trailemitter
+						position="{position}"
+						spawnrate="50"
+						particlelife="200"
+						direction="{position}"
+						speed="400"
+						angle="0"
+						drag="0.25"
+						texposscale="0"
+						texpostime="60"
+						texstretchscale="1"
+						material="/shared/effects/materials/trail_02.material"
+						attachtoemitter="true"
+					>
+						<particle
+							startsize="50"
+							midsize="40"
+							endsize="0"
+							startcolor="1 .5 0"
+							midcolor="1 .5 0"
+							endcolor="1 .5 0"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+						/>
+					</trailemitter>
+				</template>
+				<instance name="swirlyTrail" position="0 0 40" />
+				<instance name="swirlyTrail" position="0 0 -40" />
+			</model>
+
+		<!--
+			<model
+				scale="1.25"
+				position="0 0 130"
+				timenudge="1"
+				model="../../ability_01/effects/sphere/model.mdf"
+				material="../../ability_01/effects/sphere/material.material"
+				color="1 .5 0"
+				expirelife="100"
+				startalpha="1"
+				endalpha="0"
+				directionalspace="global"
+			/>
+
+			<model
+				scale="4.25"
+				anim="idle"
+				position="0 0 130"
+				timenudge="1"
+				model="/shared/effects/models/hollow_cylinder/model.mdf"
+				material="../../ability_01/effects/sphere/material.material"
+				color="1 .5 0"
+				expirelife="100"
+				startalpha=".5"
+				endalpha="0"
+				directionalspace="global"
+			/>
+			<model
+				scale="4.25"
+				anim="idle"
+				pitch="180"
+				yaw="180"
+				position="0 0 130"
+				timenudge="1"
+				model="/shared/effects/models/hollow_cylinder/model.mdf"
+				material="../../ability_01/effects/sphere/material.material"
+				color="1 .5 0"
+				expirelife="100"
+				startalpha=".5"
+				endalpha="0"
+				directionalspace="global"
+			/>
+		-->
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

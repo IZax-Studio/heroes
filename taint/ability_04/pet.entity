@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pet
+	name="Pet_Taint_Ability4"
+	
+	icon="pet/icon.tga"
+	portrait=""
+	model="pet/model.mdf"
+	skin=""
+	
+	passiveeffect="pet/effects/body.effect"
+	spawneffect="pet/effects/spawn.effect"
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	preglobalscale="2"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="64"
+	boundsradius="16"
+	selectionradius="32"
+	targetoffset="0 0 0"
+
+	movespeed="400"
+	turnrate="450"
+	turnsmoothing="0.05"
+	isselectable="true"
+	iscontrollable="false"
+
+	maxhealth="350,500,650"
+	healthregen="0.25"
+	maxmana="0"
+	manaregen="0"
+
+	armor="5.5"
+	magicarmor="3"
+
+	cancarryitems="false"
+	inventory0=""
+	inventory1=""
+	inventory2=""
+	inventory3=""
+
+	attackduration="1000"
+	attackactiontime="350"
+	attackcooldown="1250"
+	attackdamagemin="30,35,40"
+	attackdamagemax="30,35,40"
+	attacknumanims="2"
+	attackoffset="0 60 100"
+	attackprojectile=""
+	attackrange="100"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="/heroes/bephelgor/ability_02/pet/effects/impact.effect"
+	attacktype="melee"
+	combattype="Melee"
+
+	aggrorange="800"
+	sightrangeday="1200"
+	sightrangenight="800"
+	
+	goldbountymin="8"
+	goldbountymax="8"
+	experiencebounty="5"
+	
+	lifetime="8000"
+	
+	corpsetime="10000"
+	corpsefadetime="5000"
+	unittype="summoned Uninfestable"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+>
+	<onattackingpredamage>
+		<setvalue source="target_entity" name="combat_deflection" a="combat_deflection" b="0" op="min" />
+	</onattackingpredamage>
+	
+	<altavatar key="Hero_Taint.Alt2"
+		model="../alt2/ability_04/pet/model.mdf"
+	/>
+	
+	<altavatar key="Hero_Taint.Alt3"
+		model="../alt3/ability_04/pet/model.mdf"
+		spawneffect="../alt3/ability_04/pet/effects/spawn.effect"
+		passiveeffect="../alt3/ability_04/pet/effects/body.effect"
+	/>
+	
+	<altavatar key="Hero_Taint.Alt4"
+		preglobalscale=".7"
+		attackimpacteffect="../alt4/ability_04/pet/effects/impact.effect"
+		model="../alt4/ability_04/pet/model.mdf"
+		spawneffect="../alt4/ability_04/pet/effects/spawn.effect"
+		passiveeffect="../alt4/ability_04/pet/effects/body.effect"
+	/>
+	
+	<altavatar key="Hero_Taint.Alt5"
+		preglobalscale=".7"
+		attackimpacteffect="../alt5/ability_04/pet/effects/impact.effect"
+		model="../alt5/ability_04/pet/model.mdf"
+		spawneffect="../alt5/ability_04/pet/effects/spawn.effect"
+		passiveeffect="../alt5/ability_04/pet/effects/body.effect"
+	/>
+	
+	<altavatar key="Hero_Taint.Alt6"
+		preglobalscale="1"
+		attackimpacteffect="../alt6/ability_04/pet/effects/impact.effect"
+		model="../alt6/ability_04/pet/model.mdf"
+		spawneffect="../alt6/ability_04/pet/effects/spawn.effect"
+	/>
+	
+	<altavatar key="Hero_Taint.Alt7"
+		preglobalscale=".8"
+		attackimpacteffect="../alt7/ability_04/pet/effects/impact.effect"
+		model="../alt7/ability_04/pet/model.mdf"
+		spawneffect="../alt7/ability_04/pet/effects/spawn.effect"
+		passiveeffect="../alt7/ability_04/pet/effects/body.effect"
+	/>
+	
+	<altavatar key="Hero_Taint.Alt8"
+		model="../alt8/ability_04/effects/pet/model.mdf"
+		attackimpacteffect="../alt8/ability_04/pet/effects/impact.effect"
+		spawneffect="../alt8/ability_04/effects/pet/effects/spawn.effect"
+		passiveeffect="../alt8/ability_04/effects/pet/effects/body.effect"
+	/>
+</pet>

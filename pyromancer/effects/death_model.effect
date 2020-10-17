@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="death_debris">
+	<definitions>	
+		<modifier
+			life="10000"
+			alpha="0"
+		/>		
+		<particlesystem name="system0" space="world" scale="1">
+			<model
+				life="300"
+				parentskeleton="0"
+				position="0 0 0"
+				scale="1"
+				expirelife="300"
+				model="/heroes/pyromancer/effects/death/model.mdf"
+				material="/heroes/pyromancer/Lina_Body.material"
+				color="3 0 0"
+				startalpha=".5"
+				midalpha=".5"
+				endalpha="0"
+				midalphapos=".7"
+				anim="idle"
+			/>			
+			<model
+				life="300"
+				parentskeleton="0"
+				position="0 0 0"
+				scale="1"
+				expirelife="300"
+				model="/heroes/pyromancer/effects/death/model.mdf"
+				material="/shared/effects/materials/shell2.material"
+				color="3 1 1"
+				startalpha=".5"
+				midalpha=".5"
+				endalpha="0"
+				midalphapos=".7"
+				anim="idle"
+			/>
+			<simpleemitter
+				delay="100"
+				position="0 -20 60"	
+				count="200"
+				gravity="15"
+				life="300"
+				minspeed="1000"
+				maxspeed="2000"
+				drag="0.1"
+				depthbias="-50"
+				spawnrate="1000"			
+				particlelife="4000"
+				collide="true"
+				material="/shared/effects/materials/flare_05.material"
+				offsetsphere="20"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-300"
+					color="1 0 0"
+					midcolorpos=".25"
+					maxanglespeed="300"
+					minsize="2"
+					maxsize="7"
+					startalpha=".8"
+					endalpha="0"
+				/>
+			</simpleemitter>			
+			<simpleemitter
+				delay="100"
+				position="0 -20 60"
+				count="50"
+				gravity="15"
+				life="300"
+				minspeed="1000"
+				maxspeed="2000"
+				drag="0.1"
+				depthbias="-50"
+				spawnrate="1000"			
+				particlelife="2000"
+				collide="true"
+				offsetsphere="20"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-300"
+					color="1 0 0"
+					midcolorpos=".25"
+					maxanglespeed="300"
+					startalpha=".8"
+					endalpha="0"
+				>
+					<simpleemitter
+						spawnrate="4"
+						particlelife="400"
+						depthbias="-10"		
+						acceleration="50"
+						material="/shared/effects/materials/flare_05.material"
+						particledirectionalspace="local"				
+					>
+						<particle 
+							minangle="-90"
+							maxangle="90"
+							minanglespeed="100"
+							startcolor="1 0 0"
+							midcolor="1 0 0"
+							endcolor="0 0 0"
+							midcolorpos=".7"
+							maxanglespeed="0"
+							startframe="0"
+							endframe="1"				
+							minsize="2"		
+							maxsize="7"
+							midsizepos=".7"		
+							anchor=".6"
+							alpha=".2"
+						/>
+					</simpleemitter>					
+					<simpleemitter
+						spawnrate="7"
+						particlelife="500"			
+						speed="15"
+						position="0 0 10"
+						offsetsphere="10"
+						acceleration="0"
+						gravity="2"
+						material="/shared/effects/materials/flare_05.material"
+						inheritvelocity="0"
+					>
+						<particle
+							minangle="-360"
+							maxangle="360"							
+							startcolor="0"
+							midcolor="1 0 0"
+							endcolor="0"							
+							minsize=".7"
+							maxsize="1"							
+							startalpha="0"
+							midalpha="0.8"
+							endalpha="0"
+							midalphapos="0.9"
+							anchor="0"
+							depthbias="0"
+						/>
+					</simpleemitter>					
+					<billboard
+						material="/shared/effects/materials/flare_05.material"
+						startcolor=".2"
+						midcolor="1 0 0"
+						endcolor="1 0 0"
+						startsize="2"
+						midsize="10"
+						endsize="2"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						life="1000"
+						depthbias="-20"
+						loop="true"
+					/>					
+					<billboard
+						material="/shared/effects/materials/flare_05.material"
+						startcolor="0"
+						midcolor="1 0 0"
+						endcolor="0"
+						startsize="1"
+						midsize="5"
+						endsize="1"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						life="1000"
+						depthbias="-20"
+						loop="true"
+					/>
+				</particle>
+			</simpleemitter>			
+			<simpleemitter
+				delay="100"
+				life="800"
+				position="0 -20 60"
+				spawnrate="15"
+				particlelife="400"
+				depthbias="-10"		
+				acceleration="50"
+				material="/shared/effects/materials/flare_05.material"
+				particledirectionalspace="local"				
+			>
+				<particle 
+					minangle="-90"
+					maxangle="90"
+					minanglespeed="100"
+					startcolor="0 0 0"
+					midcolor="1 0 0"
+					endcolor="0 0 0"
+					midcolorpos=".7"
+					maxanglespeed="0"
+					startframe="0"
+					endframe="1"				
+					startsize="20"
+					midsize="100"
+					endsize="20"
+					midsizepos=".7"		
+					anchor="1"
+					alpha=".2"
+				/>
+			</simpleemitter>		
+			<simpleemitter
+				delay="100"
+				life="800"
+				spawnrate="30"
+				particlelife="500"			
+				position="0 -20 40"
+				speed="15"
+				offsetsphere="10"
+				acceleration="0"
+				gravity="2"
+				material="/shared/effects/materials/flare_05.material"
+				inheritvelocity="0"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"					
+					startcolor="0"
+					midcolor="1 0 0"
+					endcolor="0"					
+					minsize="5"
+					maxsize="20"					
+					startalpha="0"
+					midalpha="0.8"
+					endalpha="0"
+					midalphapos="0.9"
+					anchor="0"
+					depthbias="0"
+				/>
+			</simpleemitter>			
+			<billboard
+				delay="100"
+				position="0 -20 60"
+				material="/shared/effects/materials/flare_05.material"
+				startcolor=".2"
+				midcolor="1 0 0"
+				endcolor=".2"
+				startsize="5"
+				midsize="100"
+				endsize="5"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				life="1000"
+				depthbias="-20"
+			/>			
+			<billboard
+				delay="100"
+				position="0 -20 60"
+				material="/shared/effects/materials/flare_05.material"
+				startcolor="0"
+				midcolor=".5 0 0"
+				endcolor="0"
+				startsize="2"
+				midsize="40"
+				endsize="2"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				life="1000"
+				depthbias="-20"
+			/>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1"/>
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>

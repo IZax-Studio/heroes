@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true" useentityeffectscale="1">
+	<definitions>
+
+		<modifier
+			name="modifier0"
+			startcolor="1 .75 .2"
+			endcolor="1 1 1"
+			life="500"
+		/>
+
+		<particlesystem name="system0" space="world" scale="1">
+				
+				
+				<sound
+				forcestereo="true"
+				norestart="true"
+				channel="998"
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="1300"
+				volume="1"				
+				sample="/heroes/parallax/ability_01/sounds/imp_%.wav" 
+			/>
+			
+			<simpleemitter
+				count="10"
+				bone="_bone_centerofchest"
+				position="0 0 0"
+				spawnrate="75"
+				minparticlelife="250"
+				maxparticlelife="500"
+				minspeed="250"
+				maxspeed="500"
+				drag="0.05"
+				gravity="-1"
+				offsetsphere="25"
+				material="/shared/effects/materials/dust_smoke_02.material"
+			>
+				<particle
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					turn="1"
+					color="0 0 0"
+					size="25"
+					minendscale="6"
+					maxendscale="10"
+					startalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+-->
+<!--
+			<model
+				bone="_bone_center"
+				position="0 0 -10"
+				life="250"
+				model="tentacles/wrap/model.mdf"
+				material="tentacles/wrap/material.material"
+				anim="idle"
+				color=".15 0 .25"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".95"
+				scale="1.75"
+				yawspeed="-1200"
+				directionalspace="local"
+			>
+			</model>
+-->
+
+			<billboard
+				bone="_bone_centerofchest"
+				life="1000"
+				startcolor=".5 0 0"
+				midcolor=".5 0 0"
+				midcolorpos="0.3"
+				endcolor="0"
+				startsize="150"
+				endsize="0"
+				depthbias="0"
+				material="/shared/effects/materials/whitedot.material"
+				position="0 0 0"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				position="0 0 0"
+				delay="0"
+				life="350"
+				param="0.1"
+				startsize="25"
+				endsize="150"
+				startalpha="0"
+				midalpha=".4"
+				endalpha="0"
+				depthbias="0"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+			
+			<template name="trail">
+				<twopointtrailemitter
+					life="600"
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					spawnrate="44"
+					particlelife="500"
+					texpostime="500"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/swoosh_add.material"
+					subframepos="true"
+				>
+					<particle
+						startcolor=".1 .05 .05"
+						endcolor="0 0 0" 
+					/>
+				</twopointtrailemitter>
+				
+				<twopointtrailemitter
+					life="600"
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					spawnrate="44"
+					particlelife="500"
+					texpostime="500"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					material="/shared/effects/materials/soul_projectile.material"
+					subframepos="true"
+					startparticlealpha="1"
+					endparticlealpha="0"
+				>
+					<particle
+						color="0"
+						startalpha="1"
+						endalpha="0"
+					/>
+				</twopointtrailemitter>
+			</template>
+		
+			<instance name="trail" bone_a="Bip01 L Clavicle" bone_b="Bip01 L Hand"/>
+			<instance name="trail" bone_a="Bip01 R Clavicle" bone_b="Bip01 R Hand"/>
+			<instance name="trail" bone_a="Bip01 R Foot" bone_b="Bip01 R Thigh"/>
+			<instance name="trail" bone_a="Bip01 L Foot" bone_b="Bip01 L Thigh"/>
+			<instance name="trail" bone_a="Bip01 Pelvis" bone_b="Bip01 Head"/>
+
+		</particlesystem>
+	</definitions>
+
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnmodifier instance="instance1" modifier="modifier0"/>  
+	<waitfordeath instance="instance0" />
+</thread>
+
+</effect>
+
+
+
+
+
+
+

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_MonkeyKing_Ability1_Rush_2"
+	
+	icon="icon1.tga"
+	passiveeffect="effects/rush_2.effect"
+
+	unitwalking="true"
+	disarmed="true"
+	effecttype=""
+	modifierkey="Speeding"
+	ishidden="true"
+>
+	<altavatar key="Hero_MonkeyKing.Alt2" modpriority="1"
+	    passiveeffect="/heroes/monkey_king/alt2/ability_01/effects/rush_2.effect"
+	/>
+	
+	<altavatar key="Hero_MonkeyKing.Alt3" modpriority="1"
+	    passiveeffect="/heroes/monkey_king/alt3/ability_01/effects/rush_2.effect"
+	/>
+	
+	<altavatar key="Hero_MonkeyKing.Alt4" modpriority="1"
+	    passiveeffect="/heroes/monkey_king/alt4/ability_01/effects/rush_2.effect"
+	/>
+	
+	<altavatar key="Hero_MonkeyKing.Alt5" modpriority="1"
+	    passiveeffect="/heroes/monkey_king/alt5/ability_01/effects/rush_2.effect"
+	/>
+	
+	<altavatar key="Hero_MonkeyKing.Alt6" modpriority="1"
+	    passiveeffect="/heroes/monkey_king/alt6/ability_01/effects/rush_2.effect"
+	/>
+	
+	<altavatar key="Hero_MonkeyKing.Alt7" modpriority="1"
+	    passiveeffect="/heroes/monkey_king/alt7/ability_01/effects/rush_2.effect"
+	/>
+	
+	<altavatar key="Hero_MonkeyKing.Alt8" modpriority="1"
+	    passiveeffect="/heroes/monkey_king/alt8/ability_01/effects/rush_2.effect"
+	/>
+	
+	<altavatar key="Hero_MonkeyKing.Alt9" modpriority="1"
+	    passiveeffect="/heroes/monkey_king/alt9/ability_01/effects/rush_2.effect"
+	/>
+	
+	<altavatar key="Hero_MonkeyKing.Alt11" modpriority="1"
+	    passiveeffect="/heroes/monkey_king/alt11/ability_01/effects/rush_1.effect"
+	/>
+	
+	<altavatar key="Hero_MonkeyKing.Alt12" modpriority="1"
+	    passiveeffect="/heroes/monkey_king/alt12/ability_01/effects/rush_2.effect"
+	/>
+	
+	<altavatar key="Hero_MonkeyKing.Alt13" modpriority="1"
+	    passiveeffect="/heroes/monkey_king/alt13/ability_01/effects/rush_2.effect"
+	/>
+	
+	<altavatar key="Hero_MonkeyKing.Alt14" modpriority="1"
+	    passiveeffect="/heroes/monkey_king/alt14/ability_01/effects/rush_2.effect"
+	/>
+	
+	<altavatar key="Hero_MonkeyKing.Alt15" modpriority="1"
+		icon="../alt15/ability_01/icon.tga"
+	    passiveeffect="/heroes/monkey_king/alt15/ability_01/effects/rush_2.effect"
+	/>
+	
+</state>

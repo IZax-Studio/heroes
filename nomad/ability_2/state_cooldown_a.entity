@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+    name="State_Nomad_Ability2_Cooldown_a"
+
+    serverentity="true"
+    ishidden="true"
+    icon="iconaa.tga"
+    
+>
+    <onkilled>
+        <targettype type="illusion" target="source_entity" />
+		<else>
+            <targettype type="self" source="this_inflictor_entity" />
+			<else>
+				<targettype type="heropet" target="source_entity" />
+				<else>
+					<reducecooldown duration="20000" source="this_inflictor_entity" entity="this_spawner_entity" />
+				</else>
+            </else>
+        </else>
+    </onkilled>
+    <onframe />
+	<altavatar key="Hero_Nomad.Alt12"
+		icon="../alt12/ability_02/icon.tga"
+	>
+		<modifier key="nomadAlt12_Ability2_Upgrade"
+			icon="../alt12/ability_02/icon_u.tga"
+		/>
+	</altavatar>
+</state>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Tarot_Ability2_Shield"
+
+	icon="icon2.tga"
+	
+	passiveeffect="effects/attackspeed.effect"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	
+	maxcharges="2,3,4,5"
+
+	attackspeed="1"
+>
+	
+	<onattackimpact
+		priority="999"
+		activateonbounces="true"
+	>
+		<bounce count="1" range="800" damagemult="1.0" targetscheme="visible_enemy_heroes" seek="closest" maxbouncespertarget="1" applyrealattackeffects="true" />
+		
+		<!-- Only remove charges for the real autoattack and not the bounce -->
+		<compare a="result" b="1" op="lt">
+			<removecharge />
+		</compare>
+		
+		<compare a="charges" b="0" op="eq">
+			<expire />
+		</compare>
+	</onattackimpact>
+	
+	<altavatar key="Hero_Tarot.Alt"
+		passiveeffect="../alt/ability_02/effects/attackspeed.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt2"
+		passiveeffect="../alt2/ability_02/effects/attackspeed.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt3"
+		passiveeffect="../alt3/ability_02/effects/attackspeed.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt4"
+		passiveeffect="../alt4/ability_02/effects/attackspeed.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt5"
+		passiveeffect="../alt5/ability_02/effects/attackspeed.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt6"
+		passiveeffect="../alt6/ability_02/effects/attackspeed.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt7"
+		passiveeffect="../alt7/ability_02/effects/attackspeed.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt8"
+		passiveeffect="../alt8/ability_02/effects/attackspeed.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt9"
+		passiveeffect="../alt9/ability_02/effects/attackspeed.effect"
+	/>
+
+	<altavatar key="Hero_Tarot.Alt10"
+		passiveeffect="../alt10/ability_02/effects/attackspeed.effect"
+	>
+		<onexpired>
+			<playeffect effect="../alt10/ability_02/effects/sound_expire.effect" source="source_entity" target="" occlude="true" />
+		</onexpired>
+	</altavatar>
+
+</state>

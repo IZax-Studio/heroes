@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Nomad_Ability2_Attack_Illusion"
+	
+	icon="iconbb.tga"
+	passiveeffect=""
+	
+	movespeed="600"
+	unitwalking="true"
+	attackspeed="1"
+	truestrike="true"
+	ishidden="true"
+	
+	maxmovespeed="78"
+>
+	<onattackimpact>
+		<playanim name="ability_2_a
+		ttack" target="source_entity" />
+		<playeffect effect="effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+		<playeffect effect="effects/onattackimpact_invis.effect" source="source_entity" target="source_entity" occlude="true" />
+		<damage effecttype="Physical" amount="50,70,90,110" />
+		<order command="hold" source="source_entity" target="target_entity" queue="front" />
+		<expire />
+	</onattackimpact>
+	
+	<onframe>
+		<cantarget targetscheme="enemy_units" target="this_proxy_entity" ignoreinvulnerable="false" />
+		<else>
+			<order command="attack" force="true" forceduration="5000" source="this_owner_entity" target="this_proxy_entity" />
+		</else>
+		<targettype type="alive" target="this_proxy_entity" />
+		<else>
+			<expire />
+		</else>
+		
+		<compare a="this_proxy_entity" b="0" op="eq">
+			<expire />
+		</compare>
+	</onframe>
+	
+	<onexpired>
+		<applystate name="State_Nomad_Ability2_Death" duration="500" target="target_entity" />
+	</onexpired>
+	
+	<altavatar key="Hero_Nomad.Alt7"
+	>
+		<onattackimpact>
+			<playanim name="ability_2_attack" target="source_entity" />
+			<playeffect effect="../alt7/ability_2/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+			<playeffect effect="../alt7/ability_2/effects/onattackimpact_invis.effect" source="source_entity" target="source_entity" occlude="true" />
+			<damage effecttype="Physical" amount="50,70,90,110" />
+			<order command="hold" source="source_entity" target="target_entity" queue="front" />
+			<expire />
+		</onattackimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt8"
+	>
+		<onattackimpact>
+			<playanim name="ability_2_attack" target="source_entity" />
+			<playeffect effect="../alt8/ability_02/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+			<playeffect effect="../alt8/ability_02/effects/onattackimpact_invis.effect" source="source_entity" target="source_entity" occlude="true" />
+			<damage effecttype="Physical" amount="50,70,90,110" />
+			<order command="hold" source="source_entity" target="target_entity" queue="front" />
+			<expire />
+		</onattackimpact>
+	</altavatar>
+
+	<altavatar key="Hero_Nomad.Alt11"
+	>
+		<onattackimpact>
+			<playanim name="ability_2_attack" target="source_entity" />
+			<playeffect effect="../alt11/ability_02/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+			<playeffect effect="../alt11/ability_02/effects/onattackimpact_invis.effect" source="source_entity" target="source_entity" occlude="true" />
+			<damage effecttype="Physical" amount="50,70,90,110" />
+			<order command="hold" source="source_entity" target="target_entity" queue="front" />
+			<expire />
+		</onattackimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt12"
+		icon="../alt12/ability_02/icon.tga"
+	>
+		<modifier key="nomadAlt12_Ability2_Upgrade"
+			icon="../alt12/ability_02/icon_u.tga"
+		/>
+		<onattackimpact>
+			<playanim name="ability_2_attack" target="source_entity" />
+			<playeffect effect="../alt12/ability_02/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+			<playeffect effect="../alt12/ability_02/effects/onattackimpact_invis.effect" source="source_entity" target="source_entity" occlude="true" />
+			<damage effecttype="Physical" amount="50,70,90,110" />
+			<order command="hold" source="source_entity" target="target_entity" queue="front" />
+			<expire />
+		</onattackimpact>
+	</altavatar>
+
+	<altavatar key="Hero_Nomad.Alt13"
+	>
+		<onattackimpact>
+			<playanim name="ability_2_attack" target="source_entity" />
+			<playeffect effect="../alt13/ability_02/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+			<playeffect effect="../alt13/ability_02/effects/onattackimpact_invis.effect" source="source_entity" target="source_entity" occlude="true" />
+			<damage effecttype="Physical" amount="50,70,90,110" />
+			<order command="hold" source="source_entity" target="target_entity" queue="front" />
+			<expire />
+		</onattackimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt14"
+	>
+		<onattackimpact>
+			<playanim name="ability_2_attack" target="source_entity" />
+			<playeffect effect="../alt14/ability_02/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+			<playeffect effect="../alt14/ability_02/effects/onattackimpact_invis.effect" source="source_entity" target="source_entity" occlude="true" />
+			<damage effecttype="Physical" amount="50,70,90,110" />
+			<order command="hold" source="source_entity" target="target_entity" queue="front" />
+			<expire />
+		</onattackimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt15"
+	>
+		<onattackimpact>
+			<playanim name="ability_2_attack" target="source_entity" />
+			<playeffect effect="../alt13/ability_02/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+			<playeffect effect="../alt13/ability_02/effects/onattackimpact_invis.effect" source="source_entity" target="source_entity" occlude="true" />
+			<damage effecttype="Physical" amount="50,70,90,110" />
+			<order command="hold" source="source_entity" target="target_entity" queue="front" />
+			<expire />
+		</onattackimpact>
+	</altavatar>
+</state>

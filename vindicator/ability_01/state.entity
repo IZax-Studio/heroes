@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Vindicator_Ability1_Enemy"
+
+	icon="icon1.tga"
+	passiveeffect="effects/state_enemy.effect"
+	
+	disarmed="true"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+>
+	<altavatar key="Hero_Vindicator.Alt7" modpriority="90"
+		passiveeffect="../alt7/ability_01/effects/state_enemy.effect"
+	/>
+	<altavatar key="Hero_Vindicator.Alt9" modpriority="90"
+		icon="../alt9/ability_01/icon.tga" 
+		passiveeffect="../alt9/ability_01/effects/state_enemy.effect"
+	/>
+	<altavatar key="Hero_Vindicator.Alt10" modpriority="90"
+		icon="../alt9/ability_01/icon.tga" 
+		passiveeffect="../alt9/ability_01/effects/state_enemy.effect"
+	/>
+	
+	<altavatar key="Hero_Vindicator.Alt11" modpriority="90"
+		passiveeffect="../alt11/ability_01/effects/state_enemy.effect"
+	/>
+</state>

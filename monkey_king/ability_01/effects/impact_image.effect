@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale=".95">
+					
+			<model
+				position="0 0 0"
+				scale=".8"
+				life="500"
+				model="/heroes/monkey_king/model.mdf"
+				anim="ablity_1_clone2"
+				color="1 1 1"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".75"
+				offsetsphere="0 0 0"
+			>
+				<twopointtrailemitter
+					life="200"
+					bone_a="_bone_weapon1"
+					bone_b="_bone_weapon3"
+					spawnrate="500"
+					particlelife="200"
+					texpostime="165"
+					texposscale="1"
+					texstretchscale="0.0"
+					material="/shared/effects/materials/swoosh_white.material"
+					subframepose="true"
+					startparticlecolor="1 .5 0"
+					endparticlecolor="0 0 0"
+				>
+					<particle 
+
+					/>
+				</twopointtrailemitter>
+				
+				<billboard
+					bone="_bone_center"
+					life="500"
+					startcolor=".5 0 0"
+					endcolor="0 0 0"
+					size="100"
+					position="0 0 0"
+					material="/heroes/drunkenmaster/effects/material.material"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					yawspeed="0"
+					directionalspace="local"
+				/>
+				
+				<billboard
+					bone="_bone_center"
+					life="500"
+					startcolor=".5 0 0"
+					endcolor="0 0 0"
+					size="165"
+					position="0 0 50"
+					material="/heroes/drunkenmaster/effects/material.material"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					yawspeed="0"
+					directionalspace="local"
+				/>
+			</model>
+			
+			<model
+				position="0 0 0"
+				scale=".8"
+				life="500"
+				model="/heroes/monkey_king/model.mdf"
+				anim="ablity_1_clone2"
+				color="1 1 1"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".75"
+				offsetsphere="0 0 0"
+			/>
+			
+			<model
+				position="0 0 0"
+				scale=".8"
+				life="500"
+				model="/heroes/monkey_king/model.mdf"
+				anim="ablity_1_clone2"
+				color="1 1 1"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".75"
+				offsetsphere="0 0 0"
+			/>
+		</particlesystem>
+
+		<particlesystem name="system1" space="entity" scale="1.75">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".1"
+				sample="../../sounds/impact_%.wav"
+			/>
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".1"
+				sample="../../sounds/attack_%.wav"
+			/>
+
+			<simpleemitter
+				life="401"
+				delay="0"
+				particlelife="5200"
+				spawnrate="40"
+				speed="0"
+				gravity="0"
+				direction="0 0 0"
+				particledirectionalspace="local"
+				offsetsphere="22 22 0"
+				position="0 0 0"
+			>
+				<particle> 
+					<groundsprite
+						life="3000"
+						material="/shared/effects/materials/blood_ground.material"
+						minyaw="-360"
+						maxyaw="360"
+						minsize="20"
+						maxsize="40"
+						position="0 0 0"
+						color=".4 .4 0"
+						midcolorpos=".1"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".1"
+					/>
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				life="401"
+				delay="930"
+				particlelife="5200"
+				spawnrate="10"
+				speed="0"
+				gravity="0"
+				direction="0 0 0"
+				particledirectionalspace="local"
+				offsetsphere="75 75 0"
+				position="0 0 0"
+			>
+				<particle> 
+					<groundsprite
+						minlife="1000"
+						maxlife="2000"
+						material="/shared/effects/materials/blood_ground.material"
+						minyaw="-360"
+						maxyaw="360"
+						minsize="20"
+						maxsize="40"
+						position="0 0 0"
+						color=".5 0 0"
+						midcolorpos=".1"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".1"
+					/>
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				delay="0"
+				count="2"
+				particlelife="1100"
+				spawnrate="11"
+				speed="220"
+				gravity="20"
+				direction="0 0 1"
+				minangle="0"
+				maxangle="15"
+				particledirectionalspace="local"
+				material="/shared/effects/materials/venom_splash.material"
+				offsetsphere="11 11 0"
+				position="0 0 44"
+			>
+				<particle
+					startsize="20"
+					endsize="100"
+					color=".7 0 0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				count="5"
+				particlelife="1500"
+				spawnrate="110"
+				speed="280"
+				gravity="22"
+				minangle="0"
+				maxangle="30"
+				material="/shared/effects/materials/blood1.material"
+				offsetsphere="0 0 0"
+				position="0 0 44"
+			>
+				<particle 
+					minanglespeed="-100"
+					maxanglespeed="100"
+					minangle="-60"
+					maxangle="60"
+					color=".4 0 0"
+					startsize="30"
+					endsize="80"
+					startalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

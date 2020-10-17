@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_WolfMan4"
+	
+	statuseffecttooltip="State_WolfMan_Ability4"
+	icon="icon4.tga"
+	anim="ability_4"
+	casttime="0"
+	castactiontime="0"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_self"
+	frontqueue="true"
+	inheritmovement="true"
+	nonaggressive="true"
+	casteffect="effects/cast.effect"
+	
+	manacost="0"
+	cooldowntime="100000,80000,60000"
+	
+	modifierkey=""
+	targetscheme=""
+>
+	<onimpact>
+		<applystate name="State_WolfMan_Ability4" duration="16000" target="source_entity" />
+		<hasavatarkey name="Hero_WolfMan.Alt4">
+			<playeffect effect="../alt4/ability_04/effects/bridge.effect" source="target_position" target="target_position" occlude="true" />
+			<playeffect effect="../alt4/ability_04/effects/ult_sound.effect" source="target_position" target="target_position" occlude="true" propogatetoillusions="false" />
+		</hasavatarkey>
+		<else>
+			<playeffect effect="effects/bridge.effect" source="target_position" target="target_position" occlude="true" />
+		</else>
+	</onimpact>
+	
+	<modifier key="ult_boost" modpriority="100"
+		criticalchance="0.3"
+		criticalmultiplier="1.6,1.8,2"
+		maxhealth="100,200,300"
+		modifierkey="wolfmanult_vision1,wolfmanult_vision2,wolfmanult_vision3"
+	>
+		<aura state="State_Wolfman_Ult_Boost" radius="0" targetscheme="self" />
+		
+		<onimpact>
+			<applystate name="State_WolfMan_Ability4" duration="16000" target="source_entity" />
+			<hasavatarkey name="Hero_WolfMan.Alt4">
+				<playeffect effect="../alt4/ability_04/effects/bridge.effect" source="target_position" target="target_position" occlude="true" />
+				<playeffect effect="../alt4/ability_04/effects/ult_sound.effect" source="target_position" target="target_position" occlude="true" propogatetoillusions="false" />
+			</hasavatarkey>
+			<else>
+				<playeffect effect="effects/bridge.effect" source="target_position" target="target_position" occlude="true" />
+			</else>
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_WolfMan.Alt"
+		icon="/heroes/wolfman/alt/ability_04/icon.tga"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_WolfMan.Alt2"
+		icon="/heroes/wolfman/alt2/ability_04/icon.tga"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_WolfMan.Alt3"
+		icon="/heroes/wolfman/alt/ability_04/icon.tga"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_WolfMan.Alt4"
+		icon="/heroes/wolfman/alt4/ability_04/icon.tga"
+		modifierkey="WolfMan_Alt4_Red"
+	>
+		<modifier key="WolfMan_Alt4_Red"
+			icon="icon.tga"
+		/>
+		
+		<onlearn>
+			<playeffect effect="../alt4/ability_04/effects/learn.effect" source="target_position" target="source_entity" />
+		</onlearn>
+	</altavatar>
+	
+</ability>

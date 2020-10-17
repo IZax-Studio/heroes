@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Tremble_Ability4_AttackCommand"
+
+	icon="icon5.tga"
+	effecttype=""
+	passiveeffect=""
+	
+	movespeed="525"
+	
+	ishidden="true"
+	allowtransfer="false"	
+>	
+
+	<oninflict>
+		<distance source="this_owner_entity" target="this_proxy_entity" />
+		<compare a="result" b="1000" op="lt">
+			<resetattackcooldown source="this_owner_entity" target="this_owner_entity" />
+			<order command="attack" force="true" forceduration="200" source="this_owner_entity" target="this_proxy_entity" />			
+		</compare>
+	</oninflict>
+	
+	<onrefresh>
+		<distance source="this_owner_entity" target="this_proxy_entity" />
+		<compare a="result" b="1000" op="lt">
+			<resetattackcooldown source="this_owner_entity" target="this_owner_entity" />
+			<order command="attack" force="true" forceduration="200" source="this_owner_entity" target="this_proxy_entity" />
+		</compare>
+	</onrefresh>
+	
+	<onexpired>
+		<order command="wander" source="this_owner_entity" target="source_entity" />
+	</onexpired>
+</state>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="model_high.max" file="model.model" type="K2" high="/heroes/pyromancer/lina.model" med="/heroes/pyromancer/lina.model" low="/heroes/pyromancer/lina.model" >
+	
+	<anim name="idle" clip="/heroes/pyromancer/clips/death_1.clip" minstartframe="15" maxstartframe="30" fps="15" loop="false"/>
+	
+</model>

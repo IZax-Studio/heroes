@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+
+		<sound
+				linearfalloff="true" 
+				falloffstart="725"
+				falloffend="1300"
+				volume="1"				
+				sample="/heroes/parallax/ability_02/sounds/cast.wav" 
+			/>
+			
+			<sound
+			    forcestereo="true"
+				linearfalloff="true" 
+				falloffstart="725"
+				falloffend="1300"
+				volume="1"				
+				sample="/heroes/parallax/ability_02/sounds/push.wav" 
+			/>
+			
+			
+			<!-- link -->
+			<beam
+				life="400"
+				startcolor="0"
+				midcolor="4"
+				endcolor="0"
+				midcolorpos=".25"
+				timenudge="1"
+				material="/shared/effects/materials/trail_02.material"
+				color="1 .5 0"
+				owner_a="source"
+				owner_b="target"
+				bone_a="_bone_centerofchest"
+				position_b="0 0 120"
+				startsize="40"
+				endsize="120"
+			/>
+			<beam
+				life="400"
+				startalpha="0"
+				midalpha="4"
+				endalpha="0"
+				midalphapos=".25"
+				timenudge="1"
+				material="/shared/effects/materials/trail_03_blend.material"
+				color="1 .5 0"
+				owner_a="source"
+				owner_b="target"
+				bone_a="_bone_centerofchest"
+				position_b="0 0 120"
+				startsize="15"
+				endsize="45"
+			/>
+			<beam
+				life="400"
+				startalpha="0"
+				midalpha="4"
+				endalpha="0"
+				midalphapos=".25"
+				timenudge="1"
+				material="/shared/effects/materials/trail_02_blend.material"
+				owner_a="source"
+				owner_b="target"
+				bone_a="_bone_centerofchest"
+				position_b="0 0 120"
+				startsize="10"
+				endsize="30"
+			/>
+
+			<!-- glows on helix -->
+			<billboard
+				life="500"
+				owner="target"
+				position="0 0 120"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="0"
+				midcolor="1 .5 0"
+				endcolor="0"
+				midcolorpos=".1"
+				size="80"
+			/>
+			<billboard
+				life="500"
+				owner="target"
+				position="0 0 120"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="0"
+				midcolor="1 .5 0"
+				endcolor="0"
+				midcolorpos=".1"
+				size="40"
+			/>
+			<groundsprite
+				life="500"
+				owner="target"
+				position="0 0 120"
+				material="/shared/effects/materials/whitedot_ground.material"
+				startcolor="0"
+				midcolor="1 .5 0"
+				endcolor="0"
+				midcolorpos=".1"
+				size="120"
+			/>
+			<groundsprite
+				life="500"
+				owner="target"
+				position="0 0 120"
+				material="/shared/effects/materials/whitedot_ground.material"
+				startcolor="0"
+				midcolor="1 .5 0"
+				endcolor="0"
+				midcolorpos=".1"
+				size="40"
+			/>
+
+			<!-- shockwave -->
+			<controller
+				life="1000"
+				position="0 0 100"
+				lookat="true"
+				lookatowner="target"
+				lookatposition="0 0 100"
+			>
+				<simpleemitter
+					count="1"
+					particlelife="5000"
+					direction="0 1 0"
+					angle="0"
+					speed="-600"
+					drag="0.05"
+				>
+					<particle turn="true">
+						<billboard
+							life="250"
+							lockup="true"
+							lockright="true"
+							directionalspace="local"
+							material="/shared/effects/materials/tworing_reveal_gradient_01.material"
+							startsize="50"
+							endsize="100"
+							startframe="0"
+							midframe=".7"
+							endframe=".95"
+							startparam=".5"
+							endparam="0"
+							color="1 1 0"
+						/>
+					</particle>
+				</simpleemitter>
+				<simpleemitter
+					count="1"
+					particlelife="5000"
+					direction="0 1 0"
+					angle="0"
+					speed="-800"
+					drag="0.05"
+				>
+					<particle turn="true">
+						<billboard
+							life="400"
+							lockup="true"
+							lockright="true"
+							directionalspace="local"
+							material="/shared/effects/materials/refract_ring.material"
+							startsize="0"
+							midsize="225"
+							endsize="300"
+							startparam="0"
+							midparam="0.05"
+							endparam="0"
+							midparampos=".25"
+							color="1 1 0"
+						/>
+						<billboard
+							life="200"
+							lockup="true"
+							lockright="true"
+							directionalspace="local"
+							material="/shared/effects/materials/tworing_reveal_gradient_02.material"
+							startsize="50"
+							endsize="150"
+							startframe="0"
+							midframe=".7"
+							endframe=".95"
+							startparam=".5"
+							midparam=".15"
+							endparam="0"
+							color="1 1 0"
+						/>
+					</particle>
+				</simpleemitter>
+
+				<simpleemitter
+					count="30"
+					minparticlelife="100"
+					maxparticlelife="250"
+					direction="0 1 0"
+					minangle="0"
+					maxangle="80"
+					minspeed="-2000"
+					maxspeed="-1000"
+					drag="0.04"
+					material="/shared/effects/materials/beam_06.material"
+				>
+					<particle
+						turn="true"
+						minsize="2"
+						maxsize="6"
+						widthdistort="0.05"
+						angle="90"
+						startcolor="1 .5 0"
+						endcolor="1 .5 0"
+					/>
+				</simpleemitter>
+
+				<simpleemitter
+					count="20"
+					minparticlelife="100"
+					maxparticlelife="250"
+					direction="0 1 0"
+					minangle="0"
+					maxangle="80"
+					minspeed="-2000"
+					maxspeed="-1000"
+					drag="0.04"
+					material="/shared/effects/materials/beam_01.material"
+				>
+					<particle
+						turn="true"
+						minsize="2"
+						maxsize="6"
+						widthdistort="0.05"
+						angle="90"
+						startcolor="1 .5 0"
+						endcolor="1 .5 0"
+					/>
+				</simpleemitter>
+			</controller>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<camerashake2 duration="150" scale="2" frequency="20" radius="1600" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

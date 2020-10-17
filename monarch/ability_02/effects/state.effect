@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  deferred="1" useentityeffectscale="1">
+
+	<definitions>
+	
+		<modifier
+			expirelife="1"
+			loop="true"
+			name="modifier0"
+			alpha="0"
+		/>
+		
+		<particlesystem name="system0" space="entity" scale=".8">
+ 
+			<sound
+			    soundloop="true"
+				fadein="100"
+				fadeout="400"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1000"
+				volume="1"
+				sample="/heroes/monarch/sounds/ab2_impact.wav"
+			/>
+		
+
+<!--
+			<model
+				expirelife="300"
+				position="0 0 0"
+				model="../../custom/egg/egg.mdf"
+				anim="idle"
+				scale="150"
+			/>
+
+
+			<model
+				position="0 0 0"
+				life="200"
+				parentmodel="true"
+				parentskeleton="true"
+				color="2 .5 2"
+				startscale="1"
+				endscale=".85"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".95"
+			/>
+-->
+			<model
+				position="0 0 0"
+				expirelife="1500"
+				name="emitter0" 
+				anim="idle"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				scale="4"
+				yawspeed="90"
+				minrollspeed="-5"
+				maxrollspeed="5"
+			>
+			
+				<billboard
+					expirelife="150"
+					startcolor=".3"
+					endcolor="0 0 0"
+					size="60"
+					position="0 0 20"
+					material="/heroes/drunkenmaster/effects/material.material"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					directionalspace="local"
+					depthbias="25"
+					minroll="-180"
+					maxroll="180"
+				/>
+
+				<billboard
+					expirelife="150"
+					startcolor=".15"
+					endcolor="0 0 0"
+					size="75"
+					position="0 0 20"
+					material="/heroes/drunkenmaster/effects/material.material"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					directionalspace="local"
+					depthbias="25"
+					minroll="-180"
+					maxroll="180"
+				/>
+				
+				<billboard
+					expirelife="150"
+					startcolor=".05"
+					endcolor="0 0 0"
+					size="85"
+					position="0 0 20"
+					material="/heroes/drunkenmaster/effects/material.material"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					directionalspace="local"
+					depthbias="25"
+					minroll="-180"
+					maxroll="180"
+				/>
+
+				
+			</model>
+			
+			<model
+				position="0 0 0"
+				expirelife="1500"
+				name="emitter0" 
+				anim="idle"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				scale="4"
+				yawspeed="90"
+				minrollspeed="-5"
+				maxrollspeed="5"
+			>
+
+				
+			</model>
+
+
+
+
+
+			<simpleemitter
+				delay="100"
+				count="1"
+				startparticlecolor="1"
+				endparticlecolor="0"
+				startparticlealpha="1"
+				endparticlealpha="0"
+				spawnrate="2000"
+				expirelife="500"			
+			>
+				<particle>	
+
+					<model
+						expirelife="150"
+						position="0 0 0"
+						model="/heroes/ellonia/ability_03/effects/ice_trap/model.mdf"
+						anim="idle"
+						scale="2"
+						material="/shared/effects/materials/shell3.material"
+						color="0 1 2"
+					>
+
+						<groundsprite
+							expirelife="250"
+							material="/shared/effects/materials/dirtpile_groundsprite_gray.material"
+							size="65"
+							color=".5 .5 1"
+							startalpha=".65"
+							endalpha="0"
+							midalphapos=".85"
+							minyaw="0"
+							maxyaw="360"
+							position="0 0 0"
+						/>
+
+						<template name="groundStuff">
+							<groundsprite
+								bone="{bone}"
+								expirelife="250"
+								material="/shared/effects/materials/dirtpile_groundsprite_gray.material"
+								size="18"
+								color=".5 .5 1"
+								startalpha=".35"
+								endalpha="0"
+								midalphapos=".85"
+								minyaw="0"
+								maxyaw="360"
+								position="0 0 0"
+							/>
+
+							<groundsprite
+								bone="{bone}"
+								expirelife="250"
+								material="/shared/effects/materials/ground_smash_overlay.material"
+								minsize="6"
+								maxsize="7"
+								color="1 1 1"
+								startalpha="1"
+								midalpha="1"
+								endalpha="0"
+								midalphapos=".85"
+							/>
+							
+							<groundsprite
+								bone="{bone}"
+								expirelife="250"
+								material="/shared/effects/materials/earth_cracks_overlay.material"
+								minsize="8"
+								maxsize="10"
+								color="1 1 1"
+								startalpha="1"
+								midalpha="1"
+								endalpha="0"
+								midalphapos=".85"
+							/>
+
+							<simpleemitter
+								bone="{bone}"
+								offsetsphere="12 12 0"
+								spawnrate="10"
+								minparticlelife="250"
+								maxparticlelife="750"
+								acceleration="0"
+								position="0 0 10"
+								direction="0 0 0"
+								material="/shared/effects/materials/light_rays.material"
+							>
+								<particle
+									startcolor="0 0 0"
+									midcolor=".1 .1 .2"
+									endcolor="0 0 0"
+									width="10"
+									minstartheight="0"
+									maxstartheight="60"
+									endheight="25"
+									anchor="1"
+									lockup="1"
+									lockright="false"
+								/>
+							</simpleemitter>
+							
+							<simpleemitter
+								bone="{bone}"
+								offsetsphere="7 7 0"
+								spawnrate="10"
+								minparticlelife="250"
+								maxparticlelife="750"
+								acceleration="0"
+								position="0 0 25"
+								direction="0 0 0"
+								material="/shared/effects/materials/light_rays.material"
+							>
+								<particle
+									startcolor="0 0 0"
+									midcolor=".2"
+									endcolor="0 0 0"
+									width="10"
+									startheight="100"
+									endheight="25"
+									anchor="1"
+									lockup="1"
+									lockright="false"
+								/>
+							</simpleemitter>
+							
+							<simpleemitter
+								bone="{bone}"
+								spawnrate="25"
+								particlelife="610"
+								gravity="0"
+								speed="0"
+								position="0 0 15"
+								acceleration="11"
+								material="/shared/effects/materials/snowflake.material"
+								offsetsphere="20 20 0"
+								drag="0.05"
+								direction="1 0 0"
+							>
+								<particle
+									startstickiness="0"
+									endstickiness=".25"
+									startcolor="1"
+									midcolor="1"
+									endcolor="1"
+									startalpha="1"
+									midalpha="1"
+									endalpha="0"
+									startsize="10"
+									endsize="0"	
+									turn="1"
+									heightdistort="0.02"
+								/>
+							</simpleemitter>
+
+						</template>
+
+						
+						<instance name="groundStuff" bone="_bone_fx_28"/>
+						<instance name="groundStuff" bone="_bone_fx_29"/>
+						<instance name="groundStuff" bone="_bone_fx_30"/>
+						<instance name="groundStuff" bone="_bone_fx_31"/>
+						<instance name="groundStuff" bone="_bone_fx_32"/>
+						<instance name="groundStuff" bone="_bone_fx_33"/>
+
+						<groundsprite
+							expirelife="250"
+							material="/shared/effects/materials/earth_cracks_overlay.material"
+							size="35"
+							color="1 1 1"
+							startalpha="1"
+							endalpha="0"
+							midalphapos=".85"
+							minyaw="0"
+							maxyaw="360"
+							position="0 0 0"
+						/>
+
+						<template name="bubbles">
+							<simpleemitter
+								bone="{bone}"
+								minparticlelife="450"
+								maxparticlelife="750"
+								spawnrate="5"
+								gravity="0"
+								direction="0 0 1"
+								minangle="-15"
+								maxangle="15"
+								particledirectionalspace="local"
+								material="/shared/effects/materials/bubble_add.material"
+								offsetsphere="0 0 0"
+								position="0 0 0"
+								depthbias="-20"
+							>
+								<particle
+									startcolor=".2 .2 .35"
+									endcolor="0"
+									midcolorpos="0.8"
+									minangle="0"
+									maxangle="360"
+									minsize="5"
+									maxsize="8"
+									param=".1"
+									minendscale="2"
+									maxendscale="4"
+									startalpha="1"
+									midalpha="1"
+									endalpha="0"
+								/>
+							</simpleemitter>
+						</template>
+
+						<instance name="bubbles" bone="_bone_fx_07"/>
+						<instance name="bubbles" bone="_bone_fx_03"/>
+						<instance name="bubbles" bone="_bone_fx_10"/>
+						<instance name="bubbles" bone="_bone_fx_08"/>
+						<instance name="bubbles" bone="_bone_fx_09"/>
+						<instance name="bubbles" bone="_bone_fx_12"/>
+
+					</model>
+					
+					<simpleemitter
+						spawnrate="30"
+						minparticlelife="1000"
+						maxparticlelife="1250"
+						gravity="-.2"
+						speed="10"
+						drag="0.07"
+						acceleration="0.0"
+						mintimenudge="0"
+						maxtimenudge="1000"
+						position="0 0 25"
+						material="/shared/effects/materials/phantom_white.material"
+						depthbias="-50"
+						offsetsphere="165 165 0"
+						inheritvelocity=".5"
+					>
+						<particle 
+							minangle="0"
+							maxangle="360"
+							minanglespeed="-30"
+							color="1"
+							maxanglespeed="30"
+							minsize="100"
+							maxsize="250"
+							startalpha="0"
+							midalpha=".2"
+							endalpha="0"
+							midalphapos=".25"
+							startanchor="0"
+							endanchor="0"
+						/>
+					</simpleemitter>
+					
+					<simpleemitter
+						offsetsphere="55 55 50"
+						spawnrate="30"
+						minparticlelife="500"
+						maxparticlelife="1000"
+						acceleration="0"
+						position="0 0 50"
+						direction="0 0 0"
+						material="/shared/effects/materials/light_rays.material"
+					>
+						<particle
+							startcolor="0 0 0"
+							midcolor=".15 .15 .25"
+							endcolor="0 0 0"
+							width="70"
+							minstartheight="750"
+							maxstartheight="1750"
+							endheight="25"
+							anchor="1"
+							lockup="1"
+							lockright="false"
+						/>
+					</simpleemitter>
+					
+				<simpleemitter
+					spawnrate="200"
+					particlelife="610"
+					gravity="-2"
+					speed="0"
+					position="0 0 15"
+					acceleration="11"
+					material="/shared/effects/materials/whitedot.material"
+					offsetsphere="115 115 50"
+					drag="0.05"
+					direction="1 0 0"
+				>
+					<particle 
+						startstickiness="0"
+						endstickiness=".25"
+						startcolor=".5"
+						midcolor=".5"
+						endcolor="0 0 0"
+						startsize="5"
+						endsize="0"
+						turn="1"
+						heightdistort="0.02"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					spawnrate="200"
+					particlelife="610"
+					gravity="-25"
+					speed="0"
+					position="0 0 15"
+					acceleration="11"
+					material="/shared/effects/materials/flare_03.material"
+					offsetsphere="145 145 50"
+					drag="0.05"
+					direction="1 0 0"
+				>
+					<particle
+						startstickiness="0"
+						endstickiness=".25"
+						startcolor=".35 .35 .5"
+						midcolor=".35 .35 .5"
+						endcolor="0 0 0"
+						startsize="25"
+						endsize="0"	
+						turn="1"
+						heightdistort="0.02"
+					/>
+					
+					<particle
+						startstickiness="0"
+						endstickiness=".25"
+						startcolor="1 1 1"
+						midcolor="1 1 1"
+						endcolor="0 0 0"
+						startsize="25"
+						endsize="0"	
+						turn="1"
+						heightdistort="0.02"
+					/>
+				</simpleemitter>
+
+				</particle>	
+			</simpleemitter>
+			
+			<billboard
+				material="/shared/effects/materials/bulb_add.material"
+				startcolor=".1 .1 .2"
+				endcolor="0 0 0"
+				life="250"
+				position="0 0 25"
+				startsize="300"
+				endsize="100"
+				depthbias="-150"
+			/>
+			
+			<billboard
+				delay="150"
+				material="/shared/effects/materials/bulb_add.material"
+				startcolor=".1"
+				endcolor="0 0 0"
+				life="250"
+				position="0 0 25"
+				startsize="300"
+				endsize="100"
+				depthbias="-150"
+			/>
+
+			<billboard
+				material="/shared/effects/materials/whitedot.material"
+				startcolor=".5"
+				endcolor="0 0 0"
+				life="250"
+				position="0 0 25"
+				startsize="500"
+				endsize="100"
+				depthbias="-150"
+			/>
+
+			<billboard
+				material="/shared/effects/materials/whitedot.material"
+				startcolor=".0"
+				endcolor="0 0 0"
+				expirelife="250"
+				position="0 0 25"
+				startsize="750"
+				endsize="100"
+				depthbias="-150"
+			/>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/> 
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

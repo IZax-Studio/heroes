@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Predator_Ability2_Eyes"
+
+	passiveeffect="state_eyes.effect"
+	ishidden="true"
+	allowtransfer="false"
+>
+	<altavatar key="Hero_Predator.Alt6" 
+		passiveeffect="/heroes/predator/alt6/ability_02/state_eyes.effect"
+		
+    />
+	
+	<altavatar key="Hero_Predator.Alt8" 
+		passiveeffect="/heroes/predator/alt6/ability_02/state_eyes.effect"
+		
+    />
+	
+	<altavatar key="Hero_Predator.Alt10" 
+		passiveeffect="/heroes/predator/alt10/ability_02/effects/state_eyes.effect"
+		
+    />
+	
+	<altavatar key="Hero_Predator.Alt12" 
+		passiveeffect="/heroes/predator/alt12/ability_02/effects/state_eyes.effect"
+    />
+	
+	<altavatar key="Hero_Predator.Alt13" 
+		passiveeffect="/heroes/predator/alt13/ability_02/effects/state_eyes.effect"
+    />
+	
+	<altavatar key="Hero_Predator.Alt14" 
+		passiveeffect="/heroes/predator/alt14/ability_02/effects/state_eyes.effect"
+    />
+	
+	<!-- This state is used purely for the glowing eye effect -->
+</state>

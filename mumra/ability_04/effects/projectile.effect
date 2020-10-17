@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.5">
+
+			<template name="beam">	
+
+				<billboard
+					life="1000"
+					material="/shared/effects/materials/whitedot.material"
+					startcolor="1 .5 0"
+					midcolor="1 .5 0"
+					endcolor="0"
+					midcolorpos=".8"
+					size="20"
+					position="{position}"
+				/>
+				
+				<billboard
+					life="1000"
+					material="/shared/effects/materials/whitedot.material"
+					startcolor="1"
+					midcolor="1"
+					endcolor="0"
+					midcolorpos=".8"
+					size="5"
+					position="{position}"
+				/>
+				
+				<trailemitter
+					name="trail02"				
+					spawnrate="50"
+					startminparticlelife="500"
+					startmaxparticlelife="500"		
+					
+					endminparticlelife="1"
+					endmaxparticlelife="1" 
+					texposscale="15"
+					texstretchscale="0"
+					position="{position}"
+					material="/shared/effects/materials/chainlinkconnect.material"
+					depthbias="-10"
+				>
+					<particle
+						startcolor="1 .5 0"
+						midcolor=".8"
+						endcolor=".4"
+						midcolorpos=".1"
+						size="6"
+
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".8"
+					/>
+				</trailemitter>	
+				
+				<trailemitter
+					name="trail02"				
+					spawnrate="50"
+					startminparticlelife="500"
+					startmaxparticlelife="500"		
+					
+					endminparticlelife="1"
+					endmaxparticlelife="1" 
+					texposscale=".4"
+					texstretchscale="0"
+					position="{position}"
+					material="/shared/effects/materials/whitedot.material"
+					depthbias="-20"
+				>
+					<particle
+						startcolor="1 .5 0"
+						midcolor="1 .5 0"
+						endcolor="0"
+						midcolorpos=".8"
+						size="10"
+
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".8"
+					/>
+				</trailemitter>
+			</template>	
+			
+			<instance position="5 0 0 " name="beam"/>
+			<instance position="-5 0 0 " name="beam"/>
+			
+			<model
+				position="5 17 0"
+				scale="1.5"
+				expirelife="300"
+				model="hook/model.mdf"
+				material="../../ability_02/pet/material.material"
+				color="1"
+				
+				startalpha="1"
+				endalpha="0"
+			>
+			</model>
+			
+			<model
+				position="-5 17 0"
+				scale="1.5"
+				expirelife="300"
+				model="hook/model.mdf"
+				material="../../ability_02/pet/material.material"
+				color="1"
+				
+				startalpha="1"
+				endalpha="0"
+			>
+			</model>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+

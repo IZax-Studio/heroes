@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Taint_Ability3"
+	
+	icon="icon3.tga"
+	serverentity="true"
+	passiveeffect=""
+	impactinterval="100"
+	maxcharges="1"
+>
+	<onimpact>
+		<targettype type="illusion" target="source_entity" />
+		<compare a="charges" b="1" op="ge" />
+		<else>
+			<addcharges count="0" entity="this_spawner_entity" />
+			<compare a="result" b="0" op="eq">
+				<delete target="target_entity" />
+				<addcharges count="1" entity="this_entity" />
+				<addcharges count="1" entity="this_spawner_entity" />
+				<hasavatarkey name="Hero_Taint.Alt6" >
+					<playeffect effect="../alt6/ability_03/effects/capture.effect" target="source_entity" />
+				</hasavatarkey>
+				<else>
+				<hasavatarkey name="Hero_Taint.Alt7" >
+					<playeffect effect="../alt7/ability_03/effects/capture.effect" target="source_entity" />
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/capture.effect" target="source_entity" />
+				</else>
+				</else>
+			</compare>
+		</else>
+	</onimpact>
+	
+	<onframe />
+</state>

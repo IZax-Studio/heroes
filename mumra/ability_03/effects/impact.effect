@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true" deferred="true">
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale="1">
+
+		<sound
+			delay="100"
+			linearfalloff="true" 
+			falloffstart="0"
+			falloffend="1800"
+			volume="0.1" 
+			sample="/heroes/pollywogpriest/sounds/impact_%.wav"
+		/>
+
+		<sound
+			linearfalloff="true" 
+			falloffstart="1000"
+			falloffend="1800"
+			volume="0.6" 
+			sample="../sounds/impact_%.wav"
+		/>
+
+		<sound
+			linearfalloff="true" 
+			falloffstart="1000"
+			falloffend="1800"
+			volume="0.5" 
+			sample="/shared/sounds/effects/gib_explode.wav"
+		/>
+
+		<light				
+			life="300"
+			startcolor="3 3 0"
+			endcolor="0 0 0"
+			falloffstart="250"
+			falloffend="400"
+		/>
+		
+		
+		<simpleemitter
+			count="1"
+			spawnrate="11111"
+			particlelife="5000"
+		>	
+				<particle
+				>
+
+					<simpleemitter
+						life="400"
+						spawnrate="10"
+						particlelife="400"
+						minspeed="0"
+						maxspeed="3000"
+						drag="0.07"
+						offsetsphere="15"
+						material="/shared/effects/materials/refract_outsplash.material"
+					>
+						<particle
+							startalpha="1.0"
+							endalpha="0.0"
+							minangle="0"
+							maxangle="360"
+							anglespeed="-90"
+							startsize="120"
+							endsize="280"
+							param=".1"
+							depthbias="-130"
+						/>
+					</simpleemitter>
+	
+					<billboard
+						life="500"
+						startcolor=".2 .7 .2"
+						endcolor="0 0 0"
+						startalpha="1.0"
+						midalpha="1.0"
+						endalpha="0.0"
+						midalphapos="0.75"
+						startparam="0.05"
+						endparam="0.0"
+										
+						startsize="100"
+						midsize="130"
+						endsize="250"
+						midsizepos=".4"
+										
+						depthbias="0"
+						position="0 0 20"
+						material="/shared/effects/materials/smash_add.material"
+						lockup="true"
+						pitch="90"
+					/>
+					
+					<billboard
+						life="400"
+						startcolor=".2 .7 .2"
+						endcolor="0 0 0"
+						startalpha="1.0"
+						midalpha="1.0"
+						endalpha="0.0"
+						midalphapos="0.75"
+						startparam="0.05"
+						endparam="0.0"
+										
+						startsize="100"
+						midsize="130"
+						endsize="200"
+						midsizepos=".4"
+										
+						depthbias="0"
+						position="0 0 20"
+						material="/shared/effects/materials/smash_add.material"
+						lockup="true"
+						pitch="90"
+					/>	
+					
+					<billboard
+						life="200"
+						roll="20"
+						startcolor=".2 1 .2"
+						endcolor="0 0 0"
+						startalpha="1.0"
+						midalpha="1.0"
+						endalpha="0.0"
+						midalphapos="0.75"
+						startparam="0.05"
+						endparam="0.0"
+										
+						startsize="50"
+						midsize="100"
+						endsize="150"
+						midsizepos=".4"
+										
+						depthbias="0"
+						position="0 0 50"
+						material="/shared/effects/materials/frost_burst.material"
+						lockup="true"
+						pitch="90"
+					/>
+					
+					<billboard
+						delay="40"
+						life="200"
+						rolln="180"
+						startcolor=".2 1 .2"
+						endcolor="0 0 0"
+						startalpha="1.0"
+						midalpha="1.0"
+						endalpha="0.0"
+						midalphapos="0.75"
+						startparam="0.05"
+						endparam="0.0"
+
+						startsize="50"
+						midsize="150"
+						endsize="200"
+						midsizepos=".4"
+
+						depthbias="0"
+						position="0 0 50"
+						material="/shared/effects/materials/frost_burst.material"
+						lockup="true"
+						pitch="90"
+					/>	
+
+					<billboard
+						delay="20"
+						life="200"
+						roll="320"
+						startcolor=".2 1 .2"
+						endcolor="0 0 0"
+						startalpha="1.0"
+						midalpha="1.0"
+						endalpha="0.0"
+						midalphapos="0.75"
+						startparam="0.05"
+						endparam="0.0"
+
+						startsize="50"
+						midsize="150"
+						endsize="200"
+						midsizepos=".4"
+
+						depthbias="0"
+						position="0 0 50"
+						material="/shared/effects/materials/frost_burst.material"
+						lockup="true"
+						pitch="90"
+					/>
+				</particle>
+			</simpleemitter>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<camerashake2 scale="11.0" radius="1200" duration="400" frequency="22" />
+		<waitfordeath instance="instance0" />
+
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

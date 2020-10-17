@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="2.25">
+		
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1800"
+				volume=".70"
+				sample="/heroes/monarch/ability_01/sounds/fly.wav"
+			/>
+
+			<trailemitter
+				spawnrate="50"
+				particlelife="1500"
+				texpostime="1500"
+			 	texposscale="0.0"
+			 	texstretchscale=".4"
+				position="0 0 0"
+				material="/shared/effects/materials/arrow_trail.material"
+			>
+				<particle
+					startcolor=".25"
+					midcolor="0 0 0"
+					endcolor="0 0 0"
+					startsize="10"
+					endsize="5"
+					midsizepos="0.2"
+			 />
+			</trailemitter>
+			
+			<simpleemitter
+				spawnrate="16"				
+				particlelife="300"								
+				position="0 0 0"				
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+			>
+				<particle>
+
+					<groundsprite
+						directionalspace="local"
+						size="40"
+						life="300"
+						startcolor="0 0 0"
+						midcolor=".25 .25 .3"
+						endcolor="0 0 0"		
+						position="0 0 0"						
+						material="/shared/effects/materials/whitedot_ground.material"
+					/>					
+				</particle>
+			</simpleemitter>
+
+
+
+			<simpleemitter
+				spawnrate="300"
+				particlelife="500"
+				offsetsphere="25 25 8"
+				minspeed="10.0"
+				maxspeed="30"
+				direction="0 0 1"
+				material="/shared/effects/materials/flare_03.material"
+			>
+				<particle
+					maxangle="359"
+					maxanglespeed="30"
+					minanglespeed="-30"
+					minscale="2.5"
+					maxscale="4.5"
+					startcolor="1"
+					endcolor="0"
+				/>
+				
+				<particle
+					maxangle="359"
+					maxanglespeed="30"
+					minanglespeed="-30"
+					minscale="2.5"
+					maxscale="4.5"
+					startcolor=".5 .5 1"
+					midcolor=".5 .5 1"
+					endcolor="0"
+				/>
+			</simpleemitter> 
+
+			<billboard
+				color=".25 .25 .5"
+				size="50"
+				material="/shared/effects/materials/glow_01.material"
+				depthbias="-50"
+				position="0 0 0"
+			/>
+
+			<trackeremitter
+				inheritvelocity=".01"
+				tracktype="distance"
+				trackspeed="1.4" 
+				spawnrate="100"
+				particlelife="1000"
+				offsetsphere="25 25 8"
+				minspeed="10.0"
+				maxspeed="30"
+				direction="0 0 1"
+				material="/shared/effects/materials/snowflake.material"
+			>
+				<particle
+					startalpha="1"
+					endalpha="0"
+					midalphapos=".7"
+					maxangle="359"
+					maxanglespeed="30"
+					minanglespeed="-30"
+					minscale="2.5"
+					maxscale="4.5"
+					startcolor="1"
+					endcolor="1"
+				/>
+			</trackeremitter>
+
+
+			<simpleemitter
+				spawnrate="40"
+				particlelife="300"
+				gravity="0"
+				speed="1"
+				drag="0"
+				acceleration="20"
+				position="0 0 0"
+				material="/shared/effects/materials/fairy_glow_06.material"
+				offsetsphere="5 5 5"
+				minangle="195"
+				maxangle="185"
+				direction="0 0 0"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					startcolor=".5"
+					midcolor=".5"
+					endcolor=" 0 0 0 "
+					midcolorpos=".1"
+					startframe="0"
+					endframe="1"
+					startsize="15"
+					midsize="37.5"
+					endsize="1"
+					midsizepos=".3"
+					startalpha="0"
+					midalpha=".7"
+					endalpha="0"
+					midalphapos=".4"
+					startstickiness="0"
+					endstickiness="0"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

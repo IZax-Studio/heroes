@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Tremble_Ability4_Modifier"
+
+	icon="icon5.tga"
+	effecttype=""
+	
+	impactinterval="39950"
+	
+	allowtransfer="false"
+	
+	modifierkey="Tremble_R_Modifier"
+>	
+	<onframe />
+
+	<onimpact>
+		<setactivemodifierkey name="tremble_ability4_DisabledModifier" />
+	</onimpact>
+	
+	<onexpired>
+		<pushability name="Ability_Tremble4" />
+		<startcooldown entity="stack_entity" duration="60000" />
+	</onexpired>
+	
+	<modifier key="tremble_ability4_DisabledModifier" modpriority="100"
+		modifierkey2="tremble_ability4_Disabled"
+	>
+		<!-- Disable the ability for 1 frame right before it expires to avoid weird stuff happening -->
+	</modifier>
+</state>

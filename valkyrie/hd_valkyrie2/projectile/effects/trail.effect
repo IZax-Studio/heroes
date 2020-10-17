@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+			<trailemitter
+				bone="Scene Root"
+				spawnrate="50"
+				particlelife="800"
+				texpostime="800"
+				texposscale="0.0"
+				texstretchscale=".4"
+				position="0 60 0"
+				material="/shared/effects/materials/arrow_trail.material"
+			>
+			<particle
+				 startcolor=".5 .5 0"
+				 midcolor="0.051 0.2 0.4"
+				 endcolor="0 0 0"
+				 startsize="10"
+				 midsize="60"
+				 endsize="24"
+				 midsizepos="0.2"
+			 />
+			</trailemitter>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Tremble2c"
+
+	icon="icon2.tga"
+	
+	casttime="0"
+	castactiontime="0"
+	frontqueue="true"
+	inheritmovement="true"
+
+	actiontype="target_self"
+	casteffecttype=""
+	
+	targetscheme=""
+
+	noshuffle="true"
+>
+	<checkcost>
+		<compare a="source_health_percent" b="1" op="ne">
+			<invalidate />
+		</compare>
+	</checkcost>
+
+	<onimpact>
+		<kill target="this_owner_entity" source="" />
+	</onimpact>
+</ability>

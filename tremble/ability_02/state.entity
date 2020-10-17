@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Tremble_Ability2"
+
+	icon="icon2.tga"
+	passiveeffect="effects/state.effect"
+	
+	stealthtype="hero"
+	fadetime="2000"
+	
+	effecttype="StatusStealth"
+>
+	
+	<onframe />
+	
+	<oninflict>
+		<startfade />
+	</oninflict>
+
+	<onattack>
+		<expire entity="this_entity" />	
+	</onattack>
+	
+	<onactivatepreimpact>
+		<expire />
+	</onactivatepreimpact>
+</state>

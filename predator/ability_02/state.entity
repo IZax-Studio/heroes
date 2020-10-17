@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Predator_Ability2"
+
+	icon="icon2.tga"
+	passiveeffect="state_in.effect"
+	immunitytype="MagicImmunity1"
+	armor="3,6,9,12"
+	
+	modifierkey=""
+>
+	<onexpired>
+		<playeffect effect="state_out.effect" target="source_entity" />
+	</onexpired>
+	
+	<altavatar key="Hero_Predator.Alt" 
+		passiveeffect="/heroes/predator/alt/ability_02/effects/state_in.effect"
+    />
+
+	<altavatar key="Hero_Predator.Alt2" 
+		passiveeffect="/heroes/predator/alt2/ability_02/effects/state_in.effect"
+	>
+		<onexpired>
+			<playeffect effect="state_out.effect" target="source_entity" />
+		</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_Predator.Alt3" 
+		passiveeffect="/heroes/predator/alt3/ability_02/effects/state_in.effect"
+	>
+		<onexpired>
+			<playeffect effect="state_out.effect" target="source_entity" />
+		</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_Predator.Alt6" 
+		passiveeffect="/heroes/predator/alt6/ability_02/state_in.effect"
+    />
+	
+	<altavatar key="Hero_Predator.Alt7" 
+		passiveeffect="/heroes/predator/alt7/ability_02/state_in.effect"
+    />
+	
+	<altavatar key="Hero_Predator.Alt8" 
+		passiveeffect="/heroes/predator/alt8/ability_02/effects/state_in.effect"
+		
+		modifierkey="stoneskin_alt8"
+    />
+	
+	<altavatar key="Hero_Predator.Alt9" 
+		passiveeffect="/heroes/predator/alt9/ability_02/effects/state_in.effect"
+    />
+	
+	<altavatar key="Hero_Predator.Alt10" 
+		passiveeffect="/heroes/predator/alt10/ability_02/effects/state_in.effect"
+    />
+	
+	<altavatar key="Hero_Predator.Alt12" 
+		passiveeffect="/heroes/predator/alt12/ability_02/effects/state_in.effect"
+    >
+		<onexpired>
+			<playeffect effect="/heroes/predator/alt12/ability_02/effects/state_out.effect" target="source_entity" />
+		</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_Predator.Alt13" 
+		passiveeffect="/heroes/predator/alt13/ability_02/effects/state_in.effect"
+    >
+		<onexpired>
+			<playeffect effect="/heroes/predator/alt13/ability_02/effects/state_out.effect" target="source_entity" />
+		</onexpired>
+	</altavatar>
+	
+	<modifier key="Combo_efx_predator" modpriority="101"
+		passiveeffect="/heroes/predator/alt13/ability_02/effects/state_in_combo.effect"
+	>	
+		<onexpired>
+			<playeffect effect="/heroes/predator/alt13/ability_02/effects/state_out.effect" target="source_entity" />
+		</onexpired>
+	</modifier>
+	
+	<altavatar key="Hero_Predator.Alt14" 
+		passiveeffect="/heroes/predator/alt14/ability_02/effects/state_in.effect"
+    >
+		<onexpired>
+			<playeffect effect="/heroes/predator/alt14/ability_02/effects/state_out.effect" target="source_entity" />
+		</onexpired>
+	</altavatar>
+	
+</state>

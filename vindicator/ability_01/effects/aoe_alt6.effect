@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name=" " disable2dworld="true">
+	<definitions>
+	
+	
+		<particlesystem name="system0" space="world" scale="0.86" >
+			
+		<billboard	
+				position="0 0 100"
+				life="2500"				
+				size="1000"
+				material="/shared/effects/materials/scanlines.material"
+				startalpha="0"
+				midalpha=".5"
+				endalpha="0"
+				color=".5"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>	
+			
+		
+			<billboard	
+				position="0 0 100"
+				life="2500"				
+				startsize="0"				
+				endsize="3000"
+				material="/shared/effects/materials/whitedot_blend.material"
+				startalpha="1"
+				endalpha="0"
+				startcolor="0 0 0 "
+				midcolor="0"
+				endcolor="0 0 0 "
+				depthbias="-30"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>	
+
+			<model
+				startscale="3"
+				endscale="-3"
+				position="0 0 55"
+				life="2700"
+				model="spin.mdf"
+				anim="idle"
+				startcolor="1 2  2"
+				midcolor="1 1 1"
+				endcolor="1 1 1"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".25"
+			>
+			
+			
+		
+
+				<simpleemitter	
+					startparticlecolor="1 1 1 "
+					endparticlecolor=" 0 0 0"
+					life="703"
+					spawnrate="620"
+					bone="_bone_1"
+					particlelife="500"			
+					gravity="-1.5"
+					speed="0"
+					offsetsphere="0 0 0"
+					position="0 0 50"
+					direction="0 0 0"
+					material="/shared/effects/materials/whitedot.material"
+				>						
+					<particle 						
+						startcolor="0 0 .25"
+						midcolor=".25 0 0"
+						endcolor="0 .25 0"
+						startsize="11"
+						endsize="0"
+						turn="1"					
+					/>	
+				</simpleemitter>
+										
+				<simpleemitter	
+					startparticlecolor="1 1 1 "
+					endparticlecolor=" 0 0 0"
+					life="703"
+					spawnrate="620"
+					bone="_bone_03"
+					particlelife="500"			
+					gravity="-1.5"
+					speed="0"
+					offsetsphere="0 0 0"
+					position="0 0 50"
+					direction="0 0 0"
+					material="/shared/effects/materials/whitedot.material"
+				>						
+					<particle 						
+						startcolor="0 .25 0"
+						midcolor=".25 0 0"
+						endcolor="0 0 .25"
+						startsize="11"
+						endsize="0"
+						turn="1"					
+					/>	
+				</simpleemitter>
+
+			</model>
+			
+			<orbiteremitter
+				life="800"
+				spawnrate="600"
+				particlelife="100"
+				origin="0 0 -250" 
+				orbit="-1 70 160"
+				speed="2"
+				direction="0 0 1" 
+				offset="50 50 70"
+				cylindrical="true" 
+				material="/shared/effects/materials/flare_03.material"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-1030"
+					maxanglespeed="1710"
+					startcolor="0"
+					midcolor="1"
+					endcolor="0"
+					minsize="5"
+					maxsize="25"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+				/>
+
+			</orbiteremitter>
+			
+			<orbiteremitter
+				spawnrate="221"
+				count="5"
+				particlelife="1200"
+				origin="0 0 -400" 
+				orbit="-1 70 160"
+				speed="1"
+				direction="0 0 1" 
+				offset="50 50 50"
+				cylindrical="true" 
+				material="/shared/effects/materials/meteor.material"
+				life="5000"
+			>
+				<particle
+					color="0 .5 2"
+					midcolorpos="0.5"
+					startalpha="0"
+					midalpha=".55"
+					endalpha="0"
+					frame="0"
+					framespeed="8"
+					minscale="7.5"
+					maxscale="24.5"
+					turn="true"
+				/>
+				
+				<particle
+					color="0 2 2"
+					midcolorpos="0.5"
+					startalpha="0"
+					midalpha=".55"
+					endalpha="0"
+					frame="0"
+					framespeed="8"
+					minscale="7.5"
+					maxscale="24.5"
+					turn="true"
+				/>
+			</orbiteremitter>
+
+      </particlesystem>
+   </definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnmodifier instance="instance1" modifier="modifier0"/>  
+	
+	<waitfordeath instance="instance0" />
+	<wait duration="20000"/>
+	<!-- <die /> -->
+</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->

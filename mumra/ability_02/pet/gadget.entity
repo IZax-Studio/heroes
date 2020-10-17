@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Mumra_Ability2"
+	
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect=""
+	isselectable="true"
+	iscontrollable="false"
+	invulnerable="false"
+	selectsound=""
+	orderconfirmedsound=""
+	spawnanim="spawn_1"
+	
+	maxhealth="3"
+	healthregen="0"
+	maxmana="0"
+	manaregen="0"
+	
+	preglobalscale="1.3"
+	modelscale="1"
+	effectscale="0.9"
+	boundsheight="64"
+	boundsradius="45"
+	selectionradius="48"
+	targetoffset="0 0 0"
+	deniable="true"
+
+	canrotate="false"
+	ismobile="false"
+	isflying="false"
+	clearvision="false"
+	drawonmap="false"
+	
+	immunity="GadgetImmunity"
+	
+	deathnumanims="1"
+	deathanim="death_%"
+	
+	expirenumanims="1"
+	expireanim="expire_%"
+	
+	attacktype="none"
+	
+	lifetime="3000,4000,5000,6000"
+	corpsetime="1"
+	corpsefadetime="1"
+	
+	blocking="true"
+	
+	unittype="Pharaoh_Mummy"
+>
+	<onspawn>
+		<spawnaffector name="Affector_Mumra_Ability2" owner="this_owner_entity" proxy="this_entity"/>
+	</onspawn>
+	
+	<ondamaged>
+		<changedamage b="1" op="min"/>
+		<targettype type="owner" target="target_entity">
+			<changedamage b="50" op="max"/>
+		</targettype>
+	</ondamaged>
+
+	<altavatar key="Hero_Mumra.Alt2"
+		model="/heroes/mumra/alt2/ability_02/pet/model.mdf"
+		icon="/heroes/mumra/alt2/ability_02/pet/icon.tga"
+		portrait="/heroes/mumra/alt2/ability_02/pet/icon.tga"
+	>
+	</altavatar>
+
+	<altavatar key="Hero_Mumra.Alt3"
+		model="/heroes/mumra/alt3/ability_02/pet/model.mdf"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Mumra.Alt4"
+	    passiveeffect="/heroes/mumra/alt4/ability_02/pet/effects/state_sound.effect"
+		model="/heroes/mumra/alt4/ability_02/pet/model.mdf"
+	/>
+	
+	<altavatar key="Hero_Mumra.Alt5"
+	    passiveeffect="/heroes/mumra/alt5/ability_02/pet/effects/state_sound.effect"
+		model="/heroes/mumra/alt5/ability_02/pet/model.mdf"
+		
+		spawnanim="spawn_1"
+		deathanim="death_1"
+	/>
+	
+	<altavatar key="Hero_Mumra.Alt6"
+		model="/heroes/mumra/alt6/ability_02/pet/model.mdf"
+		modelscale=".9"
+		
+		spawnanim="spawn_1"
+		deathanim="death_1"
+	/>
+	
+		<altavatar key="Hero_Mumra.Alt7"
+		model="/heroes/mumra/alt7/ability_02/pet/model.mdf"
+		passiveeffect="/heroes/mumra/alt7/ability_02/pet/effects/idle.effect"
+		modelscale="1"
+	>
+		<onspawn>
+			<spawnaffector name="Affector_Mumra_Ability2" owner="this_owner_entity" proxy="this_entity"/>
+			<playeffect effect="/heroes/mumra/alt7/ability_02/pet/effects/spawn.effect" source="this_position"/>
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Mumra.Alt8"
+		model="/heroes/mumra/alt7/ability_02/pet/model.mdf"
+		passiveeffect="/heroes/mumra/alt7/ability_02/pet/effects/idle.effect"
+		modelscale="1"
+	>
+		<onspawn>
+			<spawnaffector name="Affector_Mumra_Ability2" owner="this_owner_entity" proxy="this_entity"/>
+			<playeffect effect="/heroes/mumra/alt7/ability_02/pet/effects/spawn.effect" source="this_position"/>
+		</onspawn>
+	</altavatar>
+		
+	<altavatar key="Hero_Mumra.set_ascension"
+	    passiveeffect="/heroes/mumra/set_ascension/ability_02/pet/effects/expire_sound.effect"
+		model="/heroes/mumra/set_ascension/ability_02/pet/model.mdf"
+	/>
+
+</gadget>

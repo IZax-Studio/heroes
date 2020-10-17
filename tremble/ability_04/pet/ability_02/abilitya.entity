@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_TremblePet2a"
+
+	icon="/heroes/tremble/ability_02/icon2.tga"
+	
+	anim="attack_1"
+	casttime="1000"
+	castactiontime="150"
+	
+	maxlevel="1"
+	baselevel="0" 
+	
+	radius="400"
+	targetradius="400"
+	targetmaterial="/shared/materials/area_cast_indicator_simple.material"
+
+	actiontype="self_position"
+	targetscheme="trees"
+	
+	casteffecttype="Magic"
+	
+	manacost="50"
+	cooldowntime="20000"
+
+	casteffect="effects/cast.effect"
+	frontqueue="true"
+	
+	showrangeandradiusintooltip="true"
+	storepetsonplayer="true"
+>
+	<onimpact>
+	</onimpact>
+	
+	<modifier key="Tremble1" modpriority="90"
+		keyslot="1"
+		cooldowntime="20000"
+		maxlevel="1"
+		baselevel="1"
+		manacost="50"
+	>
+		<onimpact>
+			<spawnunit name="Gadget_Tremble_Ability2" count="1" maxactive="3" proxy="stack_entity" target="source_position" pushentity="true" />
+		</onimpact>
+	</modifier>
+	
+	<modifier key="Tremble2" modpriority="90"
+		keyslot="1"
+		cooldowntime="20000"
+		maxlevel="2"
+		baselevel="2"
+		manacost="50"
+	>
+		<onimpact>
+			<spawnunit name="Gadget_Tremble_Ability2" count="1" maxactive="6" proxy="stack_entity" target="source_position" pushentity="true" />
+		</onimpact>
+	</modifier>
+	
+	<modifier key="Tremble3" modpriority="90"
+		keyslot="1"
+		cooldowntime="20000"
+		
+		
+		maxlevel="3"
+		baselevel="3"
+		manacost="50"
+	>
+		<onimpact>
+			<spawnunit name="Gadget_Tremble_Ability2" count="1" maxactive="9" proxy="stack_entity" target="source_position" pushentity="true" />
+		</onimpact>
+	</modifier>
+	
+	<modifier key="Tremble4" modpriority="90"
+		keyslot="1"
+		cooldowntime="20000"
+		maxlevel="4"
+		baselevel="4"
+		manacost="50"
+	>
+		<onimpact>
+			<spawnunit name="Gadget_Tremble_Art_Ability2" count="1" maxactive="12" target="source_position" pushentity="true" />
+			<spawnunit name="Gadget_Tremble_Ability2" count="1" maxactive="12" proxy="stack_entity" target="source_position" pushentity="true" />
+		</onimpact>
+	</modifier>
+	
+</ability>

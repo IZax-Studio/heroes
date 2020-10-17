@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_WitchSlayer_Ability1_Enemy"
+	
+	icon="icon1.tga"
+	ishidden="true"
+	
+	stunned="true"
+	stunneddurationunmodifiable="true"
+	impactinterval="520"
+	
+>
+	<onimpact>
+		<applystate name="State_Stunned" duration="800,1200,1600,2000" />
+		<damage effecttype="Magic" amount="80,140,200,260" />
+	</onimpact>
+</state>

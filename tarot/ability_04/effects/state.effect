@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+					<sound 
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume="1" 
+				sample="../sounds/start_%.wav"
+			/>
+			
+			<sound
+                soundloop="true"
+                fadein="1000"
+                fadeout="1000"				
+				linearfalloff="true" 
+				falloffstart="1105"
+				falloffend="1300"
+				volume="1" 
+				sample="../sounds/state.wav"
+			/>
+			
+			<template name="rotating_card">
+				<model
+					model="/shared/models/invis.mdf"
+					bone="_bone_center"
+					yaw="{yaw}"
+					yawspeed="180"
+					directionalspace="global"
+				>
+					<model
+						model="/shared/models/invis.mdf"
+						position="0 60 0"
+					>
+						<billboard
+							expirelife="200"
+							material="/shared/effects/materials/card_soccer.material"
+							lockup="true"
+							directionalspace="local"
+							color="1 1 1"
+							startheight="20"
+							endheight="0"
+							startwidth="12"
+							endwidth="0"
+						/>
+						<billboard
+							expirelife="200"
+							material="/shared/effects/materials/whitedot.material"
+							lockup="true"
+							directionalspace="local"
+							color=".5 .05 0"
+							startheight="110"
+							endheight="0"
+							startwidth="40"
+							endwidth="0"
+						/>
+								
+						<simpleemitter
+							spawnrate="20"
+							particlelife="250"
+							material="/shared/effects/materials/sparks_reveal.material"
+							maxspeed="20"
+							inheritvelocity="0.1"
+							limitinheritvelocity="20"
+							drag="0.02"
+							gravity="-1"
+						>
+							<particle
+								maxangle="360"
+								startcolor="0"
+								midcolor="1"
+								endcolor=".5 0 1"
+								midcolorpos=".25"
+								minsize="20"
+								maxsize="35"
+								startframe=".3"
+								endframe="1"
+							/>
+						</simpleemitter>
+					</model>
+				</model>
+			</template>
+			
+			<instance name="rotating_card" yaw="0" />
+			<instance name="rotating_card" yaw="45" />
+			<instance name="rotating_card" yaw="90" />
+			<instance name="rotating_card" yaw="135" />
+			<instance name="rotating_card" yaw="180" />
+			<instance name="rotating_card" yaw="225" />
+			<instance name="rotating_card" yaw="270" />
+			<instance name="rotating_card" yaw="315" />
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+</effect>

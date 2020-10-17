@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="illidansmoke">
+
+	<definitions>
+	
+		<particlesystem name="system0" space="entity">
+		
+		    <template name="illidansmoke">
+			
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="10"
+					minparticlelife="400"
+					maxparticlelife="1000"
+					material="illidansmoke.material"
+				>
+					<particle 
+						minangle="0" 
+						maxangle="360" 
+						minanglespeed="-30" 
+						color="0 1 0"  
+						startsize="3" 
+						endsize="6" 
+						startanchor="1" 
+						endanchor="0.2" 
+						startalpha=".1"
+						midalpha=".2" 
+						endalpha="0" 
+						midalphapos=".2"
+					/>
+				</simpleemitter>
+				
+		    </template>
+			
+			<instance name="illidansmoke" bone="_bone_righteye" />
+			<instance name="illidansmoke" bone="_bone_lefteye" />
+			
+		</particlesystem>
+		
+	</definitions>
+	
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+
+</effect>

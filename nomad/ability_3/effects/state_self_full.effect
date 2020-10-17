@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+
+	<definitions>
+	
+		
+
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume=".95"
+				sample="../sounds/cast.wav"
+			/>
+		
+			<simpleemitter
+				speed="2"
+				angle="50"
+				timenudge="2000"
+				bone="bone_centerofchest"
+				spawnrate="5"
+				minparticlelife="1000"
+				maxparticlelife="1500"
+				gravity="4"
+				drag=".01"
+				depthbias="-40"
+				offsetsphere="35 15 45"
+				material="/shared/effects/materials/phantom_black.material"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-116"
+					maxanglespeed="116"
+					color="0 0 0"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					startsize="0"
+					endsize="175"
+					endstickiness="0"
+					turn="1"
+					
+				/>
+			</simpleemitter>
+		
+			<template name="trails">
+				<trailemitter
+					bone="_bone_weapon3"
+					spawnrate="{spawnrate}"
+					startminparticlelife="{life}"
+					startmaxparticlelife="{life}"
+					gravity="15"
+					drag=".1"
+					endminparticlelife="1"
+					endmaxparticlelife="1" 
+					texpostime="{life}"
+					texposscale="0"
+					texstretchscale="1"
+					speed="1"
+					position="{position}"
+					material="/shared/effects/materials/arrow_trail_blend.material"
+					inheritvelocity=".25"
+					limitinheritvelocity="500"
+				>
+					<particle
+						startcolor="0 0 0"
+						endcolor="0 0 0"
+						startsize="30"
+						midsize="15"
+						endsize="2"
+						startalpha=".75"
+						endalpha="0"
+					/>
+				</trailemitter>
+			</template>
+			
+			<instance name="trails" spawnrate="50" life="750" position="0 0 0" bone="_bone_weapon2"/>
+			<instance name="trails" spawnrate="50" life="750" position="0 0 0" bone="_bone_weapon3"/>
+
+			
+			<template name="trails2">
+				<trailemitter
+					bone="_bone_weapon1"
+					spawnrate="{spawnrate}"
+					startminparticlelife="{life}"
+					startmaxparticlelife="{life}"
+					gravity="15"
+					drag=".1"
+					endminparticlelife="1"
+					endmaxparticlelife="1" 
+					texpostime="{life}"
+					texposscale="0"
+					texstretchscale="1"
+					speed="1"
+					position="{position}"
+					material="/shared/effects/materials/arrow_trail_blend.material"
+					inheritvelocity=".25"
+					limitinheritvelocity="500"
+				>
+					<particle
+						startcolor="0 0 .2"
+						endcolor="0 0 .2"
+						startsize="30"
+						midsize="15"
+						endsize="2"
+						startalpha=".75"
+						endalpha="0"
+					/>
+				</trailemitter>
+			</template>
+			
+			<instance name="trails2" spawnrate="50" life="750" position="0 0 0" bone="r_wing2"/>
+			
+			
+			<template name="trail">	
+			<twopointtrailemitter
+				
+			 	bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+				spawnrate="44"
+				particlelife="550"
+				texpostime="800"
+				texposscale="0.0"
+				texstretchscale="1.0"
+				material="../../ability_3/effects/swoosh_add.material"
+				subframepos="true"
+			>
+	         	<particle
+					startcolor="0 0 .2"
+					endcolor="0 0 .2"
+					startalpha="1"
+					endalpha="0"
+				/>
+			</twopointtrailemitter>
+		</template>
+		
+			<instance name="trail"
+			 	bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+			/>
+		
+		
+			
+			
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+		<spawnmodifier instance="instance1" modifier="modifier1"/>
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

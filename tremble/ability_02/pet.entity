@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pet
+	name="Pet_Tremble_Ability2"
+	
+	movespeed="475"
+	maxmovespeed="2000"
+	
+	icon="icon2.tga"
+	portrait="icon.tga"
+	model="/heroes/tremble/ability_04/pet/model.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect="/heroes/tremble/ability_04/pet/effects/spawn.effect"
+	
+	gravity="0"
+	flyheight="0"
+	flying="true"
+	unitwalking="true"
+	treewalking="true"
+	cliffwalking="true"
+	buildingwalking="true"
+	
+	effectscale="1"
+	modelscale=".3"
+	pathing="false"
+	boundsheight="64"
+	boundsradius="16"
+	isselectable="true"
+	iscontrollable="false"
+	selectionradius="20"
+	targetoffset="0 0 64"
+	
+	turnrate="2500"
+	
+	corpsetime="0"
+	corpsefadetime="1000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	maxhealth="3"
+	immunity="GadgetImmunity"
+	healthregenreduction="1"
+	healmultiplier="-1"
+	
+	attacktype="none"
+	combattype="Ranged"
+	
+	goldbountymin="50"
+	goldbountymax="50"
+	experiencebounty="0"
+	
+	nothreat="true"
+	
+	noblockneutralspawn="true"
+	unittype="PseudoPet"
+>
+
+	<onattackedpreimpact>
+		<setvalue name="combat_truestrike" a="1" />
+	</onattackedpreimpact>
+	
+	<ondamaged>
+		<changedamage b="1" op="min"/>
+	</ondamaged>
+	
+	<onspawn>
+		<playeffect effect="effects/cast2.effect" source="this_position" occlude="true" />
+
+		<distance source="this_entity" target="this_proxy_entity" />
+		<compare a="result" b="80" op="le">
+			<delete target="this_proxy_entity" source="" />
+			<expirestate name="State_Tremble_Ability2_Spawner" />
+		</compare>
+	</onspawn>
+
+	<onframe>
+		<distance source="this_entity" target="this_proxy_entity" />
+		<compare a="result" b="25" op="le">
+			<delete target="this_proxy_entity" source="" />
+			<expirestate name="State_Tremble_Ability2_Spawner" />
+		</compare>
+	</onframe>
+
+</pet>

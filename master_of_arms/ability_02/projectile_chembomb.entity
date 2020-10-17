@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_MasterOfArms_Ability2_ChemBomb"
+
+	lifetime="400"
+	useexactlifetime="true"
+	gravity="10000"
+
+	model="/shared/models/invis.mdf"
+	modelscale="1.7"
+	traileffect=""
+	impacteffect=""
+>
+	<onimpact>
+		<setpos0 position="target_position" offsetspace="this_proxy_entity" offset="0 800 0" />
+		<kill target="this_proxy_entity" source="" />
+		<spawnprojectile name="Projectile_MasterOfArms_Ability2_Chem2" source="target_position" target="pos0" pushentity="true" />
+		<spawnaffector name="Affector_MasterOfArms_Ability2_Chem" target="stack_entity" />
+	</onimpact>
+	 
+	<altavatar key="Hero_MasterOfArms.Alt4" modpriority="1"
+		modelscale="3.4"
+		model="../alt4/ability_02/chem_projectile/model.mdf"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt5" modpriority="1"
+		modelscale="3.4"
+		model="../alt5/ability_02/chem_projectile/model.mdf"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt6" modpriority="1"
+		modelscale="1"
+		model="/shared/models/invis.mdf"
+		traileffect="../alt6/ability_02/effects/projectile_mag_ability.effect"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt7" modpriority="1"
+		modelscale="1"
+		model="/shared/models/invis.mdf"
+		traileffect="../alt7/ability_02/effects/projectile_mag_ability.effect"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt8" modpriority="1"
+		traileffect="../alt8/ability_02/effects/projectile_mag_ability.effect"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt9" modpriority="1"
+		modelscale=".9"
+		model="../alt9/ability_02/effects/chem_projectile/model.mdf"
+		traileffect="../alt9/ability_02/effects/projectile_mag_ability.effect"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt10" modpriority="1"
+		model="../alt10/ability_02/effects/chem_projectile/model.mdf"
+		traileffect="../alt10/ability_02/effects/chem_trail.effect"
+		modelscale="1.5"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt11" modpriority="1"
+		model="../alt11/ability_02/effects/chem_projectile_ground/model.mdf"
+		traileffect="../alt11/ability_02/effects/chem_trail.effect"
+		modelscale="1"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt12" modpriority="1"
+		model="../alt12/ability_02/effects/chem_projectile_ground/model.mdf"
+		traileffect="../alt12/ability_02/effects/chem_trail.effect"
+		modelscale="1"
+	/>
+	
+</projectile>

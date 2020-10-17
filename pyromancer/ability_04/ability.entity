@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Pyromancer4"
+
+	icon="icon4.tga"
+	
+	anim="ability_4"
+	casttime="800"
+	castactiontime="100"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_entity"
+	targetscheme="enemy_units"
+	casteffecttype="Magic"
+	
+	manacost="280,420,680"
+	cooldowntime="100000,80000,60000"
+	
+	range="600"
+	
+	novoiceresponse="true"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+
+	targetpriorities="enemy_heroes"
+>
+	<onimpact>
+		<hasavatarkey name="Hero_Pyromancer.Alt3">
+			<spawnprojectile name="Projectile_Pyromancer_Ability4" source="source_entity" target="target_entity" pushentity="true" offset="25 30 150" noresponse="true" param="owner_counter" />
+			<setproxy entity="stack_entity" target="target_entity" />
+		</hasavatarkey>
+		<else>
+			<spawnprojectile name="Projectile_Pyromancer_Ability4" source="source_entity" target="target_entity" pushentity="true" offset="-20 100 100" noresponse="true" param="owner_counter" />
+			<setproxy entity="stack_entity" target="target_entity" />
+		</else>
+	</onimpact>
+	
+	<modifier 
+		key="ult_boost" 
+		modpriority="100"
+		targetradius="600"
+		targetmaterial="/shared/materials/area_cast_indicator_simple.material"
+		showrangeandradiusintooltip="true"
+	>
+		<onimpact>
+			<hasavatarkey name="Hero_Pyromancer.Alt3">
+				<spawnprojectile name="Projectile_Pyromancer_Ability4" source="source_entity" target="target_entity" pushentity="true" offset="25 30 150" noresponse="true" param="owner_counter" />
+				<setproxy entity="stack_entity" target="target_entity" />
+			</hasavatarkey>
+			<else>
+				<spawnprojectile name="Projectile_Pyromancer_Ability4" source="source_entity" target="target_entity" pushentity="true" offset="-20 100 100" noresponse="true" param="owner_counter" />
+				<setproxy entity="stack_entity" target="target_entity" />
+			</else>
+		</onimpact>
+	</modifier>
+
+	<altavatar key="Hero_Pyromancer.Alt4"
+	>
+		<modifier key="Alt4_Flamethrower" modpriority="1"
+			anim="ability_4_flamethrower"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Pyromancer.Alt8"
+		icon="/heroes/Pyromancer/alt8/ability_04/icon.tga"
+	>
+		<modifier key="pyromancerAlt8_Ability4_Upgrade"
+			icon="/heroes/Pyromancer/alt8/ability_04/icon_u.tga"
+		/>
+	</altavatar>
+</ability>

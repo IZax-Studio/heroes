@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Martyr_Ability2_Target"
+
+	icon="icon2.tga"
+	passiveeffect="effects/state.effect"
+	
+	effecttype="StatusBuff"
+	allowtransfer="false"
+	maxcharges="100"
+>
+	<onframe>
+		<evaluate a="accumulator" b="target_maxhealth" op="div" />
+		<evaluate a="result" b="100" op="mult" />
+		<evaluate a="result" b="100" op="min" />
+		<setcharges entity="this_entity" a="result" />
+	</onframe>
+	
+	<ondamaged>
+		<accumulatedamage scale="0.55,0.70,0.85,1" />
+		<scaledamage scale="0.45,0.30,0.15,0" />
+	</ondamaged>
+
+	<onexpired>
+		<damage effecttype="SuperiorMagic" amount="1" b="accumulator" op="mult" nonlethal="true" />
+		<hasavatarkey name="Hero_Martyr.Alt4">
+			<playeffect effect="../alt4/ability_02/effects/end_impact.effect" target="target_entity" source="target_entity" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Martyr.Alt6">
+				<playeffect effect="../alt6/ability_02/effects/end_impact.effect" target="target_entity" source="target_entity" />
+			</hasavatarkey>
+			<else>
+				<playeffect effect="effects/end_impact.effect" target="target_entity" source="target_entity" />
+			</else>
+		</else>
+	</onexpired>
+	
+	<altavatar key="Hero_Martyr.Alt4" modpriority="1"
+		passiveeffect="../alt4/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Martyr.Alt5" modpriority="1"
+		passiveeffect="../alt5/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Martyr.Alt6" modpriority="1"
+		passiveeffect="../alt6/ability_02/effects/state.effect"
+	/>
+	
+</state>

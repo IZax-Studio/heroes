@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<statenetaccum
+	name="State_Moraxus_Ability4"
+
+	icon="icon4.tga"
+	passiveeffect="effects/state.effect"
+	
+	modifierkey="moraxusulton"
+	impactinterval="100"
+	
+	effecttype=""
+	
+	shield="true"
+	maxaccumulator="400,600,800"
+	
+	maxcharges="10"
+>
+	<oninflict>
+		<setaccumulator value="200,300,400" />
+	</oninflict>
+	
+	<onimpact>
+		<areaofeffect
+			radius="800"
+			targetselection="all"
+			targetscheme="nonillusion_enemy_heroes"
+		/>
+		<setvar0 a="2,2.5,3" b="result" op="mult" />
+		<setaccumulator value="accumulator" valueb="var0" valueop="add" />
+		<setaccumulator value="accumulator" valueb="400,600,800" valueop="min" />
+	</onimpact>
+	
+	<ondamaged>
+		<setvar0 a="source_damage" />
+		<compare a="var0" b="accumulator" op="ge">
+			<evaluate a="var0" b="accumulator" op="sub" />
+			<changedamage b="result" op="min" />
+			<setaccumulator value="0" />
+		</compare>
+		<else>
+			<changedamage b="0" op="min" />
+			<evaluate a="accumulator" b="var0" op="sub" />
+			<setaccumulator value="result" />
+		</else>
+	</ondamaged>
+	
+	<onexpired>
+		<popup name="morult" a="accumulator" source="source_entity" target="source_entity"/>
+		
+		<evaluate a="70000,60000,50000" b="lifetime_remaining" op="add" />
+		<startcooldown toolname="Ability_Moraxus4" duration="result" />
+		<areaofeffect
+			radius="400"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+		>
+			<damage effecttype="Magic" amount="1" b="accumulator" op="mult" />
+				<hasavatarkey name="Hero_Moraxus.Alt4">
+					<playeffect effect="../alt4/ability_04/effects/impact.effect" source="target_entity" target="" />
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/impact.effect" source="target_entity" target="" />
+				</else>
+		</areaofeffect>
+		
+		<!-- Start of Artsy Stuff -->
+		<hasavatarkey name="Hero_Moraxus.Alt">
+			<playeffect effect="effects/cast_alt.effect" source="source_entity" target="" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Moraxus.Alt2">
+				<playeffect effect="effects/cast_alt2.effect" source="source_entity" target="" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Moraxus.Alt3">
+					<playeffect effect="effects/cast_alt3.effect" source="source_entity" target="" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Moraxus.Alt4">
+						<playeffect effect="effects/cast_alt4.effect" source="source_entity" target="" />
+					</hasavatarkey>
+					<else>
+						<playeffect effect="effects/cast.effect" source="source_entity" target="" />
+					</else>
+				</else>
+			</else>
+		</else>
+		<!-- End of Artsy Stuff -->
+	</onexpired>
+	
+	<onframe />
+		
+	<ondamage />
+	
+	<modifier key="ult_boost" modpriority="99">
+		<onimpact>
+			<areaofeffect
+				radius="800"
+				targetselection="all"
+				targetscheme="nonillusion_enemy_heroes"
+			/>
+			<setvar0 a="2,2.5,3" b="result" op="mult" />
+			<setaccumulator value="accumulator" valueb="var0" valueop="add" />
+			<setaccumulator value="accumulator" valueb="400,600,800" valueop="min" />
+			
+			<!-- SotM Specific Stuff; impactinterval = 100ms, so 1 charge is removed per 100ms -->
+			<removecharge />
+		</onimpact>
+		
+		<onexpired>
+			<popup name="morult" a="accumulator" source="source_entity" target="source_entity"/>
+			
+			<evaluate a="70000,60000,50000" b="lifetime_remaining" op="add" />
+			<startcooldown toolname="Ability_Moraxus4" duration="result" />
+			<areaofeffect
+				radius="400"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Magic"
+			>
+				<damage effecttype="Magic" amount="1" b="accumulator" op="mult" />
+				
+				<!-- SotM Specific Stuff -->
+				<pushability name="Ability_Moraxus3" />
+				<setvar0 target="stack_entity" a="target_level" />
+				<compare a="var0" b="0" op="gt">
+					<spawnunit name="Gadget_Moraxus_Ability3_Reveal" count="1" target="source_position" pushentity="true" />
+					<spawnprojectile name="Projectile_Moraxus_Ability3" source="source_entity" target="target_position" bind="stack_entity" proxy="stack_entity" pushentity="true" />
+					<setlevel entity="stack_entity" value="var0" />
+					<!-- <activatemodifierkey name="Moraxus3_LowDamage" entity="stack_entity" /> -->
+				</compare>
+				
+				<!-- End of SotM Specific Stuff, art stuff hereon -->
+				<hasavatarkey name="Hero_Moraxus.Alt4">
+					<playeffect effect="../alt4/ability_04/effects/impact.effect" source="target_entity" target="" />
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/impact.effect" source="target_entity" target="" />
+				</else>					
+			</areaofeffect>
+			
+			<!-- Start of Artsy Stuff -->
+			<hasavatarkey name="Hero_Moraxus.Alt">
+				<playeffect effect="effects/cast_alt.effect" source="source_entity" target="" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Moraxus.Alt2">
+					<playeffect effect="effects/cast_alt2.effect" source="source_entity" target="" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Moraxus.Alt3">
+						<playeffect effect="effects/cast_alt3.effect" source="source_entity" target="" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Moraxus.Alt4">
+							<playeffect effect="effects/cast_alt4.effect" source="source_entity" target="" />
+						</hasavatarkey>
+						<else>
+							<playeffect effect="effects/cast.effect" source="source_entity" target="" />
+						</else>
+					</else>
+				</else>
+			</else>
+			<!-- End of Artsy Stuff -->
+		</onexpired>
+		
+		<ondamage>
+			<compare a="charges" b="0" op="eq">
+				<damageeffecttype effecttype="DOT" />
+				<else>
+					<entitytype target="inflictor_entity" type="Projectile_Moraxus_Ability3" />
+					<else>
+						<pushability name="Ability_Moraxus3" />
+						<setvar0 target="stack_entity" a="target_level" />
+						<compare a="var0" b="0" op="gt">
+							<spawnunit name="Gadget_Moraxus_Ability3_Reveal" count="1" target="source_position" pushentity="true" />
+							<spawnprojectile name="Projectile_Moraxus_Ability3" source="source_entity" target="target_position" bind="stack_entity" proxy="stack_entity" pushentity="true" />
+							<setlevel entity="stack_entity" value="var0" />
+							
+							<!-- Set E proc cooldown to 10 * 100ms = 1000ms (1s) through charges -->
+							<setcharges a="10" />
+						</compare>
+					</else>
+				</else>				
+			</compare>
+		</ondamage>		
+	</modifier>
+	
+	<altavatar key="Hero_Moraxus.Alt" modpriority="1"
+		icon="/heroes/moraxus/alt/ability_04/icon.tga"
+		passiveeffect="effects/state_alt.effect"
+		modifierkey="moraxusulton_Alt"
+	/>
+	
+	<altavatar key="Hero_Moraxus.Alt2" modpriority="1"
+		passiveeffect="effects/state_alt2.effect"
+	/>
+	
+	<altavatar key="Hero_Moraxus.Alt3" modpriority="1"
+		passiveeffect="effects/state_alt3.effect"
+	/>
+	
+	<altavatar key="Hero_Moraxus.Alt4" modpriority="1"
+		passiveeffect="effects/state_alt4.effect"
+	/>
+</statenetaccum>

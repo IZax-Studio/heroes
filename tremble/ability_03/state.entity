@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Tremble_Ability3"
+	icon="icon4.tga"
+	
+	passiveeffect="effects/state_slow.effect"
+
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	movespeedslow="0.15,0.25,0.35,0.45"
+	armor="-1,-2,-3,-4"
+>
+	<onframe />
+</state>
