@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_FlintBeastwoodAttack_Hollowpoint"
+
+	speed="3000"
+	gravity="0"
+	modelscale=".4"
+	model="/heroes/flint_beastwood/alt2/projectile/effects/bullet/bullet.mdf"
+
+	impacteffect=""
+	traileffect="/heroes/flint_beastwood/alt2/projectile/headshot_trail.effect"
+>
+	<altavatar key="Hero_FlintBeastwood.Alt2"
+		model="/heroes/flint_beastwood/alt2/projectile/effects/bullet/bullet.mdf"
+		traileffect="/heroes/flint_beastwood/alt2/projectile/headshot_trail.effect"
+	/>
+
+	<altavatar key="Hero_FlintBeastwood.Alt4"
+		traileffect="/heroes/flint_beastwood/alt4/projectile/headshot_trail.effect"
+	/>
+
+	<altavatar key="Hero_FlintBeastwood.Alt7"
+		model="/shared/models/invis.mdf"
+		traileffect="/heroes/flint_beastwood/alt7/projectile/headshot_trail.effect"
+	/>
+	
+	<altavatar key="Hero_FlintBeastwood.Alt8"
+		model="/heroes/flint_beastwood/alt8/projectile/effects/bullet/bullet.mdf"
+		traileffect="/heroes/flint_beastwood/alt8/projectile/headshot_trail.effect"
+	/>
+	
+	<altavatar key="Hero_FlintBeastwood.Alt9"
+		model="/heroes/flint_beastwood/alt9/projectile/effects/bullet/bullet.mdf"
+		traileffect="/heroes/flint_beastwood/alt9/projectile/headshot_trail.effect"
+	/>
+	
+	<altavatar key="Hero_FlintBeastwood.Alt10"
+		traileffect="/heroes/flint_beastwood/alt10/projectile/headshot_trail.effect"
+	/>
+	
+	<altavatar key="Hero_FlintBeastwood.Alt11"
+		traileffect="/heroes/flint_beastwood/alt11/projectile/headshot_trail.effect"
+	>
+	
+	<modifier key="empath"
+		traileffect="/heroes/flint_beastwood/alt11/projectile/empath/trail.effect"
+	/>
+	
+	<modifier key="pearl"
+		traileffect="/heroes/flint_beastwood/alt11/projectile/pearl/trail.effect"
+	/>
+	
+	<modifier key="chicken"
+		traileffect="/heroes/flint_beastwood/alt11/projectile/chicken/trail.effect"
+	/>
+	
+	<modifier key="zephyr"
+		traileffect="/heroes/flint_beastwood/alt11/projectile/zephyr/trail.effect"
+	/>
+	
+	<modifier key="sherif"
+		traileffect="/heroes/flint_beastwood/alt11/projectile/sherif/trail.effect"
+	/>
+	
+	<modifier key="judge"
+		traileffect="/heroes/flint_beastwood/alt11/projectile/judge/trail.effect"
+	/>
+	
+	<modifier key="sushi"
+		traileffect="/heroes/flint_beastwood/alt11/projectile/sushi/trail.effect"
+	/>
+	
+	</altavatar>
+	
+	<altavatar key="Hero_FlintBeastwood.Alt12"
+		traileffect="/heroes/flint_beastwood/alt12/projectile/headshot_trail.effect"
+	/>
+	
+	<altavatar key="Hero_FlintBeastwood.Alt13"
+		model="/shared/models/invis.mdf"
+		traileffect="/heroes/flint_beastwood/alt13/projectile/headshot_trail.effect"
+	/>
+	
+	<altavatar key="Hero_FlintBeastwood.Alt14"
+		model="/shared/models/invis.mdf"
+		traileffect="/heroes/flint_beastwood/alt14/projectile/headshot_trail.effect"
+		impacteffect="/heroes/flint_beastwood/alt14/projectile/headshot_impact.effect"
+	/>
+	
+	<altavatar key="Hero_FlintBeastwood.Alt15"
+		model="/shared/models/invis.mdf"
+		traileffect="/heroes/flint_beastwood/alt15/projectile/headshot_trail.effect"
+	/>
+	
+</projectile>

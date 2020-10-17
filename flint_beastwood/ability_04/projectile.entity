@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_FlintBeastwood_Ability4"
+
+	speed="2500"
+	gravity="500"
+
+	modelscale=".6"
+	model="/shared/models/invis.mdf"
+
+	effectscale="1"
+	impacteffect="effects/impact.effect"
+	traileffect="effects/trail.effect"
+>
+	<onimpact>
+		<combatevent effecttype="AbilityBasedProjectile">
+			<onimpact>
+				<applystate name="State_Stunned" duration="200" />
+				<damage effecttype="Magic" amount="350,525,700" />
+				<setvar0 a="350,525,700" />
+				<calculatedamage amount="var0" effecttype="Magic" />
+				<setvar2 a="result" />
+				
+				<!-- VFX/SFX -->
+				<hasavatarkey name="Hero_FlintBeastwood.Alt4" >
+					<condition test="target_health le var2">
+						<playeffect effect="/heroes/flint_beastwood/alt4/ability_04/effects/impact_skill.effect" target="source_entity" />
+						<applystate name="State_FlintBeastwood_Ability4_Sound" target="target_entity" duration="0" />
+					</condition>
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_FlintBeastwood.Alt7" >
+						<playeffect effect="/heroes/flint_beastwood/alt7/ability_04/effects/impact_skill.effect" target="source_entity" />
+						<applystate name="State_FlintBeastwood_Ability4_Sound" target="target_entity" duration="0" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_FlintBeastwood.Alt8" >
+							<playeffect effect="/heroes/flint_beastwood/alt8/ability_04/effects/impact_skill.effect" target="source_entity" />
+							<applystate name="State_FlintBeastwood_Ability4_Sound" target="target_entity" duration="0" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_FlintBeastwood.Alt10" >
+								<playeffect effect="/heroes/flint_beastwood/alt10/ability_04/effects/impact_skill.effect" target="source_entity" />
+								<applystate name="State_FlintBeastwood_Ability4_Sound" target="target_entity" duration="0" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_FlintBeastwood.Alt12" >
+									<playeffect effect="/heroes/flint_beastwood/alt12/ability_04/effects/impact_skill.effect" target="source_entity" />
+									<applystate name="State_FlintBeastwood_Ability4_Sound" target="target_entity" duration="0" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_FlintBeastwood.Alt14" >
+										<playeffect effect="/heroes/flint_beastwood/alt14/ability_04/effects/impact_skill.effect" target="source_entity" />
+										<applystate name="State_FlintBeastwood_Ability4_Sound" target="target_entity" duration="0" />
+									</hasavatarkey>
+									<else>
+										<applystate name="State_FlintBeastwood_Ability4_Sound" target="target_entity" duration="0" />
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</onimpact>
+		</combatevent>
+	</onimpact>
+
+	<altavatar key="Hero_FlintBeastwood.Alt4"
+		modelscale=".65"
+		modelpitch="90"
+		model="/heroes/flint_beastwood/alt4/ability_04/effects/dragon.mdf"
+
+		impacteffect="/heroes/flint_beastwood/alt4/ability_04/effects/impact.effect"
+		traileffect="/heroes/flint_beastwood/alt4/ability_04/effects/trail.effect"
+	/>
+
+	<altavatar key="Hero_FlintBeastwood.Alt7"
+		modelscale=".65"
+
+		impacteffect="/heroes/flint_beastwood/alt7/ability_04/effects/impact.effect"
+		traileffect="/heroes/flint_beastwood/alt7/ability_04/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_FlintBeastwood.Alt8"
+		modelscale=".8"
+
+		impacteffect="/heroes/flint_beastwood/alt8/ability_04/effects/impact.effect"
+		traileffect="/heroes/flint_beastwood/alt8/ability_04/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_FlintBeastwood.Alt9"
+		impacteffect="/heroes/flint_beastwood/alt9/ability_04/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_FlintBeastwood.Alt10"
+		modelscale=".8"
+		model="/heroes/flint_beastwood/alt10/ability_04/effects/cannonball/model.mdf"
+		impacteffect="/heroes/flint_beastwood/alt10/ability_04/effects/impact.effect"
+		traileffect="/heroes/flint_beastwood/alt10/ability_04/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_FlintBeastwood.Alt11"
+		impacteffect="/heroes/flint_beastwood/alt11/ability_04/effects/impact.effect"
+		traileffect="/heroes/flint_beastwood/alt11/ability_04/effects/trail.effect"
+	>
+	
+		<modifier key="sushi" 
+			impacteffect="/heroes/flint_beastwood/alt11/ability_04/effects/sushi/impact.effect"
+			traileffect="/heroes/flint_beastwood/alt11/ability_04/effects/sushi/trail.effect"
+		/>
+		
+		<modifier key="empath" 
+			impacteffect="/heroes/flint_beastwood/alt11/ability_04/effects/empath/impact.effect"
+			traileffect="/heroes/flint_beastwood/alt11/ability_04/effects/empath/trail.effect"
+		/>
+		
+		<modifier key="pearl" 
+			impacteffect="/heroes/flint_beastwood/alt11/ability_04/effects/pearl/impact.effect"
+			traileffect="/heroes/flint_beastwood/alt11/ability_04/effects/pearl/trail.effect"
+		/>
+		
+		<modifier key="chicken" 
+			impacteffect="/heroes/flint_beastwood/alt11/ability_04/effects/chicken/impact.effect"
+			traileffect="/heroes/flint_beastwood/alt11/ability_04/effects/chicken/trail.effect"
+		/>
+		
+		<modifier key="zephyr" 
+			impacteffect="/heroes/flint_beastwood/alt11/ability_04/effects/zephyr/impact.effect"
+			traileffect="/heroes/flint_beastwood/alt11/ability_04/effects/zephyr/trail.effect"
+		/>
+		
+		<modifier key="sherif" 
+			impacteffect="/heroes/flint_beastwood/alt11/ability_04/effects/sherif/impact.effect"
+			traileffect="/heroes/flint_beastwood/alt11/ability_04/effects/sherif/trail.effect"
+		/>
+		
+		<modifier key="judge" 
+			impacteffect="/heroes/flint_beastwood/alt11/ability_04/effects/judge/impact.effect"
+			traileffect="/heroes/flint_beastwood/alt11/ability_04/effects/judge/trail.effect"
+		/>
+	
+	</altavatar>
+	
+	<altavatar key="Hero_FlintBeastwood.Alt12"
+		modelscale=".8"
+		model="/heroes/flint_beastwood/alt12/ability_04/effects/ornament/model.mdf"
+		impacteffect="/heroes/flint_beastwood/alt12/ability_04/effects/impact.effect"
+		traileffect="/heroes/flint_beastwood/alt12/ability_04/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_FlintBeastwood.Alt13"
+		modelscale=".8"
+		model="/shared/models/invis.mdf"
+		impacteffect="/heroes/flint_beastwood/alt13/ability_04/effects/impact.effect"
+		traileffect="/heroes/flint_beastwood/alt13/ability_04/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_FlintBeastwood.Alt14"
+		modelscale=".8"
+		impacteffect="/heroes/flint_beastwood/alt14/ability_04/effects/impact.effect"
+		traileffect="/heroes/flint_beastwood/alt14/ability_04/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_FlintBeastwood.Alt15"
+		modelscale=".8"
+		model="/shared/models/invis.mdf"
+		impacteffect="/heroes/flint_beastwood/alt15/ability_04/effects/impact.effect"
+		traileffect="/heroes/flint_beastwood/alt15/ability_04/effects/trail.effect"
+	/>
+	
+</projectile>

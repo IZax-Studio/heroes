@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="3">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume="1"
+				sample="../sounds/impact.ogg"
+			/>
+		
+			<sound
+				fadein="0"
+				fadeout="400"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume=".75"
+				sample="../sounds/impact.ogg"
+			/>
+
+			<sound
+				fadein="0"
+				fadeout="400"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume=".5"
+				sample="../sounds/impact.ogg"
+			/>
+
+			<billboard			
+				life="400"
+				bone="_bone_centerofchest"
+				startsize="45"
+				endsize="100"
+				material="/shared/effects/materials/blood1.material"
+				startalpha="1"
+				endalpha="0"
+				depthbias="-30"
+				maxroll="360"
+				color=".3 .05 0"
+				position="0 0 5"
+			/>
+	
+			<billboard			
+				life="250"
+				bone="_bone_centerofchest"
+				startsize="0"
+				midsize="70"
+				endsize="80"
+				material="../../sniper/effects/materials/other_CP2_002.material"
+				depthbias="-50"
+				maxroll="360"
+				color="2 .5 .15"
+			/>
+	
+			<billboard			
+				life="250"
+				bone="_bone_centerofchest"
+				startsize="100"
+				midsize="80"
+				endsize="0"
+				material="../../sniper/effects/materials/Glow_amos_19.material"
+				depthbias="-50"
+				maxroll="360"
+				color="2 .65 .25"
+			/>
+	
+			<billboard			
+				life="250"
+				bone="_bone_centerofchest"
+				startsize="100"
+				midsize="80"
+				endsize="0"
+				material="/shared/effects/materials/flare_03.material"
+				depthbias="-50"
+				maxroll="360"
+				color="2 .65 .25"
+			/>
+	
+			<billboard			
+				life="250"
+				bone="_bone_centerofchest"
+				startsize="100"
+				midsize="80"
+				endsize="0"
+				material="/shared/effects/materials/flare_03.material"
+				depthbias="-50"
+				maxroll="360"
+				color="2 .65 .25"
+			/>
+	
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="2000"
+				count="15"
+				minparticlelife="400"
+				maxparticlelife="1200"
+				gravity="13"
+				minspeed="150"
+				maxspeed="550"
+				drag=".15"
+				offsetsphere="15"
+				material="/shared/effects/materials/blood1.material"
+         		>
+  				<particle 
+					minangle="0"
+					maxangle="360"			
+					color=".5 .2 0"
+					maxanglespeed="20"
+					minanglespeed="-120"
+					startsize="10"
+					minendsize="35"
+					maxendsize="45"			
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					endstickiness=".3"
+				/>
+  				<particle 
+					minangle="0"
+					maxangle="360"			
+					color=".3"
+					maxanglespeed="55"
+					minanglespeed="-55"
+					startsize="10"
+					minendsize="55"
+					maxendsize="85"			
+					startalpha="1"
+					midalpha=".8"
+					endalpha="0"
+				/>
+  				<particle 
+					minangle="0"
+					maxangle="360"			
+					color=".2"
+					maxanglespeed="10"
+					minanglespeed="-10"
+					startsize="30"
+					minendsize="5"
+					maxendsize="10"			
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="2000"
+				count="25"
+				minparticlelife="400"
+				maxparticlelife="1400"
+				gravity="10"
+				minspeed="50"
+				maxspeed="550"
+				drag=".05"
+				offsetsphere="10"
+				material="/shared/effects/materials/blood1.material"
+         		>
+  				<particle 
+					minangle="0"
+					maxangle="360"			
+					color=".5 .2 0"
+					maxanglespeed="10"
+					minanglespeed="-10"
+					size="2"
+					minscale="1"
+					maxscale="2"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="500"
+				bone="_bone_head"
+				spawnrate="5"
+				offsetsphere="30 30 30"
+				particlelife="3000"
+				depthbias="-50"
+			>
+				<particle>
+					<groundsprite						
+						material="/shared/effects/materials/blood_ground.material"						
+						life="2000"
+						size="5"			
+						minscale="1"
+						maxscale="6"
+						minyaw="-360"
+						maxyaw="360"
+						startcolor=".35 .2 .2"
+						endcolor=".2 .1 .1"
+						startalpha=".8"
+						midalpha=".8"
+						endalpha="0"
+					/>				
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				spawnrate="1000"
+				mincount="5"
+				maxcount="10"
+				bone="_bone_centerofchest"
+				minparticlelife="100"
+				maxparticlelife="200"
+				minspeed="350"
+				maxspeed="550"
+				direction="0 1 0"
+				offsetsphere="0"
+				material="/shared/effects/materials/light_rays.material"
+				directionalspace="local"
+				minangle="0"
+				maxangle="360"
+			>
+				<particle
+					turn="true"
+					flare="true"
+					angle="180"
+					size="5"
+					height="40"
+					startscale="0"
+					minmidscale=".5"
+					maxmidscale="1.25"
+					endscale="0"
+					midscalepos=".8"
+					startcolor="1 .4 0"
+					midcolor="1 .4 0"
+					endcolor="1 .15 0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				spawnrate="1000"
+				mincount="6"
+				maxcount="10"
+				minparticlelife="100"
+				maxparticlelife="200"
+				bone="_bone_centerofchest"
+				minspeed="250"
+				maxspeed="400"
+				direction="0 1 0"
+				offsetsphere="0"
+				material="../../sniper/effects/materials/Fire_xisi_008.material"
+				depthbias="-35"
+				directionalspace="local"
+				minangle="0"
+				maxangle="360"
+			>
+				<particle
+					turn="true"
+					flare="true"
+					angle="180"
+					size="10"
+					height="40"
+					startscale="0"
+					minmidscale="1"
+					maxmidscale="1.5"
+					endscale="0"
+					midscalepos=".8"
+					startcolor="1"
+					midcolor="1"
+					endcolor="1"
+				/>
+			</simpleemitter>
+
+			<simpleemitter	
+				spawnrate="11500"
+				life="1200"				
+				count="5"
+				bone="_bone_centerofchest"
+				minparticlelife="200"			
+				maxparticlelife="350"
+				gravity="-10"
+				depthbias="-10"			
+				material="/shared/effects/materials/flame.material"			
+				offsetsphere="0"
+				minspeed="0"
+				maxspeed="100"
+				maxangle="360"
+				direction="0 0 1"
+				angle="0"
+				drag=".005"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					color="0 .2 1"
+					startsize="20"
+					endsize="100"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

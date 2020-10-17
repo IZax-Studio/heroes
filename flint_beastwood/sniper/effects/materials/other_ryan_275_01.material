@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<material>
+	<parameters>
+		<vec2 name="vUVScale" value="1 2" />
+		<vec2 name="vUVScroll" value="4 0" />
+		<float name="fBorderSharpness" value="2.0"/>
+	</parameters>
+	<phase name="color" vs="mesh_fire" ps="mesh_fire" srcblend="BLEND_SRC_ALPHA" dstblend="BLEND_ONE" translucent="true" cull="CULL_NONE" alphatest="false" layer="2" colorwrite="true" alphawrite="false">
+		<sampler name="reveal" texture="../textures/other_ryan_275.tga" repeat_u="true" repeat_v="true" scale_u="1.0000" scale_v="1.0000" fps="15" mipmaps="true" fullquality="false" nocompress="false" filtering="true" border="false" />
+	</phase>
+</material>

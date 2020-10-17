@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1" >
+	<definitions>
+		<particlesystem name="system0" space="world">
+			
+			<simpleemitter
+				spawnrate="5"
+				offsetsphere="0 0 0"
+				minparticlelife="250"
+				maxparticlelife="400"
+				position="0 150 85"
+				angle="0"
+				direction="0 1 0"
+				material="/shared/effects/materials/whitedot.material"
+			>
+				<particle
+					startsize="0"
+					midsize="300"
+					endsize="350"
+					startcolor=".1 .2 .25"
+					endcolor="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="10"
+				offsetsphere="0 0 0"
+				minparticlelife="250"
+				maxparticlelife="400"
+				position="0 150 85"
+				angle="0"
+				direction="0 1 0"
+				material="materials/Glow_CPxs_rm_010_1.material"
+			>
+				<particle
+					maxangle="360"
+					startsize="0"
+					midsize="100"
+					endsize="120"
+					startcolor=".25 .4 .5"
+					endcolor="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="10"
+				offsetsphere="0 0 0"
+				particlelife="300"
+				position="0 150 85"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle turn="true">
+					<model
+						life="300"
+						model="models/guangyun_01.mdf"
+						material="materials/other_ryan_276_1.material"
+						color=".1 .5 1"
+					/>
+					
+					<model
+						life="300"
+						model="models/guangyun_01.mdf"
+						material="materials/other_ryan_275_01.material"
+						color=".1 .5 1"
+					/>
+				</particle>
+				<particle turn="true">
+					<model
+						life="300"
+						model="models/guangyun_01.mdf"
+						material="materials/other_ryan_276_1.material"
+						color="1 .5 .1"
+					/>
+					
+					<model
+						life="300"
+						model="models/guangyun_01.mdf"
+						material="materials/other_ryan_275_01.material"
+						color="1 .5 .1"
+					/>
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter	
+				spawnrate="50"
+				position="0 150 0"
+				minparticlelife="500"			
+				maxparticlelife="700"	
+				depthbias="-10"			
+				material="/shared/effects/materials/smoke_add.material"			
+				offsetsphere="100 35 15"
+				minspeed="750"
+				maxspeed="1000"
+				angle="45"
+				direction="0 -1 0"
+				drag=".005"
+			>
+				<particle 
+					minangle="-25"
+					maxangle="25"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					color=".85 .82 .75"
+					startsize="50"
+					endsize="200"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+				/>
+				<particle 
+					minangle="-25"
+					maxangle="25"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					color=".95"
+					startsize="50"
+					endsize="200"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+				/>
+				<particle 
+					minangle="-25"
+					maxangle="25"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					color=".8"
+					startsize="100"
+					midsize="100"
+					endsize="250"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			<template name="ball_of_fire">
+				<trailemitter
+					spawnrate="10"
+					particlelife="400"
+					texpostime="500"
+					texposscale="0.0"
+					texstretchscale=".4"
+					material="/shared/effects/materials/light_trail.material"
+					life="800"
+				>
+					<particle
+						startcolor=".2 .4 1"
+						midcolor="0 .1 1"
+						endcolor="0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".075"
+						startsize="5"
+						midsize="15"
+						endsize="5"
+						midsizepos="0.2"
+				 />
+					<particle
+						startcolor="1 .4 .2"
+						midcolor="1 .1 0"
+						endcolor="0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".075"
+						startsize="5"
+						midsize="15"
+						endsize="5"
+						midsizepos="0.2"
+				 />
+				</trailemitter>
+			
+				<trailemitter
+					spawnrate="15"
+					particlelife="500"
+					texpostime="750"
+					texposscale="0.0"
+					texstretchscale=".4"
+					material="/shared/effects/materials/light_trail.material"
+					direction="0 0 1"
+					speed="50"
+					angle="0"
+					drag="0.02"
+					life="800"
+				>
+					<particle
+						startcolor="0"
+						midcolor="0 .5 1"
+						endcolor="0 0 0"
+						midcolorpos=".05"
+						startsize="5"
+						midsize="10"
+						endsize="10"
+						midsizepos=".1"
+					/>
+					<particle
+						startcolor="0"
+						midcolor="1 .5 0"
+						endcolor="0 0 0"
+						midcolorpos=".05"
+						startsize="5"
+						midsize="10"
+						endsize="10"
+						midsizepos=".1"
+					/>
+				</trailemitter>
+			</template>
+			
+			<trackeremitter
+				position="0 150 85"
+				targetposition="0 150 85"
+				inheritvelocity="0.25"
+				tracktype="distance"
+				trackspeed="3" 
+				spawnrate="100"
+				particlelife="1500"
+				offsetsphere="150"
+				speed="300"
+				direction="0 0 1"
+				yawspeed="500"
+			>
+				<particle 
+					startsize="4"
+					endsize="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="1"
+					midalphapos=".1"
+					maxangle="360"
+					minscale=".1"
+					maxscale=".6"
+					color=".2 .5 1"					
+				>
+					<instance name="ball_of_fire"/>
+				</particle>
+			</trackeremitter>
+			
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
