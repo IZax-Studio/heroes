@@ -62,6 +62,11 @@
 	<altavatar key="Hero_MonkeyKing.Alt15" modpriority="1"
 		icon="../alt15/ability_01/icon.tga"
 	    passiveeffect="/heroes/monkey_king/alt15/ability_01/effects/rush_2.effect"
+	/>	
+	
+	<altavatar key="Hero_MonkeyKing.Alt16" modpriority="1"
+		icon="../alt16/ability_01/icon.tga"
+	    passiveeffect="/heroes/monkey_king/alt16/ability_01/effects/rush_2.effect"
 	/>
 	
 </state>

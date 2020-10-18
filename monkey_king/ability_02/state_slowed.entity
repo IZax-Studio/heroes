@@ -93,6 +93,14 @@
 		<onimpact>
 			<playeffect effect="/heroes/monkey_king/alt15/ability_02/effects/impact.effect" source="target_entity" target="target_entity" />
 		</onimpact>
+	</altavatar>	
+	
+	<altavatar key="Hero_MonkeyKing.Alt16"
+		passiveeffect="/heroes/monkey_king/alt16/ability_02/effects/daze.effect"
+	>
+		<onimpact>
+			<playeffect effect="/heroes/monkey_king/alt16/ability_02/effects/impact.effect" source="target_entity" target="target_entity" />
+		</onimpact>
 	</altavatar>
 	
 </state>

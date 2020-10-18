@@ -33,6 +33,9 @@
 				</else>
 			</cantarget>
 		</targettype>
+		
+		<pushability name="Ability_MonkeyKing1" />
+		<setcharges a="0" entity="stack_entity" />
 	</onexpired>
 	
 	<altavatar key="Hero_MonkeyKing.Alt15"

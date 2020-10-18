@@ -34,13 +34,28 @@
 		<spawnprojectile name="Projectile_MonkeyKing_Ability1_1" source="source_entity" target="target_position" bind="source_entity" bindturn="true" bindstate="State_MonkeyKing_Ability1_Rush" unbindondeath="true" proxy="this_entity" pushentity="true" />
 		<spawnprojectile name="Projectile_MonkeyKing_Ability1_Cliff" source="source_entity" target="target_position" proxy="stack_entity" offsetspace="source_entity" offset="0 0 0" />
 		<spawnaffector name="Affector_MonkeyKing_Ability1" target="stack_entity" />
-		
+		<setcharges a="1" entity="this_entity" />
+	</onimpact>
+	
+	<oncomplete>
 		<!-- Kinesis Thoughtsteal accommodation -->
 		<applystate name="State_MonkeyKing_Ability1" target="source_entity" duration="2000" />
 		<activatemodifierkey name="monkeyking_Q_disabled" entity="this_entity" />
-	</onimpact>
+	</oncomplete>
 	
-	<modifier key="CloudCutter" modpriority="100"
+	<modifier key="ult_boost" modpriority="100"
+		maxcharges="2"
+	>
+		<onimpact>
+			<unbind target="source_entity" />
+			<spawnprojectile name="Projectile_MonkeyKing_Ability1_1" source="source_entity" target="target_position" bind="source_entity" bindturn="true" bindstate="State_MonkeyKing_Ability1_Rush" unbindondeath="true" proxy="this_entity" pushentity="true" />
+			<spawnprojectile name="Projectile_MonkeyKing_Ability1_Cliff" source="source_entity" target="target_position" proxy="stack_entity" offsetspace="source_entity" offset="0 0 0" />
+			<spawnaffector name="Affector_MonkeyKing_Ability1" target="stack_entity" />
+			<setcharges a="2" entity="this_entity" />
+		</onimpact>
+	</modifier>
+	
+	<modifier key="CloudCutter" modpriority="101"
 		ignorecooldown="true"
 		anim=""
 		casttime="0"
@@ -50,14 +65,26 @@
 		noresponse="true"
 	>
 		<onimpact>
-			<expirestate name="State_MonkeyKing_Ability1" target="source_entity" /> 
-			<resettimer />
+			<removecharge />
+			<compare a="charges" b="0" op="le">
+				<expirestate name="State_MonkeyKing_Ability1" target="source_entity" /> 
+				<resettimer />
+			</compare>
+			<else>
+				<unbind target="source_entity" />
+				<spawnprojectile name="Projectile_MonkeyKing_Ability1_1" source="source_entity" target="target_position" bind="source_entity" bindturn="true" bindstate="State_MonkeyKing_Ability1_Rush" unbindondeath="true" proxy="this_entity" pushentity="true" />
+				<spawnprojectile name="Projectile_MonkeyKing_Ability1_Cliff" source="source_entity" target="target_position" proxy="stack_entity" offsetspace="source_entity" offset="0 0 0" />
+				<spawnaffector name="Affector_MonkeyKing_Ability1" target="stack_entity" />
+			</else>
 		</onimpact>
+		
+		<oncomplete />
 	</modifier>
 	
-	<modifier key="monkeyking_Q_disabled" modpriority="101"
+	<modifier key="monkeyking_Q_disabled" modpriority="102"
 		disabled="true"
 	>
+		<oncomplete />
 	</modifier>
 	
 	<modifier key="soccer" modpriority="150"
@@ -76,6 +103,7 @@
 			<applystate name="State_Soccer_Buildingwalking" target="source_entity" duration="500" />
 		</onimpact>
 	</modifier>
+	
 	<altavatar key="Hero_MonkeyKing.Alt11"
 	    icon="/heroes/monkey_king/alt11/ability_01/icon.tga"		
 	/>

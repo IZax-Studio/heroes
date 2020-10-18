@@ -163,6 +163,15 @@
 			<setscriptvalue name="cast_effect" value="../alt15/ability_03/effects/cast.effect" entity="this_entity" />
 			<setscriptvalue name="impact_effect" value="../alt15/ability_03/effects/impact.effect" entity="this_entity" />
 		</onlearn>
+	</altavatar>	
+	
+	<altavatar key="Hero_MonkeyKing.Alt16"
+		dynamicprecache="../alt16/ability_03/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt16/ability_03/effects/cast.effect" entity="this_entity" />
+			<setscriptvalue name="impact_effect" value="../alt16/ability_03/effects/impact.effect" entity="this_entity" />
+		</onlearn>
 	</altavatar>
 	
 	<altavatar key="Hero_MonkeyKing.main_reskin"
