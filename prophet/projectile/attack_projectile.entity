@@ -7,19 +7,56 @@
 
 	modelscale=".7"
 	model="/shared/models/invis.mdf"
-	
-	flying="true"
-	flyheight="80"
 
 	traileffect="/heroes/hellbringer/alt6/projectile/effects/trail.effect"
 	impacteffect="/heroes/hellbringer/alt6/projectile/effects/impact.effect"
 >
+	<altavatar key="Hero_Prophet.Alt" modpriority="90"
+		traileffect="/heroes/prophet/alt2/projectile/effects/trail.effect"
+		impacteffect="/heroes/prophet/alt2/projectile/effects/impact.effect"
+		model="/heroes/prophet/alt2/projectile/effects/staff/model.mdf"
+	/>
+	
+	<altavatar key="Hero_Prophet.Alt2" modpriority="90"
+		traileffect="/heroes/prophet/alt/projectile/effects/trail.effect"
+		impacteffect="/heroes/prophet/alt/projectile/effects/impact.effect"
+		model="/heroes/prophet/alt/projectile/effects/staff/model.mdf"
+	/>
+	
+	<altavatar key="Hero_Prophet.Alt3" modpriority="90"
+		traileffect="/heroes/prophet/alt3/projectile/effects/trail.effect"
+		impacteffect="/heroes/prophet/alt3/projectile/effects/impact.effect"
+		modelscale="1.5"
+		model="/heroes/prophet/alt3/projectile/effects/model.mdf"
+	/>
+	
 	<altavatar key="Hero_Prophet.Alt4"
 		modelscale="1.6"
 		model="/heroes/prophet/alt4/projectile/effects/base/model.mdf"
 		traileffect="/heroes/prophet/alt4/projectile/effects/trail_base.effect"
 		impacteffect="/heroes/prophet/alt4/projectile/effects/impact.effect"
-	/>
+	>
+		<modifier key="Prophet_Alt4_Set_Projectile" modpriority="100"
+			model="/heroes/prophet/alt4/projectile/effects/base/model.mdf"
+			traileffect="/heroes/prophet/alt4/projectile/effects/trail_set_base.effect"
+			impacteffect="/heroes/prophet/alt4/projectile/effects/impact.effect"
+		>		
+		</modifier>
+		
+		<modifier key="Prophet_Alt4_Upgraded_Projectile" modpriority="110"
+			model="/heroes/prophet/alt4/projectile/effects/upgraded/model.mdf"
+			traileffect="/heroes/prophet/alt4/projectile/effects/trail_upgraded.effect"
+			impacteffect="/heroes/prophet/alt4/projectile/effects/impact.effect"
+		>		
+		</modifier>
+		
+		<modifier key="Prophet_Alt4_Upgraded_Set_Projectile" modpriority="120"
+			model="/heroes/prophet/alt4/projectile/effects/upgraded/model.mdf"
+			traileffect="/heroes/prophet/alt4/projectile/effects/trail_set_upgraded.effect"
+			impacteffect="/heroes/prophet/alt4/projectile/effects/impact.effect"
+		>
+		</modifier>
+	</altavatar>
 	
 	<altavatar key="Hero_Prophet.Alt5"
 		model="/shared/models/invis.mdf"
