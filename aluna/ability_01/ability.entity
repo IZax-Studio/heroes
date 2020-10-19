@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Aluna1"
+	
+	icon="icon1.tga"
+	anim="ability_1"
+	
+	casttime="1000"
+	castactiontime="300"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	
+	actiontype="target_entity"
+	targetscheme="enemy_units"
+	targetradius="500"
+	targetmaterial="/shared/materials/area_cast_indicator_pointed.material"
+	
+	casteffecttype="Magic"
+	casteffect=""
+
+	manacost="80,95,110,125"
+	cooldowntime="15000,14000,13000,12000"
+	range="600"
+	
+	statuseffecttooltip="State_Aluna_Ability1_Self"
+	statuseffecttooltip2="State_Aluna_Ability1_Enemy"
+
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	showrangeandradiusintooltip="true"
+	
+	dynamicprecache="effects/link.effect,effects/linkred.effect"
+	novoiceresponse="true"
+>
+	<onlearn>
+		<setscriptvalue name="link_effect" value="effects/link.effect" entity="this_entity" />
+		<setscriptvalue name="linkred_effect" value="effects/linkred.effect" entity="this_entity" />
+	</onlearn>
+	
+	<onimpact>
+		<applystate name="State_Stunned" duration="1250,1500,1750,2000" />
+
+		<hasmodifier name="aluna_red">
+			<spawnaffector name="Affector_Aluna_Ability1_Red" target="target_entity" proxy="target_entity" />
+			
+			<!-- Dynamic visual effects -->
+			<getscriptvalue name="linkred_effect" destvar="str0" entity="this_entity" />
+			<playeffectdynamic effect="str0" target="target_entity" occlude="true" />
+		</hasmodifier>
+		<else>
+			<spawnaffector name="Affector_Aluna_Ability1" target="target_entity" proxy="target_entity" />
+			
+			<!-- Dynamic visual effects -->
+			<getscriptvalue name="link_effect" destvar="str0" entity="this_entity" />
+			<playeffectdynamic effect="str0" target="target_entity" occlude="true" />
+		</else>	
+	</onimpact>
+	
+	<modifier key="aluna_red" modpriority="100" icon="icon1b.tga"
+		targetradius="500"
+	>	
+	</modifier>
+	
+	<modifier key="ult_boost" modpriority="120">
+		<onimpact>
+			<applystate name="State_Stunned" duration="1250,1500,1750,2000" />
+
+			<hasmodifier name="aluna_red">
+				<spawnaffector name="Affector_Aluna_Ability1_Red" target="target_entity" proxy="target_entity" />
+				
+				<!-- Dynamic visual effects -->
+				<getscriptvalue name="linkred_effect" destvar="str0" entity="this_entity" />
+				<playeffectdynamic effect="str0" target="target_entity" occlude="true" />
+			</hasmodifier>
+			<else>
+				<spawnaffector name="Affector_Aluna_Ability1" target="target_entity" proxy="target_entity" />
+				
+				<!-- Dynamic visual effects -->
+				<getscriptvalue name="link_effect" destvar="str0" entity="this_entity" />
+				<playeffectdynamic effect="str0" target="target_entity" occlude="true" />
+			</else>	
+		</onimpact>
+	</modifier>
+	
+	<modifier key="soccer" modpriority="150" 
+		baselevel="0"
+		maxlevel="1"
+		manacost="25"
+		range="500"
+		cooldowntime="8000"
+	>
+		<onimpact>
+			<applystate name="State_Stunned" duration="1000" />
+					
+			<hasmodifier name="aluna_red">
+				<spawnaffector name="Affector_Aluna_Ability1_Red" target="target_entity" proxy="target_entity" param="1000" />
+				
+				<!-- Dynamic visual effects -->
+				<getscriptvalue name="linkred_effect" destvar="str0" entity="this_entity" />
+				<playeffectdynamic effect="str0" target="target_entity" occlude="true" />
+			</hasmodifier>
+			<else>
+				<spawnaffector name="Affector_Aluna_Ability1" target="target_entity" proxy="target_entity" param="1000" />
+				
+				<!-- Dynamic visual effects -->
+				<getscriptvalue name="link_effect" destvar="str0" entity="this_entity" />
+				<playeffectdynamic effect="str0" target="target_entity" occlude="true" />
+			</else>	
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Aluna.Alt"		
+		dynamicprecache="../alt/ability_01/effects/link.effect,../alt/ability_01/effects/linkred.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="link_effect" value="../alt/ability_01/effects/link.effect" entity="this_entity" />
+			<setscriptvalue name="linkred_effect" value="../alt/ability_01/effects/linkred.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Aluna.Alt2"		
+		dynamicprecache="../alt2/ability_01/effects/link.effect,../alt2/ability_01/effects/linkred.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="link_effect" value="../alt2/ability_01/effects/link.effect" entity="this_entity" />
+			<setscriptvalue name="linkred_effect" value="../alt2/ability_01/effects/linkred.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Aluna.Alt4"		
+		dynamicprecache="../alt4/ability_01/effects/link.effect,../alt4/ability_01/effects/linkred.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="link_effect" value="../alt4/ability_01/effects/link.effect" entity="this_entity" />
+			<setscriptvalue name="linkred_effect" value="../alt4/ability_01/effects/linkred.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Aluna.Alt5"		
+		dynamicprecache="../alt5/ability_01/link.effect,../alt5/ability_01/effects/linkred.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="link_effect" value="../alt5/ability_01/link.effect" entity="this_entity" />
+			<setscriptvalue name="linkred_effect" value="../alt5/ability_01/linkred.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Aluna.Alt7"		
+		dynamicprecache="../alt7/ability_01/effects/link.effect,../alt7/ability_01/effects/linkred.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="link_effect" value="../alt7/ability_01/effects/link.effect" entity="this_entity" />
+			<setscriptvalue name="linkred_effect" value="../alt7/ability_01/effects/linkred.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Aluna.Alt8"
+		icon="../alt8/ability_01/icon.tga"
+		dynamicprecache="../alt8/ability_01/effects/link.effect,../alt8/ability_01/effects/linkred.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="link_effect" value="../alt8/ability_01/effects/link.effect" entity="this_entity" />
+			<setscriptvalue name="linkred_effect" value="../alt8/ability_01/effects/linkred.effect" entity="this_entity" />
+		</onlearn>
+		
+		<modifier key="aluna_red" modpriority="100" icon="../alt8/ability_01/iconb.tga"
+			targetradius="500"
+		>	
+		</modifier>
+	
+	</altavatar>
+	
+</ability>

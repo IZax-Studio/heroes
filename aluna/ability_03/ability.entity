@@ -66,14 +66,14 @@
 		<applystate name="State_Aluna_Ability3_Modifier" duration="7000,8000,9000,10000" />
 	</oncomplete>
 
-	<modifier key="aluna_red" priority="100" icon="icon_b.tga" />
+	<modifier key="aluna_red" priority="100" icon="icons3a.tga" />
 	
 	<!-- Button 2 spawns shadow projectile that runs back -->
 	<modifier key="button2" modpriority="100"
 		ignorecooldown="true"
 		statuseffecttooltip="State_Aluna_Ability3_Button2"
 		anim=""
-		icon="icon2.tga"
+		icon="icons3b.tga"
 		casttime="0"
 		castactiontime="0"
 		manacost="0"

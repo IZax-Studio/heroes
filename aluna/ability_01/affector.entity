@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Aluna_Ability1"
+
+	radius="500"
+
+	impactdelay="100"
+	maximpactsperinterval="1"
+	maximpactspertarget="1"
+	targetscheme="visible_enemy_units"
+	targetselection="closest"
+	effecttype="Magic"
+	persist="true"
+	
+	linkeffect="effects/impact.effect"
+>
+
+	<onimpact>
+		<chain count="1" />
+		<compare a="target_entity" b="this_proxy_entity" op="ne">
+			<applystate name="State_Stunned" duration="1250,1500,1750,2000" target="target_entity" />	
+		</compare>		
+		
+		<applystate name="State_Aluna_Ability1_Enemy" duration="5000" />
+		<applystate name="State_Aluna_Ability1_Self" duration="5000" target="source_entity" />
+		<setproxy entity="this_entity" target="target_entity" />
+	</onimpact>
+	
+	<modifier key="soccer" modpriority="150" 
+		baselevel="1"
+		maxlevel="1"
+	>
+		<onimpact>
+			<chain count="2" />
+			<applystate name="State_Stunned" duration="param" target="target_entity" />	
+			<setparam a="param" b="500" op="add" />
+			<applystate name="State_Aluna_Ability1_Enemy" duration="5000" stack="true" />
+			<applystate name="State_Aluna_Ability1_Self" duration="5000" target="source_entity" />
+			<setproxy entity="this_entity" target="target_entity" />
+		</onimpact>	
+	</modifier>
+	
+	<altavatar key="Hero_Aluna.Alt7"
+		linkeffect="../alt7/ability_01/effects/impact.effect"	
+	/>
+	
+	<altavatar key="Hero_Aluna.Alt8"
+		linkeffect="../alt8/ability_01/effects/impact.effect"	
+	/>
+</affector>

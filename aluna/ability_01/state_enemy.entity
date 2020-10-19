@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Aluna_Ability1_Enemy"
+
+	icon="icon1.tga"
+
+	passiveeffect="effects/debuff.effect"
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	attackspeed="-.5"
+>
+	
+	<modifier key="aluna_red" modpriority="100" 
+		attackspeed="-0.75" 
+		icon="icon1b.tga"
+	/>
+
+	<modifier key="soccer" modpriority="150" attackspeed="0.20">
+		<oninflict>
+			<hasmodifier name="soccer">
+				<pushability entity="source_entity" target="source_entity" source="source_entity" name="Ability_Soccer_SlideKick" />
+				<addcharges count="1" entity="stack_entity" />
+				<compare a="result" b="1" op="eq">
+					<activatemodifierkey name="aluna_charge1" entity="source_entity" />
+				</compare>
+				<addcharges count="0" entity="stack_entity" />
+				<compare a="result" b="2" op="eq">
+					<deactivatemodifierkey name="aluna_charge1" entity="source_entity" />
+					<activatemodifierkey name="aluna_charge2" entity="source_entity" />
+				</compare>
+				<addcharges count="0" entity="stack_entity" />
+				<compare a="result" b="3" op="eq">
+					<deactivatemodifierkey name="aluna_charge2" entity="source_entity" />
+					<activatemodifierkey name="aluna_charge3" entity="source_entity" />
+					<applystate name="State_Soccer_AlunaBlue" target="source_entity" duration="-1" />
+				</compare>		
+			</hasmodifier>		
+		</oninflict>
+	</modifier>
+	
+	<altavatar key="Hero_Aluna.Alt8"
+		icon="../alt8/ability_01/icon.tga"
+	>
+		<modifier key="aluna_red" modpriority="100" 
+			icon="../alt8/ability_01/iconb.tga"
+			attackspeed="-0.75" 
+		/>
+	</altavatar>
+
+</state>

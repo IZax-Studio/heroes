@@ -126,7 +126,7 @@
 	<modifier key="SandWraith4_Active" modpriority="100"
 		anim=""
 		ignorecooldown="true"
-		icon="icon_b.tga"
+		icon="icon5.tga"
 		actiontype="target_position"
 		targetscheme="my_illusions"
 		allowoutofrangecast="true"

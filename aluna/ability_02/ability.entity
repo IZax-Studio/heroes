@@ -39,7 +39,7 @@
 	</onimpact>
 	
 	<!-- Over 9000 -->
-	<modifier key="aluna_red" priority="100" range="99999" forcerange="99999" casteffect="effects/castred.effect" icon="iconb.tga"
+	<modifier key="aluna_red" priority="100" range="99999" forcerange="99999" casteffect="effects/castred.effect" icon="icon2b.tga"
 		linecastrange="20000"
 		linecastwidth="125"
 		dontshowhovercast="true"
