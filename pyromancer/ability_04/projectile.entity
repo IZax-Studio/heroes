@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Pyromancer_Ability4"
+
+	speed="2000"
+	gravity="0"
+	modelscale="0.3"
+	model="effects/spinner.mdf"
+
+	effectscale="1"
+	impacteffect="effects/ability_04_impact.effect"
+
+	dynamicprecache="effects/ability_04_impact.effect"
+>
+	<onspawn>
+		<setscriptvalue name="impact_effect" value="effects/ability_04_impact.effect" entity="this_entity" />
+	</onspawn>
+
+	<onimpact>
+		<combatevent effecttype="AbilityBasedProjectile">
+			<onimpact>
+				<damage effecttype="Magic" amount="450,650,850" target="this_proxy_entity" />
+				<compare a="param" b="0" op="ne">
+					<applystate name="State_Pyromancer_Ability3_Burning" duration="3000" statelevel="param" />
+				</compare>
+			</onimpact>
+		</combatevent>
+	</onimpact>
+
+	<modifier key="ult_boost" modpriority="100"
+		model="effects/spinner_boosted.mdf"
+		modelscale="1"
+		effectscale="1"
+		impacteffect=""
+	>
+		<onimpact>
+			<combatevent effecttype="AbilityBasedProjectile">
+				<onimpact>
+					<applystate name="State_Pyromancer_Ult_Kill" duration="100" proxy="source_entity" pushentity="true" />
+					
+					<!-- Damage -->
+					<setvar0 a="650,850,1050" />
+					<damage effecttype="Magic" amount="1" b="var0" op="mult" target="this_proxy_entity" />
+					<compare a="param" b="0" op="ne">
+						<applystate name="State_Pyromancer_Ability3_Burning" duration="3000" statelevel="param" />
+					</compare>
+					
+					<areaofeffect
+						center="this_position"
+						radius="600"
+						effecttype="Magic"
+						targetselection="all"
+						targetscheme="enemy_units"
+						ignore="this_proxy_entity"
+					>
+						<!-- Deal 50% of the single-target R damage in an AoE -->
+						<damage effecttype="Magic" amount="0.5" b="var0" op="mult" source="source_entity" />
+						<compare a="param" b="0" op="ne">
+							<applystate name="State_Pyromancer_Ability3_Burning" duration="3000" statelevel="param" />
+						</compare>
+					</areaofeffect>
+
+					<!-- Dynamic visual effects -->
+					<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+					<playeffectdynamic effect="str0" source="target_entity" target="target_entity" occlude="true" />
+				</onimpact>
+			</combatevent>
+		</onimpact>
+	</modifier>
+
+	<altavatar key="Hero_Pyromancer.Alt5"
+		model="../alt5/ability_04/effects/spinner.mdf"
+		impacteffect="../alt5/ability_04/effects/ability_04_impact.effect"
+
+		dynamicprecache="../alt5/ability_04/effects/ability_04_impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt5/ability_04/effects/ability_04_impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+
+	<altavatar key="Hero_Pyromancer.Alt6"
+		model="../alt6/ability_04/effects/spinner.mdf"
+		impacteffect="../alt6/ability_04/effects/ability_04_impact.effect"
+
+		dynamicprecache="../alt6/ability_04/effects/ability_04_impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt6/ability_04/effects/ability_04_impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+
+	<altavatar key="Hero_Pyromancer.Alt7"
+		impacteffect="../alt7/ability_04/effects/ability_04_impact.effect"
+		model="../alt7/ability_04/effects/spinner.mdf"
+		dynamicprecache="../alt7/ability_04/effects/ability_04_impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt7/ability_04/effects/ability_04_impact.effect" entity="this_entity" />
+		</onspawn>
+
+		<modifier key="ult_boost" modpriority="100"
+			model="../alt7/ability_04/effects/spinner_boosted.mdf"
+			modelscale="1"
+			effectscale="1"
+			impacteffect=""
+		>
+			<onimpact>
+				<combatevent effecttype="AbilityBasedProjectile">
+					<onimpact>
+						<applystate name="State_Pyromancer_Ult_Kill" duration="100" proxy="source_entity" pushentity="true" />
+					
+						<!-- Damage -->
+						<setvar0 a="650,850,1050" />
+						<damage effecttype="Magic" amount="1" b="var0" op="mult" target="this_proxy_entity" />
+						<compare a="param" b="0" op="ne">
+							<applystate name="State_Pyromancer_Ability3_Burning" duration="3000" statelevel="param" />
+						</compare>
+						
+						<areaofeffect
+							center="this_position"
+							radius="600"
+							effecttype="Magic"
+							targetselection="all"
+							targetscheme="enemy_units"
+							ignore="this_proxy_entity"
+						>
+							<!-- Deal 50% of the single-target R damage in an AoE -->
+							<damage effecttype="Magic" amount="0.5" b="var0" op="mult" source="source_entity" />
+							<compare a="param" b="0" op="ne">
+								<applystate name="State_Pyromancer_Ability3_Burning" duration="3000" statelevel="param" />
+							</compare>
+						</areaofeffect>
+
+						<!-- Dynamic visual effects -->
+						<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+						<playeffectdynamic effect="str0" source="target_entity" target="target_entity" occlude="true" />
+					</onimpact>
+				</combatevent>
+			</onimpact>
+		</modifier>
+	</altavatar>
+
+	<altavatar key="Hero_Pyromancer.Alt8"
+		traileffect="../alt8/ability_04/effects/trail.effect"
+		impacteffect="../alt8/ability_04/effects/ability_04_impact.effect"
+		model="/shared/models/invis.mdf"
+		dynamicprecache="../alt8/ability_04/effects/ability_04_impact.effect"
+	>
+		<modifier key="pyromancerAlt8_Ability4_Upgrade" modpriority="99"
+		    traileffect="../alt8/ability_04/effects/trail_upgrade.effect"
+			impacteffect="../alt8/ability_04/effects/ability_04_impact_upgrade.effect"
+			model="/shared/models/invis.mdf"
+			dynamicprecache="../alt8/ability_04/effects/ability_04_impact_upgrade.effect"
+		/>
+
+		<modifier key="ult_boost" modpriority="100"
+			traileffect="../alt8/ability_04/effects/trail_boosted.effect"
+			effectscale="1"
+			impacteffect=""
+		>
+
+			<onimpact>
+				<combatevent effecttype="AbilityBasedProjectile">
+					<onimpact>
+						<applystate name="State_Pyromancer_Ult_Kill" duration="100" proxy="source_entity" pushentity="true" />
+					
+						<!-- Damage -->
+						<setvar0 a="650,850,1050" />
+						<damage effecttype="Magic" amount="1" b="var0" op="mult" target="this_proxy_entity" />
+						<compare a="param" b="0" op="ne">
+							<applystate name="State_Pyromancer_Ability3_Burning" duration="3000" statelevel="param" />
+						</compare>
+						
+						<areaofeffect
+							center="this_position"
+							radius="600"
+							effecttype="Magic"
+							targetselection="all"
+							targetscheme="enemy_units"
+							ignore="this_proxy_entity"
+						>
+							<!-- Deal 50% of the single-target R damage in an AoE -->
+							<damage effecttype="Magic" amount="0.5" b="var0" op="mult" source="source_entity" />
+							<compare a="param" b="0" op="ne">
+								<applystate name="State_Pyromancer_Ability3_Burning" duration="3000" statelevel="param" />
+							</compare>
+						</areaofeffect>
+
+						<!-- Dynamic visual effects -->
+						<hasmodifier name="pyromancerAlt8_Ability2_Upgrade">
+							<playeffect effect="../alt8/ability_04/effects/ability_04_impact_upgrade.effect" source="target_entity" target="target_entity" occlude="true" />
+						</hasmodifier>
+						<else>
+							<playeffect effect="../alt8/ability_04/effects/ability_04_impact.effect" source="target_entity" target="target_entity" occlude="true" />
+						</else>
+					</onimpact>
+				</combatevent>
+			</onimpact>
+		</modifier>
+		
+		<modifier key="ult_upgrade" modpriority="101"
+			traileffect="../alt8/ability_04/effects/trail_boosted_upgrade.effect"
+			model="/shared/models/invis.mdf"
+			dynamicprecache="../alt8/ability_04/effects/ability_04_impact_upgrade.effect"
+			effectscale="1"
+			impacteffect=""
+		>
+
+			<onimpact>
+				<combatevent effecttype="AbilityBasedProjectile">
+					<onimpact>
+						<applystate name="State_Pyromancer_Ult_Kill" duration="100" proxy="source_entity" pushentity="true" />
+					
+						<!-- Damage -->
+						<setvar0 a="650,850,1050" />
+						<damage effecttype="Magic" amount="1" b="var0" op="mult" target="this_proxy_entity" />
+						<compare a="param" b="0" op="ne">
+							<applystate name="State_Pyromancer_Ability3_Burning" duration="3000" statelevel="param" />
+						</compare>
+						
+						<areaofeffect
+							center="this_position"
+							radius="600"
+							effecttype="Magic"
+							targetselection="all"
+							targetscheme="enemy_units"
+							ignore="this_proxy_entity"
+						>
+							<!-- Deal 50% of the single-target R damage in an AoE -->
+							<damage effecttype="Magic" amount="0.5" b="var0" op="mult" source="source_entity" />
+							<compare a="param" b="0" op="ne">
+								<applystate name="State_Pyromancer_Ability3_Burning" duration="3000" statelevel="param" />
+							</compare>
+						</areaofeffect>
+
+						<!-- Dynamic visual effects -->
+						<hasmodifier name="pyromancerAlt8_Ability2_Upgrade">
+							<playeffect effect="../alt8/ability_04/effects/ability_04_impact_upgrade.effect" source="target_entity" target="target_entity" occlude="true" />
+						</hasmodifier>
+						<else>
+							<playeffect effect="../alt8/ability_04/effects/ability_04_impact.effect" source="target_entity" target="target_entity" occlude="true" />
+						</else>
+					</onimpact>
+				</combatevent>
+			</onimpact>
+		</modifier>
+
+	</altavatar>
+	
+	
+	<altavatar key="Hero_Pyromancer.Alt9"
+		impacteffect="../alt9/ability_04/effects/ability_04_impact.effect"
+		traileffect="../alt9/ability_04/effects/trail.effect"
+		model="/shared/models/invis.mdf"
+		dynamicprecache="../alt9/ability_04/effects/ability_04_impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt9/ability_04/effects/ability_04_impact.effect" entity="this_entity" />
+		</onspawn>
+
+		<modifier key="ult_boost" modpriority="100"
+			traileffect="../alt9/ability_04/effects/trail_boosted.effect"
+			impacteffect=""
+		>
+			<onimpact>
+				<combatevent effecttype="AbilityBasedProjectile">
+					<onimpact>
+						<applystate name="State_Pyromancer_Ult_Kill" duration="100" proxy="source_entity" pushentity="true" />
+					
+						<!-- Damage -->
+						<setvar0 a="650,850,1050" />
+						<damage effecttype="Magic" amount="1" b="var0" op="mult" target="this_proxy_entity" />
+						<compare a="param" b="0" op="ne">
+							<applystate name="State_Pyromancer_Ability3_Burning" duration="3000" statelevel="param" />
+						</compare>
+						
+						<areaofeffect
+							center="this_position"
+							radius="600"
+							effecttype="Magic"
+							targetselection="all"
+							targetscheme="enemy_units"
+							ignore="this_proxy_entity"
+						>
+							<!-- Deal 50% of the single-target R damage in an AoE -->
+							<damage effecttype="Magic" amount="0.5" b="var0" op="mult" source="source_entity" />
+							<compare a="param" b="0" op="ne">
+								<applystate name="State_Pyromancer_Ability3_Burning" duration="3000" statelevel="param" />
+							</compare>
+						</areaofeffect>
+
+						<!-- Dynamic visual effects -->
+						<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+						<playeffectdynamic effect="str0" source="target_entity" target="target_entity" occlude="true" />
+					</onimpact>
+				</combatevent>
+			</onimpact>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Pyromancer.Alt10"
+		impacteffect="../alt10/ability_04/effects/ability_04_impact.effect"
+		traileffect="../alt10/ability_04/effects/trail.effect"
+		model="/shared/models/invis.mdf"
+		dynamicprecache="../alt10/ability_04/effects/ability_04_impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt10/ability_04/effects/ability_04_impact.effect" entity="this_entity" />
+		</onspawn>
+
+		<modifier key="ult_boost" modpriority="100"
+			traileffect="../alt10/ability_04/effects/trail_boosted.effect"
+			impacteffect=""
+		>
+			<onimpact>
+				<combatevent effecttype="AbilityBasedProjectile">
+					<onimpact>
+						<applystate name="State_Pyromancer_Ult_Kill" duration="100" proxy="source_entity" pushentity="true" />
+					
+						<!-- Damage -->
+						<setvar0 a="650,850,1050" />
+						<damage effecttype="Magic" amount="1" b="var0" op="mult" target="this_proxy_entity" />
+						<compare a="param" b="0" op="ne">
+							<applystate name="State_Pyromancer_Ability3_Burning" duration="3000" statelevel="param" />
+						</compare>
+						
+						<areaofeffect
+							center="this_position"
+							radius="600"
+							effecttype="Magic"
+							targetselection="all"
+							targetscheme="enemy_units"
+							ignore="this_proxy_entity"
+						>
+							<!-- Deal 50% of the single-target R damage in an AoE -->
+							<damage effecttype="Magic" amount="0.5" b="var0" op="mult" source="source_entity" />
+							<compare a="param" b="0" op="ne">
+								<applystate name="State_Pyromancer_Ability3_Burning" duration="3000" statelevel="param" />
+							</compare>
+						</areaofeffect>
+
+						<!-- Dynamic visual effects -->
+						<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+						<playeffectdynamic effect="str0" source="target_entity" target="target_entity" occlude="true" />
+					</onimpact>
+				</combatevent>
+			</onimpact>
+		</modifier>
+	</altavatar>
+
+</projectile>

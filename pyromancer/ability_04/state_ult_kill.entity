@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Pyromancer_Ult_Kill"
+	
+	icon=""
+	
+	ishidden="true"
+	deathpersist="true"
+	
+>
+	<oninflict>
+		<hasavatarkey name="Hero_Pyromancer.Alt5">
+			<setscriptvalue name="impact_staff_effect" value="../alt5/ability_04/effects/ability_04_cast.effect" entity="this_entity" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Pyromancer.Alt6">
+				<setscriptvalue name="impact_staff_effect" value="../alt6/ability_04/effects/ability_04_cast.effect" entity="this_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Pyromancer.Alt7" >
+					<setscriptvalue name="impact_staff_effect" value="../alt7/ability_04/effects/ability_04_cast.effect" entity="this_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Pyromancer.Alt8" >
+						<hasmodifierkey name="pyromancerAlt8_Ability4_Upgrade">
+							<setscriptvalue name="impact_staff_effect" value="../alt8/ability_04/effects/ability_04_cast.effect" entity="this_entity" />
+						</hasmodifierkey>
+						<else>
+							<setscriptvalue name="impact_staff_effect" value="../alt8/ability_04/effects/ability_04_cast.effect" entity="this_entity" />
+						</else>
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Pyromancer.Alt9" >
+							<setscriptvalue name="impact_staff_effect" value="../alt9/ability_04/effects/ability_04_cast.effect" entity="this_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Pyromancer.Alt10" >
+								<setscriptvalue name="impact_staff_effect" value="../alt10/ability_04/effects/ability_04_cast.effect" entity="this_entity" />
+							</hasavatarkey>
+							<else>
+								<setscriptvalue name="impact_staff_effect" value="effects/ability_04_cast.effect" entity="this_entity" />
+							</else>
+						</else>	
+					</else>
+				</else>
+			</else>
+		</else>
+		
+		<!-- Dynamic visual effects -->
+		<getscriptvalue name="impact_staff_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" source="source_position" target="source_position" occlude="true" />
+	</oninflict>
+
+
+
+	<onspawn>
+		<hasavatarkey name="Hero_Pyromancer.Alt5">
+			<setscriptvalue name="impact_staff_effect" value="../alt5/ability_04/effects/ability_04_impact_staff.effect" entity="this_entity" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Pyromancer.Alt6">
+				<setscriptvalue name="impact_staff_effect" value="../alt6/ability_04/effects/ability_04_impact_staff.effect" entity="this_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Pyromancer.Alt7" >
+					<setscriptvalue name="impact_staff_effect" value="../alt7/ability_04/effects/ability_04_impact_staff.effect" entity="this_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Pyromancer.Alt8" >
+						<hasmodifierkey name="pyromancerAlt8_Ability4_Upgrade">
+							<setscriptvalue name="impact_staff_effect" value="../alt8/ability_04/effects/ability_04_impact_staff_upgrade.effect" entity="this_entity" />
+						</hasmodifierkey>
+						<else>
+							<setscriptvalue name="impact_staff_effect" value="../alt8/ability_04/effects/ability_04_impact_staff.effect" entity="this_entity" />
+						</else>
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Pyromancer.Alt9" >
+							<setscriptvalue name="impact_staff_effect" value="../alt9/ability_04/effects/ability_04_impact_staff.effect" entity="this_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Pyromancer.Alt10" >
+								<setscriptvalue name="impact_staff_effect" value="../alt10/ability_04/effects/ability_04_impact_staff.effect" entity="this_entity" />
+							</hasavatarkey>
+							<else>
+								<setscriptvalue name="impact_staff_effect" value="effects/ability_04_impact_staff.effect" entity="this_entity" />
+							</else>
+						</else>	
+					</else>
+				</else>
+			</else>
+		</else>
+		
+		<!-- Dynamic visual effects -->
+		<getscriptvalue name="impact_staff_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" source="source_position" target="source_position" occlude="true" />
+	</onspawn>
+
+
+	
+	<altavatar key="Hero_Pyromancer.Alt5"
+		dynamicprecache="../alt5/ability_04/effects/ability_04_impact_staff.effect"
+	>	
+		<onspawn>
+			<setscriptvalue name="impact_staff_effect" value="../alt5/ability_04/effects/ability_04_impact_staff.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Pyromancer.Alt6"
+		dynamicprecache="../alt6/ability_04/effects/ability_04_impact_staff.effect"
+	>	
+		<onspawn>
+			<setscriptvalue name="impact_staff_effect" value="../alt6/ability_04/effects/ability_04_impact_staff.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>	
+	
+	<altavatar key="Hero_Pyromancer.Alt7"
+		dynamicprecache="../alt7/ability_04/effects/ability_04_impact_staff.effect"
+	/>	
+	
+	<altavatar key="Hero_Pyromancer.Alt8"
+		dynamicprecache="../alt8/ability_04/effects/ability_04_impact_staff.effect"
+	>
+		<modifier key="pyromancerAlt8_Ability4_Upgrade"
+			dynamicprecache="../alt8/ability_04/effects/ability_04_impact_staff_upgrade.effect"
+		/>
+	</altavatar>
+</state>

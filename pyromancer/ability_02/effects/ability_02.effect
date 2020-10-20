@@ -265,7 +265,7 @@
 				/>
 			</simpleemitter>			
 						
-			<model
+			<!-- <model
 				delay="500"
 				life="2000"
 				startalpha="1"
@@ -280,6 +280,255 @@
 				midcolor=".5" 
 				endcolor="0"
 				directionalspace="global"
+			/> -->
+
+			<groundsprite
+				life="3300"
+				material="/shared/effects/materials/ground_smash_overlay.material"
+				size="180"
+				
+				startalpha="0.75"
+				midalpha="0.75"
+				midalphapos="0.5"
+				endalpha="0"
+			/>
+	
+			<simpleemitter
+				spawnrate="999"
+				position="0 0 20"
+				count="1"
+				particlelife="600"
+			>
+				<particle startscale="2.5" midscale="6" endscale="5">
+					<simpleemitter
+						life="600"
+						spawnrate="200"
+						offsetradial="20"
+						minparticlelife="500"
+						maxparticlelife="800"
+						gravity="-5"
+						drag=".005"
+						inheritvelocity=".25"
+					>
+						<particle
+							startcolor="1.0 .4 0"
+							endcolor="0 0 0"
+							startsize="35"					
+							endsize="20"
+							startalpha=".3"
+							midalpha=".8"
+							endalpha="0"
+							minangle="-360"
+							maxangle="360"
+							minanglespeed="-50"
+							maxanglespeed="50"
+						>					
+						</particle>
+					</simpleemitter>
+				</particle>	
+			</simpleemitter>
+				
+			<billboard
+				life="250"
+				material="/shared/effects/materials/corona_07.material"
+				startsize="400"
+				endsize="410"
+				startcolor=".4 .02 0"
+				endcolor="0"
+				startalpha="0.3"
+				midalpha="0.75"
+				midalphapos=".5"
+				endalpha="0"
+				depthbias="-20"
+				position="0 0 20"
+				lockright="1"
+				lockup="1"
+				pitch="90"
+			/>
+			<billboard
+				life="1250"
+				material="/shared/effects/materials/whitedot_blend.material"
+				startsize="300"
+				endsize="810"
+				startcolor="1 .4 0"
+				endcolor="0"
+				startalpha="0.3"
+				midalpha="2"
+				midalphapos=".25"
+				endalpha="0"
+				depthbias="-20"
+				position="0 0 20"
+				lockright="1"
+				lockup="1"
+				pitch="90"
+			/>
+
+			<simpleemitter	
+				life="800"
+				spawnrate="42"		
+				particlelife="1100"			
+				offsetsphere="33 33 10"
+				direction="0 0 1"		
+				speed="50"	
+				drag="-0.01"
+				timenudge="0"
+				minangle="0"
+				maxangle="61"
+				position="0 0 0"					
+				material="/shared/effects/materials/neb_blend.material"
+			>
+				<particle
+					size="222"
+					startcolor=".4 0.02 0"
+					endcolor="0 0 0"
+					turn="1"
+					heightdistort="1"
+					midalpha="0.5"
+					startalpha="0"
+					endalpha="0"
+				
+				></particle>	
+			</simpleemitter>
+			
+			<billboard
+				life="1200"
+				startcolor=".5 .025 0"
+				endcolor="0 0 0"
+				startalpha="1.0"
+				midalpha="1.0"
+				endalpha="0.0"
+				midalphapos="0.75"
+				startparam="0.05"
+				endparam="0.0"
+				size="200"
+				rollspeed="20"
+				midsizepos=".4"
+				depthbias="0"
+				position="0 0 20"
+				material="/shared/effects/materials/z_teleportring01.material"
+				lockup="true"
+				pitch="90"
+			/>
+			
+			<simpleemitter
+				life="700"
+				spawnrate="400"
+				depthbias="-100"
+				particlelife="800"
+				count="13"
+        material="/shared/effects/materials/smash_add.material"
+				offsetsphere="30 30 30"
+      >
+				<particle 
+					startyawspeed="550"
+					endyawspeed="20"
+					minangle="0"
+					maxangle="360"
+					startcolor=".2 0.01 0"
+					midcolor=".5 0 0"
+					endcolor="0"
+					midcolorpos="0.25"
+					startsize="40"
+					endsize="125"
+					flare="1"
+					startheight="5"
+					endheight="120"
+				/>
+			</simpleemitter>
+			
+			<billboard
+				life="1000"
+				startcolor=".5 0.025 0"
+				endcolor="0 0 0"
+				startsize="100"
+				midsize="200"
+				endsize="200"
+				midsizepos=".4"
+				depthbias="-150"
+				position="0 0 40"
+				material="/shared/effects/materials/smash_add.material"
+			/>
+			
+			<terrainemitter
+					position="0 0 10"
+					spawnrate="50"
+					count="16"
+					particlelife="200"
+					range="110"
+					direction="0 0 1"
+					minangle="-30"
+					maxangle="30"
+				>
+					<particle
+						
+					>
+						<billboard
+							material="/shared/effects/materials/light_rays.material"
+							bone="_bone_center"
+							scale="1"
+							width="70"
+							minstartheight="260"
+							maxstartheight="732"
+							endheight="20"
+							startcolor="0"
+							midcolor=".7 0.3 0"
+							endcolor="0 0 0"
+							midcolorpos=".1"
+							position="0 0 0"						
+							lockup="1"
+							expirelife="1000"
+						/>
+					
+					</particle>		
+			</terrainemitter>	
+				
+			<billboard
+				material="/shared/effects/materials/light_rays.material"
+				scale="2.5"
+				width="70"
+				startheight="0"
+				midheight="720"
+				endheight="500"
+				startcolor="0"
+				midcolor="3 1 0"
+				endcolor="0 0 0"
+				midcolorpos=".1"					
+				lockup="1"
+				life="600"
+			/>
+
+			<billboard
+				material="/shared/effects/materials/light_rays.material"
+				scale="2.5"
+				width="70"
+				startheight="0"
+				midheight="720"
+				endheight="500"
+				startcolor="0"
+				midcolor="3 1 0"
+				endcolor="0 0 0"
+				midcolorpos=".1"					
+				lockup="1"
+				yaw="90"
+				life="600"
+			/>
+
+			<billboard
+				life="500"
+				color="1 .75 0"
+				startalpha="1.0"
+				midalpha="1.0"
+				endalpha="0.0"
+				midalphapos="0.75"
+				startparam=".5"
+				endparam="0.0"
+				startsize="128"
+				endsize="668"
+				depthbias="0"
+				position="0 0 20"
+				material="/shared/effects/materials/refract_ring.material"
+				lockup="true"
+				pitch="90"
 			/>
 
 			<billboard

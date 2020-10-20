@@ -7,7 +7,7 @@
 		<billboard
 			name="emitter2"
 			
-			life="600"								
+			life="900"								
 			color="1.0 1.0 1.0"				
 			position="0 -40 140"
 			startsize="200"
@@ -26,11 +26,11 @@
 		<billboard
 			name="emitter3"
 			
-			life="600"								
+			life="900"								
 			color="1.0 1.0 1.0"				
 			position="0 0 00"
 			startsize="200"
-			endsize="600"
+			endsize="900"
 			
 			material="/shared/effects/materials/refract_wave.material"
 			lockup="1"
@@ -50,14 +50,14 @@
 				
 		
 			<twopointtrailemitter
-				life="600"
+				life="900"
 				name="trail01"
 				bone_a="_bone_leftwingtip"
 				bone_b="_bone_leftwingtip"
 				spawnrate="50"
 				
-				startminparticlelife="600"
-				startmaxparticlelife="600"		
+				startminparticlelife="900"
+				startmaxparticlelife="900"		
 				
 				endminparticlelife="1"
 				endmaxparticlelife="1" 
@@ -101,13 +101,13 @@
 			</trailemitter>			
 			
 			<twopointtrailemitter
-				life="600"
+				life="900"
 				name="trail03"
 				bone_a="_bone_rightwingtip"
 				bone_b="_bone_rightwingtip"
 				spawnrate="50"		
-				startminparticlelife="600"
-				startmaxparticlelife="600"		
+				startminparticlelife="900"
+				startmaxparticlelife="900"		
 				
 				endminparticlelife="1"
 				endmaxparticlelife="1" 
@@ -153,11 +153,11 @@
 
 			<trailemitter
 				name="trail05"
-				life="600"
+				life="900"
 				bone="_bone_leftwingtip"
 				spawnrate="50"
-				startminparticlelife="600"
-				startmaxparticlelife="600"		
+				startminparticlelife="900"
+				startmaxparticlelife="900"		
 				
 				endminparticlelife="1"
 				endmaxparticlelife="1" 
@@ -179,12 +179,12 @@
 			</trailemitter>	
 			
 			<trailemitter
-				life="600"
+				life="900"
 				name="trail06"
 				bone="_bone_rightwingtip"
 				spawnrate="20"
-				startminparticlelife="600"
-				startmaxparticlelife="600"		
+				startminparticlelife="900"
+				startmaxparticlelife="900"		
 				
 				endminparticlelife="1"
 				endmaxparticlelife="1" 
@@ -209,14 +209,14 @@
 q
 		
 			<twopointtrailemitter
-				life="600"
+				life="900"
 				name="trail07"
 				bone_a="_bone_leftwingtip"
 				bone_b="_bone_rightwingtip"
 				spawnrate="50"		
 				
-				startminparticlelife="600"
-				startmaxparticlelife="600"		
+				startminparticlelife="900"
+				startmaxparticlelife="900"		
 				
 				endminparticlelife="1"
 				endmaxparticlelife="1" 
@@ -233,14 +233,14 @@ q
 			</twopointtrailemitter>					
 			
 			<twopointtrailemitter
-				life="600"
+				life="900"
 				name="trail07"
 				bone_a="_bone_leftwingtip"
 				bone_b="_bone_rightwingtip"
 				spawnrate="50"		
 				
-				startminparticlelife="600"
-				startmaxparticlelife="600"		
+				startminparticlelife="900"
+				startmaxparticlelife="900"		
 				
 				endminparticlelife="1"
 				endmaxparticlelife="1" 
@@ -260,7 +260,7 @@ q
 		
 		
 		<model
-			life="600"
+			life="900"
 			name="emitter0" 
 			anim="idle"
 			model="projectile.mdf"			
@@ -300,7 +300,7 @@ q
 			delay="0"
 			count="1"
 			spawnrate="5000"
-			particlelife="600"
+			particlelife="900"
 			gravity="1.0"
 			speed="1250.0"
 			drag="0.0"
@@ -327,7 +327,7 @@ q
 			delay="0"
 			count="3"
 			spawnrate="6"
-			particlelife="600"
+			particlelife="900"
 			gravity="1.0"
 			speed="1250.0"
 			drag="0.0"
