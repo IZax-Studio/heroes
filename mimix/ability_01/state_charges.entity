@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Mimix_Ability1_Charges"
+
+	icon="icon_1.tga"
+	passiveeffect=""
+	
+	effecttype=""
+	allowtransfer="false"
+>
+	
+	<onrefresh>
+		<addcharges count="1" />
+	</onrefresh>
+	
+	<onframe />	
+</state>

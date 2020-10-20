@@ -17,6 +17,8 @@
 			<pushability source="source_entity" slot="3" />
 			<getlevel entity="stack_entity" />
 			<setvar0 a="result" />
+			
+			<setvar1 a="0.7" /> <!-- Damage multiplier past a certain number of explosions -->
 
 			<compare a="var0" b="1" op="eq">
 				<areaofeffect
@@ -26,7 +28,18 @@
 					targetscheme="enemy_units"
 					effecttype="Magic"
 				>
-					<damage effecttype="Magic" amount="100,145,190,235" b="0.5" op="mult" />
+					<applystate name="State_Mimix_Ability1_Charges" duration="2000" pushentity="true" />
+					<setvar0 a="source_charges" source="stack_entity" />
+					<compare a="var0" b="3" op="ge">
+						<setvar0 a="var0" b="2" op="sub" />
+						<setvar0 a="var0" b="1" op="max" /> <!-- Makes sure the value is 1 at minimum, just in case -->
+						<setvar0 a="var1" b="var0" op="pow" />
+						<setvar0 a="var0" b="0.5" op="mult" /> <!-- Original damage multiplier from R -->
+						<damage effecttype="Magic" amount="100,145,190,235" b="var0" op="mult" />
+					</compare>
+					<else>
+						<damage effecttype="Magic" amount="100,145,190,235" b="0.5" op="mult" />
+					</else>
 				</areaofeffect>
 			</compare>
 		
@@ -38,7 +51,18 @@
 					targetscheme="enemy_units"
 					effecttype="Magic"
 				>
-					<damage effecttype="Magic" amount="100,145,190,235" b="0.75" op="mult" />
+					<applystate name="State_Mimix_Ability1_Charges" duration="2000" pushentity="true" />
+					<setvar0 a="source_charges" source="stack_entity" />
+					<compare a="var0" b="3" op="ge">
+						<setvar0 a="var0" b="2" op="sub" />
+						<setvar0 a="var0" b="1" op="max" /> <!-- Makes sure the value is 1 at minimum, just in case -->
+						<setvar0 a="var1" b="var0" op="pow" />
+						<setvar0 a="var0" b="0.75" op="mult" /> <!-- Original damage multiplier from R -->
+						<damage effecttype="Magic" amount="100,145,190,235" b="var0" op="mult" />
+					</compare>
+					<else>
+						<damage effecttype="Magic" amount="100,145,190,235" b="0.75" op="mult" />
+					</else>
 				</areaofeffect>
 			</compare>
 
@@ -50,7 +74,18 @@
 					targetscheme="enemy_units"
 					effecttype="Magic"
 				>
-					<damage effecttype="Magic" amount="100,145,190,235" b="1" op="mult" />
+					<applystate name="State_Mimix_Ability1_Charges" duration="2000" pushentity="true" />
+					<setvar0 a="source_charges" source="stack_entity" />
+					<compare a="var0" b="3" op="ge">
+						<setvar0 a="var0" b="2" op="sub" />
+						<setvar0 a="var0" b="1" op="max" /> <!-- Makes sure the value is 1 at minimum, just in case -->
+						<setvar0 a="var1" b="var0" op="pow" />
+						<setvar0 a="var0" b="1" op="mult" /> <!-- Original damage multiplier from R -->
+						<damage effecttype="Magic" amount="100,145,190,235" b="var0" op="mult" />
+					</compare>
+					<else>
+						<damage effecttype="Magic" amount="100,145,190,235" b="1" op="mult" />
+					</else>
 				</areaofeffect>
 			</compare>
 		</targettype>
@@ -63,7 +98,17 @@
 				targetscheme="enemy_units"
 				effecttype="Magic"
 			>
-				<damage effecttype="Magic" amount="100,145,190,235" />
+				<applystate name="State_Mimix_Ability1_Charges" duration="2000" pushentity="true" />
+				<setvar0 a="source_charges" source="stack_entity" />
+				<compare a="var0" b="3" op="ge">
+					<setvar0 a="var0" b="2" op="sub" />
+					<setvar0 a="var0" b="1" op="max" /> <!-- Makes sure the value is 1 at minimum, just in case -->
+					<setvar0 a="var1" b="var0" op="pow" />
+					<damage effecttype="Magic" amount="100,145,190,235" b="var0" op="mult" />
+				</compare>
+				<else>
+					<damage effecttype="Magic" amount="100,145,190,235" />
+				</else>
 			</areaofeffect>
 		</else>
 		

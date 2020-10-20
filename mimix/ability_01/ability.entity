@@ -22,8 +22,7 @@
 	manacost="80"
 	cooldowntime="10000"
 	
-	range="300"
-	
+	targetradius="300"
 >
 
 	<onimpact>
