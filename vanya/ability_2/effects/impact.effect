@@ -51,15 +51,15 @@
 				bone="_bone_centerofchest"
 				spawnrate="22"
 				particlelife="300"
-				gravity="0"         	
-				drag=".1"
+				gravity="100"         	
+				drag="0"
 				acceleration="0.0"
 				position="0 0 30"
 				offsetsphere="40 40 40"
 				material="/shared/effects/materials/3d_slash_02.material"
 			>
 				<particle 
-					size="150"
+					size="250"
 					startframe="0.0"
 					endframe="1.0"
 					color="1"
@@ -268,6 +268,241 @@
 				/>
 
 			</simpleemitter>
+
+							<simpleemitter
+					position="0 0 20"
+					count="6"
+					range="100"
+					material="/shared/effects/materials/shadow_cut_02_reveal_add.material"
+					minparticlelife="400"
+					maxparticlelife="600"
+				>
+					<particle
+						maxangle="360"
+						startsize="0"
+						midsize="300"
+						endsize="400"
+						startcolor="1"
+						midcolor="1 .25 0"
+						endcolor="1 0 0"
+						startframe="0"
+						endframe="1"
+						midframepos=".6"
+						lockup="true"
+						lockright="true"
+						pitch="90"
+						minscale=".9"
+						maxscale="1.1"
+					/>
+				</simpleemitter>
+			
+				<simpleemitter
+					minangle="-90"
+					maxangle="-90"
+					bone="_bone_centerofchest"
+					life="400"
+					spawnrate="650"
+					count="40"
+					minparticlelife="230"
+					maxparticlelife="2000"
+					speed="2000"
+					drag="0.05"
+					gravity="-1"
+					offsetsphere="15"
+					material="/shared/effects/materials/flame.material"
+				>
+					<particle
+						minangle="-180"
+						maxangle="180"
+						minanglespeed="-150"
+						maxanglespeed="150"
+						turn="1"
+						startcolor="1 1 1"
+						midcolorpos="0.2"
+						midcolor=".6 .3 .1"
+						endcolor="-1"
+						startsize="50"
+						minendscale="6"
+						maxendscale="10"
+						startalpha=".3"
+						midalpha="1"
+						midalphapos="0.1"
+						endalpha="0"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					minangle="-90"
+					maxangle="-90"
+					bone="_bone_centerofchest"
+					life="400"
+					spawnrate="650"
+					count="40"
+					minparticlelife="230"
+					maxparticlelife="2000"
+					speed="2000"
+					drag="0.05"
+					gravity="-1"
+					offsetsphere="15"
+					material="/shared/effects/materials/soul_projectile2.material"
+				>
+					<particle
+						minangle="-180"
+						maxangle="180"
+						minanglespeed="-150"
+						maxanglespeed="150"
+						turn="1"
+						startcolor="1 1 1"
+						midcolorpos="0.2"
+						midcolor=".6 .3 .1"
+						endcolor="-1"
+						startsize="25"
+						minendscale="6"
+						maxendscale="10"
+						startalpha=".3"
+						midalpha="1"
+						midalphapos="0.1"
+						endalpha="0"
+					/>
+				</simpleemitter>
+
+				<simpleemitter
+					life="600"
+					count="10"
+					position="0 0 55"
+					spawnrate="500"				
+					particlelife="600"
+					gravity="-3.0"
+					offsetsphere="100"
+					direction="0 0 1"	
+						material="/shared/effects/materials/dust.material"
+					depthbias="-40"
+				>
+					<particle
+						startcolor=".3"
+						endcolor="0"
+						minangle="-180"
+						maxangle="180"
+						minanglespeed="0"
+						midcolorpos=".1"
+						maxanglespeed="0"
+						startsize="89"			
+						endsize="222"			
+						startalpha="1"
+						endalpha="0"
+						
+					/>
+				</simpleemitter>
+	<!--
+				<simpleemitter
+					minangle="-90"
+					maxangle="-90"
+					bone="_bone_centerofchest"
+					life="400"
+					spawnrate="50"
+					minparticlelife="230"
+					maxparticlelife="1000"
+					speed="2000"
+					drag="0.05"
+					offsetsphere="15"
+					depthbias="-40"
+					material="/shared/effects/materials/soul_projectile2.material"
+				>
+					<particle
+						minangle="-180"
+						maxangle="180"
+						minanglespeed="-150"
+						maxanglespeed="150"
+						turn="1"
+						startcolor="1 1 1"
+						midcolorpos="0.2"
+						midcolor=".6 .3 .1"
+						endcolor="0"
+						startsize="20"
+						endsize="0"
+						startstickiness="0"
+						maxendstickiness="1"
+						minendscale="6"
+						maxendscale="10"
+						startalpha=".3"
+						midalpha="1"
+						midalphapos="0.1"
+						endalpha="0"
+					/>
+				</simpleemitter>
+	-->
+				<simpleemitter
+					life="1800"
+					spawnrate="400"
+					bone="_bone_centerofchest"
+					count="25"
+					minparticlelife="1"
+					maxparticlelife="1200"			
+					gravity="24"
+					minspeed="350"
+					maxspeed="1600"
+					drag=".01"
+					material="/shared/effects/materials/spark_10.material"
+					offsetsphere="2"
+					minangle="-10"
+					maxangle="40"
+					direction="0 0 1"
+					directionalspace="global"
+				>
+					<particle 
+						minangle="0"
+						maxangle="360"
+						startcolor="1"
+						midcolor="1 .6 0"
+						endcolor="0 0 0"
+						midcolorpos=".2"
+						minstartsize="18"
+						maxstartsize="26"
+						midsize="12"
+						endsize="6"
+						startalpha="0"
+						midalpha=".7"
+						endalpha="0"
+						midalphapos=".5"
+						turn="true"
+					/>
+				</simpleemitter>
+
+				<billboard
+					bone="_bone_centerofchest"
+					life="600"
+					startcolor=".75 .3 0"
+					endcolor="0"
+					size="275"
+					depthbias="-120"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+
+				<simpleemitter
+					bone="_bone_centerofchest"
+					life="400"
+					spawnrate="10"
+					particlelife="400"
+					minspeed="0"
+					maxspeed="3000"
+					drag="0.07"
+					offsetsphere="15"
+					material="/shared/effects/materials/refract_outsplash.material"
+				>
+					<particle
+						startalpha="1.0"
+						endalpha="0.0"
+						minangle="0"
+						maxangle="360"
+						anglespeed="-90"
+						startsize="120"
+						endsize="280"
+						param=".1"
+						depthbias="-130"
+					/>
+				</simpleemitter>
+			
+
 
 		</particlesystem>
 	</definitions>
