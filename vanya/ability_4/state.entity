@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Vanya_Ability4"
+
+	
+	
+	icon="icon4.tga"
+	passiveeffect="effects/state.effect"
+
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	isolated="true"
+	movespeedslow="0.2,0.25,0.3"
+	
+	morphpriority="99"
+	morphsightrangeday="500,450,400"
+	morphsightrangenight="500,450,400"
+
+	negativeeffect="slowed"
+>
+	<onframe />
+	
+	
+	<altavatar key="Hero_Vanya.set_ascension" modpriority="1"
+		passiveeffect="/heroes/vanya/set_ascension/ability_4/effects/state.effect"
+	>	
+	</altavatar>
+	
+	<altavatar key="Hero_Vanya.Alt4" modpriority="1"
+		passiveeffect="/heroes/vanya/alt4/ability_4/effects/state.effect"
+	>	
+	</altavatar>
+	
+	<altavatar key="Hero_Vanya.Alt5" modpriority="1"
+		passiveeffect="/heroes/vanya/alt5/ability_4/effects/state.effect"
+		icon="/heroes/vanya/alt5/ability_4/icon.tga"
+	>	
+	</altavatar>
+	
+	<altavatar key="Hero_Vanya.Alt6" modpriority="1"
+		passiveeffect="/heroes/vanya/alt6/ability_4/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Vanya.Alt7" modpriority="1"
+		passiveeffect="/heroes/vanya/alt7/ability_4/effects/state.effect"
+	/>
+	
+</state>

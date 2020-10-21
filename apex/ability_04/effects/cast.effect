@@ -31,7 +31,7 @@
 				life="250"
 				position="0 0 0"
 				material="/shared/effects/materials/corona_07.material"
-				startcolor=".5 0 .5"
+				startcolor=".6 0 1"
 				endcolor="0 0 0"
 				startsize="100"
 				endsize="350"
@@ -44,7 +44,7 @@
 				life="250"
 				position="0 0 0"
 				material="/shared/effects/materials/corona_07.material"
-				startcolor="0 .5 1"
+				startcolor=".6 0 1"
 				endcolor="0 0 0"
 				startsize="100"
 				endsize="350"
@@ -57,7 +57,7 @@
 				life="500"
 				position="0 0 0"
 				material="/shared/effects/materials/corona_07.material"
-				startcolor=".5 0 .5"
+				startcolor=".6 0 1"
 				endcolor="0 0 0"
 				startsize="100"
 				endsize="350"
@@ -70,7 +70,7 @@
 				life="1000"
 				position="0 0 0"
 				material="/shared/effects/materials/corona_07.material"
-				startcolor="0 .5 1"
+				startcolor=".6 0 1"
 				midcolor="0 0 0"
 				endcolor="0 0 0"
 				midcolorpos=".65"
@@ -86,7 +86,7 @@
 				life="1500"
 				position="0 0 0"
 				material="/shared/effects/materials/whitedot_blend.material"
-				startcolor=".5 0 .5"
+				startcolor=".6 0 1"
 				endcolor="0 0 0"
 				startalpha=".5"
 				endalpha="0"
@@ -102,7 +102,7 @@
 				life="1000"
 				position="0 0 0"
 				material="/shared/effects/materials/whitedot.material"
-				startcolor=".5 0 .5"
+				startcolor=".6 0 1"
 				endcolor="0 0 0"
 				startalpha=".2"
 				endalpha="0"
@@ -222,7 +222,30 @@
 			>
 				<particle
 					minagle="-360" maxangle="360"
-					startcolor="1 0 1" midcolor="0 .5 1" endcolor="0"
+					startcolor=".6 0 1" midcolor=".6 0 1" endcolor=".6 0 1"
+					minsize="25" maxsize="30" scale=".1"
+					startframe="1" midframe=".1" endframe="1" midframepos=".3"
+					startalpha="1" midalpha=".7" endalpha="0"
+					startanchor=".8" endanchor=".1"
+				/>
+			</simpleemitter>			
+			
+			<simpleemitter
+				delay="400" life="1200"
+				count="300"
+				spawnrate="900"
+				minparticlelife="2500" maxparticlelife="3000"
+				direction="0 0 0"
+				gravity="-1"
+				minspeed="10"  maxspeed="30"
+				drag="0.1"
+				material="/shared/effects/materials/flare_03.material"
+				offsetsphere="200 200 0"
+				depthbias="-3"
+			>
+				<particle
+					minagle="-360" maxangle="360"
+					startcolor=".6 0 1" midcolor=".6 0 1" endcolor=".6 0 1"
 					minsize="25" maxsize="30" scale=".1"
 					startframe="1" midframe=".1" endframe="1" midframepos=".3"
 					startalpha="1" midalpha=".7" endalpha="0"
@@ -406,7 +429,7 @@
 					<particle>
 						<billboard
 							life="2500"
-							material="/shared/effects/materials/earth_cracks_reveal_add_blue.material"
+							material="/shared/effects/materials/earth_cracks_add_purple.material"
 							lockup="true" lockright="true"
 							pitch="-90"
 							maxroll="360"
@@ -422,7 +445,7 @@
 		
 			<groundsprite
 				life="2000"
-				material="/shared/effects/materials/earth_cracks_reveal_add_blue.material"
+				material="/shared/effects/materials/earth_cracks_add_purple.material"
 				maxyaw="360"
 				size="40"
 				startscale="4" midscale="4.5" endscale="4.5" midscalepos=".01"

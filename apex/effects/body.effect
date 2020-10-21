@@ -2,61 +2,150 @@
 <effect deferred="false">
 	<definitions>
 		<particlesystem name="system0" space="world">
+			<!-- floating debris -->
 			<simpleemitter
-				bone="_bone_lefthand"
-				spawnrate="40"
-				particlelife="350"
-				gravity="-75"
-				speed="10"
-				acceleration="00"
-				position="0 0 -5"
-				material="/shared/effects/materials/flame_blue.material"
-				offsetsphere="0 0 0"
-				minangle="0"
-				maxangle="0"
-				direction="0 0 0"
+				spawnrate="5"
+				particlelife="3000"
+				offsetsphere="2"
+				bone="Bip001 L UpperArm"
+				yaw="90"
 			>
-				<particle 
-					minangle="0"
-					maxangle="180"
-					minanglespeed="50"
-					color=".58 0 .82"
-					midcolorpos="1"
-					maxanglespeed="0"
-					startsize="5"
-					midsize="50"
-					endsize="0"
-					anchor="1"
-				/>
-			</simpleemitter>			
-			
-			<simpleemitter
-				bone="_bone_righthand"
-				spawnrate="40"
-				particlelife="350"
-				gravity="-75"
-				speed="10"
-				acceleration="00"
-				position="0 0 -5"
-				material="/shared/effects/materials/flame_blue.material"
-				offsetsphere="0 0 0"
-				minangle="0"
-				maxangle="0"
-				direction="0 0 0"
-			>
-				<particle 
-					minangle="0"
-					maxangle="180"
-					minanglespeed="50"
-					color=".58 0 .82"
-					midcolorpos="1"
-					maxanglespeed="0"
-					startsize="5"
-					midsize="50"
-					endsize="0"
-					anchor="1"
-				/>
+				<particle
+					startanchor="1" endanchor="0.9" midanchor=".75"
+				>
+					<debris
+						offsetsphere="25" position="0 0 0"
+						minscale=".25" maxscale=".5"
+						life="1300"
+						model="/heroes/adrenaline/effects/debris/debris.mdf"
+						material="/heroes/adrenaline/material_noshadow.material"
+						anim="idle"
+						minspeed="10.0"
+						maxspeed="50.0"
+						minrotationspeed="10.0"
+						maxrotationspeed="100.0"
+						gravity="-.5" drag="0.004"
+						startcolor="3 0 0" midcolor="1 0 0" endcolor="0" midcolorpos=".5"
+						minangle="0" maxangle="40"
+						startalpha="1" 	midalpha=".75" endalpha="0"
+						animpose="false"
+					/>
+				</particle>
 			</simpleemitter>
+			
+			<template name="floating_embers" >
+			 <!-- flickering glow -->
+                <billboard
+					spawnrate="3"
+					minparticlelife="100" maxparticlelife="200" 
+                    bone="{bone}" position="{position}"
+                    startsize="30" midsize="25" endsize="35"
+                    material="/shared/effects/materials/whitedot.material"
+                    startcolor=".6 0 0"  midcolor=".2 0 0" endcolor=".6 0 0"
+                    depthbias="-18"
+                    scale="{scale}"
+					anchor="1"
+                />
+			
+			<!-- dark smoke -->			
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="80" particlelife="700"
+					direction="0 1 0"
+					gravity="-1"
+					minspeed="10"  maxspeed="30"
+					drag="0.1" 
+					material="/shared/effects/materials/phantom_white_reveal.material"
+					offsetsphere="5"
+					depthbias="-150"
+				>
+					<particle					
+						minagle="-360" maxangle="360"
+						startcolor="0" midcolor=".1 0 0" endcolor="0"
+						minsize="5" maxsize="15" scale=".7"
+						startframe="1" midframe=".1" endframe="1" midframepos=".3"
+						startalpha="0" endalpha=".7"
+						anchor="0"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="10" particlelife="1000"
+					direction="0 1 0"
+					gravity="-1"
+					minspeed="10"  maxspeed="30"
+					drag="0.1" 
+					material="/shared/effects/materials/phantom_white_reveal.material"
+					offsetsphere="10"
+					depthbias="-150"
+				>
+					<particle					
+						minagle="-360" maxangle="360"
+						startcolor="0" midcolor=".1 0 0" endcolor="0"
+						minsize="5" maxsize="15" scale=".7"
+						startframe="1" midframe=".1" endframe="1" midframepos=".3"
+						startalpha="0" endalpha=".35"
+						anchor="1"
+					/>
+				</simpleemitter>
+           
+		   <!-- floating_embers -->  
+                <simpleemitter
+                    bone="{bone}"
+                    spawnrate="40"
+                    range="80"
+                    particlelife="900"
+                    direction="0 1 1"
+                    angle="10"
+                    minspeed="10"
+                    maxspeed="20"
+                    drag="0.1"
+                    gravity="-3"
+                    offsetsphere="5 5 0"
+                >
+                    <template name="ash_particle" >
+                        <particle
+                            maxyaw="360"
+                            maxpitch="360"
+                            maxroll="360"
+                            minyawspeed="-100"
+                            maxyawspeed="100"
+                            minpitchspeed="-100"
+                            maxpitchspeed="100"
+                            minrollspeed="-100"
+                            maxrollspeed="100"
+                            startscale="0"
+                            minendscale=".5"
+                            maxendscale="1"
+                        >
+                            <billboard
+                                maxangle="360"
+                                minrollspeed="-40"
+                                maxrollspeed="40"
+                                life="900"
+                                position="20 0 0"
+                                material="/shared/effects/materials/abstract_reveal.material"
+                                startsize="5"
+                                endsize="2"
+                                startcolor="{sc}"
+                                midcolor="{mc}"
+                                endcolor="{ec}"
+                                midcolorpos="{mcpos}"
+                                startframe="0"
+                                endframe="1"
+                            />
+                        </particle>
+                    </template>
+                    <instance name="ash_particle" sc="5 0 0" mc="1 0 0" ec="-1" mcpos=".25" />
+                </simpleemitter>
+			</template>
+		
+			<instance name="floating_embers" bone="Bip001 L UpperArm" position="-7 0 8" scale=".5" />
+			<!-- <instance name="floating_embers" bone="Bip001 R UpperArm" position="2 0 5" scale=".35" /> -->
+			
+			
+			
         
            
 		</particlesystem>

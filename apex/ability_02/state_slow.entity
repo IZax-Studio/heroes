@@ -2,7 +2,7 @@
 <state
 	name="State_Apex_Ability2_Slow"
 
-	icon="icon2.tga"
+	icon="icon_2.tga"
 	passiveeffect=""
 	
 	movespeedslowstart="0.8"

@@ -2,7 +2,7 @@
 <ability
 	name="Ability_Apex2"
 
-	icon="icon2.tga"
+	icon="icon_2.tga"
 	
 	anim=""
 	casttime="0"

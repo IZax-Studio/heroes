@@ -2,7 +2,7 @@
 <state
 	name="State_Apex_Ability3_Enemy"
 
-	icon="icon3.tga"
+	icon="icon_3.tga"
 	passiveeffect="effects/state_enemy.effect"
 	
 	effecttype="StatusDebuff"

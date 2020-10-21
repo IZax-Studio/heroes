@@ -12,7 +12,7 @@
 				falloffstart="250"
 				falloffend="1300"
 				volume="1"
-				sample="/heroes/apex/sounds/laugh_3.wav"
+				sample="/heroes/apex/sounds/vox_%.wav"
 			/>
 			
 

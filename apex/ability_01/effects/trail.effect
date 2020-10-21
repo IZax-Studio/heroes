@@ -25,9 +25,8 @@
 						endscale="1"
 						life="250"
 						model="/heroes/apex/model.mdf"
-						material="/heroes/apex/material_noshadow.material"
 						anim="ability_1"
-						color=".5 0 .5"
+						color=".6 0 1"
 						startalpha=".75"
 						endalpha="0"
 						midalphapos=".5"
@@ -56,10 +55,7 @@
 					limitinheritvelocity="500"
 				>
 					<particle
-						startcolor=".5 0 .5" 
-						midcolor="0 0 0" 
-						endcolor=".5 0 .5" 
-						midcolorpos=".1"
+						startcolor=".6 0 1" medcolor="0 0 0" endcolor="0 0 0" medcolorpos=".1"
 						startsize="100"
 						midsize="30"
 						endsize="2"
@@ -75,6 +71,8 @@
 			<instance name="trails" spawnrate="40" life="500" position="0 0 0" bone="_bone_fx_01"/>
 			<instance name="trails" spawnrate="40" life="800" position="0 0 0" bone="Bip01 Spine1"/>
 
+			
+			
 		</particlesystem>
 
 	</definitions>

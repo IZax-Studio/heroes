@@ -2,7 +2,7 @@
 <ability
 	name="Ability_Apex3"
 
-	icon="icon3.tga"
+	icon="icon_3.tga"
 	
 	anim="ability_3"
 	casttime="300"

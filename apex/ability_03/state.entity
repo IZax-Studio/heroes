@@ -2,7 +2,7 @@
 <state
 	name="State_Apex_Ability3"
 
-	icon="icon3.tga"
+	icon="icon_3.tga"
 	passiveeffect="effects/state_self.effect"
 	
 	effecttype=""

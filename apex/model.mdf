@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model name="rig.max" file="darkseer.model" type="K2" high="darkseer.model" med="darkseer.model" low="darkseer.model">
+<model name="rig.max" file="void_spirit.model" type="K2" high="void_spirit.model" med="void_spirit.model" low="void_spirit.model">
 
 	<anim name="idle" clip="clips/default_1.clip" fps="32" loop="true" />
 	
@@ -21,20 +21,20 @@
 	<anim name="ability_2" clip="clips/ability_2.clip" fps="50" loop="false">
 	</anim>
 	
-	<anim name="ability_3" clip="clips/ability_3.clip" fps="30" loop="true" >
+	<anim name="ability_3" clip="clips/ability_3.clip" fps="15" loop="true" >
 	</anim>
 	
 	<anim name="ability_4" clip="clips/ability_4.clip" fps="35" loop="false">
-	    <frameevent frame="1" cmd="PlaySoundLinear sounds/ab4_vox.wav 400 2500 1"/>
-		 <frameevent frame="1" cmd="PlaySoundLinear sounds/ab4_vox.wav 400 2500 1"/>
+	    <frameevent frame="1" cmd="PlaySoundLinear /heroes/apex/ability_04/sounds/vox_%.wav 400 2500 1"/>
+		 <frameevent frame="1" cmd="PlaySoundLinear /heroes/apex/ability_04/sounds/vox_%.wav 400 2500 1"/>
 	</anim>
 	
 	<anim name="attack_1" clip="clips/attack_1.clip" fps="30" loop="false">
-	<frameevent frame="5" cmd="PlaySoundLinear sounds/attack_%.wav 0 1300 0.60"/>
+	<frameevent frame="1" cmd="PlaySoundLinear sounds/preattack_1%.wav 0 1300 1"/>
 	</anim>
 	
 	<anim name="attack_2" clip="clips/attack_2.clip" fps="30" loop="false">
-	  <frameevent frame="5" cmd="PlaySoundLinear sounds/attack_%.wav 0 1300 0.60"/>
+	  <frameevent frame="1" cmd="PlaySoundLinear sounds/preattack_1.wav 0 1300 1"/>
 	</anim>
 	
 	
@@ -45,14 +45,9 @@
 	<anim name="bored_1" clip="clips/bored_1.clip" fps="30" loop="false">
 	</anim>
 	
-	<anim name="death_1" clip="clips/death_1.clip" fps="15" loop="true" loopbackframe="-1">
-		 <frameevent frame="1" cmd="StartEffect effects/death2.effect 5" />
-		 <frameevent frame="12" cmd="StopEffect 5" />
-		 <frameevent frame="10" cmd="StartEffect effects/death.effect" />
-		 <frameevent frame="1" cmd="PlaySoundLinear sounds/death_%.wav 0 1300 1"/>
-		 <frameevent frame="1" cmd="PlaySoundLinear ability_01/sounds/teleport.wav 0 1300 1"/>
-		 <frameevent frame="1" cmd="PlaySoundLinear ability_02/sounds/trigger.wav 0 1300 .5"/>
-		  <frameevent frame="1" cmd="PlaySoundLinear ability_03/sounds/expire.wav 0 1300 1"/>
+	<anim name="death_1" clip="clips/death_1.clip" fps="30" loop="true" loopbackframe="-1">
+		 <frameevent frame="1" cmd="PlaySoundLinear sounds/death_grunt.wav 0 1300 1"/>
+
 	</anim>
 
 	<anim name="knock_1" clip="clips/knock_1.clip" loop="true" loopbackframe="-1">

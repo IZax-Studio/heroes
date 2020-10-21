@@ -2,7 +2,7 @@
 <state
 	name="State_Apex_Ability2"
 
-	icon="icon2.tga"
+	icon="icon_2.tga"
 	passiveeffect="effects/state_self.effect"
 	
 	movespeedmultiplier="1.0"

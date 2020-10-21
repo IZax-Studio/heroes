@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+
+	<definitions>
+
+		<modifier 
+			name="modifier0"
+			startcolor="1 1 1"
+			endcolor="2 1 1"
+			life="450"
+			delay="1300"
+		/>
+
+		<particlesystem name="system0" space="world" scale=".75">
+		
+			<simpleemitter
+				bone="_bone_lefthand"
+				spawnrate="40"
+				particlelife="350"
+				gravity="-30"
+				speed="10"
+				acceleration="00"
+				position="0 0 0"
+				material="/shared/effects/materials/flame.material"
+				offsetsphere="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 0 0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="180"
+					minanglespeed="50"
+					maxanglespeed="0"
+					color="1 .5 0"
+					startsize="60"
+					midsize="60"
+					endsize="60"
+					anchor="1"
+				/>
+			</simpleemitter>				
+
+			<simpleemitter
+				bone="_bone_righthand"
+				spawnrate="40"
+				particlelife="350"
+				gravity="-30"
+				speed="10"
+				acceleration="00"
+				position="0 0 0"
+				material="/shared/effects/materials/flame.material"
+				offsetsphere="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 0 0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="180"
+					minanglespeed="50"
+					maxanglespeed="0"
+					color="1 .5 0"
+					startsize="60"
+					midsize="60"
+					endsize="60"
+					anchor="1"
+				/>
+			</simpleemitter>
+
+
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+     	 	<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

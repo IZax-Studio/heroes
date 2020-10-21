@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world">
+		
+			
+				
+			<twopointtrailemitter
+				life="300"
+			 	bone_a="_bone_weapon1"
+				bone_b="_bone_weapon2"
+				spawnrate="200"
+				particlelife="150"
+				texpostime="150"
+				texposscale="1.0"
+				texstretchscale="0.0"
+				material="/shared/effects/materials/arrow_trail.material"
+				subframepose="true"
+			>
+	         	<particle
+					startcolor=".5 .5 0"
+					midcolor="1 1 0"
+					endcolor="1 0 0" 
+				/>
+			</twopointtrailemitter>
+			
+
+			<twopointtrailemitter
+			delay="50"
+				life="300"
+				bone_a="_bone_weapon3"
+				bone_b="_bone_weapon4"
+				spawnrate="200"
+				particlelife="75"
+				texpostime="75"
+				texposscale="1.0"
+				texstretchscale="0.0"
+				material="/shared/effects/materials/arrow_trail.material"
+				subframepose="true"
+			>
+	            <particle
+					startcolor=".5 .5 0"
+					midcolor="1 1 0"
+					endcolor="1 0 0" 
+					
+				/>
+			</twopointtrailemitter>
+					
+						
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

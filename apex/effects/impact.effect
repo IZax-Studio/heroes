@@ -9,144 +9,22 @@
 				linearfalloff="true" 
 				falloffstart="800"
 				falloffend="1300"
-				volume=".8"
-				sample="../sounds/imp_%.wav"
+				volume=".4"
+				sample="/heroes/apex/sounds/impact_1.wav"
+			/>			
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="800"
+				falloffend="1300"
+				volume=".2"
+				sample="/heroes/apex/sounds/impact%.wav"
 			/>
 
 
-			<debris
-				bone="_bone_centerofchest" count="1"
-				minscale=".75"
-				maxscale="1.5"
-				life="1300"
-				model="/heroes/adrenaline/effects/debris/debris.mdf"
-				material="/heroes/adrenaline/material_noshadow.material"
-				anim="idle"
-				minspeed="800.0"
-				maxspeed="1700.0"
-				minrotationspeed="300.0"
-				maxrotationspeed="1200.0"
-				gravity="80.0"
-				drag="0.03"
-				color="1"
-				minangle="0"
-				maxangle="120"
-				collide="true"
-				startalpha="1.0"
-				midalpha="1.0"
-				endalpha="0.0"
-				midalphapos="0.75"
-				bounce="0.5"
-				reflect="0.6"
-				animpose="false"
-			/>
+	
 
-			<simpleemitter
-				minparticlelife="500"
-				maxparticlelife="1400"
-				spawnrate="555"
-				count="8"
-				life="300"
-				gravity="5"
-				speed="250"
-				material="/shared/effects/materials/dust.material"
-				offsetsphere="40"
-				angle="10"
-				position="0 0 20"
-				direction="0 0 1"
-				drag="0.15"
-				depthbias="-50"
-			>
-				<particle 
-					minangle="-360"
-					maxangle="360"
-					minanglespeed="-50"
-					maxanglespeed="50"
-					color=".44 0 .1"
-					maxstartsize="60"
-					minstartsize="20"
-					endsize="300"
-					startalpha=".5"
-					endalpha="0"
-				/>
-				<particle 
-					minangle="-360"
-					maxangle="360"
-					minanglespeed="-120"
-					maxanglespeed="120"
-					color=".74 0 .2"
-					startsize="30"
-					endsize="200"
-					startalpha=".9"
-					endalpha="0"
-				/>
-			</simpleemitter>
 
-			<simpleemitter
-				minparticlelife="800"
-				maxparticlelife="1400"
-				spawnrate="555"
-				count="6"
-				life="500"
-				gravity="10"
-				speed="150"
-				material="/shared/effects/materials/dust_explosion.material"
-				offsetsphere="10 10 10"
-				angle="90"
-				position="0 0 40"
-				direction="0 0 1"
-				drag="0.1"
-				depthbias="-30"
-			>
-				<particle 
-					minangle="-360"
-					maxangle="360"
-					minanglespeed="-100"
-					maxanglespeed="100"
-					color=".43 .4 .4"
-					startsize="45"
-					endsize="160"
-					startalpha=".3"
-					endalpha="0"
-				/>
-			</simpleemitter>
-
-			<simpleemitter
-				minparticlelife="500"
-				maxparticlelife="1200"
-				spawnrate="555"
-				count="6"
-				life="500"
-				speed="25"
-				material="/shared/effects/materials/dust_puff.material"
-				offsetsphere="45"
-				position="0 0 30"
-				direction="0 0 1"
-				depthbias="-20"
-			>
-				<particle 
-					minangle="-360"
-					maxangle="360"
-					minanglespeed="-100"
-					maxanglespeed="100"
-					color=".5"
-					startsize="15"
-					endsize="160"
-					startalpha=".3"
-					endalpha="0"
-				/>
-				<particle 
-					minangle="-360"
-					maxangle="360"
-					minanglespeed="-30"
-					maxanglespeed="30"
-					color=".3"
-					startsize="75"
-					endsize="120"
-					startalpha=".8"
-					endalpha="0"
-				/>
-			</simpleemitter>
 
 		</particlesystem>
 

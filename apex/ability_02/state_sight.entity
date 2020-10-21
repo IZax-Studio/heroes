@@ -2,7 +2,7 @@
 <state
 	name="State_Apex_Ability2_Sight"
 	
-	icon="icon2.tga"
+	icon="icon_2.tga"
 	
 	serverentity="true"
 	sighted="true"

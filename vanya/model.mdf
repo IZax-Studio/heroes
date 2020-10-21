@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="ember.model" med="ember.model" low="ember.model" >
+
+	<anim name="idle" clip="clips/default_1.clip"  loop="true" blendtime="200"/>
+	
+	<anim name="portrait" clip="clips/portrait.clip" loop="true"/>
+	
+	<anim name="item_1" clip="clips/item_1.clip" fps="30"/>
+	<anim name="bored_1" clip="clips/bored_1.clip" fps="30">
+		<frameevent frame="50" cmd="StartEffect effects/MetalSpark.effect"/>
+	</anim>
+
+	<anim name="taunt_1" clip="clips/taunt_1.clip" fps="30"/>
+
+	<anim name="walk_1" clip="clips/walk_1.clip" fps="30" loop="true"  blendtime="200" loopbackframe="1">
+		<frameevent frame="4" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="9" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="21" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="26" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+
+		<frameevent frame="4" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="21" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	</anim>
+
+	<anim name="death_1" clip="clips/death_1.clip" fps="30" loop="true" loopbackframe="-1">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/death_%.wav 400 2000 .75"/>
+	</anim>
+
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="35" blendtime="200">
+		<frameevent frame="13" cmd="StartEffect effects/trails.effect"/>
+		<frameevent frame="15" cmd="PlaySoundLinear /heroes/vanya/sounds/attack_%.wav 0 1800 .75"/>
+	</anim>
+	
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="35" blendtime="200">
+		<frameevent frame="13" cmd="PlaySoundLinear /heroes/vanya/sounds/attack_%.wav 0 1800 .75"/>
+		<frameevent frame="16" cmd="StartEffect effects/trails.effect"/>	
+	</anim>
+
+
+	<anim name="ability_2" clip="clips/ability_2.clip" fps="27"/>
+
+	<anim name="ability_3_sprint" clip="clips/ability_3_sprint.clip" fps="30" loop="0">
+		<frameevent frame="1" cmd="PlaySoundLinear ability_3/sounds/cast1.wav 400 2000 .45"/>
+		<frameevent frame="1" cmd="PlaySoundLinear ability_3/sounds/cast.wav 400 2000 .55"/>
+		<frameevent frame="1" cmd="PlaySoundLinear ability_3/sounds/cast_%.wav 400 2000 1.3"/>	
+	</anim>
+
+	<anim name="ability_4" clip="clips/ability_4.clip" fps="30">
+		<frameevent frame="13" cmd="PlaySoundLinear ability_4/sounds/cast.wav 400 2000 .45"/>
+		<frameevent frame="13" cmd="PlaySoundLinear /heroes/vanya/sounds/attack_%.wav 400 2000 .35"/>
+	</anim>
+		
+	<anim name="knock_1" clip="clips/knock_1.clip" loop="true" loopbackframe="-1"/>
+	
+	<anim name="getup_1" clip="clips/getup_1.clip"/>		
+			
+</model>

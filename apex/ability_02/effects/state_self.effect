@@ -11,7 +11,7 @@
 			endalpha="0"
 		/>
 
-		<particlesystem name="system0" space="world" scale="1">
+		<particlesystem name="system0" space="world" scale=".5">
 		
 			<sound		
 				linearfalloff="true" 
@@ -35,7 +35,7 @@
 			<model
 				parentmodel="1"
 				parentskeleton="1"
-				color=".5 0 .5"
+				color=".3 0 .5"
 				material="/shared/effects/materials/shell_flat_outline.material"
 			/>
 				
@@ -45,7 +45,7 @@
 					size="85"
 					life="1000"
 					startcolor="0 0 0"
-					midcolor=".3 0 0"
+					midcolor=".3 0 .5"
 					endcolor="0 0 0"
 					material="/shared/effects/materials/whitedot.material"
 					loop="true"
@@ -58,7 +58,7 @@
 					size="40"
 					life="1000"
 					startcolor="0 0 0"
-					midcolor=".3 0 0"
+					midcolor=".3 0 .5"
 					endcolor="0 0 0"
 					material="/shared/effects/materials/whitedot.material"
 					loop="true"
@@ -71,7 +71,7 @@
 					size="100"
 					life="1000"
 					startcolor="0 0 0"
-					midcolor=".15"
+					midcolor=".3 0 .5"
 					endcolor="0 0 0"
 					material="/shared/effects/materials/whitedot.material"
 					loop="true"
@@ -81,7 +81,7 @@
 			</template>
 
 			<instance name="glow" bone="_bone_weapon2"/>
-			<instance name="glow" bone="_bone_weaponattach"/>
+			<instance name="glow" bone="_bone_weapon1"/>
 			
 
 			<template name="glow">
@@ -90,7 +90,7 @@
 					size="150"
 					life="1000"
 					startcolor="0 0 0"
-					midcolor=".3 .075 0"
+					midcolor=".3 0 .5"
 					endcolor="0 0 0"
 					material="/shared/effects/materials/whitedot.material"
 					loop="true"
@@ -103,7 +103,7 @@
 					size="80"
 					life="1000"
 					startcolor="0 0 0"
-					midcolor=".3 0 0"
+					midcolor=".3 0 .5"
 					endcolor="0 0 0"
 					material="/shared/effects/materials/whitedot.material"
 					loop="true"
@@ -125,7 +125,8 @@
 				/>
 			</template>
 
-			<instance name="glow" bone="_bone_altweapon2"/>
+			<instance name="glow" bone="_bone_weapon1"/>
+			<instance name="glow" bone="_bone_weapon2"/>
 			
 			<billboard
 				life="500"
@@ -193,55 +194,8 @@
 				/>
 			</simpleemitter>
 
-			<simpleemitter
-				minangle="-90"
-				maxangle="-90"
-				bone="_bone_centerofchest"
-				spawnrate="50"
-				minparticlelife="500"
-				maxparticlelife="1000"
-				speed="1000"
-				drag="0.1"
-				gravity="-10"
-				offsetsphere="50 50 0"
-				material="/shared/effects/materials/dust_smoke_02.material"
-			>
-				<particle
-					minangle="-180"
-					maxangle="180"
-					minanglespeed="-150"
-					maxanglespeed="150"
-					turn="1"
-					color="0 0 0"
-					startsize="30"
-					minendscale="6"
-					maxendscale="10"
-					startalpha="0"
-					midalpha=".25"
-					endalpha="0"
-				/>
-			</simpleemitter>
-			
-			<billboard
-				bone="_bone_centerofchest"
-				life="650"
-				startcolor=".5 0 .1"
-				midcolor=".25 0 .05"
-				endcolor=".5 0 .1"
-				startsize="200"
-				midsize="100"
-				endsize="200"
-				startalpha="0"
-				midalpha=".75"
-				endalpha="0"				
-				depthbias="-75"
-				material="/shared/effects/materials/whitedot.material"
-				lockup="1"
-				lockright="1"
-				pitch="90"
-				loop="true"
-			/>
-			
+
+
 			
 			
 
