@@ -11,7 +11,7 @@
 				volume="1"
 				fadein="200"
 				fadeout="400"
-				sample="/heroes/chronos/ability_03/sounds/ability_03.wav"
+				sample="/heroes/chronos/ability_03/sounds/ability_03.ogg"
 			/>
 			
 			<template name="clock">
@@ -24,9 +24,9 @@
 					material="/heroes/chronos/ability_02/effects/clock/material.material"
 					pitch="225"
 					
-					startcolor="1"
-					midcolor="1"
-					endcolor=".2"
+					startcolor="1 0 1"
+					midcolor="1 0 1"
+					endcolor=".2 0 .2"
 					midcolorpos=".8"
 					
 					startalpha="1"
@@ -58,7 +58,7 @@
 						bone_a="_bone_hand"
 						bone_b="_bone_root"
 						size="50"
-						color=".4 .5 2"
+						color="2 .5 2"
 						material="/shared/effects/materials/bow_glow_03.material"
 						depthbias="-100"
 						anchor="1"
@@ -90,7 +90,7 @@
 						bone_a="_bone_hand"
 						bone_b="_bone_root"
 						size="50"
-						color=".4 .5 2"
+						color="2 .5 2"
 						material="/shared/effects/materials/bow_glow_03.material"
 						depthbias="-100"
 						anchor="1"
@@ -145,7 +145,7 @@
 					loop="true"
 					bone="{bone}"
 					material="/shared/effects/materials/lightning_02.material"
-					color="0 .1 .25"
+					color=".25 .1 .25"
 					startsize="30"
 					midsize="60"
 					endsize="30"

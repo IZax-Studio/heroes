@@ -11,7 +11,7 @@
 					bone_a="{bone_b}"		
 					bone_b="{bone_a}"						
 					size="50"
-					color=".3 .2 .5"				
+					color=".5 .2 .5"				
 					material="/shared/effects/materials/femme_lightning_11.material"
 					framespeed="2.75"
 				/>	

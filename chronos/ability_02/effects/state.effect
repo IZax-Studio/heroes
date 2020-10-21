@@ -11,7 +11,7 @@
 				falloffstart="1300"
 				falloffend="1800"
 				volume="1"
-				sample="/heroes/chronos/ability_02/sounds/ability_02.wav"
+				sample="/heroes/chronos/ability_02/sounds/ability_02.ogg"
 			/>
 			
 			
@@ -23,7 +23,7 @@
 				volume="1"
 				fadein="200"
 				fadeout="400"
-				sample="/heroes/chronos/ability_03/sounds/ability_03.wav"
+				sample="/heroes/chronos/ability_02/sounds/ability_02.ogg"
 			/>
 			
 			<simpleemitter

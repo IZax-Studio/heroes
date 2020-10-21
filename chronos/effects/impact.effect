@@ -162,7 +162,7 @@
 					minangle="0"
 					maxangle="360"
 					startcolor="0"
-					midcolor="0 0.4 1"
+					midcolor="1 0.4 1"
 					endcolor="0"
 					midcolorpos="0.25"
 					startsize="40"

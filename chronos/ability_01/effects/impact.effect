@@ -1,114 +1,192 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<effect useentityeffectscale="true">
-
+<effect name="purgeEffect" deferred="true" useentityeffectsscale="true">
 	<definitions>
-
-		
-		
-		<particlesystem name="system0" space="world" useentityeffectscale="true" scale="1">
-
-			<sound
-				volume="0.01"
-				sample="/heroes/kunas/sounds/impact_%.wav"
+		<particlesystem name="system1" space="world" scale="0">
+	
+            <sound
+			    norestart="true"
+				channel="22355"
+			    forcestereo="true"
 				linearfalloff="true"
-				falloffstart="0"
-				falloffend="200"
-
-			/>
-
-			<sound
+				falloffstart="1300"
+				falloffend="1800"
 				volume="1"
-				sample="/shared/sounds/impacts/impact_flesh_%.wav"
-				linearfalloff="true"
-				falloffstart="200"
-				falloffend="1400"
+				sample="/heroes/chronos/ability_03/sounds/ability_03.ogg"
 			/>
-
-			<sound
-				delay="10"
-				volume=".5"
-				sample="/shared/sounds/impacts/impact_body_%.wav"
-				linearfalloff="true"
-				falloffstart="200"
-				falloffend="1400"
+			
+			<model
+				life="1000"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor=".3 0 .3"
+				endcolor=".1 0 .1"
+				startscale="1.10"
+				midscale="1.05"
+				endscale="1"
+				midscalepos="1"
+				material="/shared/effects/materials/shell_flat_outline.material"
+				startalpha="5"
+				endalpha=".7"
 			/>
-
-			<simpleemitter
-				life="400"
-	         		bone="Bip01 Spine1"			
-				directionalspace="global"
-				position="0 0 5"				
-				spawnrate="5000"
-				depthbias="-100"
-				maxparticlelife="500"
-				offsetsphere="0"
-				count="20"
-				direction="0 0 1"	
-          			material="/shared/effects/materials/smash_add.material"
-         	>
-				<particle 
-					minangle="0"
-					maxangle="360"
-					startcolor="0"
-					midcolor="0 0.4 1"
+			
+			<template name="clock">
+				<model
+					life="{life}"
+					directionalspace="global"
+					position="0 0 2"
+					scale=".8"
+					expirelife="1000"
+					model="/heroes/chronos/ability_02/effects/clock/model.mdf"
+					material="/heroes/chronos/ability_02/effects/clock/material.material"
+					
+					startcolor="1 0 1"
+					midcolor="1 0 1"
+					endcolor=".2 0 .2"
+					midcolorpos=".8"
+					
+					startalpha=".7"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".8"
+				>
+				</model>
+				
+				<model
+					life="{life}"
+					directionalspace="global"
+					position="0 0 0"
+					scale=".8"
+					model="/heroes/chronos/ability_02/effects/clock/hand.mdf"
+					material="/heroes/chronos/ability_02/effects/clock/material2.material"
+					color="1"
+					anim="idle"
+					expirelife="1000"
+					
+					startcolor="1"
 					endcolor="0"
-					midcolorpos="0.25"
-					startsize="40"
-					endsize="75"
-					startanchor="1.0"
-					midanchor="0.9"
-					endanchor="0.8"
-					flare="1"
-					startheight="50"
-					endheight="100"
-				/>
-			</simpleemitter>
+					
+					startalpha="1"
+					endalpha="0"
+				>
+					<beam
+						bone_a="_bone_hand"
+						bone_b="_bone_root"
+						size="50"
+						color="2 .5 2"
+						material="/shared/effects/materials/bow_glow_03.material"
+						depthbias="-100"
+						anchor="1"
+						position_a="0 0 7"
+						position_b="0 0 7"
+					/>	
+				</model>
+				
+				<model
+					life="{life}"
+					directionalspace="global"
+					position="0 0 0"
+					scale=".7"
+					model="/heroes/chronos/ability_02/effects/clock/hand.mdf"
+					material="/heroes/chronos/ability_02/effects/clock/material2.material"
+					color="1"
+					anim="hour"
+					
+					expirelife="1000"
+					
+					startcolor="1"
+					endcolor="0"
+					
+					startalpha="1"
+					endalpha="0"
+				>
+					<beam
+						bone_a="_bone_hand"
+						bone_b="_bone_root"
+						size="50"
+						color="2 .5 2"
+						material="/shared/effects/materials/bow_glow_03.material"
+						depthbias="-100"
+						anchor="1"
+						position_a="0 0 7"
+						position_b="0 0 7"
+					/>	
+				</model>
+				
+				<simpleemitter
+					life="{life}"
+					spawnrate="322"
+					particlelife="1400"			
+					
+					speed="40"
+					position="0 0 20"
+					offsetsphere="50 50 25"
+					acceleration="0"
+					gravity="2"
+					material="/shared/effects/materials/whitedot.material"
+					inheritvelocity="0"
+				>
 
-			<simpleemitter
-				life="300"
-				bone="_bone_centerofchest"
-				spawnrate="1000"
-				count="3"
-				particlelife="200"
-				offsetsphere="15"
-				material="/shared/effects/materials/refract_pinch.material"
-			>
-				<particle
-					startalpha=".5"
-					endalpha="0.0"
-					maxangle="360"
-					startsize="50"
-					endsize="270"
-					param=".1"
-					depthbias="-130"
-				/>
-			</simpleemitter>
+					<particle
+						minangle="-360"
+						maxangle="360"
+						
+						startcolor="0"
+						midcolor="1"
+						endcolor="0"
+						
+						minsize="1"
+						maxsize="2"
+						
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos="0.9"
+						anchor="0"
+						depthbias="0"							
+				
+					/>
+				</simpleemitter>
 
-			<billboard
-				bone="_bone_centerofchest"
-				life="400"
-				startalpha="0"
-				midalpha=".5"
-				endalpha="0.0"
-				startparam=".5"
-				endparam="0.0"
-				startsize="128"
-				endsize="500"
-				depthbias="-100"
-				material="/shared/effects/materials/refract_ripple.material"
-			/>		
+				<simpleemitter
+					spawnrate="10"
+					count="1"
+					particlelife="250"
+					offsetsphere="0 0 0"
+					position="0 0 0"
+					minangle="0"
+					maxangle="0"
+					direction="0 1 0"
+				>
+					<particle
+						turn="true"
+					>
+						<model
+							position="0 -45 0"
+							scale="1"
+							minlife="250"
+							maxlife="500"
+							model="/heroes/chronos/hd_chronos/model.mdf"
+							anim="backtrack"
+							color=".5 .5 1"
+							startalpha=".5"
+							endalpha="0"
+						>
+						</model>
+						
+					</particle>
+				</simpleemitter>
+				
+			</template>
+				
+			<instance name="clock" life="1200"/>
 			
 		</particlesystem>
-
 	</definitions>
 
 	<thread>
-		<spawnparticlesystem instance="instance0"  particlesystem="system0" />	
-		
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />	
 		<waitfordeath instance="instance0" />
-		  
-      		<!-- <die /> -->
+		<waitfordeath instance="instance1" />
 	</thread>
 </effect>
-
-<!-- [min|max][start|mid|end]property[speed][position] -->

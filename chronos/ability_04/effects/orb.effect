@@ -170,7 +170,7 @@
 				bone_b="outer_01"
 
 				size="10"
-				color=".65 .65 .65"
+				color=".65 0 .65"
 				alpha="1.0"
 				material="../../custom/materials/bolt/bolt.material"
 
@@ -183,7 +183,7 @@
 				bone_b="outer_02"
 
 				size="10"
-				color=".65 .65 .65"
+				color=".65 0 .65"
 				alpha="1.0"
 				material="../../custom/materials/bolt/bolt.material"
 
@@ -196,7 +196,7 @@
 				bone_b="outer_03"
 
 				size="10"
-				color=".65 .65 .65"
+				color=".65 0 .65"
 				alpha="1.0"
 				material="../../custom/materials/bolt/bolt.material"
 
@@ -209,7 +209,7 @@
 				bone_b="outer_04"
 
 				size="10"
-				color=".65 .65 .65"
+				color=".65 0 .65"
 				alpha="1.0"
 				material="../../custom/materials/bolt/bolt.material"
 
@@ -222,7 +222,7 @@
 				bone_b="outer_05"
 
 				size="10"
-				color=".65 .65 .65"
+				color=".65 0 .65"
 				alpha="1.0"
 				material="../../custom/materials/bolt/bolt.material"
 
@@ -236,7 +236,7 @@
 				bone_b="outer_06"
 
 				size="10"
-				color=".65 .65 .65"
+				color=".65 0 .65"
 				alpha="1.0"
 				material="../../custom/materials/bolt/bolt.material"
 
@@ -322,7 +322,7 @@
 				minanglespeed="50"
 				maxanglespeed="150"
 			
-				color="1 1 1"
+				color="1 0 1"
 				startsize="740"
 				midsize="300"
 				endsize="701"
