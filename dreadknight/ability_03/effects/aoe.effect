@@ -1,311 +1,224 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<effect deferred="1" useentityeffectscale="1">
+<effect deferred="true">
 
 	<definitions>
+		
+		<particlesystem name="system0" space="world" scale="1.2">
 
-		<particlesystem name="system0" space="world" scale="3.5">
-					
 			<sound
-				soundloop="true"
-				fadein="150"
-				fadeout="500"
 				linearfalloff="true" 
 				falloffstart="0"
-				falloffend="800"
-				volume=".20"
-				sample="/heroes/revenant/sounds/whisperdrone.wav"
+				falloffend="2200"
+				volume=".75"
+				sample="../sounds/cast.wav"
 			/>
-			
+
 			<sound
-     			linearfalloff="true" 
+				soundloop="true"
+				fadein="300"
+				fadeout="700"
+				linearfalloff="true" 
 				falloffstart="0"
-				falloffend="800"
-				volume=".80"
-				sample="../sounds/cast_vox.wav"
-			/>
-			
-			<trackeremitter
-				tracktype="lerp"
-				trackspeed="1"
-				spawnrate="3"
-				particlelife="2500"
-				acceleration="0.0"
-				speed="100"
-				minangle="0"
-				maxangle="0"
-				direction="0 0 1"
-				offsetradial="75 75 25"
-			>
-				<particle
-					turn="1"
-				>
-					<model
-						position="0 0 0"
-						minlife="500"
-						maxlife="650"
-						anim="idle"
-						model="single_bug/model.mdf"
-						scale=".15"
-						color="1.0 .3 .2"
-						startalpha="0"
-						midalpha="0"
-						endalpha="0"
-						midalphapos=".85"
-						lockup="1"
-						lockright="1"
-						pitch="0"
-						yaw="180"
-						directionalspace="local"
-					>
-					
-						<simpleemitter
-							count="50"
-							spawnrate="75"
-							minparticlelife="500"
-							maxparticlelife="1000"
-							gravity="-50"
-							speed="10"
-							drag="0.07"
-							acceleration="0.0"
-							mintimenudge="0"
-							maxtimenudge="1000"
-							position="0 0 0"
-							material="/shared/effects/materials/smoke_particle.material"
-							offsetsphere="50 50 25"
-							inheritvelocity=".5"
-						>
-							<particle
-								minangle="0"
-								maxangle="360"
-								minanglespeed="-30"
-								color="1.0 .3 .2"
-								maxanglespeed="30"
-								startsize="75"
-								endsize="150"
-								startalpha="0"
-								midalpha=".35"
-								endalpha="0"
-								midalphapos=".2"
-							 />
-						</simpleemitter>
-						
-						<simpleemitter
-							count="5"
-							spawnrate="10"
-							minparticlelife="500"
-							maxparticlelife="1000"
-							gravity="-50"
-							speed="10"
-							drag="0.07"
-							acceleration="0.0"
-							mintimenudge="0"
-							maxtimenudge="1000"
-							position="0 0 0"
-							material="/shared/effects/materials/heathaze.material"
-							offsetsphere="50 50 25"
-							inheritvelocity=".5"
-						>
-							<particle
-							param=".5"
-								minangle="0"
-								maxangle="360"
-								minanglespeed="-30"
-								color="1.0 .3 .2"
-								maxanglespeed="30"
-								startsize="75"
-								endsize="250"
-								startalpha="0"
-								midalpha=".25"
-								endalpha="0"
-								midalphapos=".2"
-							 />
-						</simpleemitter>
+				falloffend="2200"
+				volume=".5"
+				sample="../sounds/state.wav"
+			/>			
 
-						<simpleemitter
-							count="1"
-							position="0 0 0"
-							spawnrate="1000"
-							particlelife="2000"
-						>
-							<particle>
+			<template name="lava">
 
-								<groundsprite
-									life="750"
-									material=""
-									size="75"
-									startcolor="1.0 .3 .2"
-									midcolor="1.0 .3 .2"
-									endcolor="0 0 0"
-									startalpha="1"
-									midalpha=".5"
-									endalpha="0"
-									midalphapos=".85"
-								/>
-<!--
-								<billboard
-									minlife="500"
-									maxlife="750"
-									material=""
-									size="150"
-									position="0 0 75"
-									midsizepos=".1"
-									color="1.0 .3 .2"
-									startalpha="1"
-									midalpha="1"
-									endalpha="0"
-									midalphapos=".75"
-									lockup="1"
-									lockright="1"
-									pitch="90"
-									depthbias="0"
-								/>
--->
 
-								
-								<model
-									delay="0"
-									minlife="500"
-									maxlife="1000"
-									color="1.0 .3 .2"
-									model="hand/hand.mdf"
-									anim="idle"
-									minyaw="-110"
-									maxyaw="0"
-									minyawspeed="-180"
-									maxyawspeed="-90"
-									startscale="2"
-									midscale="2.75"
-									endscale="0"
-									midscalepos=".75"
-									startalpha="1"
-									midalpha=".5"
-									endalpha="0"
-									midalphapos=".5"
-									position="0 0 50"
-									directionalspace="global"
-								/>
-								
-								<billboard
-									material="/shared/effects/materials/light_rays.material"
-									scale="1"
-									width="250"
-									minheight="750"
-									maxheight="1000"
-									startcolor=".5 .2 .1"
-									endcolor=".5 .2 .1"
-									position="0 0 200"						
-									lockup="1"
-									life="500"
-									depthbias="-25"
-								/>
+				<!-- steam explosion  -->
 
-							</particle>
-						</simpleemitter>
-
-					</model>
-				</particle>
-			</trackeremitter>
-
-			<model
-				position="0 0 0"
-				expirelife="1500"
-				name="emitter0" 
-				anim="idle"
-				model="/shared/effects/models/circle_of_bones/model.mdf"
-				startscale="3.5"
-				endscale="0"
-				startcolor="0 0 0"
-				midcolor="0 0 0"
-				endcolor="0 0 0"
-				midcolorpos=".75"
-				startalpha="0"
-				midalpha="0"
-				endalpha="0"
-				midalphapos=".4"
-				minyaw="-5"
-				maxyaw="5"
-				yawspeed="270"
-				rollspeed="180"
-			>
-			
-				<template name="trails">
-					<twopointtrailemitter
-						name="trail01"
-						position="0 0 0"
-						bone_a="{bone01}"
-						bone_b="{bone02}"
-						spawnrate="75"
-						particlelife="1500"
-						subframepose="1"
-						direction="0 -1 0"
+				<simpleemitter
+					position="{position2}"
+					life="400"
+					spawnrate="500"
+					speed="20"
+					drag="0.15"
+					minparticlelife="1000"
+					maxparticlelife="2500"
+					offsetsphere="45"
+					count="20"
+					depthbias="-110"
+					gravity="-2"	
+					minangle="0"
+					maxangle="60"
+          				material="/shared/effects/materials/smoke_particle.material"
+         			>
+					<particle 
 						minangle="0"
-						maxangle="0"
-						texpostime="750"
-						texposscale="0"
-						texstretchscale="1"
-						material="/shared/effects/materials/soul_projectile2.material"
-					>
-						<particle
-							startcolor=".2 .1 .1"
-							endcolor="0 0 0"
-							startalpha="0"
-							midalpha="0"
-							endalpha="0"
-						/>
-					</twopointtrailemitter>
-				</template>
-				
-				<instance name="trails" bone01="_bone_fx_01"  bone02="_bone_fx_02"/>
-				<instance name="trails" bone01="_bone_fx_03"  bone02="_bone_fx_04"/>
-				<instance name="trails" bone01="_bone_fx_05"  bone02="_bone_fx_06"/>
-
-				<instance name="trails" bone01="_bone_fx_07"  bone02="_bone_fx_08"/>
-<!--
-				<instance name="trails" bone01="_bone_fx_09"  bone02="_bone_fx_10"/>
-				<instance name="trails" bone01="_bone_fx_11"  bone02="_bone_fx_12"/>
--->
-			</model>
-
-		</particlesystem>
-
-		<particlesystem name="system1" space="world" scale=".1">
-		
-
-			<simpleemitter
-				position="0 0 0"
-				spawnrate="1"
-				particlelife="2000"
-				offsetsphere="1100 1100 0"
-			>
-				<particle>
-
-					<billboard 
-						scale="50"
-						life="2000"
-						startcolor="0 0 0"
-						midcolor="1.0 .3 .2"
-						endcolor=" 0 0 0"
-						midcolorpos=".75"
-						material=""
-						lockup="1"
-						lockright="1"
-						pitch="90"
-						depthbias="-25"
+						maxangle="360"
+						minanglespeed="-20"
+						maxanglespeed="20"
+						startcolor=".09 0 0"
+						endcolor=".7 .2 0"
+						startalpha=".35"
+						endalpha="0"
+						startsize="70"
+						endsize="125"
+						flare="1"
 					/>
+					<particle 
+						minangle="0"
+						maxangle="360"
+						minanglespeed="-40"
+						maxanglespeed="40"
+						startcolor=".85 .8 .8"
+						endcolor=".7 .2 0"
+						startalpha=".25"
+						endalpha="0"
+						startsize="50"
+						endsize="145"
+						flare="0"
+					/>
+				</simpleemitter>
+
+				<!-- lava flow -->	
+
+				<!-- <billboard
+					life="500"
+					position="{position2}"
+					material="/shared/effects/materials/whitedot.material"
+					startcolor="0"
+					endcolor=".3 .05 0"
+					size="{size3}"
+					depthbias="-100"
+					lockup="1"
+					pitch="90"
+				/> -->
+
+				<!-- <billboard
+					delay="500"
+					expirelife="1000"
+					position="{position2}"
+					material="/shared/effects/materials/whitedot.material"
+					startcolor=".3 .05 0"
+					endcolor="0"
+					size="{size3}"
+					depthbias="-100"
+					lockup="1"
+					pitch="90"
+				/> -->
 					
-				</particle>
+				<!-- steam from lava pits -->
+
+				<simpleemitter
+					delay="500"
+					expirelife="500"
+					startparticlealpha="1"
+					endparticlealpha="0"
+					spawnrate="20"
+					particlelife="3000"
+					maxspeed="200"
+					drag="0.02"						
+					position="{position}"
+					minangle="0"
+					maxangle="1"
+					direction="0 0 1"
+					material="/shared/effects/materials/smoke_particle.material"
+					offsetsphere="10 10 0"
+				>
+					<particle 
+						minangle="0"
+						maxangle="360"
+						minanglespeed="-30"		
+						maxanglespeed="30"
+						startcolor="1 1 0"
+						midcolor=".8 .5 0"
+						midcolorpos=".05"
+						endcolor=".7"
+						startsize="24"
+						midsize="55"
+						endsize="345"
+						midsizepos=".65"
+						startalpha="0"
+						midalpha=".2"
+						endalpha="0"
+						midalphapos=".2"
+					 />			
+
+				</simpleemitter>
+
+			</template>
+
+			<instance name="lava" width="80" size1="135" size2="45" size3="400" yaw1="15" yaw2="-15" position="-170 20 0" position2="-170 20 10" />
+			<instance name="lava" width="30" size1="105" size2="30" size3="200" yaw1="65" yaw2="30" position="280 20 0" position2="280 20 10" />
+			<instance name="lava" width="45" size1="115" size2="55" size3="300" yaw1="125" yaw2="90" position="50 250 0" position2="50 250 10" />
+			<instance name="lava" width="30" size1="55" size2="35" size3="200" yaw1="-45" yaw2="-70" position="150 -350 0" position2="150 -350 10" />
+			<instance name="lava" width="30" size1="172" size2="85" size3="400" yaw1="185" yaw2="150" position="-250 -200 0" position2="-250 -200 10" />
+
+			<!-- cloud  -->
+
+			<simpleemitter	
+				spawnrate="25"			
+				particlelife="1900"			
+				gravity="-.1"
+				speed="60"
+				drag=".01"
+				position="0 0 205"
+				depthbias="-30"
+				material="/shared/effects/materials/smoke_particle.material"
+				offsetsphere="400 400 20"
+				minangle="-265"
+				maxangle="265"
+				direction="0 0 -1"
+			>
+				<particle 
+					startcolor=".8 .2 0"
+					endcolor=".8 .5 0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-30"
+					maxanglespeed="30"
+					startsize="235"
+					endsize="455"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+					lockup="true"
+					pitch="90"
+				/>
 			</simpleemitter>
 
+			<!-- distortion -->
+
+			<simpleemitter	
+				delay="300"	
+				spawnrate="170"			
+				particlelife="300"			
+				gravity="500"
+				speed="60"
+				drag=".01"
+				position="0 0 65"
+				depthbias="-200"
+				material="/shared/effects/materials/refract_wellwave.material"
+				offsetsphere="430 420 60"
+				minangle="-265"
+				maxangle="265"
+				direction="0 0 -1"
+			>
+				<particle 
+					minangle="0"
+					maxangle="60"
+					minanglespeed="-10"
+					maxanglespeed="10"
+					startsize="85"
+					endsize="85"
+					param=".0160"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
 		</particlesystem>
+
 	</definitions>
+
 	<thread>
 		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<camerashake2 scale="8.0" radius="1200" duration="400" frequency="22" />	
 		<waitfordeath instance="instance0" />
-		<waitfordeath instance="instance1" />
-		<!-- <die /> -->
 	</thread>
+
 </effect>
-
-<!-- [min|max][start|mid|end]property[speed][position] -->
-
