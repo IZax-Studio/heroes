@@ -12,8 +12,18 @@
 				linearfalloff="true" 
 				falloffstart="0"
 				falloffend="1000"
-				volume=".6"
+				volume="1"
 				sample="/heroes/flamedragon/alt9/sounds/ab3_imp_%.wav"
+			/>
+		<sound
+		        pitchshift="true"
+				minpitch="0.8"
+				maxpitch="1.1"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1000"
+				volume=".6"
+				sample="../../sounds/impact_%.ogg"
 			/>
 		
 			 <simpleemitter

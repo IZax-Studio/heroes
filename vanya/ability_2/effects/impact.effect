@@ -16,29 +16,29 @@
 				falloffstart="1000"
 				falloffend="2500"
 				volume=".5"
-				sample="../sounds/impact_new.wav"
+				sample="../sounds/impact_new_%.wav"
 			/>
 
-			<simpleemitter
+			<!-- <simpleemitter
 				life="800"
 				delay="0"
 				bone="_bone_centerofchest"
-				spawnrate="22"
-				particlelife="300"
-				gravity="0"         	
-				drag=".1"
+				spawnrate="10"
+				particlelife="200"
+				gravity="-.1"         	
+				drag="0"
 				acceleration="0.0"
-				position="0 0 30"
-				offsetsphere="40 40 40"
+				position="0 -100 0"
+				offsetsphere="0 0 0"
 				material="/shared/effects/materials/3d_slash_02.material"
 			>
 				<particle 
-					size="150"
+					size="500"
 					startframe="0.0"
 					endframe="1.0"
 					color="1"
-					minyaw="-360"
-					maxyaw="360"
+					minyaw="-300"
+					maxyaw="300"
 					
 					
 				/>
@@ -49,9 +49,9 @@
 				life="800"
 				delay="0"
 				bone="_bone_centerofchest"
-				spawnrate="22"
+				spawnrate="1"
 				particlelife="300"
-				gravity="100"         	
+				gravity="0"         	
 				drag="0"
 				acceleration="0.0"
 				position="0 0 30"
@@ -69,7 +69,7 @@
 					
 				/>
 				
-			</simpleemitter>
+			</simpleemitter> -->
 			
 			<light
 				life="500"			
@@ -280,8 +280,8 @@
 					<particle
 						maxangle="360"
 						startsize="0"
-						midsize="300"
-						endsize="400"
+						midsize="100"
+						endsize="200"
 						startcolor="1"
 						midcolor="1 .25 0"
 						endcolor="1 0 0"
@@ -300,7 +300,7 @@
 					minangle="-90"
 					maxangle="-90"
 					bone="_bone_centerofchest"
-					life="400"
+					life="200"
 					spawnrate="650"
 					count="40"
 					minparticlelife="230"
@@ -335,7 +335,7 @@
 					minangle="-90"
 					maxangle="-90"
 					bone="_bone_centerofchest"
-					life="400"
+					life="200"
 					spawnrate="650"
 					count="40"
 					minparticlelife="230"
@@ -367,7 +367,7 @@
 				</simpleemitter>
 
 				<simpleemitter
-					life="600"
+					life="400"
 					count="10"
 					position="0 0 55"
 					spawnrate="500"				
