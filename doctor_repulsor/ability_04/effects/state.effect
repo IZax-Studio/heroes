@@ -128,12 +128,12 @@
 					material="/shared/effects/materials/arrow_trail.material"
 				>
 					<particle
-						 startcolor="0 0 .75"
+						 startcolor="0 0 1"
 						 midcolor="0.05 0.2 0.4"
 						 endcolor="0 0 0"
-						 startsize="110"
-						 midsize="1800"
-						 endsize="130"
+						 startsize="330"
+						 midsize="3800"
+						 endsize="330"
 						 midsizepos="1000"
 					/>
 				</trailemitter>	

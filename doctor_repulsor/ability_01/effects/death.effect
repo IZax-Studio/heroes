@@ -16,7 +16,7 @@
 				linearfalloff="true"
 				falloffstart="400"
 				falloffend="2000"
-				volume=".75"
+				volume="1"
 				sample="../sounds/impact.wav"
 			/>
 
