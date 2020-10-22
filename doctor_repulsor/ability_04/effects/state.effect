@@ -361,6 +361,199 @@
 				midcolor=".5 .5 1"			
 				endcolor=".5 .5 1"
 			/>
+
+			<!-- shield -->
+
+			<controller bone="_bone_centerofchest" expirelife="500" startscale="1.25" endscale="0" position="0 0 -20">
+			
+				<model
+					startcolor=".5 .5 1"
+					model="/heroes/artesia/projectile/effects/orb/orb.mdf"
+					material="/shared/effects/materials/shell4.material"
+					scale=".4"
+					minyawspeed="-180"
+					maxyawspeed="180"
+					minpitchspeed="-180"
+					maxpitchspeed="180"
+				/>				
+				
+				<model
+					startcolor=".5 .5 1"
+					model="/heroes/artesia/projectile/effects/orb/orb.mdf"
+					material="/shared/effects/materials/shell2.material"
+					scale=".4"
+					minyawspeed="-180"
+					maxyawspeed="180"
+					minpitchspeed="-180"
+					maxpitchspeed="180"
+				/>
+
+				<model
+					startcolor=".5 .5 1"
+					model="/heroes/artesia/projectile/effects/orb/orb.mdf"
+					material="/shared/effects/materials/shell2.material"
+					scale=".5"
+					minyawspeed="-180"
+					maxyawspeed="180"
+					minpitchspeed="-180"
+					maxpitchspeed="180"
+				/>
+				
+				<model
+					startcolor=".5 .5 1"
+					model="/heroes/artesia/projectile/effects/orb/orb.mdf"
+					material="/shared/effects/materials/shell2.material"
+					scale=".4"
+					minyawspeed="-180"
+					maxyawspeed="180"
+					minpitchspeed="-180"
+					maxpitchspeed="180"
+				/>
+
+				<model
+					startcolor=".5 .5 1"
+					model="/heroes/artesia/projectile/effects/orb/orb.mdf"
+					material="/shared/effects/materials/shell2.material"
+					scale=".5"
+					minyawspeed="-180"
+					maxyawspeed="180"
+					minpitchspeed="-180"
+					maxpitchspeed="180"
+				/>
+				
+				<model
+					startcolor="5 5 10"
+					model="/heroes/artesia/projectile/effects/orb/orb.mdf"
+					material="/shared/effects/materials/shell2.material"
+					scale=".4"
+					minyawspeed="-180"
+					maxyawspeed="180"
+					minpitchspeed="-180"
+					maxpitchspeed="180"
+				/>
+
+				<model
+					startcolor="5 5 10"
+					model="/heroes/artesia/projectile/effects/orb/orb.mdf"
+					material="/shared/effects/materials/shell2.material"
+					scale=".5"
+					minyawspeed="-180"
+					maxyawspeed="180"
+					minpitchspeed="-180"
+					maxpitchspeed="180"
+				/>
+
+				<model
+					startcolor="1 1 1"
+					model="/heroes/artesia/projectile/effects/orb/orb.mdf"
+					material="/shared/effects/materials/shell4.material"
+					scale=".5"
+					minyawspeed="-180"
+					maxyawspeed="180"
+					minpitchspeed="-180"
+					maxpitchspeed="180"
+				/>
+
+				<billboard
+					material="/shared/effects/materials/whitedot_blend.material"
+					color="5 5 10"
+					size="400"
+					depthbias="-50"
+					loop="true"
+				/>
+				
+
+
+				<billboard
+					material="/shared/effects/materials/refract_pinch.material"
+					param=".1"
+					alpha=".3"
+					size="200"
+					minroll="-360"
+					maxroll="360"
+					minrollspeed="-180"
+					maxrollspeed="180"
+					depthbias="-50"
+					loop="true"
+				/>
+
+				<billboard
+					material="/shared/effects/materials/corona_07.material"
+					startcolor=".5 .5 1"
+					endcolor="0"
+					size="200"
+					lockup="1"
+					minyaw="-360"
+					maxyaw="360"
+					minyawspeed="-180"
+					maxyawspeed="180"
+					minpitchspeed="-180"
+					maxpitchspeed="180"
+				/>
+				
+				<billboard
+					material="/shared/effects/materials/corona_07_blend.material"
+					startcolor="1 1 1"
+					endcolor="0"
+					size="200"
+					lockup="1"
+					minyaw="-360"
+					maxyaw="360"
+					minyawspeed="-180"
+					maxyawspeed="180"
+					minpitchspeed="-180"
+					maxpitchspeed="180"
+				/>				
+				
+				<billboard
+					material="/shared/effects/materials/corona_07_blend.material"
+					startcolor="5 5 10"
+					endcolor="0"
+					size="200"
+					lockup="1"
+					minyaw="-360"
+					maxyaw="360"
+					minyawspeed="-180"
+					maxyawspeed="180"
+					minpitchspeed="-180"
+					maxpitchspeed="180"
+				/>
+				
+			</controller>
+
+				<simpleemitter	
+					bone="_bone_centerofchest"
+					spawnrate="150"
+					particlelife="400"
+					depthbias="50"		
+					acceleration="50"
+					material="/shared/effects/materials/star_03.material"
+					offsetsphere="40 40 40"
+					gravity="-10"
+					position="0 0 -20"
+				>
+					<particle 
+						minangle="-90"
+						maxangle="90"
+						minanglespeed="100"
+						color=".5 .5 .5"
+						midcolorpos=".2"
+						maxanglespeed="0"
+						startframe="0"
+						endframe="1"				
+						minsize="5"		
+						maxsize="10"
+						midsizepos=".2"		
+						anchor="1"
+					/>
+				</simpleemitter> 	
+
+			<model
+				parentmodel="1"
+				parentskeleton="1"
+				color=".5 .5 1"
+				material="/shared/effects/materials/shell_flat_outline.material"
+			/>
 			
       </particlesystem>
    </definitions>
