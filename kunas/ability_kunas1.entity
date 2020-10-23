@@ -2,7 +2,8 @@
 <ability
 	name="Ability_Kunas1"
 	
-	icon="icon1.tga"
+	icon="icons/ability_1.tga"
+	passiveeffect="effects/ability_01/gauntlet.effect"
 	
 	anim="ability_1"
 	casttime="1000"

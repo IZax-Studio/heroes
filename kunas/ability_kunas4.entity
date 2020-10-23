@@ -2,7 +2,7 @@
 <ability
 	name="Ability_Kunas4"
 
-	icon="icon4.tga"
+	icon="icons/ability_4.tga"
 
 	anim="ability_4"
 	casttime="1000"
@@ -207,4 +207,3 @@
 		</onlearn>
 	</altavatar>
 </ability>
-z

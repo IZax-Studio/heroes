@@ -5,11 +5,11 @@
 
 			
 			<sound
-				sample="/heroes/kunas/ability_04/sounds/ability_04.wav"
+				sample="/heroes/kunas/ability_04/sounds/staff_cast.wav"
 				volume=".65"
 				linearfalloff="true"
-				falloffstart="24000"
-				falloffend="25000"
+				falloffstart="1300"
+				falloffend="2000"
 			/>	
 	
 		</particlesystem>

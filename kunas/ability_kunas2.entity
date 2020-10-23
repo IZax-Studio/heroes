@@ -2,7 +2,7 @@
 <ability
 	name="Ability_Kunas2"
 	
-	icon="icon2.tga"
+	icon="icons/ability_2.tga"
 	
 	anim="ability_2"
 	casttime="1000"

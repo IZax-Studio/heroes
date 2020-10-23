@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Kunas_Ability1"
+
+	radius="500"
+	
+	impactdelay="200"
+	maximpactsperinterval="1"
+	maximpactspertarget="1"
+	targetscheme="visible_enemy_units"
+	targetselection="closest"
+	effecttype="Magic"
+	persist="true"
+	
+	impacteffect="effects/ability_01/chain_impact.effect"
+	linkeffect="effects/ability_01/chain_lightning_link.effect"
+>
+	<onimpact>
+		<targettype type="alive" source="this_proxy_entity" target="this_proxy_entity">
+			<chain count="2,4,6,8"/>
+		</targettype>
+		<else>
+			<!-- 1 less chain if the target is already dead -->
+			<chain count="1,3,5,7"/>
+		</else>
+		<compare a="target_entity" b="proxy_entity" op="eq" />
+		<else>
+			<damage effecttype="Magic" amount="85,100,115,130" />
+		</else>
+	</onimpact>
+	
+	<altavatar key="Hero_Kunas.Alt2" modpriority="1"
+		impacteffect="alt2/effects/ability_01/chain_impact.effect"
+		linkeffect="alt2/effects/ability_01/chain_lightning_link.effect"
+	/>
+	
+	<altavatar key="Hero_Kunas.Alt3" modpriority="1"
+		impacteffect="alt3/effects/ability_01/chain_impact.effect"
+		linkeffect="alt3/effects/ability_01/chain_lightning_link.effect"
+	/>
+	
+	<altavatar key="Hero_Kunas.Alt7" modpriority="1"
+		impacteffect="alt7/ability_01/effects/chain_impact.effect"
+		linkeffect="alt7/ability_01/effects/chain_lightning_link.effect"
+	/>
+	
+	<altavatar key="Hero_Kunas.Alt8" modpriority="90"
+		impacteffect="alt8/center/ability_01/effects/chain_impact.effect"
+		linkeffect="alt8/center/ability_01/effects/chain_lightning_link.effect"
+	>
+		<modifier key="East" modpriority="100"
+			impacteffect="alt8/east/ability_01/effects/chain_impact.effect"
+			linkeffect="alt8/east/ability_01/effects/chain_lightning_link.effect"
+		/>
+		
+		<modifier key="North" modpriority="100"
+			impacteffect="alt8/north/ability_01/effects/chain_impact.effect"
+			linkeffect="alt8/north/ability_01/effects/chain_lightning_link.effect"
+		/>
+		
+		<modifier key="South" modpriority="100"
+			impacteffect="alt8/south/ability_01/effects/chain_impact.effect"
+			linkeffect="alt8/south/ability_01/effects/chain_lightning_link.effect"
+		/>
+		
+		<modifier key="West" modpriority="100"
+			impacteffect="alt8/west/ability_01/effects/chain_impact.effect"
+			linkeffect="alt8/west/ability_01/effects/chain_lightning_link.effect"
+		/>
+		
+		<modifier key="Center" modpriority="100"
+			impacteffect="alt8/center/ability_01/effects/chain_impact.effect"
+			linkeffect="alt8/center/ability_01/effects/chain_lightning_link.effect"
+		/>
+		
+		<modifier key="alt_Spellshards" modpriority="101"
+			impacteffect="alt8/spellshards/ability_01/effects/chain_impact.effect"
+			linkeffect="alt8/spellshards/ability_01/effects/chain_lightning_link.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Kunas.Alt9" modpriority="1"
+		impacteffect="alt9/ability_01/effects/chain_impact.effect"
+	/>
+	
+	<altavatar key="Hero_Kunas.Alt10" modpriority="1"
+		impacteffect="alt10/ability_01/effects/chain_impact.effect"
+		linkeffect="alt10/ability_01/effects/chain_lightning_link.effect"
+	/>
+	
+	<altavatar key="Hero_Kunas.Alt11" modpriority="1"
+		impacteffect="alt11/ability_01/effects/chain_impact.effect"
+		linkeffect="alt11/ability_01/effects/chain_lightning_link.effect"
+	/>
+</affector>

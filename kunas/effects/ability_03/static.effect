@@ -13,21 +13,6 @@
 			/>
 
 
-			<model
-				life="350"
-				parentmodel="true"
-				parentskeleton="true"
-				startcolor="0 .65 3"
-				endcolor="0 .65 1"
-				startscale="1"
-				midscale="1"
-				endscale="1"
-				midscalepos=".7"
-				material="/shared/effects/materials/shell_flat_outline.material"
-				startalpha="10"
-				endalpha="0"
-			/>
-			
 			<!-- white to light -->	
 			<simpleemitter
 				

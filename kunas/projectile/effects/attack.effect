@@ -6,7 +6,7 @@
 		<particlesystem name="system0" space="world" scale=".8">
 
 			<billboard
-				life="100"
+				life="400"
 				position="0 135 95"
 				material="/shared/effects/materials/starlight.material"
 				startcolor=".2 .5 .1"
@@ -16,7 +16,7 @@
 			/>
 			
 			<billboard
-				life="100"
+				life="250"
 				position="0 135 95"
 				material="/shared/effects/materials/wisp_06.material"
 				startcolor="1 1 1"
@@ -27,7 +27,7 @@
 			/>
 			
 			<billboard
-				life="100"
+				life="250"
 				position="0 135 95"
 				material="/shared/effects/materials/blink.material"
 				startcolor="1 1 1"
@@ -39,7 +39,7 @@
 			/>
 			
 			<billboard
-				life="100"
+				life="400"
 				position="0 135 95"
 				material="/shared/effects/materials/whitedot.material"
 				startcolor="0 0 1"
@@ -48,7 +48,26 @@
 				depthbias="-30"
 			/>
 
-
+			<simpleemitter
+				delay="-150"
+				spawnrate="35"
+				position="0 135 95"
+				life="200"
+				particlelife="300"			
+				offsetsphere="20"
+          			material="/shared/effects/materials/femme_lightning_01.material"
+         	>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startcolor="1 1 1"
+					endcolor=".2 .6 1"
+					startsize="5"
+					endsize="30"
+					flare="1"
+					anchor="1"
+				/>
+        	</simpleemitter>
 			
 			<simpleemitter
 				position="0 135 95"

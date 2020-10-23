@@ -3,33 +3,31 @@
 	name="Hero_Kunas"
 
 	team="Legion"
-	icon="Zeus.tga"
-	portrait="Zeus.tga"
+	icon="icons/hero.tga"
+	portrait="icons/hero.tga"
 	model="model.mdf"
 	skin=""
 	
-	passiveeffect="effects/body.effect"
+	passiveeffect=""
 	spawneffect=""
 	respawneffect="/shared/effects/respawn.effect"
 	selectedsound="sounds/voice/select_%.wav"
 	selectedflavorsound="sounds/voice/select_flavour_%.wav"
 	confirmmovesound="sounds/voice/move_%.wav"
 	confirmattacksound="sounds/voice/attack_%.wav"
-	nomanasound="sounds/voice/no_mana_1.wav"
-	cooldownsound="sounds/voice/cooldown_%.wav"
+	nomanasound="sounds/voice/no_mana.wav"
+	cooldownsound="sounds/voice/cooldown.wav"
 	announcersound="sounds/voice/hero_select.wav"
 	tauntedsound="sounds/voice/taunt_prior.wav"
 	tauntkillsound="sounds/voice/taunt_after.wav"
 	
-	preglobalscale="1.0"
+	preglobalscale="1.35"
 	modelscale="1.0"
 	effectscale="1.08"
 	boundsheight="112"
 	boundsradius="24"
 	selectionradius="54"
 	targetoffset="0 0 64"
-	infoheight="170"
-	portraitcampos="15 5 57"
 	
 	category="magic"
 	difficulty="1.5"
@@ -98,15 +96,15 @@
 	intelligence="23"
 	intelligenceperlevel="3.0"
 	
-	previewmodel="model.mdf"
+	previewmodel="preview.mdf"
 	previewpos="0 0 -50"
 	previewangles="0 0 0"
 	previewscale="1.3"
 
-	storemodel="model.mdf"
-	storepos="0 0 -15"
+	storemodel="preview.mdf"
+	storepos="0 0 -20"
 	storeangles="0 0 0"
-	storescale="0.9"
+	storescale="1.45"
 	
 	corpsetime="3000"
 	corpsefadetime="5000"
@@ -139,6 +137,30 @@
 		passiveeffect="effects/staff_fx.effect"
 	>
 	</modifier>
+	
+	<!-- <modifier key="gated" modpriority="200"
+		movespeed="300"
+		attackrange="450"
+		magicarmor="5"
+		armor="0.3"
+		
+		inventory0="Reborn_Ability_Thunderbringer1"
+		inventory1="Reborn_Ability_Thunderbringer2"
+		inventory2="Reborn_Ability_Thunderbringer3"
+		inventory3="Reborn_Ability_Thunderbringer4"
+		
+		attackdamagemin="13"
+		attackdamagemax="21"
+		
+		primaryattribute="Intelligence"
+		strength="15"
+		strengthperlevel="2.0"
+		agility="10"
+		agilityperlevel="1.0"
+		intelligence="30"
+		intelligenceperlevel="3.5"
+	>
+	</modifier> -->
 	
 	<altavatar key="Hero_Kunas.Alt" modpriority="1"
 		altavatar="true"
@@ -249,8 +271,9 @@
 		
 		icon2="alt4/icon.tga"
 		portrait="alt4/icon.tga"
-		model="model.mdf"
+		model="alt4/model.mdf"
 		
+		preglobalscale="2"
 		passiveeffect="alt4/effects/body.effect"
 		
 		attackprojectile="Projectile_KunasAttack_Alt3"
@@ -281,7 +304,7 @@
 		
 		icon2="alt5/icon.tga"
 		portrait="alt5/icon.tga"
-		model="model.mdf"
+		model="alt5/model.mdf"
 		passiveeffect="alt5/effects/body.effect"
 		
 		previewmodel="alt5/preview.mdf"
@@ -294,6 +317,7 @@
 		storeangles="0 0 0"
 		storescale="1.3"
 		
+		preglobalscale="1.52"
 		selectedsound="alt5/sounds/voice/select_%.wav"
 		selectedflavorsound="alt5/sounds/voice/select_flavour_%.wav"
 		confirmmovesound="alt5/sounds/voice/move_%.wav"
@@ -702,7 +726,6 @@
 		portrait="alt10/icon.tga"
 		model="alt10/model.mdf"
 		modelscale="1.25"
-		preglobalscale="1.25"
 		
 		previewmodel="alt10/preview.mdf"
 		previewpos="0 0 -50"
@@ -780,7 +803,7 @@
 		
 		icon2="pog_skin/icon.tga"
 		portrait="pog_skin/icon.tga"
-		model="model.mdf"
+		model="pog_skin/model.mdf"
 		
 		previewmodel="pog_skin/preview.mdf"
 		previewpos="0 0 -50"

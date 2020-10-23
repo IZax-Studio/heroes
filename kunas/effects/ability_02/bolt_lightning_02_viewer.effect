@@ -5,37 +5,57 @@
 		
 
 			<sound
-				sample="/heroes/kunas/sounds/custom/ab2_cast.wav"
+				sample="/heroes/kunas/ability_02/sounds/ability_02.wav"
 				volume="0.5"
 				linearfalloff="true"
-				falloffstart="2000"
+				falloffstart="1500"
 				falloffend="2500"
 			/>
 			
-			<light
-				life="1150"			
-				startcolor="0 1.8 3"			
-				endcolor="0"
-				midcolorpos=".5"
-				falloffstart="100"
-				falloffend="1700"
-				position="0 0 700"	
-			/>
-			
 			<beam
-				life="220"
-				delay="0"
-				bone_a="_bone_head"
-				bone_b="_bone_head"
-				position_a="0 0 750"
-				size="140"
-				color=".2 .5 2"
-				endcolor=".5 .5 1"
-				startalpha="1"
-				midalpha=".5"
-				endalpha="0"
+				life="350"
+				bone_b="_bone_centerofchest"
+				position_a="0 0 540"
+				size="40"
+				color=".35 .35 .35"
+				alpha="1.0"
 				material="/shared/effects/materials/femme_lightning_10.material"
-				framespeed="15.75"
+				framespeed="1.75"
+
+			/>
+
+			<beam
+				life="350"
+				bone_b="_bone_centerofchest"
+				position_a="0 0 540"
+				size="40"
+				color=".5 1 1"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				framespeed="1.75"
+
+			/>
+			<beam
+				life="350"
+				bone_b="_bone_centerofchest"
+				position_a="0 0 440"
+				size="60"
+				color=".1 .5 .5"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				framespeed="1.75"
+			/>
+
+			<beam
+				life="350"
+				bone_a="_bone_centerofchest"
+				bone_b="_bone_centerofchest"
+				position_a="0 0 440"
+				size="60"
+				color=".1 .5 .5"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				framespeed="1.75"
 			/>
 
 			<billboard

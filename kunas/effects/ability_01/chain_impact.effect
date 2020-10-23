@@ -4,7 +4,7 @@
 		<particlesystem name="system0" space="world">
 
 		<sound
-			sample="/heroes/kunas/sounds/custom/ab1_impact_%.wav"
+			sample="/heroes/kunas/ability_01/sounds/ability_01_impact_0%.wav"
 			volume="0.6"
 			linearfalloff="true"
 			falloffstart="1000"
@@ -163,12 +163,12 @@
 
 			bone="_bone_centerofchest"
 
-			life="2350"
+			life="1350"
 			delay="0"
-			spawnrate="1000"
-			count="350"
-			particlelife="250"			
-			gravity="15"
+			spawnrate="3000"
+			count="5"
+			particlelife="850"			
+			gravity="-.5"
 			speed="50"
 			drag="0"
 			acceleration="0"
@@ -196,9 +196,9 @@
 
 				startframe="0"
 				endframe="1"
-				startsize="5"
-				midsize="25"
-				endsize="35"
+				startsize="15"
+				midsize="35"
+				endsize="55"
 				midsizepos=".05"	
 				
 				

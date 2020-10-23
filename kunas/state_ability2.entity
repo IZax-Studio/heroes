@@ -2,7 +2,7 @@
 <state
 	name="State_Kunas_Ability2"
 
-	icon="icon2.tga"
+	icon="icons/ability_2.tga"
 
 	passiveeffect="alt7/ability_02/effects/state.effect"
 
