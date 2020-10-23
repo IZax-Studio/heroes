@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+		<particlesystem name="system0" space="world" >
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2000"
+				volume="1" 
+				sample="../sounds/new_cast.wav"
+			/>
+
+
+			<billboard
+				bone="_bone_fx_03"
+				life="800"
+				startsize="20"
+				midsize="100"
+				endsize="20"
+				midsizepos=".1"
+				
+				material="/shared/effects/materials/whitedot.material"
+				
+				startcolor="0"
+				midcolor="0 1 0"
+				endcolor="0"
+				midcolorpos=".1"
+			
+			/>
+			
+			<simpleemitter
+				delay="200"
+				bone="_bone_fx_03"
+				count="20"
+				minparticlelife="1500"
+				maxparticlelife="2500"
+				offsetsphere="20 20 0"
+				gravity="-2"
+				minspeed="10"
+				maxspeed="60"								
+				direction="0 0 1"
+				angle="40"
+				material="/shared/effects/materials/spark_10.material"
+			>			
+				<particle
+					startcolor="0"
+					midcolor="0 1 0"
+					endcolor="0 0 0"
+					midcolorpos=".4"
+					minsize="6"
+					maxsize="12"
+					lockup="false"
+					lockright="false"
+					minangle="-360"
+					maxangle="1"
+					minanglespeed="110"
+					maxanglespeed="-110"
+				/>
+			</simpleemitter>
+		</particlesystem>
+	</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<waitfordeath instance="instance0" />
+</thread>
+</effect>

@@ -10,15 +10,64 @@
 	actiontype="passive"
 	targetradius="900"
 	
+	noshuffle="true"
+	dynamicprecache="effects/ability_03/static.effect"
+	
 	modifierkey="lightningrod1,lightningrod2,lightningrod3,lightningrod4"
 >
-	<onabilityimpact>
-		<spawnaffector name="Affector_Kunas_Ability3" target="this_owner_entity" />
-	</onabilityimpact>
+	<onlearn>
+		<setscriptvalue name="impact_effect" value="effects/ability_03/static.effect" entity="this_entity" />
+	</onlearn>
+	
+	<!-- When inflicting ability damage, apply the bonus damage -->
+	<ondamage>
+		<!-- Prevent infinite loops -->
+		<entitytype type="Ability_Kunas3" target="inflictor_entity" />
+		<else>
+			<cantarget targetscheme="enemy_heroes" effecttype="Magic">
+				<!-- Q is the damage source -->
+				<entitytype type="Ability_Kunas1" target="inflictor_entity">
+					<setaccumulator value="1" />
+				</entitytype>
+				<entitytype type="Affector_Kunas_Ability1" target="inflictor_entity">
+					<setaccumulator value="1" />
+				</entitytype>
+				
+				<!-- W is the damage source -->
+				<entitytype type="Ability_Kunas2" target="inflictor_entity">
+					<setaccumulator value="1" />
+				</entitytype>
+				
+				<!-- R is the damage source -->
+				<entitytype type="Ability_Kunas4" target="inflictor_entity">
+					<setaccumulator value="1" />
+				</entitytype>
+				<entitytype type="Affector_Kunas_Ability4" target="inflictor_entity">
+					<setaccumulator value="1" />
+				</entitytype>
+				
+				<!-- If any of the above conditions pass true, then deal the bonus damage -->
+				<compare a="accumulator" b="1" op="eq">
+					<damage effecttype="Magic Splash" amount="0.02,0.04,0.06,0.08" b="target_health" op="mult" />
+					<popup name="bonus_damage" a="result" source="target_entity" target="source_entity" />
+					
+					<!-- Dynamic VFX -->
+					<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+					<playeffectdynamic effect="str0" source="target_entity" occlude="true" />
+					<getscriptvalue name="ground_area_lightning_effect" destvar="str0" entity="this_entity" /> <!-- Optional ground lightning effect for 1 avatar -->
+					<setstr1 a="" />
+					<comparestrings a="str0" b="str1" op="ne">
+						<playeffectdynamic effect="str0" source="target_entity" occlude="true" />
+					</comparestrings>
+				</compare>
+				<setaccumulator value="0" />
+			</cantarget>
+		</else>
+	</ondamage>
 	
 	<onimpact />
 	
-	<modifier key="ult_boost" modpriority="100"
+	<modifier key="ult_boost" modpriority="150"
 		actiontype="no_target"
 		cooldowntime="200"
 		
@@ -38,11 +87,101 @@
 			</else>
 		</onimpact>
 	</modifier>
-
-	<modifier key="krosmode" modpriority="100"
+	
+	<altavatar key="Hero_Kunas.Alt2" modpriority="1"
+		dynamicprecache="alt2/effects/ability_03/static.effect"
 	>
-		<onabilityimpact>
-			<spawnaffector name="Affector_Kunas_Ability3" target="this_owner_entity" />
-		</onabilityimpact>
-	</modifier>
+		<onlearn>
+			<setscriptvalue name="impact_effect" value="alt2/effects/ability_03/static.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Kunas.Alt7" modpriority="1"
+		dynamicprecache="alt7/ability_03/effects/static.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="impact_effect" value="alt7/effects/ability_03/static.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Kunas.Alt8" modpriority="90"
+		dynamicprecache="alt8/center/ability_03/effects/static.effect,alt8/east/ability_03/effects/static.effect,alt8/north/ability_03/effects/static.effect,alt8/south/ability_03/effects/static.effect,alt8/west/ability_03/effects/static.effect,alt8/center/ability_03/effects/static.effect,alt8/spellshards/ability_03/effects/static.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="impact_effect" value="alt8/center/ability_03/effects/static.effect" entity="this_entity" />
+		</onlearn>
+		
+		<modifier key="East" modpriority="100">
+			<onlearn>
+				<setscriptvalue name="impact_effect" value="alt8/east/ability_03/effects/static.effect" entity="this_entity" />
+			</onlearn>
+		</modifier>
+		
+		<modifier key="North" modpriority="100"
+			dynamicprecache="alt8/north/ability_03/effects/static.effect"
+		>
+			<onlearn>
+				<setscriptvalue name="impact_effect" value="alt8/north/ability_03/effects/static.effect" entity="this_entity" />
+			</onlearn>
+		</modifier>
+		
+		<modifier key="South" modpriority="100"
+			dynamicprecache="alt8/south/ability_03/effects/static.effect"
+		>
+			<onlearn>
+				<setscriptvalue name="impact_effect" value="alt8/south/ability_03/effects/static.effect" entity="this_entity" />
+			</onlearn>
+		</modifier>
+		
+		<modifier key="West" modpriority="100"
+			dynamicprecache="alt8/west/ability_03/effects/static.effect"
+		>
+			<onlearn>
+				<setscriptvalue name="impact_effect" value="alt8/west/ability_03/effects/static.effect" entity="this_entity" />
+			</onlearn>
+		</modifier>
+		
+		<modifier key="Center" modpriority="100"
+			dynamicprecache="alt8/center/ability_03/effects/static.effect"
+		>
+			<onlearn>
+				<setscriptvalue name="impact_effect" value="alt8/center/ability_03/effects/static.effect" entity="this_entity" />
+			</onlearn>
+		</modifier>
+		
+		<modifier key="alt_Spellshards" modpriority="101"
+			dynamicprecache="alt8/spellshards/ability_03/effects/static.effect"
+		>
+			<onlearn>
+				<setscriptvalue name="impact_effect" value="alt8/spellshards/ability_03/effects/static.effect" entity="this_entity" />
+			</onlearn>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Kunas.Alt9" modpriority="1"
+		dynamicprecache="alt9/ability_03/effects/static.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="impact_effect" value="alt9/effects/ability_03/static.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Kunas.Alt10" modpriority="1"
+		dynamicprecache="alt10/ability_03/effects/static.effect,alt10/ability_03/effects/ground_area_lightning.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="impact_effect" value="alt10/effects/ability_03/static.effect" entity="this_entity" />
+			<compare a="level" b="4" op="le">
+				<setscriptvalue name="ground_area_lightning_effect" value="alt10/ability_03/effects/ground_area_lightning.effect" entity="this_entity" />
+			</compare>
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Kunas.Alt11" modpriority="1"
+		dynamicprecache="alt11/ability_03/effects/static.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="impact_effect" value="alt11/effects/ability_03/static.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
 </ability>

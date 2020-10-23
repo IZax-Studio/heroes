@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" entityeffectsacle="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="entity" scale=".8">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2000"
+				volume="1" 
+				sample="../sounds/new_impact.wav"
+			/>
+
+			<groundsprite
+				life="900"
+				startcolor="1 .5 0"
+				endcolor="0"
+				startyaw="0"
+				endyaw="-48"
+				startsize="10"
+				midsize="274"
+				endsize="320"
+				midsizepos=".3"
+				
+				material="/shared/effects/materials/ground_fire_ring.material"
+			/>
+			
+			<groundsprite
+				life="900"
+				material="/shared/effects/materials/pent_add.material"
+				startsize="10"
+				endsize="320"
+				startcolor="1 .5 0"
+				midcolorpos="0.6"
+				endcolor="0 0 0"
+				yawspeed="100"
+			/>
+			
+			<simpleemitter
+				delay="250"
+				count="150"	
+				minparticlelife="900"
+				maxparticlelife="1200"
+				material="/shared/effects/materials/phantom_smoke_10.material"
+				offsetradial="208"
+			>
+				<particle 
+					angle="0"
+					startcolor="1 .5 0"
+					endcolor="0"		
+					size="80"
+					startheight="220"
+					endheight="0"
+				/>
+				<particle 
+					angle="0"
+					startcolor="1 .5 0"
+					endcolor="0"		
+					size="80"
+					minstartheight="220"
+					maxstartheight="260"
+					endheight="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				count="50"	
+				particlelife="650"
+				material="/shared/effects/materials/bad_healing_smoke_06.material"
+				offsetsphere="170 170 30"
+				minangle="0"
+				maxangle="180"
+				speed="210"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					color="1 .5 0"
+					startalpha="0.6"
+					endalpha="0"
+					startsize="130"
+					endsize="420"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				mincount="15"
+				maxcount="20"
+				position="0 0 10"
+				material="/shared/effects/materials/pyroclast_ring.material"
+				minparticlelife="1000"
+				maxparticlelife="1700"
+				gravity="-1"
+				depthbias="-10"
+			>
+				<particle
+					maxangle="360"
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+					startcolor="1 .5 0"
+					endcolor="0"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+					midalphapos=".25"
+					startsize="50"
+					midsize="300"
+					endsize="500"
+					midsizepos=".25"
+					minscale=".75"
+					maxscale="1.25"
+				/>
+			</simpleemitter>
+		
+			<!-- Smoke -->
+			
+			<simpleemitter
+				mincount="40"
+				maxcount="60"
+				position="0 0 20"
+				offsetsphere="40"
+				material="/shared/effects/materials/pyroclast_01_reveal.material"
+				direction="0 0 1"
+				minangle="60"
+				maxangle="120"
+				minparticlelife="1000"
+				maxparticlelife="1700"
+				gravity="-5"
+				minspeed="600"
+				maxspeed="1000"
+				drag="0.04"
+				depthbias="-10"
+			>
+				<particle
+					maxangle="360"
+					minsize="60"
+					maxsize="80"
+					startscale=".5"
+					minendscale="2.0"
+					maxendscale="4.0"
+					startalpha="0"
+					midalpha=".75"
+					endalpha="1"
+					midalphapos=".25"
+					startcolor=".2 .6 .2"
+					endcolor="0"
+					midcolorpos=".2"
+					startframe="0"
+					midframe=".75"
+					endframe="1"
+				/>
+			</simpleemitter>
+			
+			<billboard
+				material="/shared/effects/materials/whitedot.material"
+				color="1 .5 0"								
+				startsize="50"
+				midsize="200"
+				endsize="50"
+				midsizepos=".3"
+				position="0 0 100"
+				life="500"
+			/>
+	
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

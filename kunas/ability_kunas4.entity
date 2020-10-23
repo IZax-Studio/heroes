@@ -139,7 +139,7 @@
 
 	<modifier 
 		key="Kunas_R_SotM"
-		icon="icon_sotm.tga"
+		icon="icons/icon_sotm.tga"
 		modpriority="100"
 		displayname="true"
 		actiontype="target_position"
@@ -207,3 +207,4 @@
 		</onlearn>
 	</altavatar>
 </ability>
+z

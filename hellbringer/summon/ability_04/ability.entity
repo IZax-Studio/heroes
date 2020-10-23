@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Malphas4"
+	
+	icon="icon.tga"
+	
+	maxlevel="3"
+	actiontype="passive"
+
+>
+	<onattackingdamageevent>
+		<targettype type="building">
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.5,1.75,2.0" op="mult" />
+			<hasavatarkey name="Hero_Hellbringer.Alt">
+				<playeffect effect="effects/impact_alt.effect" target="target_entity" source="target_entity"/>
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Hellbringer.Alt2">
+					<playeffect effect="effects/impact_alt2.effect" target="target_entity" source="target_entity"/>
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Hellbringer.Alt3">
+						<hasmodifier name="alt3_fire" >
+							<playeffect effect="effects/impact.effect" target="target_entity" source="target_entity"/>
+						</hasmodifier>
+						<else>
+							<hasmodifier name="alt3_ice" >
+								<playeffect effect="effects/impact_alt3_ice.effect" target="target_entity" source="target_entity"/>
+							</hasmodifier>
+							<else>
+								<playeffect effect="effects/impact_alt3_earth.effect" target="target_entity" source="target_entity"/>
+							</else>
+						</else>
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Hellbringer.Alt4">
+							<playeffect effect="effects/impact_alt.effect" target="target_entity" source="target_entity"/>
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Hellbringer.Alt5">
+								<playeffect effect="effects/impact_alt5.effect" target="target_entity" source="target_entity"/>
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Hellbringer.Alt6">
+									<playeffect effect="effects/impact_alt6.effect" target="target_entity" source="target_entity"/>
+								</hasavatarkey>
+								<else>
+									<playeffect effect="effects/impact.effect" target="target_entity" source="target_entity"/>
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</targettype>
+	</onattackingdamageevent>
+	
+	<altavatar key="Hero_Hellbringer.Alt2" modpriority="90"
+		icon="icon.tga"
+	/>
+	
+	<altavatar key="Hero_Hellbringer.Alt3" modpriority="90"
+		icon="icon.tga"
+	/>
+	
+	<altavatar key="Hero_Hellbringer.Alt5" modpriority="90"
+		icon="icon.tga"
+	/>
+</ability>

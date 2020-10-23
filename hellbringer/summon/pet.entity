@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pet
+	name="Pet_Hellbringer_Ability4"
+	
+	icon="icon.tga"
+	portrait="icon.tga"
+
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect="effects/body.effect"
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	immunity="TransfigureImmunity"
+	
+	preglobalscale="2.2"
+	modelscale="2"
+	effectscale="1.26"
+	boundsheight="96"
+	boundsradius="24"
+	selectionradius="50"
+	targetoffset="0 0 64"
+
+	movespeed="350,375,400"
+	turnrate="540"
+	turnsmoothing="0.05"
+
+	maxhealth="900,1350,1800"
+	healthregen="15,20,25"
+	maxmana="400"
+	manaregen="0"
+
+	armor="5,10,15"
+	magicarmor="17"
+
+	cancarryitems="false"
+	inventory0="Ability_Malphas2"
+	inventory1="Ability_Malphas3"
+	inventory2="Ability_Malphas4"
+	
+
+	attackduration="1000"
+	attackactiontime="800"
+	attackcooldown="1800"
+	attackdamagemin="50,75,100"
+	attackdamagemax="50,75,100"
+	attacknumanims="2"
+	attackoffset="60 60 100"
+	attackprojectile=""
+	attackrange="128"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="effects/impact.effect"
+	attacktype="melee"
+	combattype="Hero"
+
+	aggrorange="600"
+	sightrangeday="1800"
+	sightrangenight="1800"
+	
+	goldbountymin="150,200,250"
+	goldbountymax="150,200,250"
+	experiencebounty="100"
+	
+	deniablepercent="0.5"
+	
+	lifetime="60000"
+
+	corpsetime="2000"
+	corpsefadetime="10000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	unittype="summoned Malphas"
+>
+	<onspawn>
+	</onspawn>
+	
+	<modifier key="iamsheeped" modpriority="1000"
+		passiveeffect=""
+	/>
+	
+	<modifier key="alt3_fire" modpriority="100"
+		skin="fire"
+		model="../alt3/summon/model_fire.mdf"
+		
+		passiveeffect="../alt3/summon/effects/body_fire.effect"
+		attackimpacteffect="../alt3/summon/effects/impact_fire.effect"
+	/>
+	
+	<modifier key="alt3_ice" modpriority="100"
+		skin="ice"
+		model="../alt3/summon/model_ice.mdf"
+		
+		passiveeffect="../alt3/summon/effects/body_ice.effect"
+		attackimpacteffect="../alt3/summon/effects/impact_ice.effect"
+	/>
+	
+	<altavatar key="Hero_Hellbringer.Alt" modpriority="1"
+		passiveeffect="../alt/summon/effects/body.effect"
+		attackimpacteffect="../alt/summon/effects/impact.effect"
+
+		icon2="../alt/summon/icon.tga"
+		portrait="../alt/summon/icon.tga"
+		model="../alt/summon/model.mdf"
+
+		storepos="0 0 -15"
+		storeangles="0 0 0"
+		storescale="1.4"
+	/>
+	
+	<altavatar key="Hero_Hellbringer.Alt2" modpriority="1"
+		passiveeffect="../alt2/summon/effects/body.effect"
+		attackimpacteffect="../alt2/summon/effects/impact.effect"
+
+		preglobalscale="1.0,1.1,1.2"
+		
+		icon2="../alt2/summon/icon.tga"
+		portrait="../alt2/summon/icon.tga"
+		model="../alt2/summon/model.mdf"
+
+		storepos="0 0 -15"
+		storeangles="0 0 0"
+		storescale="1.4"
+	/>
+	
+	<altavatar key="Hero_Hellbringer.Alt3" modpriority="1"
+		passiveeffect="../alt3/summon/effects/body_earth.effect"
+		attackimpacteffect="../alt3/summon/effects/impact_earth.effect"
+
+		preglobalscale="1.2,1.35,1.5"
+		
+		icon2="../alt3/summon/icon.tga"
+		portrait="../alt3/summon/icon.tga"
+		model="../alt3/summon/model_earth.mdf"
+
+		storepos="0 0 -15"
+		storeangles="0 0 0"
+		storescale="1.4"
+	>
+		<onspawn>
+			<chance threshold="0.3">
+				</chance>
+				<else>
+					<chance threshold="0.5">
+						<activatemodifierkey name="alt3_fire" />
+					</chance>
+					<else>
+						<activatemodifierkey name="alt3_ice" />
+					</else>
+				</else>
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Hellbringer.Alt4" modpriority="1"
+		passiveeffect="../alt/summon/effects/body.effect"
+		attackimpacteffect="../alt/summon/effects/impact.effect"
+
+		icon2="../alt/summon/icon.tga"
+		portrait="../alt/summon/icon.tga"
+		model="../alt/summon/model.mdf"
+
+		storepos="0 0 -15"
+		storeangles="0 0 0"
+		storescale="1.4"
+	/>
+	
+	<altavatar key="Hero_Hellbringer.Alt5" modpriority="1"
+		passiveeffect="../alt5/summon/effects/body.effect"
+		attackimpacteffect="../alt5/summon/effects/impact.effect"
+		
+		preglobalscale="2.6"
+
+		icon2="../alt5/summon/icon.tga"
+		portrait="../alt5/summon/icon.tga"
+		model="../alt5/summon/model_fire.mdf"
+
+		storepos="0 0 -15"
+		storeangles="0 0 0"
+		storescale="1.4"
+	/>
+	
+	<altavatar key="Hero_Hellbringer.Alt6" modpriority="1"
+		passiveeffect="../alt6/summon/effects/body.effect"
+		attackimpacteffect="../alt6/summon/effects/impact.effect"
+		
+		portraitcampos="-15 100 30"
+		
+		preglobalscale="1.4"
+
+		model="../alt6/summon/model.mdf"
+
+		storepos="0 0 -15"
+		storeangles="0 0 0"
+		storescale="1.4"
+	/>
+</pet>

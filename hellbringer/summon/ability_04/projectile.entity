@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Malphas_Ability4"
+
+	speed="800"
+	gravity="3000"
+	lifetime="1000"
+	useexactlifetime="true"
+
+	modelscale="1.2"
+	model="/shared/models/invis.mdf"
+	traileffect="effects/trail.effect"
+
+	impacteffect="effects/impact.effect"
+>
+	<onimpact>
+		<damage effecttype="Magic" amount="50,75,100" />
+	</onimpact>
+	
+	<onspawn/>
+	
+	<altavatar key="Hero_Hellbringer.Alt" modpriority="90"
+		traileffect="effects/trail_alt.effect"
+		impacteffect="effects/impact_alt.effect"
+	/>
+	
+	<altavatar key="Hero_Hellbringer.Alt2" modpriority="90"
+		traileffect="effects/trail_alt2.effect"
+		impacteffect="effects/impact_alt2.effect"
+	/>
+	
+	<altavatar key="Hero_Hellbringer.Alt3" modpriority="90"
+		traileffect="effects/trail_alt3.effect"
+		impacteffect="effects/impact_alt3.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Hellbringer.Alt4" modpriority="90"
+		traileffect="effects/trail_alt.effect"
+		impacteffect="effects/impact_alt.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Hellbringer.Alt5" modpriority="90"
+		traileffect="effects/trail_alt5.effect"
+		impacteffect="effects/impact_alt5.effect"
+	/>
+	
+	<altavatar key="Hero_Hellbringer.Alt6" modpriority="90"
+		traileffect="effects/trail_alt6.effect"
+		impacteffect="effects/impact_alt6.effect"
+	/>
+	
+	<altavatar key="Hero_Hellbringer.pog_skin" modpriority="90"
+		traileffect="effects/trail_alt.effect"
+		impacteffect="effects/impact_alt.effect"
+	/>
+</projectile>

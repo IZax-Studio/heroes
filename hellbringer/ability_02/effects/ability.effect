@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="wave" persistent="true" useentityeffectscale="true" disable2dworld="true">
+	<definitions>		
+		
+		<particlesystem name="system0" space="world" scale="1">
+
+			<model
+				life="1000"
+				position="0 75 0"
+				startscale="5"
+				endscale="9"
+				model="../../ability_01/demon/model.mdf"
+				material="/shared/effects/materials/shell3.material"
+				startcolor="1 .5 0"
+				midcolor="1 .5 0"
+				endcolor="0 0 0"
+				midcolorpos=".8"
+				anim="fly_1"
+			>
+				<billboard
+					bone="Bip01 Spine1"
+					material="/shared/effects/materials/whitedot.material"
+					color="1 .5 0"
+					life="1000"
+					size="10"
+				/>
+				<template name="wing_trail" >
+					<twopointtrailemitter
+						bone_a="{bone_a}"
+						bone_b="{bone_b}"
+						direction="0 -1 -1"
+						angle="10"
+						spawnrate="100"
+						minparticlelife="500"
+						maxparticlelife="1000"
+						material="/shared/effects/materials/ice_trail_blend.material"
+						texposscale="0"
+						texstretchscale="1"
+					>
+						<particle
+							startcolor="0"
+							midcolor="1 .5 0"
+							endcolor="1 .5 0"
+							midcolorpos=".25"
+							startalpha=".8"
+							midalpha=".5"
+							endalpha="0"
+						/>
+					</twopointtrailemitter>
+				</template>
+				
+				<instance name="wing_trail" bone_a="_bone_rightwing" bone_b="Bone002" />
+				<instance name="wing_trail" bone_a="Bone002" bone_b="Bone001" />
+				<instance name="wing_trail" bone_a="_bone_leftwing" bone_b="Bone005" />
+				<instance name="wing_trail" bone_a="Bone005" bone_b="Bone004" />
+				
+				<billboard
+					bone="Bip01 Spine1"
+					material="/shared/effects/materials/refract_gush_trail.material"
+					color="1"
+					life="1000"
+					startsize="20"
+					endsize="50"
+					param=".1"
+					startalpha=".2"
+					midalpha=".9"
+					endalpha="0"
+					midalphapos=".8"
+				/>
+
+			</model>
+<!--			
+			<simpleemitter
+				life="1100"
+				position="0 0 30"
+				inheritvelocity=".2"
+				spawnrate="10"			
+				particlelife="1000"			
+				gravity="0"
+				speed="20"
+				drag=".01"
+				depthbias="0"
+				material="/shared/effects/materials/smoke_17.material"
+				offsetsphere="100 100 50"
+				minangle="-265"
+				maxangle="265"
+				direction="0 0 -1"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-10"
+					maxanglespeed="10"
+					startsize="150"
+					endsize="400"
+					param=".0141151"
+					startalpha="0.0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".1"
+					color=".5 1 .5"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				life="1100"
+				position="0 0 30"
+				inheritvelocity=".1"
+				spawnrate="100"			
+				particlelife="500"			
+				gravity="0"
+				speed="20"
+				drag=".01"
+				depthbias="0"
+				material="/shared/effects/materials/corona_01.material"
+				offsetsphere="100 100 50"
+				minangle="-265"
+				maxangle="265"
+				direction="0 0 -1"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-10"
+					maxanglespeed="10"
+					
+					minstartsize="2"
+					maxstartsize="6"
+					minendsize=".5"
+					maxendsize="1"
+					
+					param=".0141151"
+					startalpha="0.0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".1"
+					startcolor="0 .5 0"
+					midcolor="0 .5 0"
+					endcolor="0"
+				/>
+			</simpleemitter>
+-->
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

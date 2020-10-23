@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Malphas_Ability4"
+
+	ishidden="true"
+	passiveeffect="state.effect"
+
+	impactinterval="3000"
+	
+>
+	<onimpact>
+		<areaofeffect
+			source="this_owner_entity"
+			center="this_owner_entity"
+			radius="500"
+			targetselection="closest"
+			maxtotalimpacts="1"
+			targetscheme="visible_enemy_heroes"
+			effecttype="Magic"
+		>
+			<spawnprojectile name="Projectile_Malphas_Ability4" source="this_owner_entity" target="target_entity" />
+		</areaofeffect>
+	</onimpact>
+	
+	<onframe />
+</state>

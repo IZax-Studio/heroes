@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Malphas3"
+
+	icon="icon.tga"
+	
+	maxlevel="3"
+
+	actiontype="passive"
+	attackspeed="0.2,0.4,0.6"
+>
+	<onframe />
+	
+	<altavatar key="Hero_Hellbringer.Alt2" modpriority="90"
+		icon="../../alt2/summon/ability_03/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Hellbringer.Alt3" modpriority="90"
+		icon="../../alt3/summon/ability_03/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Hellbringer.Alt5" modpriority="90"
+		icon="../../alt5/summon/ability_03/icon.tga"
+	/>
+</ability>
