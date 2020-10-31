@@ -35,7 +35,7 @@
 				falloffstart="0"
 				falloffend="2200"
 				volume=".5"
-				sample="../sounds/cast.wav"
+				sample="../sounds/cast.ogg"
 			/>
 
 			<simpleemitter

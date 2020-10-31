@@ -17,7 +17,7 @@
 				falloffstart="0"
 				falloffend="1800"
 				volume=".5"
-				sample="/shared/sounds/impacts/body_%.wav"
+				sample="../sounds/impact_%.ogg"
 			/>
 
 			<terrainemitter

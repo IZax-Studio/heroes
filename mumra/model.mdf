@@ -28,6 +28,7 @@
 	</anim>
 
 	<anim name="ability_1" clip="clips/ability_1.clip" fps="40" loop="false" blendtime="0">
+		<frameevent frame="1" cmd="PlaySoundLinear ability_01/sounds/cast.ogg 0 2000 .75"/>
 	</anim>
 
 	<anim name="ability_2" clip="clips/ability_1.clip" fps="30" loop="false" blendtime="0">
@@ -36,6 +37,7 @@
 	</anim>
 	
 	<anim name="ability_3" clip="clips/ability_3.clip" fps="30" loop="false">
+		<frameevent frame="1" cmd="PlaySoundLinear ability_03/sounds/cast.ogg 0 2000 .75"/>
 	</anim>
 	
 	<anim name="ability_4" clip="clips/ability_4.clip" fps="30" loop="false">

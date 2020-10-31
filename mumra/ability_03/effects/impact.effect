@@ -10,7 +10,7 @@
 			falloffstart="0"
 			falloffend="1800"
 			volume="0.1" 
-			sample="/heroes/pollywogpriest/sounds/impact_%.wav"
+			sample="../sounds/impact_%.ogg"
 		/>
 
 		<sound
@@ -18,7 +18,7 @@
 			falloffstart="1000"
 			falloffend="1800"
 			volume="0.6" 
-			sample="../sounds/impact_%.wav"
+			sample="../sounds/impact_%.ogg"
 		/>
 
 		<sound
@@ -26,7 +26,7 @@
 			falloffstart="1000"
 			falloffend="1800"
 			volume="0.5" 
-			sample="/shared/sounds/effects/gib_explode.wav"
+			sample="../sounds/impact_%.ogg"
 		/>
 
 		<light				

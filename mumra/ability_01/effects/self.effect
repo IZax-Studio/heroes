@@ -13,11 +13,13 @@
 				<particle 
 				>
 					<sound
+						delay="300"
+						soundloop="false"
 						linearfalloff="true" 
 						falloffstart="0"
-						falloffend="1800"
-						volume=".5"
-						sample="../../../ability_01/sounds/impact_%.wav"
+						falloffend="1000"
+						volume=".2"
+						sample="../sounds/cast.ogg"
 					/>
 
 					<billboard
