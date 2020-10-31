@@ -16,7 +16,7 @@
 	immunity="TransfigureImmunity"
 	
 	preglobalscale="2.2"
-	modelscale="2"
+	modelscale="1.5"
 	effectscale="1.26"
 	boundsheight="96"
 	boundsradius="24"
