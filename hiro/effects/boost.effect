@@ -42,9 +42,9 @@
 						texstretchscale="1"
 					>
 						<particle
-							startcolor=".5 0 0"
-							midcolor=".5 0 0"
-							endcolor=".5 0 0"
+							startcolor="1 0 0"
+							midcolor="1 0 0"
+							endcolor="1 0 0"
 							startsize="0"
 							endsize="24"
 						/>

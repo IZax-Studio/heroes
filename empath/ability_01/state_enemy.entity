@@ -2,8 +2,8 @@
 <state 
     name="State_Empath_Ability1_Enemy" 
 
-    icon="icon.tga" 
-    passiveeffect="/heroes/empath/alt4/ability_01/effects/link_fire_4.effect" 
+    icon="icon1.tga" 
+    passiveeffect="/heroes/empath/ability_01/effects/link.effect" 
     effecttype="StatusDebuff" 
     alwaystransmitdata="true" 
 > 

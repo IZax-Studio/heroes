@@ -328,11 +328,42 @@
 									endframe="1"
 								/>
 							</trailemitter>
+
+							<trailemitter
+								bone="{bone}"
+								spawnrate="300"
+								particlelife="300.0003052"
+								texpostime="2000.0000012"
+								starttexposscale="0.0"
+								midtexposscale="0.1"
+								endtexposscale="1.0"
+								midtexposscalepos="0.9"
+								texstretchscale="1.0"
+								material="beam_fire_02_addself_oriented.material"
+								subframepose="true"
+								life="320.0000012"
+								delay="50"
+							>
+								<particle
+									startcolor="1.380 0 0 1"
+									midcolor="1.514 0 0 1"
+									endcolor="2 1.882 0 1"
+									midcolorpos="0.45"
+									startalpha="0.0"
+									midalpha="0.75"
+									endalpha="0.75"
+									midalphapos="0.05"
+									startscale="30"
+									midscale="22.5"
+									endscale="0"
+									midscalepos="0.5"
+								/>
+							</trailemitter>
 						</particle>	
 					</orbiteremitter>
 				</particle>
 			</simpleemitter>
-			
+
 		</particlesystem>
 	</definitions>
 	<thread>

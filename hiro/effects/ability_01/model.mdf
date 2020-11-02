@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="model.model" type="K2" >
+	
+	<anim name="idle" clip="ability_3.clip" fps="30" numframes="1" loop="true"/>
+	
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="28" loop="false" blendtime="200">
+		<frameevent frame="12" cmd="PlaySoundLinear sounds/attack_%.wav 400 2000 .65"/>
+		<frameevent frame="12" cmd="PlaySoundLinear sounds/preattack_%.wav 400 2000 .15"/>
+	</anim>
+	
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="28" loop="false" blendtime="200"> 
+		<frameevent frame="12" cmd="PlaySoundLinear sounds/attack_%.wav 400 2000 .65"/>
+		<frameevent frame="12" cmd="PlaySoundLinear sounds/preattack_%.wav 400 2000 .15"/>
+		<frameevent frame="6" cmd="PlaySoundLinear sounds/axe_anger_%.mp3 400 2000 .75"/>
+	</anim>
+	
+	<anim name="walk_1" clip="clips/walk_1.clip"  fps="30" loop="true" blendtime="200">
+		<frameevent frame="4" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="8" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="18" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="22" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		
+		<frameevent frame="4" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="4" cmd="PlaySoundLinear /shared/sounds/footsteps/heavy_%.mp3 0 2400 .25"/>
+		<frameevent frame="18" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="18" cmd="PlaySoundLinear /shared/sounds/footsteps/heavy_%.mp3 0 2400 .25"/>
+		
+		<frameevent frame="3"  cmd="PlaySoundLinear sounds/foley_%.wav 200 1400 .10"/>
+		<frameevent frame="17"  cmd="PlaySoundLinear sounds/foley_%.wav 200 1400 .10"/>
+	</anim>
+	
+	<anim name="death_1" clip="clips/death_1.clip" fps="30" loop="false" loopbackframe="-1">
+	</anim>
+	
+	<anim name="ability_1" clip="clips/ability_1.clip" fps="30" loop="false">
+	</anim>
+	
+	<anim name="ability_2" clip="clips/ability_2.clip" fps="30" loop="false">
+	</anim>
+	
+	<anim name="ability_3" clip="ability_3.clip" fps="40" loop="false">
+	</anim>
+	
+	<anim name="ability_4" clip="clips/ability_4.clip" fps="30" loop="false">
+	</anim>
+
+	<anim name="bored_1" clip="clips/bored_1.clip" fps="33" loop="false"/>
+	<anim name="taunt_1" clip="clips/taunt_1.clip" fps="30" loop="false"/>
+	
+</model>
