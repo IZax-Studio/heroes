@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+
+	<definitions>
+	
+		<particlesystem name="system0" space="world">
+
+			<simpleemitter
+				position="0 100 110"
+				mincount="4"
+				maxcount="6"
+				particlelife="500"
+				angle="0"
+				gravity="0"
+				offsetsphere="10 10 10"
+				speed="0"
+			>
+				<particle minscale="1" maxscale="2">
+					<billboard
+						life="200"
+						material="EF_CJ_11107_star_06.material"
+						minsize="100"
+						maxsize="150"
+						framespeed="6"
+						maxroll="180"
+					/>
+				</particle>
+			</simpleemitter>
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

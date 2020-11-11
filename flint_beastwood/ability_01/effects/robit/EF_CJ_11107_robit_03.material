@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<material>
+	<parameters/>
+	<phase
+		name="color"
+		vs="mesh_unlit"
+		ps="mesh_unlit"
+		srcblend="BLEND_SRC_ALPHA"
+		dstblend="BLEND_ONE_MINUS_SRC_ALPHA"
+		cull="CULL_NONE"
+		translucent="false"
+		alphatest="true"
+		alphawrite="false"
+		depthwrite="true"
+	>
+		<sampler
+			name="diffuse"
+			texture="EF_CJ_11107_rabbit_01.tga"
+			repeat_u="true"
+			repeat_v="true"
+			mipmaps="true"
+			fullquality="false"
+			nocompress="false"
+			filtering="true"
+		/>
+	</phase>
+</material>

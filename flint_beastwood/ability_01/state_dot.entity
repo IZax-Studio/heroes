@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_FlintBeastwood_Ability1_DoT"
+
+	icon="icon_new.tga"
+	passiveeffect=""
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+>
+	<onframe>
+		<damage effecttype="Magic DOT" amount="25,50,75,100" b="frametime" op="mult" />
+	</onframe>
+
+	<oninflict>
+		<damage effecttype="Magic" amount="25,50,75,100" />
+	</oninflict>
+	
+	<onrefresh>
+		<damage effecttype="Magic" amount="25,50,75,100" />
+	</onrefresh>
+	
+	<altavatar key="Hero_FlintBeastwood.Alt13"
+	    icon="../alt13/ability_01/icon.tga"
+	/>
+	
+	<altavatar key="Hero_FlintBeastwood.Alt15"
+	    icon="../alt15/ability_01/icon.tga"
+	/>
+	
+</state>

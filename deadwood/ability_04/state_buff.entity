@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Deadwood_Ability4_Buff"
+	
+	icon="asura.png"
+	passiveeffect="effects/state_buff.effect"
+	
+	strengthpercharge="1"
+
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<altavatar key="Hero_Deadwood.Alt7"
+		passiveeffect="/heroes/deadwood/alt7/ability_04/effects/state_buff.effect"
+	/>
+	
+	<altavatar key="Hero_Deadwood.Alt8"
+		icon="/heroes/Deadwood/alt8/ability_04/icon.tga"
+	>
+		<onframe>
+			<hasmodifier name="Night_Set_DeadwoodAlt8" entity="this_owner_entity">
+				<activatemodifierkey name="nightSetDeadwoodAlt8" />
+			</hasmodifier>
+			<else>
+				<deactivatemodifierkey name="nightSetDeadwoodAlt8" />
+			</else>
+		</onframe>
+	</altavatar>
+	
+	<modifier key="nightSetDeadwoodAlt8"
+		icon="/heroes/Deadwood/alt9/ability_04/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Deadwood.Alt9"
+		icon="/heroes/Deadwood/alt9/ability_04/icon.tga"
+	>
+		<onframe>
+			<hasmodifier name="Night_Set_DeadwoodAlt9" entity="this_owner_entity">
+				<activatemodifierkey name="nightSetDeadwoodAlt9" />
+			</hasmodifier>
+			<else>
+				<deactivatemodifierkey name="nightSetDeadwoodAlt9" />
+			</else>
+		</onframe>
+	</altavatar>
+	
+	<modifier key="nightSetDeadwoodAlt9"
+		icon="/heroes/Deadwood/alt8/ability_04/icon.tga"
+	/>
+	
+</state>

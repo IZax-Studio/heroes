@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_FlintBeastwoodAttack_Invis"
+
+	speed="3000"
+	gravity="0"
+	modelscale=".4"
+	model="/shared/models/invis.mdf"
+
+	impacteffect=""
+	traileffect=""
+>
+	<onspawn>
+		<hasavatarkey name="Hero_FlintBeastwood.Alt7">
+			<spawnprojectile name="Projectile_FlintBeastwoodAttack_Hollowpoint" source="source_entity" target="target_entity" offset="15 150 75" noresponse="true" />
+			<spawnprojectile name="Projectile_FlintBeastwoodAttack_Hollowpoint" source="source_entity" target="target_entity" offset="-15 150 85" noresponse="true" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_FlintBeastwood.Alt4" >
+				<spawnprojectile name="Projectile_FlintBeastwoodAttack_Hollowpoint" source="source_entity" target="target_entity" offset="30 100 80" noresponse="true" />
+				<spawnprojectile name="Projectile_FlintBeastwoodAttack_Hollowpoint" source="source_entity" target="target_entity" offset="-30 100 80" noresponse="true" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_FlintBeastwood.Alt2" >
+					<spawnprojectile name="Projectile_FlintBeastwoodAttack_Hollowpoint" source="source_entity" target="target_entity" offset="20 130 73" noresponse="true" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_FlintBeastwood.Alt8" >
+						<spawnprojectile name="Projectile_FlintBeastwoodAttack_Hollowpoint" source="source_entity" target="target_entity" offset="20 130 73" noresponse="true" />
+						<spawnprojectile name="Projectile_FlintBeastwoodAttack_Hollowpoint" source="source_entity" target="target_entity" offset="-20 130 73" noresponse="true" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_FlintBeastwood.Alt13" >
+							<spawnprojectile name="Projectile_FlintBeastwoodAttack_Hollowpoint" source="source_entity" target="target_entity" offset="20 50 73" noresponse="true" />
+							<spawnprojectile name="Projectile_FlintBeastwoodAttack_Hollowpoint" source="source_entity" target="target_entity" offset="-20 50 73" noresponse="true" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_FlintBeastwood.Alt14" >
+								<spawnprojectile name="Projectile_FlintBeastwoodAttack_Hollowpoint" source="source_entity" target="target_entity" offset="40 80 105" noresponse="true" />
+								<spawnprojectile name="Projectile_FlintBeastwoodAttack_Hollowpoint" source="source_entity" target="target_entity" offset="-40 80 105" noresponse="true" />
+							</hasavatarkey>
+							<else>
+								<spawnprojectile name="Projectile_FlintBeastwoodAttack_Hollowpoint" source="source_entity" target="target_entity" offset="0 150 75" noresponse="true" />
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+	</onspawn>
+</projectile>

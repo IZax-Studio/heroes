@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world">
+
+			<simpleemitter
+				count="1"
+				spawnrate="5000"
+				particlelife="7750"
+				acceleration="0.0"
+				minangle="0"
+				maxangle="0"
+				direction="0 0 1"
+				speed="250"
+				gravity="4"
+				position="0 0 -30"
+				offsetsphere="0 0 0"
+			>
+				<particle
+					turn="0"
+					scale=".6"
+				>
+					<model
+						life="600"
+						anim="spawn"
+						model="robit/model.mdf"
+						yaw="180"
+					/>
+						
+					<model
+						delay="600"
+						life="5000"
+						anim="idle"
+						model="robit/model.mdf"
+						yaw="180"
+					/>
+					<model
+						delay="5600"
+						life="350"
+						anim="death"
+						model="robit/model.mdf"
+						yaw="180"
+					/>
+					<billboard
+						position="0 0 0"
+						life="5000"
+						material="/shared/effects/materials/whitedot.material"
+						scale="8"
+						startcolor="0"
+						midcolor=".5 .2 0"
+						endcolor=".5 .2 0"
+						midcolorpos=".1"
+					/>
+					<billboard
+						position="0 0 0"
+						delay="5000"
+						life="600"
+						material="/shared/effects/materials/whitedot.material"
+						scale="8"
+						startcolor=".5 .2 0"
+						endcolor="0"
+					/>
+					<simpleemitter
+						life="5950"
+						position="0 0 0"
+						spawnrate="10"
+						particlelife="2000"
+						direction="0 .5 1"
+						angle="60"
+						offsetsphere="20"
+						minspeed="200"
+						maxspeed="300"
+						friction="200"
+					>
+						<particle minscale="2" maxscale="3" anchor="1">
+							<billboard
+								life="450"
+								material="EF_CJ_11107_smoke_02.material"
+								maxroll="360"
+								framespeed="2"
+								minrollspeed="-300"
+								maxrollspeed="300"
+								startcolor="1"
+								endcolor="1 0 1"
+							/>
+						</particle>
+						<particle minscale="2" maxscale="3" anchor="1">
+							<billboard
+								life="550"
+								material="EF_CJ_11107_smoke_02.material"
+								maxroll="360"
+								framespeed="1.75"
+								minrollspeed="-300"
+								maxrollspeed="300"
+								startcolor="1"
+								endcolor="1 0 1"
+							/>
+						</particle>
+						<particle minscale="2" maxscale="3" anchor="1">
+							<billboard
+								life="650"
+								material="EF_CJ_11107_smoke_02.material"
+								maxroll="360"
+								framespeed="1.5"
+								minrollspeed="-300"
+								maxrollspeed="300"
+								startcolor="1"
+								endcolor="1 0 1"
+							/>
+						</particle>
+					</simpleemitter>
+					<simpleemitter
+						life="5950"
+						position="0 0 0"
+						spawnrate="10"
+						particlelife="2000"
+						direction="0 .5 1"
+						angle="60"
+						offsetsphere="20"
+						minspeed="200"
+						maxspeed="300"
+						friction="200"
+					>
+						<particle minscale="3" maxscale="4" anchor="1">
+							<billboard
+								life="450"
+								material="EF_CJ_11107_flame_01.material"
+								maxroll="360"
+								framespeed="2"
+								minrollspeed="-300"
+								maxrollspeed="300"
+								startcolor="1"
+								endcolor="1 .2 0"
+							/>
+						</particle>
+						<particle minscale="3" maxscale="4" anchor="1">
+							<billboard
+								life="550"
+								material="EF_CJ_11107_flame_01.material"
+								maxroll="360"
+								framespeed="1.75"
+								minrollspeed="-300"
+								maxrollspeed="300"
+								startcolor="1"
+								endcolor="1 .2 0"
+							/>
+						</particle>
+						<particle minscale="3" maxscale="4" anchor="1">
+							<billboard
+								life="650"
+								material="EF_CJ_11107_flame_01.material"
+								maxroll="360"
+								framespeed="1.5"
+								minrollspeed="-300"
+								maxrollspeed="300"
+								startcolor="1"
+								endcolor="1 .2 0"
+							/>
+						</particle>
+					</simpleemitter>
+				</particle>
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

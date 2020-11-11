@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+
+		<modifier
+			alpha="0"
+		/>
+		
+		<particlesystem name="system0" space="world" scale=".75">
+		
+			<beam
+				position_a="0 -250 0"
+				position_b="0 225 0"
+				material="EF_CJ_11107_blend_03.material"
+				size="750"
+				color="1 0 .1"
+			/>
+			
+			<beam
+				position_a="0 -100 0"
+				position_b="0 200 0"
+				material="EF_CJ_11107_star_07.material"
+				size="300"
+				color="1"
+			/>
+			
+			<controller life="100" loop="true" startscale="2" midscale="3" endscale="2">
+				<billboard
+					material="/shared/effects/materials/whitedot.material"
+					minscale="1.5"
+					maxscale="1.75"
+					maxroll="180"
+					rollspeed="600"
+					depthbias="-50"
+					color=".2 .2 0"
+				/>
+			</controller>
+			
+			<trailemitter
+				spawnrate="50"
+				particlelife="150"
+				texpostime="150"
+				texposscale="0.0"
+				texstretchscale="1"
+				material="EF_CJ_11107_trail_05.material"
+			>
+				<particle
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".1"
+					startsize="400"
+					endsize="700"
+					startcolor=".35"
+					midcolor=".35"
+					endcolor="0"
+			/>
+			</trailemitter>
+			
+			<trailemitter
+				spawnrate="50"
+				particlelife="150"
+				texpostime="150"
+				texposscale="0.0"
+				texstretchscale="1"
+				material="EF_CJ_11107_trail_06.material"
+			>
+				<particle
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".1"
+					startsize="400"
+					endsize="250"
+					startcolor=".35"
+					midcolor=".35"
+					endcolor="0"
+			/>
+			</trailemitter>
+			
+			<trailemitter
+				spawnrate="50"
+				particlelife="200"
+				texpostime="200"
+				texposscale="0.0"
+				texstretchscale="1"
+				material="EF_CJ_11107_trail_07.material"
+			>
+				<particle
+					color="4 0 .2"
+					size="200"
+			/>
+			</trailemitter>
+			
+			<template name="star_emit">
+				<simpleemitter
+					timenudge="75"
+					spawnrate="22"
+					particlelife="300"
+					directionalspace="local"
+					material="EF_CJ_11107_star_03.material"
+					angle="60"
+					minspeed="300"
+					maxspeed="500"
+					offsetsphere="20 10 20"
+					direction="0 -1 0"
+				>
+					<particle
+						minsize="160"
+						maxsize="200"
+						startscale="0"
+						midscale=".9"
+						endscale="0"
+						midscalepos=".4"
+						color="{color}"
+					/>
+				</simpleemitter>
+			</template>
+			
+			<instance name="star_emit" color="1 1 .5"/>
+			<instance name="star_emit" color="1 .25 .75"/>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnmodifier instance="instance1" />
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

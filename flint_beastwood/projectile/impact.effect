@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume=".5"
+				sample="../violet_skin8/sounds/impact_%.wav"
+			/>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				position="0 0 0"
+				mincount="7"
+				maxcount="10"
+				particlelife="500"
+				angle="0"
+				speed="0"
+			>
+				<particle>
+					<model
+						life="200"
+						anim="idle"
+						model="/shared/models/invis.mdf"
+						startscale=".35"
+						minendscale="1"
+						maxendscale="2"
+						maxyaw="360"
+						minroll="90"
+						maxroll="180"
+						minpitch="90"
+						maxpitch="180"
+					>
+						<billboard
+							minlife="150"
+							maxlife="200"
+							position="60 0 0"
+							material="../ability_01/effects/EF_CJ_11107_ray_07.material"
+							directionalspace="local"
+							height="15"
+							width="100"
+							turn="1"
+							lockright="1"
+							startcolor="1 1 0"
+							midcolor="1 0 0"
+							endcolor="0"
+							midcolorpos=".9"
+							depthbias="-20"
+						/>
+					</model>
+				</particle>
+			</simpleemitter>
+
+			<billboard
+				life="265"
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/whitedot.material"
+				startsize="150"
+				endsize="200"
+				midsizepos=".2"
+				startcolor=".3 .3 .2"
+				midcolor=".3 0 .3"
+				endcolor="0"
+				depthbias="-15"
+			/>
+			
+			<billboard
+				life="265"
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/whitedot.material"
+				startsize="0"
+				midsize="200"
+				endsize="0"
+				midsizepos=".2"
+				startcolor=".3 .3 .1"
+				midcolor=".3 .1 .3"
+				endcolor="0"
+				depthbias="-15"
+			/>
+			
+			<billboard
+				life="250"
+				bone="_bone_centerofchest"
+				material="EF_CJ_11107_ray_04.material"
+				startsize="220"
+				endsize="0"
+				depthbias="-20"
+				framespeed="4"
+				maxroll="180"
+			/>
+			
+			<billboard
+				life="500"
+				bone="_bone_centerofchest"
+				material="EF_CJ_11107_ray_01.material"
+				startsize="220"
+				endsize="270"
+				depthbias="-20"
+				framespeed="4"
+				maxroll="180"
+			/>
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

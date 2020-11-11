@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+
+		<modifier
+			alpha="0"
+		/>
+		
+		<particlesystem name="system0" space="world" scale=".75">
+		
+			<beam
+				position_a="0 65 0"
+				position_b="0 -200 0"
+				anim="idle"
+				material="EF_CJ_11107_trail_03.material"
+				size="200"
+				color="1 .1 .2"
+			/>
+			
+			<model
+				position="0 -350 0"
+				anim="idle"
+				model="Sunshuangxiang_fly_spell_01/model.mdf"
+				scale=".65"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".9"
+			/>
+			
+			<trailemitter
+				spawnrate="300"
+				particlelife="150"
+				texpostime="150"
+				texposscale="0.0"
+				texstretchscale="1"
+				material="EF_CJ_11107_trail_01.material"
+			>
+				<particle
+					startsize="0"
+					midsize="200"
+					endsize="0"
+				/>
+			</trailemitter>
+			
+			<trailemitter
+				spawnrate="300"
+				particlelife="50"
+				texpostime="50"
+				texposscale="0.0"
+				texstretchscale="1"
+				material="EF_CJ_11107_trail_04.material"
+			>
+				<particle
+					startsize="0"
+					midsize="300"
+					endsize="0"
+				/>
+			</trailemitter>
+
+			<template name="star_emit">
+				<simpleemitter
+					timenudge="75"
+					spawnrate="11"
+					particlelife="300"
+					directionalspace="local"
+					material="../../projectile/EF_CJ_11107_star_03.material"
+					angle="60"
+					minspeed="300"
+					maxspeed="500"
+					offsetsphere="20 10 20"
+					direction="0 -1 0"
+				>
+					<particle
+						minsize="80"
+						maxsize="100"
+						startscale="0"
+						midscale=".9"
+						endscale="0"
+						midscalepos=".4"
+						color="{color}"
+					/>
+				</simpleemitter>
+			</template>
+			
+			<instance name="star_emit" color="1 1 .5"/>
+			<instance name="star_emit" color="1 .25 .75"/>
+			
+			<beam
+				position_a="0 200 0"
+				position_b="0 -600 0"
+				anim="idle"
+				material="/shared/effects/materials/whitedot.material"
+				size="300"
+				color=".3 0 .3"
+			/>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnmodifier instance="instance1" />
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>

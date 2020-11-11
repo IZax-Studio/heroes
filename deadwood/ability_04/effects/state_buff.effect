@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" >
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+
+			<template name="aura">
+				<twopointemitter
+					delay="100"
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					spawnrate="{spawnrate}"
+					offsetsphere="2"
+					particlelife="750"
+					minspeed="2"
+					maxspeed="10"
+					gravity="{gravity}"
+					direction="0 1 0"
+					maxangle="360"
+					drag="0.5"
+					material="/shared/effects/materials/fire_reveal_white.material"
+				>
+					<particle
+						startsize="{startsize}"
+						midsize="{midsize}"
+						endsize="{endsize}"
+						startcolor="1 .5 .25"
+						midcolor=".5 .05 0"
+						endcolor="0"
+						anchor="1"
+						minanglespeed="-600"
+						maxanglespeed="600"
+					/>
+				</twopointemitter>
+				<twopointemitter
+					delay="100"
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					spawnrate="{spawnrate}"
+					offsetsphere="2"
+					particlelife="750"
+					minspeed="2"
+					maxspeed="10"
+					gravity="{gravity}"
+					direction="0 1 0"
+					maxangle="360"
+					drag="0.5"
+					material="fire_add2.material"
+				>
+					<particle
+						startsize="{startsize}"
+						midsize="{midsize}"
+						endsize="{endsize}"
+						startcolor="1 .5 .25"
+						midcolor=".5 .05 0"
+						endcolor="0"
+						anchor="1"
+						minanglespeed="-600"
+						maxanglespeed="600"
+					/>
+				</twopointemitter>
+			</template>
+			
+			<instance name="aura" bone_a="Bip01 R UpperArm" bone_b="Bip01 L UpperArm" spawnrate="25" gravity="-10" startsize="0" midsize="10" endsize="0"/>
+			<instance name="aura" bone_a="Bip01 L UpperArm" bone_b="Bip01 L Forearm" spawnrate="25" gravity="-10" startsize="0" midsize="10" endsize="0"/>
+			<instance name="aura" bone_a="Bip01 R UpperArm" bone_b="Bip01 R Forearm" spawnrate="25" gravity="-10" startsize="0" midsize="10" endsize="0"/>
+			<instance name="aura" bone_a="Bip01 L Forearm" bone_b="Bip01 L Hand" spawnrate="25" gravity="-10" startsize="0" midsize="10" endsize="0"/>
+			<instance name="aura" bone_a="Bip01 R Forearm" bone_b="Bip01 R Hand" spawnrate="25" gravity="-10" startsize="0" midsize="10" endsize="0"/>
+			<instance name="aura" bone_a="Bip01 L Thigh" bone_b="Bip01 L Calf" spawnrate="15" gravity="-3" startsize="0" midsize="20" endsize="0"/>
+			<instance name="aura" bone_a="Bip01 R Thigh" bone_b="Bip01 R Calf" spawnrate="15" gravity="-3" startsize="0" midsize="20" endsize="0"/>
+			<instance name="aura" bone_a="Bip01 L Calf" bone_b="Bip01 L Foot" spawnrate="15" gravity="-3" startsize="0" midsize="20" endsize="0"/>
+			<instance name="aura" bone_a="Bip01 R Calf" bone_b="Bip01 R Foot" spawnrate="15" gravity="-3" startsize="0" midsize="20" endsize="0"/>
+			<instance name="aura" bone_a="Bip01 L Foot" bone_b="Bip01 L Toe0" spawnrate="15" gravity="-3" startsize="0" midsize="20" endsize="0"/>
+			<instance name="aura" bone_a="Bip01 R Foot" bone_b="Bip01 R Toe0" spawnrate="15" gravity="-3" startsize="0" midsize="20" endsize="0"/>
+			
+			<twopointemitter
+				bone_a="Bip01 L Forearm"
+				bone_b="Bip01 L Hand"
+				offsetsphere="3"
+				spawnrate="30"
+				material="/shared/effects/materials/fireball_03_reveal_add.material"
+				minparticlelife="350"
+				maxparticlelife="450"
+				gravity="-15"
+				maxspeed="30"
+				direction="0 0 1"
+				angle="30"
+				depthbias="-10"
+				inheritvelocity="0.2"
+				limitinheritvelocity="100"
+				drag="0.02"
+			>
+				<particle
+					minsize="10"
+					maxsize="13"
+					startscale=".5"
+					endscale="1"
+					startcolor=".75 .15 0"
+					midcolor=".5 0 0"
+					endcolor="0"
+					maxangle="360"
+					minanglespeed="-60"
+					maxanglespeed="60"
+					startframe="1"
+					midframe="0"
+					endframe="1"
+					midframepos=".25"
+					param=".1"
+				/>
+			</twopointemitter>
+
+			<simpleemitter
+				timenudge="1000"
+				bone="Bip01 L Hand"
+				offsetsphere="3"
+				spawnrate="10"
+				material="/shared/effects/materials/whitedot.material"
+				minparticlelife="750"
+				maxparticlelife="1000"
+				angle="30"
+				depthbias="-30"
+			>
+				<particle
+					anchor="1"
+					minsize="13"
+					maxsize="20"
+					startcolor="0"
+					midcolor=".5 .05 0"
+					endcolor="0"
+				/>
+			</simpleemitter>
+			
+			<twopointemitter
+				bone_a="Bip01 R Forearm"
+				bone_b="Bip01 R Hand"
+				offsetsphere="3"
+				spawnrate="30"
+				material="/shared/effects/materials/fireball_03_reveal_add.material"
+				minparticlelife="350"
+				maxparticlelife="450"
+				gravity="-15"
+				maxspeed="30"
+				direction="0 0 1"
+				angle="30"
+				depthbias="-10"
+				inheritvelocity="0.2"
+				limitinheritvelocity="100"
+				drag="0.02"
+			>
+				<particle
+					minsize="10"
+					maxsize="13"
+					startscale=".5"
+					endscale="1"
+					startcolor=".75 .15 0"
+					midcolor=".5 0 0"
+					endcolor="0"
+					maxangle="360"
+					minanglespeed="-60"
+					maxanglespeed="60"
+					startframe="1"
+					midframe="0"
+					endframe="1"
+					midframepos=".25"
+					param=".1"
+				/>
+			</twopointemitter>
+
+			<simpleemitter
+				timenudge="1000"
+				bone="Bip01 R Hand"
+				offsetsphere="3"
+				spawnrate="10"
+				material="/shared/effects/materials/whitedot.material"
+				minparticlelife="750"
+				maxparticlelife="1000"
+				angle="30"
+				depthbias="-30"
+			>
+				<particle
+					anchor="1"
+					minsize="13"
+					maxsize="20"
+					startcolor="0"
+					midcolor=".5 .05 0"
+					endcolor="0"
+				/>
+			</simpleemitter>
+
+			<skeletonemitter
+				offsetsphere="3"
+				spawnrate="100"
+				material="/shared/effects/materials/fireball_03_reveal_add.material"
+				minparticlelife="350"
+				maxparticlelife="450"
+				gravity="-15"
+				maxspeed="30"
+				direction="0 0 1"
+				angle="30"
+				depthbias="-10"
+				inheritvelocity="0.2"
+				limitinheritvelocity="100"
+				drag="0.02"
+			>
+				<particle
+					minsize="40"
+					maxsize="60"
+					startscale=".5"
+					endscale="1"
+					startcolor=".5 .05 0"
+					midcolor=".5 .05 0"
+					endcolor="0"
+					maxangle="360"
+					minanglespeed="-60"
+					maxanglespeed="60"
+					startframe="1"
+					midframe="0"
+					endframe="1"
+					midframepos=".25"
+					param=".1"
+				/>
+			</skeletonemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+</effect>

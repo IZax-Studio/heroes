@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<model
+				model="../../monk_m/effects/hammer/model.mdf"
+				parentskeleton="true"
+				material="/shared/effects/materials/shell2.material"
+				color="1.25 1.25 .25"
+				alpha="1"
+			/>
+
+				<twopointtrailemitter
+					bone_a="_bone_weapon3"
+					bone_b="_bone_weapon2"
+					spawnrate="200"
+					particlelife="300"
+					material="/shared/effects/materials/femme_lightning_02.material"
+					framespeed="5"
+				>
+					<particle 
+						alpha="1.0"
+						startcolor="1 1 1" 
+						endcolor="0 0 0"
+					/>				
+				</twopointtrailemitter>	
+		
+				<trailemitter
+					bone="_bone_weaponattach"
+					spawnrate="50"
+					particlelife="500"
+					texpostime="500"
+					texposscale="0.0"
+					texstretchscale="1"
+					material="/shared/effects/materials/light_trail.material"
+				>
+					<particle
+						 startcolor=".6 .6 0"
+						 midcolor=".6 .6 0"
+						 endcolor="0 0 0"
+						 startsize="15"
+						 midsize="25"
+						 endsize="0"
+						 midsizepos="0.2"
+				 />
+
+				</trailemitter>
+				
+				<simpleemitter
+					bone="_bone_weaponattach"
+					spawnrate="150"
+					particlelife="350"
+					speed="70"
+					material="/shared/effects/materials/lightning_02.material"
+					offsetsphere="1 1 1"
+					minangle="360"
+					maxangle="180"
+					direction="1 0 0"
+				>
+					<particle 
+						minangle="0"
+						maxangle="360"
+						minanglespeed="50"
+						maxanglespeed="150"
+						startcolor="1 .75 0"
+						midcolor=".1 .075 0"
+						endcolor="0 0 0"
+						midcolorpos=".8"
+						startframe="0"
+						endframe="1"
+						startsize="1"
+						midsize="30"
+						endsize="50"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					bone="_bone_weaponattach"
+					spawnrate="150"
+					particlelife="350"
+					speed="70"
+					material="/shared/effects/materials/lightning_02.material"
+					offsetsphere="1 1 1"
+					minangle="360"
+					maxangle="180"
+					direction="1 0 0"
+				>
+					<particle 
+						minangle="0"
+						maxangle="360"
+						minanglespeed="50"
+						maxanglespeed="150"
+						startcolor="1 1 .7"
+						midcolor="1 1 .7"
+						endcolor="0 0 0"
+						midcolorpos=".8"
+						startframe="0"
+						endframe="1"
+						startsize="1"
+						midsize="10"
+						endsize="15"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					bone="_bone_weaponattach"
+					spawnrate="150"
+					particlelife="500"			
+					gravity="25"
+					speed="150"
+					drag=".01"
+					material="/shared/effects/materials/spark_10.material"
+					offsetsphere="10 10 10"
+					minangle="175"
+					maxangle="175"
+					direction="0 0 -1"
+					offsetdirection="0 0 0"
+					offsetradial="0 0 0"
+				>
+
+					<particle 
+						minangle="0"
+						maxangle="0"
+						minanglespeed="0"
+						maxanglespeed="0"
+						startcolor="1 1 1"
+						midcolor="1 1 1"
+						endcolor="0 0 0"
+						midcolorpos=".2"
+						startframe="0"
+						endframe="1"
+						startsize="1"
+						midsize="8"
+						endsize="8"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".5"
+					/>
+
+				</simpleemitter>
+					
+				<simpleemitter
+					bone="_bone_weaponattach"
+					spawnrate="150"
+					particlelife="600"			
+					gravity="0"
+					speed="100"
+					drag="0"
+					material="/shared/effects/materials/spark_10.material"
+					offsetsphere="30 30 30"
+					minangle="175"
+					maxangle="175"
+					direction="0 0 0"
+					offsetdirection="0 0 0"
+					offsetradial="0 0 0"
+				>
+					<particle 
+						minangle="0"
+						maxangle="0"
+						minanglespeed="0"
+						maxanglespeed="0"
+						startcolor="1 1 1"
+						midcolor="1 1 1"
+						endcolor="0 0 0"
+						midcolorpos=".2"
+						startframe="0"
+						endframe="1"
+						startsize="1"
+						midsize="10"
+						endsize="10"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".5"
+					/>
+				</simpleemitter>
+				
+				<billboard
+					bone="_bone_weaponattach"
+					expirelife="250"
+					material="/shared/effects/materials/whitedot.material"
+					startcolor=".4 .4 0"
+					endcolor="0"
+					size="100"
+				/>
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<camerashake2 scale="2" radius="1200" duration="400" frequency="22" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_FlintBeastwood_Ability3"
+
+	icon="icon_new.tga"
+	
+	passiveeffect=""
+	
+	stealthtype="hero"
+	fadetime="0"
+	
+	modifierkey="Flint_E_invis"
+>
+	<oninflict>
+		<startfade />
+		<playanim name="stealth" target="source_entity" />
+	</oninflict>
+
+	<onattack>
+		<startfade a="source_attackduration" />
+		<expire />
+		<starttimer entity="this_proxy_entity" duration="1500" />
+	</onattack>
+	
+	<onactivatepreimpact>
+		<startfade a="castduration" />
+		<playanim name="stealth" target="source_entity" />
+		<expire />
+		<starttimer entity="this_proxy_entity" duration="1500" />
+	</onactivatepreimpact>
+	
+	<onchannelingframe>
+		<expire />
+		<starttimer entity="this_proxy_entity" duration="1500" />
+	</onchannelingframe>
+	
+	<onframe>
+		<targettype type="moving">
+			<expirestate name="State_FlintBeastwood_Ability3" />
+			<expirestate name="State_FlintBeastwood_Ability3_Fade" />
+		</targettype>
+		<else>
+			<targettype type="dead">
+				<expirestate name="State_FlintBeastwood_Ability3" />
+				<expirestate name="State_FlintBeastwood_Ability3_Fade" />
+			</targettype>
+		</else>
+	</onframe>	
+	
+    <altavatar key="Hero_FlintBeastwood.Alt13"
+	    icon="../alt13/ability_03/icon.tga"
+	/>
+	
+	<altavatar key="Hero_FlintBeastwood.Alt15"
+	    icon="../alt15/ability_03/icon.tga"
+	/>
+	
+</state>

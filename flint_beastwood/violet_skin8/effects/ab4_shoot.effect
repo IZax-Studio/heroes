@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" useentityeffectscale="1" >
+	<definitions>
+		<particlesystem name="system0" space="world" >
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="2500"
+				volume="1"
+				sample="../../violet_skin8/sounds/ab4_shoot.wav"
+			/>
+			
+			<simpleemitter
+				count="1"
+				particlelife="10000"
+				direction="0 1 0"
+				angle="0"
+				directionalspace="local"
+				speed="0"
+			>
+				<particle turn="1">
+					<model
+						life="1200"
+						anim="idle"
+						model="../../ability_04/effects/T2_sunshangxiang_attack_03_tishen/jojo2.mdf"
+						scale=".75"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".9"
+					/>
+					<model
+						life="400"
+						anim="idle"
+						model="../../ability_04/effects/T2_sunshangxiang_attack_03_tishen/jojo2_crystal.mdf"
+						scale=".75"
+					/>
+					<simpleemitter
+						delay="200"
+						life="600"
+						count="1"
+						particlelife="1000"
+						position="50 150 125"
+					>
+						<particle turn="1">
+							<billboard
+								life="200"
+								minsize="300"
+								maxsize="400"
+								startscale="1"
+								midscale="1"
+								endscale="0"
+								midscalepos=".8"
+								framespeed="6"
+								maxroll="180"
+								rollspeed="2000"
+								material="../../ability_04/effects/EF_CJ_11107_ball_01.material"
+							/>
+							<billboard
+								life="200"
+								minsize="100"
+								maxsize="200"
+								startscale="1"
+								midscale="1"
+								endscale="0"
+								midscalepos=".8"
+								framespeed="6"
+								maxroll="180"
+								rollspeed="2000"
+								material="../../ability_04/effects/EF_CJ_11107_star_06.material"
+							/>
+							<billboard
+								life="200"
+								minsize="100"
+								maxsize="200"
+								startscale="1"
+								midscale="1"
+								endscale="0"
+								midscalepos=".8"
+								framespeed="6"
+								maxroll="180"
+								rollspeed="-2000"
+								material="../../ability_04/effects/EF_CJ_11107_star_06.material"
+							/>
+						</particle>
+					</simpleemitter>
+				</particle>
+			</simpleemitter>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

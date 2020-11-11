@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+
+			<simpleemitter
+				position="0 -25 0"
+				count="1"
+				particlelife="10000"
+				direction="0 1 0"
+				angle="0"
+				directionalspace="local"
+				speed="0"
+			>
+				<particle turn="1">
+					<billboard
+						life="265"
+						position="0 100 110"
+						material="/shared/effects/materials/whitedot.material"
+						startsize="500"
+						endsize="0"
+						startcolor=".7 .1 .1"
+						endcolor="0"
+					/>
+					
+					<simpleemitter
+						position="0 0 110"
+						count="1"
+						directionalspace="local"
+						direction="0 1 0"
+						angle="0"
+						speed="0"
+					>
+						<particle turn="1">
+							<model>
+								<beam
+									life="1100"
+									position_a="0 75 0"
+									position_b="0 400 0"
+									material="EF_CJ_11107_flash_01.material"
+									minsize="105"
+									maxsize="135"
+									framespeed="1"
+									startcolor=".25"
+									midcolor=".25"
+									endcolor="0"
+									midcolorpos=".8"
+								/>
+							</model>
+						</particle>
+					</simpleemitter>
+					
+					<simpleemitter
+						position="0 100 110"
+						mincount="3"
+						maxcount="7"
+						minparticlelife="300"
+						maxparticlelife="700"
+						direction="0 1 0"
+						angle="30"
+						gravity="10"
+						material="/shared/effects/materials/whitedot.material"
+						offsetsphere="0"
+						minspeed="500"
+						maxspeed="600"
+						friction="200"
+					>
+						<particle
+							minscale="1"
+							maxscale="3"
+							size="5"
+							maxangle="180"
+							startcolor="1 1 0"
+							midcolor="1 0 0"
+							endcolor="0"
+							midcolorpos=".8"
+						/>
+					</simpleemitter>
+					
+					<simpleemitter
+						position="0 0 110"
+						count="1"
+						directionalspace="local"
+						direction="0 1 0"
+						angle="0"
+						speed="0"
+					>
+						<particle turn="1">
+							<model>
+								<beam
+									life="365"
+									position_a="0 75 0"
+									position_b="0 475 0"
+									material="EF_CJ_11107_muzzle_01.material"
+									minsize="165"
+									maxsize="195"
+									framespeed="3"
+									startalpha="1"
+									midalpha="1"
+									endalpha="0"
+								/>
+							</model>
+						</particle>
+					</simpleemitter>
+					
+					<simpleemitter
+						position="0 100 110"
+						mincount="2"
+						maxcount="4"
+						particlelife="500"
+						directionalspace="local"
+						direction="0 1 0"
+						angle="30"
+						speed="0"
+					>
+						<particle turn="1">
+							<model
+								life="200"
+								startscale="1"
+								minendscale="5"
+								maxendscale="6"
+							>
+								<beam
+									minlife="150"
+									maxlife="200"
+									position_a="0 0 0"
+									position_b="0 100 0"
+									material="../ability_01/effects/EF_CJ_11107_ray_07.material"
+									size="20"
+									lockright="1"
+									startcolor="1 1 0"
+									midcolor="1 0 0"
+									endcolor="0"
+									midcolorpos=".9"
+								/>
+							</model>
+						</particle>
+					</simpleemitter>
+
+					<simpleemitter
+						position="0 -50 100"
+						count="2"
+						particlelife="1200"
+						direction="0 -1 -1"
+						angle="20"
+						gravity="-20"
+						offsetsphere="50 10 10"
+						minspeed="250"
+						maxspeed="300"
+						friction="200"
+					>
+						<particle minscale="1" maxscale="2">
+							<billboard
+								life="550"
+								material="EF_CJ_11107_smoke_01.material"
+								maxroll="360"
+								framespeed="2"
+								minrollspeed="-300"
+								maxrollspeed="300"
+								startalpha="0"
+								midalpha="1"
+								endalpha="0"
+								midalphapos=".8"
+							/>
+						</particle>
+						<particle minscale="1" maxscale="2">
+							<billboard
+								life="700"
+								material="EF_CJ_11107_smoke_01.material"
+								maxroll="360"
+								framespeed="1.5"
+								minrollspeed="-300"
+								maxrollspeed="300"
+								startalpha="0"
+								midalpha="1"
+								endalpha="0"
+								midalphapos=".8"
+							/>
+						</particle>
+						<particle minscale="1" maxscale="2">
+							<billboard
+								life="1000"
+								material="EF_CJ_11107_smoke_01.material"
+								maxroll="360"
+								framespeed="1"
+								minrollspeed="-300"
+								maxrollspeed="300"
+								startalpha="0"
+								midalpha="1"
+								endalpha="0"
+								midalphapos=".8"
+							/>
+						</particle>
+					</simpleemitter>
+				</particle>
+			</simpleemitter>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+

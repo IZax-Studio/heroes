@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1">
+
+			<template name="sparks">
+				<twopointemitter
+					delay="100"
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					offsetsphere="35"
+					spawnrate="15"
+					particlelife="500"
+					minspeed="10"
+					maxspeed="50"
+					direction="0 0 1"
+					maxangle="360"
+					drag="0.01"
+				>
+					<particle>
+						<trailemitter
+							maxdelay="200"
+							offsetsphere="10"
+							minlife="100"
+							maxlife="250"
+							spawnrate="20"
+							particlelife="350"
+							material="/shared/effects/materials/femme_lightning_01_trail.material"
+							texpostime="350"
+							texposscale="0"
+							texstretchscale="1"
+							startparticlecolor="1"
+							endparticlecolor="0"
+							minparticlescale="1"
+							maxparticlescale="1.5"
+						>
+							<particle
+								startsize="0"
+								minmidsize="10"
+								maxmidsize="50"
+								endsize="0"
+								midsizepos=".25"
+								startcolor="1 .5 .25"
+								midcolor=".5 .15 0"
+								endcolor="0"
+								minframespeed="1"
+								maxframespeed="2"
+							/>
+						</trailemitter>
+					</particle>
+				</twopointemitter>
+			</template>
+			
+			<instance name="sparks" bone_a="Bip01 Pelvis" bone_b="Bip01 Head"/>
+			<instance name="sparks" bone_a="Bip01 L Clavicle" bone_b="Bip01 L Hand"/>
+			<instance name="sparks" bone_a="Bip01 R Clavicle" bone_b="Bip01 R Hand"/>
+			<instance name="sparks" bone_a="Bip01 L Thigh" bone_b="Bip01 L Foot"/>
+			<instance name="sparks" bone_a="Bip01 R Thigh" bone_b="Bip01 R Foot"/>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

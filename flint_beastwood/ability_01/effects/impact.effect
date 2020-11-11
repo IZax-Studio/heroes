@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+	
+		<particlesystem name="system0" space="world">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume=".85"
+				sample="../../violet_skin8/sounds/ab1_imp.wav"
+			/>
+
+			<groundsprite
+				life="1000"
+				material="EF_CJ_11107_blast_01.material"
+				depthbias="-70"
+				scale="4"
+				color="0"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".9"
+				maxyaw="360"
+			/>
+			
+			<model
+				life="300"
+				model="/heroes/kane/ability_04/effects/sphere/model.mdf"
+				material="ballwave.material"
+				position="0 0 0"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				startcolor="10 0 7.5"
+				midcolor="0"
+				endcolor="0"
+				midcolorpos=".75"
+				startscale="0"
+				midscale="2"
+				endscale="0"
+				midscalepos=".85"
+				yawspeed="60"
+			/>
+
+			<simpleemitter
+				position="0 0 15"
+				mincount="8"
+				maxcount="13"
+				particlelife="500"
+				angle="0"
+				speed="0"
+			>
+				<particle>
+					<model
+						life="200"
+						anim="idle"
+						model="/shared/models/invis.mdf"
+						startscale="1"
+						minendscale="5"
+						maxendscale="6"
+						maxyaw="360"
+						minroll="90"
+						maxroll="180"
+						minpitch="90"
+						maxpitch="180"
+					>
+						<billboard
+							minlife="150"
+							maxlife="200"
+							position="60 0 0"
+							material="EF_CJ_11107_ray_07.material"
+							directionalspace="local"
+							height="25"
+							width="100"
+							turn="1"
+							lockright="1"
+							startcolor="1 1 0"
+							midcolor="1 0 0"
+							endcolor="0"
+							midcolorpos=".9"
+						/>
+					</model>
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				position="0 0 15"
+				mincount="8"
+				maxcount="13"
+				particlelife="500"
+				angle="0"
+				speed="0"
+			>
+				<particle>
+					<model
+						life="200"
+						anim="idle"
+						model="/shared/models/invis.mdf"
+						startscale="1"
+						minendscale="5"
+						maxendscale="6"
+						maxyaw="360"
+						minroll="90"
+						maxroll="180"
+						minpitch="90"
+						maxpitch="180"
+					>
+						<billboard
+							minlife="150"
+							maxlife="200"
+							position="60 0 0"
+							material="EF_CJ_11107_light_01.material"
+							directionalspace="local"
+							height="15"
+							width="100"
+							turn="1"
+							lockright="1"
+							startcolor="1 1 0"
+							midcolor="1 0 0"
+							endcolor="0"
+							midcolorpos=".9"
+						/>
+					</model>
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				position="0 0 50"
+				mincount="7"
+				maxcount="12"
+				spawnrate="70"
+				particlelife="2000"
+				direction="0 0 -1"
+				angle="70"
+				offsetsphere="20"
+				minspeed="300"
+				maxspeed="500"
+				friction="200"
+				gravity="-75"
+			>
+				<particle minscale=".5" maxscale="2">
+					<billboard
+						life="325"
+						material="fire.material"
+						maxroll="360"
+						framespeed="3"
+						minrollspeed="-300"
+						maxrollspeed="300"
+					/>
+				</particle>
+				<particle minscale=".5" maxscale="2">
+					<billboard
+						life="395"
+						material="fire.material"
+						maxroll="360"
+						framespeed="2.5"
+						minrollspeed="-300"
+						maxrollspeed="300"
+					/>
+				</particle>
+				<particle minscale=".5" maxscale="2">
+					<billboard
+						life="490"
+						material="fire.material"
+						maxroll="360"
+						framespeed="2"
+						minrollspeed="-300"
+						maxrollspeed="300"
+					/>
+				</particle>
+			</simpleemitter>
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

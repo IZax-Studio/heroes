@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_FlintBeastwoodAttack"
+
+	speed="3000"
+	gravity="0"
+	modelscale=".25"
+	model="effects/bullet/bullet.mdf"
+
+	impacteffect="impact.effect"
+	traileffect="trail.effect"
+>
+
+	<altavatar key="Hero_FlintBeastwood.Alt10"
+		traileffect="/heroes/flint_beastwood/alt10/projectile/trail.effect"
+	/>
+	
+	<altavatar key="Hero_FlintBeastwood.Alt12"
+		model="/shared/models/invis.mdf"
+		traileffect="/heroes/flint_beastwood/alt12/projectile/trail.effect"
+	/>
+	
+	<altavatar key="Hero_FlintBeastwood.Alt13"
+		model="/shared/models/invis.mdf"
+		traileffect="/heroes/flint_beastwood/alt13/projectile/red/trail.effect"
+	>
+		<modifier key="red" modpriority="1"
+			traileffect="/heroes/flint_beastwood/alt13/projectile/red/trail.effect"
+		/>
+		<modifier key="green" modpriority="1"
+			traileffect="/heroes/flint_beastwood/alt13/projectile/green/trail.effect"
+		/>
+		<modifier key="pink" modpriority="1"
+			traileffect="/heroes/flint_beastwood/alt13/projectile/pink/trail.effect"
+		/>
+		<modifier key="blue" modpriority="1"
+			traileffect="/heroes/flint_beastwood/alt13/projectile/blue/trail.effect"
+		/>
+		<modifier key="yellow" modpriority="1"
+			traileffect="/heroes/flint_beastwood/alt13/projectile/yellow/trail.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_FlintBeastwood.Alt14"
+		model="/shared/models/invis.mdf"
+		traileffect="/heroes/flint_beastwood/alt14/projectile/trail.effect"
+	/>
+	
+	<altavatar key="Hero_FlintBeastwood.Alt15"
+		model="/shared/models/invis.mdf"
+		traileffect="/heroes/flint_beastwood/alt15/projectile/red/trail.effect"
+	>
+		<modifier key="red" modpriority="1"
+			traileffect="/heroes/flint_beastwood/alt15/projectile/red/trail.effect"
+		/>
+		<modifier key="green" modpriority="1"
+			traileffect="/heroes/flint_beastwood/alt15/projectile/green/trail.effect"
+		/>
+		<modifier key="pink" modpriority="1"
+			traileffect="/heroes/flint_beastwood/alt15/projectile/pink/trail.effect"
+		/>
+		<modifier key="blue" modpriority="1"
+			traileffect="/heroes/flint_beastwood/alt15/projectile/blue/trail.effect"
+		/>
+		<modifier key="yellow" modpriority="1"
+			traileffect="/heroes/flint_beastwood/alt15/projectile/yellow/trail.effect"
+		/>
+		
+	</altavatar>
+	
+</projectile>

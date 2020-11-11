@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+
+		<modifier
+			alpha="0"
+		/>
+		
+		<particlesystem name="system0" space="world">
+		
+			<beam
+				position_a="0 -800 0"
+				position_b="0 200 0"
+				material="EF_CJ_11107_line_02.material"
+				size="500"
+			/>
+			
+			<trailemitter
+				spawnrate="50"
+				particlelife="150"
+				texpostime="150"
+				texposscale="0.0"
+				texstretchscale="1"
+				material="EF_CJ_11107_trail_06.material"
+			>
+				<particle
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".1"
+					startsize="400"
+					endsize="0"
+			/>
+			</trailemitter>
+			
+			<simpleemitter
+				spawnrate="50"
+				minparticlelife="100"
+				maxparticlelife="200"
+				minspeed="2000"
+				maxspeed="3000"
+				angle="0"
+				direction="0 -1 0"
+				offsetsphere="100"
+				material="/shared/effects/materials/whitedot.material"
+			>
+				<particle
+					height="100"
+					width="25"
+					startcolor=".5 0 2"
+					midcolor=".5 0 0"
+					midcolorpos=".75"
+					endcolor="0"
+					turn="1"
+				/>
+				<particle
+					height="100"
+					width="25"
+					startcolor="2 .5 0"
+					midcolor=".5 0 0"
+					endcolor="0"
+					midcolorpos=".75"
+					turn="1"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnmodifier instance="instance1" />
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

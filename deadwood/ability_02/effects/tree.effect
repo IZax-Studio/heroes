@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1">
+		
+			<sound
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="1300"
+				volume="1"
+				sample="/heroes/salomon/ability_01/sounds/cast.wav"
+			/>
+			
+			<model
+				bone="_bone_overhead"
+				position="0 0 -10"
+				model="/shared/models/invis.mdf"
+				pitchspeed="-11.25"
+				roll="90"
+			>
+				<template name="sphere">
+					<model
+						life="500"
+						position="{pos}"
+						model="/heroes/artesia/ability_01/effects/sphere/orb2.mdf"
+						material="/shared/effects/materials/shell_rim_white.material"
+						startscale="0"
+						endscale=".1"
+						color="1 .5 .25"
+						minyawspeed="-180"
+						maxyawspeed="180"
+						minpitchspeed="-180"
+						maxpitchspeed="180"
+						minrollspeed="-180"
+						maxrollspeed="180"
+					/>
+					
+					<billboard
+						life="500"
+						position="{pos}"
+						material="/shared/effects/materials/whitedot.material"
+						startsize="0"
+						endsize="20"
+					/>
+					
+					<billboard
+						life="500"
+						position="{pos}"
+						material="/shared/effects/materials/whitedot.material"
+						startsize="0"
+						endsize="25"
+						color="1 .5 0"
+					/>
+					
+					<billboard
+						life="500"
+						position="{pos}"
+						material="/shared/effects/materials/whitedot.material"
+						startsize="0"
+						endsize="0"
+						color="1 0 0"
+					/>
+					
+					<model
+						delay="500"
+						expirelife="500"
+						position="{pos}"
+						model="/heroes/artesia/ability_01/effects/sphere/orb2.mdf"
+						material="/shared/effects/materials/shell_rim_white.material"
+						startscale=".1"
+						endscale="0"
+						color="1 .5 .25"
+						minyawspeed="-180"
+						maxyawspeed="180"
+						minpitchspeed="-180"
+						maxpitchspeed="180"
+						minrollspeed="-180"
+						maxrollspeed="180"
+					/>
+					
+					<billboard
+						delay="500"
+						expirelife="500"
+						position="{pos}"
+						material="/shared/effects/materials/whitedot.material"
+						startsize="20"
+						endsize="0"
+					/>
+					
+					<billboard
+						delay="500"
+						expirelife="500"
+						position="{pos}"
+						material="/shared/effects/materials/whitedot.material"
+						startsize="25"
+						endsize="0"
+						color="1 .5 0"
+					/>
+					
+					<billboard
+						delay="500"
+						expirelife="500"
+						position="{pos}"
+						material="/shared/effects/materials/whitedot.material"
+						startsize="30"
+						endsize="0"
+						color="1 0 0"
+					/>
+				
+					<simpleemitter
+						delay="500"
+						position="{pos}"
+						offsetsphere="15"
+						spawnrate="10"
+						particlelife="500"
+						minspeed="10"
+						maxspeed="50"
+						direction="0 0 1"
+						maxangle="360"
+						drag="0.01"
+					>
+						<particle>
+							<trailemitter
+								maxdelay="200"
+								offsetsphere="3"
+								minlife="100"
+								maxlife="200"
+								spawnrate="20"
+								particlelife="350"
+								material="/shared/effects/materials/femme_lightning_01_trail.material"
+								texpostime="50"
+								texposscale="0"
+								texstretchscale="1"
+								startparticlecolor="1"
+								endparticlecolor="0"
+								minparticlescale="1"
+								maxparticlescale="1.5"
+							>
+								<particle
+									startsize="0"
+									minmidsize="10"
+									maxmidsize="20"
+									endsize="0"
+									midsizepos=".25"
+									startcolor="1 .5 0"
+									midcolor=".5 .05 0"
+									endcolor="0"
+									midcolorpos=".2"
+									minframespeed="2"
+									maxframespeed="4"
+								/>
+							</trailemitter>
+						</particle>
+					</simpleemitter>
+					
+					<simpleemitter
+						position="{pos}"
+						spawnrate="75"
+						particlelife="350"
+						speed="35"
+						material="/shared/effects/materials/lightning_02.material"
+						offsetsphere="1 1 1"
+						minangle="360"
+						maxangle="180"
+						direction="1 0 0"
+					>
+						<particle 
+							minangle="0"
+							maxangle="360"
+							minanglespeed="50"
+							maxanglespeed="150"
+							startcolor="1 .75 0"
+							midcolor="1 .075 0"
+							endcolor="0 0 0"
+							midcolorpos=".8"
+							startframe="0"
+							endframe="1"
+							startsize="1"
+							midsize="15"
+							endsize="25"
+						/>
+					</simpleemitter>
+
+					<simpleemitter
+						position="{pos}"
+						spawnrate="75"
+						particlelife="350"
+						speed="35"
+						material="/shared/effects/materials/lightning_02.material"
+						offsetsphere="1 1 1"
+						minangle="0"
+						maxangle="360"
+						direction="1 0 0"
+					>
+						<particle
+							maxangle="360"
+							minanglespeed="50"
+							maxanglespeed="150"
+							startcolor="1 1 .8"
+							midcolor=".1 .1 0"
+							endcolor="0 0 0"
+							midcolorpos=".8"
+							startsize="1"
+							midsize="15"
+							endsize="25"
+						/>
+					</simpleemitter>
+
+					<simpleemitter
+						position="{pos}"
+						spawnrate="75"
+						particlelife="350"
+						speed="35"
+						material="/shared/effects/materials/lightning_02.material"
+						offsetsphere="1 1 1"
+						minangle="360"
+						maxangle="180"
+						direction="1 0 0"
+					>
+						<particle 
+							minangle="0"
+							maxangle="360"
+							minanglespeed="50"
+							maxanglespeed="150"
+							startcolor="1 1 .7"
+							midcolor="1 1 .7"
+							endcolor="0 0 0"
+							midcolorpos=".8"
+							startframe="0"
+							endframe="1"
+							startsize="1"
+							midsize="5"
+							endsize="7.5"
+						/>
+					</simpleemitter>
+			
+				</template>
+				
+				<instance name="sphere" pos="0 50 0"/>
+				<instance name="sphere" pos="-47.552826 15.450848 0"/>
+				<instance name="sphere" pos="-29.389259 -40.450851 0"/>
+				<instance name="sphere" pos="29.389267 -40.450848 0"/>
+				<instance name="sphere" pos="47.552826 15.450855 0"/>
+				
+			</model>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
