@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="bolt_lightning_02" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="2.5">
+		
+			<sound
+				linearfalloff="true" 
+				falloffstart="1300"
+				falloffend="2500"
+				volume="1"
+				sample=".../sounds/cast.wav"
+			/>
+<!--
+			<billboard
+				delay="250"
+				bone="_bone_fx_01"
+				life="200"
+				directionalspace="local"
+				material="/shared/effects/materials/blink.material"
+				startcolor="1 0 0"
+				midcolor="1 0 0"
+				endcolor=" 0 0 0"
+				startalpha="1"
+				midalpha="1"
+				endalpha="1"
+				width="70"
+				height="150"
+				size="40"
+				lockup="1"
+				depthbias="-110"
+				lockright="1"
+				pitch="90"
+				roll="90"
+			/>
+
+			<billboard
+				delay="250"
+				bone="Bip01 R Hand"
+				life="200"
+				directionalspace="local"
+				material="/shared/effects/materials/blink.material"
+				startcolor="1 0 .5"
+				midcolor="1 0 .5"
+				endcolor=" 0 0 0"
+				startalpha="1"
+				midalpha="1"
+				endalpha="1"
+				width="70"
+				height="150"
+				size="40"
+				lockup="1"
+				depthbias="-110"
+				lockright="1"
+				pitch="90"
+				roll="90"
+			/>
+
+
+			<template name="flashes">
+		
+				<beam
+					life="350"
+					bone_b="{zboneb}"
+					position_a="{zpos}"
+					size="60"
+					startcolor=".35 0 .15"
+					midcolor=".35 0 .15"
+					endcolor="0 0 0"
+					alpha="1.0"
+					material="/shared/effects/materials/black_energy.material"
+					framespeed="3"
+				/>
+
+				<beam
+					life="350"
+					bone_b="{zboneb}"
+					position_a="{zpos}"
+					size="70"
+					color="0 0 0"
+					alpha="1.0"
+					material="/shared/effects/materials/black_energy.material"
+					framespeed="2"
+
+				/>
+				
+				<beam
+					life="350"
+					bone_b="{zboneb}"
+					position_a="{zpos}"
+					size="120"
+					startcolor=".5 0 0"
+					midcolor=".5 0 0"
+					endcolor="0 0 0"
+					alpha="1.0"
+					material="/shared/effects/materials/black_energy.material"
+					framespeed="1"
+				/>
+			</template>
+
+			<instance name="flashes" zboneb="Bip01 L Hand" zpos="-50 0 1500"/>
+			<instance name="flashes" zboneb="_bone_fx_01" zpos="50 0 1500"/>
+-->
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+<!--
+			<template name="flashes">
+		
+				<beam
+					delay="500"
+					life="350"
+					bone_b="{zboneb}"
+					position_a="{zpos}"
+					size="40"
+					startcolor=".35 .35 .35"
+					midcolor=".35 .35 .35"
+					endcolor="0 0 0"
+					alpha="1.0"
+					material="/shared/effects/materials/black_energy.material"
+					framespeed="1.75"
+				/>
+
+				<beam
+					delay="500"
+					life="350"
+					bone_b="{zboneb}"
+					position_a="{zpos}"
+					size="40"
+					startcolor="1 .2 .2"
+					midcolor="1 .2 .2"
+					endcolor="0 0 0"
+					alpha="1.0"
+					material="/shared/effects/materials/black_energy.material"
+					framespeed="1.75"
+
+				/>
+				
+				<beam
+					delay="500"
+					life="350"
+					bone_b="{zboneb}"
+					position_a="{zpos}"
+					size="60"
+					startcolor=".5 0 0"
+					midcolor=".5 0 0"
+					endcolor="0 0 0"
+					alpha="1.0"
+					material="/shared/effects/materials/black_energy.material"
+					framespeed="1.75"
+				/>
+			</template>
+
+			<instance name="flashes" zboneb="_bone_fx_01" zpos="0 0 1500"/>
+-->
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -22,7 +22,7 @@
 	tauntkillsound="sounds/voice/taunt_after.wav"
 	
 	preglobalscale="1.61"
-	modelscale="1.0"
+	modelscale="0.75"
 	effectscale="0.9"
 	boundsheight="112"
 	boundsradius="24"
@@ -158,7 +158,7 @@
 
 	<modifier key="malikenult" modpriority="201"
 		model="/heroes/maliken/ability_04/model.mdf"
-		preglobalscale="0.8"
+		preglobalscale="1.5"
 		passiveeffect="/heroes/maliken/ability_04/effects/body.effect"
 		attackprojectile="Projectile_MalikenAttack"
 		attackcooldown="1700"

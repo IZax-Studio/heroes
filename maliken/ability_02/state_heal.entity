@@ -2,7 +2,7 @@
 <state
 	name="State_Maliken_Ability2_Healing"
 	
-	icon="icon_heal2.tga"
+	icon="icon_heal.tga"
 	passiveeffect=""
 	displaylevel="true"
 	modifierkey="swordhealing1,swordhealing2,swordhealing3,swordhealing4"

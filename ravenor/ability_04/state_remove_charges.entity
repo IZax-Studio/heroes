@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Remove_Charges_Ravenor_Ability4"
+
+	icon="icon4.tga"
+	impactinterval="125"
+	serverentity="true"
+>
+	<onimpact>
+		<hasmodifier name="Ravenor_Charges" entity="this_owner_entity" />
+		<else>
+			<removecharge entity="this_spawner_entity" />
+		</else>
+	</onimpact>
+</state>

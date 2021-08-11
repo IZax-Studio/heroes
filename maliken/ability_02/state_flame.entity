@@ -2,7 +2,7 @@
 <state
 	name="State_Maliken_Ability2_Flame"
 	
-	icon="icon_flame2.tga"
+	icon="icon_flame.tga"
 	passiveeffect=""
 	damage="15,30,45,60"
 	displaylevel="true"
