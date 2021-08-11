@@ -58,12 +58,12 @@
 									<hasavatarkey name="Hero_Soulstealer.Alt7" >
 										<playeffect effect="../alt7/ability_02/effects/impact.effect" target="target_entity" source="source_entity" />
 									</hasavatarkey>
-							<else>
-								<playeffect effect="effects/impact.effect" target="target_entity" source="source_entity" />
+									<else>
+										<playeffect effect="effects/impact.effect" target="target_entity" source="source_entity" />
+									</else>
+								</else>
 							</else>
 						</else>
-					</else>
-					</else>
 					</else>
 				</targettype>
 			</else>
@@ -72,7 +72,7 @@
 	
 	<onkilled>
 		<!-- Soul loss on death ; ceil function prevents truncation rounding errors -->
-		<evaluate a="charges" b="0.5" op="mult" />
+		<evaluate a="charges" b="0.6" op="mult" />
 		<evaluate a="result" op="ceil" />
 		<setcharges a="result" />
 	</onkilled>
@@ -131,13 +131,13 @@
 										<playeffect effect="../alt7/ability_02/effects/impact.effect" target="target_entity" source="source_entity" />
 									</hasavatarkey>
 									<else>
-								<playeffect effect="effects/impact.effect" target="target_entity" source="source_entity" />
+										<playeffect effect="effects/impact.effect" target="target_entity" source="source_entity" />
+									</else>
+								</else>
 							</else>
 						</else>
 					</else>
 				</else>
-			</else>
-			</else>
 			</else>
 		</onkill>
 	</modifier>

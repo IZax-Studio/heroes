@@ -23,7 +23,7 @@
 	tauntedsound="sounds/voice/taunt_prior.wav"
 	tauntkillsound="sounds/voice/taunt_after.wav"
 	
-	preglobalscale=".9"
+	preglobalscale="2.5"
 	modelscale="1"
 	effectscale=".85"
 	boundsheight="112"
@@ -44,7 +44,7 @@
 	rangedrating="4"
 	meleerating="0"
 
-	movespeed="305"
+	movespeed="310"
 	turnrate="900"
 	turnsmoothing="0.1"
 
@@ -84,6 +84,7 @@
 	attackimpacteffect=""
 	attacktype="ranged"
 	combattype="Hero"
+	unittype="masters_legacy_valid"
 
 	aggrorange="800"
 	sightrangeday="1800"
@@ -91,10 +92,10 @@
 	wanderrange="250"
 
 	primaryattribute="Agility"
-	strength="15"
-	strengthperlevel="2.0"
+	strength="16"
+	strengthperlevel="2.2"
 	agility="20"
-	agilityperlevel="3.0"
+	agilityperlevel="3.2"
 	intelligence="18"
 	intelligenceperlevel="2.0"
 	
@@ -132,13 +133,6 @@
 	
 	<modifier key="iamsheeped" modpriority="100"
 		passiveeffect=""
-	/>
-	
-	<modifier key="OnlyMidMap" modpriority="150"
-		strength="19"
-		strengthperlevel="2.6"
-		agility="24"
-		agilityperlevel="3.2"
 	/>
 	
 	<!-- <modifier key="gated" modpriority="200"

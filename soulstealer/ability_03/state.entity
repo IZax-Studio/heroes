@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
 	name="State_Soulstealer_Ability3"
-
-	
 	
 	icon="icon3.tga"
 	passiveeffect=""
 	
-	armor="-2,-3,-4,-5"
+	armor="-3,-4,-5,-6"
 	
 	effecttype=""
 >
