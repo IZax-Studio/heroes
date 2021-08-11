@@ -4,9 +4,9 @@
 
 	icon=""
 	portrait=""
-	model="/heroes/maliken/ability_01/effects/warglaive/warglaive.mdf"
+	model="effects/swordprojectile.mdf"
 	passiveeffect="effects/body.effect"
-	preglobalscale="1.4"
+	preglobalscale="1.3"
 	modelscale="1.0"
 	effectscale="1.0"
 	boundsheight="0"

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Maliken_Ability2_Healing"
+	
+	icon="icon_heal2.tga"
+	passiveeffect=""
+	displaylevel="true"
+	modifierkey="swordhealing1,swordhealing2,swordhealing3,swordhealing4"
+	modifierkey2="swordhealing"
+	
+	deathpersist="true"	
+	propagatetoillusions="true"
+	
+	effecttype=""
+	allowtransfer="false"
+>
+	<oninflict>
+		<playanim name="ability_2_LifeDefault" target="source_entity" />
+	</oninflict>
+	
+	<onattackimpact>
+		<targettype type="building" />
+		<else>
+			<evaluate a="source_attackdamage" b="0.01,0.02,0.03,0.04" op="mult" />
+			<heal target="source_entity" a="10,20,30,40" b="result" op="add" />
+		</else>
+	</onattackimpact>
+	
+	<onframe>
+		<hasmodifier entity="source_entity" name="malikenult_1">
+			<setactivemodifierkey name="ult_form" />
+		</hasmodifier>
+		<else>
+			<hasmodifier entity="source_entity" name="malikenult_2">
+				<setactivemodifierkey name="ult_form" />
+			</hasmodifier>
+			<else>
+				<hasmodifier entity="source_entity" name="malikenult_3">
+					<setactivemodifierkey name="ult_form" />
+				</hasmodifier>
+				<else>
+					<setactivemodifierkey name="" />
+				</else>
+			</else>
+		</else>
+	</onframe>
+		
+	<modifier key="ult_form" modpriority="100"
+	>
+		<onattackstart>
+			<setattackprojectile name="Projectile_MalikenAttack_Life" />
+			<setattackimpacteffect effect="../projectile/effects/impact_heal.effect" />
+			<playanim name="attacklife_" speed="source_attackspeed" variations="2" target="source_entity" />
+		</onattackstart>
+	</modifier>
+	
+	<modifier key="iamsheeped" modpriority="102"
+		passiveeffect=""
+	/>
+
+	<modifier key="krosmode" modpriority="101"
+		passiveeffect="effects/state_heal_shuffle.effect"
+	/>	
+	
+	<altavatar key="Hero_Maliken.Alt8"
+	>
+		<modifier key="ult_form" modpriority="100"
+		>
+			<onattackstart>
+				<setattackprojectile name="Projectile_MalikenAttack_Life" />
+				<setattackimpacteffect effect="/heroes/maliken/alt8/ability_04/effects/projectile/effects/impact_heal.effect" />
+				<playanim name="attacklife_" speed="source_attackspeed" variations="2" target="source_entity" />
+			</onattackstart>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Maliken.Alt9"
+	>
+		<modifier key="ult_form" modpriority="100"
+		>
+			<onattackstart>
+				<setattackprojectile name="Projectile_MalikenAttack_Life" />
+				<setattackimpacteffect effect="/heroes/maliken/alt9/ability_04/effects/projectile/effects/impact_heal.effect" />
+				<playanim name="attacklife_" speed="source_attackspeed" variations="2" target="source_entity" />
+			</onattackstart>
+		</modifier>
+	</altavatar>
+	
+</state>

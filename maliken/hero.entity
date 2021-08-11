@@ -21,15 +21,13 @@
 	tauntedsound="sounds/voice/taunt_prior.wav"
 	tauntkillsound="sounds/voice/taunt_after.wav"
 	
-	preglobalscale="1.0"
+	preglobalscale="1.61"
 	modelscale="1.0"
 	effectscale="0.9"
 	boundsheight="112"
 	boundsradius="24"
 	selectionradius="48"
 	targetoffset="0 0 92"
-	portraitcampos="5 -10 38"
-	portraitangles="0 0 30"
 	
 	category="tank physical"
 	difficulty="4"
