@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="warglaive.max" file="/heroes/maliken/illidan/effects/warglaive/warglaive_blue.model" type="K2" >
+<anim name="idle" clip="/heroes/maliken/ability_01/effects/warglaive/warglaive.clip" fps="240" loop="true"/>
+</model>

@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+	<definitions>
+		
+		<particlesystem name="system0" space="world" scale="1">
+
+
+			<model		
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				life="3200"
+				startscale="1"
+				
+				endscale="10"
+				anim="idle"
+				position="0 -50 50"		
+			>		
+				<billboard
+					life="1300"
+					material="/shared/effects/materials/light_rays.material"
+					width="30"
+					startheight="0"
+					midheight="720"
+					endheight="500"
+					startcolor="0"
+					midcolor="3 0 0"
+					endcolor="0 0 0"
+					midcolorpos=".1"					
+					lockup="1"
+				/>
+
+				<simpleemitter
+					life="1300"
+					spawnrate="40"
+					minparticlelife="500"
+					maxparticlelife="700"
+					speed="400"
+					direction="0 0 1"
+					angle="0"
+					material="/shared/effects/materials/smoke_01.material"
+					startinheritvelocity=".5"
+				>
+					<particle
+						startcolor=".5 0 0"
+						endcolor="0 0 0"
+						minstartsize="50"
+						maxstartsize="70"
+						endsize="0"
+						startalpha=".3"
+						midalpha=".8"
+						endalpha="0"
+						minangle="-360"
+						maxangle="360"
+						minanglespeed="-50"
+						maxanglespeed="50"
+					/>
+				</simpleemitter>
+					
+				<billboard
+					life="1300"
+					material="/shared/effects/materials/light_rays.material"
+					width="30"
+					startheight="0"
+					endheight="500"
+					startcolor="0"
+					midcolor="3 0 0"
+					endcolor="0 0 0"
+					midcolorpos=".1"					
+					lockup="1"
+					yaw="90"
+				/>
+
+				<billboard
+					life="1300"
+					material="/shared/effects/materials/flare_02.material"
+					size="100"
+					color="1 0 0"
+					startalpha="1"
+					endalpha="0"
+					position="0 0 0"
+				/>
+	
+				<billboard
+					life="1300"
+					material="/shared/effects/materials/sparks_reveal.material"
+					size="20"
+					color="1 .5 0"
+					startalpha="1"
+					endalpha="0"
+					position="0 0 0"
+				/>
+				
+				<simpleemitter
+					life="1000"
+					depthbias="-50"				
+					spawnrate="300"
+					minparticlelife="400"
+					maxparticlelife="700"
+					material="/shared/effects/materials/bad_healing_smoke_05.material"
+					drag="1"
+					speed="50"
+					minspeed="20"
+					maxspeed="50"
+					inheritvelocity=".25"
+				>
+					<particle
+						startcolor="1 0 0"
+						midcolor="0 0 0"
+						endndcolor="1 0 0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"	
+						startsize="30"
+						endsize="30"
+						minangle="-360"
+						maxangle="360"
+						minanglespeed="-80"
+						maxanglespeed="80"
+						minscale=".8"
+						maxscale="1.5"
+					/>	
+					<particle
+						startcolor="1 0 0"
+						midcolor="1 0 0"
+						endndcolor="1 0 0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"	
+						startsize="5"
+						endsize="9"
+						minangle="-360"
+						maxangle="360"
+						minanglespeed="-80"
+						maxanglespeed="80"
+						minscale=".8"
+						maxscale="1.5"
+					/>	
+
+				</simpleemitter>
+
+			<simpleemitter
+					life="1000"
+					depthbias="-50"				
+					spawnrate="50"
+					offsetsphere="30"
+					minparticlelife="400"
+					maxparticlelife="700"
+					drag="0.05"
+					minspeed="80"
+					maxspeed="150"
+					inheritvelocity=".25"
+				material="/shared/effects/materials/abstract_reveal.material"
+				
+			>
+				<particle
+					size="5"
+					startcolor="1 0 0"
+					midcolor="1 0 0"
+					endcolor="0"					
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".75"
+					minscale=".2"
+					maxscale=".4"
+				/>
+			</simpleemitter>				
+
+		<simpleemitter
+			life="1000"
+			spawnrate="80"
+			minparticlelife="850" maxparticlelife="1550"
+			gravity="1"
+			minspeed="20"  maxspeed="60"
+			direction="0 0 1"
+			minangle="0" maxangle="180"
+			offsetsphere="5"
+			depthbias="-50"
+			material="/shared/effects/materials/sparks_reveal.material"
+		>
+			<particle
+				color="1 0 0"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".5"
+				maxangle="90"
+				minsize="20"
+				maxsize="50"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				startframe=".3"
+				endframe="1"
+			/>
+		</simpleemitter>					
+				<simpleemitter
+					depthbias="-50"				
+					spawnrate="10"
+					offsetsphere="20"
+					minparticlelife="500"
+					maxparticlelife="800"
+					material="/shared/effects/materials/smoke_01.material"
+					minspeed="20"
+					maxspeed="50"
+					drag="0.05"
+					life="1500"
+					inheritvelocity=".25"
+				>
+					
+					<particle
+						startcolor=".75 0 0"
+						midcolor="0 0 0"
+						endndcolor="1 0 0"
+						startscale="35"					
+						endscale="20"
+						startalpha="0"
+						midalpha=".3"
+						endalpha="0"	
+
+						minangle="-360"
+						maxangle="360"
+						minanglespeed="-50"
+						maxanglespeed="50"
+					>					
+					</particle>
+				</simpleemitter>		
+				
+				<!-- <twopointtrailemitter		
+					
+					name="trail01"
+					bone_a="_bone_02"
+					bone_b="_bone_01"
+					spawnrate="30"
+					life="1300"
+					particlelife="1300"
+					startparticlecolor="1 0 0"
+					endparticlecolor="0 0 0"
+					texpostime="1300"
+					texposscale="0"
+					texstretchscale="1"				
+					material="/shared/effects/materials/arrow_trail.material"
+					startparticlealpha="1"
+					endparticlealpha="0"
+				>
+					<particle 				
+							
+						startcolor="1 0 0"
+						endcolor="1 0 0"					
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+					/>
+				</twopointtrailemitter>		 -->
+				
+				<trailemitter		
+					name="trail01"
+					bone_a="_bone_02"
+					spawnrate="30"
+					life="1300"
+					particlelife="1300"
+					startparticlecolor="1 0 0"
+					endparticlecolor="0 0 0"
+					texpostime="1300"
+					texposscale="0"
+					texstretchscale="1"				
+					material="/shared/effects/materials/arrow_trail.material"
+					startparticlealpha="1"
+					endparticlealpha="0"
+					position="0 20 0"
+				>
+					<particle 				
+						size="5"
+						startcolor="1 0 0"
+						endcolor="0"					
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+					/>
+				</trailemitter>	
+				
+				<template name="trail">
+				<trailemitter		
+					name="trail01"
+					bone_a="_bone_02"
+					spawnrate="30"
+					life="1300"
+					particlelife="700"
+					startparticlecolor="1 0 0"
+					endparticlecolor="0 0 0"
+					texpostime="1300"
+					texposscale="0"
+					texstretchscale="1"				
+					material="/shared/effects/materials/arrow_trail.material"
+					startparticlealpha="1"
+					endparticlealpha="0"
+					position="{position}"
+				>
+					<particle 				
+						startsize="3"
+						endsize="0"
+						startcolor="1 0 0"
+						endcolor="0"					
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+					/>
+				</trailemitter>	
+				</template>
+			<instance name="trail" position="10 20 0"/>
+			<instance name="trail" position="-10 20 0"/>
+
+			</model>
+
+		</particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <spawnparticlesystem instance="instance1" particlesystem="bombardier_ultboost" />
+      <spawnparticlesystem instance="instance2" particlesystem="bombardier_ultboost2" />
+      <waitfordeath instance="instance0" />
+      <waitfordeath instance="instance1" />
+      <waitfordeath instance="instance2" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" showoutlines="true">
+
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale="1.0">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1200"
+				volume="0.1" 
+				soundloop="true"
+				fadein="200"
+				fadeout="300"
+				sample="/shared/sounds/effects/torch.wav"
+			/>
+			
+			<template name="greenlight">				
+				<light
+					bone="{bone}"
+					expirelife="250"
+					startcolor="0 1 0"
+					endcolor="0"
+					falloffstart="0"
+					falloffend="100"
+				/>
+			</template>
+			
+			<template name="greenfire">
+				<twopointemitter
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					spawnrate="30"
+					anchor="1"
+					minparticlelife="400"
+					maxparticlelife="700"
+					inheritvelocity="0"
+					offsetsphere="1 1 1"
+					minangle="25"
+					maxangle="10"
+					direction="0 0 1"
+					material="/shared/effects/materials/flame.material"
+				>
+					<particle
+						startcolor="0 0 0"
+						midcolor="0 1.0 0"
+						endcolor="0 0 0"
+						maxangle="90"
+						minanglespeed="-45"
+						maxanglespeed="45"
+						midcolorpos=".1"
+						startsize="{ms}"
+						maxendsize="{ss}"
+						midsizepos=".4"
+						startalpha="0.0"
+						midalpha="1.0"
+						endalpha="0.0"
+						midalphapos="0.1"
+						anchor="1"
+					/>
+					<particle
+						startcolor="0 0 0"
+						midcolor="0 1.0 0"
+						endcolor="0 0 0"
+						maxangle="90"
+						minanglespeed="-45"
+						maxanglespeed="45"
+						midcolorpos=".1"
+						startsize="{ms}"
+						maxendsize="{ss}"
+						midsizepos=".4"
+						startalpha="0.0"
+						midalpha="1.0"
+						endalpha="0.0"
+						midalphapos="0.1"
+						anchor="1"
+					/>
+				</twopointemitter>
+
+				<twopointemitter
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					position="0 0 6"
+					spawnrate="20"
+					anchor="1"
+					particlelife="450"
+					gravity="-40"
+					inheritvelocity="0"
+					offsetsphere="1 1 1"
+					minangle="25"
+					maxangle="10"
+					direction="0 0 1"
+					material="/shared/effects/materials/fireball_03.material"
+				>
+					<particle
+						startcolor="0 0 0"
+						midcolor="0 0.75 0"
+						endcolor="0 0 0"
+						minangle="-180"
+						maxangle="180"
+						minanglespeed="0"
+						midcolorpos=".1"
+						maxanglespeed="0"
+						startsize="{ss}"
+						midsize="{ms}"
+						endsize="{es}"
+						midsizepos=".4"
+						startalpha="0.0"
+						midalpha="1.0"
+						endalpha="0.0"
+						midalphapos="0.1"
+						anchor="1"
+					/>
+					<particle
+						startcolor="0 0 0"
+						midcolor="0 0.75 0"
+						endcolor="0 0 0"
+						minangle="-180"
+						maxangle="180"
+						minanglespeed="0"
+						midcolorpos=".1"
+						maxanglespeed="0"
+						startsize="{ss}"
+						midsize="{ms}"
+						endsize="{es}"
+						midsizepos=".4"
+						startalpha="0.0"
+						midalpha="1.0"
+						endalpha="0.0"
+						midalphapos="0.1"
+						anchor="1"
+					/>
+				</twopointemitter>
+				
+				<twopointemitter
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					position="0 0 6"
+					spawnrate="20"
+					anchor="1"
+					particlelife="450"
+					gravity="-40"
+					inheritvelocity="0"
+					offsetsphere="1 1 1"
+					minangle="25"
+					maxangle="10"
+					direction="0 0 1"
+					material="/shared/effects/materials/phantom_smoke_13.material"
+				>
+					<particle
+						startcolor="0 0 0"
+						midcolor="0 0.75 0"
+						endcolor="0 0 0"
+						minangle="-180"
+						maxangle="180"
+						minanglespeed="0"
+						midcolorpos=".1"
+						maxanglespeed="0"
+						startsize="{ss}"
+						midsize="{ms}"
+						endsize="{es}"
+						midsizepos=".4"
+						startalpha="0.0"
+						midalpha="1.0"
+						endalpha="0.0"
+						midalphapos="0.1"
+						anchor="1"
+					/>
+					<particle
+						startcolor="0 0 0"
+						midcolor="0 0.75 0"
+						endcolor="0 0 0"
+						minangle="-180"
+						maxangle="180"
+						minanglespeed="0"
+						midcolorpos=".1"
+						maxanglespeed="0"
+						startsize="{ss}"
+						midsize="{ms}"
+						endsize="{es}"
+						midsizepos=".4"
+						startalpha="0.0"
+						midalpha="1.0"
+						endalpha="0.0"
+						midalphapos="0.1"
+						anchor="1"
+					/>
+				</twopointemitter>
+			</template>
+			
+			<!-- Warglaives -->
+			<model
+				expirelife="300"
+				startalpha="1"
+				endalpha="0"
+				bone="_bone_rightpalm"
+				model="warglaive/warglaive_green.mdf"
+				anim="idle.clip"
+				scale="1.0"
+				yaw="90"
+			>
+				<instance name="greenfire" bone_a="_bone_fx_03" bone_b="_bone_fx_04" ss="20" ms="15" es="0"/>
+				<instance name="greenfire" bone_a="_bone_fx_04" bone_b="_bone_weapon3" ss="12.5" ms="2.5" es="0"/>
+				<instance name="greenfire" bone_a="_bone_fx_05" bone_b="_bone_fx_06" ss="20" ms="15" es="0"/>
+				<instance name="greenfire" bone_a="_bone_fx_06" bone_b="_bone_weapon1" ss="12.5" ms="2.5" es="0"/>
+				<instance name="greenlight" bone="_bone_weapon2"/>
+			</model>
+			
+			<model
+				expirelife="300"
+				startalpha="1"
+				endalpha="0"
+				bone="_bone_leftpalm"
+				model="warglaive/warglaive_green.mdf"
+				anim="idle.clip"
+				scale="1.0"
+				yaw="-90"
+			>
+				<instance name="greenfire" bone_a="_bone_fx_03" bone_b="_bone_fx_04" ss="20" ms="15" es="0"/>
+				<instance name="greenfire" bone_a="_bone_fx_04" bone_b="_bone_weapon3" ss="12.5" ms="2.5" es="0"/>
+				<instance name="greenfire" bone_a="_bone_fx_05" bone_b="_bone_fx_06" ss="20" ms="15" es="0"/>
+				<instance name="greenfire" bone_a="_bone_fx_06" bone_b="_bone_weapon1" ss="12.5" ms="2.5" es="0"/>
+				<instance name="greenlight" bone="_bone_weapon2"/>
+			</model>
+			
+		</particlesystem>
+		
+	</definitions>
+	
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0" />
+	</thread>
+	
+</effect>

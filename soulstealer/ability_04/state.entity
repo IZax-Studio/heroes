@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Soulstealer_Ability4"
+
+	
+	
+	icon="icon4.tga"
+	passiveeffect="effect/ult.effect"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	movespeedslow="0.25"
+	basedamagemultiplier="-0.25"	
+
+	negativeeffect="slowed"
+>
+
+    <altavatar key="Hero_Soulstealer.Alt5" 
+		icon="../alt5/ability_04/icon.tga"
+	>
+	</altavatar>
+	
+</state>

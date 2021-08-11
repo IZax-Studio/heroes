@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+
+		
+		
+		<particlesystem name="system0" space="world" scale="1.1" >
+		
+		<template name="flames" >
+			<twopointemitter
+				bone_a="{bonea}"
+				bone_b="{boneb}"
+				spawnrate="20"
+				expirelife="200"
+				minparticlelife="700"
+				maxparticlelife="1000"
+				gravity="-10"
+				material="/shared/effects/materials/flames_02.material"
+			>
+				<particle
+					startcolor="0 .5 1"
+					endcolor="0 0 1"
+					startalpha="1"
+					endalpha="0"
+					maxangle="360"
+					startsize="50"
+					endsize="70"
+					anchor="1"
+				/>
+			</twopointemitter>
+			
+			<twopointemitter
+				bone_a="{bonea}"
+				bone_b="{boneb}"
+				spawnrate="20"
+				expirelife="200"
+				minparticlelife="700"
+				maxparticlelife="1000"
+				gravity="-10"
+				depthbias="-5"
+				material="/shared/effects/materials/fireball_01.material"
+			>
+				<particle
+					startcolor="0 .5 1"
+					endcolor="0 0 1"
+					startalpha="1"
+					endalpha="0"
+					maxangle="360"
+					startsize="50"
+					endsize="00"
+					anchor="1"
+				/>
+			</twopointemitter>
+			
+			<twopointemitter
+				bone_a="{bonea}"
+				bone_b="{boneb}"
+				spawnrate="20"
+				expirelife="200"
+				minparticlelife="350"
+				maxparticlelife="600"
+				gravity="-30"
+				material="/shared/effects/materials/flame.material"
+			>
+				<particle
+					startcolor="0 .5 1"
+					endcolor="0 0 1"
+					maxangle="360"
+					startsize="50"
+					endsize="70"
+					anchor="1"
+				/>
+			</twopointemitter>
+			
+			<twopointemitter
+				bone_a="{bonea}"
+				bone_b="{boneb}"
+				spawnrate="40"
+				expirelife="200"
+				minparticlelife="350"
+				maxparticlelife="600"
+				gravity="-30"
+				material="/shared/effects/materials/femme_fire_02.material"
+			>
+				<particle
+					startcolor="0 .5 1"
+					midcolor="0 .5 1"
+					endcolor="0 0 1"
+					maxangle="360"
+					startsize="20"
+					endsize="20"
+					anchor="1"
+				/>
+			</twopointemitter>
+		</template>
+		
+		<instance name="flames" bonea="RightArm3_JNT" boneb="RightRingFng1_JNT" />
+		
+		<instance name="flames" bonea="LeftArm3_JNT" boneb="LeftRingFng0_JNT" />
+
+		
+		
+		
+		</particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

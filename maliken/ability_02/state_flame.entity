@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Maliken_Ability2_Flame"
+	
+	icon="icon_flame2.tga"
+	passiveeffect=""
+	damage="15,30,45,60"
+	displaylevel="true"
+	modifierkey="swordflame1,swordflame2,swordflame3,swordflame4"
+	modifierkey2="swordflame"
+	
+	deathpersist="true"	
+	propagatetoillusions="true"
+
+	effecttype=""
+	allowtransfer="false"
+>
+	<oninflict>
+		<playanim name="ability_2_fireDefault" target="source_entity" />
+	</oninflict>
+	
+	<onattack>
+		<!-- threshold set that flame sword will not reduce health past -->
+		<setvar1 a="source_maxhealth" b="0.15" op="mult" />
+		
+		<!-- capture current health, subtract damage being dealt, store as var2 -->
+		<setvar2 a="source_health" b="15" op="sub" />
+		
+		<!-- if var2 is less than var 1, do not deal full dmg. Instead deal current hp minus var1 -->
+		<compare a="var2" b="var1" op="lt">
+			<evaluate a="source_health" b="var1" op="sub" />
+			<damage target="source_entity" effecttype="" amount="1" b="result" op="mult" />
+		</compare>
+		<else>
+			<damage target="source_entity" effecttype="Magic" amount="15" />
+		</else>
+	</onattack>
+	
+	<onframe>
+		<hasmodifier entity="source_entity" name="malikenult_1">
+			<setactivemodifierkey name="ult_form" />
+		</hasmodifier>
+		<else>
+			<hasmodifier entity="source_entity" name="malikenult_2">
+				<setactivemodifierkey name="ult_form" />
+			</hasmodifier>
+			<else>
+				<hasmodifier entity="source_entity" name="malikenult_3">
+					<setactivemodifierkey name="ult_form" />
+				</hasmodifier>
+				<else>
+					<setactivemodifierkey name="" />
+				</else>
+			</else>
+		</else>
+	</onframe>
+	
+	<modifier key="ult_form" modpriority="100"
+	>
+		<onattackstart>
+			<setattackprojectile name="Projectile_MalikenAttack_Flame" />
+			<setattackimpacteffect effect="../projectile/effects/impact_flame.effect" />
+			<playanim name="attackfire_" speed="source_attackspeed" variations="2" target="source_entity" />
+		</onattackstart>
+	</modifier>
+	
+	<modifier key="iamsheeped" modpriority="102"
+		passiveeffect=""
+	/>
+
+	<modifier key="krosmode" modpriority="101"
+		passiveeffect="effects/state_flame_shuffle.effect"
+	/>
+
+	
+	<altavatar key="Hero_Maliken.Alt8"
+	>
+		<modifier key="ult_form" modpriority="100"
+		>
+			<onattackstart>
+				<setattackprojectile name="Projectile_MalikenAttack_Flame" />
+				<setattackimpacteffect effect="/heroes/maliken/alt8/ability_04/effects/projectile/effects/impact_flame.effect" />
+				<playanim name="attackfire_" speed="source_attackspeed" variations="2" target="source_entity" />
+			</onattackstart>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Maliken.Alt9"
+	>
+		<modifier key="ult_form" modpriority="100"
+		>
+			<onattackstart>
+				<setattackprojectile name="Projectile_MalikenAttack_Flame" />
+				<setattackimpacteffect effect="/heroes/maliken/alt9/ability_04/effects/projectile/effects/impact_flame.effect" />
+				<playanim name="attackfire_" speed="source_attackspeed" variations="2" target="source_entity" />
+			</onattackstart>
+		</modifier>
+	</altavatar>
+	
+</state>
+

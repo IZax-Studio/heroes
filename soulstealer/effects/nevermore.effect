@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="body" deferred="true" >
+	<definitions>
+		<particlesystem name="system0" space="world" scale="2">
+
+			<simpleemitter		
+				bone="_bone_origin"
+				position="0 0 10"
+				inheritvelocity=".2"
+				spawnrate="100"			
+				particlelife="700"			
+				gravity="0"
+				speed="20"
+				drag=".5"
+				depthbias="0"
+				material="/shared/effects/materials/phantom_smoke_02.material"
+				offsetsphere="25 25 25"
+				minangle="-265"
+				maxangle="265"
+				direction="0 0 -1"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-10"
+					maxanglespeed="10"
+					color="0 0 0"
+					startsize="75"
+					endsize="100"
+					param=".0141151"
+					startalpha="0.0"
+					midalpha=".8"
+					endalpha="0"
+					midalphapos=".1"
+					anchor="1"
+
+				/>
+			</simpleemitter>
+
+			<simpleemitter		
+				bone="_bone_origin"
+				position="0 0 40"
+				inheritvelocity=".2"
+				spawnrate="50"			
+				particlelife="700"			
+				gravity="0"
+				speed="20"
+				drag=".5"
+				depthbias="0"
+				material="/shared/effects/materials/phantom_smoke_02.material"
+				offsetsphere="25 25 25"
+				minangle="-265"
+				maxangle="265"
+				direction="0 0 -1"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-10"
+					maxanglespeed="10"
+					color=".5 0 0"
+					startsize="50"
+					endsize="75"
+					param=".0141151"
+					startalpha="0.0"
+					midalpha=".8"
+					endalpha="0"
+					midalphapos=".1"
+					anchor="1"
+				/>
+			</simpleemitter>			
+			
+			
+			<!-- floating debris -->
+			<simpleemitter
+				spawnrate="4"
+				particlelife="3000"
+				offsetsphere="2"
+				bone="_bone_origin"
+				yaw="90"
+			>
+				<particle
+					startanchor="1" endanchor="0" midanchor=".75"
+				>
+					<debris
+						offsetsphere="25" position="0 0 0"
+						minscale=".5" maxscale="1"
+						life="1300"
+						model="/heroes/soulstealer/effects/debris/debris.mdf"
+						material="/heroes/adrenaline/material_noshadow.material"
+						anim="idle"
+						minspeed="10.0"
+						maxspeed="50.0"
+						minrotationspeed="10.0"
+						maxrotationspeed="100.0"
+						gravity="-.5" 
+						drag="0.004"
+						startcolor="3" 
+						midcolor="1" 
+						endcolor="0" 
+						midcolorpos=".5"
+						minangle="0" 
+						maxangle="40"
+						startalpha="1" 
+						midalpha="1" 
+						endalpha="0"
+						animpose="false"
+					/>
+				</particle>
+			</simpleemitter>
+			
+			<template name="floating_embers" >
+
+			
+			<!-- dark smoke -->			
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="40" 
+					particlelife="1000"
+					direction="0 1 0"
+					gravity="-1"
+					minspeed="10"  
+					maxspeed="30"
+					drag="0.1" 
+					material="/shared/effects/materials/phantom_white_reveal.material"
+					offsetsphere="15"
+					depthbias="-150"
+				>
+					<particle					
+						minagle="-360" 
+						maxangle="360"
+						startcolor="0" 
+						midcolor=".1 0 0" 
+						endcolor="0"
+						minsize="5" 
+						maxsize="15" 
+						scale="1"
+						startframe="1" 
+						midframe=".1" 
+						endframe="1" 
+						midframepos=".3"
+						startalpha="0" 
+						endalpha=".7"
+						anchor="0"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					bone="_bone_origin"
+					spawnrate="10"
+					particlelife="1000"
+					direction="0 1 0"
+					gravity="-1"
+					minspeed="10"  
+					maxspeed="30"
+					drag="0.1" 
+					material="/shared/effects/materials/phantom_white_reveal.material"
+					offsetsphere="10"
+					depthbias="-150"
+				>
+					<particle					
+						minagle="-360" 
+						maxangle="360"
+						startcolor="0" 
+						midcolor=".1 0 0" 
+						endcolor="0"
+						minsize="5" 
+						maxsize="15"
+						scale="1"
+						startframe="1"
+						midframe=".1" 
+						endframe="1" 
+						midframepos=".3"
+						startalpha="0" 
+						endalpha=".35"
+						anchor="1"
+					/>
+				</simpleemitter>
+				
+				
+			
+           
+		   <!-- floating_embers -->  
+			   <simpleemitter
+                    bone="{bone}"
+                    spawnrate="20"
+                    range="80"
+                    particlelife="400"
+                    direction="0 1 0"
+                    angle="10"
+                    minspeed="30"
+                    maxspeed="80"
+                    drag="0.05"
+                    gravity="-5"
+                    offsetsphere="10"
+                    inheritvelocity=".1"
+                    limitinheritvelocity="150"
+                >
+				<!--
+                    <template name="ember_particle" >
+                        <particle
+                            maxyaw="360"
+                            maxpitch="360"
+                            maxroll="360"
+                            minyawspeed="-250"
+                            maxyawspeed="250"
+                            minpitchspeed="-250"
+                            maxpitchspeed="250"
+                            minrollspeed="-250"
+                            maxrollspeed="250"
+                            startscale="0"
+                            minendscale=".5"
+                            maxendscale="1"
+                        >
+                            <billboard
+                                life="400"
+                                maxroll="360"
+                                minrollspeed="-400"
+                                maxrollspeed="400"
+                                position="30 0 0"
+                                material="/shared/effects/materials/abstract_reveal.material"
+                                minsize="6"
+                                maxsize="10"
+                                startframe="0"
+                                endframe="1"
+                                midframepos=".8"
+                                startcolor="{sc}"
+                                midcolor="{mc}"
+                                endcolor="{ec}"
+                                midcolorpos="{mcpos}"
+                            />
+                        </particle>
+                    </template>
+				-->
+                    <instance name="ember_particle" sc="1" mc="-1" ec="-1" mcpos=".5" />
+                </simpleemitter>
+
+                <simpleemitter
+                    bone="{bone}"
+                    spawnrate="40"
+                    range="80"
+                    particlelife="900"
+                    direction="0 1 1"
+                    angle="10"
+                    minspeed="40"
+                    maxspeed="70"
+                    drag="0.1"
+                    gravity="-3"
+                    offsetsphere="10"
+                >
+                    <template name="ash_particle" >
+                        <particle
+                            maxyaw="360"
+                            maxpitch="360"
+                            maxroll="360"
+                            minyawspeed="-100"
+                            maxyawspeed="100"
+                            minpitchspeed="-100"
+                            maxpitchspeed="100"
+                            minrollspeed="-100"
+                            maxrollspeed="100"
+                            startscale="0"
+                            minendscale=".5"
+                            maxendscale="1"
+                        >
+                            <billboard
+                                maxangle="360"
+                                minrollspeed="-400"
+                                maxrollspeed="400"
+                                life="900"
+                                position="20 0 0"
+                                material="/shared/effects/materials/abstract_reveal.material"
+                                startsize="8"
+                                endsize="5"
+                                startcolor="{sc}"
+                                midcolor="{mc}"
+                                endcolor="{ec}"
+                                midcolorpos="{mcpos}"
+                                startframe="0"
+                                endframe="1"
+                            />
+                        </particle>
+                    </template>
+                    <instance name="ash_particle" sc="3 1 1" mc="-1" ec="-1" mcpos=".5" />
+                    <instance name="ash_particle" sc="2 .6 .5" mc="-1" ec="-1" mcpos=".75" />
+                </simpleemitter>
+			</template>
+			<!--
+			<instance name="floating_embers" bone="_bone_origin" scale=".8"  />
+			<instance name="floating_embers" bone="_bone_origin" scale=".8"  />
+			-->
+			
+			<instance name="floating_embers" bone="_bone_origin" scale=".75" />
+			<instance name="floating_embers" bone="_bone_rightfoot" scale=".75" />
+			<instance name="floating_embers" bone="_bone_lefthand" scale=".75" />					
+
+			
+			<!-- Flame Base -->
+			<model
+				bone="_bone_origin"
+				position="0 -5 -15"
+				model="/heroes/soulstealer/effects/flamebase.mdf"
+				yawspeed="360"
+				life="1000"
+				loop="true"
+				scale=".6"
+				alpha="0.95"
+			/>			
+
+			<template name="glowChest">
+				<billboard
+					bone="{bone}"
+					delay="200"
+					position="0 0 0"
+					life="250"
+					color="1 0 0"
+					size="30"
+					rollspeed="-1250"
+					depthbias="-10"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+				
+				
+				<billboard
+					expirelife="500"
+					bone="{bone}"
+					delay="200"
+					position="0 1.5 .5"
+					startcolor="1 0 0"
+					endcolor="0 0 0"
+					size="15"
+					rollspeed="-1250"
+					depthbias="-1"
+					material="/shared/effects/materials/flare_01.material"
+				/>
+
+				<simpleemitter
+					delay="0"
+					bone="{bone}"
+					position="0 0 0" 
+					spawnrate="75"
+					particlelife="500"
+					gravity="0.0"
+					offsetsphere="5"
+					speed="150"
+					drag="0"
+					acceleration="0"
+					material="/shared/effects/materials/phantom_smoke_03.material"
+					minangle="0"
+					maxangle="10"
+					direction="0 2 0"
+				>
+					<particle 
+						startcolor="0 0 0"
+						midcolor=".5 0 0"
+						endcolor="0 0 0"
+						midcolorpos=".5"
+						minangle="0"
+						maxangle="360"
+						startsize="15"
+						endsize="30"
+						minanglespeed="-90"
+						maxanglespeed="90"
+						lockright="true"
+						lockup="true"
+						pitch="90"
+						directionalspace="local"
+						anchor="1"
+					/>
+				</simpleemitter>
+				
+				
+
+			</template>
+
+			<instance name="glowChest" bone="_bone_lefteye" />
+			<instance name="glowChest" bone="_bone_righteye" />			
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

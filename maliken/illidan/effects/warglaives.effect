@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" showoutlines="true">
+
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale="1.0">
+
+		    <!-- Left Hand Warglaive -->
+		    <model
+			    expirelife="300"
+			    startalpha="1"
+			    endalpha="0"
+			    bone="_bone_leftpalm"
+			    model="warglaive/warglaive.mdf"
+			    anim="idle.clip"
+			    scale="1.0"
+			    yaw="-90"
+		    />
+			
+			<!-- Right Hand Warglaive -->
+		    <model
+			    expirelife="300"
+			    startalpha="1"
+			    endalpha="0"
+			    bone="_bone_rightpalm"
+			    model="warglaive/warglaive.mdf"
+			    anim="idle.clip"
+			    scale="1.0"
+			    yaw="90"
+		    />
+			
+		</particlesystem>
+		
+	</definitions>
+	
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0" />
+	</thread>
+	
+</effect>

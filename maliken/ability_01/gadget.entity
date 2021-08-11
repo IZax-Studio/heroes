@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Maliken_Ability1"
+
+	icon=""
+	portrait=""
+	model="effects/swordprojectile.mdf"
+	passiveeffect="effects/body.effect"
+	preglobalscale="1.3"
+	modelscale="1.0"
+	effectscale="1.0"
+	boundsheight="0"
+	boundsradius="0"
+	isselectable="false"
+	iscontrollable="false"
+	selectionradius="0"
+	targetoffset="0 0 0"
+
+	canrotate="false"
+	ismobile="false"
+
+	attacktype="none"
+	combattype="Ranged"
+
+	sightrangeday="700"
+	sightrangenight="700"
+	unitwalking="true"
+	canattack="false"
+	deathtime="0"
+	corpsetime="0"
+	
+	invulnerable="true"
+	flying="false"
+	drawonmap="false"
+	clearvision="true"
+
+>
+	<ondeath>
+		<expirestate name="State_Maliken_Ability1" target="this_owner_entity"/>
+	</ondeath>
+	
+	
+	<modifier key="swordflame" modpriority="100"
+		passiveeffect="effects/body_flame.effect"
+	/>
+
+	<modifier key="swordflame_alt4" modpriority="100"
+		passiveeffect="effects/body_flame.effect"
+	/>
+	
+	<modifier key="swordhealing" modpriority="100"
+		passiveeffect="effects/body_heal.effect"
+	/>
+	
+	<modifier key="swordhealing_alt4" modpriority="100"
+		passiveeffect="effects/body_heal.effect"
+	/>
+	
+	
+	<altavatar key="Hero_Maliken.Alt"
+		model="../alt/ability_01/effects/swordprojectile.mdf"
+	/>
+	
+	<altavatar key="Hero_Maliken.Alt2"
+		model="../alt2/ability_01/effects/swordprojectile.mdf"
+	/>
+	
+	<altavatar key="Hero_Maliken.Alt3"
+		model="../alt3/ability_01/effects/sword/model.mdf"
+	/>
+	
+	<altavatar key="Hero_Maliken.Alt4"
+		model="../alt4/ability_01/effects/swordprojectile.mdf"
+	>
+		<modifier key="swordhealing" modpriority="100"
+			passiveeffect="effects/body_heal.effect"
+		/>
+	
+		<modifier key="swordhealing_alt4" modpriority="100"
+			passiveeffect="effects/body_heal.effect"
+		/>
+
+		<modifier key="malikenult_Alt4" modpriority="2"
+			model="../alt4/ability_04/effects/ult_projectile/swordprojectile.mdf"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Maliken.Alt5"
+		model="../alt5/ability_01/effects/swordprojectile.mdf"
+	>
+		<modifier key="swordflame" modpriority="100"
+			passiveeffect="../alt5/ability_01/effects/body_flame.effect"
+		/>
+		<modifier key="swordhealing" modpriority="100"
+			passiveeffect="../alt5/ability_01/effects/body_heal.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Maliken.Alt6"
+		model="../alt6/ability_01/effects/sword/model.mdf"
+		modelscale="1"
+		passiveeffect="../alt6/ability_01/effects/body.effect"
+	>
+		<modifier key="swordflame" modpriority="100"
+			passiveeffect="../alt6/ability_01/effects/body_flame.effect"
+		/>
+		<modifier key="swordhealing" modpriority="100"
+			passiveeffect="../alt6/ability_01/effects/body_heal.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Maliken.Alt7"
+		model="../alt7/ability_01/effects/model.mdf"
+		modelscale="1.3"
+		passiveeffect="../alt7/ability_01/effects/trail.effect"
+	>
+		<modifier key="swordflame" modpriority="100"
+			passiveeffect="../alt7/ability_01/effects/trail_flame.effect"
+		/>
+		<modifier key="swordhealing" modpriority="100"
+			passiveeffect="../alt7/ability_01/effects/trail_heal.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Maliken.Alt8"
+		model="../alt8/ability_01/effects/sword/model.mdf"
+		modelscale="1.0"
+		passiveeffect="../alt8/ability_01/effects/trail.effect"
+	>
+		<modifier key="swordflame" modpriority="100"
+			passiveeffect="../alt8/ability_01/effects/trail_flame.effect"
+		/>
+		<modifier key="swordhealing" modpriority="100"
+			passiveeffect="../alt8/ability_01/effects/trail_heal.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Maliken.Alt9"
+		model="../alt9/ability_01/effects/sword/model.mdf"
+		modelscale="1.35"
+		passiveeffect="../alt9/ability_01/effects/trail.effect"
+	>
+		<modifier key="swordflame" modpriority="100"
+			passiveeffect="../alt9/ability_01/effects/trail_flame.effect"
+		/>
+		<modifier key="swordhealing" modpriority="100"
+			passiveeffect="../alt9/ability_01/effects/trail_heal.effect"
+		/>
+	</altavatar>
+	
+</gadget>

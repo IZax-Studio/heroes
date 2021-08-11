@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<material>
+	<parameters vDiffuseColor="0.0000 1.0000 1.2000" fSpecularLevel="1.0000" fGlossiness="0" fOpacity="0.5000" fReflect="1.0000" />
+	<phase
+		name="color"
+		vs="mesh_unlit"
+		ps="mesh_unlit"
+		srcblend="BLEND_SRC_ALPHA"
+		dstblend="BLEND_ONE"
+		cull="CULL_NONE"
+		translucent="true"
+		alphawrite="false"
+	>
+		<sampler
+			name="diffuse"
+			texture="/heroes/maliken/illidan/textures/GLAVE_1H_DUALBLADE_D_02BLUE.tga"
+			repeat_u="true"
+			repeat_v="true"
+			mipmaps="true"
+			fullquality="false"
+			nocompress="false"
+			filtering="true"
+			border="false"
+		/>
+	</phase>
+</material>
